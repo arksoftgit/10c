@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="_common">
+        <df name="_class">
+          <in>COLPICK.H</in>
+          <in>COLPOPUP.H</in>
+          <in>HZOCREGS.H</in>
+          <in>HZOREGEX.H</in>
+          <in>REGEX.H</in>
+        </df>
+      </df>
+      <df name="a">
+        <df name="bin">
+          <df name="sys">
+          </df>
+        </df>
+        <df name="ed">
+          <in>tzedcwaa.h</in>
+          <in>zeditor.c</in>
+        </df>
+        <df name="incr">
+          <in>kzhsqlds.h</in>
+          <in>kzoedeca.h</in>
+          <in>kzoegdef.h</in>
+          <in>kzoemeaa.h</in>
+          <in>kzoengaa.h</in>
+          <in>kzoep1aa.h</in>
+          <in>kzoessaa.h</in>
+          <in>kzsirrep.h</in>
+          <in>kzuseraa.hg</in>
+          <in>tzvmlip.h</in>
+          <in>zdecimal.h</in>
+          <in>zdrvropr.h</in>
+          <in>zstdafx.h</in>
+        </df>
+        <df name="incz">
+          <in>img_crop.h</in>
+          <in>img_err.h</in>
+          <in>imglib.h</in>
+          <in>imgplib.h</in>
+          <in>kzhvseta.h</in>
+          <in>kzoeidaa.h</in>
+          <in>kzoeltaa.hg</in>
+          <in>kzoemiaa.h</in>
+          <in>kzoemsaa.hg</in>
+          <in>kzoep0aa.h</in>
+          <in>kzoetdaa.h</in>
+          <in>tz__oprs.h</in>
+          <in>tzctlopr.h</in>
+          <in>tzlodopr.h</in>
+          <in>tzvsecaa.h</in>
+          <in>tzwrksto.h</in>
+          <in>zdstrasm.h</in>
+        </df>
+        <df name="java">
+          <df name="class">
+            <df name="zeidon">
+            </df>
+          </df>
+          <in>kzoejava.c</in>
+          <in>kzoejava.h</in>
+        </df>
+        <df name="ms">
+          <in>kzmsgqaa.c</in>
+        </df>
+        <df name="oe">
+          <df name="zdecimal">
+            <df name="decari">
+              <in>decari.c</in>
+              <in>decari.h</in>
+              <in>zdecimal.c</in>
+            </df>
+            <in>hzapck.c</in>
+            <in>hzapck.h</in>
+            <in>hzapck2.c</in>
+            <in>hzapck2.h</in>
+          </df>
+          <in>KZOEDECA.C</in>
+          <in>fmdbcsmp.cpp</in>
+          <in>kzenque.c</in>
+          <in>kzhdbvaa.c</in>
+          <in>kzhdbvab.c</in>
+          <in>kzhdbvpr.h</in>
+          <in>kzhgenky.c</in>
+          <in>kzhgenky.h</in>
+          <in>kzhskel.c</in>
+          <in>kzhskelb.c</in>
+          <in>kzhsqlds.c</in>
+          <in>kzhsqlga.c</in>
+          <in>kzhsqlgp.h</in>
+          <in>kzhsqlxa.c</in>
+          <in>kzhsqlxa.h</in>
+          <in>kzhsqlxb.c</in>
+          <in>kzoeapaa.c</in>
+          <in>kzoeataa.c</in>
+          <in>kzoecmaa.c</in>
+          <in>kzoedeca.cpp</in>
+          <in>kzoedmaa.c</in>
+          <in>kzoedoc.h</in>
+          <in>kzoeeiaa.c</in>
+          <in>kzoeeraa.c</in>
+          <in>kzoemiaa.c</in>
+          <in>kzoemmaa.c</in>
+          <in>kzoemqaa.c</in>
+          <in>kzoeneta.c</in>
+          <in>kzoengaa.hg</in>
+          <in>kzoeodaa.c</in>
+          <in>kzoeoiaa.c</in>
+          <in>kzoeoraa.c</in>
+          <in>kzoephdr.c</in>
+          <in>kzoephdr.h</in>
+          <in>kzoesoaa.c</in>
+          <in>kzoetmaa.c</in>
+          <in>kzoetraa.c</in>
+          <in>kzoetsaa.c</in>
+          <in>kzoeufaa.c</in>
+          <in>kzoevlaa.c</in>
+          <in>kzoevmaa.c</in>
+          <in>kzoexmla.c</in>
+          <in>kzwdlgxo.c</in>
+          <in>zsimpdir.c</in>
+        </df>
+        <df name="tz">
+          <df name="ax">
+            <df name="_edit">
+              <df name="debug">
+              </df>
+              <in>hzoectl.cpp</in>
+              <in>hzoectl.h</in>
+              <in>hzoectlr.h</in>
+              <in>hzoedlg.cpp</in>
+              <in>hzoedlg.h</in>
+              <in>hzoefunc.cpp</in>
+              <in>hzoemeth.cpp</in>
+              <in>hzoeprop.cpp</in>
+              <in>hzoeprop.h</in>
+              <in>hzoessyn.cpp</in>
+              <in>hzoestri.h</in>
+              <in>hzoesyn.h</in>
+              <in>hzoeundo.cpp</in>
+              <in>hzoeundo.h</in>
+              <in>hzoezsyn.cpp</in>
+              <in>hzoezsyn.h</in>
+              <in>stdafx.h</in>
+              <in>tbedit.cpp</in>
+              <in>tbedit.h</in>
+            </df>
+            <df name="msdbgrid">
+              <in>msdbgrid.cpp</in>
+              <in>msdbgrid.h</in>
+              <in>msdbmap.cpp</in>
+            </df>
+            <df name="truegrid">
+              <df name="debug">
+              </df>
+              <in>evnthlpr.h</in>
+              <in>tdbg6.cpp</in>
+              <in>tdbg6.h</in>
+              <in>tgcolser.cpp</in>
+              <in>tgcolser.h</in>
+              <in>trddmap.cpp</in>
+              <in>trdgmap.cpp</in>
+              <in>trgrxprt.cpp</in>
+              <in>trhlpr.cpp</in>
+              <in>trhlpr.h</in>
+              <in>truegrid.cpp</in>
+              <in>xarraydb.cpp</in>
+              <in>xarraydb.h</in>
+            </df>
+            <df name="tzaxctl">
+              <df name="debug">
+              </df>
+              <in>resource.h</in>
+              <in>tzaxcal.cpp</in>
+              <in>tzaxcal.h</in>
+              <in>tzaxctl.cpp</in>
+              <in>tzaxctl.h</in>
+              <in>tzaxdate.cpp</in>
+              <in>tzaxdate.h</in>
+              <in>tzaxgbl.h</in>
+              <in>tzaxhlpr.cpp</in>
+              <in>tzaxhlpr.h</in>
+            </df>
+            <df name="tzvmledt">
+              <df name="cmcs219">
+                <df name="include">
+                  <in>cmcsafx.h</in>
+                  <in>codesense.h</in>
+                </df>
+                <df name="src">
+                  <df name="res">
+                  </df>
+                  <in>bookmark.cpp</in>
+                  <in>buffer.cpp</in>
+                  <in>buffer.h</in>
+                  <in>cedit.cpp</in>
+                  <in>cedit.h</in>
+                  <in>ceditmsg.cpp</in>
+                  <in>ceditx.cpp</in>
+                  <in>ceditx.h</in>
+                  <in>cmdarry.cpp</in>
+                  <in>cmidlids.h</in>
+                  <in>codelistctrl.cpp</in>
+                  <in>codelistctrl.h</in>
+                  <in>codetipctrl.cpp</in>
+                  <in>codetipctrl.h</in>
+                  <in>codetipfunchighlightctrl.cpp</in>
+                  <in>codetipfunchighlightctrl.h</in>
+                  <in>codetiphighlightctrl.cpp</in>
+                  <in>codetiphighlightctrl.h</in>
+                  <in>codetipmultifuncctrl.cpp</in>
+                  <in>codetipmultifuncctrl.h</in>
+                  <in>ctlstate.cpp</in>
+                  <in>debug.cpp</in>
+                  <in>debug.h</in>
+                  <in>dispatchwnd.h</in>
+                  <in>dlldata.c</in>
+                  <in>dragdrop.cpp</in>
+                  <in>dragdrop.h</in>
+                  <in>editcmd1.cpp</in>
+                  <in>editdlgs.cpp</in>
+                  <in>editdlgs.h</in>
+                  <in>editsel.cpp</in>
+                  <in>editsel.h</in>
+                  <in>editview.cpp</in>
+                  <in>editview.h</in>
+                  <in>editx.h</in>
+                  <in>editx_i.c</in>
+                  <in>editx_p.c</in>
+                  <in>exports.cpp</in>
+                  <in>findrepl.cpp</in>
+                  <in>fontnotifyimpl.hxx</in>
+                  <in>globalsx.cpp</in>
+                  <in>globalsx.h</in>
+                  <in>hkeyctrl.cpp</in>
+                  <in>hkeyctrl.h</in>
+                  <in>hotkey.cpp</in>
+                  <in>hotkeyx.cpp</in>
+                  <in>hotkeyx.h</in>
+                  <in>icodelist.cpp</in>
+                  <in>icodelist.h</in>
+                  <in>icodetip.cpp</in>
+                  <in>icodetip.h</in>
+                  <in>icodetip.hxx</in>
+                  <in>icodetipfunchighlight.cpp</in>
+                  <in>icodetipfunchighlight.h</in>
+                  <in>icodetipfunchighlight.hxx</in>
+                  <in>icodetiphighlight.cpp</in>
+                  <in>icodetiphighlight.h</in>
+                  <in>icodetipmultifunc.cpp</in>
+                  <in>icodetipmultifunc.h</in>
+                  <in>language.cpp</in>
+                  <in>langx.cpp</in>
+                  <in>langx.h</in>
+                  <in>line.cpp</in>
+                  <in>macro.cpp</in>
+                  <in>misc.cpp</in>
+                  <in>misc.h</in>
+                  <in>msgpump.cpp</in>
+                  <in>posx.cpp</in>
+                  <in>posx.h</in>
+                  <in>precomp.cpp</in>
+                  <in>precomp.h</in>
+                  <in>print.cpp</in>
+                  <in>props.cpp</in>
+                  <in>rangex.cpp</in>
+                  <in>rangex.h</in>
+                  <in>rect.h</in>
+                  <in>rectx.cpp</in>
+                  <in>rectx.h</in>
+                  <in>regclasslist.h</in>
+                  <in>regexp.cpp</in>
+                  <in>regexp.h</in>
+                  <in>resource.h</in>
+                  <in>resource2.h</in>
+                  <in>selftest.cpp</in>
+                  <in>splitter.cpp</in>
+                  <in>syntax.cpp</in>
+                  <in>undo.cpp</in>
+                  <in>undo.h</in>
+                  <in>uuid.h</in>
+                  <in>wnd.cpp</in>
+                  <in>wnd.h</in>
+                  <in>wnd.inl</in>
+                </df>
+              </df>
+              <df name="debug">
+              </df>
+              <in>tzcswrpr.cpp</in>
+              <in>tzcswrpr.h</in>
+              <in>tzvmlcst.h</in>
+              <in>tzvmledt.cpp</in>
+              <in>tzvmledt.h</in>
+              <in>zcmddef.cpp</in>
+              <in>zcmddef.h</in>
+              <in>zstring.cpp</in>
+              <in>zstring.h</in>
+              <in>zviewdef.cpp</in>
+              <in>zviewdef.h</in>
+            </df>
+          </df>
+          <df name="etc">
+            <in>yylex.c</in>
+            <in>yylex.cpp</in>
+            <in>yyparse.c</in>
+            <in>yyparse.cpp</in>
+          </df>
+          <df name="JavaProject">
+            <df name="src">
+              <df name="com">
+                <df name="quinsoft">
+                  <df name="zeidon">
+                    <df name="zeidontools">
+                    </df>
+                  </df>
+                  <df name="zeidontools">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <in>TZGLOJSP.c</in>
+          <in>TZRPSXM2.c</in>
+          <in>TZVSPMAA.HD</in>
+          <in>TZVSPMAA.HT</in>
+          <in>TZWDLG6O.c</in>
+          <in>TZWEBGL2.C</in>
+          <in>TZWEBGL3.c</in>
+          <in>TZWEBGL4.c</in>
+          <in>TrueGrid.cpp</in>
+          <in>account.c</in>
+          <in>currency.c</in>
+          <in>kzrpquer.c</in>
+          <in>kzrpsrc2.c</in>
+          <in>kzrpsrco.c</in>
+          <in>kzrpwebo.c</in>
+          <in>kzsirrep.c</in>
+          <in>kzxmlpg2.c</in>
+          <in>kzxmlpgo.c</in>
+          <in>tz__prfo.c</in>
+          <in>tzadcdod.c</in>
+          <in>tzadcs2o.c</in>
+          <in>tzadcsdo.c</in>
+          <in>tzadw1aw.c</in>
+          <in>tzadw2aw.c</in>
+          <in>tzadw3aw.c</in>
+          <in>tzadw4aw.c</in>
+          <in>tzadw5aw.c</in>
+          <in>tzadw6aw.c</in>
+          <in>tzadw7aw.c</in>
+          <in>tzadw8aw.c</in>
+          <in>tzadwdod.c</in>
+          <in>tzadwexp.c</in>
+          <in>tzadwoaw.c</in>
+          <in>tzapdmaa.c</in>
+          <in>tzapdmaa.hg</in>
+          <in>tzapdmab.c</in>
+          <in>tzapdmac.c</in>
+          <in>tzaxcfgd.c</in>
+          <in>tzbmupdd.c</in>
+          <in>tzbrau2o.c</in>
+          <in>tzbraudo.c</in>
+          <in>tzbrentd.c</in>
+          <in>tzcm_opr.c</in>
+          <in>tzcm_opr.hg</in>
+          <in>tzcmcpld.c</in>
+          <in>tzcmcpro.c</in>
+          <in>tzcmcvto.c</in>
+          <in>tzcmenqo.c</in>
+          <in>tzcmlops.c</in>
+          <in>tzcmlp2o.c</in>
+          <in>tzcmlpld.c</in>
+          <in>tzcmlplo.c</in>
+          <in>tzcmlpmd.c</in>
+          <in>tzcmlpmo.c</in>
+          <in>tzcmoprs.c</in>
+          <in>tzcmqcpo.c</in>
+          <in>tzcmqsyo.c</in>
+          <in>tzcmrepo.c</in>
+          <in>tzcmrevd.c</in>
+          <in>tzcmrptd.c</in>
+          <in>tzcmslpd.c</in>
+          <in>tzcmutil.c</in>
+          <in>tzcmwkso.c</in>
+          <in>tzdbht2d.c</in>
+          <in>tzdbhtsd.c</in>
+          <in>tzdgsrco.c</in>
+          <in>tzdmsrco.c</in>
+          <in>tzdmup2d.c</in>
+          <in>tzdmupdd.c</in>
+          <in>tzdmxgpo.c</in>
+          <in>tzedcm2d.c</in>
+          <in>tzedcmpd.c</in>
+          <in>tzedcwzd.c</in>
+          <in>tzedfrmd.c</in>
+          <in>tzeditod.c</in>
+          <in>tzedvmld.c</in>
+          <in>tzerem2o.c</in>
+          <in>tzeremdd.c</in>
+          <in>tzeremde.c</in>
+          <in>tzeremdo.c</in>
+          <in>tzeremxo.c</in>
+          <in>tzerrord.c</in>
+          <in>tzersa2o.c</in>
+          <in>tzersapd.c</in>
+          <in>tzersaso.c</in>
+          <in>tzersast.c</in>
+          <in>tzhkeyad.c</in>
+          <in>tzhlpcxd.c</in>
+          <in>tzlodopr.c</in>
+          <in>tzlodopr.hg</in>
+          <in>tzlooprs.c</in>
+          <in>tzmsdilo.c</in>
+          <in>tzobrwad.c</in>
+          <in>tzogsrco.c</in>
+          <in>tzopgrpo.c</in>
+          <in>tzophdrd.c</in>
+          <in>tzophdro.c</in>
+          <in>tzoprusd.c</in>
+          <in>tzopsigd.c</in>
+          <in>tzopsigo.c</in>
+          <in>tzopupdd.c</in>
+          <in>tzpesrco.c</in>
+          <in>tzpeupdd.c</in>
+          <in>tzpnctad.c</in>
+          <in>tzpnctld.c</in>
+          <in>tzpncw2d.c</in>
+          <in>tzpncwdd.c</in>
+          <in>tzpnolad.c</in>
+          <in>tzpnoldc.c</in>
+          <in>tzpntbad.c</in>
+          <in>tzpntrad.c</in>
+          <in>tzpntrvd.c</in>
+          <in>tzpnupgd.c</in>
+          <in>tzrepoad.c</in>
+          <in>tzrpsrco.c</in>
+          <in>tzrpsxml.c</in>
+          <in>tzrpup2d.c</in>
+          <in>tzrpupdd.c</in>
+          <in>tzrpupsd.c</in>
+          <in>tzsiimpd.c</in>
+          <in>tzsioprs.c</in>
+          <in>tzsixsko.c</in>
+          <in>tzstarto.c</in>
+          <in>tztedb2o.c</in>
+          <in>tztedbld.c</in>
+          <in>tztempmo.c</in>
+          <in>tztenv2o.c</in>
+          <in>tztenvro.c</in>
+          <in>tzteupdd.c</in>
+          <in>tzvmedaw.c</in>
+          <in>tzvmg1aa.c</in>
+          <in>tzvmg2aa.c</in>
+          <in>tzvmgnaa.c</in>
+          <in>tzvmi1aa.c</in>
+          <in>tzvmi2aa.c</in>
+          <in>tzvmi3aa.c</in>
+          <in>tzvminaa.c</in>
+          <in>tzvmlip.c</in>
+          <in>tzvmlopr.c</in>
+          <in>tzvmlopr.hg</in>
+          <in>tzvmp1aa.c</in>
+          <in>tzvmp2aa.c</in>
+          <in>tzvmp3aa.c</in>
+          <in>tzvmp4aa.c</in>
+          <in>tzvmp5aa.c</in>
+          <in>tzvmp6aa.c</in>
+          <in>tzvmp7aa.c</in>
+          <in>tzvmp8aa.c</in>
+          <in>tzvmp9aa.c</in>
+          <in>tzvmpaaa.c</in>
+          <in>tzvmpeaa.c</in>
+          <in>tzvmplaa.c</in>
+          <in>tzvmpmoo.c</in>
+          <in>tzvmpopr.c</in>
+          <in>tzvmpopr.hg</in>
+          <in>tzvmpyaa.c</in>
+          <in>tzvsdbad.c</in>
+          <in>tzvspmaa.h</in>
+          <in>tzvsrtoo.c</in>
+          <in>tzvsxcad.c</in>
+          <in>tzwdgrwd.c</in>
+          <in>tzwdgrwo.c</in>
+          <in>tzwdlg2o.c</in>
+          <in>tzwdlg3o.c</in>
+          <in>tzwdlg4o.c</in>
+          <in>tzwdlgso.c</in>
+          <in>tzwdvord.c</in>
+          <in>tzwebgl1.c</in>
+          <in>tzwrksto.c</in>
+          <in>tzxsltdd.c</in>
+          <in>tzzapp2d.c</in>
+          <in>tzzappsd.c</in>
+          <in>tzzmaind.c</in>
+          <in>tzzolo2o.c</in>
+          <in>tzzolodd.c</in>
+          <in>tzzolodo.c</in>
+          <in>tzzolodq.c</in>
+          <in>tzzolodr.c</in>
+          <in>tzzoloq2.c</in>
+          <in>tzzorpts.c</in>
+          <in>tzzoxodo.c</in>
+          <in>waccount.c</in>
+          <in>zeidonop.h</in>
+          <in>zglobal1.c</in>
+        </df>
+        <df name="ut">
+          <df name="qmap2def">
+            <in>QMAP2DEF.C</in>
+          </df>
+          <df name="qspawn">
+            <in>QSPAWN.C</in>
+          </df>
+          <df name="syncxod">
+            <in>SyncXOD.C</in>
+          </df>
+        </df>
+        <df name="zdr">
+          <df name="dsp">
+          </df>
+          <df name="jpeglib">
+            <in>CDERROR.H</in>
+            <in>CDJPEG.H</in>
+            <in>JCAPIMIN.C</in>
+            <in>JCAPISTD.C</in>
+            <in>JCCOEFCT.C</in>
+            <in>JCCOLOR.C</in>
+            <in>JCDCTMGR.C</in>
+            <in>JCHUFF.C</in>
+            <in>JCHUFF.H</in>
+            <in>JCINIT.C</in>
+            <in>JCMAINCT.C</in>
+            <in>JCMARKER.C</in>
+            <in>JCMASTER.C</in>
+            <in>JCOMAPI.C</in>
+            <in>JCONFIG.H</in>
+            <in>JCPARAM.C</in>
+            <in>JCPHUFF.C</in>
+            <in>JCPREPCT.C</in>
+            <in>JCSAMPLE.C</in>
+            <in>JCTRANS.C</in>
+            <in>JDAPIMIN.C</in>
+            <in>JDAPISTD.C</in>
+            <in>JDATADST.C</in>
+            <in>JDATASRC.C</in>
+            <in>JDCOEFCT.C</in>
+            <in>JDCOLOR.C</in>
+            <in>JDCT.H</in>
+            <in>JDDCTMGR.C</in>
+            <in>JDHUFF.C</in>
+            <in>JDHUFF.H</in>
+            <in>JDINPUT.C</in>
+            <in>JDMAINCT.C</in>
+            <in>JDMARKER.C</in>
+            <in>JDMASTER.C</in>
+            <in>JDMERGE.C</in>
+            <in>JDPHUFF.C</in>
+            <in>JDPOSTCT.C</in>
+            <in>JDSAMPLE.C</in>
+            <in>JDTRANS.C</in>
+            <in>JERROR.C</in>
+            <in>JERROR.H</in>
+            <in>JFDCTFLT.C</in>
+            <in>JFDCTFST.C</in>
+            <in>JFDCTINT.C</in>
+            <in>JIDCTFLT.C</in>
+            <in>JIDCTFST.C</in>
+            <in>JIDCTINT.C</in>
+            <in>JIDCTRED.C</in>
+            <in>JINCLUDE.H</in>
+            <in>JMEMMGR.C</in>
+            <in>JMEMNOBS.C</in>
+            <in>JMEMSYS.H</in>
+            <in>JPEGINT.H</in>
+            <in>JPEGTRAN.C</in>
+            <in>JPegLib.H</in>
+            <in>JQUANT1.C</in>
+            <in>JQUANT2.C</in>
+            <in>JUTILS.C</in>
+            <in>JVERSION.H</in>
+            <in>Jmorecfg.h</in>
+          </df>
+          <df name="MonitorProcess">
+            <df name="McbXML">
+              <df name="res">
+              </df>
+              <in>McbMain.c</in>
+              <in>McbXML.c</in>
+              <in>McbXML.h</in>
+              <in>resource.h</in>
+            </df>
+            <df name="res">
+            </df>
+            <in>MonProc.cpp</in>
+            <in>MonProc.h</in>
+            <in>MonProcDlg.cpp</in>
+            <in>MonProcDlg.h</in>
+            <in>StdAfx.cpp</in>
+            <in>StdAfx.h</in>
+            <in>Win32Process.cpp</in>
+            <in>Win32Process.h</in>
+            <in>XML_PARSER.cpp</in>
+            <in>XML_PARSER.h</in>
+            <in>resource.h</in>
+          </df>
+          <df name="res">
+          </df>
+          <in>CheckBox.cpp</in>
+          <in>CheckBox.h</in>
+          <in>ChkCombo.cpp</in>
+          <in>ChkCombo.h</in>
+          <in>Fortify.cpp</in>
+          <in>Fortify.h</in>
+          <in>MPNA81.cpp</in>
+          <in>PrintTree.cpp</in>
+          <in>PrintTree.h</in>
+          <in>Resource.h</in>
+          <in>SMTP.cpp</in>
+          <in>SMTP.h</in>
+          <in>TzCtl.cpp</in>
+          <in>TzCtl.h</in>
+          <in>TzCtlATX.cpp</in>
+          <in>TzCtlCvt.cpp</in>
+          <in>TzCtlERD.cpp</in>
+          <in>TzCtlERE.cpp</in>
+          <in>TzCtlERL.cpp</in>
+          <in>TzCtlERV.cpp</in>
+          <in>TzCtlGbl.h</in>
+          <in>TzCtlOpr.cpp</in>
+          <in>TzCtlPTB.cpp</in>
+          <in>TzCtlPTC.cpp</in>
+          <in>TzCtlPTE.cpp</in>
+          <in>TzCtlPTM.cpp</in>
+          <in>TzCtlPTR.cpp</in>
+          <in>TzCtlPTS.cpp</in>
+          <in>TzCtlPTU.cpp</in>
+          <in>TzCtlPTX.cpp</in>
+          <in>TzCtlTBE.cpp</in>
+          <in>TzCtlTab.cpp</in>
+          <in>UFORTIFY.h</in>
+          <in>Z2MP.cpp</in>
+          <in>Z2MP.h</in>
+          <in>Z2MPAPI.cpp</in>
+          <in>ZDr.cpp</in>
+          <in>ZDr.h</in>
+          <in>ZDrAct.cpp</in>
+          <in>ZDrApp.cpp</in>
+          <in>ZDrApp.h</in>
+          <in>ZDrAxLst.cpp</in>
+          <in>ZDrCCDlg.cpp</in>
+          <in>ZDrCmdLn.cpp</in>
+          <in>ZDrCmprs.cpp</in>
+          <in>ZDrCmprs.h</in>
+          <in>ZDrComm.cpp</in>
+          <in>ZDrCoolB.cpp</in>
+          <in>ZDrCtl.cpp</in>
+          <in>ZDrDIB.cpp</in>
+          <in>ZDrDebug.cpp</in>
+          <in>ZDrDlgA.cpp</in>
+          <in>ZDrDlgC.cpp</in>
+          <in>ZDrDlgM.cpp</in>
+          <in>ZDrDlgO.cpp</in>
+          <in>ZDrDlgP.cpp</in>
+          <in>ZDrDlgW.cpp</in>
+          <in>ZDrDoc.cpp</in>
+          <in>ZDrFlatB.cpp</in>
+          <in>ZDrFont.cpp</in>
+          <in>ZDrFrame.cpp</in>
+          <in>ZDrGbl.h</in>
+          <in>ZDrMapAc.cpp</in>
+          <in>ZDrMenu.cpp</in>
+          <in>ZDrMisc.cpp</in>
+          <in>ZDrMsgHK.cpp</in>
+          <in>ZDrMsgQ.cpp</in>
+          <in>ZDrOLE.cpp</in>
+          <in>ZDrOpt.cpp</in>
+          <in>ZDrPalHK.cpp</in>
+          <in>ZDrParse.cpp</in>
+          <in>ZDrParse.h</in>
+          <in>ZDrPrint.cpp</in>
+          <in>ZDrPrtC.cpp</in>
+          <in>ZDrSTask.cpp</in>
+          <in>ZDrTask.cpp</in>
+          <in>ZDrTwain.cpp</in>
+          <in>ZDrTwain.h</in>
+          <in>ZDrUtil.cpp</in>
+          <in>ZDrVCtrl.cpp</in>
+          <in>ZDrVStr.cpp</in>
+          <in>ZDrView.cpp</in>
+          <in>ZSEMail.cpp</in>
+          <in>ZSEMail.h</in>
+          <in>ZdCtl.cpp</in>
+          <in>ZdCtl.h</in>
+          <in>ZdCtlATX.cpp</in>
+          <in>ZdCtlBar.cpp</in>
+          <in>ZdCtlBar.h</in>
+          <in>ZdCtlBmb.cpp</in>
+          <in>ZdCtlBmb.h</in>
+          <in>ZdCtlBmp.cpp</in>
+          <in>ZdCtlBmp.h</in>
+          <in>ZdCtlBtn.cpp</in>
+          <in>ZdCtlBtn.h</in>
+          <in>ZdCtlCal.cpp</in>
+          <in>ZdCtlCal.h</in>
+          <in>ZdCtlChk.cpp</in>
+          <in>ZdCtlChk.h</in>
+          <in>ZdCtlCmb.cpp</in>
+          <in>ZdCtlCmb.h</in>
+          <in>ZdCtlDIB.cpp</in>
+          <in>ZdCtlDIB.h</in>
+          <in>ZdCtlDT.cpp</in>
+          <in>ZdCtlDT.h</in>
+          <in>ZdCtlDil.cpp</in>
+          <in>ZdCtlDil.h</in>
+          <in>ZdCtlEdt.cpp</in>
+          <in>ZdCtlEdt.h</in>
+          <in>ZdCtlGbl.h</in>
+          <in>ZdCtlGbx.cpp</in>
+          <in>ZdCtlGbx.h</in>
+          <in>ZdCtlGrd.cpp</in>
+          <in>ZdCtlGrd.h</in>
+          <in>ZdCtlHd.cpp</in>
+          <in>ZdCtlHd.h</in>
+          <in>ZdCtlHdn.cpp</in>
+          <in>ZdCtlHot.cpp</in>
+          <in>ZdCtlHot.h</in>
+          <in>ZdCtlIco.cpp</in>
+          <in>ZdCtlIco.h</in>
+          <in>ZdCtlLBH.cpp</in>
+          <in>ZdCtlLBH.h</in>
+          <in>ZdCtlLBX.cpp</in>
+          <in>ZdCtlLBX.h</in>
+          <in>ZdCtlMLE.cpp</in>
+          <in>ZdCtlMLE.h</in>
+          <in>ZdCtlMST.C</in>
+          <in>ZdCtlMST.cpp</in>
+          <in>ZdCtlMST.h</in>
+          <in>ZdCtlO.cpp</in>
+          <in>ZdCtlOLB.cpp</in>
+          <in>ZdCtlOLB.h</in>
+          <in>ZdCtlRB.cpp</in>
+          <in>ZdCtlRB.h</in>
+          <in>ZdCtlRDI.cpp</in>
+          <in>ZdCtlRTE.cpp</in>
+          <in>ZdCtlRTE.h</in>
+          <in>ZdCtlRTO.cpp</in>
+          <in>ZdCtlSS.cpp</in>
+          <in>ZdCtlSS.h</in>
+          <in>ZdCtlSSC.cpp</in>
+          <in>ZdCtlSSD.cpp</in>
+          <in>ZdCtlSSE.cpp</in>
+          <in>ZdCtlSSM.cpp</in>
+          <in>ZdCtlSSS.cpp</in>
+          <in>ZdCtlSSU.cpp</in>
+          <in>ZdCtlSSV.cpp</in>
+          <in>ZdCtlSSX.cpp</in>
+          <in>ZdCtlTab.cpp</in>
+          <in>ZdCtlTab.h</in>
+          <in>ZdCtlTim.cpp</in>
+          <in>ZdCtlTim.h</in>
+          <in>ZdCtlTxt.cpp</in>
+          <in>ZdCtlTxt.h</in>
+          <in>ZdCtlVwg.cpp</in>
+          <in>ZdCtlVwg.h</in>
+          <in>mpna81.h</in>
+          <in>msjexhnd.cpp</in>
+          <in>msjexhnd.h</in>
+          <in>tzpntrvd.c</in>
+        </df>
+      </df>
+      <df name="mak">
+      </df>
+      <df name="tlb">
+        <df name="res">
+        </df>
+        <in>Resource.h</in>
+        <in>StdAfx.cpp</in>
+        <in>StdAfx.h</in>
+        <in>TLB.H</in>
+        <in>TLBCONST.H</in>
+        <in>ttblbrws.h</in>
+        <in>ttblbrwsDlg.cpp</in>
+        <in>ttblbrwsDlg.h</in>
+      </df>
+      <df name="w">
+        <df name="bin">
+          <df name="hlp">
+          </df>
+          <df name="sys">
+          </df>
+        </df>
+        <df name="incr">
+          <in>kzoeenaa.h</in>
+          <in>winbase.h</in>
+        </df>
+        <df name="incz">
+          <df name="expat">
+            <in>xmlparse.h</in>
+          </df>
+          <df name="rdm321">
+            <in>DBERR.H</in>
+            <in>DBLOCK.H</in>
+            <in>DBTYPE.H</in>
+            <in>DBXTRN.H</in>
+            <in>DB_DEBUG.H</in>
+            <in>DPROTO.H</in>
+            <in>DTCOVER.H</in>
+            <in>INITTAB.H</in>
+            <in>INTERNAL.H</in>
+            <in>LL.H</in>
+            <in>LMC.H</in>
+            <in>LMCG.H</in>
+            <in>LMCI.H</in>
+            <in>LMNCB.H</in>
+            <in>LOCKCOMM.H</in>
+            <in>PARSER.H</in>
+            <in>PROTO.H</in>
+            <in>QDEFNS.H</in>
+            <in>QUERY.H</in>
+            <in>TASK.H</in>
+            <in>TRXLOG.H</in>
+            <in>VISTA.H</in>
+            <in>VISTASEG.H</in>
+            <in>YTAB.H</in>
+          </df>
+          <df name="sqlbase">
+            <in>ERRSQL.H</in>
+            <in>SQL.H</in>
+            <in>SQLSRV.H</in>
+          </df>
+          <df name="sqlsrvr">
+            <in>SQLDB.H</in>
+            <in>SQLFRONT.H</in>
+          </df>
+          <in>htmlhelp.h</in>
+          <in>kzoeinco.h</in>
+        </df>
+        <df name="libr">
+        </df>
+        <df name="libz">
+          <df name="expat">
+          </df>
+        </df>
+        <df name="ms">
+          <df name="debug">
+          </df>
+        </df>
+        <df name="oe">
+          <df name="debug">
+          </df>
+          <df name="zdecimal">
+            <df name="128bit">
+              <in>ECONST.C</in>
+              <in>EHEAD.H</in>
+              <in>IEEE.C</in>
+              <in>MCONF.H</in>
+              <in>MTHERR.C</in>
+              <in>ZDECIMAL.C</in>
+            </df>
+            <df name="decari">
+              <df name="debug">
+              </df>
+            </df>
+            <df name="longdbl">
+              <in>ZDECIMAL.C</in>
+            </df>
+          </df>
+          <in>KZSchedT.c</in>
+          <in>kzoeclnt.c</in>
+          <in>kzoedbga.cpp</in>
+          <in>kzoedbga.h</in>
+          <in>kzoengwa.c</in>
+          <in>kzoengwa.h</in>
+          <in>kzoeswrc.h</in>
+          <in>kzoesyaa.c</in>
+          <in>kzoesyaa.h</in>
+          <in>metersec.c</in>
+          <in>metersec.h</in>
+          <in>zdllinst.c</in>
+          <in>zwinsckb.c</in>
+          <in>zwinsckb.h</in>
+          <in>zwinsock.cpp</in>
+          <in>zwinsock.h</in>
+        </df>
+        <df name="redist">
+        </df>
+        <df name="setup">
+          <df name="bldcui">
+            <in>BLDVER.H</in>
+            <in>CUI.H</in>
+            <in>DIALOGS.H</in>
+            <in>DLGPROCS.C</in>
+          </df>
+          <df name="disklay">
+          </df>
+          <df name="intldll">
+            <in>BLDVER.H</in>
+            <in>GAUGE.H</in>
+            <in>IDS.H</in>
+            <in>IDS_INST.H</in>
+            <in>LOGIDS.H</in>
+          </df>
+        </df>
+        <df name="tz">
+          <df name="res">
+          </df>
+        </df>
+        <df name="ut">
+          <df name="mergedef">
+            <in>mergedef.cpp</in>
+          </df>
+          <df name="qdelete">
+            <in>QDELETE.C</in>
+          </df>
+          <df name="qmap2def">
+            <in>QMAP2DEF.C</in>
+          </df>
+          <df name="qpreproc">
+          </df>
+          <df name="qspawn">
+            <in>QSPAWN.C</in>
+          </df>
+          <df name="qstruct">
+            <in>qstruct.cpp</in>
+          </df>
+          <df name="xodgen">
+            <in>xodgen.c</in>
+            <in>xodgen.h</in>
+          </df>
+          <df name="xwdgen">
+            <in>xwdgen.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="x">
+        <df name="bin">
+        </df>
+        <df name="expat">
+          <df name="bin">
+          </df>
+          <df name="include">
+            <in>expat.h</in>
+            <in>expat_external.h</in>
+          </df>
+          <df name="lib">
+          </df>
+          <df name="man">
+            <df name="man1">
+            </df>
+          </df>
+        </df>
+        <df name="expat-2.0.1">
+          <df name="amiga">
+            <df name="include">
+              <df name="inline4">
+                <in>expat.h</in>
+              </df>
+              <df name="interfaces">
+                <in>expat.h</in>
+              </df>
+              <df name="libraries">
+                <in>expat.h</in>
+              </df>
+              <df name="proto">
+                <in>expat.h</in>
+              </df>
+            </df>
+            <in>expat_lib.c</in>
+            <in>expat_vectors.c</in>
+            <in>launch.c</in>
+            <in>stdlib.c</in>
+          </df>
+          <df name="bcb5">
+          </df>
+          <df name="conftools">
+          </df>
+          <df name="doc">
+          </df>
+          <df name="examples">
+            <in>elements.c</in>
+            <in>outline.c</in>
+          </df>
+          <df name="lib">
+            <in>amigaconfig.h</in>
+            <in>ascii.h</in>
+            <in>asciitab.h</in>
+            <in>expat.h</in>
+            <in>expat_external.h</in>
+            <in>iasciitab.h</in>
+            <in>internal.h</in>
+            <in>latin1tab.h</in>
+            <in>macconfig.h</in>
+            <in>nametab.h</in>
+            <in>utf8tab.h</in>
+            <in>winconfig.h</in>
+            <in>xmlparse.c</in>
+            <in>xmlrole.c</in>
+            <in>xmlrole.h</in>
+            <in>xmltok.c</in>
+            <in>xmltok.h</in>
+            <in>xmltok_impl.c</in>
+            <in>xmltok_impl.h</in>
+            <in>xmltok_ns.c</in>
+          </df>
+          <df name="tests">
+            <df name="benchmark">
+              <in>benchmark.c</in>
+            </df>
+            <in>chardata.c</in>
+            <in>chardata.h</in>
+            <in>minicheck.c</in>
+            <in>minicheck.h</in>
+            <in>runtests.c</in>
+            <in>runtestspp.cpp</in>
+          </df>
+          <df name="vms">
+            <in>expat_config.h</in>
+          </df>
+          <df name="win32">
+          </df>
+          <df name="xmlwf">
+            <in>codepage.c</in>
+            <in>codepage.h</in>
+            <in>ct.c</in>
+            <in>filemap.h</in>
+            <in>readfilemap.c</in>
+            <in>unixfilemap.c</in>
+            <in>win32filemap.c</in>
+            <in>xmlfile.c</in>
+            <in>xmlfile.h</in>
+            <in>xmlmime.c</in>
+            <in>xmlmime.h</in>
+            <in>xmltchar.h</in>
+            <in>xmlurl.h</in>
+            <in>xmlwf.c</in>
+            <in>xmlwin32url.cxx</in>
+          </df>
+          <in>expat_config.h</in>
+        </df>
+        <df name="incr">
+          <in>kzoeenaa.h</in>
+        </df>
+        <df name="incz">
+          <in>kzoeinco.h</in>
+        </df>
+        <df name="mysql-connector-odbc-5.1.5-linux-x86-32bit">
+          <df name="bin">
+          </df>
+          <df name="lib">
+          </df>
+        </df>
+        <df name="oe">
+          <in>kzhsqlpg.c</in>
+          <in>kzoelsck.c</in>
+          <in>kzoemsaa.hg</in>
+          <in>kzoengxa.c</in>
+          <in>kzoesyaa.c</in>
+          <in>kzoesyaa.h</in>
+        </df>
+        <df name="tz">
+        </df>
+        <df name="ut">
+          <df name="qspawn">
+            <in>qspawn.c</in>
+          </df>
+          <df name="scripts">
+          </df>
+        </df>
+      </df>
+      <df name="ztools">
+        <df name="tlist">
+          <in>common.cpp</in>
+          <in>common.h</in>
+        </df>
+        <in>Resource.h</in>
+        <in>StdAfx.cpp</in>
+        <in>StdAfx.h</in>
+        <in>ztools.cpp</in>
+        <in>ztools.h</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>CALLMAKE.BAT</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

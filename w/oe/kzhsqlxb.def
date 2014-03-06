@@ -1,0 +1,66 @@
+; CHANGE LOG
+;
+; 1998.11.10  DGC
+;    Added functions for DB2
+;
+; 1998/11/23  DC
+;    Added "PostXOD_BuildHook under define for ACCESS.
+;
+; 1999/01/08  DGC
+;    Added more hook functions.
+;
+#if defined( ACCESS )
+   LIBRARY       KZHSQLAB
+   DESCRIPTION   'MS ACCESS DDL GENERATOR'
+#elif defined( DB2 )
+   LIBRARY       KZHSQLDB
+   DESCRIPTION   'DB2 DDL GENERATOR'
+#elif defined( ODBC )
+   LIBRARY       KZHSQLOB
+   DESCRIPTION   'ODBC DDL GENERATOR'
+#elif defined( POSTGRESQL )
+   LIBRARY       KZHSQLPB
+   DESCRIPTION   'POSTGRESQL DDL GENERATOR'
+#elif defined( SQLBASE )
+   LIBRARY       KZHSQLBB
+   DESCRIPTION   'SQLBase DDL GENERATOR'
+#elif defined( SQLSERVER )
+   LIBRARY       KZHSQLSB
+   DESCRIPTION   'MS SQL Server DDL GENERATOR'
+#elif defined( MYSQL )
+   LIBRARY       KZHSQLMB
+   DESCRIPTION   'My SQL DDL GENERATOR'
+#endif
+
+#if defined( __WIN32__ )
+;; CODE      PRELOAD MOVEABLE DISCARDABLE
+;; DATA      PRELOAD SINGLE
+#else
+   STUB         'WINSTUB.EXE'
+   CODE  MOVEABLE
+   DATA  FIXED SINGLE
+   HEAPSIZE     1024
+   EXETYPE       WINDOWS
+#endif
+
+EXPORTS
+               BuildDDL
+               BuildSyncDDL
+               LoadDataTypes
+               SetDataType
+               GenerateName
+
+#if defined( ACCESS )
+               PostXOD_BuildHook
+#elif defined( DB2 )
+               PostXOD_BuildHook
+               InitDataServerConfigurationHook
+               MidDataServerConfigurationHook
+#elif defined( ODBC )
+               PostXOD_BuildHook
+#elif defined( POSTGRESQL )
+               PostXOD_BuildHook
+#elif defined( SQLBASE )
+#elif defined( SQLSERVER )
+               PostXOD_BuildHook
+#endif

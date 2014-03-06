@@ -1,0 +1,10 @@
+LIBRARY       KZHDBVAA
+DESCRIPTION   'KZHDBVAA DBVISTA HANDLER'
+EXETYPE       WINDOWS
+STUB         'WINSTUB.EXE'
+;; CODE  MOVEABLE
+;; DATA  FIXED SINGLE
+HEAPSIZE     1024
+
+EXPORTS
+              KZHDBVAA_DBH_MsgProc @1 ; name of window processing function

@@ -1,0 +1,11 @@
+;; CHANGE LOG
+;;
+   LIBRARY       zSimpDir
+   DESCRIPTION   'Zeidon simple implementation of directory services'
+;;   CODE      PRELOAD MOVEABLE DISCARDABLE
+;;   DATA      PRELOAD SINGLE
+
+EXPORTS
+               zServerDirInit       @1
+               zServerDirClose      @2
+               zServerDirGetAddr    @3

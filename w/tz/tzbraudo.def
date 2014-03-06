@@ -1,0 +1,7 @@
+LIBRARY
+DESCRIPTION   'EnqueueObject for the SystemAdministration'
+
+;; CODE      PRELOAD MOVEABLE DISCARDABLE
+;; DATA      PRELOAD SINGLE
+
+EXPORTS

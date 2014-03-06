@@ -1,0 +1,36 @@
+#if defined( DB2 )
+   LIBRARY       KZHSQLDA
+   DESCRIPTION   'DB2 DB - HANDLER'
+#elif defined( DUMMY )
+   LIBRARY       KZHSQLXX
+   DESCRIPTION   'DUMMY DB - HANDLER'
+#elif defined( ODBC )
+   LIBRARY       KZHSQLOA
+   DESCRIPTION   'ODBC DB - HANDLER'
+#elif defined( SQLBASE )
+   LIBRARY       KZHSQLBA
+   DESCRIPTION   'SQL Base DB - HANDLER'
+#elif defined( SQLSERVER )
+   LIBRARY       KZHSQLSA
+   DESCRIPTION   'MS SQL Server DB - HANDLER'
+#endif
+
+#if defined( __WIN32__ )
+;; CODE      PRELOAD MOVEABLE DISCARDABLE
+;; DATA      PRELOAD SINGLE
+#else
+   STUB         'WINSTUB.EXE'
+   CODE  MOVEABLE
+   DATA  FIXED SINGLE
+   HEAPSIZE     1024
+   EXETYPE       WINDOWS
+#endif
+
+EXPORTS
+
+              DBH_MsgProc          @1
+#if defined( DB2 )
+              RetrieveSchema       @2
+#elif defined( ODBC )
+              RetrieveSchema       @2
+#endif

@@ -1,0 +1,4309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="a">
+        <df name="ed">
+          <in>zeditor.c</in>
+        </df>
+        <df name="java">
+          <in>kzoejava.c</in>
+        </df>
+        <df name="ms">
+          <in>kzmsgqaa.c</in>
+        </df>
+        <df name="oe">
+          <df name="zdecimal">
+            <df name="decari">
+              <in>decari.c</in>
+              <in>zdecimal.c</in>
+            </df>
+            <in>hzapck.c</in>
+            <in>hzapck2.c</in>
+          </df>
+          <in>KZOEDECA.C</in>
+          <in>fmdbcsmp.cpp</in>
+          <in>kzenque.c</in>
+          <in>kzhdbvaa.c</in>
+          <in>kzhdbvab.c</in>
+          <in>kzhgenky.c</in>
+          <in>kzhskel.c</in>
+          <in>kzhskelb.c</in>
+          <in>kzhsqlds.c</in>
+          <in>kzhsqlga.c</in>
+          <in>kzhsqlxa.c</in>
+          <in>kzhsqlxb.c</in>
+          <in>kzoeapaa.c</in>
+          <in>kzoeataa.c</in>
+          <in>kzoecmaa.c</in>
+          <in>kzoedeca.cpp</in>
+          <in>kzoedmaa.c</in>
+          <in>kzoeeiaa.c</in>
+          <in>kzoeeraa.c</in>
+          <in>kzoemiaa.c</in>
+          <in>kzoemmaa.c</in>
+          <in>kzoemqaa.c</in>
+          <in>kzoeneta.c</in>
+          <in>kzoeodaa.c</in>
+          <in>kzoeoiaa.c</in>
+          <in>kzoeoraa.c</in>
+          <in>kzoephdr.c</in>
+          <in>kzoesoaa.c</in>
+          <in>kzoetmaa.c</in>
+          <in>kzoetraa.c</in>
+          <in>kzoetsaa.c</in>
+          <in>kzoeufaa.c</in>
+          <in>kzoevlaa.c</in>
+          <in>kzoevmaa.c</in>
+          <in>kzoexmla.c</in>
+          <in>kzwdlgxo.c</in>
+          <in>zsimpdir.c</in>
+        </df>
+        <df name="tz">
+          <df name="ax">
+            <df name="_edit">
+              <in>hzoectl.cpp</in>
+              <in>hzoedlg.cpp</in>
+              <in>hzoefunc.cpp</in>
+              <in>hzoemeth.cpp</in>
+              <in>hzoeprop.cpp</in>
+              <in>hzoessyn.cpp</in>
+              <in>hzoeundo.cpp</in>
+              <in>hzoezsyn.cpp</in>
+              <in>tbedit.cpp</in>
+            </df>
+            <df name="msdbgrid">
+              <in>msdbgrid.cpp</in>
+              <in>msdbmap.cpp</in>
+            </df>
+            <df name="truegrid">
+              <in>tdbg6.cpp</in>
+              <in>tgcolser.cpp</in>
+              <in>trddmap.cpp</in>
+              <in>trdgmap.cpp</in>
+              <in>trgrxprt.cpp</in>
+              <in>trhlpr.cpp</in>
+              <in>truegrid.cpp</in>
+              <in>xarraydb.cpp</in>
+            </df>
+            <df name="tzaxctl">
+              <in>tzaxcal.cpp</in>
+              <in>tzaxctl.cpp</in>
+              <in>tzaxdate.cpp</in>
+              <in>tzaxhlpr.cpp</in>
+            </df>
+            <df name="tzvmledt">
+              <df name="cmcs219">
+                <df name="src">
+                  <in>bookmark.cpp</in>
+                  <in>buffer.cpp</in>
+                  <in>cedit.cpp</in>
+                  <in>ceditmsg.cpp</in>
+                  <in>ceditx.cpp</in>
+                  <in>cmdarry.cpp</in>
+                  <in>codelistctrl.cpp</in>
+                  <in>codetipctrl.cpp</in>
+                  <in>codetipfunchighlightctrl.cpp</in>
+                  <in>codetiphighlightctrl.cpp</in>
+                  <in>codetipmultifuncctrl.cpp</in>
+                  <in>ctlstate.cpp</in>
+                  <in>debug.cpp</in>
+                  <in>dlldata.c</in>
+                  <in>dragdrop.cpp</in>
+                  <in>editcmd1.cpp</in>
+                  <in>editdlgs.cpp</in>
+                  <in>editsel.cpp</in>
+                  <in>editview.cpp</in>
+                  <in>editx_i.c</in>
+                  <in>editx_p.c</in>
+                  <in>exports.cpp</in>
+                  <in>findrepl.cpp</in>
+                  <in>globalsx.cpp</in>
+                  <in>hkeyctrl.cpp</in>
+                  <in>hotkey.cpp</in>
+                  <in>hotkeyx.cpp</in>
+                  <in>icodelist.cpp</in>
+                  <in>icodetip.cpp</in>
+                  <in>icodetipfunchighlight.cpp</in>
+                  <in>icodetiphighlight.cpp</in>
+                  <in>icodetipmultifunc.cpp</in>
+                  <in>language.cpp</in>
+                  <in>langx.cpp</in>
+                  <in>line.cpp</in>
+                  <in>macro.cpp</in>
+                  <in>misc.cpp</in>
+                  <in>msgpump.cpp</in>
+                  <in>posx.cpp</in>
+                  <in>precomp.cpp</in>
+                  <in>print.cpp</in>
+                  <in>props.cpp</in>
+                  <in>rangex.cpp</in>
+                  <in>rectx.cpp</in>
+                  <in>regexp.cpp</in>
+                  <in>selftest.cpp</in>
+                  <in>splitter.cpp</in>
+                  <in>syntax.cpp</in>
+                  <in>undo.cpp</in>
+                  <in>wnd.cpp</in>
+                </df>
+              </df>
+              <in>tzcswrpr.cpp</in>
+              <in>tzvmledt.cpp</in>
+              <in>zcmddef.cpp</in>
+              <in>zstring.cpp</in>
+              <in>zviewdef.cpp</in>
+            </df>
+          </df>
+          <df name="etc">
+            <in>yylex.c</in>
+            <in>yylex.cpp</in>
+            <in>yyparse.c</in>
+            <in>yyparse.cpp</in>
+          </df>
+          <in>TZGLOJSP.c</in>
+          <in>TZRPSXM2.c</in>
+          <in>TZWDLG6O.c</in>
+          <in>TZWEBGL2.C</in>
+          <in>TZWEBGL3.c</in>
+          <in>TZWEBGL4.c</in>
+          <in>TrueGrid.cpp</in>
+          <in>account.c</in>
+          <in>currency.c</in>
+          <in>kzrpquer.c</in>
+          <in>kzrpsrc2.c</in>
+          <in>kzrpsrco.c</in>
+          <in>kzrpwebo.c</in>
+          <in>kzsirrep.c</in>
+          <in>kzxmlpg2.c</in>
+          <in>kzxmlpgo.c</in>
+          <in>tz__prfo.c</in>
+          <in>tzadcdod.c</in>
+          <in>tzadcs2o.c</in>
+          <in>tzadcsdo.c</in>
+          <in>tzadw1aw.c</in>
+          <in>tzadw2aw.c</in>
+          <in>tzadw3aw.c</in>
+          <in>tzadw4aw.c</in>
+          <in>tzadw5aw.c</in>
+          <in>tzadw6aw.c</in>
+          <in>tzadw7aw.c</in>
+          <in>tzadw8aw.c</in>
+          <in>tzadwdod.c</in>
+          <in>tzadwexp.c</in>
+          <in>tzadwoaw.c</in>
+          <in>tzapdmaa.c</in>
+          <in>tzapdmab.c</in>
+          <in>tzapdmac.c</in>
+          <in>tzaxcfgd.c</in>
+          <in>tzbmupdd.c</in>
+          <in>tzbrau2o.c</in>
+          <in>tzbraudo.c</in>
+          <in>tzbrentd.c</in>
+          <in>tzcm_opr.c</in>
+          <in>tzcmcpld.c</in>
+          <in>tzcmcpro.c</in>
+          <in>tzcmcvto.c</in>
+          <in>tzcmenqo.c</in>
+          <in>tzcmlops.c</in>
+          <in>tzcmlp2o.c</in>
+          <in>tzcmlpld.c</in>
+          <in>tzcmlplo.c</in>
+          <in>tzcmlpmd.c</in>
+          <in>tzcmlpmo.c</in>
+          <in>tzcmoprs.c</in>
+          <in>tzcmqcpo.c</in>
+          <in>tzcmqsyo.c</in>
+          <in>tzcmrepo.c</in>
+          <in>tzcmrevd.c</in>
+          <in>tzcmrptd.c</in>
+          <in>tzcmslpd.c</in>
+          <in>tzcmutil.c</in>
+          <in>tzcmwkso.c</in>
+          <in>tzdbht2d.c</in>
+          <in>tzdbhtsd.c</in>
+          <in>tzdgsrco.c</in>
+          <in>tzdmsrco.c</in>
+          <in>tzdmup2d.c</in>
+          <in>tzdmupdd.c</in>
+          <in>tzdmxgpo.c</in>
+          <in>tzedcm2d.c</in>
+          <in>tzedcmpd.c</in>
+          <in>tzedcwzd.c</in>
+          <in>tzedfrmd.c</in>
+          <in>tzeditod.c</in>
+          <in>tzedvmld.c</in>
+          <in>tzerem2o.c</in>
+          <in>tzeremdd.c</in>
+          <in>tzeremde.c</in>
+          <in>tzeremdo.c</in>
+          <in>tzeremxo.c</in>
+          <in>tzerrord.c</in>
+          <in>tzersa2o.c</in>
+          <in>tzersapd.c</in>
+          <in>tzersaso.c</in>
+          <in>tzersast.c</in>
+          <in>tzhkeyad.c</in>
+          <in>tzhlpcxd.c</in>
+          <in>tzlodopr.c</in>
+          <in>tzlooprs.c</in>
+          <in>tzmsdilo.c</in>
+          <in>tzobrwad.c</in>
+          <in>tzogsrco.c</in>
+          <in>tzopgrpo.c</in>
+          <in>tzophdrd.c</in>
+          <in>tzophdro.c</in>
+          <in>tzoprusd.c</in>
+          <in>tzopsigd.c</in>
+          <in>tzopsigo.c</in>
+          <in>tzopupdd.c</in>
+          <in>tzpesrco.c</in>
+          <in>tzpeupdd.c</in>
+          <in>tzpnctad.c</in>
+          <in>tzpnctld.c</in>
+          <in>tzpncw2d.c</in>
+          <in>tzpncwdd.c</in>
+          <in>tzpnolad.c</in>
+          <in>tzpnoldc.c</in>
+          <in>tzpntbad.c</in>
+          <in>tzpntrad.c</in>
+          <in>tzpntrvd.c</in>
+          <in>tzpnupgd.c</in>
+          <in>tzrepoad.c</in>
+          <in>tzrpsrco.c</in>
+          <in>tzrpsxml.c</in>
+          <in>tzrpup2d.c</in>
+          <in>tzrpupdd.c</in>
+          <in>tzrpupsd.c</in>
+          <in>tzsiimpd.c</in>
+          <in>tzsioprs.c</in>
+          <in>tzsixsko.c</in>
+          <in>tzstarto.c</in>
+          <in>tztedb2o.c</in>
+          <in>tztedbld.c</in>
+          <in>tztempmo.c</in>
+          <in>tztenv2o.c</in>
+          <in>tztenvro.c</in>
+          <in>tzteupdd.c</in>
+          <in>tzvmedaw.c</in>
+          <in>tzvmg1aa.c</in>
+          <in>tzvmg2aa.c</in>
+          <in>tzvmgnaa.c</in>
+          <in>tzvmi1aa.c</in>
+          <in>tzvmi2aa.c</in>
+          <in>tzvmi3aa.c</in>
+          <in>tzvminaa.c</in>
+          <in>tzvmlip.c</in>
+          <in>tzvmlopr.c</in>
+          <in>tzvmp1aa.c</in>
+          <in>tzvmp2aa.c</in>
+          <in>tzvmp3aa.c</in>
+          <in>tzvmp4aa.c</in>
+          <in>tzvmp5aa.c</in>
+          <in>tzvmp6aa.c</in>
+          <in>tzvmp7aa.c</in>
+          <in>tzvmp8aa.c</in>
+          <in>tzvmp9aa.c</in>
+          <in>tzvmpaaa.c</in>
+          <in>tzvmpeaa.c</in>
+          <in>tzvmplaa.c</in>
+          <in>tzvmpmoo.c</in>
+          <in>tzvmpopr.c</in>
+          <in>tzvmpyaa.c</in>
+          <in>tzvsdbad.c</in>
+          <in>tzvsrtoo.c</in>
+          <in>tzvsxcad.c</in>
+          <in>tzwdgrwd.c</in>
+          <in>tzwdgrwo.c</in>
+          <in>tzwdlg2o.c</in>
+          <in>tzwdlg3o.c</in>
+          <in>tzwdlg4o.c</in>
+          <in>tzwdlgso.c</in>
+          <in>tzwdvord.c</in>
+          <in>tzwebgl1.c</in>
+          <in>tzwrksto.c</in>
+          <in>tzxsltdd.c</in>
+          <in>tzzapp2d.c</in>
+          <in>tzzappsd.c</in>
+          <in>tzzmaind.c</in>
+          <in>tzzolo2o.c</in>
+          <in>tzzolodd.c</in>
+          <in>tzzolodo.c</in>
+          <in>tzzolodq.c</in>
+          <in>tzzolodr.c</in>
+          <in>tzzoloq2.c</in>
+          <in>tzzorpts.c</in>
+          <in>tzzoxodo.c</in>
+          <in>waccount.c</in>
+          <in>zglobal1.c</in>
+        </df>
+        <df name="ut">
+          <df name="qmap2def">
+            <in>QMAP2DEF.C</in>
+          </df>
+          <df name="qspawn">
+            <in>QSPAWN.C</in>
+          </df>
+          <df name="syncxod">
+            <in>SyncXOD.C</in>
+          </df>
+        </df>
+        <df name="zdr">
+          <df name="jpeglib">
+            <in>JCAPIMIN.C</in>
+            <in>JCAPISTD.C</in>
+            <in>JCCOEFCT.C</in>
+            <in>JCCOLOR.C</in>
+            <in>JCDCTMGR.C</in>
+            <in>JCHUFF.C</in>
+            <in>JCINIT.C</in>
+            <in>JCMAINCT.C</in>
+            <in>JCMARKER.C</in>
+            <in>JCMASTER.C</in>
+            <in>JCOMAPI.C</in>
+            <in>JCPARAM.C</in>
+            <in>JCPHUFF.C</in>
+            <in>JCPREPCT.C</in>
+            <in>JCSAMPLE.C</in>
+            <in>JCTRANS.C</in>
+            <in>JDAPIMIN.C</in>
+            <in>JDAPISTD.C</in>
+            <in>JDATADST.C</in>
+            <in>JDATASRC.C</in>
+            <in>JDCOEFCT.C</in>
+            <in>JDCOLOR.C</in>
+            <in>JDDCTMGR.C</in>
+            <in>JDHUFF.C</in>
+            <in>JDINPUT.C</in>
+            <in>JDMAINCT.C</in>
+            <in>JDMARKER.C</in>
+            <in>JDMASTER.C</in>
+            <in>JDMERGE.C</in>
+            <in>JDPHUFF.C</in>
+            <in>JDPOSTCT.C</in>
+            <in>JDSAMPLE.C</in>
+            <in>JDTRANS.C</in>
+            <in>JERROR.C</in>
+            <in>JFDCTFLT.C</in>
+            <in>JFDCTFST.C</in>
+            <in>JFDCTINT.C</in>
+            <in>JIDCTFLT.C</in>
+            <in>JIDCTFST.C</in>
+            <in>JIDCTINT.C</in>
+            <in>JIDCTRED.C</in>
+            <in>JMEMMGR.C</in>
+            <in>JMEMNOBS.C</in>
+            <in>JPEGTRAN.C</in>
+            <in>JQUANT1.C</in>
+            <in>JQUANT2.C</in>
+            <in>JUTILS.C</in>
+          </df>
+          <df name="MonitorProcess">
+            <df name="McbXML">
+              <in>McbMain.c</in>
+              <in>McbXML.c</in>
+            </df>
+            <in>MonProc.cpp</in>
+            <in>MonProcDlg.cpp</in>
+            <in>StdAfx.cpp</in>
+            <in>Win32Process.cpp</in>
+            <in>XML_PARSER.cpp</in>
+          </df>
+          <in>CheckBox.cpp</in>
+          <in>ChkCombo.cpp</in>
+          <in>Fortify.cpp</in>
+          <in>MPNA81.cpp</in>
+          <in>PrintTree.cpp</in>
+          <in>SMTP.cpp</in>
+          <in>TzCtl.cpp</in>
+          <in>TzCtlATX.cpp</in>
+          <in>TzCtlCvt.cpp</in>
+          <in>TzCtlERD.cpp</in>
+          <in>TzCtlERE.cpp</in>
+          <in>TzCtlERL.cpp</in>
+          <in>TzCtlERV.cpp</in>
+          <in>TzCtlOpr.cpp</in>
+          <in>TzCtlPTB.cpp</in>
+          <in>TzCtlPTC.cpp</in>
+          <in>TzCtlPTE.cpp</in>
+          <in>TzCtlPTM.cpp</in>
+          <in>TzCtlPTR.cpp</in>
+          <in>TzCtlPTS.cpp</in>
+          <in>TzCtlPTU.cpp</in>
+          <in>TzCtlPTX.cpp</in>
+          <in>TzCtlTBE.cpp</in>
+          <in>TzCtlTab.cpp</in>
+          <in>Z2MP.cpp</in>
+          <in>Z2MPAPI.cpp</in>
+          <in>ZDr.cpp</in>
+          <in>ZDrAct.cpp</in>
+          <in>ZDrApp.cpp</in>
+          <in>ZDrAxLst.cpp</in>
+          <in>ZDrCCDlg.cpp</in>
+          <in>ZDrCmdLn.cpp</in>
+          <in>ZDrCmprs.cpp</in>
+          <in>ZDrComm.cpp</in>
+          <in>ZDrCoolB.cpp</in>
+          <in>ZDrCtl.cpp</in>
+          <in>ZDrDIB.cpp</in>
+          <in>ZDrDebug.cpp</in>
+          <in>ZDrDlgA.cpp</in>
+          <in>ZDrDlgC.cpp</in>
+          <in>ZDrDlgM.cpp</in>
+          <in>ZDrDlgO.cpp</in>
+          <in>ZDrDlgP.cpp</in>
+          <in>ZDrDlgW.cpp</in>
+          <in>ZDrDoc.cpp</in>
+          <in>ZDrFlatB.cpp</in>
+          <in>ZDrFont.cpp</in>
+          <in>ZDrFrame.cpp</in>
+          <in>ZDrMapAc.cpp</in>
+          <in>ZDrMenu.cpp</in>
+          <in>ZDrMisc.cpp</in>
+          <in>ZDrMsgHK.cpp</in>
+          <in>ZDrMsgQ.cpp</in>
+          <in>ZDrOLE.cpp</in>
+          <in>ZDrOpt.cpp</in>
+          <in>ZDrPalHK.cpp</in>
+          <in>ZDrParse.cpp</in>
+          <in>ZDrPrint.cpp</in>
+          <in>ZDrPrtC.cpp</in>
+          <in>ZDrSTask.cpp</in>
+          <in>ZDrTask.cpp</in>
+          <in>ZDrTwain.cpp</in>
+          <in>ZDrUtil.cpp</in>
+          <in>ZDrVCtrl.cpp</in>
+          <in>ZDrVStr.cpp</in>
+          <in>ZDrView.cpp</in>
+          <in>ZSEMail.cpp</in>
+          <in>ZdCtl.cpp</in>
+          <in>ZdCtlATX.cpp</in>
+          <in>ZdCtlBar.cpp</in>
+          <in>ZdCtlBmb.cpp</in>
+          <in>ZdCtlBmp.cpp</in>
+          <in>ZdCtlBtn.cpp</in>
+          <in>ZdCtlCal.cpp</in>
+          <in>ZdCtlChk.cpp</in>
+          <in>ZdCtlCmb.cpp</in>
+          <in>ZdCtlDIB.cpp</in>
+          <in>ZdCtlDT.cpp</in>
+          <in>ZdCtlDil.cpp</in>
+          <in>ZdCtlEdt.cpp</in>
+          <in>ZdCtlGbx.cpp</in>
+          <in>ZdCtlGrd.cpp</in>
+          <in>ZdCtlHd.cpp</in>
+          <in>ZdCtlHdn.cpp</in>
+          <in>ZdCtlHot.cpp</in>
+          <in>ZdCtlIco.cpp</in>
+          <in>ZdCtlLBH.cpp</in>
+          <in>ZdCtlLBX.cpp</in>
+          <in>ZdCtlMLE.cpp</in>
+          <in>ZdCtlMST.C</in>
+          <in>ZdCtlMST.cpp</in>
+          <in>ZdCtlO.cpp</in>
+          <in>ZdCtlOLB.cpp</in>
+          <in>ZdCtlRB.cpp</in>
+          <in>ZdCtlRDI.cpp</in>
+          <in>ZdCtlRTE.cpp</in>
+          <in>ZdCtlRTO.cpp</in>
+          <in>ZdCtlSS.cpp</in>
+          <in>ZdCtlSSC.cpp</in>
+          <in>ZdCtlSSD.cpp</in>
+          <in>ZdCtlSSE.cpp</in>
+          <in>ZdCtlSSM.cpp</in>
+          <in>ZdCtlSSS.cpp</in>
+          <in>ZdCtlSSU.cpp</in>
+          <in>ZdCtlSSV.cpp</in>
+          <in>ZdCtlSSX.cpp</in>
+          <in>ZdCtlTab.cpp</in>
+          <in>ZdCtlTim.cpp</in>
+          <in>ZdCtlTxt.cpp</in>
+          <in>ZdCtlVwg.cpp</in>
+          <in>msjexhnd.cpp</in>
+          <in>tzpntrvd.c</in>
+        </df>
+      </df>
+      <df name="tlb">
+        <in>StdAfx.cpp</in>
+        <in>ttblbrwsDlg.cpp</in>
+      </df>
+      <df name="w">
+        <df name="oe">
+          <df name="zdecimal">
+            <df name="128bit">
+              <in>ECONST.C</in>
+              <in>IEEE.C</in>
+              <in>MTHERR.C</in>
+              <in>ZDECIMAL.C</in>
+            </df>
+            <df name="longdbl">
+              <in>ZDECIMAL.C</in>
+            </df>
+          </df>
+          <in>KZSchedT.c</in>
+          <in>kzoeclnt.c</in>
+          <in>kzoedbga.cpp</in>
+          <in>kzoengwa.c</in>
+          <in>kzoesyaa.c</in>
+          <in>metersec.c</in>
+          <in>zdllinst.c</in>
+          <in>zwinsckb.c</in>
+          <in>zwinsock.cpp</in>
+        </df>
+        <df name="setup">
+          <df name="bldcui">
+            <in>DLGPROCS.C</in>
+          </df>
+        </df>
+        <df name="ut">
+          <df name="mergedef">
+            <in>mergedef.cpp</in>
+          </df>
+          <df name="qdelete">
+            <in>QDELETE.C</in>
+          </df>
+          <df name="qmap2def">
+            <in>QMAP2DEF.C</in>
+          </df>
+          <df name="qspawn">
+            <in>QSPAWN.C</in>
+          </df>
+          <df name="qstruct">
+            <in>qstruct.cpp</in>
+          </df>
+          <df name="xodgen">
+            <in>xodgen.c</in>
+          </df>
+          <df name="xwdgen">
+            <in>xwdgen.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="x">
+        <df name="expat-2.0.1">
+          <df name="amiga">
+            <in>expat_lib.c</in>
+            <in>expat_vectors.c</in>
+            <in>launch.c</in>
+            <in>stdlib.c</in>
+          </df>
+          <df name="examples">
+            <in>elements.c</in>
+            <in>outline.c</in>
+          </df>
+          <df name="lib">
+            <in>xmlparse.c</in>
+            <in>xmlrole.c</in>
+            <in>xmltok.c</in>
+            <in>xmltok_impl.c</in>
+            <in>xmltok_ns.c</in>
+          </df>
+          <df name="tests">
+            <df name="benchmark">
+              <in>benchmark.c</in>
+            </df>
+            <in>chardata.c</in>
+            <in>minicheck.c</in>
+            <in>runtests.c</in>
+            <in>runtestspp.cpp</in>
+          </df>
+          <df name="xmlwf">
+            <in>codepage.c</in>
+            <in>ct.c</in>
+            <in>readfilemap.c</in>
+            <in>unixfilemap.c</in>
+            <in>win32filemap.c</in>
+            <in>xmlfile.c</in>
+            <in>xmlmime.c</in>
+            <in>xmlwf.c</in>
+            <in>xmlwin32url.cxx</in>
+          </df>
+        </df>
+        <df name="oe">
+          <in>kzhsqlpg.c</in>
+          <in>kzoelsck.c</in>
+          <in>kzoengxa.c</in>
+          <in>kzoesyaa.c</in>
+        </df>
+        <df name="ut">
+          <df name="qspawn">
+            <in>qspawn.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="ztools">
+        <df name="tlist">
+          <in>common.cpp</in>
+        </df>
+        <in>StdAfx.cpp</in>
+        <in>ztools.cpp</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>CALLMAKE.BAT</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>CALLMAKE.BAT</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f CALLMAKE.BAT</buildCommand>
+          <cleanCommand>${MAKE} -f CALLMAKE.BAT clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem></pElem>
+            </incDir>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem></pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="a/ed/zeditor.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/java/kzoejava.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/ms/kzmsgqaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/oe/KZOEDECA.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/oe/fmdbcsmp.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/oe/kzenque.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhdbvaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhdbvab.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhgenky.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhskel.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhskelb.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhsqlds.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhsqlga.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhsqlxa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzhsqlxb.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeapaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeataa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoecmaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoedeca.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/oe/kzoedmaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeeiaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeeraa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoemiaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoemmaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoemqaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeneta.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeodaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeoiaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeoraa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoephdr.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoesoaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoetmaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoetraa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoetsaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoeufaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoevlaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoevmaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzoexmla.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/kzwdlgxo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/zdecimal/decari/decari.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/oe/zdecimal/decari/zdecimal.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/oe/zdecimal/hzapck.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe/zdecimal</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/zdecimal/hzapck2.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe/zdecimal</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/oe/zsimpdir.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/TZGLOJSP.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/TZRPSXM2.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/TZWDLG6O.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/TZWEBGL2.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/tz/TZWEBGL3.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/TZWEBGL4.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/TrueGrid.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/tz/account.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoectl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoedlg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoefunc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoemeth.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoeprop.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoessyn.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoeundo.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/hzoezsyn.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/_edit/tbedit.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/msdbgrid/msdbgrid.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/msdbgrid/msdbmap.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/tdbg6.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/tgcolser.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/trddmap.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/trdgmap.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/trgrxprt.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/trhlpr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/truegrid.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/truegrid/xarraydb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzaxctl/tzaxcal.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzaxctl/tzaxctl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzaxctl/tzaxdate.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzaxctl/tzaxhlpr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/bookmark.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/buffer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/cedit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/ceditmsg.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/ceditx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/cmdarry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/codelistctrl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/codetipctrl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/codetipfunchighlightctrl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/codetiphighlightctrl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/codetipmultifuncctrl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/ctlstate.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/debug.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/dlldata.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/dragdrop.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/editcmd1.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/editdlgs.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/editsel.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/editview.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/editx_i.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/editx_p.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/exports.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/findrepl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/globalsx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/hkeyctrl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/hotkey.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/hotkeyx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/icodelist.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetip.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetipfunchighlight.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetiphighlight.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetipmultifunc.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/language.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/langx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/line.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/macro.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/misc.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/msgpump.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/posx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/precomp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/print.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/props.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/rangex.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/rectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/regexp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/selftest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/splitter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/syntax.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/undo.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/cmcs219/src/wnd.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/tzcswrpr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/tzvmledt</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/tzvmledt.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/tzvmledt</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/zcmddef.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/tzvmledt</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/zstring.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/tzvmledt</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/tz/ax/tzvmledt/zviewdef.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/tzvmledt</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/tz/currency.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/etc/yylex.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/tz/etc/yylex.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/etc/yyparse.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/tz/etc/yyparse.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/tz/kzrpquer.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/kzrpsrc2.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/kzrpsrco.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/kzrpwebo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/kzsirrep.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/kzxmlpg2.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/kzxmlpgo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tz__prfo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadcdod.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadcs2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadcsdo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw1aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw2aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw3aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw4aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw5aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw6aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw7aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadw8aw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadwdod.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadwexp.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzadwoaw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzapdmaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzapdmab.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzapdmac.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzaxcfgd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzbmupdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzbrau2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzbraudo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzbrentd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcm_opr.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmcpld.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmcpro.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmcvto.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmenqo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmlops.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmlp2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmlpld.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmlplo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmlpmd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmlpmo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmoprs.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmqcpo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmqsyo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmrepo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmrevd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmrptd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmslpd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmutil.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzcmwkso.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzdbht2d.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzdbhtsd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzdgsrco.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzdmsrco.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzdmup2d.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzdmupdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzdmxgpo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzedcm2d.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzedcmpd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzedcwzd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzedfrmd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzeditod.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzedvmld.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzerem2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzeremdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzeremde.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzeremdo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzeremxo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzerrord.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzersa2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzersapd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzersaso.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzersast.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzhkeyad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzhlpcxd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzlodopr.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzlooprs.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzmsdilo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzobrwad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzogsrco.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzopgrpo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzophdrd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzophdro.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzoprusd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzopsigd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzopsigo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzopupdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpesrco.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpeupdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpnctad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpnctld.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpncw2d.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpncwdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpnolad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpnoldc.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpntbad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpntrad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpntrvd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzpnupgd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzrepoad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzrpsrco.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzrpsxml.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzrpup2d.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzrpupdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzrpupsd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzsiimpd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzsioprs.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzsixsko.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzstarto.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tztedb2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tztedbld.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tztempmo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tztenv2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tztenvro.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzteupdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmedaw.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmg1aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmg2aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmgnaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmi1aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmi2aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmi3aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvminaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmlip.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmlopr.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp1aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp2aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp3aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp4aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp5aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp6aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp7aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp8aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmp9aa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmpaaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmpeaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmplaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmpmoo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmpopr.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvmpyaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvsdbad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvsrtoo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzvsxcad.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwdgrwd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwdgrwo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwdlg2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwdlg3o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwdlg4o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwdlgso.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwdvord.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwebgl1.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzwrksto.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzxsltdd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzapp2d.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzappsd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzmaind.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzolo2o.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzolodd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzolodo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzolodq.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzolodr.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzoloq2.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzorpts.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/tzzoxodo.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/waccount.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/tz/zglobal1.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/tz</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="a/ut/qmap2def/QMAP2DEF.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/ut/qspawn/QSPAWN.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/ut/syncxod/SyncXOD.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/CheckBox.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ChkCombo.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/Fortify.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/MPNA81.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/MonitorProcess/McbXML/McbMain.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/zdr/MonitorProcess/McbXML/McbXML.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="a/zdr/MonitorProcess/MonProc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/MonitorProcess/MonProcDlg.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/MonitorProcess/StdAfx.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/MonitorProcess/Win32Process.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/MonitorProcess/XML_PARSER.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/PrintTree.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/SMTP.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlATX.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlCvt.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlERD.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlERE.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlERL.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlERV.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlOpr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTB.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTE.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTM.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTR.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTS.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTU.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlPTX.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlTBE.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/TzCtlTab.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/Z2MP.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/Z2MPAPI.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrAct.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrApp.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrAxLst.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrCCDlg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrCmdLn.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrCmprs.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrComm.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrCoolB.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrCtl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDIB.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDebug.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDlgA.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDlgC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDlgM.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDlgO.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDlgP.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDlgW.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrDoc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrFlatB.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrFont.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrFrame.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrMapAc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrMenu.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrMisc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrMsgHK.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrMsgQ.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrOLE.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrOpt.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrPalHK.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrParse.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrPrint.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrPrtC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrSTask.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrTask.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrTwain.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrUtil.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrVCtrl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrVStr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZDrView.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZSEMail.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlATX.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlBar.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlBmb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlBmp.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlBtn.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlCal.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlChk.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlCmb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlDIB.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlDT.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlDil.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlEdt.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlGbx.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlGrd.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlHd.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlHdn.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlHot.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlIco.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlLBH.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlLBX.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlMLE.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlMST.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlMST.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlO.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlOLB.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlRB.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlRDI.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlRTE.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlRTO.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSS.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSD.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSE.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSM.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSS.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSU.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSV.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlSSX.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlTab.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlTim.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlTxt.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/ZdCtlVwg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCAPIMIN.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCAPISTD.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCCOEFCT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCCOLOR.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCDCTMGR.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCHUFF.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCINIT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCMAINCT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCMARKER.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCMASTER.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCOMAPI.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCPARAM.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCPHUFF.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCPREPCT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCSAMPLE.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JCTRANS.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDAPIMIN.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDAPISTD.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDATADST.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDATASRC.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDCOEFCT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDCOLOR.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDDCTMGR.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDHUFF.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDINPUT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDMAINCT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDMARKER.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDMASTER.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDMERGE.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDPHUFF.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDPOSTCT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDSAMPLE.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JDTRANS.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JERROR.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JFDCTFLT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JFDCTFST.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JFDCTINT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JIDCTFLT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JIDCTFST.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JIDCTINT.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JIDCTRED.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JMEMMGR.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JMEMNOBS.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JPEGTRAN.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JQUANT1.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JQUANT2.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/jpeglib/JUTILS.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="a/zdr/msjexhnd.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="a/zdr/tzpntrvd.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/zdr</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <folder path="0/a/ed">
+        <cTool>
+          <incDir>
+            <pElem>a/ed</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/a/java">
+        <cTool>
+          <incDir>
+            <pElem>a/java</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/a/ms">
+        <cTool>
+          <incDir>
+            <pElem>a/ms</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/a/oe/zdecimal/decari">
+        <cTool>
+          <incDir>
+            <pElem>a/oe/zdecimal/decari</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/a/tz/ax">
+        <cTool>
+          <incDir>
+            <pElem>a/tz/ax/tzvmledt/cmcs219/src</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/a/tz/ax/_edit">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/_edit</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/tz/ax/msdbgrid">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/msdbgrid</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/tz/ax/truegrid">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/truegrid</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/tz/ax/tzaxctl">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/tzaxctl</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/tz/ax/tzvmledt/cmcs219">
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/ax/tzvmledt/cmcs219/src</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/tz/etc">
+        <cTool>
+          <incDir>
+            <pElem>a/tz/etc</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>a/tz/etc</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/ut/qmap2def">
+        <ccTool>
+          <incDir>
+            <pElem>a/ut/qmap2def</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/ut/qspawn">
+        <ccTool>
+          <incDir>
+            <pElem>a/ut/qspawn</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/ut/syncxod">
+        <ccTool>
+          <incDir>
+            <pElem>a/ut/syncxod</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/zdr/MonitorProcess">
+        <cTool>
+          <incDir>
+            <pElem>a/zdr/MonitorProcess/McbXML</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr/MonitorProcess</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/a/zdr/jpeglib">
+        <ccTool>
+          <incDir>
+            <pElem>a/zdr/jpeglib</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/tlb">
+        <ccTool>
+          <incDir>
+            <pElem>tlb</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/oe/zdecimal/128bit">
+        <ccTool>
+          <incDir>
+            <pElem>w/oe/zdecimal/128bit</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/oe/zdecimal/longdbl">
+        <ccTool>
+          <incDir>
+            <pElem>w/oe/zdecimal/longdbl</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/setup">
+        <ccTool>
+          <incDir>
+            <pElem>w/setup/bldcui</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/ut/mergedef">
+        <ccTool>
+          <incDir>
+            <pElem>w/ut/mergedef</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/ut/qdelete">
+        <ccTool>
+          <incDir>
+            <pElem>w/ut/qdelete</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/ut/qmap2def">
+        <ccTool>
+          <incDir>
+            <pElem>w/ut/qmap2def</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/ut/qspawn">
+        <ccTool>
+          <incDir>
+            <pElem>w/ut/qspawn</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/ut/qstruct">
+        <ccTool>
+          <incDir>
+            <pElem>w/ut/qstruct</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/w/ut/xodgen">
+        <cTool>
+          <incDir>
+            <pElem>w/ut/xodgen</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/w/ut/xwdgen">
+        <cTool>
+          <incDir>
+            <pElem>w/ut/xwdgen</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/x/expat-2.0.1/amiga">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/amiga</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/x/expat-2.0.1/examples">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/examples</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/x/expat-2.0.1/lib">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/lib</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/x/expat-2.0.1/tests">
+        <ccTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/tests</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/x/expat-2.0.1/tests/benchmark">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/tests/benchmark</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/x/expat-2.0.1/xmlwf">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/xmlwf</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/xmlwf</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/x/ut">
+        <cTool>
+          <incDir>
+            <pElem>x/ut/qspawn</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ztools/tlist">
+        <ccTool>
+          <incDir>
+            <pElem>ztools/tlist</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="tlb/StdAfx.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="tlb/ttblbrwsDlg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/oe/KZSchedT.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="w/oe/kzoeclnt.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="w/oe/kzoedbga.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="w/oe/kzoengwa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="w/oe/kzoesyaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+            <pElem>a/incz</pElem>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="w/oe/metersec.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="w/oe/zdecimal/128bit/ECONST.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/oe/zdecimal/128bit/IEEE.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/oe/zdecimal/128bit/MTHERR.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/oe/zdecimal/128bit/ZDECIMAL.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/oe/zdecimal/longdbl/ZDECIMAL.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/oe/zdllinst.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="w/oe/zwinsckb.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="w/oe/zwinsock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>w/oe</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="w/setup/bldcui/DLGPROCS.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/ut/mergedef/mergedef.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/ut/qdelete/QDELETE.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/ut/qmap2def/QMAP2DEF.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/ut/qspawn/QSPAWN.C" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/ut/qstruct/qstruct.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="w/ut/xodgen/xodgen.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="w/ut/xwdgen/xwdgen.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/amiga/expat_lib.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/amiga/expat_vectors.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/amiga/launch.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/amiga/stdlib.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/examples/elements.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/examples/outline.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/lib/xmlparse.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/lib/xmlrole.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/lib/xmltok.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/lib/xmltok_impl.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/lib/xmltok_ns.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/tests/benchmark/benchmark.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/tests/chardata.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/tests</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/tests/minicheck.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/tests</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/tests/runtests.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>x/expat-2.0.1/tests</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/tests/runtestspp.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/codepage.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/ct.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/readfilemap.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/unixfilemap.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/win32filemap.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/xmlfile.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/xmlmime.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/xmlwf.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="x/expat-2.0.1/xmlwf/xmlwin32url.cxx"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="x/oe/kzhsqlpg.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/incz</pElem>
+            <pElem>x/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="x/oe/kzoelsck.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>x/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="x/oe/kzoengxa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>x/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="x/oe/kzoesyaa.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>a/oe</pElem>
+            <pElem>a/incz</pElem>
+            <pElem>x/oe</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="x/ut/qspawn/qspawn.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="ztools/StdAfx.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>ztools</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="ztools/tlist/common.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="ztools/ztools.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>ztools</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,7 @@
+LIBRARY       ZDECIMAL
+DESCRIPTION   '128-bit Decimal operations'
+;; CODE      PRELOAD MOVEABLE DISCARDABLE
+;; DATA      PRELOAD SINGLE
+
+EXPORTS
+   zDecimalOperation

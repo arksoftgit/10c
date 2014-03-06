@@ -1,0 +1,23 @@
+#if defined( __WIN32__ )
+   NAME         KZSCHEDT
+   DESCRIPTION  'Object Services Task Scheduler'
+;; CODE      PRELOAD MOVEABLE DISCARDABLE
+;; DATA      PRELOAD SINGLE
+#else
+   NAME         KZSCHEDT
+   DESCRIPTION  'Object Services Task Scheduler'
+   EXETYPE      WINDOWS
+   STUB         'WINSTUB.EXE'
+   CODE  MOVEABLE
+   DATA  FIXED SINGLE
+   HEAPSIZE     1024
+   STACKSIZE    16384
+#endif
+
+
+; All functions that will be called by any Windows routine
+; MUST be exported.
+
+EXPORTS
+        MainWndProc   @1   ; name of window processing function
+

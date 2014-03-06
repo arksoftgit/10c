@@ -1,0 +1,72 @@
+LIBRARY
+DESCRIPTION   'TZAXCFGD'
+
+
+EXPORTS
+
+
+   zwTZAXCFGD_ActionNew=_zwTZAXCFGD_ActionNew@4                         @240  ;; added by mergedef
+   zwTZAXCFGD_ActionRemove=_zwTZAXCFGD_ActionRemove@4                   @241  ;; added by mergedef
+   zwTZAXCFGD_ActionUpdate=_zwTZAXCFGD_ActionUpdate@4                   @242  ;; added by mergedef
+   zwTZAXCFGD_LoadColumnPopup=_zwTZAXCFGD_LoadColumnPopup@4             @249  ;; added by mergedef
+   zwTZAXCFGD_Postbuild=_zwTZAXCFGD_Postbuild@4                         @250  ;; added by mergedef
+   zwTZAXCFGD_Properties=_zwTZAXCFGD_Properties@4                       @251  ;; added by mergedef
+   zwTZAXCFGD_CreateCheckBox=_zwTZAXCFGD_CreateCheckBox@4               @255  ;; added by mergedef
+   zwTZAXCFGD_CreateComboBox=_zwTZAXCFGD_CreateComboBox@4               @256  ;; added by mergedef
+   zwTZAXCFGD_CreateEdit=_zwTZAXCFGD_CreateEdit@4                       @257  ;; added by mergedef
+   zwTZAXCFGD_CreateRadioButton=_zwTZAXCFGD_CreateRadioButton@4         @259  ;; added by mergedef
+   zwTZAXCFGD_CreateRadio=_zwTZAXCFGD_CreateRadio@4                     @260  ;; added by mergedef
+   zwTZAXCFGD_CtrlContextMappInit=_zwTZAXCFGD_CtrlContextMappInit@4     @261  ;; added by mergedef
+   zwTZAXCFGD_DeleteAllRadioButtons=_zwTZAXCFGD_DeleteAllRadioButtons@4 @262  ;; added by mergedef
+   zwTZAXCFGD_DeleteRadioButton=_zwTZAXCFGD_DeleteRadioButton@4         @263  ;; added by mergedef
+   zwTZAXCFGD_GridListMapping=_zwTZAXCFGD_GridListMapping@4             @264  ;; added by mergedef
+   zwTZAXCFGD_GridScopeMapping=_zwTZAXCFGD_GridScopeMapping@4           @265  ;; added by mergedef
+   zwTZAXCFGD_LoadActionPopup=_zwTZAXCFGD_LoadActionPopup@4             @266  ;; added by mergedef
+   zwTZAXCFGD_NewColumn_OnCancel=_zwTZAXCFGD_NewColumn_OnCancel@4       @267  ;; added by mergedef
+   zwTZAXCFGD_NewColumn_OnOk=_zwTZAXCFGD_NewColumn_OnOk@4               @268  ;; added by mergedef
+   zwTZAXCFGD_NewSubControl=_zwTZAXCFGD_NewSubControl@4                 @269  ;; added by mergedef
+   zwTZAXCFGD_OperationEdit=_zwTZAXCFGD_OperationEdit@4                 @270  ;; added by mergedef
+   zwTZAXCFGD_ReturnFromSubwindow=_zwTZAXCFGD_ReturnFromSubwindow@4     @271  ;; added by mergedef
+   zwTZAXCFGD_SetActionView=_zwTZAXCFGD_SetActionView@4                 @272  ;; added by mergedef
+   SetupGridColumnFromControlView=_SetupGridColumnFromControlView@12    @273  ;; added by mergedef
+   SetupGridCombo=_SetupGridCombo@16                                    @274  ;; added by mergedef
+   SetupGridRadioGroup=_SetupGridRadioGroup@16                          @275  ;; added by mergedef
+   zwTZAXCFGD_CHECK_Init=_zwTZAXCFGD_CHECK_Init@4                       @276  ;; added by mergedef
+   zwTZAXCFGD_CHECK_OK=_zwTZAXCFGD_CHECK_OK@4                           @277  ;; added by mergedef
+   zwTZAXCFGD_CHECK_Postbuild=_zwTZAXCFGD_CHECK_Postbuild@4             @278  ;; added by mergedef
+   zwTZAXCFGD_COMBO_DS_SetSubtype=_zwTZAXCFGD_COMBO_DS_SetSubtype@4     @279  ;; added by mergedef
+   zwTZAXCFGD_COMBO_D_OK=_zwTZAXCFGD_COMBO_D_OK@4                       @280  ;; added by mergedef
+   zwTZAXCFGD_COMBO_D_PostBuild=_zwTZAXCFGD_COMBO_D_PostBuild@4         @281  ;; added by mergedef
+   zwTZAXCFGD_COMBO_Init=_zwTZAXCFGD_COMBO_Init@4                       @282  ;; added by mergedef
+   zwTZAXCFGD_COMBO_PostBuild=_zwTZAXCFGD_COMBO_PostBuild@4             @283  ;; added by mergedef
+   zwTZAXCFGD_COMBO_S_Init=_zwTZAXCFGD_COMBO_S_Init@4                   @284  ;; added by mergedef
+   zwTZAXCFGD_COMBO_S_OK=_zwTZAXCFGD_COMBO_S_OK@4                       @285  ;; added by mergedef
+   zwTZAXCFGD_COMBO_S_PostBuild=_zwTZAXCFGD_COMBO_S_PostBuild@4         @286  ;; added by mergedef
+   zwTZAXCFGD_COMBO_S_RtnFromSubwdn=_zwTZAXCFGD_COMBO_S_RtnFromSubwdn@4 @287  ;; added by mergedef
+   zwTZAXCFGD_COMBO_S_SelAttPullDwn=_zwTZAXCFGD_COMBO_S_SelAttPullDwn@4 @288  ;; added by mergedef
+   zwTZAXCFGD_COMBO_SetScopeOI=_zwTZAXCFGD_COMBO_SetScopeOI@4           @289  ;; added by mergedef
+   zwTZAXCFGD_COMBO_SetSubtype=_zwTZAXCFGD_COMBO_SetSubtype@4           @290  ;; added by mergedef
+   zwTZAXCFGD_Init=_zwTZAXCFGD_Init@4                                   @291  ;; added by mergedef
+   zwTZAXCFGD_COMBO_RtnFrmSbwnd=_zwTZAXCFGD_COMBO_RtnFrmSbwnd@4         @293  ;; added by mergedef
+   zwTZAXCFGD_COMBO_SelectEntity=_zwTZAXCFGD_COMBO_SelectEntity@4       @295  ;; added by mergedef
+   zwTZAXCFGD_COMBO_SelectScope=_zwTZAXCFGD_COMBO_SelectScope@4         @296  ;; added by mergedef
+   zwTZAXCFGD_OK=_zwTZAXCFGD_OK@4                                       @298  ;; added by mergedef
+   zwTZAXCFGD_ReturnFromSub=_zwTZAXCFGD_ReturnFromSub@4                 @301  ;; added by mergedef
+   zwTZAXCFGD_UpdateAction=_zwTZAXCFGD_UpdateAction@4                   @303  ;; added by mergedef
+   zwTZAXCFGD_RadioClearDefaultBtn=_zwTZAXCFGD_RadioClearDefaultBtn@4   @304  ;; added by mergedef
+   zwTZAXCFGD_RadioGroupCancel=_zwTZAXCFGD_RadioGroupCancel@4           @305  ;; added by mergedef
+   zwTZAXCFGD_RadioGroupOK=_zwTZAXCFGD_RadioGroupOK@4                   @306  ;; added by mergedef
+   zwTZAXCFGD_RadioPostbuild=_zwTZAXCFGD_RadioPostbuild@4               @307  ;; added by mergedef
+   zwTZAXCFGD_RadioPrebuildRadioGrp=_zwTZAXCFGD_RadioPrebuildRadioGrp@4 @308  ;; added by mergedef
+   zwTZAXCFGD_RadioPrebuildSubCtrl=_zwTZAXCFGD_RadioPrebuildSubCtrl@4   @309  ;; added by mergedef
+   zwTZAXCFGD_RadioSetDefaultButton=_zwTZAXCFGD_RadioSetDefaultButton@4 @310  ;; added by mergedef
+   zwTZAXCFGD_RadioSubCtrlCancel=_zwTZAXCFGD_RadioSubCtrlCancel@4       @311  ;; added by mergedef
+   zwTZAXCFGD_RadioSubCtrlOK=_zwTZAXCFGD_RadioSubCtrlOK@4               @312  ;; added by mergedef
+   zwTZAXCFGD_RadioUpdateSubCtrl=_zwTZAXCFGD_RadioUpdateSubCtrl@4       @313  ;; added by mergedef
+   zwTZAXCFGD_SelectAction=_zwTZAXCFGD_SelectAction@4                   @314  ;; added by mergedef
+   zwTZAXCFGD_TEXT_Init=_zwTZAXCFGD_TEXT_Init@4                         @315  ;; added by mergedef
+   zwTZAXCFGD_TEXT_OK=_zwTZAXCFGD_TEXT_OK@4                             @316  ;; added by mergedef
+   zwTZAXCFGD_TEXT_PostBuild=_zwTZAXCFGD_TEXT_PostBuild@4               @317  ;; added by mergedef
+   zwTZAXCFGD_UpdateSubControl=_zwTZAXCFGD_UpdateSubControl@4           @318  ;; added by mergedef
+   zwTZAXCFGD_DeleteSubControl=_zwTZAXCFGD_DeleteSubControl@4           @319  ;; added by mergedef
+

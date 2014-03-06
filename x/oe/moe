@@ -1,0 +1,3 @@
+#!/bin/sh
+export KZV=/home/dchristensen/zeidon/10e
+make -f kzoengaa.mak $*

@@ -1,0 +1,7 @@
+LIBRARY
+DESCRIPTION   'ToolBar control maintenance Dialog'
+
+;; CODE      PRELOAD MOVEABLE DISCARDABLE
+;; DATA      PRELOAD SINGLE
+
+EXPORTS

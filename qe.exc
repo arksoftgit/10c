@@ -1,0 +1,15 @@
+.cproject
+.project
+*.bak
+*.dep
+*.hnm
+*.txt
+account.*
+waccount.*
+ad.rpt
+qc.bat
+qe.bat
+qe.exc
+x.bat
+.svn\
+java\

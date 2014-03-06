@@ -1,0 +1,17 @@
+#if defined( __WIN32__ )
+   LIBRARY       KZHGENKY
+   DESCRIPTION   'ZEIDON GENKEY HANDLER'
+;; CODE      PRELOAD MOVEABLE DISCARDABLE
+;; DATA      PRELOAD SINGLE
+#else
+   LIBRARY       KZHGENKY
+   DESCRIPTION   'ZEIDON GENKEY HANDLER'
+   STUB         'WINSTUB.EXE'
+   CODE  MOVEABLE
+   DATA  FIXED SINGLE
+   HEAPSIZE     1024
+   EXETYPE       WINDOWS
+#endif
+
+EXPORTS
+              GKH_MsgProc @1 ; name of window processing function
