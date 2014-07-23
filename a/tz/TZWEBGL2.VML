@@ -29,6 +29,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
    STRING ( 32 )  szMapEntityName
    STRING ( 32 )  szMapAttributeName
    STRING ( 32 )  szActionName
+   STRING ( 256 ) szAction
    STRING ( 10 )  szSelectAction
    STRING ( 10 )  szSelectFunction
    STRING ( 50 )  szCtrlTag
@@ -70,6 +71,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
    STRING ( 50 )  szParentWebType
    STRING ( 1 )   szRepeatingGroupFlag
    STRING ( 1 )   szSurveyGroupFlag
+   STRING ( 1 )   szGroupBoxAbsPosFlag
    STRING ( 1 )   szGridGroupingFlag
    STRING ( 1 )   szIncludeFileFlag
    STRING ( 1 )   szNoHeightFlag
@@ -440,40 +442,69 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
          END
 
          szContainer = ""
-         SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Container Absolute Size"
+         //SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Container Absolute Size"
+         SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Fieldset Absolute Pos"
          IF RESULT >= zCURSOR_SET
             szContainer = "A"
          END
 
-         SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Container"
+         //SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Container"
+         SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Fieldset"
          IF RESULT >= zCURSOR_SET
             szContainer = "C"
          END
+         
+         // A groupbox might want the children to be absolutely positioned.  Allow for this.
+         szGroupBoxAbsPosFlag = ""
+         SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Absolute Pos"
+         IF RESULT >= zCURSOR_SET
+            szGroupBoxAbsPosFlag = "Y"
+         END
+
       END
 
       // Initialize the szAbsoluteStyle variable with X and Y values.
-      IF  szNoPositioning = "Y"
+      IF szNoPositioning = "Y"
+      
+         lWidth = vDialog.Control.SZDLG_X * dDLUnits
+         lHeight = vDialog.Control.SZDLG_Y * dDLUnits
+         zIntegerToString( szWidth, 10, lWidth )
+         zIntegerToString( szHeight, 10, lHeight )
+      
+         // If szGroupBoxAbsPosFlag = "Y" then we are saying that the children of this group box will
+         // be absolutely positioned.
+         IF szControlType = "GroupBox" AND szGroupBoxAbsPosFlag = "Y"
+         
+            szNoPositioningHold = szNoPositioning
+            szNoPositioning = ""  // we want absolute positioning on all child controls
+            
+            IF szNoHeightFlag = "Y" // We might not want the groupbox to have a height (so it grows)
+               szAbsoluteStyle = "style=^float:left;position:relative; width:" + szWidth + "px;^"
+            ELSE
+               //zIntegerToString( szHeight, 10, lHeight * dDLUnits )
+               szAbsoluteStyle = "  style=^float:left;position:relative; width:" + szWidth + "px; height:" + szHeight + "px;^"
+            END                      
+         ELSE 
          IF szControlType = "GroupBox" AND szNoHeightFlag = "Y" AND szNoWidthFlag = "Y"
             szAbsoluteStyle = ""
          ELSE
          IF szControlType = "GroupBox" AND szNoHeightFlag = "Y"
             // We might not want the groupbox to have a height (so it grows)
-            zIntegerToString( szWidth, 10, vDialog.Control.SZDLG_X * dDLUnits )
             szAbsoluteStyle = "style=^width:" + szWidth + "px;^"
          ELSE
          IF szControlType = "GroupBox" AND szNoWidthFlag = "Y"
             // We might not want the groupbox to have a width (so it grows)
-            zIntegerToString( szHeight, 10, vDialog.Control.SZDLG_Y * dDLUnits )
             szAbsoluteStyle = "style=^height:" + szHeight + "px;^"
          ELSE
             CreateNoPosStyleString( vDialog, szAbsoluteStyle, "" )
          END
          END
          END
+         END
       ELSE
          CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
       END
-
+      
       szWriteBuffer = "<% /* " + szCtrlTag + ":" + szControlType + " */ %>"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
@@ -503,7 +534,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
       IF szControlType = "GroupBox" AND szGridGroupingFlag = "Y"
 
          // If we are not using absolute positioning, then make all the divs float left.
-         IF  szNoPositioning = "Y"
+         IF szNoPositioning = "Y"
             zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
          END
 
@@ -607,22 +638,22 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
          //              szHTMLCtrlID,
          //              zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
 
-            szNoPositioningHold = szNoPositioning
-            szNoPositioning = ""  // we want absolute positioning on all child controls
 
             lWidth = vDialog.Control.SZDLG_X
-            lHeight = vDialog.Control.SZDLG_Y - 10
+            lHeight = vDialog.Control.SZDLG_Y //- 10
 
             IF szContainer = "A"
+               szNoPositioningHold = szNoPositioning
+               szNoPositioning = ""  // we want absolute positioning on all child controls
                zIntegerToString( szWidth, 10, lWidth * dDLUnits )
                IF szNoHeightFlag = "Y" // We might not want the groupbox to have a height (so it grows)
-                  szAbsoluteStyle = "style=^size:absolute; width:" + szWidth + "px;^"
+                  szAbsoluteStyle = "style=^position:relative; width:" + szWidth + "px;^"
                ELSE
                   zIntegerToString( szHeight, 10, lHeight * dDLUnits )
-                  szAbsoluteStyle = "  style=^size:absolute; width:" + szWidth + "px; height:" + szHeight + "px;^"
+                  szAbsoluteStyle = "  style=^position:relative; width:" + szWidth + "px; height:" + szHeight + "px;^"
                END
-            ELSE
-               szAbsoluteStyle = ""
+            //ELSE
+            //   szAbsoluteStyle = ""
             END
 
             IF szClass = ""
@@ -1179,7 +1210,9 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
          END
          END
          END  // IF szControlType = "GroupBox" AND szRepeatingGroupFlag = "" AND szFileTransferFlag = "" AND szGroupIsTable = "" AND szGridGroupingFlag = ""
-
+         IF szGroupBoxAbsPosFlag = "Y"
+            szNoPositioning = szNoPositioningHold
+         END
       ELSE  // Not a groupbox
          IF szControlType = "Text"  // TEXT
             GenJSPJ_CrteText( vDialog, vGroupParent, vDialogRoot, lFile, szWriteBuffer, szIndent, szCtrlTag,
@@ -1280,9 +1313,6 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
             CreateTabIndexString( vDialog, szTabIndex )
             szAbsoluteStyle = szAbsoluteStyle + szTabIndex
-         // szWriteBuffer = "<button name=^" + szCtrlTag + "^ onclick=^" +
-         //                 szActionName + "( )^ " + "value=^^" + szAbsoluteStyle +
-         //                 ">" + vDialog.Control.Text + "</button>"
 
             szText = vDialog.Control.Text
             // Set Class as either null or with Class value.
@@ -1313,15 +1343,27 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                szWidget = "<button type=^button^ " + szClass + szTitleHTML + "name=^"
                szTerm = szText + "</button>"
                szText = ""
+               
+            // Action is different if this is a repeating group.
+            IF szRepeatGrpKey = ""
+               szAction = szActionName + "( )"
+            ELSE
+               szAction = szActionName + "( '" + szCtrlTag + szRepeatGrpKey + "' )"
+            END
 
             szParentWebType = ""
+            // KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+            // out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
             IF vGroupParent != 0
+               //*
                SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
                IF RESULT >= zCURSOR_SET
                   szParentWebType = "RelativePos"
                ELSE
                   szParentWebType = vGroupParent.Control.WebCtrlType
                END
+               //*/
+               //szParentWebType = vGroupParent.Control.WebCtrlType
             END
             IF szParentWebType = "Div" OR szParentWebType = "DivScroll" OR
                szParentWebType = "Span"
@@ -1330,10 +1372,10 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                CreateSizeString( vDialog, szSize )
                szWriteBuffer = szWidget + szCtrlTag + "^ id=^" + szCtrlTag + "^ value=^" + szText + "^ onclick=^" +
-                               szActionName + "( )^ " + "style=^" + szSize + "^>" + szTerm
+                               szAction + "^ " + "style=^" + szSize + "^>" + szTerm
             ELSE
                szWriteBuffer = szWidget + szCtrlTag + "^ id=^" + szCtrlTag + "^ value=^" + szText + "^ onclick=^" +
-                               szActionName + "( )^ " + szAbsoluteStyle + ">" + szTerm
+                               szAction + "^ " + szAbsoluteStyle + ">" + szTerm
             END
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
          END  //End of PushBtn
@@ -2215,12 +2257,17 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
             szWebCtrlType = ""
             IF vGroupParent != 0
+               // KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+               // out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
+               //*
                SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
                IF RESULT >= zCURSOR_SET
                   szWebCtrlType = "RelativePos"
                ELSE
                   szWebCtrlType = vGroupParent.Control.WebCtrlType
                END
+               //*/
+               //szWebCtrlType = vGroupParent.Control.WebCtrlType
             END
 
             // KJS 6/19/08 - We want to add filtering on a table.  If the user chooses the web control property "Filter Rows" then
@@ -3906,6 +3953,10 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 //********************** END OF GRID ***********************************
 
          IF szControlType = "MLEdit"  // MLEDIT
+         
+            GenJSPJ_CrteMLEdit( vDialog, lFile, szWriteBuffer, szIndent, szCtrlTag,
+                                "", szJustify, szNoPositioning, lOffsetX, lOffsetY, szRepeatGrpKey )
+/*                                
             SET CURSOR FIRST vDialog.CtrlMapLOD_Attribute WITHIN vDialog.Control
             IF RESULT >= zCURSOR_SET
                szWriteBuffer = "<%"
@@ -3953,27 +4004,23 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                ELSE
                   szContextName = ""
                END
-
                IF vDialog.CtrlMapER_Domain.MaxStringLth > 254
                   lMaxStringLength = vDialog.CtrlMapER_Domain.MaxStringLth
                   szMaxStringLength = lMaxStringLength
                ELSE
                   szMaxStringLength = "254"
                END
-
                szWriteBuffer = "            strErrorMapValue = " +
                                vDialog.CtrlMapView.Name + ".cursor( ^" +
                                vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
                                vDialog.CtrlMapER_Attribute.Name + "^, ^" +
                                szContextName + "^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-
                // KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
                szWriteBuffer = "            if ( strErrorMapValue == null )"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "               strErrorMapValue = ^^;"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-
                szWriteBuffer = "            task.log( ).info( ^" + vDialog.CtrlMapRelatedEntity.Name + "." +
                                vDialog.CtrlMapER_Attribute.Name + ": ^ + strErrorMapValue );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -3996,39 +4043,31 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "         strErrorMapValue = ^" + vDialog.Control.Text + "^;"
                END
-
                // This doesn't work, but something like it may be necessary to remove special characters ... dks 2012.04.25
                // strErrorMapValue = strErrorMapValue.replace("/&/g", "&amp;").replace("/>/g", "&gt;").replace("/</g", "&lt;").replace("/\"/g", "&quot;").replace("/%/g", "&#037;");
-
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "%>"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-
                X_Size = vDialog.Control.SZDLG_X
                Size = X_Size / 4
                zIntegerToString( szSize, 10, Size )
                Y_Size = vDialog.Control.SZDLG_Y
                Size = Y_Size / 12
                zIntegerToString( szHeight, 10, Size )
-
                IF vDialog.Control.VisibleBorder = "Y"
                   zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:4px;border-style:groove;", "style=", "^" )
                ELSE
                   zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:2px;border-style:groove;", "style=", "^" )
                END
-
                szTinyMCEFlag = ""
                SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "wysiwyg TinyMCE"
                IF RESULT >= zCURSOR_SET
                   szTinyMCEFlag = "Y"
                END
-
                IF vDialog.Control.WebCtrlType = "wysiwygEditor" OR szTinyMCEFlag = "Y"
-
                // CreateTabIndexString( vDialog, szTabIndex )
                // CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
                // szAbsoluteStyle = szAbsoluteStyle + szTabIndex
-
                   GetViewByName( vLPLR, "TaskLPLR", vDialog, zLEVEL_TASK )
                   szText = vLPLR.LPLR.Name
                   szLPLR_Name = "[App." + szText + "]"
@@ -4036,27 +4075,24 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                   IF szClass = ""
                      szClass = "mceSimple"  // "mceSimple" is TinyMCE default
                   END
-
                   IF vDialog.Control.CSS_Class != ""
                      szClass = szClass + " " + vDialog.Control.CSS_Class
                   END
-
-                  szWriteBuffer = "<textarea name=^" + szCtrlTag + "^" + szRepeatGrpKey + " id=^" + szCtrlTag + "^" + szRepeatGrpKey +
-                                  " class=^" + szClass + "^ " + szTitleHTML +
+                  szWriteBuffer = "<textarea name=^" + szCtrlTag + szRepeatGrpKey + "^ id=^" + szCtrlTag + szRepeatGrpKey +
+                                  "^ class=^" + szClass + "^ " + szTitleHTML +
                                   szAbsoluteStyle + ">" +
                                // "^ rows="15" cols="80" style="width: 80%">" +
                                   "<%=strErrorMapValue%></textarea>"
-
                ELSE
                   szClass = vDialog.Control.CSS_Class
                   CreateTabIndexString( vDialog, szTabIndex )
-                  szWriteBuffer = "<textarea name=^" + szCtrlTag + "^" +  szRepeatGrpKey + " id=^" + szCtrlTag + "^" + szRepeatGrpKey + szTitleHTML +
+                  szWriteBuffer = "<textarea name=^" + szCtrlTag + szRepeatGrpKey + "^ id=^" + szCtrlTag + szRepeatGrpKey + "^" + szTitleHTML +
                                   szAbsoluteStyle + szTabIndex + " wrap=^wrap^>" +
                                   "<%=strErrorMapValue%></textarea>"
-
                END
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
             END
+*/               
          END   //IF szControlType = "MLEdit"
       END
    END // FOR EACH
@@ -4108,12 +4144,15 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
    STRING ( 1 )   szXSSEncode
    STRING ( 1 )   szRepeatingGroupFlag
    STRING ( 100 ) szRepeatingGroupKey
+   STRING ( 256 ) szBlob
+   STRING ( 100 ) szUnChecked
    STRING ( 50 )  szWebCtrlType
    STRING ( 1 )  szSurveyGroupFlag
    INTEGER       lEditBox
    INTEGER       lSubtype
    INTEGER       lSubtypeX
    INTEGER       lTemp
+   INTEGER       lLen
    INTEGER       lMaxStringLength
    SHORT         nViewNameLth
    SHORT         bResetToPlaceHolder
@@ -4282,6 +4321,30 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                      szWriteBuffer = "         strMapValue = ReplaceXSSValues( strMapValue );"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   END
+                  
+                  // If this is a checkbox, then we want to check the unchecked value if there is one.
+                  IF szControlType = "CheckBox" 
+   
+                     // See if the checkbox has an unchecked value. The checked value is in attrib RadioOrCheckboxValue but we 
+                     // don't have an attrib for the unchecked value.
+                     lTemp = 256
+                     GetBlobFromAttribute( szBlob, lTemp, vDialog, "Control", "CtrlBOI" )
+                     lLen = zstrlen( szBlob )
+                     lLen = lLen + 2
+                     szUnChecked = ""
+                     IF lTemp > lLen 
+                        ZeidonCopyWithinString( szBlob, 1, lLen, 256 )
+                        szUnChecked = szBlob
+                        szWriteBuffer = "         // If the checkbox is not checked, then set to the unchecked value."
+                        WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                        szWriteBuffer = "         if (strMapValue == null |||| strMapValue.isEmpty() )"
+                        WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                        szWriteBuffer = "            strMapValue = ^" + szUnChecked + "^;" 
+                        WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+                     END
+                     
+                  END
+                  
                   // try
                   szWriteBuffer = "         try"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -4446,15 +4509,19 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                         szWriteBuffer = "               nRelPos = java.lang.Integer.parseInt( strMapValue );"
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-
+       /*
+   
                         IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
                            // For Auto Include, we must decrement nRelPos for blank entry.
                            szWriteBuffer = "            nRelPos--;    // For Auto Include combos, we need to decrement for the blank entry."
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                         END
+                        */
 
+                        //szWriteBuffer = "               " + vDialog2.CtrlMapView.Name + ".cursor( ^" + szListMappingEntityName + "^ )" +
+                        //                ".setPosition( nRelPos, ^" + szScopingEntityName + "^ );"
                         szWriteBuffer = "               " + vDialog2.CtrlMapView.Name + ".cursor( ^" + szListMappingEntityName + "^ )" +
-                                        ".setPosition( nRelPos, ^" + szScopingEntityName + "^ );"
+                                        ".setByEntityKey( nRelPos );"
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                         szWriteBuffer = "            }"
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -4543,12 +4610,13 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "         // Auto Include Code "
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "         // If the value is ^0^ then the user has selected the null entry, we do not want to do an include."
+                           szWriteBuffer = "         // If the value is ^0^ or the selected item is blank, then the user has selected the null entry, we do not want to do an include."
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "         // If there is an entity, we want to exclude it. "
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
-                           szWriteBuffer = "         if ( !StringUtils.equals( strMapValue, ^0^ ) )"
+                           szWriteBuffer = "         if ( !StringUtils.equals( strMapValue, ^0^ ) && !StringUtils.isBlank( " + szViewName + ".cursor( ^" +
+                                           vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ) +  " ) )"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "         {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -4674,9 +4742,11 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                szWriteBuffer = "            nRelPos = java.lang.Integer.parseInt( strMapValue );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
+                    
                szWriteBuffer = "               " + szViewName + ".cursor( ^" + vDialog.CtrlMapLOD_Entity.Name + "^ )" +
-                               ".setPosition( " +
-                               "nRelPos, ^" + szScopingEntityName + "^ );"
+                               ".setByEntityKey( nRelPos );"
+                               //".setPosition( " +
+                               //"nRelPos, ^" + szScopingEntityName + "^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                szWriteBuffer = "         }"
@@ -4917,8 +4987,27 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
 
                      szWriteBuffer = "         strTag = ^" + szCtrlTag + "^ + strEntityKey;"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         strMapValue" + szSuffix + " = request.getParameter( strTag );"
+                     szWriteBuffer = "         strMapValue" + " = request.getParameter( strTag );"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+                     // See if the checkbox has an unchecked value. The checked value is in attrib RadioOrCheckboxValue but we 
+                     // don't have an attrib for the unchecked value.
+                     lTemp = 256
+                     GetBlobFromAttribute( szBlob, lTemp, vDialog, "Control", "CtrlBOI" )
+                     lLen = zstrlen( szBlob )
+                     lLen = lLen + 2
+                     szUnChecked = ""
+                     IF lTemp > lLen 
+                        ZeidonCopyWithinString( szBlob, 1, lLen, 256 )
+                        szUnChecked = szBlob
+                        szWriteBuffer = "         // If the checkbox is not checked, then set to the unchecked value."
+                        WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                        szWriteBuffer = "         if (strMapValue == null |||| strMapValue.isEmpty() )"
+                        WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                        szWriteBuffer = "            strMapValue = ^" + szUnChecked + "^;" 
+                        WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+                     END
+                     
                      szCheckBoxValue = vDialog.Control.RadioOrCheckboxValue
 
                      // try
@@ -4933,12 +5022,13 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                      szWriteBuffer = "            else"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "               if ( strMapValue" + szSuffix + " != null )"
+                     szWriteBuffer = "               if ( strMapValue"  + " != null )"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                      szWriteBuffer = "                  vGridTmp.cursor( ^" +
                                   vDialog.CtrlMapRelatedEntity.Name +
                                   "^ ).setAttribute( ^" + vDialog.CtrlMapER_Attribute.Name +
-                                  "^, ^" + szCheckBoxValue + "^ );"
+                                  "^, strMapValue );" //KKKKKKK
+                                  //"^, ^" + szCheckBoxValue + "^ );" //KKKKKKK
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                      szWriteBuffer = "               else"
                      WL_QC( vDialog, lFile, szWriteBuffer, "'", 0 )
@@ -5726,6 +5816,7 @@ GenJSPJ_OutputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                szWriteBuffer = "      document." + szFormName + ".h" + szCtrlTag + ".value = " +
                                "document." + szFormName + "." + szCtrlTag + ".selectedIndex;"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               // KJS 05/21/14 - Trying to change
             ELSE
                //IN Grid
                szWriteBuffer = "      document.getElementById( hControl ).value = Control.selectedIndex;"
@@ -5917,6 +6008,8 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    STRING ( 64 )    szSystemIniApplName
    STRING ( 32 )    szViewName
    STRING ( 32 )    szEntityName
+   STRING ( 32 )    szEntityNameR
+   STRING ( 32 )    szScopingName
    STRING ( 32 )    szContextName
    STRING ( 32 )    szDlgTagRoot
    STRING ( 32 )    szWndTagRoot
@@ -5930,6 +6023,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    STRING ( 10 )    szMaxStringLength
    STRING ( 50 )    szPrivateKey
    STRING ( 50 )    szPublicKey
+   STRING ( 3 )     szBuffer
    STRING ( 1 )     InsertBlankFlag
    STRING ( 1 )     szCommentAdded
    STRING ( 1 )     szDialogClassCreated
@@ -5940,6 +6034,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    INTEGER          lControl
    INTEGER          lMaxStringLength
    INTEGER          lActionType
+   INTEGER          lAutoSubAction
    SHORT            nViewNameLth
    SHORT            nGridParent
    SHORT            nRC
@@ -5950,7 +6045,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    GetViewByName( vLPLR, "TaskLPLR", vDialog, zLEVEL_TASK )
    szSystemIniApplName = "[App." + vLPLR.LPLR.Name + "]"
    SysReadZeidonIni( -1, szSystemIniApplName, "WebRedirection", szWebRedirection )
-
+   
    szWriteBuffer = "   while ( bDone == false && StringUtils.equals( strActionToProcess, ^" + szActionName + "^ ) )"
    WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   {"
@@ -6020,9 +6115,13 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "      {"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "         strVMLError = ^<br><br>*** Error running Operation " + vDialogTemp.ActOper.Name + ": ^ + e.getMessage();"     
+                  szWriteBuffer = "         // Set the error return code."
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "         task.log().info( strVMLError );"
+                  szWriteBuffer = "         nOptRC = 2;"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         strVMLError = ^<br><br>*** Error running Operation " + vDialogTemp.ActOper.Name + ", Please contact the helpdesk: ^ + e.getMessage();"     
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         task.log().error( strVMLError, e );"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "      }"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -6161,12 +6260,27 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       //SET CURSOR FIRST vDialogTemp.Control WHERE vDialogTemp.ControlDef.Tag = "EditBox"
       FOR EACH vDialogTemp.Control
 
+         // Aadit, wants there to be an upload file limit, so that for email attachment, the file isn't too big to bring
+         // down the mail server. This really needs to be an updatable field...
+         szWriteBuffer = "      if ( iFileLth > 10485760 )"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      {"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, ^This file is too large!^, ^This file is too large!^ );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         break;"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      }"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+
+
          IF vDialogTemp.ControlDef.Tag = "EditBox"
                                         //256
            //Get the mapping
             SET CURSOR FIRST vDialogTemp.CtrlMapLOD_Attribute WITHIN vDialogTemp.Control
             IF RESULT >= zCURSOR_SET
                szUploadViewName = vDialogTemp.CtrlMapView.Name
+               szCtrlTag = vDialogTemp.Control.Tag
                szWriteBuffer = "      View " + szUploadViewName + ";"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
                szWriteBuffer = "      " + vDialogTemp.CtrlMapView.Name + " = " +
@@ -6174,7 +6288,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "      if ( VmlOperation.isValid( " + vDialogTemp.CtrlMapView.Name + " ) == false )"
                WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "      task.log( ).info( ^Invalid View: ^ + ^" + szCtrlTag + "^ );"
+               szWriteBuffer = "         task.log( ).info( ^Invalid View: ^ + ^" + szCtrlTag + "^ );"
                WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "      else"
                WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
@@ -6190,43 +6304,37 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
 
 
                // try
-               szWriteBuffer = "         try"
+               szWriteBuffer = "            try"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "         {"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "            if ( webMapping )"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" +
-                                                  szCtrlTag + "^, ^^, strMapValue );"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "            else"
+               szWriteBuffer = "            {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "               " +
                       vDialogTemp.CtrlMapView.Name +
-                      ".cursor( ^," + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).setAttribute( ^" +
-                      "^, ^" +
+                      ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).setAttribute( ^" +
                       vDialogTemp.CtrlMapER_Attribute.Name + "^, strInputFileName );"
                WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "         }"
+               szWriteBuffer = "            }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                // catch
-               szWriteBuffer = "         catch ( InvalidAttributeValueException e )"
+               szWriteBuffer = "            catch ( InvalidAttributeValueException e )"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "         {"
+               szWriteBuffer = "            {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "            nMapError = -16;"
+               szWriteBuffer = "               nRC = 2;  // do the ^error^ redirection"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                // KJS 02/27/12 Specifically using strTag...
-               szWriteBuffer = "            VmlOperation.CreateMessage( task, strTag, e.getReason( ), strMapValue );"
+               szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strInputFileName );"
             // szWriteBuffer = "            VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strMapValue );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "         }"
+               szWriteBuffer = "               break;"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "            }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                // end of try/catch
 
-               szWriteBuffer = "      }"
+               szWriteBuffer = "         }"
                WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "   }"
+               szWriteBuffer = "      }"
                WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
 
             END
@@ -6336,16 +6444,14 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       IF SetEntityCursor( vDialogTemp, "Control", "Tag", lControl,
                           szCtrlTag, "", "", 0,
                           "Window", "" ) >= zCURSOR_SET 
-                         /* AND
-         (vDialogTemp.ControlDef.Tag = "PushBtn" OR vDialogTemp.ControlDef.Tag = "GridEditCtl" OR
-          vDialogTemp.ControlDef.Tag = "Bitmap" OR vDialogTemp.ControlDef.Tag = "BitmapBtn" OR
-          vDialogTemp.ControlDef.Tag = "ComboBox" OR vDialogTemp.ControlDef.Tag = "GridComboCtl" )
-          */
 
-         // Identify if this Control is inside a Grid.
+         // Identify if this Control is inside a Grid. Or if this control is inside a repeating group (or maybe both).
          nRC = 0
          nGridParent = 0
-         LOOP WHILE nRC = 0 AND nGridParent = 0
+         szBuffer = ""
+         // For correct setEntityKey placement later, we need to know if this action is on a repeating group (even if it's within a grid). Because of this
+         // we need to keep reseting the view from subobject because we could be down several groups.
+         LOOP WHILE nRC = 0 AND ( nGridParent = 0 OR szRepeatingGroupFlag = "" )
             nRC = ResetViewFromSubobject( vDialogTemp )
             IF nRC = 0 AND vDialogTemp.ControlDef EXISTS
                IF vDialogTemp.ControlDef.Tag = "GroupBox"
@@ -6356,25 +6462,49 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                      SET CURSOR FIRST vDialogTemp.WebControlProperty WHERE vDialogTemp.WebControlProperty.Name = "Repeating Group"
                      IF RESULT >= zCURSOR_SET
                         szRepeatingGroupFlag = "Y"
+                        // KJS 09/23/13 - Try getting the view for this
+                        IF vDialogTemp.CtrlMapView EXISTS AND
+                           vDialogTemp.CtrlMapLOD_Entity EXISTS
+                           
+                           szEntityNameR = vDialogTemp.CtrlMapLOD_Entity.Name
+                        END
+                        szBuffer = "   "
                      END
                   END
                END
+
                IF vDialogTemp.ControlDef.Tag = "Grid" OR szRepeatingGroupFlag = "Y"
+                  // If the parent is a grid, then get the View and Entity now (we might be reseting the subobject and lose
+                  // our position on the grid) so it can be used further down.
+                  IF vDialogTemp.CtrlMapView EXISTS AND
+                     vDialogTemp.CtrlMapLOD_Entity EXISTS AND nGridParent = 0
+                     szViewName = vDialogTemp.CtrlMapView.Name
+                     szEntityName = vDialogTemp.CtrlMapLOD_Entity.Name
+                     // See if there is a scoping entity.
+                     SET CURSOR NEXT vDialogTemp.CtrlMap
+                     IF RESULT >= zCURSOR_SET
+                        IF vDialogTemp.CtrlMapLOD_Entity EXISTS
+                           szScopingName = vDialogTemp.CtrlMapLOD_Entity.Name
+                        END
+                     END
+                  END
                   // The parent of the this control is a Grid, so indicate for later.
-                  nGridParent = 1
+                  IF vDialogTemp.ControlDef.Tag = "Grid"
+                     nGridParent = 1
+                  END
                END
             END
          END
 
          //If we successfully reset from the subcontrols and we are on a grid.
-         IF nGridParent = 1
+         IF nGridParent = 1 OR szRepeatingGroupFlag = "Y"
          
             // Because we are going to be looking again later in the generation process at actions and whether or not
             // they are inside a grid or repeating group, set a flag now so we don't have to do this later.
             vDialog.Action.ParentIsGridOrGrp = "Y"
 
-            IF vDialogTemp.CtrlMapView EXISTS AND
-               vDialogTemp.CtrlMapLOD_Entity EXISTS AND szPosDataCreated = "N"
+            // szPosDataCreated is just to make sure we don't create this code twice.
+            IF szPosDataCreated = "N"
 
                szPosDataCreated = "Y"
 
@@ -6383,8 +6513,8 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
 
                // We have a "select button" or HotText in a list, so we need to set
                // up the code to set position on the proper list item.
-               szViewName = vDialogTemp.CtrlMapView.Name
-               szEntityName = vDialogTemp.CtrlMapLOD_Entity.Name
+               //szViewName = vDialogTemp.CtrlMapView.Name
+               //szEntityName = vDialogTemp.CtrlMapLOD_Entity.Name
                szWriteBuffer = "      String strEntityKey = (String) request.getParameter( ^zTableRowSelect^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                //If this action is for the download button or for the upload button, we may have already created
@@ -6412,41 +6542,72 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                szWriteBuffer = "         csrRC = " + szViewName + ".cursor( ^" + szEntityName + "^ ).setByEntityKey( lEKey );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
-               szWriteBuffer = "         if ( !csrRC.isSet() ) //if ( nRC < 0 )"
+               szWriteBuffer = "         if ( !csrRC.isSet() )"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "         {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "         // This is temp code because SetCursorEntityKey doesn't work on subobjects."
+               szWriteBuffer = "            boolean bFound = false;"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "            csrRCk = " + szViewName + ".cursor( ^" + szEntityName + "^ ).setFirst( );"
+               // Because this link might be inside a grid that is inside a repeating group, we need to loop through
+               // all the entities that the repeating group loops through to see if the entity key exists. Not just
+               // the current entity we are on.
+               IF szRepeatingGroupFlag = "Y"
+                  szWriteBuffer = "            CursorResult csrRCRptGrp = null;"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "            csrRCRptGrp = " + szViewName + ".cursor( ^" + szEntityNameR + "^ ).setFirst( );"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "            while ( csrRCRptGrp.isSet() && !bFound )"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "            {"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               END 
+               IF nGridParent = 1 //AND szScopingName != ""
+                  //szWriteBuffer = "            csrRCk = " + szViewName + ".cursor( ^" + szScopingName + "^ ).setFirst( );"
+                  IF szScopingName = ""  
+                     szWriteBuffer = szBuffer + "            csrRCk = " + szViewName + ".cursor( ^" + szEntityName + "^ ).setFirst( );"
+                  ELSE
+                     szWriteBuffer = szBuffer + "            csrRCk = " + szViewName + ".cursor( ^" + szEntityName + "^ ).setFirst(^" + szScopingName + "^ );"
+                  END
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = szBuffer + "            while ( csrRCk.isSet() && !bFound )"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = szBuffer + "            {"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               END
+
+               szWriteBuffer = szBuffer + "               lEKey = " + szViewName + ".cursor( ^" + szEntityName + "^ ).getEntityKey( );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "            while ( csrRCk.isSet() )"
+               szWriteBuffer = szBuffer + "               strKey = Long.toString( lEKey );"
+               //szWriteBuffer = szBuffer + "               csrRC = " + szViewName + ".cursor( ^" + szEntityName + "^ ).setByEntityKey( lEKey );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "            {"
+               //szWriteBuffer = szBuffer + "               if ( csrRC.isSet() )"
+               szWriteBuffer = szBuffer + "               if ( StringUtils.equals( strKey, strEntityKey ) )"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               lEKey = " + szViewName + ".cursor( ^" + szEntityName + "^ ).getEntityKey( );"
+               szWriteBuffer = szBuffer + "               {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               strKey = Long.toString( lEKey );"
+               szWriteBuffer = szBuffer + "                  // Stop while loop because we have positioned on the correct entity."
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               if ( StringUtils.equals( strKey, strEntityKey ) )"
+               szWriteBuffer = szBuffer + "                  bFound = true;"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               {"
+               szWriteBuffer = szBuffer + "               }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "                  // Stop while loop because we have positioned on the correct entity."
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               // KJS 09/05/12 - The following is wrong because csrRCk is not an integer.  I think we can just use "break".
-               //szWriteBuffer = "                  csrRCk = -1;"
-               //WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "                  break;"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               }"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               else"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "                  csrRCk = " + szViewName + ".cursor( ^" + szEntityName + "^ ).setNextContinue( );"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "            }"
-               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               IF nGridParent = 1 //AND szScopingName != ""
+                  szWriteBuffer = szBuffer + "               else"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = szBuffer + "                  csrRCk = " + szViewName + ".cursor( ^" + szEntityName + "^ ).setNextContinue( );"
+                  //szWriteBuffer = "                  csrRCk = " + szViewName + ".cursor( ^" + szScopingName + "^ ).setNextContinue( );"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = szBuffer + "            } // Grid"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               END
+               IF szRepeatingGroupFlag = "Y"
+                  szWriteBuffer = "               if ( !bFound )"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "                  csrRCRptGrp = " + szViewName + ".cursor( ^" + szEntityNameR + "^ ).setNextContinue( );"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "            } // Repeating group"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               END
                szWriteBuffer = "         }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
@@ -6517,6 +6678,10 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       szWriteBuffer = "      catch (Exception e)"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      {"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         // Set the error return code."
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         nOptRC = 2;"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "         strVMLError = ^<br><br>*** Error running Operation " + szOperName + ": ^ + e.getMessage();"     
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -6739,6 +6904,84 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       IF szJavaScript != "" AND szJavaScriptLocation = "Pre-Operation"
          szWriteBuffer = "      " + szJavaScript + "  // " + szJavaScriptLocation
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+      END
+      
+      // Add Object Functions Accept, Cancel, Create Temporal Entity and Create Temporal Subobject Version.
+      lAutoSubAction = vDialog.Action.SB_SubAction 
+      IF lAutoSubAction = 1 OR    // Accept
+         lAutoSubAction = 2 OR    // Cancel
+         lAutoSubAction = 32 OR   // Create Temporal Entity
+         lAutoSubAction = 64      // Create Subobject Version
+         
+         szWriteBuffer = "      // Action Auto Object Function"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      nRC = 0;"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         
+         // Get View and Entity names from the Action.
+         IF vDialog.ActMapView EXISTS
+            szViewName = vDialog.ActMapView.Name 
+         END
+         IF vDialog.ActMapLOD_Entity EXISTS
+            szEntityName = vDialog.ActMapLOD_Entity.Name 
+         END
+         
+         // We don't want the getViewByName if it was generated above with the code:
+         // IF nGridParent = 1 OR szRepeatingGroupFlag = "Y"
+         IF nGridParent = 1 OR szRepeatingGroupFlag = "Y"
+         ELSE
+            szWriteBuffer = "      View " + szViewName + " = task.getViewByName( ^" + szViewName + "^ );"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         END
+         
+         szWriteBuffer = "      EntityCursor cursor = " + szViewName + ".cursor( ^" + szEntityName + "^ );"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         
+         // Add Accept or Cancel statement.
+         IF lAutoSubAction = 1 OR lAutoSubAction = 2
+            szWriteBuffer = "      if ( cursor.isNull() )"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "         nRC = 0;"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "      else"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "      {"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         
+            szWriteBuffer = "         if ( cursor.isVersioned( ) )"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "         {"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               
+            IF lAutoSubAction = 1
+               // Accept
+               szWriteBuffer = "           cursor.acceptSubobject( );"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            ELSE
+               // Cancel
+               szWriteBuffer = "           cursor.cancelSubobject( );"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            END
+            
+            szWriteBuffer = "           nRC = 0;"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "         }"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "      }"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+         ELSE
+            IF lAutoSubAction = 32
+               // Create Temporal Entity
+               szWriteBuffer = "      cursor.createTemporalEntity( );"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+            ELSE
+               IF lAutoSubAction = 64
+                  // Create Subobject Version
+                  szWriteBuffer = "      cursor.createTemporalSubobjectVersion( );"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+               END
+            END
+         END
       END
 
       IF szWAB != ""

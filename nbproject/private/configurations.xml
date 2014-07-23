@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
       <df name="_common">
@@ -521,21 +521,17 @@
           <df name="dsp">
           </df>
           <df name="jpeglib">
-            <in>CDERROR.H</in>
-            <in>CDJPEG.H</in>
             <in>JCAPIMIN.C</in>
             <in>JCAPISTD.C</in>
             <in>JCCOEFCT.C</in>
             <in>JCCOLOR.C</in>
             <in>JCDCTMGR.C</in>
             <in>JCHUFF.C</in>
-            <in>JCHUFF.H</in>
             <in>JCINIT.C</in>
             <in>JCMAINCT.C</in>
             <in>JCMARKER.C</in>
             <in>JCMASTER.C</in>
             <in>JCOMAPI.C</in>
-            <in>JCONFIG.H</in>
             <in>JCPARAM.C</in>
             <in>JCPHUFF.C</in>
             <in>JCPREPCT.C</in>
@@ -547,10 +543,8 @@
             <in>JDATASRC.C</in>
             <in>JDCOEFCT.C</in>
             <in>JDCOLOR.C</in>
-            <in>JDCT.H</in>
             <in>JDDCTMGR.C</in>
             <in>JDHUFF.C</in>
-            <in>JDHUFF.H</in>
             <in>JDINPUT.C</in>
             <in>JDMAINCT.C</in>
             <in>JDMARKER.C</in>
@@ -561,7 +555,6 @@
             <in>JDSAMPLE.C</in>
             <in>JDTRANS.C</in>
             <in>JERROR.C</in>
-            <in>JERROR.H</in>
             <in>JFDCTFLT.C</in>
             <in>JFDCTFST.C</in>
             <in>JFDCTINT.C</in>
@@ -569,46 +562,25 @@
             <in>JIDCTFST.C</in>
             <in>JIDCTINT.C</in>
             <in>JIDCTRED.C</in>
-            <in>JINCLUDE.H</in>
             <in>JMEMMGR.C</in>
             <in>JMEMNOBS.C</in>
-            <in>JMEMSYS.H</in>
-            <in>JPEGINT.H</in>
             <in>JPEGTRAN.C</in>
-            <in>JPegLib.H</in>
             <in>JQUANT1.C</in>
             <in>JQUANT2.C</in>
             <in>JUTILS.C</in>
-            <in>JVERSION.H</in>
-            <in>Jmorecfg.h</in>
           </df>
           <df name="MonitorProcess">
             <df name="McbXML">
-              <df name="res">
-              </df>
               <in>McbMain.c</in>
               <in>McbXML.c</in>
-              <in>McbXML.h</in>
-              <in>resource.h</in>
-            </df>
-            <df name="res">
             </df>
             <in>MonProc.cpp</in>
-            <in>MonProc.h</in>
             <in>MonProcDlg.cpp</in>
-            <in>MonProcDlg.h</in>
             <in>StdAfx.cpp</in>
-            <in>StdAfx.h</in>
             <in>Win32Process.cpp</in>
-            <in>Win32Process.h</in>
             <in>XML_PARSER.cpp</in>
-            <in>XML_PARSER.h</in>
-            <in>resource.h</in>
-          </df>
-          <df name="res">
           </df>
           <in>CheckBox.cpp</in>
-          <in>CheckBox.h</in>
           <in>ChkCombo.cpp</in>
           <in>ChkCombo.h</in>
           <in>Fortify.cpp</in>
@@ -616,9 +588,7 @@
           <in>MPNA81.cpp</in>
           <in>PrintTree.cpp</in>
           <in>PrintTree.h</in>
-          <in>Resource.h</in>
           <in>SMTP.cpp</in>
-          <in>SMTP.h</in>
           <in>TzCtl.cpp</in>
           <in>TzCtl.h</in>
           <in>TzCtlATX.cpp</in>
@@ -641,13 +611,11 @@
           <in>TzCtlTab.cpp</in>
           <in>UFORTIFY.h</in>
           <in>Z2MP.cpp</in>
-          <in>Z2MP.h</in>
           <in>Z2MPAPI.cpp</in>
           <in>ZDr.cpp</in>
           <in>ZDr.h</in>
           <in>ZDrAct.cpp</in>
           <in>ZDrApp.cpp</in>
-          <in>ZDrApp.h</in>
           <in>ZDrAxLst.cpp</in>
           <in>ZDrCCDlg.cpp</in>
           <in>ZDrCmdLn.cpp</in>
@@ -678,7 +646,6 @@
           <in>ZDrOpt.cpp</in>
           <in>ZDrPalHK.cpp</in>
           <in>ZDrParse.cpp</in>
-          <in>ZDrParse.h</in>
           <in>ZDrPrint.cpp</in>
           <in>ZDrPrtC.cpp</in>
           <in>ZDrSTask.cpp</in>
@@ -695,17 +662,14 @@
           <in>ZdCtl.h</in>
           <in>ZdCtlATX.cpp</in>
           <in>ZdCtlBar.cpp</in>
-          <in>ZdCtlBar.h</in>
           <in>ZdCtlBmb.cpp</in>
           <in>ZdCtlBmb.h</in>
           <in>ZdCtlBmp.cpp</in>
-          <in>ZdCtlBmp.h</in>
           <in>ZdCtlBtn.cpp</in>
           <in>ZdCtlBtn.h</in>
           <in>ZdCtlCal.cpp</in>
           <in>ZdCtlCal.h</in>
           <in>ZdCtlChk.cpp</in>
-          <in>ZdCtlChk.h</in>
           <in>ZdCtlCmb.cpp</in>
           <in>ZdCtlCmb.h</in>
           <in>ZdCtlDIB.cpp</in>
@@ -720,7 +684,6 @@
           <in>ZdCtlGbx.cpp</in>
           <in>ZdCtlGbx.h</in>
           <in>ZdCtlGrd.cpp</in>
-          <in>ZdCtlGrd.h</in>
           <in>ZdCtlHd.cpp</in>
           <in>ZdCtlHd.h</in>
           <in>ZdCtlHdn.cpp</in>
@@ -729,19 +692,16 @@
           <in>ZdCtlIco.cpp</in>
           <in>ZdCtlIco.h</in>
           <in>ZdCtlLBH.cpp</in>
-          <in>ZdCtlLBH.h</in>
           <in>ZdCtlLBX.cpp</in>
           <in>ZdCtlLBX.h</in>
           <in>ZdCtlMLE.cpp</in>
           <in>ZdCtlMLE.h</in>
           <in>ZdCtlMST.C</in>
           <in>ZdCtlMST.cpp</in>
-          <in>ZdCtlMST.h</in>
           <in>ZdCtlO.cpp</in>
           <in>ZdCtlOLB.cpp</in>
           <in>ZdCtlOLB.h</in>
           <in>ZdCtlRB.cpp</in>
-          <in>ZdCtlRB.h</in>
           <in>ZdCtlRDI.cpp</in>
           <in>ZdCtlRTE.cpp</in>
           <in>ZdCtlRTE.h</in>
@@ -766,102 +726,23 @@
           <in>ZdCtlVwg.h</in>
           <in>mpna81.h</in>
           <in>msjexhnd.cpp</in>
-          <in>msjexhnd.h</in>
           <in>tzpntrvd.c</in>
         </df>
       </df>
       <df name="mak">
       </df>
       <df name="tlb">
-        <df name="res">
-        </df>
-        <in>Resource.h</in>
         <in>StdAfx.cpp</in>
-        <in>StdAfx.h</in>
-        <in>TLB.H</in>
-        <in>TLBCONST.H</in>
-        <in>ttblbrws.h</in>
         <in>ttblbrwsDlg.cpp</in>
-        <in>ttblbrwsDlg.h</in>
       </df>
       <df name="w">
-        <df name="bin">
-          <df name="hlp">
-          </df>
-          <df name="sys">
-          </df>
-        </df>
-        <df name="incr">
-          <in>kzoeenaa.h</in>
-          <in>winbase.h</in>
-        </df>
-        <df name="incz">
-          <df name="expat">
-            <in>xmlparse.h</in>
-          </df>
-          <df name="rdm321">
-            <in>DBERR.H</in>
-            <in>DBLOCK.H</in>
-            <in>DBTYPE.H</in>
-            <in>DBXTRN.H</in>
-            <in>DB_DEBUG.H</in>
-            <in>DPROTO.H</in>
-            <in>DTCOVER.H</in>
-            <in>INITTAB.H</in>
-            <in>INTERNAL.H</in>
-            <in>LL.H</in>
-            <in>LMC.H</in>
-            <in>LMCG.H</in>
-            <in>LMCI.H</in>
-            <in>LMNCB.H</in>
-            <in>LOCKCOMM.H</in>
-            <in>PARSER.H</in>
-            <in>PROTO.H</in>
-            <in>QDEFNS.H</in>
-            <in>QUERY.H</in>
-            <in>TASK.H</in>
-            <in>TRXLOG.H</in>
-            <in>VISTA.H</in>
-            <in>VISTASEG.H</in>
-            <in>YTAB.H</in>
-          </df>
-          <df name="sqlbase">
-            <in>ERRSQL.H</in>
-            <in>SQL.H</in>
-            <in>SQLSRV.H</in>
-          </df>
-          <df name="sqlsrvr">
-            <in>SQLDB.H</in>
-            <in>SQLFRONT.H</in>
-          </df>
-          <in>htmlhelp.h</in>
-          <in>kzoeinco.h</in>
-        </df>
-        <df name="libr">
-        </df>
-        <df name="libz">
-          <df name="expat">
-          </df>
-        </df>
-        <df name="ms">
-          <df name="debug">
-          </df>
-        </df>
         <df name="oe">
-          <df name="debug">
-          </df>
           <df name="zdecimal">
             <df name="128bit">
               <in>ECONST.C</in>
-              <in>EHEAD.H</in>
               <in>IEEE.C</in>
-              <in>MCONF.H</in>
               <in>MTHERR.C</in>
               <in>ZDECIMAL.C</in>
-            </df>
-            <df name="decari">
-              <df name="debug">
-              </df>
             </df>
             <df name="longdbl">
               <in>ZDECIMAL.C</in>
@@ -870,41 +751,16 @@
           <in>KZSchedT.c</in>
           <in>kzoeclnt.c</in>
           <in>kzoedbga.cpp</in>
-          <in>kzoedbga.h</in>
           <in>kzoengwa.c</in>
-          <in>kzoengwa.h</in>
-          <in>kzoeswrc.h</in>
           <in>kzoesyaa.c</in>
-          <in>kzoesyaa.h</in>
           <in>metersec.c</in>
-          <in>metersec.h</in>
           <in>zdllinst.c</in>
           <in>zwinsckb.c</in>
-          <in>zwinsckb.h</in>
           <in>zwinsock.cpp</in>
-          <in>zwinsock.h</in>
-        </df>
-        <df name="redist">
         </df>
         <df name="setup">
           <df name="bldcui">
-            <in>BLDVER.H</in>
-            <in>CUI.H</in>
-            <in>DIALOGS.H</in>
             <in>DLGPROCS.C</in>
-          </df>
-          <df name="disklay">
-          </df>
-          <df name="intldll">
-            <in>BLDVER.H</in>
-            <in>GAUGE.H</in>
-            <in>IDS.H</in>
-            <in>IDS_INST.H</in>
-            <in>LOGIDS.H</in>
-          </df>
-        </df>
-        <df name="tz">
-          <df name="res">
           </df>
         </df>
         <df name="ut">
@@ -917,8 +773,6 @@
           <df name="qmap2def">
             <in>QMAP2DEF.C</in>
           </df>
-          <df name="qpreproc">
-          </df>
           <df name="qspawn">
             <in>QSPAWN.C</in>
           </df>
@@ -927,7 +781,6 @@
           </df>
           <df name="xodgen">
             <in>xodgen.c</in>
-            <in>xodgen.h</in>
           </df>
           <df name="xwdgen">
             <in>xwdgen.c</in>
@@ -935,73 +788,22 @@
         </df>
       </df>
       <df name="x">
-        <df name="bin">
-        </df>
-        <df name="expat">
-          <df name="bin">
-          </df>
-          <df name="include">
-            <in>expat.h</in>
-            <in>expat_external.h</in>
-          </df>
-          <df name="lib">
-          </df>
-          <df name="man">
-            <df name="man1">
-            </df>
-          </df>
-        </df>
         <df name="expat-2.0.1">
           <df name="amiga">
-            <df name="include">
-              <df name="inline4">
-                <in>expat.h</in>
-              </df>
-              <df name="interfaces">
-                <in>expat.h</in>
-              </df>
-              <df name="libraries">
-                <in>expat.h</in>
-              </df>
-              <df name="proto">
-                <in>expat.h</in>
-              </df>
-            </df>
             <in>expat_lib.c</in>
             <in>expat_vectors.c</in>
             <in>launch.c</in>
             <in>stdlib.c</in>
-          </df>
-          <df name="bcb5">
-          </df>
-          <df name="conftools">
-          </df>
-          <df name="doc">
           </df>
           <df name="examples">
             <in>elements.c</in>
             <in>outline.c</in>
           </df>
           <df name="lib">
-            <in>amigaconfig.h</in>
-            <in>ascii.h</in>
-            <in>asciitab.h</in>
-            <in>expat.h</in>
-            <in>expat_external.h</in>
-            <in>iasciitab.h</in>
-            <in>internal.h</in>
-            <in>latin1tab.h</in>
-            <in>macconfig.h</in>
-            <in>nametab.h</in>
-            <in>utf8tab.h</in>
-            <in>winconfig.h</in>
             <in>xmlparse.c</in>
             <in>xmlrole.c</in>
-            <in>xmlrole.h</in>
             <in>xmltok.c</in>
-            <in>xmltok.h</in>
             <in>xmltok_impl.c</in>
-            <in>xmltok_impl.h</in>
             <in>xmltok_ns.c</in>
           </df>
           <df name="tests">
@@ -1009,76 +811,40 @@
               <in>benchmark.c</in>
             </df>
             <in>chardata.c</in>
-            <in>chardata.h</in>
             <in>minicheck.c</in>
-            <in>minicheck.h</in>
             <in>runtests.c</in>
             <in>runtestspp.cpp</in>
           </df>
-          <df name="vms">
-            <in>expat_config.h</in>
-          </df>
-          <df name="win32">
-          </df>
           <df name="xmlwf">
             <in>codepage.c</in>
-            <in>codepage.h</in>
             <in>ct.c</in>
-            <in>filemap.h</in>
             <in>readfilemap.c</in>
             <in>unixfilemap.c</in>
             <in>win32filemap.c</in>
             <in>xmlfile.c</in>
-            <in>xmlfile.h</in>
             <in>xmlmime.c</in>
-            <in>xmlmime.h</in>
-            <in>xmltchar.h</in>
-            <in>xmlurl.h</in>
             <in>xmlwf.c</in>
             <in>xmlwin32url.cxx</in>
-          </df>
-          <in>expat_config.h</in>
-        </df>
-        <df name="incr">
-          <in>kzoeenaa.h</in>
-        </df>
-        <df name="incz">
-          <in>kzoeinco.h</in>
-        </df>
-        <df name="mysql-connector-odbc-5.1.5-linux-x86-32bit">
-          <df name="bin">
-          </df>
-          <df name="lib">
           </df>
         </df>
         <df name="oe">
           <in>kzhsqlpg.c</in>
           <in>kzoelsck.c</in>
-          <in>kzoemsaa.hg</in>
           <in>kzoengxa.c</in>
           <in>kzoesyaa.c</in>
-          <in>kzoesyaa.h</in>
-        </df>
-        <df name="tz">
         </df>
         <df name="ut">
           <df name="qspawn">
             <in>qspawn.c</in>
-          </df>
-          <df name="scripts">
           </df>
         </df>
       </df>
       <df name="ztools">
         <df name="tlist">
           <in>common.cpp</in>
-          <in>common.h</in>
         </df>
-        <in>Resource.h</in>
         <in>StdAfx.cpp</in>
-        <in>StdAfx.h</in>
         <in>ztools.cpp</in>
-        <in>ztools.h</in>
       </df>
     </df>
   </logicalFolder>

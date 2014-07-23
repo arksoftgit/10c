@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
       <df name="a">
@@ -678,16 +678,10 @@
         </makeTool>
       </makefileType>
       <item path="a/ed/zeditor.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/java/kzoejava.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/ms/kzmsgqaa.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/oe/KZOEDECA.C" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -967,12 +961,8 @@
         </cTool>
       </item>
       <item path="a/oe/zdecimal/decari/decari.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/oe/zdecimal/decari/zdecimal.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/oe/zdecimal/hzapck.c" ex="false" tool="0" flavor2="2">
         <cTool>
@@ -1052,446 +1042,300 @@
         </cTool>
       </item>
       <item path="a/tz/ax/_edit/hzoectl.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/hzoedlg.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/hzoefunc.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/hzoemeth.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/hzoeprop.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/hzoessyn.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/hzoeundo.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/hzoezsyn.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/_edit/tbedit.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/msdbgrid/msdbgrid.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/msdbgrid/msdbmap.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/tdbg6.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/tgcolser.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/trddmap.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/trdgmap.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/trgrxprt.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/trhlpr.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/truegrid.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/truegrid/xarraydb.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzaxctl/tzaxcal.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzaxctl/tzaxctl.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzaxctl/tzaxdate.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzaxctl/tzaxhlpr.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/bookmark.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/buffer.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/cedit.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/ceditmsg.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/ceditx.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/cmdarry.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/codelistctrl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/codetipctrl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/codetipfunchighlightctrl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/codetiphighlightctrl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/codetipmultifuncctrl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/ctlstate.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/debug.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/dlldata.c"
             ex="false"
             tool="0"
             flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/dragdrop.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/editcmd1.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/editdlgs.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/editsel.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/editview.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/editx_i.c"
             ex="false"
             tool="0"
             flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/editx_p.c"
             ex="false"
             tool="0"
             flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/exports.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/findrepl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/globalsx.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/hkeyctrl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/hotkey.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/hotkeyx.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/icodelist.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetip.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetipfunchighlight.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetiphighlight.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/icodetipmultifunc.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/language.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/langx.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/line.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/macro.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/misc.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/msgpump.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/posx.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/precomp.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/print.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/props.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/rangex.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/rectx.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/regexp.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/selftest.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/splitter.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/syntax.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/undo.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/cmcs219/src/wnd.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/ax/tzvmledt/tzcswrpr.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -1536,20 +1380,12 @@
         </cTool>
       </item>
       <item path="a/tz/etc/yylex.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/tz/etc/yylex.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/etc/yyparse.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/tz/etc/yyparse.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/tz/kzrpquer.c" ex="false" tool="0" flavor2="2">
         <cTool>
@@ -2721,16 +2557,10 @@
         </cTool>
       </item>
       <item path="a/ut/qmap2def/QMAP2DEF.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/ut/qspawn/QSPAWN.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/ut/syncxod/SyncXOD.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/CheckBox.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -2764,44 +2594,30 @@
             ex="false"
             tool="0"
             flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/zdr/MonitorProcess/McbXML/McbXML.c"
             ex="false"
             tool="0"
             flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="a/zdr/MonitorProcess/MonProc.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/MonitorProcess/MonProcDlg.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/MonitorProcess/StdAfx.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/MonitorProcess/Win32Process.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/MonitorProcess/XML_PARSER.cpp"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/PrintTree.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -3546,192 +3362,98 @@
         </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCAPIMIN.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCAPISTD.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCCOEFCT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCCOLOR.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCDCTMGR.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCHUFF.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCINIT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCMAINCT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCMARKER.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCMASTER.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCOMAPI.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCPARAM.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCPHUFF.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCPREPCT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCSAMPLE.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JCTRANS.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDAPIMIN.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDAPISTD.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDATADST.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDATASRC.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDCOEFCT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDCOLOR.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDDCTMGR.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDHUFF.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDINPUT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDMAINCT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDMARKER.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDMASTER.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDMERGE.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDPHUFF.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDPOSTCT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDSAMPLE.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JDTRANS.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JERROR.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JFDCTFLT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JFDCTFST.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JFDCTINT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JIDCTFLT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JIDCTFST.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JIDCTINT.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JIDCTRED.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JMEMMGR.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JMEMNOBS.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JPEGTRAN.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JQUANT1.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JQUANT2.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/jpeglib/JUTILS.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="a/zdr/msjexhnd.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -4008,12 +3730,8 @@
         </ccTool>
       </folder>
       <item path="tlb/StdAfx.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="tlb/ttblbrwsDlg.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/oe/KZSchedT.c" ex="false" tool="0" flavor2="2">
         <cTool>
@@ -4061,24 +3779,14 @@
         </cTool>
       </item>
       <item path="w/oe/zdecimal/128bit/ECONST.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/oe/zdecimal/128bit/IEEE.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/oe/zdecimal/128bit/MTHERR.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/oe/zdecimal/128bit/ZDECIMAL.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/oe/zdecimal/longdbl/ZDECIMAL.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/oe/zdllinst.c" ex="false" tool="0" flavor2="2">
         <cTool>
@@ -4102,90 +3810,50 @@
         </ccTool>
       </item>
       <item path="w/setup/bldcui/DLGPROCS.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/ut/mergedef/mergedef.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/ut/qdelete/QDELETE.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/ut/qmap2def/QMAP2DEF.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/ut/qspawn/QSPAWN.C" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/ut/qstruct/qstruct.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="w/ut/xodgen/xodgen.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="w/ut/xwdgen/xwdgen.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/amiga/expat_lib.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/amiga/expat_vectors.c"
             ex="false"
             tool="0"
             flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/amiga/launch.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/amiga/stdlib.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/examples/elements.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/examples/outline.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/lib/xmlparse.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/lib/xmlrole.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/lib/xmltok.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/lib/xmltok_impl.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/lib/xmltok_ns.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/tests/benchmark/benchmark.c"
             ex="false"
             tool="0"
             flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/tests/chardata.c" ex="false" tool="0" flavor2="2">
         <cTool>
@@ -4209,47 +3877,27 @@
         </cTool>
       </item>
       <item path="x/expat-2.0.1/tests/runtestspp.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/codepage.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/ct.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/readfilemap.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/unixfilemap.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/win32filemap.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/xmlfile.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/xmlmime.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/xmlwf.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="x/expat-2.0.1/xmlwf/xmlwin32url.cxx"
             ex="false"
             tool="1"
             flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="x/oe/kzhsqlpg.c" ex="false" tool="0" flavor2="2">
         <cTool>
@@ -4283,8 +3931,6 @@
         </cTool>
       </item>
       <item path="x/ut/qspawn/qspawn.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-        </cTool>
       </item>
       <item path="ztools/StdAfx.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -4294,8 +3940,6 @@
         </ccTool>
       </item>
       <item path="ztools/tlist/common.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
       </item>
       <item path="ztools/ztools.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
