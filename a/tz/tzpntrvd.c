@@ -1,14 +1,14 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "TZ__OPRS.H" 
-#include "ZDRVROPR.H" 
-#include "TZVMLIP.H" 
- 
+#include "KZOENGAA.H"
+#include "TZ__OPRS.H"
+#include "ZDRVROPR.H"
+#include "TZVMLIP.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 zSHORT zwTZPNTRAD_DeleteMenu( void );
@@ -107,17 +107,17 @@ REMOVE_ReusableMenuActions( zVIEW     ViewToWindow );
 zOPER_EXPORT zSHORT OPERATION
 GOTO_SelectReusableSideMenu( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW TZDLG_List REGISTERED AS TZDLG_List
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zLONG     lTempInteger_3; 
-   zLONG     lTempInteger_4; 
+   zVIEW     TZWND_List = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zLONG     lTempInteger_3;
+   zLONG     lTempInteger_4;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", vSubtask, zLEVEL_TASK );
@@ -127,171 +127,171 @@ GOTO_SelectReusableSideMenu( zVIEW     vSubtask )
    //:IF TZWINDOWL.ReusableWindowSelection EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableWindowSelection" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableWindowSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableWindowSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableDialogSelection EXISTS
    lTempInteger_1 = CheckExistenceOfEntity( TZWINDOWL, "ReusableDialogSelection" );
    if ( lTempInteger_1 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableDialogSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableDialogSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableSideWindow EXISTS
    lTempInteger_2 = CheckExistenceOfEntity( TZWINDOWL, "ReusableSideWindow" );
    if ( lTempInteger_2 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       //:           WHERE TZDLG_List.W_MetaDef.CPLR_ZKey = TZWINDOWL.ReusableSideDialog.ZKey
       GetIntegerFromAttribute( &lTempInteger_3, TZWINDOWL, "ReusableSideDialog", "ZKey" );
       RESULT = SetCursorFirstEntityByInteger( TZDLG_List, "W_MetaDef", "CPLR_ZKey", lTempInteger_3, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:INCLUDE TZWINDOWL.ReusableDialogSelection FROM TZDLG_List.W_MetaDef
          RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableDialogSelection", TZDLG_List, "W_MetaDef", zPOS_AFTER );
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IF TZWND_List.Dialog.ZKey != TZWINDOWL.ReusableSideDialog.ZKey
             if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "ZKey", TZWINDOWL, "ReusableSideDialog", "ZKey" ) != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, TZWND_List )
                DropMetaOI( vSubtask, TZWND_List );
                //:TZWND_List = 0
                TZWND_List = 0;
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:TZWND_List = 0
             TZWND_List = 0;
-         } 
+         }
 
          //:END
          //:IF TZWND_List != 0
          if ( TZWND_List != 0 )
-         { 
+         {
             //:SET CURSOR FIRST TZWND_List.Window
             //:           WHERE TZWND_List.Window.ZKey = TZWINDOWL.ReusableSideWindow.ZKey
             GetIntegerFromAttribute( &lTempInteger_4, TZWINDOWL, "ReusableSideWindow", "ZKey" );
             RESULT = SetCursorFirstEntityByInteger( TZWND_List, "Window", "ZKey", lTempInteger_4, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:INCLUDE TZWINDOWL.ReusableWindowSelection FROM TZWND_List.Window
                RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableWindowSelection", TZWND_List, "Window", zPOS_AFTER );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:SET CURSOR FIRST TZWND_List.Window
                RESULT = SetCursorFirstEntity( TZWND_List, "Window", "" );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:IF TZDLG_List.W_MetaDef.CPLR_ZKey  = TZWINDOWL.Dialog.ZKey
             if ( CompareAttributeToAttribute( TZDLG_List, "W_MetaDef", "CPLR_ZKey", TZWINDOWL, "Dialog", "ZKey" ) == 0 )
-            { 
+            {
                //:CreateViewFromView( TZWND_List, TZWINDOWL )
                CreateViewFromView( &TZWND_List, TZWINDOWL );
                //:NAME VIEW TZWND_List "TZWND_List"
                SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
                ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
                //:NAME VIEW TZWND_List "TZWND_List"
                SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IF TZWINDOWL.Dialog.ZKey = TZWND_List.Dialog.ZKey
             if ( CompareAttributeToAttribute( TZWINDOWL, "Dialog", "ZKey", TZWND_List, "Dialog", "ZKey" ) == 0 )
-            { 
+            {
                //:DropView( TZWND_List )
                DropView( TZWND_List );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:DropMetaOI( vSubtask, TZWND_List )
                DropMetaOI( vSubtask, TZWND_List );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
          //:SET CURSOR FIRST TZDLG_List.W_MetaDef
          RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-      } 
+      }
 
       //:END
 
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
 
       //:GET VIEW TZWND_List NAMED "TZWND_List"
       RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:IF TZWINDOWL.Dialog.ZKey = TZWND_List.Dialog.ZKey
          if ( CompareAttributeToAttribute( TZWINDOWL, "Dialog", "ZKey", TZWND_List, "Dialog", "ZKey" ) == 0 )
-         { 
+         {
             //:DropView( TZWND_List )
             DropView( TZWND_List );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:DropMetaOI( vSubtask, TZWND_List )
             DropMetaOI( vSubtask, TZWND_List );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -301,24 +301,24 @@ GOTO_SelectReusableSideMenu( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 REMOVE_DefaultMenuActions( zVIEW     ViewToWindow )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
 
    //:IF TZWINDOWL.DefaultReusableActionWindow EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "DefaultReusableActionWindow" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.DefaultReusableActionWindow
       RESULT = ExcludeEntity( TZWINDOWL, "DefaultReusableActionWindow", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -328,10 +328,10 @@ REMOVE_DefaultMenuActions( zVIEW     ViewToWindow )
 zOPER_EXPORT zSHORT OPERATION
 COPY_WindowToClipboard( zVIEW     ViewToWindow )
 {
-   zVIEW     TaskLPLR = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TaskLPLR = 0;
+   zSHORT    RESULT;
    //:VIEW TZWINDOWL REGISTERED AS TZWINDOWL
-   zVIEW     TZWINDOWL = 0; 
+   zVIEW     TZWINDOWL = 0;
 
    RESULT = GetViewByName( &TaskLPLR, "TaskLPLR", ViewToWindow, zLEVEL_TASK );
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
@@ -341,7 +341,7 @@ COPY_WindowToClipboard( zVIEW     ViewToWindow )
    //:// We determine it is an external LPLR if TaskLPLR.LPLR.wFullyQualifiedFileName is not null.
    //:IF TaskLPLR.LPLR.wFullyQualifiedFileName = ""
    if ( CompareAttributeToString( TaskLPLR, "LPLR", "wFullyQualifiedFileName", "" ) == 0 )
-   { 
+   {
       //:MessageSend( ViewToWindow, "", "Copy Window to Clipboard",
       //:             "This function is only valid for an external Dialog.",
       //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 1 )
@@ -350,7 +350,7 @@ COPY_WindowToClipboard( zVIEW     ViewToWindow )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    //:TaskLPLR.LPLR.wCopyPasteDirectoryFileName = TaskLPLR.LPLR.wFullyQualifiedFileName
@@ -359,7 +359,7 @@ COPY_WindowToClipboard( zVIEW     ViewToWindow )
    SetAttributeFromAttribute( TaskLPLR, "LPLR", "wCopyPasteWindowName", TZWINDOWL, "Window", "Tag" );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -369,21 +369,21 @@ COPY_WindowToClipboard( zVIEW     ViewToWindow )
 zOPER_EXPORT zSHORT OPERATION
 PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
 {
-   zVIEW     TaskLPLR = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TaskLPLR = 0;
+   zSHORT    RESULT;
    //:VIEW TZWINDOWL    REGISTERED AS TZWINDOWL
-   zVIEW     TZWINDOWL = 0; 
+   zVIEW     TZWINDOWL = 0;
    //:VIEW SourceDialog BASED ON LOD  TZWDLGSO
-   zVIEW     SourceDialog = 0; 
+   zVIEW     SourceDialog = 0;
    //:VIEW TargetDialog BASED ON LOD  TZWDLGSO
-   zVIEW     TargetDialog = 0; 
+   zVIEW     TargetDialog = 0;
    //:STRING ( 200 ) szFileName
-   zCHAR     szFileName[ 201 ] = { 0 }; 
+   zCHAR     szFileName[ 201 ] = { 0 };
    //:STRING ( 32 )  szTag
-   zCHAR     szTag[ 33 ] = { 0 }; 
+   zCHAR     szTag[ 33 ] = { 0 };
    //:SHORT  nRC
-   zSHORT    nRC = 0; 
-   zCHAR     szTempString_0[ 255 ]; 
+   zSHORT    nRC = 0;
+   zCHAR     szTempString_0[ 255 ];
 
    RESULT = GetViewByName( &TaskLPLR, "TaskLPLR", ViewToWindow, zLEVEL_TASK );
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
@@ -394,7 +394,7 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
    //:// Make sure directory and Window have been specified.
    //:IF TaskLPLR.LPLR.wCopyPasteDirectoryFileName = "" OR TaskLPLR.LPLR.wCopyPasteWindowName = ""
    if ( CompareAttributeToString( TaskLPLR, "LPLR", "wCopyPasteDirectoryFileName", "" ) == 0 || CompareAttributeToString( TaskLPLR, "LPLR", "wCopyPasteWindowName", "" ) == 0 )
-   { 
+   {
       //:MessageSend( ViewToWindow, "", "Paste Window from Clipboard",
       //:             "A window and directory have not been copied to the clipboard.",
       //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 1 )
@@ -403,7 +403,7 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -419,7 +419,7 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
    RESULT = SetCursorFirstEntityByString( TargetDialog, "Window", "Tag", szTempString_0, "" );
    //:IF RESULT >= zCURSOR_SET
    if ( RESULT >= zCURSOR_SET )
-   { 
+   {
       //:MessageSend( ViewToWindow, "", "Paste Window from Clipboard",
       //:             "A window by the same name as the copied window already exists in the current Dialog.",
       //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 1 )
@@ -428,7 +428,7 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -439,7 +439,7 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
    nRC = ActivateOI_FromFile( &SourceDialog, "TZWDLGSO", ViewToWindow, szFileName, zSINGLE );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:MessageSend( ViewToWindow, "", "Paste Clipboard",
       //:             "The requested Dialog could not be activated.",
       //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
@@ -448,7 +448,7 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    //:NAME VIEW SourceDialog "SourceDialog"
@@ -462,7 +462,7 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
    nRC = oTZWDLGSO_CloneWindow( TargetDialog, SourceDialog, TaskLPLR, ViewToWindow );
    //:IF nRC >= 0
    if ( nRC >= 0 )
-   { 
+   {
       //:// Re-order window list and enable display of new window.
       //:szTag = TargetDialog.Window.Tag
       GetVariableFromAttribute( szTag, 0, 'S', 33, TargetDialog, "Window", "Tag", "", 0 );
@@ -473,9 +473,9 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
       //:fnPainterCall( 11, ViewToWindow, 0, szTag )
       fnPainterCall( 11, ViewToWindow, 0, szTag );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:// An error occurred during copy. Give a message and delete the Window just created.
       //:DELETE ENTITY TargetDialog.Window Previous
       RESULT = DeleteEntity( TargetDialog, "Window", zREPOS_PREV );
@@ -487,12 +487,12 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -502,17 +502,17 @@ PASTE_WindowFromClipboard( zVIEW     ViewToWindow )
 zOPER_EXPORT zSHORT OPERATION
 GOTO_SelectDefaultMenuActions( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW TZDLG_List REGISTERED AS TZDLG_List
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zLONG     lTempInteger_3; 
-   zLONG     lTempInteger_4; 
+   zVIEW     TZWND_List = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zLONG     lTempInteger_3;
+   zLONG     lTempInteger_4;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", vSubtask, zLEVEL_TASK );
@@ -522,133 +522,133 @@ GOTO_SelectDefaultMenuActions( zVIEW     vSubtask )
    //:IF TZWINDOWL.ReusableWindowSelection EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableWindowSelection" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableWindowSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableWindowSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableDialogSelection EXISTS
    lTempInteger_1 = CheckExistenceOfEntity( TZWINDOWL, "ReusableDialogSelection" );
    if ( lTempInteger_1 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableDialogSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableDialogSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.DefaultReusableActionWindow EXISTS
    lTempInteger_2 = CheckExistenceOfEntity( TZWINDOWL, "DefaultReusableActionWindow" );
    if ( lTempInteger_2 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       //:           WHERE TZDLG_List.W_MetaDef.CPLR_ZKey = TZWINDOWL.DefaultReusableActionDialog.ZKey
       GetIntegerFromAttribute( &lTempInteger_3, TZWINDOWL, "DefaultReusableActionDialog", "ZKey" );
       RESULT = SetCursorFirstEntityByInteger( TZDLG_List, "W_MetaDef", "CPLR_ZKey", lTempInteger_3, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:INCLUDE TZWINDOWL.ReusableDialogSelection FROM TZDLG_List.W_MetaDef
          RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableDialogSelection", TZDLG_List, "W_MetaDef", zPOS_AFTER );
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IF TZWND_List.Dialog.ZKey != TZWINDOWL.DefaultReusableActionDialog.ZKey
             if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "ZKey", TZWINDOWL, "DefaultReusableActionDialog", "ZKey" ) != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, TZWND_List )
                DropMetaOI( vSubtask, TZWND_List );
                //:TZWND_List = 0
                TZWND_List = 0;
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:TZWND_List = 0
             TZWND_List = 0;
-         } 
+         }
 
          //:END
          //:IF TZWND_List != 0
          if ( TZWND_List != 0 )
-         { 
+         {
             //:SET CURSOR FIRST TZWND_List.Window
             //:           WHERE TZWND_List.Window.ZKey = TZWINDOWL.DefaultReusableActionWindow.ZKey
             GetIntegerFromAttribute( &lTempInteger_4, TZWINDOWL, "DefaultReusableActionWindow", "ZKey" );
             RESULT = SetCursorFirstEntityByInteger( TZWND_List, "Window", "ZKey", lTempInteger_4, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:INCLUDE TZWINDOWL.ReusableWindowSelection FROM TZWND_List.Window
                RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableWindowSelection", TZWND_List, "Window", zPOS_AFTER );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:SET CURSOR FIRST TZWND_List.Window
                RESULT = SetCursorFirstEntity( TZWND_List, "Window", "" );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
             ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
             //:NAME VIEW TZWND_List "TZWND_List"
             SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-         } 
+         }
 
          //:END
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:DropMetaOI( vSubtask, TZWND_List )
             DropMetaOI( vSubtask, TZWND_List );
-         } 
+         }
 
          //:END
          //:SET CURSOR FIRST TZDLG_List.W_MetaDef
          RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-      } 
+      }
 
       //:END
 
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
 
       //:GET VIEW TZWND_List NAMED "TZWND_List"
       RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:DropMetaOI( vSubtask, TZWND_List )
          DropMetaOI( vSubtask, TZWND_List );
-      } 
+      }
 
       //:END
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -659,17 +659,17 @@ GOTO_SelectDefaultMenuActions( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 GOTO_SelectReusableMenuActions( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW TZDLG_List REGISTERED AS TZDLG_List
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zLONG     lTempInteger_3; 
-   zLONG     lTempInteger_4; 
+   zVIEW     TZWND_List = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zLONG     lTempInteger_3;
+   zLONG     lTempInteger_4;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", vSubtask, zLEVEL_TASK );
@@ -679,133 +679,133 @@ GOTO_SelectReusableMenuActions( zVIEW     vSubtask )
    //:IF TZWINDOWL.ReusableWindowSelection EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableWindowSelection" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableWindowSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableWindowSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableDialogSelection EXISTS
    lTempInteger_1 = CheckExistenceOfEntity( TZWINDOWL, "ReusableDialogSelection" );
    if ( lTempInteger_1 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableDialogSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableDialogSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableActionWindow EXISTS
    lTempInteger_2 = CheckExistenceOfEntity( TZWINDOWL, "ReusableActionWindow" );
    if ( lTempInteger_2 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       //:           WHERE TZDLG_List.W_MetaDef.CPLR_ZKey = TZWINDOWL.ReusableActionDialog.ZKey
       GetIntegerFromAttribute( &lTempInteger_3, TZWINDOWL, "ReusableActionDialog", "ZKey" );
       RESULT = SetCursorFirstEntityByInteger( TZDLG_List, "W_MetaDef", "CPLR_ZKey", lTempInteger_3, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:INCLUDE TZWINDOWL.ReusableDialogSelection FROM TZDLG_List.W_MetaDef
          RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableDialogSelection", TZDLG_List, "W_MetaDef", zPOS_AFTER );
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IF TZWND_List.Dialog.ZKey != TZWINDOWL.ReusableActionDialog.ZKey
             if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "ZKey", TZWINDOWL, "ReusableActionDialog", "ZKey" ) != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, TZWND_List )
                DropMetaOI( vSubtask, TZWND_List );
                //:TZWND_List = 0
                TZWND_List = 0;
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:TZWND_List = 0
             TZWND_List = 0;
-         } 
+         }
 
          //:END
          //:IF TZWND_List != 0
          if ( TZWND_List != 0 )
-         { 
+         {
             //:SET CURSOR FIRST TZWND_List.Window
             //:           WHERE TZWND_List.Window.ZKey = TZWINDOWL.ReusableActionWindow.ZKey
             GetIntegerFromAttribute( &lTempInteger_4, TZWINDOWL, "ReusableActionWindow", "ZKey" );
             RESULT = SetCursorFirstEntityByInteger( TZWND_List, "Window", "ZKey", lTempInteger_4, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:INCLUDE TZWINDOWL.ReusableWindowSelection FROM TZWND_List.Window
                RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableWindowSelection", TZWND_List, "Window", zPOS_AFTER );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:SET CURSOR FIRST TZWND_List.Window
                RESULT = SetCursorFirstEntity( TZWND_List, "Window", "" );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
             ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
             //:NAME VIEW TZWND_List "TZWND_List"
             SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-         } 
+         }
 
          //:END
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:DropMetaOI( vSubtask, TZWND_List )
             DropMetaOI( vSubtask, TZWND_List );
-         } 
+         }
 
          //:END
          //:SET CURSOR FIRST TZDLG_List.W_MetaDef
          RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-      } 
+      }
 
       //:END
 
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
 
       //:GET VIEW TZWND_List NAMED "TZWND_List"
       RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:DropMetaOI( vSubtask, TZWND_List )
          DropMetaOI( vSubtask, TZWND_List );
-      } 
+      }
 
       //:END
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -815,10 +815,10 @@ GOTO_SelectReusableMenuActions( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 CONVERT_ClassNames( zVIEW     ViewToWindow )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW vDialog   BASED ON LOD  TZWDLGSO
-   zVIEW     vDialog = 0; 
+   zVIEW     vDialog = 0;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
 
@@ -827,31 +827,31 @@ CONVERT_ClassNames( zVIEW     ViewToWindow )
    CreateViewFromView( &vDialog, TZWINDOWL );
    //:IF TZWINDOWL.Dialog.wClassNameConvertType = "D"
    if ( CompareAttributeToString( TZWINDOWL, "Dialog", "wClassNameConvertType", "D" ) == 0 )
-   { 
+   {
       //:FOR EACH vDialog.Window
       RESULT = SetCursorFirstEntity( vDialog, "Window", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
          //:CONVERT_ClassNamesRecursive( TZWINDOWL, vDialog )
          o_CONVERT_ClassNamesRecursive( TZWINDOWL, vDialog );
          RESULT = SetCursorNextEntity( vDialog, "Window", "" );
-      } 
+      }
 
       //:END
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:CONVERT_ClassNamesRecursive( TZWINDOWL, vDialog )
       o_CONVERT_ClassNamesRecursive( TZWINDOWL, vDialog );
-   } 
+   }
 
    //:END
    //:DropView( vDialog )
    DropView( vDialog );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -861,17 +861,17 @@ CONVERT_ClassNames( zVIEW     ViewToWindow )
 zOPER_EXPORT zSHORT OPERATION
 GOTO_SelectReusableMainMenu( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW TZDLG_List REGISTERED AS TZDLG_List
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zLONG     lTempInteger_3; 
-   zLONG     lTempInteger_4; 
+   zVIEW     TZWND_List = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zLONG     lTempInteger_3;
+   zLONG     lTempInteger_4;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", vSubtask, zLEVEL_TASK );
@@ -881,133 +881,133 @@ GOTO_SelectReusableMainMenu( zVIEW     vSubtask )
    //:IF TZWINDOWL.ReusableWindowSelection EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableWindowSelection" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableWindowSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableWindowSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableDialogSelection EXISTS
    lTempInteger_1 = CheckExistenceOfEntity( TZWINDOWL, "ReusableDialogSelection" );
    if ( lTempInteger_1 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableDialogSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableDialogSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableMainWindow EXISTS
    lTempInteger_2 = CheckExistenceOfEntity( TZWINDOWL, "ReusableMainWindow" );
    if ( lTempInteger_2 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       //:           WHERE TZDLG_List.W_MetaDef.CPLR_ZKey = TZWINDOWL.ReusableMainDialog.ZKey
       GetIntegerFromAttribute( &lTempInteger_3, TZWINDOWL, "ReusableMainDialog", "ZKey" );
       RESULT = SetCursorFirstEntityByInteger( TZDLG_List, "W_MetaDef", "CPLR_ZKey", lTempInteger_3, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:INCLUDE TZWINDOWL.ReusableDialogSelection FROM TZDLG_List.W_MetaDef
          RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableDialogSelection", TZDLG_List, "W_MetaDef", zPOS_AFTER );
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IF TZWND_List.Dialog.ZKey != TZWINDOWL.ReusableMainDialog.ZKey
             if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "ZKey", TZWINDOWL, "ReusableMainDialog", "ZKey" ) != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, TZWND_List )
                DropMetaOI( vSubtask, TZWND_List );
                //:TZWND_List = 0
                TZWND_List = 0;
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:TZWND_List = 0
             TZWND_List = 0;
-         } 
+         }
 
          //:END
          //:IF TZWND_List != 0
          if ( TZWND_List != 0 )
-         { 
+         {
             //:SET CURSOR FIRST TZWND_List.Window
             //:           WHERE TZWND_List.Window.ZKey = TZWINDOWL.ReusableMainWindow.ZKey
             GetIntegerFromAttribute( &lTempInteger_4, TZWINDOWL, "ReusableMainWindow", "ZKey" );
             RESULT = SetCursorFirstEntityByInteger( TZWND_List, "Window", "ZKey", lTempInteger_4, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:INCLUDE TZWINDOWL.ReusableWindowSelection FROM TZWND_List.Window
                RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableWindowSelection", TZWND_List, "Window", zPOS_AFTER );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:SET CURSOR FIRST TZWND_List.Window
                RESULT = SetCursorFirstEntity( TZWND_List, "Window", "" );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
             ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
             //:NAME VIEW TZWND_List "TZWND_List"
             SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-         } 
+         }
 
          //:END
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:DropMetaOI( vSubtask, TZWND_List )
             DropMetaOI( vSubtask, TZWND_List );
-         } 
+         }
 
          //:END
          //:SET CURSOR FIRST TZDLG_List.W_MetaDef
          RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-      } 
+      }
 
       //:END
 
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
 
       //:GET VIEW TZWND_List NAMED "TZWND_List"
       RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:DropMetaOI( vSubtask, TZWND_List )
          DropMetaOI( vSubtask, TZWND_List );
-      } 
+      }
 
       //:END
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1017,17 +1017,17 @@ GOTO_SelectReusableMainMenu( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 GOTO_SelectDefaultMainMenu( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW TZDLG_List REGISTERED AS TZDLG_List
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zLONG     lTempInteger_3; 
-   zLONG     lTempInteger_4; 
+   zVIEW     TZWND_List = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zLONG     lTempInteger_3;
+   zLONG     lTempInteger_4;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", vSubtask, zLEVEL_TASK );
@@ -1037,133 +1037,133 @@ GOTO_SelectDefaultMainMenu( zVIEW     vSubtask )
    //:IF TZWINDOWL.ReusableWindowSelection EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableWindowSelection" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableWindowSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableWindowSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.ReusableDialogSelection EXISTS
    lTempInteger_1 = CheckExistenceOfEntity( TZWINDOWL, "ReusableDialogSelection" );
    if ( lTempInteger_1 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableDialogSelection
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableDialogSelection", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    //:IF TZWINDOWL.DefaultReusableMainWindow EXISTS
    lTempInteger_2 = CheckExistenceOfEntity( TZWINDOWL, "DefaultReusableMainWindow" );
    if ( lTempInteger_2 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       //:           WHERE TZDLG_List.W_MetaDef.CPLR_ZKey = TZWINDOWL.ReusableMainDialog.ZKey
       GetIntegerFromAttribute( &lTempInteger_3, TZWINDOWL, "ReusableMainDialog", "ZKey" );
       RESULT = SetCursorFirstEntityByInteger( TZDLG_List, "W_MetaDef", "CPLR_ZKey", lTempInteger_3, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:INCLUDE TZWINDOWL.ReusableDialogSelection FROM TZDLG_List.W_MetaDef
          RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableDialogSelection", TZDLG_List, "W_MetaDef", zPOS_AFTER );
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IF TZWND_List.Dialog.ZKey != TZWINDOWL.ReusableMainDialog.ZKey
             if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "ZKey", TZWINDOWL, "ReusableMainDialog", "ZKey" ) != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, TZWND_List )
                DropMetaOI( vSubtask, TZWND_List );
                //:TZWND_List = 0
                TZWND_List = 0;
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:TZWND_List = 0
             TZWND_List = 0;
-         } 
+         }
 
          //:END
          //:IF TZWND_List != 0
          if ( TZWND_List != 0 )
-         { 
+         {
             //:SET CURSOR FIRST TZWND_List.Window
             //:           WHERE TZWND_List.Window.ZKey = TZWINDOWL.DefaultReusableMainWindow.ZKey
             GetIntegerFromAttribute( &lTempInteger_4, TZWINDOWL, "DefaultReusableMainWindow", "ZKey" );
             RESULT = SetCursorFirstEntityByInteger( TZWND_List, "Window", "ZKey", lTempInteger_4, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:INCLUDE TZWINDOWL.ReusableWindowSelection FROM TZWND_List.Window
                RESULT = IncludeSubobjectFromSubobject( TZWINDOWL, "ReusableWindowSelection", TZWND_List, "Window", zPOS_AFTER );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:SET CURSOR FIRST TZWND_List.Window
                RESULT = SetCursorFirstEntity( TZWND_List, "Window", "" );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
             ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
             //:NAME VIEW TZWND_List "TZWND_List"
             SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-         } 
+         }
 
          //:END
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:GET VIEW TZWND_List NAMED "TZWND_List"
          RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:DropMetaOI( vSubtask, TZWND_List )
             DropMetaOI( vSubtask, TZWND_List );
-         } 
+         }
 
          //:END
          //:SET CURSOR FIRST TZDLG_List.W_MetaDef
          RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-      } 
+      }
 
       //:END
 
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
 
       //:GET VIEW TZWND_List NAMED "TZWND_List"
       RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:DropMetaOI( vSubtask, TZWND_List )
          DropMetaOI( vSubtask, TZWND_List );
-      } 
+      }
 
       //:END
       //:SET CURSOR FIRST TZDLG_List.W_MetaDef
       RESULT = SetCursorFirstEntity( TZDLG_List, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1173,13 +1173,13 @@ GOTO_SelectDefaultMainMenu( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 LOAD_SelectedDialog( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW TZDLG_List REGISTERED AS TZDLG_List
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZWND_List = 0;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", vSubtask, zLEVEL_TASK );
@@ -1189,60 +1189,60 @@ LOAD_SelectedDialog( zVIEW     vSubtask )
    RESULT = GetViewByName( &TZWND_List, "TZWND_List", vSubtask, zLEVEL_TASK );
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   { 
+   {
       //:IF TZWND_List.Dialog.ZKey != TZDLG_List.W_MetaDef.CPLR_ZKey
       if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "ZKey", TZDLG_List, "W_MetaDef", "CPLR_ZKey" ) != 0 )
-      { 
+      {
          //:IF TZWINDOWL.Dialog.ZKey = TZWND_List.Dialog.ZKey
          if ( CompareAttributeToAttribute( TZWINDOWL, "Dialog", "ZKey", TZWND_List, "Dialog", "ZKey" ) == 0 )
-         { 
+         {
             //:DropView( TZWND_List )
             DropView( TZWND_List );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:DropMetaOI( vSubtask, TZWND_List )
             DropMetaOI( vSubtask, TZWND_List );
-         } 
+         }
 
          //:END
          //:TZWND_List = 0
          TZWND_List = 0;
-      } 
+      }
 
       //:END
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:TZWND_List = 0
       TZWND_List = 0;
-   } 
+   }
 
    //:END
    //:IF TZWND_List = 0
    if ( TZWND_List == 0 )
-   { 
+   {
       //:IF TZDLG_List.W_MetaDef.CPLR_ZKey = TZWINDOWL.Dialog.ZKey
       if ( CompareAttributeToAttribute( TZDLG_List, "W_MetaDef", "CPLR_ZKey", TZWINDOWL, "Dialog", "ZKey" ) == 0 )
-      { 
+      {
          //:CreateViewFromView( TZWND_List, TZWINDOWL )
          CreateViewFromView( &TZWND_List, TZWINDOWL );
          //:NAME VIEW TZWND_List "TZWND_List"
          SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
          ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
          //:NAME VIEW TZWND_List "TZWND_List"
          SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
    //:SET CURSOR FIRST TZWND_List.Window
@@ -1252,15 +1252,15 @@ LOAD_SelectedDialog( zVIEW     vSubtask )
    //:IF TZWINDOWL.ReusableWindowSelection EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableWindowSelection" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableWindowSelection NONE
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableWindowSelection", zREPOS_NONE );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1270,18 +1270,18 @@ LOAD_SelectedDialog( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 SELECT_ReusableMenuWindow( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
    //:VIEW TZDLG_List REGISTERED AS TZDLG_List
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW TZWND_List REGISTERED AS TZWND_List
-   zVIEW     TZWND_List = 0; 
+   zVIEW     TZWND_List = 0;
    //:STRING ( 32 ) IncludeEntityName
-   zCHAR     IncludeEntityName[ 33 ] = { 0 }; 
+   zCHAR     IncludeEntityName[ 33 ] = { 0 };
    //:SHORT         nRC
-   zSHORT    nRC = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
+   zSHORT    nRC = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", vSubtask, zLEVEL_TASK );
@@ -1292,7 +1292,7 @@ SELECT_ReusableMenuWindow( zVIEW     vSubtask )
    //:   TZWINDOWL.ReusableDialogSelection DOES NOT EXIST
    lTempInteger_1 = CheckExistenceOfEntity( TZWINDOWL, "ReusableDialogSelection" );
    if ( lTempInteger_0 != 0 || lTempInteger_1 != 0 )
-   { 
+   {
 
       //:MessageSend( vSubtask, "", "Select Reusable Menu",
       //:             "A Dialog or Window has not been selected.",
@@ -1302,7 +1302,7 @@ SELECT_ReusableMenuWindow( zVIEW     vSubtask )
       SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    //:IncludeEntityName = TZWINDOWL.Dialog.wReusableSelectEntityName
@@ -1311,17 +1311,17 @@ SELECT_ReusableMenuWindow( zVIEW     vSubtask )
    nRC = CheckExistenceOfEntity( TZWINDOWL, IncludeEntityName );
    //:IF nRC >= 0
    if ( nRC >= 0 )
-   { 
+   {
       //:ExcludeEntity( TZWINDOWL, IncludeEntityName, zREPOS_NONE )
       ExcludeEntity( TZWINDOWL, IncludeEntityName, zREPOS_NONE );
-   } 
+   }
 
    //:END
    //:IncludeSubobjectFromSubobject( TZWINDOWL, IncludeEntityName, TZWND_List, "Window", zPOS_AFTER )
    IncludeSubobjectFromSubobject( TZWINDOWL, IncludeEntityName, TZWND_List, "Window", zPOS_AFTER );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1331,24 +1331,24 @@ SELECT_ReusableMenuWindow( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 REMOVE_DefaultMainMenu( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
 
    //:IF TZWINDOWL.DefaultReusableMainWindow EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "DefaultReusableMainWindow" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.DefaultReusableMainWindow
       RESULT = ExcludeEntity( TZWINDOWL, "DefaultReusableMainWindow", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1358,24 +1358,24 @@ REMOVE_DefaultMainMenu( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 REMOVE_ReusableSideMenu( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
 
    //:IF TZWINDOWL.ReusableSideWindow EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableSideWindow" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableSideWindow
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableSideWindow", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1385,24 +1385,24 @@ REMOVE_ReusableSideMenu( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 REMOVE_ReusableMainMenu( zVIEW     vSubtask )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", vSubtask, zLEVEL_TASK );
 
    //:IF TZWINDOWL.ReusableMainWindow EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableMainWindow" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableMainWindow
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableMainWindow", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1412,8 +1412,8 @@ REMOVE_ReusableMainMenu( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 CONVERT_ControlClassForWindow( zVIEW     ViewToWindow )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
 
@@ -1422,7 +1422,7 @@ CONVERT_ControlClassForWindow( zVIEW     ViewToWindow )
    SetAttributeFromString( TZWINDOWL, "Dialog", "wClassNameConvertType", "W" );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1432,8 +1432,8 @@ CONVERT_ControlClassForWindow( zVIEW     ViewToWindow )
 zOPER_EXPORT zSHORT OPERATION
 CONVERT_ControlClassForDialog( zVIEW     ViewToWindow )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
 
@@ -1442,7 +1442,7 @@ CONVERT_ControlClassForDialog( zVIEW     ViewToWindow )
    SetAttributeFromString( TZWINDOWL, "Dialog", "wClassNameConvertType", "D" );
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -1454,15 +1454,15 @@ static zSHORT
 o_CONVERT_ClassNamesRecursive( zVIEW     vDialogRoot,
                                zVIEW     vControl )
 {
-   zCHAR     OriginalClassName[ 33 ] = { 0 }; 
+   zCHAR     OriginalClassName[ 33 ] = { 0 };
    //:STRING ( 32 ) NewClassName
-   zCHAR     NewClassName[ 33 ] = { 0 }; 
+   zCHAR     NewClassName[ 33 ] = { 0 };
    //:STRING ( 256 ) CSS_Class
-   zCHAR     CSS_Class[ 257 ] = { 0 }; 
+   zCHAR     CSS_Class[ 257 ] = { 0 };
    //:SHORT  nReplaceCnt
-   zSHORT    nReplaceCnt = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zSHORT    nReplaceCnt = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
 
    //:// Convert the Control Class Names.
@@ -1473,7 +1473,7 @@ o_CONVERT_ClassNamesRecursive( zVIEW     vDialogRoot,
    //:FOR EACH vControl.Control
    RESULT = SetCursorFirstEntity( vControl, "Control", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:CSS_Class = vControl.Control.CSS_Class
       GetVariableFromAttribute( CSS_Class, 0, 'S', 257, vControl, "Control", "CSS_Class", "", 0 );
       //:nReplaceCnt = zSearchAndReplaceWord( CSS_Class, 256,
@@ -1482,32 +1482,32 @@ o_CONVERT_ClassNamesRecursive( zVIEW     vDialogRoot,
       nReplaceCnt = zSearchAndReplaceWord( CSS_Class, 256, OriginalClassName, NewClassName, "" );
       //:IF nReplaceCnt > 0
       if ( nReplaceCnt > 0 )
-      { 
+      {
          //:vControl.Control.CSS_Class = CSS_Class
          SetAttributeFromString( vControl, "Control", "CSS_Class", CSS_Class );
-      } 
+      }
 
       //:END
       //:IF vControl.CtrlCtrl EXISTS
       lTempInteger_0 = CheckExistenceOfEntity( vControl, "CtrlCtrl" );
       if ( lTempInteger_0 == 0 )
-      { 
+      {
          //:SetViewToSubobject( vControl, "CtrlCtrl" )
          SetViewToSubobject( vControl, "CtrlCtrl" );
          //:CONVERT_ClassNamesRecursive( vDialogRoot, vControl )
          o_CONVERT_ClassNamesRecursive( vDialogRoot, vControl );
          //:ResetViewFromSubobject( vControl )
          ResetViewFromSubobject( vControl );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vControl, "Control", "" );
       //:END
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1517,27 +1517,27 @@ o_CONVERT_ClassNamesRecursive( zVIEW     vDialogRoot,
 zOPER_EXPORT zSHORT OPERATION
 REMOVE_ReusableMenuActions( zVIEW     ViewToWindow )
 {
-   zVIEW     TZWINDOWL = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZWINDOWL = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZWINDOWL, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
 
    //:IF TZWINDOWL.ReusableActionWindow EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( TZWINDOWL, "ReusableActionWindow" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:EXCLUDE TZWINDOWL.ReusableActionWindow
       RESULT = ExcludeEntity( TZWINDOWL, "ReusableActionWindow", zREPOS_AFTER );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif

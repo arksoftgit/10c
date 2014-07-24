@@ -1,14 +1,14 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "TZ__OPRS.H" 
-#include "tzlodopr.h" 
-#include "ZDRVROPR.H" 
- 
+#include "KZOENGAA.H"
+#include "TZ__OPRS.H"
+#include "tzlodopr.h"
+#include "ZDRVROPR.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 static zSHORT
@@ -87,19 +87,19 @@ oTZWDLGSO_CloneActMap( zVIEW     vSourceLPLR,
                        zVIEW     vNewW,
                        zVIEW     vSubtask )
 {
-   zVIEW     vLOD = 0; 
+   zVIEW     vLOD = 0;
    //:VIEW LOD_List   BASED ON LOD TZCMLPLO
-   zVIEW     LOD_List = 0; 
+   zVIEW     LOD_List = 0;
    //:INTEGER       nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
    //:STRING ( 64 ) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    RESULT;
+   zCHAR     szTempString_1[ 33 ];
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
 
 
    //:CreateMetaEntity( vSubtask, vNewW, "ActMap", zPOS_AFTER )
@@ -112,14 +112,14 @@ oTZWDLGSO_CloneActMap( zVIEW     vSourceLPLR,
    //:IF CheckExistenceOfEntity( vOrigW, "ActMapView" ) >= 0
    lTempInteger_0 = CheckExistenceOfEntity( vOrigW, "ActMapView" );
    if ( lTempInteger_0 >= 0 )
-   { 
+   {
       //:nRC = PositionOnVOR( vNewW, vOrigW,
       //:                     vSourceLPLR, vOrigW.ActMapView.Name, vSubtask )
       GetStringFromAttribute( szTempString_0, vOrigW, "ActMapView", "Name" );
       nRC = oTZWDLGSO_PositionOnVOR( vNewW, vOrigW, vSourceLPLR, szTempString_0, vSubtask );
       //:IF nRC >= 0
       if ( nRC >= 0 )
-      { 
+      {
 
          //:// We are now positioned on the correct ViewObjRef.  Create
          //:// the relationship from ActMap to ViewObjRef.
@@ -127,12 +127,12 @@ oTZWDLGSO_CloneActMap( zVIEW     vSourceLPLR,
          //:                               vNewW, "ViewObjRef", zPOS_AFTER )
          IncludeSubobjectFromSubobject( vNewW, "ActMapView", vNewW, "ViewObjRef", zPOS_AFTER );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       //:END
 
@@ -147,10 +147,10 @@ oTZWDLGSO_CloneActMap( zVIEW     vSourceLPLR,
       //:IF GetViewByName( vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK ) > 0
       lTempInteger_1 = GetViewByName( &vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK );
       if ( lTempInteger_1 > 0 )
-      { 
+      {
          //:DropMetaOI( vSubtask, vLOD )
          DropMetaOI( vSubtask, vLOD );
-      } 
+      }
 
       //:END
       //:ActivateMetaOI( vSubtask, vLOD, LOD_List, zREFER_LOD_META, zSINGLE )
@@ -164,7 +164,7 @@ oTZWDLGSO_CloneActMap( zVIEW     vSourceLPLR,
       //:IF CheckExistenceOfEntity( vOrigW, "ActMapLOD_Entity" ) >= 0
       lTempInteger_2 = CheckExistenceOfEntity( vOrigW, "ActMapLOD_Entity" );
       if ( lTempInteger_2 >= 0 )
-      { 
+      {
          //:// We assume position on the correct LOD from the ActMapView.
          //:SET CURSOR FIRST vLOD.LOD_Entity
          //:    WHERE  vLOD.LOD_Entity.Name = vOrigW.ActMapLOD_Entity.Name
@@ -172,16 +172,16 @@ oTZWDLGSO_CloneActMap( zVIEW     vSourceLPLR,
          RESULT = SetCursorFirstEntityByString( vLOD, "LOD_Entity", "Name", szTempString_1, "" );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:// Include Entity
             //:IncludeSubobjectFromSubobject( vNewW, "ActMapLOD_Entity",
             //:                               vLOD,  "LOD_Entity", zPOS_AFTER )
             IncludeSubobjectFromSubobject( vNewW, "ActMapLOD_Entity", vLOD, "LOD_Entity", zPOS_AFTER );
 
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:szMsg ="LOD_Entity doesn't exist: " + vOrigW.ActMapLOD_Entity.Name
             GetVariableFromAttribute( szTempString_1, 0, 'S', 33, vOrigW, "ActMapLOD_Entity", "Name", "", 0 );
             ZeidonStringCopy( szMsg, 1, 0, "LOD_Entity doesn't exist: ", 1, 0, 65 );
@@ -189,28 +189,28 @@ oTZWDLGSO_CloneActMap( zVIEW     vSourceLPLR,
             //:MessageSend( vSubtask, "WD00214", "Dialog Clone",
             //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
             MessageSend( vSubtask, "WD00214", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:// Get the last vLOD  View, if not ActMapView.
       //:GetViewByName( vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK )
       GetViewByName( &vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK );
-   } 
+   }
 
    //:END
 
    //:RETURN  0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -226,16 +226,16 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
                        zVIEW     vNewW,
                        zVIEW     vSubtask )
 {
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
    //:INTEGER   nLength
-   zLONG     nLength = 0; 
+   zLONG     nLength = 0;
    //:STRING(1) szLanguageType
-   zCHAR     szLanguageType[ 2 ] = { 0 }; 
+   zCHAR     szLanguageType[ 2 ] = { 0 };
    //:STRING(32) szSourceName
-   zCHAR     szSourceName[ 33 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_0; 
+   zCHAR     szSourceName[ 33 ] = { 0 };
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_0;
 
 
    //:// Simply return if an Action by the same name already exists.
@@ -244,22 +244,22 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
    RESULT = SetCursorFirstEntityByString( vNewW, "Action", "Tag", szTempString_0, "" );
    //:IF RESULT >= zCURSOR_SET
    if ( RESULT >= zCURSOR_SET )
-   { 
+   {
       //:RETURN 0
       return( 0 );
-   } 
+   }
 
    //:END
 
    //:IF vOrigW.Action.Tag != ""
    if ( CompareAttributeToString( vOrigW, "Action", "Tag", "" ) != 0 )
-   { 
+   {
       //:CreateMetaEntity( vSubtask, vNewW, "Action", zPOS_AFTER )
       CreateMetaEntity( vSubtask, vNewW, "Action", zPOS_AFTER );
       //:SetMatchingAttributesByName( vNewW,  "Action",
       //:                             vOrigW, "Action", zSET_NULL )
       SetMatchingAttributesByName( vNewW, "Action", vOrigW, "Action", zSET_NULL );
-   } 
+   }
 
    //:END
 
@@ -267,19 +267,19 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
    //:FOR EACH vOrigW.ActMap
    RESULT = SetCursorFirstEntity( vOrigW, "ActMap", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:nRC = CloneActMap( vSourceLPLR, vOrigW, vNewW, vSubtask )
       nRC = oTZWDLGSO_CloneActMap( vSourceLPLR, vOrigW, vNewW, vSubtask );
       //:IF nRC = -1
       if ( nRC == -1 )
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigW, "ActMap", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -289,14 +289,14 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
    //:IF vOrigW.ActOper EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( vOrigW, "ActOper" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST vNewW.Operation WITHIN vNewW.Dialog WHERE
       //:                 vNewW.Operation.Name = vOrigW.ActOper.Name
       GetStringFromAttribute( szTempString_0, vOrigW, "ActOper", "Name" );
       RESULT = SetCursorFirstEntityByString( vNewW, "Operation", "Name", szTempString_0, "Dialog" );
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      { 
+      {
          //:// Add the Operation under the SourceFile entity.  Look at the SourceFile of
          //:// the original Dialog to determine if type is C or VML and add the operation
          //:// to the correct SourceFile entry.  If one doesn't exist, create it.
@@ -311,7 +311,7 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
          RESULT = SetCursorFirstEntityByString( vNewW, "SourceFile", "LanguageType", szLanguageType, "" );
          //:IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         { 
+         {
             //: // There was no SourceFileEntry of correct language type.
             //: // Add one, but make sure name is unique.
             //: szSourceName = vNewW.Dialog.Tag
@@ -321,21 +321,21 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
             RESULT = SetCursorFirstEntityByString( vNewW, "SourceFile", "Name", szSourceName, "" );
             //: IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //: // A SourceFile entity by dialog name already exists. Modify name.
                //: nLength = GetStringLength( szSourceName )
                nLength = GetStringLength( szSourceName );
                //: IF nLength >= 8
                if ( nLength >= 8 )
-               { 
+               {
                   //: szSourceName = szSourceName[1:7]
                   ZeidonStringCopy( szSourceName, 1, 0, szSourceName, 1, 7, 33 );
-               } 
+               }
 
                //: END
                //: szSourceName = szSourceName + szLanguageType
                ZeidonStringConcat( szSourceName, 1, 0, szLanguageType, 1, 0, 33 );
-            } 
+            }
 
             //: END
             //: CreateMetaEntity( vSubtask, vNewW, "SourceFile", zPOS_AFTER )
@@ -346,19 +346,19 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
             SetAttributeFromString( vNewW, "SourceFile", "LanguageType", szLanguageType );
             //:  IF szLanguageType = "V"
             if ( ZeidonStringCompare( szLanguageType, 1, 0, "V", 1, 0, 2 ) == 0 )
-            { 
+            {
                //:  vNewW.SourceFile.Extension = "VML"
                SetAttributeFromString( vNewW, "SourceFile", "Extension", "VML" );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:  vNewW.SourceFile.Extension = "C"
                SetAttributeFromString( vNewW, "SourceFile", "Extension", "C" );
-            } 
+            }
 
             //:  END
-         } 
+         }
 
          //:END
 
@@ -370,23 +370,23 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
          //:FOR EACH vOrigW.Parameter
          RESULT = SetCursorFirstEntity( vOrigW, "Parameter", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         { 
+         {
             //: CreateMetaEntity( vSubtask, vNewW, "Parameter", zPOS_AFTER )
             CreateMetaEntity( vSubtask, vNewW, "Parameter", zPOS_AFTER );
             //: SetMatchingAttributesByName( vNewW,  "Parameter",
             //:                              vOrigW, "Parameter", zSET_NULL )
             SetMatchingAttributesByName( vNewW, "Parameter", vOrigW, "Parameter", zSET_NULL );
             RESULT = SetCursorNextEntity( vOrigW, "Parameter", "" );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
       //:// Include the Operation in either case above.
       //:INCLUDE vNewW.ActOper FROM vNewW.Operation
       RESULT = IncludeSubobjectFromSubobject( vNewW, "ActOper", vNewW, "Operation", zPOS_AFTER );
-   } 
+   }
 
 
    //:END
@@ -394,7 +394,7 @@ oTZWDLGSO_CloneAction( zVIEW     vSourceLPLR,
    //:RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -416,14 +416,14 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
                         zVIEW     vPE,
                         zVIEW     vSubtask )
 {
-   zCHAR     szMsg[ 65 ] = { 0 }; 
+   zCHAR     szMsg[ 65 ] = { 0 };
    //:INTEGER nRC
-   zLONG     nRC = 0; 
-   zSHORT    RESULT; 
-   zLONG     lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zLONG     lTempInteger_1; 
-   zCHAR     szTempString_1[ 33 ]; 
+   zLONG     nRC = 0;
+   zSHORT    RESULT;
+   zLONG     lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
+   zLONG     lTempInteger_1;
+   zCHAR     szTempString_1[ 33 ];
 
 
    //:CreateMetaEntity( vSubtask, vNewWC, "Control", zPOS_AFTER )
@@ -437,34 +437,34 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
    RESULT = SetCursorFirstEntityByInteger( vPE, "ControlDef", "Key", lTempInteger_0, "" );
    //:IF RESULT < 0
    if ( RESULT < 0 )
-   { 
+   {
       //:SET CURSOR FIRST vPE.ControlDef WHERE
       //:                 vPE.ControlDef.Tag = vOrigWC.ControlDef.Tag
       GetStringFromAttribute( szTempString_0, vOrigWC, "ControlDef", "Tag" );
       RESULT = SetCursorFirstEntityByString( vPE, "ControlDef", "Tag", szTempString_0, "" );
       //:IF RESULT < 0
       if ( RESULT < 0 )
-      { 
+      {
          //:SET CURSOR FIRST vPE.ControlDef WHERE
          //:                 vPE.ControlDef.Key = vOrigWC.ControlDef.ZKey
          GetIntegerFromAttribute( &lTempInteger_1, vOrigWC, "ControlDef", "ZKey" );
          RESULT = SetCursorFirstEntityByInteger( vPE, "ControlDef", "Key", lTempInteger_1, "" );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   { 
+   {
       //:IncludeSubobjectFromSubobject( vNewWC, "ControlDef",
       //:                               vPE,   "ControlDef", zPOS_AFTER )
       IncludeSubobjectFromSubobject( vNewWC, "ControlDef", vPE, "ControlDef", zPOS_AFTER );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:szMsg ="ControlDef doesn't exist: " + vOrigWC.ControlDef.Tag
       GetVariableFromAttribute( szTempString_0, 0, 'S', 33, vOrigWC, "ControlDef", "Tag", "", 0 );
       ZeidonStringCopy( szMsg, 1, 0, "ControlDef doesn't exist: ", 1, 0, 65 );
@@ -472,7 +472,7 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
       //:MessageSend( vSubtask, "WD00204", "Dialog Clone",
       //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
       MessageSend( vSubtask, "WD00204", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-   } 
+   }
 
    //:END
 
@@ -530,7 +530,7 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
    //:FOR EACH vOrigWC.CtrlCtrl
    RESULT = SetCursorFirstEntity( vOrigWC, "CtrlCtrl", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SetViewToSubobject( vOrigWC, "CtrlCtrl" )
       SetViewToSubobject( vOrigWC, "CtrlCtrl" );
       //:SetViewToSubobject( vNewWC, "CtrlCtrl" )
@@ -543,14 +543,14 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
       ResetViewFromSubobject( vNewWC );
       //:IF nRC = -1
       if ( nRC == -1 )
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigWC, "CtrlCtrl", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -560,19 +560,19 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
    //:FOR EACH vOrigWC.CtrlMap
    RESULT = SetCursorFirstEntity( vOrigWC, "CtrlMap", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:nRC = CloneCtrlMap( vNewW, vNewWC, vOrigW, vOrigWC, vSourceLPLR, vSubtask )
       nRC = oTZWDLGSO_CloneCtrlMap( vNewW, vNewWC, vOrigW, vOrigWC, vSourceLPLR, vSubtask );
       //:IF nRC = -1
       if ( nRC == -1 )
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigWC, "CtrlMap", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -580,10 +580,10 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
    //:FOR EACH vOrigWC.Event
    RESULT = SetCursorFirstEntity( vOrigWC, "Event", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:IF vOrigWC.EventAct.Tag != ""
       if ( CompareAttributeToString( vOrigWC, "EventAct", "Tag", "" ) != 0 )
-      { 
+      {
          //:CreateMetaEntity( vSubtask, vNewWC, "Event", zPOS_AFTER )
          CreateMetaEntity( vSubtask, vNewWC, "Event", zPOS_AFTER );
          //:SetMatchingAttributesByName( vNewWC, "Event",
@@ -595,39 +595,39 @@ oTZWDLGSO_CloneControl( zVIEW     vSourceLPLR,
          RESULT = SetCursorFirstEntityByString( vNewW, "Action", "Tag", szTempString_1, "" );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IncludeSubobjectFromSubobject( vNewWC, "EventAct",
             //:                               vNewW, "Action", zPOS_AFTER )
             IncludeSubobjectFromSubobject( vNewWC, "EventAct", vNewW, "Action", zPOS_AFTER );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigWC, "Event", "" );
       //:END
-   } 
+   }
 
    //:END
 
-   //:FOR EACH vOrigWC.WebControlProperty  
+   //:FOR EACH vOrigWC.WebControlProperty
    RESULT = SetCursorFirstEntity( vOrigWC, "WebControlProperty", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:CreateMetaEntity( vSubtask, vNewWC, "WebControlProperty", zPOS_AFTER )
       CreateMetaEntity( vSubtask, vNewWC, "WebControlProperty", zPOS_AFTER );
       //:SetMatchingAttributesByName( vNewWC, "WebControlProperty",
       //:                             vOrigWC, "WebControlProperty", zSET_NULL )
       SetMatchingAttributesByName( vNewWC, "WebControlProperty", vOrigWC, "WebControlProperty", zSET_NULL );
       RESULT = SetCursorNextEntity( vOrigWC, "WebControlProperty", "" );
-   } 
+   }
 
    //:END
 
    //:RETURN  0
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -647,21 +647,21 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
                         zVIEW     vSourceLPLR,
                         zVIEW     vSubtask )
 {
-   zVIEW     vLOD = 0; 
+   zVIEW     vLOD = 0;
    //:VIEW LOD_List   BASED ON LOD TZCMLPLO
-   zVIEW     LOD_List = 0; 
+   zVIEW     LOD_List = 0;
    //:INTEGER       nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
    //:STRING ( 64 ) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zSHORT    lTempInteger_3; 
-   zCHAR     szTempString_2[ 33 ]; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    RESULT;
+   zCHAR     szTempString_1[ 33 ];
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zSHORT    lTempInteger_3;
+   zCHAR     szTempString_2[ 33 ];
 
 
    //:CreateMetaEntity( vSubtask, vNewWC, "CtrlMap", zPOS_AFTER )
@@ -676,14 +676,14 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
    //:IF CheckExistenceOfEntity( vOrigWC, "CtrlMapView" ) >= 0
    lTempInteger_0 = CheckExistenceOfEntity( vOrigWC, "CtrlMapView" );
    if ( lTempInteger_0 >= 0 )
-   { 
+   {
       //:nRC = PositionOnVOR( vNewW, vOrigW, vSourceLPLR,
       //:                     vOrigWC.CtrlMapView.Name, vSubtask )
       GetStringFromAttribute( szTempString_0, vOrigWC, "CtrlMapView", "Name" );
       nRC = oTZWDLGSO_PositionOnVOR( vNewW, vOrigW, vSourceLPLR, szTempString_0, vSubtask );
       //:IF nRC >= 0
       if ( nRC >= 0 )
-      { 
+      {
 
          //:// We are now positioned on the correct ViewObjRef.  Create
          //:// the relationship from CtrlMap to ViewObjRef.
@@ -691,12 +691,12 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
          //:                               vNewW, "ViewObjRef", zPOS_AFTER )
          IncludeSubobjectFromSubobject( vNewWC, "CtrlMapView", vNewW, "ViewObjRef", zPOS_AFTER );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       //:END
       //:RetrieveViewForMetaList( vSubtask, LOD_List, zREFER_LOD_META )
@@ -709,10 +709,10 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
       //:IF GetViewByName( vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK ) > 0
       lTempInteger_1 = GetViewByName( &vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK );
       if ( lTempInteger_1 > 0 )
-      { 
+      {
          //:DropMetaOI( vSubtask, vLOD )
          DropMetaOI( vSubtask, vLOD );
-      } 
+      }
 
       //:END
       //:ActivateMetaOI( vSubtask, vLOD, LOD_List, zREFER_LOD_META, zSINGLE )
@@ -721,7 +721,7 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
       SetNameForView( vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK );
       //:DropView( LOD_List )
       DropView( LOD_List );
-   } 
+   }
 
    //:END
 
@@ -729,7 +729,7 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
    //:IF CheckExistenceOfEntity( vOrigWC, "CtrlMapLOD_Entity" ) >= 0
    lTempInteger_2 = CheckExistenceOfEntity( vOrigWC, "CtrlMapLOD_Entity" );
    if ( lTempInteger_2 >= 0 )
-   { 
+   {
       //:// The View for the last MapView entity was named TZTMPLOD.
       //:GetViewByName( vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK )
       GetViewByName( &vLOD, "TZTMPLOD", vSubtask, zLEVEL_TASK );
@@ -739,14 +739,14 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
       RESULT = SetCursorFirstEntityByString( vLOD, "LOD_Entity", "Name", szTempString_1, "" );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:IncludeSubobjectFromSubobject( vNewWC, "CtrlMapLOD_Entity",
          //:                               vLOD,  "LOD_Entity", zPOS_AFTER )
          IncludeSubobjectFromSubobject( vNewWC, "CtrlMapLOD_Entity", vLOD, "LOD_Entity", zPOS_AFTER );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:szMsg ="LOD_Entity doesn't exist: " + vOrigWC.CtrlMapLOD_Entity.Name
          GetVariableFromAttribute( szTempString_1, 0, 'S', 33, vOrigWC, "CtrlMapLOD_Entity", "Name", "", 0 );
          ZeidonStringCopy( szMsg, 1, 0, "LOD_Entity doesn't exist: ", 1, 0, 65 );
@@ -754,10 +754,10 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
          //:MessageSend( vSubtask, "WD00209", "Control Clone",
          //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
          MessageSend( vSubtask, "WD00209", "Control Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
@@ -765,7 +765,7 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
    //:IF CheckExistenceOfEntity( vOrigWC, "CtrlMapLOD_Attribute" ) >= 0
    lTempInteger_3 = CheckExistenceOfEntity( vOrigWC, "CtrlMapLOD_Attribute" );
    if ( lTempInteger_3 >= 0 )
-   { 
+   {
       //:// We assume position on the correct LOD from the CtrlMapView.
       //:SET CURSOR FIRST vLOD.LOD_Entity
       //:    WHERE  vLOD.LOD_Entity.Name = vOrigWC.CtrlMapRelatedEntity.Name
@@ -773,14 +773,14 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
       RESULT = SetCursorFirstEntityByString( vLOD, "LOD_Entity", "Name", szTempString_2, "" );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:// Include Attribute and Context, if necessary.
          //:CtrlAttributeMapping( vSubtask, vSourceLPLR, vOrigWC, vNewWC, vLOD )
          oTZWDLGSO_CtrlAttributeMapping( vSubtask, vSourceLPLR, vOrigWC, vNewWC, vLOD );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:szMsg ="LOD_Entity doesn't exist: " + vOrigWC.CtrlMapRelatedEntity.Name
          GetVariableFromAttribute( szTempString_2, 0, 'S', 33, vOrigWC, "CtrlMapRelatedEntity", "Name", "", 0 );
          ZeidonStringCopy( szMsg, 1, 0, "LOD_Entity doesn't exist: ", 1, 0, 65 );
@@ -788,17 +788,17 @@ oTZWDLGSO_CloneCtrlMap( zVIEW     vNewW,
          //:MessageSend( vSubtask, "WD00210", "Control Clone",
          //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
          MessageSend( vSubtask, "WD00210", "Control Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
    //:RETURN  0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -814,21 +814,21 @@ oTZWDLGSO_CloneMenuAndOptions( zVIEW     vSourceLPLR,
                                zVIEW     vNewW,
                                zVIEW     vSubtask )
 {
-   zVIEW     vNewWO = 0; 
+   zVIEW     vNewWO = 0;
    //:VIEW vOrigWO BASED ON LOD TZWDLGSO
-   zVIEW     vOrigWO = 0; 
+   zVIEW     vOrigWO = 0;
    //:INTEGER nRC
-   zLONG     nRC = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
+   zLONG     nRC = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
 
 
    //:// Create Menu & Options if Menu exists.
    //:FOR EACH vOrigW.Menu
    RESULT = SetCursorFirstEntity( vOrigW, "Menu", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:CreateMetaEntity( vSubtask, vNewW, "Menu", zPOS_AFTER )
       CreateMetaEntity( vSubtask, vNewW, "Menu", zPOS_AFTER );
       //:SetMatchingAttributesByName( vNewW,  "Menu",
@@ -851,30 +851,30 @@ oTZWDLGSO_CloneMenuAndOptions( zVIEW     vSourceLPLR,
       //:FOR EACH vOrigWO.Option
       RESULT = SetCursorFirstEntity( vOrigWO, "Option", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
          //:nRC = CloneOption( vNewWO, vNewW, vOrigWO, vOrigW, vSourceLPLR, vSubtask )
          nRC = oTZWDLGSO_CloneOption( vNewWO, vNewW, vOrigWO, vOrigW, vSourceLPLR, vSubtask );
          //:IF nRC = -1
          if ( nRC == -1 )
-         { 
+         {
             //:RETURN -1
             return( -1 );
-         } 
+         }
 
          RESULT = SetCursorNextEntity( vOrigWO, "Option", "" );
          //:END
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigW, "Menu", "" );
       //:END
-   } 
+   }
 
    //:END
    //:// Set Default Menu, if it exists.
    //:IF CheckExistenceOfEntity( vOrigW, "DfltMenu" ) = zCURSOR_SET
    lTempInteger_0 = CheckExistenceOfEntity( vOrigW, "DfltMenu" );
    if ( lTempInteger_0 == zCURSOR_SET )
-   { 
+   {
       //:SET CURSOR FIRST vNewW.Menu
       //:              WHERE vNewW.Menu.Tag = vOrigW.DfltMenu.Tag
       GetStringFromAttribute( szTempString_0, vOrigW, "DfltMenu", "Tag" );
@@ -882,14 +882,14 @@ oTZWDLGSO_CloneMenuAndOptions( zVIEW     vSourceLPLR,
       //:IncludeSubobjectFromSubobject( vNewW, "DfltMenu",
       //:                               vNewW, "Menu", zPOS_AFTER )
       IncludeSubobjectFromSubobject( vNewW, "DfltMenu", vNewW, "Menu", zPOS_AFTER );
-   } 
+   }
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -909,18 +909,18 @@ oTZWDLGSO_CloneOptMap( zVIEW     vSourceLPLR,
                        zVIEW     vNewWO,
                        zVIEW     vSubtask )
 {
-   zVIEW     vLOD = 0; 
+   zVIEW     vLOD = 0;
    //:VIEW LOD_List   BASED ON LOD TZCMLPLO
-   zVIEW     LOD_List = 0; 
+   zVIEW     LOD_List = 0;
    //:INTEGER       nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
    //:STRING ( 64 ) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zSHORT    lTempInteger_1; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    RESULT;
+   zCHAR     szTempString_1[ 33 ];
+   zSHORT    lTempInteger_1;
 
 
    //:CreateMetaEntity( vSubtask, vNewWO, "OptMap", zPOS_AFTER )
@@ -939,14 +939,14 @@ oTZWDLGSO_CloneOptMap( zVIEW     vSourceLPLR,
    //:IF CheckExistenceOfEntity( vOrigWO, "OptMapView" ) >= 0
    lTempInteger_0 = CheckExistenceOfEntity( vOrigWO, "OptMapView" );
    if ( lTempInteger_0 >= 0 )
-   { 
+   {
       //:nRC = PositionOnVOR( vNewW, vOrigW, vSourceLPLR,
       //:                     vOrigWO.OptMapView.Name, vSubtask )
       GetStringFromAttribute( szTempString_0, vOrigWO, "OptMapView", "Name" );
       nRC = oTZWDLGSO_PositionOnVOR( vNewW, vOrigW, vSourceLPLR, szTempString_0, vSubtask );
       //:IF nRC >= 0
       if ( nRC >= 0 )
-      { 
+      {
 
          //:// We are now positioned on the correct ViewObjRef.  Create
          //:// the relationship from OptMap to ViewObjRef.
@@ -954,12 +954,12 @@ oTZWDLGSO_CloneOptMap( zVIEW     vSourceLPLR,
          //:                               vNewW, "ViewObjRef", zPOS_AFTER )
          IncludeSubobjectFromSubobject( vNewWO, "OptMapView", vNewW, "ViewObjRef", zPOS_AFTER );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       //:END
 
@@ -973,7 +973,7 @@ oTZWDLGSO_CloneOptMap( zVIEW     vSourceLPLR,
       ActivateMetaOI( vSubtask, &vLOD, LOD_List, zREFER_LOD_META, zSINGLE );
       //:DropView( LOD_List )
       DropView( LOD_List );
-   } 
+   }
 
    //:END
 
@@ -981,7 +981,7 @@ oTZWDLGSO_CloneOptMap( zVIEW     vSourceLPLR,
    //:IF CheckExistenceOfEntity( vOrigWO, "OptMapLOD_Attribute" ) >= 0
    lTempInteger_1 = CheckExistenceOfEntity( vOrigWO, "OptMapLOD_Attribute" );
    if ( lTempInteger_1 >= 0 )
-   { 
+   {
       //:// We assume position on the correct LOD from the OptMapView
       //:SET CURSOR FIRST vLOD.LOD_Entity
       //:    WHERE  vLOD.LOD_Entity.Name = vOrigWO.OptMapRelatedEntity.Name
@@ -989,14 +989,14 @@ oTZWDLGSO_CloneOptMap( zVIEW     vSourceLPLR,
       RESULT = SetCursorFirstEntityByString( vLOD, "LOD_Entity", "Name", szTempString_1, "" );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:// Include Attribute and Context, if necessary.
          //:OptAttributeMapping( vSubtask, vSourceLPLR, vOrigWO, vNewWO, vLOD )
          oTZWDLGSO_OptAttributeMapping( vSubtask, vSourceLPLR, vOrigWO, vNewWO, vLOD );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:szMsg ="LOD_Entity doesn't exist: " + vOrigWO.OptMapRelatedEntity.Name
          GetVariableFromAttribute( szTempString_1, 0, 'S', 33, vOrigWO, "OptMapRelatedEntity", "Name", "", 0 );
          ZeidonStringCopy( szMsg, 1, 0, "LOD_Entity doesn't exist: ", 1, 0, 65 );
@@ -1006,26 +1006,26 @@ oTZWDLGSO_CloneOptMap( zVIEW     vSourceLPLR,
          MessageSend( vSubtask, "WD00215", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
    //:IF vLOD != 0
    if ( vLOD != 0 )
-   { 
+   {
       //:DropMetaOI( vSubtask, vLOD )
       DropMetaOI( vSubtask, vLOD );
-   } 
+   }
 
    //:END
 
    //:RETURN  0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -1045,11 +1045,11 @@ oTZWDLGSO_CloneOption( zVIEW     vNewWO,
                        zVIEW     vSourceLPLR,
                        zVIEW     vSubtask )
 {
-   zLONG     nRC = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zCHAR     szTempString_0[ 33 ]; 
+   zLONG     nRC = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zCHAR     szTempString_0[ 33 ];
 
 
    //:CreateMetaEntity( vSubtask, vNewWO, "Option", zPOS_AFTER )
@@ -1062,7 +1062,7 @@ oTZWDLGSO_CloneOption( zVIEW     vNewWO,
    //:FOR EACH vOrigWO.OptOpt
    RESULT = SetCursorFirstEntity( vOrigWO, "OptOpt", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SetViewToSubobject( vOrigWO, "OptOpt" )
       SetViewToSubobject( vOrigWO, "OptOpt" );
       //:SetViewToSubobject( vNewWO, "OptOpt" )
@@ -1075,14 +1075,14 @@ oTZWDLGSO_CloneOption( zVIEW     vNewWO,
       ResetViewFromSubobject( vNewWO );
       //:IF nRC = -1
       if ( nRC == -1 )
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigWO, "OptOpt", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -1090,18 +1090,18 @@ oTZWDLGSO_CloneOption( zVIEW     vNewWO,
    //:IF CheckExistenceOfEntity( vOrigWO, "OptMap" ) = zCURSOR_SET
    lTempInteger_0 = CheckExistenceOfEntity( vOrigWO, "OptMap" );
    if ( lTempInteger_0 == zCURSOR_SET )
-   { 
+   {
       //:nRC = CloneOptMap( vSourceLPLR, vOrigW, vOrigWO, vNewW, vNewWO, vSubtask )
       nRC = oTZWDLGSO_CloneOptMap( vSourceLPLR, vOrigW, vOrigWO, vNewW, vNewWO, vSubtask );
       //:IF nRC = -1
       if ( nRC == -1 )
-      { 
+      {
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
@@ -1109,34 +1109,34 @@ oTZWDLGSO_CloneOption( zVIEW     vNewWO,
    //:IF CheckExistenceOfEntity( vOrigWO, "OptAct" ) = zCURSOR_SET
    lTempInteger_1 = CheckExistenceOfEntity( vOrigWO, "OptAct" );
    if ( lTempInteger_1 == zCURSOR_SET )
-   { 
+   {
       //:IF vOrigWO.OptAct.Tag != ""
       if ( CompareAttributeToString( vOrigWO, "OptAct", "Tag", "" ) != 0 )
-      { 
+      {
          //:SET CURSOR FIRST vNewW.Action
          //:   WHERE  vNewW.Action.Tag = vOrigWO.OptAct.Tag
          GetStringFromAttribute( szTempString_0, vOrigWO, "OptAct", "Tag" );
          RESULT = SetCursorFirstEntityByString( vNewW, "Action", "Tag", szTempString_0, "" );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IncludeSubobjectFromSubobject( vNewWO, "OptAct",
             //:                               vNewW, "Action", zPOS_AFTER )
             IncludeSubobjectFromSubobject( vNewWO, "OptAct", vNewW, "Action", zPOS_AFTER );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -1152,17 +1152,17 @@ oTZWDLGSO_CloneWindow( zVIEW     vNewW,
                        zVIEW     vSourceLPLR,
                        zVIEW     vSubtask )
 {
-   zVIEW     vPE = 0; 
+   zVIEW     vPE = 0;
    //:VIEW LOD_List BASED ON LOD TZCMLPLO
-   zVIEW     LOD_List = 0; 
+   zVIEW     LOD_List = 0;
    //:STRING ( 254 ) szMsg
-   zCHAR     szMsg[ 255 ] = { 0 }; 
+   zCHAR     szMsg[ 255 ] = { 0 };
    //:SHORT          nRC
-   zSHORT    nRC = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 33 ]; 
+   zSHORT    nRC = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zCHAR     szTempString_1[ 33 ];
 
 
    //:// Get View to Presentation Environment.
@@ -1171,13 +1171,13 @@ oTZWDLGSO_CloneWindow( zVIEW     vNewW,
    //:IF GetViewByName( vPE, "TZPESRCO", vSubtask, zLEVEL_TASK ) < 0
    lTempInteger_0 = GetViewByName( &vPE, "TZPESRCO", vSubtask, zLEVEL_TASK );
    if ( lTempInteger_0 < 0 )
-   { 
+   {
       //:LoadZeidonPPE( vSubtask, vPE, zREFER_PENV_META, LOD_List,
       //:               "Configuration Management", "" )
       LoadZeidonPPE( vSubtask, &vPE, zREFER_PENV_META, LOD_List, "Configuration Management", "" );
       //:SetNameForView( vPE, "TZPESRCO", vSubtask, zLEVEL_TASK )
       SetNameForView( vPE, "TZPESRCO", vSubtask, zLEVEL_TASK );
-   } 
+   }
 
    //:END
 
@@ -1194,14 +1194,14 @@ oTZWDLGSO_CloneWindow( zVIEW     vNewW,
    RESULT = SetCursorFirstEntityByString( vPE, "WindowStyle", "Tag", szTempString_0, "" );
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   { 
+   {
       //:IncludeSubobjectFromSubobject( vNewW, "WndStyle",
       //:                               vPE, "WindowStyle", zPOS_AFTER )
       IncludeSubobjectFromSubobject( vNewW, "WndStyle", vPE, "WindowStyle", zPOS_AFTER );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:szMsg = "The Style value, '"
       ZeidonStringCopy( szMsg, 1, 0, "The Style value, '", 1, 0, 255 );
       //:szMsg = szMsg + vOrigW.WndStyle.Tag
@@ -1217,7 +1217,7 @@ oTZWDLGSO_CloneWindow( zVIEW     vNewW,
       //:MessageSend( vSubtask, "WD00201", "Dialog Clone",
       //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
       MessageSend( vSubtask, "WD00201", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-   } 
+   }
 
    //:END
 
@@ -1258,7 +1258,7 @@ oTZWDLGSO_CloneWindow( zVIEW     vNewW,
    //:RETURN  nRC
    return( nRC );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -1276,18 +1276,18 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
                                 zVIEW     vNewWC,
                                 zVIEW     vLOD )
 {
-   zVIEW     vDomain = 0; 
+   zVIEW     vDomain = 0;
    //:VIEW DomainList BASED ON LOD TZCMLPLO
-   zVIEW     DomainList = 0; 
+   zVIEW     DomainList = 0;
    //:STRING ( 64 ) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_0; 
-   zLONG     lTempInteger_1; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zCHAR     szTempString_2[ 33 ]; 
-   zCHAR     szTempString_3[ 33 ]; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_0;
+   zLONG     lTempInteger_1;
+   zCHAR     szTempString_1[ 33 ];
+   zCHAR     szTempString_2[ 33 ];
+   zCHAR     szTempString_3[ 33 ];
 
 
    //:// We assume position is already on the correct LOD_Entity.
@@ -1297,7 +1297,7 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
    RESULT = SetCursorFirstEntityByString( vLOD, "ER_Attribute", "Name", szTempString_0, "LOD_Entity" );
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   { 
+   {
       //:IncludeSubobjectFromSubobject( vNewWC, "CtrlMapLOD_Attribute",
       //:                                vLOD,  "LOD_Attribute", zPOS_AFTER )
       IncludeSubobjectFromSubobject( vNewWC, "CtrlMapLOD_Attribute", vLOD, "LOD_Attribute", zPOS_AFTER );
@@ -1305,7 +1305,7 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
       //:IF CheckExistenceOfEntity( vOrigWC, "CtrlMapContext" ) >= 0
       lTempInteger_0 = CheckExistenceOfEntity( vOrigWC, "CtrlMapContext" );
       if ( lTempInteger_0 >= 0 )
-      { 
+      {
          //:SET CURSOR FIRST vSourceLPLR.W_MetaType WHERE
          //:                 vSourceLPLR.W_MetaType.Type = 2003
          RESULT = SetCursorFirstEntityByInteger( vSourceLPLR, "W_MetaType", "Type", 2003, "" );
@@ -1321,7 +1321,7 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
          RESULT = SetCursorFirstEntityByString( DomainList, "W_MetaDef", "Name", szTempString_0, "" );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:ActivateMetaOI( vSubtask, vDomain, DomainList, zREFER_DOMAIN_META,
             //:                                                zSINGLE )
             ActivateMetaOI( vSubtask, &vDomain, DomainList, zREFER_DOMAIN_META, zSINGLE );
@@ -1332,14 +1332,14 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
             RESULT = SetCursorFirstEntityByString( vDomain, "Context", "Name", szTempString_0, "" );
             //:IF RESULT >= 0
             if ( RESULT >= 0 )
-            { 
+            {
                //:IncludeSubobjectFromSubobject( vNewWC, "CtrlMapContext",
                //:                               vDomain, "Context", zPOS_AFTER )
                IncludeSubobjectFromSubobject( vNewWC, "CtrlMapContext", vDomain, "Context", zPOS_AFTER );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:szMsg = "Context doesn't exist within Domain: " +
                //:       vOrigWC.CtrlMapContext.Name + ", " +
                //:       vSourceLPLR.W_MetaDef.Name
@@ -1352,15 +1352,15 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
                //:MessageSend( vSubtask, "WD00211", "Dialog Clone",
                //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
                MessageSend( vSubtask, "WD00211", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-            } 
+            }
 
             //:END
             //:DropMetaOI( vSubtask, vDomain )
             DropMetaOI( vSubtask, vDomain );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:szMsg = "Domain doesn't exist: " + vSourceLPLR.W_MetaDef.Name
             GetVariableFromAttribute( szTempString_2, 0, 'S', 33, vSourceLPLR, "W_MetaDef", "Name", "", 0 );
             ZeidonStringCopy( szMsg, 1, 0, "Domain doesn't exist: ", 1, 0, 65 );
@@ -1368,18 +1368,18 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
             //:MessageSend( vSubtask, "WD00212", "Dialog Clone",
             //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
             MessageSend( vSubtask, "WD00212", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-         } 
+         }
 
          //:END
          //:DropView( DomainList )
          DropView( DomainList );
-      } 
+      }
 
       //:END
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:szMsg = "ER_Attribute doesn't exist: " +
       //:        vOrigWC.CtrlMapER_Attribute.Name
       GetVariableFromAttribute( szTempString_3, 0, 'S', 33, vOrigWC, "CtrlMapER_Attribute", "Name", "", 0 );
@@ -1388,14 +1388,14 @@ oTZWDLGSO_CtrlAttributeMapping( zVIEW     vSubtask,
       //:MessageSend( vSubtask, "WD00213", "Dialog Clone",
       //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
       MessageSend( vSubtask, "WD00213", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-   } 
+   }
 
    //:END
 
    //:RETURN  0
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -1413,23 +1413,23 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
                                  zVIEW     vPE,
                                  zVIEW     vSubtask )
 {
-   zVIEW     TZDLG_List = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZDLG_List = 0;
+   zSHORT    RESULT;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
+   zVIEW     TZWND_List = 0;
    //:VIEW vNewWC     BASED ON LOD  TZWDLGSO
-   zVIEW     vNewWC = 0; 
+   zVIEW     vNewWC = 0;
    //:VIEW vOrigWC    BASED ON LOD  TZWDLGSO
-   zVIEW     vOrigWC = 0; 
+   zVIEW     vOrigWC = 0;
    //:VIEW vTempNewW  BASED ON LOD  TZWDLGSO
-   zVIEW     vTempNewW = 0; 
+   zVIEW     vTempNewW = 0;
    //:VIEW vTempOrigW BASED ON LOD  TZWDLGSO
-   zVIEW     vTempOrigW = 0; 
+   zVIEW     vTempOrigW = 0;
    //:INTEGER nRC
-   zLONG     nRC = 0; 
-   zLONG     lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_1; 
+   zLONG     nRC = 0;
+   zLONG     lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_1;
 
    RESULT = GetViewByName( &TZDLG_List, "TZCMLPLO", vNewW, zLEVEL_TASK );
 
@@ -1452,23 +1452,23 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
    //:FOR EACH vOrigW.Action
    RESULT = SetCursorFirstEntity( vOrigW, "Action", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:nRC = CloneAction( vSourceLPLR, vOrigW, vNewW, vSubtask )
       nRC = oTZWDLGSO_CloneAction( vSourceLPLR, vOrigW, vNewW, vSubtask );
       //:IF nRC = -1
       if ( nRC == -1 )
-      { 
+      {
          //:DropView( vNewWC )
          DropView( vNewWC );
          //:DropView( vOrigWC )
          DropView( vOrigWC );
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigW, "Action", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -1476,23 +1476,23 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
    //:FOR EACH vOrigWC.Control
    RESULT = SetCursorFirstEntity( vOrigWC, "Control", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:nRC = CloneControl( vSourceLPLR, vOrigW, vOrigWC, vNewW, vNewWC, vPE, vSubtask )
       nRC = oTZWDLGSO_CloneControl( vSourceLPLR, vOrigW, vOrigWC, vNewW, vNewWC, vPE, vSubtask );
       //:IF nRC = -1
       if ( nRC == -1 )
-      { 
+      {
          //:DropView( vNewWC )
          DropView( vNewWC );
          //:DropView( vOrigWC )
          DropView( vOrigWC );
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigWC, "Control", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -1502,14 +1502,14 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
    //:FOR EACH vOrigW.WndEvent
    RESULT = SetCursorFirstEntity( vOrigW, "WndEvent", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST vTempNewW.WndEvent
       //:                  WHERE vTempNewW.WndEvent.Type = vOrigW.WndEvent.Type
       GetIntegerFromAttribute( &lTempInteger_0, vOrigW, "WndEvent", "Type" );
       RESULT = SetCursorFirstEntityByInteger( vTempNewW, "WndEvent", "Type", lTempInteger_0, "" );
       //:IF RESULT < 0 AND vOrigW.WndAct.Tag != ""
       if ( RESULT < 0 && CompareAttributeToString( vOrigW, "WndAct", "Tag", "" ) != 0 )
-      { 
+      {
          //:CreateMetaEntity( vSubtask, vNewW, "WndEvent", zPOS_AFTER )
          CreateMetaEntity( vSubtask, vNewW, "WndEvent", zPOS_AFTER );
          //:SetMatchingAttributesByName( vNewW,  "WndEvent",
@@ -1521,18 +1521,18 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
          RESULT = SetCursorFirstEntityByString( vNewW, "Action", "Tag", szTempString_0, "" );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:IncludeSubobjectFromSubobject( vNewW, "WndAct",
             //:                               vNewW, "Action", zPOS_AFTER )
             IncludeSubobjectFromSubobject( vNewW, "WndAct", vNewW, "Action", zPOS_AFTER );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigW, "WndEvent", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -1541,7 +1541,7 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
    nRC = oTZWDLGSO_CloneMenuAndOptions( vSourceLPLR, vOrigW, vNewW, vSubtask );
    //:IF nRC = -1
    if ( nRC == -1 )
-   { 
+   {
       //:DropView( vNewWC )
       DropView( vNewWC );
       //:DropView( vOrigWC )
@@ -1550,7 +1550,7 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
       DropView( vTempNewW );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -1564,21 +1564,21 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
    //:FOR EACH vOrigW.Hotkey
    RESULT = SetCursorFirstEntity( vOrigW, "Hotkey", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:IF CheckExistenceOfEntity( vOrigW, "HotAct" ) = zCURSOR_SET
       lTempInteger_1 = CheckExistenceOfEntity( vOrigW, "HotAct" );
       if ( lTempInteger_1 == zCURSOR_SET )
-      { 
+      {
          //:IF vOrigW.HotAct.Tag != ""
          if ( CompareAttributeToString( vOrigW, "HotAct", "Tag", "" ) != 0 )
-         { 
+         {
             //:SET CURSOR FIRST vNewW.Action
             //:      WHERE  vNewW.Action.Tag = vOrigW.HotAct.Tag
             GetStringFromAttribute( szTempString_0, vOrigW, "HotAct", "Tag" );
             RESULT = SetCursorFirstEntityByString( vNewW, "Action", "Tag", szTempString_0, "" );
             //:IF RESULT >= 0
             if ( RESULT >= 0 )
-            { 
+            {
                //:CreateMetaEntity( vSubtask, vNewW, "Hotkey", zPOS_AFTER )
                CreateMetaEntity( vSubtask, vNewW, "Hotkey", zPOS_AFTER );
                //:SetMatchingAttributesByName( vNewW,  "Hotkey",
@@ -1587,17 +1587,17 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
                //:IncludeSubobjectFromSubobject( vNewW, "HotAct",
                //:                               vNewW, "Action", zPOS_AFTER )
                IncludeSubobjectFromSubobject( vNewW, "HotAct", vNewW, "Action", zPOS_AFTER );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vOrigW, "Hotkey", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -1612,7 +1612,7 @@ oTZWDLGSO_MergeWindowComponents( zVIEW     vNewW,
    //:RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -1626,19 +1626,19 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
                          zVIEW     vOrigW,
                          zVIEW     vSubtask )
 {
-   zVIEW     TZDLG_List = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZDLG_List = 0;
+   zSHORT    RESULT;
    //:VIEW TZWND_List BASED ON LOD  TZWDLGSO
-   zVIEW     TZWND_List = 0; 
+   zVIEW     TZWND_List = 0;
    //:INTEGER nRC
-   zLONG     nRC = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_2; 
-   zSHORT    lTempInteger_3; 
-   zSHORT    lTempInteger_4; 
-   zSHORT    lTempInteger_5; 
+   zLONG     nRC = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_2;
+   zSHORT    lTempInteger_3;
+   zSHORT    lTempInteger_4;
+   zSHORT    lTempInteger_5;
 
    RESULT = GetViewByName( &TZDLG_List, "TZCMLPLO", vNewW, zLEVEL_TASK );
 
@@ -1649,10 +1649,10 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
    lTempInteger_0 = CheckExistenceOfEntity( vOrigW, "ReusableSideWindow" );
    lTempInteger_1 = CheckExistenceOfEntity( vNewW, "ReusableSideWindow" );
    if ( lTempInteger_0 == 0 && lTempInteger_1 != 0 )
-   { 
+   {
       //:IF vOrigW.ReusableSideDialog.Tag = vNewW.Dialog.Tag
       if ( CompareAttributeToAttribute( vOrigW, "ReusableSideDialog", "Tag", vNewW, "Dialog", "Tag" ) == 0 )
-      { 
+      {
          //:// The Reusable Menu IS in this Dialog, so find the correct Window and include it.
          //:CreateViewFromView( TZWND_List, vNewW )
          CreateViewFromView( &TZWND_List, vNewW );
@@ -1662,18 +1662,18 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
          RESULT = SetCursorFirstEntityByString( TZWND_List, "Window", "Tag", szTempString_0, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:INCLUDE vNewW.ReusableSideWindow FROM TZWND_List.Window
             RESULT = IncludeSubobjectFromSubobject( vNewW, "ReusableSideWindow", TZWND_List, "Window", zPOS_AFTER );
-         } 
+         }
 
          //:END
          //:DropView( TZWND_List )
          DropView( TZWND_List );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:// The Reusable Menu is not in this Dialog, so look for an external Dialog.
          //:SET CURSOR FIRST TZDLG_List.W_MetaDef
          //:           WHERE TZDLG_List.W_MetaDef.Name = vOrigW.ReusableSideDialog.Tag
@@ -1681,16 +1681,16 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
          RESULT = SetCursorFirstEntityByString( TZDLG_List, "W_MetaDef", "Name", szTempString_0, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:// Make sure that any left over ReusableDialogSelection entity is removed and then
             //:// include new Dialog.
             //:IF vNewW.ReusableDialogSelection EXISTS
             lTempInteger_2 = CheckExistenceOfEntity( vNewW, "ReusableDialogSelection" );
             if ( lTempInteger_2 == 0 )
-            { 
+            {
                //:EXCLUDE vNewW.ReusableDialogSelection
                RESULT = ExcludeEntity( vNewW, "ReusableDialogSelection", zREPOS_AFTER );
-            } 
+            }
 
             //:END
             //:INCLUDE vNewW.ReusableDialogSelection FROM TZDLG_List.W_MetaDef
@@ -1702,65 +1702,65 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
             RESULT = GetViewByName( &TZWND_List, "TZWND_List", vNewW, zLEVEL_TASK );
             //:IF RESULT >= 0
             if ( RESULT >= 0 )
-            { 
+            {
                //:IF TZWND_List.Dialog.Tag != vOrigW.ReusableSideDialog.Tag
                if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "Tag", vOrigW, "ReusableSideDialog", "Tag" ) != 0 )
-               { 
+               {
                   //:DropMetaOI( vSubtask, TZWND_List )
                   DropMetaOI( vSubtask, TZWND_List );
                   //:TZWND_List = 0
                   TZWND_List = 0;
-               } 
+               }
 
                //:END
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:TZWND_List = 0
                TZWND_List = 0;
-            } 
+            }
 
             //:END
 
             //:IF TZWND_List = 0
             if ( TZWND_List == 0 )
-            { 
+            {
                //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
                ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
                //:NAME VIEW TZWND_List "TZWND_List"
                SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-            } 
+            }
 
             //:END
 
             //:IF TZWND_List != 0
             if ( TZWND_List != 0 )
-            { 
+            {
                //:SET CURSOR FIRST TZWND_List.Window
                //:           WHERE TZWND_List.Window.Tag = vOrigW.ReusableSideWindow.Tag
                GetStringFromAttribute( szTempString_0, vOrigW, "ReusableSideWindow", "Tag" );
                RESULT = SetCursorFirstEntityByString( TZWND_List, "Window", "Tag", szTempString_0, "" );
                //:IF RESULT >= zCURSOR_SET
                if ( RESULT >= zCURSOR_SET )
-               { 
+               {
                   //:INCLUDE vNewW.ReusableSideWindow FROM TZWND_List.Window
                   RESULT = IncludeSubobjectFromSubobject( vNewW, "ReusableSideWindow", TZWND_List, "Window", zPOS_AFTER );
-               } 
+               }
 
                //:END
                //:DropView( TZWND_List )
                DropView( TZWND_List );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
@@ -1768,10 +1768,10 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
    lTempInteger_3 = CheckExistenceOfEntity( vOrigW, "ReusableMainWindow" );
    lTempInteger_4 = CheckExistenceOfEntity( vNewW, "ReusableMainWindow" );
    if ( lTempInteger_3 == 0 && lTempInteger_4 != 0 )
-   { 
+   {
       //:IF vOrigW.ReusableMainDialog.Tag = vNewW.Dialog.Tag
       if ( CompareAttributeToAttribute( vOrigW, "ReusableMainDialog", "Tag", vNewW, "Dialog", "Tag" ) == 0 )
-      { 
+      {
          //:// The Reusable Menu IS in this Dialog, so find the correct Window and include it.
          //:CreateViewFromView( TZWND_List, vNewW )
          CreateViewFromView( &TZWND_List, vNewW );
@@ -1781,34 +1781,34 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
          RESULT = SetCursorFirstEntityByString( TZWND_List, "Window", "Tag", szTempString_0, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:INCLUDE vNewW.ReusableMainWindow FROM TZWND_List.Window
             RESULT = IncludeSubobjectFromSubobject( vNewW, "ReusableMainWindow", TZWND_List, "Window", zPOS_AFTER );
-         } 
+         }
 
          //:END
          //:DropView( TZWND_List )
          DropView( TZWND_List );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:SET CURSOR FIRST TZDLG_List.W_MetaDef
          //:           WHERE TZDLG_List.W_MetaDef.Name = vOrigW.ReusableMainDialog.Tag
          GetStringFromAttribute( szTempString_0, vOrigW, "ReusableMainDialog", "Tag" );
          RESULT = SetCursorFirstEntityByString( TZDLG_List, "W_MetaDef", "Name", szTempString_0, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:// Make sure that any left over ReusableDialogSelection entity is removed and then
             //:// include new Dialog.
             //:IF vNewW.ReusableDialogSelection EXISTS
             lTempInteger_5 = CheckExistenceOfEntity( vNewW, "ReusableDialogSelection" );
             if ( lTempInteger_5 == 0 )
-            { 
+            {
                //:EXCLUDE vNewW.ReusableDialogSelection
                RESULT = ExcludeEntity( vNewW, "ReusableDialogSelection", zREPOS_AFTER );
-            } 
+            }
 
             //:END
             //:INCLUDE vNewW.ReusableDialogSelection FROM TZDLG_List.W_MetaDef
@@ -1820,72 +1820,72 @@ oTZWDLGSO_MergeWebMenus( zVIEW     vNewW,
             RESULT = GetViewByName( &TZWND_List, "TZWND_List", vNewW, zLEVEL_TASK );
             //:IF RESULT >= 0
             if ( RESULT >= 0 )
-            { 
+            {
                //:IF TZWND_List.Dialog.Tag != vOrigW.ReusableMainDialog.Tag
                if ( CompareAttributeToAttribute( TZWND_List, "Dialog", "Tag", vOrigW, "ReusableMainDialog", "Tag" ) != 0 )
-               { 
+               {
                   //:DropMetaOI( vSubtask, TZWND_List )
                   DropMetaOI( vSubtask, TZWND_List );
                   //:TZWND_List = 0
                   TZWND_List = 0;
-               } 
+               }
 
                //:END
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:TZWND_List = 0
                TZWND_List = 0;
-            } 
+            }
 
             //:END
 
             //:IF TZWND_List = 0
             if ( TZWND_List == 0 )
-            { 
+            {
                //:ActivateMetaOI( vSubtask, TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE )
                ActivateMetaOI( vSubtask, &TZWND_List, TZDLG_List, zREFER_DIALOG_META, zSINGLE );
                //:NAME VIEW TZWND_List "TZWND_List"
                SetNameForView( TZWND_List, "TZWND_List", 0, zLEVEL_TASK );
-            } 
+            }
 
             //:END
 
             //:IF TZWND_List != 0
             if ( TZWND_List != 0 )
-            { 
+            {
                //:SET CURSOR FIRST TZWND_List.Window
                //:           WHERE TZWND_List.Window.Tag = vOrigW.ReusableMainWindow.Tag
                GetStringFromAttribute( szTempString_0, vOrigW, "ReusableMainWindow", "Tag" );
                RESULT = SetCursorFirstEntityByString( TZWND_List, "Window", "Tag", szTempString_0, "" );
                //:IF RESULT >= zCURSOR_SET
                if ( RESULT >= zCURSOR_SET )
-               { 
+               {
                   //:INCLUDE vNewW.ReusableMainWindow FROM TZWND_List.Window
                   RESULT = IncludeSubobjectFromSubobject( vNewW, "ReusableMainWindow", TZWND_List, "Window", zPOS_AFTER );
-               } 
+               }
 
                //:END
                //:DropView( TZWND_List )
                DropView( TZWND_List );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -1903,18 +1903,18 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
                                zVIEW     vNewWO,
                                zVIEW     vLOD )
 {
-   zVIEW     vDomain = 0; 
+   zVIEW     vDomain = 0;
    //:VIEW DomainList BASED ON LOD TZCMLPLO
-   zVIEW     DomainList = 0; 
+   zVIEW     DomainList = 0;
    //:STRING ( 64 ) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_0; 
-   zLONG     lTempInteger_1; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zCHAR     szTempString_2[ 33 ]; 
-   zCHAR     szTempString_3[ 33 ]; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_0;
+   zLONG     lTempInteger_1;
+   zCHAR     szTempString_1[ 33 ];
+   zCHAR     szTempString_2[ 33 ];
+   zCHAR     szTempString_3[ 33 ];
 
 
    //:// We assume position is already on the correct LOD_Entity.
@@ -1924,7 +1924,7 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
    RESULT = SetCursorFirstEntityByString( vLOD, "ER_Attribute", "Name", szTempString_0, "LOD_Entity" );
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   { 
+   {
       //:IncludeSubobjectFromSubobject( vNewWO, "OptMapLOD_Attribute",
       //:                               vLOD,  "LOD_Attribute", zPOS_AFTER )
       IncludeSubobjectFromSubobject( vNewWO, "OptMapLOD_Attribute", vLOD, "LOD_Attribute", zPOS_AFTER );
@@ -1933,7 +1933,7 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
       //:IF CheckExistenceOfEntity( vOrigWO, "OptMapContext" ) >= 0
       lTempInteger_0 = CheckExistenceOfEntity( vOrigWO, "OptMapContext" );
       if ( lTempInteger_0 >= 0 )
-      { 
+      {
          //:SET CURSOR FIRST vSourceLPLR.W_MetaType WHERE
          //:                 vSourceLPLR.W_MetaType.Type = 2003
          RESULT = SetCursorFirstEntityByInteger( vSourceLPLR, "W_MetaType", "Type", 2003, "" );
@@ -1949,7 +1949,7 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
          RESULT = SetCursorFirstEntityByString( DomainList, "W_MetaDef", "Name", szTempString_0, "" );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:ActivateMetaOI( vSubtask, vDomain, DomainList, zREFER_DOMAIN_META, zSINGLE )
             ActivateMetaOI( vSubtask, &vDomain, DomainList, zREFER_DOMAIN_META, zSINGLE );
             //:SET CURSOR FIRST vDomain.Context
@@ -1959,14 +1959,14 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
             RESULT = SetCursorFirstEntityByString( vDomain, "Context", "Name", szTempString_0, "" );
             //:IF RESULT >= 0
             if ( RESULT >= 0 )
-            { 
+            {
                //:IncludeSubobjectFromSubobject( vNewWO, "OptMapContext",
                //:                               vDomain, "Context", zPOS_AFTER )
                IncludeSubobjectFromSubobject( vNewWO, "OptMapContext", vDomain, "Context", zPOS_AFTER );
                //:ELSE
-            } 
+            }
             else
-            { 
+            {
                //:szMsg = "Context doesn't exist within Domain: " +
                //:       vOrigWO.OptMapContext.Name + ", " +
                //:       vSourceLPLR.W_MetaDef.Name
@@ -1981,15 +1981,15 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
                MessageSend( vSubtask, "WD00216", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
                //:RETURN -1
                return( -1 );
-            } 
+            }
 
             //:END
             //:DropMetaOI( vSubtask, vDomain )
             DropMetaOI( vSubtask, vDomain );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:szMsg = "Domain doesn't exist: " +
             //:       vSourceLPLR.W_MetaDef.Name
             GetVariableFromAttribute( szTempString_2, 0, 'S', 33, vSourceLPLR, "W_MetaDef", "Name", "", 0 );
@@ -2000,18 +2000,18 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
             MessageSend( vSubtask, "WD00217", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
             //:RETURN -1
             return( -1 );
-         } 
+         }
 
          //:END
          //:DropView( DomainList )
          DropView( DomainList );
-      } 
+      }
 
       //:END
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:szMsg = "ER_Attribute doesn't exist: " +
       //:       vOrigWO.OptMapER_Attribute.Name
       GetVariableFromAttribute( szTempString_3, 0, 'S', 33, vOrigWO, "OptMapER_Attribute", "Name", "", 0 );
@@ -2022,14 +2022,14 @@ oTZWDLGSO_OptAttributeMapping( zVIEW     vSubtask,
       MessageSend( vSubtask, "WD00218", "Dialog Clone", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
    //:RETURN  0
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -2047,18 +2047,18 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
                          zPCHAR    szViewName,
                          zVIEW     vSubtask )
 {
-   zVIEW     VOR = 0; 
+   zVIEW     VOR = 0;
    //:VIEW VOR_List   BASED ON LOD TZCMLPLO
-   zVIEW     VOR_List = 0; 
+   zVIEW     VOR_List = 0;
    //:VIEW vLOD       BASED ON LOD TZZOLODO
-   zVIEW     vLOD = 0; 
+   zVIEW     vLOD = 0;
    //:VIEW LOD_List   BASED ON LOD TZCMLPLO
-   zVIEW     LOD_List = 0; 
+   zVIEW     LOD_List = 0;
 
    //:STRING (64) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
 
 
    //:// Create necessary ViewObjRef entity and the relationship
@@ -2068,7 +2068,7 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
    RESULT = SetCursorFirstEntityByString( vNewW, "ViewObjRef", "Name", szViewName, "" );
    //:IF RESULT < 0
    if ( RESULT < 0 )
-   { 
+   {
       //:// Try to use existing VOR
       //:RetrieveViewForMetaList( vSubtask, VOR_List, zREFER_VOR_META )
       RetrieveViewForMetaList( vSubtask, &VOR_List, zREFER_VOR_META );
@@ -2077,16 +2077,16 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
       RESULT = SetCursorFirstEntityByString( VOR_List, "W_MetaDef", "Name", szViewName, "" );
       //:IF RESULT >= 0
       if ( RESULT >= 0 )
-      { 
+      {
          //:ActivateMetaOI( vSubtask, VOR, VOR_List, zREFER_VOR_META, zSINGLE )
          ActivateMetaOI( vSubtask, &VOR, VOR_List, zREFER_VOR_META, zSINGLE );
          //:IncludeSubobjectFromSubobject( vNewW, "ViewObjRef",
          //:                               VOR, "ViewObjRef", zPOS_AFTER )
          IncludeSubobjectFromSubobject( vNewW, "ViewObjRef", VOR, "ViewObjRef", zPOS_AFTER );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:// Create new VOR since it doesn't already exist.  This is required for
          //:// migrating from one LPLR to another, not for cloning within the same LPLR.
          //:RetrieveViewForMetaList( vSubtask, LOD_List, zREFER_LOD_META )
@@ -2096,7 +2096,7 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
          RESULT = SetCursorFirstEntityByString( vOrigW, "ViewObjRef", "Name", szViewName, "" );
          //:IF RESULT < 0
          if ( RESULT < 0 )
-         { 
+         {
             //:szMsg = "Window has mapping with no VOR: " + szViewName
             ZeidonStringCopy( szMsg, 1, 0, "Window has mapping with no VOR: ", 1, 0, 65 );
             ZeidonStringConcat( szMsg, 1, 0, szViewName, 1, 0, 65 );
@@ -2109,7 +2109,7 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
             DropView( LOD_List );
             //:RETURN -1
             return( -1 );
-         } 
+         }
 
          //:END
 
@@ -2119,7 +2119,7 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
          RESULT = SetCursorFirstEntityByString( LOD_List, "W_MetaDef", "Name", szTempString_0, "" );
          //:IF RESULT >= 0
          if ( RESULT >= 0 )
-         { 
+         {
             //:ActivateEmptyMetaOI( vSubtask, VOR, zSOURCE_VOR_META, zSINGLE )
             ActivateEmptyMetaOI( vSubtask, &VOR, zSOURCE_VOR_META, zSINGLE );
             //:CreateMetaEntity( vSubtask, VOR, "ViewObjRef", zPOS_AFTER )
@@ -2140,9 +2140,9 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
             //:DropMetaOI( vSubtask, vLOD )
             DropMetaOI( vSubtask, vLOD );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:szMsg = "Non-existent LOD: " + vOrigW.LOD.Name
             GetVariableFromAttribute( szTempString_0, 0, 'S', 33, vOrigW, "LOD", "Name", "", 0 );
             ZeidonStringCopy( szMsg, 1, 0, "Non-existent LOD: ", 1, 0, 65 );
@@ -2156,12 +2156,12 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
             DropView( LOD_List );
             //:RETURN -1
             return( -1 );
-         } 
+         }
 
          //:END
          //:DropView( LOD_List )
          DropView( LOD_List );
-      } 
+      }
 
 
       //:END
@@ -2169,14 +2169,14 @@ oTZWDLGSO_PositionOnVOR( zVIEW     vNewW,
       DropMetaOI( vSubtask, VOR );
       //:DropView( VOR_List )
       DropView( VOR_List );
-   } 
+   }
 
    //:END
 
    //:RETURN  0
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -2192,17 +2192,17 @@ oTZWDLGSO_WndEventName( zVIEW     vTZWDLGSO,
                         LPVIEWATTRIB lpViewAttrib,
                         zSHORT    nMsg )
 {
-   zVIEW     vPE = 0; 
+   zVIEW     vPE = 0;
    //:VIEW vMetaList BASED ON LOD TZCMLPLO
-   zVIEW     vMetaList = 0; 
+   zVIEW     vMetaList = 0;
 
    //:STRING ( 256 ) szEventString
-   zCHAR     szEventString[ 257 ] = { 0 }; 
+   zCHAR     szEventString[ 257 ] = { 0 };
    //:INTEGER       nRC
-   zLONG     nRC = 0; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zLONG     lTempInteger_0; 
+   zLONG     nRC = 0;
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zLONG     lTempInteger_0;
 
 
    //:nRC = GetViewByName( vPE, "TZPESRCO", vTZWDLGSO, zLEVEL_TASK )
@@ -2210,7 +2210,7 @@ oTZWDLGSO_WndEventName( zVIEW     vTZWDLGSO,
 
    //:IF nRC = -1
    if ( nRC == -1 )
-   { 
+   {
       //:// Activate the presentation environment.
       //:// RetrieveViewForMetaList( vSubtask, vTZWDLGSO, vMetaList, zREFER_PENV_META )
       //:RetrieveViewForMetaList( vTZWDLGSO, vMetaList, zREFER_PENV_META )
@@ -2219,7 +2219,7 @@ oTZWDLGSO_WndEventName( zVIEW     vTZWDLGSO,
       RESULT = SetCursorFirstEntity( vMetaList, "W_MetaDef", "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:szEventString = vTZWDLGSO.ActWndEvent.Type
          GetVariableFromAttribute( szEventString, 0, 'S', 257, vTZWDLGSO, "ActWndEvent", "Type", "", 0 );
          //:StoreStringInRecord( vTZWDLGSO, lpViewEntity, lpViewAttrib,
@@ -2228,9 +2228,9 @@ oTZWDLGSO_WndEventName( zVIEW     vTZWDLGSO,
          //:RETURN -16
          return( -16 );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:LoadZeidonPPE( vTZWDLGSO, vPE, zREFER_PENV_META, vMetaList,
          //:               "Configuration Management", "" )
          LoadZeidonPPE( vTZWDLGSO, &vPE, zREFER_PENV_META, vMetaList, "Configuration Management", "" );
@@ -2238,10 +2238,10 @@ oTZWDLGSO_WndEventName( zVIEW     vTZWDLGSO,
          SetNameForView( vPE, "TZPESRCO", vTZWDLGSO, zLEVEL_TASK );
          //:DropView( vMetaList )
          DropView( vMetaList );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
@@ -2257,29 +2257,29 @@ oTZWDLGSO_WndEventName( zVIEW     vTZWDLGSO,
 
    //:IF RESULT >= zCURSOR_SET
    if ( RESULT >= zCURSOR_SET )
-   { 
+   {
       //:szEventString = vPE.EventDef.Tag
       GetVariableFromAttribute( szEventString, 0, 'S', 257, vPE, "EventDef", "Tag", "", 0 );
       //:StoreStringInRecord( vTZWDLGSO, lpViewEntity, lpViewAttrib,
       //:                     szEventString )
       StoreStringInRecord( vTZWDLGSO, lpViewEntity, lpViewAttrib, szEventString );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:szEventString = vTZWDLGSO.ActWndEvent.Type
       GetVariableFromAttribute( szEventString, 0, 'S', 257, vTZWDLGSO, "ActWndEvent", "Type", "", 0 );
       //:StoreStringInRecord( vTZWDLGSO, lpViewEntity, lpViewAttrib,
       //:                     szEventString )
       StoreStringInRecord( vTZWDLGSO, lpViewEntity, lpViewAttrib, szEventString );
-   } 
+   }
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -2295,14 +2295,14 @@ oTZWDLGSO_BuildWebCtrlPropOpts( zVIEW     vDialog,
                                 zPCHAR    SourceEntityName,
                                 zPCHAR    SourceAttributeName )
 {
-   zCHAR     szExternalValue[ 33 ] = { 0 }; 
+   zCHAR     szExternalValue[ 33 ] = { 0 };
    //:STRING ( 32 ) ControlContext
-   zCHAR     ControlContext[ 33 ] = { 0 }; 
+   zCHAR     ControlContext[ 33 ] = { 0 };
    //:INTEGER       CursorPos
-   zLONG     CursorPos = 0; 
+   zLONG     CursorPos = 0;
    //:SHORT nRC
-   zSHORT    nRC = 0; 
-   zSHORT    RESULT; 
+   zSHORT    nRC = 0;
+   zSHORT    RESULT;
 
 
    //:// Build the list of WebControlPropertyOptions from the Domain table entries.
@@ -2312,11 +2312,11 @@ oTZWDLGSO_BuildWebCtrlPropOpts( zVIEW     vDialog,
    //:FOR EACH vDialog.WebControlPropertyOption
    RESULT = SetCursorFirstEntity( vDialog, "WebControlPropertyOption", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:DELETE ENTITY vDialog.WebControlPropertyOption NONE
       RESULT = DeleteEntity( vDialog, "WebControlPropertyOption", zREPOS_NONE );
       RESULT = SetCursorNextEntity( vDialog, "WebControlPropertyOption", "" );
-   } 
+   }
 
    //:END
    //:ControlContext = ""
@@ -2327,16 +2327,16 @@ oTZWDLGSO_BuildWebCtrlPropOpts( zVIEW     vDialog,
    nRC = GetFirstTableEntryForAttribute( szExternalValue, vSourceView, SourceEntityName, SourceAttributeName, ControlContext, &CursorPos );
    //:LOOP WHILE nRC >= 0
    while ( nRC >= 0 )
-   { 
+   {
       //:IF szExternalValue != ""
       if ( ZeidonStringCompare( szExternalValue, 1, 0, "", 1, 0, 33 ) != 0 )
-      { 
+      {
          //://CREATE ENTITY vDialog.WebControlPropertyOption
          //:CreateMetaEntity( vDialog, vDialog, "WebControlPropertyOption", zPOS_AFTER )
          CreateMetaEntity( vDialog, vDialog, "WebControlPropertyOption", zPOS_AFTER );
          //:vDialog.WebControlPropertyOption.Name = szExternalValue
          SetAttributeFromString( vDialog, "WebControlPropertyOption", "Name", szExternalValue );
-      } 
+      }
 
       //:END
 
@@ -2344,12 +2344,12 @@ oTZWDLGSO_BuildWebCtrlPropOpts( zVIEW     vDialog,
       //:                                     vSourceView, SourceEntityName, SourceAttributeName,
       //:                                     ControlContext, CursorPos )
       nRC = GetNextTableEntryForAttribute( szExternalValue, vSourceView, SourceEntityName, SourceAttributeName, ControlContext, &CursorPos );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -2365,14 +2365,14 @@ oTZWDLGSO_BuildMapTypeList( zVIEW     vDialog,
                             zPCHAR    SourceEntityName,
                             zPCHAR    SourceAttributeName )
 {
-   zCHAR     szExternalValue[ 33 ] = { 0 }; 
+   zCHAR     szExternalValue[ 33 ] = { 0 };
    //:STRING ( 32 ) ControlContext
-   zCHAR     ControlContext[ 33 ] = { 0 }; 
+   zCHAR     ControlContext[ 33 ] = { 0 };
    //:INTEGER       CursorPos
-   zLONG     CursorPos = 0; 
+   zLONG     CursorPos = 0;
    //:SHORT nRC
-   zSHORT    nRC = 0; 
-   zSHORT    RESULT; 
+   zSHORT    nRC = 0;
+   zSHORT    RESULT;
 
 
    //:// Build the combobox list of MapType values from the Domain table entries.
@@ -2382,11 +2382,11 @@ oTZWDLGSO_BuildMapTypeList( zVIEW     vDialog,
    //:FOR EACH vDialog.ComboBoxEntry
    RESULT = SetCursorFirstEntity( vDialog, "ComboBoxEntry", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:DELETE ENTITY vDialog.ComboBoxEntry NONE
       RESULT = DeleteEntity( vDialog, "ComboBoxEntry", zREPOS_NONE );
       RESULT = SetCursorNextEntity( vDialog, "ComboBoxEntry", "" );
-   } 
+   }
 
    //:END
    //:ControlContext = ""
@@ -2397,16 +2397,16 @@ oTZWDLGSO_BuildMapTypeList( zVIEW     vDialog,
    nRC = GetFirstTableEntryForAttribute( szExternalValue, vSourceView, SourceEntityName, SourceAttributeName, ControlContext, &CursorPos );
    //:LOOP WHILE nRC >= 0
    while ( nRC >= 0 )
-   { 
+   {
       //:IF szExternalValue != ""
       if ( ZeidonStringCompare( szExternalValue, 1, 0, "", 1, 0, 33 ) != 0 )
-      { 
+      {
          //://CREATE ENTITY vDialog.WebControlPropertyOption
          //:CREATE ENTITY vDialog.ComboBoxEntry
          RESULT = CreateEntity( vDialog, "ComboBoxEntry", zPOS_AFTER );
          //:vDialog.ComboBoxEntry.Name = szExternalValue
          SetAttributeFromString( vDialog, "ComboBoxEntry", "Name", szExternalValue );
-      } 
+      }
 
       //:END
 
@@ -2414,12 +2414,12 @@ oTZWDLGSO_BuildMapTypeList( zVIEW     vDialog,
       //:                                     vSourceView, SourceEntityName, SourceAttributeName,
       //:                                     ControlContext, CursorPos )
       nRC = GetNextTableEntryForAttribute( szExternalValue, vSourceView, SourceEntityName, SourceAttributeName, ControlContext, &CursorPos );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -2429,14 +2429,14 @@ oTZWDLGSO_BuildMapTypeList( zVIEW     vDialog,
 zOPER_EXPORT zSHORT OPERATION
 oTZWDLGSO_BuildCtrlMapByTagList( zVIEW     vDialogC )
 {
-   zVIEW     vDialogT = 0; 
+   zVIEW     vDialogT = 0;
    //:STRING ( 32 ) ControlContext
-   zCHAR     ControlContext[ 33 ] = { 0 }; 
+   zCHAR     ControlContext[ 33 ] = { 0 };
    //:INTEGER       CursorPos
-   zLONG     CursorPos = 0; 
+   zLONG     CursorPos = 0;
    //:SHORT nRC
-   zSHORT    nRC = 0; 
-   zSHORT    RESULT; 
+   zSHORT    nRC = 0;
+   zSHORT    RESULT;
 
 
    //:// Build the CtrlMap select list for all entries with a Tag name.
@@ -2445,24 +2445,24 @@ oTZWDLGSO_BuildCtrlMapByTagList( zVIEW     vDialogC )
    //:FOR EACH vDialogT.CtrlMap
    RESULT = SetCursorFirstEntity( vDialogT, "CtrlMap", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:IF vDialogT.CtrlMap.Tag != ""
       if ( CompareAttributeToString( vDialogT, "CtrlMap", "Tag", "" ) != 0 )
-      { 
+      {
          //:INCLUDE vDialogC.ListCtrlMap FROM vDialogT.CtrlMap
          RESULT = IncludeSubobjectFromSubobject( vDialogC, "ListCtrlMap", vDialogT, "CtrlMap", zPOS_AFTER );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vDialogT, "CtrlMap", "" );
       //:END
-   } 
+   }
 
    //:END
    //:DropView( vDialogT )
    DropView( vDialogT );
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -2478,36 +2478,36 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
                          zVIEW     SourceLPLR,
                          zVIEW     vSubtask )
 {
-   zVIEW     SourceLPLR2 = 0; 
+   zVIEW     SourceLPLR2 = 0;
    //:VIEW CurrentLPLR BASED ON LOD TZCMLPLO
-   zVIEW     CurrentLPLR = 0; 
+   zVIEW     CurrentLPLR = 0;
    //:VIEW TZDLG_List  BASED ON LOD TZCMLPLO
-   zVIEW     TZDLG_List = 0; 
+   zVIEW     TZDLG_List = 0;
    //:VIEW OldDialog   BASED ON LOD TZWDLGSO
-   zVIEW     OldDialog = 0; 
+   zVIEW     OldDialog = 0;
 
    //:STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
    //:STRING ( 32 )  SourceName
-   zCHAR     SourceName[ 33 ] = { 0 }; 
+   zCHAR     SourceName[ 33 ] = { 0 };
    //:INTEGER        nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
    //:STRING ( 9 )   ExtensionName
-   zCHAR     ExtensionName[ 10 ] = { 0 }; 
+   zCHAR     ExtensionName[ 10 ] = { 0 };
    //:STRING ( 513 ) SourceFileName1           // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName1[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName1[ 514 ] = { 0 };
    //:STRING ( 513 ) SourceFileName2           // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName2[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName2[ 514 ] = { 0 };
    //:STRING ( 32 )  MetaName
-   zCHAR     MetaName[ 33 ] = { 0 }; 
+   zCHAR     MetaName[ 33 ] = { 0 };
    //:STRING ( 1 )   NewDialogFlag
-   zCHAR     NewDialogFlag[ 2 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
+   zCHAR     NewDialogFlag[ 2 ] = { 0 };
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
+   zCHAR     szTempString_1[ 33 ];
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
 
 
    //:// Activate existing source meta OldDialog
@@ -2528,12 +2528,12 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
    RESULT = GetViewByName( &TZDLG_List, "TZDLG_List", NewDialog, zLEVEL_TASK );
    //:IF RESULT < 0
    if ( RESULT < 0 )
-   { 
+   {
       //:RetrieveViewForMetaList( vSubtask, TZDLG_List, zREFER_DIALOG_META )
       RetrieveViewForMetaList( vSubtask, &TZDLG_List, zREFER_DIALOG_META );
       //:NAME VIEW TZDLG_List "TZDLG_List"
       SetNameForView( TZDLG_List, "TZDLG_List", 0, zLEVEL_TASK );
-   } 
+   }
 
    //:END
 
@@ -2543,7 +2543,7 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
    //:IF NewDialog.Dialog DOES NOT EXIST
    lTempInteger_0 = CheckExistenceOfEntity( NewDialog, "Dialog" );
    if ( lTempInteger_0 != 0 )
-   { 
+   {
       //:CreateMetaEntity( vSubtask, NewDialog, "Dialog", zPOS_AFTER )
       CreateMetaEntity( vSubtask, NewDialog, "Dialog", zPOS_AFTER );
       //:NewDialog.Dialog.Tag          = OldDialog.Dialog.Tag
@@ -2556,7 +2556,7 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
       SetAttributeFromAttribute( NewDialog, "Dialog", "DLL_Name", OldDialog, "Dialog", "DLL_Name" );
       //:NewDialogFlag = "Y"
       ZeidonStringCopy( NewDialogFlag, 1, 0, "Y", 1, 0, 2 );
-   } 
+   }
 
    //:END
 
@@ -2567,7 +2567,7 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
    //:FOR EACH OldDialog.ViewObjRef
    RESULT = SetCursorFirstEntity( OldDialog, "ViewObjRef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:// The following routine not only positions on the VOR but also
       //:// includes it, if it doesn't already exist.
       //:PositionOnVOR( NewDialog, OldDialog,
@@ -2575,7 +2575,7 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
       GetStringFromAttribute( szTempString_0, OldDialog, "ViewObjRef", "Name" );
       oTZWDLGSO_PositionOnVOR( NewDialog, OldDialog, SourceLPLR, szTempString_0, vSubtask );
       RESULT = SetCursorNextEntity( OldDialog, "ViewObjRef", "" );
-   } 
+   }
 
    //:END
 
@@ -2583,30 +2583,30 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
    //:FOR EACH OldDialog.Window
    RESULT = SetCursorFirstEntity( OldDialog, "Window", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST NewDialog.Window WHERE NewDialog.Window.Tag = OldDialog.Window.Tag
       GetStringFromAttribute( szTempString_1, OldDialog, "Window", "Tag" );
       RESULT = SetCursorFirstEntityByString( NewDialog, "Window", "Tag", szTempString_1, "" );
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      { 
+      {
          //:nRC = CloneWindow( NewDialog, OldDialog, SourceLPLR, vSubtask )
          nRC = oTZWDLGSO_CloneWindow( NewDialog, OldDialog, SourceLPLR, vSubtask );
          //:IF nRC = -1
          if ( nRC == -1 )
-         { 
+         {
             //:DropObjectInstance( OldDialog )
             DropObjectInstance( OldDialog );
             //:RETURN -1
             return( -1 );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       RESULT = SetCursorNextEntity( OldDialog, "Window", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -2615,20 +2615,20 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
    //:FOR EACH OldDialog.Window
    RESULT = SetCursorFirstEntity( OldDialog, "Window", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST NewDialog.Window WHERE NewDialog.Window.Tag = OldDialog.Window.Tag
       GetStringFromAttribute( szTempString_1, OldDialog, "Window", "Tag" );
       RESULT = SetCursorFirstEntityByString( NewDialog, "Window", "Tag", szTempString_1, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:MergeWebMenus( NewDialog, OldDialog, vSubtask )
          oTZWDLGSO_MergeWebMenus( NewDialog, OldDialog, vSubtask );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( OldDialog, "Window", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -2636,20 +2636,20 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
    //:IF OldDialog.DfltWnd EXISTS
    lTempInteger_1 = CheckExistenceOfEntity( OldDialog, "DfltWnd" );
    if ( lTempInteger_1 == 0 )
-   { 
+   {
       //:IF NewDialog.DfltWnd DOES NOT EXIST
       lTempInteger_2 = CheckExistenceOfEntity( NewDialog, "DfltWnd" );
       if ( lTempInteger_2 != 0 )
-      { 
+      {
          //:SET CURSOR FIRST NewDialog.Window WHERE NewDialog.Window.Tag = OldDialog.DfltWnd.Tag
          GetStringFromAttribute( szTempString_1, OldDialog, "DfltWnd", "Tag" );
          RESULT = SetCursorFirstEntityByString( NewDialog, "Window", "Tag", szTempString_1, "" );
          //:INCLUDE NewDialog.DfltWnd FROM NewDialog.Window
          RESULT = IncludeSubobjectFromSubobject( NewDialog, "DfltWnd", NewDialog, "Window", zPOS_AFTER );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
@@ -2710,10 +2710,10 @@ oTZWDLGSO_DialogMigrate( zVIEW     NewDialog,
    //:RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif

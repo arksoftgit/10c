@@ -1,12 +1,12 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "ZDRVROPR.H" 
- 
+#include "KZOENGAA.H"
+#include "ZDRVROPR.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 //:GLOBAL OPERATION
@@ -20,7 +20,7 @@ JSP_StaticSection1( zLONG     lFile,
                     zPCHAR    szWriteBuffer,
                     zVIEW     vDialog )
 {
-   zCHAR     szFormName[ 65 ] = { 0 }; 
+   zCHAR     szFormName[ 65 ] = { 0 };
 
 
    //:   // STATIC SECTION
@@ -433,7 +433,7 @@ JSP_StaticSection1( zLONG     lFile,
    WL_QC( vDialog, lFile, szWriteBuffer, "'", 1 );
    return( 0 );
 // END
-} 
+}
 
 
 //:GLOBAL OPERATION
@@ -447,8 +447,8 @@ JSP_StaticMainSection( zLONG     lFile,
                        zPCHAR    szWriteBuffer,
                        zVIEW     vDialog )
 {
-   zVIEW     vLPLR = 0; 
-   zCHAR     szTempString_0[ 33 ]; 
+   zVIEW     vLPLR = 0;
+   zCHAR     szTempString_0[ 33 ];
 
 
    //:// MAIN SECTION HEADER
@@ -612,10 +612,10 @@ JSP_StaticMainSection( zLONG     lFile,
    WL_QC( vDialog, lFile, szWriteBuffer, "'", 1 );
    return( 0 );
 // END
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif

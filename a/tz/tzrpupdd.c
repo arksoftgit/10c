@@ -387,16 +387,16 @@ ShowReportMappingPopup( zVIEW   vSubtask )
 
    if ( zstrcmp( szEntityName, "FullReportEntityChild" ) == 0 )
       CreateTrackingPopupMenu( vSubtask, "FullReportEntityChild", -1, 0, FALSE, FALSE );
-   
+
    if ( zstrcmp( szEntityName, "PartialReportEntity" ) == 0 )
       CreateTrackingPopupMenu( vSubtask, "PartialReportEntity", -1, 0, FALSE, FALSE );
 
    if ( zstrcmp( szEntityName, "PartialReportEntityChild" ) == 0 )
       CreateTrackingPopupMenu( vSubtask, "PartialReportEntityChild", -1, 0, FALSE, FALSE );
-      
+
    if ( zstrcmp( szEntityName, "Page" ) == 0 )
       CreateTrackingPopupMenu( vSubtask, "Page", -1, 0, FALSE, FALSE );
-      
+
    if ( zstrcmp( szEntityName, "GroupSet" ) == 0 )
       CreateTrackingPopupMenu( vSubtask, "GroupSet", -1, 0, FALSE, FALSE );
 
@@ -1153,7 +1153,7 @@ UPD_TEXT_OK( zVIEW vSubtask )
 
    CB_GetSelectedString( vSubtask, "Horizontal", szWork );
    //SetAttributeFromString( vControl, "Control", "TextAlignHorizontal", szWork );
-   
+
    if ( zstrcmp( szWork, "Center" ) == 0 )
    {
       ld.chCenter = 1;
@@ -1938,7 +1938,7 @@ BlockPostBuild( zVIEW vSubtask )
                "text-altitude;text-depth;top;visibility;voice-family;volume",
                0 );  // ==> ListData is a semi-colon separated list
 
-   
+
    RefreshPropertyAttribute( vSubtask );
    return( 0 );
 }

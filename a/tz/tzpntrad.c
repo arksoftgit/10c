@@ -16424,7 +16424,7 @@ fnSetTagType( zVIEW vFlow )
    }
 
    SetAttributeFromString( vFlow, "Widget", "TagType", szText );
-   
+
 }
 
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
@@ -16509,7 +16509,7 @@ BuildDialogFlow( zVIEW vSubtask )
             }
 
             SetAttributeFromString( vFlow, "Action", "TagOperWAB_DlgWnd", szText );
-            
+
             if ( CheckExistenceOfEntity( vDialog, "ActWndEvent" ) == 0 )
             {
                nRC = SetCursorFirstEntity( vDialog, "ActWndEvent", 0 );
@@ -16579,7 +16579,7 @@ BuildDialogFlow( zVIEW vSubtask )
 
          nRC = SetCursorNextEntity( vDialog, "Window", 0 );
       }
-      
+
       DropView( vDialog );
       return( 0 );
    }

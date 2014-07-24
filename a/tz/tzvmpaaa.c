@@ -428,15 +428,15 @@ ParseSource( zVIEW  vVML_Subtask,
    {
       szOpGenType[ 0 ] = 0;
       GetStringFromAttribute( szOpGenType, g_lpZOListView, "Operation", "GenerationType" );
-	  if ( szOpGenType[0] == 'C' && g_szGenLang[ 0 ] == 'J' )
-	  {
-	     DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
-	  }
-	  else
-	  if ( szOpGenType[0] == 'J' && g_szGenLang[ 0 ] == 'C' )
-	  {
-	     DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
-	  }
+     if ( szOpGenType[0] == 'C' && g_szGenLang[ 0 ] == 'J' )
+     {
+        DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
+     }
+     else
+     if ( szOpGenType[0] == 'J' && g_szGenLang[ 0 ] == 'C' )
+     {
+        DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
+     }
       lRC = SetCursorNextEntity( g_lpZOListView, "Operation", "" );
    }
 

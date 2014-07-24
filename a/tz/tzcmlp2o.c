@@ -1,12 +1,12 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "ZDRVROPR.H" 
- 
+#include "KZOENGAA.H"
+#include "ZDRVROPR.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 static zVOID
@@ -26,12 +26,12 @@ oTZCMLPLO_AnalyzeEntity( zVIEW     vXOD,
                          zVIEW     vWk,
                          zPCHAR    ObjectName )
 {
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 255 ]; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zCHAR     szTempString_2[ 255 ]; 
-   zCHAR     szTempString_3[ 33 ]; 
-   zCHAR     szTempString_4[ 33 ]; 
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 255 ];
+   zCHAR     szTempString_1[ 33 ];
+   zCHAR     szTempString_2[ 255 ];
+   zCHAR     szTempString_3[ 33 ];
+   zCHAR     szTempString_4[ 33 ];
 
    //:AnalyzeEntity( VIEW vXOD BASED ON LOD TZZOXODO,
    //:            VIEW vWk  BASED ON LOD TZCMHDWO,
@@ -41,7 +41,7 @@ oTZCMLPLO_AnalyzeEntity( zVIEW     vXOD,
    //:FOR EACH vXOD.CHILDENTITY
    RESULT = SetCursorFirstEntity( vXOD, "CHILDENTITY", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SetViewToSubobject( vXOD, "CHILDENTITY" )
       SetViewToSubobject( vXOD, "CHILDENTITY" );
       //:AnalyzeEntity( vXOD, vWk, ObjectName )
@@ -49,14 +49,14 @@ oTZCMLPLO_AnalyzeEntity( zVIEW     vXOD,
       //:ResetViewFromSubobject( vXOD )
       ResetViewFromSubobject( vXOD );
       RESULT = SetCursorNextEntity( vXOD, "CHILDENTITY", "" );
-   } 
+   }
 
    //:END
 
    //:// Create the Object Entity Constraint work entity if necessary.
    //:IF vXOD.ENTITY.ECEOPER != ""
    if ( CompareAttributeToString( vXOD, "ENTITY", "ECEOPER", "" ) != 0 )
-   { 
+   {
       //:CREATE ENTITY vWk.Object
       RESULT = CreateEntity( vWk, "Object", zPOS_AFTER );
       //:vWk.Object.Name = ObjectName + "." + vXOD.ENTITY.NAME
@@ -69,18 +69,18 @@ oTZCMLPLO_AnalyzeEntity( zVIEW     vXOD,
       SetAttributeFromAttribute( vWk, "Object", "OperName", vXOD, "ENTITY", "ECEOPER" );
       //:vWk.Object.Type = "E"
       SetAttributeFromString( vWk, "Object", "Type", "E" );
-   } 
+   }
 
    //:END
 
    //:FOR EACH vXOD.ATTRIB
    RESULT = SetCursorFirstEntity( vXOD, "ATTRIB", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:// Create the Derived Attribute work entity if necessary.
       //:IF vXOD.ATTRIB.DERIVEDF != ""
       if ( CompareAttributeToString( vXOD, "ATTRIB", "DERIVEDF", "" ) != 0 )
-      { 
+      {
          //:CREATE ENTITY vWk.Object
          RESULT = CreateEntity( vWk, "Object", zPOS_AFTER );
          //:vWk.Object.Name = ObjectName + "." + vXOD.ENTITY.NAME + "." + vXOD.ATTRIB.NAME
@@ -96,16 +96,16 @@ oTZCMLPLO_AnalyzeEntity( zVIEW     vXOD,
          SetAttributeFromAttribute( vWk, "Object", "OperName", vXOD, "ATTRIB", "DERIVEDF" );
          //:vWk.Object.Type = "A"
          SetAttributeFromString( vWk, "Object", "Type", "A" );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vXOD, "ATTRIB", "" );
       //:END
-   } 
+   }
 
    //:END
    return;
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -116,38 +116,38 @@ zOPER_EXPORT zSHORT OPERATION
 oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
                               zVIEW     vSubtask )
 {
-   zVIEW     vXDM = 0; 
+   zVIEW     vXDM = 0;
    //:VIEW vXOD BASED ON LOD TZZOXODO
-   zVIEW     vXOD = 0; 
+   zVIEW     vXOD = 0;
    //:VIEW vWk  BASED ON LOD TZCMHDWO
-   zVIEW     vWk = 0; 
+   zVIEW     vWk = 0;
 
    //:STRING ( 513 ) FileName       // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     FileName[ 514 ] = { 0 }; 
+   zCHAR     FileName[ 514 ] = { 0 };
    //:INTEGER        f
-   zLONG     f = 0; 
+   zLONG     f = 0;
    //:STRING ( 513 ) XDM_FileName   // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     XDM_FileName[ 514 ] = { 0 }; 
+   zCHAR     XDM_FileName[ 514 ] = { 0 };
    //:STRING ( 254 ) Sl
-   zCHAR     Sl[ 255 ] = { 0 }; 
+   zCHAR     Sl[ 255 ] = { 0 };
    //:STRING ( 2 )   Quote
-   zCHAR     Quote[ 3 ] = { 0 }; 
+   zCHAR     Quote[ 3 ] = { 0 };
    //:INTEGER        nFirstTime
-   zLONG     nFirstTime = 0; 
+   zLONG     nFirstTime = 0;
    //:STRING ( 513 ) XOD_FileName   // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     XOD_FileName[ 514 ] = { 0 }; 
+   zCHAR     XOD_FileName[ 514 ] = { 0 };
    //:SHORT  nRC
-   zSHORT    nRC = 0; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 9 ]; 
-   zCHAR     szTempString_2[ 33 ]; 
-   zCHAR     szTempString_3[ 255 ]; 
-   zCHAR     szTempString_4[ 255 ]; 
-   zCHAR     szTempString_5[ 255 ]; 
-   zCHAR     szTempString_6[ 255 ]; 
-   zCHAR     szTempString_7[ 255 ]; 
-   zCHAR     szTempString_8[ 255 ]; 
+   zSHORT    nRC = 0;
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zCHAR     szTempString_1[ 9 ];
+   zCHAR     szTempString_2[ 33 ];
+   zCHAR     szTempString_3[ 255 ];
+   zCHAR     szTempString_4[ 255 ];
+   zCHAR     szTempString_5[ 255 ];
+   zCHAR     szTempString_6[ 255 ];
+   zCHAR     szTempString_7[ 255 ];
+   zCHAR     szTempString_8[ 255 ];
 
 
    //:Quote = "\"
@@ -215,7 +215,7 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
    //:FOR EACH vXDM.Domain
    RESULT = SetCursorFirstEntity( vXDM, "Domain", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST vWk.Executable
       //:    WHERE vWk.Executable.Name = vXDM.Domain.DLL_Name
       GetStringFromAttribute( szTempString_0, vXDM, "Domain", "DLL_Name" );
@@ -223,18 +223,18 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
 
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      { 
+      {
          //:CREATE ENTITY vWk.Executable
          RESULT = CreateEntity( vWk, "Executable", zPOS_AFTER );
          //:vWk.Executable.Name = vXDM.Domain.DLL_Name
          SetAttributeFromAttribute( vWk, "Executable", "Name", vXDM, "Domain", "DLL_Name" );
-      } 
+      }
 
       //:END
 
       //:IF vXDM.Domain.OperName != ""
       if ( CompareAttributeToString( vXDM, "Domain", "OperName", "" ) != 0 )
-      { 
+      {
          //:CREATE ENTITY vWk.Object
          RESULT = CreateEntity( vWk, "Object", zPOS_AFTER );
          //:vWk.Object.Name = vXDM.Domain.Name
@@ -243,11 +243,11 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          SetAttributeFromAttribute( vWk, "Object", "OperName", vXDM, "Domain", "OperName" );
          //:vWk.Object.Type = "D"
          SetAttributeFromString( vWk, "Object", "Type", "D" );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vXDM, "Domain", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -261,7 +261,7 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
    //:FOR EACH vLPLR.W_MetaDef
    RESULT = SetCursorFirstEntity( vLPLR, "W_MetaDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
 
       //:XOD_FileName = vLPLR.LPLR.ExecDir
       GetVariableFromAttribute( XOD_FileName, 0, 'S', 514, vLPLR, "LPLR", "ExecDir", "", 0 );
@@ -274,7 +274,7 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
       nRC = ActivateOI_FromFile( &vXOD, "TZZOXODO", vLPLR, XOD_FileName, zSINGLE );
       //:IF nRC >= 0
       if ( nRC >= 0 )
-      { 
+      {
          //:SET CURSOR FIRST vWk.Executable
          //:    WHERE vWk.Executable.Name = vXOD.OBJECT.OPER_LIBNM
          GetStringFromAttribute( szTempString_1, vXOD, "OBJECT", "OPER_LIBNM" );
@@ -282,19 +282,19 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
 
          //:IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         { 
+         {
             //:CREATE ENTITY vWk.Executable
             RESULT = CreateEntity( vWk, "Executable", zPOS_AFTER );
             //:vWk.Executable.Name = vXOD.OBJECT.OPER_LIBNM
             SetAttributeFromAttribute( vWk, "Executable", "Name", vXOD, "OBJECT", "OPER_LIBNM" );
-         } 
+         }
 
          //:END
 
          //:// Create the Object Entity Constraint work entity if necessary.
          //:IF vXOD.OBJECT.OCEOPER != ""
          if ( CompareAttributeToString( vXOD, "OBJECT", "OCEOPER", "" ) != 0 )
-         { 
+         {
             //:CREATE ENTITY vWk.Object
             RESULT = CreateEntity( vWk, "Object", zPOS_AFTER );
             //:vWk.Object.Name = vXOD.OBJECT.NAME
@@ -303,21 +303,21 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
             SetAttributeFromAttribute( vWk, "Object", "OperName", vXOD, "OBJECT", "OCEOPER" );
             //:vWk.Object.Type = "O"
             SetAttributeFromString( vWk, "Object", "Type", "O" );
-         } 
+         }
 
          //:END
 
          //:AnalyzeEntity( vXOD, vWk, vXOD.OBJECT.NAME )
          GetStringFromAttribute( szTempString_2, vXOD, "OBJECT", "NAME" );
          oTZCMLPLO_AnalyzeEntity( vXOD, vWk, szTempString_2 );
-      } 
+      }
 
       //:END
 
       //:DropObjectInstance( vXOD )
       DropObjectInstance( vXOD );
       RESULT = SetCursorNextEntity( vLPLR, "W_MetaDef", "" );
-   } 
+   }
 
 
    //:END
@@ -325,18 +325,18 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
    //:FOR EACH vWk.Executable
    RESULT = SetCursorFirstEntity( vWk, "Executable", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:nFirstTime = 1
       nFirstTime = 1;
 
       //:FOR EACH vWk.Object
       RESULT = SetCursorFirstEntity( vWk, "Object", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
 
          //:IF nFirstTime = 1
          if ( nFirstTime == 1 )
-         { 
+         {
             //:nFirstTime = 0
             nFirstTime = 0;
             //:wl( f, "zPVOID " )
@@ -348,51 +348,51 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
             oTZCMLPLO_wl( f, Sl );
             //:wl( f, "{" )
             oTZCMLPLO_wl( f, "{" );
-         } 
+         }
 
          //:END
 
          //:IF vWk.Object.Type = "D"
          if ( CompareAttributeToString( vWk, "Object", "Type", "D" ) == 0 )
-         { 
+         {
             //:Sl = "   // Operation Calls for Domain: " + vWk.Object.Name
             GetVariableFromAttribute( szTempString_3, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Operation Calls for Domain: ", 1, 0, 255 );
             ZeidonStringConcat( Sl, 1, 0, szTempString_3, 1, 0, 255 );
-         } 
+         }
 
          //:END
 
          //:IF vWk.Object.Type = "O"
          if ( CompareAttributeToString( vWk, "Object", "Type", "O" ) == 0 )
-         { 
+         {
             //:Sl = "   // Object Constraint for Object: " + vWk.Object.Name
             GetVariableFromAttribute( szTempString_4, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Object Constraint for Object: ", 1, 0, 255 );
             ZeidonStringConcat( Sl, 1, 0, szTempString_4, 1, 0, 255 );
-         } 
+         }
 
          //:END
 
          //:IF vWk.Object.Type = "E"
          if ( CompareAttributeToString( vWk, "Object", "Type", "E" ) == 0 )
-         { 
+         {
             //:Sl = "   // Entity Constraint for Object.Entity: " + vWk.Object.Name
             GetVariableFromAttribute( szTempString_5, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Entity Constraint for Object.Entity: ", 1, 0, 255 );
             ZeidonStringConcat( Sl, 1, 0, szTempString_5, 1, 0, 255 );
-         } 
+         }
 
          //:END
 
          //:IF vWk.Object.Type = "A"
          if ( CompareAttributeToString( vWk, "Object", "Type", "A" ) == 0 )
-         { 
+         {
             //:Sl = "   // Derived Attribute for Object.Entity.Attr: " + vWk.Object.Name
             GetVariableFromAttribute( szTempString_6, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Derived Attribute for Object.Entity.Attr: ", 1, 0, 255 );
             ZeidonStringConcat( Sl, 1, 0, szTempString_6, 1, 0, 255 );
-         } 
+         }
 
          //:END
 
@@ -418,14 +418,14 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          //:wl( f, " " )
          oTZCMLPLO_wl( f, " " );
          RESULT = SetCursorNextEntity( vWk, "Object", "" );
-      } 
+      }
 
 
       //:END
 
       //:IF nFirstTime = 0
       if ( nFirstTime == 0 )
-      { 
+      {
          //:wl( f, "   return( 0 ); " )
          oTZCMLPLO_wl( f, "   return( 0 ); " );
          //:wl( f, " " )
@@ -434,11 +434,11 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          oTZCMLPLO_wl( f, "}" );
          //:wl( f, " " )
          oTZCMLPLO_wl( f, " " );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vWk, "Executable", "" );
       //:END
-   } 
+   }
 
 
    //:END
@@ -452,7 +452,7 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
    oTZCMLPLO_GenerateTransShell( vLPLR, vSubtask );
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -464,7 +464,7 @@ static zSHORT
 oTZCMLPLO_wl( zLONG     nFile,
               zPCHAR    StatementLine )
 {
-   zVIEW     vSubtask = 0; 
+   zVIEW     vSubtask = 0;
 
 
    //:vSubtask = GetDefaultViewForActiveTask( )
@@ -473,7 +473,7 @@ oTZCMLPLO_wl( zLONG     nFile,
    SysWriteLine( vSubtask, nFile, StatementLine );
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -483,42 +483,42 @@ zOPER_EXPORT zSHORT OPERATION
 oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                               zVIEW     vSubtask )
 {
-   zVIEW     vLOD = 0; 
+   zVIEW     vLOD = 0;
    //:INTEGER f
-   zLONG     f = 0; 
+   zLONG     f = 0;
    //:INTEGER l
-   zLONG     l = 0; 
+   zLONG     l = 0;
    //:INTEGER lArgCount
-   zLONG     lArgCount = 0; 
+   zLONG     lArgCount = 0;
    //:INTEGER lViewCount
-   zLONG     lViewCount = 0; 
+   zLONG     lViewCount = 0;
    //:INTEGER nFirstTime
-   zLONG     nFirstTime = 0; 
+   zLONG     nFirstTime = 0;
    //:STRING ( 10 )  szl
-   zCHAR     szl[ 11 ] = { 0 }; 
+   zCHAR     szl[ 11 ] = { 0 };
    //:STRING ( 10 )  szViewCount
-   zCHAR     szViewCount[ 11 ] = { 0 }; 
+   zCHAR     szViewCount[ 11 ] = { 0 };
    //:STRING ( 2 )   Quote
-   zCHAR     Quote[ 3 ] = { 0 }; 
+   zCHAR     Quote[ 3 ] = { 0 };
    //:STRING ( 513 ) sz            // size according to zMAX_FILESPEC_LTH + 1
-   zCHAR     sz[ 514 ] = { 0 }; 
+   zCHAR     sz[ 514 ] = { 0 };
    //:STRING ( 513 ) sz2           // size according to zMAX_FILESPEC_LTH + 1
-   zCHAR     sz2[ 514 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 33 ]; 
-   zCHAR     szTempString_2[ 33 ]; 
-   zCHAR     szTempString_3[ 33 ]; 
-   zCHAR     szTempString_4[ 65 ]; 
-   zCHAR     szTempString_5[ 65 ]; 
-   zCHAR     szTempString_6[ 65 ]; 
-   zCHAR     szTempString_7[ 65 ]; 
-   zCHAR     szTempString_8[ 65 ]; 
-   zCHAR     szTempString_9[ 65 ]; 
-   zCHAR     szTempString_10[ 33 ]; 
-   zCHAR     szTempString_11[ 33 ]; 
-   zCHAR     szTempString_12[ 65 ]; 
-   zCHAR     szTempString_13[ 65 ]; 
+   zCHAR     sz2[ 514 ] = { 0 };
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zCHAR     szTempString_1[ 33 ];
+   zCHAR     szTempString_2[ 33 ];
+   zCHAR     szTempString_3[ 33 ];
+   zCHAR     szTempString_4[ 65 ];
+   zCHAR     szTempString_5[ 65 ];
+   zCHAR     szTempString_6[ 65 ];
+   zCHAR     szTempString_7[ 65 ];
+   zCHAR     szTempString_8[ 65 ];
+   zCHAR     szTempString_9[ 65 ];
+   zCHAR     szTempString_10[ 33 ];
+   zCHAR     szTempString_11[ 33 ];
+   zCHAR     szTempString_12[ 65 ];
+   zCHAR     szTempString_13[ 65 ];
 
 
    //:Quote = "\"
@@ -530,13 +530,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
    //:FOR EACH vLPLR.W_MetaDef
    RESULT = SetCursorFirstEntity( vLPLR, "W_MetaDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:ActivateMetaOI( vSubtask, vLOD, vLPLR, 2007, 0 )
       ActivateMetaOI( vSubtask, &vLOD, vLPLR, 2007, 0 );
       //:FOR EACH vLOD.SourceFile WHERE vLOD.SourceFile.LanguageType = "V"
       RESULT = SetCursorFirstEntityByString( vLOD, "SourceFile", "LanguageType", "V", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
          //:sz = vLPLR.LPLR.PgmSrcDir
          GetVariableFromAttribute( sz, 0, 'S', 514, vLPLR, "LPLR", "PgmSrcDir", "", 0 );
          //:sz = sz + "\" + vLOD.SourceFile.Name + ".c"
@@ -548,7 +548,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
          f = SysOpenFile( vLPLR, sz, 448 );
          //:IF f != 0
          if ( f != 0 )
-         { 
+         {
             //:wl( f, " " )
             oTZCMLPLO_wl( f, " " );
             //:wl( f, "zLONG OPERATION" )
@@ -568,12 +568,12 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
             ZeidonStringCopy( sz, 1, 0, "", 1, 0, 514 );
             //:LOOP WHILE l > 0
             while ( l > 0 )
-            { 
+            {
                //:sz = sz + " "
                ZeidonStringConcat( sz, 1, 0, " ", 1, 0, 514 );
                //:l = l - 1
                l = l - 1;
-            } 
+            }
 
             //:END
             //:sz2 = sz + "zVIEW  vArgs,"
@@ -596,19 +596,19 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
             //:FOR EACH vLOD.Operation WHERE vLOD.Operation.Type = "T"
             RESULT = SetCursorFirstEntityByString( vLOD, "Operation", "Type", "T", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            { 
+            {
                //:sz = "   if ( zstrcmp( pszOperName, " + Quote
                ZeidonStringCopy( sz, 1, 0, "   if ( zstrcmp( pszOperName, ", 1, 0, 514 );
                ZeidonStringConcat( sz, 1, 0, Quote, 1, 0, 514 );
                //:IF vLOD.SourceFile.LanguageType = "V"
                if ( CompareAttributeToString( vLOD, "SourceFile", "LanguageType", "V" ) == 0 )
-               { 
+               {
                   //:sz = sz + "o" + vLOD.LOD.Name + "_"
                   ZeidonStringConcat( sz, 1, 0, "o", 1, 0, 514 );
                   GetVariableFromAttribute( szTempString_2, 0, 'S', 33, vLOD, "LOD", "Name", "", 0 );
                   ZeidonStringConcat( sz, 1, 0, szTempString_2, 1, 0, 514 );
                   ZeidonStringConcat( sz, 1, 0, "_", 1, 0, 514 );
-               } 
+               }
 
                //:END
                //:sz = sz + vLOD.Operation.Name + Quote + " ) == 0 )"
@@ -629,7 +629,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                //:FOR EACH vLOD.Parameter
                RESULT = SetCursorFirstEntity( vLOD, "Parameter", "" );
                while ( RESULT > zCURSOR_UNCHANGED )
-               { 
+               {
                   //:l = l + 1
                   l = l + 1;
                   //:ConvertIntegerToString( l, szl, 10 )
@@ -637,7 +637,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
 
                   //:IF vLOD.Parameter.DataType = "S"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "S" ) == 0 )
-                  { 
+                  {
                      //:sz = "      zPCHAR   pszArg" + szl + ";" +
                      //:   "  // " + vLOD.Parameter.ShortDesc
                      ZeidonStringCopy( sz, 1, 0, "      zPCHAR   pszArg", 1, 0, 514 );
@@ -648,21 +648,21 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, szTempString_4, 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "Y"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "Y" ) == 0 )
-                  { 
+                  {
                      //:IF nFirstTime = 1
                      if ( nFirstTime == 1 )
-                     { 
+                     {
                         //:nFirstTime = 0
                         nFirstTime = 0;
                         //:wl( f, "      zLONG    lTemp;" )
                         oTZCMLPLO_wl( f, "      zLONG    lTemp;" );
-                     } 
+                     }
 
                      //:END
                      //:sz = "      zCHAR    cArg" + szl + ";" +
@@ -675,13 +675,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, szTempString_5, 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "M"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "M" ) == 0 )
-                  { 
+                  {
                      //:sz = "      zDECIMAL dArg" + szl + ";" +
                      //:   "  // " + vLOD.Parameter.ShortDesc
                      ZeidonStringCopy( sz, 1, 0, "      zDECIMAL dArg", 1, 0, 514 );
@@ -692,21 +692,21 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, szTempString_6, 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "N"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "N" ) == 0 )
-                  { 
+                  {
                      //:IF nFirstTime = 1
                      if ( nFirstTime == 1 )
-                     { 
+                     {
                         //:nFirstTime = 0
                         nFirstTime = 0;
                         //:wl( f, "      zLONG    lTemp;" )
                         oTZCMLPLO_wl( f, "      zLONG    lTemp;" );
-                     } 
+                     }
 
                      //:END
                      //:sz = "      zSHORT   nArg" + szl + ";" +
@@ -719,13 +719,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, szTempString_7, 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "L"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "L" ) == 0 )
-                  { 
+                  {
                      //:sz = "      zLONG    lArg" + szl + ";" +
                      //:   "  // " + vLOD.Parameter.ShortDesc
                      ZeidonStringCopy( sz, 1, 0, "      zLONG    lArg", 1, 0, 514 );
@@ -736,11 +736,11 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, szTempString_8, 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   RESULT = SetCursorNextEntity( vLOD, "Parameter", "" );
                   //:END
-               } 
+               }
 
                //:END
 
@@ -767,7 +767,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                //:FOR EACH vLOD.Parameter
                RESULT = SetCursorFirstEntity( vLOD, "Parameter", "" );
                while ( RESULT > zCURSOR_UNCHANGED )
-               { 
+               {
                   //:wl( f, " " )
                   oTZCMLPLO_wl( f, " " );
                   //:sz = "      // Get value for " + vLOD.Parameter.ShortDesc
@@ -778,13 +778,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                   oTZCMLPLO_wl( f, sz );
                   //:IF nFirstTime = 1
                   if ( nFirstTime == 1 )
-                  { 
+                  {
                      //:nFirstTime = 0
                      nFirstTime = 0;
                      //:ELSE
-                  } 
+                  }
                   else
-                  { 
+                  {
                      //:sz = "      SetCursorNextEntity( vArgs, " + Quote + "Argument" +
                      //:                Quote + ", 0 );"
                      ZeidonStringCopy( sz, 1, 0, "      SetCursorNextEntity( vArgs, ", 1, 0, 514 );
@@ -794,7 +794,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, ", 0 );", 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
@@ -805,7 +805,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
 
                   //:IF vLOD.Parameter.DataType = "S"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "S" ) == 0 )
-                  { 
+                  {
                      //:sz = "      GetAddrForAttribute( &pszArg" + szl + ", vArgs, " +
                      //:  Quote + "Argument" + Quote + ", " + Quote + "Value" +
                      //:  Quote + " );"
@@ -822,13 +822,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, " );", 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "N"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "N" ) == 0 )
-                  { 
+                  {
                      //:sz = "      GetIntegerFromAttribute( &lTemp, vArgs, " +
                      //:  Quote + "Argument" + Quote + ", " + Quote + "Value" +
                      //:  Quote + " );"
@@ -849,13 +849,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, " = (zSHORT) lTemp;", 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "Y"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "Y" ) == 0 )
-                  { 
+                  {
                      //:sz = "      GetIntegerFromAttribute( &lTemp, vArgs, " +
                      //:  Quote + "Argument" + Quote + ", " + Quote + "Value" +
                      //:  Quote + " );"
@@ -876,13 +876,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, " = (zCHAR) lTemp;", 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "L"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "L" ) == 0 )
-                  { 
+                  {
                      //:sz = "      GetIntegerFromAttribute( &lArg" + szl + ", vArgs, " +
                      //:  Quote + "Argument" + Quote + ", " + Quote + "Value" +
                      //:  Quote + " );"
@@ -899,13 +899,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, " );", 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "M"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "M" ) == 0 )
-                  { 
+                  {
                      //:sz = "      GetDecimalFromAttribute( &dArg" + szl + ", vArgs, " +
                      //:  Quote + "Argument" + Quote + ", " + Quote + "Value" +
                      //:  Quote + " );"
@@ -922,11 +922,11 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, " );", 1, 0, 514 );
                      //:wl( f, sz )
                      oTZCMLPLO_wl( f, sz );
-                  } 
+                  }
 
                   RESULT = SetCursorNextEntity( vLOD, "Parameter", "" );
                   //:END
-               } 
+               }
 
 
                //:END
@@ -948,12 +948,12 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                ZeidonStringCopy( sz2, 1, 0, "", 1, 0, 514 );
                //:LOOP WHILE l > 0
                while ( l > 0 )
-               { 
+               {
                   //:sz2 = sz2 + " "
                   ZeidonStringConcat( sz2, 1, 0, " ", 1, 0, 514 );
                   //:l = l - 1
                   l = l - 1;
-               } 
+               }
 
                //:END
                //:l = 0
@@ -963,7 +963,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                //:FOR EACH vLOD.Parameter
                RESULT = SetCursorFirstEntity( vLOD, "Parameter", "" );
                while ( RESULT > zCURSOR_UNCHANGED )
-               { 
+               {
                   //:l = l + 1
                   l = l + 1;
                   //:ConvertIntegerToString( l, szl, 10 )
@@ -971,13 +971,13 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
 
                   //:IF vLOD.Parameter.DataType = "V"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "V" ) == 0 )
-                  { 
+                  {
                      //:IF vLOD.Parameter.PFlag != "Y"
                      if ( CompareAttributeToString( vLOD, "Parameter", "PFlag", "Y" ) != 0 )
-                     { 
+                     {
                         //:sz = sz + "*"
                         ZeidonStringConcat( sz, 1, 0, "*", 1, 0, 514 );
-                     } 
+                     }
 
                      //:END
 
@@ -989,76 +989,76 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                      ZeidonStringConcat( sz, 1, 0, " ]", 1, 0, 514 );
                      //:lViewCount = lViewCount + 1
                      lViewCount = lViewCount + 1;
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "S"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "S" ) == 0 )
-                  { 
+                  {
                      //:sz = sz + "pszArg" + szl
                      ZeidonStringConcat( sz, 1, 0, "pszArg", 1, 0, 514 );
                      ZeidonStringConcat( sz, 1, 0, szl, 1, 0, 514 );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "N"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "N" ) == 0 )
-                  { 
+                  {
                      //:sz = sz + "nArg" + szl
                      ZeidonStringConcat( sz, 1, 0, "nArg", 1, 0, 514 );
                      ZeidonStringConcat( sz, 1, 0, szl, 1, 0, 514 );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "Y"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "Y" ) == 0 )
-                  { 
+                  {
                      //:sz = sz + "cArg" + szl
                      ZeidonStringConcat( sz, 1, 0, "cArg", 1, 0, 514 );
                      ZeidonStringConcat( sz, 1, 0, szl, 1, 0, 514 );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "L"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "L" ) == 0 )
-                  { 
+                  {
                      //:sz = sz + "lArg" + szl
                      ZeidonStringConcat( sz, 1, 0, "lArg", 1, 0, 514 );
                      ZeidonStringConcat( sz, 1, 0, szl, 1, 0, 514 );
-                  } 
+                  }
 
                   //:END
 
                   //:IF vLOD.Parameter.DataType = "M"
                   if ( CompareAttributeToString( vLOD, "Parameter", "DataType", "M" ) == 0 )
-                  { 
+                  {
                      //:sz = sz + "dArg" + szl
                      ZeidonStringConcat( sz, 1, 0, "dArg", 1, 0, 514 );
                      ZeidonStringConcat( sz, 1, 0, szl, 1, 0, 514 );
-                  } 
+                  }
 
                   //:END
 
                   //:IF l != lArgCount
                   if ( l != lArgCount )
-                  { 
+                  {
                      //:sz = sz + ",     // " + vLOD.Parameter.ShortDesc
                      ZeidonStringConcat( sz, 1, 0, ",     // ", 1, 0, 514 );
                      GetVariableFromAttribute( szTempString_12, 0, 'S', 65, vLOD, "Parameter", "ShortDesc", "", 0 );
                      ZeidonStringConcat( sz, 1, 0, szTempString_12, 1, 0, 514 );
                      //:ELSE
-                  } 
+                  }
                   else
-                  { 
+                  {
                      //:sz = sz + " );   // " + vLOD.Parameter.ShortDesc
                      ZeidonStringConcat( sz, 1, 0, " );   // ", 1, 0, 514 );
                      GetVariableFromAttribute( szTempString_13, 0, 'S', 65, vLOD, "Parameter", "ShortDesc", "", 0 );
                      ZeidonStringConcat( sz, 1, 0, szTempString_13, 1, 0, 514 );
-                  } 
+                  }
 
                   //:END
 
@@ -1067,7 +1067,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                   //:sz = sz2
                   ZeidonStringCopy( sz, 1, 0, sz2, 1, 0, 514 );
                   RESULT = SetCursorNextEntity( vLOD, "Parameter", "" );
-               } 
+               }
 
                //:END
 
@@ -1078,7 +1078,7 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
                //:wl( f, " " )
                oTZCMLPLO_wl( f, " " );
                RESULT = SetCursorNextEntityByString( vLOD, "Operation", "Type", "T", "" );
-            } 
+            }
 
 
             //:END // FOR EACH vLOD.Operation...
@@ -1089,26 +1089,26 @@ oTZCMLPLO_GenerateTransShell( zVIEW     vLPLR,
             oTZCMLPLO_wl( f, "}" );
             //:SysCloseFile( vLPLR, f, 0 )
             SysCloseFile( vLPLR, f, 0 );
-         } 
+         }
 
          RESULT = SetCursorNextEntityByString( vLOD, "SourceFile", "LanguageType", "V", "" );
 
          //:END // if f != 0...
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vLPLR, "W_MetaDef", "" );
 
       //:END  // FOR EACH vLOD.SourceFile
-   } 
+   }
 
 
    //:END // FOR EACH vLPLR.W_MetaDef
    return( 0 );
 // END // GenTransShell
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif

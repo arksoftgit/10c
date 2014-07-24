@@ -3641,7 +3641,7 @@ GenerateSetCursorWithScope( zVIEW vSubtask, zLONG lScope )  // java???
             pchFunction = "SetCursorPrevEntity";
             break;
       }
-   /* 
+   /*
    }
    */
 

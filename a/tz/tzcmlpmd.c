@@ -1,14 +1,14 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "TZ__OPRS.H" 
-#include "ZDRVROPR.H" 
-#include "tzlodopr.h" 
- 
+#include "KZOENGAA.H"
+#include "TZ__OPRS.H"
+#include "ZDRVROPR.H"
+#include "tzlodopr.h"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 zOPER_EXPORT zSHORT OPERATION
@@ -110,16 +110,16 @@ CleanUpVORs( zVIEW     ViewToWindow );
 zOPER_EXPORT zSHORT OPERATION
 BuildTargetLPLR_List( zVIEW     vSubtask )
 {
-   zVIEW     TargetLPLR = 0; 
+   zVIEW     TargetLPLR = 0;
    //:VIEW SourceLPLR BASED ON LOD TZCMLPLO
-   zVIEW     SourceLPLR = 0; 
+   zVIEW     SourceLPLR = 0;
    //:VIEW TZCMLPLO BASED ON LOD TZCMLPLO
-   zVIEW     TZCMLPLO = 0; 
-   zSHORT    RESULT; 
-   zLONG     lTempInteger_0; 
-   zLONG     lTempInteger_1; 
-   zLONG     lTempInteger_2; 
-   zLONG     lTempInteger_3; 
+   zVIEW     TZCMLPLO = 0;
+   zSHORT    RESULT;
+   zLONG     lTempInteger_0;
+   zLONG     lTempInteger_1;
+   zLONG     lTempInteger_2;
+   zLONG     lTempInteger_3;
 
 
    //:GET VIEW TZCMLPLO NAMED "TZCMLPLO"
@@ -131,18 +131,18 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
 
    //:IF RESULT > 0
    if ( RESULT > 0 )
-   { 
+   {
       //:DELETE ENTITY TargetLPLR.LPLR
       RESULT = DeleteEntity( TargetLPLR, "LPLR", zPOS_NEXT );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:ACTIVATE TargetLPLR EMPTY
       RESULT = ActivateEmptyObjectInstance( &TargetLPLR, "TZCMLPLO", vSubtask, zSINGLE );
       //:NAME VIEW TargetLPLR "TargetLPLR"
       SetNameForView( TargetLPLR, "TargetLPLR", 0, zLEVEL_TASK );
-   } 
+   }
 
    //:END
 
@@ -152,9 +152,9 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
    //:         TZCMLPLO.W_MetaType.Type >= 2000
    RESULT = SetCursorFirstEntity( TZCMLPLO, "W_MetaType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       if ( CompareAttributeToInteger( TZCMLPLO, "W_MetaType", "Type", 2000 ) >= 0 )
-      { 
+      {
 
          //:// Do not include Domains (2003), Global Operations (2002) or
          //:// Registered Views (2009) in the list.
@@ -162,7 +162,7 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
          //:TZCMLPLO.W_MetaType.Type != 2003 AND
          //:TZCMLPLO.W_MetaType.Type != 2009
          if ( CompareAttributeToInteger( TZCMLPLO, "W_MetaType", "Type", 2002 ) != 0 && CompareAttributeToInteger( TZCMLPLO, "W_MetaType", "Type", 2003 ) != 0 && CompareAttributeToInteger( TZCMLPLO, "W_MetaType", "Type", 2009 ) != 0 )
-         { 
+         {
 
             //:CREATE ENTITY TargetLPLR.W_MetaType
             RESULT = CreateEntity( TargetLPLR, "W_MetaType", zPOS_AFTER );
@@ -171,22 +171,22 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
             //:FOR EACH TZCMLPLO.W_MetaDef
             RESULT = SetCursorFirstEntity( TZCMLPLO, "W_MetaDef", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            { 
+            {
                //:CREATE ENTITY TargetLPLR.W_MetaDef
                RESULT = CreateEntity( TargetLPLR, "W_MetaDef", zPOS_AFTER );
                //:TargetLPLR.W_MetaDef.Name = TZCMLPLO.W_MetaDef.Name
                SetAttributeFromAttribute( TargetLPLR, "W_MetaDef", "Name", TZCMLPLO, "W_MetaDef", "Name" );
                RESULT = SetCursorNextEntity( TZCMLPLO, "W_MetaDef", "" );
-            } 
+            }
 
             //:END
-         } 
+         }
 
-      } 
+      }
 
       RESULT = SetCursorNextEntity( TZCMLPLO, "W_MetaType", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -197,26 +197,26 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
    //:FOR EACH TargetLPLR.W_MetaType
    RESULT = SetCursorFirstEntity( TargetLPLR, "W_MetaType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:IF TargetLPLR.W_MetaType.Type = 2013 OR
       //:   TargetLPLR.W_MetaType.Type = 2014
       if ( CompareAttributeToInteger( TargetLPLR, "W_MetaType", "Type", 2013 ) == 0 || CompareAttributeToInteger( TargetLPLR, "W_MetaType", "Type", 2014 ) == 0 )
-      { 
+      {
          //:TargetLPLR.W_MetaType.SortOrder = TargetLPLR.W_MetaType.Type
          SetAttributeFromAttribute( TargetLPLR, "W_MetaType", "SortOrder", TargetLPLR, "W_MetaType", "Type" );
          //:else
-      } 
+      }
       else
-      { 
+      {
          //:TargetLPLR.W_MetaType.SortOrder = TargetLPLR.W_MetaType.Type + 20
          GetIntegerFromAttribute( &lTempInteger_0, TargetLPLR, "W_MetaType", "Type" );
          lTempInteger_1 = lTempInteger_0 + 20;
          SetAttributeFromInteger( TargetLPLR, "W_MetaType", "SortOrder", lTempInteger_1 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( TargetLPLR, "W_MetaType", "" );
       //:END
-   } 
+   }
 
    //:END
    //:OrderEntityForView( TargetLPLR, "W_MetaType", "SortOrder A" )
@@ -224,11 +224,11 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
    //:FOR EACH TargetLPLR.W_MetaType
    RESULT = SetCursorFirstEntity( TargetLPLR, "W_MetaType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:OrderEntityForView( TargetLPLR, "W_MetaDef", "Name A" )
       OrderEntityForView( TargetLPLR, "W_MetaDef", "Name A" );
       RESULT = SetCursorNextEntity( TargetLPLR, "W_MetaType", "" );
-   } 
+   }
 
    //:END
 
@@ -237,26 +237,26 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
    //:FOR EACH SourceLPLR.W_MetaType
    RESULT = SetCursorFirstEntity( SourceLPLR, "W_MetaType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:IF SourceLPLR.W_MetaType.Type = 2013 OR
       //:   SourceLPLR.W_MetaType.Type = 2014
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2013 ) == 0 || CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2014 ) == 0 )
-      { 
+      {
          //:SourceLPLR.W_MetaType.SortOrder = SourceLPLR.W_MetaType.Type
          SetAttributeFromAttribute( SourceLPLR, "W_MetaType", "SortOrder", SourceLPLR, "W_MetaType", "Type" );
          //:else
-      } 
+      }
       else
-      { 
+      {
          //:SourceLPLR.W_MetaType.SortOrder = SourceLPLR.W_MetaType.Type + 20
          GetIntegerFromAttribute( &lTempInteger_2, SourceLPLR, "W_MetaType", "Type" );
          lTempInteger_3 = lTempInteger_2 + 20;
          SetAttributeFromInteger( SourceLPLR, "W_MetaType", "SortOrder", lTempInteger_3 );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( SourceLPLR, "W_MetaType", "" );
       //:END
-   } 
+   }
 
    //:END
    //:OrderEntityForView( SourceLPLR, "W_MetaType", "SortOrder A" )
@@ -264,11 +264,11 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
    //:FOR EACH SourceLPLR.W_MetaType
    RESULT = SetCursorFirstEntity( SourceLPLR, "W_MetaType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:OrderEntityForView( SourceLPLR, "W_MetaDef", "Name A" )
       OrderEntityForView( SourceLPLR, "W_MetaDef", "Name A" );
       RESULT = SetCursorNextEntity( SourceLPLR, "W_MetaType", "" );
-   } 
+   }
 
    //:END
 
@@ -279,7 +279,7 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
    RESULT = SetCursorFirstEntity( SourceLPLR, "W_MetaType", "" );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -292,27 +292,27 @@ BuildTargetLPLR_List( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 DialogCompareDataModels( zVIEW     vSubtask )
 {
-   zVIEW     vCM = 0; 
+   zVIEW     vCM = 0;
    //:VIEW OtherLPLR   BASED ON LOD TZCMLPLO
-   zVIEW     OtherLPLR = 0; 
+   zVIEW     OtherLPLR = 0;
    //:VIEW CurrentLPLR BASED ON LOD TZCMLPLO
-   zVIEW     CurrentLPLR = 0; 
+   zVIEW     CurrentLPLR = 0;
    //:VIEW OtherERD    BASED ON LOD TZEREMDO
-   zVIEW     OtherERD = 0; 
+   zVIEW     OtherERD = 0;
    //:VIEW CurrentERD  BASED ON LOD TZEREMDO
-   zVIEW     CurrentERD = 0; 
+   zVIEW     CurrentERD = 0;
    //:VIEW TZERRPTO    BASED ON LOD TZERRPTO
-   zVIEW     TZERRPTO = 0; 
+   zVIEW     TZERRPTO = 0;
 
 
    //:STRING (512) FileName
-   zCHAR     FileName[ 513 ] = { 0 }; 
+   zCHAR     FileName[ 513 ] = { 0 };
    //:STRING (9)   TruncatedName
-   zCHAR     TruncatedName[ 10 ] = { 0 }; 
+   zCHAR     TruncatedName[ 10 ] = { 0 };
    //:SHORT        nRC
-   zSHORT    nRC = 0; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
+   zSHORT    nRC = 0;
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
 
 
    //:GET VIEW vCM NAMED "TZCMWKSO"
@@ -332,13 +332,13 @@ DialogCompareDataModels( zVIEW     vSubtask )
    nRC = ActivateOI_FromFile( &OtherLPLR, "TZCMLPLO", vSubtask, FileName, zSINGLE );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:MessageSend( vSubtask, "", "Compare Data Models",
       //:             "Error activating Other LPLR", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       MessageSend( vSubtask, "", "Compare Data Models", "Error activating Other LPLR", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    //:NAME VIEW OtherLPLR "OtherLPLR"
@@ -349,13 +349,13 @@ DialogCompareDataModels( zVIEW     vSubtask )
    RESULT = SetCursorFirstEntityByInteger( OtherLPLR, "W_MetaType", "Type", 2004, "" );
    //:IF RESULT < zCURSOR_SET
    if ( RESULT < zCURSOR_SET )
-   { 
+   {
       //:MessageSend( vSubtask, "", "Compare Data Models",
       //:             "Selected LPLR does not have a Data Model", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       MessageSend( vSubtask, "", "Compare Data Models", "Selected LPLR does not have a Data Model", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    //:FileName = OtherLPLR.LPLR.MetaSrcDir + "\" + OtherLPLR.W_MetaDef.Name + ".PMD"
@@ -368,13 +368,13 @@ DialogCompareDataModels( zVIEW     vSubtask )
    nRC = ActivateOI_FromFile( &OtherERD, "TZEREMDO", OtherLPLR, FileName, zSINGLE );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:MessageSend( vSubtask, "", "Compare Data Models",
       //:             "Error activating Other ERD", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       MessageSend( vSubtask, "", "Compare Data Models", "Error activating Other ERD", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -389,13 +389,13 @@ DialogCompareDataModels( zVIEW     vSubtask )
    nRC = ActivateMetaOI( vSubtask, &CurrentERD, CurrentLPLR, zSOURCE_ERD_META, zSINGLE );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:MessageSend( vSubtask, "", "Compare Data Models",
       //:             "Error activating Current ERD", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       MessageSend( vSubtask, "", "Compare Data Models", "Error activating Current ERD", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -410,7 +410,7 @@ DialogCompareDataModels( zVIEW     vSubtask )
    FormatSubobjectOnDoc( TZERRPTO, "Root", vSubtask, "ERDCOMP", 0 );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -420,69 +420,69 @@ DialogCompareDataModels( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 MigrateMeta( zVIEW     vSubtask )
 {
-   zVIEW     SourceLPLR = 0; 
+   zVIEW     SourceLPLR = 0;
    //:VIEW SourceVOR_LPLR     BASED ON LOD TZCMLPLO
-   zVIEW     SourceVOR_LPLR = 0; 
+   zVIEW     SourceVOR_LPLR = 0;
    //:VIEW TargetVOR_LPLR     BASED ON LOD TZCMLPLO
-   zVIEW     TargetVOR_LPLR = 0; 
+   zVIEW     TargetVOR_LPLR = 0;
    //:VIEW OrigLPLR           BASED ON LOD TZCMLPLO
-   zVIEW     OrigLPLR = 0; 
+   zVIEW     OrigLPLR = 0;
    //:VIEW CurrentLPLR        BASED ON LOD TZCMLPLO
-   zVIEW     CurrentLPLR = 0; 
+   zVIEW     CurrentLPLR = 0;
    //:VIEW NewERD             BASED ON LOD TZEREMDO
-   zVIEW     NewERD = 0; 
+   zVIEW     NewERD = 0;
    //:VIEW ReturnedSA         BASED ON LOD TZERSASO
-   zVIEW     ReturnedSA = 0; 
+   zVIEW     ReturnedSA = 0;
    //:VIEW ReturnedTE         BASED ON LOD TZTENVRO
-   zVIEW     ReturnedTE = 0; 
+   zVIEW     ReturnedTE = 0;
    //:VIEW NewLOD             BASED ON LOD TZZOLODO
-   zVIEW     NewLOD = 0; 
+   zVIEW     NewLOD = 0;
    //:VIEW ReturnedPPE        BASED ON LOD TZPESRCO
-   zVIEW     ReturnedPPE = 0; 
+   zVIEW     ReturnedPPE = 0;
    //:VIEW NewDialog          BASED ON LOD TZWDLGSO
-   zVIEW     NewDialog = 0; 
+   zVIEW     NewDialog = 0;
    //:VIEW ReturnedDialogSpec BASED ON LOD TZADCSDO
-   zVIEW     ReturnedDialogSpec = 0; 
+   zVIEW     ReturnedDialogSpec = 0;
    //:VIEW ReturnedReport     BASED ON LOD TZRPSRCO
-   zVIEW     ReturnedReport = 0; 
+   zVIEW     ReturnedReport = 0;
    //:VIEW ReturnedXSLT       BASED ON LOD TZXSLTSO
-   zVIEW     ReturnedXSLT = 0; 
+   zVIEW     ReturnedXSLT = 0;
    //:VIEW NewDomainGroup     BASED ON LOD TZDGSRCO
-   zVIEW     NewDomainGroup = 0; 
+   zVIEW     NewDomainGroup = 0;
    //:VIEW NewOperationGroup  BASED ON LOD TZOGSRCO
-   zVIEW     NewOperationGroup = 0; 
+   zVIEW     NewOperationGroup = 0;
    //:VIEW ReturnedHeader     BASED ON LOD TZOPHDRO
-   zVIEW     ReturnedHeader = 0; 
+   zVIEW     ReturnedHeader = 0;
    //:VIEW vPE                BASED ON LOD TZPESRCO
-   zVIEW     vPE = 0; 
+   zVIEW     vPE = 0;
    //:VIEW vVOR               BASED ON LOD TZWDVORO
-   zVIEW     vVOR = 0; 
+   zVIEW     vVOR = 0;
 
    //:STRING (32)  MetaName
-   zCHAR     MetaName[ 33 ] = { 0 }; 
+   zCHAR     MetaName[ 33 ] = { 0 };
    //:STRING (32)  NewTE_Name
-   zCHAR     NewTE_Name[ 33 ] = { 0 }; 
+   zCHAR     NewTE_Name[ 33 ] = { 0 };
    //:STRING (250) MG_ErrorMessage
-   zCHAR     MG_ErrorMessage[ 251 ] = { 0 }; 
+   zCHAR     MG_ErrorMessage[ 251 ] = { 0 };
    //:STRING (513) SourceDirectoryName       // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceDirectoryName[ 514 ] = { 0 }; 
+   zCHAR     SourceDirectoryName[ 514 ] = { 0 };
    //:STRING (513) SourceFileName            // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
    //:STRING ( 1 ) szDoNotMergeOperationsFlag
-   zCHAR     szDoNotMergeOperationsFlag[ 2 ] = { 0 }; 
+   zCHAR     szDoNotMergeOperationsFlag[ 2 ] = { 0 };
    //://INTEGER      nConvertFlag
    //:INTEGER      lZKey
-   zLONG     lZKey = 0; 
+   zLONG     lZKey = 0;
    //:SHORT        nRC
-   zSHORT    nRC = 0; 
+   zSHORT    nRC = 0;
    //:SHORT        nRC1
-   zSHORT    nRC1 = 0; 
-   zSHORT    RESULT; 
-   zLONG     lTempInteger_0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zSHORT    lTempInteger_3; 
+   zSHORT    nRC1 = 0;
+   zSHORT    RESULT;
+   zLONG     lTempInteger_0;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zSHORT    lTempInteger_3;
 
 
    //:GET VIEW SourceLPLR NAMED "SourceLPLR"
@@ -499,7 +499,7 @@ MigrateMeta( zVIEW     vSubtask )
    //:FOR EACH SourceVOR_LPLR.W_MetaDef
    RESULT = SetCursorFirstEntity( SourceVOR_LPLR, "W_MetaDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:// Activate existing source meta VOR
       //:lZKey = SourceVOR_LPLR.W_MetaDef.CPLR_ZKey
       GetIntegerFromAttribute( &lZKey, SourceVOR_LPLR, "W_MetaDef", "CPLR_ZKey" );
@@ -521,7 +521,7 @@ MigrateMeta( zVIEW     vSubtask )
       //:DropObjectInstance( vVOR )
       DropObjectInstance( vVOR );
       RESULT = SetCursorNextEntity( SourceVOR_LPLR, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
 
@@ -530,7 +530,7 @@ MigrateMeta( zVIEW     vSubtask )
    nRC = SetCursorFirstSelectedEntity( SourceLPLR, "W_MetaDef", "LPLR" );
    //:LOOP WHILE nRC >= zCURSOR_SET
    while ( nRC >= zCURSOR_SET )
-   { 
+   {
 
       //:MetaName = SourceLPLR.W_MetaDef.Name
       GetVariableFromAttribute( MetaName, 0, 'S', 33, SourceLPLR, "W_MetaDef", "Name", "", 0 );
@@ -538,7 +538,7 @@ MigrateMeta( zVIEW     vSubtask )
       //:// Domain Group: W_MetaType.Type = 2013 for domain group meta
       //:IF SourceLPLR.W_MetaType.Type = 2013
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2013 ) == 0 )
-      { 
+      {
          //:// If the Domain Group doesn't already exist, create it.
          //:// Otherwise pass the activated DomainGroup to the migrate routine so
          //:// that Domains can be merged.
@@ -546,10 +546,10 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &NewDomainGroup, 0, zSOURCE_DOMAINGRP_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:ActivateEmptyMetaOI( vSubtask, NewDomainGroup, zSOURCE_DOMAINGRP_META, zSINGLE )
             ActivateEmptyMetaOI( vSubtask, &NewDomainGroup, zSOURCE_DOMAINGRP_META, zSINGLE );
-         } 
+         }
 
          //:END
 
@@ -562,7 +562,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = oTZDGSRCO_DomainGrpMigrate( NewDomainGroup, MetaName, SourceLPLR, vSubtask );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Domain Group(" + MetaName + ") aborted."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Domain Group(", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -570,23 +570,23 @@ MigrateMeta( zVIEW     vSubtask )
             //:MessageSend( vSubtask, "CM01001", "Configuration Management",
             //:             MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
             MessageSend( vSubtask, "CM01001", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-         } 
+         }
 
          //:END
 
          //:IF NewDomainGroup != 0
          if ( NewDomainGroup != 0 )
-         { 
+         {
             //:DropMetaOI( vSubtask, NewDomainGroup )
             DropMetaOI( vSubtask, NewDomainGroup );
-         } 
+         }
 
          //:END
 
          //:// Turn off the selected state flag
          //:SetSelectStateOfEntity( SourceLPLR, "W_MetaDef", 0 )
          SetSelectStateOfEntity( SourceLPLR, "W_MetaDef", 0 );
-      } 
+      }
 
 
       //:END
@@ -594,7 +594,7 @@ MigrateMeta( zVIEW     vSubtask )
       //:// Global Operation Group: W_MetaType.Type = 2014 for global operation group meta
       //:IF SourceLPLR.W_MetaType.Type = 2014
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2014 ) == 0 )
-      { 
+      {
          //:// If the Global Operation Group doesn't already exist, create it.
          //:// Otherwise pass the activated GlobalOperationGroup to the migrate routine so
          //:// that Global Operations can be merged.
@@ -602,10 +602,10 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &NewOperationGroup, 0, zSOURCE_GOPGRP_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:ActivateEmptyMetaOI( vSubtask, NewOperationGroup, zSOURCE_GOPGRP_META, zSINGLE )
             ActivateEmptyMetaOI( vSubtask, &NewOperationGroup, zSOURCE_GOPGRP_META, zSINGLE );
-         } 
+         }
 
          //:END
 
@@ -618,7 +618,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = oTZOGSRCO_GlobalOperGrpMigrate( NewOperationGroup, MetaName, SourceLPLR, vSubtask );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Global Operation Group(" + MetaName + ") aborted."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Global Operation Group(", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -626,29 +626,29 @@ MigrateMeta( zVIEW     vSubtask )
             //:MessageSend( vSubtask, "CM01001", "Configuration Management",
             //:             MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
             MessageSend( vSubtask, "CM01001", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-         } 
+         }
 
          //:END
 
          //:IF NewOperationGroup != 0
          if ( NewOperationGroup != 0 )
-         { 
+         {
             //:DropMetaOI( vSubtask, NewOperationGroup )
             DropMetaOI( vSubtask, NewOperationGroup );
-         } 
+         }
 
          //:END
          //:// Turn off the selected state flag
          //:SetSelectStateOfEntity( SourceLPLR, "W_MetaDef", 0 )
          SetSelectStateOfEntity( SourceLPLR, "W_MetaDef", 0 );
-      } 
+      }
 
 
       //:END
 
       //:nRC = SetCursorNextSelectedEntity( SourceLPLR, "W_MetaDef", "LPLR" )
       nRC = SetCursorNextSelectedEntity( SourceLPLR, "W_MetaDef", "LPLR" );
-   } 
+   }
 
 
    //:END
@@ -663,7 +663,7 @@ MigrateMeta( zVIEW     vSubtask )
    nRC = SetCursorFirstSelectedEntity( SourceLPLR, "W_MetaDef", "LPLR" );
    //:LOOP WHILE nRC >= zCURSOR_SET
    while ( nRC >= zCURSOR_SET )
-   { 
+   {
 
       //:// Position on the corresponding meta in the OrigLPLR view.
       //:SET CURSOR FIRST OrigLPLR.W_MetaDef WITHIN OrigLPLR.LPLR WHERE
@@ -680,7 +680,7 @@ MigrateMeta( zVIEW     vSubtask )
       //:// Header: W_MetaType.Type = 2000 for Header meta
       //:IF SourceLPLR.W_MetaType.Type = 2000
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2000 ) == 0 )
-      { 
+      {
 
          //:// If the Header doesn't already exist, create it.
          //:// Otherwise return error message.
@@ -688,7 +688,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &ReturnedHeader, 0, zREFER_HDR_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating Header: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating Header: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -698,7 +698,7 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = oTZCMLPLO_HeaderMigrate( OrigLPLR, MetaName, &ReturnedHeader, vSubtask );
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:MG_ErrorMessage = "Header (" + MetaName + ") aborted."
                ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Header (", 1, 0, 251 );
                ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -706,21 +706,21 @@ MigrateMeta( zVIEW     vSubtask )
                //:MessageSend( vSubtask, "CM01005", "Configuration Management",
                //:             MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                MessageSend( vSubtask, "CM01005", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-            } 
+            }
 
             //:END
             //:IF ReturnedHeader != 0
             if ( ReturnedHeader != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, ReturnedHeader )
                DropMetaOI( vSubtask, ReturnedHeader );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "Header (" + MetaName + ") already exists."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Header (", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -730,17 +730,17 @@ MigrateMeta( zVIEW     vSubtask )
             MessageSend( vSubtask, "CM01006", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
             //:DropMetaOI( vSubtask, ReturnedHeader )
             DropMetaOI( vSubtask, ReturnedHeader );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
       //:// ERD: W_MetaType.Type = 2004 for ERD meta
       //:IF SourceLPLR.W_MetaType.Type = 2004
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2004 ) == 0 )
-      { 
+      {
 
          //:// If the ERD doesn't already exist, create it.
          //:// Otherwise pass the activated ERD to the migrate routine so that entities, attributes and
@@ -753,10 +753,10 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &NewERD, 0, zSOURCE_ERD_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:ActivateEmptyMetaOI( vSubtask, NewERD, zSOURCE_ERD_META, zSINGLE )
             ActivateEmptyMetaOI( vSubtask, &NewERD, zSOURCE_ERD_META, zSINGLE );
-         } 
+         }
 
          //:END
          //:NAME VIEW NewERD "NewERD"
@@ -771,7 +771,7 @@ MigrateMeta( zVIEW     vSubtask )
          oTZEREMDO_ERD_Migrate( NewERD, &OrigLPLR, vSubtask );
          //:DropMetaOI( vSubtask, NewERD )
          DropMetaOI( vSubtask, NewERD );
-      } 
+      }
 
 
       //:END
@@ -779,7 +779,7 @@ MigrateMeta( zVIEW     vSubtask )
       //:// Subject Area: W_MetaType.Type = 2005 for Subject Area meta
       //:IF SourceLPLR.W_MetaType.Type = 2005
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2005 ) == 0 )
-      { 
+      {
 
          //:// If the Subject Area doesn't already exist, create it.
          //:// Otherwise return error message, as we're not going to merge subject areas at this time.
@@ -787,7 +787,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &ReturnedSA, 0, zREFER_SA_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating Subject Area: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating Subject Area: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -797,16 +797,16 @@ MigrateMeta( zVIEW     vSubtask )
             oTZERSASO_SA_Migrate( &ReturnedSA, MetaName, OrigLPLR, vSubtask );
             //:IF ReturnedSA != 0
             if ( ReturnedSA != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, ReturnedSA )
                DropMetaOI( vSubtask, ReturnedSA );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "Subject Area (" + MetaName + ") already exists."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Subject Area (", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -814,17 +814,17 @@ MigrateMeta( zVIEW     vSubtask )
             //:MessageSend( vSubtask, "CM01011", "Configuration Management",
             //:             MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
             MessageSend( vSubtask, "CM01011", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
       //:// Technical Environment: W_MetaType.Type = 2006 for TE meta
       //:IF SourceLPLR.W_MetaType.Type = 2006
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2006 ) == 0 )
-      { 
+      {
 
          //:// If the TE doesn't already exist, create it.
          //:// Otherwise return error message, as we're not going to merge TEs at this time.
@@ -837,7 +837,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &ReturnedTE, 0, zREFER_DTE_META, zSINGLE, NewTE_Name, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating TE: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating TE: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -847,16 +847,16 @@ MigrateMeta( zVIEW     vSubtask )
             oTZTENVRO_TE_Migrate( &ReturnedTE, MetaName, OrigLPLR, vSubtask );
             //:IF ReturnedTE != 0
             if ( ReturnedTE != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, ReturnedTE )
                DropMetaOI( vSubtask, ReturnedTE );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "Technical Environment (" + NewTE_Name + ") already exists."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Technical Environment (", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, NewTE_Name, 1, 0, 251 );
@@ -866,17 +866,17 @@ MigrateMeta( zVIEW     vSubtask )
             MessageSend( vSubtask, "CM01012", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
             //:DropMetaOI( vSubtask, ReturnedTE )
             DropMetaOI( vSubtask, ReturnedTE );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
       //:// LOD: W_MetaType.Type = 2007 for LOD meta
       //:IF SourceLPLR.W_MetaType.Type = 2007
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2007 ) == 0 )
-      { 
+      {
 
          //:// Copy over or merge LOD based on value of DoNotMergeFlag for the LOD.
          //:// If the DoNotMergeFlag is set but the DoNotMergeOperationsFlag is not, we will only merge in Operations.
@@ -888,7 +888,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &NewLOD, 0, zSOURCE_LOD_META, zSINGLE, MetaName, 0 );
          //:IF nRC >= 0
          if ( nRC >= 0 )
-         { 
+         {
             //:SET CURSOR FIRST CurrentLPLR.W_MetaType WHERE CurrentLPLR.W_MetaType.Type = 7
             RESULT = SetCursorFirstEntityByInteger( CurrentLPLR, "W_MetaType", "Type", 7, "" );
             //:SET CURSOR FIRST CurrentLPLR.W_MetaDef WHERE CurrentLPLR.W_MetaDef.Name = SourceLPLR.W_MetaDef.Name
@@ -896,49 +896,49 @@ MigrateMeta( zVIEW     vSubtask )
             RESULT = SetCursorFirstEntityByString( CurrentLPLR, "W_MetaDef", "Name", szTempString_0, "" );
             //:IF NewLOD.LOD.DoNotMergeFlag = "" AND NewLOD.LOD.DoNotMergeOperationsFlag = ""
             if ( CompareAttributeToString( NewLOD, "LOD", "DoNotMergeFlag", "" ) == 0 && CompareAttributeToString( NewLOD, "LOD", "DoNotMergeOperationsFlag", "" ) == 0 )
-            { 
+            {
                //:DELETE ENTITY NewLOD.LOD_EntityParent
                RESULT = DeleteEntity( NewLOD, "LOD_EntityParent", zPOS_NEXT );
                //:FOR EACH NewLOD.SourceFile
                RESULT = SetCursorFirstEntity( NewLOD, "SourceFile", "" );
                while ( RESULT > zCURSOR_UNCHANGED )
-               { 
+               {
                   //:DELETE ENTITY NewLOD.SourceFile NONE
                   RESULT = DeleteEntity( NewLOD, "SourceFile", zREPOS_NONE );
                   RESULT = SetCursorNextEntity( NewLOD, "SourceFile", "" );
-               } 
+               }
 
                //:END
                //:IF NewLOD.POD EXISTS
                lTempInteger_1 = CheckExistenceOfEntity( NewLOD, "POD" );
                if ( lTempInteger_1 == 0 )
-               { 
+               {
                   //:DELETE ENTITY NewLOD.POD
                   RESULT = DeleteEntity( NewLOD, "POD", zPOS_NEXT );
-               } 
+               }
 
                //:END
                //:IF NewLOD.LOD_ConstraintOper EXISTS
                lTempInteger_2 = CheckExistenceOfEntity( NewLOD, "LOD_ConstraintOper" );
                if ( lTempInteger_2 == 0 )
-               { 
+               {
                   //:EXCLUDE NewLOD.LOD_ConstraintOper
                   RESULT = ExcludeEntity( NewLOD, "LOD_ConstraintOper", zREPOS_AFTER );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
             //:NAME VIEW NewLOD "NewLOD"
             SetNameForView( NewLOD, "NewLOD", 0, zLEVEL_TASK );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:ActivateEmptyMetaOI( vSubtask, NewLOD, zSOURCE_LOD_META, zSINGLE )
             ActivateEmptyMetaOI( vSubtask, &NewLOD, zSOURCE_LOD_META, zSINGLE );
-         } 
+         }
 
          //:END
          //:NAME VIEW NewLOD "NewLOD"
@@ -949,7 +949,7 @@ MigrateMeta( zVIEW     vSubtask )
          //:IF NewLOD.LOD_EntityParent DOES NOT EXIST OR szDoNotMergeOperationsFlag = ""
          lTempInteger_3 = CheckExistenceOfEntity( NewLOD, "LOD_EntityParent" );
          if ( lTempInteger_3 != 0 || ZeidonStringCompare( szDoNotMergeOperationsFlag, 1, 0, "", 1, 0, 2 ) == 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating LOD: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating LOD: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -959,7 +959,7 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = oTZZOLODO_LOD_Migrate( NewLOD, MetaName, OrigLPLR, vSubtask );
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:MG_ErrorMessage = "LOD (" + MetaName + ") aborted."
                ZeidonStringCopy( MG_ErrorMessage, 1, 0, "LOD (", 1, 0, 251 );
                ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -967,22 +967,22 @@ MigrateMeta( zVIEW     vSubtask )
                //:MessageSend( vSubtask, "CM01013", "Configuration Management",
                //:             MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                MessageSend( vSubtask, "CM01013", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
          //:DropMetaOI( vSubtask, NewLOD )
          DropMetaOI( vSubtask, NewLOD );
-      } 
+      }
 
       //:END
 
       //:// PPE: W_MetaType.Type = 2010 for PPE meta
       //:IF SourceLPLR.W_MetaType.Type = 2010
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2010 ) == 0 )
-      { 
+      {
 
          //:// If the PPE doesn't already exist, create it.
          //:// Otherwise ask for merge.
@@ -990,7 +990,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &ReturnedPPE, 0, zSOURCE_PENV_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating PPE: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating PPE: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1000,22 +1000,22 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = oTZPESRCO_MigratePPE( &ReturnedPPE, SourceLPLR, vSubtask );
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:IF nRC = -16  //SourceLPLR has a old PPE
                if ( nRC == -16 )
-               { 
+               {
                   //:MG_ErrorMessage = "Invalid PPE in Source Project!" + NEW_LINE +
                   //:                  "New PPE required. Migrating aborted."
                   ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Invalid PPE in Source Project!", 1, 0, 251 );
                   ZeidonStringConcat( MG_ErrorMessage, 1, 0, NEW_LINE, 1, 0, 251 );
                   ZeidonStringConcat( MG_ErrorMessage, 1, 0, "New PPE required. Migrating aborted.", 1, 0, 251 );
                   //:ELSE
-               } 
+               }
                else
-               { 
+               {
                   //:MG_ErrorMessage = "Migrating of PPE will be aborted."
                   ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating of PPE will be aborted.", 1, 0, 251 );
-               } 
+               }
 
                //:END
                //:MessageSend( vSubtask, "CM01013", "Configuration Management",
@@ -1023,13 +1023,13 @@ MigrateMeta( zVIEW     vSubtask )
                MessageSend( vSubtask, "CM01013", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
                //:RETURN nRC
                return( nRC );
-            } 
+            }
 
             //:END
             //:ELSE //PPE exists
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "PPE already exists. Do you want to merge it?"
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "PPE already exists. Do you want to merge it?", 1, 0, 251 );
             //:nRC = MessagePrompt( vSubtask, "CM01014", "Configuration Management",
@@ -1038,7 +1038,7 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = MessagePrompt( vSubtask, "CM01014", "Configuration Management", MG_ErrorMessage, 1, zBUTTONS_YESNO, zRESPONSE_YES, 0 );
             //:IF nRC = zRESPONSE_YES
             if ( nRC == zRESPONSE_YES )
-            { 
+            {
                //:MB_SetMessage( vSubtask, 1, "Merging Zeidon.PPE" )
                MB_SetMessage( vSubtask, 1, "Merging Zeidon.PPE" );
                //://if Repository Project, check check out status
@@ -1046,7 +1046,7 @@ MigrateMeta( zVIEW     vSubtask )
                nRC1 = ComponentIsCheckedOut( vSubtask, ReturnedPPE, 2010 );
                //:IF nRC1 = 0
                if ( nRC1 == 0 )
-               { 
+               {
                   //:MG_ErrorMessage = "PPE is not checked out. Merging aborted."
                   ZeidonStringCopy( MG_ErrorMessage, 1, 0, "PPE is not checked out. Merging aborted.", 1, 0, 251 );
                   //:MessageSend( vSubtask, "CM01013", "Configuration Management",
@@ -1054,17 +1054,17 @@ MigrateMeta( zVIEW     vSubtask )
                   MessageSend( vSubtask, "CM01013", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
                   //:RETURN -1
                   return( -1 );
-               } 
+               }
 
                //:END
                //:nRC = MergePPE( ReturnedPPE, SourceLPLR, vSubtask )
                nRC = oTZPESRCO_MergePPE( ReturnedPPE, SourceLPLR, vSubtask );
                //:IF nRC < 0
                if ( nRC < 0 )
-               { 
+               {
                   //:IF nRC = -16  //SourceLPLR has a old PPE
                   if ( nRC == -16 )
-                  { 
+                  {
                      //:MG_ErrorMessage = "Invalid PPE in Source Project! " + NEW_LINE +
                      //:                  "New PPE required. Merging aborted."
                      ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Invalid PPE in Source Project! ", 1, 0, 251 );
@@ -1073,38 +1073,38 @@ MigrateMeta( zVIEW     vSubtask )
                      //:MessageSend( vSubtask, "CM01013", "Configuration Management",
                      //:             MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                      MessageSend( vSubtask, "CM01013", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-                  } 
+                  }
 
                   //:END
                   //:IF ReturnedPPE != 0
                   if ( ReturnedPPE != 0 )
-                  { 
+                  {
                      //:DropMetaOI( vSubtask, ReturnedPPE )
                      DropMetaOI( vSubtask, ReturnedPPE );
-                  } 
+                  }
 
                   //:END
                   //:RETURN nRC
                   return( nRC );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END //END IF nRC < 0
          //:DropMetaOI( vSubtask, ReturnedPPE )
          DropMetaOI( vSubtask, ReturnedPPE );
-      } 
+      }
 
       //:END
 
       //:// Dialog: W_MetaType.Type = 2011 for Dialog meta
       //:IF SourceLPLR.W_MetaType.Type = 2011
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2011 ) == 0 )
-      { 
+      {
 
          //:// Make sure a valid Presentation Environment exists.
          //:// If not, exit the operation.
@@ -1121,10 +1121,10 @@ MigrateMeta( zVIEW     vSubtask )
          DropView( CurrentLPLR );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:RETURN -16
             return( -16 );
-         } 
+         }
 
          //:END
 
@@ -1134,7 +1134,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &NewDialog, 0, zSOURCE_DIALOG_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating Dialog: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating Dialog: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1148,7 +1148,7 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = oTZWDLGSO_DialogMigrate( NewDialog, MetaName, OrigLPLR, vSubtask );
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:MG_ErrorMessage = "Dialog (" + MetaName + ") aborted."
                ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Dialog (", 1, 0, 251 );
                ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1158,13 +1158,13 @@ MigrateMeta( zVIEW     vSubtask )
                //:             MG_ErrorMessage,
                //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                MessageSend( vSubtask, "CM01016", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "Migrating Dialog: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating Dialog: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1174,7 +1174,7 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = oTZWDLGSO_DialogMigrate( NewDialog, MetaName, OrigLPLR, vSubtask );
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:MG_ErrorMessage = "Dialog (" + MetaName + ") aborted."
                ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Dialog (", 1, 0, 251 );
                ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1184,22 +1184,22 @@ MigrateMeta( zVIEW     vSubtask )
                //:             MG_ErrorMessage,
                //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                MessageSend( vSubtask, "CM01016", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
          //:DropMetaOI( vSubtask, NewDialog )
          DropMetaOI( vSubtask, NewDialog );
-      } 
+      }
 
       //:END
 
       //:// UIS: W_MetaType.Type = 2012 for User Interface Spec meta
       //:IF SourceLPLR.W_MetaType.Type = 2012
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2012 ) == 0 )
-      { 
+      {
 
          //:// If the User Spec doesn't already exist, create it.
          //:// Otherwise return error message.
@@ -1207,7 +1207,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &ReturnedDialogSpec, 0, zREFER_UIS_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating User Interface Spec: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating User Interface Spec: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1218,24 +1218,24 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = oTZADCSDO_DialogSpecMigrate( &ReturnedDialogSpec, MetaName, OrigLPLR, vSubtask );
             //:IF ReturnedDialogSpec != 0
             if ( ReturnedDialogSpec != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, ReturnedDialogSpec )
                DropMetaOI( vSubtask, ReturnedDialogSpec );
-            } 
+            }
 
             //:END
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:IF  nRC = -16  //PPE does not exists
                if ( nRC == -16 )
-               { 
+               {
                   //:RETURN nRC
                   return( nRC );
                   //:ELSE
-               } 
+               }
                else
-               { 
+               {
                   //:MG_ErrorMessage = "User Interface Spec (" + MetaName + ") aborted."
                   ZeidonStringCopy( MG_ErrorMessage, 1, 0, "User Interface Spec (", 1, 0, 251 );
                   ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1245,16 +1245,16 @@ MigrateMeta( zVIEW     vSubtask )
                   //:             MG_ErrorMessage,
                   //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                   MessageSend( vSubtask, "CM01018", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "User Interface Spec (" + MetaName + ") already exists."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "User Interface Spec (", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1264,17 +1264,17 @@ MigrateMeta( zVIEW     vSubtask )
             MessageSend( vSubtask, "CM01019", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
             //:DropMetaOI( vSubtask, ReturnedDialogSpec )
             DropMetaOI( vSubtask, ReturnedDialogSpec );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
       //:// Report: W_MetaType.Type = 2015 for Report Definition meta
       //:IF SourceLPLR.W_MetaType.Type = 2015
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2015 ) == 0 )
-      { 
+      {
 
          //:// If the ReportDef doesn't already exist, create it.
          //:// Otherwise return error message.
@@ -1282,7 +1282,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &ReturnedReport, 0, zREFER_REPORT_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating Report Definition: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating Report Definition: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1292,24 +1292,24 @@ MigrateMeta( zVIEW     vSubtask )
             nRC = oTZRPSRCO_ReportMigrate( &ReturnedReport, MetaName, OrigLPLR, vSubtask );
             //:IF ReturnedReport != 0
             if ( ReturnedReport != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, ReturnedReport )
                DropMetaOI( vSubtask, ReturnedReport );
-            } 
+            }
 
             //:END
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:IF  nRC = -16  //PPE does not exists
                if ( nRC == -16 )
-               { 
+               {
                   //:RETURN nRC
                   return( nRC );
                   //:ELSE
-               } 
+               }
                else
-               { 
+               {
                   //:MG_ErrorMessage = "Report Definition (" + MetaName + ") aborted."
                   ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Report Definition (", 1, 0, 251 );
                   ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1319,16 +1319,16 @@ MigrateMeta( zVIEW     vSubtask )
                   //:             MG_ErrorMessage,
                   //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                   MessageSend( vSubtask, "CM01023", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "Report Definition (" + MetaName + ") already exists."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Report Definition (", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1338,17 +1338,17 @@ MigrateMeta( zVIEW     vSubtask )
             MessageSend( vSubtask, "CM01024", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
             //:DropMetaOI( vSubtask, ReturnedReport )
             DropMetaOI( vSubtask, ReturnedReport );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
       //:// XSLT: W_MetaType.Type = 2016 for XSLT Definition meta
       //:IF SourceLPLR.W_MetaType.Type = 2016
       if ( CompareAttributeToInteger( SourceLPLR, "W_MetaType", "Type", 2016 ) == 0 )
-      { 
+      {
 
          //:// If the XSLTDef doesn't already exist, create it.
          //:// Otherwise return error message.
@@ -1356,7 +1356,7 @@ MigrateMeta( zVIEW     vSubtask )
          nRC = ActivateMetaOI_ByName( vSubtask, &ReturnedXSLT, 0, zREFER_XSLT_META, zSINGLE, MetaName, 0 );
          //:IF nRC < 0
          if ( nRC < 0 )
-         { 
+         {
             //:MG_ErrorMessage = "Migrating XSLT Definition: " + MetaName
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "Migrating XSLT Definition: ", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1365,24 +1365,24 @@ MigrateMeta( zVIEW     vSubtask )
             //://xnRC = XSLT_Migrate( ReturnedXSLT, MetaName, OrigLPLR, vSubtask )
             //:IF ReturnedXSLT != 0
             if ( ReturnedXSLT != 0 )
-            { 
+            {
                //:DropMetaOI( vSubtask, ReturnedXSLT )
                DropMetaOI( vSubtask, ReturnedXSLT );
-            } 
+            }
 
             //:END
             //:IF nRC < 0
             if ( nRC < 0 )
-            { 
+            {
                //:IF  nRC = -16  //PPE does not exists
                if ( nRC == -16 )
-               { 
+               {
                   //:RETURN nRC
                   return( nRC );
                   //:ELSE
-               } 
+               }
                else
-               { 
+               {
                   //:MG_ErrorMessage = "XSLT Definition (" + MetaName + ") aborted."
                   ZeidonStringCopy( MG_ErrorMessage, 1, 0, "XSLT Definition (", 1, 0, 251 );
                   ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1392,16 +1392,16 @@ MigrateMeta( zVIEW     vSubtask )
                   //:             MG_ErrorMessage,
                   //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
                   MessageSend( vSubtask, "CM01023", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:MG_ErrorMessage = "XSLT Definition (" + MetaName + ") already exists."
             ZeidonStringCopy( MG_ErrorMessage, 1, 0, "XSLT Definition (", 1, 0, 251 );
             ZeidonStringConcat( MG_ErrorMessage, 1, 0, MetaName, 1, 0, 251 );
@@ -1411,16 +1411,16 @@ MigrateMeta( zVIEW     vSubtask )
             MessageSend( vSubtask, "CM01024", "Configuration Management", MG_ErrorMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
             //:DropMetaOI( vSubtask, ReturnedXSLT )
             DropMetaOI( vSubtask, ReturnedXSLT );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
       //:nRC = SetCursorNextSelectedEntity( SourceLPLR, "W_MetaDef", "LPLR" )
       nRC = SetCursorNextSelectedEntity( SourceLPLR, "W_MetaDef", "LPLR" );
-   } 
+   }
 
 
    //:END
@@ -1429,7 +1429,7 @@ MigrateMeta( zVIEW     vSubtask )
    MB_SetMessage( vSubtask, 1, "Migration Complete" );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1439,23 +1439,23 @@ MigrateMeta( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 SelectLPLR( zVIEW     vSubtask )
 {
-   zVIEW     vCM = 0; 
+   zVIEW     vCM = 0;
    //:VIEW SourceLPLR  BASED ON LOD TZCMLPLO
-   zVIEW     SourceLPLR = 0; 
+   zVIEW     SourceLPLR = 0;
    //:VIEW OrigLPLR    BASED ON LOD TZCMLPLO
-   zVIEW     OrigLPLR = 0; 
+   zVIEW     OrigLPLR = 0;
    //:VIEW VOR_LPLR    BASED ON LOD TZCMLPLO
-   zVIEW     VOR_LPLR = 0; 
+   zVIEW     VOR_LPLR = 0;
    //:VIEW CurrentLPLR BASED ON LOD TZCMLPLO
-   zVIEW     CurrentLPLR = 0; 
+   zVIEW     CurrentLPLR = 0;
 
    //:STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
    //:STRING ( 9 )   TruncatedName
-   zCHAR     TruncatedName[ 10 ] = { 0 }; 
+   zCHAR     TruncatedName[ 10 ] = { 0 };
    //:INTEGER        TempType
-   zLONG     TempType = 0; 
-   zSHORT    RESULT; 
+   zLONG     TempType = 0;
+   zSHORT    RESULT;
 
 
    //:GET VIEW vCM NAMED "TZCMWKSO"
@@ -1508,9 +1508,9 @@ SelectLPLR( zVIEW     vSubtask )
    //:         OrigLPLR.W_MetaType.Type >= 2000
    RESULT = SetCursorFirstEntity( OrigLPLR, "W_MetaType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       if ( CompareAttributeToInteger( OrigLPLR, "W_MetaType", "Type", 2000 ) >= 0 )
-      { 
+      {
 
          //:// Do not include Domains (2003), Global Operations (2002) or
          //:// Registered Views (2009) in the list.
@@ -1518,7 +1518,7 @@ SelectLPLR( zVIEW     vSubtask )
          //:OrigLPLR.W_MetaType.Type != 2003 AND
          //:OrigLPLR.W_MetaType.Type != 2009
          if ( CompareAttributeToInteger( OrigLPLR, "W_MetaType", "Type", 2002 ) != 0 && CompareAttributeToInteger( OrigLPLR, "W_MetaType", "Type", 2003 ) != 0 && CompareAttributeToInteger( OrigLPLR, "W_MetaType", "Type", 2009 ) != 0 )
-         { 
+         {
 
             //:CREATE ENTITY SourceLPLR.W_MetaType
             RESULT = CreateEntity( SourceLPLR, "W_MetaType", zPOS_AFTER );
@@ -1533,27 +1533,27 @@ SelectLPLR( zVIEW     vSubtask )
             //:FOR EACH OrigLPLR.W_MetaDef
             RESULT = SetCursorFirstEntity( OrigLPLR, "W_MetaDef", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            { 
+            {
                //:CREATE ENTITY SourceLPLR.W_MetaDef
                RESULT = CreateEntity( SourceLPLR, "W_MetaDef", zPOS_AFTER );
                //:SetMatchingAttributesByName( SourceLPLR, "W_MetaDef", OrigLPLR, "W_MetaDef", zSET_ALL )
                SetMatchingAttributesByName( SourceLPLR, "W_MetaDef", OrigLPLR, "W_MetaDef", zSET_ALL );
                RESULT = SetCursorNextEntity( OrigLPLR, "W_MetaDef", "" );
-            } 
+            }
 
             //:END
-         } 
+         }
 
-      } 
+      }
 
       RESULT = SetCursorNextEntity( OrigLPLR, "W_MetaType", "" );
       //:END
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1563,10 +1563,10 @@ SelectLPLR( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 MigrateCompilerSubobjects( zVIEW     vSubtask )
 {
-   zVIEW     SourceLPLR = 0; 
+   zVIEW     SourceLPLR = 0;
    //:VIEW CurrentLPLR   BASED ON LOD TZCMLPLO
-   zVIEW     CurrentLPLR = 0; 
-   zSHORT    RESULT; 
+   zVIEW     CurrentLPLR = 0;
+   zSHORT    RESULT;
 
 
    //:GET VIEW SourceLPLR  NAMED "OrigLPLR"
@@ -1578,7 +1578,7 @@ MigrateCompilerSubobjects( zVIEW     vSubtask )
    oTZCMLPLO_CompilerMigrate( CurrentLPLR, SourceLPLR, vSubtask );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1591,13 +1591,13 @@ MigrateCompilerSubobjects( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 CommitTZWDLCVO( zVIEW     vSubtask )
 {
-   zVIEW     vTZWDLCVO = 0; 
+   zVIEW     vTZWDLCVO = 0;
    //:VIEW vLPLR   BASED ON LOD TZCMLPLO
-   zVIEW     vLPLR = 0; 
+   zVIEW     vLPLR = 0;
 
    //:STRING ( 513 ) szFileName                // zMAX_FILESPEC_LTH+1
-   zCHAR     szFileName[ 514 ] = { 0 }; 
-   zSHORT    RESULT; 
+   zCHAR     szFileName[ 514 ] = { 0 };
+   zSHORT    RESULT;
 
 
    //:GET VIEW vLPLR NAMED "TaskLPLR"
@@ -1610,11 +1610,11 @@ CommitTZWDLCVO( zVIEW     vSubtask )
    //:FOR EACH vTZWDLCVO.SelectedNLS_Text WITHIN vTZWDLCVO.OriginalLanguage
    RESULT = SetCursorFirstEntity( vTZWDLCVO, "SelectedNLS_Text", "OriginalLanguage" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:EXCLUDE vTZWDLCVO.SelectedNLS_Text NONE
       RESULT = ExcludeEntity( vTZWDLCVO, "SelectedNLS_Text", zREPOS_NONE );
       RESULT = SetCursorNextEntity( vTZWDLCVO, "SelectedNLS_Text", "OriginalLanguage" );
-   } 
+   }
 
    //:END
 
@@ -1625,7 +1625,7 @@ CommitTZWDLCVO( zVIEW     vSubtask )
    CommitOI_ToFile( vTZWDLCVO, szFileName, zASCII );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1635,17 +1635,17 @@ CommitTZWDLCVO( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 InitializeTZWDLCVO( zVIEW     vSubtask )
 {
-   zVIEW     vTZWDLCVO = 0; 
+   zVIEW     vTZWDLCVO = 0;
    //:VIEW vDialog   BASED ON LOD TZWDLGSO
-   zVIEW     vDialog = 0; 
+   zVIEW     vDialog = 0;
    //:VIEW vLPLR     BASED ON LOD TZCMLPLO
-   zVIEW     vLPLR = 0; 
+   zVIEW     vLPLR = 0;
 
    //:STRING (64) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 255 ]; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zCHAR     szTempString_1[ 255 ];
 
 
    //:GET VIEW vTZWDLCVO NAMED "TZWDLCVO"
@@ -1659,7 +1659,7 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
    //:FOR EACH vLPLR.W_MetaDef
    RESULT = SetCursorFirstEntity( vLPLR, "W_MetaDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:  ActivateMetaOI( vSubtask, vDialog, vLPLR, zREFER_DIALOG_META, zSINGLE )
       ActivateMetaOI( vSubtask, &vDialog, vLPLR, zREFER_DIALOG_META, zSINGLE );
 
@@ -1673,7 +1673,7 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
       //:FOR EACH vDialog.Window
       RESULT = SetCursorFirstEntity( vDialog, "Window", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
          //:// First process Caption entries for each Window.
          //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
          //:    vTZWDLCVO.OriginalText.Value = vDialog.Window.Caption
@@ -1681,12 +1681,12 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
          RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
          //:IF RESULT < zCURSOR_SET AND vDialog.Window.Caption != ""
          if ( RESULT < zCURSOR_SET && CompareAttributeToString( vDialog, "Window", "Caption", "" ) != 0 )
-         { 
+         {
             //:CREATE ENTITY vTZWDLCVO.OriginalText
             RESULT = CreateEntity( vTZWDLCVO, "OriginalText", zPOS_AFTER );
             //:vTZWDLCVO.OriginalText.Value = vDialog.Window.Caption
             SetAttributeFromAttribute( vTZWDLCVO, "OriginalText", "Value", vDialog, "Window", "Caption" );
-         } 
+         }
 
          //:END
 
@@ -1695,14 +1695,14 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
          //:FOR EACH vDialog.Option
          RESULT = SetCursorFirstEntity( vDialog, "Option", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         { 
+         {
             //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
             //:     vTZWDLCVO.OriginalText.Value = vDialog.Option.Text
             GetStringFromAttribute( szTempString_1, vDialog, "Option", "Text" );
             RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
             //:IF RESULT < zCURSOR_SET AND vDialog.Option.Text != ""
             if ( RESULT < zCURSOR_SET && CompareAttributeToString( vDialog, "Option", "Text", "" ) != 0 )
-            { 
+            {
                //:CREATE ENTITY vTZWDLCVO.OriginalText
                RESULT = CreateEntity( vTZWDLCVO, "OriginalText", zPOS_AFTER );
                //:vTZWDLCVO.OriginalText.Value = vDialog.Option.Text
@@ -1710,11 +1710,11 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
                //:// Call recursive subobject
                //:InitializeOptionSubobject( vTZWDLCVO, vDialog )
                o_InitializeOptionSubobject( vTZWDLCVO, vDialog );
-            } 
+            }
 
             RESULT = SetCursorNextEntity( vDialog, "Option", "" );
             //:END
-         } 
+         }
 
          //:END
 
@@ -1723,7 +1723,7 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
          //:FOR EACH vDialog.Control
          RESULT = SetCursorFirstEntity( vDialog, "Control", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         { 
+         {
             //:// First process Text
             //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
             //:     vTZWDLCVO.OriginalText.Value =vDialog.Control.Text
@@ -1731,12 +1731,12 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
             RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
             //:IF RESULT < zCURSOR_SET AND vDialog.Control.Text != ""
             if ( RESULT < zCURSOR_SET && CompareAttributeToString( vDialog, "Control", "Text", "" ) != 0 )
-            { 
+            {
                //:CREATE ENTITY vTZWDLCVO.OriginalText
                RESULT = CreateEntity( vTZWDLCVO, "OriginalText", zPOS_AFTER );
                //:vTZWDLCVO.OriginalText.Value = vDialog.Control.Text
                SetAttributeFromAttribute( vTZWDLCVO, "OriginalText", "Value", vDialog, "Control", "Text" );
-            } 
+            }
 
             //:END
             //:// Next process DIL_Text
@@ -1746,12 +1746,12 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
             RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
             //:IF RESULT < zCURSOR_SET AND vDialog.Control.DIL_Text != ""
             if ( RESULT < zCURSOR_SET && CompareAttributeToString( vDialog, "Control", "DIL_Text", "" ) != 0 )
-            { 
+            {
                //:CREATE ENTITY vTZWDLCVO.OriginalText
                RESULT = CreateEntity( vTZWDLCVO, "OriginalText", zPOS_AFTER );
                //:vTZWDLCVO.OriginalText.Value = vDialog.Control.DIL_Text
                SetAttributeFromAttribute( vTZWDLCVO, "OriginalText", "Value", vDialog, "Control", "DIL_Text" );
-            } 
+            }
 
             //:END
 
@@ -1759,17 +1759,17 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
             //:InitializeControlSubobject( vTZWDLCVO, vDialog )
             o_InitializeControlSubobject( vTZWDLCVO, vDialog );
             RESULT = SetCursorNextEntity( vDialog, "Control", "" );
-         } 
+         }
 
          RESULT = SetCursorNextEntity( vDialog, "Window", "" );
          //:END
-      } 
+      }
 
       //:END
       //:DropObjectInstance( vDialog )
       DropObjectInstance( vDialog );
       RESULT = SetCursorNextEntity( vLPLR, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
 
@@ -1778,7 +1778,7 @@ InitializeTZWDLCVO( zVIEW     vSubtask )
    OrderEntityForView( vTZWDLCVO, "OriginalText", "Value A" );
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -1786,8 +1786,8 @@ static zSHORT
 o_InitializeControlSubobject( zVIEW     vTZWDLCVO,
                               zVIEW     vDialog )
 {
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 255 ]; 
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 255 ];
 
    //:InitializeControlSubobject( VIEW vTZWDLCVO BASED ON LOD TZWDLCVO,
    //:                         VIEW vDialog BASED ON LOD TZWDLGSO )
@@ -1798,7 +1798,7 @@ o_InitializeControlSubobject( zVIEW     vTZWDLCVO,
    //:FOR EACH vDialog.Control
    RESULT = SetCursorFirstEntity( vDialog, "Control", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:// First process Text
       //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
       //:      vTZWDLCVO.OriginalText.Value = vDialog.Control.Text
@@ -1806,7 +1806,7 @@ o_InitializeControlSubobject( zVIEW     vTZWDLCVO,
       RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_0, "" );
       //:IF RESULT < zCURSOR_SET AND vDialog.Control.Text != ""
       if ( RESULT < zCURSOR_SET && CompareAttributeToString( vDialog, "Control", "Text", "" ) != 0 )
-      { 
+      {
          //:CREATE ENTITY vTZWDLCVO.OriginalText
          RESULT = CreateEntity( vTZWDLCVO, "OriginalText", zPOS_AFTER );
          //:vTZWDLCVO.OriginalText.Value = vDialog.Control.Text
@@ -1814,7 +1814,7 @@ o_InitializeControlSubobject( zVIEW     vTZWDLCVO,
          //:// Call recursive subobject
          //:InitializeControlSubobject( vTZWDLCVO, vDialog )
          o_InitializeControlSubobject( vTZWDLCVO, vDialog );
-      } 
+      }
 
       //:END
       //:// Next process DIL_Text
@@ -1824,16 +1824,16 @@ o_InitializeControlSubobject( zVIEW     vTZWDLCVO,
       RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_0, "" );
       //:IF RESULT < zCURSOR_SET AND vDialog.Control.DIL_Text != ""
       if ( RESULT < zCURSOR_SET && CompareAttributeToString( vDialog, "Control", "DIL_Text", "" ) != 0 )
-      { 
+      {
          //:CREATE ENTITY vTZWDLCVO.OriginalText
          RESULT = CreateEntity( vTZWDLCVO, "OriginalText", zPOS_AFTER );
          //:vTZWDLCVO.OriginalText.Value = vDialog.Control.DIL_Text
          SetAttributeFromAttribute( vTZWDLCVO, "OriginalText", "Value", vDialog, "Control", "DIL_Text" );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vDialog, "Control", "" );
       //:END
-   } 
+   }
 
 
    //:END
@@ -1841,7 +1841,7 @@ o_InitializeControlSubobject( zVIEW     vTZWDLCVO,
    ResetViewFromSubobject( vDialog );
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -1849,8 +1849,8 @@ static zSHORT
 o_InitializeOptionSubobject( zVIEW     vTZWDLCVO,
                              zVIEW     vDialog )
 {
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
 
    //:InitializeOptionSubobject( VIEW vTZWDLCVO BASED ON LOD TZWDLCVO,
    //:                  VIEW vDialog BASED ON LOD TZWDLGSO )
@@ -1861,14 +1861,14 @@ o_InitializeOptionSubobject( zVIEW     vTZWDLCVO,
    //:FOR EACH vDialog.Option
    RESULT = SetCursorFirstEntity( vDialog, "Option", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
       //:      vTZWDLCVO.OriginalText.Value = vDialog.Option.Text
       GetStringFromAttribute( szTempString_0, vDialog, "Option", "Text" );
       RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_0, "" );
       //:IF RESULT < zCURSOR_SET AND vDialog.Option.Text != ""
       if ( RESULT < zCURSOR_SET && CompareAttributeToString( vDialog, "Option", "Text", "" ) != 0 )
-      { 
+      {
          //:CREATE ENTITY vTZWDLCVO.OriginalText
          RESULT = CreateEntity( vTZWDLCVO, "OriginalText", zPOS_AFTER );
          //:vTZWDLCVO.OriginalText.Value = vDialog.Option.Text
@@ -1876,18 +1876,18 @@ o_InitializeOptionSubobject( zVIEW     vTZWDLCVO,
          //:// Call recursive subobject
          //:InitializeOptionSubobject( vTZWDLCVO, vDialog )
          o_InitializeOptionSubobject( vTZWDLCVO, vDialog );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( vDialog, "Option", "" );
       //:END
-   } 
+   }
 
    //:END
    //:ResetViewFromSubobject( vDialog )
    ResetViewFromSubobject( vDialog );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1897,9 +1897,9 @@ o_InitializeOptionSubobject( zVIEW     vTZWDLCVO,
 zOPER_EXPORT zSHORT OPERATION
 SelectNewLanguageCode( zVIEW     vSubtask )
 {
-   zVIEW     vTZWDLCVO = 0; 
-   zSHORT    RESULT; 
-   zLONG     lTempInteger_0; 
+   zVIEW     vTZWDLCVO = 0;
+   zSHORT    RESULT;
+   zLONG     lTempInteger_0;
 
 
    //:GET VIEW vTZWDLCVO NAMED "TZWDLCVO"
@@ -1909,21 +1909,21 @@ SelectNewLanguageCode( zVIEW     vSubtask )
    //:FOR EACH vTZWDLCVO.SelectedNLS_Text WITHIN vTZWDLCVO.OriginalLanguage
    RESULT = SetCursorFirstEntity( vTZWDLCVO, "SelectedNLS_Text", "OriginalLanguage" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:EXCLUDE vTZWDLCVO.SelectedNLS_Text NONE
       RESULT = ExcludeEntity( vTZWDLCVO, "SelectedNLS_Text", zREPOS_NONE );
       RESULT = SetCursorNextEntity( vTZWDLCVO, "SelectedNLS_Text", "OriginalLanguage" );
-   } 
+   }
 
    //:END
 
    //:// Simply return if the new Language Code is 0 (meaning it is null).
    //:IF vTZWDLCVO.OriginalLanguage.CurrentSelectedLanguageCode = 0
    if ( CompareAttributeToInteger( vTZWDLCVO, "OriginalLanguage", "CurrentSelectedLanguageCode", 0 ) == 0 )
-   { 
+   {
       //:RETURN
       return( 0 );
-   } 
+   }
 
    //:END
 
@@ -1933,7 +1933,7 @@ SelectNewLanguageCode( zVIEW     vSubtask )
    //:FOR EACH vTZWDLCVO.OriginalText
    RESULT = SetCursorFirstEntity( vTZWDLCVO, "OriginalText", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
       //:     vTZWDLCVO.NLS_Text.LanguageIndex  =
       //:                 vTZWDLCVO.OriginalLanguage.CurrentSelectedLanguageCode
@@ -1941,24 +1941,24 @@ SelectNewLanguageCode( zVIEW     vSubtask )
       RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_0, "" );
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      { 
+      {
          //:CREATE ENTITY vTZWDLCVO.NLS_Text
          RESULT = CreateEntity( vTZWDLCVO, "NLS_Text", zPOS_AFTER );
          //:vTZWDLCVO.NLS_Text.LanguageIndex =
          //:              vTZWDLCVO.OriginalLanguage.CurrentSelectedLanguageCode
          SetAttributeFromAttribute( vTZWDLCVO, "NLS_Text", "LanguageIndex", vTZWDLCVO, "OriginalLanguage", "CurrentSelectedLanguageCode" );
-      } 
+      }
 
       //:END
       //:INCLUDE vTZWDLCVO.SelectedNLS_Text FROM vTZWDLCVO.NLS_Text
       RESULT = IncludeSubobjectFromSubobject( vTZWDLCVO, "SelectedNLS_Text", vTZWDLCVO, "NLS_Text", zPOS_AFTER );
       RESULT = SetCursorNextEntity( vTZWDLCVO, "OriginalText", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -1971,15 +1971,15 @@ SelectNewLanguageCode( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 ActivateTZWDLCVO( zVIEW     vSubtask )
 {
-   zVIEW     vTZWDLCVO = 0; 
+   zVIEW     vTZWDLCVO = 0;
    //:VIEW vLPLR   BASED ON LOD TZCMLPLO
-   zVIEW     vLPLR = 0; 
+   zVIEW     vLPLR = 0;
 
    //:STRING ( 513 ) szFileName                // zMAX_FILESPEC_LTH+1
-   zCHAR     szFileName[ 514 ] = { 0 }; 
+   zCHAR     szFileName[ 514 ] = { 0 };
    //:INTEGER        nFileNo
-   zLONG     nFileNo = 0; 
-   zSHORT    RESULT; 
+   zLONG     nFileNo = 0;
+   zSHORT    RESULT;
 
 
    //:GET VIEW vLPLR NAMED "TaskLPLR"
@@ -1992,18 +1992,18 @@ ActivateTZWDLCVO( zVIEW     vSubtask )
    nFileNo = SysOpenFile( vSubtask, szFileName, COREFILE_READ );
    //:IF nFileNo > 0
    if ( nFileNo > 0 )
-   { 
+   {
       //:  ActivateOI_FromFile( vTZWDLCVO, "TZWDLCVO", vSubtask, szFileName, zSINGLE )
       ActivateOI_FromFile( &vTZWDLCVO, "TZWDLCVO", vSubtask, szFileName, zSINGLE );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:ACTIVATE vTZWDLCVO EMPTY
       RESULT = ActivateEmptyObjectInstance( &vTZWDLCVO, "TZWDLCVO", vSubtask, zSINGLE );
       //:CREATE ENTITY vTZWDLCVO.OriginalLanguage
       RESULT = CreateEntity( vTZWDLCVO, "OriginalLanguage", zPOS_AFTER );
-   } 
+   }
 
    //:END
 
@@ -2014,15 +2014,15 @@ ActivateTZWDLCVO( zVIEW     vSubtask )
    //:// SelectedNLS_Text entries.
    //:IF vTZWDLCVO.OriginalLanguage.CurrentSelectedLanguageCode != 0
    if ( CompareAttributeToInteger( vTZWDLCVO, "OriginalLanguage", "CurrentSelectedLanguageCode", 0 ) != 0 )
-   { 
+   {
       //:SelectNewLanguageCode( vSubtask )
       SelectNewLanguageCode( vSubtask );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2032,25 +2032,25 @@ ActivateTZWDLCVO( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 ConvertTextInDialogs( zVIEW     vSubtask )
 {
-   zVIEW     vTZWDLCVO = 0; 
+   zVIEW     vTZWDLCVO = 0;
    //:VIEW vDialog   BASED ON LOD TZWDLGSO
-   zVIEW     vDialog = 0; 
+   zVIEW     vDialog = 0;
    //:VIEW vLPLR     BASED ON LOD TZCMLPLO
-   zVIEW     vLPLR = 0; 
+   zVIEW     vLPLR = 0;
 
    //:STRING (64) szMsg
-   zCHAR     szMsg[ 65 ] = { 0 }; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 255 ]; 
-   zLONG     lTempInteger_0; 
-   zLONG     lTempInteger_1; 
-   zLONG     lTempInteger_2; 
-   zLONG     lTempInteger_3; 
-   zLONG     lTempInteger_4; 
-   zLONG     lTempInteger_5; 
-   zLONG     lTempInteger_6; 
-   zLONG     lTempInteger_7; 
+   zCHAR     szMsg[ 65 ] = { 0 };
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zCHAR     szTempString_1[ 255 ];
+   zLONG     lTempInteger_0;
+   zLONG     lTempInteger_1;
+   zLONG     lTempInteger_2;
+   zLONG     lTempInteger_3;
+   zLONG     lTempInteger_4;
+   zLONG     lTempInteger_5;
+   zLONG     lTempInteger_6;
+   zLONG     lTempInteger_7;
 
 
    //:// First make sure that now Dialog meta is currently open.  We will
@@ -2059,14 +2059,14 @@ ConvertTextInDialogs( zVIEW     vSubtask )
    RESULT = GetViewByName( &vDialog, "TZWINDOWL", vSubtask, zLEVEL_TASK );
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   { 
+   {
       //:MessageSend( vSubtask, "CM01020", "Dialog",
       //:             "You cannot convert text when a dialog is open.",
       //:             zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
       MessageSend( vSubtask, "CM01020", "Dialog", "You cannot convert text when a dialog is open.", zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -2082,7 +2082,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
    //:FOR EACH vLPLR.W_MetaDef
    RESULT = SetCursorFirstEntity( vLPLR, "W_MetaDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:  ActivateMetaOI( vSubtask, vDialog, vLPLR, zSOURCE_DIALOG_META, zSINGLE )
       ActivateMetaOI( vSubtask, &vDialog, vLPLR, zSOURCE_DIALOG_META, zSINGLE );
 
@@ -2096,7 +2096,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
       //:FOR EACH vDialog.Window
       RESULT = SetCursorFirstEntity( vDialog, "Window", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
          //:// First process Caption entries for each Window, if there is a match on
          //:// an original text entry.
          //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
@@ -2105,7 +2105,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
          RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:// Then position on the correct NLS_Text entry used for conversion.
             //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
             //:          vTZWDLCVO.NLS_Text.LanguageIndex =
@@ -2114,7 +2114,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
             RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_0, "" );
             //:IF vTZWDLCVO.NLS_Text.Text != ""
             if ( CompareAttributeToString( vTZWDLCVO, "NLS_Text", "Text", "" ) != 0 )
-            { 
+            {
                //:// Then create the Dialog NLS entry if it doesn't exist.
                //:SET CURSOR FIRST vDialog.CaptionNLS_Text WHERE
                //:vDialog.CaptionNLS_Text.LanguageIndex =
@@ -2123,10 +2123,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                RESULT = SetCursorFirstEntityByInteger( vDialog, "CaptionNLS_Text", "LanguageIndex", lTempInteger_1, "" );
                //:IF RESULT < zCURSOR_SET
                if ( RESULT < zCURSOR_SET )
-               { 
+               {
                   //:CreateMetaEntity( vSubtask, vDialog, "CaptionNLS_Text", zPOS_AFTER )
                   CreateMetaEntity( vSubtask, vDialog, "CaptionNLS_Text", zPOS_AFTER );
-               } 
+               }
 
                //:END
                //:// Finally, set the text values.
@@ -2134,10 +2134,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                SetAttributeFromAttribute( vDialog, "CaptionNLS_Text", "LanguageIndex", vTZWDLCVO, "NLS_Text", "LanguageIndex" );
                //:vDialog.CaptionNLS_Text.Text = vTZWDLCVO.NLS_Text.Text
                SetAttributeFromAttribute( vDialog, "CaptionNLS_Text", "Text", vTZWDLCVO, "NLS_Text", "Text" );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          //:END
 
@@ -2146,14 +2146,14 @@ ConvertTextInDialogs( zVIEW     vSubtask )
          //:FOR EACH vDialog.Option
          RESULT = SetCursorFirstEntity( vDialog, "Option", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         { 
+         {
             //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
             //:     vTZWDLCVO.OriginalText.Value = vDialog.Option.Text
             GetStringFromAttribute( szTempString_1, vDialog, "Option", "Text" );
             RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:// Then position on the correct NLS_Text entry used for conversion.
                //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
                //:          vTZWDLCVO.NLS_Text.LanguageIndex =
@@ -2162,7 +2162,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_2, "" );
                //:IF vTZWDLCVO.NLS_Text.Text != ""
                if ( CompareAttributeToString( vTZWDLCVO, "NLS_Text", "Text", "" ) != 0 )
-               { 
+               {
                   //:// Then create the Dialog NLS entry if it doesn't exist.
                   //:SET CURSOR FIRST vDialog.OptionNLS_Text WHERE
                   //:     vDialog.OptionNLS_Text.LanguageIndex =
@@ -2171,10 +2171,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                   RESULT = SetCursorFirstEntityByInteger( vDialog, "OptionNLS_Text", "LanguageIndex", lTempInteger_3, "" );
                   //:IF RESULT < zCURSOR_SET
                   if ( RESULT < zCURSOR_SET )
-                  { 
+                  {
                      //:CreateMetaEntity( vSubtask, vDialog, "OptionNLS_Text", zPOS_AFTER )
                      CreateMetaEntity( vSubtask, vDialog, "OptionNLS_Text", zPOS_AFTER );
-                  } 
+                  }
 
                   //:END
                   //:// Finally, set the text values.
@@ -2182,10 +2182,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                   SetAttributeFromAttribute( vDialog, "OptionNLS_Text", "LanguageIndex", vTZWDLCVO, "NLS_Text", "LanguageIndex" );
                   //:vDialog.OptionNLS_Text.Text = vTZWDLCVO.NLS_Text.Text
                   SetAttributeFromAttribute( vDialog, "OptionNLS_Text", "Text", vTZWDLCVO, "NLS_Text", "Text" );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
 
@@ -2193,7 +2193,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
             //:ConvertOptionSubobject( vSubtask, vTZWDLCVO, vDialog )
             o_ConvertOptionSubobject( vSubtask, vTZWDLCVO, vDialog );
             RESULT = SetCursorNextEntity( vDialog, "Option", "" );
-         } 
+         }
 
          //:END
 
@@ -2202,7 +2202,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
          //:FOR EACH vDialog.Control
          RESULT = SetCursorFirstEntity( vDialog, "Control", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         { 
+         {
 
             //:// Control Text
             //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
@@ -2211,7 +2211,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
             RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:// Then position on the correct NLS_Text entry used for conversion.
                //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
                //:          vTZWDLCVO.NLS_Text.LanguageIndex =
@@ -2220,7 +2220,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_4, "" );
                //:IF vTZWDLCVO.NLS_Text.Text != ""
                if ( CompareAttributeToString( vTZWDLCVO, "NLS_Text", "Text", "" ) != 0 )
-               { 
+               {
                   //:// Then create the Dialog NLS entry if it doesn't exist.
                   //:SET CURSOR FIRST vDialog.ControlNLS_Text WHERE
                   //:     vDialog.ControlNLS_Text.LanguageIndex =
@@ -2229,10 +2229,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                   RESULT = SetCursorFirstEntityByInteger( vDialog, "ControlNLS_Text", "LanguageIndex", lTempInteger_5, "" );
                   //:IF RESULT < zCURSOR_SET
                   if ( RESULT < zCURSOR_SET )
-                  { 
+                  {
                      //:CreateMetaEntity( vSubtask, vDialog, "ControlNLS_Text", zPOS_AFTER )
                      CreateMetaEntity( vSubtask, vDialog, "ControlNLS_Text", zPOS_AFTER );
-                  } 
+                  }
 
                   //:END
                   //:// Finally, set the text values.
@@ -2240,10 +2240,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                   SetAttributeFromAttribute( vDialog, "ControlNLS_Text", "LanguageIndex", vTZWDLCVO, "NLS_Text", "LanguageIndex" );
                   //:vDialog.ControlNLS_Text.Text = vTZWDLCVO.NLS_Text.Text
                   SetAttributeFromAttribute( vDialog, "ControlNLS_Text", "Text", vTZWDLCVO, "NLS_Text", "Text" );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
 
@@ -2254,7 +2254,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
             RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_1, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            { 
+            {
                //:// Then position on the correct NLS_Text entry used for conversion.
                //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
                //:          vTZWDLCVO.NLS_Text.LanguageIndex =
@@ -2263,7 +2263,7 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_6, "" );
                //:IF vTZWDLCVO.NLS_Text.Text != ""
                if ( CompareAttributeToString( vTZWDLCVO, "NLS_Text", "Text", "" ) != 0 )
-               { 
+               {
                   //:// Then create the Dialog NLS entry if it doesn't exist.
                   //:SET CURSOR FIRST vDialog.ControlNLS_DIL_Text WHERE
                   //:     vDialog.ControlNLS_DIL_Text.LanguageIndex =
@@ -2272,10 +2272,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                   RESULT = SetCursorFirstEntityByInteger( vDialog, "ControlNLS_DIL_Text", "LanguageIndex", lTempInteger_7, "" );
                   //:IF RESULT < zCURSOR_SET
                   if ( RESULT < zCURSOR_SET )
-                  { 
+                  {
                      //:CreateMetaEntity( vSubtask, vDialog, "ControlNLS_DIL_Text", zPOS_AFTER )
                      CreateMetaEntity( vSubtask, vDialog, "ControlNLS_DIL_Text", zPOS_AFTER );
-                  } 
+                  }
 
                   //:END
                   //:// Finally, set the text values.
@@ -2283,10 +2283,10 @@ ConvertTextInDialogs( zVIEW     vSubtask )
                   SetAttributeFromAttribute( vDialog, "ControlNLS_DIL_Text", "LanguageIndex", vTZWDLCVO, "NLS_Text", "LanguageIndex" );
                   //:vDialog.ControlNLS_DIL_Text.Text = vTZWDLCVO.NLS_Text.Text
                   SetAttributeFromAttribute( vDialog, "ControlNLS_DIL_Text", "Text", vTZWDLCVO, "NLS_Text", "Text" );
-               } 
+               }
 
                //:END
-            } 
+            }
 
             //:END
 
@@ -2294,11 +2294,11 @@ ConvertTextInDialogs( zVIEW     vSubtask )
             //:ConvertControlSubobject( vSubtask, vTZWDLCVO, vDialog )
             o_ConvertControlSubobject( vSubtask, vTZWDLCVO, vDialog );
             RESULT = SetCursorNextEntity( vDialog, "Control", "" );
-         } 
+         }
 
          RESULT = SetCursorNextEntity( vDialog, "Window", "" );
          //:END
-      } 
+      }
 
       //:END
 
@@ -2308,13 +2308,13 @@ ConvertTextInDialogs( zVIEW     vSubtask )
       //:DropObjectInstance( vDialog )
       DropObjectInstance( vDialog );
       RESULT = SetCursorNextEntity( vLPLR, "W_MetaDef", "" );
-   } 
+   }
 
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -2323,12 +2323,12 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
                            zVIEW     vTZWDLCVO,
                            zVIEW     vDialog )
 {
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 255 ]; 
-   zLONG     lTempInteger_0; 
-   zLONG     lTempInteger_1; 
-   zLONG     lTempInteger_2; 
-   zLONG     lTempInteger_3; 
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 255 ];
+   zLONG     lTempInteger_0;
+   zLONG     lTempInteger_1;
+   zLONG     lTempInteger_2;
+   zLONG     lTempInteger_3;
 
    //:ConvertControlSubobject( VIEW vSubtask,
    //:                      VIEW vTZWDLCVO BASED ON LOD TZWDLCVO,
@@ -2343,7 +2343,7 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
    //:FOR EACH vDialog.Control
    RESULT = SetCursorFirstEntity( vDialog, "Control", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
 
       //:// Control Text
       //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
@@ -2352,7 +2352,7 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
       RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_0, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:// Then position on the correct NLS_Text entry used for conversion.
          //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
          //:          vTZWDLCVO.NLS_Text.LanguageIndex =
@@ -2361,7 +2361,7 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
          RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_0, "" );
          //:IF vTZWDLCVO.NLS_Text.Text != ""
          if ( CompareAttributeToString( vTZWDLCVO, "NLS_Text", "Text", "" ) != 0 )
-         { 
+         {
             //:// Then create the Dialog NLS entry if it doesn't exist.
             //:SET CURSOR FIRST vDialog.ControlNLS_Text WHERE
             //:     vDialog.ControlNLS_Text.LanguageIndex =
@@ -2370,10 +2370,10 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
             RESULT = SetCursorFirstEntityByInteger( vDialog, "ControlNLS_Text", "LanguageIndex", lTempInteger_1, "" );
             //:IF RESULT < zCURSOR_SET
             if ( RESULT < zCURSOR_SET )
-            { 
+            {
                //:CreateMetaEntity( vSubtask, vDialog, "ControlNLS_Text", zPOS_AFTER )
                CreateMetaEntity( vSubtask, vDialog, "ControlNLS_Text", zPOS_AFTER );
-            } 
+            }
 
             //:END
             //:// Finally, set the text values.
@@ -2381,10 +2381,10 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
             SetAttributeFromAttribute( vDialog, "ControlNLS_Text", "LanguageIndex", vTZWDLCVO, "NLS_Text", "LanguageIndex" );
             //:vDialog.ControlNLS_Text.Text = vTZWDLCVO.NLS_Text.Text
             SetAttributeFromAttribute( vDialog, "ControlNLS_Text", "Text", vTZWDLCVO, "NLS_Text", "Text" );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
@@ -2395,7 +2395,7 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
       RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_0, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:// Then position on the correct NLS_Text entry used for conversion.
          //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
          //:          vTZWDLCVO.NLS_Text.LanguageIndex =
@@ -2404,7 +2404,7 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
          RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_2, "" );
          //:IF vTZWDLCVO.NLS_Text.Text != ""
          if ( CompareAttributeToString( vTZWDLCVO, "NLS_Text", "Text", "" ) != 0 )
-         { 
+         {
             //:// Then create the Dialog NLS entry if it doesn't exist.
             //:SET CURSOR FIRST vDialog.ControlNLS_DIL_Text WHERE
             //:     vDialog.ControlNLS_DIL_Text.LanguageIndex =
@@ -2413,10 +2413,10 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
             RESULT = SetCursorFirstEntityByInteger( vDialog, "ControlNLS_DIL_Text", "LanguageIndex", lTempInteger_3, "" );
             //:IF RESULT < zCURSOR_SET
             if ( RESULT < zCURSOR_SET )
-            { 
+            {
                //:CreateMetaEntity( vSubtask, vDialog, "ControlNLS_DIL_Text", zPOS_AFTER )
                CreateMetaEntity( vSubtask, vDialog, "ControlNLS_DIL_Text", zPOS_AFTER );
-            } 
+            }
 
             //:END
             //:// Finally, set the text values.
@@ -2424,10 +2424,10 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
             SetAttributeFromAttribute( vDialog, "ControlNLS_DIL_Text", "LanguageIndex", vTZWDLCVO, "NLS_Text", "LanguageIndex" );
             //:vDialog.ControlNLS_DIL_Text.Text = vTZWDLCVO.NLS_Text.Text
             SetAttributeFromAttribute( vDialog, "ControlNLS_DIL_Text", "Text", vTZWDLCVO, "NLS_Text", "Text" );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
@@ -2435,14 +2435,14 @@ o_ConvertControlSubobject( zVIEW     vSubtask,
       //:ConvertControlSubobject( vSubtask, vTZWDLCVO, vDialog )
       o_ConvertControlSubobject( vSubtask, vTZWDLCVO, vDialog );
       RESULT = SetCursorNextEntity( vDialog, "Control", "" );
-   } 
+   }
 
    //:END
    //:ResetViewFromSubobject( vDialog )
    ResetViewFromSubobject( vDialog );
    return;
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -2451,10 +2451,10 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
                           zVIEW     vTZWDLCVO,
                           zVIEW     vDialog )
 {
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zLONG     lTempInteger_0; 
-   zLONG     lTempInteger_1; 
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zLONG     lTempInteger_0;
+   zLONG     lTempInteger_1;
 
    //:ConvertOptionSubobject( VIEW vSubtask, VIEW vTZWDLCVO BASED ON LOD TZWDLCVO,
    //:                     VIEW vDialog BASED ON LOD TZWDLGSO )
@@ -2468,14 +2468,14 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
    //:FOR EACH vDialog.Option
    RESULT = SetCursorFirstEntity( vDialog, "Option", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST vTZWDLCVO.OriginalText WHERE
       //:     vTZWDLCVO.OriginalText.Value = vDialog.Option.Text
       GetStringFromAttribute( szTempString_0, vDialog, "Option", "Text" );
       RESULT = SetCursorFirstEntityByString( vTZWDLCVO, "OriginalText", "Value", szTempString_0, "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      { 
+      {
          //:// Then position on the correct NLS_Text entry used for conversion.
          //:SET CURSOR FIRST vTZWDLCVO.NLS_Text WHERE
          //:          vTZWDLCVO.NLS_Text.LanguageIndex =
@@ -2484,7 +2484,7 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
          RESULT = SetCursorFirstEntityByInteger( vTZWDLCVO, "NLS_Text", "LanguageIndex", lTempInteger_0, "" );
          //:IF vTZWDLCVO.NLS_Text.Text != ""
          if ( CompareAttributeToString( vTZWDLCVO, "NLS_Text", "Text", "" ) != 0 )
-         { 
+         {
             //:// Then create the Dialog NLS entry if it doesn't exist.
             //:SET CURSOR FIRST vDialog.OptionNLS_Text WHERE
             //:     vDialog.OptionNLS_Text.LanguageIndex =
@@ -2493,10 +2493,10 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
             RESULT = SetCursorFirstEntityByInteger( vDialog, "OptionNLS_Text", "LanguageIndex", lTempInteger_1, "" );
             //:IF RESULT < zCURSOR_SET
             if ( RESULT < zCURSOR_SET )
-            { 
+            {
                //:CreateMetaEntity( vSubtask, vDialog, "OptionNLS_Text", zPOS_AFTER )
                CreateMetaEntity( vSubtask, vDialog, "OptionNLS_Text", zPOS_AFTER );
-            } 
+            }
 
             //:END
             //:// Finally, set the text values.
@@ -2504,10 +2504,10 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
             SetAttributeFromAttribute( vDialog, "OptionNLS_Text", "LanguageIndex", vTZWDLCVO, "NLS_Text", "LanguageIndex" );
             //:vDialog.OptionNLS_Text.Text = vTZWDLCVO.NLS_Text.Text
             SetAttributeFromAttribute( vDialog, "OptionNLS_Text", "Text", vTZWDLCVO, "NLS_Text", "Text" );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
 
@@ -2515,7 +2515,7 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
       //:ConvertOptionSubobject( vSubtask, vTZWDLCVO, vDialog )
       o_ConvertOptionSubobject( vSubtask, vTZWDLCVO, vDialog );
       RESULT = SetCursorNextEntity( vDialog, "Option", "" );
-   } 
+   }
 
    //:END
 
@@ -2523,7 +2523,7 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
    ResetViewFromSubobject( vDialog );
    return;
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2536,9 +2536,9 @@ o_ConvertOptionSubobject( zVIEW     vSubtask,
 zOPER_EXPORT zSHORT OPERATION
 UpdateLanguageText( zVIEW     vSubtask )
 {
-   zVIEW     vTZWDLCVO = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     vTZWDLCVO = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
 
    //:GET VIEW vTZWDLCVO NAMED "TZWDLCVO"
@@ -2547,15 +2547,15 @@ UpdateLanguageText( zVIEW     vSubtask )
    //:IF vTZWDLCVO.SelectedNLS_Text DOES NOT EXIST
    lTempInteger_0 = CheckExistenceOfEntity( vTZWDLCVO, "SelectedNLS_Text" );
    if ( lTempInteger_0 != 0 )
-   { 
+   {
       //:SelectNewLanguageCode( vSubtask )
       SelectNewLanguageCode( vSubtask );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2570,17 +2570,17 @@ UpdateLanguageText( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 SelectLPLR_ForSAMerge( zVIEW     vSubtask )
 {
-   zVIEW     vCM = 0; 
+   zVIEW     vCM = 0;
    //:VIEW SourceLPLR BASED ON LOD TZCMLPLO
-   zVIEW     SourceLPLR = 0; 
+   zVIEW     SourceLPLR = 0;
    //:VIEW OrigLPLR BASED ON LOD TZCMLPLO
-   zVIEW     OrigLPLR = 0; 
+   zVIEW     OrigLPLR = 0;
 
    //:STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
    //:STRING ( 9 )   TruncatedName
-   zCHAR     TruncatedName[ 10 ] = { 0 }; 
-   zSHORT    RESULT; 
+   zCHAR     TruncatedName[ 10 ] = { 0 };
+   zSHORT    RESULT;
 
 
    //:GET VIEW vCM NAMED "TZCMWKSO"
@@ -2625,18 +2625,18 @@ SelectLPLR_ForSAMerge( zVIEW     vSubtask )
    //:FOR EACH OrigLPLR.W_MetaDef
    RESULT = SetCursorFirstEntity( OrigLPLR, "W_MetaDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:CREATE ENTITY SourceLPLR.W_MetaDef
       RESULT = CreateEntity( SourceLPLR, "W_MetaDef", zPOS_AFTER );
       //:SetMatchingAttributesByName( SourceLPLR, "W_MetaDef", OrigLPLR, "W_MetaDef", zSET_ALL )
       SetMatchingAttributesByName( SourceLPLR, "W_MetaDef", OrigLPLR, "W_MetaDef", zSET_ALL );
       RESULT = SetCursorNextEntity( OrigLPLR, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2652,32 +2652,32 @@ SelectLPLR_ForSAMerge( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 MergeSAsToER( zVIEW     vSubtask )
 {
-   zVIEW     vSourceLPLR = 0; 
-   zSHORT    RESULT; 
+   zVIEW     vSourceLPLR = 0;
+   zSHORT    RESULT;
    //:VIEW TZCMLPLO     REGISTERED AS TZCMLPLO
-   zVIEW     TZCMLPLO = 0; 
+   zVIEW     TZCMLPLO = 0;
    //:VIEW vSourceLPLR2 BASED ON LOD  TZCMLPLO
-   zVIEW     vSourceLPLR2 = 0; 
+   zVIEW     vSourceLPLR2 = 0;
    //:VIEW vCurrentLPLR BASED ON LOD  TZCMLPLO
-   zVIEW     vCurrentLPLR = 0; 
+   zVIEW     vCurrentLPLR = 0;
    //:VIEW vTargetERD   BASED ON LOD  TZEREMDO
-   zVIEW     vTargetERD = 0; 
+   zVIEW     vTargetERD = 0;
    //:VIEW vSourceERD   BASED ON LOD  TZEREMDO
-   zVIEW     vSourceERD = 0; 
+   zVIEW     vSourceERD = 0;
    //:VIEW vSourceSA    BASED ON LOD  TZERSASO
-   zVIEW     vSourceSA = 0; 
+   zVIEW     vSourceSA = 0;
    //:VIEW vTargetSA    BASED ON LOD  TZERSASO
-   zVIEW     vTargetSA = 0; 
+   zVIEW     vTargetSA = 0;
 
    //:STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
    //:STRING ( 33 ) SubjectAreaName
-   zCHAR     SubjectAreaName[ 34 ] = { 0 }; 
+   zCHAR     SubjectAreaName[ 34 ] = { 0 };
    //:INTEGER nRC
-   zLONG     nRC = 0; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_0; 
-   zCHAR     szTempString_1[ 2 ]; 
+   zLONG     nRC = 0;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_0;
+   zCHAR     szTempString_1[ 2 ];
 
    RESULT = GetViewByName( &vSourceLPLR, "SourceLPLR", vSubtask, zLEVEL_TASK );
    RESULT = GetViewByName( &TZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
@@ -2709,20 +2709,20 @@ MergeSAsToER( zVIEW     vSubtask )
    //:IF vCurrentLPLR.W_MetaDef EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( vCurrentLPLR, "W_MetaDef" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:ActivateMetaOI( vSubtask, vTargetERD, vCurrentLPLR, zSOURCE_ERD_META, zSINGLE )
       ActivateMetaOI( vSubtask, &vTargetERD, vCurrentLPLR, zSOURCE_ERD_META, zSINGLE );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:ActivateEmptyMetaOI( vSubtask, vTargetERD, zSOURCE_ERD_META, zSINGLE )
       ActivateEmptyMetaOI( vSubtask, &vTargetERD, zSOURCE_ERD_META, zSINGLE );
       //:CreateMetaEntity( vSubtask, vTargetERD, "EntpER_Model", zPOS_AFTER )
       CreateMetaEntity( vSubtask, vTargetERD, "EntpER_Model", zPOS_AFTER );
       //:vTargetERD.EntpER_Model.Name = TZCMLPLO.LPLR.Name
       SetAttributeFromAttribute( vTargetERD, "EntpER_Model", "Name", TZCMLPLO, "LPLR", "Name" );
-   } 
+   }
 
    //:END
 
@@ -2734,7 +2734,7 @@ MergeSAsToER( zVIEW     vSubtask )
    nRC = SetCursorFirstSelectedEntity( vSourceLPLR, "W_MetaDef", "LPLR" );
    //:LOOP WHILE nRC >= zCURSOR_SET
    while ( nRC >= zCURSOR_SET )
-   { 
+   {
       //:SubjectAreaName = vSourceLPLR.W_MetaDef.Name
       GetVariableFromAttribute( SubjectAreaName, 0, 'S', 34, vSourceLPLR, "W_MetaDef", "Name", "", 0 );
       //:SourceFileName  = vSourceLPLR.LPLR.MetaSrcDir + "\" + SubjectAreaName + ".PSA"
@@ -2756,18 +2756,18 @@ MergeSAsToER( zVIEW     vSubtask )
       nRC = oTZEREMDO_MergeSA_ToER( vTargetERD, vSourceERD, vSourceSA, szTempString_1, vSubtask );
       //:IF nRC < 0
       if ( nRC < 0 )
-      { 
+      {
          //:// If an error occurred during merge, abort the process.  An error
          //:// message was already send by the merge routine.
          //:RETURN -1
          return( -1 );
-      } 
+      }
 
       //:END
 
       //:nRC = SetCursorNextSelectedEntity( vSourceLPLR, "W_MetaDef", "LPLR" )
       nRC = SetCursorNextSelectedEntity( vSourceLPLR, "W_MetaDef", "LPLR" );
-   } 
+   }
 
    //:END
 
@@ -2784,7 +2784,7 @@ MergeSAsToER( zVIEW     vSubtask )
    nRC = SetCursorFirstSelectedEntity( vSourceLPLR, "W_MetaDef", "LPLR" );
    //:LOOP WHILE nRC >= zCURSOR_SET
    while ( nRC >= zCURSOR_SET )
-   { 
+   {
       //:SubjectAreaName = vSourceLPLR.W_MetaDef.Name
       GetVariableFromAttribute( SubjectAreaName, 0, 'S', 34, vSourceLPLR, "W_MetaDef", "Name", "", 0 );
       //:SourceFileName  = vSourceLPLR.LPLR.MetaSrcDir + "\" + SubjectAreaName + ".PSA"
@@ -2805,25 +2805,25 @@ MergeSAsToER( zVIEW     vSubtask )
       nRC = ActivateMetaOI_ByName( vSubtask, &vTargetSA, 0, zREFER_SA_META, 0, SubjectAreaName, 0 );
       //:IF nRC < 0
       if ( nRC < 0 )
-      { 
+      {
          //:SA_MigrateWithERDs( vTargetSA, vSourceSA,
          //:                    vTargetERD, vSourceERD, vSubtask )
          oTZERSASO_SA_MigrateWithERDs( &vTargetSA, vSourceSA, vTargetERD, vSourceERD, vSubtask );
 
          //:CommitMetaOI( vSubtask, vTargetSA, zSOURCE_SA_META )
          CommitMetaOI( vSubtask, vTargetSA, zSOURCE_SA_META );
-      } 
+      }
 
       //:END
 
       //:nRC = SetCursorNextSelectedEntity( vSourceLPLR, "W_MetaDef", "LPLR" )
       nRC = SetCursorNextSelectedEntity( vSourceLPLR, "W_MetaDef", "LPLR" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2839,7 +2839,7 @@ RefreshListBoxes( zVIEW     vSubtask )
    RefreshCtrl( vSubtask, "RelLinkList" );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2848,9 +2848,9 @@ RefreshListBoxes( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 DropPPE_View( zVIEW     vSubtask )
 {
-   zSHORT    nRC = 0; 
+   zSHORT    nRC = 0;
    //:VIEW    vPE BASED ON LOD TZPESRCO
-   zVIEW     vPE = 0; 
+   zVIEW     vPE = 0;
 
 
    //:nRC = GetViewByName( vPE, "TZPESRCO", vSubtask, zLEVEL_TASK )
@@ -2858,15 +2858,15 @@ DropPPE_View( zVIEW     vSubtask )
 
    //:IF nRC >= 0
    if ( nRC >= 0 )
-   { 
+   {
       //:DropView( vPE )
       DropView( vPE );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2875,17 +2875,17 @@ DropPPE_View( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 SetCheckoutState( zVIEW     vSubtask )
 {
-   zSHORT    nEnable = 0; 
+   zSHORT    nEnable = 0;
    //:STRING ( 100 )  szTitle
-   zCHAR     szTitle[ 101 ] = { 0 }; 
+   zCHAR     szTitle[ 101 ] = { 0 };
 
    //:VIEW vCurrentLPLR BASED ON LOD  TZCMLPLO
-   zVIEW     vCurrentLPLR = 0; 
+   zVIEW     vCurrentLPLR = 0;
    //:VIEW SourceLPLR   REGISTERED AS SourceLPLR
-   zVIEW     SourceLPLR = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
+   zVIEW     SourceLPLR = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
 
    RESULT = GetViewByName( &SourceLPLR, "SourceLPLR", vSubtask, zLEVEL_TASK );
 
@@ -2898,7 +2898,7 @@ SetCheckoutState( zVIEW     vSubtask )
    //:IF SourceLPLR.W_MetaDef EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( SourceLPLR, "W_MetaDef" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:// Then activate the Target ERD as either empty or existing.
       //:RetrieveViewForMetaList( vSubtask, vCurrentLPLR, zREFER_ERD_META )
       RetrieveViewForMetaList( vSubtask, &vCurrentLPLR, zREFER_ERD_META );
@@ -2906,29 +2906,29 @@ SetCheckoutState( zVIEW     vSubtask )
       //:IF vCurrentLPLR.W_MetaDef EXISTS
       lTempInteger_1 = CheckExistenceOfEntity( vCurrentLPLR, "W_MetaDef" );
       if ( lTempInteger_1 == 0 )
-      { 
+      {
          //:IF vCurrentLPLR.W_MetaDef.Status != 1
          if ( CompareAttributeToInteger( vCurrentLPLR, "W_MetaDef", "Status", 1 ) != 0 )
-         { 
+         {
             //:nEnable = 0
             nEnable = 0;
             //:szTitle = "Merge Subject Area To Data Model    < Data Model not checked out >"
             ZeidonStringCopy( szTitle, 1, 0, "Merge Subject Area To Data Model    < Data Model not checked out >", 1, 0, 101 );
             //:SetWindowCaptionTitle( vSubtask, szTitle, "" )
             SetWindowCaptionTitle( vSubtask, szTitle, "" );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:nEnable = 0
       nEnable = 0;
-   } 
+   }
 
    //:END
 
@@ -2936,7 +2936,7 @@ SetCheckoutState( zVIEW     vSubtask )
    SetCtrlState( vSubtask, "Merge", zOPTION_STATUS_ENABLED, (zLONG) nEnable );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -2946,20 +2946,20 @@ SetCheckoutState( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 CleanUpVORs( zVIEW     ViewToWindow )
 {
-   zVIEW     vCurrentLPLR = 0; 
+   zVIEW     vCurrentLPLR = 0;
    //:VIEW vCurrentLPLRn BASED ON LOD  TZCMLPLO
-   zVIEW     vCurrentLPLRn = 0; 
+   zVIEW     vCurrentLPLRn = 0;
    //:VIEW vVOR          BASED ON LOD  TZWDVORO
-   zVIEW     vVOR = 0; 
+   zVIEW     vVOR = 0;
    //:STRING ( 200 ) SourceFileName
-   zCHAR     SourceFileName[ 201 ] = { 0 }; 
+   zCHAR     SourceFileName[ 201 ] = { 0 };
    //:STRING ( 200 ) SourceDirectoryName
-   zCHAR     SourceDirectoryName[ 201 ] = { 0 }; 
+   zCHAR     SourceDirectoryName[ 201 ] = { 0 };
    //:STRING ( 32 ) MetaName
-   zCHAR     MetaName[ 33 ] = { 0 }; 
+   zCHAR     MetaName[ 33 ] = { 0 };
    //:INTEGER       lZKey
-   zLONG     lZKey = 0; 
-   zSHORT    RESULT; 
+   zLONG     lZKey = 0;
+   zSHORT    RESULT;
 
 
    //:// Remove duplicate VORs.
@@ -2972,25 +2972,25 @@ CleanUpVORs( zVIEW     ViewToWindow )
    //:FOR EACH vCurrentLPLR.W_MetaDef
    RESULT = SetCursorFirstEntity( vCurrentLPLR, "W_MetaDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:CreateViewFromView( vCurrentLPLRn, vCurrentLPLR )
       CreateViewFromView( &vCurrentLPLRn, vCurrentLPLR );
       //:SET CURSOR NEXT vCurrentLPLRn.W_MetaDef
       RESULT = SetCursorNextEntity( vCurrentLPLRn, "W_MetaDef", "" );
       //:IF vCurrentLPLRn.W_MetaDef.CPLR_ZKey = vCurrentLPLR.W_MetaDef.CPLR_ZKey
       if ( CompareAttributeToAttribute( vCurrentLPLRn, "W_MetaDef", "CPLR_ZKey", vCurrentLPLR, "W_MetaDef", "CPLR_ZKey" ) == 0 )
-      { 
+      {
          //:IssueError( ViewToWindow,0,0, "Delete Entity" )
          IssueError( ViewToWindow, 0, 0, "Delete Entity" );
          //:DeleteEntity( vCurrentLPLRn, "W_MetaDef", zREPOS_NONE )
          DeleteEntity( vCurrentLPLRn, "W_MetaDef", zREPOS_NONE );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:IF vCurrentLPLRn.W_MetaDef.Name = vCurrentLPLR.W_MetaDef.Name
          if ( CompareAttributeToAttribute( vCurrentLPLRn, "W_MetaDef", "Name", vCurrentLPLR, "W_MetaDef", "Name" ) == 0 )
-         { 
+         {
             //:// Activate existing source meta VOR
             //:lZKey = vCurrentLPLRn.W_MetaDef.CPLR_ZKey
             GetIntegerFromAttribute( &lZKey, vCurrentLPLRn, "W_MetaDef", "CPLR_ZKey" );
@@ -3004,24 +3004,24 @@ CleanUpVORs( zVIEW     ViewToWindow )
             //://IssueError( ViewToWindow,0,0, "Delete VOR" )
             //:DeleteMetaOI( ViewToWindow, vCurrentLPLRn, zSOURCE_VOR_META )
             DeleteMetaOI( ViewToWindow, vCurrentLPLRn, zSOURCE_VOR_META );
-         } 
+         }
 
          //:END
-      } 
+      }
 
       //:END
       //:DropView( vCurrentLPLRn )
       DropView( vCurrentLPLRn );
       RESULT = SetCursorNextEntity( vCurrentLPLR, "W_MetaDef", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif
