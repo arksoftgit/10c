@@ -1,0 +1,100 @@
+ ZSIMPDIR
+
+ Timestamp is 5356cb61 (Tue Apr 22 16:04:49 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001672H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 0000019eH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00000218H .data                   DATA
+ 0003:00000628 00000030H .bss                    DATA
+ 0004:00000000 0000003cH .idata$2                DATA
+ 0004:0000003c 00000014H .idata$3                DATA
+ 0004:00000050 000000d4H .idata$4                DATA
+ 0004:00000124 000000d4H .idata$5                DATA
+ 0004:000001f8 000001b6H .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000030       _zServerDirInit@16         10001030 f   ZSIMPDIR.OBJ
+ 0001:00000043       _zServerDirClose@12        10001043 f   ZSIMPDIR.OBJ
+ 0001:0000004d       _zServerDirGetAddr@20      1000104d f   ZSIMPDIR.OBJ
+ 0001:00000298       _SysMutexUnlock@12         10001298 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000029e       _GetStringFromAttribute@16 1000129e f   kzoengaa:KZOENGAA.DLL
+ 0001:000002a4       _SysReadZeidonIni@16       100012a4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000002aa       _SetAttributeFromString@16 100012aa f   kzoengaa:KZOENGAA.DLL
+ 0001:000002b0       _CreateEntity@12           100012b0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000002b6       _SetCursorFirstEntityByString@20 100012b6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000002bc       _SysMutexLock@16           100012bc f   kzoengaa:KZOENGAA.DLL
+ 0001:000002c2       _GetViewByName@16          100012c2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000002c8       _SysGetPointerFromHandle@4 100012c8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000002ce       _sprintf                   100012ce f   MSVCRTD:MSVCRTD.dll
+ 0001:000002d4       _strcpy                    100012d4 f   MSVCRTD:MSVCRTD.dll
+ 0001:000002e0       __chkstk                   100012e0 f   MSVCRTD:chkstk.obj
+ 0001:000002e0       __alloca_probe             100012e0 f   MSVCRTD:chkstk.obj
+ 0001:00000310       __CRT_INIT@12              10001310 f   MSVCRTD:crtdll.obj
+ 0001:00000420       __DllMainCRTStartup@12     10001420 f   MSVCRTD:crtdll.obj
+ 0001:00000514       __free_dbg                 10001514 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000051a       __initterm                 1000151a f   MSVCRTD:MSVCRTD.dll
+ 0001:00000520       __onexit                   10001520 f   MSVCRTD:atonexit.obj
+ 0001:00000560       _atexit                    10001560 f   MSVCRTD:atonexit.obj
+ 0001:00000578       __malloc_dbg               10001578 f   MSVCRTD:MSVCRTD.dll
+ 0001:00000580       _DllMain@12                10001580 f   MSVCRTD:dllmain.obj
+ 0001:000005a6       ___dllonexit               100015a6 f   MSVCRTD:MSVCRTD.dll
+ 0001:000005ac       _DisableThreadLibraryCalls@4 100015ac f   kernel32:KERNEL32.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000301c     MSVCRTD:crtdll.obj
+ 0003:00000000       ___xc_a                    10004000     MSVCRTD:cinitexe.obj
+ 0003:00000104       ___xc_z                    10004104     MSVCRTD:cinitexe.obj
+ 0003:00000208       ___xi_a                    10004208     MSVCRTD:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000430c     MSVCRTD:cinitexe.obj
+ 0003:00000410       ??_C@_05KBGO@Value?$AA@    10004410     ZSIMPDIR.OBJ
+ 0003:00000418       ??_C@_0L@MHGJ@ApplServer?$AA@ 10004418     ZSIMPDIR.OBJ
+ 0003:00000428       ??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@ 10004428     ZSIMPDIR.OBJ
+ 0003:00000430       ??_C@_0CD@JLPG@Current?5address?5of?5the?5appl?5serv@ 10004430     ZSIMPDIR.OBJ
+ 0003:0000045c       ??_C@_03HAKM@Key?$AA@      1000445c     ZSIMPDIR.OBJ
+ 0003:00000460       ??_C@_0O@MLLO@ServerAddress?$AA@ 10004460     ZSIMPDIR.OBJ
+ 0003:00000470       ??_C@_04DKMG@Desc?$AA@     10004470     ZSIMPDIR.OBJ
+ 0003:00000478       ??_C@_0EK@JCOH@Set?5from?5zSimpDir?4DLL?5to?5determi@ 10004478     ZSIMPDIR.OBJ
+ 0003:000004d0       ??_C@_05GGEJ@Group?$AA@    100044d0     ZSIMPDIR.OBJ
+ 0003:000004d8       ??_C@_04EFNI@Name?$AA@     100044d8     ZSIMPDIR.OBJ
+ 0003:000004e0       ??_C@_08PNAL@ApplServ?$AA@ 100044e0     ZSIMPDIR.OBJ
+ 0003:000004ec       ??_C@_0L@PDLM@Zeidon?5DBH?$AA@ 100044ec     ZSIMPDIR.OBJ
+ 0003:000004fc       ??_C@_0BN@EAEA@Zeidon?5DBHandler?5Work?5Object?$AA@ 100044fc     ZSIMPDIR.OBJ
+ 0003:0000062c       __adjust_fdiv              1000462c     <common>
+ 0003:00000638       ___onexitend               10004638     <common>
+ 0003:00000648       ___onexitbegin             10004648     <common>
+ 0003:0000064c       __pRawDllMain              1000464c     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_KZOENGAA 10005000     kzoengaa:KZOENGAA.DLL
+ 0004:00000014       __IMPORT_DESCRIPTOR_MSVCRTD 10005014     MSVCRTD:MSVCRTD.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_KERNEL32 10005028     kernel32:KERNEL32.dll
+ 0004:0000003c       __NULL_IMPORT_DESCRIPTOR   1000503c     kzoengaa:KZOENGAA.DLL
+ 0004:00000124       __imp__DisableThreadLibraryCalls@4 10005124     kernel32:KERNEL32.dll
+ 0004:00000128       \177KERNEL32_NULL_THUNK_DATA 10005128     kernel32:KERNEL32.dll
+ 0004:00000154       __imp__SysReadZeidonIni@16 10005154     kzoengaa:KZOENGAA.DLL
+ 0004:00000158       __imp__SetAttributeFromString@16 10005158     kzoengaa:KZOENGAA.DLL
+ 0004:0000015c       __imp__CreateEntity@12     1000515c     kzoengaa:KZOENGAA.DLL
+ 0004:00000160       __imp__SetCursorFirstEntityByString@20 10005160     kzoengaa:KZOENGAA.DLL
+ 0004:00000164       __imp__GetStringFromAttribute@16 10005164     kzoengaa:KZOENGAA.DLL
+ 0004:00000168       __imp__GetViewByName@16    10005168     kzoengaa:KZOENGAA.DLL
+ 0004:0000016c       __imp__SysGetPointerFromHandle@4 1000516c     kzoengaa:KZOENGAA.DLL
+ 0004:00000170       __imp__SysMutexUnlock@12   10005170     kzoengaa:KZOENGAA.DLL
+ 0004:00000174       __imp__SysMutexLock@16     10005174     kzoengaa:KZOENGAA.DLL
+ 0004:00000178       \177KZOENGAA_NULL_THUNK_DATA 10005178     kzoengaa:KZOENGAA.DLL
+ 0004:000001a8       __imp___free_dbg           100051a8     MSVCRTD:MSVCRTD.dll
+ 0004:000001ac       __imp___initterm           100051ac     MSVCRTD:MSVCRTD.dll
+ 0004:000001b0       __imp___malloc_dbg         100051b0     MSVCRTD:MSVCRTD.dll
+ 0004:000001b4       __imp___adjust_fdiv        100051b4     MSVCRTD:MSVCRTD.dll
+ 0004:000001b8       __imp____dllonexit         100051b8     MSVCRTD:MSVCRTD.dll
+ 0004:000001bc       __imp___onexit             100051bc     MSVCRTD:MSVCRTD.dll
+ 0004:000001c0       __imp__strcpy              100051c0     MSVCRTD:MSVCRTD.dll
+ 0004:000001c4       __imp__sprintf             100051c4     MSVCRTD:MSVCRTD.dll
+ 0004:000001c8       \177MSVCRTD_NULL_THUNK_DATA 100051c8     MSVCRTD:MSVCRTD.dll
+
+ entry point at        0001:00000420
+

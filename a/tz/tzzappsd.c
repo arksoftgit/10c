@@ -1,12 +1,12 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "ZDRVROPR.H" 
- 
+#include "KZOENGAA.H"
+#include "ZDRVROPR.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 zOPER_EXPORT zSHORT OPERATION
@@ -32,13 +32,13 @@ TZZAPPSD_SaveZeidonApp( zVIEW     vSubtask );
 zOPER_EXPORT zSHORT OPERATION
 TZZAPPSD_MainInit( zVIEW     vSubtask )
 {
-   zCHAR     szZeidon[ 129 ] = { 0 }; 
+   zCHAR     szZeidon[ 129 ] = { 0 };
    //:STRING(128) szZeidonApp
-   zCHAR     szZeidonApp[ 129 ] = { 0 }; 
+   zCHAR     szZeidonApp[ 129 ] = { 0 };
    //:VIEW        vZApp  BASED ON LOD KZAPPLOO
-   zVIEW     vZApp = 0; 
+   zVIEW     vZApp = 0;
    //:INTEGER     nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
 
 
    //:// get the path for ZEIDON.APP
@@ -48,7 +48,7 @@ TZZAPPSD_MainInit( zVIEW     vSubtask )
    nRC = SysGetEnvVar( szZeidon, "ZEIDON", 128 );
    //:IF nRC != 0
    if ( nRC != 0 )
-   { 
+   {
       //:MessageSend( vSubtask,
       //:             "AM00001", "Application Maintenance",
       //:             "Environment Variable ZEIDON is not set!",
@@ -60,7 +60,7 @@ TZZAPPSD_MainInit( zVIEW     vSubtask )
       SetWindowActionBehavior( vSubtask, zWAB_ExitDialogTask, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -80,7 +80,7 @@ TZZAPPSD_MainInit( zVIEW     vSubtask )
    nRC = ActivateOI_FromFile( &vZApp, "KZAPPLOO", vSubtask, szZeidonApp, zMULTIPLE );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:MessageSend( vSubtask,
       //:             "AM00002", "Application Maintenance",
       //:             "Could not activate ZEIDON.APP !",
@@ -92,7 +92,7 @@ TZZAPPSD_MainInit( zVIEW     vSubtask )
       SetWindowActionBehavior( vSubtask, zWAB_ExitDialogTask, 0, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -106,7 +106,7 @@ TZZAPPSD_MainInit( zVIEW     vSubtask )
    SetWindowCaptionTitle( vSubtask, "Zeidon Admin", szZeidonApp );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -116,13 +116,13 @@ TZZAPPSD_MainInit( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 TZZAPPSD_SelectApp( zVIEW     vSubtask )
 {
-   zVIEW     vZApp = 0; 
-   zSHORT    RESULT; 
+   zVIEW     vZApp = 0;
+   zSHORT    RESULT;
 
    RESULT = GetViewByName( &vZApp, "KZAPPLOO", vSubtask, zLEVEL_TASK );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -132,12 +132,12 @@ TZZAPPSD_SelectApp( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 TZZAPPSD_MainExit( zVIEW     vSubtask )
 {
-   zVIEW     vZApp = 0; 
-   zSHORT    RESULT; 
+   zVIEW     vZApp = 0;
+   zSHORT    RESULT;
    //:STRING(80)  szMsg
-   zCHAR     szMsg[ 81 ] = { 0 }; 
+   zCHAR     szMsg[ 81 ] = { 0 };
    //:INTEGER     nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
 
    RESULT = GetViewByName( &vZApp, "KZAPPLOO", vSubtask, zLEVEL_TASK );
 
@@ -145,7 +145,7 @@ TZZAPPSD_MainExit( zVIEW     vSubtask )
    nRC = ObjectInstanceUpdated( vZApp );
    //:IF nRC = 1
    if ( nRC == 1 )
-   { 
+   {
       //:szMsg = "ZEIDON.APP has changed" + NEW_LINE +
       //:       "Do you want to save it?"
       ZeidonStringCopy( szMsg, 1, 0, "ZEIDON.APP has changed", 1, 0, 81 );
@@ -161,28 +161,28 @@ TZZAPPSD_MainExit( zVIEW     vSubtask )
       nRC = MessagePrompt( vSubtask, "AM00004", "Appl Admin", szMsg, 0, zBUTTONS_YESNOCANCEL, zRESPONSE_YES, 0 );
       //:IF nRC = zRESPONSE_YES
       if ( nRC == zRESPONSE_YES )
-      { 
+      {
          //:TZZAPPSD_SaveZeidonApp( vSubtask )
          TZZAPPSD_SaveZeidonApp( vSubtask );
-      } 
+      }
 
       //:END
       //:IF nRC = zRESPONSE_CANCEL
       if ( nRC == zRESPONSE_CANCEL )
-      { 
+      {
          //:SetWindowActionBehavior( vSubtask,
          //:                         zWAB_StayOnWindow,
          //:                         0, 0)
          SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -192,14 +192,14 @@ TZZAPPSD_MainExit( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 TZZAPPSD_SaveZeidonApp( zVIEW     vSubtask )
 {
-   zCHAR     szZeidon[ 129 ] = { 0 }; 
+   zCHAR     szZeidon[ 129 ] = { 0 };
    //:STRING(128) szZeidonApp
-   zCHAR     szZeidonApp[ 129 ] = { 0 }; 
+   zCHAR     szZeidonApp[ 129 ] = { 0 };
    //:VIEW        vZApp REGISTERED AS KZAPPLOO
-   zVIEW     vZApp = 0; 
-   zSHORT    RESULT; 
+   zVIEW     vZApp = 0;
+   zSHORT    RESULT;
    //:INTEGER     nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
 
    RESULT = GetViewByName( &vZApp, "KZAPPLOO", vSubtask, zLEVEL_TASK );
 
@@ -223,7 +223,7 @@ TZZAPPSD_SaveZeidonApp( zVIEW     vSubtask )
    nRC = CommitOI_ToFile( vZApp, szZeidonApp, zASCII );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:MessageSend( vSubtask,
       //:             "AM00003", "Application Maintenance",
       //:             "Could not save ZEIDON.APP !",
@@ -231,15 +231,15 @@ TZZAPPSD_SaveZeidonApp( zVIEW     vSubtask )
       MessageSend( vSubtask, "AM00003", "Application Maintenance", "Could not save ZEIDON.APP !", zMSGQ_OBJECT_CONSTRAINT_ERROR, 1 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif

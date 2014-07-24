@@ -95,7 +95,7 @@ oTZOPHDRO_DeriveName( zVIEW        vMeta,
 {
    zLONG   lHDR_ZKey;
    zVIEW   vHDR_Ref;
-   zCHAR   szHDR_Name[ 9 ];
+   zCHAR   szHDR_Name[ 33 ];
    zSHORT  nRC;
 
    GetIntegerFromAttribute( &lHDR_ZKey, vMeta,

@@ -2732,7 +2732,8 @@ ZER_Relationship::DrawRelationshipText( )
             for ( ; ; )
             {
                Size = m_pER_Diagram->m_hDC->GetTextExtent( zsText, uTextL );
-               uTextC = (zUSHORT) ((Size.cx / tzERCELLSIZE) + (Size.cx % tzERCELLSIZE ? 1 : 0));
+               uTextC = (Size.cx / tzERCELLSIZE) +
+                        (Size.cx % tzERCELLSIZE ? 1 : 0);
                if ( m_nTextLth >= (zSHORT) uTextC )
                   break;
 
@@ -2747,8 +2748,10 @@ ZER_Relationship::DrawRelationshipText( )
                    ((zLONG) ((m_nTextLth - uTextC) / 2) * tzERDIAGRAMX);
 //          lWX = ((PosX( lDrawDiagramCell ) - PosX( tzERDISPLAYPOS )) *
 //                                   tzERCELLSIZE) + (tzERCELLSIZE / 2) + 2;
-            lWX = (PosX( lDrawDiagramCell ) - PosX( tzERDISPLAYPOS )) * tzERCELLSIZE;
-            lWY = (PosY( lDrawDiagramCell ) - PosY( tzERDISPLAYPOS )) * tzERCELLSIZE;
+            lWX = (PosX( lDrawDiagramCell ) - PosX( tzERDISPLAYPOS )) *
+                                                               tzERCELLSIZE;
+            lWY = (PosY( lDrawDiagramCell ) - PosY( tzERDISPLAYPOS )) *
+                                                               tzERCELLSIZE;
             if ( nPass == 0 )
             {
                // On the first pass, we draw downward on the right side
@@ -2779,7 +2782,8 @@ ZER_Relationship::DrawRelationshipText( )
             for ( ;; )
             {
                Size= m_pER_Diagram->m_hDC->GetTextExtent( zsText, uTextL );
-               uTextC = (zUSHORT) ((Size.cx / tzERCELLSIZE) + (Size.cx % tzERCELLSIZE ? 1 : 0));
+               uTextC = (Size.cx / tzERCELLSIZE) +
+                        (Size.cx % tzERCELLSIZE ? 1 : 0);
                if ( m_nTextLth >= (zSHORT) uTextC )
                   break;
 

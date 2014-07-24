@@ -17,37 +17,27 @@
 /*
 AUTHOR:  Bianca Ludwig
 DATE:    2000.10.13
-
 CHANGE LOG
-
 2001.07.06   BL
    Set new Control Position
-
 2001.02.16   HH
    Move code for switching foreign keys to TZTENVRO, so that it can
    be reused by TE tool.
-
 2000.11.19   BL
    Postbuild Import Window: Set Default Values for Import, set new error
    messages, set new View Names
-
 2000.11.17   HH
    Improve handling if foreign key switch candidate was not found.
-
 2000.11.13   BL
    Modified Message Text and if close SAP Import Window, do not
    delete SAP View
-
 2000.11.10   HH
    use "lLeng" on attribute import.
    improved FK switching, function ReferenceBaseKey.
-
 2000.11.06   BL  Z10
    new Prototypes for SAP Logoff and GetRelationship
-
 2000.11.01   BL  Z10
    Modified SAP Import for Subject Areas and TE generation ....
-
 2000.10.13   BL  Z10
    Create this File for import SAP-Tables to Zeidon Data Models
 */
@@ -482,7 +472,7 @@ zwTZERSAPD_ReadServerFromSirEnv( zVIEW  vSubtask,
                                  zVIEW  vTZERSAPO )
 {
    void    *hServerList = 0;
-   zCHAR   szServerName[ 9 ];
+   zCHAR   szServerName[ 33 ];
    zLONG   lCountServer, k;
 
    pfnSapGetServerList  pfnGetServerList;
@@ -550,7 +540,7 @@ zwTZERSAPD_LoadWorkLod( zVIEW vSubtask )
 {
    zVIEW  vTZERSAPO;
    zCHAR  szValue[ 20 ];
-   zCHAR  szDecrypt[ 9 ];
+   zCHAR  szDecrypt[ 33 ];
 
    if ( GetViewByName( &vTZERSAPO, "TZERSAPO", vSubtask, zLEVEL_TASK ) > 0 )
       return( 0 );
@@ -600,7 +590,7 @@ zOPER_EXPORT zSHORT /*LOCAL */  OPERATION
 zwTZERSAPD_SaveInZeidonIni( zVIEW vTZERSAPO )
 {
    zCHAR  szValue[ 20 ];
-   zCHAR  szEncrypt[ 9 ];
+   zCHAR  szEncrypt[ 33 ];
 
    // if checkBox "save in zeidon.ini" active, set new values in zeidon.ini
    if ( CompareAttributeToString( vTZERSAPO, "SapEnvironment",
@@ -1078,7 +1068,7 @@ fnTZERSAPD_SAP_Connect( zVIEW   vSubtask,
    zCHAR          szClient[ 4 ];
    zCHAR          szUser[ 13 ];
    zCHAR          szPassword[ 9 ];
-   zCHAR          szServer[ 9 ];
+   zCHAR          szServer[ 33 ];
    pfnSapLogon    pfnLogon;
    pfnSapLogoff   pfnLogoff;
 
@@ -1327,7 +1317,7 @@ fnTZERSAPD_CreateNewLogonEntity( zVIEW  vTZERSAPO )
    zCHAR   szClient[ 4 ];
    zCHAR   szUser[13];
    zCHAR   szPassword[9];
-   zCHAR   szServer[9];
+   zCHAR   szServer[33];
 
    GetStringFromAttribute( szClient, vTZERSAPO, "SapEnvironment", "Client" );
    GetStringFromAttribute( szUser, vTZERSAPO, "SapEnvironment", "User" );
@@ -3090,7 +3080,7 @@ zwTZERSAPD_Build_SAP_RS( zVIEW  vSubtask,
    zVIEW    vTZERSASO;
    zSHORT   nRC;
    zSHORT   nError = 0;
-   zCHAR    szTableName[ 33 ];
+   zCHAR    szTableName[ 255 ];
    zBOOL    bSA_Exists = FALSE;
 
    // Create Relationship from SAP

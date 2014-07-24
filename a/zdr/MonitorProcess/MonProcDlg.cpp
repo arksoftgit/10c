@@ -79,7 +79,7 @@ CMonProcDlg::OnInitDialog( )
    // EndDialog( 1);
    }
 
-   m_MonitorTomcat.LoadXML_Document( "c:\\10c\\a\\zdr\\MonitorProcess\\MonProc.xml" );
+   m_MonitorTomcat.LoadXML_Document( "c:\\10e\\a\\zdr\\MonitorProcess\\MonProc.xml" );
 
 #else
 

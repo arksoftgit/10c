@@ -1,0 +1,152 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzobrwad.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzobrwad.dll
+
+           0 characteristics
+    5356CF77 time date stamp Tue Apr 22 16:22:15 2014
+        0.00 version
+           1 ordinal base
+         124 number of functions
+         124 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000012D5 _ActivateWorkStation@12
+          2    1 00001244 _BuildObjectInstanceForView@4
+          3    2 000011F9 _BuildOutlinerOI_ForView@4
+          4    3 0000124E _BuildTaskList@4
+          5    4 00001145 _CommitOI@4
+          6    5 00001325 _CompareExcludingAttributes@4
+          7    6 00001186 _CompareFirstDifference@4
+          8    7 0000130C _CompareLastDifference@4
+          9    8 00001276 _CompareNextDifference@4
+         10    9 0000110E _CompareObjects@4
+         11    A 00001122 _ComparePreviousDifference@4
+         12    B 00001311 _CompareResetSubobject@4
+         13    C 000011B8 _CompareSetCursorCorresponding@4
+         14    D 00001262 _CompareSubobject@4
+         15    E 0000106E _CreateEntityInstance@4
+         16    F 00001316 _DeleteEntityInstance@4
+         17   10 00001104 _DisplayObjDef@4
+         18   11 00001140 _DisplayTaskInstance@4
+         19   12 0000114F _ExcludeEntityInstance@4
+         20   13 00001023 _ExitDialog@4
+         21   14 00001190 _GetDLL_Instance@4
+         22   15 000010F0 _GetTraceLevel@4
+         23   16 000011E0 _GetWKS_FileName@4
+         24   17 000010FA _PrebuildCreateEntity@4
+         25   18 000011A9 _RefreshListBox2@4
+         26   19 0000119A _RefreshListBox3@4
+         27   1A 00001014 _SelectAttribute@4
+         28   1B 000012B2 _SelectCreateEntity@4
+         29   1C 00001041 _SetTraceLevel@4
+         30   1D 00001073 _SortViewList@4
+         31   1E 00001019 _StageSingleTask@8
+         32   1F 00001226 _SwitchOrientation@4
+         33   20 000010BE _ToggleShowDesc@4
+         34   21 000010E1 _ToggleShowDescFromOI@4
+         35   22 00001302 _ToggleShowHidden@4
+         36   23 000012DF _ToggleShowUnnamed@4
+         37   24 00001271 _UpdateAttribute@4
+         38   25 000012CB _UpdateIndicators@4
+         39   26 0000111D _ViewOI_Exit@4
+         40   27 000011FE _ViewOI_Prebuild@4
+         41   28 00001168 _fnDeleteExcludeEntityInstance@8
+         42   29 000011E5 _zwCompareBuildAttrValueList@4
+         43   2A 00001163 _zwTZOBRWAD_AcceptAllSubobjects@4
+         44   2B 00001064 _zwTZOBRWAD_ActivateOIDisplay@4
+         45   2C 000011A4 _zwTZOBRWAD_ActivateObject@4
+         46   2D 00001091 _zwTZOBRWAD_BuildAttrsForGraph@4
+         47   2E 00001109 _zwTZOBRWAD_BuildCompareViews@4
+         48   2F 00001113 _zwTZOBRWAD_BuildGraphForView@4
+         49   30 00001078 _zwTZOBRWAD_BuildOutlinerAttrs@4
+         50   31 0000101E _zwTZOBRWAD_BuildTextForGraph@8
+         51   32 00001212 _zwTZOBRWAD_CancelAllSubobjects@4
+         52   33 00001131 _zwTZOBRWAD_CenterNode@4
+         53   34 000010F5 _zwTZOBRWAD_ChangeAttribute@4
+         54   35 0000120D _zwTZOBRWAD_CheckShowDesc@4
+         55   36 00001046 _zwTZOBRWAD_ClientMenu@4
+         56   37 000011CC _zwTZOBRWAD_CollapseNode@4
+         57   38 0000127B _zwTZOBRWAD_CommitFilePostBuild@4
+         58   39 0000116D _zwTZOBRWAD_CommitToFile@4
+         59   3A 000011BD _zwTZOBRWAD_CompareNext@4
+         60   3B 00001037 _zwTZOBRWAD_ComparePostBuild@4
+         61   3C 000011C2 _zwTZOBRWAD_ComparePrev@4
+         62   3D 000011C7 _zwTZOBRWAD_CompareZoomIn@4
+         63   3E 000012C6 _zwTZOBRWAD_CompareZoomOut@4
+         64   3F 0000113B _zwTZOBRWAD_CreateNewView@4
+         65   40 0000107D _zwTZOBRWAD_CursorChange@12
+         66   41 00001299 _zwTZOBRWAD_CursorFirst@4
+         67   42 000011AE _zwTZOBRWAD_CursorLast@4
+         68   43 000012B7 _zwTZOBRWAD_CursorNext@4
+         69   44 0000102D _zwTZOBRWAD_CursorNextOI@4
+         70   45 00001195 _zwTZOBRWAD_CursorPrev@4
+         71   46 000011EA _zwTZOBRWAD_CursorPrevOI@4
+         72   47 000010A0 _zwTZOBRWAD_DisplayLB_Click@4
+         73   48 0000123F _zwTZOBRWAD_DropInstance@4
+         74   49 00001267 _zwTZOBRWAD_DropView@4
+         75   4A 00001181 _zwTZOBRWAD_EntityCreate@4
+         76   4B 00001294 _zwTZOBRWAD_EntityCreateTemporal@4
+         77   4C 0000114A _zwTZOBRWAD_EntityDelete@4
+         78   4D 000010E6 _zwTZOBRWAD_EntityDeleteAll@4
+         79   4E 0000126C _zwTZOBRWAD_EntityDeselect@4
+         80   4F 000011D1 _zwTZOBRWAD_EntityDeselectAll@4
+         81   50 0000109B _zwTZOBRWAD_EntityDrop@4
+         82   51 0000118B _zwTZOBRWAD_EntityExclude@4
+         83   52 0000100A _zwTZOBRWAD_EntityExcludeAll@4
+         84   53 000010C8 _zwTZOBRWAD_EntityMenu@4
+         85   54 00001307 _zwTZOBRWAD_EntitySelect@4
+         86   55 000012F8 _zwTZOBRWAD_EntitySelectAll@4
+         87   56 000012A3 _zwTZOBRWAD_ExpandAllNodes@4
+         88   57 000010B9 _zwTZOBRWAD_ExpandNode@4
+         89   58 00001096 _zwTZOBRWAD_FlagView@4
+         90   59 000010B4 _zwTZOBRWAD_GetNameForFile@4
+         91   5A 00001082 _zwTZOBRWAD_HelpAbout@4
+         92   5B 000012FD _zwTZOBRWAD_HelpBasics@4
+         93   5C 000012BC _zwTZOBRWAD_HelpContents@4
+         94   5D 0000122B _zwTZOBRWAD_HelpOnHelp@4
+         95   5E 000012A8 _zwTZOBRWAD_HideNode@4
+         96   5F 00001285 _zwTZOBRWAD_NameOI_AtTask@4
+         97   60 000012EE _zwTZOBRWAD_NameView@4
+         98   61 00001154 _zwTZOBRWAD_NameViewPostBuild@4
+         99   62 00001159 _zwTZOBRWAD_NextSelectSet@4
+        100   63 0000105A _zwTZOBRWAD_OIDisplayExit@4
+        101   64 000012AD _zwTZOBRWAD_OIDisplayExitCancel@4
+        102   65 000010A5 _zwTZOBRWAD_OpenDescDisp@8
+        103   66 0000128A _zwTZOBRWAD_PostBuildDescDisp@4
+        104   67 00001136 _zwTZOBRWAD_PostBuildMainW@4
+        105   68 0000131B _zwTZOBRWAD_PostBuildOIDisplay@4
+        106   69 00001127 _zwTZOBRWAD_PreBuildOIDisplay@4
+        107   6A 000012DA _zwTZOBRWAD_PrevSelectSet@4
+        108   6B 000011B3 _zwTZOBRWAD_RefreshDescDisp@4
+        109   6C 000010D7 _zwTZOBRWAD_SelectViewForCompare@4
+        110   6D 00001230 _zwTZOBRWAD_SetModeAttributes@4
+        111   6E 00001028 _zwTZOBRWAD_SetModeEntities@4
+        112   6F 0000112C _zwTZOBRWAD_SetModeMarkings@4
+        113   70 00001217 _zwTZOBRWAD_SetModeTwins@4
+        114   71 00001055 _zwTZOBRWAD_ShowSelectSet@4
+        115   72 000010AA _zwTZOBRWAD_SorryNotDone@4
+        116   73 000012E4 _zwTZOBRWAD_SubobjectAccept@4
+        117   74 000012D0 _zwTZOBRWAD_SubobjectCancel@4
+        118   75 00001172 _zwTZOBRWAD_SubobjectResetView@4
+        119   76 000010CD _zwTZOBRWAD_SubobjectSetView@4
+        120   77 00001280 _zwTZOBRWAD_SubobjectTemporal@4
+        121   78 000012C1 _zwTZOBRWAD_Zoom100@4
+        122   79 000012E9 _zwTZOBRWAD_ZoomFit@4
+        123   7A 000010EB _zwTZOBRWAD_ZoomIn@4
+        124   7B 000010DC _zwTZOBRWAD_ZoomOut@4
+
+  Summary
+
+        3000 .data
+        1000 .idata
+        2000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       13000 .text

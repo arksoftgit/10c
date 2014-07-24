@@ -411,7 +411,7 @@ protected:
     //{{AFX_MSG(TZSizingControlBar)
     afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
     afx_msg void OnNcCalcSize(BOOL bCalcValidRects, NCCALCSIZE_PARAMS FAR* lpncsp);
-    afx_msg LRESULT OnNcHitTest(CPoint point);
+    afx_msg UINT OnNcHitTest(CPoint point);
     afx_msg void OnCaptureChanged(CWnd *pWnd);
     afx_msg void OnSettingChange(UINT uFlags, LPCTSTR lpszSection);
     afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
@@ -592,7 +592,7 @@ protected:
 // Generated message map functions
 protected:
     //{{AFX_MSG(TZSizingControlBarG)
-    afx_msg LRESULT OnNcHitTest(CPoint point);
+    afx_msg UINT OnNcHitTest(CPoint point);
     afx_msg void OnNcLButtonUp(UINT nHitTest, CPoint point);
     //}}AFX_MSG
 
@@ -1265,8 +1265,8 @@ public:
    afx_msg void OnSysKeyDown( UINT uKey, UINT uRepeatCnt, UINT uFlags );
    afx_msg void OnKeyDown( UINT uKey, UINT uRepeatCnt, UINT uFlags );
    afx_msg void OnKeyUp( UINT uKey, UINT uRepeatCnt, UINT uFlags );
-   afx_msg void OnInitMenu( CMenu *pMenu );
-   afx_msg void OnInitMenuPopup( CMenu *pPopupMenu, UINT nIndex, BOOL bSysMenu );
+   afx_msg void OnInitMenu( HMENU hMenu );
+   afx_msg void OnInitMenuPopup( HMENU hPopupMenu, UINT nIndex, BOOL bSysMenu );
    afx_msg void OnSetFocus( CWnd *pWndLostFocus );
    afx_msg void OnKillFocus( CWnd *pWndGetFocus );
    afx_msg void OnClose( );

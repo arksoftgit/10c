@@ -147,7 +147,7 @@ ZText::ZText( ZSubtask *pZSubtask,
    else
    {
       CString cs( *m_pzsText );
-      zPCHAR pchAmpersand = (zPCHAR) zstrchr( cs, '&' );
+      zPCHAR pchAmpersand = zstrchr( cs, '&' );
       while ( pchAmpersand )
       {
          pchAmpersand++;
@@ -159,7 +159,7 @@ ZText::ZText( ZSubtask *pZSubtask,
             break;
          }
 
-         pchAmpersand = (zPCHAR) zstrchr( pchAmpersand, '&' );
+         pchAmpersand = zstrchr( pchAmpersand, '&' );
       }
 
       SetText( cs );
@@ -857,7 +857,7 @@ ZText::OnPaint( )
          COLORREF colorOldText = dc.SetTextColor( m_clrText );
          COLORREF colorBk;
          CRect rectClient;
-         zSHORT nQuadrant = (zSHORT) ((m_lEscapement - 1) / 900) + 1;
+         zSHORT nQuadrant = ((m_lEscapement - 1) / 900) + 1;
 
 //       GetUpdateRect( rect, 1 );
 //       CBrush brush( dc.GetBkColor( ) );
@@ -1756,7 +1756,7 @@ ZText::SetText( zCPCHAR szText )
    mDeleteInit( m_pzsText );
    m_pzsText = new CString( szText );
 
-   zPCHAR pchBackSlash = (zPCHAR) zstrchr( *m_pzsText, '\\' );
+   zPCHAR pchBackSlash = zstrchr( *m_pzsText, '\\' );
    while ( pchBackSlash )
    {
       if ( *(pchBackSlash + 1) == '\\' )
@@ -1768,7 +1768,7 @@ ZText::SetText( zCPCHAR szText )
          zstrcpy( pchBackSlash + 1, pchBackSlash + 2 );
       }
 
-      pchBackSlash = (zPCHAR) zstrchr( pchBackSlash + 1, '\\' );
+      pchBackSlash = zstrchr( pchBackSlash + 1, '\\' );
    }
 
    if ( mIs_hWnd( m_hWnd ) )
@@ -2653,9 +2653,7 @@ ZClrPicker::DrawItem( LPDRAWITEMSTRUCT lpDIS )
       }
       else
       {
-         zSHORT k;
-
-         for ( k = 0; k < m_nNbrColors; k++ )
+         for ( zSHORT k = 0; k < m_nNbrColors; k++ )
          {
             if ( m_clrColorBk == g_clrColors[ k ].clrColor )
             {
@@ -3920,9 +3918,9 @@ ZClrPopup::OnKillFocus( CWnd *pNewWnd )
 
 // KillFocus problem fix suggested by Paul Wilkerson.
 void
-ZClrPopup::OnActivateApp( BOOL bActive, DWORD hTask )
+ZClrPopup::OnActivateApp( BOOL bActive, HTASK hTask )
 {
-   CWnd::OnActivateApp( bActive, (HTASK) hTask );
+   CWnd::OnActivateApp( bActive, hTask );
 
    // If Deactivating App, cancel this selection
    if ( bActive == FALSE )

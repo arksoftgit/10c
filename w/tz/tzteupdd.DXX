@@ -1,0 +1,148 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzteupdd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzteupdd.dll
+
+           0 characteristics
+    5356CF65 time date stamp Tue Apr 22 16:21:57 2014
+        0.00 version
+           1 ordinal base
+         120 number of functions
+         120 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000010B9 _DataTypeSelected@4
+          2    1 00001023 _DisplayDBH_MainDialog@4
+          3    2 0000111D _FieldRelLink_NextFieldRelLink@4
+          4    3 0000105A _FieldRelLink_Postbuild@4
+          5    4 00001212 _FieldRelLink_PrevFieldRelLink@4
+          6    5 000010F0 _FieldRelLink_SetDB_DataTypes@4
+          7    6 0000117C _ForKeyM_Prebuild@4
+          8    7 000011F9 _ForKeyM_SwitchForKeys@4
+          9    8 00001159 _GetDLL_Instance@4
+         10    9 0000116D _SelectAllLODs@4
+         11    A 0000119A _TableRecord_Postbuild@4
+         12    B 00001145 _zwTZTEUPDD_AcceptFieldRS@4
+         13    C 000011E5 _zwTZTEUPDD_AcceptKeyData@4
+         14    D 000011EF _zwTZTEUPDD_AcceptSubobject@16
+         15    E 00001208 _zwTZTEUPDD_AcceptTableRecord@4
+         16    F 000011DB _zwTZTEUPDD_BuildNetXODsOnLPLR@4
+         17   10 00001258 _zwTZTEUPDD_BuildXMD_OnServer@4
+         18   11 000011C2 _zwTZTEUPDD_BuildXOD_Init@8
+         19   12 00001172 _zwTZTEUPDD_BuildXODsLOD_List@4
+         20   13 0000123F _zwTZTEUPDD_BuildXODsOnLPLR@4
+         21   14 0000102D _zwTZTEUPDD_BuildXODsOnServer@4
+         22   15 000010D2 _zwTZTEUPDD_CancelField@4
+         23   16 00001073 _zwTZTEUPDD_CancelKeyData@4
+         24   17 000011F4 _zwTZTEUPDD_CancelTableRecord@4
+         25   18 00001136 _zwTZTEUPDD_ClearErrorWindow@4
+         26   19 00001271 _zwTZTEUPDD_CloseTablRecordWindow@4
+         27   1A 0000119F _zwTZTEUPDD_ColumnFieldPopup@4
+         28   1B 00001249 _zwTZTEUPDD_DS_TemporaryGraying@4
+         29   1C 000011EA _zwTZTEUPDD_DataSrcAssignZKey@4
+         30   1D 00001253 _zwTZTEUPDD_DataSrcDetail@4
+         31   1E 00001019 _zwTZTEUPDD_DataSrcDetailMenu@4
+         32   1F 00001195 _zwTZTEUPDD_DataSrcPopup@4
+         33   20 0000109B _zwTZTEUPDD_DataSrcSingleClick@4
+         34   21 00001262 _zwTZTEUPDD_DataSrc_Prebuild@4
+         35   22 000011BD _zwTZTEUPDD_DeleteAllTablRecs@4
+         36   23 00001091 _zwTZTEUPDD_DeleteDataSource@4
+         37   24 00001014 _zwTZTEUPDD_DeleteField@4
+         38   25 000010A5 _zwTZTEUPDD_DeleteKey@4
+         39   26 0000126C _zwTZTEUPDD_DeleteSelectedColumn@4
+         40   27 00001127 _zwTZTEUPDD_DeleteSelectedEntity@4
+         41   28 0000118B _zwTZTEUPDD_DeleteSelectedKeys@4
+         42   29 00001181 _zwTZTEUPDD_DeleteSubobject@16
+         43   2A 00001235 _zwTZTEUPDD_DeleteTable@4
+         44   2B 00001226 _zwTZTEUPDD_DeleteVsamTables@4
+         45   2C 00001230 _zwTZTEUPDD_DisableButton@4
+         46   2D 00001096 _zwTZTEUPDD_DisableFieldWndForSAP@4
+         47   2E 00001037 _zwTZTEUPDD_DisableKeyWndForSAP@4
+         48   2F 00001221 _zwTZTEUPDD_DropErrorMsgView@4
+         49   30 000011A4 _zwTZTEUPDD_ExitSaveModelDTE@4
+         50   31 0000112C _zwTZTEUPDD_ForeignKeyPostbuild@4
+         51   32 00001217 _zwTZTEUPDD_GenerateDDL@4
+         52   33 00001190 _zwTZTEUPDD_GenerateSyncDDL@4
+         53   34 0000120D _zwTZTEUPDD_HelpAbout@4
+         54   35 00001109 _zwTZTEUPDD_HelpBasics@4
+         55   36 0000125D _zwTZTEUPDD_HelpContents@4
+         56   37 000010FF _zwTZTEUPDD_HelpOnHelp@4
+         57   38 0000114A _zwTZTEUPDD_ImportDB_Data@4
+         58   39 00001122 _zwTZTEUPDD_InitMenu@4
+         59   3A 00001050 _zwTZTEUPDD_InitMenuEdit@20
+         60   3B 000010CD _zwTZTEUPDD_InitMenuForTableWnd@16
+         61   3C 0000106E _zwTZTEUPDD_InitMenuForVSAM@12
+         62   3D 000010E6 _zwTZTEUPDD_InitTool@4
+         63   3E 0000124E _zwTZTEUPDD_KeepPhysCharAll@4
+         64   3F 00001078 _zwTZTEUPDD_KeepPhysCharAllColumn@4
+         65   40 0000113B _zwTZTEUPDD_KeepPhysCharField@4
+         66   41 0000104B _zwTZTEUPDD_KeepPhysCharTable@4
+         67   42 000010DC _zwTZTEUPDD_KeyAssignZKey@4
+         68   43 000011B3 _zwTZTEUPDD_KeyListExclude@4
+         69   44 0000121C _zwTZTEUPDD_KeyListInclude@4
+         70   45 000011D6 _zwTZTEUPDD_KeyListPostbuild@4
+         71   46 00001082 _zwTZTEUPDD_KeyListPrebuild@4
+         72   47 00001131 _zwTZTEUPDD_KeyPopup@4
+         73   48 000010AA _zwTZTEUPDD_ListRtnFromSubwnd@4
+         74   49 000011C7 _zwTZTEUPDD_LoadPopup@20
+         75   4A 000011B8 _zwTZTEUPDD_LoadTableDetail@4
+         76   4B 0000110E _zwTZTEUPDD_MainRtnFromSubwnd@4
+         77   4C 00001244 _zwTZTEUPDD_MainTableRecPopup@4
+         78   4D 00001168 _zwTZTEUPDD_MoveField@4
+         79   4E 000011E0 _zwTZTEUPDD_NextDataSource@4
+         80   4F 000011D1 _zwTZTEUPDD_NextKey@4
+         81   50 000010AF _zwTZTEUPDD_NextTable@4
+         82   51 00001177 _zwTZTEUPDD_PreBuildDelete@4
+         83   52 0000115E _zwTZTEUPDD_PrevDataSource@4
+         84   53 00001203 _zwTZTEUPDD_PrevKey@4
+         85   54 000010C3 _zwTZTEUPDD_PrevTable@4
+         86   55 000010EB _zwTZTEUPDD_RebuildLODsOnLPLR@4
+         87   56 00001163 _zwTZTEUPDD_RebuildTablesRels@4
+         88   57 00001046 _zwTZTEUPDD_ReconstructERForForeignKey@12
+         89   58 000010B4 _zwTZTEUPDD_ReconstructER_Attributes@12
+         90   59 000010A0 _zwTZTEUPDD_ReconstructSelectedEntity@12
+         91   5A 0000114F _zwTZTEUPDD_RefreshTableDetail@4
+         92   5B 00001064 _zwTZTEUPDD_RefreshWindows@12
+         93   5C 000011FE _zwTZTEUPDD_RemoveMultiSelection@12
+         94   5D 00001028 _zwTZTEUPDD_SaveModelDTE@4
+         95   5E 0000123A _zwTZTEUPDD_SaveSelectedField@4
+         96   5F 0000108C _zwTZTEUPDD_SaveViewCursor@4
+         97   60 00001186 _zwTZTEUPDD_SelectDBMS@4
+         98   61 00001154 _zwTZTEUPDD_SetERAttributeWithDomain@12
+         99   62 0000100A _zwTZTEUPDD_SetERDUpdateFlag@12
+        100   63 0000122B _zwTZTEUPDD_SetFactType@12
+        101   64 000010BE _zwTZTEUPDD_SetForeignKeyCaption@4
+        102   65 00001055 _zwTZTEUPDD_SetParadigmFromDBMS@4
+        103   66 0000103C _zwTZTEUPDD_SortByDate@4
+        104   67 0000100F _zwTZTEUPDD_SortByName@4
+        105   68 000010FA _zwTZTEUPDD_SortDBs@4
+        106   69 00001113 _zwTZTEUPDD_SortTRsByDesc@4
+        107   6A 00001118 _zwTZTEUPDD_SortTRsByName@4
+        108   6B 00001267 _zwTZTEUPDD_SortTRsByOwner@4
+        109   6C 000011CC _zwTZTEUPDD_SwitchLPLR@4
+        110   6D 000011AE _zwTZTEUPDD_SyncDeselectTarget@4
+        111   6E 00001041 _zwTZTEUPDD_SyncInitWorkObject@12
+        112   6F 000010F5 _zwTZTEUPDD_SyncNext@4
+        113   70 0000101E _zwTZTEUPDD_SyncOK@4
+        114   71 0000107D _zwTZTEUPDD_SyncPreBuild@4
+        115   72 000010E1 _zwTZTEUPDD_SyncPrev@4
+        116   73 00001140 _zwTZTEUPDD_SyncRelationships@4
+        117   74 00001104 _zwTZTEUPDD_SyncSelectC_Source@4
+        118   75 00001005 _zwTZTEUPDD_SyncSelectC_Target@4
+        119   76 00001069 _zwTZTEUPDD_TableRecPopup@4
+        120   77 000011A9 _zwfnTZTEUPDD_InitDTE@8
+
+  Summary
+
+        3000 .data
+        1000 .idata
+        2000 .rdata
+        2000 .reloc
+        1000 .rsrc
+        D000 .text

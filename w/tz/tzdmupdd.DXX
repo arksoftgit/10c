@@ -1,0 +1,152 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzdmupdd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzdmupdd.dll
+
+           0 characteristics
+    5356CF47 time date stamp Tue Apr 22 16:21:27 2014
+        0.00 version
+           1 ordinal base
+         124 number of functions
+         124 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001168 _GetDLL_Instance@4
+          2    1 0000100A _GrayGroupControls@4
+          3    2 0000101E _LoadProperties@4
+          4    3 00001186 _NLS_CreateNLS_View@4
+          5    4 0000119F _NLS_DIL_DeleteText@4
+          6    5 00001221 _NLS_DIL_NewText@4
+          7    6 00001226 _NLS_DIL_Refresh@4
+          8    7 00001244 _NLS_DIL_SaveText@4
+          9    8 0000106E _NLS_ExtValueDeleteText@4
+         10    9 00001037 _NLS_ExtValueNewText@4
+         11    A 0000109B _NLS_ExtValueRefresh@4
+         12    B 000011DB _NLS_ExtValueSaveText@4
+         13    C 00001041 _NewDomainGroup@4
+         14    D 000011CC _zwTZDMUPDD_AcceptDomainGroup@4
+         15    E 00001064 _zwTZDMUPDD_AcceptOperation@4
+         16    F 00001280 _zwTZDMUPDD_AcceptSubobject@16
+         17   10 00001136 _zwTZDMUPDD_ActivateDomain@4
+         18   11 000011FE _zwTZDMUPDD_AddTableEntry@4
+         19   12 00001212 _zwTZDMUPDD_AskForSave@4
+         20   13 00001127 _zwTZDMUPDD_CONTEXT_BUTTON_Next@4
+         21   14 00001118 _zwTZDMUPDD_CONTEXT_BUTTON_OK@4
+         22   15 000010B9 _zwTZDMUPDD_CONTEXT_BUTTON_Prev@4
+         23   16 00001050 _zwTZDMUPDD_CONTEXT_INIT@4
+         24   17 0000107D _zwTZDMUPDD_CONTEXT_PINIT@4
+         25   18 000010EB _zwTZDMUPDD_CheckDomainGroupTyp@8
+         26   19 00001140 _zwTZDMUPDD_CheckGroupName@12
+         27   1A 0000100F _zwTZDMUPDD_CheckGroupType@8
+         28   1B 00001235 _zwTZDMUPDD_Check_CheckoutStatus@4
+         29   1C 0000114A _zwTZDMUPDD_ContextPopup@4
+         30   1D 000011AE _zwTZDMUPDD_CopyOperationWorkLOD@12
+         31   1E 00001249 _zwTZDMUPDD_CreateByCopy@4
+         32   1F 000011F4 _zwTZDMUPDD_CreateCloneContext@4
+         33   20 00001091 _zwTZDMUPDD_CreateContext@12
+         34   21 00001055 _zwTZDMUPDD_CreateDeleteWorkLod@12
+         35   22 0000113B _zwTZDMUPDD_CreateDomainParameter@8
+         36   23 0000108C _zwTZDMUPDD_CreateNewContext@4
+         37   24 0000123A _zwTZDMUPDD_CreateNewDomain@4
+         38   25 000010B4 _zwTZDMUPDD_CreateOperation@16
+         39   26 000010C8 _zwTZDMUPDD_CreateWorkLOD@4
+         40   27 0000115E _zwTZDMUPDD_DIL_Popup@4
+         41   28 000011BD _zwTZDMUPDD_DeleteContext@4
+         42   29 00001073 _zwTZDMUPDD_DeleteDomain@4
+         43   2A 00001253 _zwTZDMUPDD_DeleteDomainGrp@4
+         44   2B 0000123F _zwTZDMUPDD_DeleteOperFromFile@12
+         45   2C 00001087 _zwTZDMUPDD_DeleteOperation@4
+         46   2D 00001028 _zwTZDMUPDD_DeleteSelOperation@4
+         47   2E 000010AA _zwTZDMUPDD_DeleteTableEntry@4
+         48   2F 00001014 _zwTZDMUPDD_DomainGroupPopup@4
+         49   30 000010DC _zwTZDMUPDD_DuplicateContext@4
+         50   31 0000127B _zwTZDMUPDD_EditOperationcode@4
+         51   32 00001217 _zwTZDMUPDD_EditOperationcodeMenu@4
+         52   33 00001195 _zwTZDMUPDD_ExitSaveDomain@4
+         53   34 000010FF _zwTZDMUPDD_ExtValue_Popup@4
+         54   35 00001208 _zwTZDMUPDD_GoToNewTableEntry@4
+         55   36 0000104B _zwTZDMUPDD_GoToUpdateTableEntry@4
+         56   37 0000114F _zwTZDMUPDD_GroupCheckedOut@4
+         57   38 0000105A _zwTZDMUPDD_HelpAbout@4
+         58   39 00001122 _zwTZDMUPDD_HelpBasics@4
+         59   3A 00001096 _zwTZDMUPDD_HelpContents@4
+         60   3B 0000118B _zwTZDMUPDD_HelpOnHelp@4
+         61   3C 0000111D _zwTZDMUPDD_InitMenu@4
+         62   3D 000010E1 _zwTZDMUPDD_InitTool1@4
+         63   3E 000010E6 _zwTZDMUPDD_InitTool2@4
+         64   3F 000011B8 _zwTZDMUPDD_ListRtnFromSubwnd@4
+         65   40 000011F9 _zwTZDMUPDD_LoadDomain@4
+         66   41 00001276 _zwTZDMUPDD_LoadDomainGroupList@4
+         67   42 0000102D _zwTZDMUPDD_LoadDomainList@4
+         68   43 00001163 _zwTZDMUPDD_LoadOperationList@4
+         69   44 00001069 _zwTZDMUPDD_LoadPopup@20
+         70   45 000011EA _zwTZDMUPDD_MainRtnFromSubWnd@4
+         71   46 000010D2 _zwTZDMUPDD_MoveCheckGroupType@12
+         72   47 000011B3 _zwTZDMUPDD_MoveDomainCancel@4
+         73   48 00001271 _zwTZDMUPDD_MoveDomainOperToFile@8
+         74   49 00001154 _zwTZDMUPDD_MoveDomainPostBuild@4
+         75   4A 000011A4 _zwTZDMUPDD_MoveDomainPreBuild@4
+         76   4B 000010FA _zwTZDMUPDD_MoveDomainToNewGroup@4
+         77   4C 000010CD _zwTZDMUPDD_MoveRtnFromSubwindow@4
+         78   4D 000011C7 _zwTZDMUPDD_NewDomain@4
+         79   4E 000011D6 _zwTZDMUPDD_NewDomainPrebuild@4
+         80   4F 00001203 _zwTZDMUPDD_OpenDomain@4
+         81   50 00001145 _zwTZDMUPDD_OpenDomainPreBuild@4
+         82   51 00001258 _zwTZDMUPDD_OpenNextDom@4
+         83   52 0000117C _zwTZDMUPDD_OpenPrevDom@4
+         84   53 0000122B _zwTZDMUPDD_OperationPopup@4
+         85   54 0000124E _zwTZDMUPDD_OrderByExternalValue@4
+         86   55 0000125D _zwTZDMUPDD_OrderByInternalValue@4
+         87   56 00001181 _zwTZDMUPDD_REGULARE_BUTTON_Next@4
+         88   57 00001190 _zwTZDMUPDD_REGULARE_BUTTON_Prev@4
+         89   58 00001005 _zwTZDMUPDD_RebuildXDM@4
+         90   59 00001230 _zwTZDMUPDD_RefreshDomainList@4
+         91   5A 000010D7 _zwTZDMUPDD_RefreshGroupList@4
+         92   5B 00001285 _zwTZDMUPDD_RemoveOperFromGroup@12
+         93   5C 000011D1 _zwTZDMUPDD_ResetProfileXFER@4
+         94   5D 000011A9 _zwTZDMUPDD_SaveAsCancel@4
+         95   5E 00001104 _zwTZDMUPDD_SaveAsCheckValues@12
+         96   5F 00001172 _zwTZDMUPDD_SaveAsDomain@4
+         97   60 0000120D _zwTZDMUPDD_SaveAsInNewGroup@4
+         98   61 000011EF _zwTZDMUPDD_SaveAsKeepCurrentDesc@4
+         99   62 00001262 _zwTZDMUPDD_SaveAsPostBuild@4
+        100   63 00001131 _zwTZDMUPDD_SaveAsPreBuild@4
+        101   64 00001082 _zwTZDMUPDD_SaveAsRtnFromSubwnd@4
+        102   65 00001032 _zwTZDMUPDD_SaveDomain@4
+        103   66 00001019 _zwTZDMUPDD_SetCeckOutState@4
+        104   67 00001267 _zwTZDMUPDD_SetDefaultContext@4
+        105   68 0000121C _zwTZDMUPDD_SetFlagForNewDomain@4
+        106   69 00001109 _zwTZDMUPDD_SetGroupName@4
+        107   6A 000010BE _zwTZDMUPDD_SetNullEntry@8
+        108   6B 000011E0 _zwTZDMUPDD_SetSaveAsName@4
+        109   6C 0000116D _zwTZDMUPDD_Set_CM_List@4
+        110   6D 000010F0 _zwTZDMUPDD_ShowDetail@4
+        111   6E 000010AF _zwTZDMUPDD_SortByDate@4
+        112   6F 0000110E _zwTZDMUPDD_SortByGroup@4
+        113   70 000011E5 _zwTZDMUPDD_SortByName@4
+        114   71 00001113 _zwTZDMUPDD_SwitchLPLR@4
+        115   72 0000105F _zwTZDMUPDD_TABLEENT_BUTTON_Next@4
+        116   73 0000112C _zwTZDMUPDD_TABLEENT_BUTTON_Prev@4
+        117   74 00001046 _zwTZDMUPDD_TableEntryIntegerInit@4
+        118   75 000010C3 _zwTZDMUPDD_TableEntryIntegerOK@4
+        119   76 0000119A _zwTZDMUPDD_TableEntryOK@4
+        120   77 0000103C _zwTZDMUPDD_TablePopup@4
+        121   78 00001177 _zwfnTZDMUPDD_DeleteCode@8
+        122   79 0000126C _zwfnTZDMUPDD_DeleteFromXLP@8
+        123   7A 00001078 _zwfnTZDMUPDD_PromptForDelete@16
+        124   7B 000011C2 _zwfnTZDMUPDD_SaveDomain@8
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        2000 .rdata
+        2000 .reloc
+        1000 .rsrc
+        D000 .text

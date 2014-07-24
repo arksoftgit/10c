@@ -1,0 +1,146 @@
+ kzmsgqaa
+
+ Timestamp is 5137a612 (Wed Mar 06 15:24:50 2013)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001fc1H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 0000020bH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 000001dbH .data                   DATA
+ 0003:000005ec 00000038H .bss                    DATA
+ 0004:00000000 0000003cH .idata$2                DATA
+ 0004:0000003c 00000014H .idata$3                DATA
+ 0004:00000050 00000130H .idata$4                DATA
+ 0004:00000180 00000130H .idata$5                DATA
+ 0004:000002b0 000001ccH .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000060       _DllMain@12                10001060 f   zdllinst.obj
+ 0001:00000086       _GetDLL_Instance@4         10001086 f   zdllinst.obj
+ 0001:000000a0       _fnMQ_MessageSendServer@28 100010a0 f   kzmsgqaa.obj
+ 0001:000001db       _fnMQ_MessageSend@28       100011db f   kzmsgqaa.obj
+ 0001:00000588       _MQ_MessageSend@28         10001588 f   kzmsgqaa.obj
+ 0001:000005f6       _MQ_MessagePrompt@36       100015f6 f   kzmsgqaa.obj
+ 0001:00000803       _MQ_MessagePromptForInput@32 10001803 f   kzmsgqaa.obj
+ 0001:00000829       _MQ_MessagePresent@12      10001829 f   kzmsgqaa.obj
+ 0001:00000b96       _SysMessageBox@16          10001b96 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000b9c       _SetAttributeFromInteger@16 10001b9c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000ba2       _SetAttributeFromString@16 10001ba2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000ba8       _CreateEntity@12           10001ba8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bae       _UfFormatDateTime@12       10001bae f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bb4       _SysGetDateTime@4          10001bb4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bba       _TraceLineS@8              10001bba f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bc0       _GetStringFromAttribute@16 10001bc0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bc6       _SetNameForView@16         10001bc6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bcc       _ActivateOI_FromFile@20    10001bcc f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bd2       _SysOpenFile@12            10001bd2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bd8       _SysGetLocalDirectory@4    10001bd8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bde       _SetCursorFirstEntityByString@20 10001bde f   kzoengaa:KZOENGAA.DLL
+ 0001:00000be4       _GetViewByName@16          10001be4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bea       _SfCurrentTaskIsServer@4   10001bea f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bf0       _TraceLine                 10001bf0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bf6       _DropView@4                10001bf6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000bfc       _GetIntegerFromAttribute@16 10001bfc f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c02       _GetAddrForAttribute@16    10001c02 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c08       _DeleteEntity@12           10001c08 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c0e       _SetCursorLastEntity@12    10001c0e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c14       _CreateViewFromViewForTask@12 10001c14 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c1a       _strcat                    10001c1a f   msvcrtd:MSVCRTD.dll
+ 0001:00000c20       _strcpy                    10001c20 f   msvcrtd:MSVCRTD.dll
+ 0001:00000c26       _memset                    10001c26 f   msvcrtd:MSVCRTD.dll
+ 0001:00000c30       __chkstk                   10001c30 f   msvcrtd:chkstk.obj
+ 0001:00000c30       __alloca_probe             10001c30 f   msvcrtd:chkstk.obj
+ 0001:00000c60       _strncpy                   10001c60 f   msvcrtd:MSVCRTD.dll
+ 0001:00000c66       _strncat                   10001c66 f   msvcrtd:MSVCRTD.dll
+ 0001:00000c6c       _strlen                    10001c6c f   msvcrtd:MSVCRTD.dll
+ 0001:00000c72       _strchr                    10001c72 f   msvcrtd:MSVCRTD.dll
+ 0001:00000c80       __CRT_INIT@12              10001c80 f   msvcrtd:crtdll.obj
+ 0001:00000d90       __DllMainCRTStartup@12     10001d90 f   msvcrtd:crtdll.obj
+ 0001:00000e84       __free_dbg                 10001e84 f   msvcrtd:MSVCRTD.dll
+ 0001:00000e8a       __initterm                 10001e8a f   msvcrtd:MSVCRTD.dll
+ 0001:00000e90       __onexit                   10001e90 f   msvcrtd:atonexit.obj
+ 0001:00000ed0       _atexit                    10001ed0 f   msvcrtd:atonexit.obj
+ 0001:00000ee8       __malloc_dbg               10001ee8 f   msvcrtd:MSVCRTD.dll
+ 0001:00000eee       ___dllonexit               10001eee f   msvcrtd:MSVCRTD.dll
+ 0001:00000ef4       _OperatorPrompt@28         10001ef4 f   zdrapp:ZDrApp.dll
+ 0001:00000efa       _OperatorPromptForInput@24 10001efa f   zdrapp:ZDrApp.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000301c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10004000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10004104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10004208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000430c     msvcrtd:cinitexe.obj
+ 0003:00000410       ??_C@_04KOLF@Beep?$AA@     10004410     kzmsgqaa.obj
+ 0003:00000418       ??_C@_04FCOP@Type?$AA@     10004418     kzmsgqaa.obj
+ 0003:00000420       ??_C@_05LDDM@Title?$AA@    10004420     kzmsgqaa.obj
+ 0003:00000428       ??_C@_04BNNJ@Text?$AA@     10004428     kzmsgqaa.obj
+ 0003:00000430       ??_C@_02FECH@Id?$AA@       10004430     kzmsgqaa.obj
+ 0003:00000434       ??_C@_04KHMB@QMsg?$AA@     10004434     kzmsgqaa.obj
+ 0003:0000043c       ??_C@_01BJG@?6?$AA@        1000443c     kzmsgqaa.obj
+ 0003:00000440       ??_C@_0BI@GFEI@YYYY?9mm?9DD?9HH?4MI?4SS?4999?$AA@ 10004440     kzmsgqaa.obj
+ 0003:0000045c       ??_C@_0BI@MJKP@Domain?5Validation?5Error?$AA@ 1000445c     kzmsgqaa.obj
+ 0003:00000478       ??_C@_08JIIE@KZMSGQOO?$AA@ 10004478     kzmsgqaa.obj
+ 0003:00000484       ??_C@_08ILCE@LAND?4MSG?$AA@ 10004484     kzmsgqaa.obj
+ 0003:00000490       ??_C@_0M@NNHG@OverrideMsg?$AA@ 10004490     kzmsgqaa.obj
+ 0003:000004a0       ??_C@_0P@OHNN@KZ_MessageText?$AA@ 100044a0     kzmsgqaa.obj
+ 0003:000004b4       ??_C@_0BI@GODP@MessagePrompt?3?5?$CFs?5?$CFs?5?$CFs?$AA@ 100044b4     kzmsgqaa.obj
+ 0003:000004d0       ??_C@_06IOLI@Status?$AA@   100044d0     kzmsgqaa.obj
+ 0003:000005ec       _g_hInstanceDLL            100045ec     zdllinst.obj
+ 0003:000005f0       ??_C@_00A@?$AA@            100045f0     kzmsgqaa.obj
+ 0003:000005f8       __adjust_fdiv              100045f8     <common>
+ 0003:00000604       ___onexitend               10004604     <common>
+ 0003:00000614       ___onexitbegin             10004614     <common>
+ 0003:00000618       __pRawDllMain              10004618     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_KZOENGAA 10005000     kzoengaa:KZOENGAA.DLL
+ 0004:00000014       __IMPORT_DESCRIPTOR_MSVCRTD 10005014     msvcrtd:MSVCRTD.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_ZDrApp 10005028     zdrapp:ZDrApp.dll
+ 0004:0000003c       __NULL_IMPORT_DESCRIPTOR   1000503c     kzoengaa:KZOENGAA.DLL
+ 0004:00000180       __imp__SysMessageBox@16    10005180     kzoengaa:KZOENGAA.DLL
+ 0004:00000184       __imp__SetAttributeFromInteger@16 10005184     kzoengaa:KZOENGAA.DLL
+ 0004:00000188       __imp__SetAttributeFromString@16 10005188     kzoengaa:KZOENGAA.DLL
+ 0004:0000018c       __imp__CreateEntity@12     1000518c     kzoengaa:KZOENGAA.DLL
+ 0004:00000190       __imp__UfFormatDateTime@12 10005190     kzoengaa:KZOENGAA.DLL
+ 0004:00000194       __imp__SysGetDateTime@4    10005194     kzoengaa:KZOENGAA.DLL
+ 0004:00000198       __imp__TraceLineS@8        10005198     kzoengaa:KZOENGAA.DLL
+ 0004:0000019c       __imp__GetStringFromAttribute@16 1000519c     kzoengaa:KZOENGAA.DLL
+ 0004:000001a0       __imp__SetNameForView@16   100051a0     kzoengaa:KZOENGAA.DLL
+ 0004:000001a4       __imp__ActivateOI_FromFile@20 100051a4     kzoengaa:KZOENGAA.DLL
+ 0004:000001a8       __imp__SysOpenFile@12      100051a8     kzoengaa:KZOENGAA.DLL
+ 0004:000001ac       __imp__SysGetLocalDirectory@4 100051ac     kzoengaa:KZOENGAA.DLL
+ 0004:000001b0       __imp__SetCursorFirstEntityByString@20 100051b0     kzoengaa:KZOENGAA.DLL
+ 0004:000001b4       __imp__GetViewByName@16    100051b4     kzoengaa:KZOENGAA.DLL
+ 0004:000001b8       __imp__SfCurrentTaskIsServer@4 100051b8     kzoengaa:KZOENGAA.DLL
+ 0004:000001bc       __imp__TraceLine           100051bc     kzoengaa:KZOENGAA.DLL
+ 0004:000001c0       __imp__DropView@4          100051c0     kzoengaa:KZOENGAA.DLL
+ 0004:000001c4       __imp__GetIntegerFromAttribute@16 100051c4     kzoengaa:KZOENGAA.DLL
+ 0004:000001c8       __imp__GetAddrForAttribute@16 100051c8     kzoengaa:KZOENGAA.DLL
+ 0004:000001cc       __imp__DeleteEntity@12     100051cc     kzoengaa:KZOENGAA.DLL
+ 0004:000001d0       __imp__SetCursorLastEntity@12 100051d0     kzoengaa:KZOENGAA.DLL
+ 0004:000001d4       __imp__CreateViewFromViewForTask@12 100051d4     kzoengaa:KZOENGAA.DLL
+ 0004:000001d8       \177KZOENGAA_NULL_THUNK_DATA 100051d8     kzoengaa:KZOENGAA.DLL
+ 0004:00000214       __imp__strcat              10005214     msvcrtd:MSVCRTD.dll
+ 0004:00000218       __imp__strcpy              10005218     msvcrtd:MSVCRTD.dll
+ 0004:0000021c       __imp__memset              1000521c     msvcrtd:MSVCRTD.dll
+ 0004:00000220       __imp__strncpy             10005220     msvcrtd:MSVCRTD.dll
+ 0004:00000224       __imp__strncat             10005224     msvcrtd:MSVCRTD.dll
+ 0004:00000228       __imp__strlen              10005228     msvcrtd:MSVCRTD.dll
+ 0004:0000022c       __imp__strchr              1000522c     msvcrtd:MSVCRTD.dll
+ 0004:00000230       __imp___free_dbg           10005230     msvcrtd:MSVCRTD.dll
+ 0004:00000234       __imp___initterm           10005234     msvcrtd:MSVCRTD.dll
+ 0004:00000238       __imp___malloc_dbg         10005238     msvcrtd:MSVCRTD.dll
+ 0004:0000023c       __imp___adjust_fdiv        1000523c     msvcrtd:MSVCRTD.dll
+ 0004:00000240       __imp____dllonexit         10005240     msvcrtd:MSVCRTD.dll
+ 0004:00000244       __imp___onexit             10005244     msvcrtd:MSVCRTD.dll
+ 0004:00000248       \177MSVCRTD_NULL_THUNK_DATA 10005248     msvcrtd:MSVCRTD.dll
+ 0004:0000027c       __imp__OperatorPromptForInput@24 1000527c     zdrapp:ZDrApp.dll
+ 0004:00000280       __imp__OperatorPrompt@28   10005280     zdrapp:ZDrApp.dll
+ 0004:00000284       \177ZDrApp_NULL_THUNK_DATA 10005284     zdrapp:ZDrApp.dll
+
+ entry point at        0001:00000d90
+

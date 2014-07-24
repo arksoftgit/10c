@@ -339,7 +339,7 @@ fnTZRPUPDD_OpenReportFile( zVIEW vSubtask, zVIEW vNewReport )
    // the user cannot update the values in Detail Windows
    if ( !ComponentIsCheckedOut( vSubtask, vNewReport, zSOURCE_REPORT_META ))
       SetViewReadOnly( vNewReport );
-   
+
    // Execute routine to initialize Report Display subobject data, as necessary.
    oTZRPSRCO_InitReportStructure( vNewReport );
 
@@ -755,7 +755,7 @@ zOPER_EXPORT zSHORT OPERATION
 TZRPUPDD_AskForSave( zVIEW vSubtask )
 {
    zVIEW  vReport;
-   zCHAR  szReportName[ 9 ];
+   zCHAR  szReportName[ 33 ];
    zCHAR  szMessageText[ 254 ];
    zBOOL  nSaveAs = FALSE;
    zSHORT nRC;
@@ -1206,7 +1206,7 @@ TZRPUPDD_NewReportFile( zVIEW vSubtask )
    zVIEW   vMetaList;
    zVIEW   vLOD_LPLR;
    zCHAR   szFileName[ 256 ];
-   zCHAR   szReportName[ 9 ];
+   zCHAR   szReportName[ 33 ];
    zSHORT  nIdx;
 
    // get the C++ class pointer to the painter object from the
@@ -2110,8 +2110,8 @@ TZRPUP2D_SaveAsReport( zVIEW vSubtask )
    zVIEW  vCM_List;
    zVIEW  vSaveAs;
    zVIEW  vTaskLPLR;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zVIEW  vProfileXFER;
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -2222,10 +2222,10 @@ TZRPUP2D_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vCM_List;
    zVIEW   vCM_List_Copy;
-   zCHAR   szNewName[ 9 ];
-   zCHAR   szOutName[ 9 ];
+   zCHAR   szNewName[ 33 ];
+   zCHAR   szOutName[ 33 ];
 
-   GetCtrlText( vSubtask, "edReportName", szNewName, 9 );
+   GetCtrlText( vSubtask, "edReportName", szNewName, 33 );
    UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -2655,16 +2655,16 @@ GENERATE_XSLT_File( zVIEW vSubtask )
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CreateEntityGroupSet
-**    
+**
 *************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 CreateEntityGroupSetA( zVIEW vViewToWindow )
 {
    zVIEW  vTZRPSRCO;
    SHORT  nRC;
-   
+
    TraceLineS("*** CreateEntityGroupSet *** ", "");
 
    nRC = GetViewByName( &vTZRPSRCO, "TZOPENRPT", vViewToWindow, zLEVEL_TASK );
@@ -2679,9 +2679,9 @@ CreateEntityGroupSetA( zVIEW vViewToWindow )
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: DeleteGroupSetForEntity
-**    
+**
 *************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 DeleteGroupSetForEntity( zVIEW vViewToWindow )
@@ -2704,9 +2704,9 @@ DeleteGroupSetForEntity( zVIEW vViewToWindow )
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: SetGroupSetEntity
-**    
+**
 *************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 SetGroupSetEntity( zVIEW vViewToWindow )
@@ -2725,15 +2725,15 @@ SetGroupSetEntity( zVIEW vViewToWindow )
       GetStringFromAttribute( szTest, vReportTmp, "LOD_EntityParent", "Name" );
       SetAttributeFromAttribute( vReport, "DrivingViewObjRef", "wGroupSetName",
                                  vReportTmp, "LOD_EntityParent", "Name" );
-      // Since we are selecting a lod entity, this will be an entity group set.                                 
+      // Since we are selecting a lod entity, this will be an entity group set.
       SetAttributeFromString( vReport, "DrivingViewObjRef", "wGroupSetType", "E" );
-      
+
       /* // WHEN OUTLINER IS TZRPTLODENT (FullReportEntity)
       nRC = GetViewByName( &vReportTmp, "TZRPTLODENT", vViewToWindow, zLEVEL_TASK );
       GetStringFromAttribute( szTest, vReportTmp, "FullReportEntity", "Name" );
       SetAttributeFromAttribute( vReport, "DrivingViewObjRef", "wGroupSetName",
                                  vReportTmp, "FullReportEntity", "Name" );
-      // Since we are selecting a lod entity, this will be an entity group set.                                 
+      // Since we are selecting a lod entity, this will be an entity group set.
       SetAttributeFromString( vReport, "DrivingViewObjRef", "wGroupSetType", "E" );
       */
    }
@@ -2743,9 +2743,9 @@ SetGroupSetEntity( zVIEW vViewToWindow )
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: GOTO_AddGroupSet
-**    
+**
 *************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 GOTO_AddGroupSet( zVIEW vViewToWindow )
@@ -2769,9 +2769,9 @@ GOTO_AddGroupSet( zVIEW vViewToWindow )
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CreatePageHeader
-**    
+**
 *************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 CreatePageHeader( zVIEW vViewToWindow )
@@ -2790,9 +2790,9 @@ CreatePageHeader( zVIEW vViewToWindow )
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CreatePageFooter
-**    
+**
 *************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 CreatePageFooter( zVIEW vViewToWindow )
@@ -2813,15 +2813,15 @@ CreatePageFooter( zVIEW vViewToWindow )
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: ChangeDrivingView
-**    
+**
 *************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 ChangeDrivingView( zVIEW vViewToWindow )
 {
    zVIEW  vReportDef;
-   
+
    GetViewByName( &vReportDef, "TZOPENRPT", vViewToWindow, zLEVEL_TASK );
 
    // Execute routine to initialize Report Display subobject data, as necessary.

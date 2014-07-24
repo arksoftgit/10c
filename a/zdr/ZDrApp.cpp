@@ -1106,7 +1106,7 @@ ZPairedList::Display( zCPCHAR cpcText )
 {
    zCHAR szMsg[ 256 ];
 
-   zsprintf( szMsg, "Display NumberList (0x%08x): ", this );
+   zsprintf( szMsg, "Display NumberList (0x%06x): ", this );
    TraceLineS( szMsg, cpcText );
 
    ZPairedItem *pItem = m_pHeadItem;

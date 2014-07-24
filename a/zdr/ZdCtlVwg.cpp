@@ -3784,7 +3784,7 @@ void ZVirtualWebColumns::Dump( CDumpContext& dc ) const
    POSITION pos = GetHeadPosition( );
    while ( pos )
    {
-      CObject* p = (CObject *) GetNext( pos );
+      CObject* p = GetNext( pos );
       if ( p )
          p->Dump( dc );
    }

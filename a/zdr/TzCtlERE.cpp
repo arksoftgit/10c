@@ -918,5 +918,5 @@ ZER_Entity::CenterEntity( )
    // Here we zoom the diagram to the current scale to ensure the
    // display position is altered if necessary so the right and bottom
    // edge aren't beyond the diagram space
-   m_pER_Diagram->ZoomDiagram( (zSHORT) (m_pER_Diagram->m_lScale + 100), 1 );
+   m_pER_Diagram->ZoomDiagram( m_pER_Diagram->m_lScale + 100, 1 );
 }

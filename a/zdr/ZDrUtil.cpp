@@ -1762,14 +1762,12 @@ DetermineSystemVersion( zPLONG plMajorVersion,
                   }
                }
                else
-#ifdef VER_SUITE_SERVERAPPLIANCE
                if ( osvi.wSuiteMask == VER_SUITE_SERVERAPPLIANCE )
                {
                   zstrcat( szVersion, "Web Server " );
                   nRC = 150;
                }
                else
-#endif
                {
                   zstrcat( szVersion, "Server " );
                   nRC = 100;
@@ -2022,7 +2020,7 @@ DetermineSystemVersion( zPLONG plMajorVersion,
 #include <stdio.h>
 #include <conio.h>
 
-// KJS 12/02/09 - Taking out the following lines of code because for some reason in AddMember on 
+// KJS 12/02/09 - Taking out the following lines of code because for some reason in AddMember on
 // the statement QueryInterface, tomcat and application crashes.  When I take these lines out
 // I don't get as many warnings and I don't crash.  Go Figure!!
 /*
@@ -2074,25 +2072,25 @@ ActiveDirectoryLoginAuthentication( zCPCHAR cpcPathName,
       // Use the object.
       lRC = 0;  // success ... user authenticated
 
-	  /*
-	  // This is just temp code.
-	  // We are trying to figure out how to update a property.
-	  // If we openobject with zencas/enc-ad then we can seemingly
-	  // update the "userPassword" or "description" (SetInfo return code is 0) but we don't see the
-	  // change in active directory.  When I try to update "sn" or many of
-	  // the other properties, we get an error on the SetInfo (-2147016684). 
-	  // Haven't figured out what that means.
+     /*
+     // This is just temp code.
+     // We are trying to figure out how to update a property.
+     // If we openobject with zencas/enc-ad then we can seemingly
+     // update the "userPassword" or "description" (SetInfo return code is 0) but we don't see the
+     // change in active directory.  When I try to update "sn" or many of
+     // the other properties, we get an error on the SetInfo (-2147016684).
+     // Haven't figured out what that means.
       strPassword2 = OLESTR( "ZencasKelly" );
       hr = pObject->Put( L"sn",(_variant_t)strPassword2 );
       if ( FAILED( hr ) )
          TraceLineS("Put Failed again", "");
-	  else
+     else
          TraceLineS("Put successful", "");
 
       hr = pObject->SetInfo( );
       if ( FAILED( hr ) )
          TraceLineI("SetInfo Failed", zLONG(hr));
-	  else
+     else
          TraceLineS("SetInfo successful", "");
       */
 
@@ -2100,6 +2098,7 @@ ActiveDirectoryLoginAuthentication( zCPCHAR cpcPathName,
       pObject->Release();
 
       CoUninitialize();
+
    }
    else
    {
@@ -2115,8 +2114,8 @@ zOPER_EXPORT zLONG  OPERATION
 ActiveDirectoryGetProperty( zCPCHAR cpcPathName,
                             zCPCHAR cpcUserName,
                             zCPCHAR cpcPassword,
-					 		       zCPCHAR cpcPropertyName,
-							       zPCHAR  pchReturnString)
+                            zCPCHAR cpcPropertyName,
+                            zPCHAR  pchReturnString)
 {
    IADs *pObject;
    CComBSTR strPathName = cpcPathName;
@@ -2143,25 +2142,25 @@ ActiveDirectoryGetProperty( zCPCHAR cpcPathName,
       // Use the object.
       lRC = 0;  // success ... user authenticated
 
-	  VARIANT var;
+     VARIANT var;
       VariantInit(&var);
- 
+
          TraceLineS("AdsOpenObject successful", "");
 
 
       //hr = pObject->Get(strProperty, &var );
       hr = pObject->Get(L"cn", &var );
       if ( FAILED( hr ) )
-	  {
+     {
          TraceLineI("Get Failed", zLONG(hr));
          pObject->Release();
-         lRC = -1;  
-	  }
-	  else
-	  {
-	
+         lRC = -1;
+     }
+     else
+     {
+
          TraceLineS("Get successful", zPCHAR(&var));
-	  }
+     }
 
       // Release the object.
       pObject->Release();
@@ -2191,7 +2190,7 @@ AddMember( OLECHAR *strPathName, OLECHAR *strLoginUserName, OLECHAR *strLoginPas
    // Create our connection string
    strUserName = OLESTR( "cn=" );
    strUserName.Append( strNewUserName );
-   //strPathName.Append( OLESTR( ":" ) ); 
+   //strPathName.Append( OLESTR( ":" ) );
 
    LPWSTR adsPath = L"LDAP://DC=ENC-AD,DC=ENC,DC=EDU";
    LPWSTR usrPass = NULL;
@@ -2200,10 +2199,10 @@ AddMember( OLECHAR *strPathName, OLECHAR *strLoginUserName, OLECHAR *strLoginPas
    // Add code to securely get the username and password or leave
    // as NULL to use the current security context.
 
-   /* Code created for testing.  
-      hr = ADsOpenObject(strPathName, 
-					  strLoginUserName,
-					  strLoginPassword,
+   /* Code created for testing.
+      hr = ADsOpenObject(strPathName,
+                 strLoginUserName,
+                 strLoginPassword,
                       0,
                       IID_IADsContainer,
                       (void**)&pCont);
@@ -2218,11 +2217,11 @@ AddMember( OLECHAR *strPathName, OLECHAR *strLoginUserName, OLECHAR *strLoginPas
     TraceLineS( "After Release1.", "" );
   pCont->Release();
 */
-   // KJS Original code on 12/2/09 
-   
-   hr = ADsOpenObject(strPathName, 
-					  strLoginUserName,
-					  strLoginPassword,
+   // KJS Original code on 12/2/09
+
+   hr = ADsOpenObject(strPathName,
+                 strLoginUserName,
+                 strLoginPassword,
                       ADS_SECURE_AUTHENTICATION,
                       IID_IADsContainer,
                       (void**)&pCont);
@@ -2264,7 +2263,7 @@ AddMember( OLECHAR *strPathName, OLECHAR *strLoginUserName, OLECHAR *strLoginPas
    // physicalDeliveryOfficeName
    // ou This attribute specifies the name of the organizational unit. When used as a component of a directory name, it identifies an organizational unit with which the named object is affiliated.
 
-   
+
    TraceLineS( "After Query Inferface...", "" );
 
    pDisp->Release();
@@ -2275,7 +2274,7 @@ AddMember( OLECHAR *strPathName, OLECHAR *strLoginUserName, OLECHAR *strLoginPas
    TraceLineS( "AddMember Completed.", "" );
 
    return 0;
-   
+
 }
 
 HRESULT
@@ -2290,7 +2289,7 @@ AddMemberDKS( )
    CoInitialize( NULL );
 
    hr = ADsGetObject( L"LDAP://CN=users,DC=fabrikam,DC=com", IID_IADsContainer, (void**) &pCont );
-   
+
    if ( !SUCCEEDED( hr ) )
    {
       return 0;
@@ -2299,12 +2298,12 @@ AddMemberDKS( )
    //-----------------
    // Create a user
    //-----------------
-   
+
    hr = pCont->Create(CComBSTR("user"), CComBSTR("cn=jeffsmith"), &pDisp );
-   
-   // Release the container object.    
+
+   // Release the container object.
    pCont->Release( );
-   
+
    if ( !SUCCEEDED( hr ) )
    {
       return 0;
@@ -2316,7 +2315,7 @@ AddMemberDKS( )
    pDisp->Release( );
 
    if ( !SUCCEEDED( hr ) )
-   {    
+   {
       return 0;
    }
 
@@ -2360,7 +2359,7 @@ AddMemberOrig( OLECHAR *strServerName, OLECHAR *strServerPort, OLECHAR *strOrgan
    //strAdminDN = OLESTR( "cn=Administrator, ou=members, o=" );
    //strAdminDN.Append( strOrganization );
 
-   
+
    hr = CoInitialize( NULL );
    if ( FAILED( hr ) )
    {
@@ -2466,7 +2465,7 @@ AddMemberOrig( OLECHAR *strServerName, OLECHAR *strServerPort, OLECHAR *strOrgan
    // Clean up and return
    pIADsNewMember->Release( );
    pIADsContainer->Release( );
-   
+
    CoUninitialize();
 
    return S_OK;
@@ -2503,7 +2502,7 @@ ActiveDirectoryAddUser( zCPCHAR cpcPathName, zCPCHAR cpcLoginUserName,
 }
 
 zOPER_EXPORT zLONG  OPERATION
-ActiveDirectoryChangePassword( zCPCHAR cpcPathName, zCPCHAR cpcAdminUserName, zCPCHAR cpcAdminPassword, 
+ActiveDirectoryChangePassword( zCPCHAR cpcPathName, zCPCHAR cpcAdminUserName, zCPCHAR cpcAdminPassword,
                                zCPCHAR cpcUserName, zCPCHAR cpcOldPassword, zCPCHAR cpcPassword )
 {
    IADsUser *pUser=NULL;
@@ -2533,140 +2532,140 @@ ActiveDirectoryChangePassword( zCPCHAR cpcPathName, zCPCHAR cpcAdminUserName, zC
 //-2147023569 = ?     // Password cannot be changed at this time (user cannot change within X days after changing it)
 
    // Error codes for adsi http://www.selfadsi.org/errorcodes.htm
-  
+
    CoInitialize(NULL);
 
-	hr = S_OK;
+   hr = S_OK;
 
-	//LDAP://DC=ENC-AD,DC=ENC,DC=EDU
-	// Open an ads object using the admin username and password.  We will use this
-	// object to get the ads path name for the username for whom we want to change the
-	// password. 
-	// We can not open an ads object to change the password using the user's username.  Because
-	// of this we need to get the users AdsPath and use that in the AdsOpenObject method.
-    hr = ADsOpenObject(	
-						strPathName,
-						strAdminUserName,
-						strAdminPassword,
-						ADS_SECURE_AUTHENTICATION, 
-						IID_IDirectorySearch,
-						(void**) &pSearch
-					);
+   //LDAP://DC=ENC-AD,DC=ENC,DC=EDU
+   // Open an ads object using the admin username and password.  We will use this
+   // object to get the ads path name for the username for whom we want to change the
+   // password.
+   // We can not open an ads object to change the password using the user's username.  Because
+   // of this we need to get the users AdsPath and use that in the AdsOpenObject method.
+    hr = ADsOpenObject(
+                  strPathName,
+                  strAdminUserName,
+                  strAdminPassword,
+                  ADS_SECURE_AUTHENTICATION,
+                  IID_IDirectorySearch,
+                  (void**) &pSearch
+               );
     if ( !SUCCEEDED(hr) )
-	{ 
-		TraceLineI("ADsOpen for Search object failed. ", zLONG(hr));
-	    CoUninitialize();
-		return zLONG(hr);
-	}
+   {
+      TraceLineI("ADsOpen for Search object failed. ", zLONG(hr));
+       CoUninitialize();
+      return zLONG(hr);
+   }
 
     // Search for the user's AdsPath
-	ADS_SEARCHPREF_INFO prefInfo[1];
-	prefInfo[0].dwSearchPref = ADS_SEARCHPREF_SEARCH_SCOPE;
-	prefInfo[0].vValue.dwType = ADSTYPE_INTEGER;
-	prefInfo[0].vValue.Integer = ADS_SCOPE_SUBTREE;
+   ADS_SEARCHPREF_INFO prefInfo[1];
+   prefInfo[0].dwSearchPref = ADS_SEARCHPREF_SEARCH_SCOPE;
+   prefInfo[0].vValue.dwType = ADSTYPE_INTEGER;
+   prefInfo[0].vValue.Integer = ADS_SCOPE_SUBTREE;
 
-	hr = pSearch->SetSearchPreference( prefInfo, 1);
-	if ( !SUCCEEDED(hr) )
-	{
-		TraceLineI("SetSearchPreference failed. ", zLONG(hr));
-	    CoUninitialize();
-		return zLONG(hr);
-	}
+   hr = pSearch->SetSearchPreference( prefInfo, 1);
+   if ( !SUCCEEDED(hr) )
+   {
+      TraceLineI("SetSearchPreference failed. ", zLONG(hr));
+       CoUninitialize();
+      return zLONG(hr);
+   }
 
-	//Setting the attibutes needs to be retrieved 
-	LPWSTR pszAttr[] = { L"AdsPath"};
+   //Setting the attibutes needs to be retrieved
+   LPWSTR pszAttr[] = { L"AdsPath"};
 
-	DWORD dwCount= sizeof(pszAttr)/sizeof(LPWSTR);
-	ADS_SEARCH_HANDLE hSearch;
+   DWORD dwCount= sizeof(pszAttr)/sizeof(LPWSTR);
+   ADS_SEARCH_HANDLE hSearch;
 
-	// Build a search string based on the passed username.
+   // Build a search string based on the passed username.
     strSearch = OLESTR( "(&(objectCategory=Person)(objectclass=User)(sAMAccountName=" );
-	strSearch.Append( strUserName);
-	strSearch.Append( OLESTR("))"));
+   strSearch.Append( strUserName);
+   strSearch.Append( OLESTR("))"));
 
-	//Executing the search by using the user's username.
-	//hr = pSearch->ExecuteSearch(L"(&(objectCategory=Person)(objectclass=User)(sAMAccountName=testz))", pszAttr, dwCount, &hSearch );
-	hr = pSearch->ExecuteSearch(strSearch, pszAttr, dwCount, &hSearch );
+   //Executing the search by using the user's username.
+   //hr = pSearch->ExecuteSearch(L"(&(objectCategory=Person)(objectclass=User)(sAMAccountName=testz))", pszAttr, dwCount, &hSearch );
+   hr = pSearch->ExecuteSearch(strSearch, pszAttr, dwCount, &hSearch );
 
-	if ( !SUCCEEDED(hr) )
-	{
-		pSearch->Release();
-		TraceLineI("Execute Search failed. ", zLONG(hr));
-	    CoUninitialize();
-		return zLONG(hr);
-	}
-	else
-	{
-		TraceLineS("ExecuteSearch successful", "");
-	}
+   if ( !SUCCEEDED(hr) )
+   {
+      pSearch->Release();
+      TraceLineI("Execute Search failed. ", zLONG(hr));
+       CoUninitialize();
+      return zLONG(hr);
+   }
+   else
+   {
+      TraceLineS("ExecuteSearch successful", "");
+   }
 
-	ADS_SEARCH_COLUMN col;
-	//Searching in the whole collection
-	// If no rows where returned then the search was not successful.
-	if ( pSearch->GetNextRow(hSearch) == S_ADS_NOMORE_ROWS )
-	{
-		// Most likely the problem is the username does not exist in AD.
-  		pSearch->CloseSearchHandle(hSearch);
-		pSearch->Release();
-	    CoUninitialize();
-		return (2);
-	}
-	else
-	{
-		hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
+   ADS_SEARCH_COLUMN col;
+   //Searching in the whole collection
+   // If no rows where returned then the search was not successful.
+   if ( pSearch->GetNextRow(hSearch) == S_ADS_NOMORE_ROWS )
+   {
+      // Most likely the problem is the username does not exist in AD.
+      pSearch->CloseSearchHandle(hSearch);
+      pSearch->Release();
+       CoUninitialize();
+      return (2);
+   }
+   else
+   {
+      hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
 
-		if ( SUCCEEDED(hr) )
-		{
-			//wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
-            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString); 
-			pSearch->FreeColumn( &col );
-		}
-		else if ( hr == E_ADS_COLUMN_NOT_SET )
-		{
-			TraceLineS("Could not do a GetColumn: ", "");
-		}				
-	}
-	pSearch->CloseSearchHandle(hSearch);
-	pSearch->Release();
+      if ( SUCCEEDED(hr) )
+      {
+         //wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
+            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString);
+         pSearch->FreeColumn( &col );
+      }
+      else if ( hr == E_ADS_COLUMN_NOT_SET )
+      {
+         TraceLineS("Could not do a GetColumn: ", "");
+      }
+   }
+   pSearch->CloseSearchHandle(hSearch);
+   pSearch->Release();
 
-	// Open the ads object for the username we want to change the password for.
-    hr = ADsOpenObject(	
-						szADsPath,
-						strAdminUserName,
-						strAdminPassword,
-						ADS_SECURE_AUTHENTICATION, 
-						IID_IADsUser,
-						(void**) &pUser
-					);
+   // Open the ads object for the username we want to change the password for.
+    hr = ADsOpenObject(
+                  szADsPath,
+                  strAdminUserName,
+                  strAdminPassword,
+                  ADS_SECURE_AUTHENTICATION,
+                  IID_IADsUser,
+                  (void**) &pUser
+               );
 
     if ( !SUCCEEDED(hr) )
-	{ 
-		TraceLineI("ADsOpenObject with users AdsPath failed. ", zLONG(hr));
-		return zLONG(hr);
-	}
+   {
+      TraceLineI("ADsOpenObject with users AdsPath failed. ", zLONG(hr));
+      return zLONG(hr);
+   }
 
-    
-	//ChangePassword is the call which will adhere all 
-	//the Password Policy, if we want to NOT follow the 
-	//password policies then user SetPassword, however SetPassword
-	//is a Admin call
 
-	hr = pUser->ChangePassword(strOldPassword, strPassword);
-	//hr = pUser->ChangePassword(L"Kelly1234", L"Aadit1234");
+   //ChangePassword is the call which will adhere all
+   //the Password Policy, if we want to NOT follow the
+   //password policies then user SetPassword, however SetPassword
+   //is a Admin call
 
-	if(hr == S_OK)
-	{
-	   TraceLineS( "ChangePassword successful.", "" );
+   hr = pUser->ChangePassword(strOldPassword, strPassword);
+   //hr = pUser->ChangePassword(L"Kelly1234", L"Aadit1234");
+
+   if(hr == S_OK)
+   {
+      TraceLineS( "ChangePassword successful.", "" );
        lRC = 0;
-	}
-	else
-	{
-	   TraceLineI( "ChangePassword Error.. ", zLONG(hr));
+   }
+   else
+   {
+      TraceLineI( "ChangePassword Error.. ", zLONG(hr));
        lRC = zLONG(hr);
-	}		
-	pUser->Release();
-	
-	CoUninitialize();
+   }
+   pUser->Release();
+
+   CoUninitialize();
 
    return( lRC );
 }
@@ -2697,152 +2696,152 @@ ActiveDirectorySetPassword( zCPCHAR cpcPathName, zCPCHAR cpcAdminUserName,
 
    hr = S_OK;
 
-	//LDAP://DC=ENC-AD,DC=ENC,DC=EDU
-	// Open an ads object using the admin username and password.  We will use this
-	// object to get the ads path name for the username for whom we want to change the
-	// password. 
-	// We can not open an ads object to change the password using the user's username.  Because
-	// of this we need to get the users AdsPath and use that in the AdsOpenObject method.
-    hr = ADsOpenObject(	
-						strPathName,
-						strAdminUserName,
-						strAdminPassword,
-						ADS_SECURE_AUTHENTICATION, 
-						IID_IDirectorySearch,
-						(void**) &pSearch
-					);
+   //LDAP://DC=ENC-AD,DC=ENC,DC=EDU
+   // Open an ads object using the admin username and password.  We will use this
+   // object to get the ads path name for the username for whom we want to change the
+   // password.
+   // We can not open an ads object to change the password using the user's username.  Because
+   // of this we need to get the users AdsPath and use that in the AdsOpenObject method.
+    hr = ADsOpenObject(
+                  strPathName,
+                  strAdminUserName,
+                  strAdminPassword,
+                  ADS_SECURE_AUTHENTICATION,
+                  IID_IDirectorySearch,
+                  (void**) &pSearch
+               );
     if ( !SUCCEEDED(hr) )
-	{ 
-		TraceLineI("ADsOpen for Search object failed. ", zLONG(hr));
-	    CoUninitialize();
-		return hr;
-	}
+   {
+      TraceLineI("ADsOpen for Search object failed. ", zLONG(hr));
+       CoUninitialize();
+      return hr;
+   }
 
     // Search for the user's AdsPath
-	ADS_SEARCHPREF_INFO prefInfo[1];
-	prefInfo[0].dwSearchPref = ADS_SEARCHPREF_SEARCH_SCOPE;
-	prefInfo[0].vValue.dwType = ADSTYPE_INTEGER;
-	prefInfo[0].vValue.Integer = ADS_SCOPE_SUBTREE;
+   ADS_SEARCHPREF_INFO prefInfo[1];
+   prefInfo[0].dwSearchPref = ADS_SEARCHPREF_SEARCH_SCOPE;
+   prefInfo[0].vValue.dwType = ADSTYPE_INTEGER;
+   prefInfo[0].vValue.Integer = ADS_SCOPE_SUBTREE;
 
-	hr = pSearch->SetSearchPreference( prefInfo, 1);
-	if ( !SUCCEEDED(hr) )
-	{
-		TraceLineI("SetSearchPreference failed. ", zLONG(hr));
-	    CoUninitialize();
-		return zLONG(hr);
-	}
+   hr = pSearch->SetSearchPreference( prefInfo, 1);
+   if ( !SUCCEEDED(hr) )
+   {
+      TraceLineI("SetSearchPreference failed. ", zLONG(hr));
+       CoUninitialize();
+      return zLONG(hr);
+   }
 
-	//Setting the attibutes needs to be retrieved 
-	LPWSTR pszAttr[] = { L"AdsPath"};
+   //Setting the attibutes needs to be retrieved
+   LPWSTR pszAttr[] = { L"AdsPath"};
 
-	DWORD dwCount= sizeof(pszAttr)/sizeof(LPWSTR);
-	ADS_SEARCH_HANDLE hSearch;
+   DWORD dwCount= sizeof(pszAttr)/sizeof(LPWSTR);
+   ADS_SEARCH_HANDLE hSearch;
 
-	// Build a search string based on the passed username.
+   // Build a search string based on the passed username.
     strSearch = OLESTR( "(&(objectCategory=Person)(objectclass=User)(sAMAccountName=" );
-	strSearch.Append( strUserName);
-	strSearch.Append( OLESTR("))"));
+   strSearch.Append( strUserName);
+   strSearch.Append( OLESTR("))"));
 
-	//Executing the search by using the user's username.
-	hr = pSearch->ExecuteSearch(strSearch, pszAttr, dwCount, &hSearch );
+   //Executing the search by using the user's username.
+   hr = pSearch->ExecuteSearch(strSearch, pszAttr, dwCount, &hSearch );
 
-	if ( !SUCCEEDED(hr) )
-	{
-		pSearch->Release();
-	    CoUninitialize();
-		TraceLineI("Execute Search failed. ", zLONG(hr));
-		return zLONG(hr);
-	}
-	else
-	{
-		TraceLineS("ExecuteSearch successful", "");
-	}
+   if ( !SUCCEEDED(hr) )
+   {
+      pSearch->Release();
+       CoUninitialize();
+      TraceLineI("Execute Search failed. ", zLONG(hr));
+      return zLONG(hr);
+   }
+   else
+   {
+      TraceLineS("ExecuteSearch successful", "");
+   }
 
-	ADS_SEARCH_COLUMN col;
-	//Searching in the whole collection
-	// If no rows where returned then the search was not successful.
-	if ( pSearch->GetNextRow(hSearch) == S_ADS_NOMORE_ROWS )
-	{
-		// Most likely the problem is the username does not exist in AD.
-  		pSearch->CloseSearchHandle(hSearch);
-		pSearch->Release();
-	    CoUninitialize();
-		return (2);
-	}
-	else
-	{
-		hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
+   ADS_SEARCH_COLUMN col;
+   //Searching in the whole collection
+   // If no rows where returned then the search was not successful.
+   if ( pSearch->GetNextRow(hSearch) == S_ADS_NOMORE_ROWS )
+   {
+      // Most likely the problem is the username does not exist in AD.
+      pSearch->CloseSearchHandle(hSearch);
+      pSearch->Release();
+       CoUninitialize();
+      return (2);
+   }
+   else
+   {
+      hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
 
-		if ( SUCCEEDED(hr) )
-		{
-			//wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
-            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString); 
-			pSearch->FreeColumn( &col );
-		}
-		else if ( hr == E_ADS_COLUMN_NOT_SET )
-		{
-			TraceLineS("Could not do a GetColumn: ", "");
-		}				
-	}
+      if ( SUCCEEDED(hr) )
+      {
+         //wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
+            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString);
+         pSearch->FreeColumn( &col );
+      }
+      else if ( hr == E_ADS_COLUMN_NOT_SET )
+      {
+         TraceLineS("Could not do a GetColumn: ", "");
+      }
+   }
 /*
-	while( pSearch->GetNextRow(hSearch) != S_ADS_NOMORE_ROWS )
-	{
-		hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
+   while( pSearch->GetNextRow(hSearch) != S_ADS_NOMORE_ROWS )
+   {
+      hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
 
-		if ( SUCCEEDED(hr) )
-		{
-			//wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
-            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString); 
-			pSearch->FreeColumn( &col );
-		}
-		else if ( hr == E_ADS_COLUMN_NOT_SET )
-		{
-			TraceLineS("Could not do a GetColumn: ", "");
-		}				
-	}
+      if ( SUCCEEDED(hr) )
+      {
+         //wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
+            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString);
+         pSearch->FreeColumn( &col );
+      }
+      else if ( hr == E_ADS_COLUMN_NOT_SET )
+      {
+         TraceLineS("Could not do a GetColumn: ", "");
+      }
+   }
 */
-	pSearch->CloseSearchHandle(hSearch);
-	pSearch->Release();
+   pSearch->CloseSearchHandle(hSearch);
+   pSearch->Release();
 
 
-	// Open the ads object for the username we want to change the password for.
-    hr = ADsOpenObject(	
-						szADsPath,
-						strAdminUserName,
-						strAdminPassword,
-						ADS_SECURE_AUTHENTICATION, 
-						IID_IADsUser,
-						(void**) &pUser
-					);
+   // Open the ads object for the username we want to change the password for.
+    hr = ADsOpenObject(
+                  szADsPath,
+                  strAdminUserName,
+                  strAdminPassword,
+                  ADS_SECURE_AUTHENTICATION,
+                  IID_IADsUser,
+                  (void**) &pUser
+               );
 
     if ( !SUCCEEDED(hr) )
-	{ 
-		TraceLineI("ADsOpenObject with users AdsPath failed. ", zLONG(hr));
-		return zLONG(hr);
-	}
+   {
+      TraceLineI("ADsOpenObject with users AdsPath failed. ", zLONG(hr));
+      return zLONG(hr);
+   }
 
-    
-	//ChangePassword is the call which will adhere all 
-	//the Password Policy, if we want to NOT follow the 
-	//password policies then user SetPassword, however SetPassword
-	//is a Admin call
 
-	hr = pUser->SetPassword(strPassword);
+   //ChangePassword is the call which will adhere all
+   //the Password Policy, if we want to NOT follow the
+   //password policies then user SetPassword, however SetPassword
+   //is a Admin call
 
-	if(hr == S_OK)
-	{
-	   TraceLineS( "SetPassword successful.", "" );
+   hr = pUser->SetPassword(strPassword);
+
+   if(hr == S_OK)
+   {
+      TraceLineS( "SetPassword successful.", "" );
        lRC = 0;
-	}
-	else
-	{
-	   TraceLineI( "SetPassword Error.. ", zLONG(hr));
+   }
+   else
+   {
+      TraceLineI( "SetPassword Error.. ", zLONG(hr));
        lRC = zLONG(hr);
-	}	
-	
-	pUser->Release();
-	
-	CoUninitialize();
+   }
+
+   pUser->Release();
+
+   CoUninitialize();
 
    return( lRC );
 }
@@ -2850,7 +2849,7 @@ ActiveDirectorySetPassword( zCPCHAR cpcPathName, zCPCHAR cpcAdminUserName,
 zOPER_EXPORT zLONG  OPERATION
 ActiveDirectorySetProperty( zCPCHAR cpcPathName,
                             zCPCHAR cpcAdminUserName,
-                            zCPCHAR cpcAdminUserPassword, 
+                            zCPCHAR cpcAdminUserPassword,
                             zCPCHAR cpcUserName,
                             zCPCHAR cpcPropertyName,
                             zCPCHAR cpcPropertyValue )
@@ -2877,139 +2876,139 @@ ActiveDirectorySetProperty( zCPCHAR cpcPathName,
 
 
    // Error codes for adsi http://www.selfadsi.org/errorcodes.htm
-  
+
    CoInitialize(NULL);
 
-	hr = S_OK;
+   hr = S_OK;
 
-	//LDAP://DC=ENC-AD,DC=ENC,DC=EDU
-	// Open an ads object using the admin username and password.  We will use this
-	// object to get the ads path name for the username for whom we want to change the
-	// password. 
-	// We can not open an ads object to change the password using the user's username.  Because
-	// of this we need to get the users AdsPath and use that in the AdsOpenObject method.
-    hr = ADsOpenObject(	
-						strPathName,
-						strAdminUserName,
-						strAdminPassword,
-						ADS_SECURE_AUTHENTICATION, 
-						IID_IDirectorySearch,
-						(void**) &pSearch
-					);
+   //LDAP://DC=ENC-AD,DC=ENC,DC=EDU
+   // Open an ads object using the admin username and password.  We will use this
+   // object to get the ads path name for the username for whom we want to change the
+   // password.
+   // We can not open an ads object to change the password using the user's username.  Because
+   // of this we need to get the users AdsPath and use that in the AdsOpenObject method.
+    hr = ADsOpenObject(
+                  strPathName,
+                  strAdminUserName,
+                  strAdminPassword,
+                  ADS_SECURE_AUTHENTICATION,
+                  IID_IDirectorySearch,
+                  (void**) &pSearch
+               );
     if ( !SUCCEEDED(hr) )
-	{ 
-		TraceLineI("ADsOpen for Search object failed. ", zLONG(hr));
-	    CoUninitialize();
-		return zLONG(hr);
-	}
+   {
+      TraceLineI("ADsOpen for Search object failed. ", zLONG(hr));
+       CoUninitialize();
+      return zLONG(hr);
+   }
 
     // Search for the user's AdsPath
-	ADS_SEARCHPREF_INFO prefInfo[1];
-	prefInfo[0].dwSearchPref = ADS_SEARCHPREF_SEARCH_SCOPE;
-	prefInfo[0].vValue.dwType = ADSTYPE_INTEGER;
-	prefInfo[0].vValue.Integer = ADS_SCOPE_SUBTREE;
+   ADS_SEARCHPREF_INFO prefInfo[1];
+   prefInfo[0].dwSearchPref = ADS_SEARCHPREF_SEARCH_SCOPE;
+   prefInfo[0].vValue.dwType = ADSTYPE_INTEGER;
+   prefInfo[0].vValue.Integer = ADS_SCOPE_SUBTREE;
 
-	hr = pSearch->SetSearchPreference( prefInfo, 1);
-	if ( !SUCCEEDED(hr) )
-	{
-		TraceLineI("SetSearchPreference failed. ", zLONG(hr));
-	    CoUninitialize();
-		return zLONG(hr);
-	}
+   hr = pSearch->SetSearchPreference( prefInfo, 1);
+   if ( !SUCCEEDED(hr) )
+   {
+      TraceLineI("SetSearchPreference failed. ", zLONG(hr));
+       CoUninitialize();
+      return zLONG(hr);
+   }
 
-	//Setting the attibutes needs to be retrieved 
-	LPWSTR pszAttr[] = { L"AdsPath"};
+   //Setting the attibutes needs to be retrieved
+   LPWSTR pszAttr[] = { L"AdsPath"};
 
-	DWORD dwCount= sizeof(pszAttr)/sizeof(LPWSTR);
-	ADS_SEARCH_HANDLE hSearch;
+   DWORD dwCount= sizeof(pszAttr)/sizeof(LPWSTR);
+   ADS_SEARCH_HANDLE hSearch;
 
-	// Build a search string based on the passed username.
+   // Build a search string based on the passed username.
     strSearch = OLESTR( "(&(objectCategory=Person)(objectclass=User)(sAMAccountName=" );
-	strSearch.Append( strUserName);
-	strSearch.Append( OLESTR("))"));
+   strSearch.Append( strUserName);
+   strSearch.Append( OLESTR("))"));
 
-	//Executing the search by using the user's username.
-	//hr = pSearch->ExecuteSearch(L"(&(objectCategory=Person)(objectclass=User)(sAMAccountName=testz))", pszAttr, dwCount, &hSearch );
-	hr = pSearch->ExecuteSearch(strSearch, pszAttr, dwCount, &hSearch );
+   //Executing the search by using the user's username.
+   //hr = pSearch->ExecuteSearch(L"(&(objectCategory=Person)(objectclass=User)(sAMAccountName=testz))", pszAttr, dwCount, &hSearch );
+   hr = pSearch->ExecuteSearch(strSearch, pszAttr, dwCount, &hSearch );
 
-	if ( !SUCCEEDED(hr) )
-	{
-		pSearch->Release();
-		TraceLineI("Execute Search failed. ", zLONG(hr));
-	    CoUninitialize();
-		return zLONG(hr);
-	}
-	else
-	{
-		TraceLineS("ExecuteSearch successful", "");
-	}
+   if ( !SUCCEEDED(hr) )
+   {
+      pSearch->Release();
+      TraceLineI("Execute Search failed. ", zLONG(hr));
+       CoUninitialize();
+      return zLONG(hr);
+   }
+   else
+   {
+      TraceLineS("ExecuteSearch successful", "");
+   }
 
-	ADS_SEARCH_COLUMN col;
-	//Searching in the whole collection
-	// If no rows where returned then the search was not successful.
-	if ( pSearch->GetNextRow(hSearch) == S_ADS_NOMORE_ROWS )
-	{
-		// Most likely the problem is the username does not exist in AD.
-  		pSearch->CloseSearchHandle(hSearch);
-		pSearch->Release();
-	    CoUninitialize();
-		return (2);
-	}
-	else
-	{
-		hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
+   ADS_SEARCH_COLUMN col;
+   //Searching in the whole collection
+   // If no rows where returned then the search was not successful.
+   if ( pSearch->GetNextRow(hSearch) == S_ADS_NOMORE_ROWS )
+   {
+      // Most likely the problem is the username does not exist in AD.
+      pSearch->CloseSearchHandle(hSearch);
+      pSearch->Release();
+       CoUninitialize();
+      return (2);
+   }
+   else
+   {
+      hr = pSearch->GetColumn( hSearch, pszAttr[0], &col);
 
-		if ( SUCCEEDED(hr) )
-		{
-			//wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
-            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString); 
-			pSearch->FreeColumn( &col );
-		}
-		else if ( hr == E_ADS_COLUMN_NOT_SET )
-		{
-			TraceLineS("Could not do a GetColumn: ", "");
-		}				
-	}
-	pSearch->CloseSearchHandle(hSearch);
-	pSearch->Release();
+      if ( SUCCEEDED(hr) )
+      {
+         //wsprintf(lpAdsPath  , (LPWSTR)col.pADsValues->CaseIgnoreString);
+            wcscpy(szADsPath, col.pADsValues->CaseIgnoreString);
+         pSearch->FreeColumn( &col );
+      }
+      else if ( hr == E_ADS_COLUMN_NOT_SET )
+      {
+         TraceLineS("Could not do a GetColumn: ", "");
+      }
+   }
+   pSearch->CloseSearchHandle(hSearch);
+   pSearch->Release();
 
-	// Open the ads object for the username we want to change the password for.
-    hr = ADsOpenObject(	
-						szADsPath,
-						strAdminUserName,
-						strAdminPassword,
-						ADS_SECURE_AUTHENTICATION, 
-						IID_IADsUser,
-						(void**) &pUser
-					);
+   // Open the ads object for the username we want to change the password for.
+    hr = ADsOpenObject(
+                  szADsPath,
+                  strAdminUserName,
+                  strAdminPassword,
+                  ADS_SECURE_AUTHENTICATION,
+                  IID_IADsUser,
+                  (void**) &pUser
+               );
 
     if ( !SUCCEEDED(hr) )
-	{ 
-		TraceLineI("ADsOpenObject with users AdsPath failed. ", zLONG(hr));
-		return zLONG(hr);
-	}
+   {
+      TraceLineI("ADsOpenObject with users AdsPath failed. ", zLONG(hr));
+      return zLONG(hr);
+   }
 
-    
-	//ChangePassword is the call which will adhere all 
-	//the Password Policy, if we want to NOT follow the 
-	//password policies then user SetPassword, however SetPassword
-	//is a Admin call
+
+   //ChangePassword is the call which will adhere all
+   //the Password Policy, if we want to NOT follow the
+   //password policies then user SetPassword, however SetPassword
+   //is a Admin call
 
    hr = pUser->Put(strPropertyName, (_variant_t)strPropertyValue);
 
-	if(hr == S_OK)
-	{
-	   TraceLineS( "set property successful.", "" );
+   if(hr == S_OK)
+   {
+      TraceLineS( "set property successful.", "" );
        lRC = 0;
-	}
-	else
-	{
-	   TraceLineI( "Set Property Error.. ", zLONG(hr));
+   }
+   else
+   {
+      TraceLineI( "Set Property Error.. ", zLONG(hr));
        lRC = zLONG(hr);
-	}		
-	pUser->Release();
-	
-	CoUninitialize();
+   }
+   pUser->Release();
+
+   CoUninitialize();
 
    return( lRC );
 }

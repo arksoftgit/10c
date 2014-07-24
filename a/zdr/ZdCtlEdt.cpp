@@ -360,7 +360,7 @@ ZEdit::OnCreate( LPCREATESTRUCT lpCreateStruct )
 
       lf.lfHeight = -MulDiv( lf.lfHeight, GetDeviceCaps( pDC->GetSafeHdc( ),
                                                          LOGPIXELSY ), 72 );
-      m_pFont->CreatePointFont( (int) (lf.lfHeight * 4.5), _T( "Courier New" ) );
+      m_pFont->CreatePointFont( lf.lfHeight * 4.5, _T( "Courier New" ) );
    // m_pFont->CreatePointFont( lf.lfWidth * 10, _T( "Courier New" ) );
 #else
       m_pFont->CreatePointFont( 90, _T( "Courier New" ) );
@@ -1232,7 +1232,7 @@ ZEdit::GetReplacementChar( zLONG lPos, zCHAR cWant, char& cGet )
          break;
    }
 
-   return( (zSHORT) (lPos + 1) );
+   return( lPos + 1 );
 }
 
 zLONG
@@ -2082,7 +2082,7 @@ void
 ZMFE::FormatAndDisplay( )
 {
    ASSERT( m_FieldSpecs );
-   ASSERT( m_FieldWidths.size( ) != 0 );
+   ASSERT( m_FieldWidths.size != 0 );
 
    CString displayval;
 
@@ -3531,7 +3531,7 @@ CGCDoubleField::Construct( const UINT nChar )
 void
 CGCDoubleField::RoundNTrunc( )
 {
-   double factor = (pow( 10.0, (int) m_uiMaxPrecision ));
+   double factor = (pow( 10.0,m_uiMaxPrecision ));
    m_dValue = m_dValue * factor + 0.5;
    m_dValue = floor( m_dValue );
    m_dValue /= factor;
@@ -3971,7 +3971,7 @@ CGCStringListField::DeleteEntry( const UINT Index )
    if ( m_List.size( ) == 0 )
       m_lIndex = -1;  // List is now empty.
    else
-   if ( Index <= (UINT) m_lIndex )
+   if ( Index <= m_lIndex )
    {
       // The item we deleted came before or was the item currently selected.
       // We need to adjust m_lIndex to the new offset.  However, we only need to

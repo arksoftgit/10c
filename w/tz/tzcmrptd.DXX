@@ -1,0 +1,40 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzcmrptd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzcmrptd.dll
+
+           0 characteristics
+    5356CF40 time date stamp Tue Apr 22 16:21:20 2014
+        0.00 version
+           1 ordinal base
+          12 number of functions
+          12 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000101E _GetDLL_Instance@4
+          2    1 00001019 _zwTZCMRPTD_CloseRefresh@4
+          3    2 00001014 _zwTZCMRPTD_DropViewForAudittrail@4
+          4    3 00001046 _zwTZCMRPTD_ExportTextFile@4
+          5    4 0000100A _zwTZCMRPTD_LoadAudittrail@4
+          6    5 00001037 _zwTZCMRPTD_LoadDesc_AU2O@4
+          7    6 0000103C _zwTZCMRPTD_LoadDesc_AUDO@4
+          8    7 00001028 _zwTZCMRPTD_LoadNewAudittrail@4
+          9    8 0000104B _zwTZCMRPTD_RefreshAllComponents@4
+         10    9 00001005 _zwTZCMRPTD_RefreshSelComponents@4
+         11    A 0000102D _zwTZCMRPTD_SetCPLR_Desc@4
+         12    B 00001041 _zwTZCMRPTD_SetMinWindowSize@4
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        3000 .text

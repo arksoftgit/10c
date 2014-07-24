@@ -1,0 +1,233 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzpnctad.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzpnctad.dll
+
+           0 characteristics
+    5356CF59 time date stamp Tue Apr 22 16:21:45 2014
+        0.00 version
+           1 ordinal base
+         205 number of functions
+         205 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000012DF _ACT_USE_BuildActionUseList@4
+          2    1 00001091 _ADD_GeneralVariableCtrlMap@4
+          3    2 00001361 _ActionAdd@4
+          4    3 00001113 _Action_Popup@4
+          5    4 000013BB _AssignDefaultButton@4
+          6    5 0000105A _ColorNew@4
+          7    6 00001366 _ComboBoxAdd@4
+          8    7 000013F2 _ComboBoxDelete@4
+          9    8 00001064 _ComboBoxItemAddAction@4
+         10    9 000010FA _ComboBoxItemDeleteAction@4
+         11    A 00001299 _ComboBoxItemPostBuild@4
+         12    B 000010A0 _ComboBoxItemSelectAction@4
+         13    C 00001190 _ComboBoxItemUPD_Cancel@4
+         14    D 0000121C _ComboBoxItemUPD_OK@4
+         15    E 000013ED _ComboBoxUpdate@4
+         16    F 000013C5 _CommonSelectedDetailCancel@4
+         17   10 00001154 _CommonSelectedDetailOK@4
+         18   11 000012D0 _CommonSelectedDetailPostbuild@4
+         19   12 00001127 _ControlAddAction@4
+         20   13 0000123F _ControlListAddAction@4
+         21   14 00001096 _ControlOperationEdit@4
+         22   15 000012FD _CreateMappingEntity@4
+         23   16 000013B6 _CtrlContextMappingInit@4
+         24   17 0000141A _DELETE_GeneralVariableCtrlMap@4
+         25   18 00001041 _DisplayColorPopup@4
+         26   19 0000123A _DisplayFontPopup@4
+         27   1A 000011B8 _DropMultiSelectOI@4
+         28   1B 00001186 _FontColor@4
+         29   1C 00001398 _FontNew@4
+         30   1D 00001217 _GetDLL_Instance@4
+         31   1E 000010E6 _LIST_ACT_AddAction@4
+         32   1F 000011D1 _LIST_ACT_Cancel@4
+         33   20 000013AC _LIST_ACT_Close@4
+         34   21 00001230 _LIST_ACT_DeleteAction@4
+         35   22 0000116D _LIST_ACT_LoadActionPopup@4
+         36   23 0000110E _LIST_ACT_PostBuildInit@4
+         37   24 0000131B _LIST_ACT_PreBuildInit@4
+         38   25 00001343 _LIST_ACT_RemoveAction@4
+         39   26 0000100F _LIST_ACT_SelectAction@4
+         40   27 000011EF _LIST_ACT_UpdateAction@4
+         41   28 000011AE _LoadOperations@4
+         42   29 000013E8 _PICK_ATTR_GeneralSelectMapping@4
+         43   2A 00001370 _PICK_ENT_GeneralSelectMapping@4
+         44   2B 00001023 _PostbuildSpreadSheet@4
+         45   2C 000012D5 _PrebuildSpreadSheet@4
+         46   2D 000011D6 _REMOVE_CurrentWebCtrlProperties@4
+         47   2E 00001136 _RemoveActionFromControl@4
+         48   2F 00001401 _RepaintZeidonControl@4
+         49   30 000010D2 _SEL_ATTR_Cancel@4
+         50   31 000012AD _SEL_ATTR_GeneralSelectCancel@4
+         51   32 000012DA _SEL_ATTR_GeneralSelectMapping@4
+         52   33 000013A2 _SEL_ATTR_Init@4
+         53   34 00001267 _SEL_ATTR_InitReuse@4
+         54   35 00001069 _SEL_ATTR_ListInit@4
+         55   36 000010BE _SEL_ATTR_Postbuild@4
+         56   37 0000125D _SEL_ATTR_SelectAttribute@4
+         57   38 00001159 _SEL_ATTR_SelectEntity@4
+         58   39 00001384 _SEL_ATTR_SelectMapping@4
+         59   3A 00001348 _SEL_ATTR_SelectView@4
+         60   3B 0000122B _SET_CurrentWebControlProperties@4
+         61   3C 0000126C _SelectActionForControl@4
+         62   3D 000010F5 _SetupMultiChangeText@4
+         63   3E 000012B2 _TextAddAction@4
+         64   3F 00001087 _TextDeleteAction@4
+         65   40 000011B3 _TextSelectAction@4
+         66   41 00001212 _TextTestIt@4
+         67   42 000011C2 _UPD_ACT_ActionInclude@4
+         68   43 0000118B _UPD_ACT_BuildWindowList@4
+         69   44 00001352 _UPD_ACT_Cancel@4
+         70   45 0000135C _UPD_ACT_CheckAction@4
+         71   46 000010AF _UPD_ACT_CheckWndEvent@4
+         72   47 00001082 _UPD_ACT_DeleteAction@4
+         73   48 000010CD _UPD_ACT_Init@4
+         74   49 000011EA _UPD_ACT_New@4
+         75   4A 0000113B _UPD_ACT_NextAction@4
+         76   4B 0000133E _UPD_ACT_OK@4
+         77   4C 00001316 _UPD_ACT_PositionOnActOper@4
+         78   4D 000013D9 _UPD_ACT_PrevAction@4
+         79   4E 0000119F _UPD_ACT_SelectDialogOpers@4
+         80   4F 00001311 _UPD_ACT_SelectEntity@4
+         81   50 00001104 _UPD_ACT_SelectScope@4
+         82   51 00001244 _UPD_ACT_SelectView@4
+         83   52 000011FE _UPD_ACT_SetEditButtonStatus@4
+         84   53 0000128A _UPD_ACT_SetupDialogList@4
+         85   54 0000103C _UPD_BITMAPBTN_Init@4
+         86   55 0000106E _UPD_BITMAPBTN_OK@4
+         87   56 000012B7 _UPD_BMPBTN_BrowseDA@4
+         88   57 000012EE _UPD_BMPBTN_BrowseDN@4
+         89   58 000010FF _UPD_BMPBTN_BrowseFO@4
+         90   59 0000111D _UPD_BMPBTN_BrowseUP@4
+         91   5A 00001253 _UPD_BmpBtnBrowseFileName@12
+         92   5B 00001005 _UPD_CHECK_Init@4
+         93   5C 000010A5 _UPD_CHECK_OK@4
+         94   5D 000011A9 _UPD_CHECK_Postbuild@4
+         95   5E 00001032 _UPD_COMBO_Cancel@4
+         96   5F 00001334 _UPD_COMBO_DS_SetSubtype@4
+         97   60 00001109 _UPD_COMBO_D_OK@4
+         98   61 000012F8 _UPD_COMBO_D_PostBuild@4
+         99   62 0000139D _UPD_COMBO_Init@4
+        100   63 0000112C _UPD_COMBO_PostBuild@4
+        101   64 0000101E _UPD_COMBO_S_Init@4
+        102   65 0000138E _UPD_COMBO_S_OK@4
+        103   66 000013E3 _UPD_COMBO_S_PostBuild@4
+        104   67 00001050 _UPD_COMBO_S_ReturnFromSubwindow@4
+        105   68 000012F3 _UPD_COMBO_S_SelAttrPullDown@4
+        106   69 000011F4 _UPD_COMBO_SetScopeOI@4
+        107   6A 00001168 _UPD_COMBO_SetSubtype@4
+        108   6B 000013CF _UPD_CTRL_PhysOverride@4
+        109   6C 000013B1 _UPD_EDIT_OK@4
+        110   6D 00001415 _UPD_EDIT_Postbuild@4
+        111   6E 00001118 _UPD_EDIT_TEXT_Init@4
+        112   6F 00001406 _UPD_ERD_PostBuild@4
+        113   70 00001389 _UPD_ERD_PreBuild@4
+        114   71 000010DC _UPD_ERD_SelectView@4
+        115   72 00001294 _UPD_GRAPH_Init@4
+        116   73 00001177 _UPD_GRAPH_OK@4
+        117   74 0000136B _UPD_GRAPH_ReturnFromSubwindow@4
+        118   75 000010E1 _UPD_GRAPH_SelDataAttrib@4
+        119   76 00001393 _UPD_GROUP_Init@4
+        120   77 00001375 _UPD_GeneralCancel@4
+        121   78 00001046 _UPD_GeneralOK@4
+        122   79 000010D7 _UPD_GeneralVariableCtrlMap@4
+        123   7A 00001131 _UPD_LISTBOX_Cancel@4
+        124   7B 0000105F _UPD_LISTBOX_Init@4
+        125   7C 0000104B _UPD_LISTBOX_OK@4
+        126   7D 000010C8 _UPD_LISTBOX_PostBuild@4
+        127   7E 0000102D _UPD_LISTBOX_RemoveAction@4
+        128   7F 00001410 _UPD_LISTBOX_ReturnFromSubwindow@4
+        129   80 00001357 _UPD_LISTBOX_SelectAction@4
+        130   81 0000129E _UPD_LISTBOX_SelectEntity@4
+        131   82 0000120D _UPD_LISTBOX_SelectScope@4
+        132   83 00001019 _UPD_LISTBOX_SelectView@4
+        133   84 000010B4 _UPD_LISTBOX_SetScope@4
+        134   85 0000117C _UPD_LISTBOX_UpdateAction@4
+        135   86 000011E0 _UPD_LISTCTRL_AddField@4
+        136   87 00001055 _UPD_LISTCTRL_Cancel@4
+        137   88 000011A4 _UPD_LISTCTRL_Init@4
+        138   89 0000124E _UPD_LISTCTRL_New@4
+        139   8A 0000108C _UPD_LISTCTRL_OK@4
+        140   8B 0000115E _UPD_LISTCTRL_UpdateField@4
+        141   8C 00001280 _UPD_OUTLINER_AttrCancel@4
+        142   8D 000011DB _UPD_OUTLINER_AttrOK@4
+        143   8E 0000141F _UPD_OUTLINER_Attributes@4
+        144   8F 000012A8 _UPD_OUTLINER_Cancel@4
+        145   90 000012C1 _UPD_OUTLINER_ChangeView@4
+        146   91 0000137F _UPD_OUTLINER_DisableSS_AttrName@4
+        147   92 00001028 _UPD_OUTLINER_Init@4
+        148   93 000012CB _UPD_OUTLINER_OK@4
+        149   94 00001195 _UPD_OUTLINER_ObjectOK@4
+        150   95 0000119A _UPD_OUTLINER_OnPick@4
+        151   96 00001285 _UPD_OUTLINER_SelectCancel@4
+        152   97 000011BD _UPD_OUTLINER_SelectInit@4
+        153   98 00001073 _UPD_OUTLINER_SelectOK@4
+        154   99 0000100A _UPD_PUSH_Init@4
+        155   9A 0000128F _UPD_PUSH_OK@4
+        156   9B 0000107D _UPD_PUSH_Postbuild@4
+        157   9C 000013A7 _UPD_PUSH_RemoveAction@4
+        158   9D 00001140 _UPD_PUSH_ReturnFromSub@4
+        159   9E 000012E4 _UPD_PUSH_SelectAction@4
+        160   9F 00001258 _UPD_PUSH_UpdateAction@4
+        161   A0 000013C0 _UPD_RadioClearDefaultButton@4
+        162   A1 00001163 _UPD_RadioGroupCancel@4
+        163   A2 00001302 _UPD_RadioGroupOK@4
+        164   A3 000010AA _UPD_RadioPostbuild@4
+        165   A4 00001339 _UPD_RadioPrebuildRadioGroup@4
+        166   A5 00001235 _UPD_RadioPrebuildSubControl@4
+        167   A6 000011E5 _UPD_RadioSetDefaultButton@4
+        168   A7 00001122 _UPD_RadioSubControlCancel@4
+        169   A8 00001307 _UPD_RadioSubControlOK@4
+        170   A9 0000114F _UPD_RadioUpdateSubControl@4
+        171   AA 000012A3 _UPD_SSCOMBO_Init@4
+        172   AB 000010C3 _UPD_SSCOMBO_Postbuild@4
+        173   AC 000012E9 _UPD_SSEDIT_Init@4
+        174   AD 0000137A _UPD_SSEDIT_ReturnFromSubwindow@4
+        175   AE 00001203 _UPD_SSEDIT_SelectWebColMapping@4
+        176   AF 00001226 _UPD_SSSUB_Cancel@4
+        177   B0 000012BC _UPD_SSSUB_Init@4
+        178   B1 000010F0 _UPD_SSSUB_OK@4
+        179   B2 000013D4 _UPD_SS_OK@4
+        180   B3 0000130C _UPD_SS_SetActionView@4
+        181   B4 00001145 _UPD_TEXT_Cancel@4
+        182   B5 000011F9 _UPD_TEXT_CommonDetail@4
+        183   B6 0000140B _UPD_TEXT_DisableControls@4
+        184   B7 00001249 _UPD_TEXT_Init@4
+        185   B8 00001181 _UPD_TEXT_OK@4
+        186   B9 000012C6 _UPD_TEXT_OnChange@4
+        187   BA 000010EB _UPD_TEXT_OnReturn@4
+        188   BB 0000127B _UPD_TEXT_PostBuild@4
+        189   BC 000013CA _UpdateControlEvents@4
+        190   BD 00001078 _UpdateFont@4
+        191   BE 0000114A _fnBuildOutlinerCtrls@16
+        192   BF 00001424 _fnDeleteAction@8
+        193   C0 0000132F _fnResetOutliner@8
+        194   C1 0000109B _fnSearchForEntityRecursively@12
+        195   C2 00001014 _fnSetUpSEL_LOD@16
+        196   C3 00001320 _fnSetUpScopeListOI@12
+        197   C4 000011C7 _zwTZPNCTAD_CommonDetailOK@4
+        198   C5 0000134D _zwTZPNCTAD_CommonDetailPostBuild@4
+        199   C6 000013FC _zwTZPNCTAD_CommonDisableCtrls@4
+        200   C7 00001172 _zwTZPNCTAD_DeleteAllActions@4
+        201   C8 000013DE _zwTZPNCTAD_DisableButtons@16
+        202   C9 00001262 _zwTZPNCTAD_LoadEventPopups@28
+        203   CA 00001037 _zwTZPNCTAD_RefreshActionList@4
+        204   CB 000011CC _zwTZPNCTAD_SetActionAndEditState@4
+        205   CC 00001276 _zwTZPNCTAD_TransferToEditor@4
+
+  Summary
+
+        3000 .data
+        1000 .idata
+        3000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       17000 .text

@@ -6555,19 +6555,19 @@ PostXOD_BuildHook( zVIEW vTZTEDBLO,
        // No blob in the TE.  Get it from the DB list object.
       SetOI_FromBlob( &vOI, szObjectName, vTZZOXODO, vTZTEDBLO,
                       "TE_DBMS_Source", "DBH_Data", zMULTIPLE );
-   
+
    if ( vOI == 0 )
    {
       // KJS - 08/22/12 - This is being put in because we were getting an 'Invalid View' error on the DropView( vOI ) if
-	  // a 'Set DBH' hadn't been done on the data source and the db handler was PostgreSQL since TZDBHODO was not ever set.
-	  // Not actually sure if this is much of an error (should I just put the DropView in the below "If") or if there could
-	  // be problems if TZDBHODO is not a valid view.
+     // a 'Set DBH' hadn't been done on the data source and the db handler was PostgreSQL since TZDBHODO was not ever set.
+     // Not actually sure if this is much of an error (should I just put the DropView in the below "If") or if there could
+     // be problems if TZDBHODO is not a valid view.
       MessageSend( vTZZOXODO, "PostXOD_BuildHook", "Zeidon Tools",
                    "You need to do a 'Set DBH' for this data source before building the xods.", zMSGQ_SYSTEM_ERROR, TRUE );
       TraceLineS( "*** PostXOD_BuildHook TZDBHODO does not exist. ", "" );
       return( zCALL_ERROR );
    }
- 
+
    // Check for ODBC object.
    if ( zstrcmp( szObjectName, "TZDBHODO" ) == 0 )
    {

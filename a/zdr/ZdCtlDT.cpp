@@ -4232,7 +4232,7 @@ ZEditAppointment::CalculateSize( )
    }
 }
 
-LRESULT
+UINT
 ZEditAppointment::OnNcHitTest( CPoint pt )
 {
    UINT uRC = CEdit::OnNcHitTest( pt );
@@ -7181,12 +7181,10 @@ ZMiniCalendar::DrawDays( CDC &dc, int nY, int nLeftX,
    BOOL     bHighlight;
    BOOL     bNonMonthDay;
    int      nDayOfMonth;
-   int      nDaySpot;
-   int      nRow;
 
    // Allow up to 6 rows of days.  This is the actual maximum number of
    // calendar weeks that can occur in a month.
-   for ( nDaySpot = 0, nRow = 1; nRow <= 6; nRow++ )
+   for ( int nDaySpot = 0, nRow = 1; nRow <= 6; nRow++ )
    {
       int nX = nStartX;
 
@@ -7782,7 +7780,6 @@ ZMiniCalendar::ComputeSize( )
    int nTotalHeight = 0;
    CFont *pOldFont = 0;
    CClientDC *pDC = 0;
-   int nX;
 
    if ( m_bFontsCreated == FALSE )
       CreateFontObjects( );
@@ -7807,7 +7804,7 @@ ZMiniCalendar::ComputeSize( )
    // compensate for this, calculate the width of all possible dates the
    // control will display.
    pDC->SelectObject( m_DaysFontInfo.m_pFont );
-   for ( nX = 1; nX <= 31; nX++ )
+   for ( int nX = 1; nX <= 31; nX++ )
    {
       CString csTemp;
       csTemp.Format( "00%d", nX );
@@ -8777,7 +8774,6 @@ ZMiniCalendarList::OnPaint( )
    CPaintDC dc( this ); // device context for painting
    ZMemDC   memDC( &dc );
    CRect    rectClient;
-   int nItem;
 
    // Calendar must be instantiated for this to work correctly.
    ASSERT( m_pWndCalendar );
@@ -8798,7 +8794,7 @@ ZMiniCalendarList::OnPaint( )
    int nMonth = m_nMiddleMonth;
    int nYear = m_nMiddleYear;
 
-   for ( nItem = 0; nItem < nHalfCount; nItem++ )
+   for ( int nItem = 0; nItem < nHalfCount; nItem++ )
    {
       nMonth--;
       if ( nMonth < 1 )
@@ -8936,9 +8932,9 @@ ZMiniCalendarList::SetItemsPerPage( int nValue )
    // Require at least 3 items per page and the count must be odd (same
    // number of items on either side of middle).
    ASSERT( nValue >= 3 );
-   ASSERT( fmod( (double) nValue, (double) 2 ) );
+   ASSERT( fmod( nValue, 2 ) );
 
-   if ( nValue >= 3 && fmod( (double) nValue, (double) 2 ) )
+   if ( nValue >= 3 && fmod( nValue, 2 ) )
       m_nItemsPerPage = nValue;
 }
 

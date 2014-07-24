@@ -2176,7 +2176,7 @@ zwTZPEUPDD_GenerateCode( zVIEW vSubtask )
    zVIEW    vTZPEAXWO;
    zCHAR    szTypeLib[ 260 ];
    zCHAR    szClassName[ 33 ];
-   zCHAR    szSourceFileName[ 9 ];
+   zCHAR    szSourceFileName[ 33 ];
    zCHAR    szPathName[ 260 ];
    zCHAR    szGUID[ 80 ];
    zCHAR    szScriptOper[ 80 ];

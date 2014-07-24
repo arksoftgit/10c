@@ -24,7 +24,7 @@
 #define IDB_DIL                         20
 #define IDB_OUTLINER                    21
 #define IDB_HIERDIAGRAM                 23
-#define RT_MANIFEST                     MAKEINTRESOURCE(24)
+#define RT_MANIFEST                     24
 #define IDB_BLOCK                       25
 #define IDB_BITMAP                      28
 #define IDB_GROUPSET                    30
@@ -84,7 +84,7 @@
 #define IDC_DROPOKM                     418
 #define IDC_DROPOKM1                    419
 #define IDC_DROPOKMM                    420
-#define IDC_HAND1                       421
+#define IDC_HAND                        421
 #define IDC_HAND2                       422
 #define IDC_HANDX                       423
 #define IDC_HSPLIT                      424
@@ -267,7 +267,7 @@
 #define ID_ARROW                        0xE833
 
 // Next default values for new objects
-// 
+//
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        163

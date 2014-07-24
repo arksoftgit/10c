@@ -1,0 +1,82 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzpnctld.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzpnctld.dll
+
+           0 characteristics
+    5356CF5B time date stamp Tue Apr 22 16:21:47 2014
+        0.00 version
+           1 ordinal base
+          54 number of functions
+          54 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000102D _ActionInitPrebuild@4
+          2    1 000010C8 _ActionNew@4
+          3    2 0000106E _ActionRemove@4
+          4    3 00001032 _ActionUpdate@4
+          5    4 0000105A _ActiveX_AddMapEntity@4
+          6    5 000010C3 _ActiveX_BuildContextList@4
+          7    6 000010FA _ActiveX_ContextMappingInit@4
+          8    7 00001087 _ActiveX_ContextSelect@4
+          9    8 0000105F _ActiveX_DeleteMapEntity@4
+         10    9 000010D7 _ActiveX_LoadMappingPopup@4
+         11    A 00001050 _ActiveX_Postbuild@4
+         12    B 00001096 _ActiveX_Properties@4
+         13    C 0000103C _CalendarActionPopup@4
+         14    D 0000100F _CancelTab@4
+         15    E 000010E1 _DayTimerActionPopup@4
+         16    F 000010A5 _DisableTabControls@8
+         17   10 00001091 _GetDLL_Instance@4
+         18   11 000010A0 _GoToUpdateSubTab@4
+         19   12 00001014 _LoadActionPopup@4
+         20   13 0000100A _OperationEdit@4
+         21   14 0000110E _RepaintZeidonControl@4
+         22   15 000010F5 _ReturnFromSubwindow@4
+         23   16 00001005 _SetActionView@4
+         24   17 0000108C _SetTabTabColor@4
+         25   18 00001041 _SetTabTextColor@4
+         26   19 00001113 _SubTabCancel@4
+         27   1A 0000101E _SubTabOK@4
+         28   1B 000010E6 _SubTabPostBuild@4
+         29   1C 000010F0 _TabPostBuild@4
+         30   1D 00001023 _TabPreBuild@4
+         31   1E 000010DC _UPD_BmpCtlBrowseFileName@4
+         32   1F 000010B9 _UPD_BmpCtlOK@4
+         33   20 00001069 _UPD_BmpCtlPostBuild@4
+         34   21 00001073 _UPD_DayTimerSelectScope@4
+         35   22 00001078 _UPD_DayTimerSetScope@4
+         36   23 000010FF _UPD_IconBrowseFileName@4
+         37   24 000010CD _UPD_IconOK@4
+         38   25 00001104 _UPD_IconPostBuild@4
+         39   26 0000109B _UPD_Init@4
+         40   27 000010D2 _UPD_OK@4
+         41   28 00001028 _UPD_Popup@4
+         42   29 000010BE _UPD_SelectAction@4
+         43   2A 00001082 _UPD_TimerOK@4
+         44   2B 000010B4 _UPD_TimerPostBuild@4
+         45   2C 00001019 _UpdateCalendarOK@4
+         46   2D 000010EB _UpdateCalendarPostBuild@4
+         47   2E 00001109 _UpdateCalendarPreBuild@4
+         48   2F 0000104B _UpdateDayTimerOK@4
+         49   30 00001064 _UpdateDayTimerPostBuild@4
+         50   31 000010AA _UpdateDayTimerPreBuild@4
+         51   32 00001046 _UpdateTab@4
+         52   33 00001055 _zwTZPNCTLD_CtrlContextMapping@4
+         53   34 0000107D _zwTZPNCTLD_DisableButtons@12
+         54   35 000010AF _zwTZPNCTLD_LoadEventPopups@24
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        6000 .text

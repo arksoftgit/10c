@@ -2859,14 +2859,13 @@ void
 Create24Bit( ZDib2& source, ZDib2& dest )
 {
    int pal;
-   int k;
 
    dest.Create( source.Width( ), source.Height( ), 24 );
    pal = source.GetPaletteSize( );
 
    BYTE palet[ 768 ];
 
-   for ( k = 0; k < pal; k++ )
+   for ( int k = 0; k < pal; k++ )
    {
       COLORREF col = source.PaletteColor( k );
       palet[ k * 3 + 2 ] = GetRValue( col );

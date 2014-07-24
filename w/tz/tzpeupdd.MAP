@@ -1,0 +1,522 @@
+ tzpeupdd
+
+ Timestamp is 5356cf57 (Tue Apr 22 16:21:43 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00005e45H .text                   CODE
+ 0002:00000000 000001dcH .rdata                  DATA
+ 0002:000001e0 00002cd8H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00000d8cH .data                   DATA
+ 0003:000011a0 00000058H .bss                    DATA
+ 0004:00000000 000000a0H .idata$2                DATA
+ 0004:000000a0 00000014H .idata$3                DATA
+ 0004:000000b4 00000308H .idata$4                DATA
+ 0004:000003bc 00000308H .idata$5                DATA
+ 0004:000006c4 000003bdH .idata$6                DATA
+ 0005:00000000 00000211H .rsrc$01                DATA
+ 0005:00000220 00000610H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:000004b0       _DllMain@12                100014b0 f   zdllinst.obj
+ 0001:000004d6       _GetDLL_Instance@4         100014d6 f   zdllinst.obj
+ 0001:000004f0       _zwTZPEUPDD_SetTitle@4     100014f0 f   tzpeupdd.obj
+ 0001:0000052d       _zwTZPEUPDD_InitPE_ForLPLR@4 1000152d f   tzpeupdd.obj
+ 0001:00000630       _zwTZPEUPDD_PreBuildPE@4   10001630 f   tzpeupdd.obj
+ 0001:000006ef       _zwTZPEUPDD_MainRtnFromSubWnd@4 100016ef f   tzpeupdd.obj
+ 0001:00000780       _zwTZPEUPDD_SwitchLPLR@4   10001780 f   tzpeupdd.obj
+ 0001:000008af       _zwTZPEUPDD_CreateNewPresEnv@4 100018af f   tzpeupdd.obj
+ 0001:0000096f       _zwTZPEUPDD_DeletePresEnv@4 1000196f f   tzpeupdd.obj
+ 0001:00000b00       _zwTZPEUPDD_CreateNewFont@4 10001b00 f   tzpeupdd.obj
+ 0001:00000b0a       _zwTZPEUPDD_UpdateFont@4   10001b0a f   tzpeupdd.obj
+ 0001:00000b14       _zwTZPEUPDD_UpdateControlDef@4 10001b14 f   tzpeupdd.obj
+ 0001:00000b93       _zwTZPEUPDD_CreateNewColor@4 10001b93 f   tzpeupdd.obj
+ 0001:00000b9d       _zwTZPEUPDD_UpdateColor@4  10001b9d f   tzpeupdd.obj
+ 0001:00000ba7       _zwTZPEUPDD_CreateNewWindowStyle@4 10001ba7 f   tzpeupdd.obj
+ 0001:00000c2d       _zwTZPEUPDD_CreateNewEvent@4 10001c2d f   tzpeupdd.obj
+ 0001:00000cb3       _zwTZPEUPDD_SelectValidChildren@4 10001cb3 f   tzpeupdd.obj
+ 0001:00000db5       _zwTZPEUPDD_SelectValidParents@4 10001db5 f   tzpeupdd.obj
+ 0001:00000eb7       _zwTZPEUPDD_DeleteConvertables@4 10001eb7 f   tzpeupdd.obj
+ 0001:00000f23       _zwTZPEUPDD_SelectConvertables@4 10001f23 f   tzpeupdd.obj
+ 0001:00001025       _zwTZPEUPDD_DeleteValidChildren@4 10002025 f   tzpeupdd.obj
+ 0001:00001091       _zwTZPEUPDD_DeleteValidParents@4 10002091 f   tzpeupdd.obj
+ 0001:000010fd       _zwTZPEUPDD_DeleteFont@4   100020fd f   tzpeupdd.obj
+ 0001:00001107       _zwTZPEUPDD_DeleteColor@4  10002107 f   tzpeupdd.obj
+ 0001:00001111       _zwTZPEUPDD_DeleteControlDef@4 10002111 f   tzpeupdd.obj
+ 0001:000011d9       _zwTZPEUPDD_GrayOptions@4  100021d9 f   tzpeupdd.obj
+ 0001:000013ec       _zwTZPEUPDD_SavePresEnv@4  100023ec f   tzpeupdd.obj
+ 0001:00001465       _zwTZPEUPDD_ExitPresEnv@4  10002465 f   tzpeupdd.obj
+ 0001:0000157f       _zwTZPESRCO_DelInvisibleCtrlDef@4 1000257f f   tzpeupdd.obj
+ 0001:0000159c       _zwTZPESRCO_DelInvisibleFont@4 1000259c f   tzpeupdd.obj
+ 0001:000015a6       _fnTZPESRCO_GetRidOfInvisible@12 100025a6 f   tzpeupdd.obj
+ 0001:000016dc       _zwTZPEUPDD_CreateEventDefEntity@4 100026dc f   tzpeupdd.obj
+ 0001:00001762       _zwTZPEUPDD_AddNewCtrlDef@4 10002762 f   tzpeupdd.obj
+ 0001:000017d6       _zwTZPEUPDD_CreateNewControlDef@4 100027d6 f   tzpeupdd.obj
+ 0001:000019b8       _zwTZPEUPDD_CtrlDefOK@4    100029b8 f   tzpeupdd.obj
+ 0001:00001b21       _zwTZPEUPDD_BuildActiveX_CtrlList@4 10002b21 f   tzpeupdd.obj
+ 0001:00001c18       _zwTZPEUPDD_SetActiveX_GUID@4 10002c18 f   tzpeupdd.obj
+ 0001:00001db5       _zwTZPEUPDD_BuildActiveX_EventLst@4 10002db5 f   tzpeupdd.obj
+ 0001:00002068       _zwTZPEUPDD_AddActiveX_EventToPE@4 10003068 f   tzpeupdd.obj
+ 0001:0000212b       _zwTZPEUPDD_DeleteActiveX_Event@4 1000312b f   tzpeupdd.obj
+ 0001:000021ee       _zwTZPEUPDD_SaveActiveX_EventList@4 100031ee f   tzpeupdd.obj
+ 0001:0000238d       _zwTZPEUPDD_AddMapDef@4    1000338d f   tzpeupdd.obj
+ 0001:00002413       _zwTZPEUPDD_DeleteMapDef@4 10003413 f   tzpeupdd.obj
+ 0001:0000245e       _zwTZPEUPDD_MapDefOK@4     1000345e f   tzpeupdd.obj
+ 0001:000026bb       _zwTZPEUPDD_GenerateCodePostBuild@4 100036bb f   tzpeupdd.obj
+ 0001:000028d4       _zwTZPEUPDD_GenerateCode@4 100038d4 f   tzpeupdd.obj
+ 0001:00002b05       _zwTZPEUPDD_LoadPopup@24   10003b05 f   tzpeupdd.obj
+ 0001:00002c7c       _zwTZPEUPDD_LoadFontPopup@4 10003c7c f   tzpeupdd.obj
+ 0001:00002c86       _zwTZPEUPDD_LoadColorPopup@4 10003c86 f   tzpeupdd.obj
+ 0001:00002c90       _zwTZPEUPDD_LoadWindowStylePopup@4 10003c90 f   tzpeupdd.obj
+ 0001:00002cbc       _zwTZPEUPDD_LoadControlDefPopup@4 10003cbc f   tzpeupdd.obj
+ 0001:00002ce8       _zwTZPEUPDD_LoadStyleColorsPopup@4 10003ce8 f   tzpeupdd.obj
+ 0001:00002cf2       _zwTZPEUPDD_LoadStyleFontsPopup@4 10003cf2 f   tzpeupdd.obj
+ 0001:00002cfc       _zwTZPEUPDD_LoadWindowEventPopup@4 10003cfc f   tzpeupdd.obj
+ 0001:00002d28       _zwTZPEUPDD_AcceptWindowStyle@4 10003d28 f   tzpeupdd.obj
+ 0001:00002d52       _zwTZPEUPDD_SetCursorWindowStyle@8 10003d52 f   tzpeupdd.obj
+ 0001:00002e03       _zwTZPEUPDD_NextWindowStyle@4 10003e03 f   tzpeupdd.obj
+ 0001:00002e18       _zwTZPEUPDD_PrevWindowStyle@4 10003e18 f   tzpeupdd.obj
+ 0001:00002e2d       _zwTZPEUPDD_AcceptSubobject@12 10003e2d f   tzpeupdd.obj
+ 0001:00003131       _zwTZPEUPDD_AcceptWndStyleEvent@4 10004131 f   tzpeupdd.obj
+ 0001:0000315b       _zwTZPEUPDD_SetCursWndStyleEvent@8 1000415b f   tzpeupdd.obj
+ 0001:0000320c       _zwTZPEUPDD_NextWindowStyleEvent@4 1000420c f   tzpeupdd.obj
+ 0001:00003221       _zwTZPEUPDD_PrevWindowStyleEvent@4 10004221 f   tzpeupdd.obj
+ 0001:00003236       _zwTZPEUPDD_FontOptionPostbuild@4 10004236 f   tzpeupdd.obj
+ 0001:00003240       _zwTZPEUPDD_ColorOptionPostbuild@4 10004240 f   tzpeupdd.obj
+ 0001:0000324a       _zwTZPEUPDD_CreateNewFontOption@4 1000424a f   tzpeupdd.obj
+ 0001:00003254       _zwTZPEUPDD_AcceptFontOption@4 10004254 f   tzpeupdd.obj
+ 0001:0000325e       _zwTZPEUPDD_AcceptColorOption@4 1000425e f   tzpeupdd.obj
+ 0001:00003268       _zwTZPEUPDD_CreateNewColorOption@4 10004268 f   tzpeupdd.obj
+ 0001:00003272       _zwTZPEUPDD_SetCursorFontOption@8 10004272 f   tzpeupdd.obj
+ 0001:0000327c       _zwTZPEUPDD_NextFontOption@4 1000427c f   tzpeupdd.obj
+ 0001:00003286       _zwTZPEUPDD_PrevFontOption@4 10004286 f   tzpeupdd.obj
+ 0001:00003290       _zwTZPEUPDD_SetCursorColorOption@8 10004290 f   tzpeupdd.obj
+ 0001:0000329a       _zwTZPEUPDD_NextColorOption@4 1000429a f   tzpeupdd.obj
+ 0001:000032a4       _zwTZPEUPDD_PrevColorOption@4 100042a4 f   tzpeupdd.obj
+ 0001:000032ae       _zwTZPEUPDD_DeleteSubobject@16 100042ae f   tzpeupdd.obj
+ 0001:00003365       _zwTZPEUPDD_DeleteWindowStyle@4 10004365 f   tzpeupdd.obj
+ 0001:000033b0       _zwTZPEUPDD_DeleteWindowEvent@4 100043b0 f   tzpeupdd.obj
+ 0001:000033fb       _zwTZPEUPDD_DeleteColorOption@4 100043fb f   tzpeupdd.obj
+ 0001:00003405       _zwTZPEUPDD_DeleteFontOption@4 10004405 f   tzpeupdd.obj
+ 0001:0000340f       _zwTZPEUPDD_EnableCtrlForActiveX@4 1000440f f   tzpeupdd.obj
+ 0001:00003544       _zwTZPEUPDD_CrtlDefPostbuild@4 10004544 f   tzpeupdd.obj
+ 0001:000035dd       _zwTZPEUPDD_SetCursorControlDef@8 100045dd f   tzpeupdd.obj
+ 0001:00003697       _zwTZPEUPDD_NextControlDef@4 10004697 f   tzpeupdd.obj
+ 0001:000036ac       _zwTZPEUPDD_PrevControlDef@4 100046ac f   tzpeupdd.obj
+ 0001:000036c1       _zwTZPEUPDD_AcceptCtrlEventDef@4 100046c1 f   tzpeupdd.obj
+ 0001:000036eb       _zwTZPEUPDD_SetCursorEventDef@8 100046eb f   tzpeupdd.obj
+ 0001:000037a5       _zwTZPEUPDD_NextCtrlEventDef@4 100047a5 f   tzpeupdd.obj
+ 0001:000037ba       _zwTZPEUPDD_PrevCtrlEventDef@4 100047ba f   tzpeupdd.obj
+ 0001:000037cf       _zwTZPEUPDD_LoadCtrlEventPopup@4 100047cf f   tzpeupdd.obj
+ 0001:000037fb       _zwTZPEUPDD_DeleteCtrlEventDef@4 100047fb f   tzpeupdd.obj
+ 0001:00003846       _zwTZPEUPDD_LoadMappingPopup@4 10004846 f   tzpeupdd.obj
+ 0001:00003872       _zwTZPEUPDD_SetCursorControlMapp@8 10004872 f   tzpeupdd.obj
+ 0001:00003923       _zwTZPEUPDD_NextControlMapping@4 10004923 f   tzpeupdd.obj
+ 0001:00003938       _zwTZPEUPDD_PrevControlMapping@4 10004938 f   tzpeupdd.obj
+ 0001:0000394d       _zwTZPEUPDD_LoadCtrlFontPopup@4 1000494d f   tzpeupdd.obj
+ 0001:00003957       _zwTZPEUPDD_AcceptCtrlFont@4 10004957 f   tzpeupdd.obj
+ 0001:00003961       _zwTZPEUPDD_CreateNewCtrlFont@4 10004961 f   tzpeupdd.obj
+ 0001:0000396b       _zwTZPEUPDD_DeleteCtrlFont@4 1000496b f   tzpeupdd.obj
+ 0001:00003975       _zwTZPEUPDD_SetCursorCtrlFont@8 10004975 f   tzpeupdd.obj
+ 0001:0000397f       _zwTZPEUPDD_NextCtrlFont@4 1000497f f   tzpeupdd.obj
+ 0001:00003989       _zwTZPEUPDD_PrevCtrlFont@4 10004989 f   tzpeupdd.obj
+ 0001:00003993       _zwTZPEUPDD_LoadCtrlColorPopup@4 10004993 f   tzpeupdd.obj
+ 0001:0000399d       _zwTZPEUPDD_AcceptCtrlColor@4 1000499d f   tzpeupdd.obj
+ 0001:000039a7       _zwTZPEUPDD_CreateNewCtrlColor@4 100049a7 f   tzpeupdd.obj
+ 0001:000039b1       _zwTZPEUPDD_DeleteCtrlColor@4 100049b1 f   tzpeupdd.obj
+ 0001:000039bb       _zwTZPEUPDD_SetCursorCtrlColor@8 100049bb f   tzpeupdd.obj
+ 0001:000039c5       _zwTZPEUPDD_NextCtrlColor@4 100049c5 f   tzpeupdd.obj
+ 0001:000039cf       _zwTZPEUPDD_PrevCtrlColor@4 100049cf f   tzpeupdd.obj
+ 0001:000039d9       _zwTZPEUPDD_LoadValidPopup@20 100049d9 f   tzpeupdd.obj
+ 0001:00003a8c       _zwTZPEUPDD_LoadValidChildPopup@4 10004a8c f   tzpeupdd.obj
+ 0001:00003ab3       _zwTZPEUPDD_LoadValidParentPopup@4 10004ab3 f   tzpeupdd.obj
+ 0001:00003ada       _zwTZPEUPDD_LoadConvertablesPopup@4 10004ada f   tzpeupdd.obj
+ 0001:00003b01       _zwTZPEUPDD_FontSetVisible@4 10004b01 f   tzpeupdd.obj
+ 0001:00003b0b       _zwTZPEUPDD_ControlDefSetVisible@4 10004b0b f   tzpeupdd.obj
+ 0001:00003b9e       _zwTZPEUPDD_PropertyAdd@4  10004b9e f   tzpeupdd.obj
+ 0001:00003bda       _zwTZPEUPDD_PropertyUpdate@4 10004bda f   tzpeupdd.obj
+ 0001:00003c10       _zwTZPEUPDD_PropertyOK@4   10004c10 f   tzpeupdd.obj
+ 0001:00003c46       _zwTZPEUPDD_PropertyCancel@4 10004c46 f   tzpeupdd.obj
+ 0001:00004a60       _SetTitleWithCheckOutState@24 10005a60 f   tzlodopr:tzlodopr.dll
+ 0001:00004a66       _ActivateMetaOI@20         10005a66 f   tzlodopr:tzlodopr.dll
+ 0001:00004a6c       _RetrieveViewForMetaList@12 10005a6c f   tzlodopr:tzlodopr.dll
+ 0001:00004a72       _ComponentIsCheckedOut@12  10005a72 f   tzlodopr:tzlodopr.dll
+ 0001:00004a78       _oTZ__PRFO_GetViewToProfile@16 10005a78 f   tzlodopr:tzlodopr.dll
+ 0001:00004a7e       _InitializeLPLR@8          10005a7e f   tzlodopr:tzlodopr.dll
+ 0001:00004a84       _CommitMetaOI@12           10005a84 f   tzlodopr:tzlodopr.dll
+ 0001:00004a8a       _CreateMetaEntity@16       10005a8a f   tzlodopr:tzlodopr.dll
+ 0001:00004a90       _ActivateEmptyMetaOI@16    10005a90 f   tzlodopr:tzlodopr.dll
+ 0001:00004a96       _ofnTZCMWKSO_AppendSlash@4 10005a96 f   tzlodopr:tzlodopr.dll
+ 0001:00004a9c       _DeleteMetaOI@12           10005a9c f   tzlodopr:tzlodopr.dll
+ 0001:00004aa2       _DropMetaOI@8              10005aa2 f   tzlodopr:tzlodopr.dll
+ 0001:00004aa8       _CreateTemporalMetaEntity@16 10005aa8 f   tzlodopr:tzlodopr.dll
+ 0001:00004aae       _AssignZKeyToMetaOI@16     10005aae f   tzlodopr:tzlodopr.dll
+ 0001:00004ab4       _TerminateLPLR@4           10005ab4 f   tzlodopr:tzlodopr.dll
+ 0001:00004aba       _IssueToolMsg@32           10005aba f   tzlodopr:tzlodopr.dll
+ 0001:00004ac0       _zGetStringWithoutBlank@8  10005ac0 f   tzvmlip:tzvmlip.dll
+ 0001:00004ac6       _MessageBoxA@16            10005ac6 f   user32:USER32.dll
+ 0001:00004acc       _GetViewByName@16          10005acc f   kzoengaa:KZOENGAA.DLL
+ 0001:00004ad2       _CreateEntity@12           10005ad2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004ad8       _ActivateEmptyObjectInstance@16 10005ad8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004ade       _CreateViewFromViewForTask@12 10005ade f   kzoengaa:KZOENGAA.DLL
+ 0001:00004ae4       _SetCursorFirstEntity@12   10005ae4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004aea       _SetNameForView@16         10005aea f   kzoengaa:KZOENGAA.DLL
+ 0001:00004af0       _SetViewReadOnly@4         10005af0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004af6       _DropView@4                10005af6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004afc       _MessagePrompt@32          10005afc f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b02       _ObjectInstanceUpdatedFromFile@4 10005b02 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b08       _MessageSend@24            10005b08 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b0e       _SetAttributeFromInteger@16 10005b0e f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b14       _SetAttributeFromString@16 10005b14 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b1a       _SysOpenFile@12            10005b1a f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b20       _GetStringFromAttribute@16 10005b20 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b26       _CheckExistenceOfEntity@8  10005b26 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b2c       _CreateTemporalSubobjectVersion@8 10005b2c f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b32       _CompareAttributeToInteger@16 10005b32 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b38       _SetCursorNextSelectedEntity@12 10005b38 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b3e       _IncludeSubobjectFromSubobject@20 10005b3e f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b44       _SetCursorFirstEntityByEntityCsr@20 10005b44 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b4a       _SetCursorFirstSelectedEntity@12 10005b4a f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b50       _ExcludeEntity@12          10005b50 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b56       _AddToAttributeFromInteger@16 10005b56 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b5c       _DeleteEntity@12           10005b5c f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b62       _GetIntegerFromAttribute@16 10005b62 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b68       _GetSelectStateOfEntity@8  10005b68 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b6e       _OrderEntityForView@12     10005b6e f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b74       _ResetView@4               10005b74 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b7a       _SetCursorNextEntity@12    10005b7a f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b80       _AcceptSubobject@8         10005b80 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b86       _SetMatchingAttributesByName@20 10005b86 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b8c       _SetCursorFirstEntityByInteger@20 10005b8c f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b92       _SetCursorFirstEntityByString@20 10005b92 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b98       _SetAttributeFromAttribute@24 10005b98 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b9e       _CompareAttributeToString@16 10005b9e f   kzoengaa:KZOENGAA.DLL
+ 0001:00004ba4       _SetSelectStateOfEntity@12 10005ba4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004baa       _SetAllSelectStatesForEntity@16 10005baa f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bb0       _SetSelectSetForView@8     10005bb0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bb6       _SetCursorNextEntityByString@20 10005bb6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bbc       _SysGetEnvVar@12           10005bbc f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bc2       _SfGetApplicationForSubtask@8 10005bc2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bc8       _SetCursorPrevEntity@12    10005bc8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bce       _CancelSubobject@8         10005bce f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bd4       _strcpy                    10005bd4 f   msvcrtd:MSVCRTD.dll
+ 0001:00004bda       _strcat                    10005bda f   msvcrtd:MSVCRTD.dll
+ 0001:00004be0       _strcmp                    10005be0 f   msvcrtd:MSVCRTD.dll
+ 0001:00004be6       _strchr                    10005be6 f   msvcrtd:MSVCRTD.dll
+ 0001:00004bec       _strlen                    10005bec f   msvcrtd:MSVCRTD.dll
+ 0001:00004c00       __CRT_INIT@12              10005c00 f   msvcrtd:crtdll.obj
+ 0001:00004d10       __DllMainCRTStartup@12     10005d10 f   msvcrtd:crtdll.obj
+ 0001:00004e04       __free_dbg                 10005e04 f   msvcrtd:MSVCRTD.dll
+ 0001:00004e0a       __initterm                 10005e0a f   msvcrtd:MSVCRTD.dll
+ 0001:00004e10       __onexit                   10005e10 f   msvcrtd:atonexit.obj
+ 0001:00004e50       _atexit                    10005e50 f   msvcrtd:atonexit.obj
+ 0001:00004e68       __malloc_dbg               10005e68 f   msvcrtd:MSVCRTD.dll
+ 0001:00004e6e       ___dllonexit               10005e6e f   msvcrtd:MSVCRTD.dll
+ 0001:00004e74       _SetWindowActionBehavior@16 10005e74 f   zdrapp:ZDrApp.dll
+ 0001:00004e7a       _EnableAction@12           10005e7a f   zdrapp:ZDrApp.dll
+ 0001:00004e80       _SetFocusToCtrl@8          10005e80 f   zdrapp:ZDrApp.dll
+ 0001:00004e86       _RefreshWindow@4           10005e86 f   zdrapp:ZDrApp.dll
+ 0001:00004e8c       _GetParentWindow@8         10005e8c f   zdrapp:ZDrApp.dll
+ 0001:00004e92       _SetOptionState@16         10005e92 f   zdrapp:ZDrApp.dll
+ 0001:00004e98       _GetSubtaskForWindowName@12 10005e98 f   zdrapp:ZDrApp.dll
+ 0001:00004e9e       _GetCtrlState@12           10005e9e f   zdrapp:ZDrApp.dll
+ 0001:00004ea4       _SetCtrlTextLth@12         10005ea4 f   zdrapp:ZDrApp.dll
+ 0001:00004eaa       _SetCtrlText@12            10005eaa f   zdrapp:ZDrApp.dll
+ 0001:00004eb0       _SetCtrlState@16           10005eb0 f   zdrapp:ZDrApp.dll
+ 0001:00004eb6       _SetWindowCaptionTitle@12  10005eb6 f   zdrapp:ZDrApp.dll
+ 0001:00004ebc       _GetCtrlText@16            10005ebc f   zdrapp:ZDrApp.dll
+ 0001:00004ec2       _CreateTrackingPopupMenu@24 10005ec2 f   zdrapp:ZDrApp.dll
+ 0001:00004ec8       _LB_SetSelectSelectSet@12  10005ec8 f   zdctl:ZdCtl.dll
+ 0001:00004ece       _LB_SetDisplaySelectSet@12 10005ece f   zdctl:ZdCtl.dll
+ 0001:00004ed4       _BuildTZPEAXWO@12          10005ed4 f   tzctl:TzCtl.dll
+ 0001:00004eda       _GenerateActiveX_Code@28   10005eda f   tzctl:TzCtl.dll
+ 0002:00000020       _IID_IDocHostUIHandlerDispatch 10007020     tzpeupdd.obj
+ 0002:00000038       _IID_IInternalConnection   10007038     tzpeupdd.obj
+ 0002:00000050       _IID_IAxWinAmbientDispatch 10007050     tzpeupdd.obj
+ 0002:00000068       _IID_IAxWinHostWindow      10007068     tzpeupdd.obj
+ 0002:00000080       _IID_IRegistrar            10007080     tzpeupdd.obj
+ 0002:00000098       _CLSID_Registrar           10007098     tzpeupdd.obj
+ 0002:000000b0       _LIBID_ATLLib              100070b0     tzpeupdd.obj
+ 0002:000000c4       ??_C@_08JKC@crtdll?4c?$AA@ 100070c4     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    1000a000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    1000a104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    1000a208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000a30c     msvcrtd:cinitexe.obj
+ 0003:00000410       ?GUID_ATLVer30@ATL@@3U_GUID@@A 1000a410     tzpeupdd.obj
+ 0003:00000434       ??_C@_0BJ@EDPK@Presentation?5Environment?$AA@ 1000a434     tzpeupdd.obj
+ 0003:00000454       ??_C@_0L@BJAM@PresEnvDef?$AA@ 1000a454     tzpeupdd.obj
+ 0003:00000464       ??_C@_08NLIK@TZPESRCV?$AA@ 1000a464     tzpeupdd.obj
+ 0003:00000470       ??_C@_04DIDG@ROOT?$AA@     1000a470     tzpeupdd.obj
+ 0003:00000478       ??_C@_08PLJG@TZPEWRKV?$AA@ 1000a478     tzpeupdd.obj
+ 0003:00000484       ??_C@_08KMMJ@TZPEWRKO?$AA@ 1000a484     tzpeupdd.obj
+ 0003:00000490       ??_C@_08LGDJ@TZPECTRL?$AA@ 1000a490     tzpeupdd.obj
+ 0003:0000049c       ??_C@_09DBFF@W_MetaDef?$AA@ 1000a49c     tzpeupdd.obj
+ 0003:000004a8       ??_C@_0M@HJLB@CM_PPE_List?$AA@ 1000a4a8     tzpeupdd.obj
+ 0003:000004b8       ??_C@_0M@CKE@ProfileXFER?$AA@ 1000a4b8     tzpeupdd.obj
+ 0003:000004c8       ??_C@_02KOMF@WD?$AA@       1000a4c8     tzpeupdd.obj
+ 0003:000004cc       ??_C@_0P@JIOH@OpenControlDef?$AA@ 1000a4cc     tzpeupdd.obj
+ 0003:000004e0       ??_C@_0N@DLOJ@OpenWndStyle?$AA@ 1000a4e0     tzpeupdd.obj
+ 0003:000004f0       ??_C@_08DNEA@TZPEUPDD?$AA@ 1000a4f0     tzpeupdd.obj
+ 0003:000004fc       ??_C@_08GLMA@TZTEUPDD?$AA@ 1000a4fc     tzpeupdd.obj
+ 0003:00000508       ??_C@_07MBNC@PE00101?$AA@  1000a508     tzpeupdd.obj
+ 0003:00000514       ??_C@_0DG@MKCG@Do?5you?5wish?5to?5save?5current?5Pres@ 1000a514     tzpeupdd.obj
+ 0003:00000554       ??_C@_07DOGL@PE00102?$AA@  1000a554     tzpeupdd.obj
+ 0003:00000560       ??_C@_0DP@MKGC@A?5new?5presentation?5environment?5h@ 1000a560     tzpeupdd.obj
+ 0003:000005ac       ??_C@_08CAAA@LastCtrl?$AA@ 1000a5ac     tzpeupdd.obj
+ 0003:000005b8       ??_C@_04EFNI@Name?$AA@     1000a5b8     tzpeupdd.obj
+ 0003:000005c0       ??_C@_06BADI@Zeidon?$AA@   1000a5c0     tzpeupdd.obj
+ 0003:000005c8       ??_C@_07FOFE@CM00458?$AA@  1000a5c8     tzpeupdd.obj
+ 0003:000005d4       ??_C@_0BJ@JFDF@Configuration?5Management?$AA@ 1000a5d4     tzpeupdd.obj
+ 0003:000005f4       ??_C@_0M@EOEO@?5not?5found?4?$AA@ 1000a5f4     tzpeupdd.obj
+ 0003:00000604       ??_C@_0BP@NCPG@Corresponding?5Executable?5File?5?$AA@ 1000a604     tzpeupdd.obj
+ 0003:0000062c       ??_C@_0L@CJKN@Zeidon?4xpe?$AA@ 1000a62c     tzpeupdd.obj
+ 0003:0000063c       ??_C@_04FDFI@LPLR?$AA@     1000a63c     tzpeupdd.obj
+ 0003:00000644       ??_C@_07LMFN@ExecDir?$AA@  1000a644     tzpeupdd.obj
+ 0003:00000650       ??_C@_08HHLD@TaskLPLR?$AA@ 1000a650     tzpeupdd.obj
+ 0003:0000065c       ??_C@_07JEPM@PE00103?$AA@  1000a65c     tzpeupdd.obj
+ 0003:00000668       ??_C@_0CF@GBLI@Delete?5the?5Presentation?5Environm@ 1000a668     tzpeupdd.obj
+ 0003:00000694       ??_C@_07JEDH@PE00106?$AA@  1000a694     tzpeupdd.obj
+ 0003:000006a0       ??_C@_0DM@EGIJ@This?5control?5definition?5is?5invis@ 1000a6a0     tzpeupdd.obj
+ 0003:000006e8       ??_C@_0L@ELHM@ControlDef?$AA@ 1000a6e8     tzpeupdd.obj
+ 0003:000006f8       ??_C@_09DKMA@Invisible?$AA@ 1000a6f8     tzpeupdd.obj
+ 0003:00000704       ??_C@_06NHJO@edName?$AA@   1000a704     tzpeupdd.obj
+ 0003:0000070c       ??_C@_0M@DPPI@WindowStyle?$AA@ 1000a70c     tzpeupdd.obj
+ 0003:0000071c       ??_C@_0N@BGFE@CtrlEventDef?$AA@ 1000a71c     tzpeupdd.obj
+ 0003:0000072c       ??_C@_0L@IGI@ValidChild?$AA@ 1000a72c     tzpeupdd.obj
+ 0003:0000073c       ??_C@_0M@BDAM@ValidParent?$AA@ 1000a73c     tzpeupdd.obj
+ 0003:0000074c       ??_C@_0BA@PFKJ@ConvertableFrom?$AA@ 1000a74c     tzpeupdd.obj
+ 0003:00000760       ??_C@_03CHAC@Tag?$AA@      1000a760     tzpeupdd.obj
+ 0003:00000764       ??_C@_09DCCN@INVISIBLE?$AA@ 1000a764     tzpeupdd.obj
+ 0003:00000770       ??_C@_02FECH@Id?$AA@       1000a770     tzpeupdd.obj
+ 0003:00000774       ??_C@_0O@NJJL@DeleteCtrlDef?$AA@ 1000a774     tzpeupdd.obj
+ 0003:00000784       ??_C@_0M@IHKO@OpenCtrlDef?$AA@ 1000a784     tzpeupdd.obj
+ 0003:00000794       ??_C@_0P@ILH@DeleteWndStyle?$AA@ 1000a794     tzpeupdd.obj
+ 0003:000007a8       ??_C@_0L@DEMO@NewCtrlDef?$AA@ 1000a7a8     tzpeupdd.obj
+ 0003:000007b8       ??_C@_0M@JFK@NewWndStyle?$AA@ 1000a7b8     tzpeupdd.obj
+ 0003:000007c8       ??_C@_04GOHB@Save?$AA@     1000a7c8     tzpeupdd.obj
+ 0003:000007d0       ??_C@_0O@KMNC@DeletePresEnv?$AA@ 1000a7d0     tzpeupdd.obj
+ 0003:000007e0       ??_C@_07KFAP@FileNew?$AA@  1000a7e0     tzpeupdd.obj
+ 0003:000007ec       ??_C@_05PDBK@Tag?5A?$AA@   1000a7ec     tzpeupdd.obj
+ 0003:000007f4       ??_C@_07HNOP@PE00110?$AA@  1000a7f4     tzpeupdd.obj
+ 0003:00000800       ??_C@_0DC@PLGI@Do?5you?5wish?5to?5save?5the?5Presenta@ 1000a800     tzpeupdd.obj
+ 0003:0000083c       ??_C@_08BBH@EventDef?$AA@  1000a83c     tzpeupdd.obj
+ 0003:00000848       ??_C@_0BB@CDKA@ControlDefUpdate?$AA@ 1000a848     tzpeupdd.obj
+ 0003:0000085c       ??_C@_0BA@JLOA@PainterDLL_Name?$AA@ 1000a85c     tzpeupdd.obj
+ 0003:00000870       ??_C@_05FIBH@TZCTL?$AA@    1000a870     tzpeupdd.obj
+ 0003:00000878       ??_C@_03IDPP@new?$AA@      1000a878     tzpeupdd.obj
+ 0003:0000087c       ??_C@_03HAKM@Key?$AA@      1000a87c     tzpeupdd.obj
+ 0003:00000880       ??_C@_07JFGK@PE00109?$AA@  1000a880     tzpeupdd.obj
+ 0003:0000088c       ??_C@_0CL@FAFJ@Please?5select?5the?5type?5of?5the?5ne@ 1000a88c     tzpeupdd.obj
+ 0003:000008c0       ??_C@_07PABI@InHouse?$AA@  1000a8c0     tzpeupdd.obj
+ 0003:000008cc       ??_C@_07PGLG@ActiveX?$AA@  1000a8cc     tzpeupdd.obj
+ 0003:000008d8       ??_C@_0BD@ICAO@Control?5Definition?$AA@ 1000a8d8     tzpeupdd.obj
+ 0003:000008f0       ??_C@_0DH@JCGJ@ActiveX?5Script?0?5DLL?5and?5Class?5Id@ 1000a8f0     tzpeupdd.obj
+ 0003:00000934       ??_C@_07MCMF@PE00xxx?$AA@  1000a934     tzpeupdd.obj
+ 0003:00000940       ??_C@_0CN@EAFE@ActiveX?5Class?5Id?5incompatible?5wi@ 1000a940     tzpeupdd.obj
+ 0003:00000978       ??_C@_04BGHA@GUID?$AA@     1000a978     tzpeupdd.obj
+ 0003:00000980       ??_C@_0BC@ENFM@ActiveX_ScriptDLL?$AA@ 1000a980     tzpeupdd.obj
+ 0003:00000998       ??_C@_0P@EKJP@ActiveX_Script?$AA@ 1000a998     tzpeupdd.obj
+ 0003:000009ac       ??_C@_07NMJI@ClassId?$AA@  1000a9ac     tzpeupdd.obj
+ 0003:000009b8       ??_C@_08JHML@TZPEAXWO?$AA@ 1000a9b8     tzpeupdd.obj
+ 0003:000009c4       ??_C@_0CM@DFCF@Bitmap?5Id?5incompatible?5with?5Acti@ 1000a9c4     tzpeupdd.obj
+ 0003:000009f8       ??_C@_04FCOP@Type?$AA@     1000a9f8     tzpeupdd.obj
+ 0003:00000a00       ??_C@_0L@FKLI@DispatchId?$AA@ 1000aa00     tzpeupdd.obj
+ 0003:00000a10       ??_C@_05MJIN@Event?$AA@    1000aa10     tzpeupdd.obj
+ 0003:00000a18       ??_C@_0M@DKEL@Description?$AA@ 1000aa18     tzpeupdd.obj
+ 0003:00000a28       ??_C@_0BJ@LBKE@DeleteActiveXEventFromPE?$AA@ 1000aa28     tzpeupdd.obj
+ 0003:00000a48       ??_C@_0P@HIOM@DeleteFromList?$AA@ 1000aa48     tzpeupdd.obj
+ 0003:00000a5c       ??_C@_0BE@MHAB@AddActiveXEventToPE?$AA@ 1000aa5c     tzpeupdd.obj
+ 0003:00000a74       ??_C@_0DB@LKEN@ActiveX?5control?5does?5not?5have?5ev@ 1000aa74     tzpeupdd.obj
+ 0003:00000ab0       ??_C@_0P@IMCE@RegistryEvents?$AA@ 1000aab0     tzpeupdd.obj
+ 0003:00000ac4       ??_C@_09FLOP@PE_Events?$AA@ 1000aac4     tzpeupdd.obj
+ 0003:00000ad0       ??_C@_0L@MFNM@CtrlMapDef?$AA@ 1000aad0     tzpeupdd.obj
+ 0003:00000ae0       ??_C@_0P@OJMN@MapMaintenance?$AA@ 1000aae0     tzpeupdd.obj
+ 0003:00000af4       ??_C@_07HNCE@PE00115?$AA@  1000aaf4     tzpeupdd.obj
+ 0003:00000b00       ??_C@_0CP@FDAL@A?5Control?5Mapping?5already?5exists@ 1000ab00     tzpeupdd.obj
+ 0003:00000b38       ??_C@_06HNLG@cbType?$AA@   1000ab38     tzpeupdd.obj
+ 0003:00000b40       ??_C@_0CC@GADO@Control?5Mapping?5Type?5is?5required@ 1000ab40     tzpeupdd.obj
+ 0003:00000b68       ??_C@_07NHLD@PE00114?$AA@  1000ab68     tzpeupdd.obj
+ 0003:00000b74       ??_C@_0CC@IOHG@Control?5Mapping?5Name?5is?5required@ 1000ab74     tzpeupdd.obj
+ 0003:00000b9c       ??_C@_0O@FBCC@DirectoryName?$AA@ 1000ab9c     tzpeupdd.obj
+ 0003:00000bac       ??_C@_06HLLH@ZEIDON?$AA@   1000abac     tzpeupdd.obj
+ 0003:00000bb4       ??_C@_0P@KHKB@SourceFileName?$AA@ 1000abb4     tzpeupdd.obj
+ 0003:00000bc8       ??_C@_09HANA@ClassName?$AA@ 1000abc8     tzpeupdd.obj
+ 0003:00000bd4       ??_C@_0N@DHIJ@GenerateCode?$AA@ 1000abd4     tzpeupdd.obj
+ 0003:00000be4       ??_C@_0BM@MKMH@Code?5generated?5successfully?$AA@ 1000abe4     tzpeupdd.obj
+ 0003:00000c08       ??_C@_0CA@EBAN@Zeidon?5ActiveX?5Generation?5Error?$AA@ 1000ac08     tzpeupdd.obj
+ 0003:00000c30       ??_C@_0CE@NCLB@File?5not?5replaced?5?$CIat?5user?5reque@ 1000ac30     tzpeupdd.obj
+ 0003:00000c5c       ??_C@_0CC@POBP@Zeidon?5ActiveX?5Generation?5Aborte@ 1000ac5c     tzpeupdd.obj
+ 0003:00000c84       ??_C@_0BM@CEF@Code?5could?5not?5be?5generated?$AA@ 1000ac84     tzpeupdd.obj
+ 0003:00000ca8       ??_C@_0BN@PEFO@Zeidon?5ActiveX?5TypeLib?5Error?$AA@ 1000aca8     tzpeupdd.obj
+ 0003:00000ccc       ??_C@_0BM@GIBP@Names?5cannot?5contain?5spaces?$AA@ 1000accc     tzpeupdd.obj
+ 0003:00000cf0       ??_C@_0P@MCBP@Zeidon?5ActiveX?$AA@ 1000acf0     tzpeupdd.obj
+ 0003:00000d04       ??_C@_07CKPO@TypeLib?$AA@  1000ad04     tzpeupdd.obj
+ 0003:00000d10       ??_C@_0BF@KNKF@ControlDefSetVisible?$AA@ 1000ad10     tzpeupdd.obj
+ 0003:00000d2c       ??_C@_0BA@BNLH@ControlDefPopup?$AA@ 1000ad2c     tzpeupdd.obj
+ 0003:00000d40       ??_C@_0BC@LIBP@CreateNewWndStyle?$AA@ 1000ad40     tzpeupdd.obj
+ 0003:00000d58       ??_C@_0BB@KHBA@WindowStylePopup?$AA@ 1000ad58     tzpeupdd.obj
+ 0003:00000d6c       ??_C@_0BE@LMKB@CreateNewControlDef?$AA@ 1000ad6c     tzpeupdd.obj
+ 0003:00000d84       ??_C@_0BB@GLAM@DeleteControlDef?$AA@ 1000ad84     tzpeupdd.obj
+ 0003:00000d98       ??_C@_0P@DFIG@UpdateWndEvent?$AA@ 1000ad98     tzpeupdd.obj
+ 0003:00000dac       ??_C@_08FINP@EventAdd?$AA@ 1000adac     tzpeupdd.obj
+ 0003:00000db8       ??_C@_0P@FHKO@DeleteWndEvent?$AA@ 1000adb8     tzpeupdd.obj
+ 0003:00000dcc       ??_C@_0L@KEPG@EventPopup?$AA@ 1000adcc     tzpeupdd.obj
+ 0003:00000ddc       ??_C@_0N@KPDJ@Window?5Style?$AA@ 1000addc     tzpeupdd.obj
+ 0003:00000dec       ??_C@_0BO@GLKC@?5already?5exists?5by?5this?5name?$CB?$AA@ 1000adec     tzpeupdd.obj
+ 0003:00000e10       ??_C@_02OOOP@A?5?$AA@      1000ae10     tzpeupdd.obj
+ 0003:00000e14       ??_C@_0BD@IJLH@?5Name?5is?5required?4?$AA@ 1000ae14     tzpeupdd.obj
+ 0003:00000e2c       ??_C@_0BD@NBNK@Window?5Style?5Event?$AA@ 1000ae2c     tzpeupdd.obj
+ 0003:00000e44       ??_C@_0P@POFH@WndStyleUpdate?$AA@ 1000ae44     tzpeupdd.obj
+ 0003:00000e58       ??_C@_0BE@DGIE@WndEventMaintenance?$AA@ 1000ae58     tzpeupdd.obj
+ 0003:00000e70       ??_C@_0BF@HBNM@SelectActiveX_Events?$AA@ 1000ae70     tzpeupdd.obj
+ 0003:00000e8c       ??_C@_0BD@ICJL@ActiveX_Script_DLL?$AA@ 1000ae8c     tzpeupdd.obj
+ 0003:00000ea4       ??_C@_0BD@LMKC@SelectActiveX_GUID?$AA@ 1000aea4     tzpeupdd.obj
+ 0003:00000ebc       ??_C@_0BC@KCKP@AcceptAllChildren?$AA@ 1000aebc     tzpeupdd.obj
+ 0003:00000ed4       ??_C@_0P@PNDE@ParentRequired?$AA@ 1000aed4     tzpeupdd.obj
+ 0003:00000ee8       ??_C@_0BB@BOBI@AcceptAllParents?$AA@ 1000aee8     tzpeupdd.obj
+ 0003:00000efc       ??_C@_06DHPE@Delete?$AA@   1000aefc     tzpeupdd.obj
+ 0003:00000f04       ??_C@_0O@BLCH@Control?5Event?$AA@ 1000af04     tzpeupdd.obj
+ 0003:00000f14       ??_C@_0P@OCBI@UpdateEventDef?$AA@ 1000af14     tzpeupdd.obj
+ 0003:00000f28       ??_C@_08MNAB@AddEvent?$AA@ 1000af28     tzpeupdd.obj
+ 0003:00000f34       ??_C@_0M@OFCD@DeleteEvent?$AA@ 1000af34     tzpeupdd.obj
+ 0003:00000f44       ??_C@_0BB@OEBF@EventMaintenance?$AA@ 1000af44     tzpeupdd.obj
+ 0003:00000f58       ??_C@_0N@LDFA@UpdateMapDef?$AA@ 1000af58     tzpeupdd.obj
+ 0003:00000f68       ??_C@_09EFEE@AddMapDef?$AA@ 1000af68     tzpeupdd.obj
+ 0003:00000f74       ??_C@_0N@JPGM@DeleteMapDef?$AA@ 1000af74     tzpeupdd.obj
+ 0003:00000f84       ??_C@_0N@MPPM@MappingPopup?$AA@ 1000af84     tzpeupdd.obj
+ 0003:00000f94       ??_C@_0P@PDJC@SelectControls?$AA@ 1000af94     tzpeupdd.obj
+ 0003:00000fa8       ??_C@_0M@NJGL@DeleteChild?$AA@ 1000afa8     tzpeupdd.obj
+ 0003:00000fb8       ??_C@_0L@FJOP@ChildPopup?$AA@ 1000afb8     tzpeupdd.obj
+ 0003:00000fc8       ??_C@_0N@IDNN@DeleteParent?$AA@ 1000afc8     tzpeupdd.obj
+ 0003:00000fd8       ??_C@_0M@GBJK@ParentPopup?$AA@ 1000afd8     tzpeupdd.obj
+ 0003:00000fe8       ??_C@_0BD@LFBI@DeleteConvertables?$AA@ 1000afe8     tzpeupdd.obj
+ 0003:00001000       ??_C@_0BB@FAMH@ConvertablePopup?$AA@ 1000b000     tzpeupdd.obj
+ 0003:00001014       ??_C@_07IKBJ@VISIBLE?$AA@  1000b014     tzpeupdd.obj
+ 0003:00001020       ??_C@_0M@HJEB@PropertyDef?$AA@ 1000b020     tzpeupdd.obj
+ 0003:000011a0       _g_hInstanceDLL            1000b1a0     zdllinst.obj
+ 0003:000011a4       ?ATL_CREATE_OBJECT@CComApartment@ATL@@2IA 1000b1a4     tzpeupdd.obj
+ 0003:000011a8       ?m_libid@CComModule@ATL@@2U_GUID@@A 1000b1a8     tzpeupdd.obj
+ 0003:000011bc       ?_pModule@ATL@@3PAVCComModule@1@A 1000b1bc     tzpeupdd.obj
+ 0003:000011c0       ??_C@_00A@?$AA@            1000b1c0     tzpeupdd.obj
+ 0003:000011c4       __afxForceEXCLUDE          1000b1c4     MFCS42:nolib.obj
+ 0003:000011cc       __adjust_fdiv              1000b1cc     <common>
+ 0003:000011d8       ___onexitend               1000b1d8     <common>
+ 0003:000011e8       ___onexitbegin             1000b1e8     <common>
+ 0003:000011ec       __pRawDllMain              1000b1ec     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 1000c000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_tzvmlip 1000c014     tzvmlip:tzvmlip.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_USER32 1000c028     user32:USER32.dll
+ 0004:0000003c       __IMPORT_DESCRIPTOR_KZOENGAA 1000c03c     kzoengaa:KZOENGAA.DLL
+ 0004:00000050       __IMPORT_DESCRIPTOR_MSVCRTD 1000c050     msvcrtd:MSVCRTD.dll
+ 0004:00000064       __IMPORT_DESCRIPTOR_ZDrApp 1000c064     zdrapp:ZDrApp.dll
+ 0004:00000078       __IMPORT_DESCRIPTOR_ZdCtl  1000c078     zdctl:ZdCtl.dll
+ 0004:0000008c       __IMPORT_DESCRIPTOR_TzCtl  1000c08c     tzctl:TzCtl.dll
+ 0004:000000a0       __NULL_IMPORT_DESCRIPTOR   1000c0a0     tzlodopr:tzlodopr.dll
+ 0004:000003bc       __imp__ResetView@4         1000c3bc     kzoengaa:KZOENGAA.DLL
+ 0004:000003c0       __imp__SetAllSelectStatesForEntity@16 1000c3c0     kzoengaa:KZOENGAA.DLL
+ 0004:000003c4       __imp__SetSelectStateOfEntity@12 1000c3c4     kzoengaa:KZOENGAA.DLL
+ 0004:000003c8       __imp__CompareAttributeToString@16 1000c3c8     kzoengaa:KZOENGAA.DLL
+ 0004:000003cc       __imp__SetAttributeFromAttribute@24 1000c3cc     kzoengaa:KZOENGAA.DLL
+ 0004:000003d0       __imp__SetCursorFirstEntityByString@20 1000c3d0     kzoengaa:KZOENGAA.DLL
+ 0004:000003d4       __imp__SetCursorFirstEntityByInteger@20 1000c3d4     kzoengaa:KZOENGAA.DLL
+ 0004:000003d8       __imp__SetMatchingAttributesByName@20 1000c3d8     kzoengaa:KZOENGAA.DLL
+ 0004:000003dc       __imp__AcceptSubobject@8   1000c3dc     kzoengaa:KZOENGAA.DLL
+ 0004:000003e0       __imp__SetCursorNextEntity@12 1000c3e0     kzoengaa:KZOENGAA.DLL
+ 0004:000003e4       __imp__OrderEntityForView@12 1000c3e4     kzoengaa:KZOENGAA.DLL
+ 0004:000003e8       __imp__GetSelectStateOfEntity@8 1000c3e8     kzoengaa:KZOENGAA.DLL
+ 0004:000003ec       __imp__GetIntegerFromAttribute@16 1000c3ec     kzoengaa:KZOENGAA.DLL
+ 0004:000003f0       __imp__DeleteEntity@12     1000c3f0     kzoengaa:KZOENGAA.DLL
+ 0004:000003f4       __imp__AddToAttributeFromInteger@16 1000c3f4     kzoengaa:KZOENGAA.DLL
+ 0004:000003f8       __imp__CancelSubobject@8   1000c3f8     kzoengaa:KZOENGAA.DLL
+ 0004:000003fc       __imp__SetCursorPrevEntity@12 1000c3fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000400       __imp__SfGetApplicationForSubtask@8 1000c400     kzoengaa:KZOENGAA.DLL
+ 0004:00000404       __imp__SysGetEnvVar@12     1000c404     kzoengaa:KZOENGAA.DLL
+ 0004:00000408       __imp__SetCursorNextEntityByString@20 1000c408     kzoengaa:KZOENGAA.DLL
+ 0004:0000040c       __imp__GetViewByName@16    1000c40c     kzoengaa:KZOENGAA.DLL
+ 0004:00000410       __imp__CreateEntity@12     1000c410     kzoengaa:KZOENGAA.DLL
+ 0004:00000414       __imp__ActivateEmptyObjectInstance@16 1000c414     kzoengaa:KZOENGAA.DLL
+ 0004:00000418       __imp__CreateViewFromViewForTask@12 1000c418     kzoengaa:KZOENGAA.DLL
+ 0004:0000041c       __imp__SetCursorFirstEntity@12 1000c41c     kzoengaa:KZOENGAA.DLL
+ 0004:00000420       __imp__SetNameForView@16   1000c420     kzoengaa:KZOENGAA.DLL
+ 0004:00000424       __imp__SetViewReadOnly@4   1000c424     kzoengaa:KZOENGAA.DLL
+ 0004:00000428       __imp__DropView@4          1000c428     kzoengaa:KZOENGAA.DLL
+ 0004:0000042c       __imp__MessagePrompt@32    1000c42c     kzoengaa:KZOENGAA.DLL
+ 0004:00000430       __imp__ObjectInstanceUpdatedFromFile@4 1000c430     kzoengaa:KZOENGAA.DLL
+ 0004:00000434       __imp__MessageSend@24      1000c434     kzoengaa:KZOENGAA.DLL
+ 0004:00000438       __imp__SetAttributeFromInteger@16 1000c438     kzoengaa:KZOENGAA.DLL
+ 0004:0000043c       __imp__SetAttributeFromString@16 1000c43c     kzoengaa:KZOENGAA.DLL
+ 0004:00000440       __imp__SysOpenFile@12      1000c440     kzoengaa:KZOENGAA.DLL
+ 0004:00000444       __imp__GetStringFromAttribute@16 1000c444     kzoengaa:KZOENGAA.DLL
+ 0004:00000448       __imp__CheckExistenceOfEntity@8 1000c448     kzoengaa:KZOENGAA.DLL
+ 0004:0000044c       __imp__CreateTemporalSubobjectVersion@8 1000c44c     kzoengaa:KZOENGAA.DLL
+ 0004:00000450       __imp__CompareAttributeToInteger@16 1000c450     kzoengaa:KZOENGAA.DLL
+ 0004:00000454       __imp__SetCursorNextSelectedEntity@12 1000c454     kzoengaa:KZOENGAA.DLL
+ 0004:00000458       __imp__IncludeSubobjectFromSubobject@20 1000c458     kzoengaa:KZOENGAA.DLL
+ 0004:0000045c       __imp__SetCursorFirstEntityByEntityCsr@20 1000c45c     kzoengaa:KZOENGAA.DLL
+ 0004:00000460       __imp__SetCursorFirstSelectedEntity@12 1000c460     kzoengaa:KZOENGAA.DLL
+ 0004:00000464       __imp__ExcludeEntity@12    1000c464     kzoengaa:KZOENGAA.DLL
+ 0004:00000468       __imp__SetSelectSetForView@8 1000c468     kzoengaa:KZOENGAA.DLL
+ 0004:0000046c       \177KZOENGAA_NULL_THUNK_DATA 1000c46c     kzoengaa:KZOENGAA.DLL
+ 0004:000004b8       __imp__strcat              1000c4b8     msvcrtd:MSVCRTD.dll
+ 0004:000004bc       __imp__strcmp              1000c4bc     msvcrtd:MSVCRTD.dll
+ 0004:000004c0       __imp__strchr              1000c4c0     msvcrtd:MSVCRTD.dll
+ 0004:000004c4       __imp__strlen              1000c4c4     msvcrtd:MSVCRTD.dll
+ 0004:000004c8       __imp___onexit             1000c4c8     msvcrtd:MSVCRTD.dll
+ 0004:000004cc       __imp___free_dbg           1000c4cc     msvcrtd:MSVCRTD.dll
+ 0004:000004d0       __imp___initterm           1000c4d0     msvcrtd:MSVCRTD.dll
+ 0004:000004d4       __imp___malloc_dbg         1000c4d4     msvcrtd:MSVCRTD.dll
+ 0004:000004d8       __imp___adjust_fdiv        1000c4d8     msvcrtd:MSVCRTD.dll
+ 0004:000004dc       __imp____dllonexit         1000c4dc     msvcrtd:MSVCRTD.dll
+ 0004:000004e0       __imp__strcpy              1000c4e0     msvcrtd:MSVCRTD.dll
+ 0004:000004e4       \177MSVCRTD_NULL_THUNK_DATA 1000c4e4     msvcrtd:MSVCRTD.dll
+ 0004:00000518       __imp__GenerateActiveX_Code@28 1000c518     tzctl:TzCtl.dll
+ 0004:0000051c       __imp__BuildTZPEAXWO@12    1000c51c     tzctl:TzCtl.dll
+ 0004:00000520       \177TzCtl_NULL_THUNK_DATA  1000c520     tzctl:TzCtl.dll
+ 0004:0000054c       __imp__MessageBoxA@16      1000c54c     user32:USER32.dll
+ 0004:00000550       \177USER32_NULL_THUNK_DATA 1000c550     user32:USER32.dll
+ 0004:0000057c       __imp__CreateTrackingPopupMenu@24 1000c57c     zdrapp:ZDrApp.dll
+ 0004:00000580       __imp__GetCtrlText@16      1000c580     zdrapp:ZDrApp.dll
+ 0004:00000584       __imp__SetWindowCaptionTitle@12 1000c584     zdrapp:ZDrApp.dll
+ 0004:00000588       __imp__SetCtrlState@16     1000c588     zdrapp:ZDrApp.dll
+ 0004:0000058c       __imp__SetCtrlText@12      1000c58c     zdrapp:ZDrApp.dll
+ 0004:00000590       __imp__SetCtrlTextLth@12   1000c590     zdrapp:ZDrApp.dll
+ 0004:00000594       __imp__GetCtrlState@12     1000c594     zdrapp:ZDrApp.dll
+ 0004:00000598       __imp__GetSubtaskForWindowName@12 1000c598     zdrapp:ZDrApp.dll
+ 0004:0000059c       __imp__SetOptionState@16   1000c59c     zdrapp:ZDrApp.dll
+ 0004:000005a0       __imp__GetParentWindow@8   1000c5a0     zdrapp:ZDrApp.dll
+ 0004:000005a4       __imp__RefreshWindow@4     1000c5a4     zdrapp:ZDrApp.dll
+ 0004:000005a8       __imp__SetFocusToCtrl@8    1000c5a8     zdrapp:ZDrApp.dll
+ 0004:000005ac       __imp__EnableAction@12     1000c5ac     zdrapp:ZDrApp.dll
+ 0004:000005b0       __imp__SetWindowActionBehavior@16 1000c5b0     zdrapp:ZDrApp.dll
+ 0004:000005b4       \177ZDrApp_NULL_THUNK_DATA 1000c5b4     zdrapp:ZDrApp.dll
+ 0004:000005e8       __imp__LB_SetSelectSelectSet@12 1000c5e8     zdctl:ZdCtl.dll
+ 0004:000005ec       __imp__LB_SetDisplaySelectSet@12 1000c5ec     zdctl:ZdCtl.dll
+ 0004:000005f0       \177ZdCtl_NULL_THUNK_DATA  1000c5f0     zdctl:ZdCtl.dll
+ 0004:0000061c       __imp__CommitMetaOI@12     1000c61c     tzlodopr:tzlodopr.dll
+ 0004:00000620       __imp__CreateMetaEntity@16 1000c620     tzlodopr:tzlodopr.dll
+ 0004:00000624       __imp__ActivateEmptyMetaOI@16 1000c624     tzlodopr:tzlodopr.dll
+ 0004:00000628       __imp__ofnTZCMWKSO_AppendSlash@4 1000c628     tzlodopr:tzlodopr.dll
+ 0004:0000062c       __imp__DeleteMetaOI@12     1000c62c     tzlodopr:tzlodopr.dll
+ 0004:00000630       __imp__DropMetaOI@8        1000c630     tzlodopr:tzlodopr.dll
+ 0004:00000634       __imp__InitializeLPLR@8    1000c634     tzlodopr:tzlodopr.dll
+ 0004:00000638       __imp__AssignZKeyToMetaOI@16 1000c638     tzlodopr:tzlodopr.dll
+ 0004:0000063c       __imp__TerminateLPLR@4     1000c63c     tzlodopr:tzlodopr.dll
+ 0004:00000640       __imp__IssueToolMsg@32     1000c640     tzlodopr:tzlodopr.dll
+ 0004:00000644       __imp__ActivateMetaOI@20   1000c644     tzlodopr:tzlodopr.dll
+ 0004:00000648       __imp__RetrieveViewForMetaList@12 1000c648     tzlodopr:tzlodopr.dll
+ 0004:0000064c       __imp__oTZ__PRFO_GetViewToProfile@16 1000c64c     tzlodopr:tzlodopr.dll
+ 0004:00000650       __imp__CreateTemporalMetaEntity@16 1000c650     tzlodopr:tzlodopr.dll
+ 0004:00000654       __imp__ComponentIsCheckedOut@12 1000c654     tzlodopr:tzlodopr.dll
+ 0004:00000658       __imp__SetTitleWithCheckOutState@24 1000c658     tzlodopr:tzlodopr.dll
+ 0004:0000065c       \177tzlodopr_NULL_THUNK_DATA 1000c65c     tzlodopr:tzlodopr.dll
+ 0004:00000694       __imp__zGetStringWithoutBlank@8 1000c694     tzvmlip:tzvmlip.dll
+ 0004:00000698       \177tzvmlip_NULL_THUNK_DATA 1000c698     tzvmlip:tzvmlip.dll
+
+ entry point at        0001:00004d10
+

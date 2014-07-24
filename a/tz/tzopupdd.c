@@ -612,7 +612,7 @@ zwTZOPUPDD_OpenOperation( zVIEW vSubtask )
    zVIEW vOperGrp;
    zVIEW vOperGrp2;
    zVIEW vMainWindow;
-   zCHAR szOperGroupName[ 9 ];
+   zCHAR szOperGroupName[ 33 ];
    zCHAR szOperName[ 33 ];
    zSHORT nRC;
 
@@ -1330,7 +1330,7 @@ zwTZOPUPDD_CheckGroupName( zVIEW  vSubtask,
                            zVIEW  vOperGrp,
                            zVIEW  vCM_ListGroup )
 {
-   zCHAR    szExecName[ 9 ];
+   zCHAR    szExecName[ 33 ];
    zSHORT   nRC;
 
    if ( szOperGrpName[ 0 ] == 0 )
@@ -1416,7 +1416,7 @@ zwTZOPUPDD_SaveOperationGroup( zVIEW vSubtask )
    zVIEW    vProfileXFER;
    zVIEW    vCM_ListGroup;
    zVIEW    vParentWindow;
-   zCHAR    szOperGrpName[ 9 ];
+   zCHAR    szOperGrpName[ 33 ];
    zCHAR    szControltext[ 4 ];
 
    // Commit the Operation Group to a file.  This would be done whether the
@@ -1915,7 +1915,7 @@ zwTZOPUPDD_MoveOperationPostBuil( zVIEW vSubtask )
    zVIEW  vTZOGSRCO;
    zVIEW  vMoveOperation;
    zCHAR  szOperationName[ 33 ];
-   zCHAR  szOperationGroup[9];
+   zCHAR  szOperationGroup[33];
    zCHAR  szType[ 4 ];
    zSHORT nRC = -1;
 
@@ -1972,7 +1972,7 @@ zwTZOPUPDD_MoveCheckGroupType( zVIEW  vSubtask,
    zCHAR    szMsg[ 100 ];
    zCHAR    szControltext[ 4 ];
    zCHAR    szLanguageType[ 4 ];
-   zCHAR    szGroupName[9];
+   zCHAR    szGroupName[33];
 
    GetViewByName( &vMoveOperation, "MoveOperation", vSubtask, zLEVEL_TASK );
    GetSubtaskForWindowName( vSubtask, &vWindow, "MoveOperation" );
@@ -2006,7 +2006,7 @@ zwTZOPUPDD_MoveCheckGroupType( zVIEW  vSubtask,
    if ( nCheckIdenticalGroup == 1 )
    {
       // if source and target group identical
-      GetCtrlText( vWindow, "txtOperationGroup", szGroupName, 9 );
+      GetCtrlText( vWindow, "txtOperationGroup", szGroupName, 33 );
       if ( CompareAttributeToString( vMoveOperation, "SourceFile", "Name",
                                      szGroupName ) == 0 )
       {
@@ -2087,7 +2087,7 @@ zwTZOPUPDD_MoveOperationToFile( zVIEW vSubtask )
    zVIEW  vDeleteOp;
    zVIEW  vTZOGSRCO;
    zVIEW  vWindow;
-   zCHAR  szGroupName[ 9 ];
+   zCHAR  szGroupName[ 33 ];
    zCHAR  szOperationName[ 33 ];
 
    // Move Operation Code to new Source File
@@ -2108,7 +2108,7 @@ zwTZOPUPDD_MoveOperationToFile( zVIEW vSubtask )
 
       // Create Source File
       CreateEntity( vDeleteOp, "SourceFile", zPOS_AFTER );
-      GetCtrlText( vWindow, "txtOperationGroup", szGroupName, 9 );
+      GetCtrlText( vWindow, "txtOperationGroup", szGroupName, 33 );
       SetCursorFirstEntityByString( vMoveOperation_Copy, "SourceFile", "Name",
                                     szGroupName, "" );
       SetMatchingAttributesByName( vDeleteOp, "SourceFile",
@@ -2370,7 +2370,7 @@ zwTZOPUPDD_SetSaveAsName( zVIEW vSubtask )
    zVIEW   vMoveOperation;
    zVIEW   vProfileXFER;
    zVIEW   vTZOGSRCO;
-   zCHAR   szGroupName[9];
+   zCHAR   szGroupName[33];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CMLIST", vSubtask, zLEVEL_TASK );
@@ -2429,7 +2429,7 @@ zwTZOPUPDD_SetGroupName( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vMoveOperation;
    zVIEW   vProfileXFER;
-   zCHAR   szGroupName[9];
+   zCHAR   szGroupName[33];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CMLIST", vSubtask, zLEVEL_TASK );
@@ -2469,7 +2469,7 @@ zwTZOPUPDD_SaveAsInNewGroup( zVIEW vSubtask )
    zVIEW  vCM_List_Copy;
    zCHAR  szOutName[ 33 ];
    zCHAR  szNewName[ 33 ];
-   zCHAR  szGroupName[9];
+   zCHAR  szGroupName[33];
    zCHAR  szMsg[ 100 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -2568,7 +2568,7 @@ zwTZOPUPDD_SaveAsCheckValues( zVIEW  vSubtask,
    GetSubtaskForWindowName( vSubtask, &vWindow, "SaveAs" );
 
    //Operation Group Name is required
-   GetCtrlText( vWindow, "txtOperationGroup", szGroupName, 9 );
+   GetCtrlText( vWindow, "txtOperationGroup", szGroupName, 33 );
    if ( zstrcmp( szGroupName, "" ) == 0 )
    {
       MessageSend( vSubtask, "ZO00137", "Operation Maintenance",
@@ -2677,7 +2677,7 @@ zwTZOPUPDD_SaveAsOperation( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vProfileXFER;
    zVIEW   vWindow;
-   zCHAR   szGroupName[9];
+   zCHAR   szGroupName[33];
    zCHAR   szOutName[ 33 ];
    zSHORT  nCopyCode = 0;
    zSHORT  nRC;
@@ -2757,7 +2757,7 @@ zwTZOPUPDD_SaveAsNewOperation( zVIEW  vSubtask,
    zVIEW   vCM_List;
    zVIEW   vCM_ListGroup;
    zVIEW   vMoveOperation;
-   zCHAR   szOperationGroup[9];
+   zCHAR   szOperationGroup[33];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
    GetViewByName( &vSource, "TZOGSRCO", vSubtask, zLEVEL_TASK );
@@ -2767,7 +2767,7 @@ zwTZOPUPDD_SaveAsNewOperation( zVIEW  vSubtask,
    if ( nCopyCode == 1 )
       zwTZOPUPDD_CopyOperationWorkLOD( vSubtask, vSource, 1 );
 
-   GetCtrlText( vSubtask, "txtOperationGroup", szOperationGroup, 9 );
+   GetCtrlText( vSubtask, "txtOperationGroup", szOperationGroup, 33 );
    SetCursorFirstEntityByString( vCM_ListGroup, "W_MetaDef", "Name",
                                  szOperationGroup, 0 );
 
@@ -3566,7 +3566,7 @@ zwTZOPUPDD_SaveAsRtnFromSubwnd( zVIEW vSubtask )
 {
    zVIEW    vProfileXFER;
    zVIEW    vMoveOperation;
-   zCHAR    szGroupName[9];
+   zCHAR    szGroupName[33];
    zCHAR    szLanguageType[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -3582,7 +3582,7 @@ zwTZOPUPDD_SaveAsRtnFromSubwnd( zVIEW vSubtask )
                            zOP_SaveAsOperation );
 
    // save GroupName for set cursor to selected Operation Group
-   GetCtrlText( vSubtask, "txtOperationGroup", szGroupName, 9 );
+   GetCtrlText( vSubtask, "txtOperationGroup", szGroupName, 33 );
    zwTZOPUPDD_CreateWorkLOD( vSubtask );
 
    GetViewByName( &vMoveOperation, "MoveOperation", vSubtask, zLEVEL_TASK );

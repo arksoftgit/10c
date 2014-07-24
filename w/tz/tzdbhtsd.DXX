@@ -1,0 +1,68 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzdbhtsd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzdbhtsd.dll
+
+           0 characteristics
+    5356CF71 time date stamp Tue Apr 22 16:22:09 2014
+        0.00 version
+           1 ordinal base
+          40 number of functions
+          40 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001041 _DBH_ActivateOI_FromXML@20
+          2    1 0000105F _DBH_WriteOI_ToXML@12
+          3    2 000010AA _EditApp_Prebuild@4
+          4    3 000010D7 _EditEntitySpec_Prebuild@4
+          5    4 00001055 _EditFile_Prebuild@4
+          6    5 00001046 _EditID_Clear@4
+          7    6 000010A0 _EditID_OK@4
+          8    7 00001028 _EditID_Prebuild@4
+          9    8 00001005 _EditLOD_Prebuild@4
+         10    9 00001064 _EditQualAttrib_Prebuild@4
+         11    A 00001037 _EditQual_Prebuild@4
+         12    B 0000103C _EditViewName_Prebuild@4
+         13    C 00001069 _GetDLL_Instance@4
+         14    D 0000108C _Include_IncludeSubobject@4
+         15    E 00001096 _Include_LinkSubobject@4
+         16    F 00001014 _Include_NextEntity1@4
+         17   10 00001019 _Include_NextEntity2@4
+         18   11 0000106E _Include_Prebuild@4
+         19   12 0000107D _Include_PrevEntity1@4
+         20   13 00001078 _Include_PrevEntity2@4
+         21   14 00001050 _Include_SelectEntity1@4
+         22   15 0000104B _Include_SelectEntity2@4
+         23   16 0000100A _Include_SelectView1@4
+         24   17 0000100F _Include_SelectView2@4
+         25   18 000010E6 _ParseAndExecute@4
+         26   19 000010C8 _ShowTrans_ExecuteTrans@4
+         27   1A 000010F5 _ShowTrans_Postbuild@4
+         28   1B 000010C3 _ShowTrans_RefreshArgs@4
+         29   1C 00001073 _TZDBHTSD_EditQualOI@4
+         30   1D 000010EB _TZDBHTSD_EnableControls@4
+         31   1E 00001091 _TZDBHTSD_Prebuild@4
+         32   1F 0000105A _TZDBHTSD_RefreshTrans@4
+         33   20 000010DC _TZDBHTSD_RefreshViewList@4
+         34   21 000010E1 _TZDBHTSD_SaveConfiguration@4
+         35   22 0000109B _TZDBHTSD_SetOptionsFromResultLst@4
+         36   23 000010B9 _Tester@4
+         37   24 000010B4 _fnGetTickCount@4
+         38   25 00001023 _zExecuteOperation@4
+         39   26 0000101E _zSetDBH_TraceLevel@4
+         40   27 00001087 _zStartBrowser@4
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        8000 .text

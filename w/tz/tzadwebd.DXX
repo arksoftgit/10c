@@ -1,0 +1,33 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzadwebd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzadwebd.dll
+
+           0 characteristics
+    52CD9618 time date stamp Wed Jan 08 13:16:56 2014
+        0.00 version
+           1 ordinal base
+           6 number of functions
+           6 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001023 _AUTODESIGN_Group@4
+          2    1 00001019 _GetDLL_Instance@4
+          3    2 0000101E _REMOVE_PotentialAttributes@4
+          4    3 00001005 _SELECT_PotentialAttributes@4
+          5    4 00001014 _SELECT_TopEntityForAutodesign@4
+          6    5 0000100F _SELECT_VOR_ForAutodesign@4
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        4000 .text

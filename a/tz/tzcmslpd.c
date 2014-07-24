@@ -181,7 +181,7 @@ zwTZCMSLPD_RebuildMetaLists( zVIEW vSubtask )
    zCHAR  szLPLR_FileSpec[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szDirectorySpec[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szLPLR_Name[ 33 ];
-   zCHAR  szLPLR_FileName[ 10 ];
+   zCHAR  szLPLR_FileName[ 33 ];
    zLONG  lTaskUseCnt;
    zLONG  lCurrentZKey;
    zLONG  lZKey;
@@ -225,8 +225,8 @@ zwTZCMSLPD_RebuildMetaLists( zVIEW vSubtask )
    GetStringFromAttribute( szDirectorySpec, vTZCMWKSO, "LPLR", "ExecDir" );  // borrow szDirectorySpec for a second
    SysConvertEnvironmentString( szLPLR_FileSpec, szDirectorySpec );
    ofnTZCMWKSO_AppendSlash( szLPLR_FileSpec );
-   zstrncpy( szLPLR_FileName, szLPLR_Name, 9 );
-   for ( nRC = 0; nRC < 8; nRC++ )
+   zstrncpy( szLPLR_FileName, szLPLR_Name, 33 );
+   for ( nRC = 0; nRC < 32; nRC++ )
    {
       if ( szLPLR_FileName[ nRC ] == 0 )
          break;

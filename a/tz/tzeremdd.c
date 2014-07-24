@@ -17,7 +17,7 @@
 // ENVIRONMENT:   Windows 3.1
 // REVISION:      10B    1995/08/05
 //
-// LAST MESSAGE ID: ER00200
+// LAST MESSAGE ID: ER00194
 //
 // HISTORY:
 //
@@ -564,8 +564,8 @@ zwTZEREMDD_InitTool2( zVIEW vSubtask )
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
 
    // Always have a Named List of EMD's (even though there can only be One!).
-   // This is done to be consistent with other dialogs.  The only time that
-   // the named List will not exist is during a SwitchLPLR.
+   // This is done to be consistent with other dialogs.  The only time the
+   // that the named List will not exist is during a SwithLPLR.
    // This fact is used a "flag" to the ReturnFromSubWnd logic.
    nRC = RetrieveViewForMetaList( vSubtask, &vT, zREFER_ERD_META );
    if ( vT )
@@ -3138,8 +3138,8 @@ zOPER_EXPORT zSHORT OPERATION
 zwTZEREMDD_ValidateEntity( zVIEW vSubtask )
 {
    zVIEW vTZEREMDO;
-   zCHAR szEntityName[ 33 ];
-   zCHAR szOutName[ 33 ];
+   zCHAR szEntityName[ 255 ];
+   zCHAR szOutName[ 255 ];
    zCHAR szMsg[ 256 ];
    zSHORT nRC;
 
@@ -3157,12 +3157,15 @@ zwTZEREMDD_ValidateEntity( zVIEW vSubtask )
 
    // Check TE Table Name
    GetStringFromAttribute( szEntityName, vTZEREMDO, "ER_Entity", "TE_TableName" );
-   UfCompressName( szEntityName, szOutName, 32, "", "", "", "", 0 );
+   //UfCompressName( szEntityName, szOutName, 32, "", "", "", "", 0 );
 
-   if ( zstrcmp( szOutName, "" ) == 0 )
+   //if ( zstrcmp( szOutName, "" ) == 0 )
+   if ( zstrcmp( szEntityName, "" ) == 0 )
    {
-     if (ComponentIsCheckedOut( vSubtask, vTZEREMDO, zSOURCE_ERD_META ))
-         SetAttributeFromString( vTZEREMDO, "ER_Entity", "TE_TableName", szOutName );
+     // The following lines were commented out by DonC on 7/11/2014 because check out is no longer being used and the operation
+     // code was somehow initializing the attribute to garbage values.
+     //if (ComponentIsCheckedOut( vSubtask, vTZEREMDO, zSOURCE_ERD_META ))
+     //    SetAttributeFromString( vTZEREMDO, "ER_Entity", "TE_TableName", szOutName );
    }
    else
 
@@ -5461,7 +5464,7 @@ zwTZEREMDD_SA_AskForSave( zVIEW vSubtask )
 {
    zVIEW  vTZERSASO;
    zVIEW  vSA;
-   zCHAR  szName[9];
+   zCHAR  szName[33];
    zCHAR  szMsg[ 254 ];
    zSHORT nRC;
 
@@ -5584,7 +5587,7 @@ zwTZEREMDD_CreateNewSA( zVIEW vSubtask )
    zVIEW vTZEREMDO;
    zSHORT nRC;
    zCHAR  szInName[ 120 ];
-   zCHAR  szOutName[9];
+   zCHAR  szOutName[33];
 
    // Get access to opened ER Model and error if a ER model is not opened
    nRC = GetViewByName( &vTZEREMDO, "TZEREMDO", vSubtask, zLEVEL_TASK );
@@ -6711,7 +6714,7 @@ zwTZEREMDD_AddAttrToIdentifier( zVIEW vSubtask )
    nRC = DeleteEntity( vTZERATLO, "ER_Attribute", zREPOS_NEXT );
 
    // Set Name if it is null from attribute just selected
-   GetCtrlText( vSubtask, "Name", szValue, 2 );
+   GetCtrlText( vSubtask, "Name", szValue, 2);
    if (szValue[ 0 ] == 0 )
    {
       GetAddrForAttribute( &szName, vTZEREMDO, "ER_AttributeIdentifier", "Name" );
@@ -8942,23 +8945,6 @@ zwTZEREMDD_CloseSA( zVIEW vSubtask )
    return( 0 );
 }
 
-
-zOPER_EXPORT zSHORT OPERATION
-AnalyzeERD_ZKeys( zVIEW vSubtask )
-{
-   // This routine executes the ERD object operation to check if there are
-   // duplicate ZKeys within the ERD object.
-
-   zVIEW  vERD;
-
-   // This routine prints a report on the current ERD in memory.
-
-   GetViewByName( &vERD, "TZEREMDO", vSubtask, zLEVEL_TASK );
-   oTZEREMDO_AnalyzeZKeys( vERD );
-
-   return( 0 );
-}
-
 zOPER_EXPORT zSHORT OPERATION
 zwTZEREMDD_SetDIL_Message( zVIEW vSubtask )
 {
@@ -9614,7 +9600,7 @@ zwTZEREMDD_SA_SetNewName( zVIEW vSubtask )
 {
    zVIEW  vTZERSFLO;
    zVIEW  vTZERSASO;
-   zCHAR  szSAName[9];
+   zCHAR  szSAName[33];
    zCHAR  szDescription[32000];
 
    GetViewByName( &vTZERSFLO, "TZERSFLO", vSubtask, zLEVEL_TASK );
@@ -9683,8 +9669,8 @@ zwTZEREMDD_SA_SaveAs( zVIEW vSubtask )
    zVIEW  vTZERSFLO;
    zVIEW  vTZERSASO_New;
    zVIEW  vSAView;
-   zCHAR  szNewName[9];
-   zCHAR  szOutName[9];
+   zCHAR  szNewName[33];
+   zCHAR  szOutName[33];
    zCHAR  szDescription[32000];
 
    // Validate Subject Area Name is OK
@@ -11640,996 +11626,46 @@ zwTZEREMDD_UnselectCompEntries( zVIEW vSubtask )
    return( 0 );
 } // zwTZEREMDD_UnselectCompEntries
 
-void
-fnCreateER_Entity( zVIEW vSubtask, zVIEW vTZEREMDO, zPCHAR pchEntityName, zSHORT nPosX, zSHORT nPosY, zSHORT nCol )
-{
-   zCHAR szEntityName[ 38 ];
-
-   if ( SetCursorFirstEntityByString( vTZEREMDO, "ER_Entity", "Name", szEntityName, 0 ) == zCURSOR_SET )
-   {
-      szEntityName[ 0 ] = 'h';
-      szEntityName[ 1 ] = '_';
-      zstrcpy( szEntityName + 2, pchEntityName );
-      szEntityName[ 32 ] = 0;
-      SysTranslateString( szEntityName, 'L' );
-      toupper( szEntityName[ 2 ] );
-   }
-   else
-   {
-      zstrcpy( szEntityName, pchEntityName );
-   }
-
-   TraceLineS( "Creating entity: ", szEntityName );
-   CreateMetaEntity( vSubtask, vTZEREMDO, "ER_Entity", zPOS_LAST );
-   SetAttributeFromString ( vTZEREMDO, "ER_Entity", "Desc", pchEntityName );
-   SetAttributeFromString ( vTZEREMDO, "ER_Entity", "Name", szEntityName );
-   SetAttributeFromInteger( vTZEREMDO, "ER_Entity", "ER_DiagramPosX", nPosX );
-   SetAttributeFromInteger( vTZEREMDO, "ER_Entity", "ER_DiagramPosY", nPosY );
-   SetAttributeFromString( vTZEREMDO, "ER_Entity", "Purpose", "F" );
-}
-
-void
-fnCreateER_Attribute( zVIEW vSubtask, zVIEW vTZEREMDO, zPCHAR pchAttributeName, zSHORT nType, zLONG lLth, zSHORT nNotNull,
-                      zPCHAR pchDefault, zPCHAR pchComment, zPCHAR pchEnum, zPCHAR pchFloat )
-{
-   zCHAR szMessage[ 256 ];
-   zVIEW vDomain;
-   zBOOL bUnsigned;
-
-   bUnsigned = nType & 256;
-   nType &= 255;
-   zstrcpy( szMessage, pchAttributeName );
-   zstrcat( szMessage, "  Type: " );
-   zstrcat( szMessage, nType == 1 ? "int" : nType == 2 ? "smallint" : nType == 3 ? "bigint" : nType == 4 ? "TEXT" : nType == 5 ? "char" : nType == 6 ? "varchar" : nType == 7 ? "DATE" :
-                       nType == 8 ? "time" : nType == 9 ? "datetime" : nType == 10 ? "timestamp" : nType == 11 ? "double" : nType == 12 ? "float" : nType == 13 ? "MEMO" : nType == 14 ? "longtext" : "tinyblob" );
-
-   if ( lLth > 0 )
-   {
-      zCHAR szLth[ 16 ];
-
-      zstrcat( szMessage, "[" );
-      zltoa( lLth, szLth );
-      zstrcat( szMessage, szLth );
-      zstrcat( szMessage, "] " );
-   }
-
-   zstrcat( szMessage, "  Null: " );
-   zstrcat( szMessage, nNotNull == 0 ? "" : nNotNull == 1 ? "NULL" : nNotNull == 3 ? "NOT NULL" : "not set" );
-   TraceLineS( "Creating attribute: ", szMessage );
-   
-   CreateMetaEntity( vSubtask, vTZEREMDO, "ER_Attribute", zPOS_AFTER );
-   SetAttributeFromString ( vTZEREMDO, "ER_Attribute", "Name", pchAttributeName );
-   SetAttributeFromString ( vTZEREMDO, "ER_Attribute", "Desc", pchComment );
-   if ( lLth )
-      SetAttributeFromInteger( vTZEREMDO, "ER_Attribute", "Lth", lLth );
-
-   SetAttributeFromString ( vTZEREMDO, "ER_Attribute", "NotNull", nNotNull == 3 ? "Y" : "N" );
-
-   if ( nType == 1 || nType == 2 || nType == 3 )
-      ActivateMetaOI_ByName( vSubtask, &vDomain, 0, zREFER_DOMAIN_META, zSINGLE | zLEVEL_APPLICATION, "Integer", zCURRENT_OI );
-   else
-   if ( nType == 7 || nType == 8 || nType == 9|| nType == 10 )
-      ActivateMetaOI_ByName( vSubtask, &vDomain, 0, zREFER_DOMAIN_META, zSINGLE | zLEVEL_APPLICATION, "DateTime", zCURRENT_OI );
-   else
-   if ( nType == 11 || nType == 12 )
-      ActivateMetaOI_ByName( vSubtask, &vDomain, 0, zREFER_DOMAIN_META, zSINGLE | zLEVEL_APPLICATION, "Decimal", zCURRENT_OI );
-   else
-   if ( nType == 13 )
-      ActivateMetaOI_ByName( vSubtask, &vDomain, 0, zREFER_DOMAIN_META, zSINGLE | zLEVEL_APPLICATION, "Note", zCURRENT_OI );
-   else
-      ActivateMetaOI_ByName( vSubtask, &vDomain, 0, zREFER_DOMAIN_META, zSINGLE | zLEVEL_APPLICATION, "Text", zCURRENT_OI );
-
-   IncludeSubobjectFromSubobject( vTZEREMDO, "Domain", vDomain, "Domain", zPOS_AFTER );
-   DropMetaOI( vSubtask, vDomain );
-}
-
-// Remove all comments ... return length if things are good, -1 if problems.
-zLONG
-fnStripComments( zPCHAR pchReturnLine, zVIEW vSubtask, zLONG hFile, zPLONG plLine, zLONG lMaxLth, zPCHAR pchReadLine )
-{
-   zLONG  lLth = 0;
-   zLONG  k = 0;
-   zSHORT nRC = 0;
-
-   while ( pchReadLine[ k ] )
-   {
-      if ( pchReadLine[ k ] == '/' )
-      {
-         if ( pchReadLine[ k + 1 ] == '/' )  // found an "end-of-line" comment
-         {
-            pchReturnLine[ lLth ] = 0;
-            return( lLth );  // everything is good
-         }
-         else
-         if ( pchReadLine[ k + 1 ] == '*' )  // found a multi-line comment
-         {
-            k += 2;
-            while ( pchReadLine[ k ] )
-            {
-               if ( pchReadLine[ k ] == '*' )
-               {
-                  if ( pchReadLine[ k + 1 ] == '/' )  // found end of multi-line comment
-                  {
-                     k += 2;
-                     break; // out of inner loop
-                  }
-               }
-
-               if ( pchReadLine[ k ] == 0 )
-               {
-                  nRC = SysReadLine( vSubtask, &pchReadLine, hFile );
-                  if ( nRC > 0 )
-                  {
-                     k = 0;
-                     (*plLine)++;
-                  }
-                  else
-                  {
-                     zCHAR szMessage[ 256 ];
-                     zCHAR szLineNbr[ 32 ];
-
-                     pchReturnLine[ lLth ] = 0;
-                     zstrcpy( szMessage, "Unable to locate terminating comment at line: " );
-                     zltoa( *plLine, szLineNbr );
-                     zstrcat( szMessage, szLineNbr );
-                     MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                     SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                     return( -1 );
-                  }
-               }
-               else
-               {
-                  k++;
-               }
-            }
-         }
-      }
-      else
-      if ( pchReadLine[ k ] == '-' )
-      {
-         if ( pchReadLine[ k + 1 ] == '-' )  // found an "end-of-line" comment
-         {
-            pchReturnLine[ lLth ] = 0;
-            return( lLth );  // everything is good
-         }
-      }
-
-      if ( lLth < lMaxLth )
-      {
-         pchReturnLine[ lLth++ ] = pchReadLine[ k++ ];
-      }
-      else
-      {
-         zCHAR szMessage[ 256 ];
-         zCHAR szLineNbr[ 32 ];
-
-         pchReturnLine[ lLth ] = 0;
-         zstrcpy( szMessage, "Maximum line length exceeded in DDL File at line: " );
-         zltoa( *plLine, szLineNbr );
-         zstrcat( szMessage, szLineNbr );
-         zstrcat( szMessage, "\n" );
-         MessageSend( vSubtask, "ER00195", szMessage, pchReadLine, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-         SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-         return( -1 );
-      }
-   }
-
-   pchReturnLine[ lLth ] = 0;
-   return lLth;  // everything is good
-}
-
-// Get the next line with data ... return 0 if no more data.
-zLONG
-fnGetNextLine( zPCHAR pchLine, zVIEW vSubtask, zLONG hFile, zLONG lMaxLth, zPLONG plLine )
-{
-   zCHAR szLineNbr[ 32 ];
-   zPCHAR pchReadLine;
-   zLONG  lLth;
-   zSHORT nRC;
-
-   nRC = SysReadLine( vSubtask, &pchReadLine, hFile );
-   while ( nRC > 0 )
-   {
-      (*plLine)++;
-      zsprintf( szLineNbr, " ~ %4d: ", *plLine );
-      TraceLineS( szLineNbr, pchReadLine );
-      lLth = fnStripComments( pchLine, vSubtask, hFile, plLine, lMaxLth, pchReadLine );
-      if ( lLth > 0 )
-      {
-         return( lLth );  // we've got data to process
-      }
-      else
-      if ( lLth == 0 )
-      {
-         nRC = SysReadLine( vSubtask, &pchReadLine, hFile );
-      }
-      else
-      {
-         nRC = 0;
-      }
-   }
-
-   pchLine[ 0 ] = 0;
-   return( 0 );  // we're done
-}
-
-/////////////////////////////////////////////////////////////////////////////
-//
-//    OPERATION: ImportDDL
-//
-/////////////////////////////////////////////////////////////////////////////
+/*************************************************************************************************
+**    
+**    OPERATION: zwTZEREMDD_AnalyzeDuplicateZKeys
+**    
+*************************************************************************************************/
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
-ImportDDL( zVIEW vSubtask )
+zwTZEREMDD_AnalyzeDuplicateZKeys( zVIEW vSubtask )
 {
-   zCHAR  szFileName[ zMAX_FILENAME_LTH ];
-// zCHAR  szDirectory[ zMAX_FILENAME_LTH ];
-   zCHAR  szMessage[ 256 ];
-   zCHAR  szLine[ 2048 ];
-   zCHAR  szLineNbr[ 16 ];
-   zCHAR  szTableColumnName[ 64 ];
-   zCHAR  szDefault[ 64 ];
-   zCHAR  szComment[ 256 ];
-   zCHAR  szEnum[ 256 ];
-   zCHAR  szFloat[ 32 ];
-   zCHAR  szBreakToken[ 2 ];
-   zPCHAR pchToken;
-   zPCHAR pchBreak;
-   zCHAR  chBreak;
-// zVIEW  vTaskLPLR;
-   zLONG  hFile;
-   zLONG  lLine;
-   zSHORT nState;
-   zSHORT nType = 0;
-   zSHORT k;
-   zLONG  lLth;
-   zSHORT nPrimaryKey = 0;
-   zSHORT nNotNull = 0;
-   zSHORT nOnUpdate = 0;
-   zLONG  lRC;
-   zVIEW  vTZEREMDO = 0;
-   zVIEW  vER_Temp = 0;
-   zVIEW  vDialog;
-   zBOOL  bDoingDefault = FALSE;
-   zBOOL  bDoingComment = FALSE;
-   zBOOL  bDoingEnum = FALSE;
-   zBOOL  bDoingFloat = FALSE;
-   zSHORT nPosX;
-   zSHORT nPosY;
-   zSHORT nCols;
-   zSHORT nRow;
-   zSHORT nCol;
+   zVIEW vTZEREMDO;
+   zVIEW vTaskLPLR;
 
-   GetCtrlText( vSubtask, "FileName", szFileName, zMAX_FILENAME_LTH );
-   GetCtrlText( vSubtask, "PosX", szLineNbr, 16 );
-   nPosX = (zSHORT) zatol( szLineNbr );
-   GetCtrlText( vSubtask, "PosY", szLineNbr, 16 );
-   nPosY = (zSHORT) zatol( szLineNbr );
-   GetCtrlText( vSubtask, "NbrCols", szLineNbr, 16 );
-   nCols = (zSHORT) zatol( szLineNbr );
+   // Refresh the hierarchical diagram.
 
-   if ( nPosX == 0 )
-      nPosX = 5;
-
-   if ( nPosY == 0 )
-      nPosY = 80;
-
-   if ( nCols == 0 )
-      nCols = 10;
-
-   nCol = 1;
-   nRow = nPosX;
-
-   // zstrcpy( szFileName, "m:\\Download\\HA\\HA2DEV.SQL" );
-   if ( szFileName[ 0 ] == 0 )
+   if ( GetViewByName( &vTZEREMDO, "TZEREMDO", vSubtask, zLEVEL_TASK ) == zLEVEL_TASK )
    {
-      MessageSend( vSubtask, "ER00195", "ER Data Model Maintenance", "File name containing DDL required", zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-      SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-      return( -1 );
-   }
-
-// GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
-// GetViewByName( &vTaskLPLR, "TZERMFLO", vSubtask, zLEVEL_TASK );
-// GetViewByName( &vTaskLPLR, "ZeidonCM", vSubtask, zLEVEL_APPLICATION ); 
-
-   // Get the current LPLR work directory.
-// GetApplDirectoryFromView( szDirectory, vTaskLPLR, zAPPL_DIR_LIB, zMAX_FILENAME_LTH );
-// zstrcat( szDirectory, szFileName );
-// 
-   TraceLineS( "Source File Name: ", szFileName );
-   hFile = SysOpenFile( vSubtask, szFileName, COREFILE_READ );
-   if ( hFile >= 0 )
-   {
-      // Do the work
-      GetViewByName( &vTZEREMDO, "TZEREMDO", vSubtask, zLEVEL_TASK );
-      CreateViewFromView( &vER_Temp, vTZEREMDO );
-      szDefault[ 0 ] = 0;
-      szComment[ 0 ] = 0;
-      szEnum[ 0 ] = 0;
-      szFloat[ 0 ] = 0;
-      lLine = 0;
-      nState = 0;
-
-      lRC = fnGetNextLine( szLine, vSubtask, hFile, sizeof( szLine ), &lLine );
-      while ( lRC > 0 )
+      GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+      
+      // Identify Entities that should not be part of duplicate check, since they are the same instances
+      // of other Entities in the object.
+      if ( CheckExistenceOfEntity( vTaskLPLR, "DuplicateCheckEntity" ) < 0 )
       {
-         // CREATE `TABLE` ADDRESS (
-         //    `ID`                 INTEGER            NOT NULL,
-         //    `NAME`               TEXT( 128 )        NOT NULL,
-         //    `SYSTEMREQUIRED`     TEXT( 1 )                   ) ;
-
-      // if ( lLine == 3430 )
-      //    TraceLineS( "", "" );
-
-         pchToken = strtok( szLine, " \t\r\n" );
-         while ( pchToken )
-         {
-            pchBreak = strpbrk( pchToken, "`'\",();=" );
-            if ( pchBreak )
-            {
-               chBreak = *pchBreak;
-               if ( pchBreak == pchToken )
-               {
-                  if ( ((bDoingEnum || bDoingFloat) && chBreak == '(') || (chBreak == '`' || chBreak == '"' || chBreak == '\'') )
-                  {
-                     if ( bDoingEnum|| bDoingFloat )
-                        chBreak = ')';
-
-                     // Get the table/column name or quoted data or enum values.
-                     pchBreak++;
-                     k = 0;
-                     while ( pchBreak && *pchBreak != chBreak )
-                     {
-                        if ( *pchBreak )
-                        {
-                           if ( bDoingDefault && k < sizeof( szDefault ) ) // looking for DEFAULT value
-                              szDefault[ k++ ] = *pchBreak;
-                           else
-                           if ( bDoingComment && k < sizeof( szComment ) ) // looking for COMMENT value
-                           {
-                              szComment[ k++ ] = *pchBreak;
-                              if ( chBreak == '\'' && pchBreak[ 1 ] == '\'' && pchBreak[ 2 ] == '\'' )
-                              {
-                                 pchBreak += 2;
-                                 szComment[ k++ ] = *pchBreak;
-                              }
-                           }
-                           else
-                           if ( bDoingEnum && k < sizeof( szEnum ) ) // looking for ENUM values
-                              szEnum[ k++ ] = *pchBreak;
-                           else
-                           if ( bDoingFloat && k < sizeof( szFloat ) ) // looking for FLOAT values
-                              szFloat[ k++ ] = *pchBreak;
-                           else
-                           if ( k < sizeof( szTableColumnName ) )
-                              szTableColumnName[ k++ ] = *pchBreak;
-
-                           pchBreak++;
-                        }
-                        else
-                        {
-                           if ( bDoingDefault ) // looking for DEFAULT value
-                              szDefault[ k++ ] = ' ';
-                           else
-                           if ( bDoingComment ) // looking for COMMENT value
-                              szComment[ k++ ] = ' ';
-                           else
-                           if ( bDoingEnum ) // looking for ENUM values
-                              szEnum[ k++ ] = ' ';
-                           else
-                           if ( bDoingFloat ) // looking for FLOAT values
-                              szFloat[ k++ ] = ' ';
-                           else
-                              szTableColumnName[ k++ ] = ' ';
-
-                           pchToken = strtok( 0, " \t\r\n" );
-                           if ( pchToken == 0 )
-                           {
-                              lRC = fnGetNextLine( szLine, vSubtask, hFile, sizeof( szLine ), &lLine );
-                              if ( lRC > 0 )
-                              {
-                                 pchToken = strtok( szLine, " \t\r\n" );
-                              }
-                           }
-
-                           pchBreak = pchToken;
-                        }
-                     }
-
-                     if ( pchBreak && *pchBreak == chBreak )
-                     {
-                        pchBreak++;
-                        if ( bDoingDefault ) // looking for DEFAULT value
-                        {
-                           szDefault[ k ] = 0;
-                           pchToken = szDefault;
-                           bDoingDefault = FALSE;
-                        }
-                        else
-                        if ( bDoingComment ) // looking for COMMENT value
-                        {
-                           szComment[ k ] = 0;
-                           pchToken = szComment;
-                           bDoingComment = FALSE;
-                        }
-                        else
-                        if ( bDoingEnum ) // looking for ENUM values
-                        {
-                           szEnum[ k ] = 0;
-                           pchToken = szEnum;
-                           bDoingEnum = FALSE;
-                        }
-                        else
-                        if ( bDoingFloat ) // looking for FLOAT values
-                        {
-                           szFloat[ k ] = 0;
-                           pchToken = szFloat;
-                           bDoingFloat = FALSE;
-                        }
-                        else
-                        {
-                           szTableColumnName[ k ] = 0;
-                           pchToken = szTableColumnName;
-                        }
-                     }
-                     else
-                     {
-                        zstrcpy( szMessage, "Invalid " );
-                        szMessage[ 8 ] = ' ';
-                        szMessage[ 9 ] = chBreak;
-                        zstrcpy( szMessage + 9, " at line: " );
-                        zltoa( lLine, szLineNbr );
-                        zstrcat( szMessage, szLineNbr );
-                        MessageSend( vSubtask, "ER00198", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                        SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                        return( -1 );
-                     }
-                  }
-                  else
-                  {
-                     szBreakToken[ 0 ] = chBreak;
-                     szBreakToken[ 1 ] = 0;
-                     pchBreak++;  // point to next token
-                     pchToken = szBreakToken;
-                  }
-               }
-               else
-               {
-                  *pchBreak = 0;
-               }
-            }
-            else
-            {
-               chBreak = 0;
-               if ( bDoingDefault )
-               {
-                  zstrcpy( szDefault, pchToken );
-                  bDoingDefault = FALSE;
-                  nState = 5;  // done with getting 'value' of default
-               }
-            }
-
-            do  // purist's goto
-            {
-               if ( nState == 0 )
-               {
-                  if ( zstrcmp( pchToken, "CREATE" ) == 0 )
-                  {
-                     nState = 1;   // found a CREATE ... now need to find a TABLE
-                     nPrimaryKey = 0;
-                     nNotNull = 0;
-                     nOnUpdate = 0;
-                     szDefault[ 0 ] = 0;
-                     szComment[ 0 ] = 0;
-                     bDoingDefault = FALSE;
-                     bDoingComment = FALSE;
-                     bDoingEnum = FALSE;
-                     bDoingFloat = FALSE;
-
-                  /* zstrcpy( szMessage, "Invalid CREATE at line: " );
-                     zltoa( lLine, szLineNbr );
-                     zstrcat( szMessage, szLineNbr );
-                     MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                     SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                     return( -1 );
-                  */
-                     break;  // out of: purist's goto
-                  }
-               }
-
-               if ( nState == 1 )
-               {
-               /* if ( nState > 1 )
-                  {
-                     zstrcpy( szMessage, "Invalid TABLE at line: " );
-                     zltoa( lLine, szLineNbr );
-                     zstrcat( szMessage, szLineNbr );
-                     MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                     SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                     return( -1 );
-                  }
-                  else
-               */
-                  if ( zstrcmp( pchToken, "TABLE" ) == 0 )
-                  {
-                     nState = 2;   // found a TABLE ... now need to find an open paren
-                  }
-                  else
-                  if ( zstrcmp( pchToken, ";" ) == 0 )
-                  {
-                     nState = 0;
-                  }
-
-                  break;  // out of: purist's goto
-               }
-
-               if ( nState >= 2 )
-               {
-                  if ( zstrcmp( pchToken, "(" ) == 0 )
-                  {
-                     if ( nState != 2 && nState != 5 && nPrimaryKey == 0 )
-                     {
-                        zstrcpy( szMessage, "Invalid OPEN PAREN at line: " );
-                        zltoa( lLine, szLineNbr );
-                        zstrcat( szMessage, szLineNbr );
-                        MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                        SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                        return( -1 );
-                     }
-
-                     nState++;   // found an OPEN PAREN ... now need to process attributes or process an attribute's length
-                     break;  // out of: purist's goto
-                  }
-
-                  if ( zstrcmp( pchToken, ";" ) == 0 )
-                  {
-                     nState = 0;
-                     break;  // out of: purist's goto
-                  }
-
-                  if ( zstrcmp( pchToken, ")" ) == 0 )
-                  {
-                     if ( nState == 5 )
-                     {
-                        if ( nPrimaryKey == 0 )
-                        {
-                           if ( szTableColumnName[ 0 ] )
-                           {
-                              fnCreateER_Attribute( vSubtask, vTZEREMDO, szTableColumnName, nType, lLth, nNotNull,
-                                                    szDefault, szComment, szEnum, szFloat );
-                              szTableColumnName[ 0 ] = 0;
-                              nPrimaryKey = 0;
-                              nNotNull = 0;
-                              nOnUpdate = 0;
-                              szDefault[ 0 ] = 0;
-                              szComment[ 0 ] = 0;
-                              szEnum[ 0 ] = 0;
-                              szFloat[ 0 ] = 0;
-                              bDoingDefault = FALSE;
-                              bDoingComment = FALSE;
-                              bDoingEnum = FALSE;
-                              bDoingFloat = FALSE;
-                           }
-                        }
-                        else
-                           nPrimaryKey = 0;
-
-                        szTableColumnName[ 0 ] = 0;
-                        nState = 1;
-                        break;  // out of: purist's goto
-                     }
-                     else
-                     if ( nState != 2 && nState != 7 && nPrimaryKey == 0)
-                     {
-                        zstrcpy( szMessage, "Invalid CLOSE PAREN at line: " );
-                        zltoa( lLine, szLineNbr );
-                        zstrcat( szMessage, szLineNbr );
-                        MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                        SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                        return( -1 );
-                     }
-                     else
-                     if ( nState >= 5 )
-                        nPrimaryKey = 0;
-
-                  // nState--;  // found a CLOSE PAREN ... now need to process attributes (if 2) or attribute length (if 7)
-
-                     if ( nState == 7 )
-                     {
-                        nState = 5;  // done with getting 'value' of property (like length or default or comment
-                     /* fnCreateER_Attribute( vSubtask, vTZEREMDO, szTableColumnName, nType, lLth, nNotNull,
-                                              szDefault, szComment, szEnum, szFloat );
-
-                        szTableColumnName[ 0 ] = 0;
-                        nPrimaryKey = 0;
-                        nNotNull = 0;
-                        nOnUpdate = 0;
-                        szDefault[ 0 ] = 0;
-                        szComment[ 0 ] = 0;
-                        szEnum[ 0 ] = 0;
-                        szFloat[ 0 ] = 0;
-                        bDoingDefault = FALSE;
-                        bDoingComment = FALSE;
-                        bDoingEnum = FALSE;
-                        bDoingFloat = FALSE;
-                     */
-                        break;  // out of: purist's goto
-                     }
-                  }
-
-                  if ( zstrcmp( pchToken, "," ) == 0 )
-                  {
-                     if ( nState && (nState == 2 || nState >= 5) )
-                     {
-                        if ( nPrimaryKey == 3 )
-                           nState = 6;
-                        else
-                        {
-                           if ( szTableColumnName[ 0 ] )
-                           {
-                              fnCreateER_Attribute( vSubtask, vTZEREMDO, szTableColumnName, nType, lLth, nNotNull,
-                                                    szDefault, szComment, szEnum, szFloat );
-                              szTableColumnName[ 0 ] = 0;
-                              nPrimaryKey = 0;
-                              nType = 0;
-                              lLth = 0;
-                              nNotNull = 0;
-                              szDefault[ 0 ] = 0;
-                              szComment[ 0 ] = 0;
-                              szEnum[ 0 ] = 0;
-                              szFloat[ 0 ] = 0;
-                              bDoingDefault = FALSE;
-                              bDoingComment = FALSE;
-                              bDoingEnum = FALSE;
-                              bDoingFloat = FALSE;
-                           }
-
-                           nState = 3;
-                        }
-
-                        break;  // out of: purist's goto
-                     }
-
-                     if ( nPrimaryKey == 0 )
-                     {
-                        zstrcpy( szMessage, "Invalid COMMA at line: " );
-                        zltoa( lLine, szLineNbr );
-                        zstrcat( szMessage, szLineNbr );
-                        MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                        SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                        return( -1 );
-                     }
-                  }
-
-                  if ( nState == 2 )
-                  {
-                     fnCreateER_Entity( vSubtask, vTZEREMDO, pchToken, nRow, nPosY, nCol );
-                     if ( nCol >= nCols )
-                     {
-                        nCol = 1;
-                        nRow = nPosX;
-                        nPosY += 15;
-                     }
-                     else
-                     {
-                        nCol++;
-                        nRow += 15;
-                     }
-
-                     nPrimaryKey = 0;
-                     nType = 0;
-                     lLth = 0;
-                     nNotNull = 0;
-                     szDefault[ 0 ] = 0;
-                     szComment[ 0 ] = 0;
-                     szEnum[ 0 ] = 0;
-                     szFloat[ 0 ] = 0;
-                     bDoingDefault = FALSE;
-                     bDoingComment = FALSE;
-                     bDoingEnum = FALSE;
-                     bDoingFloat = FALSE;
-                     break;  // out of: purist's goto
-                  }
-
-                  // Doing attribute.
-                  if ( nState == 3 )
-                  {
-                     if ( zstrcmp( pchToken, "PRIMARY" ) == 0 )
-                     {
-                        nPrimaryKey |= 1;
-                        if ( nPrimaryKey == 3 )
-                           nState = 5;
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "KEY" ) == 0 )
-                     {
-                        nPrimaryKey |= 2;
-                        if ( nPrimaryKey == 3 )
-                           nState = 5;
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "UNIQUE" ) == 0 )
-                     {
-                        // nothing to do at this point
-                     }
-                     else
-                    if ( nPrimaryKey == 0 )
-                     {
-                        if ( pchToken != szTableColumnName )
-                           zstrcpy( szTableColumnName, pchToken );
-
-                     // pchToken = strtok( NULL, " \t\r\n" );
-                        nState = 4;
-                        nType = 0;  // unknown type
-                        lLth = 0;
-                        nNotNull = 0;  // unknown notnull
-                     }
-
-                     break;  // out of: purist's goto
-                  }
-
-                  // Doing attribute type:
-                  //    ID                 INTEGER            NOT NULL,   1 
-                  //    ID                 int                NOT NULL,   2 
-                  //    DESCRIPTION        TEXT( 128 )                ,   3 
-                  //    DESCRIPTION        varchar( 128 )     NULL    ,   4 
-                  //    CREATEDDATETIME    DATE                       ,   5 
-                  //    CREATEDDATETIME    datetime           NULL    ,   6 
-                  //    HEIGHT             DOUBLE                     ,   7 
-                  //    HEIGHT             double             NULL    ,   8 
-                  //    COMMENT            MEMO                       ,   9 
-                  //    COMMENT            longtext           NULL    ,  10
-
-                  if ( nState == 4 )
-                  {
-                     if ( zstrcmp( pchToken, "INTEGER" ) == 0 || zstrcmp( pchToken, "int" ) == 0 )
-                     {
-                        nType |= 1;  // integer type (no length)
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "smallint" ) == 0 || zstrcmp( pchToken, "tinyint" ) == 0 )
-                     {
-                        nType |= 2;  // integer type (no length for smallint)
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "bigint" ) == 0 )
-                     {
-                        nType |= 3;  // integer type (with length)
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "TEXT" ) == 0 || zstrcmp( pchToken, "text" ) == 0 )
-                     {
-                        nType |= 4;
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "char" ) == 0 )
-                     {
-                        nType |= 5;
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "varchar" ) == 0 )
-                     {
-                        nType |= 6;
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "DATE" ) == 0 || zstrcmp( pchToken, "date" ) == 0 )
-                     {
-                        nType |= 7;  // no length
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "TIME" ) == 0 || zstrcmp( pchToken, "time" ) == 0 )
-                     {
-                        nType |= 8;  // no length
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "DATETIME" ) == 0 || zstrcmp( pchToken, "datetime" ) == 0 )
-                     {
-                        nType |= 9;  // no length
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "TIMESTAMP" ) == 0 || zstrcmp( pchToken, "timestamp" ) == 0 )
-                     {
-                        nType |= 10;  // no length
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "DOUBLE" ) == 0 || zstrcmp( pchToken, "double" ) == 0 )
-                     {
-                        nType |= 11;  // double type (no length)
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "float" ) == 0 )
-                     {
-                        nType |= 12;  // double type (with length, precision)
-                        bDoingFloat = TRUE;
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "MEMO" ) == 0 )
-                     {
-                        nType |= 13;  // big text type (no length)
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "longtext" ) == 0 )
-                     {
-                        nType |= 14;  // big text type (no length)
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "tinyblob" ) == 0 )
-                     {
-                        nType |= 15;  // big text type (no length)
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "enum" ) == 0 )
-                     {
-                        nType |= 16;  // enumerated list
-                        bDoingEnum = TRUE;
-                     }
-                     else
-                     if ( nPrimaryKey )
-                        break;
-                     else
-                     {
-                        zstrcpy( szMessage, "Unknown attribute type at line: " );
-                        zltoa( lLine, szLineNbr );
-                        zstrcat( szMessage, szLineNbr );
-                        MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                        SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                        return( -1 );
-                     }
-
-                     // ID           int                NOT NULL,
-                     // DESCRIPTION  varchar( 128 )     NULL    );
-
-                     nState = 5;
-                     break;  // out of: purist's goto
-                  }
-
-                  // Finding length of the attribute
-                  if ( nState == 5 )
-                  {
-                     if ( zstrcmp( pchToken, "(" ) == 0 )
-                     {
-                        nState = 6;
-                        break;  // out of: purist's goto
-                     }
-                  }
-
-                  if ( nState == 6 )
-                  {
-                     if ( nPrimaryKey == 3 )
-                     {
-                        SetViewFromView( vER_Temp, vTZEREMDO );
-                        if ( SetCursorFirstEntityByString( vER_Temp, "ER_Attribute", "Name", pchToken, 0 ) == zCURSOR_SET )
-                        {
-                           TraceLineS( "Found Primary Key: ", pchToken );
-                           SetAttributeFromString( vER_Temp, "ER_Attribute", "Key", "Y" );
-                           if ( pchToken == szTableColumnName )
-                              szTableColumnName[ 0 ] = 0;
-
-                        // nPrimaryKey = 0; cannot do this here since there may be multiple primary keys
-                        }
-                        else
-                        {
-                           DisplayObjectInstance( vTZEREMDO, "ER_Entity", "ER_Entity" );
-                           zstrcpy( szMessage, "Primary Key attribute cannot be found (" );
-                           zstrcat( szMessage, pchToken );
-                           zstrcat( szMessage, ") at line: " );
-                           zltoa( lLine, szLineNbr );
-                           zstrcat( szMessage, szLineNbr );
-                           MessageSend( vSubtask, "ER00199", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                           SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                           return( -1 );
-                        }
-                     }
-                     else
-                     {
-                        lLth = zatol( pchToken );
-                     }
-
-                     nState = 7;
-                     break;  // out of: purist's goto
-                  }
-
-                  if ( nState > 2 )
-                  {
-                     if ( zstrcmp( pchToken, "NULL" ) == 0 )
-                     {
-                        nNotNull |= 1;
-                        break;  // out of: purist's goto
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "NOT" ) == 0 )
-                     {
-                        nNotNull |= 2;
-                        break;  // out of: purist's goto
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "DEFAULT" ) == 0 )
-                     {
-                        bDoingDefault = TRUE;
-                        break;  // out of: purist's goto
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "COMMENT" ) == 0 )
-                     {
-                        bDoingComment = TRUE;
-                        break;  // out of: purist's goto
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "ON" ) == 0 )
-                     {
-                        nOnUpdate |= 1;
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "UPDATE" ) == 0 )
-                     {
-                        nOnUpdate |= 2;
-                     }
-                     else
-                      if ( zstrcmp( pchToken, "AUTO_INCREMENT" ) == 0 )
-                     {
-                        nNotNull |= 128;
-                        break;  // out of: purist's goto
-                     }
-                     else
-                     if ( zstrcmp( pchToken, "unsigned" ) == 0 )
-                     {
-                        nType |= 256;
-                        break;  // out of: purist's goto
-                     }
-                  }
-
-                  if ( nState < 3 )
-                  {
-                     zstrcpy( szMessage, "Invalid data (expecting attribute) at line: " );
-                     zltoa( lLine, szLineNbr );
-                     zstrcat( szMessage, szLineNbr );
-                     MessageSend( vSubtask, "ER00196", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-                     SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-                     return( -1 );
-                  }
-               }
-            } while ( FALSE );  // end of: purist's goto
-
-            if ( chBreak )
-            {
-               if ( pchToken != szBreakToken )
-               {
-                  if ( chBreak != '`' && chBreak != '"' && chBreak != '\'' )
-                     *pchBreak = chBreak;
-               }
-
-               pchToken = pchBreak;
-               chBreak = 0;
-               if ( *pchToken )
-                  continue;
-            }
-
-            pchToken = strtok( 0, " \t\r\n" );
-         }
-
-         if ( lRC > 0 && pchToken == 0 )
-         {
-            lRC = fnGetNextLine( szLine, vSubtask, hFile, sizeof( szLine ), &lLine );
-         }
+         // No Duplicate Entities have not been defined for a LOD, so do it.
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "ER_Entity" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "ER_Attribute" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "ER_RelLink" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "ER_EntIdentifier" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "ER_RelType" );
       }
-
-
-      SysCloseFile( vSubtask, hFile, 0 );
+      
+      // Go to check for duplicates.
+      oTZCMLPLO_CheckOI_ForDupZKey( vTaskLPLR, vTZEREMDO, "EntpER_Model" );
    }
-   else
-   {
-      zstrcpy( szMessage, "Unable to open file: " );
-      zstrcat( szMessage, szFileName );
-      MessageSend( vSubtask, "ER00200", "ER Data Model Maintenance", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-      SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
-      return( -1 );
-   }
-
-   GetViewByName( &vDialog, "TZEREMDD", vSubtask, zLEVEL_TASK );
-   if ( vDialog )
-      RefreshEntity( vDialog, "ERD" );
 
    return( 0 );
-} // zwTZEREMDD_UnselectCompEntries
+} // zwTZEREMDD_AnalyzeDuplicateZKeys
 
 
 #ifdef __cplusplus

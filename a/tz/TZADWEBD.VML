@@ -1,0 +1,571 @@
+
+/*************************************************************************************************
+**    
+**    OPERATION: SELECT_VOR_ForAutodesign
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+SELECT_VOR_ForAutodesign( VIEW ViewToWindow )
+
+   VIEW SelectedLOD BASED ON LOD TZZOLODO
+   VIEW TZWINDOWL   BASED ON LOD TZWDLGSO
+   VIEW TZADCSDO    BASED ON LOD TZADCSDO
+   SHORT nRC
+   
+   // For the selected view, initialie a UI Spec for and create the list of selectable entities.
+   GET VIEW TZWINDOWL NAMED "TZWINDOWL"
+   nRC = ActivateMetaOI_ByZKey( ViewToWindow, SelectedLOD, 0, zREFER_LOD_META, zSINGLE, TZWINDOWL.LOD.ZKey, 0 )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Autodesign Window Group",
+                   "The Lod Object could not be read.", 
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      RETURN -2
+   END
+   NAME VIEW SelectedLOD "AutodesignSelectedLOD"
+   
+   ActivateEmptyMetaOI( ViewToWindow, TZADCSDO, zSOURCE_UIS_META, zSINGLE )
+   NAME VIEW TZADCSDO "TZADCSDO"
+   CREATE ENTITY TZADCSDO.UI_Spec  
+   
+   // Clear any existing selections.
+   IF TZADCSDO.FlatListSelectedEntity EXISTS
+      DELETE ENTITY TZADCSDO.FlatListSelectedEntity  
+   END
+   FOR EACH TZADCSDO.FlatListPotentialAttribute 
+      DELETE ENTITY TZADCSDO.FlatListPotentialAttribute NONE 
+   END
+   FOR EACH TZADCSDO.FlatListSelectedAttribute 
+      DELETE ENTITY TZADCSDO.FlatListSelectedAttribute NONE 
+   END
+   
+   // Build Potential Flat List of entities.
+   FOR EACH SelectedLOD.LOD_Entity 
+      CREATE ENTITY TZADCSDO.FlatListPotentialTopEntity 
+      SetMatchingAttributesByName( TZADCSDO, "FlatListPotentialTopEntity", SelectedLOD, "LOD_Entity", zSET_ALL ) 
+   END
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: SELECT_TopEntityForAutodesign
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+SELECT_TopEntityForAutodesign( VIEW ViewToWindow )
+
+   VIEW TZADCSDO    REGISTERED AS TZADCSDO
+   VIEW SelectedLOD BASED ON LOD  TZZOLODO
+   STRING ( 32 ) szTopEntityName
+   SHORT         ReturnedLevel
+   SHORT         nRC
+
+   // Create a new selected Entity.
+   IF TZADCSDO.FlatListSelectedEntity EXISTS
+      DELETE ENTITY TZADCSDO.FlatListSelectedEntity  
+   END
+   CREATE ENTITY TZADCSDO.FlatListSelectedEntity 
+   SetMatchingAttributesByName( TZADCSDO, "FlatListSelectedEntity", TZADCSDO, "FlatListPotentialTopEntity", zSET_ALL ) 
+   
+   // Clear any existing selections.
+   FOR EACH TZADCSDO.FlatListPotentialAttribute 
+      DELETE ENTITY TZADCSDO.FlatListPotentialAttribute NONE 
+   END
+   FOR EACH TZADCSDO.FlatListSelectedAttribute 
+      DELETE ENTITY TZADCSDO.FlatListSelectedAttribute NONE 
+   END
+   
+   // Build list of potential attributes to be selected. This will contain all subobject entities/attributes for
+   // the selected Top Entity.
+   GET VIEW SelectedLOD NAMED "AutodesignSelectedLOD"
+   SET CURSOR FIRST SelectedLOD.LOD_EntityParent 
+   szTopEntityName = TZADCSDO.FlatListSelectedEntity.Name 
+   LocateTopEntityRecurs( TZADCSDO, SelectedLOD, szTopEntityName ) 
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: LocateTopEntityRecurs
+**    
+*************************************************************************************************/
+LOCAL OPERATION
+LocateTopEntityRecurs( VIEW TZADCSDO    BASED ON LOD TZADCSDO,
+                       VIEW SelectedLOD BASED ON LOD TZZOLODO,
+                       STRING ( 32 ) szTopEntityName )
+
+   // Search each LOD_EntityParent recursively until the entity identified by TopEntityName is located.
+   // Then process that subobject to create the FlatListPotentialAttribute entries in TZADCSDO.
+   FOR EACH SelectedLOD.LOD_EntityParent 
+      IF SelectedLOD.LOD_EntityParent.Name = szTopEntityName
+         // We've got a match on Top Entity, so go to process the subobject creating FlatListPotentialAttribute entries.
+         BuildAutodesignGroupPotList( TZADCSDO, SelectedLOD )
+      ELSE
+         // This isn't a match on Top Entity, so continue recursive search.
+         SetViewToSubobject( SelectedLOD, "LOD_EntityChild" )
+         LocateTopEntityRecurs( TZADCSDO, SelectedLOD, szTopEntityName )
+         ResetViewFromSubobject( SelectedLOD )
+      END
+   END
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: BuildAutodesignGroupPotList
+**    
+*************************************************************************************************/
+LOCAL OPERATION
+BuildAutodesignGroupPotList( VIEW TZADCSDO    BASED ON LOD TZADCSDO,
+                             VIEW SelectedLOD BASED ON LOD TZZOLODO )
+
+   STRING ( 32 ) szAttributeName
+   STRING ( 32 ) szDomainName
+
+   // Build the FlatListPotentialAttribute entries from the subobject starting with LOD_EntityParent.
+   CREATE ENTITY TZADCSDO.FlatListPotentialAttribute 
+   TZADCSDO.FlatListPotentialAttribute.EntityName       = SelectedLOD.LOD_EntityParent.Name 
+   TZADCSDO.FlatListPotentialAttribute.IndentEntityName = SelectedLOD.LOD_EntityParent.IndentName 
+   SetMatchingAttributesByName( TZADCSDO, "FlatListPotentialAttribute", SelectedLOD, "LOD_EntityParent", zSET_ALL ) 
+   
+   FOR EACH SelectedLOD.LOD_AttributeRec 
+      CREATE ENTITY TZADCSDO.FlatListPotentialAttribute 
+      szAttributeName = SelectedLOD.ER_AttributeRec.Name 
+      szDomainName    = SelectedLOD.DomainRec.Name
+      SetMatchingAttributesByName( TZADCSDO, "FlatListPotentialAttribute", SelectedLOD, "LOD_EntityParent", zSET_ALL ) 
+      TZADCSDO.FlatListPotentialAttribute.EntityName    = SelectedLOD.LOD_EntityParent.Name
+      TZADCSDO.FlatListPotentialAttribute.AttributeName = szAttributeName
+      
+      // Create Control Type based on Update characteristic of Entity and Domain.
+      // A Domain of Y/N will create a Checkbox even if the entity is not updatable.
+      IF SelectedLOD.DomainRec.Name = "Y/N" 
+         // Domain is Y/N.
+         TZADCSDO.FlatListPotentialAttribute.ControlType   = "Checkbox"
+      ELSE
+         IF TZADCSDO.FlatListPotentialTopEntity.Update = "Y"
+            IF SelectedLOD.DomainRec.Name = "Date" OR SelectedLOD.DomainRec.Name = "DateTime" 
+               // A Domain of Date will make the control a Calendar.
+               TZADCSDO.FlatListPotentialAttribute.ControlType   = "Calendar"
+            ELSE
+               IF SelectedLOD.DomainRec.DomainType = "T"
+                  // The Domain is a table, so make control a Combobox.
+                  TZADCSDO.FlatListPotentialAttribute.ControlType   = "Combobox"
+               ELSE
+                  // If not a table, make control an Editbox.
+                  TZADCSDO.FlatListPotentialAttribute.ControlType   = "Editbox"
+               END
+            END
+         ELSE
+            // The entity is not updatable, so Control Type is "Text"
+            TZADCSDO.FlatListPotentialAttribute.ControlType   = "Text"
+         END
+      END
+      
+      // The Control Width of each Attribute will depend on Domain Type, as follows.
+      IF SelectedLOD.DomainRec.DataType = "S"
+         // String length is just length of Domain or Attribute.
+         IF SelectedLOD.ER_AttributeRec.Lth = ""
+            TZADCSDO.FlatListPotentialAttribute.ControlWidth = SelectedLOD.DomainRec.MaxStringLth 
+         ELSE
+            TZADCSDO.FlatListPotentialAttribute.ControlWidth = SelectedLOD.ER_AttributeRec.Lth 
+         END
+      ELSE 
+      IF SelectedLOD.DomainRec.DataType = "L" OR SelectedLOD.DomainRec.DataType = "M"
+         // Integer or Decimal length is 8.
+         TZADCSDO.FlatListPotentialAttribute.ControlWidth = 8
+      ELSE
+      IF SelectedLOD.DomainRec.DataType = "D" OR SelectedLOD.DomainRec.DataType = "T" OR SelectedLOD.DomainRec.DataType = "I"
+         // Date, DateTime or Time length is 10.
+         TZADCSDO.FlatListPotentialAttribute.ControlWidth = 10
+      ELSE 
+         // Anything else is 10.
+         TZADCSDO.FlatListPotentialAttribute.ControlWidth = 10
+      END
+      END
+      END
+   END
+   
+   // Process subentities.
+   FOR EACH SelectedLOD.LOD_EntityChild 
+      SetViewToSubobject( SelectedLOD, "LOD_EntityChild" )
+      BuildAutodesignGroupPotList( TZADCSDO, SelectedLOD )
+      ResetViewFromSubobject( SelectedLOD )
+   END
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: SELECT_PotentialAttributes
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+SELECT_PotentialAttributes( VIEW ViewToWindow )
+
+   VIEW TZADCSDO  REGISTERED AS TZADCSDO
+   VIEW TZADCSDO2 BASED ON LOD TZADCSDO
+   STRING ( 1 ) szCreateEntityOnlyEntry
+   SHORT nRC
+   
+   // First make sure that any currently Selected entry is selected on the Potential side, because we are going to
+   // delete Selected entries and recreate them.
+   FOR EACH TZADCSDO.FlatListSelectedAttribute 
+      SET CURSOR FIRST TZADCSDO.FlatListPotentialAttribute 
+                 WHERE TZADCSDO.FlatListPotentialAttribute.EntityName    = TZADCSDO.FlatListSelectedAttribute.EntityName 
+                   AND TZADCSDO.FlatListPotentialAttribute.AttributeName = TZADCSDO.FlatListSelectedAttribute.AttributeName 
+      SetSelectStateOfEntity( TZADCSDO, "FlatListPotentialAttribute", 1 )
+      DELETE ENTITY TZADCSDO.FlatListSelectedAttribute NONE 
+   END
+   
+   // Copy selected attributes from FlatListPotentialAttribute entries to FlatListSelectedAttribute entries.
+   CreateViewFromView( TZADCSDO2, TZADCSDO )
+   FOR EACH TZADCSDO.FlatListPotentialAttribute 
+      nRC = GetSelectStateOfEntity( TZADCSDO, "FlatListPotentialAttribute" )
+      IF nRC = 1 AND TZADCSDO.FlatListPotentialAttribute.AttributeName != ""   // We will skip Entity only entries, since that 
+                                                                               // simplifies the logic below.
+         // Make sure that there is a current "Entity only" entry.
+         szCreateEntityOnlyEntry = ""
+         IF TZADCSDO.FlatListSelectedAttribute DOES NOT EXIST
+            szCreateEntityOnlyEntry = "Y"
+         ELSE
+            IF TZADCSDO.FlatListSelectedAttribute.EntityName != TZADCSDO.FlatListPotentialAttribute.EntityName 
+               szCreateEntityOnlyEntry = "Y"
+            END
+         END
+         IF szCreateEntityOnlyEntry = "Y"
+            CREATE ENTITY TZADCSDO.FlatListSelectedAttribute
+            SetMatchingAttributesByName( TZADCSDO, "FlatListSelectedAttribute", TZADCSDO, "FlatListPotentialAttribute", zSET_ALL )
+            TZADCSDO.FlatListSelectedAttribute.AttributeName = ""    // Indicate this is not an Attribute entry.
+            TZADCSDO.FlatListSelectedAttribute.ControlType   = ""
+            // Get Indented Name from the Entity only entry.
+            SET CURSOR FIRST TZADCSDO2.FlatListPotentialAttribute 
+                       WHERE TZADCSDO2.FlatListPotentialAttribute.EntityName = TZADCSDO.FlatListPotentialAttribute.EntityName 
+                         AND TZADCSDO2.FlatListPotentialAttribute.IndentEntityName != "" 
+            TZADCSDO.FlatListSelectedAttribute.IndentEntityName = TZADCSDO2.FlatListPotentialAttribute.IndentEntityName 
+         END
+         CREATE ENTITY TZADCSDO.FlatListSelectedAttribute
+         SetMatchingAttributesByName( TZADCSDO, "FlatListSelectedAttribute", TZADCSDO, "FlatListPotentialAttribute", zSET_ALL )
+         SetSelectStateOfEntity( TZADCSDO, "FlatListPotentialAttribute", 0 ) 
+      END
+   END
+   DropView( TZADCSDO2 )
+   
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: REMOVE_PotentialAttributes
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+REMOVE_PotentialAttributes( VIEW ViewToWindow )
+
+   VIEW TZADCSDO  REGISTERED AS TZADCSDO
+   VIEW TZADCSDO2 BASED ON LOD TZADCSDO
+   STRING ( 1 ) szCreateEntityOnlyEntry
+   SHORT nRC
+   
+   // Remove any selected Selected entries.
+   FOR EACH TZADCSDO.FlatListSelectedAttribute 
+      nRC = GetSelectStateOfEntity( TZADCSDO, "FlatListSelectedAttribute" )
+      IF nRC = 1
+         DELETE ENTITY TZADCSDO.FlatListSelectedAttribute NONE 
+      END
+   END
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: AUTODESIGN_Group
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+AUTODESIGN_Group( VIEW ViewToWindow )
+
+   VIEW TZADCSDO    BASED ON LOD  TZADCSDO
+   VIEW TZWINDOWL   BASED ON LOD  TZWDLGSO
+   VIEW TZCONTROL   BASED ON LOD  TZWDLGSO
+   VIEW SelectedLOD BASED ON LOD  TZZOLODO
+   STRING ( 32 ) szTag
+   SHORT nRC
+   
+   // Make sure that at least one attribute has been selected.
+   GET VIEW TZADCSDO NAMED "TZADCSDO"
+   IF RESULT < 0
+      MessageSend( ViewToWindow, "", "Autodesign Window Group",
+                   "At least one Attribute must be selected.", 
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -2
+   END
+   SET CURSOR FIRST TZADCSDO.FlatListSelectedAttribute WHERE TZADCSDO.FlatListSelectedAttribute.AttributeName != ""
+   IF RESULT < zCURSOR_SET
+      MessageSend( ViewToWindow, "", "Autodesign Window Group",
+                   "At least one Attribute must be selected.", 
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -2
+   END 
+   
+   // Build the grid or group of Text, Editbox, Checkbox, Calendar or Combobox controls depending
+   // on the value of WebAutodesignGroupType.
+   GET VIEW TZWINDOWL NAMED "TZWINDOWL"
+   GET VIEW TZCONTROL NAMED "TZCONTROL"
+   GET VIEW SelectedLOD NAMED "AutodesignSelectedLOD"
+   AcceptSubobject( TZCONTROL, "Control" )
+   
+   IF TZADCSDO.UI_Spec.WebAutodesignGroupType = "D"
+      // Go to build a Grid control for display only based on the specifications of FlatListSelectedAttribute.
+      AutodesignGridCtrl( TZADCSDO, TZWINDOWL, TZCONTROL, SelectedLOD, "D" )
+      szTag = TZWINDOWL.Window.Tag 
+      fnPainterCall( 8, ViewToWindow, 0, szTag )
+   ELSE
+      IF TZADCSDO.UI_Spec.WebAutodesignGroupType = "U"
+         // Go to build a Grid control for update based on the specifications of FlatListSelectedAttribute.
+         AutodesignGridCtrl( TZADCSDO, TZWINDOWL, TZCONTROL, SelectedLOD, "U" )
+         szTag = TZWINDOWL.Window.Tag 
+         fnPainterCall( 8, ViewToWindow, 0, szTag )
+      ELSE
+         // Go to build a group of update controls based on the specifications of FlatListSelectedAttribute.
+         AutodesignUpdateCtrls( TZADCSDO, TZWINDOWL, TZCONTROL, SelectedLOD )
+         szTag = TZWINDOWL.Window.Tag 
+         fnPainterCall( 8, ViewToWindow, 0, szTag )
+      END
+   END
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: AutodesignGridCtrl
+**    
+*************************************************************************************************/
+LOCAL OPERATION
+AutodesignGridCtrl( VIEW TZADCSDO    BASED ON LOD TZADCSDO,
+                    VIEW TZWINDOWL   BASED ON LOD TZWDLGSO,
+                    VIEW TZCONTROL   BASED ON LOD TZWDLGSO,
+                    VIEW SelectedLOD BASED ON LOD TZZOLODO,
+                    STRING ( 1 ) szDisplayUpdateFlag )
+
+   VIEW TZPESRCO BASED ON LOD TZPESRCO
+   INTEGER lGridWidth
+   INTEGER lControlWidthChars
+   INTEGER lControlWidth
+   INTEGER lControlPosition
+   INTEGER lTotalAttributeWidthsLT10
+   INTEGER lTotalAttributeWidthsGT10
+   INTEGER lWidth
+   STRING ( 50 ) szPromptText
+   STRING ( 32 ) szAttributeName
+   STRING ( 20 ) szControlType
+
+   // Build a Grid control, with a subentity for each FlatListSelectedAttribute entry.
+   SET CURSOR FIRST TZADCSDO.FlatListSelectedAttribute  
+   GET VIEW TZPESRCO NAMED "TZPESRCO"
+   SET CURSOR FIRST TZPESRCO.ControlDef WHERE TZPESRCO.ControlDef.Tag = "Grid" 
+   CreateMetaEntity( TZWINDOWL, TZCONTROL, "CtrlCtrl", zPOS_AFTER )
+   SetViewToSubobject( TZCONTROL, "CtrlCtrl" )
+   INCLUDE TZCONTROL.ControlDef FROM TZPESRCO.ControlDef 
+   TZCONTROL.Control.Tag = "Grid" + TZADCSDO.FlatListSelectedAttribute.EntityName 
+   TZCONTROL.Control.SyncKey = 9999
+   
+   // Position and Size will be intially set from constants.
+   TZCONTROL.Control.PSDLG_X = 5
+   TZCONTROL.Control.PSDLG_Y = 5
+   TZCONTROL.Control.SZDLG_X = 410
+   TZCONTROL.Control.SZDLG_Y = 27
+   
+   // Build CtrlMap subobject for list entity, which is first entity in FlatListSelectedAttribute.
+   CreateMetaEntity( TZWINDOWL, TZCONTROL, "CtrlMap", zPOS_AFTER )
+   SET CURSOR FIRST SelectedLOD.LOD_Entity WHERE SelectedLOD.LOD_Entity.Name = TZADCSDO.FlatListSelectedAttribute.EntityName 
+   INCLUDE TZCONTROL.CtrlMapLOD_Entity FROM SelectedLOD.LOD_Entity 
+   INCLUDE TZCONTROL.CtrlMapView FROM TZWINDOWL.ViewObjRef 
+   
+   // For large attribues (eg. length > 10), we will use a ratio of their size to the size of the grid minus the
+   // lengths of smaller attributes
+   // Total widths for all attributes, which will be used in ratios below.
+   lTotalAttributeWidthsLT10 = 0
+   lTotalAttributeWidthsGT10 = 0
+   FOR EACH TZADCSDO.FlatListSelectedAttribute WHERE TZADCSDO.FlatListSelectedAttribute.AttributeName != ""
+      lWidth = TZADCSDO.FlatListSelectedAttribute.ControlWidth
+      IF lWidth > 10
+         lTotalAttributeWidthsGT10 = lTotalAttributeWidthsGT10 + lWidth 
+      ELSE
+         IF lWidth < 4
+            lWidth = 4    // We won't consider any control to be less than 4 characters. 
+         END
+         lTotalAttributeWidthsLT10 = lTotalAttributeWidthsLT10 + lWidth 
+      END
+   END
+   
+   // Build subcontrol for each FlatListSelectedAttribute entry.
+   lGridWidth = TZCONTROL.Control.SZDLG_X
+   lControlPosition = 0
+   FOR EACH TZADCSDO.FlatListSelectedAttribute WHERE TZADCSDO.FlatListSelectedAttribute.AttributeName != ""
+      CreateMetaEntity( TZWINDOWL, TZCONTROL, "CtrlCtrl", zPOS_AFTER )
+      SetViewToSubobject( TZCONTROL, "CtrlCtrl" )
+      szAttributeName = TZADCSDO.FlatListSelectedAttribute.AttributeName
+      TZCONTROL.Control.Tag = "GridCtrl" + szAttributeName
+      InsertSpacesInPrompt( szPromptText, TZCONTROL, szAttributeName, 100 )
+      TZCONTROL.Control.Text = szPromptText
+      
+      // What Control is used depends first on whether the szDisplayUpdateFlag is update or display and then on a combination
+      // of the Update flag for the Entity and the Domain of the attribute.
+      IF szDisplayUpdateFlag = "D"
+         // The request is for display only, so include the regular subedit control and disable the edit function.
+         SET CURSOR FIRST TZPESRCO.ControlDef WHERE TZPESRCO.ControlDef.Tag = "GridEditCtl" 
+         INCLUDE TZCONTROL.ControlDef FROM TZPESRCO.ControlDef 
+         TZCONTROL.Control.Disabled = "Y"
+      ELSE
+         // Determine if the Entity is updatable.
+         SET CURSOR FIRST SelectedLOD.LOD_Entity WHERE SelectedLOD.LOD_Entity.Name = TZADCSDO.FlatListSelectedAttribute.EntityName 
+         IF SelectedLOD.LOD_Entity.Update = "Y"
+            // Build the Editbox, Checkbox, Calendar or Combobox controls depending on ControlType.
+            szControlType = TZADCSDO.FlatListSelectedAttribute.ControlType
+            IF szControlType = "Checkbox" OR szControlType = "Combobox" OR szControlType = "Calendar"
+               SET CURSOR FIRST TZPESRCO.ControlDef WHERE TZPESRCO.ControlDef.Tag = szControlType
+            ELSE
+               SET CURSOR FIRST TZPESRCO.ControlDef WHERE TZPESRCO.ControlDef.Tag = "GridEditCtl" 
+            END
+            INCLUDE TZCONTROL.ControlDef FROM TZPESRCO.ControlDef 
+         ELSE
+            // Since Entity is not updatable, use regular display control.
+            SET CURSOR FIRST TZPESRCO.ControlDef WHERE TZPESRCO.ControlDef.Tag = "GridEditCtl" 
+            INCLUDE TZCONTROL.ControlDef FROM TZPESRCO.ControlDef 
+            TZCONTROL.Control.Disabled = "Y"
+         END
+      END
+      
+      // Width of Control where the ControlWidth > 10 will be based on the ratio of each Attribute size to the total of all 
+      // attributes with width greater than 10. (100 - lTotalAttributeWidthsLT10 is the total length to be applied for all strings > 10.)
+      // Otherwise, width will simply be multiplied by 4 pixels.
+      lWidth = TZADCSDO.FlatListSelectedAttribute.ControlWidth
+      IF lWidth > 10
+         lControlWidth = (( lWidth * ( 100 - lTotalAttributeWidthsLT10 )) / lTotalAttributeWidthsGT10 ) * 4
+      ELSE
+         IF lWidth < 4
+            lWidth = 4    // We won't consider any control to be less than 4 characters. 
+         END
+         lControlWidth = lWidth * 4
+      END
+      
+      TZCONTROL.Control.PSDLG_X = lControlPosition
+      TZCONTROL.Control.SZDLG_X = lControlWidth
+      TZCONTROL.Control.PSDLG_Y = 0
+      TZCONTROL.Control.SZDLG_Y = 15
+      lControlPosition = lControlPosition + lControlWidth
+      
+      // Build CtrlMap subobject for list control entity from Entity.Attribute of FlatListSelectedAttribute
+      CreateMetaEntity( TZWINDOWL, TZCONTROL, "CtrlMap", zPOS_AFTER )
+      SET CURSOR FIRST SelectedLOD.LOD_Entity WHERE SelectedLOD.LOD_Entity.Name = TZADCSDO.FlatListSelectedAttribute.EntityName
+      SET CURSOR FIRST SelectedLOD.ER_Attribute WITHIN SelectedLOD.LOD_Entity 
+                 WHERE SelectedLOD.ER_Attribute.Name = TZADCSDO.FlatListSelectedAttribute.AttributeName  
+      INCLUDE TZCONTROL.CtrlMapLOD_Attribute FROM SelectedLOD.LOD_Attribute 
+      INCLUDE TZCONTROL.CtrlMapView FROM TZWINDOWL.ViewObjRef 
+      
+      ResetViewFromSubobject( TZCONTROL )
+   END
+   
+   ResetViewFromSubobject( TZCONTROL )
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: AutodesignUpdateCtrls
+**    
+*************************************************************************************************/
+LOCAL OPERATION
+AutodesignUpdateCtrls( VIEW TZADCSDO    BASED ON LOD TZADCSDO,
+                       VIEW TZWINDOWL   BASED ON LOD TZWDLGSO,
+                       VIEW TZCONTROL   BASED ON LOD TZWDLGSO,
+                       VIEW SelectedLOD BASED ON LOD TZZOLODO )
+
+   VIEW TZPESRCO BASED ON LOD TZPESRCO
+   INTEGER lMaxPromptLength
+   INTEGER lPromptWidth
+   INTEGER lControlWidth
+   INTEGER lControlPositionX
+   INTEGER lControlPositionY
+   INTEGER lControlHeight
+   STRING ( 50 ) szPromptText
+   STRING ( 32 ) szAttributeName
+   STRING ( 20 ) szControlType
+   SHORT   lPromptLength
+
+   // Build a group of Text, Editbox, Checkbox, Calendar or Combobox controls from the entries in the
+   // FlatListSelectedAttribute subobject. We will get a prompt/control pair for each entry in FlatListSelectedAttribute.
+   
+   // First loop through each FlatListSelectedAttribute entry and determine the value and maximum size of the prompt Text entries.
+   lMaxPromptLength = 0
+   FOR EACH TZADCSDO.FlatListSelectedAttribute WHERE TZADCSDO.FlatListSelectedAttribute.AttributeName != ""
+      szAttributeName = TZADCSDO.FlatListSelectedAttribute.AttributeName
+      InsertSpacesInPrompt( szPromptText, TZCONTROL, szAttributeName, 100 )
+      TZADCSDO.FlatListSelectedAttribute.PromptValue = szPromptText + ":"
+      lPromptLength = GetStringLength( szPromptText )
+      IF lPromptLength > lMaxPromptLength
+         lMaxPromptLength = lPromptLength
+      END
+   END
+   // To get max width of Prompts, each character is considered 4 pixels.
+   lPromptWidth = lMaxPromptLength * 4
+   
+   // The X position of each Control will be 1 pixel beyond the Prompt.
+   lControlPositionX = 5 + lPromptWidth + 1
+   
+   // The height of each prompt and control will be 12.
+   lControlHeight = 12
+   
+   // Loop through each Attribute FlatListSelectedAttribute and generate a prompt/control pair.
+   GET VIEW TZPESRCO NAMED "TZPESRCO"
+   SetViewToSubobject( TZCONTROL, "CtrlCtrl" )
+   lControlPositionY = 0
+   FOR EACH TZADCSDO.FlatListSelectedAttribute WHERE TZADCSDO.FlatListSelectedAttribute.AttributeName != ""
+      szAttributeName = TZADCSDO.FlatListSelectedAttribute.AttributeName
+      
+      // First create Prompt.
+      SET CURSOR FIRST TZPESRCO.ControlDef WHERE TZPESRCO.ControlDef.Tag = "Text"
+      szPromptText = TZADCSDO.FlatListSelectedAttribute.PromptValue 
+      CreateMetaEntity( TZWINDOWL, TZCONTROL, "Control", zPOS_AFTER )
+      TZCONTROL.Control.Tag = "Prompt" + szAttributeName 
+      TZCONTROL.Control.Text = szPromptText
+      INCLUDE TZCONTROL.ControlDef FROM TZPESRCO.ControlDef 
+      TZCONTROL.Control.PSDLG_X = 0
+      TZCONTROL.Control.PSDLG_Y = lControlPositionY
+      TZCONTROL.Control.SZDLG_X = lPromptWidth
+      TZCONTROL.Control.SZDLG_Y = 12
+      
+      // Next create Control based on FlatListSelectedAttribute.ControlType 
+      szControlType = TZADCSDO.FlatListSelectedAttribute.ControlType 
+      // A Calendar is 53 pixels. Other controls are based on text size specified on FlatListSelectedAttribute.
+      IF szControlType = "Calendar" 
+         lControlWidth = 53
+      ELSE
+         lControlWidth = TZADCSDO.FlatListSelectedAttribute.ControlWidth * 5
+      END
+      SET CURSOR FIRST TZPESRCO.ControlDef WHERE TZPESRCO.ControlDef.Tag = szControlType
+      CreateMetaEntity( TZWINDOWL, TZCONTROL, "Control", zPOS_AFTER )
+      TZCONTROL.Control.Tag = "Ctrl" + szAttributeName 
+      INCLUDE TZCONTROL.ControlDef FROM TZPESRCO.ControlDef 
+      TZCONTROL.Control.PSDLG_X = lControlPositionX
+      TZCONTROL.Control.PSDLG_Y = lControlPositionY
+      TZCONTROL.Control.SZDLG_X = lControlWidth
+      TZCONTROL.Control.SZDLG_Y = 12
+      
+      // Build CtrlMap subobject from Entity.Attribute of FlatListSelectedAttribute
+      CreateMetaEntity( TZWINDOWL, TZCONTROL, "CtrlMap", zPOS_AFTER )
+      SET CURSOR FIRST SelectedLOD.LOD_Entity WHERE SelectedLOD.LOD_Entity.Name = TZADCSDO.FlatListSelectedAttribute.EntityName
+      SET CURSOR FIRST SelectedLOD.ER_Attribute WITHIN SelectedLOD.LOD_Entity 
+                 WHERE SelectedLOD.ER_Attribute.Name = TZADCSDO.FlatListSelectedAttribute.AttributeName  
+      INCLUDE TZCONTROL.CtrlMapLOD_Attribute FROM SelectedLOD.LOD_Attribute 
+      INCLUDE TZCONTROL.CtrlMapView FROM TZWINDOWL.ViewObjRef 
+      
+      
+      lControlPositionY = lControlPositionY + lControlHeight
+      
+   END
+   ResetViewFromSubobject( TZCONTROL )
+
+END
+

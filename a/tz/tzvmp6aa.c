@@ -279,10 +279,10 @@ InsertSetCursorWithWhere( zVIEW vSubtask )  // java???
                                          0, "", 0, 0 );
       }
 
-	  // KJS 09/04/12 - We are currently going back to using SetCursorFirstEntity etc. instead of .setFirst etc.
-	  // This is because DG has change the return code from the .set cursor functions and our generated code no
-	  // longer works.  We may want to go back at some point so I am keeping the code.
-	  /*
+     // KJS 09/04/12 - We are currently going back to using SetCursorFirstEntity etc. instead of .setFirst etc.
+     // This is because DG has change the return code from the .set cursor functions and our generated code no
+     // longer works.  We may want to go back at some point so I am keeping the code.
+     /*
       if ( g_szGenLang[ 0 ] == 'J' )
       {
          if ( g_lSetFNPL == qFIRST )
@@ -320,7 +320,7 @@ InsertSetCursorWithWhere( zVIEW vSubtask )  // java???
       }
       else
       {
-	  */
+     */
          if ( g_lSetFNPL == qFIRST )
             zstrcpy( szOperationName, "SetCursorFirstEntity" );
          else
@@ -457,7 +457,7 @@ InsertSetCursorWithWhere( zVIEW vSubtask )  // java???
       // Add the while statement to do all of these compares...
       AddStatementEntityToPI( vSubtask, qWHILE, qqlineno, vTargetView, zPOS_AFTER );
 
-	  /*
+     /*
       if ( g_szGenLang[ 0 ] == 'J' )
       {
          bSetNextJava = TRUE;
@@ -468,7 +468,7 @@ InsertSetCursorWithWhere( zVIEW vSubtask )  // java???
       }
       else
       {
-	  */
+     */
          bSetNextJava = FALSE;
          if ( g_lSetFNPL == qFIRST || g_lSetFNPL == qNEXT )
             zstrcpy( szOperationName, "SetCursorNextEntity" );

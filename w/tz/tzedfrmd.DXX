@@ -1,0 +1,129 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzedfrmd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzedfrmd.dll
+
+           0 characteristics
+    5356CF44 time date stamp Tue Apr 22 16:21:24 2014
+        0.00 version
+           1 ordinal base
+         101 number of functions
+         101 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001244 _AEQ_AttributePopup@4
+          2    1 00001023 _AEQ_ClearViews@4
+          3    2 00001109 _AEQ_Close@4
+          4    3 0000105F _AEQ_EntityPopup@4
+          5    4 0000106E _AEQ_GetViews@4
+          6    5 00001019 _AEQ_PasteView@4
+          7    6 000011D6 _AEQ_PasteViewEntity@4
+          8    7 0000108C _AEQ_PasteViewEntityAttr@4
+          9    8 0000123F _AEQ_PasteViewEntityAttr_Quoted@4
+         10    9 00001082 _AEQ_PasteViewEntity_Quoted@4
+         11    A 0000120D _AEQ_Postbuild@4
+         12    B 000011A9 _AEQ_RefreshAEQ@4
+         13    C 000010AA _AEQ_RefreshAEQ_AttrList@4
+         14    D 00001145 _AEQ_SelectView@4
+         15    E 0000117C _AEQ_ViewPopup@4
+         16    F 000010B9 _ActivateBasicsHelp@4
+         17   10 000011B8 _ActivateOperationsRef@4
+         18   11 000011E5 _ActivateProgrammersRef@4
+         19   12 000010BE _ActivateUsersGuide@4
+         20   13 0000116D _ErrList_Close@4
+         21   14 000010F5 _ErrList_GetFocus@4
+         22   15 000010FF _ErrList_Postbuild@4
+         23   16 000011DB _ErrList_ShowError@4
+         24   17 0000102D _FileNew@4
+         25   18 000011EF _FileSaveAs@4
+         26   19 0000114A _Generate@8
+         27   1A 000011C7 _GenerateC@4
+         28   1B 00001208 _GenerateJava@4
+         29   1C 0000113B _GetDLL_Instance@4
+         30   1D 00001159 _GotoWindow@4
+         31   1E 00001203 _InsertComment@12
+         32   1F 000011BD _OBJ_PasteObjectName@4
+         33   20 00001249 _OBJ_Prebuild@4
+         34   21 00001190 _ObjList_AddObjOpersToWorkList@4
+         35   22 000010D7 _ObjList_Prebuild@4
+         36   23 0000121C _ObjList_RefreshSelectButton@4
+         37   24 00001104 _OpIns_BuildOperList@4
+         38   25 0000109B _OpIns_Close@4
+         39   26 0000112C _OpIns_InsertOperation@4
+         40   27 00001154 _OpIns_Postbuild@4
+         41   28 00001235 _OpIns_RebuildOperList@4
+         42   29 00001122 _OpIns_RefreshSelectButton@4
+         43   2A 00001230 _OpIns_StartOperationHelp@4
+         44   2B 000011B3 _OptionSettings@4
+         45   2C 000010F0 _PostBuild@4
+         46   2D 00001091 _PreBuild@4
+         47   2E 000011E0 _SaveAndParse@8
+         48   2F 000010C3 _SaveAndParseC@4
+         49   30 000011AE _SaveAndParseJava@4
+         50   31 000010B4 _SaveFile@4
+         51   32 0000104B _SearchBackward@4
+         52   33 0000118B _SearchContinue@8
+         53   34 00001005 _SearchForward@4
+         54   35 00001163 _SortMetaListByDate@4
+         55   36 0000105A _SortMetaListByName@4
+         56   37 0000111D _SystemClose@4
+         57   38 0000110E _TZEDFRMD_AskForSave@4
+         58   39 00001221 _TZEDFRMD_AskForSaveWithParse@8
+         59   3A 00001113 _TZEDFRMD_Cancel@4
+         60   3B 0000101E _TZEDFRMD_CopyOperationCode@8
+         61   3C 00001131 _TZEDFRMD_CreateContextMenue@4
+         62   3D 000010C8 _TZEDFRMD_DisableActions@4
+         63   3E 0000107D _TZEDFRMD_DropOperationFromSource@4
+         64   3F 000011C2 _TZEDFRMD_EditCopy@4
+         65   40 00001168 _TZEDFRMD_EditCut@4
+         66   41 00001181 _TZEDFRMD_EditDelete@4
+         67   42 000011CC _TZEDFRMD_EditFind@4
+         68   43 00001177 _TZEDFRMD_EditPaste@4
+         69   44 000011EA _TZEDFRMD_EditRedo@4
+         70   45 00001253 _TZEDFRMD_EditReplace@4
+         71   46 0000119A _TZEDFRMD_EditSelectAll@4
+         72   47 00001217 _TZEDFRMD_EditUndo@4
+         73   48 000011D1 _TZEDFRMD_EnableEditMenuActions@4
+         74   49 00001186 _TZEDFRMD_GotoOperation@4
+         75   4A 00001212 _TZEDFRMD_InitMenu@4
+         76   4B 00001096 _TZEDFRMD_Keystroke@4
+         77   4C 00001226 _TZEDFRMD_LineChange@4
+         78   4D 000011F9 _TZEDFRMD_MoveOperationCode@8
+         79   4E 0000100F _TZEDFRMD_OnEditFind@4
+         80   4F 0000115E _TZEDFRMD_OnEditFindNext@4
+         81   50 00001028 _TZEDFRMD_OpenFindReplace@4
+         82   51 00001140 _TZEDFRMD_OpenSubwindow@4
+         83   52 00001087 _TZEDFRMD_ReceiveFocus@4
+         84   53 000010EB _TZEDFRMD_SetInsert@4
+         85   54 000011A4 _TZEDFRMD_SetOverstrike@4
+         86   55 00001046 _TZEDFRMD_ZeidonMenuSelected@4
+         87   56 00001055 _VML_BuildTextList@4
+         88   57 00001041 _VML_Close@4
+         89   58 000010D2 _VML_CreateText_DeleteAll@4
+         90   59 000010CD _VML_CreateText_Exit@4
+         91   5A 0000124E _VML_DisplayList@4
+         92   5B 0000122B _VML_InsertText@4
+         93   5C 000010E1 _VML_Postbuild@4
+         94   5D 00001037 _VML_SelectItem@4
+         95   5E 000011F4 _VML_ShowPopupMenu@4
+         96   5F 00001014 _VML_StartHelp@4
+         97   60 000010A5 _VOR_PasteName@4
+         98   61 00001136 _VOR_Prebuild@4
+         99   62 00001127 _zPrint@4
+        100   63 0000103C _zTZEDFRMD_FileClose@4
+        101   64 000011FE _zTZEDFRMD_OpenFile@4
+
+  Summary
+
+        5000 .data
+        2000 .idata
+        2000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       11000 .text

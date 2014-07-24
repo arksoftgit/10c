@@ -2,8 +2,6 @@
 #include "mpna81.h"
 #include "Z2MP.h"
 
-#pragma warning(disable: 4996) // This function or variable may be unsafe
-
 zOPER_EXPORT zSHORT OPERATION
 MapPointIsActive( )
 {

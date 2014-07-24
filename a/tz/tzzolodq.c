@@ -1540,7 +1540,7 @@ zwTZZOLODD_LoadLODList( zVIEW vSubtask )
 {
    zVIEW    vTZLODS;
    zVIEW    vTZZOLODO;
-   zCHAR    szLodName[9];
+   zCHAR    szLodName[33];
    zSHORT   nRC;
 
    // Obtain list of LOD's and position on the current LOD if there is
@@ -1597,7 +1597,7 @@ zwfnTZZOLODD_AskForSave( zVIEW vSubtask )
    zVIEW    vTZZOLODO;
    zSHORT   nRC;
    zBOOL    nSaveAs = FALSE;
-   zCHAR    szLodName[9];
+   zCHAR    szLodName[33];
    zCHAR    szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    // Get Access to LOD Object
@@ -1848,7 +1848,7 @@ zwTZZOLODD_CreateNewLOD( zVIEW vSubtask )
    zSHORT nRC;
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
    zCHAR  szInName[ 120 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szOutName[ 33 ];
 
 
    // A name must be entered.
@@ -1856,7 +1856,7 @@ zwTZZOLODD_CreateNewLOD( zVIEW vSubtask )
 
    // Validate LOD Name is OK
    GetStringFromAttribute( szInName, vProfileXFER, "TZ", "Name" );
-   UfCompressName( szInName, szOutName, 8, "", "", "", "", 0 );
+   UfCompressName( szInName, szOutName, 32, "", "", "", "", 0 );
    SetAttributeFromString( vProfileXFER, "TZ", "Name", szOutName );
 
    if ( CompareAttributeToString( vProfileXFER, "TZ", "Name", "" ) == 0 )
@@ -1984,7 +1984,7 @@ zwTZZOLODD_OkNewLOD( zVIEW vSubtask )
    zVIEW  vTZZOHDGO;
    zVIEW  vTZEREMDO_REF;
    zVIEW  vProfileXFER;
-   zCHAR  szNewName[ 9 ];
+   zCHAR  szNewName[ 33 ];
 
    zSHORT nRC;
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
@@ -7798,7 +7798,7 @@ zwfnTZZOLODD_SaveAsSetSourceName( zVIEW   vSubtask,
                                   zVIEW   vLodData,
                                   zSHORT  nIndex )
 {
-   zCHAR  szNewName[9];
+   zCHAR  szNewName[33];
    zCHAR  szIndex[ 4 ];
    zSHORT nPosition = 0;
    zSHORT nRC;
@@ -7936,8 +7936,8 @@ zwfnTZZOLODD_SaveAsCheckFileName( zVIEW    vSubtask,
 {
    zVIEW    vSaveAsCopy;
    zSHORT   nRC;
-   zCHAR    szNewName[9];
-   zCHAR    szFileName[9];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
    zCHAR    szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    CreateViewFromViewForTask( &vSaveAsCopy, vSaveAs, 0 );
@@ -7948,7 +7948,7 @@ zwfnTZZOLODD_SaveAsCheckFileName( zVIEW    vSubtask,
    {
       // Source File Name is required
       GetStringFromAttribute( szNewName, vSaveAs, "SourceFile", "SaveAsName" );
-      UfCompressName( szNewName, szFileName, 8, "", "", "", "", 0 );
+      UfCompressName( szNewName, szFileName, 32, "", "", "", "", 0 );
       if ( zstrcmp( szFileName, "" ) == 0 )
       {
          MessageSend( vSubtask, "ZO00137", "LOD Maintenance",
@@ -7996,8 +7996,8 @@ zwfnTZZOLODD_SaveAsCheckName( zVIEW    vSubtask,
 {
    zVIEW  vDialog_LPLR;
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
-   zCHAR  szDLLName[9];
-   zCHAR  szNewName[9];
+   zCHAR  szDLLName[33];
+   zCHAR  szNewName[33];
 
    //Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
@@ -8012,7 +8012,7 @@ zwfnTZZOLODD_SaveAsCheckName( zVIEW    vSubtask,
 
    // DLL Name is required
    GetStringFromAttribute( szNewName, vSaveAs, "ActionAfterSaveAS", "DLL_Name" );
-   UfCompressName( szNewName, szDLLName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szDLLName, 32, "", "", "", "", 0 );
    if ( zstrcmp( szDLLName, "" ) == 0 &&
         CheckExistenceOfEntity( vTZZOLODO, "SourceFile" ) >= zCURSOR_SET )
    {
@@ -8089,11 +8089,11 @@ zwfnTZZOLODD_SaveAsGetFileName( zVIEW  vTaskLPLR,
                                 zPCHAR szSourceFileName )
 {
    zCHAR    szExtension[ zMAX_EXTENSION_LTH + 1 ];
-   zCHAR    szNewName[9];
-   zCHAR    szFileName[9];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
 
    GetStringFromAttribute( szNewName, vView, "SourceFile", szAttribute );
-   UfCompressName( szNewName, szFileName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szFileName, 32, "", "", "", "", 0 );
 
    GetStringFromAttribute( szSourceFileName, vTaskLPLR, "LPLR", "PgmSrcDir" );
    GetStringFromAttributeByContext(   szExtension, vView, "SourceFile",
@@ -8207,8 +8207,8 @@ zwTZZOLODD_SaveAsLOD( zVIEW vSubtask )
    zVIEW  vTZZOLFLO;
    zVIEW  vTZZOLODO;
    zVIEW  vSaveAs;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    GetViewByName( &vTZZOLFLO, "TZZOLFLO", vSubtask, zLEVEL_TASK );
@@ -8217,7 +8217,7 @@ zwTZZOLODD_SaveAsLOD( zVIEW vSubtask )
 
    // Validate LOD Name is OK
    GetStringFromAttribute( szNewName, vSaveAs, "ActionAfterSaveAS", "SaveAsName8" );
-   UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szOutName, 32, "", "", "", "", 0 );
 
    //Name is required
    if ( zwfnTZZOLODD_SaveAsCheckName( vSubtask, vSaveAs,
@@ -8839,11 +8839,11 @@ zwTZZOLODD_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vTZZOLFLO;
    zVIEW   vTZZOLFLO_Copy;
-   zCHAR   szNewName[9];
-   zCHAR   szOutName[9];
+   zCHAR   szNewName[33];
+   zCHAR   szOutName[33];
 
-   GetCtrlText( vSubtask, "edLODName", szNewName, 9 );
-   UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
+   GetCtrlText( vSubtask, "edLODName", szNewName, 33 );
+   UfCompressName( szNewName, szOutName, 32, "", "", "", "", 0 );
 
    GetViewByName( &vTZZOLFLO, "TZZOLFLO", vSubtask, zLEVEL_TASK );
    CreateViewFromViewForTask( &vTZZOLFLO_Copy, vTZZOLFLO, 0 );
@@ -9251,8 +9251,8 @@ zwTZZOLODD_SaveAsSetDefaults( zVIEW vSubtask )
    zVIEW  vSaveAs;
    zVIEW  vTZZOLFLO;
    zVIEW  vTZLodList;
-   zCHAR  szNewName[9];
-   zCHAR  szOutName[9];
+   zCHAR  szNewName[33];
+   zCHAR  szOutName[33];
    zSHORT nRC;
    zSHORT nIndex = -1;
 
@@ -9263,7 +9263,7 @@ zwTZZOLODD_SaveAsSetDefaults( zVIEW vSubtask )
 
    // if LOD Name not required, set default value
    GetStringFromAttribute( szNewName, vSaveAs, "ActionAfterSaveAS", "SaveAsName8" );
-   UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szOutName, 32, "", "", "", "", 0 );
 
    //Name is required
    if ( zstrcmp( szOutName, "" ) != 0 )

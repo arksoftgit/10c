@@ -304,11 +304,7 @@ SOURCE=.\RES\GRID.bmp
 # End Source File
 # Begin Source File
 
-SOURCE=.\HAND1.cur
-# End Source File
-# Begin Source File
-
-SOURCE=.\Hand1.cur
+SOURCE=.\HAND.cur
 # End Source File
 # Begin Source File
 

@@ -1,0 +1,53 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tztedbld.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tztedbld.dll
+
+           0 characteristics
+    5356CF63 time date stamp Tue Apr 22 16:21:55 2014
+        0.00 version
+           1 ordinal base
+          25 number of functions
+          25 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000101E _DB2_ApplA_Main_Close@4
+          2    1 00001064 _DB2_ApplA_Main_Prebuild@4
+          3    2 00001046 _GetDLL_Instance@4
+          4    3 0000102D _GoToSubDialog@4
+          5    4 00001082 _List_Prebuild@4
+          6    5 0000100F _LoadDataTypes@4
+          7    6 00001055 _ODBC_LOD_Cancel@4
+          8    7 00001078 _ODBC_LOD_EntityAboutToBeChanged@4
+          9    8 00001005 _ODBC_LOD_EntityChanged@4
+         10    9 00001041 _ODBC_LOD_JoinSelected@4
+         11    A 00001037 _ODBC_LOD_OK@4
+         12    B 00001028 _ODBC_LOD_Prebuild@4
+         13    C 00001073 _ODBC_LOD_SetX_ToOne@4
+         14    D 00001014 _ODBC_PostBuild@4
+         15    E 00001032 _ODBC_StoreOI_InBlob@4
+         16    F 00001023 _SQL_DBH_LOD_BeforeEntityChange@4
+         17   10 00001069 _SQL_DBH_LOD_EntityChanged@4
+         18   11 0000105A _SQL_DBH_LOD_PostBuild@4
+         19   12 0000100A _SQL_DBH_LOD_Prebuild@4
+         20   13 0000103C _SQL_DBH_RemoveAll@4
+         21   14 0000104B _SQL_DBH_SetX_ToOne@4
+         22   15 0000105F _SaveList@4
+         23   16 0000106E _SqlSO_TE_Main_Cancel@4
+         24   17 00001050 _SqlSO_TE_Main_Close@4
+         25   18 0000107D _SqlSO_TE_Main_Prebuild@4
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        4000 .text

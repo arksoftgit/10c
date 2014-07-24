@@ -1,0 +1,199 @@
+ tzcmslpd
+
+ Timestamp is 5356cf41 (Tue Apr 22 16:21:21 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00002150H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 00000332H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 000005eeH .data                   DATA
+ 0003:00000a00 00000038H .bss                    DATA
+ 0004:00000000 00000050H .idata$2                DATA
+ 0004:00000050 00000014H .idata$3                DATA
+ 0004:00000064 0000018cH .idata$4                DATA
+ 0004:000001f0 0000018cH .idata$5                DATA
+ 0004:0000037c 0000029dH .idata$6                DATA
+ 0005:00000000 00000113H .rsrc$01                DATA
+ 0005:00000120 00000000H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000050       _DllMain@12                10001050 f   zdllinst.obj
+ 0001:00000076       _GetDLL_Instance@4         10001076 f   zdllinst.obj
+ 0001:00000090       _zwTZCMSLPD_InitDialog@4   10001090 f   tzcmslpd.obj
+ 0001:0000013c       _zwTZCMSLPD_TerminateDialog@4 1000113c f   tzcmslpd.obj
+ 0001:00000178       _zwTZCMSLPD_SwitchLPLR@4   10001178 f   tzcmslpd.obj
+ 0001:0000034a       _zwTZCMSLPD_RebuildMetaLists@4 1000134a f   tzcmslpd.obj
+ 0001:00000a2e       _zwTZCMSLPD_SwapLanguage@4 10001a2e f   tzcmslpd.obj
+ 0001:00000d16       _oTZCMWKSO_CommitWorkstation@4 10001d16 f   tzlodopr:tzlodopr.dll
+ 0001:00000d1c       _InitializeDefaultLPL@4    10001d1c f   tzlodopr:tzlodopr.dll
+ 0001:00000d22       _TerminateLPLR@4           10001d22 f   tzlodopr:tzlodopr.dll
+ 0001:00000d28       _zgSortEntityWithinParent@20 10001d28 f   tzlodopr:tzlodopr.dll
+ 0001:00000d2e       _CreateMetaEntity@16       10001d2e f   tzlodopr:tzlodopr.dll
+ 0001:00000d34       _BuildLPLR_MetaTypes@12    10001d34 f   tzlodopr:tzlodopr.dll
+ 0001:00000d3a       _ofnTZCMWKSO_AppendSlash@4 10001d3a f   tzlodopr:tzlodopr.dll
+ 0001:00000d40       _SetSelectStateOfEntityForSet@16 10001d40 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d46       _MessageSend@24            10001d46 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d4c       _SetNameForView@16         10001d4c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d52       _CreateViewFromViewForTask@12 10001d52 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d58       _GetViewByName@16          10001d58 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d5e       _DropNameForView@16        10001d5e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d64       _SetCursorFirstEntityByInteger@20 10001d64 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d6a       _SetAttributeFromInteger@16 10001d6a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d70       _GetIntegerFromAttribute@16 10001d70 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d76       _SfGetCurrentTask@4        10001d76 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d7c       _SfGetTaskInfo@12          10001d7c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d82       _SfGetNextTask@4           10001d82 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d88       _SysGetEnvVar@12           10001d88 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d8e       _DropObjectInstance@4      10001d8e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d94       _CommitOI_ToFile@12        10001d94 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d9a       _IncludeSubobjectFromSubobject@20 10001d9a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000da0       _CheckExistenceOfEntity@8  10001da0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000da6       _SetMatchingAttributesByName@20 10001da6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000dac       _SetAttributeFromAttribute@24 10001dac f   kzoengaa:KZOENGAA.DLL
+ 0001:00000db2       _ActivateEmptyObjectInstance@16 10001db2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000db8       _ActivateOI_FromFile@20    10001db8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000dbe       _SysCloseFile@12           10001dbe f   kzoengaa:KZOENGAA.DLL
+ 0001:00000dc4       _SysOpenFile@12            10001dc4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000dca       _SysConvertEnvironmentString@8 10001dca f   kzoengaa:KZOENGAA.DLL
+ 0001:00000dd0       _GetStringFromAttribute@16 10001dd0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000dd6       _MessagePrompt@32          10001dd6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000ddc       _SysSetLanguageCode@4      10001ddc f   kzoengaa:KZOENGAA.DLL
+ 0001:00000de2       _SysGetLanguageCode@4      10001de2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000de8       __stricmp                  10001de8 f   msvcrtd:MSVCRTD.dll
+ 0001:00000dee       __strnicmp                 10001dee f   msvcrtd:MSVCRTD.dll
+ 0001:00000df4       _strcpy                    10001df4 f   msvcrtd:MSVCRTD.dll
+ 0001:00000dfa       _strcat                    10001dfa f   msvcrtd:MSVCRTD.dll
+ 0001:00000e00       _strncpy                   10001e00 f   msvcrtd:MSVCRTD.dll
+ 0001:00000e10       __CRT_INIT@12              10001e10 f   msvcrtd:crtdll.obj
+ 0001:00000f20       __DllMainCRTStartup@12     10001f20 f   msvcrtd:crtdll.obj
+ 0001:00001014       __free_dbg                 10002014 f   msvcrtd:MSVCRTD.dll
+ 0001:0000101a       __initterm                 1000201a f   msvcrtd:MSVCRTD.dll
+ 0001:00001020       __onexit                   10002020 f   msvcrtd:atonexit.obj
+ 0001:00001060       _atexit                    10002060 f   msvcrtd:atonexit.obj
+ 0001:00001078       __malloc_dbg               10002078 f   msvcrtd:MSVCRTD.dll
+ 0001:0000107e       ___dllonexit               1000207e f   msvcrtd:MSVCRTD.dll
+ 0001:00001084       _SetWindowActionBehavior@16 10002084 f   zdrapp:ZDrApp.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000401c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10005000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10005104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10005208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000530c     msvcrtd:cinitexe.obj
+ 0003:00000410       ??_C@_04FDFI@LPLR?$AA@     10005410     tzcmslpd.obj
+ 0003:00000418       ??_C@_07EIFG@CM00601?$AA@  10005418     tzcmslpd.obj
+ 0003:00000424       ??_C@_0BJ@JFDF@Configuration?5Management?$AA@ 10005424     tzcmslpd.obj
+ 0003:00000444       ??_C@_0CE@IDPA@Unable?5to?5activate?5RepositoryCli@ 10005444     tzcmslpd.obj
+ 0003:00000470       ??_C@_08JKFK@TZCMSLPL?$AA@ 10005470     tzcmslpd.obj
+ 0003:0000047c       ??_C@_08HFDF@TZCMWKSO?$AA@ 1000547c     tzcmslpd.obj
+ 0003:00000488       ??_C@_08CHAA@ZeidonCM?$AA@ 10005488     tzcmslpd.obj
+ 0003:00000494       ??_C@_04BBDM@ZKey?$AA@     10005494     tzcmslpd.obj
+ 0003:0000049c       ??_C@_0BB@CJP@RepositoryClient?$AA@ 1000549c     tzcmslpd.obj
+ 0003:000004b0       ??_C@_0BB@DGBA@DefaultLPLR_ZKey?$AA@ 100054b0     tzcmslpd.obj
+ 0003:000004c4       ??_C@_07PHEK@CM00299?$AA@  100054c4     tzcmslpd.obj
+ 0003:000004d0       ??_C@_0GB@HBNF@Another?5Zeidon?5Tool?5is?5currently@ 100054d0     tzcmslpd.obj
+ 0003:00000544       ??_C@_08EKAG@TZOBRWAD?$AA@ 10005544     tzcmslpd.obj
+ 0003:00000550       ??_C@_02JHIA@TZ?$AA@       10005550     tzcmslpd.obj
+ 0003:00000554       ??_C@_07LHOP@CM00602?$AA@  10005554     tzcmslpd.obj
+ 0003:00000560       ??_C@_0CH@EFGF@Unable?5to?5obtain?5RepositoryClien@ 10005560     tzcmslpd.obj
+ 0003:00000590       ??_C@_08OAOC@TZCM?4DET?$AA@ 10005590     tzcmslpd.obj
+ 0003:0000059c       ??_C@_06HLLH@ZEIDON?$AA@   1000559c     tzcmslpd.obj
+ 0003:000005a4       ??_C@_07LGHJ@CM00608?$AA@  100055a4     tzcmslpd.obj
+ 0003:000005b0       ??_C@_0BG@LFCI@?5has?5been?5rebuilt?5in?6?$AA@ 100055b0     tzcmslpd.obj
+ 0003:000005cc       ??_C@_08PNJO@Project?5?$AA@ 100055cc     tzcmslpd.obj
+ 0003:000005d8       ??_C@_0L@KGCI@W_MetaType?$AA@ 100055d8     tzcmslpd.obj
+ 0003:000005e8       ??_C@_04FCOP@Type?$AA@     100055e8     tzcmslpd.obj
+ 0003:000005f0       ??_C@_07LHCE@CM00607?$AA@  100055f0     tzcmslpd.obj
+ 0003:000005fc       ??_C@_0BM@NLDF@Please?5notify?5Bill?5of?5error?$AA@ 100055fc     tzcmslpd.obj
+ 0003:00000620       ??_C@_0BN@PODP@?6Commit?5of?5Project?5aborted?$CB?6?$AA@ 10005620     tzcmslpd.obj
+ 0003:00000644       ??_C@_0CB@DIJP@?5doesn?8t?5match?5name?5?6of?5OI?5file?6@ 10005644     tzcmslpd.obj
+ 0003:0000066c       ??_C@_0O@LMKM@Project?5Name?5?$AA@ 1000566c     tzcmslpd.obj
+ 0003:0000067c       ??_C@_07BNLD@CM00606?$AA@  1000567c     tzcmslpd.obj
+ 0003:00000688       ??_C@_0DE@MBJL@Project?5is?5currently?5active?5in?5m@ 10005688     tzcmslpd.obj
+ 0003:000006c8       ??_C@_0N@IBBO@TaskUseCount?$AA@ 100056c8     tzcmslpd.obj
+ 0003:000006d8       ??_C@_07OCAK@CM00605?$AA@  100056d8     tzcmslpd.obj
+ 0003:000006e4       ??_C@_0DC@ECAO@Rebuilding?5of?5the?5Project?5is?5the@ 100056e4     tzcmslpd.obj
+ 0003:00000720       ??_C@_0DD@PAOL@Rebuilding?5the?5Project?5may?5corru@ 10005720     tzcmslpd.obj
+ 0003:00000760       ??_C@_0CO@MAGH@Project?5is?5currently?5active?5in?5a@ 10005760     tzcmslpd.obj
+ 0003:00000798       ??_C@_0BC@FEEN@CorrespondingCPLR?$AA@ 10005798     tzcmslpd.obj
+ 0003:000007b0       ??_C@_07EIJN@CM00604?$AA@  100057b0     tzcmslpd.obj
+ 0003:000007bc       ??_C@_0CI@FJAF@Error?5activating?5empty?5Project?5I@ 100057bc     tzcmslpd.obj
+ 0003:000007ec       ??_C@_08JMDO@TZCMLPLO?$AA@ 100057ec     tzcmslpd.obj
+ 0003:000007f8       ??_C@_04CCKA@?4XLP?$AA@    100057f8     tzcmslpd.obj
+ 0003:00000800       ??_C@_07LMFN@ExecDir?$AA@  10005800     tzcmslpd.obj
+ 0003:0000080c       ??_C@_04EFNI@Name?$AA@     1000580c     tzcmslpd.obj
+ 0003:00000814       ??_C@_0BB@KLK@TZCM_RebuildLPLR?$AA@ 10005814     tzcmslpd.obj
+ 0003:00000828       ??_C@_07BMOO@CM00609?$AA@  10005828     tzcmslpd.obj
+ 0003:00000834       ??_C@_0CF@CJPF@Do?5you?5want?5to?5rebuild?5your?5Proj@ 10005834     tzcmslpd.obj
+ 0003:00000860       ??_C@_0DI@GLDE@Hinweis?3?5Der?5Sprachspeicher?5wurd@ 10005860     tzcmslpd.obj
+ 0003:000008a4       ??_C@_0CM@CBDG@Note?3?5The?5Language?5has?5been?5set?5@ 100058a4     tzcmslpd.obj
+ 0003:00000a00       _g_hInstanceDLL            10005a00     zdllinst.obj
+ 0003:00000a04       ??_C@_00A@?$AA@            10005a04     tzcmslpd.obj
+ 0003:00000a0c       __adjust_fdiv              10005a0c     <common>
+ 0003:00000a18       ___onexitend               10005a18     <common>
+ 0003:00000a28       ___onexitbegin             10005a28     <common>
+ 0003:00000a2c       __pRawDllMain              10005a2c     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 10006000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KZOENGAA 10006014     kzoengaa:KZOENGAA.DLL
+ 0004:00000028       __IMPORT_DESCRIPTOR_MSVCRTD 10006028     msvcrtd:MSVCRTD.dll
+ 0004:0000003c       __IMPORT_DESCRIPTOR_ZDrApp 1000603c     zdrapp:ZDrApp.dll
+ 0004:00000050       __NULL_IMPORT_DESCRIPTOR   10006050     tzlodopr:tzlodopr.dll
+ 0004:000001f0       __imp__SetMatchingAttributesByName@20 100061f0     kzoengaa:KZOENGAA.DLL
+ 0004:000001f4       __imp__SysGetLanguageCode@4 100061f4     kzoengaa:KZOENGAA.DLL
+ 0004:000001f8       __imp__SysSetLanguageCode@4 100061f8     kzoengaa:KZOENGAA.DLL
+ 0004:000001fc       __imp__MessagePrompt@32    100061fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000200       __imp__GetStringFromAttribute@16 10006200     kzoengaa:KZOENGAA.DLL
+ 0004:00000204       __imp__SysConvertEnvironmentString@8 10006204     kzoengaa:KZOENGAA.DLL
+ 0004:00000208       __imp__SysOpenFile@12      10006208     kzoengaa:KZOENGAA.DLL
+ 0004:0000020c       __imp__SetSelectStateOfEntityForSet@16 1000620c     kzoengaa:KZOENGAA.DLL
+ 0004:00000210       __imp__MessageSend@24      10006210     kzoengaa:KZOENGAA.DLL
+ 0004:00000214       __imp__SetNameForView@16   10006214     kzoengaa:KZOENGAA.DLL
+ 0004:00000218       __imp__CreateViewFromViewForTask@12 10006218     kzoengaa:KZOENGAA.DLL
+ 0004:0000021c       __imp__GetViewByName@16    1000621c     kzoengaa:KZOENGAA.DLL
+ 0004:00000220       __imp__DropNameForView@16  10006220     kzoengaa:KZOENGAA.DLL
+ 0004:00000224       __imp__SetCursorFirstEntityByInteger@20 10006224     kzoengaa:KZOENGAA.DLL
+ 0004:00000228       __imp__SetAttributeFromInteger@16 10006228     kzoengaa:KZOENGAA.DLL
+ 0004:0000022c       __imp__GetIntegerFromAttribute@16 1000622c     kzoengaa:KZOENGAA.DLL
+ 0004:00000230       __imp__SfGetCurrentTask@4  10006230     kzoengaa:KZOENGAA.DLL
+ 0004:00000234       __imp__SfGetTaskInfo@12    10006234     kzoengaa:KZOENGAA.DLL
+ 0004:00000238       __imp__SfGetNextTask@4     10006238     kzoengaa:KZOENGAA.DLL
+ 0004:0000023c       __imp__SysGetEnvVar@12     1000623c     kzoengaa:KZOENGAA.DLL
+ 0004:00000240       __imp__DropObjectInstance@4 10006240     kzoengaa:KZOENGAA.DLL
+ 0004:00000244       __imp__CommitOI_ToFile@12  10006244     kzoengaa:KZOENGAA.DLL
+ 0004:00000248       __imp__IncludeSubobjectFromSubobject@20 10006248     kzoengaa:KZOENGAA.DLL
+ 0004:0000024c       __imp__CheckExistenceOfEntity@8 1000624c     kzoengaa:KZOENGAA.DLL
+ 0004:00000250       __imp__SysCloseFile@12     10006250     kzoengaa:KZOENGAA.DLL
+ 0004:00000254       __imp__SetAttributeFromAttribute@24 10006254     kzoengaa:KZOENGAA.DLL
+ 0004:00000258       __imp__ActivateEmptyObjectInstance@16 10006258     kzoengaa:KZOENGAA.DLL
+ 0004:0000025c       __imp__ActivateOI_FromFile@20 1000625c     kzoengaa:KZOENGAA.DLL
+ 0004:00000260       \177KZOENGAA_NULL_THUNK_DATA 10006260     kzoengaa:KZOENGAA.DLL
+ 0004:000002a0       __imp___free_dbg           100062a0     msvcrtd:MSVCRTD.dll
+ 0004:000002a4       __imp___initterm           100062a4     msvcrtd:MSVCRTD.dll
+ 0004:000002a8       __imp___malloc_dbg         100062a8     msvcrtd:MSVCRTD.dll
+ 0004:000002ac       __imp___adjust_fdiv        100062ac     msvcrtd:MSVCRTD.dll
+ 0004:000002b0       __imp____dllonexit         100062b0     msvcrtd:MSVCRTD.dll
+ 0004:000002b4       __imp___onexit             100062b4     msvcrtd:MSVCRTD.dll
+ 0004:000002b8       __imp__strcat              100062b8     msvcrtd:MSVCRTD.dll
+ 0004:000002bc       __imp___stricmp            100062bc     msvcrtd:MSVCRTD.dll
+ 0004:000002c0       __imp___strnicmp           100062c0     msvcrtd:MSVCRTD.dll
+ 0004:000002c4       __imp__strcpy              100062c4     msvcrtd:MSVCRTD.dll
+ 0004:000002c8       __imp__strncpy             100062c8     msvcrtd:MSVCRTD.dll
+ 0004:000002cc       \177MSVCRTD_NULL_THUNK_DATA 100062cc     msvcrtd:MSVCRTD.dll
+ 0004:00000300       __imp__SetWindowActionBehavior@16 10006300     zdrapp:ZDrApp.dll
+ 0004:00000304       \177ZDrApp_NULL_THUNK_DATA 10006304     zdrapp:ZDrApp.dll
+ 0004:00000330       __imp__ofnTZCMWKSO_AppendSlash@4 10006330     tzlodopr:tzlodopr.dll
+ 0004:00000334       __imp__BuildLPLR_MetaTypes@12 10006334     tzlodopr:tzlodopr.dll
+ 0004:00000338       __imp__CreateMetaEntity@16 10006338     tzlodopr:tzlodopr.dll
+ 0004:0000033c       __imp__zgSortEntityWithinParent@20 1000633c     tzlodopr:tzlodopr.dll
+ 0004:00000340       __imp__TerminateLPLR@4     10006340     tzlodopr:tzlodopr.dll
+ 0004:00000344       __imp__InitializeDefaultLPL@4 10006344     tzlodopr:tzlodopr.dll
+ 0004:00000348       __imp__oTZCMWKSO_CommitWorkstation@4 10006348     tzlodopr:tzlodopr.dll
+ 0004:0000034c       \177tzlodopr_NULL_THUNK_DATA 1000634c     tzlodopr:tzlodopr.dll
+
+ entry point at        0001:00000f20
+

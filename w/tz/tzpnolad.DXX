@@ -1,0 +1,84 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzpnolad.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzpnolad.dll
+
+           0 characteristics
+    5356CF73 time date stamp Tue Apr 22 16:22:11 2014
+        0.00 version
+           1 ordinal base
+          56 number of functions
+          56 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000010A5 _GetDLL_Instance@4
+          2    1 00001028 _OL_BitmapBrowseFileName@12
+          3    2 0000101E _OL_DetailActionPopup@4
+          4    3 000010D7 _OL_DetailAddAction@4
+          5    4 000010A0 _OL_DetailAddEvent@4
+          6    5 00001091 _OL_DetailCancel@4
+          7    6 000010B4 _OL_DetailOperationEdit@4
+          8    7 0000109B _OL_DetailPostBuild@4
+          9    8 000010C3 _OL_DetailPreBuild@4
+         10    9 0000100F _OL_DetailPreSelectChange@4
+         11    A 000010BE _OL_DetailRemoveAction@4
+         12    B 00001046 _OL_DetailReturnFromSubwindow@4
+         13    C 000010DC _OL_DetailSave@4
+         14    D 00001032 _OL_DetailSelectAction@4
+         15    E 00001118 _OL_DetailSelectChange@4
+         16    F 000010E6 _OL_DetailUpdateAction@4
+         17   10 000010C8 _OL_DetailViewChange@4
+         18   11 0000104B _OL_DisableBitmaps@4
+         19   12 00001073 _OL_DisableButtons@4
+         20   13 000010E1 _OL_GetBkgColorAndBitmapSize@4
+         21   14 0000106E _OL_GetProperties@4
+         22   15 00001041 _OL_GetScopeEntityName@8
+         23   16 000010D2 _OL_LoadBitmapWithResourcePath@8
+         24   17 000010EB _OL_LoadDefaultBitmap@4
+         25   18 000010B9 _OL_LoadDefaultBitmapFromPopup@4
+         26   19 0000107D _OL_LoadSelectedBitmap@4
+         27   1A 000010FF _OL_LoadSelectedBitmapFromPopup@4
+         28   1B 0000103C _OL_LoadTreePopup@4
+         29   1C 00001023 _OL_ObjectCancel@4
+         30   1D 0000111D _OL_ObjectOK@4
+         31   1E 0000110E _OL_ObjectPreBuild@4
+         32   1F 00001104 _OL_Postbuild@4
+         33   20 000010F5 _OL_SearchOutlinerEntity@8
+         34   21 0000100A _OL_SetActionView@4
+         35   22 000010AA _OL_SetBackgrdColor@4
+         36   23 000010FA _OL_SetBitmap@4
+         37   24 000010CD _OL_SetBitmapState@8
+         38   25 00001069 _OL_SetBitmapStateForDefault@4
+         39   26 00001113 _OL_SetBitmapStateForSelected@4
+         40   27 00001109 _OL_SetDflBitmap@4
+         41   28 0000105A _OL_SetNewBackgrdColor@4
+         42   29 00001014 _OL_SetNewTextColor@4
+         43   2A 00001005 _OL_SetProperties@8
+         44   2B 00001096 _OL_SetPropertiesForNewTree@4
+         45   2C 0000108C _OL_SetSelBitmap@4
+         46   2D 0000102D _OL_SetTextColor@4
+         47   2E 00001064 _OL_SetTextFont@4
+         48   2F 00001082 _OL_ShowBitmaps@32
+         49   30 000010AF _fnAddSiblingsToWorkOI@32
+         50   31 00001087 _fnFindFirstSelectedEntity@4
+         51   32 000010F0 _fnFindNextSelectedEntity@8
+         52   33 00001078 _fnLoadSelectionForSiblings@28
+         53   34 0000105F _fnNextSelectedEntity@8
+         54   35 00001019 _fnSpecifyOutlinerOutliner@4
+         55   36 00001050 _fnVerifySelectionStatus@16
+         56   37 00001055 _fnWriteSiblingsToBuffer@24
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        9000 .text

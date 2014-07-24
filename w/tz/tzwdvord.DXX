@@ -1,0 +1,68 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzwdvord.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzwdvord.dll
+
+           0 characteristics
+    5356CF6B time date stamp Tue Apr 22 16:22:03 2014
+        0.00 version
+           1 ordinal base
+          40 number of functions
+          40 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001055 _GetDLL_Instance@4
+          2    1 00001087 _zwTZWDVORD_AddNewApplVOR@4
+          3    2 0000101E _zwTZWDVORD_CloseVOR_ListView@4
+          4    3 0000104B _zwTZWDVORD_DeleteVOR_Meta@4
+          5    4 0000108C _zwTZWDVORD_ExcludeVOR_Entity@4
+          6    5 00001005 _zwTZWDVORD_GetVOR_ListView@4
+          7    6 00001041 _zwTZWDVORD_IncludeLOD@4
+          8    7 000010A5 _zwTZWDVORD_IncludeVOR_Entity@4
+          9    8 00001064 _zwTZWDVORD_LoadControlDetailWnd@8
+         10    9 0000107D _zwTZWDVORD_LoadCtrlDetail_Attrib@4
+         11    A 0000106E _zwTZWDVORD_LoadCtrlDetail_Entity@4
+         12    B 00001082 _zwTZWDVORD_LoadCtrlDetail_View@4
+         13    C 0000102D _zwTZWDVORD_LoadPopup@4
+         14    D 0000105F _zwTZWDVORD_Mapp_AttrMapp@8
+         15    E 000010AF _zwTZWDVORD_Mapp_AttrWithMapp@4
+         16    F 0000103C _zwTZWDVORD_Mapp_AttrWithoutMapp@4
+         17   10 000010CD _zwTZWDVORD_Mapp_CreateAttribMap@20
+         18   11 00001091 _zwTZWDVORD_Mapp_CreateEntityMap@20
+         19   12 0000105A _zwTZWDVORD_Mapp_CreateMapping@20
+         20   13 00001023 _zwTZWDVORD_Mapp_CreateTreeObject@12
+         21   14 00001069 _zwTZWDVORD_Mapp_CreateViewMap@20
+         22   15 00001028 _zwTZWDVORD_Mapp_DropWorkView@4
+         23   16 00001032 _zwTZWDVORD_Mapp_EntireView@4
+         24   17 00001037 _zwTZWDVORD_Mapp_Postbuild@4
+         25   18 000010A0 _zwTZWDVORD_Mapp_ShowAllAttribute@4
+         26   19 000010AA _zwTZWDVORD_Mapp_ShowMapping@4
+         27   1A 00001078 _zwTZWDVORD_Mapp_ShowView@4
+         28   1B 00001014 _zwTZWDVORD_Mapp_SortByName@4
+         29   1C 000010C8 _zwTZWDVORD_Mapp_SortLodStructure@4
+         30   1D 0000100F _zwTZWDVORD_Postbuild@4
+         31   1E 00001050 _zwTZWDVORD_ReturnFromSubwindow@4
+         32   1F 0000100A _zwTZWDVORD_SetVOR_Caption@4
+         33   20 00001096 _zwTZWDVORD_UpdateApplVOR@4
+         34   21 00001073 _zwTZWDVORD_UpdateInit@4
+         35   22 000010B4 _zwTZWDVORD_UpdateVOR_Cancel@4
+         36   23 000010BE _zwTZWDVORD_UpdateVOR_CheckName@12
+         37   24 00001046 _zwTZWDVORD_UpdateVOR_Delete@4
+         38   25 000010B9 _zwTZWDVORD_UpdateVOR_Next@4
+         39   26 000010C3 _zwTZWDVORD_UpdateVOR_OK@4
+         40   27 0000109B _zwTZWDVORD_UpdateVOR_Prev@4
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        7000 .text

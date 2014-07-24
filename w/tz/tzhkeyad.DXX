@@ -1,0 +1,40 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzhkeyad.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzhkeyad.dll
+
+           0 characteristics
+    5356CF4D time date stamp Tue Apr 22 16:21:33 2014
+        0.00 version
+           1 ordinal base
+          12 number of functions
+          12 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001028 _GetDLL_Instance@4
+          2    1 00001019 _PostBSetVKey@4
+          3    2 0000100A _SaveVKey@4
+          4    3 0000102D _zwTZHKEYAD_ExitAppl@4
+          5    4 00001037 _zwTZHKEYAD_IncludeOperation@4
+          6    5 00001023 _zwTZHKEYAD_InitHK_ForLPLR@4
+          7    6 00001041 _zwTZHKEYAD_MainRtnFromSubWnd@4
+          8    7 0000103C _zwTZHKEYAD_PreBAppl@4
+          9    8 00001014 _zwTZHKEYAD_PreBHotkeyOpers@4
+         10    9 00001032 _zwTZHKEYAD_SaveHK_ForLPLR@4
+         11    A 00001005 _zwTZHKEYAD_SetTitle@4
+         12    B 0000101E _zwTZHKEYAD_SwitchLPLR@4
+
+  Summary
+
+        3000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        3000 .text

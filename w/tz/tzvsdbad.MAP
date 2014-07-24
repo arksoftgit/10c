@@ -1,0 +1,150 @@
+ tzvsdbad
+
+ Timestamp is 5356cf67 (Tue Apr 22 16:21:59 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00002087H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 00000581H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 0000024bH .data                   DATA
+ 0003:0000065c 00000038H .bss                    DATA
+ 0004:00000000 00000050H .idata$2                DATA
+ 0004:00000050 00000014H .idata$3                DATA
+ 0004:00000064 0000013cH .idata$4                DATA
+ 0004:000001a0 0000013cH .idata$5                DATA
+ 0004:000002dc 00000213H .idata$6                DATA
+ 0005:00000000 000001d3H .rsrc$01                DATA
+ 0005:000001e0 00000499H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:000000a0       _DllMain@12                100010a0 f   zdllinst.obj
+ 0001:000000c6       _GetDLL_Instance@4         100010c6 f   zdllinst.obj
+ 0001:000000e0       _zwTZVSDBAD_BuildVar@4     100010e0 f   tzvsdbad.obj
+ 0001:00000149       _zwTZVSDBAD_Resume@4       10001149 f   tzvsdbad.obj
+ 0001:0000019e       _zwTZVSDBAD_Exit@4         1000119e f   tzvsdbad.obj
+ 0001:000001d1       _zwTZVSDBAD_FindStatement@8 100011d1 f   tzvsdbad.obj
+ 0001:00000361       _zwTZVSDBAD_Go@4           10001361 f   tzvsdbad.obj
+ 0001:00000465       _zwTZVSDBAD_InitDebugger@4 10001465 f   tzvsdbad.obj
+ 0001:0000051c       _zwTZVSDBAD_PostInitDebugger@4 1000151c f   tzvsdbad.obj
+ 0001:00000596       _zwTZVSDBAD_SetBreakPoint@4 10001596 f   tzvsdbad.obj
+ 0001:00000655       _zwTZVSDBAD_Skip@4         10001655 f   tzvsdbad.obj
+ 0001:00000740       _zwTZVSDBAD_SpawnObjectBrowser@4 10001740 f   tzvsdbad.obj
+ 0001:000007e0       _zwTZVSDBAD_StepForward@4  100017e0 f   tzvsdbad.obj
+ 0001:000008cb       _zwTZVSDBAD_StepOnce@4     100018cb f   tzvsdbad.obj
+ 0001:000009b6       _zwTZVSDBAD_Update@4       100019b6 f   tzvsdbad.obj
+ 0001:00000cf6       _Exec_ResumeFromDebugger@12 10001cf6 f   tzvmlopr:tzvmlopr.dll
+ 0001:00000cfc       _Exec_Go@4                 10001cfc f   tzvmlopr:tzvmlopr.dll
+ 0001:00000d02       _Exec_Skip@4               10001d02 f   tzvmlopr:tzvmlopr.dll
+ 0001:00000d08       _StageBrowser@8            10001d08 f   tzvmlopr:tzvmlopr.dll
+ 0001:00000d0e       _Exec_StepForward@4        10001d0e f   tzvmlopr:tzvmlopr.dll
+ 0001:00000d14       _Exec_StepOnce@4           10001d14 f   tzvmlopr:tzvmlopr.dll
+ 0001:00000d1a       _CreateTemporalSubobjectVersion@8 10001d1a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d20       _SetNameForView@16         10001d20 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d26       _GetViewByName@16          10001d26 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d2c       _SetCursorNextEntity@12    10001d2c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d32       _SetAttributeFromString@16 10001d32 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d38       _CompareAttributeToString@16 10001d38 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d3e       _CompareAttributeToAttribute@24 10001d3e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d44       _ResetViewFromSubobject@4  10001d44 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d4a       _SetViewToSubobject@8      10001d4a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d50       _CheckExistenceOfEntity@8  10001d50 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d56       _SetCursorFirstEntity@12   10001d56 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d5c       _SetCursorFirstEntityByInteger@20 10001d5c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d62       _GetIntegerFromAttribute@16 10001d62 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d68       _CreateViewFromViewForTask@12 10001d68 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d6e       _MessageSend@24            10001d6e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d74       _GetBlobFromAttribute@20   10001d74 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d7a       _CompareAttributeToInteger@16 10001d7a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000d80       __CRT_INIT@12              10001d80 f   msvcrtd:crtdll.obj
+ 0001:00000e90       __DllMainCRTStartup@12     10001e90 f   msvcrtd:crtdll.obj
+ 0001:00000f84       __free_dbg                 10001f84 f   msvcrtd:MSVCRTD.dll
+ 0001:00000f8a       __initterm                 10001f8a f   msvcrtd:MSVCRTD.dll
+ 0001:00000f90       __onexit                   10001f90 f   msvcrtd:atonexit.obj
+ 0001:00000fd0       _atexit                    10001fd0 f   msvcrtd:atonexit.obj
+ 0001:00000fe8       __malloc_dbg               10001fe8 f   msvcrtd:MSVCRTD.dll
+ 0001:00000fee       ___dllonexit               10001fee f   msvcrtd:MSVCRTD.dll
+ 0001:00000ff4       _SetWindowActionBehavior@16 10001ff4 f   zdrapp:ZDrApp.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000401c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10005000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10005104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10005208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000530c     msvcrtd:cinitexe.obj
+ 0003:00000410       ??_C@_08LOHJ@Variable?$AA@ 10005410     tzvsdbad.obj
+ 0003:0000041c       ??_C@_0M@NDPP@StackObject?$AA@ 1000541c     tzvsdbad.obj
+ 0003:0000042c       ??_C@_09MGCF@ZeidonVML?$AA@ 1000542c     tzvsdbad.obj
+ 0003:00000438       ??_C@_0BA@PEJC@ApplicationView?$AA@ 10005438     tzvsdbad.obj
+ 0003:0000044c       ??_C@_01PCJP@Y?$AA@        1000544c     tzvsdbad.obj
+ 0003:00000450       ??_C@_0P@IFLF@BreakPointFlag?$AA@ 10005450     tzvsdbad.obj
+ 0003:00000464       ??_C@_01FAFK@?$DO?$AA@     10005464     tzvsdbad.obj
+ 0003:00000468       ??_C@_0O@PGLF@OperationText?$AA@ 10005468     tzvsdbad.obj
+ 0003:00000478       ??_C@_0BD@KBFM@RelativeLineNumber?$AA@ 10005478     tzvsdbad.obj
+ 0003:00000490       ??_C@_0N@FOPJ@Substatement?$AA@ 10005490     tzvsdbad.obj
+ 0003:000004a0       ??_C@_09IND@Statement?$AA@ 100054a0     tzvsdbad.obj
+ 0003:000004ac       ??_C@_0O@HHFJ@StatementView?$AA@ 100054ac     tzvsdbad.obj
+ 0003:000004bc       ??_C@_03EFM@XPG?$AA@       100054bc     tzvsdbad.obj
+ 0003:000004c0       ??_C@_09GMMJ@Operation?$AA@ 100054c0     tzvsdbad.obj
+ 0003:000004cc       ??_C@_0BA@MKNH@OperationSource?$AA@ 100054cc     tzvsdbad.obj
+ 0003:000004e0       ??_C@_04BBDM@ZKey?$AA@     100054e0     tzvsdbad.obj
+ 0003:000004e8       ??_C@_07PHFG@VS00201?$AA@  100054e8     tzvsdbad.obj
+ 0003:000004f4       ??_C@_08EEHE@Launcher?$AA@ 100054f4     tzvsdbad.obj
+ 0003:00000500       ??_C@_0BG@INIE@View?5is?5not?5yet?5valid?$AA@ 10005500     tzvsdbad.obj
+ 0003:0000051c       ??_C@_05KBGO@Value?$AA@    1000551c     tzvsdbad.obj
+ 0003:00000524       ??_C@_08DLDO@TZVSDBAD?$AA@ 10005524     tzvsdbad.obj
+ 0003:00000530       ??_C@_09NEBH@UPDATEVAR?$AA@ 10005530     tzvsdbad.obj
+ 0003:0000053c       ??_C@_08FNON@DataType?$AA@ 1000553c     tzvsdbad.obj
+ 0003:00000548       ??_C@_02GMH@ID?$AA@        10005548     tzvsdbad.obj
+ 0003:0000065c       _g_hInstanceDLL            1000565c     zdllinst.obj
+ 0003:00000660       ??_C@_00A@?$AA@            10005660     tzvsdbad.obj
+ 0003:00000668       __adjust_fdiv              10005668     <common>
+ 0003:00000674       ___onexitend               10005674     <common>
+ 0003:00000684       ___onexitbegin             10005684     <common>
+ 0003:00000688       __pRawDllMain              10005688     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzvmlopr 10006000     tzvmlopr:tzvmlopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KZOENGAA 10006014     kzoengaa:KZOENGAA.DLL
+ 0004:00000028       __IMPORT_DESCRIPTOR_MSVCRTD 10006028     msvcrtd:MSVCRTD.dll
+ 0004:0000003c       __IMPORT_DESCRIPTOR_ZDrApp 1000603c     zdrapp:ZDrApp.dll
+ 0004:00000050       __NULL_IMPORT_DESCRIPTOR   10006050     tzvmlopr:tzvmlopr.dll
+ 0004:000001a0       __imp__SetCursorFirstEntity@12 100061a0     kzoengaa:KZOENGAA.DLL
+ 0004:000001a4       __imp__CompareAttributeToInteger@16 100061a4     kzoengaa:KZOENGAA.DLL
+ 0004:000001a8       __imp__GetBlobFromAttribute@20 100061a8     kzoengaa:KZOENGAA.DLL
+ 0004:000001ac       __imp__MessageSend@24      100061ac     kzoengaa:KZOENGAA.DLL
+ 0004:000001b0       __imp__CreateViewFromViewForTask@12 100061b0     kzoengaa:KZOENGAA.DLL
+ 0004:000001b4       __imp__GetIntegerFromAttribute@16 100061b4     kzoengaa:KZOENGAA.DLL
+ 0004:000001b8       __imp__CreateTemporalSubobjectVersion@8 100061b8     kzoengaa:KZOENGAA.DLL
+ 0004:000001bc       __imp__SetNameForView@16   100061bc     kzoengaa:KZOENGAA.DLL
+ 0004:000001c0       __imp__GetViewByName@16    100061c0     kzoengaa:KZOENGAA.DLL
+ 0004:000001c4       __imp__SetCursorNextEntity@12 100061c4     kzoengaa:KZOENGAA.DLL
+ 0004:000001c8       __imp__SetAttributeFromString@16 100061c8     kzoengaa:KZOENGAA.DLL
+ 0004:000001cc       __imp__CompareAttributeToString@16 100061cc     kzoengaa:KZOENGAA.DLL
+ 0004:000001d0       __imp__CompareAttributeToAttribute@24 100061d0     kzoengaa:KZOENGAA.DLL
+ 0004:000001d4       __imp__ResetViewFromSubobject@4 100061d4     kzoengaa:KZOENGAA.DLL
+ 0004:000001d8       __imp__SetViewToSubobject@8 100061d8     kzoengaa:KZOENGAA.DLL
+ 0004:000001dc       __imp__CheckExistenceOfEntity@8 100061dc     kzoengaa:KZOENGAA.DLL
+ 0004:000001e0       __imp__SetCursorFirstEntityByInteger@20 100061e0     kzoengaa:KZOENGAA.DLL
+ 0004:000001e4       \177KZOENGAA_NULL_THUNK_DATA 100061e4     kzoengaa:KZOENGAA.DLL
+ 0004:0000021c       __imp___onexit             1000621c     msvcrtd:MSVCRTD.dll
+ 0004:00000220       __imp___malloc_dbg         10006220     msvcrtd:MSVCRTD.dll
+ 0004:00000224       __imp___adjust_fdiv        10006224     msvcrtd:MSVCRTD.dll
+ 0004:00000228       __imp____dllonexit         10006228     msvcrtd:MSVCRTD.dll
+ 0004:0000022c       __imp___initterm           1000622c     msvcrtd:MSVCRTD.dll
+ 0004:00000230       __imp___free_dbg           10006230     msvcrtd:MSVCRTD.dll
+ 0004:00000234       \177MSVCRTD_NULL_THUNK_DATA 10006234     msvcrtd:MSVCRTD.dll
+ 0004:00000264       __imp__SetWindowActionBehavior@16 10006264     zdrapp:ZDrApp.dll
+ 0004:00000268       \177ZDrApp_NULL_THUNK_DATA 10006268     zdrapp:ZDrApp.dll
+ 0004:00000294       __imp__Exec_StepOnce@4     10006294     tzvmlopr:tzvmlopr.dll
+ 0004:00000298       __imp__Exec_StepForward@4  10006298     tzvmlopr:tzvmlopr.dll
+ 0004:0000029c       __imp__StageBrowser@8      1000629c     tzvmlopr:tzvmlopr.dll
+ 0004:000002a0       __imp__Exec_Skip@4         100062a0     tzvmlopr:tzvmlopr.dll
+ 0004:000002a4       __imp__Exec_Go@4           100062a4     tzvmlopr:tzvmlopr.dll
+ 0004:000002a8       __imp__Exec_ResumeFromDebugger@12 100062a8     tzvmlopr:tzvmlopr.dll
+ 0004:000002ac       \177tzvmlopr_NULL_THUNK_DATA 100062ac     tzvmlopr:tzvmlopr.dll
+
+ entry point at        0001:00000e90
+

@@ -3204,7 +3204,7 @@ fnDecryptStringUL( zPCHAR pchOut, zPCHAR pchIn, zPCHAR pchKey, zUSHORT uLth, zBO
          nOrderIdx++;
 
       nInLth = (zSHORT) (((zUCHAR) pchIn[ EncryptB[ nOrderIdx ] ]) - 'a');
-      if ( uLth > zMAXEL || 
+      if ( uLth > zMAXEL ||
            (bEncodeLth && nInLth >= uLth) ||
            (bEncodeLth == FALSE && nInLth > uLth) ||
            nInLth < 0 )

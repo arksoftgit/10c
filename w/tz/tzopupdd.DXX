@@ -1,0 +1,103 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzopupdd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzopupdd.dll
+
+           0 characteristics
+    5356CF55 time date stamp Tue Apr 22 16:21:41 2014
+        0.00 version
+           1 ordinal base
+          75 number of functions
+          75 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000010DC _GetDLL_Instance@4
+          2    1 00001082 _fnzwTZOPUPDD_DeleteFromXLP@8
+          3    2 000010F5 _fnzwTZOPUPDD_DropOperFromFile@8
+          4    3 00001050 _zwTZOPUPDD_AcceptSubobject@16
+          5    4 0000102D _zwTZOPUPDD_CheckGroupName@16
+          6    5 0000119A _zwTZOPUPDD_Check_CheckoutStatus@4
+          7    6 0000107D _zwTZOPUPDD_CopyOperationWorkLOD@12
+          8    7 0000115E _zwTZOPUPDD_CreateOperation@4
+          9    8 00001109 _zwTZOPUPDD_CreateParameter@4
+         10    9 00001131 _zwTZOPUPDD_CreateWorkLOD@4
+         11    A 000010C3 _zwTZOPUPDD_DeleteOperFromFile@12
+         12    B 00001096 _zwTZOPUPDD_DeleteOperGroup@4
+         13    C 000010BE _zwTZOPUPDD_DeleteOperation@4
+         14    D 00001122 _zwTZOPUPDD_DeleteParameter@4
+         15    E 0000118B _zwTZOPUPDD_EnableAndSetCheckOut@4
+         16    F 0000105F _zwTZOPUPDD_ExitDialog@4
+         17   10 00001073 _zwTZOPUPDD_GrayGroupControls@4
+         18   11 00001028 _zwTZOPUPDD_GroupCheckedOut@4
+         19   12 000010F0 _zwTZOPUPDD_HelpAbout@4
+         20   13 00001032 _zwTZOPUPDD_HelpBasics@4
+         21   14 00001163 _zwTZOPUPDD_HelpContents@4
+         22   15 00001005 _zwTZOPUPDD_HelpOnHelp@4
+         23   16 00001177 _zwTZOPUPDD_InitGroupDetail@4
+         24   17 000010E1 _zwTZOPUPDD_InitMenu@4
+         25   18 00001154 _zwTZOPUPDD_LoadOperGroupList@4
+         26   19 00001159 _zwTZOPUPDD_LoadOperation@4
+         27   1A 00001145 _zwTZOPUPDD_LoadOperationList@4
+         28   1B 00001019 _zwTZOPUPDD_MainPostBuild@4
+         29   1C 0000113B _zwTZOPUPDD_MainRtnFromSubWnd@4
+         30   1D 00001046 _zwTZOPUPDD_MenuOpenOperation@4
+         31   1E 000010D7 _zwTZOPUPDD_MoveCheckGroupType@12
+         32   1F 00001037 _zwTZOPUPDD_MoveOperToNewGroup@4
+         33   20 000010A0 _zwTZOPUPDD_MoveOperationCancel@4
+         34   21 00001186 _zwTZOPUPDD_MoveOperationPostBuil@4
+         35   22 0000109B _zwTZOPUPDD_MoveOperationPreBuild@4
+         36   23 00001118 _zwTZOPUPDD_MoveOperationToFile@4
+         37   24 00001069 _zwTZOPUPDD_MoveRtnFromSubwindow@4
+         38   25 0000106E _zwTZOPUPDD_NewOperPrebuild@4
+         39   26 00001023 _zwTZOPUPDD_NewOperation@4
+         40   27 000010EB _zwTZOPUPDD_NewOperationGroup@4
+         41   28 00001127 _zwTZOPUPDD_OpenOperPreBuild@4
+         42   29 000010C8 _zwTZOPUPDD_OpenOperation@4
+         43   2A 00001190 _zwTZOPUPDD_OperGroupPopup@4
+         44   2B 00001087 _zwTZOPUPDD_OperationGroupPopup@4
+         45   2C 0000116D _zwTZOPUPDD_ParameterAccept@4
+         46   2D 000010FA _zwTZOPUPDD_ParameterNext@4
+         47   2E 00001113 _zwTZOPUPDD_ParameterPopup@4
+         48   2F 00001136 _zwTZOPUPDD_ParameterPrev@4
+         49   30 0000112C _zwTZOPUPDD_PromptForSave@4
+         50   31 00001078 _zwTZOPUPDD_RefreshGroupList@4
+         51   32 00001014 _zwTZOPUPDD_RefreshOperationList@4
+         52   33 0000117C _zwTZOPUPDD_ReportExitInitialize@4
+         53   34 000010AA _zwTZOPUPDD_ResetProfileXFER@4
+         54   35 000010CD _zwTZOPUPDD_SaveAsCancel@4
+         55   36 000010AF _zwTZOPUPDD_SaveAsCheckValues@12
+         56   37 000010E6 _zwTZOPUPDD_SaveAsInNewGroup@4
+         57   38 00001172 _zwTZOPUPDD_SaveAsKeepCurrentDesc@4
+         58   39 0000101E _zwTZOPUPDD_SaveAsNewOperation@16
+         59   3A 00001168 _zwTZOPUPDD_SaveAsOperation@4
+         60   3B 0000110E _zwTZOPUPDD_SaveAsPostBuild@4
+         61   3C 0000100A _zwTZOPUPDD_SaveAsPreBuild@4
+         62   3D 000010B9 _zwTZOPUPDD_SaveAsRtnFromSubwnd@4
+         63   3E 00001091 _zwTZOPUPDD_SaveOperation@4
+         64   3F 00001055 _zwTZOPUPDD_SaveOperationGroup@4
+         65   40 00001064 _zwTZOPUPDD_SetExtension@4
+         66   41 00001104 _zwTZOPUPDD_SetFlagForNewOper@4
+         67   42 0000104B _zwTZOPUPDD_SetGroupName@4
+         68   43 00001140 _zwTZOPUPDD_SetSaveAsName@4
+         69   44 0000114A _zwTZOPUPDD_Set_CM_List@4
+         70   45 0000108C _zwTZOPUPDD_ShowDetail@4
+         71   46 0000114F _zwTZOPUPDD_SortByDate@4
+         72   47 000010B4 _zwTZOPUPDD_SortByGroup@4
+         73   48 00001041 _zwTZOPUPDD_SortByName@4
+         74   49 0000100F _zwTZOPUPDD_SwitchLPLR@4
+         75   4A 00001181 _zwTZOPUPDD_TransferToEditor@4
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        9000 .text

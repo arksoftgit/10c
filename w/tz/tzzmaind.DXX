@@ -1,0 +1,53 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzzmaind.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzzmaind.dll
+
+           0 characteristics
+    5356CF6E time date stamp Tue Apr 22 16:22:06 2014
+        0.00 version
+           1 ordinal base
+          25 number of functions
+          25 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001050 _GetDLL_Instance@4
+          2    1 00001055 _zwTZZMAIND_CheckForSwitch@4
+          3    2 00001087 _zwTZZMAIND_DisplayPopup1@4
+          4    3 00001037 _zwTZZMAIND_FocusBrowser@4
+          5    4 00001073 _zwTZZMAIND_FocusDTE@4
+          6    5 00001014 _zwTZZMAIND_FocusDialog@4
+          7    6 00001064 _zwTZZMAIND_FocusDomains@4
+          8    7 00001023 _zwTZZMAIND_FocusER@4
+          9    8 0000103C _zwTZZMAIND_FocusLOD@4
+         10    9 00001069 _zwTZZMAIND_FocusOperations@4
+         11    A 0000101E _zwTZZMAIND_FocusPE@4
+         12    B 0000100A _zwTZZMAIND_ListPostBuild@4
+         13    C 00001041 _zwTZZMAIND_PostBuild@4
+         14    D 00001005 _zwTZZMAIND_StartAnimator@4
+         15    E 0000105A _zwTZZMAIND_StartBrowser@4
+         16    F 00001046 _zwTZZMAIND_StartDTE@4
+         17   10 00001082 _zwTZZMAIND_StartDialog@4
+         18   11 00001028 _zwTZZMAIND_StartDomains@4
+         19   12 0000106E _zwTZZMAIND_StartER@4
+         20   13 0000108C _zwTZZMAIND_StartEditor@4
+         21   14 0000102D _zwTZZMAIND_StartLOD@4
+         22   15 0000104B _zwTZZMAIND_StartOperations@4
+         23   16 0000107D _zwTZZMAIND_StartPE@4
+         24   17 00001032 _zwTZZMAIND_ToolAboutExit@4
+         25   18 00001078 _zwTZZMAIND_ToolAboutPostBuild@4
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        5000 .rsrc
+        2000 .text

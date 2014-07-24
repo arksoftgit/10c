@@ -1,0 +1,64 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzwdgrwd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzwdgrwd.dll
+
+           0 characteristics
+    5356CF69 time date stamp Tue Apr 22 16:22:01 2014
+        0.00 version
+           1 ordinal base
+          36 number of functions
+          36 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000106E _GetDLL_Instance@4
+          2    1 000010AF _zwTZWDGRWD_ERD_HighliteEntity@4
+          3    2 0000101E _zwTZWDGRWD_GraphBuild@4
+          4    3 0000100F _zwTZWDGRWD_HideGroupEvents@4
+          5    4 00001064 _zwTZWDGRWD_PositionWD@4
+          6    5 00001091 _zwTZWDGRWD_SaveGraph@4
+          7    6 00001096 _zwTZWDGRWD_SelectPostBuild@4
+          8    7 0000109B _zwTZWDGRWD_ShowGroupEvents@4
+          9    8 0000102D _zwTZWDGRWD_TraceReport@4
+         10    9 00001019 _zwTZWDGRWD_WD_Actions@4
+         11    A 00001050 _zwTZWDGRWD_WD_ArcActions@4
+         12    B 00001069 _zwTZWDGRWD_WD_Focus@4
+         13    C 0000107D _zwTZWDGRWD_WD_HideShowActions@4
+         14    D 000010B9 _zwTZWDGRWD_WD_LClick@4
+         15    E 00001005 _zwTZWDGRWD_WD_NodeActions@4
+         16    F 0000105A _zwTZWDGRWD_WD_NodeCreate@4
+         17   10 00001087 _zwTZWDGRWD_WD_NodeNeighbors@4
+         18   11 00001041 _zwTZWDGRWD_WD_NodeSelect@4
+         19   12 00001055 _zwTZWDGRWD_WD_Print@4
+         20   13 0000104B _zwTZWDGRWD_WD_RelCreate@4
+         21   14 0000105F _zwTZWDGRWD_WD_RelDelete@4
+         22   15 000010A5 _zwTZWDGRWD_WD_RelNeighbors@4
+         23   16 00001078 _zwTZWDGRWD_WD_RelSelect@4
+         24   17 0000108C _zwTZWDGRWD_WD_ZoomIn@4
+         25   18 00001082 _zwTZWDGRWD_WD_ZoomOut@4
+         26   19 00001028 _zwTZWDGRWD_WD_ZoomOutFit@4
+         27   1A 00001014 _zwTZWDGRWD_WD_ZoomStandardSize@4
+         28   1B 000010A0 _zwfnTZWDGRWD_FreeCell@20
+         29   1C 00001073 _zwfnTZWDGRWD_FreePosEDM@24
+         30   1D 00001046 _zwfnTZWDGRWD_GetWeightedPosEDM@12
+         31   1E 000010AA _zwfnTZWDGRWD_HideShowGroupEvents@12
+         32   1F 00001037 _zwfnTZWDGRWD_InitCellsEDM@4
+         33   20 0000103C _zwfnTZWDGRWD_MarkCellEDM@8
+         34   21 00001032 _zwfnTZWDGRWD_PositionNonPosEnts@8
+         35   22 0000100A _zwfnTZWDGRWD_RePositionEntity@8
+         36   23 000010B4 _zwfnTZWDGRWD_UnmarkCellEDM@8
+
+  Summary
+
+        4000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        6000 .text

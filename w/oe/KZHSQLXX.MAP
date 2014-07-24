@@ -1,0 +1,566 @@
+ KZHSQLXX
+
+ Timestamp is 5356cb6c (Tue Apr 22 16:05:00 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000142d8H .text                   CODE
+ 0002:00000000 0000013eH .rdata                  DATA
+ 0002:00000140 0000015aH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00002476H .data                   DATA
+ 0003:00002888 00000080H .bss                    DATA
+ 0004:00000000 0000003cH .idata$2                DATA
+ 0004:0000003c 00000014H .idata$3                DATA
+ 0004:00000050 00000238H .idata$4                DATA
+ 0004:00000288 00000238H .idata$5                DATA
+ 0004:000004c0 0000026dH .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000230       _fnAllocateConnectionMemory@16 10001230 f   KZHSQLXX.OBJ
+ 0001:00000343       _InitDatabase              10001343 f   KZHSQLXX.OBJ
+ 0001:0000042f       _CloseDatabase             1000142f f   KZHSQLXX.OBJ
+ 0001:000007b3       _BeginTransaction          100017b3 f   KZHSQLXX.OBJ
+ 0001:000008e7       _CommitTransaction         100018e7 f   KZHSQLXX.OBJ
+ 0001:000009d1       _RollbackTransaction       100019d1 f   KZHSQLXX.OBJ
+ 0001:00000a88       _fnCancelQuery             10001a88 f   KZHSQLXX.OBJ
+ 0001:00000a8d       _fnFindNextJoinedChild@12  10001a8d f   KZHSQLXX.OBJ
+ 0001:00000ba5       _fnGetNextDataField@4      10001ba5 f   KZHSQLXX.OBJ
+ 0001:00000deb       _fnCreateKeyList@16        10001deb f   KZHSQLXX.OBJ
+ 0001:00000e17       _fnSetEntityByKeys@28      10001e17 f   KZHSQLXX.OBJ
+ 0001:000012cb       _Load                      100022cb f   KZHSQLXX.OBJ
+ 0001:0000221d       _Insert                    1000321d f   KZHSQLXX.OBJ
+ 0001:000023ab       _InsertRel                 100033ab f   KZHSQLXX.OBJ
+ 0001:0000253b       _Delete                    1000353b f   KZHSQLXX.OBJ
+ 0001:000026eb       _DeleteRel                 100036eb f   KZHSQLXX.OBJ
+ 0001:00002831       _Update                    10003831 f   KZHSQLXX.OBJ
+ 0001:00002a51       _DBH_Error                 10003a51 f   KZHSQLXX.OBJ
+ 0001:00002ab9       _DisplayCommand            10003ab9 f   KZHSQLXX.OBJ
+ 0001:00002b79       _fnOpenDatabaseConnection@16 10003b79 f   KZHSQLXX.OBJ
+ 0001:00002cfc       _GetWorkObjectView         10003cfc f   KZHSQLXX.OBJ
+ 0001:000030d2       _WriteLongChar             100040d2 f   KZHSQLXX.OBJ
+ 0001:000030da       _fnClearDBHandlerError@4   100040da f   KZHSQLXX.OBJ
+ 0001:00003232       _fnSetDBHandlerError@16    10004232 f   KZHSQLXX.OBJ
+ 0001:000034b3       _DBH_MsgProc@32            100044b3 f   KZHSQLXX.OBJ
+ 0001:00003984       _fnDBH_Callback@24         10004984 f   KZHSQLXX.OBJ
+ 0001:00003b48       _RetrieveSchema@8          10004b48 f   KZHSQLXX.OBJ
+ 0001:00004d10       _zstrtrim                  10005d10 f   KZHSQLGA.OBJ
+ 0001:00004def       _SqlEntityIsQualified@8    10005def f   KZHSQLGA.OBJ
+ 0001:00004e1e       _fnTableName@12            10005e1e f   KZHSQLGA.OBJ
+ 0001:00004f91       _SqlAttributeIsNull@12     10005f91 f   KZHSQLGA.OBJ
+ 0001:000050e6       _SqlBuildInsert@20         100060e6 f   KZHSQLGA.OBJ
+ 0001:00006028       _SqlBuildInsertCorrTable@20 10007028 f   KZHSQLGA.OBJ
+ 0001:000065c9       _SqlBuildUpdate@24         100075c9 f   KZHSQLGA.OBJ
+ 0001:00006e06       _SqlBuildUpdateCorrTable@20 10007e06 f   KZHSQLGA.OBJ
+ 0001:000071e5       _SqlBuildDelete@20         100081e5 f   KZHSQLGA.OBJ
+ 0001:000072e8       _SqlBuildDeleteAll@20      100082e8 f   KZHSQLGA.OBJ
+ 0001:000073eb       _SqlBuildDeleteCorrTable@20 100083eb f   KZHSQLGA.OBJ
+ 0001:000075dd       _SqlCheckOpenSQL@8         100085dd f   KZHSQLGA.OBJ
+ 0001:00007628       _SqlEntityValidForJoin@12  10008628 f   KZHSQLGA.OBJ
+ 0001:00007844       _SqlFindNextJoinableChild@20 10008844 f   KZHSQLGA.OBJ
+ 0001:00007962       _SqlBuildSelect@24         10008962 f   KZHSQLGA.OBJ
+ 0001:0000ad85       _SqlBuildSelectForEntityInstance@24 1000bd85 f   KZHSQLGA.OBJ
+ 0001:0000b0c3       _SqlAutoLoadFromParent@24  1000c0c3 f   KZHSQLGA.OBJ
+ 0001:0000c539       _SqlDisplayQualEntity@8    1000d539 f   KZHSQLGA.OBJ
+ 0001:0000c8ac       _SqlFreeQualEntity@4       1000d8ac f   KZHSQLGA.OBJ
+ 0001:0000c980       _fnAddCheckForNullKey      1000d980 f   KZHSQLGA.OBJ
+ 0001:0000cd8f       _SqlRetrieveQualObject@20  1000dd8f f   KZHSQLGA.OBJ
+ 0001:0000f4e4       _SqlDisplayCommandEx@16    100104e4 f   KZHSQLGA.OBJ
+ 0001:0000ff04       _fnTraceSql@8              10010f04 f   KZHSQLGA.OBJ
+ 0001:0000ff19       _SqlDisplayCommand@8       10010f19 f   KZHSQLGA.OBJ
+ 0001:0000ff34       _SqlInitBoundAttrList@20   10010f34 f   KZHSQLGA.OBJ
+ 0001:0000ffb0       _SqlAddBoundAttr@20        10010fb0 f   KZHSQLGA.OBJ
+ 0001:0001006d       _SqlFreeBoundAttrList@4    1001106d f   KZHSQLGA.OBJ
+ 0001:00012dcc       _SysGetProcessID@4         10013dcc f   kzoengaa:KZOENGAA.DLL
+ 0001:00012dd2       _SysAllocMemory@20         10013dd2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012dd8       _SysFreeMemory@4           10013dd8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012dde       _TraceLineS@8              10013dde f   kzoengaa:KZOENGAA.DLL
+ 0001:00012de4       _SysMutexUnlock@12         10013de4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012dea       _SetAttributeFromString@16 10013dea f   kzoengaa:KZOENGAA.DLL
+ 0001:00012df0       _CreateEntity@12           10013df0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012df6       _SetCursorFirstEntityByString@20 10013df6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012dfc       _SysMutexLock@16           10013dfc f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e02       _GetViewByName@16          10013e02 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e08       _DeleteEntity@12           10013e08 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e0e       _SetAttributeFromBlob@20   10013e0e f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e14       _SfDropSubtask@8           10013e14 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e1a       _DisplayObjectInstance@12  10013e1a f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e20       _SetCursorNextEntity@12    10013e20 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e26       _GetAddrForAttribute@16    10013e26 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e2c       _SetCursorFirstEntity@12   10013e2c f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e32       _SysGetTaskFromView@4      10013e32 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e38       _DropView@4                10013e38 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e3e       _OrderOI_ByDefaultAttribs@4 10013e3e f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e44       _SysGetPointerFromHandle@4 10013e44 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e4a       _StoreValueInRecord@20     10013e4a f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e50       _GetStringFromRecord@20    10013e50 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e56       _StoreStringInRecord@16    10013e56 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e5c       _LoadEntity@16             10013e5c f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e62       _CompareAttributeToString@16 10013e62 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e68       _GetValueFromRecord@24     10013e68 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e6e       _SetEntityCursor@40        10013e6e f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e74       _SysMessageBox@16          10013e74 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e7a       _SysGetDateTime@4          10013e7a f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e80       _SysConvertDoubleToDecimal@12 10013e80 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e86       _TraceLineI@8              10013e86 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e8c       _DisplayEntityInstance@8   10013e8c f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e92       _CheckExistenceOfEntity@8  10013e92 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e98       _SysMalloc@4               10013e98 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012e9e       _MessageSend@24            10013e9e f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ea4       _SysGetDB_UserID@12        10013ea4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012eaa       _SfCreateSubtask@12        10013eaa f   kzoengaa:KZOENGAA.DLL
+ 0001:00012eb0       _SysReadZeidonIni@16       10013eb0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012eb6       _GetTaskDBHandlerTraceLevel@4 10013eb6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ebc       _SetAttributeFromInteger@16 10013ebc f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ec2       _TraceLine                 10013ec2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ec8       _GetDefaultViewForActiveTask@0 10013ec8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ece       _CreateViewFromViewForTask@12 10013ece f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ed4       _SetCursorFirstEntityByInteger@20 10013ed4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012eda       _MiGetViewEntityForView@8  10013eda f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ee0       _CountEntitiesForView@8    10013ee0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ee6       _SetAttributeFromVariable@32 10013ee6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012eec       _SetNameForView@16         10013eec f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ef2       _ActivateEmptyObjectInstance@16 10013ef2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012ef8       _IncludeSubobjectFromSubobject@20 10013ef8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012efe       _GetStringFromAttribute@16 10013efe f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f04       _GetAttributeFlags@16      10013f04 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f0a       _UfFormatDateTime@12       10013f0a f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f10       _IssueError@16             10013f10 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f16       _DropEntity@12             10013f16 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f1c       _UfCompareDateTimeToDateTime@8 10013f1c f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f22       _SysCompareDecimalToDecimal@8 10013f22 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f28       _UfStringToDateTime@8      10013f28 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f2e       _SysConvertStringToDecimal@8 10013f2e f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f34       _DisplayEntityInstancePath@8 10013f34 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f3a       _SetViewToSubobject@8      10013f3a f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f40       _GetIntegerFromAttribute@16 10013f40 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f46       _SetCursorPrevEntity@12    10013f46 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f4c       _SetCursorLastEntity@12    10013f4c f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f52       _UfEditFormatDateTime@8    10013f52 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f58       _SysFree@4                 10013f58 f   kzoengaa:KZOENGAA.DLL
+ 0001:00012f5e       _strncmp                   10013f5e f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f64       _strlen                    10013f64 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f6a       _sprintf                   10013f6a f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f70       _strcmp                    10013f70 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f76       _memset                    10013f76 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f80       _strcpy                    10013f80 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f86       __stricmp                  10013f86 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f8c       _atol                      10013f8c f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f92       __isctype                  10013f92 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f98       _strcat                    10013f98 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012f9e       __ltoa                     10013f9e f   MSVCRTD:MSVCRTD.dll
+ 0001:00012fa4       __strnicmp                 10013fa4 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012faa       _free                      10013faa f   MSVCRTD:MSVCRTD.dll
+ 0001:00012fb0       _strstr                    10013fb0 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012fb6       _malloc                    10013fb6 f   MSVCRTD:MSVCRTD.dll
+ 0001:00012fbc       _strncpy                   10013fbc f   MSVCRTD:MSVCRTD.dll
+ 0001:00012fd0       __CRT_INIT@12              10013fd0 f   MSVCRTD:crtdll.obj
+ 0001:000130e0       __DllMainCRTStartup@12     100140e0 f   MSVCRTD:crtdll.obj
+ 0001:000131d4       __free_dbg                 100141d4 f   MSVCRTD:MSVCRTD.dll
+ 0001:000131da       __initterm                 100141da f   MSVCRTD:MSVCRTD.dll
+ 0001:000131e0       __onexit                   100141e0 f   MSVCRTD:atonexit.obj
+ 0001:00013220       _atexit                    10014220 f   MSVCRTD:atonexit.obj
+ 0001:00013238       __malloc_dbg               10014238 f   MSVCRTD:MSVCRTD.dll
+ 0001:00013240       _DllMain@12                10014240 f   MSVCRTD:dllmain.obj
+ 0001:00013266       ___dllonexit               10014266 f   MSVCRTD:MSVCRTD.dll
+ 0001:0001326c       _DisableThreadLibraryCalls@4 1001426c f   kernel32:KERNEL32.dll
+ 0002:00000020       __real@8@3fff8cccccccccccd000 10016020     KZHSQLXX.OBJ
+ 0002:0000002c       ??_C@_08JKC@crtdll?4c?$AA@ 1001602c     MSVCRTD:crtdll.obj
+ 0003:00000000       ___xc_a                    10017000     MSVCRTD:cinitexe.obj
+ 0003:00000104       ___xc_z                    10017104     MSVCRTD:cinitexe.obj
+ 0003:00000208       ___xi_a                    10017208     MSVCRTD:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1001730c     MSVCRTD:cinitexe.obj
+ 0003:00000414       ??_C@_0CD@BONL@Compile?5date?1time?5for?5KZHSQLXX?5i@ 10017414     KZHSQLXX.OBJ
+ 0003:00000440       ??_C@_0BF@JCLN@Apr?522?52014?516?304?359?$AA@ 10017440     KZHSQLXX.OBJ
+ 0003:0000045c       ??_C@_04FCOP@Type?$AA@     1001745c     KZHSQLXX.OBJ
+ 0003:00000464       ??_C@_0L@PDLM@Zeidon?5DBH?$AA@ 10017464     KZHSQLXX.OBJ
+ 0003:00000474       ??_C@_0CB@LKIL@Can?8t?5find?5DB?9Handler?5work?5view?4@ 10017474     KZHSQLXX.OBJ
+ 0003:0000049c       ??_C@_0BN@EAEA@Zeidon?5DBHandler?5Work?5Object?$AA@ 1001749c     KZHSQLXX.OBJ
+ 0003:000004c0       ??_C@_0P@FLKG@ConnectionBlob?$AA@ 100174c0     KZHSQLXX.OBJ
+ 0003:000004d4       ??_C@_0CA@EIKD@ERROR?5?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?5CloseDatabase?5?$AA@ 100174d4     KZHSQLXX.OBJ
+ 0003:000004fc       ??_C@_0CE@LBDN@TaskID?5not?5found?5for?5Task?3TaskID@ 100174fc     KZHSQLXX.OBJ
+ 0003:00000528       ??_C@_0L@MDFJ@Connection?$AA@ 10017528     KZHSQLXX.OBJ
+ 0003:00000538       ??_C@_0BA@FMEM@LogicalUserName?$AA@ 10017538     KZHSQLXX.OBJ
+ 0003:0000054c       ??_C@_0M@CMMN@0x?$CF08x?3?$CF08x?$AA@ 1001754c     KZHSQLXX.OBJ
+ 0003:0000055c       ??_C@_0EL@FIPI@Internal?5error?5?9?9?5cannot?5find?5DB@ 1001755c     KZHSQLXX.OBJ
+ 0003:000005b8       ??_C@_0BB@JILM@Database?5name?5?$DN?5?$AA@ 100175b8     KZHSQLXX.OBJ
+ 0003:000005cc       ??_C@_0BH@CHIC@Activating?5Object?5Def?5?$AA@ 100175cc     KZHSQLXX.OBJ
+ 0003:000005e8       ??_C@_0BA@GPBB@Storing?5Objects?$AA@ 100175e8     KZHSQLXX.OBJ
+ 0003:000005fc       ??_C@_0DF@CENA@?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?5?5BEGIN?5TRANSA@ 100175fc     KZHSQLXX.OBJ
+ 0003:0000063c       ??_C@_0DF@OLNF@?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD@ 1001763c     KZHSQLXX.OBJ
+ 0003:0000067c       ??_C@_0DF@FMK@?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?5?5COMMIT?5TRANSA@ 1001767c     KZHSQLXX.OBJ
+ 0003:000006bc       ??_C@_0BL@NOKL@lpConnection?5is?5null?$CB?$CB?$CB?$CB?$CB?$CB?$AA@ 100176bc     KZHSQLXX.OBJ
+ 0003:000006dc       ??_C@_0DF@FDPI@?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?5ROLLBACK?5TRANSA@ 100176dc     KZHSQLXX.OBJ
+ 0003:0000071c       ??_C@_0BA@JJNG@DBHandler?5Error?$AA@ 1001771c     KZHSQLXX.OBJ
+ 0003:00000730       ??_C@_0BH@HOFD@Key?5type?5not?5supported?$AA@ 10017730     KZHSQLXX.OBJ
+ 0003:0000074c       ??_C@_0BN@PBBH@Number?5of?5rows?5?5retrieved?5?$DN?5?$AA@ 1001774c     KZHSQLXX.OBJ
+ 0003:00000770       ??_C@_0BN@FPPH@Number?5of?5roots?5retrieved?5?$DN?5?$AA@ 10017770     KZHSQLXX.OBJ
+ 0003:00000794       ??_C@_0O@CBHC@TempString?$CFld?$AA@ 10017794     KZHSQLXX.OBJ
+ 0003:000007a4       ??_C@_0BP@GFJJ@Duplicate?5row?5found?0?5entity?5?$DN?5?$AA@ 100177a4     KZHSQLXX.OBJ
+ 0003:000007cc       ??_C@_0CG@KNGC@?$CIxa?$CJ?5Number?5of?5rows?5currently?5re@ 100177cc     KZHSQLXX.OBJ
+ 0003:000007fc       ??_C@_0M@JJEC@Compile?5SQL?$AA@ 100177fc     KZHSQLXX.OBJ
+ 0003:0000080c       ??_C@_0BL@ECMK@Number?5of?5rows?5selected?5?$DN?5?$AA@ 1001780c     KZHSQLXX.OBJ
+ 0003:0000082c       ??_C@_0DD@LABC@Foreign?5key?5is?5null?0?5so?5followin@ 1001782c     KZHSQLXX.OBJ
+ 0003:0000086c       ??_C@_09EMIP@executed?4?$AA@ 1001786c     KZHSQLXX.OBJ
+ 0003:00000878       ??_C@_0P@LFKB@Entity?5name?5?$DN?5?$AA@ 10017878     KZHSQLXX.OBJ
+ 0003:0000088c       ??_C@_0DG@OBLP@Loading?5entity?5from?5parent?5using@ 1001788c     KZHSQLXX.OBJ
+ 0003:000008cc       ??_C@_0BJ@FGHI@SQL?5might?5not?5be?5needed?4?$AA@ 100178cc     KZHSQLXX.OBJ
+ 0003:000008ec       ??_C@_0BK@KKJ@?5?5Table?5is?5not?5qualified?4?$AA@ 100178ec     KZHSQLXX.OBJ
+ 0003:0000090c       ??_C@_0BG@NJF@?5?5Table?5IS?5qualified?4?$AA@ 1001790c     KZHSQLXX.OBJ
+ 0003:00000928       ??_C@_0BC@NKII@DBHandler?5Warning?$AA@ 10017928     KZHSQLXX.OBJ
+ 0003:00000940       ??_C@_0FC@LJLO@XOD?5?8?$CFs?8?5needs?5to?5be?5saved?5with?5@ 10017940     KZHSQLXX.OBJ
+ 0003:000009a4       ??_C@_0DE@IAL@?5?5Table?5loaded?5earlier?5as?5part?5o@ 100179a4     KZHSQLXX.OBJ
+ 0003:000009e4       ??_C@_0P@CCKC@?5?5Table?5name?3?5?$AA@ 100179e4     KZHSQLXX.OBJ
+ 0003:000009f8       ??_C@_0BA@BADB@?5?5Entity?5name?3?5?$AA@ 100179f8     KZHSQLXX.OBJ
+ 0003:00000a0c       ??_C@_0DG@PFML@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5Performing?5loa@ 10017a0c     KZHSQLXX.OBJ
+ 0003:00000a4c       ??_C@_0BC@LMHG@Inserting?5record?5?$AA@ 10017a4c     KZHSQLXX.OBJ
+ 0003:00000a64       ??_C@_0BC@ENOM@Inserting?5entity?5?$AA@ 10017a64     KZHSQLXX.OBJ
+ 0003:00000a7c       ??_C@_0BN@CHFK@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5Insert?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$AA@ 10017a7c     KZHSQLXX.OBJ
+ 0003:00000aa0       ??_C@_06NCJM@CHILD?3?$AA@  10017aa0     KZHSQLXX.OBJ
+ 0003:00000aa8       ??_C@_07IHIH@PARENT?3?$AA@ 10017aa8     KZHSQLXX.OBJ
+ 0003:00000ab4       ??_C@_0BK@FAG@Inserting?5rel?5for?5record?5?$AA@ 10017ab4     KZHSQLXX.OBJ
+ 0003:00000ad4       ??_C@_0BK@PEJM@Inserting?5rel?5for?5entity?5?$AA@ 10017ad4     KZHSQLXX.OBJ
+ 0003:00000af4       ??_C@_0CB@ODKK@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5Insert?5Rel?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN@ 10017af4     KZHSQLXX.OBJ
+ 0003:00000b1c       ??_C@_0BI@IHKI@SqlBuildDeleteAll?5SQL?3?5?$AA@ 10017b1c     KZHSQLXX.OBJ
+ 0003:00000b38       ??_C@_0BB@DDCM@Deleting?5record?5?$AA@ 10017b38     KZHSQLXX.OBJ
+ 0003:00000b4c       ??_C@_0BB@MCLG@Deleting?5entity?5?$AA@ 10017b4c     KZHSQLXX.OBJ
+ 0003:00000b60       ??_C@_0BN@OIOI@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5Delete?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$AA@ 10017b60     KZHSQLXX.OBJ
+ 0003:00000b84       ??_C@_0CB@IFLO@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5Delete?5Rel?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN@ 10017b84     KZHSQLXX.OBJ
+ 0003:00000bac       ??_C@_0BB@KLNM@Updating?5record?5?$AA@ 10017bac     KZHSQLXX.OBJ
+ 0003:00000bc0       ??_C@_0BB@FKEG@Updating?5entity?5?$AA@ 10017bc0     KZHSQLXX.OBJ
+ 0003:00000bd4       ??_C@_0BN@HAHA@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5Update?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$AA@ 10017bd4     KZHSQLXX.OBJ
+ 0003:00000bf8       ??_C@_07DOHJ@KZH0101?$AA@  10017bf8     KZHSQLXX.OBJ
+ 0003:00000c04       ??_C@_0BD@FDAG@KZHSQLXX?5DBH?5Error?$AA@ 10017c04     KZHSQLXX.OBJ
+ 0003:00000c1c       ??_C@_06LKAC@nRC?$DN?$DO?5?$AA@ 10017c1c     KZHSQLXX.OBJ
+ 0003:00000c24       ??_C@_06CLGD@Msg?$DN?$DO?5?$AA@ 10017c24     KZHSQLXX.OBJ
+ 0003:00000c2c       ??_C@_0BM@GLLE@?$DN?$DN?$DN?$DN?$DN?5DBH_Entry?5Error?5?$DN?$DN?$DN?$DN?$DN?$AA@ 10017c2c     KZHSQLXX.OBJ
+ 0003:00000c50       ??_C@_0O@DDFB@Return?5Code?5?3?$AA@ 10017c50     KZHSQLXX.OBJ
+ 0003:00000c60       ??_C@_0O@LCKO@Dummy?5Call?5?3?5?$AA@ 10017c60     KZHSQLXX.OBJ
+ 0003:00000c70       ??_C@_0CH@EANP@Too?5many?5open?5databases?5for?51?5se@ 10017c70     KZHSQLXX.OBJ
+ 0003:00000ca0       ??_C@_0L@HIKM@?$FLKZHSQLXX?$FN?$AA@ 10017ca0     KZHSQLXX.OBJ
+ 0003:00000cb0       ??_C@_0L@ODNC@TraceLevel?$AA@ 10017cb0     KZHSQLXX.OBJ
+ 0003:00000cc0       ??_C@_08ILLO@Conn?5END?$AA@ 10017cc0     KZHSQLXX.OBJ
+ 0003:00000ccc       ??_C@_0L@NIJE@Conn?5BEGIN?$AA@ 10017ccc     KZHSQLXX.OBJ
+ 0003:00000cdc       ??_C@_06KKHG@TaskID?$AA@   10017cdc     KZHSQLXX.OBJ
+ 0003:00000ce4       ??_C@_0DK@DCLD@GetWorkObjectView?5RESETTING?5task@ 10017ce4     KZHSQLXX.OBJ
+ 0003:00000d2c       ??_C@_04HDAF@Task?$AA@     10017d2c     KZHSQLXX.OBJ
+ 0003:00000d34       ??_C@_02FECH@Id?$AA@       10017d34     KZHSQLXX.OBJ
+ 0003:00000d38       ??_C@_09IMGK@DBH_Error?$AA@ 10017d38     KZHSQLXX.OBJ
+ 0003:00000d44       ??_C@_06OMJI@__MSGQ?$AA@   10017d44     KZHSQLXX.OBJ
+ 0003:00000d4c       ??_C@_03IDDH@Msg?$AA@      10017d4c     KZHSQLXX.OBJ
+ 0003:00000d50       ??_C@_05PILG@State?$AA@    10017d50     KZHSQLXX.OBJ
+ 0003:00000d58       ??_C@_04GO@Code?$AA@       10017d58     KZHSQLXX.OBJ
+ 0003:00000d60       ??_C@_06DPMO@Client?$AA@   10017d60     KZHSQLXX.OBJ
+ 0003:00000d68       ??_C@_06BADI@Zeidon?$AA@   10017d68     KZHSQLXX.OBJ
+ 0003:00000d70       ??_C@_08JIIE@KZMSGQOO?$AA@ 10017d70     KZHSQLXX.OBJ
+ 0003:00000d7c       ??_C@_0BD@MMAH@Committing?5object?5?$AA@ 10017d7c     KZHSQLXX.OBJ
+ 0003:00000d94       ??_C@_0CC@LLKJ@?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9@ 10017d94     KZHSQLXX.OBJ
+ 0003:00000dbc       ??_C@_0BE@ICCD@Qualification?5View?3?$AA@ 10017dbc     KZHSQLXX.OBJ
+ 0003:00000dd4       ??_C@_0CB@IHCB@Error?5performing?5Update?5for?5OD?3?5@ 10017dd4     KZHSQLXX.OBJ
+ 0003:00000dfc       ??_C@_0CE@JBNJ@Error?5performing?5DeleteRel?5for?5O@ 10017dfc     KZHSQLXX.OBJ
+ 0003:00000e28       ??_C@_0CB@HHED@Error?5performing?5Delete?5for?5OD?3?5@ 10017e28     KZHSQLXX.OBJ
+ 0003:00000e50       ??_C@_0CE@LABG@Error?5performing?5InsertRel?5for?5O@ 10017e50     KZHSQLXX.OBJ
+ 0003:00000e7c       ??_C@_0CB@GPGO@Error?5performing?5Insert?5for?5OD?3?5@ 10017e7c     KZHSQLXX.OBJ
+ 0003:00000ea4       ??_C@_0BP@LFHP@Error?5performing?5Load?5for?5OD?3?5?$AA@ 10017ea4     KZHSQLXX.OBJ
+ 0003:00000ecc       ??_C@_0BD@EGMP@TE_FieldDataRelKey?$AA@ 10017ecc     KZHSQLXX.OBJ
+ 0003:00000ee4       ??_C@_0BC@JFAB@Retrieved?5From?5DB?$AA@ 10017ee4     KZHSQLXX.OBJ
+ 0003:00000efc       ??_C@_0O@LKEB@TE_TablRecKey?$AA@ 10017efc     KZHSQLXX.OBJ
+ 0003:00000f0c       ??_C@_09CEBI@IndexName?$AA@ 10017f0c     KZHSQLXX.OBJ
+ 0003:00000f18       ??_C@_08FNON@DataType?$AA@ 10017f18     KZHSQLXX.OBJ
+ 0003:00000f24       ??_C@_06CAAP@Length?$AA@   10017f24     KZHSQLXX.OBJ
+ 0003:00000f2c       ??_C@_0BA@PJGE@TE_FieldDataRel?$AA@ 10017f2c     KZHSQLXX.OBJ
+ 0003:00000f40       ??_C@_0L@NCMM@TE_TablRec?$AA@ 10017f40     KZHSQLXX.OBJ
+ 0003:00000f50       ??_C@_04EFNI@Name?$AA@     10017f50     KZHSQLXX.OBJ
+ 0003:00000f58       ??_C@_0P@BCDD@TE_DBMS_Source?$AA@ 10017f58     KZHSQLXX.OBJ
+ 0003:00000f6c       ??_C@_0O@DNOO@TE_DB_Environ?$AA@ 10017f6c     KZHSQLXX.OBJ
+ 0003:00000f7c       ??_C@_08CBKH@TZTENVRO?$AA@ 10017f7c     KZHSQLXX.OBJ
+ 0003:00000fb8       ??_C@_02HJJN@?5?$CJ?$AA@   10017fb8     KZHSQLGA.OBJ
+ 0003:00000fbc       ??_C@_0N@HPJO@?5?$CJ?5VALUES?5?$CI?5?$AA@ 10017fbc     KZHSQLGA.OBJ
+ 0003:00000fcc       ??_C@_03HADD@?5?$CI?5?$AA@ 10017fcc     KZHSQLGA.OBJ
+ 0003:00000fd0       ??_C@_0N@KHCN@INSERT?5INTO?5?$AA@ 10017fd0     KZHSQLGA.OBJ
+ 0003:00000fe0       ??_C@_02GIEM@?0?5?$AA@     10017fe0     KZHSQLGA.OBJ
+ 0003:00000fe4       ??_C@_01PJCK@?4?$AA@       10017fe4     KZHSQLGA.OBJ
+ 0003:00000fe8       ??_C@_05FPIK@MAX?$CI?5?$AA@ 10017fe8     KZHSQLGA.OBJ
+ 0003:00000ff0       ??_C@_05GHGF@SUM?$CI?5?$AA@ 10017ff0     KZHSQLGA.OBJ
+ 0003:00000ff8       ??_C@_05LIAH@MIN?$CI?5?$AA@ 10017ff8     KZHSQLGA.OBJ
+ 0003:00001000       ??_C@_07KPIK@COUNT?$CI?5?$AA@ 10018000     KZHSQLGA.OBJ
+ 0003:0000100c       ??_C@_05HOBE@AVG?$CI?5?$AA@ 1001800c     KZHSQLGA.OBJ
+ 0003:00001014       ??_C@_03CKJJ@?5?0?5?$AA@   10018014     KZHSQLGA.OBJ
+ 0003:00001018       ??_C@_04GOCP@null?$AA@     10018018     KZHSQLGA.OBJ
+ 0003:00001020       ??_C@_04CBMB@?8?$CFs?8?$AA@ 10018020     KZHSQLGA.OBJ
+ 0003:00001028       ??_C@_0BI@GFEI@YYYY?9mm?9DD?9HH?4MI?4SS?4999?$AA@ 10018028     KZHSQLGA.OBJ
+ 0003:00001044       ??_C@_0L@KIEJ@YYYY?9mm?9DD?$AA@ 10018044     KZHSQLGA.OBJ
+ 0003:00001054       ??_C@_0N@MMAL@HH?4MI?4SS?4999?$AA@ 10018054     KZHSQLGA.OBJ
+ 0003:00001064       ??_C@_0M@MIHA@Zeidon?5Core?$AA@ 10018064     KZHSQLGA.OBJ
+ 0003:00001074       ??_C@_0CJ@GMJF@Blobs?5not?5supported?5as?5string?5at@ 10018074     KZHSQLGA.OBJ
+ 0003:000010a8       ??_C@_07FAJG@?5WHERE?5?$AA@ 100180a8     KZHSQLGA.OBJ
+ 0003:000010b4       ??_C@_09JNIL@?5WHERE?5?$CI?5?$AA@ 100180b4     KZHSQLGA.OBJ
+ 0003:000010c0       ??_C@_06JMOA@?5FROM?5?$AA@ 100180c0     KZHSQLGA.OBJ
+ 0003:000010c8       ??_C@_01FCOA@?5?$AA@       100180c8     KZHSQLGA.OBJ
+ 0003:000010cc       ??_C@_03FGJK@?5?$DN?5?$AA@ 100180cc     KZHSQLGA.OBJ
+ 0003:000010d0       ??_C@_05DNFI@?5SET?5?$AA@  100180d0     KZHSQLGA.OBJ
+ 0003:000010d8       ??_C@_07EKDD@UPDATE?5?$AA@ 100180d8     KZHSQLGA.OBJ
+ 0003:000010e4       ??_C@_0BA@CFOD@?6Entity?5name?5?$DN?5?$AA@ 100180e4     KZHSQLGA.OBJ
+ 0003:000010f8       ??_C@_0FP@EHEK@SQL?5Error?5creating?5WHERE?5clause?5@ 100180f8     KZHSQLGA.OBJ
+ 0003:0000116c       ??_C@_05COPK@?5AND?5?$AA@  1001816c     KZHSQLGA.OBJ
+ 0003:00001174       ??_C@_04EEFI@?5IS?5?$AA@   10018174     KZHSQLGA.OBJ
+ 0003:0000117c       ??_C@_0CC@KMAE@fnSqlBuildWhere?5found?5Attribute?3@ 1001817c     KZHSQLGA.OBJ
+ 0003:000011a4       ??_C@_0CD@NKAK@fnSqlBuildWhere?5found?5ForeignKey@ 100181a4     KZHSQLGA.OBJ
+ 0003:000011d0       ??_C@_0N@MCBO@DELETE?5FROM?5?$AA@ 100181d0     KZHSQLGA.OBJ
+ 0003:000011e0       ??_C@_02DCOG@?$CI?5?$AA@   100181e0     KZHSQLGA.OBJ
+ 0003:000011e4       ??_C@_07EDAG@SELECT?5?$AA@ 100181e4     KZHSQLGA.OBJ
+ 0003:000011f0       ??_C@_03GGJJ@?5?$CJ?5?$AA@ 100181f0     KZHSQLGA.OBJ
+ 0003:000011f4       ??_C@_04DLNC@?5ON?5?$AA@   100181f4     KZHSQLGA.OBJ
+ 0003:000011fc       ??_C@_0M@PBEI@?5LEFT?5JOIN?5?$AA@ 100181fc     KZHSQLGA.OBJ
+ 0003:0000120c       ??_C@_0BE@LIH@Internal?5Core?5Error?$AA@ 1001820c     KZHSQLGA.OBJ
+ 0003:00001224       ??_C@_0BL@GEPD@Too?5many?5tables?5in?5SQL?5cmd?$AA@ 10018224     KZHSQLGA.OBJ
+ 0003:00001244       ??_C@_03NND@?5AS?$AA@      10018244     KZHSQLGA.OBJ
+ 0003:00001248       ??_C@_01PKAG@?3?$AA@       10018248     KZHSQLGA.OBJ
+ 0003:0000124c       ??_C@_06HNHI@?5INTO?5?$AA@ 1001824c     KZHSQLGA.OBJ
+ 0003:00001254       ??_C@_0BL@NJCO@Zeidon?5SQL?5Generator?5Error?$AA@ 10018254     KZHSQLGA.OBJ
+ 0003:00001274       ??_C@_0CJ@NCBL@Internal?5error?5?$CD11?9?9can?8t?5find?5R@ 10018274     KZHSQLGA.OBJ
+ 0003:000012a8       ??_C@_0BH@FLAN@?$CI?$CD11?$CJ?5RelViewAttrib?5?$DN?5?$AA@ 100182a8     KZHSQLGA.OBJ
+ 0003:000012c4       ??_C@_0CH@LIFN@?$CI?$CD11?$CJ?5Building?5foreign?5keys?5for?5@ 100182c4     KZHSQLGA.OBJ
+ 0003:000012f4       ??_C@_0BG@JPHD@?$CI?$CD11?$CJ?5View?5OD?5Name?5?$DN?5?$AA@ 100182f4     KZHSQLGA.OBJ
+ 0003:00001310       ??_C@_02FP@?$DM?$DO?$AA@   10018310     KZHSQLGA.OBJ
+ 0003:00001314       ??_C@_08LAAC@?5IS?5NOT?5?$AA@ 10018314     KZHSQLGA.OBJ
+ 0003:00001320       ??_C@_05DBOO@UPPER?$AA@    10018320     KZHSQLGA.OBJ
+ 0003:00001328       ??_C@_0DP@OIPP@?5IN?5?$CI?5SELECT?5INTVALUE?5FROM?5ZEIDO@ 10018328     KZHSQLGA.OBJ
+ 0003:00001374       ??_C@_07FGEC@?5AND?5?$CI?5?$AA@ 10018374     KZHSQLGA.OBJ
+ 0003:00001380       ??_C@_0L@OFNJ@?5?$CI?5SELECT?5?$AA@ 10018380     KZHSQLGA.OBJ
+ 0003:00001390       ??_C@_07DHPL@KZH0202?$AA@  10018390     KZHSQLGA.OBJ
+ 0003:0000139c       ??_C@_0BL@CLFC@Qualification?5Object?5Error?$AA@ 1001839c     KZHSQLGA.OBJ
+ 0003:000013bc       ??_C@_0CG@FFMP@Cursor?5is?5NULL?5for?5attribute?5?8?$EA?$CF@ 100183bc     KZHSQLGA.OBJ
+ 0003:000013ec       ??_C@_0BN@MACK@?$CIkzhsqlga?$CJ?5Internal?5error?5?$CD3?$AA@ 100183ec     KZHSQLGA.OBJ
+ 0003:00001410       ??_C@_09BDMP@?5?$CJ?5AND?5?$CI?5?$AA@ 10018410     KZHSQLGA.OBJ
+ 0003:0000141c       ??_C@_0BN@GKLN@?$CIkzhsqlga?$CJ?5Internal?5error?5?$CD2?$AA@ 1001841c     KZHSQLGA.OBJ
+ 0003:00001440       ??_C@_05PLAL@?5DESC?$AA@   10018440     KZHSQLGA.OBJ
+ 0003:00001448       ??_C@_0L@GLGB@?5ORDER?5BY?5?$AA@ 10018448     KZHSQLGA.OBJ
+ 0003:00001458       ??_C@_0CH@LDBH@Invalid?5Sequencing?5defined?5for?5E@ 10018458     KZHSQLGA.OBJ
+ 0003:00001488       ??_C@_0BM@LAPF@?5?5bContainsSubselect?3?5FALSE?$AA@ 10018488     KZHSQLGA.OBJ
+ 0003:000014ac       ??_C@_0BL@KJOM@?5?5bContainsSubselect?3?5TRUE?$AA@ 100184ac     KZHSQLGA.OBJ
+ 0003:000014cc       ??_C@_0BO@INKB@?5?5bQualUsesChildEntity?3?5FALSE?$AA@ 100184cc     KZHSQLGA.OBJ
+ 0003:000014f0       ??_C@_0BN@PNNJ@?5?5bQualUsesChildEntity?3?5TRUE?$AA@ 100184f0     KZHSQLGA.OBJ
+ 0003:00001514       ??_C@_0P@NFAJ@?5?5Entity?5Name?3?$AA@ 10018514     KZHSQLGA.OBJ
+ 0003:00001528       ??_C@_0BD@EGCK@?9?9?9?5QualEntity?5?9?9?9?$AA@ 10018528     KZHSQLGA.OBJ
+ 0003:00001540       ??_C@_0BN@OJB@Display?5QualEntity?5structure?$AA@ 10018540     KZHSQLGA.OBJ
+ 0003:00001564       ??_C@_0CF@KMIO@?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK@ 10018564     KZHSQLGA.OBJ
+ 0003:00001590       ??_C@_0BG@HNMB@SourceView?5is?5defined?$AA@ 10018590     KZHSQLGA.OBJ
+ 0003:000015ac       ??_C@_0BF@DAIK@Source?5Attrib?5name?3?5?$AA@ 100185ac     KZHSQLGA.OBJ
+ 0003:000015c8       ??_C@_0BF@OLCB@Source?5Entity?5name?3?5?$AA@ 100185c8     KZHSQLGA.OBJ
+ 0003:000015e4       ??_C@_0O@KCIO@Value?5?5?5?5?5?5?3?5?$AA@ 100185e4     KZHSQLGA.OBJ
+ 0003:000015f4       ??_C@_0O@JFMN@Oper?5?5?5?5?5?5?5?3?5?$AA@ 100185f4     KZHSQLGA.OBJ
+ 0003:00001604       ??_C@_0O@JFLN@Attrib?5name?3?5?$AA@ 10018604     KZHSQLGA.OBJ
+ 0003:00001614       ??_C@_0O@EOBG@Entity?5name?3?5?$AA@ 10018614     KZHSQLGA.OBJ
+ 0003:00001624       ??_C@_0BD@PCAK@?9?9?9?5QualAttrib?5?9?9?9?$AA@ 10018624     KZHSQLGA.OBJ
+ 0003:0000163c       ??_C@_01GFI@?$CI?$AA@      1001863c     KZHSQLGA.OBJ
+ 0003:00001640       ??_C@_0M@ELME@IS?5NOT?5NULL?$AA@ 10018640     KZHSQLGA.OBJ
+ 0003:00001650       ??_C@_03LACO@AND?$AA@      10018650     KZHSQLGA.OBJ
+ 0003:00001654       ??_C@_01KMMP@?$CJ?$AA@     10018654     KZHSQLGA.OBJ
+ 0003:00001658       ??_C@_0BI@HMNO@Cannot?5allocate?5memory?4?$AA@ 10018658     KZHSQLGA.OBJ
+ 0003:00001674       ??_C@_07MIEC@KZH0201?$AA@  10018674     KZHSQLGA.OBJ
+ 0003:00001680       ??_C@_0BN@OKLO@Qualification?5Object?5Warning?$AA@ 10018680     KZHSQLGA.OBJ
+ 0003:000016a4       ??_C@_0DM@JLJD@?$CFs?5loading?5qualification?5object?5@ 100186a4     KZHSQLGA.OBJ
+ 0003:000016ec       ??_C@_05CKBG@Error?$AA@    100186ec     KZHSQLGA.OBJ
+ 0003:000016f4       ??_C@_07JCGI@Warning?$AA@  100186f4     KZHSQLGA.OBJ
+ 0003:00001700       ??_C@_06EINC@NOJOIN?$AA@   10018700     KZHSQLGA.OBJ
+ 0003:00001708       ??_C@_07BFAH@Options?$AA@  10018708     KZHSQLGA.OBJ
+ 0003:00001714       ??_C@_0FG@GELL@Attribute?5name?5?8?$CFs?8?5specified?5in@ 10018714     KZHSQLGA.OBJ
+ 0003:0000177c       ??_C@_0EN@INCH@OpenSQL?5is?5specified?5but?5entity?5@ 1001877c     KZHSQLGA.OBJ
+ 0003:000017d8       ??_C@_0DE@EGFH@OpenSQL?5is?5specified?5but?5not?5Ope@ 100187d8     KZHSQLGA.OBJ
+ 0003:00001818       ??_C@_0BG@LKGC@OpenSQL_AttributeList?$AA@ 10018818     KZHSQLGA.OBJ
+ 0003:00001834       ??_C@_07GHKO@OpenSQL?$AA@  10018834     KZHSQLGA.OBJ
+ 0003:00001840       ??_C@_0HG@LHHG@Entity?5?8?$CFs?8?5in?5Object?5?8?$CFs?8?5is?5a?5@ 10018840     KZHSQLGA.OBJ
+ 0003:000018d0       ??_C@_0CK@HIED@Entity?5?8?$CFs?8?5does?5not?5exist?5in?5Ob@ 100188d0     KZHSQLGA.OBJ
+ 0003:00001904       ??_C@_06KGGE@?$CKroot?$CK?$AA@ 10018904     KZHSQLGA.OBJ
+ 0003:0000190c       ??_C@_0L@LOJF@EntityName?$AA@ 1001890c     KZHSQLGA.OBJ
+ 0003:0000191c       ??_C@_0BH@PEAG@Cannot?5allocate?5memory?$AA@ 1001891c     KZHSQLGA.OBJ
+ 0003:00001938       ??_C@_0DO@LKHE@Parens?5for?5all?5QualAttrib?4Oper?5u@ 10018938     KZHSQLGA.OBJ
+ 0003:00001984       ??_C@_0HF@KMDH@The?5QualAttrib?5used?5to?5qualify?5E@ 10018984     KZHSQLGA.OBJ
+ 0003:00001a10       ??_C@_0CK@KIML@Internal?5error?5setting?5view?5to?5S@ 10018a10     KZHSQLGA.OBJ
+ 0003:00001a44       ??_C@_0EN@PDAK@QualAttrib?5has?5Value?5or?5SourceAt@ 10018a44     KZHSQLGA.OBJ
+ 0003:00001aa0       ??_C@_0KB@PIDC@QualAttrib?5has?5AttributeName?5but@ 10018aa0     KZHSQLGA.OBJ
+ 0003:00001b64       ??_C@_0M@JNPN@?$DM?$DN?5?$DN?$DM?5?$DO?$DN?5?$DN?$DO?$AA@ 10018b64     KZHSQLGA.OBJ
+ 0003:00001b74       ??_C@_05KDJB@?$DM?$DO?5?$CB?$DN?$AA@ 10018b74     KZHSQLGA.OBJ
+ 0003:00001b7c       ??_C@_01KPOD@?$DN?$AA@     10018b7c     KZHSQLGA.OBJ
+ 0003:00001b80       ??_C@_0EN@PMGH@Entity?4AttributeName?5for?5QualAtt@ 10018b80     KZHSQLGA.OBJ
+ 0003:00001bdc       ??_C@_0DO@OMMN@QualAttrib?5must?5have?5Entity?4Attr@ 10018bdc     KZHSQLGA.OBJ
+ 0003:00001c28       ??_C@_04CNFB@LIKE?$AA@     10018c28     KZHSQLGA.OBJ
+ 0003:00001c30       ??_C@_0JE@MCPI@Extraneous?5attributes?5specified?5@ 10018c30     KZHSQLGA.OBJ
+ 0003:00001ce4       ??_C@_0DC@IDHA@QualAttrib?5must?5have?5SourceView?5@ 10018ce4     KZHSQLGA.OBJ
+ 0003:00001d20       ??_C@_0DI@MBHE@QualAttrib?5must?5have?5SourceEntit@ 10018d20     KZHSQLGA.OBJ
+ 0003:00001d64       ??_C@_0DC@DJCF@QualAttrib?5must?5have?5EntityName?5@ 10018d64     KZHSQLGA.OBJ
+ 0003:00001da0       ??_C@_02PKFC@IS?$AA@       10018da0     KZHSQLGA.OBJ
+ 0003:00001da4       ??_C@_07HGBL@IS?5NULL?$AA@ 10018da4     KZHSQLGA.OBJ
+ 0003:00001db0       ??_C@_0HP@JFMD@Extraneous?5attributes?5specified?5@ 10018db0     KZHSQLGA.OBJ
+ 0003:00001e48       ??_C@_0GL@JMPP@QualAttrib?4EntityName?5must?5be?5a?5@ 10018e48     KZHSQLGA.OBJ
+ 0003:00001ec8       ??_C@_0DP@OOON@QualAttrib?5must?5specify?5EntityNa@ 10018ec8     KZHSQLGA.OBJ
+ 0003:00001f14       ??_C@_0L@NLOM@NOT?5EXISTS?$AA@ 10018f14     KZHSQLGA.OBJ
+ 0003:00001f24       ??_C@_06MBBB@EXISTS?$AA@   10018f24     KZHSQLGA.OBJ
+ 0003:00001f2c       ??_C@_0EJ@LPMO@SourceAttributeName?5in?5QualAttri@ 10018f2c     KZHSQLGA.OBJ
+ 0003:00001f84       ??_C@_0EG@PCBP@QualAttrib?5has?5SourceAttributeNa@ 10018f84     KZHSQLGA.OBJ
+ 0003:00001fd8       ??_C@_0BE@ICOG@SourceAttributeName?$AA@ 10018fd8     KZHSQLGA.OBJ
+ 0003:00001ff0       ??_C@_0FG@NEKO@SourceEntityName?5does?5not?5have?5h@ 10018ff0     KZHSQLGA.OBJ
+ 0003:00002058       ??_C@_0EH@KPNM@Cursor?5is?5not?5set?5properly?5in?5th@ 10019058     KZHSQLGA.OBJ
+ 0003:000020b0       ??_C@_0EB@GCHM@Attribute?5SourceEntityName?5not?5f@ 100190b0     KZHSQLGA.OBJ
+ 0003:00002100       ??_C@_0BB@CPOO@SourceEntityName?$AA@ 10019100     KZHSQLGA.OBJ
+ 0003:00002114       ??_C@_0CI@EBIP@SourceViewName?5not?5found?5at?5TASK@ 10019114     KZHSQLGA.OBJ
+ 0003:00002144       ??_C@_0N@NIIK@SourceViewID?$AA@ 10019144     KZHSQLGA.OBJ
+ 0003:00002154       ??_C@_0P@FPPG@SourceViewName?$AA@ 10019154     KZHSQLGA.OBJ
+ 0003:00002168       ??_C@_0N@GDFL@IntegerValue?$AA@ 10019168     KZHSQLGA.OBJ
+ 0003:00002178       ??_C@_0FC@BIMJ@Only?5one?5QualAttrib?5is?5allowed?5t@ 10019178     KZHSQLGA.OBJ
+ 0003:000021dc       ??_C@_0DG@LFLJ@The?5only?5datatypes?5supported?5wit@ 100191dc     KZHSQLGA.OBJ
+ 0003:0000221c       ??_C@_0DO@NKLO@QualAttrib?5entity?5has?5KeyList?5bu@ 1001921c     KZHSQLGA.OBJ
+ 0003:00002268       ??_C@_0DN@GECA@Cannot?5specify?5?8Value?8?5and?5?8KeyL@ 10019268     KZHSQLGA.OBJ
+ 0003:000022b4       ??_C@_07CHNO@KeyList?$AA@  100192b4     KZHSQLGA.OBJ
+ 0003:000022c0       ??_C@_0CH@LDJG@QualAttrib?5Value?5invalid?5for?5Dat@ 100192c0     KZHSQLGA.OBJ
+ 0003:000022f0       ??_C@_0DM@KLOB@QualAttrib?5entity?5has?5Value?5but?5@ 100192f0     KZHSQLGA.OBJ
+ 0003:00002338       ??_C@_05KBGO@Value?$AA@    10019338     KZHSQLGA.OBJ
+ 0003:00002340       ??_C@_0CJ@DBMB@Internal?5error?5?$CD10?9?9can?8t?5find?5R@ 10019340     KZHSQLGA.OBJ
+ 0003:00002374       ??_C@_0EG@DCHG@AttributeName?5in?5QualAttrib?5not?5@ 10019374     KZHSQLGA.OBJ
+ 0003:000023c8       ??_C@_0EB@DNAB@QualAttrib?5entity?5has?5AttributeN@ 100193c8     KZHSQLGA.OBJ
+ 0003:00002418       ??_C@_0O@JICG@AttributeName?$AA@ 10019418     KZHSQLGA.OBJ
+ 0003:00002428       ??_C@_0IA@HMPO@You?5cannot?5qualify?5entity?5?8?$CFs?8?5u@ 10019428     KZHSQLGA.OBJ
+ 0003:000024c4       ??_C@_0FF@DLKJ@Entity?5?8?$CFs?8?5was?5specified?5in?5the@ 100194c4     KZHSQLGA.OBJ
+ 0003:0000252c       ??_C@_02CHDK@OR?$AA@       1001952c     KZHSQLGA.OBJ
+ 0003:00002530       ??_C@_0EO@LLOI@QualAttrib?5does?5not?5have?5an?5oper@ 10019530     KZHSQLGA.OBJ
+ 0003:00002590       ??_C@_04FKDH@Oper?$AA@     10019590     KZHSQLGA.OBJ
+ 0003:00002598       ??_C@_0BC@OOFP@19000101000000000?$AA@ 10019598     KZHSQLGA.OBJ
+ 0003:000025b0       ??_C@_04CBCM@H?3MI?$AA@    100195b0     KZHSQLGA.OBJ
+ 0003:000025b8       ??_C@_06EGCN@H?3MIAM?$AA@  100195b8     KZHSQLGA.OBJ
+ 0003:000025c0       ??_C@_07JFNG@H?3MI?3SS?$AA@ 100195c0     KZHSQLGA.OBJ
+ 0003:000025cc       ??_C@_09PFHM@H?3MI?3SSAM?$AA@ 100195cc     KZHSQLGA.OBJ
+ 0003:000025d8       ??_C@_08CKLJ@YYYY?9M?9D?$AA@ 100195d8     KZHSQLGA.OBJ
+ 0003:000025e4       ??_C@_0O@OCDE@YYYY?9M?9D?5H?3MI?$AA@ 100195e4     KZHSQLGA.OBJ
+ 0003:000025f4       ??_C@_0BA@IDOA@YYYY?9M?9D?5H?3MIAM?$AA@ 100195f4     KZHSQLGA.OBJ
+ 0003:00002608       ??_C@_0BB@LABD@YYYY?9M?9D?5H?3MI?3SS?$AA@ 10019608     KZHSQLGA.OBJ
+ 0003:0000261c       ??_C@_0L@IEDE@D?9Mmm?9YYYY?$AA@ 1001961c     KZHSQLGA.OBJ
+ 0003:0000262c       ??_C@_0BF@OAH@D?9Mmm?9YYYY?5H?3MI?3SSAM?$AA@ 1001962c     KZHSQLGA.OBJ
+ 0003:00002648       ??_C@_0BD@HAHI@YYYY?9M?9D?5H?3MI?3SSAM?$AA@ 10019648     KZHSQLGA.OBJ
+ 0003:00002660       ??_C@_08IHH@YYYYMMDD?$AA@  10019660     KZHSQLGA.OBJ
+ 0003:0000266c       ??_C@_06ICCC@WHERE?5?$AA@  1001966c     KZHSQLGA.OBJ
+ 0003:00002674       ??_C@_07FJEG@VALUES?5?$AA@ 10019674     KZHSQLGA.OBJ
+ 0003:00002680       ??_C@_04DJPC@SET?5?$AA@    10019680     KZHSQLGA.OBJ
+ 0003:00002688       ??_C@_03HNOH@IN?5?$AA@     10019688     KZHSQLGA.OBJ
+ 0003:0000268c       ??_C@_05MJHM@INTO?5?$AA@   1001968c     KZHSQLGA.OBJ
+ 0003:00002694       ??_C@_05CIOE@FROM?5?$AA@   10019694     KZHSQLGA.OBJ
+ 0003:0000269c       ??_C@_03BEMH@OR?5?$AA@     1001969c     KZHSQLGA.OBJ
+ 0003:000026a0       ??_C@_04CKFA@AND?5?$AA@    100196a0     KZHSQLGA.OBJ
+ 0003:000026a8       ??_C@_03JBJA@ON?5?$AA@     100196a8     KZHSQLGA.OBJ
+ 0003:000026ac       ??_C@_01KHHK@?$FO?$AA@     100196ac     KZHSQLGA.OBJ
+ 0003:000026b0       ??_C@_06DDKN@ERR?$DO?5?5?$AA@ 100196b0     KZHSQLGA.OBJ
+ 0003:000026b8       ??_C@_06FEFN@SQL?$DO?5?5?$AA@ 100196b8     KZHSQLGA.OBJ
+ 0003:00002888       ??_C@_00A@?$AA@            10019888     KZHSQLXX.OBJ
+ 0003:00002890       _g_lCurrentProcessID       10019890     <common>
+ 0003:000028c0       _BoundAttrListRecord       100198c0     <common>
+ 0003:000028dc       __adjust_fdiv              100198dc     <common>
+ 0003:000028e8       ___onexitend               100198e8     <common>
+ 0003:000028f8       ___onexitbegin             100198f8     <common>
+ 0003:000028fc       __pRawDllMain              100198fc     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_KZOENGAA 1001a000     kzoengaa:KZOENGAA.DLL
+ 0004:00000014       __IMPORT_DESCRIPTOR_MSVCRTD 1001a014     MSVCRTD:MSVCRTD.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_KERNEL32 1001a028     kernel32:KERNEL32.dll
+ 0004:0000003c       __NULL_IMPORT_DESCRIPTOR   1001a03c     kzoengaa:KZOENGAA.DLL
+ 0004:00000288       __imp__DisableThreadLibraryCalls@4 1001a288     kernel32:KERNEL32.dll
+ 0004:0000028c       \177KERNEL32_NULL_THUNK_DATA 1001a28c     kernel32:KERNEL32.dll
+ 0004:000002b8       __imp__SysFreeMemory@4     1001a2b8     kzoengaa:KZOENGAA.DLL
+ 0004:000002bc       __imp__TraceLineS@8        1001a2bc     kzoengaa:KZOENGAA.DLL
+ 0004:000002c0       __imp__SysMutexUnlock@12   1001a2c0     kzoengaa:KZOENGAA.DLL
+ 0004:000002c4       __imp__SetAttributeFromString@16 1001a2c4     kzoengaa:KZOENGAA.DLL
+ 0004:000002c8       __imp__CreateEntity@12     1001a2c8     kzoengaa:KZOENGAA.DLL
+ 0004:000002cc       __imp__SetCursorFirstEntityByString@20 1001a2cc     kzoengaa:KZOENGAA.DLL
+ 0004:000002d0       __imp__SysMutexLock@16     1001a2d0     kzoengaa:KZOENGAA.DLL
+ 0004:000002d4       __imp__GetViewByName@16    1001a2d4     kzoengaa:KZOENGAA.DLL
+ 0004:000002d8       __imp__DeleteEntity@12     1001a2d8     kzoengaa:KZOENGAA.DLL
+ 0004:000002dc       __imp__SetAttributeFromBlob@20 1001a2dc     kzoengaa:KZOENGAA.DLL
+ 0004:000002e0       __imp__SfDropSubtask@8     1001a2e0     kzoengaa:KZOENGAA.DLL
+ 0004:000002e4       __imp__DisplayObjectInstance@12 1001a2e4     kzoengaa:KZOENGAA.DLL
+ 0004:000002e8       __imp__SetCursorNextEntity@12 1001a2e8     kzoengaa:KZOENGAA.DLL
+ 0004:000002ec       __imp__GetAddrForAttribute@16 1001a2ec     kzoengaa:KZOENGAA.DLL
+ 0004:000002f0       __imp__SetCursorFirstEntity@12 1001a2f0     kzoengaa:KZOENGAA.DLL
+ 0004:000002f4       __imp__SysGetTaskFromView@4 1001a2f4     kzoengaa:KZOENGAA.DLL
+ 0004:000002f8       __imp__DropView@4          1001a2f8     kzoengaa:KZOENGAA.DLL
+ 0004:000002fc       __imp__OrderOI_ByDefaultAttribs@4 1001a2fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000300       __imp__SysGetPointerFromHandle@4 1001a300     kzoengaa:KZOENGAA.DLL
+ 0004:00000304       __imp__StoreValueInRecord@20 1001a304     kzoengaa:KZOENGAA.DLL
+ 0004:00000308       __imp__GetStringFromRecord@20 1001a308     kzoengaa:KZOENGAA.DLL
+ 0004:0000030c       __imp__StoreStringInRecord@16 1001a30c     kzoengaa:KZOENGAA.DLL
+ 0004:00000310       __imp__LoadEntity@16       1001a310     kzoengaa:KZOENGAA.DLL
+ 0004:00000314       __imp__CompareAttributeToString@16 1001a314     kzoengaa:KZOENGAA.DLL
+ 0004:00000318       __imp__GetValueFromRecord@24 1001a318     kzoengaa:KZOENGAA.DLL
+ 0004:0000031c       __imp__SetEntityCursor@40  1001a31c     kzoengaa:KZOENGAA.DLL
+ 0004:00000320       __imp__SysMessageBox@16    1001a320     kzoengaa:KZOENGAA.DLL
+ 0004:00000324       __imp__SysGetDateTime@4    1001a324     kzoengaa:KZOENGAA.DLL
+ 0004:00000328       __imp__SysConvertDoubleToDecimal@12 1001a328     kzoengaa:KZOENGAA.DLL
+ 0004:0000032c       __imp__TraceLineI@8        1001a32c     kzoengaa:KZOENGAA.DLL
+ 0004:00000330       __imp__DisplayEntityInstance@8 1001a330     kzoengaa:KZOENGAA.DLL
+ 0004:00000334       __imp__CheckExistenceOfEntity@8 1001a334     kzoengaa:KZOENGAA.DLL
+ 0004:00000338       __imp__SysAllocMemory@20   1001a338     kzoengaa:KZOENGAA.DLL
+ 0004:0000033c       __imp__MessageSend@24      1001a33c     kzoengaa:KZOENGAA.DLL
+ 0004:00000340       __imp__SysGetDB_UserID@12  1001a340     kzoengaa:KZOENGAA.DLL
+ 0004:00000344       __imp__SfCreateSubtask@12  1001a344     kzoengaa:KZOENGAA.DLL
+ 0004:00000348       __imp__SysReadZeidonIni@16 1001a348     kzoengaa:KZOENGAA.DLL
+ 0004:0000034c       __imp__GetTaskDBHandlerTraceLevel@4 1001a34c     kzoengaa:KZOENGAA.DLL
+ 0004:00000350       __imp__SetAttributeFromInteger@16 1001a350     kzoengaa:KZOENGAA.DLL
+ 0004:00000354       __imp__TraceLine           1001a354     kzoengaa:KZOENGAA.DLL
+ 0004:00000358       __imp__GetDefaultViewForActiveTask@0 1001a358     kzoengaa:KZOENGAA.DLL
+ 0004:0000035c       __imp__CreateViewFromViewForTask@12 1001a35c     kzoengaa:KZOENGAA.DLL
+ 0004:00000360       __imp__SetCursorFirstEntityByInteger@20 1001a360     kzoengaa:KZOENGAA.DLL
+ 0004:00000364       __imp__MiGetViewEntityForView@8 1001a364     kzoengaa:KZOENGAA.DLL
+ 0004:00000368       __imp__CountEntitiesForView@8 1001a368     kzoengaa:KZOENGAA.DLL
+ 0004:0000036c       __imp__SetAttributeFromVariable@32 1001a36c     kzoengaa:KZOENGAA.DLL
+ 0004:00000370       __imp__SetNameForView@16   1001a370     kzoengaa:KZOENGAA.DLL
+ 0004:00000374       __imp__ActivateEmptyObjectInstance@16 1001a374     kzoengaa:KZOENGAA.DLL
+ 0004:00000378       __imp__IncludeSubobjectFromSubobject@20 1001a378     kzoengaa:KZOENGAA.DLL
+ 0004:0000037c       __imp__GetStringFromAttribute@16 1001a37c     kzoengaa:KZOENGAA.DLL
+ 0004:00000380       __imp__GetAttributeFlags@16 1001a380     kzoengaa:KZOENGAA.DLL
+ 0004:00000384       __imp__UfFormatDateTime@12 1001a384     kzoengaa:KZOENGAA.DLL
+ 0004:00000388       __imp__IssueError@16       1001a388     kzoengaa:KZOENGAA.DLL
+ 0004:0000038c       __imp__DropEntity@12       1001a38c     kzoengaa:KZOENGAA.DLL
+ 0004:00000390       __imp__UfCompareDateTimeToDateTime@8 1001a390     kzoengaa:KZOENGAA.DLL
+ 0004:00000394       __imp__SysCompareDecimalToDecimal@8 1001a394     kzoengaa:KZOENGAA.DLL
+ 0004:00000398       __imp__UfStringToDateTime@8 1001a398     kzoengaa:KZOENGAA.DLL
+ 0004:0000039c       __imp__SysConvertStringToDecimal@8 1001a39c     kzoengaa:KZOENGAA.DLL
+ 0004:000003a0       __imp__DisplayEntityInstancePath@8 1001a3a0     kzoengaa:KZOENGAA.DLL
+ 0004:000003a4       __imp__SetViewToSubobject@8 1001a3a4     kzoengaa:KZOENGAA.DLL
+ 0004:000003a8       __imp__GetIntegerFromAttribute@16 1001a3a8     kzoengaa:KZOENGAA.DLL
+ 0004:000003ac       __imp__SetCursorPrevEntity@12 1001a3ac     kzoengaa:KZOENGAA.DLL
+ 0004:000003b0       __imp__SetCursorLastEntity@12 1001a3b0     kzoengaa:KZOENGAA.DLL
+ 0004:000003b4       __imp__UfEditFormatDateTime@8 1001a3b4     kzoengaa:KZOENGAA.DLL
+ 0004:000003b8       __imp__SysFree@4           1001a3b8     kzoengaa:KZOENGAA.DLL
+ 0004:000003bc       __imp__SysMalloc@4         1001a3bc     kzoengaa:KZOENGAA.DLL
+ 0004:000003c0       __imp__SysGetProcessID@4   1001a3c0     kzoengaa:KZOENGAA.DLL
+ 0004:000003c4       \177KZOENGAA_NULL_THUNK_DATA 1001a3c4     kzoengaa:KZOENGAA.DLL
+ 0004:00000424       __imp__sprintf             1001a424     MSVCRTD:MSVCRTD.dll
+ 0004:00000428       __imp__strcmp              1001a428     MSVCRTD:MSVCRTD.dll
+ 0004:0000042c       __imp__memset              1001a42c     MSVCRTD:MSVCRTD.dll
+ 0004:00000430       __imp__strcpy              1001a430     MSVCRTD:MSVCRTD.dll
+ 0004:00000434       __imp___stricmp            1001a434     MSVCRTD:MSVCRTD.dll
+ 0004:00000438       __imp__atol                1001a438     MSVCRTD:MSVCRTD.dll
+ 0004:0000043c       __imp___pctype             1001a43c     MSVCRTD:MSVCRTD.dll
+ 0004:00000440       __imp___isctype            1001a440     MSVCRTD:MSVCRTD.dll
+ 0004:00000444       __imp____mb_cur_max        1001a444     MSVCRTD:MSVCRTD.dll
+ 0004:00000448       __imp__strcat              1001a448     MSVCRTD:MSVCRTD.dll
+ 0004:0000044c       __imp___ltoa               1001a44c     MSVCRTD:MSVCRTD.dll
+ 0004:00000450       __imp___strnicmp           1001a450     MSVCRTD:MSVCRTD.dll
+ 0004:00000454       __imp__free                1001a454     MSVCRTD:MSVCRTD.dll
+ 0004:00000458       __imp__strstr              1001a458     MSVCRTD:MSVCRTD.dll
+ 0004:0000045c       __imp__malloc              1001a45c     MSVCRTD:MSVCRTD.dll
+ 0004:00000460       __imp__strncpy             1001a460     MSVCRTD:MSVCRTD.dll
+ 0004:00000464       __imp___free_dbg           1001a464     MSVCRTD:MSVCRTD.dll
+ 0004:00000468       __imp___initterm           1001a468     MSVCRTD:MSVCRTD.dll
+ 0004:0000046c       __imp___malloc_dbg         1001a46c     MSVCRTD:MSVCRTD.dll
+ 0004:00000470       __imp___adjust_fdiv        1001a470     MSVCRTD:MSVCRTD.dll
+ 0004:00000474       __imp____dllonexit         1001a474     MSVCRTD:MSVCRTD.dll
+ 0004:00000478       __imp___onexit             1001a478     MSVCRTD:MSVCRTD.dll
+ 0004:0000047c       __imp__strncmp             1001a47c     MSVCRTD:MSVCRTD.dll
+ 0004:00000480       __imp__strlen              1001a480     MSVCRTD:MSVCRTD.dll
+ 0004:00000484       \177MSVCRTD_NULL_THUNK_DATA 1001a484     MSVCRTD:MSVCRTD.dll
+
+ entry point at        0001:000130e0
+

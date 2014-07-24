@@ -1,0 +1,695 @@
+ account
+
+ Timestamp is 44bf7da0 (Thu Jul 20 08:57:04 2006)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00006110H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 000014f4H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00001376H .data                   DATA
+ 0003:00001788 00000068H .bss                    DATA
+ 0004:00000000 000000c8H .idata$2                DATA
+ 0004:000000c8 00000014H .idata$3                DATA
+ 0004:000000dc 00000484H .idata$4                DATA
+ 0004:00000560 00000484H .idata$5                DATA
+ 0004:000009e4 00000404H .idata$6                DATA
+ 0005:00000000 000008e0H .rsrc$01                DATA
+ 0005:000008e0 0033c143H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:000003c0       _DllMain@12                100013c0 f   zdllinst.obj
+ 0001:000003e6       _GetDLL_Instance@4         100013e6 f   zdllinst.obj
+ 0001:00000400       _ProcessOLB_Events@16      10001400 f   account.obj
+ 0001:00000433       _CheckMutexLock@8          10001433 f   account.obj
+ 0001:00000546       _ActivateAccountOI@4       10001546 f   account.obj
+ 0001:00000654       _SetListColors@4           10001654 f   account.obj
+ 0001:00000c53       _SubFlagChange@4           10001c53 f   account.obj
+ 0001:00000c6f       _SelectSet@4               10001c6f f   account.obj
+ 0001:00000d94       _Setup@4                   10001d94 f   account.obj
+ 0001:00000dc2       _Cleanup@4                 10001dc2 f   account.obj
+ 0001:00000dcc       _Conversational@4          10001dcc f   account.obj
+ 0001:00000e1b       _ResetText@4               10001e1b f   account.obj
+ 0001:00000e5c       _EditChange@4              10001e5c f   account.obj
+ 0001:00000e75       _Acquire@4                 10001e75 f   account.obj
+ 0001:00000ebb       _FindItemByName@20         10001ebb f   account.obj
+ 0001:0000123f       _GetRegistryTypeLibValue@16 1000223f f   account.obj
+ 0001:000013ad       _Refresh@4                 100023ad f   account.obj
+ 0001:000013d6       _GetCurrentActiveTab@4     100023d6 f   account.obj
+ 0001:000013e0       _EditLoseFocus@4           100023e0 f   account.obj
+ 0001:0000150e       _Hotkey@4                  1000250e f   account.obj
+ 0001:00001562       _Message1@4                10002562 f   account.obj
+ 0001:000015c2       _Message2@4                100025c2 f   account.obj
+ 0001:000015cc       _SetFocusToTest2@4         100025cc f   account.obj
+ 0001:000015e4       _Add@4                     100025e4 f   account.obj
+ 0001:0000161e       _Subtract@4                1000261e f   account.obj
+ 0001:00001658       _Multiply@4                10002658 f   account.obj
+ 0001:00001692       _Divide@4                  10002692 f   account.obj
+ 0001:000016cc       _Enter@4                   100026cc f   account.obj
+ 0001:00001706       _EditEnter@4               10002706 f   account.obj
+ 0001:00001720       _New@4                     10002720 f   account.obj
+ 0001:00001739       _SetTab@4                  10002739 f   account.obj
+ 0001:000017a1       _ShowTab@4                 100027a1 f   account.obj
+ 0001:000017f6       _DisableTab@4              100027f6 f   account.obj
+ 0001:0000184b       _HideTab@4                 1000284b f   account.obj
+ 0001:00001900       _RefreshAX_Events@4        10002900 f   account.obj
+ 0001:00001918       _Test@4                    10002918 f   account.obj
+ 0001:0000195f       _SubwndPostbuild@4         1000295f f   account.obj
+ 0001:00001990       _NewDraft@4                10002990 f   account.obj
+ 0001:000019c7       _DeleteObjectEntity@4      100029c7 f   account.obj
+ 0001:00001a02       _DeleteInstance@4          10002a02 f   account.obj
+ 0001:00001a41       _Prompt@4                  10002a41 f   account.obj
+ 0001:00001ace       _SwitchBitmap@4            10002ace f   account.obj
+ 0001:00001b0d       _Hilite123@4               10002b0d f   account.obj
+ 0001:00001b47       _DeleteTransaction@4       10002b47 f   account.obj
+ 0001:00001b86       _AddTransaction@4          10002b86 f   account.obj
+ 0001:00001c33       _CellSelect@4              10002c33 f   account.obj
+ 0001:00001c3d       _InitMenu@4                10002c3d f   account.obj
+ 0001:00001c47       _TrackPopup@4              10002c47 f   account.obj
+ 0001:00001c67       _InitPopup@4               10002c67 f   account.obj
+ 0001:00001c86       _RemotePrint@4             10002c86 f   account.obj
+ 0001:00001cc0       _DoTheReport@4             10002cc0 f   account.obj
+ 0001:00001d00       _Count@4                   10002d00 f   account.obj
+ 0001:00001d23       _PrintPage@16              10002d23 f   account.obj
+ 0001:00001ecb       _TabPreChange@4            10002ecb f   account.obj
+ 0001:00001f13       _TabPostChange@4           10002f13 f   account.obj
+ 0001:00001f5e       _SwitchText@4              10002f5e f   account.obj
+ 0001:0000203f       _AfterUpdate@4             1000303f f   account.obj
+ 0001:00002118       _F1@4                      10003118 f   account.obj
+ 0001:00002156       _F2@4                      10003156 f   account.obj
+ 0001:000021ec       _F3@4                      100031ec f   account.obj
+ 0001:00002384       _F4@4                      10003384 f   account.obj
+ 0001:000023ca       _F5@4                      100033ca f   account.obj
+ 0001:0000243c       _F6@4                      1000343c f   account.obj
+ 0001:00002490       _F7@4                      10003490 f   account.obj
+ 0001:000024ae       _F8@4                      100034ae f   account.obj
+ 0001:00002610       _F9@4                      10003610 f   account.obj
+ 0001:00002f48       _F10@4                     10003f48 f   account.obj
+ 0001:00002fe1       _F11@4                     10003fe1 f   account.obj
+ 0001:00003086       _F12@4                     10004086 f   account.obj
+ 0001:00003142       _F14@4                     10004142 f   account.obj
+ 0001:0000317d       _Window1PostBuild@4        1000417d f   account.obj
+ 0001:00003187       _SplitPostBuild@4          10004187 f   account.obj
+ 0001:00003191       _AutoSetListBoxHeaderWidths@4 10004191 f   account.obj
+ 0001:000031ac       _AppointmentAlarm@4        100041ac f   account.obj
+ 0001:000031ef       _DayTimerPostBuild@4       100041ef f   account.obj
+ 0001:0000322f       _SaveAppointment@4         1000422f f   account.obj
+ 0001:00003247       _SaveAllAppointments@4     10004247 f   account.obj
+ 0001:0000325f       _NewAppointment@4          1000425f f   account.obj
+ 0001:00003285       _UpdateAppointment@4       10004285 f   account.obj
+ 0001:0000329d       _DeleteAppointment@4       1000429d f   account.obj
+ 0001:000032b5       _Crypt@4                   100042b5 f   account.obj
+ 0001:0000335c       _SetDefaultTextColor@4     1000435c f   account.obj
+ 0001:0000339c       _SetSelectedTextColor@4    1000439c f   account.obj
+ 0001:000033dc       _TabPrebuild@4             100043dc f   account.obj
+ 0001:0000340d       _TabPostbuild@4            1000440d f   account.obj
+ 0001:0000348e       _fnGetEntityName@8         1000448e f   account.obj
+ 0001:000034a8       _BlankOutMasterPassword@4  100044a8 f   account.obj
+ 0001:000034fc       _ResetMasterPassword@4     100044fc f   account.obj
+ 0001:00003807       _ShowAccountPassword@4     10004807 f   account.obj
+ 0001:0000395b       _GetMasterPassword@4       1000495b f   account.obj
+ 0001:00003a20       _SaveInstance@4            10004a20 f   account.obj
+ 0001:00003a88       _UpdateAccountPassword@4   10004a88 f   account.obj
+ 0001:00003bb1       _AddAccountPassword@4      10004bb1 f   account.obj
+ 0001:00003bff       _DeleteAccountPassword@4   10004bff f   account.obj
+ 0001:00004af2       _FormatSubobjectOnDoc@20   10005af2 f   kzrpsrco:kzrpsrco.dll
+ 0001:00004af8       _MapPointShowApplication@4 10005af8 f   z2mp:Z2MP.dll
+ 0001:00004afe       _MapPointStart@0           10005afe f   z2mp:Z2MP.dll
+ 0001:00004b04       _MapPointStop@0            10005b04 f   z2mp:Z2MP.dll
+ 0001:00004b0a       _MapPointSetPushPin@32     10005b0a f   z2mp:Z2MP.dll
+ 0001:00004b10       _MapPointValidateAddress@28 10005b10 f   z2mp:Z2MP.dll
+ 0001:00004b16       _GetDistanceRectangle@140  10005b16 f   z2mp:Z2MP.dll
+ 0001:00004b1c       _GetDistance@164           10005b1c f   z2mp:Z2MP.dll
+ 0001:00004b22       _CloseSeeConnection@4      10005b22 f   ZSEmail:ZSEMail.dll
+ 0001:00004b28       _CreateSeeMessage@56       10005b28 f   ZSEmail:ZSEMail.dll
+ 0001:00004b2e       _CreateSeeConnection@16    10005b2e f   ZSEmail:ZSEMail.dll
+ 0001:00004b34       _GetFileSize@8             10005b34 f   kernel32:KERNEL32.dll
+ 0001:00004b3a       _SetCursor@4               10005b3a f   user32:USER32.dll
+ 0001:00004b40       _LoadCursorA@8             10005b40 f   user32:USER32.dll
+ 0001:00004b46       _MessageBoxA@16            10005b46 f   user32:USER32.dll
+ 0001:00004b4c       _RegQueryValueExA@24       10005b4c f   advapi32:ADVAPI32.dll
+ 0001:00004b52       _RegEnumValueA@32          10005b52 f   advapi32:ADVAPI32.dll
+ 0001:00004b58       _RegEnumKeyA@16            10005b58 f   advapi32:ADVAPI32.dll
+ 0001:00004b5e       _RegQueryInfoKeyA@48       10005b5e f   advapi32:ADVAPI32.dll
+ 0001:00004b64       _RegOpenKeyExA@20          10005b64 f   advapi32:ADVAPI32.dll
+ 0001:00004b6a       _RegConnectRegistryA@12    10005b6a f   advapi32:ADVAPI32.dll
+ 0001:00004b70       _TraceLineI@8              10005b70 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b76       _SysMutexUnlock@12         10005b76 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b7c       _UnregisterZeidonApplication@4 10005b7c f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b82       _RegisterZeidonApplication@28 10005b82 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b88       _SysWait@4                 10005b88 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b8e       _SysMutexLock@16           10005b8e f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b94       _ActivateEmptyObjectInstance@16 10005b94 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004b9a       _GetViewByName@16          10005b9a f   kzoengaa:KZOENGAA.DLL
+ 0001:00004ba0       _GetActualAttributeLength@16 10005ba0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004ba6       _CompareAttributeToString@16 10005ba6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bac       _SetNameForView@16         10005bac f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bb2       _ActivateOI_FromFile@20    10005bb2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bb8       _SetCursorNextEntity@12    10005bb8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bbe       _SetSelectStateOfEntity@12 10005bbe f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bc4       _GetStringFromAttribute@16 10005bc4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bca       _SetAllSelectStatesForEntity@16 10005bca f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bd0       _SetCursorFirstEntity@12   10005bd0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bd6       _SetSelectSetForView@8     10005bd6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bdc       _TraceLineS@8              10005bdc f   kzoengaa:KZOENGAA.DLL
+ 0001:00004be2       _SetAttributeFromDecimal@52 10005be2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004be8       ??1ZDecimal@@QAE@XZ        10005be8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bee       ??4ZDecimal@@QAE?AV0@F@Z   10005bee f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bf4       _GetDecimalFromAttribute@16 10005bf4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004bfa       ??0ZDecimal@@QAE@XZ        10005bfa f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c00       _CreateEntity@12           10005c00 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c06       _DeleteEntity@12           10005c06 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c0c       _ZeidonStringCopy@28       10005c0c f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c12       _SetAttributeFromString@16 10005c12 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c18       _SysMessageBox@16          10005c18 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c1e       _SysReadFile@16            10005c1e f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c24       _SysCloseFile@12           10005c24 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c2a       _IssueError@16             10005c2a f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c30       _SysOpenFile@12            10005c30 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c36       _TraceLine                 10005c36 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c3c       ??4ZDecimal@@QAE?AV0@UDecimalStruct@@@Z 10005c3c f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c42       _SysConvertDecimalToString@12 10005c42 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c48       ??4ZDecimal@@QAE?AV0@H@Z   10005c48 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c4e       ??4ZDecimal@@QAE?AV0@N@Z   10005c4e f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c54       _UfDecryptStringUL@16      10005c54 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c5a       _UfEncryptStringUL@16      10005c5a f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c60       _CheckExistenceOfEntity@8  10005c60 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c66       _GetStringFromAttributeByContext@24 10005c66 f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c6c       _CommitOI_ToFile@12        10005c6c f   kzoengaa:KZOENGAA.DLL
+ 0001:00004c72       __ltoa                     10005c72 f   msvcrtd:MSVCRTD.dll
+ 0001:00004c78       _strcpy                    10005c78 f   msvcrtd:MSVCRTD.dll
+ 0001:00004c7e       _strcmp                    10005c7e f   msvcrtd:MSVCRTD.dll
+ 0001:00004c84       _strlen                    10005c84 f   msvcrtd:MSVCRTD.dll
+ 0001:00004c8a       _sprintf                   10005c8a f   msvcrtd:MSVCRTD.dll
+ 0001:00004c90       _atol                      10005c90 f   msvcrtd:MSVCRTD.dll
+ 0001:00004ca0       _memset                    10005ca0 f   msvcrtd:MSVCRTD.dll
+ 0001:00004cb0       __CRT_INIT@12              10005cb0 f   msvcrtd:crtdll.obj
+ 0001:00004dc0       __DllMainCRTStartup@12     10005dc0 f   msvcrtd:crtdll.obj
+ 0001:00004eb4       __free_dbg                 10005eb4 f   msvcrtd:MSVCRTD.dll
+ 0001:00004eba       __initterm                 10005eba f   msvcrtd:MSVCRTD.dll
+ 0001:00004ec0       __onexit                   10005ec0 f   msvcrtd:atonexit.obj
+ 0001:00004f00       _atexit                    10005f00 f   msvcrtd:atonexit.obj
+ 0001:00004f18       __malloc_dbg               10005f18 f   msvcrtd:MSVCRTD.dll
+ 0001:00004f1e       ___dllonexit               10005f1e f   msvcrtd:MSVCRTD.dll
+ 0001:00004f24       _GetWindowHandle@16        10005f24 f   zdrapp:ZDrApp.dll
+ 0001:00004f2a       _GetApplicationInstance@4  10005f2a f   zdrapp:ZDrApp.dll
+ 0001:00004f30       _TranslateCtrlValue@24     10005f30 f   zdrapp:ZDrApp.dll
+ 0001:00004f36       _SetCtrlTranslationList@16 10005f36 f   zdrapp:ZDrApp.dll
+ 0001:00004f3c       _SetCtrlState@16           10005f3c f   zdrapp:ZDrApp.dll
+ 0001:00004f42       _SetCtrlProperty@20        10005f42 f   zdrapp:ZDrApp.dll
+ 0001:00004f48       _GetLastCtrlTag@8          10005f48 f   zdrapp:ZDrApp.dll
+ 0001:00004f4e       _OperatorConversationalDialog@16 10005f4e f   zdrapp:ZDrApp.dll
+ 0001:00004f54       _SetCtrlText@12            10005f54 f   zdrapp:ZDrApp.dll
+ 0001:00004f5a       _GetCtrlWithFocus@8        10005f5a f   zdrapp:ZDrApp.dll
+ 0001:00004f60       _CompressFile@24           10005f60 f   zdrapp:ZDrApp.dll
+ 0001:00004f66       _RefreshWindowExceptForCtrl@8 10005f66 f   zdrapp:ZDrApp.dll
+ 0001:00004f6c       _PumpMessages@4            10005f6c f   zdrapp:ZDrApp.dll
+ 0001:00004f72       _SetFocusToCtrl@8          10005f72 f   zdrapp:ZDrApp.dll
+ 0001:00004f78       _GetCtrlState@12           10005f78 f   zdrapp:ZDrApp.dll
+ 0001:00004f7e       _RefreshCtrl@8             10005f7e f   zdrapp:ZDrApp.dll
+ 0001:00004f84       _PlaceWindow@8             10005f84 f   zdrapp:ZDrApp.dll
+ 0001:00004f8a       _SetWindowActionBehavior@16 10005f8a f   zdrapp:ZDrApp.dll
+ 0001:00004f90       _SetWindowState@12         10005f90 f   zdrapp:ZDrApp.dll
+ 0001:00004f96       _GetSubtaskForWindowName@12 10005f96 f   zdrapp:ZDrApp.dll
+ 0001:00004f9c       _HiliteListBoxItem@16      10005f9c f   zdrapp:ZDrApp.dll
+ 0001:00004fa2       _CreateTrackingPopupMenu@24 10005fa2 f   zdrapp:ZDrApp.dll
+ 0001:00004fa8       _SetPopupOptionState@16    10005fa8 f   zdrapp:ZDrApp.dll
+ 0001:00004fae       _OpenRemoteReportFromClient@24 10005fae f   zdrapp:ZDrApp.dll
+ 0001:00004fb4       _PrintCtrl@24              10005fb4 f   zdrapp:ZDrApp.dll
+ 0001:00004fba       _DrawRectangleToReport@44  10005fba f   zdrapp:ZDrApp.dll
+ 0001:00004fc0       _DrawTextToReport@48       10005fc0 f   zdrapp:ZDrApp.dll
+ 0001:00004fc6       _GetTextHeight@8           10005fc6 f   zdrapp:ZDrApp.dll
+ 0001:00004fcc       _GetTextWidth@8            10005fcc f   zdrapp:ZDrApp.dll
+ 0001:00004fd2       _SelectFontForReport@8     10005fd2 f   zdrapp:ZDrApp.dll
+ 0001:00004fd8       _CreateFontForReport@44    10005fd8 f   zdrapp:ZDrApp.dll
+ 0001:00004fde       _DrFreeTaskMemory@4        10005fde f   zdrapp:ZDrApp.dll
+ 0001:00004fe4       _DrAllocTaskMemory@12      10005fe4 f   zdrapp:ZDrApp.dll
+ 0001:00004fea       _DetermineRegKeyValue@16   10005fea f   zdrapp:ZDrApp.dll
+ 0001:00004ff0       _CloseFrame@4              10005ff0 f   zdrapp:ZDrApp.dll
+ 0001:00004ff6       _AttachSubtaskToPane@20    10005ff6 f   zdrapp:ZDrApp.dll
+ 0001:00004ffc       _GetCtrlText@16            10005ffc f   zdrapp:ZDrApp.dll
+ 0001:00005002       _OperatorSend@16           10006002 f   zdrapp:ZDrApp.dll
+ 0001:00005008       _MapCtrl@8                 10006008 f   zdrapp:ZDrApp.dll
+ 0001:0000500e       _OperatorPrompt@28         1000600e f   zdrapp:ZDrApp.dll
+ 0001:00005014       _SetCtrlTextLth@12         10006014 f   zdrapp:ZDrApp.dll
+ 0001:0000501a       _OperatorPromptForInput@24 1000601a f   zdrapp:ZDrApp.dll
+ 0001:00005020       _GetLastCommandTag@8       10006020 f   zdrapp:ZDrApp.dll
+ 0001:00005026       _CB_SetData@20             10006026 f   zdctl:ZdCtl.dll
+ 0001:0000502c       _GRID_SetColorAssociation@28 1000602c f   zdctl:ZdCtl.dll
+ 0001:00005032       _GRID_SetColorAttributeName@16 10006032 f   zdctl:ZdCtl.dll
+ 0001:00005038       _LB_SetColorAssociation@28 10006038 f   zdctl:ZdCtl.dll
+ 0001:0000503e       _LB_SetColorAttributeName@16 1000603e f   zdctl:ZdCtl.dll
+ 0001:00005044       _OLB_SetSelFolder@12       10006044 f   zdctl:ZdCtl.dll
+ 0001:0000504a       _OLB_AddFolderItem@28      1000604a f   zdctl:ZdCtl.dll
+ 0001:00005050       _OLB_AddFolderBar@20       10006050 f   zdctl:ZdCtl.dll
+ 0001:00005056       _OLB_AddFolder@16          10006056 f   zdctl:ZdCtl.dll
+ 0001:0000505c       _OLB_AddImages@16          1000605c f   zdctl:ZdCtl.dll
+ 0001:00005062       _OLB_SetEventCallback@12   10006062 f   zdctl:ZdCtl.dll
+ 0001:00005068       _BTN_SetColor@24           10006068 f   zdctl:ZdCtl.dll
+ 0001:0000506e       _GRID_SetCheckAttribute@24 1000606e f   zdctl:ZdCtl.dll
+ 0001:00005074       _GRID_SetColumnCtrl@20     10006074 f   zdctl:ZdCtl.dll
+ 0001:0000507a       _GRID_SetSelectSelectSet@12 1000607a f   zdctl:ZdCtl.dll
+ 0001:00005080       _GRID_SetDisplaySelectSet@12 10006080 f   zdctl:ZdCtl.dll
+ 0001:00005086       _BMP_SetBitmapFileName@12  10006086 f   zdctl:ZdCtl.dll
+ 0001:0000508c       _TAB_SetActiveTab@12       1000608c f   zdctl:ZdCtl.dll
+ 0001:00005092       _TAB_HideSubTab@16         10006092 f   zdctl:ZdCtl.dll
+ 0001:00005098       _TAB_HideTab@16            10006098 f   zdctl:ZdCtl.dll
+ 0001:0000509e       _TAB_SetSubTabColors@20    1000609e f   zdctl:ZdCtl.dll
+ 0001:000050a4       _TAB_GetActiveSubTab@12    100060a4 f   zdctl:ZdCtl.dll
+ 0001:000050aa       _ED_HiliteText@16          100060aa f   zdctl:ZdCtl.dll
+ 0001:000050b0       _LB_SortByColumn@16        100060b0 f   zdctl:ZdCtl.dll
+ 0001:000050b6       _TB_GetItemText@20         100060b6 f   zdctl:ZdCtl.dll
+ 0001:000050bc       _TB_SetTextMode@12         100060bc f   zdctl:ZdCtl.dll
+ 0001:000050c2       _TB_GetTextMode@8          100060c2 f   zdctl:ZdCtl.dll
+ 0001:000050c8       _LB_AutoSizeColumns@20     100060c8 f   zdctl:ZdCtl.dll
+ 0001:000050ce       _DT_DisplayCurrentAppointment@16 100060ce f   zdctl:ZdCtl.dll
+ 0001:000050d4       _DT_SetTimeEntityAttributes@40 100060d4 f   zdctl:ZdCtl.dll
+ 0001:000050da       _DT_UpdateCurrentAppointment@8 100060da f   zdctl:ZdCtl.dll
+ 0001:000050e0       _DT_NewAppointment@24      100060e0 f   zdctl:ZdCtl.dll
+ 0001:000050e6       _DT_DeleteCurrentAppointment@8 100060e6 f   zdctl:ZdCtl.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000801c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    1000a000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    1000a104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    1000a208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000a30c     msvcrtd:cinitexe.obj
+ 0003:00000410       ??_C@_0CB@BOAB@ProcessOLB_Events?5FolderChange?3?5@ 1000a410     account.obj
+ 0003:00000438       ??_C@_0BO@HGFG@ProcessOLB_Events?5ItemClick?3?5?$AA@ 1000a438     account.obj
+ 0003:0000045c       ??_C@_0DD@LEKF@ActivateAccountOI?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN@ 1000a45c     account.obj
+ 0003:0000049c       ??_C@_0DB@KLKF@ActivateAccountOI?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN@ 1000a49c     account.obj
+ 0003:000004d8       ??_C@_0BH@PKHP@?2?2Zeidon_Tools?2Account?$AA@ 1000a4d8     account.obj
+ 0003:000004f4       ??_C@_0DB@CNLH@ActivateAccountOI?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN@ 1000a4f4     account.obj
+ 0003:00000530       ??_C@_07JPGB@Account?$AA@  1000a530     account.obj
+ 0003:0000053c       ??_C@_0CP@DEK@ActivateAccountOI?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN@ 1000a53c     account.obj
+ 0003:00000574       ??_C@_08JHML@TZPEAXWO?$AA@ 1000a574     account.obj
+ 0003:00000580       ??_C@_0BM@INGA@KZDBHWOB?5view?5from?5account?5?$AA@ 1000a580     account.obj
+ 0003:000005a4       ??_C@_0BN@EAEA@Zeidon?5DBHandler?5Work?5Object?$AA@ 1000a5a4     account.obj
+ 0003:000005c8       ??_C@_0DE@EFCL@GetActualAttributeLength?5for?5ACC@ 1000a5c8     account.obj
+ 0003:00000608       ??_C@_08DIJL@CUSTOMER?$AA@ 1000a608     account.obj
+ 0003:00000614       ??_C@_08MBCL@LastName?$AA@ 1000a614     account.obj
+ 0003:00000620       ??_C@_05FBPG@Month?$AA@    1000a620     account.obj
+ 0003:00000628       ??_C@_0M@LNMD@CARLSON?4POR?$AA@ 1000a628     account.obj
+ 0003:00000638       ??_C@_0L@MNEE@ACCOUNTLST?$AA@ 1000a638     account.obj
+ 0003:00000648       ??_C@_07EAOK@ACCOUNT?$AA@  1000a648     account.obj
+ 0003:00000654       ??_C@_0M@JCMI@CARLSON?4PSV?$AA@ 1000a654     account.obj
+ 0003:00000664       ??_C@_0HP@GFMG@?$DLWidth?$DLHeight?$DLWidth?1Height?$DLMinim@ 1000a664     account.obj
+ 0003:000006fc       ??_C@_07GIHG@SubFlag?$AA@  1000a6fc     account.obj
+ 0003:00000708       ??_C@_0JC@GBDN@0?$DL?$DL1?$DLWidth?$DL2?$DLHeight?$DL3?$DLWidth?1Heig@ 1000a708     account.obj
+ 0003:000007b8       ??_C@_07DBJI@Decimal?$AA@  1000a7b8     account.obj
+ 0003:000007c4       ??_C@_09LJNP@SwitchBmp?$AA@ 1000a7c4     account.obj
+ 0003:000007d0       ??_C@_08NGAK@Message1?$AA@ 1000a7d0     account.obj
+ 0003:000007dc       ??_C@_01PFH@A?$AA@         1000a7dc     account.obj
+ 0003:000007e0       ??_C@_05NGGP@100?40?$AA@   1000a7e0     account.obj
+ 0003:000007e8       ??_C@_05GKPA@123?40?$AA@   1000a7e8     account.obj
+ 0003:000007f0       ??_C@_06EKCN@Amount?$AA@   1000a7f0     account.obj
+ 0003:000007f8       ??_C@_05PILG@State?$AA@    1000a7f8     account.obj
+ 0003:00000800       ??_C@_04IFBP@0?400?$AA@    1000a800     account.obj
+ 0003:00000808       ??_C@_0L@PFBJ@AutoWidths?$AA@ 1000a808     account.obj
+ 0003:00000818       ??_C@_07OOGE@Balance?$AA@  1000a818     account.obj
+ 0003:00000824       ??_C@_0L@EDPB@Arial?5Bold?$AA@ 1000a824     account.obj
+ 0003:00000834       ??_C@_0DA@PJCD@Let?8s?5see?5what?5this?5Item?5will?5be@ 1000a834     account.obj
+ 0003:00000870       ??_C@_07CDCN@Item?517?$AA@ 1000a870     account.obj
+ 0003:0000087c       ??_C@_0L@EABA@New?5Item?51?$AA@ 1000a87c     account.obj
+ 0003:0000088c       ??_C@_07IJLK@Item?516?$AA@ 1000a88c     account.obj
+ 0003:00000898       ??_C@_07HGAD@Item?515?$AA@ 1000a898     account.obj
+ 0003:000008a4       ??_C@_07NMJE@Item?514?$AA@ 1000a8a4     account.obj
+ 0003:000008b0       ??_C@_07IJHB@Item?513?$AA@ 1000a8b0     account.obj
+ 0003:000008bc       ??_C@_07CDOG@Item?512?$AA@ 1000a8bc     account.obj
+ 0003:000008c8       ??_C@_07NMFP@Item?511?$AA@ 1000a8c8     account.obj
+ 0003:000008d4       ??_C@_07HGMI@Item?510?$AA@ 1000a8d4     account.obj
+ 0003:000008e0       ??_C@_06MCA@Item?59?$AA@   1000a8e0     account.obj
+ 0003:000008e8       ??_C@_06KGLH@Item?58?$AA@  1000a8e8     account.obj
+ 0003:000008f0       ??_C@_06KHOK@Item?57?$AA@  1000a8f0     account.obj
+ 0003:000008f8       ??_C@_06NHN@Item?56?$AA@   1000a8f8     account.obj
+ 0003:00000900       ??_C@_06PCME@Item?55?$AA@  1000a900     account.obj
+ 0003:00000908       ??_C@_06FIFD@Item?54?$AA@  1000a908     account.obj
+ 0003:00000910       ??_C@_06NLG@Item?53?$AA@   1000a910     account.obj
+ 0003:00000918       ??_C@_06KHCB@Item?52?$AA@  1000a918     account.obj
+ 0003:00000920       ??_C@_06FIJI@Item?51?$AA@  1000a920     account.obj
+ 0003:00000928       ??_C@_08FDEH@Folder?54?$AA@ 1000a928     account.obj
+ 0003:00000934       ??_C@_08GKC@Folder?53?$AA@ 1000a934     account.obj
+ 0003:00000940       ??_C@_0M@JFCC@Folder?5List?$AA@ 1000a940     account.obj
+ 0003:00000950       ??_C@_06OEBB@States?$AA@   1000a950     account.obj
+ 0003:00000958       ??_C@_0M@LDMG@Folder?5Tree?$AA@ 1000a958     account.obj
+ 0003:00000968       ??_C@_0N@NLFH@OLB_Outliner?$AA@ 1000a968     account.obj
+ 0003:00000978       ??_C@_08FDIM@Folder?51?$AA@ 1000a978     account.obj
+ 0003:00000984       ??_C@_05KFJA@__OLB?$AA@    1000a984     account.obj
+ 0003:0000098c       ??_C@_0N@LPJH@PrintPreview?$AA@ 1000a98c     account.obj
+ 0003:0000099c       ??_C@_05KGMP@Print?$AA@    1000a99c     account.obj
+ 0003:000009a4       ??_C@_04OMLL@Date?$AA@     1000a9a4     account.obj
+ 0003:000009ac       ??_C@_0P@BDCH@GridStateCombo?$AA@ 1000a9ac     account.obj
+ 0003:000009c0       ??_C@_0BA@EMIB@GridListAccount?$AA@ 1000a9c0     account.obj
+ 0003:000009d4       ??_C@_08LFLN@GridDate?$AA@ 1000a9d4     account.obj
+ 0003:000009e0       ??_C@_0BH@HBNA@d?3?210c?2w?2bin?2zdctl?4dll?$AA@ 1000a9e0     account.obj
+ 0003:000009fc       ??_C@_0L@LAJP@SelectSets?$AA@ 1000a9fc     account.obj
+ 0003:00000a0c       ??_C@_01PCJP@Y?$AA@        1000aa0c     account.obj
+ 0003:00000a10       ??_C@_0L@HPGP@Authorized?$AA@ 1000aa10     account.obj
+ 0003:00000a20       ??_C@_0M@JACB@TRANSACTION?$AA@ 1000aa20     account.obj
+ 0003:00000a30       ??_C@_09CJDC@FirstName?$AA@ 1000aa30     account.obj
+ 0003:00000a3c       ??_C@_0O@DIOC@Account?5Setup?$AA@ 1000aa3c     account.obj
+ 0003:00000a4c       ??_C@_0DO@MDCJ@ACCOUNT?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DO?5LastCtrl?5from?5O@ 1000aa4c     account.obj
+ 0003:00000a98       ??_C@_0DM@OIGA@ACCOUNT?5?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DO?5Return?5from?5Ope@ 1000aa98     account.obj
+ 0003:00000ae0       ??_C@_0P@BJBH@Conversational?$AA@ 1000aae0     account.obj
+ 0003:00000af4       ??_C@_09DEAI@ResetText?$AA@ 1000aaf4     account.obj
+ 0003:00000b00       ??_C@_0BB@BBHI@Ctrl?5with?5focus?5?$AA@ 1000ab00     account.obj
+ 0003:00000b14       ??_C@_0L@OCNG@EditChange?$AA@ 1000ab14     account.obj
+ 0003:00000b24       ??_C@_0BA@PMII@d?3?2temp?2dks?4bmp?$AA@ 1000ab24     account.obj
+ 0003:00000b38       ??_C@_0P@KNBA@d?3?2temp?2dks?4zl?$AA@ 1000ab38     account.obj
+ 0003:00000b4c       ??_C@_06DDJA@?$DP?$DP?$DP?3?5?5?$AA@ 1000ab4c     account.obj
+ 0003:00000b54       ??_C@_07OHMF@?$CFd?$CJ?5?$CFs?5?$AA@ 1000ab54     account.obj
+ 0003:00000b60       ??_C@_0BA@BOEL@Found?5Key?5?$DN?$DN?$DN?$DO?5?$AA@ 1000ab60     account.obj
+ 0003:00000b74       ??_C@_09HIAF@?$CIDefault?$CJ?$AA@ 1000ab74     account.obj
+ 0003:00000b80       ??_C@_05FPNF@Debug?$AA@    1000ab80     account.obj
+ 0003:00000b88       ??_C@_0DF@CIGD@Line?3?$CFd?50?5based?5index?5?$DN?5?$CFd?0?5dwRC@ 1000ab88     account.obj
+ 0003:00000bc8       ??_C@_0N@CCBK@IDE_CLASS?$DP?3?5?$AA@ 1000abc8     account.obj
+ 0003:00000bd8       ??_C@_0O@GPBI@IDE_CVALUES?3?5?$AA@ 1000abd8     account.obj
+ 0003:00000be8       ??_C@_0M@BOJE@IDE_CLASS?3?5?$AA@ 1000abe8     account.obj
+ 0003:00000bf8       ??_C@_0BF@CMJN@RegOpenKeyEx?5TypeLib?$AA@ 1000abf8     account.obj
+ 0003:00000c14       ??_C@_07CKPO@TypeLib?$AA@  1000ac14     account.obj
+ 0003:00000c20       ??_C@_0BG@IOEP@RegOpenKeyEx?5KeyCLSID?$AA@ 1000ac20     account.obj
+ 0003:00000c3c       ??_C@_0CH@JFBL@?$HL6DDE3061?9736C?911D2?9A5E8?900A0C96@ 1000ac3c     account.obj
+ 0003:00000c6c       ??_C@_0BD@HFOB@RegOpenKeyEx?5CLSID?$AA@ 1000ac6c     account.obj
+ 0003:00000c84       ??_C@_05FGFK@CLSID?$AA@    1000ac84     account.obj
+ 0003:00000c8c       ??_C@_0BP@DIJD@RegOpenKeyEx?5HKEY_CLASSES_ROOT?$AA@ 1000ac8c     account.obj
+ 0003:00000cb4       ??_C@_0BD@MGP@RegConnectRegistry?$AA@ 1000acb4     account.obj
+ 0003:00000ccc       ??_C@_07FOLM@?5failed?$AA@ 1000accc     account.obj
+ 0003:00000cd8       ??_C@_05MBMK@lRC?3?5?$AA@  1000acd8     account.obj
+ 0003:00000ce0       ??_C@_0CP@DIAK@Decimal?5value?5?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD?$CD@ 1000ace0     account.obj
+ 0003:00000d18       ??_C@_0CA@EMIF@Hotkey?5Ctrl?5with?5Focus?5?$DN?$DN?$DN?$DN?$DN?$DN?$DO?5?$AA@ 1000ad18     account.obj
+ 0003:00000d40       ??_C@_0BB@IPJL@Message1?5State?3?5?$AA@ 1000ad40     account.obj
+ 0003:00000d54       ??_C@_05DECN@Test2?$AA@    1000ad54     account.obj
+ 0003:00000d5c       ??_C@_0BC@EIMD@Hotkey?5Operation?5?$AA@ 1000ad5c     account.obj
+ 0003:00000d74       ??_C@_03KPJN@Add?$AA@      1000ad74     account.obj
+ 0003:00000d78       ??_C@_08OHCG@Subtract?$AA@ 1000ad78     account.obj
+ 0003:00000d84       ??_C@_08KHNE@Multiply?$AA@ 1000ad84     account.obj
+ 0003:00000d90       ??_C@_06DBBI@Divide?$AA@   1000ad90     account.obj
+ 0003:00000d98       ??_C@_05LEJJ@Enter?$AA@    1000ad98     account.obj
+ 0003:00000da0       ??_C@_05FKKD@Edit?5?$AA@   1000ada0     account.obj
+ 0003:00000da8       ??_C@_0P@DHNK@Get?1Lose?5focus?$AA@ 1000ada8     account.obj
+ 0003:00000dbc       ??_C@_06OKOA@TagTab?$AA@   1000adbc     account.obj
+ 0003:00000dc4       ??_C@_0L@NLCA@DisableTab?$AA@ 1000adc4     account.obj
+ 0003:00000dd4       ??_C@_07NBBG@HideTab?$AA@  1000add4     account.obj
+ 0003:00000de0       ??_C@_07FEDP@ShowTab?$AA@  1000ade0     account.obj
+ 0003:00000dec       ??_C@_06CMOA@TagOne?$AA@   1000adec     account.obj
+ 0003:00000df4       ??_C@_06HPCA@Events?$AA@   1000adf4     account.obj
+ 0003:00000dfc       ??_C@_0BG@FEGI@Called?5Test?5operation?$AA@ 1000adfc     account.obj
+ 0003:00000e18       ??_C@_06EGH@DRAFTS?$AA@    1000ae18     account.obj
+ 0003:00000e20       ??_C@_07LABH@Test?5?6?5?$AA@ 1000ae20     account.obj
+ 0003:00000e2c       ??_C@_0CB@LMHN@ACCOUNT?5Bitmap?5subtask?5NOT?5found@ 1000ae2c     account.obj
+ 0003:00000e54       ??_C@_0BN@JPI@ACCOUNT?5Bitmap?5subtask?5found?$AA@ 1000ae54     account.obj
+ 0003:00000e78       ??_C@_06KLJN@Bitmap?$AA@   1000ae78     account.obj
+ 0003:00000e80       ??_C@_0L@POIN@ControlBar?$AA@ 1000ae80     account.obj
+ 0003:00000e90       ??_C@_0M@COKL@ListAccount?$AA@ 1000ae90     account.obj
+ 0003:00000ea0       ??_C@_0O@EJFE@CustomerIdNbr?$AA@ 1000aea0     account.obj
+ 0003:00000eb0       ??_C@_03JGPK@747?$AA@      1000aeb0     account.obj
+ 0003:00000eb4       ??_C@_04ELBB@7?477?$AA@    1000aeb4     account.obj
+ 0003:00000ebc       ??_C@_06KIEF@Number?$AA@   1000aebc     account.obj
+ 0003:00000ec4       ??_C@_07NLMJ@1111111?$AA@  1000aec4     account.obj
+ 0003:00000ed0       ??_C@_04FCOP@Type?$AA@     1000aed0     account.obj
+ 0003:00000ed8       ??_C@_05PIHG@Check?$AA@    1000aed8     account.obj
+ 0003:00000ee0       ??_C@_09LMCB@Hilite123?$AA@ 1000aee0     account.obj
+ 0003:00000eec       ??_C@_04FJMG@New1?$AA@     1000aeec     account.obj
+ 0003:00000ef4       ??_C@_04IDKD@Phil?$AA@     1000aef4     account.obj
+ 0003:00000efc       ??_C@_08PPAB@AccountR?$AA@ 1000aefc     account.obj
+ 0003:00000f08       ??_C@_08POJH@AccountX?$AA@ 1000af08     account.obj
+ 0003:00000f14       ??_C@_08OBMD@My?5Title?$AA@ 1000af14     account.obj
+ 0003:00000f20       ??_C@_03KALA@TAG?$AA@      1000af20     account.obj
+ 0003:00000f24       ??_C@_08FNMP@vertical?$AA@ 1000af24     account.obj
+ 0003:00000f30       ??_C@_05CNHG@Arial?$AA@    1000af30     account.obj
+ 0003:00000f38       ??_C@_08FIBN@Vertical?$AA@ 1000af38     account.obj
+ 0003:00000f44       ??_C@_08MENL@Try?5this?$AA@ 1000af44     account.obj
+ 0003:00000f50       ??_C@_0BJ@FMIK@TabPreChange?5ActiveTab?3?5?$AA@ 1000af50     account.obj
+ 0003:00000f70       ??_C@_0BK@IJBO@TabPostChange?5ActiveTab?3?5?$AA@ 1000af70     account.obj
+ 0003:00000f90       ??_C@_02IMFN@F1?$AA@       1000af90     account.obj
+ 0003:00000f94       ??_C@_0L@LMFB@F2?5Release?$AA@ 1000af94     account.obj
+ 0003:00000fa4       ??_C@_05CDDE@Mouse?$AA@    1000afa4     account.obj
+ 0003:00000fac       ??_C@_0L@KBBN@F2?5Capture?$AA@ 1000afac     account.obj
+ 0003:00000fbc       ??_C@_02HDOE@F2?$AA@       1000afbc     account.obj
+ 0003:00000fc0       ??_C@_0BH@KCIG@CreateSeeMessage?5RC?5?$DN?5?$AA@ 1000afc0     account.obj
+ 0003:00000fdc       ??_C@_0BB@PLAE@arksoft?$EAjuno?4com?$AA@ 1000afdc     account.obj
+ 0003:00000ff0       ??_C@_0N@EAGC@Subject?5Line?$AA@ 1000aff0     account.obj
+ 0003:00001000       ??_C@_0BK@NIJ@?$EAd?3?210c?2a?2tz?2SendHTML?4htm?$AA@ 1000b000     account.obj
+ 0003:00001020       ??_C@_0BD@IEOC@Alternate?5DKS?5Text?$AA@ 1000b020     account.obj
+ 0003:00001038       ??_C@_0CO@JMOE@d?3?210c?2a?2tz?2image1?4gif?$DLd?3?210c?2a?2@ 1000b038     account.obj
+ 0003:00001070       ??_C@_07BLLG@Arksoft?$AA@  1000b070     account.obj
+ 0003:0000107c       ??_C@_08NCJP@Rachel16?$AA@ 1000b07c     account.obj
+ 0003:00001088       ??_C@_0BB@FODH@smtp?4comcast?4net?$AA@ 1000b088     account.obj
+ 0003:0000109c       ??_C@_0BE@CAHJ@arksoft?$EAcomcast?4net?$AA@ 1000b09c     account.obj
+ 0003:000010b4       ??_C@_0CH@KJJI@StartEmailClient?5using?5Document?5@ 1000b0b4     account.obj
+ 0003:000010e4       ??_C@_0BK@NFFN@Can?8t?5open?5Document?5file?4?$AA@ 1000b0e4     account.obj
+ 0003:00001104       ??_C@_0BL@PDG@Can?8t?5open?5Document?5file?3?5?$AA@ 1000b104     account.obj
+ 0003:00001124       ??_C@_0CI@HNNK@d?3?2lplr?2zencas?2docs?2output?2req_t@ 1000b124     account.obj
+ 0003:00001154       ??_C@_0BJ@PAAG@d?3?210c?2a?2tz?2student?4html?$AA@ 1000b154     account.obj
+ 0003:00001174       ??_C@_0CC@DAAA@Hotkey?5Email?5Operation?5?$CFs?5?$CIRC?$DN?$CFd@ 1000b174     account.obj
+ 0003:0000119c       ??_C@_0BK@FGPN@mailto?2shell?2open?2command?$AA@ 1000b19c     account.obj
+ 0003:000011bc       ??_C@_02IMJG@F4?$AA@       1000b1bc     account.obj
+ 0003:000011c0       ??_C@_02CGAB@F5?$AA@       1000b1c0     account.obj
+ 0003:000011c4       ??_C@_07BJN@ToolBar?$AA@   1000b1c4     account.obj
+ 0003:000011d0       ??_C@_06MMEP@Fourth?$AA@   1000b1d0     account.obj
+ 0003:000011d8       ??_C@_02HDCP@F7?$AA@       1000b1d8     account.obj
+ 0003:000011dc       ??_C@_0BO@DPCI@23?5Faxon?5Rd?0?5Quincy?0?5MA?502171?$AA@ 1000b1dc     account.obj
+ 0003:00001200       ??_C@_0BE@LCAN@Samoset?5Ave?4?0?502169?$AA@ 1000b200     account.obj
+ 0003:00001218       ??_C@_0CF@CGIE@One?5Microsoft?5Way?0?5Redmond?0?5WA?59@ 1000b218     account.obj
+ 0003:00001244       ??_C@_02HCHC@F8?$AA@       1000b244     account.obj
+ 0003:00001248       ??_C@_0BC@IFDF@Longitude?5Dist?5?$DN?5?$AA@ 1000b248     account.obj
+ 0003:00001260       ??_C@_0BB@BLFJ@Latitude?5Dist?5?$DN?5?$AA@ 1000b260     account.obj
+ 0003:00001274       ??_C@_0BC@OOBG@West?5Longitude?5?$DN?5?$AA@ 1000b274     account.obj
+ 0003:0000128c       ??_C@_0BC@GEGD@North?5Latitude?5?$DN?5?$AA@ 1000b28c     account.obj
+ 0003:000012a4       ??_C@_0BC@MDED@East?5Longitude?5?$DN?5?$AA@ 1000b2a4     account.obj
+ 0003:000012bc       ??_C@_0BC@OOLG@South?5Latitude?5?$DN?5?$AA@ 1000b2bc     account.obj
+ 0003:000012d4       ??_C@_0L@LELI@LonDist?5?$DN?5?$AA@ 1000b2d4     account.obj
+ 0003:000012e4       ??_C@_0L@HIIJ@LatDist?5?$DN?5?$AA@ 1000b2e4     account.obj
+ 0003:000012f4       ??_C@_0BC@IDJD@Distance?5delta?5?$DN?5?$AA@ 1000b2f4     account.obj
+ 0003:0000130c       ??_C@_08HHCF@Dist3?5?$DN?5?$AA@ 1000b30c     account.obj
+ 0003:00001318       ??_C@_08FCHH@Dist2?5?$DN?5?$AA@ 1000b318     account.obj
+ 0003:00001324       ??_C@_08DNIB@Dist1?5?$DN?5?$AA@ 1000b324     account.obj
+ 0003:00001330       ??_C@_03KHAC@SSN?$AA@      1000b330     account.obj
+ 0003:00001334       ??_C@_02NIOF@F9?$AA@       1000b334     account.obj
+ 0003:00001338       ??_C@_03DLBM@F10?$AA@      1000b338     account.obj
+ 0003:0000133c       ??_C@_0M@FDF@Termination?$AA@ 1000b33c     account.obj
+ 0003:0000134c       ??_C@_03JBIL@F11?$AA@      1000b34c     account.obj
+ 0003:00001350       ??_C@_06ONBC@SubWnd?$AA@   1000b350     account.obj
+ 0003:00001358       ??_C@_0BF@MCHM@FirstName?5attribute?5?$AA@ 1000b358     account.obj
+ 0003:00001374       ??_C@_0BE@BGCK@FirstName?5contents?5?$AA@ 1000b374     account.obj
+ 0003:0000138c       ??_C@_03GODC@F12?$AA@      1000b38c     account.obj
+ 0003:00001390       ??_C@_0BB@LGEM@AppointmentAlarm?$AA@ 1000b390     account.obj
+ 0003:000013a4       ??_C@_08MDGG@DayTimer?$AA@ 1000b3a4     account.obj
+ 0003:000013b0       ??_C@_05MJIN@Event?$AA@    1000b3b0     account.obj
+ 0003:000013b8       ??_C@_07MEND@Subject?$AA@  1000b3b8     account.obj
+ 0003:000013c4       ??_C@_07NNP@Message?$AA@   1000b3c4     account.obj
+ 0003:000013d0       ??_C@_08NKIE@TimeFrom?$AA@ 1000b3d0     account.obj
+ 0003:000013dc       ??_C@_06BNNP@TimeTo?$AA@   1000b3dc     account.obj
+ 0003:000013e4       ??_C@_05OGFP@Alarm?$AA@    1000b3e4     account.obj
+ 0003:000013ec       ??_C@_07MOLG@FullDay?$AA@  1000b3ec     account.obj
+ 0003:000013f8       ??_C@_08NKKK@Password?$AA@ 1000b3f8     account.obj
+ 0003:00001404       ??_C@_06GGNK@Center?$AA@   1000b404     account.obj
+ 0003:0000140c       ??_C@_05NJOH@Three?$AA@    1000b40c     account.obj
+ 0003:00001414       ??_C@_03OBMJ@One?$AA@      1000b414     account.obj
+ 0003:00001418       ??_C@_04NBCE@City?$AA@     1000b418     account.obj
+ 0003:00001420       ??_C@_0P@FGGG@MasterPassword?$AA@ 1000b420     account.obj
+ 0003:00001434       ??_C@_0BK@HGFI@New?5Password?5be?5specified?$AA@ 1000b434     account.obj
+ 0003:00001454       ??_C@_0EG@DODM@New?5Password?5does?5not?5match?5Conf@ 1000b454     account.obj
+ 0003:000014a8       ??_C@_0CO@GIIO@Master?5Password?5Incorrect?5?4?4?4?5Pl@ 1000b4a8     account.obj
+ 0003:000014e0       ??_C@_0BA@DMCD@Master?5Password?$AA@ 1000b4e0     account.obj
+ 0003:000014f4       ??_C@_0CD@DMBN@Master?5Password?5Reset?5Successful@ 1000b4f4     account.obj
+ 0003:00001520       ??_C@_0BA@FMPJ@ConfirmPassword?$AA@ 1000b520     account.obj
+ 0003:00001534       ??_C@_0M@FKGA@NewPassword?$AA@ 1000b534     account.obj
+ 0003:00001544       ??_C@_0M@DKEL@Description?$AA@ 1000b544     account.obj
+ 0003:00001554       ??_C@_04EFNI@Name?$AA@     1000b554     account.obj
+ 0003:0000155c       ??_C@_09PJNM@Password?3?$AA@ 1000b55c     account.obj
+ 0003:00001568       ??_C@_0BA@MBJA@LastCommandTag?5?$AA@ 1000b568     account.obj
+ 0003:0000157c       ??_C@_0M@EGGF@AccountList?$AA@ 1000b57c     account.obj
+ 0003:0000158c       ??_C@_0P@BLJE@Delete?5Account?$AA@ 1000b58c     account.obj
+ 0003:000015a0       ??_C@_0CM@JHKJ@Are?5you?5sure?5you?5want?5to?5delete?5@ 1000b5a0     account.obj
+ 0003:00001788       _g_hInstanceDLL            1000b788     zdllinst.obj
+ 0003:00001798       _g_vSubtaskFrame0          1000b798     account.obj
+ 0003:0000179c       _g_vSubtaskFrame1          1000b79c     account.obj
+ 0003:000017a0       _g_vSubtaskFrame2          1000b7a0     account.obj
+ 0003:000017a4       _g_vSubtaskFrame3          1000b7a4     account.obj
+ 0003:000017bc       ??_C@_00A@?$AA@            1000b7bc     account.obj
+ 0003:000017c4       __adjust_fdiv              1000b7c4     <common>
+ 0003:000017d0       ___onexitend               1000b7d0     <common>
+ 0003:000017e0       ___onexitbegin             1000b7e0     <common>
+ 0003:000017e4       __pRawDllMain              1000b7e4     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_kzrpsrco 1000c000     kzrpsrco:kzrpsrco.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_Z2MP   1000c014     z2mp:Z2MP.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_ZSEMail 1000c028     ZSEmail:ZSEMail.dll
+ 0004:0000003c       __IMPORT_DESCRIPTOR_KERNEL32 1000c03c     kernel32:KERNEL32.dll
+ 0004:00000050       __IMPORT_DESCRIPTOR_USER32 1000c050     user32:USER32.dll
+ 0004:00000064       __IMPORT_DESCRIPTOR_ADVAPI32 1000c064     advapi32:ADVAPI32.dll
+ 0004:00000078       __IMPORT_DESCRIPTOR_KZOENGAA 1000c078     kzoengaa:KZOENGAA.DLL
+ 0004:0000008c       __IMPORT_DESCRIPTOR_MSVCRTD 1000c08c     msvcrtd:MSVCRTD.dll
+ 0004:000000a0       __IMPORT_DESCRIPTOR_ZDrApp 1000c0a0     zdrapp:ZDrApp.dll
+ 0004:000000b4       __IMPORT_DESCRIPTOR_ZdCtl  1000c0b4     zdctl:ZdCtl.dll
+ 0004:000000c8       __NULL_IMPORT_DESCRIPTOR   1000c0c8     kzrpsrco:kzrpsrco.dll
+ 0004:00000560       __imp__RegOpenKeyExA@20    1000c560     advapi32:ADVAPI32.dll
+ 0004:00000564       __imp__RegQueryInfoKeyA@48 1000c564     advapi32:ADVAPI32.dll
+ 0004:00000568       __imp__RegEnumKeyA@16      1000c568     advapi32:ADVAPI32.dll
+ 0004:0000056c       __imp__RegEnumValueA@32    1000c56c     advapi32:ADVAPI32.dll
+ 0004:00000570       __imp__RegQueryValueExA@24 1000c570     advapi32:ADVAPI32.dll
+ 0004:00000574       __imp__RegConnectRegistryA@12 1000c574     advapi32:ADVAPI32.dll
+ 0004:00000578       \177ADVAPI32_NULL_THUNK_DATA 1000c578     advapi32:ADVAPI32.dll
+ 0004:000005a8       __imp__GetFileSize@8       1000c5a8     kernel32:KERNEL32.dll
+ 0004:000005ac       \177KERNEL32_NULL_THUNK_DATA 1000c5ac     kernel32:KERNEL32.dll
+ 0004:000005d8       __imp__SysMessageBox@16    1000c5d8     kzoengaa:KZOENGAA.DLL
+ 0004:000005dc       __imp__SetAttributeFromString@16 1000c5dc     kzoengaa:KZOENGAA.DLL
+ 0004:000005e0       __imp__ZeidonStringCopy@28 1000c5e0     kzoengaa:KZOENGAA.DLL
+ 0004:000005e4       __imp__SysOpenFile@12      1000c5e4     kzoengaa:KZOENGAA.DLL
+ 0004:000005e8       __imp__SysReadFile@16      1000c5e8     kzoengaa:KZOENGAA.DLL
+ 0004:000005ec       __imp__SysCloseFile@12     1000c5ec     kzoengaa:KZOENGAA.DLL
+ 0004:000005f0       __imp__IssueError@16       1000c5f0     kzoengaa:KZOENGAA.DLL
+ 0004:000005f4       __imp__CommitOI_ToFile@12  1000c5f4     kzoengaa:KZOENGAA.DLL
+ 0004:000005f8       __imp__GetStringFromAttributeByContext@24 1000c5f8     kzoengaa:KZOENGAA.DLL
+ 0004:000005fc       __imp__CheckExistenceOfEntity@8 1000c5fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000600       __imp__TraceLine           1000c600     kzoengaa:KZOENGAA.DLL
+ 0004:00000604       __imp_??4ZDecimal@@QAE?AV0@UDecimalStruct@@@Z 1000c604     kzoengaa:KZOENGAA.DLL
+ 0004:00000608       __imp__SysConvertDecimalToString@12 1000c608     kzoengaa:KZOENGAA.DLL
+ 0004:0000060c       __imp_??4ZDecimal@@QAE?AV0@H@Z 1000c60c     kzoengaa:KZOENGAA.DLL
+ 0004:00000610       __imp__UfDecryptStringUL@16 1000c610     kzoengaa:KZOENGAA.DLL
+ 0004:00000614       __imp__DeleteEntity@12     1000c614     kzoengaa:KZOENGAA.DLL
+ 0004:00000618       __imp_??4ZDecimal@@QAE?AV0@N@Z 1000c618     kzoengaa:KZOENGAA.DLL
+ 0004:0000061c       __imp__TraceLineI@8        1000c61c     kzoengaa:KZOENGAA.DLL
+ 0004:00000620       __imp__SysMutexUnlock@12   1000c620     kzoengaa:KZOENGAA.DLL
+ 0004:00000624       __imp__UnregisterZeidonApplication@4 1000c624     kzoengaa:KZOENGAA.DLL
+ 0004:00000628       __imp__RegisterZeidonApplication@28 1000c628     kzoengaa:KZOENGAA.DLL
+ 0004:0000062c       __imp__SysWait@4           1000c62c     kzoengaa:KZOENGAA.DLL
+ 0004:00000630       __imp__SysMutexLock@16     1000c630     kzoengaa:KZOENGAA.DLL
+ 0004:00000634       __imp__ActivateEmptyObjectInstance@16 1000c634     kzoengaa:KZOENGAA.DLL
+ 0004:00000638       __imp__GetViewByName@16    1000c638     kzoengaa:KZOENGAA.DLL
+ 0004:0000063c       __imp__GetActualAttributeLength@16 1000c63c     kzoengaa:KZOENGAA.DLL
+ 0004:00000640       __imp__CompareAttributeToString@16 1000c640     kzoengaa:KZOENGAA.DLL
+ 0004:00000644       __imp__SetNameForView@16   1000c644     kzoengaa:KZOENGAA.DLL
+ 0004:00000648       __imp__ActivateOI_FromFile@20 1000c648     kzoengaa:KZOENGAA.DLL
+ 0004:0000064c       __imp__SetCursorNextEntity@12 1000c64c     kzoengaa:KZOENGAA.DLL
+ 0004:00000650       __imp__SetSelectStateOfEntity@12 1000c650     kzoengaa:KZOENGAA.DLL
+ 0004:00000654       __imp__GetStringFromAttribute@16 1000c654     kzoengaa:KZOENGAA.DLL
+ 0004:00000658       __imp__SetAllSelectStatesForEntity@16 1000c658     kzoengaa:KZOENGAA.DLL
+ 0004:0000065c       __imp__SetCursorFirstEntity@12 1000c65c     kzoengaa:KZOENGAA.DLL
+ 0004:00000660       __imp__SetSelectSetForView@8 1000c660     kzoengaa:KZOENGAA.DLL
+ 0004:00000664       __imp__TraceLineS@8        1000c664     kzoengaa:KZOENGAA.DLL
+ 0004:00000668       __imp__SetAttributeFromDecimal@52 1000c668     kzoengaa:KZOENGAA.DLL
+ 0004:0000066c       __imp_??1ZDecimal@@QAE@XZ  1000c66c     kzoengaa:KZOENGAA.DLL
+ 0004:00000670       __imp_??4ZDecimal@@QAE?AV0@F@Z 1000c670     kzoengaa:KZOENGAA.DLL
+ 0004:00000674       __imp__GetDecimalFromAttribute@16 1000c674     kzoengaa:KZOENGAA.DLL
+ 0004:00000678       __imp_??0ZDecimal@@QAE@XZ  1000c678     kzoengaa:KZOENGAA.DLL
+ 0004:0000067c       __imp__CreateEntity@12     1000c67c     kzoengaa:KZOENGAA.DLL
+ 0004:00000680       __imp__UfEncryptStringUL@16 1000c680     kzoengaa:KZOENGAA.DLL
+ 0004:00000684       \177KZOENGAA_NULL_THUNK_DATA 1000c684     kzoengaa:KZOENGAA.DLL
+ 0004:000006d0       __imp__strcpy              1000c6d0     msvcrtd:MSVCRTD.dll
+ 0004:000006d4       __imp__strcmp              1000c6d4     msvcrtd:MSVCRTD.dll
+ 0004:000006d8       __imp__strlen              1000c6d8     msvcrtd:MSVCRTD.dll
+ 0004:000006dc       __imp__sprintf             1000c6dc     msvcrtd:MSVCRTD.dll
+ 0004:000006e0       __imp__atol                1000c6e0     msvcrtd:MSVCRTD.dll
+ 0004:000006e4       __imp__memset              1000c6e4     msvcrtd:MSVCRTD.dll
+ 0004:000006e8       __imp___free_dbg           1000c6e8     msvcrtd:MSVCRTD.dll
+ 0004:000006ec       __imp___initterm           1000c6ec     msvcrtd:MSVCRTD.dll
+ 0004:000006f0       __imp___malloc_dbg         1000c6f0     msvcrtd:MSVCRTD.dll
+ 0004:000006f4       __imp____dllonexit         1000c6f4     msvcrtd:MSVCRTD.dll
+ 0004:000006f8       __imp___adjust_fdiv        1000c6f8     msvcrtd:MSVCRTD.dll
+ 0004:000006fc       __imp___onexit             1000c6fc     msvcrtd:MSVCRTD.dll
+ 0004:00000700       __imp___ltoa               1000c700     msvcrtd:MSVCRTD.dll
+ 0004:00000704       \177MSVCRTD_NULL_THUNK_DATA 1000c704     msvcrtd:MSVCRTD.dll
+ 0004:00000738       __imp__MessageBoxA@16      1000c738     user32:USER32.dll
+ 0004:0000073c       __imp__LoadCursorA@8       1000c73c     user32:USER32.dll
+ 0004:00000740       __imp__SetCursor@4         1000c740     user32:USER32.dll
+ 0004:00000744       \177USER32_NULL_THUNK_DATA 1000c744     user32:USER32.dll
+ 0004:00000770       __imp__MapPointStart@0     1000c770     z2mp:Z2MP.dll
+ 0004:00000774       __imp__MapPointStop@0      1000c774     z2mp:Z2MP.dll
+ 0004:00000778       __imp__MapPointSetPushPin@32 1000c778     z2mp:Z2MP.dll
+ 0004:0000077c       __imp__MapPointValidateAddress@28 1000c77c     z2mp:Z2MP.dll
+ 0004:00000780       __imp__GetDistance@164     1000c780     z2mp:Z2MP.dll
+ 0004:00000784       __imp__GetDistanceRectangle@140 1000c784     z2mp:Z2MP.dll
+ 0004:00000788       __imp__MapPointShowApplication@4 1000c788     z2mp:Z2MP.dll
+ 0004:0000078c       \177Z2MP_NULL_THUNK_DATA   1000c78c     z2mp:Z2MP.dll
+ 0004:000007bc       __imp__OperatorPromptForInput@24 1000c7bc     zdrapp:ZDrApp.dll
+ 0004:000007c0       __imp__MapCtrl@8           1000c7c0     zdrapp:ZDrApp.dll
+ 0004:000007c4       __imp__GetLastCommandTag@8 1000c7c4     zdrapp:ZDrApp.dll
+ 0004:000007c8       __imp__SetCtrlTextLth@12   1000c7c8     zdrapp:ZDrApp.dll
+ 0004:000007cc       __imp__OperatorPrompt@28   1000c7cc     zdrapp:ZDrApp.dll
+ 0004:000007d0       __imp__OperatorSend@16     1000c7d0     zdrapp:ZDrApp.dll
+ 0004:000007d4       __imp__GetWindowHandle@16  1000c7d4     zdrapp:ZDrApp.dll
+ 0004:000007d8       __imp__GetApplicationInstance@4 1000c7d8     zdrapp:ZDrApp.dll
+ 0004:000007dc       __imp__TranslateCtrlValue@24 1000c7dc     zdrapp:ZDrApp.dll
+ 0004:000007e0       __imp__SetCtrlTranslationList@16 1000c7e0     zdrapp:ZDrApp.dll
+ 0004:000007e4       __imp__SetCtrlState@16     1000c7e4     zdrapp:ZDrApp.dll
+ 0004:000007e8       __imp__SetCtrlProperty@20  1000c7e8     zdrapp:ZDrApp.dll
+ 0004:000007ec       __imp__GetLastCtrlTag@8    1000c7ec     zdrapp:ZDrApp.dll
+ 0004:000007f0       __imp__OperatorConversationalDialog@16 1000c7f0     zdrapp:ZDrApp.dll
+ 0004:000007f4       __imp__SetCtrlText@12      1000c7f4     zdrapp:ZDrApp.dll
+ 0004:000007f8       __imp__GetCtrlWithFocus@8  1000c7f8     zdrapp:ZDrApp.dll
+ 0004:000007fc       __imp__CompressFile@24     1000c7fc     zdrapp:ZDrApp.dll
+ 0004:00000800       __imp__RefreshWindowExceptForCtrl@8 1000c800     zdrapp:ZDrApp.dll
+ 0004:00000804       __imp__PumpMessages@4      1000c804     zdrapp:ZDrApp.dll
+ 0004:00000808       __imp__SetFocusToCtrl@8    1000c808     zdrapp:ZDrApp.dll
+ 0004:0000080c       __imp__GetCtrlState@12     1000c80c     zdrapp:ZDrApp.dll
+ 0004:00000810       __imp__RefreshCtrl@8       1000c810     zdrapp:ZDrApp.dll
+ 0004:00000814       __imp__PlaceWindow@8       1000c814     zdrapp:ZDrApp.dll
+ 0004:00000818       __imp__SetWindowActionBehavior@16 1000c818     zdrapp:ZDrApp.dll
+ 0004:0000081c       __imp__SetWindowState@12   1000c81c     zdrapp:ZDrApp.dll
+ 0004:00000820       __imp__GetSubtaskForWindowName@12 1000c820     zdrapp:ZDrApp.dll
+ 0004:00000824       __imp__HiliteListBoxItem@16 1000c824     zdrapp:ZDrApp.dll
+ 0004:00000828       __imp__CreateTrackingPopupMenu@24 1000c828     zdrapp:ZDrApp.dll
+ 0004:0000082c       __imp__SetPopupOptionState@16 1000c82c     zdrapp:ZDrApp.dll
+ 0004:00000830       __imp__OpenRemoteReportFromClient@24 1000c830     zdrapp:ZDrApp.dll
+ 0004:00000834       __imp__PrintCtrl@24        1000c834     zdrapp:ZDrApp.dll
+ 0004:00000838       __imp__DrawRectangleToReport@44 1000c838     zdrapp:ZDrApp.dll
+ 0004:0000083c       __imp__DrawTextToReport@48 1000c83c     zdrapp:ZDrApp.dll
+ 0004:00000840       __imp__GetTextHeight@8     1000c840     zdrapp:ZDrApp.dll
+ 0004:00000844       __imp__GetTextWidth@8      1000c844     zdrapp:ZDrApp.dll
+ 0004:00000848       __imp__SelectFontForReport@8 1000c848     zdrapp:ZDrApp.dll
+ 0004:0000084c       __imp__CreateFontForReport@44 1000c84c     zdrapp:ZDrApp.dll
+ 0004:00000850       __imp__DrFreeTaskMemory@4  1000c850     zdrapp:ZDrApp.dll
+ 0004:00000854       __imp__DrAllocTaskMemory@12 1000c854     zdrapp:ZDrApp.dll
+ 0004:00000858       __imp__DetermineRegKeyValue@16 1000c858     zdrapp:ZDrApp.dll
+ 0004:0000085c       __imp__CloseFrame@4        1000c85c     zdrapp:ZDrApp.dll
+ 0004:00000860       __imp__AttachSubtaskToPane@20 1000c860     zdrapp:ZDrApp.dll
+ 0004:00000864       __imp__GetCtrlText@16      1000c864     zdrapp:ZDrApp.dll
+ 0004:00000868       \177ZDrApp_NULL_THUNK_DATA 1000c868     zdrapp:ZDrApp.dll
+ 0004:000008b4       __imp__CloseSeeConnection@4 1000c8b4     ZSEmail:ZSEMail.dll
+ 0004:000008b8       __imp__CreateSeeMessage@56 1000c8b8     ZSEmail:ZSEMail.dll
+ 0004:000008bc       __imp__CreateSeeConnection@16 1000c8bc     ZSEmail:ZSEMail.dll
+ 0004:000008c0       \177ZSEMail_NULL_THUNK_DATA 1000c8c0     ZSEmail:ZSEMail.dll
+ 0004:000008ec       __imp__DT_DeleteCurrentAppointment@8 1000c8ec     zdctl:ZdCtl.dll
+ 0004:000008f0       __imp__CB_SetData@20       1000c8f0     zdctl:ZdCtl.dll
+ 0004:000008f4       __imp__GRID_SetColorAssociation@28 1000c8f4     zdctl:ZdCtl.dll
+ 0004:000008f8       __imp__GRID_SetColorAttributeName@16 1000c8f8     zdctl:ZdCtl.dll
+ 0004:000008fc       __imp__LB_SetColorAssociation@28 1000c8fc     zdctl:ZdCtl.dll
+ 0004:00000900       __imp__LB_SetColorAttributeName@16 1000c900     zdctl:ZdCtl.dll
+ 0004:00000904       __imp__OLB_SetSelFolder@12 1000c904     zdctl:ZdCtl.dll
+ 0004:00000908       __imp__OLB_AddFolderItem@28 1000c908     zdctl:ZdCtl.dll
+ 0004:0000090c       __imp__OLB_AddFolderBar@20 1000c90c     zdctl:ZdCtl.dll
+ 0004:00000910       __imp__OLB_AddFolder@16    1000c910     zdctl:ZdCtl.dll
+ 0004:00000914       __imp__OLB_AddImages@16    1000c914     zdctl:ZdCtl.dll
+ 0004:00000918       __imp__OLB_SetEventCallback@12 1000c918     zdctl:ZdCtl.dll
+ 0004:0000091c       __imp__BTN_SetColor@24     1000c91c     zdctl:ZdCtl.dll
+ 0004:00000920       __imp__GRID_SetCheckAttribute@24 1000c920     zdctl:ZdCtl.dll
+ 0004:00000924       __imp__GRID_SetColumnCtrl@20 1000c924     zdctl:ZdCtl.dll
+ 0004:00000928       __imp__GRID_SetSelectSelectSet@12 1000c928     zdctl:ZdCtl.dll
+ 0004:0000092c       __imp__GRID_SetDisplaySelectSet@12 1000c92c     zdctl:ZdCtl.dll
+ 0004:00000930       __imp__BMP_SetBitmapFileName@12 1000c930     zdctl:ZdCtl.dll
+ 0004:00000934       __imp__TAB_SetActiveTab@12 1000c934     zdctl:ZdCtl.dll
+ 0004:00000938       __imp__TAB_HideSubTab@16   1000c938     zdctl:ZdCtl.dll
+ 0004:0000093c       __imp__TAB_HideTab@16      1000c93c     zdctl:ZdCtl.dll
+ 0004:00000940       __imp__TAB_SetSubTabColors@20 1000c940     zdctl:ZdCtl.dll
+ 0004:00000944       __imp__TAB_GetActiveSubTab@12 1000c944     zdctl:ZdCtl.dll
+ 0004:00000948       __imp__ED_HiliteText@16    1000c948     zdctl:ZdCtl.dll
+ 0004:0000094c       __imp__LB_SortByColumn@16  1000c94c     zdctl:ZdCtl.dll
+ 0004:00000950       __imp__TB_GetItemText@20   1000c950     zdctl:ZdCtl.dll
+ 0004:00000954       __imp__TB_SetTextMode@12   1000c954     zdctl:ZdCtl.dll
+ 0004:00000958       __imp__TB_GetTextMode@8    1000c958     zdctl:ZdCtl.dll
+ 0004:0000095c       __imp__LB_AutoSizeColumns@20 1000c95c     zdctl:ZdCtl.dll
+ 0004:00000960       __imp__DT_DisplayCurrentAppointment@16 1000c960     zdctl:ZdCtl.dll
+ 0004:00000964       __imp__DT_SetTimeEntityAttributes@40 1000c964     zdctl:ZdCtl.dll
+ 0004:00000968       __imp__DT_UpdateCurrentAppointment@8 1000c968     zdctl:ZdCtl.dll
+ 0004:0000096c       __imp__DT_NewAppointment@24 1000c96c     zdctl:ZdCtl.dll
+ 0004:00000970       \177ZdCtl_NULL_THUNK_DATA  1000c970     zdctl:ZdCtl.dll
+ 0004:000009b4       __imp__FormatSubobjectOnDoc@20 1000c9b4     kzrpsrco:kzrpsrco.dll
+ 0004:000009b8       \177kzrpsrco_NULL_THUNK_DATA 1000c9b8     kzrpsrco:kzrpsrco.dll
+
+ entry point at        0001:00004dc0
+

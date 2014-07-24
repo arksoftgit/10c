@@ -2327,13 +2327,13 @@ PainterSnapRect( TZPainterBar *pPainterBar,
 
    // Set snap value based on the snap value for the painter window.
    if ( nCharSnapValueX )
-      nSnapValueX = (zSHORT) (TextMetrics.tmAveCharWidth / nCharSnapValueX);
+      nSnapValueX = TextMetrics.tmAveCharWidth / nCharSnapValueX;
    else
       nSnapValueX = 0;
 
    // Set snap value based on the snap value for the painter window
    if ( nCharSnapValueY )
-      nSnapValueY = (zSHORT) (TextMetrics.tmHeight / nCharSnapValueY);
+      nSnapValueY = TextMetrics.tmHeight / nCharSnapValueY;
    else
       nSnapValueY = 0;
 
@@ -2342,7 +2342,7 @@ PainterSnapRect( TZPainterBar *pPainterBar,
       return;
 
    // Set Fudging factor to
-   nSnapFudgeFactor = (zSHORT) (2 * TextMetrics.tmDescent) + 2;
+   nSnapFudgeFactor = (2 * TextMetrics.tmDescent) + 2;
 
    // if the control is smaller than necessary to handle one line of
    // characters, then make it big enough to handle one line.
