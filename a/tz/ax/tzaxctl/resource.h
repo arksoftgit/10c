@@ -22,7 +22,7 @@
 #define IDC_BMOVE1                      113
 #define IDC_BMOVEM                      114
 #define IDC_BPROMOTE                    115
-#define IDC_HAND1                       116
+#define IDC_HAND                        116
 #define IDC_VSPLIT                      117
 #define IDC_HSPLIT                      118
 #define IDC_XSPLIT                      119

@@ -109,6 +109,221 @@ oTZCMLPLO_AnalyzeEntity( zVIEW     vXOD,
 
 
 //:TRANSFORMATION OPERATION
+//:CheckOI_ForDupZKey( VIEW vTZCMLPLO BASED ON LOD TZCMLPLO,
+//:                    VIEW vHierMetaOI_Orig,
+//:                    STRING ( 32 ) szRootEntityName )
+
+//:   VIEW vHierMetaOI
+zOPER_EXPORT zSHORT OPERATION
+oTZCMLPLO_CheckOI_ForDupZKey( zVIEW     vTZCMLPLO,
+                              zVIEW     vHierMetaOI_Orig,
+                              zPCHAR    szRootEntityName )
+{
+   zVIEW     vHierMetaOI = 0; 
+   //:STRING ( 32 )   szCurrentEntityName
+   zCHAR     szCurrentEntityName[ 33 ] = { 0 }; 
+   //:STRING ( 32 )   szPreviousEntityName
+   zCHAR     szPreviousEntityName[ 33 ] = { 0 }; 
+   //:STRING ( 2000 ) szMsg
+   zCHAR     szMsg[ 2001 ] = { 0 }; 
+   //:STRING ( 20 )   szZKey
+   zCHAR     szZKey[ 21 ] = { 0 }; 
+   //:INTEGER         lZKey
+   zLONG     lZKey = 0; 
+   //:INTEGER         lLastZKey
+   zLONG     lLastZKey = 0; 
+   //:SHORT           nHierRC
+   zSHORT    nHierRC = 0; 
+   //:SHORT           nReturnLevel
+   zSHORT    nReturnLevel = 0; 
+   zSHORT    RESULT; 
+   zSHORT    lTempInteger_0; 
+   zCHAR     szTempString_0[ 255 ]; 
+   zCHAR     szTempString_1[ 255 ]; 
+
+
+   //:// Check the vHierMetaOI object instance for a duplicate ZKey. Do this by creating a work
+   //:// subobject in vHierMetaOI of all ZKey values in the vHierMetaOI, then sorting and comparing them.
+
+   //:FOR EACH vTZCMLPLO.EntityZKey 
+   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+      RESULT = DeleteEntity( vTZCMLPLO, "EntityZKey", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( vTZCMLPLO, "EntityZKey", "" );
+   } 
+
+   //:END
+   //:FOR EACH vTZCMLPLO.DuplicateZKey 
+   RESULT = SetCursorFirstEntity( vTZCMLPLO, "DuplicateZKey", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:DELETE ENTITY vTZCMLPLO.DuplicateZKey NONE 
+      RESULT = DeleteEntity( vTZCMLPLO, "DuplicateZKey", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( vTZCMLPLO, "DuplicateZKey", "" );
+   } 
+
+   //:END
+
+   //:CreateViewFromView( vHierMetaOI, vHierMetaOI_Orig )
+   CreateViewFromView( &vHierMetaOI, vHierMetaOI_Orig );
+   //:NAME VIEW vHierMetaOI "vHierMetaOIDuplicates"
+   SetNameForView( vHierMetaOI, "vHierMetaOIDuplicates", 0, zLEVEL_TASK );
+   //:SetCursorFirstEntity( vHierMetaOI, szRootEntityName, "" )
+   SetCursorFirstEntity( vHierMetaOI, szRootEntityName, "" );
+   //:DefineHierarchicalCursor( vHierMetaOI, szRootEntityName )
+   DefineHierarchicalCursor( vHierMetaOI, szRootEntityName );
+   //:nHierRC = zCURSOR_SET
+   nHierRC = zCURSOR_SET;
+   //:// Create Root ZKey.
+   //:GetIntegerFromAttribute( lZKey, vHierMetaOI, szRootEntityName, "ZKey" )
+   GetIntegerFromAttribute( &lZKey, vHierMetaOI, szRootEntityName, "ZKey" );
+   //:CREATE ENTITY vTZCMLPLO.EntityZKey 
+   RESULT = CreateEntity( vTZCMLPLO, "EntityZKey", zPOS_AFTER );
+   //:vTZCMLPLO.EntityZKey.ZKey       = lZKey
+   SetAttributeFromInteger( vTZCMLPLO, "EntityZKey", "ZKey", lZKey );
+   //:vTZCMLPLO.EntityZKey.EntityName = szRootEntityName
+   SetAttributeFromString( vTZCMLPLO, "EntityZKey", "EntityName", szRootEntityName );
+   //:LOOP WHILE nHierRC >= zCURSOR_SET
+   while ( nHierRC >= zCURSOR_SET )
+   { 
+      //:nHierRC = SetCursorNextEntityHierarchical( nReturnLevel,
+      //:                                           szCurrentEntityName,
+      //:                                           vHierMetaOI )
+      nHierRC = SetCursorNextEntityHierarchical( (zPUSHORT) &nReturnLevel, szCurrentEntityName, vHierMetaOI );
+      //:IF nHierRC >= zCURSOR_SET
+      if ( nHierRC >= zCURSOR_SET )
+      { 
+         //:// Create ZKey, unless Entity is identified as No Duplicate Check.
+         //:SET CURSOR FIRST vTZCMLPLO.DuplicateCheckEntity WHERE vTZCMLPLO.DuplicateCheckEntity.EntityName = szCurrentEntityName
+         RESULT = SetCursorFirstEntityByString( vTZCMLPLO, "DuplicateCheckEntity", "EntityName", szCurrentEntityName, "" );
+         //:IF RESULT >= zCURSOR_SET 
+         if ( RESULT >= zCURSOR_SET )
+         { 
+            //:GetIntegerFromAttribute( lZKey, vHierMetaOI, szCurrentEntityName, "ZKey" )
+            GetIntegerFromAttribute( &lZKey, vHierMetaOI, szCurrentEntityName, "ZKey" );
+            //:CREATE ENTITY vTZCMLPLO.EntityZKey 
+            RESULT = CreateEntity( vTZCMLPLO, "EntityZKey", zPOS_AFTER );
+            //:vTZCMLPLO.EntityZKey.ZKey       = lZKey
+            SetAttributeFromInteger( vTZCMLPLO, "EntityZKey", "ZKey", lZKey );
+            //:vTZCMLPLO.EntityZKey.EntityName = szCurrentEntityName
+            SetAttributeFromString( vTZCMLPLO, "EntityZKey", "EntityName", szCurrentEntityName );
+
+            //:// For recursive subentity, step down a level.
+            //:IF nHierRC = zCURSOR_SET_RECURSIVECHILD
+            if ( nHierRC == zCURSOR_SET_RECURSIVECHILD )
+            { 
+               //:SetViewToSubobject( vHierMetaOI, szCurrentEntityName )
+               SetViewToSubobject( vHierMetaOI, szCurrentEntityName );
+            } 
+
+            //:END
+         } 
+
+         //:END
+      } 
+
+      //:END
+   } 
+
+   //:END
+   //:DropView( vHierMetaOI )
+   DropView( vHierMetaOI );
+
+   //:// Sort ZKey entries and loop through each entry looking for duplicates.
+   //:OrderEntityForView( vTZCMLPLO, "EntityZKey", "ZKey A" )
+   OrderEntityForView( vTZCMLPLO, "EntityZKey", "ZKey A" );
+   //:SET CURSOR FIRST vTZCMLPLO.EntityZKey 
+   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+   //:lLastZKey = 0
+   lLastZKey = 0;
+   //:FOR EACH vTZCMLPLO.EntityZKey 
+   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:lZKey = vTZCMLPLO.EntityZKey.ZKey 
+      GetIntegerFromAttribute( &lZKey, vTZCMLPLO, "EntityZKey", "ZKey" );
+      //:IF lLastZKey = lZKey
+      if ( lLastZKey == lZKey )
+      { 
+         //:CREATE ENTITY vTZCMLPLO.DuplicateZKey 
+         RESULT = CreateEntity( vTZCMLPLO, "DuplicateZKey", zPOS_AFTER );
+         //:vTZCMLPLO.DuplicateZKey.ZKey        = vTZCMLPLO.EntityZKey.ZKey 
+         SetAttributeFromAttribute( vTZCMLPLO, "DuplicateZKey", "ZKey", vTZCMLPLO, "EntityZKey", "ZKey" );
+         //:vTZCMLPLO.DuplicateZKey.EntityName1 = vTZCMLPLO.EntityZKey.EntityName 
+         SetAttributeFromAttribute( vTZCMLPLO, "DuplicateZKey", "EntityName1", vTZCMLPLO, "EntityZKey", "EntityName" );
+         //:vTZCMLPLO.DuplicateZKey.EntityName2 = szPreviousEntityName
+         SetAttributeFromString( vTZCMLPLO, "DuplicateZKey", "EntityName2", szPreviousEntityName );
+      } 
+
+      //:END
+      //:lLastZKey            = lZKey
+      lLastZKey = lZKey;
+      //:szPreviousEntityName = vTZCMLPLO.EntityZKey.EntityName
+      GetVariableFromAttribute( szPreviousEntityName, 0, 'S', 33, vTZCMLPLO, "EntityZKey", "EntityName", "", 0 );
+      RESULT = SetCursorNextEntity( vTZCMLPLO, "EntityZKey", "" );
+   } 
+
+   //:END
+
+   //:// If a duplicate ZKey was found, issue a message.
+   //:IF vTZCMLPLO.DuplicateZKey EXISTS
+   lTempInteger_0 = CheckExistenceOfEntity( vTZCMLPLO, "DuplicateZKey" );
+   if ( lTempInteger_0 == 0 )
+   { 
+      //:szMsg = "The following ZKeys and Entities are duplicates: " + NEW_LINE
+      ZeidonStringCopy( szMsg, 1, 0, "The following ZKeys and Entities are duplicates: ", 1, 0, 2001 );
+      ZeidonStringConcat( szMsg, 1, 0, NEW_LINE, 1, 0, 2001 );
+      //:FOR EACH vTZCMLPLO.DuplicateZKey 
+      RESULT = SetCursorFirstEntity( vTZCMLPLO, "DuplicateZKey", "" );
+      while ( RESULT > zCURSOR_UNCHANGED )
+      { 
+         //:szZKey = vTZCMLPLO.DuplicateZKey.ZKey 
+         GetVariableFromAttribute( szZKey, 0, 'S', 21, vTZCMLPLO, "DuplicateZKey", "ZKey", "", 0 );
+         //:szMsg = szMsg + "   " + szZKey + " / " + vTZCMLPLO.DuplicateZKey.EntityName1 + " / " + vTZCMLPLO.DuplicateZKey.EntityName2 + NEW_LINE
+         ZeidonStringConcat( szMsg, 1, 0, "   ", 1, 0, 2001 );
+         ZeidonStringConcat( szMsg, 1, 0, szZKey, 1, 0, 2001 );
+         ZeidonStringConcat( szMsg, 1, 0, " / ", 1, 0, 2001 );
+         GetVariableFromAttribute( szTempString_0, 0, 'S', 255, vTZCMLPLO, "DuplicateZKey", "EntityName1", "", 0 );
+         ZeidonStringConcat( szMsg, 1, 0, szTempString_0, 1, 0, 2001 );
+         ZeidonStringConcat( szMsg, 1, 0, " / ", 1, 0, 2001 );
+         GetVariableFromAttribute( szTempString_1, 0, 'S', 255, vTZCMLPLO, "DuplicateZKey", "EntityName2", "", 0 );
+         ZeidonStringConcat( szMsg, 1, 0, szTempString_1, 1, 0, 2001 );
+         ZeidonStringConcat( szMsg, 1, 0, NEW_LINE, 1, 0, 2001 );
+         RESULT = SetCursorNextEntity( vTZCMLPLO, "DuplicateZKey", "" );
+      } 
+
+      //:END
+      //:MessageSend( vTZCMLPLO, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
+      MessageSend( vTZCMLPLO, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:MessageSend( vTZCMLPLO, "", "Configuration Management", "There were no duplicate keys in object.", zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
+      MessageSend( vTZCMLPLO, "", "Configuration Management", "There were no duplicate keys in object.", zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
+   } 
+
+   //:END
+
+   //:// Remove temporary work entities.
+   //:FOR EACH vTZCMLPLO.EntityZKey 
+   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+      RESULT = DeleteEntity( vTZCMLPLO, "EntityZKey", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( vTZCMLPLO, "EntityZKey", "" );
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:TRANSFORMATION OPERATION
 //:GenerateCallHeader( VIEW vLPLR BASED ON LOD TZCMLPLO, VIEW vSubtask )
 
 //:   VIEW vXDM BASED ON LOD TZDMXGPO
@@ -140,14 +355,13 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
    zSHORT    nRC = 0; 
    zSHORT    RESULT; 
    zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 9 ]; 
-   zCHAR     szTempString_2[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
+   zCHAR     szTempString_2[ 255 ]; 
    zCHAR     szTempString_3[ 255 ]; 
    zCHAR     szTempString_4[ 255 ]; 
    zCHAR     szTempString_5[ 255 ]; 
    zCHAR     szTempString_6[ 255 ]; 
    zCHAR     szTempString_7[ 255 ]; 
-   zCHAR     szTempString_8[ 255 ]; 
 
 
    //:Quote = "\"
@@ -308,8 +522,8 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          //:END
 
          //:AnalyzeEntity( vXOD, vWk, vXOD.OBJECT.NAME )
-         GetStringFromAttribute( szTempString_2, vXOD, "OBJECT", "NAME" );
-         oTZCMLPLO_AnalyzeEntity( vXOD, vWk, szTempString_2 );
+         GetStringFromAttribute( szTempString_1, vXOD, "OBJECT", "NAME" );
+         oTZCMLPLO_AnalyzeEntity( vXOD, vWk, szTempString_1 );
       } 
 
       //:END
@@ -356,9 +570,9 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          if ( CompareAttributeToString( vWk, "Object", "Type", "D" ) == 0 )
          { 
             //:Sl = "   // Operation Calls for Domain: " + vWk.Object.Name
-            GetVariableFromAttribute( szTempString_3, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
+            GetVariableFromAttribute( szTempString_2, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Operation Calls for Domain: ", 1, 0, 255 );
-            ZeidonStringConcat( Sl, 1, 0, szTempString_3, 1, 0, 255 );
+            ZeidonStringConcat( Sl, 1, 0, szTempString_2, 1, 0, 255 );
          } 
 
          //:END
@@ -367,9 +581,9 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          if ( CompareAttributeToString( vWk, "Object", "Type", "O" ) == 0 )
          { 
             //:Sl = "   // Object Constraint for Object: " + vWk.Object.Name
-            GetVariableFromAttribute( szTempString_4, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
+            GetVariableFromAttribute( szTempString_3, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Object Constraint for Object: ", 1, 0, 255 );
-            ZeidonStringConcat( Sl, 1, 0, szTempString_4, 1, 0, 255 );
+            ZeidonStringConcat( Sl, 1, 0, szTempString_3, 1, 0, 255 );
          } 
 
          //:END
@@ -378,9 +592,9 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          if ( CompareAttributeToString( vWk, "Object", "Type", "E" ) == 0 )
          { 
             //:Sl = "   // Entity Constraint for Object.Entity: " + vWk.Object.Name
-            GetVariableFromAttribute( szTempString_5, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
+            GetVariableFromAttribute( szTempString_4, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Entity Constraint for Object.Entity: ", 1, 0, 255 );
-            ZeidonStringConcat( Sl, 1, 0, szTempString_5, 1, 0, 255 );
+            ZeidonStringConcat( Sl, 1, 0, szTempString_4, 1, 0, 255 );
          } 
 
          //:END
@@ -389,9 +603,9 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          if ( CompareAttributeToString( vWk, "Object", "Type", "A" ) == 0 )
          { 
             //:Sl = "   // Derived Attribute for Object.Entity.Attr: " + vWk.Object.Name
-            GetVariableFromAttribute( szTempString_6, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
+            GetVariableFromAttribute( szTempString_5, 0, 'S', 255, vWk, "Object", "Name", "", 0 );
             ZeidonStringCopy( Sl, 1, 0, "   // Derived Attribute for Object.Entity.Attr: ", 1, 0, 255 );
-            ZeidonStringConcat( Sl, 1, 0, szTempString_6, 1, 0, 255 );
+            ZeidonStringConcat( Sl, 1, 0, szTempString_5, 1, 0, 255 );
          } 
 
          //:END
@@ -402,16 +616,16 @@ oTZCMLPLO_GenerateCallHeader( zVIEW     vLPLR,
          //:Sl = "   if ( zstrcmp( pszFunctionName, " + Quote + vWk.Object.OperName + Quote + " ) == 0 )"
          ZeidonStringCopy( Sl, 1, 0, "   if ( zstrcmp( pszFunctionName, ", 1, 0, 255 );
          ZeidonStringConcat( Sl, 1, 0, Quote, 1, 0, 255 );
-         GetVariableFromAttribute( szTempString_7, 0, 'S', 255, vWk, "Object", "OperName", "", 0 );
-         ZeidonStringConcat( Sl, 1, 0, szTempString_7, 1, 0, 255 );
+         GetVariableFromAttribute( szTempString_6, 0, 'S', 255, vWk, "Object", "OperName", "", 0 );
+         ZeidonStringConcat( Sl, 1, 0, szTempString_6, 1, 0, 255 );
          ZeidonStringConcat( Sl, 1, 0, Quote, 1, 0, 255 );
          ZeidonStringConcat( Sl, 1, 0, " ) == 0 )", 1, 0, 255 );
          //:wl( f, Sl )
          oTZCMLPLO_wl( f, Sl );
          //:Sl = "      return( (zPVOID) " + vWk.Object.OperName + " );"
-         GetVariableFromAttribute( szTempString_8, 0, 'S', 255, vWk, "Object", "OperName", "", 0 );
+         GetVariableFromAttribute( szTempString_7, 0, 'S', 255, vWk, "Object", "OperName", "", 0 );
          ZeidonStringCopy( Sl, 1, 0, "      return( (zPVOID) ", 1, 0, 255 );
-         ZeidonStringConcat( Sl, 1, 0, szTempString_8, 1, 0, 255 );
+         ZeidonStringConcat( Sl, 1, 0, szTempString_7, 1, 0, 255 );
          ZeidonStringConcat( Sl, 1, 0, " );", 1, 0, 255 );
          //:wl( f, Sl )
          oTZCMLPLO_wl( f, Sl );

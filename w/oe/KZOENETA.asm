@@ -1,0 +1,23946 @@
+	TITLE	C:\10C\A\oe\KZOENETA.C
+	.386P
+include listing.inc
+if @Version gt 510
+.model FLAT
+else
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+_BSS	SEGMENT DWORD USE32 PUBLIC 'BSS'
+_BSS	ENDS
+$$SYMBOLS	SEGMENT BYTE USE32 'DEBSYM'
+$$SYMBOLS	ENDS
+$$TYPES	SEGMENT BYTE USE32 'DEBTYP'
+$$TYPES	ENDS
+_TLS	SEGMENT DWORD USE32 PUBLIC 'TLS'
+_TLS	ENDS
+;	COMDAT ??_C@_0BJ@EHOH@Cannot?5find?5network?5?8?$CFs?8?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@NBFJ@zServerDirInit?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@MCNM@zServerDirClose?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BC@HBA@zServerDirGetAddr?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0ED@DJEB@Can?8t?5find?5Server?5Directory?5func@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@MHGJ@ApplServer?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DL@HADH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Opening?5a?5connecti@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DD@DDIN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Open?5connection?5fa@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BJ@HMHB@Couldn?8t?5find?5lpNetConn?$CB?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06OMJI@__MSGQ?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08JIIE@KZMSGQOO?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@ODIO@Cannot?5load?5Message?5Object?3?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@LGH@System?5Error?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_04HDAF@Task?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_02FECH@Id?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06DPMO@Client?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_04KHMB@QMsg?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09IMGK@DBH_Error?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_00A@?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@HCGL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5mes@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08JIKI@KZTRACEO?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08GPOP@DateTime?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08PPHM@TraceEnd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_05EMFM@Trace?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@NBFM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@IOJK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@OJEE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08JAGJ@kzmsgqoo?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DA@EAEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@NAPH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@JAOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_04KEDG@Line?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@JJBL@TraceStart?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CD@GAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Start?5Server?5Trace@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@EGEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Line?3?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CB@KMFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5End?5Server?5Trace?3?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06DOOC@?$CF2?42hd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@PBEA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RequestOI?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_02LFP@1b?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0FG@MJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activate?5P@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@JCDN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5qualificat@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DF@FLBM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Act?5ACK?5?9@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@LNK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5activate@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BO@NAJA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5error?5?$CD?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@BADB@Application?5not?5defined?5on?5Serve@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@LFAO@?$CKOut?5Of?5Memory?$CK?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BK@MODC@Server?5Transaction?5Crash?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@NFHD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5RC?5?9?5erro@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@PAEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5unknown?5P@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@BGHJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@HGLB@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5activate?5?$DN@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@BGAE@DefaultNetwork?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08KBJI@?$FLZeidon?$FN?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@BDFJ@No?5default?5network?5for?5NetStartu@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BD@IMBJ@DefaultNetworkExec?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BI@HHFA@Can?8t?5find?5library?5?8?$CFs?8?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09CMFF@zNetStart?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@LMKD@Can?8t?5find?5operation?5zNetStart?5i@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09DIDO@zNetClose?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@MPJH@Can?8t?5find?5operation?5zNetClose?5i@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@OAJL@zNetListen?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DA@JLPI@Can?8t?5find?5operation?5zNetListen?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@PKGC@zNetStopListen?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DE@GMNN@Can?8t?5find?5operation?5zNetStopLis@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BD@KLFB@zNetOpenConnection?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DI@JOAI@Can?8t?5find?5operation?5zNetOpenCon@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BE@JINK@zNetCloseConnection?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DJ@MEBA@Can?8t?5find?5operation?5zNetCloseCo@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08KIFN@zNetSend?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@NJIH@Can?8t?5find?5operation?5zNetSend?5in@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@PEDE@zNetReceive?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@FPPO@Cannot?5find?5operation?5zNetReceiv@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BD@GMJ@zNetGetHostAddress?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DO@LNFB@Cannot?5find?5operation?5zNetGetLoc@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CA@JHEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5network?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BK@KAO@Out?5of?5memory?5for?5network?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@ODNC@TraceLevel?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@JFNK@ServerCoreTraceLevel?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BE@HNF@ServerNetTraceLevel?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BE@JFOA@ServerDBHTraceLevel?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@FAEG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Local?5host?5address@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@HDAN@ServerDirApp?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08BLJC@zSimpDir?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@NPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5NetClose?5for?5Netwo@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BP@OPC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Closing?5network?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@EOKO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5NetListen@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@JJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5already?5li@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@IJCC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5listen?5fo@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@BKLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Stopping?5listen?5fo@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@JGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5not?5listen@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DE@NCA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Inside?5NetProcessM@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0EB@GMML@?$CIkzoeneta?$CJ?5?$CK?$CK?5Cannot?5find?5networ@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@CDA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5message?5f@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@KPAK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5me@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@MIOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5Tr@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@EGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5?4?4?4?5removing@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_05GIDN@nLine?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@MKJM@Request?5OI?5From?5File?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@GEHI@Request?5OI?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BC@MOPB@Commit?5OI?5to?5File?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09LDEG@Commit?5OI?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09BFMO@Send?5File?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@FEMH@Call?5Operation?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@HADB@BAD_MESSAGE?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BP@KGDJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Message?5Type?5?$DN?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@MJIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Bad?5message?5?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DP@KGCE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Leaving?5NetProcess@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@DIOI@QualAttrib?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@GCPH@SubQualAttrib?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_02PKFC@IS?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_04FKDH@Oper?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@FPPG@SourceViewName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@NIIK@SourceViewID?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BB@CPOO@SourceEntityName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@LOJF@EntityName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01GFI@?$CI?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_03LACO@AND?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@JICG@AttributeName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01KPOD@?$DN?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_05KBGO@Value?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01KMMP@?$CJ?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DO@DJKH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5activate?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06CEIK@?$CFx?3?$CFlx?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@JLMD@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5Old?5en@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@FPHM@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5New?5en@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BH@BKMF@?$CImerge?$CJ?5lpOld?5?5?5?5?5?5?5?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BH@LDLJ@?$CImerge?$CJ?5lpNew?9?$DOlTag?5?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@ONLK@?$CImerge?$CJ?5Extra?5New?5entity?$CB?5?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@DJGN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Commit?5OI?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@DEHH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Appl?5Name?3?5?$CFs?5?5Use@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@ODIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5View?5Count?3?5?$CFs?5?5OD@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BJ@LCNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5OD?5Names?3?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BH@CGMJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5LB?5Lth?3?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@BDJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5OIs?5to?5com@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@GOMF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5OI?5f@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@CNJI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5return@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@PMCB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@NGEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5bytes?5but@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CA@EJON@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5commit?5?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08FNEA@kztranwo?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09GMMJ@Operation?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@FCJM@ApplicationName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08DJIK@OperName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01KGOM@T?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@LJID@OperationType?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@OKBL@ObjectName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01PACF@G?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08PMAN@DLL_Name?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@JGJO@ReturnType?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01PCJP@Y?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@EDLM@ReturnArgument?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@GJDM@PointerValue?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@EPJI@SendArgument?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08FNON@DataType?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01OAK@N?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@ONNJ@SubtaskView?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@EIIH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Transforma@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@OPPG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5Arg?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01PDMC@V?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@EPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5argu@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BO@PLHK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5ACK?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DD@NHEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@JCDO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@BKKK@ReturnValue?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01KFAL@E?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@LNAH@ViewReturned?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@KEIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@NMFO@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5transactio@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@EJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Setting?5Net?5trace?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09GPO@?$CKdefault?$CK?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DG@BKII@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?3?5no@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@KFLK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?5for@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@PDGB@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5ru@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@ENIE@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Connection@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@DBIM@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5li@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CB@NPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Read?5Data?5error?5?$DN?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BJ@COP@Invalid?5Entity?5name?5?$DN?5?$CFs?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BK@NKPC@Invalid?5Entity?5level?5?$DN?5?$CFs?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@GNNE@Maximum?5number?5of?5entities?5in?5st@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@PAOB@Invalid?5Attr?5name?5for?5Entity?5?$DN?5?$CF@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@GEHO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5SE@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@LDBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5OI?5END?5me@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@KHFM@Error?5transmitting?5OI?5?9?9?5some?5li@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@BNG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Packet?5ER@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DG@KIBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5packet?5typ@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@HIHC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5SENDLTH?5p@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CD@ICDP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5da@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@BNNI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Initiating?5receive@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@KNHF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receive?5OI?5OK?4?5?5Se@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DJ@MJAH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@DIGI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@HNMP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5data@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BC@MJJP@NetSendCompressed?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06OFMK@NETACT?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@IGND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5END?5packet@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@CNPK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Activate?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@HEFB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Activat@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@NJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@IDJC@?$CIkzoeneta?$CJ?5?$CK?$CK?5User?5Name?3?5?$CFs?5?5App@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@CFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5App?5name?5?$DN@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CB@CKJN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5OD?5name?5?$DN?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CB@OJNA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5Qual?5OI?4@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08ILBJ@KZDBHQUA?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@OGJE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5indica@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@MMFL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5ACK?5re@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@NMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activated?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@BBPE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@NKCF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Retu@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@OODD@fnProcessActivateOI_FromFile?$CI?5?$CJ?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@JNC@?$CIkzoeneta?$CJ?5?$CK?$CK?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@LGAL@Link?5buffer?5doesn?8t?5start?5with?5a@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@EEDE@Link?5buffer?3?5expecting?5hex?5digit@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@COO@Link?5buffer?3?5expecting?5?8?3?8?5after@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@PJGO@Link?5buffer?3?5Could?5find?5OI?5match@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@ODDL@Link?5buffer?3?5expecting?5hex?5digit@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@EIKB@Link?5buffer?3?5expecting?5?8?$CJ?1?8?5afte@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DA@IOBN@Link?5buffer?3?5Could?5find?5EI?5match@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@HFCF@Link?5buffer?3?5Link?5EIs?5don?8t?5have@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@CFI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Commit?5OI@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@IEBE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Commit?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@NBGD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@MIAE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DB@EHAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@PGA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Link?5Buffer?5?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@HDFN@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5Obje@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@LPBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5OIs?5to?5c@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DD@CJKL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@KJBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5committed?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@KGJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@HING@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Erro@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@HFCJ@fnProcessCommitOI_ToFile?$CI?5?$CJ?5is?5D@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@CBKM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Send?5File@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@MGKA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@LCMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@LFPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5File@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BO@IIAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5file?4?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@HMBJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@FILB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5writing?5line@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@OHAI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5?$CD?5of?5lines@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@FLJJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5line@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@HAIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Transform@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@FNOC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5the?5Arg@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@NHGB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_01JME@l?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08BJPE@UserName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08NKKK@Password?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@IDNN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@CBOP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5l@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BM@HBIG@Can?8t?5find?5global?5oper?5lib?4?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09FGAN@_zCall_?$CFs?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@KOAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5?$DN@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BL@LONK@Can?8t?5find?5_zCall?4?4?4?5func?4?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@FCON@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5vArg@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@BJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5view@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DF@EBAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@EFKG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Trace?5Swi@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@OJLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@DIDM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Timestamp@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@DNEK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Trying?5to?5startup?5@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09MJBF@Network?$CFd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09IBKJ@?$FLNetwork?$FN?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_07KNL@Startup?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BJ@JIDC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5?$DN?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08DOHO@ExecName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@HEFO@?$CIkzoeneta?$CJ?5?$CKMainTask?$CK?5Starting?5L@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@LJDE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetL@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@JOAC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetS@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@IJNL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5networks?5s@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+FLAT	GROUP _DATA, CONST, _BSS
+	ASSUME	CS: FLAT, DS: FLAT, SS: FLAT
+endif
+PUBLIC	_g_chNetSendCompressed
+PUBLIC	_szlApplA
+PUBLIC	_szlAddress
+PUBLIC	__szlApplication
+PUBLIC	_szlArgument
+PUBLIC	_szlDataServer
+PUBLIC	_szlDefaultServer
+PUBLIC	_szlLOD
+PUBLIC	_szlNetworkError
+PUBLIC	_szlOverrideLOD
+PUBLIC	_szlOverrideLOD_Server
+PUBLIC	_szlOverrideOper
+PUBLIC	_szlOverrideOperServer
+PUBLIC	_szlFalse
+PUBLIC	_szlTrue
+PUBLIC	_szlTranDataServer
+PUBLIC	_szlTransformation
+PUBLIC	_szlTranUserGroup
+PUBLIC	_szlUserGroup
+_BSS	SEGMENT
+_g_chNetSendCompressed DB 01H DUP (?)
+_BSS	ENDS
+_DATA	SEGMENT
+COMM	_jbEmergencyExit:DWORD:010H
+_szlApplA DB	'ApplA', 00H
+	ORG $+2
+_szlAddress DB	'Address', 00H
+__szlApplication DB 'Application', 00H
+_szlArgument DB	'Argument', 00H
+	ORG $+3
+_szlDataServer DB 'DataServer', 00H
+	ORG $+1
+_szlDefaultServer DB 'DefaultServer', 00H
+	ORG $+2
+_szlLOD	DB	'LOD', 00H
+_szlNetworkError DB 'Zeidon Network Error', 00H
+	ORG $+3
+_szlOverrideLOD DB 'OverrideLOD', 00H
+_szlOverrideLOD_Server DB 'OverrideLOD_Server', 00H
+	ORG $+1
+_szlOverrideOper DB 'OverrideOper', 00H
+	ORG $+3
+_szlOverrideOperServer DB 'OverrideOperServer', 00H
+	ORG $+1
+_szlFalse DB	'F', 00H
+	ORG $+2
+_szlTrue DB	'T', 00H
+	ORG $+2
+_szlTranDataServer DB 'TranDataServer', 00H
+	ORG $+1
+_szlTransformation DB 'Transformation', 00H
+	ORG $+1
+_szlTranUserGroup DB 'TranUserGroup', 00H
+	ORG $+2
+_szlUserGroup DB 'UserGroup', 00H
+_DATA	ENDS
+PUBLIC	_fnFindNetwork@12
+PUBLIC	??_C@_0BJ@EHOH@Cannot?5find?5network?5?8?$CFs?8?$AA@ ; `string'
+EXTRN	_SysGetProcessID@4:NEAR
+EXTRN	_fnSysMessageBox@16:NEAR
+EXTRN	__imp__sprintf:NEAR
+EXTRN	_strcmp:NEAR
+EXTRN	_AnchorBlock:DWORD
+EXTRN	_g_pfnGetPtr:DWORD
+EXTRN	_fnSysLockCoreMutex@4:NEAR
+EXTRN	_fnSysUnlockCoreMutex@4:NEAR
+;	COMDAT ??_C@_0BJ@EHOH@Cannot?5find?5network?5?8?$CFs?8?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0BJ@EHOH@Cannot?5find?5network?5?8?$CFs?8?$AA@ DB 'Cannot find netw'
+	DB	'ork ''%s''', 00H				; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTask$ = 8
+_pchNetworkName$ = 12
+_bShowError$ = 16
+_lpNetwork$ = -8
+_lProcessID$ = -4
+_szMsg$7734 = -208
+_fnFindNetwork@12 PROC NEAR
+
+; 313  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 212				; 000000d4H
+
+; 314  :    LPNETWORK lpNetwork;
+; 315  : 
+; 316  :    zLONG  lProcessID   = SysGetProcessID( 0 );
+
+	push	0
+	call	_SysGetProcessID@4
+	mov	DWORD PTR _lProcessID$[ebp], eax
+
+; 317  : 
+; 318  :    zLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysLockCoreMutex@4
+
+; 319  : 
+; 320  :    // Find the network pointer that matches the network name.
+; 321  :    for ( lpNetwork = zGETPTR( AnchorBlock->hFirstNetwork );
+; 322  :          lpNetwork;
+; 323  :          lpNetwork = zGETPTR( lpNetwork->hNextNetwork ) )
+
+	mov	eax, DWORD PTR _AnchorBlock
+	mov	ecx, DWORD PTR [eax+122]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	jmp	SHORT $L7722
+$L7723:
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR [edx]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+$L7722:
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	je	SHORT $L7724
+
+; 325  :       if ( lpNetwork->lProcessID != lProcessID )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+4]
+	cmp	edx, DWORD PTR _lProcessID$[ebp]
+	je	SHORT $L7725
+
+; 326  :          continue;
+
+	jmp	SHORT $L7723
+$L7725:
+
+; 327  : 
+; 328  :       if ( zstrcmp( lpNetwork->szNetworkName, pchNetworkName ) != 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, BYTE PTR [eax+20]
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	cmp	ecx, eax
+	jne	SHORT $L10206
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 20					; 00000014H
+	push	edx
+	call	_strcmp
+	add	esp, 8
+	mov	DWORD PTR -212+[ebp], eax
+	jmp	SHORT $L10207
+$L10206:
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, BYTE PTR [eax+20]
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	sub	ecx, eax
+	xor	edx, edx
+	test	ecx, ecx
+	setle	dl
+	dec	edx
+	and	edx, 2
+	add	edx, -1
+	mov	DWORD PTR -212+[ebp], edx
+$L10207:
+	cmp	DWORD PTR -212+[ebp], 0
+	je	SHORT $L7732
+
+; 329  :          continue;
+
+	jmp	SHORT $L7723
+$L7732:
+$L7724:
+
+; 334  : 
+; 335  :    zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 336  : 
+; 337  :    if ( lpNetwork == 0 && bShowError )
+
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L7733
+	mov	eax, DWORD PTR _bShowError$[ebp]
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	je	SHORT $L7733
+
+; 339  :       zCHAR szMsg[ 200 ];
+; 340  : 
+; 341  :       zsprintf( szMsg, "Cannot find network '%s'", pchNetworkName );
+
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BJ@EHOH@Cannot?5find?5network?5?8?$CFs?8?$AA@ ; `string'
+	lea	edx, DWORD PTR _szMsg$7734[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 342  :       fnSysMessageBox( lpTask, szlNetworkError, szMsg, 1 );
+
+	push	1
+	lea	eax, DWORD PTR _szMsg$7734[ebp]
+	push	eax
+	push	OFFSET FLAT:_szlNetworkError
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	call	_fnSysMessageBox@16
+$L7733:
+
+; 344  : 
+; 345  :    return( lpNetwork );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+
+; 346  : 
+; 347  : } // fnFindNetwork
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnFindNetwork@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnRetrieveAppName@8
+EXTRN	_fnGetApplicationForSubtask@8:NEAR
+EXTRN	_strcpy:NEAR
+_TEXT	SEGMENT
+_vSubtask$ = 8
+_pchAppName$ = 12
+_lpApp$ = -4
+_fnRetrieveAppName@8 PROC NEAR
+
+; 353  : {
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+
+; 354  :    LPAPP lpApp;
+; 355  : 
+; 356  :    fnGetApplicationForSubtask( &lpApp, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _lpApp$[ebp]
+	push	ecx
+	call	_fnGetApplicationForSubtask@8
+
+; 357  :    if ( lpApp )
+
+	cmp	DWORD PTR _lpApp$[ebp], 0
+	je	SHORT $L7743
+
+; 358  :       zstrcpy( pchAppName, lpApp->szName );
+
+	mov	edx, DWORD PTR _lpApp$[ebp]
+	add	edx, 6
+	push	edx
+	mov	eax, DWORD PTR _pchAppName$[ebp]
+	push	eax
+	call	_strcpy
+	add	esp, 8
+
+; 359  :    else
+
+	jmp	SHORT $L7744
+$L7743:
+
+; 360  :       pchAppName[ 0 ] = 0;
+
+	mov	ecx, DWORD PTR _pchAppName$[ebp]
+	mov	BYTE PTR [ecx], 0
+$L7744:
+
+; 361  : }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_fnRetrieveAppName@8 ENDP
+_TEXT	ENDS
+PUBLIC	_LoadNetworkOperations
+PUBLIC	??_C@_0P@NBFJ@zServerDirInit?$AA@		; `string'
+PUBLIC	??_C@_0BA@MCNM@zServerDirClose?$AA@		; `string'
+PUBLIC	??_C@_0BC@HBA@zServerDirGetAddr?$AA@		; `string'
+PUBLIC	??_C@_0ED@DJEB@Can?8t?5find?5Server?5Directory?5func@ ; `string'
+PUBLIC	??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@	; `string'
+EXTRN	_SysGetProc@8:NEAR
+EXTRN	_SysLoadLibraryWithErrFlag@12:NEAR
+;	COMDAT ??_C@_0P@NBFJ@zServerDirInit?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0P@NBFJ@zServerDirInit?$AA@ DB 'zServerDirInit', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@MCNM@zServerDirClose?$AA@
+_DATA	SEGMENT
+??_C@_0BA@MCNM@zServerDirClose?$AA@ DB 'zServerDirClose', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BC@HBA@zServerDirGetAddr?$AA@
+_DATA	SEGMENT
+??_C@_0BC@HBA@zServerDirGetAddr?$AA@ DB 'zServerDirGetAddr', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0ED@DJEB@Can?8t?5find?5Server?5Directory?5func@
+_DATA	SEGMENT
+??_C@_0ED@DJEB@Can?8t?5find?5Server?5Directory?5func@ DB 'Can''t find Ser'
+	DB	'ver Directory functions in ''%s''. See trace for more.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@
+_DATA	SEGMENT
+??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ DB 'Zeidon Network Error', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTask$ = 8
+_lpNetwork$ = 12
+_hLibrary$ = -4
+_lpSystemTask$ = -8
+_vTask$ = -12
+_szMsg$7767 = -212
+_LoadNetworkOperations PROC NEAR
+
+; 365  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 212				; 000000d4H
+
+; 366  :    LPLIBRARY hLibrary;
+; 367  :    LPTASK    lpSystemTask = zGETPTR( AnchorBlock->hMainTask );
+
+	mov	eax, DWORD PTR _AnchorBlock
+	mov	ecx, DWORD PTR [eax+106]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpSystemTask$[ebp], eax
+
+; 368  : // zVIEW     vTask = zGETPTR( lpSystemTask->hFirstView );
+; 369  :    zVIEW     vTask = zGETPTR( lpTask->hFirstView );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	eax, DWORD PTR [edx+106]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _vTask$[ebp], eax
+
+; 370  : 
+; 371  :    if ( vTask == 0 )
+
+	cmp	DWORD PTR _vTask$[ebp], 0
+	jne	SHORT $L7756
+
+; 372  :       vTask = zGETPTR( lpSystemTask->hFirstView );
+
+	mov	ecx, DWORD PTR _lpSystemTask$[ebp]
+	mov	edx, DWORD PTR [ecx+106]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _vTask$[ebp], eax
+$L7756:
+
+; 373  : 
+; 374  :    hLibrary = SysLoadLibraryWithErrFlag( vTask, lpNetwork->szFileName, FALSE );
+
+	push	0
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 222				; 000000deH
+	push	eax
+	mov	ecx, DWORD PTR _vTask$[ebp]
+	push	ecx
+	call	_SysLoadLibraryWithErrFlag@12
+	mov	DWORD PTR _hLibrary$[ebp], eax
+
+; 375  :    if ( hLibrary )
+
+	cmp	DWORD PTR _hLibrary$[ebp], 0
+	je	$L7765
+
+; 377  :       lpNetwork->hServDirLib = hLibrary;
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	mov	DWORD PTR [edx+206], eax
+
+; 378  :       lpNetwork->lpfnServDirInit = (zLPFN_SERVDIRINIT)
+; 379  :                                 SysGetProc( hLibrary, "zServerDirInit" );
+
+	push	OFFSET FLAT:??_C@_0P@NBFJ@zServerDirInit?$AA@ ; `string'
+	mov	ecx, DWORD PTR _hLibrary$[ebp]
+	push	ecx
+	call	_SysGetProc@8
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [edx+210], eax
+
+; 380  :       lpNetwork->lpfnServDirClose = (zLPFN_SERVDIRCLOSE)
+; 381  :                                 SysGetProc( hLibrary, "zServerDirClose" );
+
+	push	OFFSET FLAT:??_C@_0BA@MCNM@zServerDirClose?$AA@ ; `string'
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	call	_SysGetProc@8
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [ecx+214], eax
+
+; 382  :       lpNetwork->lpfnServDirGetAddr = (zLPFN_SERVDIRADDR)
+; 383  :                                 SysGetProc( hLibrary, "zServerDirGetAddr" );
+
+	push	OFFSET FLAT:??_C@_0BC@HBA@zServerDirGetAddr?$AA@ ; `string'
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	call	_SysGetProc@8
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [ecx+218], eax
+
+; 384  : 
+; 385  :       if ( lpNetwork->lpfnServDirInit    == 0 ||
+; 386  :            lpNetwork->lpfnServDirClose   == 0 ||
+; 387  :            lpNetwork->lpfnServDirGetAddr == 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [edx+210], 0
+	je	SHORT $L7766
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [eax+214], 0
+	je	SHORT $L7766
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [ecx+218], 0
+	jne	SHORT $L7765
+$L7766:
+
+; 389  :          zCHAR szMsg[ 200 ];
+; 390  : 
+; 391  :          zsprintf( szMsg, "Can't find Server Directory functions in '%s'. "
+; 392  :                    "See trace for more.", lpNetwork->szFileName );
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 222				; 000000deH
+	push	edx
+	push	OFFSET FLAT:??_C@_0ED@DJEB@Can?8t?5find?5Server?5Directory?5func@ ; `string'
+	lea	eax, DWORD PTR _szMsg$7767[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 393  :          fnSysMessageBox( lpTask, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	ecx, DWORD PTR _szMsg$7767[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnSysMessageBox@16
+
+; 394  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7750
+$L7765:
+
+; 397  : 
+; 398  :    return( 0 );
+
+	xor	ax, ax
+$L7750:
+
+; 399  : }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_LoadNetworkOperations ENDP
+_TEXT	ENDS
+PUBLIC	_fnGetApplAddress@24
+PUBLIC	??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@			; `string'
+PUBLIC	??_C@_0L@MHGJ@ApplServer?$AA@			; `string'
+EXTRN	_SysReadZeidonIni@16:NEAR
+EXTRN	__chkstk:NEAR
+;	COMDAT ??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@ DB '[%s]', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@MHGJ@ApplServer?$AA@
+_DATA	SEGMENT
+??_C@_0L@MHGJ@ApplServer?$AA@ DB 'ApplServer', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTask$ = 8
+_lpNetwork$ = 12
+_lType$ = 16
+_pvData$ = 20
+_pchReturnAddress$ = 24
+_pchUserAddress$ = 28
+_szGroup$ = -4096
+_lProcessID$7786 = -4100
+_lpLibrary$7787 = -4104
+_fnGetApplAddress@24 PROC NEAR
+
+; 410  : {
+
+	push	ebp
+	mov	ebp, esp
+	mov	eax, 4104				; 00001008H
+	call	__chkstk
+
+; 411  :    zCHAR szGroup[ 4096 ];
+; 412  : 
+; 413  :    // If we have a server directory function, use it.
+; 414  :    if ( lpNetwork->lpfnServDirGetAddr )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [eax+218], 0
+	je	SHORT $L7789
+
+; 416  :       zLONG lProcessID = SysGetProcessID( 0 ); // we didn't do this in 10B
+
+	push	0
+	call	_SysGetProcessID@4
+	mov	DWORD PTR _lProcessID$7786[ebp], eax
+
+; 417  :       LPLIBRARY lpLibrary = zGETPTR( lpNetwork->hServDirLib );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+206]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpLibrary$7787[ebp], eax
+
+; 418  :       if ( lpLibrary == 0 || lProcessID != lpLibrary->lProcessID )
+
+	cmp	DWORD PTR _lpLibrary$7787[ebp], 0
+	je	SHORT $L7790
+	mov	eax, DWORD PTR _lpLibrary$7787[ebp]
+	mov	ecx, DWORD PTR _lProcessID$7786[ebp]
+	cmp	ecx, DWORD PTR [eax+271]
+	je	SHORT $L7789
+$L7790:
+
+; 419  :          LoadNetworkOperations( lpTask, lpNetwork );
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_LoadNetworkOperations
+	add	esp, 8
+$L7789:
+
+; 421  : 
+; 422  :    if ( lpNetwork->lpfnServDirGetAddr )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [ecx+218], 0
+	je	SHORT $L7791
+
+; 424  :       return( (*lpNetwork->lpfnServDirGetAddr)( lpTask,
+; 425  :                                                 pchReturnAddress,
+; 426  :                                                 &lpNetwork->pvServDirData,
+; 427  :                                                 lType, pvData ) );
+
+	mov	edx, DWORD PTR _pvData$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lType$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 16					; 00000010H
+	push	ecx
+	mov	edx, DWORD PTR _pchReturnAddress$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+218]
+	jmp	SHORT $L7783
+$L7791:
+
+; 429  : 
+; 430  :    // Default is to allow only one attempt.
+; 431  :    if ( lType & zAPPLREQ_RETRY )
+
+	mov	edx, DWORD PTR _lType$[ebp]
+	and	edx, 65536				; 00010000H
+	test	edx, edx
+	je	SHORT $L7792
+
+; 432  :       return( zNETWORK_ERROR );
+
+	mov	ax, -6					; fffffffaH
+	jmp	SHORT $L7783
+$L7792:
+
+; 433  : 
+; 434  :    // If the user supplied an address, then just use that.
+; 435  :    if ( pchUserAddress && pchUserAddress[ 0 ] )
+
+	cmp	DWORD PTR _pchUserAddress$[ebp], 0
+	je	SHORT $L7793
+	mov	eax, DWORD PTR _pchUserAddress$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	test	ecx, ecx
+	je	SHORT $L7793
+
+; 437  :       zstrcpy( pchReturnAddress, pchUserAddress );
+
+	mov	edx, DWORD PTR _pchUserAddress$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pchReturnAddress$[ebp]
+	push	eax
+	call	_strcpy
+	add	esp, 8
+
+; 438  :       return( 0 );
+
+	xor	ax, ax
+	jmp	SHORT $L7783
+$L7793:
+
+; 440  : 
+; 441  :    // The default is to read the server address from the INI file
+; 442  :    // using the network name.
+; 443  :    zsprintf( szGroup, "[%s]", lpNetwork->szNetworkName );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 20					; 00000014H
+	push	ecx
+	push	OFFSET FLAT:??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@ ; `string'
+	lea	edx, DWORD PTR _szGroup$[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 444  :    SysReadZeidonIni( -1, szGroup, "ApplServer", pchReturnAddress );
+
+	mov	eax, DWORD PTR _pchReturnAddress$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0L@MHGJ@ApplServer?$AA@ ; `string'
+	lea	ecx, DWORD PTR _szGroup$[ebp]
+	push	ecx
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 445  : 
+; 446  :    return( 0 );
+
+	xor	ax, ax
+$L7783:
+
+; 447  : 
+; 448  : } // fnGetApplAddress
+
+	mov	esp, ebp
+	pop	ebp
+	ret	24					; 00000018H
+_fnGetApplAddress@24 ENDP
+_TEXT	ENDS
+PUBLIC	_fnAddConnectionToNetwork@32
+PUBLIC	??_C@_0DL@HADH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Opening?5a?5connecti@ ; `string'
+PUBLIC	??_C@_0DD@DDIN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Open?5connection?5fa@ ; `string'
+EXTRN	_TraceLineI@8:NEAR
+EXTRN	_TraceLineS@8:NEAR
+EXTRN	_fnAllocDataspace:NEAR
+;	COMDAT ??_C@_0DL@HADH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Opening?5a?5connecti@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0DL@HADH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Opening?5a?5connecti@ DB '(kzo'
+	DB	'eneta) ** Opening a connection. Current connections = ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DD@DDIN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Open?5connection?5fa@
+_DATA	SEGMENT
+??_C@_0DD@DDIN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Open?5connection?5fa@ DB '(kzo'
+	DB	'eneta) ** Open connection failed, hostaddress=', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTask$ = 8
+_lpNetwork$ = 12
+_pchServerAddress$ = 16
+_ppvConn$ = 20
+_bCallOpen$ = 24
+_lRequest$ = 28
+_pvRequestInfo$ = 32
+_vSubtask$ = 36
+_lpNetConn$ = -4
+_hNetConn$ = -8
+_szServer$7817 = -268
+_nRC$7818 = -12
+_fnAddConnectionToNetwork@32 PROC NEAR
+
+; 463  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 268				; 0000010cH
+
+; 464  :    LPNETCONN lpNetConn;
+; 465  :    zPVOID    hNetConn;
+; 466  : 
+; 467  :    zLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysLockCoreMutex@4
+
+; 468  : 
+; 469  :    // Do we need to call the network handler to open a connection?
+; 470  :    if ( bCallOpen )
+
+	mov	eax, DWORD PTR _bCallOpen$[ebp]
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	je	$L7823
+
+; 472  :       zCHAR  szServer[ 256 ];
+; 473  :       zSHORT nRC;
+; 474  : 
+; 475  :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L7819
+
+; 476  :          TraceLineI( "(kzoeneta) ** Opening a connection. Current connections = ",
+; 477  :                      lpNetwork->nConnCount );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+148]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0DL@HADH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Opening?5a?5connecti@ ; `string'
+	call	_TraceLineI@8
+$L7819:
+
+; 483  :          // Get address of data server.
+; 484  :          nRC = fnGetApplAddress( lpTask, lpNetwork, lRequest, pvRequestInfo,
+; 485  :                                  szServer, pchServerAddress );
+
+	mov	edx, DWORD PTR _pchServerAddress$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szServer$7817[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pvRequestInfo$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lRequest$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	call	_fnGetApplAddress@24
+	mov	WORD PTR _nRC$7818[ebp], ax
+
+; 486  :          if ( nRC < 0 )
+
+	movsx	edx, WORD PTR _nRC$7818[ebp]
+	test	edx, edx
+	jge	SHORT $L7824
+
+; 487  :             return( zNETWORK_ERROR );
+
+	mov	ax, -6					; fffffffaH
+	jmp	$L7813
+$L7824:
+
+; 488  : 
+; 489  :          // Try to open the connection.  Return codes:
+; 490  :          //    0 - Connection opened.
+; 491  :          //   -1 - Connection failed (timed out).
+; 492  :          //   zCALL_ERROR - unrecoverable error.
+; 493  :          nRC = (*lpNetwork->lpfnOpenConn)( (zPPVOID) &lpNetwork->pNetworkHandle,
+; 494  :                                            (zPPVOID) ppvConn, szServer, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _szServer$7817[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+178]
+	mov	WORD PTR _nRC$7818[ebp], ax
+
+; 495  :          if ( nRC )
+
+	movsx	edx, WORD PTR _nRC$7818[ebp]
+	test	edx, edx
+	je	SHORT $L7827
+
+; 497  :             TraceLineS( "(kzoeneta) ** Open connection failed, hostaddress=",
+; 498  :                         pchServerAddress );
+
+	mov	eax, DWORD PTR _pchServerAddress$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0DD@DDIN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Open?5connection?5fa@ ; `string'
+	call	_TraceLineS@8
+
+; 499  : 
+; 500  :             if ( nRC == zCALL_ERROR )
+
+	movsx	ecx, WORD PTR _nRC$7818[ebp]
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L7829
+
+; 501  :                return( zNETWORK_ERROR );
+
+	mov	ax, -6					; fffffffaH
+	jmp	$L7813
+$L7829:
+
+; 502  : 
+; 503  :             // We will try to open the connection again.  Turn on a flag to
+; 504  :             // tell the appl server logic that we are trying again.
+; 505  :             lRequest |= zAPPLREQ_RETRY;
+
+	mov	edx, DWORD PTR _lRequest$[ebp]
+	or	edx, 65536				; 00010000H
+	mov	DWORD PTR _lRequest$[ebp], edx
+$L7827:
+
+; 507  : 
+; 508  :       } while ( nRC );
+
+	movsx	eax, WORD PTR _nRC$7818[ebp]
+	test	eax, eax
+	jne	$L7819
+$L7823:
+
+; 511  : 
+; 512  :    hNetConn = fnAllocDataspace( lpTask->hFirstDataHeader,
+; 513  :                                 sizeof( NetConnectionRecord ), TRUE, 0, 0 );
+
+	push	0
+	push	0
+	push	1
+	push	216					; 000000d8H
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	mov	edx, DWORD PTR [ecx+94]
+	push	edx
+	call	_fnAllocDataspace
+	add	esp, 20					; 00000014H
+	mov	DWORD PTR _hNetConn$[ebp], eax
+
+; 514  :    lpNetConn = zGETPTR( hNetConn );
+
+	mov	eax, DWORD PTR _hNetConn$[ebp]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetConn$[ebp], eax
+
+; 515  :    lpNetConn->pvConn = ppvConn;
+
+	mov	ecx, DWORD PTR _lpNetConn$[ebp]
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	mov	DWORD PTR [ecx], edx
+
+; 516  : 
+; 517  :    lpNetConn->hNextNetConn = lpNetwork->hFirstNetConn;
+
+	mov	eax, DWORD PTR _lpNetConn$[ebp]
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+150]
+	mov	DWORD PTR [eax+4], edx
+
+; 518  :    lpNetwork->nConnCount++;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	cx, WORD PTR [eax+148]
+	add	cx, 1
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	WORD PTR [edx+148], cx
+
+; 519  :    lpNetwork->hFirstNetConn = hNetConn;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR _hNetConn$[ebp]
+	mov	DWORD PTR [eax+150], ecx
+
+; 520  : 
+; 521  :    zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 522  : 
+; 523  :    return( 0 );
+
+	xor	ax, ax
+$L7813:
+
+; 524  : 
+; 525  : } // fnAddConnectionToNetwork
+
+	mov	esp, ebp
+	pop	ebp
+	ret	32					; 00000020H
+_fnAddConnectionToNetwork@32 ENDP
+_TEXT	ENDS
+PUBLIC	_fnRemoveConnectionFromNetwork@12
+PUBLIC	??_C@_0BJ@HMHB@Couldn?8t?5find?5lpNetConn?$CB?$AA@ ; `string'
+EXTRN	_SysMessageBox@16:NEAR
+EXTRN	_fnFreeDataspace:NEAR
+;	COMDAT ??_C@_0BJ@HMHB@Couldn?8t?5find?5lpNetConn?$CB?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0BJ@HMHB@Couldn?8t?5find?5lpNetConn?$CB?$AA@ DB 'Couldn''t find lpN'
+	DB	'etConn!', 00H				; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_bCallClose$ = 16
+_lpNetConn$ = -8
+_lpPrevNetConn$ = -12
+_nRC$ = -4
+_fnRemoveConnectionFromNetwork@12 PROC NEAR
+
+; 531  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 532  :    LPNETCONN lpNetConn;
+; 533  :    LPNETCONN lpPrevNetConn;
+; 534  :    zSHORT    nRC;
+; 535  : 
+; 536  :    zLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysLockCoreMutex@4
+
+; 537  : 
+; 538  :    lpPrevNetConn = 0;
+
+	mov	DWORD PTR _lpPrevNetConn$[ebp], 0
+
+; 539  :    for ( lpNetConn = zGETPTR( lpNetwork->hFirstNetConn );
+; 540  :          lpNetConn && lpNetConn->pvConn != ppvConn;
+; 541  :          lpNetConn = zGETPTR( lpNetConn->hNextNetConn ) )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR [eax+150]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetConn$[ebp], eax
+	jmp	SHORT $L7845
+$L7846:
+	mov	edx, DWORD PTR _lpNetConn$[ebp]
+	mov	eax, DWORD PTR [edx+4]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetConn$[ebp], eax
+$L7845:
+	cmp	DWORD PTR _lpNetConn$[ebp], 0
+	je	SHORT $L7847
+	mov	ecx, DWORD PTR _lpNetConn$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	cmp	edx, DWORD PTR _ppvConn$[ebp]
+	je	SHORT $L7847
+
+; 543  :       lpPrevNetConn = lpNetConn;
+
+	mov	eax, DWORD PTR _lpNetConn$[ebp]
+	mov	DWORD PTR _lpPrevNetConn$[ebp], eax
+
+; 544  :    }
+
+	jmp	SHORT $L7846
+$L7847:
+
+; 545  : 
+; 546  :    if ( lpNetConn == 0 )
+
+	cmp	DWORD PTR _lpNetConn$[ebp], 0
+	jne	SHORT $L7848
+
+; 548  :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 549  :       lpNetConn = zGETPTR( lpNetwork->hFirstNetConn );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+150]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetConn$[ebp], eax
+
+; 550  :       SysMessageBox( 0, szlNetworkError, "Couldn't find lpNetConn!", -1 );
+
+	push	-1
+	push	OFFSET FLAT:??_C@_0BJ@HMHB@Couldn?8t?5find?5lpNetConn?$CB?$AA@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	push	0
+	call	_SysMessageBox@16
+
+; 551  :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L7839
+$L7848:
+
+; 553  : 
+; 554  :    if ( lpPrevNetConn == 0 )
+
+	cmp	DWORD PTR _lpPrevNetConn$[ebp], 0
+	jne	SHORT $L7851
+
+; 555  :       lpNetwork->hFirstNetConn = lpNetConn->hNextNetConn;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR _lpNetConn$[ebp]
+	mov	edx, DWORD PTR [ecx+4]
+	mov	DWORD PTR [eax+150], edx
+
+; 556  :    else
+
+	jmp	SHORT $L7852
+$L7851:
+
+; 557  :       lpPrevNetConn->hNextNetConn = lpNetConn->hNextNetConn;
+
+	mov	eax, DWORD PTR _lpPrevNetConn$[ebp]
+	mov	ecx, DWORD PTR _lpNetConn$[ebp]
+	mov	edx, DWORD PTR [ecx+4]
+	mov	DWORD PTR [eax+4], edx
+$L7852:
+
+; 558  : 
+; 559  :    nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 560  :    if ( bCallClose )
+
+	mov	eax, DWORD PTR _bCallClose$[ebp]
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	je	SHORT $L7856
+
+; 562  :       if ( (*lpNetwork->lpfnCloseConn)( (zPPVOID) &lpNetwork->pNetworkHandle,
+; 563  :                                         (zPPVOID) ppvConn ) != 0 )
+
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+182]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L7856
+
+; 565  :          nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L7856:
+
+; 568  : 
+; 569  :    fnFreeDataspace( lpNetConn );
+
+	mov	edx, DWORD PTR _lpNetConn$[ebp]
+	push	edx
+	call	_fnFreeDataspace
+	add	esp, 4
+
+; 570  :    lpNetwork->nConnCount--;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	cx, WORD PTR [eax+148]
+	sub	cx, 1
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	WORD PTR [edx+148], cx
+
+; 571  : 
+; 572  :    zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 573  : 
+; 574  :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+$L7839:
+
+; 575  : 
+; 576  : } // fnRemoveConnectionFromNetwork
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnRemoveConnectionFromNetwork@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnFlushBuffer@8
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_fnFlushBuffer@8 PROC NEAR
+
+; 585  : {
+
+	push	ebp
+	mov	ebp, esp
+
+; 586  :    if ( lpNetwork->lpfnBufferEnd )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [eax+186], 0
+	je	SHORT $L7863
+
+; 587  :       return(*lpNetwork->lpfnBufferEnd)( &lpNetwork->pNetworkHandle, ppvConn );
+
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+186]
+	jmp	SHORT $L7864
+$L7863:
+
+; 588  :    else
+; 589  :       return(*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 590  :                                      0, 0, zTYPE_BLOB );
+
+	push	66					; 00000042H
+	push	0
+	push	0
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+170]
+$L7864:
+
+; 591  : } // fnFlushBuffer
+
+	pop	ebp
+	ret	8
+_fnFlushBuffer@8 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSendDataPacket@16
+EXTRN	_memset:NEAR
+EXTRN	__imp___ltoa:NEAR
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_cPacketType$ = 16
+_lPacketData$ = 20
+_nRC$ = -4
+_Packet$7878 = -16
+_fnSendDataPacket@16 PROC NEAR
+
+; 599  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 16					; 00000010H
+
+; 600  :    zSHORT nRC;
+; 601  : 
+; 602  :    if ( lpNetwork->lpfnSendPacket )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [eax+198], 0
+	je	SHORT $L7876
+
+; 604  :       // If the network handler supplied us a SendPacket routine then use it.
+; 605  :       nRC = (*lpNetwork->lpfnSendPacket)( &lpNetwork->pNetworkHandle,
+; 606  :                                           ppvConn, cPacketType, lPacketData );
+
+	mov	ecx, DWORD PTR _lPacketData$[ebp]
+	push	ecx
+	mov	dl, BYTE PTR _cPacketType$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+198]
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 608  :    else
+
+	jmp	SHORT $L7877
+$L7876:
+
+; 610  :       zDataStrPacket Packet;
+; 611  : 
+; 612  :       zmemset( &Packet, 0, zSTRPACKETLTH );
+
+	push	10					; 0000000aH
+	push	0
+	lea	eax, DWORD PTR _Packet$7878[ebp]
+	push	eax
+	call	_memset
+	add	esp, 12					; 0000000cH
+
+; 613  :       Packet.cPacketType = cPacketType;
+
+	mov	cl, BYTE PTR _cPacketType$[ebp]
+	mov	BYTE PTR _Packet$7878[ebp], cl
+
+; 614  : 
+; 615  :       if ( lPacketData < 0 )
+
+	cmp	DWORD PTR _lPacketData$[ebp], 0
+	jge	SHORT $L7880
+
+; 617  :          // Convert negative integer to positive and prepend '-' sign.
+; 618  :          Packet.szPacketData[ 0 ] = '-';
+
+	mov	BYTE PTR _Packet$7878[ebp+1], 45	; 0000002dH
+
+; 619  :          lPacketData = -lPacketData;
+
+	mov	edx, DWORD PTR _lPacketData$[ebp]
+	neg	edx
+	mov	DWORD PTR _lPacketData$[ebp], edx
+
+; 620  :          zltox( lPacketData, &Packet.szPacketData[ 1 ] );
+
+	push	16					; 00000010H
+	lea	eax, DWORD PTR _Packet$7878[ebp+2]
+	push	eax
+	mov	ecx, DWORD PTR _lPacketData$[ebp]
+	push	ecx
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 622  :       else
+
+	jmp	SHORT $L7881
+$L7880:
+
+; 623  :          zltox( lPacketData, Packet.szPacketData );
+
+	push	16					; 00000010H
+	lea	edx, DWORD PTR _Packet$7878[ebp+1]
+	push	edx
+	mov	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+$L7881:
+
+; 624  : 
+; 625  :       nRC = (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 626  :                                     &Packet, zSTRPACKETLTH, zTYPE_STRING );
+
+	push	83					; 00000053H
+	push	10					; 0000000aH
+	lea	ecx, DWORD PTR _Packet$7878[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+170]
+	mov	WORD PTR _nRC$[ebp], ax
+$L7877:
+
+; 628  : 
+; 629  :    if ( cPacketType == zPACKET_ERROR )
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	cmp	edx, 42					; 0000002aH
+	jne	SHORT $L7883
+
+; 630  :       fnFlushBuffer( lpNetwork, ppvConn );
+
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnFlushBuffer@8
+$L7883:
+
+; 631  : 
+; 632  :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+
+; 633  : 
+; 634  : } // fnSendDataPacket
+
+	mov	esp, ebp
+	pop	ebp
+	ret	16					; 00000010H
+_fnSendDataPacket@16 ENDP
+_TEXT	ENDS
+PUBLIC	_fnReceiveDataPacket@16
+EXTRN	__imp__strtoul:NEAR
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_pcPacketType$ = 16
+_plPacketData$ = 20
+_pDummy$ = -4
+_lpPacket$7901 = -8
+_fnReceiveDataPacket@16 PROC NEAR
+
+; 641  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+$L7896:
+
+; 642  :    zPVOID   pDummy;
+; 643  : 
+; 644  :    // Keep looping until we receive a valid packet.
+; 645  :    while ( TRUE )
+
+	mov	eax, 1
+	test	eax, eax
+	je	$L7897
+
+; 647  :       if ( lpNetwork->lpfnRecvPacket )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [ecx+202], 0
+	je	SHORT $L7898
+
+; 649  :          // If the network handler supplied us a ReceivePacket routine
+; 650  :          // then use it.
+; 651  :          if ( (*lpNetwork->lpfnRecvPacket)( &lpNetwork->pNetworkHandle,
+; 652  :                                             ppvConn, pcPacketType,
+; 653  :                                             plPacketData ) != 0 )
+
+	mov	edx, DWORD PTR _plPacketData$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pcPacketType$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+202]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L7899
+
+; 655  :             return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L7897
+$L7899:
+
+; 658  :       else
+
+	jmp	SHORT $L7900
+$L7898:
+
+; 660  :          LPSTRPACKET lpPacket;
+; 661  : 
+; 662  :          if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle,
+; 663  :                                          ppvConn, &lpPacket, zSTRPACKETLTH,
+; 664  :                                          zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	10					; 0000000aH
+	lea	edx, DWORD PTR _lpPacket$7901[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L7903
+
+; 666  :             return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7897
+$L7903:
+
+; 668  : 
+; 669  :          *pcPacketType = lpPacket->cPacketType;
+
+	mov	ecx, DWORD PTR _pcPacketType$[ebp]
+	mov	edx, DWORD PTR _lpPacket$7901[ebp]
+	mov	al, BYTE PTR [edx]
+	mov	BYTE PTR [ecx], al
+
+; 670  :          *plPacketData = zxtol( lpPacket->szPacketData );
+
+	push	16					; 00000010H
+	push	0
+	mov	ecx, DWORD PTR _lpPacket$7901[ebp]
+	add	ecx, 1
+	push	ecx
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	edx, DWORD PTR _plPacketData$[ebp]
+	mov	DWORD PTR [edx], eax
+$L7900:
+
+; 672  : 
+; 673  :       // If we've retrieved any packet type other than zPACKET_HEADER then
+; 674  :       // return.  If we've received a header packet, then we want to skip it
+; 675  :       // (the header is for some server application).
+; 676  :       if ( *pcPacketType != zPACKET_HEADER )
+
+	mov	eax, DWORD PTR _pcPacketType$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	cmp	ecx, 72					; 00000048H
+	je	SHORT $L7904
+
+; 677  :          return( 0 );
+
+	xor	ax, ax
+	jmp	SHORT $L7897
+$L7904:
+
+; 678  : 
+; 679  :       // Suck up the bytes that make up the header.
+; 680  :       if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 681  :                                       &pDummy, *plPacketData,
+; 682  :                                       zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	mov	edx, DWORD PTR _plPacketData$[ebp]
+	mov	eax, DWORD PTR [edx]
+	push	eax
+	lea	ecx, DWORD PTR _pDummy$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+174]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L7905
+
+; 684  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7897
+$L7905:
+
+; 686  : 
+; 687  :    } // for (;;)...
+
+	jmp	$L7896
+$L7897:
+
+; 688  : 
+; 689  : } // fnReceiveDataPacket
+
+	mov	esp, ebp
+	pop	ebp
+	ret	16					; 00000010H
+_fnReceiveDataPacket@16 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSendHeaderPacket@16
+EXTRN	_strlen:NEAR
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_cPacketType$ = 16
+_szAppName$ = 20
+_szHeaderStr$ = -56
+_nLth$ = -4
+_fnSendHeaderPacket@16 PROC NEAR
+
+; 696  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 56					; 00000038H
+
+; 697  :    zCHAR         szHeaderStr[ 50 ];
+; 698  :    zSHORT        nLth;
+; 699  : 
+; 700  :    szHeaderStr[ 0 ] = cPacketType;
+
+	mov	al, BYTE PTR _cPacketType$[ebp]
+	mov	BYTE PTR _szHeaderStr$[ebp], al
+
+; 701  :    zstrcpy( &szHeaderStr[ 1 ], szAppName );
+
+	mov	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szHeaderStr$[ebp+1]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+
+; 702  :    nLth = zstrlen( szHeaderStr ) + 1;
+
+	lea	eax, DWORD PTR _szHeaderStr$[ebp]
+	push	eax
+	call	_strlen
+	add	esp, 4
+	add	eax, 1
+	mov	WORD PTR _nLth$[ebp], ax
+
+; 703  : 
+; 704  :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_HEADER, nLth ) != 0 )
+
+	movsx	ecx, WORD PTR _nLth$[ebp]
+	push	ecx
+	push	72					; 00000048H
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L7917
+
+; 705  :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7914
+$L7917:
+
+; 706  : 
+; 707  :    // Send server the header string.
+; 708  :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 709  :                                 szHeaderStr, nLth, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	movsx	edx, WORD PTR _nLth$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szHeaderStr$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+170]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L7918
+
+; 711  :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7914
+$L7918:
+
+; 713  : 
+; 714  :    return( 0 );
+
+	xor	ax, ax
+$L7914:
+
+; 715  : 
+; 716  : } // fnSendHeaderPacket
+
+	mov	esp, ebp
+	pop	ebp
+	ret	16					; 00000010H
+_fnSendHeaderPacket@16 ENDP
+_TEXT	ENDS
+PUBLIC	_fnCreateMsgObj@4
+PUBLIC	??_C@_06OMJI@__MSGQ?$AA@			; `string'
+PUBLIC	??_C@_08JIIE@KZMSGQOO?$AA@			; `string'
+PUBLIC	??_C@_0BN@ODIO@Cannot?5load?5Message?5Object?3?5?$AA@ ; `string'
+PUBLIC	??_C@_0N@LGH@System?5Error?$AA@			; `string'
+PUBLIC	??_C@_04HDAF@Task?$AA@				; `string'
+PUBLIC	??_C@_02FECH@Id?$AA@				; `string'
+PUBLIC	??_C@_06DPMO@Client?$AA@			; `string'
+EXTRN	_SetAttributeFromInteger@16:NEAR
+EXTRN	_SysGetTaskFromView@4:NEAR
+EXTRN	_ActivateEmptyObjectInstance@16:NEAR
+EXTRN	_GetViewByName@16:NEAR
+EXTRN	_SetNameForView@16:NEAR
+EXTRN	_CreateEntity@12:NEAR
+EXTRN	_strcat:NEAR
+EXTRN	_SetAttributeFromString@16:NEAR
+;	COMDAT ??_C@_06OMJI@__MSGQ?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_06OMJI@__MSGQ?$AA@ DB '__MSGQ', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08JIIE@KZMSGQOO?$AA@
+_DATA	SEGMENT
+??_C@_08JIIE@KZMSGQOO?$AA@ DB 'KZMSGQOO', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@ODIO@Cannot?5load?5Message?5Object?3?5?$AA@
+_DATA	SEGMENT
+??_C@_0BN@ODIO@Cannot?5load?5Message?5Object?3?5?$AA@ DB 'Cannot load Mes'
+	DB	'sage Object: ', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@LGH@System?5Error?$AA@
+_DATA	SEGMENT
+??_C@_0N@LGH@System?5Error?$AA@ DB 'System Error', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_04HDAF@Task?$AA@
+_DATA	SEGMENT
+??_C@_04HDAF@Task?$AA@ DB 'Task', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_02FECH@Id?$AA@
+_DATA	SEGMENT
+??_C@_02FECH@Id?$AA@ DB 'Id', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06DPMO@Client?$AA@
+_DATA	SEGMENT
+??_C@_06DPMO@Client?$AA@ DB 'Client', 00H		; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_vSubtask$ = 8
+_vMsgQ$ = -8
+_lTask$ = -4
+_lpApp$7927 = -12
+_szMsg$7930 = -524
+_fnCreateMsgObj@4 PROC NEAR
+
+; 720  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 524				; 0000020cH
+
+; 721  :    zVIEW  vMsgQ;
+; 722  :    zLONG  lTask;
+; 723  : 
+; 724  :    GetViewByName( &vMsgQ, "__MSGQ", vSubtask, zLEVEL_TASK );
+
+	push	2
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_06OMJI@__MSGQ?$AA@	; `string'
+	lea	ecx, DWORD PTR _vMsgQ$[ebp]
+	push	ecx
+	call	_GetViewByName@16
+
+; 725  :    if ( vMsgQ == 0 )
+
+	cmp	DWORD PTR _vMsgQ$[ebp], 0
+	jne	$L7926
+
+; 727  :       LPAPP lpApp;
+; 728  : 
+; 729  :       if ( ActivateEmptyObjectInstance( &vMsgQ, "KZMSGQOO", vSubtask,
+; 730  :                                         zMULTIPLE ) < 0 )
+
+	push	256					; 00000100H
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_08JIIE@KZMSGQOO?$AA@	; `string'
+	lea	eax, DWORD PTR _vMsgQ$[ebp]
+	push	eax
+	call	_ActivateEmptyObjectInstance@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	jge	SHORT $L7928
+
+; 732  :          zCHAR szMsg[ 512 ];
+; 733  : 
+; 734  :          zstrcpy( szMsg, "Cannot load Message Object: " );
+
+	push	OFFSET FLAT:??_C@_0BN@ODIO@Cannot?5load?5Message?5Object?3?5?$AA@ ; `string'
+	lea	edx, DWORD PTR _szMsg$7930[ebp]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+
+; 735  :          zstrcat( szMsg, "KZMSGQOO" );
+
+	push	OFFSET FLAT:??_C@_08JIIE@KZMSGQOO?$AA@	; `string'
+	lea	eax, DWORD PTR _szMsg$7930[ebp]
+	push	eax
+	call	_strcat
+	add	esp, 8
+
+; 736  :          SysMessageBox( vSubtask, "System Error", szMsg, 1 );
+
+	push	1
+	lea	ecx, DWORD PTR _szMsg$7930[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0N@LGH@System?5Error?$AA@ ; `string'
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 737  :          return( 0 );
+
+	xor	eax, eax
+	jmp	SHORT $L7922
+$L7928:
+
+; 739  : 
+; 740  :       SetNameForView( vMsgQ, "__MSGQ", vSubtask, zLEVEL_TASK );
+
+	push	2
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_06OMJI@__MSGQ?$AA@	; `string'
+	mov	ecx, DWORD PTR _vMsgQ$[ebp]
+	push	ecx
+	call	_SetNameForView@16
+
+; 741  :       CreateEntity( vMsgQ, "Task", zPOS_FIRST );
+
+	push	1
+	push	OFFSET FLAT:??_C@_04HDAF@Task?$AA@	; `string'
+	mov	edx, DWORD PTR _vMsgQ$[ebp]
+	push	edx
+	call	_CreateEntity@12
+
+; 742  :       lTask = SysGetTaskFromView( vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_SysGetTaskFromView@4
+	mov	DWORD PTR _lTask$[ebp], eax
+
+; 743  :       SetAttributeFromInteger( vMsgQ, "Task", "Id", lTask );
+
+	mov	ecx, DWORD PTR _lTask$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_02FECH@Id?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04HDAF@Task?$AA@	; `string'
+	mov	edx, DWORD PTR _vMsgQ$[ebp]
+	push	edx
+	call	_SetAttributeFromInteger@16
+
+; 744  : 
+; 745  :       fnGetApplicationForSubtask( &lpApp, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _lpApp$7927[ebp]
+	push	ecx
+	call	_fnGetApplicationForSubtask@8
+
+; 746  :       SetAttributeFromString( vMsgQ, "Task", "Client", lpApp->szName );
+
+	mov	edx, DWORD PTR _lpApp$7927[ebp]
+	add	edx, 6
+	push	edx
+	push	OFFSET FLAT:??_C@_06DPMO@Client?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04HDAF@Task?$AA@	; `string'
+	mov	eax, DWORD PTR _vMsgQ$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+$L7926:
+
+; 748  : 
+; 749  :    return( vMsgQ );
+
+	mov	eax, DWORD PTR _vMsgQ$[ebp]
+$L7922:
+
+; 750  : }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_fnCreateMsgObj@4 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSendOI@16
+PUBLIC	_TestMsgObjDef
+PUBLIC	_fnSendMessageObject@12
+PUBLIC	??_C@_04KHMB@QMsg?$AA@				; `string'
+PUBLIC	??_C@_09IMGK@DBH_Error?$AA@			; `string'
+PUBLIC	??_C@_00A@?$AA@					; `string'
+PUBLIC	??_C@_0CN@HCGL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5mes@ ; `string'
+EXTRN	_ActivateOI_FromOI_ForTask@16:NEAR
+EXTRN	_fnDropView@4:NEAR
+EXTRN	_DropObjectInstance@4:NEAR
+EXTRN	_CheckExistenceOfEntity@8:NEAR
+EXTRN	_DeleteEntity@12:NEAR
+EXTRN	_SetCursorNextEntity@12:NEAR
+EXTRN	_SetCursorFirstEntity@12:NEAR
+EXTRN	_szl__MSGQ:DWORD
+;	COMDAT ??_C@_00A@?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_BSS	SEGMENT
+??_C@_00A@?$AA@ DB 01H DUP (?)				; `string'
+_BSS	ENDS
+;	COMDAT ??_C@_04KHMB@QMsg?$AA@
+_DATA	SEGMENT
+??_C@_04KHMB@QMsg?$AA@ DB 'QMsg', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09IMGK@DBH_Error?$AA@
+_DATA	SEGMENT
+??_C@_09IMGK@DBH_Error?$AA@ DB 'DBH_Error', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@HCGL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5mes@
+_DATA	SEGMENT
+??_C@_0CN@HCGL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5mes@ DB '(kz'
+	DB	'oeneta) ** Unable to send message object!', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_vSubtask$ = 16
+_vMessage$ = -8
+_vMsgQ$ = -12
+_nRC$ = -4
+_nNewMsgObj$7949 = -16
+_fnSendMessageObject@12 PROC NEAR
+
+; 756  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 16					; 00000010H
+
+; 757  :    zVIEW  vMessage = 0;
+
+	mov	DWORD PTR _vMessage$[ebp], 0
+
+; 758  :    zVIEW  vMsgQ;
+; 759  :    zSHORT nRC;
+; 760  : 
+; 761  :    GetViewByName( &vMsgQ, szl__MSGQ, vSubtask, zLEVEL_TASK );
+
+	push	2
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _szl__MSGQ
+	push	ecx
+	lea	edx, DWORD PTR _vMsgQ$[ebp]
+	push	edx
+	call	_GetViewByName@16
+
+; 762  :    if ( vMsgQ )
+
+	cmp	DWORD PTR _vMsgQ$[ebp], 0
+	je	$L7960
+
+; 764  :       // The message object contains the messages for all tasks that belong
+; 765  :       // to the same application.  Since we only want to send the messages
+; 766  :       // for the current task, we will create a temp message object to send
+; 767  :       // to the client with just the messages for the current task.  We only
+; 768  :       // care about it if messages (or DBH error messages) exist.
+; 769  : 
+; 770  :       zSHORT nNewMsgObj = TestMsgObjDef( vMsgQ );
+
+	mov	eax, DWORD PTR _vMsgQ$[ebp]
+	push	eax
+	call	_TestMsgObjDef
+	add	esp, 4
+	mov	WORD PTR _nNewMsgObj$7949[ebp], ax
+
+; 771  : 
+; 772  :       if ( CheckExistenceOfEntity( vMsgQ, "QMsg" ) == zCURSOR_SET ||
+; 773  :            (nNewMsgObj &&
+; 774  :             CheckExistenceOfEntity( vMsgQ, "DBH_Error" ) == zCURSOR_SET) )
+
+	push	OFFSET FLAT:??_C@_04KHMB@QMsg?$AA@	; `string'
+	mov	ecx, DWORD PTR _vMsgQ$[ebp]
+	push	ecx
+	call	_CheckExistenceOfEntity@8
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L7951
+	movsx	eax, WORD PTR _nNewMsgObj$7949[ebp]
+	test	eax, eax
+	je	$L7960
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	ecx, DWORD PTR _vMsgQ$[ebp]
+	push	ecx
+	call	_CheckExistenceOfEntity@8
+	movsx	edx, ax
+	test	edx, edx
+	jne	$L7960
+$L7951:
+
+; 776  :          ActivateOI_FromOI_ForTask( &vMessage, vMsgQ, 0, zSINGLE );
+
+	push	0
+	push	0
+	mov	eax, DWORD PTR _vMsgQ$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _vMessage$[ebp]
+	push	ecx
+	call	_ActivateOI_FromOI_ForTask@16
+
+; 777  : 
+; 778  :          // Now that we have the messages in a temp OI, delete the messages out
+; 779  :          // of the original OI.
+; 780  :          for ( nRC = SetCursorFirstEntity( vMsgQ, "QMsg", 0 );
+; 781  :                nRC >= zCURSOR_SET;
+; 782  :                nRC = SetCursorNextEntity( vMsgQ, "QMsg", 0 ) )
+
+	push	0
+	push	OFFSET FLAT:??_C@_04KHMB@QMsg?$AA@	; `string'
+	mov	edx, DWORD PTR _vMsgQ$[ebp]
+	push	edx
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+	jmp	SHORT $L7954
+$L7955:
+	push	0
+	push	OFFSET FLAT:??_C@_04KHMB@QMsg?$AA@	; `string'
+	mov	eax, DWORD PTR _vMsgQ$[ebp]
+	push	eax
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+$L7954:
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	test	ecx, ecx
+	jl	SHORT $L7956
+
+; 784  :             DeleteEntity( vMsgQ, "QMsg", zREPOS_NONE );
+
+	push	0
+	push	OFFSET FLAT:??_C@_04KHMB@QMsg?$AA@	; `string'
+	mov	edx, DWORD PTR _vMsgQ$[ebp]
+	push	edx
+	call	_DeleteEntity@12
+
+; 785  :          }
+
+	jmp	SHORT $L7955
+$L7956:
+
+; 786  : 
+; 787  :          if ( nNewMsgObj )
+
+	movsx	eax, WORD PTR _nNewMsgObj$7949[ebp]
+	test	eax, eax
+	je	SHORT $L7960
+
+; 789  :             for ( nRC = SetCursorFirstEntity( vMsgQ, "DBH_Error", 0 );
+; 790  :                   nRC >= zCURSOR_SET;
+; 791  :                   nRC = SetCursorNextEntity( vMsgQ, "DBH_Error", 0 ) )
+
+	push	0
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	ecx, DWORD PTR _vMsgQ$[ebp]
+	push	ecx
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+	jmp	SHORT $L7958
+$L7959:
+	push	0
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	edx, DWORD PTR _vMsgQ$[ebp]
+	push	edx
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+$L7958:
+	movsx	eax, WORD PTR _nRC$[ebp]
+	test	eax, eax
+	jl	SHORT $L7960
+
+; 793  :                DeleteEntity( vMsgQ, "DBH_Error", zREPOS_NONE );
+
+	push	0
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	ecx, DWORD PTR _vMsgQ$[ebp]
+	push	ecx
+	call	_DeleteEntity@12
+
+; 794  :             }
+
+	jmp	SHORT $L7959
+$L7960:
+
+; 798  : 
+; 799  :    if ( vMessage )
+
+	cmp	DWORD PTR _vMessage$[ebp], 0
+	je	SHORT $L7961
+
+; 801  :       // Send flag to indicate we are sending a message object.
+; 802  :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 803  :                                    szlTrue, 1, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	1
+	push	OFFSET FLAT:_szlTrue
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+170]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L7962
+
+; 805  :          fnDropView( vMessage );
+
+	mov	eax, DWORD PTR _vMessage$[ebp]
+	push	eax
+	call	_fnDropView@4
+
+; 806  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7944
+$L7962:
+
+; 808  : 
+; 809  :       if ( fnSendOI( ppvConn, lpNetwork, vMessage, 0 ) == zCALL_ERROR )
+
+	push	0
+	mov	ecx, DWORD PTR _vMessage$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	call	_fnSendOI@16
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L7963
+
+; 811  :          TraceLineS( "(kzoeneta) ** Unable to send message object!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@HCGL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5mes@ ; `string'
+	call	_TraceLineS@8
+
+; 812  :          fnDropView( vMessage );
+
+	mov	edx, DWORD PTR _vMessage$[ebp]
+	push	edx
+	call	_fnDropView@4
+
+; 813  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7944
+$L7963:
+
+; 815  : 
+; 816  :       // Since we don't need it anymore, drop the temp message OI.
+; 817  :       DropObjectInstance( vMessage );
+
+	mov	eax, DWORD PTR _vMessage$[ebp]
+	push	eax
+	call	_DropObjectInstance@4
+
+; 819  :    else
+
+	jmp	SHORT $L7967
+$L7961:
+
+; 821  :       // Send flag to indicate that there is no message object.
+; 822  :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 823  :                                    szlFalse, 1, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	1
+	push	OFFSET FLAT:_szlFalse
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+170]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L7967
+
+; 825  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7944
+$L7967:
+
+; 828  : 
+; 829  :    return( 0 );
+
+	xor	ax, ax
+$L7944:
+
+; 830  : 
+; 831  : } // fnSendMessageObject
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnSendMessageObject@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSendTraceObj@12
+PUBLIC	??_C@_08JIKI@KZTRACEO?$AA@			; `string'
+PUBLIC	??_C@_08GPOP@DateTime?$AA@			; `string'
+PUBLIC	??_C@_08PPHM@TraceEnd?$AA@			; `string'
+PUBLIC	??_C@_05EMFM@Trace?$AA@				; `string'
+PUBLIC	??_C@_0CP@NBFM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@ ; `string'
+PUBLIC	??_C@_0CL@IOJK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@ ; `string'
+EXTRN	_SetAttributeFromVariable@32:NEAR
+EXTRN	_SysGetDateTime@4:NEAR
+;	COMDAT ??_C@_08JIKI@KZTRACEO?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_08JIKI@KZTRACEO?$AA@ DB 'KZTRACEO', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08GPOP@DateTime?$AA@
+_DATA	SEGMENT
+??_C@_08GPOP@DateTime?$AA@ DB 'DateTime', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08PPHM@TraceEnd?$AA@
+_DATA	SEGMENT
+??_C@_08PPHM@TraceEnd?$AA@ DB 'TraceEnd', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_05EMFM@Trace?$AA@
+_DATA	SEGMENT
+??_C@_05EMFM@Trace?$AA@ DB 'Trace', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@NBFM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@
+_DATA	SEGMENT
+??_C@_0CP@NBFM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@ DB '(kz'
+	DB	'oeneta) ** Unable to send Trace Object Flag', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@IOJK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@
+_DATA	SEGMENT
+??_C@_0CL@IOJK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@ DB '(kz'
+	DB	'oeneta) ** Unable to send Trace object!', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_vSubtask$ = 16
+_vTrace$ = -4
+_szDateTime$7979 = -24
+_fnSendTraceObj@12 PROC NEAR
+
+; 837  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 24					; 00000018H
+
+; 838  :    zVIEW  vTrace = 0;
+
+	mov	DWORD PTR _vTrace$[ebp], 0
+
+; 839  : 
+; 840  :    GetViewByName( &vTrace, "KZTRACEO", vSubtask, zLEVEL_TASK );
+
+	push	2
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_08JIKI@KZTRACEO?$AA@	; `string'
+	lea	ecx, DWORD PTR _vTrace$[ebp]
+	push	ecx
+	call	_GetViewByName@16
+
+; 841  : 
+; 842  :    if ( vTrace )
+
+	cmp	DWORD PTR _vTrace$[ebp], 0
+	je	$L7978
+
+; 844  :       zCHAR szDateTime[ 18 ];
+; 845  : 
+; 846  :       SysGetDateTime( szDateTime );  // DateTime yyyymmddhhmmssttt
+
+	lea	edx, DWORD PTR _szDateTime$7979[ebp]
+	push	edx
+	call	_SysGetDateTime@4
+
+; 847  :       SetAttributeFromVariable( vTrace, "Trace", "TraceEnd",
+; 848  :                                 szDateTime, zTYPE_STRING, 17, "DateTime", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_08GPOP@DateTime?$AA@	; `string'
+	push	17					; 00000011H
+	push	83					; 00000053H
+	lea	eax, DWORD PTR _szDateTime$7979[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_08PPHM@TraceEnd?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	mov	ecx, DWORD PTR _vTrace$[ebp]
+	push	ecx
+	call	_SetAttributeFromVariable@32
+
+; 849  : 
+; 850  :       // Send flag to indicate we are sending a Trace object.
+; 851  :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 852  :                                    szlTrue, 1, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	1
+	push	OFFSET FLAT:_szlTrue
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+170]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L7983
+
+; 854  :          TraceLineS( "(kzoeneta) ** Unable to send Trace Object Flag", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CP@NBFM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@ ; `string'
+	call	_TraceLineS@8
+
+; 855  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7975
+$L7983:
+
+; 857  : 
+; 858  :       if ( fnSendOI( ppvConn, lpNetwork, vTrace, 0 ) == zCALL_ERROR )
+
+	push	0
+	mov	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	call	_fnSendOI@16
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L7985
+
+; 860  :          TraceLineS( "(kzoeneta) ** Unable to send Trace object!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CL@IOJK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Unable?5to?5send?5Tra@ ; `string'
+	call	_TraceLineS@8
+
+; 861  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7975
+$L7985:
+
+; 864  :    else
+
+	jmp	SHORT $L7988
+$L7978:
+
+; 866  :       // Send flag to indicate that there is no Trace object.
+; 867  :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 868  :                                    szlFalse, 1, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	1
+	push	OFFSET FLAT:_szlFalse
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+170]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L7988
+
+; 870  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L7975
+$L7988:
+
+; 873  : 
+; 874  :    return( 0 );
+
+	xor	ax, ax
+$L7975:
+
+; 875  : 
+; 876  : } // fnSendTraceObj
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnSendTraceObj@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSendMsgAndTraceObj@12
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_vSubtask$ = 16
+_nRC1$ = -4
+_nRC2$ = -8
+_fnSendMsgAndTraceObj@12 PROC NEAR
+
+; 882  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 883  :   zSHORT nRC1, nRC2;
+; 884  :   nRC1 = fnSendMessageObject( lpNetwork, ppvConn, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendMessageObject@12
+	mov	WORD PTR _nRC1$[ebp], ax
+
+; 885  :   nRC2 = fnSendTraceObj( lpNetwork, ppvConn, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendTraceObj@12
+	mov	WORD PTR _nRC2$[ebp], ax
+
+; 886  :   return( nRC1 == 0 ? nRC2 : nRC1 );
+
+	movsx	eax, WORD PTR _nRC1$[ebp]
+	test	eax, eax
+	jne	SHORT $L10223
+	movsx	ecx, WORD PTR _nRC2$[ebp]
+	mov	DWORD PTR -12+[ebp], ecx
+	jmp	SHORT $L10224
+$L10223:
+	movsx	edx, WORD PTR _nRC1$[ebp]
+	mov	DWORD PTR -12+[ebp], edx
+$L10224:
+	mov	ax, WORD PTR -12+[ebp]
+
+; 887  : }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnSendMsgAndTraceObj@12 ENDP
+_vMsg$ = 8
+_lpViewOD$ = -4
+_lpViewEntity$ = -8
+_TestMsgObjDef PROC NEAR
+
+; 897  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 898  :    LPVIEWOD lpViewOD;
+; 899  :    LPVIEWENTITY lpViewEntity;
+; 900  : 
+; 901  :    // Does the Object definition contain the entity "DBH_Error"?
+; 902  :    lpViewOD = zGETPTR( vMsg->hViewOD );
+
+	mov	eax, DWORD PTR _vMsg$[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOD$[ebp], eax
+
+; 903  :    for ( lpViewEntity = zGETPTR( lpViewOD->hFirstOD_Entity );
+; 904  :          lpViewEntity;
+; 905  :          lpViewEntity = zGETPTR( lpViewEntity->hNextHier ) )
+
+	mov	edx, DWORD PTR _lpViewOD$[ebp]
+	mov	eax, DWORD PTR [edx+224]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$[ebp], eax
+	jmp	SHORT $L8007
+$L8008:
+	mov	ecx, DWORD PTR _lpViewEntity$[ebp]
+	mov	edx, DWORD PTR [ecx+2]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$[ebp], eax
+$L8007:
+	cmp	DWORD PTR _lpViewEntity$[ebp], 0
+	je	SHORT $L8009
+
+; 907  :       // Is the entity the DBH_Error?
+; 908  :       if ( zstrcmp( lpViewEntity->szName, "DBH_Error" ) == 0 )
+
+	mov	eax, DWORD PTR _lpViewEntity$[ebp]
+	movsx	ecx, BYTE PTR [eax+14]
+	movsx	edx, BYTE PTR ??_C@_09IMGK@DBH_Error?$AA@
+	cmp	ecx, edx
+	jne	SHORT $L10226
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	eax, DWORD PTR _lpViewEntity$[ebp]
+	add	eax, 14					; 0000000eH
+	push	eax
+	call	_strcmp
+	add	esp, 8
+	mov	DWORD PTR -12+[ebp], eax
+	jmp	SHORT $L10227
+$L10226:
+	mov	ecx, DWORD PTR _lpViewEntity$[ebp]
+	movsx	edx, BYTE PTR [ecx+14]
+	movsx	eax, BYTE PTR ??_C@_09IMGK@DBH_Error?$AA@
+	sub	edx, eax
+	xor	ecx, ecx
+	test	edx, edx
+	setle	cl
+	dec	ecx
+	and	ecx, 2
+	add	ecx, -1
+	mov	DWORD PTR -12+[ebp], ecx
+$L10227:
+	cmp	DWORD PTR -12+[ebp], 0
+	jne	SHORT $L8016
+
+; 909  :          return( 1 );
+
+	mov	ax, 1
+	jmp	SHORT $L8001
+$L8016:
+
+; 910  :    }
+
+	jmp	SHORT $L8008
+$L8009:
+
+; 911  : 
+; 912  :    return( 0 );
+
+	xor	ax, ax
+$L8001:
+
+; 913  : }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_TestMsgObjDef ENDP
+_TEXT	ENDS
+PUBLIC	_fnReceiveOI@24
+PUBLIC	_fnRetrieveMessageObject@12
+PUBLIC	??_C@_0CO@OJEE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_08JAGJ@kzmsgqoo?$AA@			; `string'
+PUBLIC	??_C@_0DA@EAEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+EXTRN	_SetMatchingAttributesByName@20:NEAR
+EXTRN	_CreateViewFromViewForTask@12:NEAR
+EXTRN	_DropView@4:NEAR
+EXTRN	_CountEntitiesForView@8:NEAR
+EXTRN	_MessagePresent@12:NEAR
+;	COMDAT ??_C@_0CO@OJEE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CO@OJEE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Message flag.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08JAGJ@kzmsgqoo?$AA@
+_DATA	SEGMENT
+??_C@_08JAGJ@kzmsgqoo?$AA@ DB 'kzmsgqoo', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DA@EAEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0DA@EAEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Message object.', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_vSubtask$ = 16
+_pchFlag$ = -12
+_vMessage$ = -8
+_vLocalMsg$ = -16
+_nRC$ = -4
+_vCopy$8032 = -20
+_nc$8037 = -24
+_lc$8038 = -28
+_fnRetrieveMessageObject@12 PROC NEAR
+
+; 919  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 28					; 0000001cH
+
+; 920  :    zPCHAR pchFlag;
+; 921  :    zVIEW  vMessage, vLocalMsg;
+; 922  :    zSHORT nRC;
+; 923  : 
+; 924  :    // Retrieve the 1-byte flag indicating whether a message object was sent.
+; 925  :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 926  :                                    &pchFlag, 1, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	1
+	lea	eax, DWORD PTR _pchFlag$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+174]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8029
+
+; 928  :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Message flag.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CO@OJEE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 929  :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8024
+$L8029:
+
+; 931  : 
+; 932  :    // If the flag indicates that a message object was sent, then retrieve it.
+; 933  :    if ( pchFlag[ 0 ] == szlTrue[ 0 ] )
+
+	mov	edx, DWORD PTR _pchFlag$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	movsx	ecx, BYTE PTR _szlTrue
+	cmp	eax, ecx
+	jne	$L8031
+
+; 935  :       zVIEW vCopy = 0;
+
+	mov	DWORD PTR _vCopy$8032[ebp], 0
+
+; 936  : 
+; 937  :       if ( fnReceiveOI( ppvConn, lpNetwork, &vMessage, vSubtask, "kzmsgqoo",
+; 938  :                         zSINGLE ) == zCALL_ERROR )
+
+	push	0
+	push	OFFSET FLAT:??_C@_08JAGJ@kzmsgqoo?$AA@	; `string'
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _vMessage$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	call	_fnReceiveOI@24
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L8033
+
+; 940  :          TraceLineS( "(kzoeneta) ** Couldn't retrieve Message object.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DA@EAEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 941  :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8024
+$L8033:
+
+; 943  : 
+; 944  :       nRC = MessagePresent( vSubtask, 0, vMessage );
+
+	mov	ecx, DWORD PTR _vMessage$[ebp]
+	push	ecx
+	push	0
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_MessagePresent@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 945  : 
+; 946  :       // Copy the DBH_Error entities to the local message Object.
+; 947  :       vLocalMsg = fnCreateMsgObj( vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_fnCreateMsgObj@4
+	mov	DWORD PTR _vLocalMsg$[ebp], eax
+
+; 948  :       if ( TestMsgObjDef( vLocalMsg ) != 0 &&
+; 949  :            CreateViewFromViewForTask( &vCopy, vLocalMsg, 0 ) >= 0 )
+
+	mov	ecx, DWORD PTR _vLocalMsg$[ebp]
+	push	ecx
+	call	_TestMsgObjDef
+	add	esp, 4
+	movsx	edx, ax
+	test	edx, edx
+	je	$L8036
+	push	0
+	mov	eax, DWORD PTR _vLocalMsg$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _vCopy$8032[ebp]
+	push	ecx
+	call	_CreateViewFromViewForTask@12
+	movsx	edx, ax
+	test	edx, edx
+	jl	$L8036
+
+; 951  :          zSHORT nc;
+; 952  :          zLONG  lc;
+; 953  : 
+; 954  :          // Copy over all the DBH_Error entities.
+; 955  :          nc = SetCursorFirstEntity( vMessage, "DBH_Error", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	eax, DWORD PTR _vMessage$[ebp]
+	push	eax
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nc$8037[ebp], ax
+$L8040:
+
+; 956  :          while ( nc >= zCURSOR_SET )
+
+	movsx	ecx, WORD PTR _nc$8037[ebp]
+	test	ecx, ecx
+	jl	SHORT $L8041
+
+; 958  :             if ( CreateEntity( vCopy, "DBH_Error", zPOS_LAST ) < 0 )
+
+	push	2
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	edx, DWORD PTR _vCopy$8032[ebp]
+	push	edx
+	call	_CreateEntity@12
+	movsx	eax, ax
+	test	eax, eax
+	jge	SHORT $L8043
+
+; 959  :                break;
+
+	jmp	SHORT $L8041
+$L8043:
+
+; 960  : 
+; 961  :             SetMatchingAttributesByName( vCopy, "DBH_Error",
+; 962  :                                          vMessage, "DBH_Error", zSET_ALL );
+
+	push	3
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	ecx, DWORD PTR _vMessage$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	edx, DWORD PTR _vCopy$8032[ebp]
+	push	edx
+	call	_SetMatchingAttributesByName@20
+
+; 963  :             nc = SetCursorNextEntity( vMessage, "DBH_Error", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	eax, DWORD PTR _vMessage$[ebp]
+	push	eax
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nc$8037[ebp], ax
+
+; 964  :          }
+
+	jmp	SHORT $L8040
+$L8041:
+
+; 965  : 
+; 966  :          // Make sure that there are not more than 100 DBH_Error's.
+; 967  :          lc = CountEntitiesForView( vCopy, "DBH_Error") - 100;
+
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	ecx, DWORD PTR _vCopy$8032[ebp]
+	push	ecx
+	call	_CountEntitiesForView@8
+	sub	eax, 100				; 00000064H
+	mov	DWORD PTR _lc$8038[ebp], eax
+
+; 968  :          if ( lc > 0 )
+
+	cmp	DWORD PTR _lc$8038[ebp], 0
+	jle	SHORT $L8047
+
+; 970  :             SetCursorFirstEntity( vCopy, "DBH_Error", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	edx, DWORD PTR _vCopy$8032[ebp]
+	push	edx
+	call	_SetCursorFirstEntity@12
+$L8046:
+
+; 971  : 
+; 972  :             while ( lc > 0 )
+
+	cmp	DWORD PTR _lc$8038[ebp], 0
+	jle	SHORT $L8047
+
+; 974  :                DeleteEntity( vCopy, "DBH_Error", zREPOS_FIRST );
+
+	push	1
+	push	OFFSET FLAT:??_C@_09IMGK@DBH_Error?$AA@	; `string'
+	mov	eax, DWORD PTR _vCopy$8032[ebp]
+	push	eax
+	call	_DeleteEntity@12
+
+; 975  :                lc--;
+
+	mov	ecx, DWORD PTR _lc$8038[ebp]
+	sub	ecx, 1
+	mov	DWORD PTR _lc$8038[ebp], ecx
+
+; 976  :             }
+
+	jmp	SHORT $L8046
+$L8047:
+
+; 978  : 
+; 979  :          DropView( vCopy );
+
+	mov	edx, DWORD PTR _vCopy$8032[ebp]
+	push	edx
+	call	_DropView@4
+$L8036:
+
+; 981  : 
+; 982  :       DropObjectInstance( vMessage );
+
+	mov	eax, DWORD PTR _vMessage$[ebp]
+	push	eax
+	call	_DropObjectInstance@4
+
+; 983  :       return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+	jmp	SHORT $L8024
+$L8031:
+
+; 985  : 
+; 986  :    return( 0 );
+
+	xor	ax, ax
+$L8024:
+
+; 987  : 
+; 988  : } // fnRetrieveMessageObject
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnRetrieveMessageObject@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnRetrieveTraceObj@12
+PUBLIC	??_C@_0CM@NAPH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0CO@JAOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_04KEDG@Line?$AA@				; `string'
+PUBLIC	??_C@_0L@JJBL@TraceStart?$AA@			; `string'
+PUBLIC	??_C@_0CD@GAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Start?5Server?5Trace@ ; `string'
+PUBLIC	??_C@_0BF@EGEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Line?3?5?$AA@ ; `string'
+PUBLIC	??_C@_0CB@KMFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5End?5Server?5Trace?3?5@ ; `string'
+EXTRN	_GetStringFromAttribute@16:NEAR
+;	COMDAT ??_C@_0CM@NAPH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CM@NAPH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Trace flag.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@JAOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0CO@JAOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Trace object.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_04KEDG@Line?$AA@
+_DATA	SEGMENT
+??_C@_04KEDG@Line?$AA@ DB 'Line', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@JJBL@TraceStart?$AA@
+_DATA	SEGMENT
+??_C@_0L@JJBL@TraceStart?$AA@ DB 'TraceStart', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CD@GAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Start?5Server?5Trace@
+_DATA	SEGMENT
+??_C@_0CD@GAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Start?5Server?5Trace@ DB '(kzo'
+	DB	'eneta) ** Start Server Trace: ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@EGEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Line?3?5?$AA@
+_DATA	SEGMENT
+??_C@_0BF@EGEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Line?3?5?$AA@ DB '(kzoeneta) *'
+	DB	'* Line: ', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CB@KMFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5End?5Server?5Trace?3?5@
+_DATA	SEGMENT
+??_C@_0CB@KMFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5End?5Server?5Trace?3?5@ DB '(k'
+	DB	'zoeneta) ** End Server Trace: ', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_vSubtask$ = 16
+_pchFlag$ = -8
+_vTrace$ = -12
+_nRC$ = -4
+_cDTime$8066 = -44
+_cLine$8072 = -300
+_fnRetrieveTraceObj@12 PROC NEAR
+
+; 994  : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 300				; 0000012cH
+
+; 995  :    zPCHAR pchFlag;
+; 996  :    zVIEW  vTrace;
+; 997  :    zSHORT nRC;
+; 998  : 
+; 999  :    // Retrieve the 1-byte flag indicating whether a trace object was sent.
+; 1000 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 1001 :                                    &pchFlag, 1, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	1
+	lea	eax, DWORD PTR _pchFlag$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+174]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8059
+
+; 1003 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Trace flag.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CM@NAPH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 1004 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8055
+$L8059:
+
+; 1006 : 
+; 1007 :    // If the flag indicates that a message object was sent, then retrieve it.
+; 1008 :    if ( pchFlag[ 0 ] == szlTrue[ 0 ] )
+
+	mov	edx, DWORD PTR _pchFlag$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	movsx	ecx, BYTE PTR _szlTrue
+	cmp	eax, ecx
+	jne	$L8061
+
+; 1010 :       if ( fnReceiveOI( ppvConn, lpNetwork, &vTrace, vSubtask, "KZTRACEO",
+; 1011 :                         zSINGLE | zACTIVATE_SYSTEM ) == zCALL_ERROR )
+
+	push	536870912				; 20000000H
+	push	OFFSET FLAT:??_C@_08JIKI@KZTRACEO?$AA@	; `string'
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	call	_fnReceiveOI@24
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L8062
+
+; 1013 :          TraceLineS( "(kzoeneta) ** Couldn't retrieve Trace object.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CO@JAOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 1014 :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8055
+$L8062:
+
+; 1016 : 
+; 1017 :       nRC = SetCursorFirstEntity ( vTrace, "Line", "Trace" );
+
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04KEDG@Line?$AA@	; `string'
+	mov	ecx, DWORD PTR _vTrace$[ebp]
+	push	ecx
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 1018 :       if ( nRC == zCURSOR_SET )
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	test	edx, edx
+	jne	$L8065
+
+; 1020 :          zCHAR cDTime[ 32 ];
+; 1021 :          GetStringFromAttribute( cDTime, vTrace,"Trace", "TraceStart" );
+
+	push	OFFSET FLAT:??_C@_0L@JJBL@TraceStart?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	mov	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cDTime$8066[ebp]
+	push	ecx
+	call	_GetStringFromAttribute@16
+
+; 1022 :          TraceLineS( "(kzoeneta) ** Start Server Trace: ", cDTime );
+
+	lea	edx, DWORD PTR _cDTime$8066[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CD@GAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Start?5Server?5Trace@ ; `string'
+	call	_TraceLineS@8
+$L8070:
+
+; 1023 :          while ( nRC == zCURSOR_SET )
+
+	movsx	eax, WORD PTR _nRC$[ebp]
+	test	eax, eax
+	jne	SHORT $L8071
+
+; 1025 :            zCHAR cLine[ 255 ];
+; 1026 :            cLine[ 0 ] = 0;
+
+	mov	BYTE PTR _cLine$8072[ebp], 0
+
+; 1027 :            GetStringFromAttribute( cLine, vTrace, "Line", "Line" );
+
+	push	OFFSET FLAT:??_C@_04KEDG@Line?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04KEDG@Line?$AA@	; `string'
+	mov	ecx, DWORD PTR _vTrace$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _cLine$8072[ebp]
+	push	edx
+	call	_GetStringFromAttribute@16
+
+; 1028 :            if ( cLine[ 0 ] )
+
+	movsx	eax, BYTE PTR _cLine$8072[ebp]
+	test	eax, eax
+	je	SHORT $L8073
+
+; 1029 :               TraceLineS( "(kzoeneta) ** Line: ", cLine );
+
+	lea	ecx, DWORD PTR _cLine$8072[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BF@EGEJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Line?3?5?$AA@ ; `string'
+	call	_TraceLineS@8
+$L8073:
+
+; 1030 : 
+; 1031 :            nRC = SetCursorNextEntity( vTrace, "Line", "Trace" );
+
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04KEDG@Line?$AA@	; `string'
+	mov	edx, DWORD PTR _vTrace$[ebp]
+	push	edx
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 1032 :          } // while
+
+	jmp	SHORT $L8070
+$L8071:
+
+; 1033 : 
+; 1034 :          GetStringFromAttribute( cDTime, vTrace,"Trace", "TraceEnd" );
+
+	push	OFFSET FLAT:??_C@_08PPHM@TraceEnd?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	mov	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cDTime$8066[ebp]
+	push	ecx
+	call	_GetStringFromAttribute@16
+
+; 1035 :          TraceLineS( "(kzoeneta) ** End Server Trace: ", cDTime );
+
+	lea	edx, DWORD PTR _cDTime$8066[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CB@KMFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5End?5Server?5Trace?3?5@ ; `string'
+	call	_TraceLineS@8
+$L8065:
+
+; 1037 : 
+; 1038 :       DropObjectInstance( vTrace );
+
+	mov	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	call	_DropObjectInstance@4
+$L8061:
+
+; 1040 : 
+; 1041 :    return( 0 );
+
+	xor	ax, ax
+$L8055:
+
+; 1042 : 
+; 1043 : } // fnRetrieveTraceObj
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnRetrieveTraceObj@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnRetrieveMsgAndTraceObj@12
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_vSubtask$ = 16
+_nRC1$ = -4
+_nRC2$ = -8
+_fnRetrieveMsgAndTraceObj@12 PROC NEAR
+
+; 1049 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 1050 :    zSHORT nRC1, nRC2;
+; 1051 :    nRC1 = fnRetrieveMessageObject( lpNetwork, ppvConn, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnRetrieveMessageObject@12
+	mov	WORD PTR _nRC1$[ebp], ax
+
+; 1052 :    nRC2 = fnRetrieveTraceObj( lpNetwork, ppvConn, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnRetrieveTraceObj@12
+	mov	WORD PTR _nRC2$[ebp], ax
+
+; 1053 :    return( nRC1 == 0 ? nRC2 : nRC1 );
+
+	movsx	eax, WORD PTR _nRC1$[ebp]
+	test	eax, eax
+	jne	SHORT $L10231
+	movsx	ecx, WORD PTR _nRC2$[ebp]
+	mov	DWORD PTR -12+[ebp], ecx
+	jmp	SHORT $L10232
+$L10231:
+	movsx	edx, WORD PTR _nRC1$[ebp]
+	mov	DWORD PTR -12+[ebp], edx
+$L10232:
+	mov	ax, WORD PTR -12+[ebp]
+
+; 1054 : }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnRetrieveMsgAndTraceObj@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnEmptyOI@4
+_TEXT	SEGMENT
+_lpView$ = 8
+_lpViewCsr$ = -4
+_lpViewOI$ = -12
+_lpEntityInstance$ = -8
+_fnEmptyOI@4 PROC NEAR
+
+; 1059 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 1060 :    LPVIEWCSR         lpViewCsr = zGETPTR( lpView->hViewCsr );
+
+	mov	eax, DWORD PTR _lpView$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 1061 :    LPVIEWOI          lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	edx, DWORD PTR _lpViewCsr$[ebp]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$[ebp], eax
+
+; 1062 :    LPENTITYINSTANCE  lpEntityInstance = zGETPTR( lpViewOI->hRootEntityInstance );
+
+	mov	ecx, DWORD PTR _lpViewOI$[ebp]
+	mov	edx, DWORD PTR [ecx+26]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+
+; 1063 : 
+; 1064 :    if ( lpEntityInstance == 0 )
+
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	jne	SHORT $L8096
+
+; 1065 :       return( TRUE );
+
+	mov	al, 1
+	jmp	SHORT $L8089
+$L8096:
+
+; 1066 : 
+; 1067 :    if ( lpEntityInstance->u.nInd.bHidden == FALSE )
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	shr	ecx, 10					; 0000000aH
+	and	ecx, 1
+	test	ecx, ecx
+	jne	SHORT $L8097
+
+; 1068 :       return( FALSE );
+
+	xor	al, al
+	jmp	SHORT $L8089
+$L8097:
+
+; 1069 : 
+; 1070 :    while ( lpEntityInstance->hNextTwin )
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	cmp	DWORD PTR [edx+22], 0
+	je	SHORT $L8100
+
+; 1072 :       lpEntityInstance = zGETPTR( lpEntityInstance->hNextTwin );
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+22]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+
+; 1073 :       if ( lpEntityInstance->u.nInd.bHidden == FALSE )
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	shr	eax, 10					; 0000000aH
+	and	eax, 1
+	test	eax, eax
+	jne	SHORT $L8102
+
+; 1074 :          break;
+
+	jmp	SHORT $L8100
+$L8102:
+
+; 1075 :    }
+
+	jmp	SHORT $L8097
+$L8100:
+
+; 1076 : 
+; 1077 :    if ( lpEntityInstance->u.nInd.bHidden &&
+; 1078 :         (lpEntityInstance->u.nInd.bCreated ||
+; 1079 :          lpEntityInstance->u.nInd.bDeleted == FALSE) )
+
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+6]
+	shr	edx, 10					; 0000000aH
+	and	edx, 1
+	test	edx, edx
+	je	SHORT $L8103
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	shr	ecx, 1
+	and	ecx, 1
+	test	ecx, ecx
+	jne	SHORT $L8104
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	shr	eax, 3
+	and	eax, 1
+	test	eax, eax
+	jne	SHORT $L8103
+$L8104:
+
+; 1082 :       return( TRUE );
+
+	mov	al, 1
+	jmp	SHORT $L8089
+$L8103:
+
+; 1084 : 
+; 1085 :    return( FALSE );
+
+	xor	al, al
+$L8089:
+
+; 1086 : 
+; 1087 : } // fnEmptyOI
+
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_fnEmptyOI@4 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSendTraceSwitches@12
+PUBLIC	??_C@_06DOOC@?$CF2?42hd?$AA@			; `string'
+;	COMDAT ??_C@_06DOOC@?$CF2?42hd?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_06DOOC@?$CF2?42hd?$AA@ DB '%2.2hd', 00H		; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_szTraceSwitch$ = -8
+_fnSendTraceSwitches@12 PROC NEAR
+
+; 1101 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+
+; 1102 :    zCHAR  szTraceSwitch[ L_TRACE_SWITCH_MSG + 1 ];
+; 1103 : 
+; 1104 :    zsprintf( szTraceSwitch, "%2.2hd", lpNetwork->nServerCoreTraceLevel );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+142]
+	push	ecx
+	push	OFFSET FLAT:??_C@_06DOOC@?$CF2?42hd?$AA@ ; `string'
+	lea	edx, DWORD PTR _szTraceSwitch$[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1105 : // zsprintf( szTraceSwitch + 2, "%2.2hd", lpTask->nDBHandlerTraceLevel );
+; 1106 :    zsprintf( szTraceSwitch + 2, "%2.2hd", lpNetwork->nServerDBHTraceLevel );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+146]
+	push	ecx
+	push	OFFSET FLAT:??_C@_06DOOC@?$CF2?42hd?$AA@ ; `string'
+	lea	edx, DWORD PTR _szTraceSwitch$[ebp+2]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1107 :    zsprintf( szTraceSwitch + 4, "%2.2hd", lpNetwork->nServerNetTraceLevel );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+144]
+	push	ecx
+	push	OFFSET FLAT:??_C@_06DOOC@?$CF2?42hd?$AA@ ; `string'
+	lea	edx, DWORD PTR _szTraceSwitch$[ebp+4]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1108 : 
+; 1109 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_TRACESWITCH,
+; 1110 :                           L_TRACE_SWITCH_MSG  ) != 0 )
+
+	push	6
+	push	43					; 0000002bH
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8115
+
+; 1112 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8112
+$L8115:
+
+; 1114 : 
+; 1115 :    // Send server the trace switch message.
+; 1116 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 1117 :                                 szTraceSwitch, L_TRACE_SWITCH_MSG,
+; 1118 :                                 zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	6
+	lea	eax, DWORD PTR _szTraceSwitch$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+170]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8116
+
+; 1120 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8112
+$L8116:
+
+; 1122 : 
+; 1123 :    return( 0 );
+
+	xor	ax, ax
+$L8112:
+
+; 1124 : 
+; 1125 : } // fnSendTraceSwitches
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnSendTraceSwitches@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSendTimestamp@12
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_szTimestamp$ = -20
+_fnSendTimestamp@12 PROC NEAR
+
+; 1131 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 20					; 00000014H
+
+; 1132 :    zCHAR  szTimestamp[ L_TIMESTAMP_MSG + 1 ];
+; 1133 : 
+; 1134 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_TIMESTAMP,
+; 1135 :                           L_TIMESTAMP_MSG  ) != 0 )
+
+	push	18					; 00000012H
+	push	84					; 00000054H
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8126
+
+; 1137 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8124
+$L8126:
+
+; 1139 : 
+; 1140 :    // Send server the timestamp message.
+; 1141 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, ppvConn,
+; 1142 :                                 szTimestamp, L_TRACE_SWITCH_MSG,
+; 1143 :                                 zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	6
+	lea	eax, DWORD PTR _szTimestamp$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+170]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8127
+
+; 1145 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8124
+$L8127:
+
+; 1147 : 
+; 1148 :    return( 0 );
+
+	xor	ax, ax
+$L8124:
+
+; 1149 : 
+; 1150 : } // fnSendTimestamp
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnSendTimestamp@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CM@NFHD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5RC?5?9?5erro@ ; `string'
+PUBLIC	??_C@_0CH@PAEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5unknown?5P@ ; `string'
+PUBLIC	??_C@_0CJ@BGHJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@ ; `string'
+PUBLIC	??_C@_0CC@HGLB@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5activate?5?$DN@ ; `string'
+PUBLIC	_fnNetActivateOI@32
+PUBLIC	??_C@_0CH@PBEA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RequestOI?5@ ; `string'
+PUBLIC	??_C@_02LFP@1b?$AA@				; `string'
+PUBLIC	??_C@_0FG@MJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activate?5P@ ; `string'
+PUBLIC	??_C@_0CH@JCDN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5qualificat@ ; `string'
+PUBLIC	??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+PUBLIC	??_C@_0DF@FLBM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Act?5ACK?5?9@ ; `string'
+PUBLIC	??_C@_0CG@LNK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5activate@ ; `string'
+PUBLIC	??_C@_0BO@NAJA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5error?5?$CD?$AA@ ; `string'
+PUBLIC	??_C@_0CC@BADB@Application?5not?5defined?5on?5Serve@ ; `string'
+PUBLIC	??_C@_0BA@LFAO@?$CKOut?5Of?5Memory?$CK?$AA@	; `string'
+PUBLIC	??_C@_0BK@MODC@Server?5Transaction?5Crash?5?$AA@ ; `string'
+EXTRN	_SysGetUserID@12:NEAR
+EXTRN	_TraceLine:NEAR
+;	COMDAT ??_C@_0CH@PBEA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RequestOI?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CH@PBEA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RequestOI?5@ DB '(kzo'
+	DB	'eneta) ** Sending RequestOI packet', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_02LFP@1b?$AA@
+_DATA	SEGMENT
+??_C@_02LFP@1b?$AA@ DB '1b', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0FG@MJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activate?5P@
+_DATA	SEGMENT
+??_C@_0FG@MJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activate?5P@ DB '(kzo'
+	DB	'eneta) ** Sending Activate Packet ... ApplName: %s  Object De'
+	DB	'f: %s  User Name: %s', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@JCDN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5qualificat@
+_DATA	SEGMENT
+??_C@_0CH@JCDN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5qualificat@ DB '(kzoe'
+	DB	'neta) ** Sending qualification OI', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@
+_DATA	SEGMENT
+??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ DB '(kzo'
+	DB	'eneta) ** Error receiving OI ACK!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DF@FLBM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Act?5ACK?5?9@
+_DATA	SEGMENT
+??_C@_0DF@FLBM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Act?5ACK?5?9@ DB '(k'
+	DB	'zoeneta) ** Received Act ACK - proceeding with Act', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@LNK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5activate@
+_DATA	SEGMENT
+??_C@_0CG@LNK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5activate@ DB '(kzoen'
+	DB	'eta) ** Receiving activated OI.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BO@NAJA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5error?5?$CD?$AA@
+_DATA	SEGMENT
+??_C@_0BO@NAJA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5error?5?$CD?$AA@ DB '('
+	DB	'kzoeneta) ** Network error #', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@BADB@Application?5not?5defined?5on?5Serve@
+_DATA	SEGMENT
+??_C@_0CC@BADB@Application?5not?5defined?5on?5Serve@ DB 'Application not '
+	DB	'defined on Server', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@LFAO@?$CKOut?5Of?5Memory?$CK?$AA@
+_DATA	SEGMENT
+??_C@_0BA@LFAO@?$CKOut?5Of?5Memory?$CK?$AA@ DB '*Out Of Memory*', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BK@MODC@Server?5Transaction?5Crash?5?$AA@
+_DATA	SEGMENT
+??_C@_0BK@MODC@Server?5Transaction?5Crash?5?$AA@ DB 'Server Transaction C'
+	DB	'rash ', 00H					; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@NFHD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5RC?5?9?5erro@
+_DATA	SEGMENT
+??_C@_0CM@NFHD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5RC?5?9?5erro@ DB '(k'
+	DB	'zoeneta) ** Received RC - error in Commit', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@PAEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5unknown?5P@
+_DATA	SEGMENT
+??_C@_0CH@PAEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5unknown?5P@ DB '(kzo'
+	DB	'eneta) ** Received unknown Packet!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@BGHJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@
+_DATA	SEGMENT
+??_C@_0CJ@BGHJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@ DB '(kz'
+	DB	'oeneta) ** No return code for Commit!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@HGLB@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5activate?5?$DN@
+_DATA	SEGMENT
+??_C@_0CC@HGLB@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5activate?5?$DN@ DB '('
+	DB	'kzoeneta) ** RC from activate = ', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTask$ = 8
+_lpNetwork$ = 12
+_pchAddress$ = 16
+_pvReturnView$ = 20
+_pchObjName$ = 24
+_vSubtask$ = 28
+_vQual$ = 32
+_lControl$ = 36
+_cPacketType$ = -224
+_lPacketData$ = -4
+_pvConn$ = -12
+_szAppName$ = -196
+_nRC$ = -8
+_ActPacket$ = -160
+_ActivateInfo$ = -220
+_fnNetActivateOI@32 PROC NEAR
+
+; 1161 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 228				; 000000e4H
+	push	edi
+
+; 1162 :    zCHAR   cPacketType;
+; 1163 :    zLONG   lPacketData;
+; 1164 :    zPVOID  pvConn = 0;
+
+	mov	DWORD PTR _pvConn$[ebp], 0
+
+; 1165 :    zCHAR   szAppName[ zZEIDON_NAME_LTH + 1 ];
+; 1166 :    zSHORT  nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 1167 : 
+; 1168 :    zActivatePacket       ActPacket = { 0 };
+
+	mov	BYTE PTR _ActPacket$[ebp], 0
+	mov	ecx, 36					; 00000024H
+	xor	eax, eax
+	lea	edi, DWORD PTR _ActPacket$[ebp+1]
+	rep stosd
+	stosw
+
+; 1169 :    ServDirActivateRecord ActivateInfo = { 0 };
+
+	mov	DWORD PTR _ActivateInfo$[ebp], 0
+	xor	eax, eax
+	mov	DWORD PTR _ActivateInfo$[ebp+4], eax
+	mov	DWORD PTR _ActivateInfo$[ebp+8], eax
+	mov	DWORD PTR _ActivateInfo$[ebp+12], eax
+	mov	DWORD PTR _ActivateInfo$[ebp+16], eax
+	mov	DWORD PTR _ActivateInfo$[ebp+20], eax
+
+; 1170 : 
+; 1171 :    fnRetrieveAppName( vSubtask, szAppName );
+
+	lea	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_fnRetrieveAppName@8
+
+; 1172 : 
+; 1173 :    // Set up info for activate request.
+; 1174 :    ActivateInfo.pszNetworkName         = lpNetwork->szNetworkName;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	mov	DWORD PTR _ActivateInfo$[ebp], eax
+
+; 1175 :    ActivateInfo.vSubtask               = vSubtask;
+
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	mov	DWORD PTR _ActivateInfo$[ebp+12], ecx
+
+; 1176 :    ActivateInfo.lControl               = lControl;
+
+	mov	edx, DWORD PTR _lControl$[ebp]
+	mov	DWORD PTR _ActivateInfo$[ebp+8], edx
+
+; 1177 :    ActivateInfo.pszViewOD_Name         = pchObjName;
+
+	mov	eax, DWORD PTR _pchObjName$[ebp]
+	mov	DWORD PTR _ActivateInfo$[ebp+16], eax
+
+; 1178 :    ActivateInfo.vQualView              = vQual;
+
+	mov	ecx, DWORD PTR _vQual$[ebp]
+	mov	DWORD PTR _ActivateInfo$[ebp+20], ecx
+
+; 1179 :    ActivateInfo.pszUserSuppliedAddress = pchAddress;
+
+	mov	edx, DWORD PTR _pchAddress$[ebp]
+	mov	DWORD PTR _ActivateInfo$[ebp+4], edx
+
+; 1180 : 
+; 1181 :    // Open connection.
+; 1182 :    if ( fnAddConnectionToNetwork( lpTask, lpNetwork, pchAddress,
+; 1183 :                                   &pvConn, TRUE, zAPPLREQ_ACTIVATE,
+; 1184 :                                   &ActivateInfo, vSubtask ) < 0 )
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _ActivateInfo$[ebp]
+	push	ecx
+	push	1
+	push	1
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pchAddress$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnAddConnectionToNetwork@32
+	movsx	eax, ax
+	test	eax, eax
+	jge	SHORT $L8153
+
+; 1186 :       return( zNETWORK_ERROR );
+
+	mov	ax, -6					; fffffffaH
+	jmp	$L8145
+$L8153:
+
+; 1188 : 
+; 1189 :    if ( lpNetwork->nTraceLevel > 1 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	cmp	edx, 1
+	jle	SHORT $L8154
+
+; 1190 :       TraceLineS( "(kzoeneta) ** Sending RequestOI packet", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@PBEA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RequestOI?5@ ; `string'
+	call	_TraceLineS@8
+$L8154:
+
+; 1191 : 
+; 1192 :    *pvReturnView = 0;
+
+	mov	eax, DWORD PTR _pvReturnView$[ebp]
+	mov	DWORD PTR [eax], 0
+
+; 1193 : 
+; 1194 :    //=======================================================================
+; 1195 :    // Transmitting data.
+; 1196 :    //
+; 1197 :    // Until further notice, the following code only SENDS data over the
+; 1198 :    // network.
+; 1199 :    //=======================================================================
+; 1200 : 
+; 1201 :    // First send the header for the server driver and then the regular
+; 1202 :    // packet for the function structure.
+; 1203 :    if ( fnSendHeaderPacket( lpNetwork, &pvConn,
+; 1204 :                             zPACKET_REQUESTOI, szAppName ) != 0 )
+
+	lea	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	push	82					; 00000052H
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendHeaderPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8156
+
+; 1206 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8156:
+
+; 1208 : 
+; 1209 :    if ( fnSendTraceSwitches( lpNetwork, &pvConn, lpTask) != 0 )
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendTraceSwitches@12
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8158
+
+; 1210 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8158:
+
+; 1211 : 
+; 1212 :    if ( fnSendDataPacket( lpNetwork, &pvConn, zPACKET_REQUESTOI, 0 ) != 0 )
+
+	push	0
+	push	82					; 00000052H
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8159
+
+; 1213 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8159:
+
+; 1214 : 
+; 1215 :    // Set up the activate information.  We initialize the structure to 0's so
+; 1216 :    // that the network stack can better compress the data.
+; 1217 :    zmemset( &ActPacket, 0, sizeof( zActivatePacket ) );
+
+	push	147					; 00000093H
+	push	0
+	lea	eax, DWORD PTR _ActPacket$[ebp]
+	push	eax
+	call	_memset
+	add	esp, 12					; 0000000cH
+
+; 1218 :    zstrcpy( ActPacket.szVersion, zCURRENT_PROTOCOL_VERSION );
+
+	push	OFFSET FLAT:??_C@_02LFP@1b?$AA@		; `string'
+	lea	ecx, DWORD PTR _ActPacket$[ebp]
+	push	ecx
+	call	_strcpy
+	add	esp, 8
+
+; 1219 :    zltox( lControl, ActPacket.szControl );
+
+	push	16					; 00000010H
+	lea	edx, DWORD PTR _ActPacket$[ebp+35]
+	push	edx
+	mov	eax, DWORD PTR _lControl$[ebp]
+	push	eax
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 1220 :    zstrcpy( ActPacket.szObjectDef, pchObjName );
+
+	mov	ecx, DWORD PTR _pchObjName$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _ActPacket$[ebp+3]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+
+; 1221 :    if ( vQual )
+
+	cmp	DWORD PTR _vQual$[ebp], 0
+	je	SHORT $L8162
+
+; 1222 :       ActPacket.cUseQualification = 'Y';
+
+	mov	BYTE PTR _ActPacket$[ebp+44], 89	; 00000059H
+
+; 1223 :    else
+
+	jmp	SHORT $L8163
+$L8162:
+
+; 1224 :       ActPacket.cUseQualification = 'N';
+
+	mov	BYTE PTR _ActPacket$[ebp+44], 78	; 0000004eH
+$L8163:
+
+; 1225 : 
+; 1226 :    zstrcpy( ActPacket.szAppName, szAppName );
+
+	lea	eax, DWORD PTR _szAppName$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _ActPacket$[ebp+45]
+	push	ecx
+	call	_strcpy
+	add	esp, 8
+
+; 1227 :    SysGetUserID( vSubtask, ActPacket.szUserName, ActPacket.szPassword );
+
+	lea	edx, DWORD PTR _ActPacket$[ebp+111]
+	push	edx
+	lea	eax, DWORD PTR _ActPacket$[ebp+78]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	call	_SysGetUserID@12
+
+; 1228 : 
+; 1229 :    if ( lpNetwork->nTraceLevel > 1 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	cmp	eax, 1
+	jle	SHORT $L8164
+
+; 1231 :       TraceLine( "(kzoeneta) ** Sending Activate Packet ... ApplName: %s  "
+; 1232 :                    "Object Def: %s  User Name: %s",
+; 1233 :                  ActPacket.szAppName, ActPacket.szObjectDef,
+; 1234 :                  ActPacket.szUserName );
+
+	lea	ecx, DWORD PTR _ActPacket$[ebp+78]
+	push	ecx
+	lea	edx, DWORD PTR _ActPacket$[ebp+3]
+	push	edx
+	lea	eax, DWORD PTR _ActPacket$[ebp+45]
+	push	eax
+	push	OFFSET FLAT:??_C@_0FG@MJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activate?5P@ ; `string'
+	call	_TraceLine
+	add	esp, 16					; 00000010H
+$L8164:
+
+; 1236 : 
+; 1237 :    // Send server activate info.
+; 1238 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 1239 :                                 &ActPacket, sizeof( zActivatePacket ),
+; 1240 :                                 zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	147					; 00000093H
+	lea	ecx, DWORD PTR _ActPacket$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+170]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8167
+
+; 1242 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8167:
+
+; 1244 : 
+; 1245 :    // If we have a qualification object, then send it.
+; 1246 :    if ( vQual )
+
+	cmp	DWORD PTR _vQual$[ebp], 0
+	je	SHORT $L8171
+
+; 1248 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L8169
+
+; 1249 :          TraceLineS( "(kzoeneta) ** Sending qualification OI", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@JCDN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5qualificat@ ; `string'
+	call	_TraceLineS@8
+$L8169:
+
+; 1250 : 
+; 1251 :       if ( fnSendOI( &pvConn, lpNetwork, vQual, 0 ) == zCALL_ERROR )
+
+	push	0
+	mov	edx, DWORD PTR _vQual$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	call	_fnSendOI@16
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L8171
+
+; 1252 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8171:
+
+; 1254 : 
+; 1255 :    // Tell network handler to flush the send buffer.
+; 1256 :    if ( fnFlushBuffer( lpNetwork, &pvConn ) != 0 )
+
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnFlushBuffer@8
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8172
+
+; 1257 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8172:
+
+; 1258 : 
+; 1259 :    //=======================================================================
+; 1260 :    // Receiving data.
+; 1261 :    //
+; 1262 :    // From here until we close the connection we will only RECEIVE data over
+; 1263 :    // the network.
+; 1264 :    //=======================================================================
+; 1265 : 
+; 1266 :    // Wait for Ack.
+; 1267 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lPacketData ) != 0 )
+
+	lea	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cPacketType$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnReceiveDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8173
+
+; 1269 :       TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 1270 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8173:
+
+; 1272 : 
+; 1273 :    switch ( cPacketType )
+; 1274 :    {
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	mov	DWORD PTR -228+[ebp], edx
+	mov	eax, DWORD PTR -228+[ebp]
+	sub	eax, 35					; 00000023H
+	mov	DWORD PTR -228+[ebp], eax
+	cmp	DWORD PTR -228+[ebp], 66		; 00000042H
+	ja	$L8198
+	mov	edx, DWORD PTR -228+[ebp]
+	xor	ecx, ecx
+	mov	cl, BYTE PTR $L10237[edx]
+	jmp	DWORD PTR $L10238[ecx*4]
+$L8179:
+
+; 1275 :       case zPACKET_ACK:
+; 1276 :          // We got an ACK, so continue OK.
+; 1277 :          if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L8180
+
+; 1279 :             TraceLineS( "(kzoeneta) ** Received Act ACK - proceeding with Act", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DF@FLBM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Act?5ACK?5?9@ ; `string'
+	call	_TraceLineS@8
+
+; 1280 :             TraceLineS( "(kzoeneta) ** Receiving activated OI.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@LNK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5activate@ ; `string'
+	call	_TraceLineS@8
+$L8180:
+
+; 1282 : 
+; 1283 :          nRC = fnReceiveOI( &pvConn, lpNetwork, pvReturnView,
+; 1284 :                             vSubtask, pchObjName, lControl );
+
+	mov	edx, DWORD PTR _lControl$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pchObjName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pvReturnView$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	call	_fnReceiveOI@24
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 1285 :          break;
+
+	jmp	$L8176
+$L8183:
+
+; 1286 : 
+; 1287 :       case zPACKET_EMPTYOI:
+; 1288 :          // This means that the server didn't find anything to activate and
+; 1289 :          // is returning an empty OI.  Instead of actually returning it from
+; 1290 :          // the server (and wasting time on the network), we'll just activate
+; 1291 :          // it here.
+; 1292 :          ActivateEmptyObjectInstance( pvReturnView, pchObjName,
+; 1293 :                                       vSubtask, lControl );
+
+	mov	edx, DWORD PTR _lControl$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pchObjName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pvReturnView$[ebp]
+	push	edx
+	call	_ActivateEmptyObjectInstance@16
+
+; 1294 :          break;
+
+	jmp	$L8176
+$L8184:
+
+; 1295 : 
+; 1296 :       case zPACKET_ERROR:
+; 1297 :          TraceLineI( "(kzoeneta) ** Network error #", lPacketData );
+
+	mov	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BO@NAJA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5error?5?$CD?$AA@ ; `string'
+	call	_TraceLineI@8
+
+; 1298 :          if ( lPacketData == zNETERR_INVALIDAPP )
+
+	cmp	DWORD PTR _lPacketData$[ebp], 1
+	jne	SHORT $L8186
+
+; 1300 :             fnSysMessageBox( lpTask, "Application not defined on Server",
+; 1301 :                              ActPacket.szAppName, 0 );
+
+	push	0
+	lea	ecx, DWORD PTR _ActPacket$[ebp+45]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CC@BADB@Application?5not?5defined?5on?5Serve@ ; `string'
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnSysMessageBox@16
+
+; 1303 :          else
+
+	jmp	SHORT $L8192
+$L8186:
+
+; 1304 :          if ( lPacketData == zNETERR_OUTOFMEMORY )
+
+	cmp	DWORD PTR _lPacketData$[ebp], 3
+	jne	SHORT $L8189
+
+; 1306 :             fnSysMessageBox( lpTask, "Server Transaction Crash ",
+; 1307 :                              "*Out Of Memory*", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0BA@LFAO@?$CKOut?5Of?5Memory?$CK?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_0BK@MODC@Server?5Transaction?5Crash?5?$AA@ ; `string'
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnSysMessageBox@16
+
+; 1309 :          else
+
+	jmp	SHORT $L8192
+$L8189:
+
+; 1310 :             fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, vSubtask );
+
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnRetrieveMsgAndTraceObj@12
+$L8192:
+
+; 1311 : 
+; 1312 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8193:
+
+; 1313 : 
+; 1314 :       case zPACKET_RC:
+; 1315 :          // If we received the RC packet, then there was an error activating
+; 1316 :          // the OI on the server.  Get the return code and go to the end of
+; 1317 :          // the function.
+; 1318 :          if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L8194
+
+; 1319 :             TraceLineS( "(kzoeneta) ** Received RC - error in Commit", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CM@NFHD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5RC?5?9?5erro@ ; `string'
+	call	_TraceLineS@8
+$L8194:
+
+; 1320 : 
+; 1321 :          if ( fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, vSubtask ) < 0 )
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnRetrieveMsgAndTraceObj@12
+	movsx	eax, ax
+	test	eax, eax
+	jge	SHORT $L8196
+
+; 1322 :             goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8196:
+
+; 1323 : 
+; 1324 :          nRC = (zSHORT) lPacketData;
+
+	mov	cx, WORD PTR _lPacketData$[ebp]
+	mov	WORD PTR _nRC$[ebp], cx
+
+; 1325 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8198:
+
+; 1326 : 
+; 1327 :       default:
+; 1328 :          TraceLineS( "(kzoeneta) ** Received unknown Packet!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@PAEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5unknown?5P@ ; `string'
+	call	_TraceLineS@8
+
+; 1329 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8157
+$L8176:
+
+; 1331 : 
+; 1332 :    // Get return code.
+; 1333 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lPacketData ) != 0 )
+
+	lea	edx, DWORD PTR _lPacketData$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _cPacketType$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnReceiveDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8200
+
+; 1335 :       TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 1336 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 1337 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$8157
+$L8200:
+
+; 1339 : 
+; 1340 :    if ( cPacketType != zPACKET_RC )
+
+	movsx	ecx, BYTE PTR _cPacketType$[ebp]
+	cmp	ecx, 35					; 00000023H
+	je	SHORT $L8201
+
+; 1342 :       TraceLineS( "(kzoeneta) ** No return code for Commit!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@BGHJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@ ; `string'
+	call	_TraceLineS@8
+
+; 1343 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 1344 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$8157
+$L8201:
+
+; 1346 : 
+; 1347 :    nRC = (zSHORT) lPacketData;
+
+	mov	dx, WORD PTR _lPacketData$[ebp]
+	mov	WORD PTR _nRC$[ebp], dx
+
+; 1348 : 
+; 1349 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L8204
+
+; 1351 :       TraceLineI( "(kzoeneta) ** RC from activate = ", nRC );
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CC@HGLB@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5activate?5?$DN@ ; `string'
+	call	_TraceLineI@8
+$L8204:
+
+; 1353 : 
+; 1354 :    if ( fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, vSubtask ) < 0 )
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnRetrieveMsgAndTraceObj@12
+	movsx	eax, ax
+	test	eax, eax
+	jge	SHORT $EndOfFunction$8157
+
+; 1356 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$EndOfFunction$8157:
+
+; 1359 : 
+; 1360 : EndOfFunction:
+; 1361 :    fnRemoveConnectionFromNetwork( lpNetwork, &pvConn, TRUE );
+
+	push	1
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnRemoveConnectionFromNetwork@12
+
+; 1362 : 
+; 1363 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+$L8145:
+
+; 1364 : 
+; 1365 : } // fnNetActivateOI
+
+	pop	edi
+	mov	esp, ebp
+	pop	ebp
+	ret	32					; 00000020H
+$L10238:
+	DD	$L8193
+	DD	$L8184
+	DD	$L8179
+	DD	$L8183
+	DD	$L8198
+$L10237:
+	DB	0
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	1
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	2
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	3
+_fnNetActivateOI@32 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0P@BGAE@DefaultNetwork?$AA@		; `string'
+PUBLIC	??_C@_08KBJI@?$FLZeidon?$FN?$AA@		; `string'
+PUBLIC	??_C@_0CC@BDFJ@No?5default?5network?5for?5NetStartu@ ; `string'
+PUBLIC	??_C@_0BD@IMBJ@DefaultNetworkExec?$AA@		; `string'
+PUBLIC	??_C@_0BI@HHFA@Can?8t?5find?5library?5?8?$CFs?8?$AA@ ; `string'
+PUBLIC	??_C@_09CMFF@zNetStart?$AA@			; `string'
+PUBLIC	??_C@_0CP@LMKD@Can?8t?5find?5operation?5zNetStart?5i@ ; `string'
+PUBLIC	??_C@_09DIDO@zNetClose?$AA@			; `string'
+PUBLIC	??_C@_0CP@MPJH@Can?8t?5find?5operation?5zNetClose?5i@ ; `string'
+PUBLIC	??_C@_0L@OAJL@zNetListen?$AA@			; `string'
+PUBLIC	??_C@_0DA@JLPI@Can?8t?5find?5operation?5zNetListen?5@ ; `string'
+PUBLIC	??_C@_0P@PKGC@zNetStopListen?$AA@		; `string'
+PUBLIC	??_C@_0DE@GMNN@Can?8t?5find?5operation?5zNetStopLis@ ; `string'
+PUBLIC	??_C@_0BD@KLFB@zNetOpenConnection?$AA@		; `string'
+PUBLIC	??_C@_0DI@JOAI@Can?8t?5find?5operation?5zNetOpenCon@ ; `string'
+PUBLIC	??_C@_0BE@JINK@zNetCloseConnection?$AA@		; `string'
+PUBLIC	??_C@_0DJ@MEBA@Can?8t?5find?5operation?5zNetCloseCo@ ; `string'
+PUBLIC	??_C@_08KIFN@zNetSend?$AA@			; `string'
+PUBLIC	??_C@_0CO@NJIH@Can?8t?5find?5operation?5zNetSend?5in@ ; `string'
+PUBLIC	??_C@_0M@PEDE@zNetReceive?$AA@			; `string'
+PUBLIC	??_C@_0DC@FPPO@Cannot?5find?5operation?5zNetReceiv@ ; `string'
+PUBLIC	??_C@_0BD@GMJ@zNetGetHostAddress?$AA@		; `string'
+PUBLIC	??_C@_0DO@LNFB@Cannot?5find?5operation?5zNetGetLoc@ ; `string'
+PUBLIC	??_C@_0CA@JHEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5network?5?$AA@ ; `string'
+PUBLIC	??_C@_0BK@KAO@Out?5of?5memory?5for?5network?$AA@ ; `string'
+PUBLIC	??_C@_0L@ODNC@TraceLevel?$AA@			; `string'
+PUBLIC	??_C@_0BF@JFNK@ServerCoreTraceLevel?$AA@	; `string'
+PUBLIC	??_C@_0BE@HNF@ServerNetTraceLevel?$AA@		; `string'
+PUBLIC	??_C@_0BE@JFOA@ServerDBHTraceLevel?$AA@		; `string'
+PUBLIC	??_C@_0CE@FAEG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Local?5host?5address@ ; `string'
+PUBLIC	??_C@_0N@HDAN@ServerDirApp?$AA@			; `string'
+PUBLIC	??_C@_08BLJC@zSimpDir?$AA@			; `string'
+PUBLIC	_NetStartup@12
+PUBLIC	_NetClose@8
+PUBLIC	_NetGetLocalHostAddress@12
+EXTRN	_SysGetLocalDirectory@4:NEAR
+EXTRN	_SysLoadLibrary@8:NEAR
+EXTRN	_fnOperationCall:NEAR
+EXTRN	_fnOperationReturn:NEAR
+EXTRN	__imp__strchr:NEAR
+EXTRN	_cDirSep:BYTE
+EXTRN	__imp__atol:NEAR
+EXTRN	_SysFreeLibrary@8:NEAR
+;	COMDAT ??_C@_0P@BGAE@DefaultNetwork?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0P@BGAE@DefaultNetwork?$AA@ DB 'DefaultNetwork', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08KBJI@?$FLZeidon?$FN?$AA@
+_DATA	SEGMENT
+??_C@_08KBJI@?$FLZeidon?$FN?$AA@ DB '[Zeidon]', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@BDFJ@No?5default?5network?5for?5NetStartu@
+_DATA	SEGMENT
+??_C@_0CC@BDFJ@No?5default?5network?5for?5NetStartu@ DB 'No default netwo'
+	DB	'rk for NetStartup', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BD@IMBJ@DefaultNetworkExec?$AA@
+_DATA	SEGMENT
+??_C@_0BD@IMBJ@DefaultNetworkExec?$AA@ DB 'DefaultNetworkExec', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BI@HHFA@Can?8t?5find?5library?5?8?$CFs?8?$AA@
+_DATA	SEGMENT
+??_C@_0BI@HHFA@Can?8t?5find?5library?5?8?$CFs?8?$AA@ DB 'Can''t find libr'
+	DB	'ary ''%s''', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09CMFF@zNetStart?$AA@
+_DATA	SEGMENT
+??_C@_09CMFF@zNetStart?$AA@ DB 'zNetStart', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@LMKD@Can?8t?5find?5operation?5zNetStart?5i@
+_DATA	SEGMENT
+??_C@_0CP@LMKD@Can?8t?5find?5operation?5zNetStart?5i@ DB 'Can''t find ope'
+	DB	'ration zNetStart in library ''%s''', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09DIDO@zNetClose?$AA@
+_DATA	SEGMENT
+??_C@_09DIDO@zNetClose?$AA@ DB 'zNetClose', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@MPJH@Can?8t?5find?5operation?5zNetClose?5i@
+_DATA	SEGMENT
+??_C@_0CP@MPJH@Can?8t?5find?5operation?5zNetClose?5i@ DB 'Can''t find ope'
+	DB	'ration zNetClose in library ''%s''', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@OAJL@zNetListen?$AA@
+_DATA	SEGMENT
+??_C@_0L@OAJL@zNetListen?$AA@ DB 'zNetListen', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DA@JLPI@Can?8t?5find?5operation?5zNetListen?5@
+_DATA	SEGMENT
+??_C@_0DA@JLPI@Can?8t?5find?5operation?5zNetListen?5@ DB 'Can''t find ope'
+	DB	'ration zNetListen in library ''%s''', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@PKGC@zNetStopListen?$AA@
+_DATA	SEGMENT
+??_C@_0P@PKGC@zNetStopListen?$AA@ DB 'zNetStopListen', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DE@GMNN@Can?8t?5find?5operation?5zNetStopLis@
+_DATA	SEGMENT
+??_C@_0DE@GMNN@Can?8t?5find?5operation?5zNetStopLis@ DB 'Can''t find oper'
+	DB	'ation zNetStopListen in library ''%s''', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BD@KLFB@zNetOpenConnection?$AA@
+_DATA	SEGMENT
+??_C@_0BD@KLFB@zNetOpenConnection?$AA@ DB 'zNetOpenConnection', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DI@JOAI@Can?8t?5find?5operation?5zNetOpenCon@
+_DATA	SEGMENT
+??_C@_0DI@JOAI@Can?8t?5find?5operation?5zNetOpenCon@ DB 'Can''t find oper'
+	DB	'ation zNetOpenConnection in library ''%s''', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BE@JINK@zNetCloseConnection?$AA@
+_DATA	SEGMENT
+??_C@_0BE@JINK@zNetCloseConnection?$AA@ DB 'zNetCloseConnection', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DJ@MEBA@Can?8t?5find?5operation?5zNetCloseCo@
+_DATA	SEGMENT
+??_C@_0DJ@MEBA@Can?8t?5find?5operation?5zNetCloseCo@ DB 'Can''t find oper'
+	DB	'ation zNetCloseConnection in library ''%s''', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08KIFN@zNetSend?$AA@
+_DATA	SEGMENT
+??_C@_08KIFN@zNetSend?$AA@ DB 'zNetSend', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@NJIH@Can?8t?5find?5operation?5zNetSend?5in@
+_DATA	SEGMENT
+??_C@_0CO@NJIH@Can?8t?5find?5operation?5zNetSend?5in@ DB 'Can''t find ope'
+	DB	'ration zNetSend in library ''%s''', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@PEDE@zNetReceive?$AA@
+_DATA	SEGMENT
+??_C@_0M@PEDE@zNetReceive?$AA@ DB 'zNetReceive', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@FPPO@Cannot?5find?5operation?5zNetReceiv@
+_DATA	SEGMENT
+??_C@_0DC@FPPO@Cannot?5find?5operation?5zNetReceiv@ DB 'Cannot find opera'
+	DB	'tion zNetReceive in library ''%s''', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BD@GMJ@zNetGetHostAddress?$AA@
+_DATA	SEGMENT
+??_C@_0BD@GMJ@zNetGetHostAddress?$AA@ DB 'zNetGetHostAddress', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DO@LNFB@Cannot?5find?5operation?5zNetGetLoc@
+_DATA	SEGMENT
+??_C@_0DO@LNFB@Cannot?5find?5operation?5zNetGetLoc@ DB 'Cannot find opera'
+	DB	'tion zNetGetLocalHostAddress in library ''%s''', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CA@JHEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5network?5?$AA@
+_DATA	SEGMENT
+??_C@_0CA@JHEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5network?5?$AA@ DB '('
+	DB	'kzoeneta) ** Starting network ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BK@KAO@Out?5of?5memory?5for?5network?$AA@
+_DATA	SEGMENT
+??_C@_0BK@KAO@Out?5of?5memory?5for?5network?$AA@ DB 'Out of memory for ne'
+	DB	'twork', 00H					; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@ODNC@TraceLevel?$AA@
+_DATA	SEGMENT
+??_C@_0L@ODNC@TraceLevel?$AA@ DB 'TraceLevel', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@JFNK@ServerCoreTraceLevel?$AA@
+_DATA	SEGMENT
+??_C@_0BF@JFNK@ServerCoreTraceLevel?$AA@ DB 'ServerCoreTraceLevel', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BE@HNF@ServerNetTraceLevel?$AA@
+_DATA	SEGMENT
+??_C@_0BE@HNF@ServerNetTraceLevel?$AA@ DB 'ServerNetTraceLevel', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BE@JFOA@ServerDBHTraceLevel?$AA@
+_DATA	SEGMENT
+??_C@_0BE@JFOA@ServerDBHTraceLevel?$AA@ DB 'ServerDBHTraceLevel', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@FAEG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Local?5host?5address@
+_DATA	SEGMENT
+??_C@_0CE@FAEG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Local?5host?5address@ DB '(kzo'
+	DB	'eneta) ** Local host address = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@HDAN@ServerDirApp?$AA@
+_DATA	SEGMENT
+??_C@_0N@HDAN@ServerDirApp?$AA@ DB 'ServerDirApp', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08BLJC@zSimpDir?$AA@
+_DATA	SEGMENT
+??_C@_08BLJC@zSimpDir?$AA@ DB 'zSimpDir', 00H		; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_pchExecutable$ = 16
+_lpTask$ = -8496
+_lpSystemTask$ = -272
+_vSystemView$ = -4392
+_lpNetwork$ = -8512
+_hNetwork$ = -8492
+_szFileName$ = -260
+_lpvNetHandle$ = -12616
+_hLibrary$ = -268
+_szGroup$ = -8488
+_szServerDirApp$ = -12608
+_szTraceLevel$ = -4388
+_szDefaultNetwork$ = -4368
+_szExecutableName$ = -12892
+_lpfnInit$ = -12628
+_lpfnClose$ = -8504
+_lpfnListen$ = -8500
+_lpfnStopListen$ = -12624
+_lpfnOpenConn$ = -12620
+_lpfnCloseConn$ = -12612
+_lpfnGetAddress$ = -12632
+_lpfnSend$ = -264
+_lpfnReceive$ = -8508
+_szMsg$8251 = -13092
+_szMsg$8256 = -13292
+_szMsg$8261 = -13492
+_szMsg$8266 = -13692
+_szMsg$8271 = -13892
+_szMsg$8276 = -14092
+_szMsg$8281 = -14292
+_szMsg$8286 = -14492
+_szMsg$8291 = -14692
+_szMsg$8296 = -14892
+_szLocalName$8316 = -15192
+_NetStartup@12 PROC NEAR
+
+; 1396 : {
+
+	push	ebp
+	mov	ebp, esp
+	mov	eax, 15192				; 00003b58H
+	call	__chkstk
+
+; 1397 :    LPTASK           lpTask;
+; 1398 :    LPTASK           lpSystemTask = zGETPTR( AnchorBlock->hMainTask );
+
+	mov	eax, DWORD PTR _AnchorBlock
+	mov	ecx, DWORD PTR [eax+106]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpSystemTask$[ebp], eax
+
+; 1399 :    zVIEW            vSystemView = zGETPTR( lpSystemTask->hFirstView );
+
+	mov	edx, DWORD PTR _lpSystemTask$[ebp]
+	mov	eax, DWORD PTR [edx+106]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _vSystemView$[ebp], eax
+
+; 1400 :    LPNETWORK        lpNetwork;
+; 1401 :    zPVOID           hNetwork;
+; 1402 :    zCHAR            szFileName[ zMAX_FILENAME_LTH + 1 ];
+; 1403 :    zPVOID           lpvNetHandle;
+; 1404 :    LPLIBRARY        hLibrary;
+; 1405 :    zCHAR            szGroup[ 4096 ];
+; 1406 :    zCHAR            szServerDirApp[ 4096 ];
+; 1407 :    zCHAR            szTraceLevel[ 20 ];
+; 1408 :    zCHAR            szDefaultNetwork[ 4096 ];
+; 1409 :    zCHAR            szExecutableName[ zMAX_FILENAME_LTH + 1 ];
+; 1410 : // zBOOL            bOldTrace;
+; 1411 :    zLPFN_NETSTART   lpfnInit;
+; 1412 :    zLPFN_NETCLOSE   lpfnClose;
+; 1413 :    zLPFN_NETLISTEN  lpfnListen;
+; 1414 :    zLPFN_NETCLOSE   lpfnStopListen;
+; 1415 :    zLPFN_NETOPCONN  lpfnOpenConn;
+; 1416 :    zLPFN_NETCLCONN  lpfnCloseConn;
+; 1417 :    zLPFN_NETGETADDR lpfnGetAddress;
+; 1418 :    zLPFN_NETIO      lpfnSend;
+; 1419 :    zLPFN_NETIO      lpfnReceive;
+; 1420 : 
+; 1421 :    // If task not active or disabled, return zCALL_ERROR.
+; 1422 :    if ( (lpTask = fnOperationCall( iNetStartup, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	push	507					; 000001fbH
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8238
+
+; 1424 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8238:
+
+; 1426 : 
+; 1427 :    // If network name isn't supplied, use the default.
+; 1428 :    if ( pchNetworkName == 0 || *pchNetworkName == 0 )
+
+	cmp	DWORD PTR _pchNetworkName$[ebp], 0
+	je	SHORT $L8240
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	test	eax, eax
+	jne	$L8239
+$L8240:
+
+; 1430 :       SysReadZeidonIni( -1, "[Zeidon]", "DefaultNetwork", szDefaultNetwork );
+
+	lea	ecx, DWORD PTR _szDefaultNetwork$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0P@BGAE@DefaultNetwork?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_08KBJI@?$FLZeidon?$FN?$AA@ ; `string'
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 1431 :       if ( szDefaultNetwork[ 0 ] == 0 )
+
+	movsx	edx, BYTE PTR _szDefaultNetwork$[ebp]
+	test	edx, edx
+	jne	SHORT $L8243
+
+; 1433 :          SysMessageBox( lpTaskView, szlNetworkError, "No default network for NetStartup", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0CC@BDFJ@No?5default?5network?5for?5NetStartu@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	call	_SysMessageBox@16
+
+; 1434 :          fnOperationReturn( iNetStartup, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1435 :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8243:
+
+; 1437 : 
+; 1438 :       pchNetworkName = szDefaultNetwork;
+
+	lea	edx, DWORD PTR _szDefaultNetwork$[ebp]
+	mov	DWORD PTR _pchNetworkName$[ebp], edx
+
+; 1439 : 
+; 1440 :       SysReadZeidonIni( -1, "[Zeidon]", "DefaultNetworkExec", szExecutableName );
+
+	lea	eax, DWORD PTR _szExecutableName$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BD@IMBJ@DefaultNetworkExec?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_08KBJI@?$FLZeidon?$FN?$AA@ ; `string'
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 1441 :       if ( szExecutableName[ 0 ] == 0 )
+
+	movsx	ecx, BYTE PTR _szExecutableName$[ebp]
+	test	ecx, ecx
+	jne	SHORT $L8246
+
+; 1443 :          // If no exec name give, use network name for executable too.
+; 1444 :          zstrcpy( szExecutableName, szDefaultNetwork);
+
+	lea	edx, DWORD PTR _szDefaultNetwork$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szExecutableName$[ebp]
+	push	eax
+	call	_strcpy
+	add	esp, 8
+$L8246:
+
+; 1446 : 
+; 1447 :       pchExecutable = szExecutableName;
+
+	lea	ecx, DWORD PTR _szExecutableName$[ebp]
+	mov	DWORD PTR _pchExecutable$[ebp], ecx
+$L8239:
+
+; 1449 : 
+; 1450 :    // Since networks are chained off the system task we need to protect
+; 1451 :    // ourselves from other threads.
+; 1452 :    zLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysLockCoreMutex@4
+
+; 1453 : 
+; 1454 :    // Check to make sure that the network name doesn't already exist.
+; 1455 :    if ( fnFindNetwork( lpTask, pchNetworkName, FALSE ) != 0 )
+
+	push	0
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnFindNetwork@12
+	test	eax, eax
+	je	SHORT $L8247
+
+; 1457 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1458 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1459 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L8213
+$L8247:
+
+; 1461 : 
+; 1462 :    if ( zstrchr( pchNetworkName, cDirSep ) == 0 )
+
+	movsx	edx, BYTE PTR _cDirSep
+	push	edx
+	mov	eax, DWORD PTR _pchNetworkName$[ebp]
+	push	eax
+	call	DWORD PTR __imp__strchr
+	add	esp, 8
+	test	eax, eax
+	jne	SHORT $L8248
+
+; 1464 :       SysGetLocalDirectory( szFileName );
+
+	lea	ecx, DWORD PTR _szFileName$[ebp]
+	push	ecx
+	call	_SysGetLocalDirectory@4
+
+; 1465 :       zstrcat( szFileName, pchExecutable );
+
+	mov	edx, DWORD PTR _pchExecutable$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szFileName$[ebp]
+	push	eax
+	call	_strcat
+	add	esp, 8
+
+; 1467 :    else
+
+	jmp	SHORT $L8249
+$L8248:
+
+; 1468 :       zstrcpy( szFileName, pchExecutable );
+
+	mov	ecx, DWORD PTR _pchExecutable$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szFileName$[ebp]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+$L8249:
+
+; 1469 : 
+; 1470 :    // Try loading the library.
+; 1471 :    hLibrary = SysLoadLibrary( vSystemView, szFileName );
+
+	lea	eax, DWORD PTR _szFileName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSystemView$[ebp]
+	push	ecx
+	call	_SysLoadLibrary@8
+	mov	DWORD PTR _hLibrary$[ebp], eax
+
+; 1472 :    if ( hLibrary == 0 )
+
+	cmp	DWORD PTR _hLibrary$[ebp], 0
+	jne	SHORT $L8250
+
+; 1474 :       zCHAR szMsg[ 200 ];
+; 1475 : 
+; 1476 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1477 :       zsprintf( szMsg, "Can't find library '%s'", pchExecutable );
+
+	mov	edx, DWORD PTR _pchExecutable$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BI@HHFA@Can?8t?5find?5library?5?8?$CFs?8?$AA@ ; `string'
+	lea	eax, DWORD PTR _szMsg$8251[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1478 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	ecx, DWORD PTR _szMsg$8251[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 1479 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1480 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8250:
+
+; 1482 : 
+; 1483 :    // ===
+; 1484 :    // === Make sure that the Network Handler contains all the necessary
+; 1485 :    // === operations.
+; 1486 :    // ===
+; 1487 : 
+; 1488 :    lpfnInit = (zLPFN_NETSTART) SysGetProc( hLibrary, "zNetStart" );
+
+	push	OFFSET FLAT:??_C@_09CMFF@zNetStart?$AA@	; `string'
+	mov	ecx, DWORD PTR _hLibrary$[ebp]
+	push	ecx
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnInit$[ebp], eax
+
+; 1489 :    if ( lpfnInit == 0 )
+
+	cmp	DWORD PTR _lpfnInit$[ebp], 0
+	jne	SHORT $L8255
+
+; 1491 :       zCHAR szMsg[ 200 ];
+; 1492 : 
+; 1493 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1494 :       zsprintf( szMsg, "Can't find operation zNetStart in library '%s'",
+; 1495 :                 pchExecutable );
+
+	mov	edx, DWORD PTR _pchExecutable$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CP@LMKD@Can?8t?5find?5operation?5zNetStart?5i@ ; `string'
+	lea	eax, DWORD PTR _szMsg$8256[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1496 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	ecx, DWORD PTR _szMsg$8256[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 1497 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSystemView$[ebp]
+	push	ecx
+	call	_SysFreeLibrary@8
+
+; 1498 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1499 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8255:
+
+; 1501 : 
+; 1502 :    lpfnClose = (zLPFN_NETCLOSE) SysGetProc( hLibrary, "zNetClose" );
+
+	push	OFFSET FLAT:??_C@_09DIDO@zNetClose?$AA@	; `string'
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnClose$[ebp], eax
+
+; 1503 :    if ( lpfnClose == 0 )
+
+	cmp	DWORD PTR _lpfnClose$[ebp], 0
+	jne	SHORT $L8260
+
+; 1505 :       zCHAR szMsg[ 200 ];
+; 1506 : 
+; 1507 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1508 :       zsprintf( szMsg, "Can't find operation zNetClose in library '%s'",
+; 1509 :                 pchExecutable );
+
+	mov	ecx, DWORD PTR _pchExecutable$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CP@MPJH@Can?8t?5find?5operation?5zNetClose?5i@ ; `string'
+	lea	edx, DWORD PTR _szMsg$8261[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1510 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	eax, DWORD PTR _szMsg$8261[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_SysMessageBox@16
+
+; 1511 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSystemView$[ebp]
+	push	eax
+	call	_SysFreeLibrary@8
+
+; 1512 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1513 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8260:
+
+; 1515 : 
+; 1516 :    lpfnListen = (zLPFN_NETLISTEN) SysGetProc( hLibrary, "zNetListen" );
+
+	push	OFFSET FLAT:??_C@_0L@OAJL@zNetListen?$AA@ ; `string'
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnListen$[ebp], eax
+
+; 1517 :    if ( lpfnListen == 0 )
+
+	cmp	DWORD PTR _lpfnListen$[ebp], 0
+	jne	SHORT $L8265
+
+; 1519 :       zCHAR szMsg[ 200 ];
+; 1520 : 
+; 1521 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1522 :       zsprintf( szMsg, "Can't find operation zNetListen in library '%s'",
+; 1523 :                 pchExecutable );
+
+	mov	eax, DWORD PTR _pchExecutable$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0DA@JLPI@Can?8t?5find?5operation?5zNetListen?5@ ; `string'
+	lea	ecx, DWORD PTR _szMsg$8266[ebp]
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1524 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	edx, DWORD PTR _szMsg$8266[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	call	_SysMessageBox@16
+
+; 1525 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	ecx, DWORD PTR _hLibrary$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSystemView$[ebp]
+	push	edx
+	call	_SysFreeLibrary@8
+
+; 1526 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1527 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8265:
+
+; 1529 : 
+; 1530 :    lpfnStopListen = (zLPFN_NETCLOSE) SysGetProc( hLibrary, "zNetStopListen" );
+
+	push	OFFSET FLAT:??_C@_0P@PKGC@zNetStopListen?$AA@ ; `string'
+	mov	ecx, DWORD PTR _hLibrary$[ebp]
+	push	ecx
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnStopListen$[ebp], eax
+
+; 1531 :    if ( lpfnStopListen == 0 )
+
+	cmp	DWORD PTR _lpfnStopListen$[ebp], 0
+	jne	SHORT $L8270
+
+; 1533 :       zCHAR szMsg[ 200 ];
+; 1534 : 
+; 1535 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1536 :       zsprintf( szMsg, "Can't find operation zNetStopListen in library '%s'",
+; 1537 :                 pchExecutable );
+
+	mov	edx, DWORD PTR _pchExecutable$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0DE@GMNN@Can?8t?5find?5operation?5zNetStopLis@ ; `string'
+	lea	eax, DWORD PTR _szMsg$8271[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1538 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	ecx, DWORD PTR _szMsg$8271[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 1539 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSystemView$[ebp]
+	push	ecx
+	call	_SysFreeLibrary@8
+
+; 1540 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1541 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8270:
+
+; 1543 : 
+; 1544 :    lpfnOpenConn = (zLPFN_NETOPCONN) SysGetProc( hLibrary,
+; 1545 :                                                 "zNetOpenConnection" );
+
+	push	OFFSET FLAT:??_C@_0BD@KLFB@zNetOpenConnection?$AA@ ; `string'
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnOpenConn$[ebp], eax
+
+; 1546 :    if ( lpfnOpenConn == 0 )
+
+	cmp	DWORD PTR _lpfnOpenConn$[ebp], 0
+	jne	SHORT $L8275
+
+; 1548 :       zCHAR szMsg[ 200 ];
+; 1549 : 
+; 1550 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1551 :       zsprintf( szMsg, "Can't find operation zNetOpenConnection in library '%s'",
+; 1552 :                 pchExecutable );
+
+	mov	ecx, DWORD PTR _pchExecutable$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0DI@JOAI@Can?8t?5find?5operation?5zNetOpenCon@ ; `string'
+	lea	edx, DWORD PTR _szMsg$8276[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1553 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	eax, DWORD PTR _szMsg$8276[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_SysMessageBox@16
+
+; 1554 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSystemView$[ebp]
+	push	eax
+	call	_SysFreeLibrary@8
+
+; 1555 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1556 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8275:
+
+; 1558 : 
+; 1559 :    lpfnCloseConn = (zLPFN_NETCLCONN) SysGetProc( hLibrary,
+; 1560 :                                                  "zNetCloseConnection" );
+
+	push	OFFSET FLAT:??_C@_0BE@JINK@zNetCloseConnection?$AA@ ; `string'
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnCloseConn$[ebp], eax
+
+; 1561 :    if ( lpfnCloseConn == 0 )
+
+	cmp	DWORD PTR _lpfnCloseConn$[ebp], 0
+	jne	SHORT $L8280
+
+; 1563 :       zCHAR szMsg[ 200 ];
+; 1564 : 
+; 1565 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1566 :       zsprintf( szMsg, "Can't find operation zNetCloseConnection in library '%s'",
+; 1567 :                 pchExecutable );
+
+	mov	eax, DWORD PTR _pchExecutable$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0DJ@MEBA@Can?8t?5find?5operation?5zNetCloseCo@ ; `string'
+	lea	ecx, DWORD PTR _szMsg$8281[ebp]
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1568 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	edx, DWORD PTR _szMsg$8281[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	call	_SysMessageBox@16
+
+; 1569 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	ecx, DWORD PTR _hLibrary$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSystemView$[ebp]
+	push	edx
+	call	_SysFreeLibrary@8
+
+; 1570 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1571 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8280:
+
+; 1573 : 
+; 1574 :    lpfnSend = (zLPFN_NETIO) SysGetProc( hLibrary, "zNetSend" );
+
+	push	OFFSET FLAT:??_C@_08KIFN@zNetSend?$AA@	; `string'
+	mov	ecx, DWORD PTR _hLibrary$[ebp]
+	push	ecx
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnSend$[ebp], eax
+
+; 1575 :    if ( lpfnSend == 0 )
+
+	cmp	DWORD PTR _lpfnSend$[ebp], 0
+	jne	SHORT $L8285
+
+; 1577 :       zCHAR szMsg[ 200 ];
+; 1578 : 
+; 1579 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1580 :       zsprintf( szMsg, "Can't find operation zNetSend in library '%s'",
+; 1581 :                 pchExecutable );
+
+	mov	edx, DWORD PTR _pchExecutable$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CO@NJIH@Can?8t?5find?5operation?5zNetSend?5in@ ; `string'
+	lea	eax, DWORD PTR _szMsg$8286[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1582 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	ecx, DWORD PTR _szMsg$8286[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 1583 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSystemView$[ebp]
+	push	ecx
+	call	_SysFreeLibrary@8
+
+; 1584 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1585 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8285:
+
+; 1587 : 
+; 1588 :    lpfnReceive = (zLPFN_NETIO) SysGetProc( hLibrary, "zNetReceive" );
+
+	push	OFFSET FLAT:??_C@_0M@PEDE@zNetReceive?$AA@ ; `string'
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnReceive$[ebp], eax
+
+; 1589 :    if ( lpfnReceive == 0 )
+
+	cmp	DWORD PTR _lpfnReceive$[ebp], 0
+	jne	SHORT $L8290
+
+; 1591 :       zCHAR szMsg[ 200 ];
+; 1592 : 
+; 1593 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1594 :       zsprintf( szMsg, "Cannot find operation zNetReceive in library '%s'",
+; 1595 :                 pchExecutable );
+
+	mov	ecx, DWORD PTR _pchExecutable$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0DC@FPPO@Cannot?5find?5operation?5zNetReceiv@ ; `string'
+	lea	edx, DWORD PTR _szMsg$8291[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1596 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	eax, DWORD PTR _szMsg$8291[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_SysMessageBox@16
+
+; 1597 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSystemView$[ebp]
+	push	eax
+	call	_SysFreeLibrary@8
+
+; 1598 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1599 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8290:
+
+; 1601 : 
+; 1602 :    lpfnGetAddress = (zLPFN_NETGETADDR) SysGetProc( hLibrary, "zNetGetHostAddress" );
+
+	push	OFFSET FLAT:??_C@_0BD@GMJ@zNetGetHostAddress?$AA@ ; `string'
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	call	_SysGetProc@8
+	mov	DWORD PTR _lpfnGetAddress$[ebp], eax
+
+; 1603 :    if ( lpfnGetAddress == 0 )
+
+	cmp	DWORD PTR _lpfnGetAddress$[ebp], 0
+	jne	SHORT $L8295
+
+; 1605 :       zCHAR szMsg[ 200 ];
+; 1606 : 
+; 1607 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1608 :       zsprintf( szMsg, "Cannot find operation zNetGetLocalHostAddress in "
+; 1609 :                 "library '%s'", pchExecutable );
+
+	mov	eax, DWORD PTR _pchExecutable$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0DO@LNFB@Cannot?5find?5operation?5zNetGetLoc@ ; `string'
+	lea	ecx, DWORD PTR _szMsg$8296[ebp]
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1610 :       SysMessageBox( lpTaskView, "Zeidon Network Error", szMsg, 1 );
+
+	push	1
+	lea	edx, DWORD PTR _szMsg$8296[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BF@GLC@Zeidon?5Network?5Error?$AA@ ; `string'
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	call	_SysMessageBox@16
+
+; 1611 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	ecx, DWORD PTR _hLibrary$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSystemView$[ebp]
+	push	edx
+	call	_SysFreeLibrary@8
+
+; 1612 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1613 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8295:
+
+; 1615 : 
+; 1616 :    // We got here, so the DLL contains all the operations it needs, so
+; 1617 :    // call init operation.
+; 1618 :    TraceLineS( "(kzoeneta) ** Starting network ", szFileName );
+
+	lea	ecx, DWORD PTR _szFileName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CA@JHEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5network?5?$AA@ ; `string'
+	call	_TraceLineS@8
+
+; 1619 :    if ( (*lpfnInit)( pchNetworkName, &lpvNetHandle ) != 0 )
+
+	lea	edx, DWORD PTR _lpvNetHandle$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pchNetworkName$[ebp]
+	push	eax
+	call	DWORD PTR _lpfnInit$[ebp]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8299
+
+; 1621 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1622 :       SysFreeLibrary( vSystemView, hLibrary );
+
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSystemView$[ebp]
+	push	eax
+	call	_SysFreeLibrary@8
+
+; 1623 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1624 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8299:
+
+; 1626 : 
+; 1627 :    // If we get here then we're in business.  Create the network buffer and
+; 1628 :    // add the network to the network chain.
+; 1629 :    hNetwork = (LPNETWORK)
+; 1630 :           fnAllocDataspace( (LPDATAHEADER) lpSystemTask->hFirstDataHeader,
+; 1631 :                             sizeof( NetworkRecord ), TRUE, 0, 0 );
+
+	push	0
+	push	0
+	push	1
+	push	479					; 000001dfH
+	mov	edx, DWORD PTR _lpSystemTask$[ebp]
+	mov	eax, DWORD PTR [edx+94]
+	push	eax
+	call	_fnAllocDataspace
+	add	esp, 20					; 00000014H
+	mov	DWORD PTR _hNetwork$[ebp], eax
+
+; 1632 :    lpNetwork = zGETPTR( hNetwork );
+
+	mov	ecx, DWORD PTR _hNetwork$[ebp]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+
+; 1633 :    if ( lpNetwork == 0 )
+
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8304
+
+; 1635 :       zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1636 :       SysMessageBox( lpTaskView, szlNetworkError, "Out of memory for network", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0BK@KAO@Out?5of?5memory?5for?5network?$AA@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 1637 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1638 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8213
+$L8304:
+
+; 1640 : 
+; 1641 :    zmemset( lpNetwork, 0, sizeof( NetworkRecord ) );
+
+	push	479					; 000001dfH
+	push	0
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_memset
+	add	esp, 12					; 0000000cH
+
+; 1642 : 
+; 1643 : // Following functions are NOT necessary.  Turn off tracing flag so we
+; 1644 :    // don't show warning messages.
+; 1645 : // bOldTrace = lpTask->bTrace;
+; 1646 : // lpTask->bTrace = FALSE;
+; 1647 : //
+; 1648 : // lpNetwork->lpfnBufferEnd  = 0;//(zLPFN_NETCLCONN) SysGetProc( hLibrary, "zNetBufferEnd" );
+; 1649 : // lpNetwork->lpfnSendPacket = 0;//(zLPFN_NETSENDPKT)SysGetProc( hLibrary, "zNetSendPacket" );
+; 1650 : // lpNetwork->lpfnRecvPacket = 0;//(zLPFN_NETRECVPKT)SysGetProc( hLibrary, "zNetReceivePacket" );
+; 1651 : // lpNetwork->lpfnSetMode    = 0;//(zLPFN_NETSETM)   SysGetProc( hLibrary, "zNetSetMode" );
+; 1652 : //
+; 1653 : // lpTask->bTrace = bOldTrace;
+; 1654 : 
+; 1655 :    zstrcpy( lpNetwork->szNetworkName, pchNetworkName );
+
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	push	eax
+	call	_strcpy
+	add	esp, 8
+
+; 1656 :    zstrcpy( lpNetwork->szExecutable, pchExecutable );
+
+	mov	ecx, DWORD PTR _pchExecutable$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 80					; 00000050H
+	push	edx
+	call	_strcpy
+	add	esp, 8
+
+; 1657 :    lpNetwork->nConnCount     = 0;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	WORD PTR [eax+148], 0
+
+; 1658 :    lpNetwork->lProcessID     = SysGetProcessID( 0 );
+
+	push	0
+	call	_SysGetProcessID@4
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [ecx+4], eax
+
+; 1659 :    lpNetwork->bListen        = FALSE;
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR [edx+154]
+	and	al, -2					; fffffffeH
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [ecx+154], eax
+
+; 1660 :    lpNetwork->pNetworkHandle = lpvNetHandle;
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR _lpvNetHandle$[ebp]
+	mov	DWORD PTR [edx+12], eax
+
+; 1661 :    lpNetwork->hLibrary       = hLibrary;
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	mov	DWORD PTR [ecx+8], edx
+
+; 1662 :    lpNetwork->lpfnClose      = lpfnClose;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR _lpfnClose$[ebp]
+	mov	DWORD PTR [eax+158], ecx
+
+; 1663 :    lpNetwork->lpfnOpenConn   = lpfnOpenConn;
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR _lpfnOpenConn$[ebp]
+	mov	DWORD PTR [edx+178], eax
+
+; 1664 :    lpNetwork->lpfnCloseConn  = lpfnCloseConn;
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR _lpfnCloseConn$[ebp]
+	mov	DWORD PTR [ecx+182], edx
+
+; 1665 :    lpNetwork->lpfnSend       = lpfnSend;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR _lpfnSend$[ebp]
+	mov	DWORD PTR [eax+170], ecx
+
+; 1666 :    lpNetwork->lpfnReceive    = lpfnReceive;
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR _lpfnReceive$[ebp]
+	mov	DWORD PTR [edx+174], eax
+
+; 1667 :    lpNetwork->lpfnListen     = lpfnListen;
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR _lpfnListen$[ebp]
+	mov	DWORD PTR [ecx+162], edx
+
+; 1668 :    lpNetwork->lpfnStopListen = lpfnStopListen;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR _lpfnStopListen$[ebp]
+	mov	DWORD PTR [eax+166], ecx
+
+; 1669 :    lpNetwork->lpfnGetAddress = lpfnGetAddress;
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR _lpfnGetAddress$[ebp]
+	mov	DWORD PTR [edx+190], eax
+
+; 1670 : 
+; 1671 :    zsprintf( szGroup, "[%s]", pchNetworkName );
+
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@ ; `string'
+	lea	edx, DWORD PTR _szGroup$[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 1672 :    SysReadZeidonIni( -1, szGroup, "TraceLevel", szTraceLevel );
+
+	lea	eax, DWORD PTR _szTraceLevel$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0L@ODNC@TraceLevel?$AA@ ; `string'
+	lea	ecx, DWORD PTR _szGroup$[ebp]
+	push	ecx
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 1673 :    lpNetwork->nTraceLevel = (zSHORT) zatol( szTraceLevel );
+
+	lea	edx, DWORD PTR _szTraceLevel$[ebp]
+	push	edx
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	WORD PTR [ecx+140], ax
+
+; 1674 :    SysReadZeidonIni( -1, szGroup, "ServerCoreTraceLevel", szTraceLevel );
+
+	lea	edx, DWORD PTR _szTraceLevel$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BF@JFNK@ServerCoreTraceLevel?$AA@ ; `string'
+	lea	eax, DWORD PTR _szGroup$[ebp]
+	push	eax
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 1675 :    lpNetwork->nServerCoreTraceLevel = (zSHORT) zatol( szTraceLevel );
+
+	lea	ecx, DWORD PTR _szTraceLevel$[ebp]
+	push	ecx
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	WORD PTR [edx+142], ax
+
+; 1676 :    SysReadZeidonIni( -1, szGroup, "ServerNetTraceLevel", szTraceLevel );
+
+	lea	eax, DWORD PTR _szTraceLevel$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BE@HNF@ServerNetTraceLevel?$AA@ ; `string'
+	lea	ecx, DWORD PTR _szGroup$[ebp]
+	push	ecx
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 1677 :    lpNetwork->nServerNetTraceLevel = (zSHORT) zatol( szTraceLevel );
+
+	lea	edx, DWORD PTR _szTraceLevel$[ebp]
+	push	edx
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	WORD PTR [ecx+144], ax
+
+; 1678 :    SysReadZeidonIni( -1, szGroup, "ServerDBHTraceLevel", szTraceLevel );
+
+	lea	edx, DWORD PTR _szTraceLevel$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BE@JFOA@ServerDBHTraceLevel?$AA@ ; `string'
+	lea	eax, DWORD PTR _szGroup$[ebp]
+	push	eax
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 1679 :    lpNetwork->nServerDBHTraceLevel = (zSHORT) zatol( szTraceLevel );
+
+	lea	ecx, DWORD PTR _szTraceLevel$[ebp]
+	push	ecx
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	WORD PTR [edx+146], ax
+
+; 1680 : 
+; 1681 :    lpNetwork->hNextNetwork = AnchorBlock->hFirstNetwork;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR _AnchorBlock
+	mov	edx, DWORD PTR [ecx+122]
+	mov	DWORD PTR [eax], edx
+
+; 1682 :    AnchorBlock->hFirstNetwork = hNetwork;
+
+	mov	eax, DWORD PTR _AnchorBlock
+	mov	ecx, DWORD PTR _hNetwork$[ebp]
+	mov	DWORD PTR [eax+122], ecx
+
+; 1683 : 
+; 1684 :    zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1685 : 
+; 1686 : #if 0
+; 1687 :    // Following functions are NOT necessary.  Turn off tracing flag so we
+; 1688 :    // don't show warning messages.
+; 1689 :    bOldTrace = lpTask->bTrace;
+; 1690 :    lpTask->bTrace = FALSE;
+; 1691 : 
+; 1692 :    lpNetwork->lpfnBufferEnd  = (zLPFN_NETCLCONN)
+; 1693 :                                  SysGetProc( hLibrary, "zNetBufferEnd" );
+; 1694 :    lpNetwork->lpfnSendPacket = (zLPFN_NETSENDPKT)
+; 1695 :                                  SysGetProc( hLibrary, "zNetSendPacket" );
+; 1696 :    lpNetwork->lpfnRecvPacket = (zLPFN_NETRECVPKT)
+; 1697 :                                  SysGetProc( hLibrary, "zNetReceivePacket" );
+; 1698 :    lpNetwork->lpfnSetMode    = (zLPFN_NETSETM)
+; 1699 :                                  SysGetProc( hLibrary, "zNetSetMode" );
+; 1700 : 
+; 1701 :    lpTask->bTrace = bOldTrace;
+; 1702 : #endif
+; 1703 : 
+; 1704 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L8315
+
+; 1706 :       zCHAR szLocalName[ 300 ];
+; 1707 : 
+; 1708 :       NetGetLocalHostAddress( lpTaskView, pchNetworkName, szLocalName );
+
+	lea	ecx, DWORD PTR _szLocalName$8316[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	call	_NetGetLocalHostAddress@12
+
+; 1709 :       TraceLineS( "(kzoeneta) ** Local host address = ", szLocalName );
+
+	lea	ecx, DWORD PTR _szLocalName$8316[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CE@FAEG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Local?5host?5address@ ; `string'
+	call	_TraceLineS@8
+$L8315:
+
+; 1711 : 
+; 1712 :    //
+; 1713 :    // Now load the server directory functions.
+; 1714 :    //
+; 1715 : 
+; 1716 :    SysReadZeidonIni( -1, szGroup, "ServerDirApp", szServerDirApp );
+
+	lea	edx, DWORD PTR _szServerDirApp$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0N@HDAN@ServerDirApp?$AA@ ; `string'
+	lea	eax, DWORD PTR _szGroup$[ebp]
+	push	eax
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 1717 :    if ( szServerDirApp[ 0 ] == 0 )
+
+	movsx	ecx, BYTE PTR _szServerDirApp$[ebp]
+	test	ecx, ecx
+	jne	SHORT $L8319
+
+; 1718 :       strcpy( szServerDirApp, "zSimpDir" );
+
+	push	OFFSET FLAT:??_C@_08BLJC@zSimpDir?$AA@	; `string'
+	lea	edx, DWORD PTR _szServerDirApp$[ebp]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+$L8319:
+
+; 1719 : 
+; 1720 :    if ( zstrchr( szServerDirApp, cDirSep ) == 0 )
+
+	movsx	eax, BYTE PTR _cDirSep
+	push	eax
+	lea	ecx, DWORD PTR _szServerDirApp$[ebp]
+	push	ecx
+	call	DWORD PTR __imp__strchr
+	add	esp, 8
+	test	eax, eax
+	jne	SHORT $L8321
+
+; 1722 :       SysGetLocalDirectory( lpNetwork->szFileName );
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 222				; 000000deH
+	push	edx
+	call	_SysGetLocalDirectory@4
+
+; 1723 :       zstrcat( lpNetwork->szFileName, szServerDirApp );
+
+	lea	eax, DWORD PTR _szServerDirApp$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 222				; 000000deH
+	push	ecx
+	call	_strcat
+	add	esp, 8
+
+; 1725 :    else
+
+	jmp	SHORT $L8322
+$L8321:
+
+; 1726 :       zstrcpy( lpNetwork->szFileName, szServerDirApp );
+
+	lea	edx, DWORD PTR _szServerDirApp$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 222				; 000000deH
+	push	eax
+	call	_strcpy
+	add	esp, 8
+$L8322:
+
+; 1727 : 
+; 1728 :    // Try loading the library.
+; 1729 :    if ( LoadNetworkOperations( (LPTASK) zGETPTR( lpTaskView->hTask ),
+; 1730 :                                lpNetwork ) == 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	mov	eax, DWORD PTR [edx+14]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_LoadNetworkOperations
+	add	esp, 8
+	movsx	ecx, ax
+	test	ecx, ecx
+	jne	SHORT $L8325
+
+; 1732 :       (*lpNetwork->lpfnServDirInit)( lpTask, pchNetworkName,
+; 1733 :                                      &lpNetwork->pvServDirData, 0 );
+
+	push	0
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 16					; 00000010H
+	push	edx
+	mov	eax, DWORD PTR _pchNetworkName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+210]
+
+; 1735 :    else
+
+	jmp	SHORT $L8326
+$L8325:
+
+; 1737 :       NetClose( lpTaskView, pchNetworkName );
+
+	mov	eax, DWORD PTR _pchNetworkName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_NetClose@8
+
+; 1738 :       fnOperationReturn( iNetStartup, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1739 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8213
+$L8326:
+
+; 1741 : 
+; 1742 :    fnOperationReturn( iNetStartup, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	507					; 000001fbH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1743 :    return( 0 );
+
+	xor	ax, ax
+$L8213:
+
+; 1744 : 
+; 1745 : } // NetStartup
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_NetStartup@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CF@NPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5NetClose?5for?5Netwo@ ; `string'
+PUBLIC	??_C@_0BP@OPC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Closing?5network?5?$AA@ ; `string'
+PUBLIC	_NetStopListen@8
+;	COMDAT ??_C@_0CF@NPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5NetClose?5for?5Netwo@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CF@NPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5NetClose?5for?5Netwo@ DB '(kzo'
+	DB	'eneta) ** NetClose for Network: ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BP@OPC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Closing?5network?5?$AA@
+_DATA	SEGMENT
+??_C@_0BP@OPC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Closing?5network?5?$AA@ DB '(kz'
+	DB	'oeneta) ** Closing network ', 00H		; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_lpTask$ = -16
+_lpSystemTask$ = -8
+_lpPrevNetwork$ = -32
+_lpSrchNetwork$ = -28
+_lpNetwork$ = -20
+_lpLibrary$ = -24
+_lProcessID$ = -4
+_nRC$ = -12
+_lpNetConn$8348 = -36
+_NetClose@8 PROC NEAR
+
+; 1770 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 36					; 00000024H
+
+; 1771 :    LPTASK      lpTask;
+; 1772 :    LPTASK      lpSystemTask = zGETPTR( AnchorBlock->hMainTask );
+
+	mov	eax, DWORD PTR _AnchorBlock
+	mov	ecx, DWORD PTR [eax+106]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpSystemTask$[ebp], eax
+
+; 1773 :    LPNETWORK   lpPrevNetwork;
+; 1774 :    LPNETWORK   lpSrchNetwork;
+; 1775 :    LPNETWORK   lpNetwork;
+; 1776 :    LPLIBRARY   lpLibrary;
+; 1777 :    zLONG       lProcessID;
+; 1778 :    zSHORT      nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 1779 : 
+; 1780 :    TraceLineS( "(kzoeneta) ** NetClose for Network: ", pchNetworkName );
+
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CF@NPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5NetClose?5for?5Netwo@ ; `string'
+	call	_TraceLineS@8
+
+; 1781 : 
+; 1782 :    // If task not active or disabled, return zCALL_ERROR.
+; 1783 :    if ( (lpTask = fnOperationCall( iNetClose, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	502					; 000001f6H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8342
+
+; 1785 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8331
+$L8342:
+
+; 1787 : 
+; 1788 :    zLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysLockCoreMutex@4
+
+; 1789 : 
+; 1790 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8343
+
+; 1792 :       fnOperationReturn( iNetClose, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	502					; 000001f6H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1793 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8331
+$L8343:
+
+; 1795 : 
+; 1796 :    if ( lpNetwork->bListen &&
+; 1797 :         NetStopListen( lpTaskView, lpNetwork->szNetworkName ) == zCALL_ERROR )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+154]
+	and	edx, 1
+	test	edx, edx
+	je	SHORT $L8344
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_NetStopListen@8
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L8344
+
+; 1799 :       // Error trying to stop a listen, but we keep trying to close the network.
+; 1800 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8344:
+
+; 1802 : 
+; 1803 :    // Try closing any open connections.
+; 1804 :    while ( lpNetwork->hFirstNetConn )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [eax+150], 0
+	je	SHORT $L8347
+
+; 1806 :       LPNETCONN lpNetConn = zGETPTR( lpNetwork->hFirstNetConn );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+150]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNetConn$8348[ebp], eax
+
+; 1807 : 
+; 1808 :       fnRemoveConnectionFromNetwork( lpNetwork,
+; 1809 :                                      lpNetConn->pvConn,
+; 1810 :                                      TRUE );
+
+	push	1
+	mov	eax, DWORD PTR _lpNetConn$8348[ebp]
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnRemoveConnectionFromNetwork@12
+
+; 1811 :    }
+
+	jmp	SHORT $L8344
+$L8347:
+
+; 1812 : 
+; 1813 :    lProcessID = SysGetProcessID( 0 );
+
+	push	0
+	call	_SysGetProcessID@4
+	mov	DWORD PTR _lProcessID$[ebp], eax
+
+; 1814 : // if ( lpNetwork->lpfnServDirClose )
+; 1815 : // {
+; 1816 : //    lpLibrary = zGETPTR( lpNetwork->hServDirLib );
+; 1817 : //    if ( lProcessID != lpLibrary->lProcessID )
+; 1818 : //       LoadNetworkOperations( lpTask, lpNetwork );
+; 1819 : // }
+; 1820 : 
+; 1821 :    if ( lpNetwork->lpfnServDirClose &&
+; 1822 :         LoadNetworkOperations( lpTask, lpNetwork ) == 0 &&
+; 1823 :         (*lpNetwork->lpfnServDirClose)( lpTask,
+; 1824 :                                         &lpNetwork->pvServDirData, 0 ) != 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [eax+214], 0
+	je	SHORT $L8350
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_LoadNetworkOperations
+	add	esp, 8
+	movsx	eax, ax
+	test	eax, eax
+	jne	SHORT $L8350
+	push	0
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 16					; 00000010H
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+214]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8350
+
+; 1826 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8350:
+
+; 1828 : 
+; 1829 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L8351
+
+; 1830 :       TraceLineS( "(kzoeneta) ** Closing network ", lpNetwork->szNetworkName );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 20					; 00000014H
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BP@OPC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Closing?5network?5?$AA@ ; `string'
+	call	_TraceLineS@8
+$L8351:
+
+; 1831 : 
+; 1832 :    if ( lpNetwork->lpfnClose &&
+; 1833 :         (*lpNetwork->lpfnClose)( lpTaskView, &lpNetwork->pNetworkHandle ) != 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [edx+158], 0
+	je	SHORT $L8353
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+158]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8353
+
+; 1835 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8353:
+
+; 1837 : 
+; 1838 :    if ( lpNetwork->hLibrary )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [ecx+8], 0
+	je	SHORT $L8356
+
+; 1840 :       lpLibrary = zGETPTR( lpNetwork->hLibrary );
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpLibrary$[ebp], eax
+
+; 1841 :       if ( lProcessID == lpLibrary->lProcessID )
+
+	mov	ecx, DWORD PTR _lpLibrary$[ebp]
+	mov	edx, DWORD PTR _lProcessID$[ebp]
+	cmp	edx, DWORD PTR [ecx+271]
+	jne	SHORT $L8356
+
+; 1842 :          SysFreeLibrary( lpTaskView, lpNetwork->hLibrary );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	push	ecx
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_SysFreeLibrary@8
+$L8356:
+
+; 1844 : 
+; 1845 :    if ( lpNetwork->lpfnServDirClose &&
+; 1846 :         (*lpNetwork->lpfnServDirClose)( lpTask,
+; 1847 :                                         &lpNetwork->pvServDirData, 0 ) != 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [eax+214], 0
+	je	SHORT $L8357
+	push	0
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 16					; 00000010H
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+214]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8357
+
+; 1849 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8357:
+
+; 1851 : 
+; 1852 :    if ( lpNetwork->hServDirLib )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	cmp	DWORD PTR [edx+206], 0
+	je	SHORT $L8358
+
+; 1854 :       SysFreeLibrary( lpTaskView, lpNetwork->hServDirLib );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR [eax+206]
+	push	ecx
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_SysFreeLibrary@8
+
+; 1855 :       lpNetwork->hServDirLib = 0;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [eax+206], 0
+$L8358:
+
+; 1857 : 
+; 1858 :    // Remove the network from the chain.
+; 1859 :    lpPrevNetwork = 0;
+
+	mov	DWORD PTR _lpPrevNetwork$[ebp], 0
+
+; 1860 :    for ( lpSrchNetwork = zGETPTR( AnchorBlock->hFirstNetwork );
+; 1861 :          lpSrchNetwork != lpNetwork;
+; 1862 :          lpSrchNetwork = zGETPTR( lpSrchNetwork->hNextNetwork ) )
+
+	mov	ecx, DWORD PTR _AnchorBlock
+	mov	edx, DWORD PTR [ecx+122]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpSrchNetwork$[ebp], eax
+	jmp	SHORT $L8361
+$L8362:
+	mov	eax, DWORD PTR _lpSrchNetwork$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpSrchNetwork$[ebp], eax
+$L8361:
+	mov	edx, DWORD PTR _lpSrchNetwork$[ebp]
+	cmp	edx, DWORD PTR _lpNetwork$[ebp]
+	je	SHORT $L8363
+
+; 1864 :       lpPrevNetwork = lpSrchNetwork;
+
+	mov	eax, DWORD PTR _lpSrchNetwork$[ebp]
+	mov	DWORD PTR _lpPrevNetwork$[ebp], eax
+
+; 1865 :    }
+
+	jmp	SHORT $L8362
+$L8363:
+
+; 1866 : 
+; 1867 :    if ( lpPrevNetwork )
+
+	cmp	DWORD PTR _lpPrevNetwork$[ebp], 0
+	je	SHORT $L8364
+
+; 1868 :       lpPrevNetwork->hNextNetwork = lpNetwork->hNextNetwork;
+
+	mov	ecx, DWORD PTR _lpPrevNetwork$[ebp]
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	DWORD PTR [ecx], eax
+
+; 1869 :    else
+
+	jmp	SHORT $L8365
+$L8364:
+
+; 1870 :       AnchorBlock->hFirstNetwork = lpNetwork->hNextNetwork;
+
+	mov	ecx, DWORD PTR _AnchorBlock
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	DWORD PTR [ecx+122], eax
+$L8365:
+
+; 1871 : 
+; 1872 :    zUNLOCK_MUTEX( zMUTEX_NETWORKCHAIN );
+
+	push	15					; 0000000fH
+	call	_fnSysUnlockCoreMutex@4
+
+; 1873 : 
+; 1874 :    fnFreeDataspace( lpNetwork );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnFreeDataspace
+	add	esp, 4
+
+; 1875 : 
+; 1876 :    fnOperationReturn( iNetClose, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	502					; 000001f6H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1877 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+$L8331:
+
+; 1878 : 
+; 1879 : } // NetClose
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_NetClose@8 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CO@EOKO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5NetListen@ ; `string'
+PUBLIC	??_C@_0CJ@JJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5already?5li@ ; `string'
+PUBLIC	??_C@_0CL@IJCC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5listen?5fo@ ; `string'
+PUBLIC	_NetListen@8
+;	COMDAT ??_C@_0CO@EOKO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5NetListen@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CO@EOKO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5NetListen@ DB '(kzoe'
+	DB	'neta) ** Starting NetListen for network ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@JJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5already?5li@
+_DATA	SEGMENT
+??_C@_0CJ@JJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5already?5li@ DB '(kzo'
+	DB	'eneta) ** Network already listening!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@IJCC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5listen?5fo@
+_DATA	SEGMENT
+??_C@_0CL@IJCC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5listen?5fo@ DB '(kzo'
+	DB	'eneta) ** Starting listen for network ', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_lpTask$ = -8
+_lpNetwork$ = -12
+_nRC$ = -4
+_NetListen@8 PROC NEAR
+
+; 1905 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 1906 :    LPTASK      lpTask;
+; 1907 :    LPNETWORK   lpNetwork;
+; 1908 :    zSHORT      nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 1909 : 
+; 1910 :    // If task not active or disabled, return zCALL_ERROR.
+; 1911 :    if ( (lpTask = fnOperationCall( iNetListen, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	504					; 000001f8H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8374
+
+; 1913 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8370
+$L8374:
+
+; 1915 : 
+; 1916 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8375
+
+; 1918 :       fnOperationReturn( iNetListen, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	504					; 000001f8H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1919 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8370
+$L8375:
+
+; 1921 : 
+; 1922 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L8376
+
+; 1924 :       TraceLineS( "(kzoeneta) ** Starting NetListen for network ",
+; 1925 :                   lpNetwork->szNetworkName );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	push	eax
+	push	OFFSET FLAT:??_C@_0CO@EOKO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5NetListen@ ; `string'
+	call	_TraceLineS@8
+$L8376:
+
+; 1927 : 
+; 1928 :    if ( lpNetwork->bListen )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+154]
+	and	edx, 1
+	test	edx, edx
+	je	SHORT $L8378
+
+; 1930 :       TraceLineS( "(kzoeneta) ** Network already listening!",
+; 1931 :                   lpNetwork->szNetworkName );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	push	eax
+	push	OFFSET FLAT:??_C@_0CJ@JJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5already?5li@ ; `string'
+	call	_TraceLineS@8
+
+; 1932 :       fnOperationReturn( iNetListen, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	504					; 000001f8H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1933 :       return( 0 );
+
+	xor	ax, ax
+	jmp	SHORT $L8370
+$L8378:
+
+; 1935 : 
+; 1936 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L8380
+
+; 1938 :       TraceLineS( "(kzoeneta) ** Starting listen for network ",
+; 1939 :                   lpNetwork->szNetworkName );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 20					; 00000014H
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CL@IJCC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5listen?5fo@ ; `string'
+	call	_TraceLineS@8
+$L8380:
+
+; 1941 : 
+; 1942 :    if ( (*lpNetwork->lpfnListen)( &lpNetwork->pNetworkHandle,
+; 1943 :                                   0, lpTaskView ) != 0 )
+
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	push	0
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+162]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8382
+
+; 1945 :       fnOperationReturn( iNetListen, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	504					; 000001f8H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1946 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8370
+$L8382:
+
+; 1948 : 
+; 1949 :    lpNetwork->bListen = TRUE;
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+154]
+	or	edx, 1
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [eax+154], edx
+
+; 1950 : 
+; 1951 :    fnOperationReturn( iNetListen, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	504					; 000001f8H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1952 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+$L8370:
+
+; 1953 : 
+; 1954 : } // NetListen
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_NetListen@8 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CL@BKLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Stopping?5listen?5fo@ ; `string'
+PUBLIC	??_C@_0CF@JGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5not?5listen@ ; `string'
+;	COMDAT ??_C@_0CL@BKLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Stopping?5listen?5fo@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CL@BKLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Stopping?5listen?5fo@ DB '(kzo'
+	DB	'eneta) ** Stopping listen for network ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@JGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5not?5listen@
+_DATA	SEGMENT
+??_C@_0CF@JGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5not?5listen@ DB '(kzo'
+	DB	'eneta) ** Network not listening!', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_lpTask$ = -4
+_lpNetwork$ = -8
+_NetStopListen@8 PROC NEAR
+
+; 1977 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+
+; 1978 :    LPTASK      lpTask;
+; 1979 :    LPNETWORK   lpNetwork;
+; 1980 : 
+; 1981 :    // If task not active or disabled, return zCALL_ERROR.
+; 1982 :    if ( (lpTask = fnOperationCall( iNetStopListen, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	509					; 000001fdH
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8390
+
+; 1984 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8387
+$L8390:
+
+; 1986 : 
+; 1987 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8391
+
+; 1989 :       fnOperationReturn( iNetStopListen, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	509					; 000001fdH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 1990 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8387
+$L8391:
+
+; 1992 : 
+; 1993 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L8392
+
+; 1995 :       TraceLineS( "(kzoeneta) ** Stopping listen for network ",
+; 1996 :                   lpNetwork->szNetworkName );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	push	eax
+	push	OFFSET FLAT:??_C@_0CL@BKLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Stopping?5listen?5fo@ ; `string'
+	call	_TraceLineS@8
+$L8392:
+
+; 1998 : 
+; 1999 :    if ( lpNetwork->bListen == FALSE )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+154]
+	and	edx, 1
+	test	edx, edx
+	jne	SHORT $L8394
+
+; 2001 :       TraceLineS( "(kzoeneta) ** Network not listening!",
+; 2002 :                   lpNetwork->szNetworkName );
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	push	eax
+	push	OFFSET FLAT:??_C@_0CF@JGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5not?5listen@ ; `string'
+	call	_TraceLineS@8
+
+; 2003 :       fnOperationReturn( iNetStopListen, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	509					; 000001fdH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2004 :       return( 0 );
+
+	xor	ax, ax
+	jmp	SHORT $L8387
+$L8394:
+
+; 2006 : 
+; 2007 :    if ( (*lpNetwork->lpfnStopListen)( lpTaskView,
+; 2008 :                                       &lpNetwork->pNetworkHandle ) != 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+166]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8396
+
+; 2010 :       fnOperationReturn( iNetStopListen, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	509					; 000001fdH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2011 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8387
+$L8396:
+
+; 2013 : 
+; 2014 :    lpNetwork->bListen = FALSE;
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	edx, DWORD PTR [ecx+154]
+	and	edx, -2					; fffffffeH
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR [eax+154], edx
+
+; 2015 : 
+; 2016 :    fnOperationReturn( iNetStopListen, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	509					; 000001fdH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2017 :    return( 0 );
+
+	xor	ax, ax
+$L8387:
+
+; 2018 : 
+; 2019 : } // NetStopListen
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_NetStopListen@8 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0DE@NCA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Inside?5NetProcessM@ ; `string'
+PUBLIC	??_C@_0EB@GMML@?$CIkzoeneta?$CJ?5?$CK?$CK?5Cannot?5find?5networ@ ; `string'
+PUBLIC	??_C@_0CM@CDA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5message?5f@ ; `string'
+PUBLIC	??_C@_0CH@KPAK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5me@ ; `string'
+PUBLIC	??_C@_0CN@MIOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5Tr@ ; `string'
+PUBLIC	??_C@_0DK@EGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5?4?4?4?5removing@ ; `string'
+PUBLIC	??_C@_05GIDN@nLine?$AA@				; `string'
+PUBLIC	??_C@_0BF@MKJM@Request?5OI?5From?5File?$AA@	; `string'
+PUBLIC	??_C@_0L@GEHI@Request?5OI?$AA@			; `string'
+PUBLIC	??_C@_0BC@MOPB@Commit?5OI?5to?5File?$AA@	; `string'
+PUBLIC	??_C@_09LDEG@Commit?5OI?$AA@			; `string'
+PUBLIC	??_C@_09BFMO@Send?5File?$AA@			; `string'
+PUBLIC	??_C@_0P@FEMH@Call?5Operation?$AA@		; `string'
+PUBLIC	??_C@_0M@HADB@BAD_MESSAGE?$AA@			; `string'
+PUBLIC	??_C@_0BP@KGDJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Message?5Type?5?$DN?$DN?5?$AA@ ; `string'
+PUBLIC	??_C@_0BN@MJIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Bad?5message?5?$DN?5?$AA@ ; `string'
+PUBLIC	??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+PUBLIC	??_C@_0DP@KGCE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Leaving?5NetProcess@ ; `string'
+PUBLIC	_fnProcessActivateOI@12
+PUBLIC	_fnProcessCommitOI@12
+PUBLIC	_fnProcessActivateOI_FromFile@8
+PUBLIC	_fnProcessCommitOI_ToFile@8
+PUBLIC	_fnProcessOperation@12
+PUBLIC	_fnProcessSendFile@12
+PUBLIC	_fnProcessTraceSwitches@12
+PUBLIC	_fnProcessTimestamp@12
+PUBLIC	_NetProcessMessage@12
+EXTRN	__setjmp3:NEAR
+EXTRN	_SfActivateSysEmptyOI@16:NEAR
+EXTRN	_SfLockView@4:NEAR
+;	COMDAT ??_C@_0DE@NCA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Inside?5NetProcessM@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0DE@NCA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Inside?5NetProcessM@ DB '(kzoen'
+	DB	'eta) ** Inside NetProcessMessage( ) network: ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0EB@GMML@?$CIkzoeneta?$CJ?5?$CK?$CK?5Cannot?5find?5networ@
+_DATA	SEGMENT
+??_C@_0EB@GMML@?$CIkzoeneta?$CJ?5?$CK?$CK?5Cannot?5find?5networ@ DB '(kzo'
+	DB	'eneta) ** Cannot find network NetProcessMessage( ) network: ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@CDA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5message?5f@
+_DATA	SEGMENT
+??_C@_0CM@CDA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5message?5f@ DB '(kzoe'
+	DB	'neta) ** Received message for network ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@KPAK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5me@
+_DATA	SEGMENT
+??_C@_0CH@KPAK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5me@ DB '(kzo'
+	DB	'eneta) ** Error receiving message!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@MIOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5Tr@
+_DATA	SEGMENT
+??_C@_0CN@MIOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5Tr@ DB '(kzo'
+	DB	'eneta) ** Error receiving Trace Switches', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@EGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5?4?4?4?5removing@
+_DATA	SEGMENT
+??_C@_0DK@EGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5?4?4?4?5removing@ DB '('
+	DB	'kzoeneta) ** Error ... removing connection from network!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_05GIDN@nLine?$AA@
+_DATA	SEGMENT
+??_C@_05GIDN@nLine?$AA@ DB 'nLine', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BF@MKJM@Request?5OI?5From?5File?$AA@
+_DATA	SEGMENT
+??_C@_0BF@MKJM@Request?5OI?5From?5File?$AA@ DB 'Request OI From File', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@GEHI@Request?5OI?$AA@
+_DATA	SEGMENT
+??_C@_0L@GEHI@Request?5OI?$AA@ DB 'Request OI', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BC@MOPB@Commit?5OI?5to?5File?$AA@
+_DATA	SEGMENT
+??_C@_0BC@MOPB@Commit?5OI?5to?5File?$AA@ DB 'Commit OI to File', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09LDEG@Commit?5OI?$AA@
+_DATA	SEGMENT
+??_C@_09LDEG@Commit?5OI?$AA@ DB 'Commit OI', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09BFMO@Send?5File?$AA@
+_DATA	SEGMENT
+??_C@_09BFMO@Send?5File?$AA@ DB 'Send File', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@FEMH@Call?5Operation?$AA@
+_DATA	SEGMENT
+??_C@_0P@FEMH@Call?5Operation?$AA@ DB 'Call Operation', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@HADB@BAD_MESSAGE?$AA@
+_DATA	SEGMENT
+??_C@_0M@HADB@BAD_MESSAGE?$AA@ DB 'BAD_MESSAGE', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BP@KGDJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Message?5Type?5?$DN?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0BP@KGDJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Message?5Type?5?$DN?$DN?5?$AA@ DB '('
+	DB	'kzoeneta) ** Message Type == ', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@MJIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Bad?5message?5?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0BN@MJIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Bad?5message?5?$DN?5?$AA@ DB '('
+	DB	'kzoeneta) ** Bad message = ', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@
+_DATA	SEGMENT
+??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ DB '(kzo'
+	DB	'eneta) ** Error sending zPACKET_END', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DP@KGCE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Leaving?5NetProcess@
+_DATA	SEGMENT
+??_C@_0DP@KGCE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Leaving?5NetProcess@ DB '(kzoe'
+	DB	'neta) ** Leaving NetProcessMessage( ) network: %s  RC: %d', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_ppvConn$ = 16
+_pchTemp$ = -12
+_lpTask$ = -16
+_cPacketType$ = -20
+_lPacketData$ = -4
+_lpNetwork$ = -28
+_vTrace$ = -24
+_nRC$ = -8
+_szDateTime$8432 = -48
+_NetProcessMessage@12 PROC NEAR
+
+; 2050 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 56					; 00000038H
+
+; 2051 :    zCHAR       *pchTemp;
+; 2052 :    LPTASK      lpTask;
+; 2053 :    zCHAR       cPacketType;
+; 2054 :    zLONG       lPacketData;
+; 2055 :    LPNETWORK   lpNetwork;
+; 2056 :    zVIEW       vTrace = 0;
+
+	mov	DWORD PTR _vTrace$[ebp], 0
+
+; 2057 :    zSHORT      nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 2058 : 
+; 2059 :    // If task not active or disabled, return zCALL_ERROR.
+; 2060 :    if ( (lpTask = fnOperationCall( iNetProcessMessage, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	505					; 000001f9H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8411
+
+; 2062 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8403
+$L8411:
+
+; 2064 : 
+; 2065 :    TraceLineS( "(kzoeneta) ** Inside NetProcessMessage( ) network: ", pchNetworkName );
+
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0DE@NCA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Inside?5NetProcessM@ ; `string'
+	call	_TraceLineS@8
+
+; 2066 : 
+; 2067 :    // Set flag indicating that the current task is a server for a client
+; 2068 :    // request.
+; 2069 :    lpTask->bServer = TRUE;
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	eax, DWORD PTR [edx+443]
+	or	al, 64					; 00000040H
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	mov	DWORD PTR [ecx+443], eax
+
+; 2070 : 
+; 2071 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	edx, DWORD PTR _pchNetworkName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8413
+
+; 2073 :       TraceLineS( "(kzoeneta) ** Cannot find network NetProcessMessage( ) network: ", pchNetworkName );
+
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0EB@GMML@?$CIkzoeneta?$CJ?5?$CK?$CK?5Cannot?5find?5networ@ ; `string'
+	call	_TraceLineS@8
+
+; 2074 :       fnOperationReturn( iNetProcessMessage, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	505					; 000001f9H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2075 :       lpTask->bServer = FALSE;
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	mov	ecx, DWORD PTR [eax+443]
+	and	ecx, -65				; ffffffbfH
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	DWORD PTR [edx+443], ecx
+
+; 2076 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8403
+$L8413:
+
+; 2078 : 
+; 2079 :    // A connection should have been created and passed to us via ppvConn so
+; 2080 :    // we'll just add it to our connection list.
+; 2081 :    fnAddConnectionToNetwork( lpTask, lpNetwork, 0, ppvConn,
+; 2082 :                              FALSE, 0, 0, lpTaskView );
+
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	0
+	push	0
+	push	0
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	push	0
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnAddConnectionToNetwork@32
+
+; 2083 : 
+; 2084 : // if ( lpNetwork->nTraceLevel > 0 )
+; 2085 :       TraceLineS( "(kzoeneta) ** Received message for network ",
+; 2086 :                   lpNetwork->szNetworkName );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 20					; 00000014H
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CM@CDA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5message?5f@ ; `string'
+	call	_TraceLineS@8
+$L8417:
+
+; 2087 : 
+; 2088 :    // This seems to continue looping if the data packet if a TRACESWITCH or TIMESTAMP. Not really sure
+; 2089 :    // when that would be used.
+; 2090 :    while ( TRUE )
+
+	mov	edx, 1
+	test	edx, edx
+	je	$L8418
+
+; 2092 :       if ( fnReceiveDataPacket( lpNetwork, ppvConn, &cPacketType,
+; 2093 :                                 &lPacketData ) != 0 )
+
+	lea	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cPacketType$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnReceiveDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8419
+
+; 2095 :          TraceLineS( "(kzoeneta) ** Error receiving message!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@KPAK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5me@ ; `string'
+	call	_TraceLineS@8
+
+; 2096 :          nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8419:
+
+; 2098 : 
+; 2099 :       if ( cPacketType == zPACKET_TRACESWITCH )
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	cmp	edx, 43					; 0000002bH
+	jne	SHORT $L8421
+
+; 2101 :          if ( fnProcessTraceSwitches( lpNetwork, ppvConn, lpTask ) != 0 )
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnProcessTraceSwitches@12
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8422
+
+; 2103 :             TraceLineS( "(kzoeneta) ** Error receiving Trace Switches", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@MIOH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5Tr@ ; `string'
+	call	_TraceLineS@8
+
+; 2104 :             nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8422:
+
+; 2107 :       else
+
+	jmp	SHORT $L8426
+$L8421:
+
+; 2108 :       if ( cPacketType == zPACKET_TIMESTAMP )
+
+	movsx	ecx, BYTE PTR _cPacketType$[ebp]
+	cmp	ecx, 84					; 00000054H
+	jne	SHORT $L8425
+
+; 2110 :          fnProcessTimestamp( lpNetwork, ppvConn, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnProcessTimestamp@12
+
+; 2112 :       else
+
+	jmp	SHORT $L8426
+$L8425:
+
+; 2113 :          break;
+
+	jmp	SHORT $L8418
+$L8426:
+
+; 2114 :    }
+
+	jmp	$L8417
+$L8418:
+
+; 2115 : 
+; 2116 :    if ( nRC )
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	test	edx, edx
+	je	SHORT $L8427
+
+; 2118 :       TraceLineS( "(kzoeneta) ** Error ... removing connection from network!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DK@EGGP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5?4?4?4?5removing@ ; `string'
+	call	_TraceLineS@8
+
+; 2119 :       fnRemoveConnectionFromNetwork( lpNetwork, ppvConn, FALSE );
+
+	push	0
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnRemoveConnectionFromNetwork@12
+
+; 2120 :       fnOperationReturn( iNetProcessMessage, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	505					; 000001f9H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2121 :       lpTask->bServer = FALSE;
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	mov	ecx, DWORD PTR [eax+443]
+	and	ecx, -65				; ffffffbfH
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	DWORD PTR [edx+443], ecx
+
+; 2122 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8403
+$L8427:
+
+; 2124 : 
+; 2125 :    // Create Trace Object
+; 2126 :    nRC = SfActivateSysEmptyOI( &vTrace, "KZTRACEO", lpTaskView, zSINGLE );
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_08JIKI@KZTRACEO?$AA@	; `string'
+	lea	ecx, DWORD PTR _vTrace$[ebp]
+	push	ecx
+	call	_SfActivateSysEmptyOI@16
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2127 :    if ( nRC == 0 )
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	test	edx, edx
+	jne	SHORT $L8429
+
+; 2128 :       nRC = SetNameForView( vTrace, "KZTRACEO", lpTaskView, zLEVEL_TASK );
+
+	push	2
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_08JIKI@KZTRACEO?$AA@	; `string'
+	mov	ecx, DWORD PTR _vTrace$[ebp]
+	push	ecx
+	call	_SetNameForView@16
+	mov	WORD PTR _nRC$[ebp], ax
+$L8429:
+
+; 2129 : 
+; 2130 :    if ( nRC == 0 )
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	test	edx, edx
+	jne	SHORT $L8430
+
+; 2131 :       nRC = SfLockView( vTrace );
+
+	mov	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	call	_SfLockView@4
+	mov	WORD PTR _nRC$[ebp], ax
+$L8430:
+
+; 2132 : 
+; 2133 :    if ( nRC == 0 )
+
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	test	ecx, ecx
+	jne	SHORT $L8431
+
+; 2135 :       zCHAR szDateTime[ 18 ];
+; 2136 : 
+; 2137 :       nRC = CreateEntity( vTrace, "Trace", zPOS_AFTER );
+
+	push	3
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	mov	edx, DWORD PTR _vTrace$[ebp]
+	push	edx
+	call	_CreateEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2138 :       SetAttributeFromInteger( vTrace, "Trace", "nLine", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_05GIDN@nLine?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	mov	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	call	_SetAttributeFromInteger@16
+
+; 2139 :       SysGetDateTime( szDateTime );  // DateTime yyyymmddhhmmssttt
+
+	lea	ecx, DWORD PTR _szDateTime$8432[ebp]
+	push	ecx
+	call	_SysGetDateTime@4
+
+; 2140 :       SetAttributeFromVariable( vTrace, "Trace", "TraceStart",
+; 2141 :                                 szDateTime, zTYPE_STRING, 17, "DateTime", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_08GPOP@DateTime?$AA@	; `string'
+	push	17					; 00000011H
+	push	83					; 00000053H
+	lea	edx, DWORD PTR _szDateTime$8432[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0L@JJBL@TraceStart?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_05EMFM@Trace?$AA@	; `string'
+	mov	eax, DWORD PTR _vTrace$[ebp]
+	push	eax
+	call	_SetAttributeFromVariable@32
+$L8431:
+
+; 2143 : 
+; 2144 :    switch ( cPacketType )
+; 2145 :    {
+
+	movsx	ecx, BYTE PTR _cPacketType$[ebp]
+	mov	DWORD PTR -52+[ebp], ecx
+	mov	edx, DWORD PTR -52+[ebp]
+	sub	edx, 67					; 00000043H
+	mov	DWORD PTR -52+[ebp], edx
+	cmp	DWORD PTR -52+[ebp], 48			; 00000030H
+	ja	SHORT $L8451
+	mov	ecx, DWORD PTR -52+[ebp]
+	xor	eax, eax
+	mov	al, BYTE PTR $L10245[ecx]
+	jmp	DWORD PTR $L10246[eax*4]
+$L8439:
+
+; 2146 :       case zPACKET_REQUESTOIFROMFILE:
+; 2147 :          pchTemp = "Request OI From File";
+
+	mov	DWORD PTR _pchTemp$[ebp], OFFSET FLAT:??_C@_0BF@MKJM@Request?5OI?5From?5File?$AA@ ; `string'
+
+; 2148 :          break;
+
+	jmp	SHORT $L8436
+$L8441:
+
+; 2149 : 
+; 2150 :       case zPACKET_REQUESTOI:
+; 2151 :          pchTemp = "Request OI";
+
+	mov	DWORD PTR _pchTemp$[ebp], OFFSET FLAT:??_C@_0L@GEHI@Request?5OI?$AA@ ; `string'
+
+; 2152 :          break;
+
+	jmp	SHORT $L8436
+$L8443:
+
+; 2153 : 
+; 2154 :       case zPACKET_COMMITOITOFILE:
+; 2155 :          pchTemp = "Commit OI to File";
+
+	mov	DWORD PTR _pchTemp$[ebp], OFFSET FLAT:??_C@_0BC@MOPB@Commit?5OI?5to?5File?$AA@ ; `string'
+
+; 2156 :          break;
+
+	jmp	SHORT $L8436
+$L8445:
+
+; 2157 : 
+; 2158 :       case zPACKET_COMMITOI:
+; 2159 :          pchTemp = "Commit OI";
+
+	mov	DWORD PTR _pchTemp$[ebp], OFFSET FLAT:??_C@_09LDEG@Commit?5OI?$AA@ ; `string'
+
+; 2160 :          break;
+
+	jmp	SHORT $L8436
+$L8447:
+
+; 2161 : 
+; 2162 :       case zPACKET_SENDFILE:
+; 2163 :          pchTemp = "Send File";
+
+	mov	DWORD PTR _pchTemp$[ebp], OFFSET FLAT:??_C@_09BFMO@Send?5File?$AA@ ; `string'
+
+; 2164 :          break;
+
+	jmp	SHORT $L8436
+$L8449:
+
+; 2165 : 
+; 2166 :       case zPACKET_CALLOPERATION:
+; 2167 :          pchTemp = "Call Operation";
+
+	mov	DWORD PTR _pchTemp$[ebp], OFFSET FLAT:??_C@_0P@FEMH@Call?5Operation?$AA@ ; `string'
+
+; 2168 :          break;
+
+	jmp	SHORT $L8436
+$L8451:
+
+; 2169 : 
+; 2170 :       default:
+; 2171 :          pchTemp = "BAD_MESSAGE";
+
+	mov	DWORD PTR _pchTemp$[ebp], OFFSET FLAT:??_C@_0M@HADB@BAD_MESSAGE?$AA@ ; `string'
+$L8436:
+
+; 2174 : 
+; 2175 :    TraceLineS( "(kzoeneta) ** Message Type == ", pchTemp );
+
+	mov	edx, DWORD PTR _pchTemp$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BP@KGDJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Message?5Type?5?$DN?$DN?5?$AA@ ; `string'
+	call	_TraceLineS@8
+
+; 2176 : 
+; 2177 :    if ( setjmp( jbEmergencyExit ) == 0 )
+
+	push	0
+	push	OFFSET FLAT:_jbEmergencyExit
+	call	__setjmp3
+	add	esp, 8
+	test	eax, eax
+	jne	$L8454
+
+; 2179 :       // Check to see if the client requested an OI.
+; 2180 :       switch ( cPacketType )
+; 2181 :       {
+
+	movsx	eax, BYTE PTR _cPacketType$[ebp]
+	mov	DWORD PTR -56+[ebp], eax
+	mov	ecx, DWORD PTR -56+[ebp]
+	sub	ecx, 67					; 00000043H
+	mov	DWORD PTR -56+[ebp], ecx
+	cmp	DWORD PTR -56+[ebp], 48			; 00000030H
+	ja	$L8465
+	mov	eax, DWORD PTR -56+[ebp]
+	xor	edx, edx
+	mov	dl, BYTE PTR $L10247[eax]
+	jmp	DWORD PTR $L10248[edx*4]
+$L8459:
+
+; 2182 :          case zPACKET_REQUESTOIFROMFILE:
+; 2183 :             nRC = fnProcessActivateOI_FromFile( lpNetwork, ppvConn );
+
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnProcessActivateOI_FromFile@8
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2184 :             break;
+
+	jmp	$L8456
+$L8460:
+
+; 2185 : 
+; 2186 :          case zPACKET_REQUESTOI:
+; 2187 :             nRC = fnProcessActivateOI( lpTaskView, lpNetwork, ppvConn );
+
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	call	_fnProcessActivateOI@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2188 :             break;
+
+	jmp	$L8456
+$L8461:
+
+; 2189 : 
+; 2190 :          case zPACKET_COMMITOITOFILE:
+; 2191 :             nRC = fnProcessCommitOI_ToFile( lpNetwork, ppvConn );
+
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnProcessCommitOI_ToFile@8
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2192 :             break;
+
+	jmp	$L8456
+$L8462:
+
+; 2193 : 
+; 2194 :          case zPACKET_COMMITOI:
+; 2195 :             nRC = fnProcessCommitOI( lpTaskView, lpNetwork, ppvConn );
+
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_fnProcessCommitOI@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2196 :             break;
+
+	jmp	SHORT $L8456
+$L8463:
+
+; 2197 : 
+; 2198 :          case zPACKET_SENDFILE:
+; 2199 :             nRC = fnProcessSendFile( lpTaskView, lpNetwork, ppvConn );
+
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_fnProcessSendFile@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2200 :             break;
+
+	jmp	SHORT $L8456
+$L8464:
+
+; 2201 : 
+; 2202 :          case zPACKET_CALLOPERATION:
+; 2203 :             nRC = fnProcessOperation( lpTaskView, lpNetwork, ppvConn );
+
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_fnProcessOperation@12
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2204 :             break;
+
+	jmp	SHORT $L8456
+$L8465:
+
+; 2205 : 
+; 2206 :          default:
+; 2207 :             nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 2208 :             TraceLineI( "(kzoeneta) ** Bad message = ", cPacketType );
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BN@MJIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Bad?5message?5?$DN?5?$AA@ ; `string'
+	call	_TraceLineI@8
+
+; 2209 :             if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 2210 :                                    zNETERR_BADMESSAGE ) != 0 )
+
+	push	5
+	push	42					; 0000002aH
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8467
+
+; 2212 :                TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L8467:
+$L8456:
+
+; 2218 :    else
+
+	jmp	SHORT $L8469
+$L8454:
+
+; 2220 :       // We get here on a return from longjmp.
+; 2221 :       // At that point, the system is highly instable (Out Of Memory).
+; 2222 :       fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 2223 :                         zNETERR_OUTOFMEMORY );
+
+	push	3
+	push	42					; 0000002aH
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+
+; 2224 :       nRC = -1;
+
+	mov	WORD PTR _nRC$[ebp], -1
+$L8469:
+
+; 2226 : 
+; 2227 :    // Delete Trace Object
+; 2228 :    if ( vTrace )
+
+	cmp	DWORD PTR _vTrace$[ebp], 0
+	je	SHORT $L8470
+
+; 2229 :       DropObjectInstance( vTrace );
+
+	mov	edx, DWORD PTR _vTrace$[ebp]
+	push	edx
+	call	_DropObjectInstance@4
+$L8470:
+
+; 2230 : 
+; 2231 :    // The connection should be closed as soon as we return soooo...
+; 2232 :    fnRemoveConnectionFromNetwork( lpNetwork, ppvConn, FALSE );
+
+	push	0
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnRemoveConnectionFromNetwork@12
+
+; 2233 : 
+; 2234 :    fnOperationReturn( iNetProcessMessage, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	505					; 000001f9H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2235 :    lpTask->bServer = FALSE;
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	mov	ecx, DWORD PTR [eax+443]
+	and	ecx, -65				; ffffffbfH
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	DWORD PTR [edx+443], ecx
+
+; 2236 :    TraceLine( "(kzoeneta) ** Leaving NetProcessMessage( ) network: %s  RC: %d",
+; 2237 :               pchNetworkName, nRC );
+
+	movsx	eax, WORD PTR _nRC$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0DP@KGCE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Leaving?5NetProcess@ ; `string'
+	call	_TraceLine
+	add	esp, 12					; 0000000cH
+
+; 2238 : 
+; 2239 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+$L8403:
+
+; 2240 : 
+; 2241 : } // NetProcessMessage
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+$L10246:
+	DD	$L8445
+	DD	$L8439
+	DD	$L8449
+	DD	$L8441
+	DD	$L8443
+	DD	$L8447
+	DD	$L8451
+$L10245:
+	DB	0
+	DB	6
+	DB	6
+	DB	1
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	2
+	DB	6
+	DB	6
+	DB	3
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	4
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	5
+$L10248:
+	DD	$L8462
+	DD	$L8459
+	DD	$L8464
+	DD	$L8460
+	DD	$L8461
+	DD	$L8463
+	DD	$L8465
+$L10247:
+	DB	0
+	DB	6
+	DB	6
+	DB	1
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	2
+	DB	6
+	DB	6
+	DB	3
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	4
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	5
+_NetProcessMessage@12 ENDP
+_TEXT	ENDS
+PUBLIC	_fnConvertIS_Clause@4
+PUBLIC	??_C@_0L@DIOI@QualAttrib?$AA@			; `string'
+PUBLIC	??_C@_0O@GCPH@SubQualAttrib?$AA@		; `string'
+PUBLIC	??_C@_02PKFC@IS?$AA@				; `string'
+PUBLIC	??_C@_04FKDH@Oper?$AA@				; `string'
+PUBLIC	??_C@_0P@FPPG@SourceViewName?$AA@		; `string'
+PUBLIC	??_C@_0N@NIIK@SourceViewID?$AA@			; `string'
+PUBLIC	??_C@_0BB@CPOO@SourceEntityName?$AA@		; `string'
+PUBLIC	??_C@_0L@LOJF@EntityName?$AA@			; `string'
+PUBLIC	??_C@_01GFI@?$CI?$AA@				; `string'
+PUBLIC	??_C@_03LACO@AND?$AA@				; `string'
+PUBLIC	??_C@_0O@JICG@AttributeName?$AA@		; `string'
+PUBLIC	??_C@_01KPOD@?$DN?$AA@				; `string'
+PUBLIC	??_C@_05KBGO@Value?$AA@				; `string'
+PUBLIC	??_C@_01KMMP@?$CJ?$AA@				; `string'
+EXTRN	_SetAttributeFromAttribute@24:NEAR
+EXTRN	_CompareAttributeToString@16:NEAR
+EXTRN	_fnValidViewEntity@16:NEAR
+EXTRN	_fnEstablishViewForInstance:NEAR
+EXTRN	_GetIntegerFromAttribute@16:NEAR
+;	COMDAT ??_C@_0L@DIOI@QualAttrib?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0L@DIOI@QualAttrib?$AA@ DB 'QualAttrib', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@GCPH@SubQualAttrib?$AA@
+_DATA	SEGMENT
+??_C@_0O@GCPH@SubQualAttrib?$AA@ DB 'SubQualAttrib', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_02PKFC@IS?$AA@
+_DATA	SEGMENT
+??_C@_02PKFC@IS?$AA@ DB 'IS', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_04FKDH@Oper?$AA@
+_DATA	SEGMENT
+??_C@_04FKDH@Oper?$AA@ DB 'Oper', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@FPPG@SourceViewName?$AA@
+_DATA	SEGMENT
+??_C@_0P@FPPG@SourceViewName?$AA@ DB 'SourceViewName', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@NIIK@SourceViewID?$AA@
+_DATA	SEGMENT
+??_C@_0N@NIIK@SourceViewID?$AA@ DB 'SourceViewID', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BB@CPOO@SourceEntityName?$AA@
+_DATA	SEGMENT
+??_C@_0BB@CPOO@SourceEntityName?$AA@ DB 'SourceEntityName', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@LOJF@EntityName?$AA@
+_DATA	SEGMENT
+??_C@_0L@LOJF@EntityName?$AA@ DB 'EntityName', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01GFI@?$CI?$AA@
+_DATA	SEGMENT
+??_C@_01GFI@?$CI?$AA@ DB '(', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_03LACO@AND?$AA@
+_DATA	SEGMENT
+??_C@_03LACO@AND?$AA@ DB 'AND', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@JICG@AttributeName?$AA@
+_DATA	SEGMENT
+??_C@_0O@JICG@AttributeName?$AA@ DB 'AttributeName', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01KPOD@?$DN?$AA@
+_DATA	SEGMENT
+??_C@_01KPOD@?$DN?$AA@ DB '=', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_05KBGO@Value?$AA@
+_DATA	SEGMENT
+??_C@_05KBGO@Value?$AA@ DB 'Value', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01KMMP@?$CJ?$AA@
+_DATA	SEGMENT
+??_C@_01KMMP@?$CJ?$AA@ DB ')', 00H			; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_plpQualView$ = 8
+_lpOrigQual$ = -20
+_lpNewQual$ = -28
+_lpViewCsr$ = -4
+_lpViewOI$ = -32
+_lpEntityInstance$ = -16
+_lpQualViewEntity$ = -24
+_lpQualViewEntityCsr$ = -12
+_lpSubQualViewEntity$ = -36
+_lpSubQualViewEntityCsr$ = -8
+_lpViewEntity$8494 = -80
+_lpSrcViewEntity$8496 = -172
+_lpViewAttrib$8497 = -124
+_lpViewEntityCsr$8498 = -176
+_lpTempViewEntityCsr$8499 = -168
+_lpSrcView$8500 = -120
+_szSrcViewName$8501 = -116
+_szTargetEntity$8502 = -164
+_szSourceEntity$8503 = -76
+_pchEntityName$8504 = -128
+_bFirstTime$8505 = -40
+_fnConvertIS_Clause@4 PROC NEAR
+
+; 2267 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 176				; 000000b0H
+
+; 2268 :    zVIEW             lpOrigQual = *plpQualView;
+
+	mov	eax, DWORD PTR _plpQualView$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR _lpOrigQual$[ebp], ecx
+
+; 2269 :    zVIEW             lpNewQual = 0;
+
+	mov	DWORD PTR _lpNewQual$[ebp], 0
+
+; 2270 :    LPVIEWCSR         lpViewCsr;
+; 2271 :    LPVIEWOI          lpViewOI;
+; 2272 :    LPENTITYINSTANCE  lpEntityInstance;
+; 2273 :    LPVIEWENTITY      lpQualViewEntity;
+; 2274 :    LPVIEWENTITYCSR   lpQualViewEntityCsr;
+; 2275 :    LPVIEWENTITY      lpSubQualViewEntity;
+; 2276 :    LPVIEWENTITYCSR   lpSubQualViewEntityCsr;
+; 2277 : 
+; 2278 :    ActivateOI_FromOI_ForTask( &lpNewQual, lpOrigQual, 0, zMULTIPLE );
+
+	push	256					; 00000100H
+	push	0
+	mov	edx, DWORD PTR _lpOrigQual$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _lpNewQual$[ebp]
+	push	eax
+	call	_ActivateOI_FromOI_ForTask@16
+
+; 2279 :    *plpQualView = lpNewQual;
+
+	mov	ecx, DWORD PTR _plpQualView$[ebp]
+	mov	edx, DWORD PTR _lpNewQual$[ebp]
+	mov	DWORD PTR [ecx], edx
+
+; 2280 : 
+; 2281 :    lpViewCsr = zGETPTR( lpNewQual->hViewCsr );
+
+	mov	eax, DWORD PTR _lpNewQual$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 2282 :    lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	edx, DWORD PTR _lpViewCsr$[ebp]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$[ebp], eax
+
+; 2283 : 
+; 2284 :    lpQualViewEntity    = fnValidViewEntity( &lpQualViewEntityCsr, lpNewQual,
+; 2285 :                                             "QualAttrib", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_0L@DIOI@QualAttrib?$AA@ ; `string'
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _lpQualViewEntityCsr$[ebp]
+	push	edx
+	call	_fnValidViewEntity@16
+	mov	DWORD PTR _lpQualViewEntity$[ebp], eax
+
+; 2286 :    lpSubQualViewEntity = fnValidViewEntity( &lpSubQualViewEntityCsr, lpNewQual,
+; 2287 :                                             "SubQualAttrib", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_0O@GCPH@SubQualAttrib?$AA@ ; `string'
+	mov	eax, DWORD PTR _lpNewQual$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _lpSubQualViewEntityCsr$[ebp]
+	push	ecx
+	call	_fnValidViewEntity@16
+	mov	DWORD PTR _lpSubQualViewEntity$[ebp], eax
+
+; 2288 : 
+; 2289 :    // Loop through each of the entities in the and look for QualAttribs and
+; 2290 :    // SubQualAttribs.
+; 2291 :    for ( lpEntityInstance = zGETPTR( lpViewOI->hRootEntityInstance );
+; 2292 :          lpEntityInstance;
+; 2293 :          lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier ) )
+
+	mov	edx, DWORD PTR _lpViewOI$[ebp]
+	mov	eax, DWORD PTR [edx+26]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+	jmp	SHORT $L8491
+$L8492:
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+$L8491:
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	je	$L8493
+
+; 2295 :       LPVIEWENTITY    lpViewEntity = zGETPTR( lpEntityInstance->hViewEntity );
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+2]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$8494[ebp], eax
+
+; 2296 :       LPVIEWENTITY    lpSrcViewEntity;
+; 2297 :       LPVIEWATTRIB    lpViewAttrib;
+; 2298 :       LPVIEWENTITYCSR lpViewEntityCsr;
+; 2299 :       LPVIEWENTITYCSR lpTempViewEntityCsr;
+; 2300 :       zVIEW           lpSrcView;
+; 2301 :       zCHAR           szSrcViewName[ zZEIDON_NAME_LTH + 1 ];
+; 2302 :       zCHAR           szTargetEntity[ zZEIDON_NAME_LTH + 1 ];
+; 2303 :       zCHAR           szSourceEntity[ zZEIDON_NAME_LTH + 1 ];
+; 2304 :       zPCHAR          pchEntityName;
+; 2305 :       zBOOL           bFirstTime;
+; 2306 : 
+; 2307 :       // Find if the current EI is a QualAttrib or a SubQualAttrib.
+; 2308 :       if ( lpViewEntity == lpQualViewEntity )
+
+	mov	edx, DWORD PTR _lpViewEntity$8494[ebp]
+	cmp	edx, DWORD PTR _lpQualViewEntity$[ebp]
+	jne	SHORT $L8506
+
+; 2309 :          lpViewEntityCsr = lpQualViewEntityCsr;
+
+	mov	eax, DWORD PTR _lpQualViewEntityCsr$[ebp]
+	mov	DWORD PTR _lpViewEntityCsr$8498[ebp], eax
+
+; 2310 :       else
+
+	jmp	SHORT $L8509
+$L8506:
+
+; 2311 :       if ( lpViewEntity == lpSubQualViewEntity )
+
+	mov	ecx, DWORD PTR _lpViewEntity$8494[ebp]
+	cmp	ecx, DWORD PTR _lpSubQualViewEntity$[ebp]
+	jne	SHORT $L8508
+
+; 2312 :          lpViewEntityCsr = lpSubQualViewEntityCsr;
+
+	mov	edx, DWORD PTR _lpSubQualViewEntityCsr$[ebp]
+	mov	DWORD PTR _lpViewEntityCsr$8498[ebp], edx
+
+; 2313 :       else
+
+	jmp	SHORT $L8509
+$L8508:
+
+; 2314 :          continue;      // Skip non-QualAttrib entities.
+
+	jmp	SHORT $L8492
+$L8509:
+
+; 2315 : 
+; 2316 :       fnEstablishViewForInstance( lpNewQual, lpViewEntityCsr,
+; 2317 :                                   lpEntityInstance );
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpViewEntityCsr$8498[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNewQual$[ebp]
+	push	edx
+	call	_fnEstablishViewForInstance
+	add	esp, 12					; 0000000cH
+
+; 2318 : 
+; 2319 :       pchEntityName = lpViewEntity->szName;
+
+	mov	eax, DWORD PTR _lpViewEntity$8494[ebp]
+	add	eax, 14					; 0000000eH
+	mov	DWORD PTR _pchEntityName$8504[ebp], eax
+
+; 2320 : 
+; 2321 :       // Skip over entities where the Oper is not "IS".
+; 2322 :       if ( CompareAttributeToString( lpNewQual, pchEntityName,
+; 2323 :                                      "Oper", "IS" ) != 0 )
+
+	push	OFFSET FLAT:??_C@_02PKFC@IS?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04FKDH@Oper?$AA@	; `string'
+	mov	ecx, DWORD PTR _pchEntityName$8504[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNewQual$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8510
+
+; 2325 :          continue;
+
+	jmp	$L8492
+$L8510:
+
+; 2327 : 
+; 2328 :       // Get the source view.entity and the target entity.
+; 2329 :       GetStringFromAttribute( szSrcViewName, lpNewQual, pchEntityName,
+; 2330 :                               "SourceViewName" );
+
+	push	OFFSET FLAT:??_C@_0P@FPPG@SourceViewName?$AA@ ; `string'
+	mov	ecx, DWORD PTR _pchEntityName$8504[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNewQual$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szSrcViewName$8501[ebp]
+	push	eax
+	call	_GetStringFromAttribute@16
+
+; 2331 :       if ( szSrcViewName && szSrcViewName[ 0 ] )
+
+	lea	ecx, DWORD PTR _szSrcViewName$8501[ebp]
+	test	ecx, ecx
+	je	SHORT $L8514
+	movsx	edx, BYTE PTR _szSrcViewName$8501[ebp]
+	test	edx, edx
+	je	SHORT $L8514
+
+; 2332 :          GetViewByName( &lpSrcView, szSrcViewName, lpOrigQual, zLEVEL_TASK );
+
+	push	2
+	mov	eax, DWORD PTR _lpOrigQual$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _szSrcViewName$8501[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _lpSrcView$8500[ebp]
+	push	edx
+	call	_GetViewByName@16
+
+; 2333 :       else
+
+	jmp	SHORT $L8515
+$L8514:
+
+; 2334 :          GetIntegerFromAttribute( (zPLONG) &lpSrcView, lpNewQual,
+; 2335 :                                   pchEntityName, "SourceViewID" );
+
+	push	OFFSET FLAT:??_C@_0N@NIIK@SourceViewID?$AA@ ; `string'
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _lpSrcView$8500[ebp]
+	push	edx
+	call	_GetIntegerFromAttribute@16
+$L8515:
+
+; 2336 :       GetStringFromAttribute( szSourceEntity, lpNewQual, pchEntityName,
+; 2337 :                               "SourceEntityName" );
+
+	push	OFFSET FLAT:??_C@_0BB@CPOO@SourceEntityName?$AA@ ; `string'
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szSourceEntity$8503[ebp]
+	push	edx
+	call	_GetStringFromAttribute@16
+
+; 2338 :       GetStringFromAttribute( szTargetEntity, lpNewQual, pchEntityName,
+; 2339 :                               "EntityName" );
+
+	push	OFFSET FLAT:??_C@_0L@LOJF@EntityName?$AA@ ; `string'
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szTargetEntity$8502[ebp]
+	push	edx
+	call	_GetStringFromAttribute@16
+
+; 2340 : 
+; 2341 :       // Now change the "IS" to "(key1 = value1 & key2 = value2...)"
+; 2342 : 
+; 2343 :       // Replace the "IS" with open paren.
+; 2344 :       SetAttributeFromString( lpNewQual, pchEntityName, "Oper", "(" );
+
+	push	OFFSET FLAT:??_C@_01GFI@?$CI?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04FKDH@Oper?$AA@	; `string'
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 2345 :       SetAttributeFromString( lpNewQual, pchEntityName, "SourceViewName", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0P@FPPG@SourceViewName?$AA@ ; `string'
+	mov	edx, DWORD PTR _pchEntityName$8504[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNewQual$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 2346 :       SetAttributeFromString( lpNewQual, pchEntityName, "SourceViewID", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@NIIK@SourceViewID?$AA@ ; `string'
+	mov	ecx, DWORD PTR _pchEntityName$8504[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNewQual$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 2347 :       SetAttributeFromString( lpNewQual, pchEntityName, "SourceEntityName", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0BB@CPOO@SourceEntityName?$AA@ ; `string'
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 2348 :       SetAttributeFromString( lpNewQual, pchEntityName, "EntityName", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0L@LOJF@EntityName?$AA@ ; `string'
+	mov	edx, DWORD PTR _pchEntityName$8504[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNewQual$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 2349 : 
+; 2350 :       // Add a QualAttrib for each key.
+; 2351 :       lpSrcViewEntity = fnValidViewEntity( &lpTempViewEntityCsr,
+; 2352 :                                            lpSrcView, szSourceEntity, 0 );
+
+	push	0
+	lea	ecx, DWORD PTR _szSourceEntity$8503[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpSrcView$8500[ebp]
+	push	edx
+	lea	eax, DWORD PTR _lpTempViewEntityCsr$8499[ebp]
+	push	eax
+	call	_fnValidViewEntity@16
+	mov	DWORD PTR _lpSrcViewEntity$8496[ebp], eax
+
+; 2353 :       bFirstTime = TRUE;
+
+	mov	BYTE PTR _bFirstTime$8505[ebp], 1
+
+; 2354 :       for ( lpViewAttrib = zGETPTR( lpSrcViewEntity->hFirstOD_Attrib );
+; 2355 :             lpViewAttrib;
+; 2356 :             lpViewAttrib = zGETPTR( lpViewAttrib->hNextOD_Attrib ) )
+
+	mov	ecx, DWORD PTR _lpSrcViewEntity$8496[ebp]
+	mov	edx, DWORD PTR [ecx+179]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewAttrib$8497[ebp], eax
+	jmp	SHORT $L8523
+$L8524:
+	mov	eax, DWORD PTR _lpViewAttrib$8497[ebp]
+	mov	ecx, DWORD PTR [eax+2]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewAttrib$8497[ebp], eax
+$L8523:
+	cmp	DWORD PTR _lpViewAttrib$8497[ebp], 0
+	je	$L8525
+
+; 2358 :          if ( lpViewAttrib->bKey == FALSE )
+
+	mov	edx, DWORD PTR _lpViewAttrib$8497[ebp]
+	mov	eax, DWORD PTR [edx+193]
+	shr	eax, 1
+	and	eax, 1
+	test	eax, eax
+	jne	SHORT $L8526
+
+; 2359 :             continue;
+
+	jmp	SHORT $L8524
+$L8526:
+
+; 2360 : 
+; 2361 :          if ( bFirstTime )
+
+	mov	ecx, DWORD PTR _bFirstTime$8505[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	je	SHORT $L8527
+
+; 2362 :             bFirstTime = FALSE;
+
+	mov	BYTE PTR _bFirstTime$8505[ebp], 0
+
+; 2363 :          else
+
+	jmp	SHORT $L8528
+$L8527:
+
+; 2365 :             // Create the "AND" oper.
+; 2366 :             CreateEntity( lpNewQual, pchEntityName, zPOS_NEXT );
+
+	push	3
+	mov	edx, DWORD PTR _pchEntityName$8504[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNewQual$[ebp]
+	push	eax
+	call	_CreateEntity@12
+
+; 2367 :             SetAttributeFromString( lpNewQual, pchEntityName, "Oper", "AND" );
+
+	push	OFFSET FLAT:??_C@_03LACO@AND?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04FKDH@Oper?$AA@	; `string'
+	mov	ecx, DWORD PTR _pchEntityName$8504[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNewQual$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+$L8528:
+
+; 2369 : 
+; 2370 :          // Create the key compare.
+; 2371 :          CreateEntity( lpNewQual, pchEntityName, zPOS_NEXT );
+
+	push	3
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	call	_CreateEntity@12
+
+; 2372 :          SetAttributeFromString( lpNewQual, pchEntityName, "EntityName",
+; 2373 :                                  szTargetEntity );
+
+	lea	edx, DWORD PTR _szTargetEntity$8502[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0L@LOJF@EntityName?$AA@ ; `string'
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 2374 :          SetAttributeFromString( lpNewQual, pchEntityName, "AttributeName",
+; 2375 :                                  lpViewAttrib->szName );
+
+	mov	edx, DWORD PTR _lpViewAttrib$8497[ebp]
+	add	edx, 10					; 0000000aH
+	push	edx
+	push	OFFSET FLAT:??_C@_0O@JICG@AttributeName?$AA@ ; `string'
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 2376 :          SetAttributeFromString( lpNewQual, pchEntityName, "Oper", "=" );
+
+	push	OFFSET FLAT:??_C@_01KPOD@?$DN?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04FKDH@Oper?$AA@	; `string'
+	mov	edx, DWORD PTR _pchEntityName$8504[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNewQual$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 2377 :          SetAttributeFromAttribute( lpNewQual, pchEntityName, "Value",
+; 2378 :                                     lpSrcView, szSourceEntity,
+; 2379 :                                     lpViewAttrib->szName );
+
+	mov	ecx, DWORD PTR _lpViewAttrib$8497[ebp]
+	add	ecx, 10					; 0000000aH
+	push	ecx
+	lea	edx, DWORD PTR _szSourceEntity$8503[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpSrcView$8500[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	mov	ecx, DWORD PTR _pchEntityName$8504[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNewQual$[ebp]
+	push	edx
+	call	_SetAttributeFromAttribute@24
+
+; 2380 :       } // for ( lpViewAttrib )...
+
+	jmp	$L8524
+$L8525:
+
+; 2381 : 
+; 2382 :       // Create the closing paren.
+; 2383 :       CreateEntity( lpNewQual, pchEntityName, zPOS_NEXT );
+
+	push	3
+	mov	eax, DWORD PTR _pchEntityName$8504[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNewQual$[ebp]
+	push	ecx
+	call	_CreateEntity@12
+
+; 2384 :       SetAttributeFromString( lpNewQual, pchEntityName, "Oper", ")" );
+
+	push	OFFSET FLAT:??_C@_01KMMP@?$CJ?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_04FKDH@Oper?$AA@	; `string'
+	mov	edx, DWORD PTR _pchEntityName$8504[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNewQual$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 2385 : 
+; 2386 :       // We've just created a number of QualAttribs that we know don't contain
+; 2387 :       // the "IS" oper so set lpEntityInstance to skip over the new entities.
+; 2388 :       lpEntityInstance = zGETPTR( lpViewEntityCsr->hEntityInstance );
+
+	mov	ecx, DWORD PTR _lpViewEntityCsr$8498[ebp]
+	mov	edx, DWORD PTR [ecx+26]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+
+; 2389 : 
+; 2390 :    } // for ( lpEntityInstance )...
+
+	jmp	$L8492
+$L8493:
+
+; 2391 : 
+; 2392 :    return( 0 );
+
+	xor	ax, ax
+
+; 2393 : 
+; 2394 : } // fnConvertIS_Clause
+
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_fnConvertIS_Clause@4 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0DO@DJKH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5activate?5@ ; `string'
+PUBLIC	_NetActivateOI@28
+;	COMDAT ??_C@_0DO@DJKH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5activate?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0DO@DJKH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5activate?5@ DB '(kzo'
+	DB	'eneta) ** Starting activate for network: %s   OD Name: %s', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_pchNetworkName$ = 8
+_pchAddress$ = 12
+_pvReturnView$ = 16
+_pchViewOD_Name$ = 20
+_vSubtask$ = 24
+_lpQualView$ = 28
+_lControl$ = 32
+_lpTask$ = -8
+_lpNetwork$ = -12
+_nRC$ = -4
+_NetActivateOI@28 PROC NEAR
+
+; 2432 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 2433 :    LPTASK         lpTask;
+; 2434 :    LPNETWORK      lpNetwork;
+; 2435 :    zSHORT         nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 2436 : 
+; 2437 :    // If task not active or disabled, return zCALL_ERROR.
+; 2438 :    if ( (lpTask = fnOperationCall( iNetActivateOI, vSubtask, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	push	500					; 000001f4H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8556
+
+; 2440 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8552
+$L8556:
+
+; 2442 : 
+; 2443 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8557
+
+; 2445 :       fnOperationReturn( iNetActivateOI, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	500					; 000001f4H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2446 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8552
+$L8557:
+
+; 2448 : 
+; 2449 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L8558
+
+; 2451 :       TraceLine( "(kzoeneta) ** Starting activate for network: %s   OD Name: %s",
+; 2452 :                  lpNetwork->szNetworkName, pchViewOD_Name );
+
+	mov	eax, DWORD PTR _pchViewOD_Name$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 20					; 00000014H
+	push	ecx
+	push	OFFSET FLAT:??_C@_0DO@DJKH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Starting?5activate?5@ ; `string'
+	call	_TraceLine
+	add	esp, 12					; 0000000cH
+$L8558:
+
+; 2454 : 
+; 2455 :    // Check to see if the qualification object uses the "IS" clause.  If it
+; 2456 :    // does we need to change the "IS" clause into it's seperate key
+; 2457 :    // components.
+; 2458 :    if ( lpQualView )
+
+	cmp	DWORD PTR _lpQualView$[ebp], 0
+	je	SHORT $L8561
+
+; 2460 :       if ( fnConvertIS_Clause( &lpQualView ) == zCALL_ERROR )
+
+	lea	edx, DWORD PTR _lpQualView$[ebp]
+	push	edx
+	call	_fnConvertIS_Clause@4
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L8561
+
+; 2462 :          fnOperationReturn( iNetActivateOI, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	500					; 000001f4H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2463 :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L8552
+$L8561:
+
+; 2466 : 
+; 2467 :    nRC = fnNetActivateOI( lpTask, lpNetwork, pchAddress, pvReturnView,
+; 2468 :                           pchViewOD_Name, vSubtask, lpQualView, lControl );
+
+	mov	edx, DWORD PTR _lControl$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpQualView$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pchViewOD_Name$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pvReturnView$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pchAddress$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnNetActivateOI@32
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 2469 : 
+; 2470 :    // fnConvertIS_Clause( ) created a new qualification object so we must
+; 2471 :    // drop it.
+; 2472 :    if ( lpQualView )
+
+	cmp	DWORD PTR _lpQualView$[ebp], 0
+	je	SHORT $L8562
+
+; 2473 :       fnDropView( lpQualView );
+
+	mov	ecx, DWORD PTR _lpQualView$[ebp]
+	push	ecx
+	call	_fnDropView@4
+$L8562:
+
+; 2474 : 
+; 2475 :    fnOperationReturn( iNetActivateOI, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	500					; 000001f4H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 2476 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+$L8552:
+
+; 2477 : 
+; 2478 : } // NetActivateOI
+
+	mov	esp, ebp
+	pop	ebp
+	ret	28					; 0000001cH
+_NetActivateOI@28 ENDP
+_TEXT	ENDS
+PUBLIC	_NetActivateOI_FromFile@28
+_TEXT	SEGMENT
+_NetActivateOI_FromFile@28 PROC NEAR
+
+; 2516 : {
+
+	push	ebp
+	mov	ebp, esp
+
+; 2517 :    return( 0 );
+
+	xor	ax, ax
+
+; 2518 : 
+; 2519 : // 2001.06.28
+; 2520 : // DGC Not supported at the moment (security risk).
+; 2521 : #if 0
+; 2522 :    LPTASK          lpTask;
+; 2523 :    LAD_InfoRecord  LAD_Info;
+; 2524 :    zCHAR           cPacketType;
+; 2525 :    zLONG           lPacketData;
+; 2526 :    LPNETWORK       lpNetwork;
+; 2527 :    zPVOID          pvConn = 0;
+; 2528 :    zActivatePacket ActPacket;
+; 2529 :    zSHORT          nRC = zCALL_ERROR;
+; 2530 : 
+; 2531 :    zmemset( &LAD_Info, 0, sizeof( LAD_Info ) );
+; 2532 : 
+; 2533 :    // If task not active or disabled, return zCALL_ERROR.
+; 2534 :    if ( (lpTask = fnOperationCall( iNetActivateOI_FromFile ... )) == 0 )
+; 2535 :    {
+; 2536 :       return( zCALL_ERROR );
+; 2537 :    }
+; 2538 : 
+; 2539 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+; 2540 :    {
+; 2541 :       fnOperationReturn( iNetActivateOI_FromFile, lpTask );
+; 2542 :       return( zCALL_ERROR );
+; 2543 :    }
+; 2544 : 
+; 2545 :    if ( lpNetwork->nTraceLevel > 0 )
+; 2546 :    {
+; 2547 :       TraceLine( "(kzoeneta) ** Starting activate for network: %s  OD Name: %s",
+; 2548 :                  lpNetwork->szNetworkName, pchViewOD_Name );
+; 2549 :    }
+; 2550 : 
+; 2551 :    LAD_Info.lpTask     = lpTask;
+; 2552 :    LAD_Info.lpNetwork  = lpNetwork;
+; 2553 :    LAD_Info.vSubtask   = vSubtask;
+; 2554 :    LAD_Info.nObjType   = zLADTYPE_LOD_ACTIVATE_FILE;
+; 2555 :    LAD_Info.pchObjName = pchViewOD_Name;
+; 2556 :    SysGetUserID( vSubtask, LAD_Info.szUserName, LAD_Info.szPassword );
+; 2557 :    fnRetrieveAppName( vSubtask, LAD_Info.szAppName );
+; 2558 : 
+; 2559 :    if ( fnGetApplAddress( &LAD_Info, pchAddress ) == zCALL_ERROR )
+; 2560 :    {
+; 2561 :       fnOperationReturn( iNetActivateOI_FromFile, lpTask );
+; 2562 :       return( zCALL_ERROR );
+; 2563 :    }
+; 2564 : 
+; 2565 :    // Open connection.
+; 2566 :    if ( fnAddConnectionToNetwork( &LAD_Info, &pvConn, TRUE, vSubtask ) < 0 )
+; 2567 :    {
+; 2568 :       fnOperationReturn( iNetActivateOI_FromFile, lpTask );
+; 2569 :       return( zNETWORK_ERROR );
+; 2570 :    }
+; 2571 : 
+; 2572 :    if ( lpNetwork->nTraceLevel > 1 )
+; 2573 :       TraceLineS( "(kzoeneta) ** Sending RequestOI packet", "" );
+; 2574 : 
+; 2575 :    //=======================================================================
+; 2576 :    // Transmitting data.
+; 2577 :    //
+; 2578 :    // Until further notice, the following code only SENDS data over the
+; 2579 :    // network.
+; 2580 :    //=======================================================================
+; 2581 : 
+; 2582 :    // First send the header for the server driver and then the regular
+; 2583 :    // packet for the function structure.
+; 2584 :    if ( fnSendHeaderPacket( lpNetwork, &pvConn, zPACKET_REQUESTOIFROMFILE,
+; 2585 :                             LAD_Info.szAppName ) != 0 )
+; 2586 :       goto EndOfFunction;
+; 2587 : 
+; 2588 :    if ( fnSendTraceSwitches( lpNetwork, &pvConn, lpTask) != 0)
+; 2589 :       goto EndOfFunction;
+; 2590 : 
+; 2591 :    if ( fnSendDataPacket( lpNetwork, &pvConn,
+; 2592 :                           zPACKET_REQUESTOIFROMFILE, 0 ) != 0 )
+; 2593 :       goto EndOfFunction;
+; 2594 : 
+; 2595 :    // Set up the activate information.  We initialize the structure to 0's so
+; 2596 :    // that the network stack can better compress the data.
+; 2597 :    zmemset( &ActPacket, 0, sizeof( zActivatePacket ) );
+; 2598 :    zstrcpy( ActPacket.szVersion, zCURRENT_PROTOCOL_VERSION );
+; 2599 :    zltox( lControl, ActPacket.szControl );
+; 2600 :    zstrcpy( ActPacket.szObjectDef, pchViewOD_Name );
+; 2601 :    ActPacket.cUseQualification = 'N';
+; 2602 :    zltox( (zLONG) zstrlen( pchFileName ) + 1, ActPacket.szFileNameLth );
+; 2603 : 
+; 2604 :    zstrcpy( ActPacket.szAppName, LAD_Info.szAppName );
+; 2605 :    SysGetUserID( vSubtask, ActPacket.szUserName, ActPacket.szPassword );
+; 2606 : 
+; 2607 :    if ( lpNetwork->nTraceLevel > 1 )
+; 2608 :    {
+; 2609 :       TraceLine( "(kzoeneta) ** Sending Activate File Packet Appl Name: %s  ",
+; 2610 :                    "Object Def: %s  User Name: %s  FileName: %s",
+; 2611 :                  ActPacket.szAppName, ActPacket.szObjectDef,
+; 2612 :                  ActPacket.szUserName, pchFileName );
+; 2613 :    }
+; 2614 : 
+; 2615 :    // Send server activate info.
+; 2616 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle,
+; 2617 :                                 &pvConn, &ActPacket, sizeof( zActivatePacket ),
+; 2618 :                                 zTYPE_STRING ) != 0 )
+; 2619 :       goto EndOfFunction;
+; 2620 : 
+; 2621 :    // Send file name.
+; 2622 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 2623 :                                 pchFileName,
+; 2624 :                                 zstrlen( pchFileName ) + 1,
+; 2625 :                                 zTYPE_STRING ) != 0 )
+; 2626 :    {
+; 2627 :       goto EndOfFunction;
+; 2628 :    }
+; 2629 : 
+; 2630 :    // Tell network handler to flush the send buffer.
+; 2631 :    if ( fnFlushBuffer( lpNetwork, &pvConn ) != 0 )
+; 2632 :       goto EndOfFunction;
+; 2633 : 
+; 2634 :    //=======================================================================
+; 2635 :    // Receiving data.
+; 2636 :    //
+; 2637 :    // From here until we close the connection we will only RECEIVE data over
+; 2638 :    // the network.
+; 2639 :    //=======================================================================
+; 2640 : 
+; 2641 :    // Wait for Ack.
+; 2642 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lPacketData ) != 0 )
+; 2643 :    {
+; 2644 :       TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+; 2645 :       goto EndOfFunction;
+; 2646 :    }
+; 2647 : 
+; 2648 :    if ( cPacketType == zPACKET_ERROR )
+; 2649 :    {
+; 2650 : 
+; 2651 :       TraceLineI( "(kzoeneta) ** Network error #", lPacketData );
+; 2652 :       if ( lPacketData == zNETERR_OUTOFMEMORY )
+; 2653 :       {
+; 2654 :          SysMessageBox( "Server Transaction Crash ",
+; 2655 :                         "*Out Of Memory*", 1 );
+; 2656 :       }
+; 2657 :       goto EndOfFunction;
+; 2658 :    }
+; 2659 :    else
+; 2660 :    if ( cPacketType == zPACKET_RC )
+; 2661 :    {
+; 2662 :       // If we received the RC packet, then there was an error activating
+; 2663 :       // the OI on the server.  Get the return code and go to the end of the
+; 2664 :       // function.
+; 2665 :       if ( lpNetwork->nTraceLevel > 0 )
+; 2666 :          TraceLineS( "(kzoeneta) ** Received RC - error in Commit", "" );
+; 2667 : 
+; 2668 :       nRC = (zSHORT) lPacketData;
+; 2669 :       goto EndOfFunction;
+; 2670 :    }
+; 2671 :    else
+; 2672 :    if ( cPacketType != zPACKET_ACK )
+; 2673 :    {
+; 2674 :       TraceLineS( "(kzoeneta) ** Received bytes but no ACK!", "" );
+; 2675 :       goto EndOfFunction;
+; 2676 :    }
+; 2677 : 
+; 2678 :    if ( lpNetwork->nTraceLevel > 0 )
+; 2679 :    {
+; 2680 :       TraceLineS( "(kzoeneta) ** Received Act ACK - proceeding with Act ... "
+; 2681 :                   "Receiving activated OI." );
+; 2682 :    }
+; 2683 : 
+; 2684 :    fnReceiveOI( &pvConn, lpNetwork, pvReturnView, vSubtask,
+; 2685 :                 pchViewOD_Name, zMULTIPLE );
+; 2686 : 
+; 2687 :    // Get return code.
+; 2688 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lPacketData ) != 0 )
+; 2689 :    {
+; 2690 :       TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+; 2691 :       goto EndOfFunction;
+; 2692 :    }
+; 2693 : 
+; 2694 :    if ( cPacketType != zPACKET_RC )
+; 2695 :    {
+; 2696 :       TraceLineS( "(kzoeneta) ** No return code for Commit!", "" );
+; 2697 :       goto EndOfFunction;
+; 2698 :    }
+; 2699 : 
+; 2700 :    nRC = (zSHORT) lPacketData;
+; 2701 : 
+; 2702 :    if ( lpNetwork->nTraceLevel > 0 )
+; 2703 :       TraceLineI( "(kzoeneta) ** RC from activate = ", nRC );
+; 2704 : 
+; 2705 :    if ( fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, vSubtask ) < 0 )
+; 2706 :    {
+; 2707 :       nRC = zCALL_ERROR;
+; 2708 :       goto EndOfFunction;
+; 2709 :    }
+; 2710 : 
+; 2711 : EndOfFunction:
+; 2712 : 
+; 2713 :    if ( fnRemoveConnectionFromNetwork( lpNetwork, &pvConn,
+; 2714 :                                        TRUE ) == zCALL_ERROR )
+; 2715 :    {
+; 2716 :       nRC = zCALL_ERROR;
+; 2717 :    }
+; 2718 : 
+; 2719 :    fnOperationReturn( iNetActivateOI_FromFile, lpTask );
+; 2720 :    return( nRC );
+; 2721 : #endif
+; 2722 : 
+; 2723 : } // NetActivateOI_FromFile
+
+	pop	ebp
+	ret	28					; 0000001cH
+_NetActivateOI_FromFile@28 ENDP
+_TEXT	ENDS
+PUBLIC	_fnFindEntityInstanceByHierCount@8
+EXTRN	_fnEntityInstanceIsDead@4:NEAR
+_TEXT	SEGMENT
+_lpEntityInstance$ = 8
+_lHierCount$ = 12
+_lpNextTwin$ = -4
+_nLevel$8592 = -8
+_fnFindEntityInstanceByHierCount@8 PROC NEAR
+
+; 2728 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+$L8586:
+
+; 2729 :    LPENTITYINSTANCE lpNextTwin;
+; 2730 : 
+; 2731 :    while ( lpEntityInstance )
+
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	je	$L8587
+
+; 2733 :       // If the EI is dead then skip it and it's children.
+; 2734 :       if ( fnEntityInstanceIsDead( lpEntityInstance ) )
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	push	eax
+	call	_fnEntityInstanceIsDead@4
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8588
+
+; 2736 :          if ( lpEntityInstance->hNextTwin )
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	cmp	DWORD PTR [edx+22], 0
+	je	SHORT $L8589
+
+; 2737 :             lpEntityInstance = zGETPTR( lpEntityInstance->hNextTwin );
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+22]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+
+; 2738 :          else
+
+	jmp	SHORT $L8597
+$L8589:
+
+; 2740 :             zSHORT nLevel = lpEntityInstance->nLevel;
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ax, WORD PTR [edx+58]
+	mov	WORD PTR _nLevel$8592[ebp], ax
+
+; 2741 : 
+; 2742 :             for ( lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier );
+; 2743 :                   lpEntityInstance && lpEntityInstance->nLevel > nLevel;
+; 2744 :                   lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier ) )
+
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+	jmp	SHORT $L8595
+$L8596:
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+14]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+$L8595:
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	je	SHORT $L8597
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	movsx	eax, WORD PTR [edx+58]
+	movsx	ecx, WORD PTR _nLevel$8592[ebp]
+	cmp	eax, ecx
+	jle	SHORT $L8597
+
+; 2746 :                // Nothing needs to be done here.
+; 2747 :             }
+
+	jmp	SHORT $L8596
+$L8597:
+
+; 2749 : 
+; 2750 :          continue;
+
+	jmp	SHORT $L8586
+$L8588:
+
+; 2752 : 
+; 2753 :       if ( lpEntityInstance->lHierCount == lHierCount )
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	eax, DWORD PTR [edx+54]
+	cmp	eax, DWORD PTR _lHierCount$[ebp]
+	jne	SHORT $L8598
+
+; 2754 :          return( lpEntityInstance );
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	jmp	SHORT $L8583
+$L8598:
+
+; 2755 : 
+; 2756 :       // Try a shortcut...see if the next twin (if there is one) has a hier
+; 2757 :       // count < the one we're looking for.
+; 2758 :       lpNextTwin = zGETPTR( lpEntityInstance->hNextTwin );
+
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+22]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNextTwin$[ebp], eax
+
+; 2759 : 
+; 2760 :       // Just in case the next twin stuff doesn't work out we'll set
+; 2761 :       // lpEntityInstance to point to the next EI hierarchically.
+; 2762 :       lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier );
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+14]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+$L8602:
+
+; 2763 : 
+; 2764 :       while ( lpNextTwin )
+
+	cmp	DWORD PTR _lpNextTwin$[ebp], 0
+	je	SHORT $L8603
+
+; 2766 :          if ( lpNextTwin->lHierCount <= lHierCount &&
+; 2767 :               !fnEntityInstanceIsDead( lpNextTwin ) )
+
+	mov	edx, DWORD PTR _lpNextTwin$[ebp]
+	mov	eax, DWORD PTR [edx+54]
+	cmp	eax, DWORD PTR _lHierCount$[ebp]
+	jg	SHORT $L8604
+	mov	ecx, DWORD PTR _lpNextTwin$[ebp]
+	push	ecx
+	call	_fnEntityInstanceIsDead@4
+	movsx	edx, ax
+	test	edx, edx
+	jne	SHORT $L8604
+
+; 2769 :             lpEntityInstance = lpNextTwin;
+
+	mov	eax, DWORD PTR _lpNextTwin$[ebp]
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+$L8604:
+
+; 2771 : 
+; 2772 :          lpNextTwin = zGETPTR( lpNextTwin->hNextTwin );
+
+	mov	ecx, DWORD PTR _lpNextTwin$[ebp]
+	mov	edx, DWORD PTR [ecx+22]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNextTwin$[ebp], eax
+
+; 2773 :       }
+
+	jmp	SHORT $L8602
+$L8603:
+
+; 2774 :    }
+
+	jmp	$L8586
+$L8587:
+
+; 2775 : 
+; 2776 :    return( 0 );  // If we get here then we didn't find it.
+
+	xor	eax, eax
+$L8583:
+
+; 2777 : 
+; 2778 : } // fnFindEntityInstanceByHierCount
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_fnFindEntityInstanceByHierCount@8 ENDP
+_TEXT	ENDS
+PUBLIC	_fnSetLinkBuffer@20
+PUBLIC	??_C@_06CEIK@?$CFx?3?$CFlx?$AA@			; `string'
+;	COMDAT ??_C@_06CEIK@?$CFx?3?$CFlx?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_06CEIK@?$CFx?3?$CFlx?$AA@ DB '%x:%lx', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTask$ = 8
+_lpViewArray$ = 12
+_nViewCount$ = 16
+_ppchLinkBuffer$ = 20
+_plLinkBufferLth$ = 24
+_pchLinkBuffer$ = -428
+_k$ = -420
+_pchBufferEnd$ = -412
+_lHierCount$ = -432
+_bInterlinking$ = -416
+_lpEntityInstance$ = -8
+_lpViewOI$ = -424
+_lpViewCsr$ = -4
+_cOI_Linked$ = -408
+_lpLinked$8639 = -436
+_j$8648 = -440
+_lpTempViewCsr$8653 = -444
+_nLinkInfo$8672 = -448
+_pchSave$8673 = -456
+_lpLinked$8674 = -452
+_j$8682 = -460
+_lpTempViewCsr$8687 = -464
+_fnSetLinkBuffer@20 PROC NEAR
+
+; 2796 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 464				; 000001d0H
+
+; 2797 :    zPCHAR           pchLinkBuffer;
+; 2798 :    zSHORT           k;
+; 2799 :    zPCHAR           pchBufferEnd;
+; 2800 :    zLONG            lHierCount;
+; 2801 :    zBOOL            bInterlinking = FALSE;
+
+	mov	BYTE PTR _bInterlinking$[ebp], 0
+
+; 2802 :    LPENTITYINSTANCE lpEntityInstance;
+; 2803 :    LPVIEWOI         lpViewOI;
+; 2804 :    LPVIEWCSR        lpViewCsr;
+; 2805 :    zCHAR            cOI_Linked[ 400 ];  // We can handle 400 OIs.
+; 2806 : 
+; 2807 :    *ppchLinkBuffer  = 0;
+
+	mov	eax, DWORD PTR _ppchLinkBuffer$[ebp]
+	mov	DWORD PTR [eax], 0
+
+; 2808 :    *plLinkBufferLth = 0;
+
+	mov	ecx, DWORD PTR _plLinkBufferLth$[ebp]
+	mov	DWORD PTR [ecx], 0
+
+; 2809 : 
+; 2810 :    // If we have only 1 view there can't be any interlinking...
+; 2811 :    if ( nViewCount <= 1 )
+
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	edx, 1
+	jg	SHORT $L8627
+
+; 2812 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L8617
+$L8627:
+
+; 2813 : 
+; 2814 :    // First set the hier count for all the EIs.  Also check to make sure that
+; 2815 :    // there is interlinking between OIs.
+; 2816 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8628
+$L8629:
+	mov	ax, WORD PTR _k$[ebp]
+	add	ax, 1
+	mov	WORD PTR _k$[ebp], ax
+$L8628:
+	movsx	ecx, WORD PTR _k$[ebp]
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, edx
+	jge	$L8630
+
+; 2818 :       if ( lpViewArray[ k ] == 0 )
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [ecx+eax*4], 0
+	jne	SHORT $L8631
+
+; 2819 :          continue;
+
+	jmp	SHORT $L8629
+$L8631:
+
+; 2820 : 
+; 2821 :       lHierCount = 0;
+
+	mov	DWORD PTR _lHierCount$[ebp], 0
+
+; 2822 :       lpViewCsr  = zGETPTR( lpViewArray[ k ]->hViewCsr );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 2823 :       lpViewOI   = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	eax, DWORD PTR _lpViewCsr$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$[ebp], eax
+
+; 2824 :       for ( lpEntityInstance = zGETPTR( lpViewOI->hRootEntityInstance );
+; 2825 :             lpEntityInstance;
+; 2826 :             lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier ) )
+
+	mov	edx, DWORD PTR _lpViewOI$[ebp]
+	mov	eax, DWORD PTR [edx+26]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+	jmp	SHORT $L8636
+$L8637:
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+$L8636:
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	je	$L8638
+
+; 2828 :          LPENTITYINSTANCE lpLinked;
+; 2829 : 
+; 2830 :          if ( fnEntityInstanceIsDead( lpEntityInstance ) )
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	push	eax
+	call	_fnEntityInstanceIsDead@4
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8640
+
+; 2831 :             continue;
+
+	jmp	SHORT $L8637
+$L8640:
+
+; 2832 : 
+; 2833 :          lpEntityInstance->lHierCount = lHierCount++;
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	eax, DWORD PTR _lHierCount$[ebp]
+	mov	DWORD PTR [edx+54], eax
+	mov	ecx, DWORD PTR _lHierCount$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _lHierCount$[ebp], ecx
+
+; 2834 : 
+; 2835 :          // Check to see if the current EI is linked with an EI in one of the
+; 2836 :          // other OIs.  If bInterlinking is TRUE then we already know that
+; 2837 :          // there is interlinking between the OIs so skip it.  (We still need
+; 2838 :          // to loop through the entity instances to set their hier #)
+; 2839 :          if ( bInterlinking || lpEntityInstance->hNextLinked == 0 )
+
+	mov	edx, DWORD PTR _bInterlinking$[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	jne	SHORT $L8642
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	cmp	DWORD PTR [eax+42], 0
+	jne	SHORT $L8641
+$L8642:
+
+; 2840 :             continue;
+
+	jmp	SHORT $L8637
+$L8641:
+
+; 2841 : 
+; 2842 :          // Loop through each of the linked instances and see if there is
+; 2843 :          // any interlinking.  Stop looping if we find that there is
+; 2844 :          // interlinking.
+; 2845 :          for ( lpLinked = zGETPTR( lpEntityInstance->hNextLinked );
+; 2846 :                lpLinked != lpEntityInstance && bInterlinking == FALSE;
+; 2847 :                lpLinked = zGETPTR( lpLinked->hNextLinked ) )
+
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+42]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpLinked$8639[ebp], eax
+	jmp	SHORT $L8645
+$L8646:
+	mov	eax, DWORD PTR _lpLinked$8639[ebp]
+	mov	ecx, DWORD PTR [eax+42]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpLinked$8639[ebp], eax
+$L8645:
+	mov	edx, DWORD PTR _lpLinked$8639[ebp]
+	cmp	edx, DWORD PTR _lpEntityInstance$[ebp]
+	je	$L8647
+	mov	eax, DWORD PTR _bInterlinking$[ebp]
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	jne	$L8647
+
+; 2849 :             zSHORT j;
+; 2850 : 
+; 2851 :             // Don't look at EI's that are part of the same OI.
+; 2852 :             if ( lpLinked->hViewOI == lpViewCsr->hViewOI )
+
+	mov	ecx, DWORD PTR _lpLinked$8639[ebp]
+	mov	edx, DWORD PTR _lpViewCsr$[ebp]
+	mov	eax, DWORD PTR [ecx+10]
+	cmp	eax, DWORD PTR [edx+10]
+	jne	SHORT $L8649
+
+; 2853 :                continue;
+
+	jmp	SHORT $L8646
+$L8649:
+
+; 2854 : 
+; 2855 :             // See if the linked instance belongs to another OI.
+; 2856 :             for ( j = 0; j < nViewCount; j++ )
+
+	mov	WORD PTR _j$8648[ebp], 0
+	jmp	SHORT $L8650
+$L8651:
+	mov	cx, WORD PTR _j$8648[ebp]
+	add	cx, 1
+	mov	WORD PTR _j$8648[ebp], cx
+$L8650:
+	movsx	edx, WORD PTR _j$8648[ebp]
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	edx, eax
+	jge	SHORT $L8652
+
+; 2858 :                LPVIEWCSR lpTempViewCsr;
+; 2859 : 
+; 2860 :                if ( lpViewArray[ j ] == 0 )
+
+	movsx	ecx, WORD PTR _j$8648[ebp]
+	mov	edx, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [edx+ecx*4], 0
+	jne	SHORT $L8654
+
+; 2861 :                   continue;
+
+	jmp	SHORT $L8651
+$L8654:
+
+; 2862 : 
+; 2863 :                lpTempViewCsr = zGETPTR( lpViewArray[ j ]->hViewCsr );
+
+	movsx	eax, WORD PTR _j$8648[ebp]
+	mov	ecx, DWORD PTR _lpViewArray$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*4]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpTempViewCsr$8653[ebp], eax
+
+; 2864 :                if ( lpTempViewCsr->hViewOI == lpLinked->hViewOI )
+
+	mov	ecx, DWORD PTR _lpTempViewCsr$8653[ebp]
+	mov	edx, DWORD PTR _lpLinked$8639[ebp]
+	mov	eax, DWORD PTR [ecx+10]
+	cmp	eax, DWORD PTR [edx+10]
+	jne	SHORT $L8656
+
+; 2866 :                   // We have a match--set flag and get out.
+; 2867 :                   bInterlinking = TRUE;
+
+	mov	BYTE PTR _bInterlinking$[ebp], 1
+
+; 2868 :                   break;
+
+	jmp	SHORT $L8652
+$L8656:
+
+; 2870 : 
+; 2871 :             } // for ( j...)...
+
+	jmp	SHORT $L8651
+$L8652:
+
+; 2872 : 
+; 2873 :          } // for ( lpLinked...)...
+
+	jmp	$L8646
+$L8647:
+
+; 2874 : 
+; 2875 :       } // for ( lpEntityInstance...)...
+
+	jmp	$L8637
+$L8638:
+
+; 2876 : 
+; 2877 :    } // for ( k...)...
+
+	jmp	$L8629
+$L8630:
+
+; 2878 : 
+; 2879 :    // If there is no interlinking between the OIs then there's nothing more
+; 2880 :    // to do.
+; 2881 :    if ( bInterlinking == FALSE )
+
+	mov	ecx, DWORD PTR _bInterlinking$[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	jne	SHORT $L8657
+
+; 2882 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L8617
+$L8657:
+
+; 2883 : 
+; 2884 :    // We now know that there is interlinking between the OIs.  Create the
+; 2885 :    // buffer and set it so we can re-link the instances later.
+; 2886 : 
+; 2887 :    pchLinkBuffer = (zPCHAR) fnAllocDataspace( lpTask->hFirstDataHeader,
+; 2888 :                                               LINK_BUFFER_SIZE, FALSE, 0, 0 );
+
+	push	0
+	push	0
+	push	0
+	push	30000					; 00007530H
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	eax, DWORD PTR [edx+94]
+	push	eax
+	call	_fnAllocDataspace
+	add	esp, 20					; 00000014H
+	mov	DWORD PTR _pchLinkBuffer$[ebp], eax
+
+; 2889 :    if ( pchLinkBuffer == 0 )
+
+	cmp	DWORD PTR _pchLinkBuffer$[ebp], 0
+	jne	SHORT $L8659
+
+; 2890 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8617
+$L8659:
+
+; 2891 : 
+; 2892 :    pchLinkBuffer   = zGETPTR( pchLinkBuffer );
+
+	mov	ecx, DWORD PTR _pchLinkBuffer$[ebp]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _pchLinkBuffer$[ebp], eax
+
+; 2893 :    *ppchLinkBuffer = pchBufferEnd = pchLinkBuffer;
+
+	mov	edx, DWORD PTR _pchLinkBuffer$[ebp]
+	mov	DWORD PTR _pchBufferEnd$[ebp], edx
+	mov	eax, DWORD PTR _ppchLinkBuffer$[ebp]
+	mov	ecx, DWORD PTR _pchBufferEnd$[ebp]
+	mov	DWORD PTR [eax], ecx
+
+; 2894 : 
+; 2895 :    // Loop through all the EI's again.  This time we'll start adding link info.
+; 2896 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8661
+$L8662:
+	mov	dx, WORD PTR _k$[ebp]
+	add	dx, 1
+	mov	WORD PTR _k$[ebp], dx
+$L8661:
+	movsx	eax, WORD PTR _k$[ebp]
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	eax, ecx
+	jge	$L8663
+
+; 2898 :       if ( lpViewArray[ k ] == 0 )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [eax+edx*4], 0
+	jne	SHORT $L8664
+
+; 2899 :          continue;
+
+	jmp	SHORT $L8662
+$L8664:
+
+; 2900 : 
+; 2901 :       lpViewCsr  = zGETPTR( lpViewArray[ k ]->hViewCsr );
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _lpViewArray$[ebp]
+	mov	eax, DWORD PTR [edx+ecx*4]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 2902 :       lpViewOI   = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	edx, DWORD PTR _lpViewCsr$[ebp]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$[ebp], eax
+
+; 2903 :       for ( lpEntityInstance = zGETPTR( lpViewOI->hRootEntityInstance );
+; 2904 :             lpEntityInstance;
+; 2905 :             lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier ) )
+
+	mov	ecx, DWORD PTR _lpViewOI$[ebp]
+	mov	edx, DWORD PTR [ecx+26]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+	jmp	SHORT $L8669
+$L8670:
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	mov	ecx, DWORD PTR [eax+14]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+$L8669:
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	je	$L8671
+
+; 2907 :          zSHORT           nLinkInfo;
+; 2908 :          zPCHAR           pchSave;
+; 2909 :          LPENTITYINSTANCE lpLinked;
+; 2910 : 
+; 2911 :          // Don't bother with an entity that isn't linked.
+; 2912 :          if ( lpEntityInstance->hNextLinked == 0 )
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	cmp	DWORD PTR [edx+42], 0
+	jne	SHORT $L8675
+
+; 2913 :             continue;
+
+	jmp	SHORT $L8670
+$L8675:
+
+; 2914 : 
+; 2915 :          // Don't bother with a dead entity.
+; 2916 :          if ( fnEntityInstanceIsDead( lpEntityInstance ) )
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	push	eax
+	call	_fnEntityInstanceIsDead@4
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8676
+
+; 2917 :             continue;
+
+	jmp	SHORT $L8670
+$L8676:
+
+; 2918 : 
+; 2919 :          // Assume that we don't have to create link information for the
+; 2920 :          // current EI.  nLinkInfo can be:
+; 2921 :          //   0 - Means that no interlinks have been found.
+; 2922 :          //   1 - Interlink has been found--add info to link buffer.
+; 2923 :          //   2 - A link has been found but it belongs to an OI that we've
+; 2924 :          //       already searched.  This means that info has already been
+; 2925 :          //       added to the link buffer for the current EI.
+; 2926 :          // pchSave saves the current position of pchBufferEnd in case we have
+; 2927 :          // to go back to it.
+; 2928 :          nLinkInfo = 0;
+
+	mov	WORD PTR _nLinkInfo$8672[ebp], 0
+
+; 2929 :          pchSave   = pchBufferEnd;
+
+	mov	edx, DWORD PTR _pchBufferEnd$[ebp]
+	mov	DWORD PTR _pchSave$8673[ebp], edx
+
+; 2930 : 
+; 2931 :          // Set table to all 0's to indicate that for this linked-list chain
+; 2932 :          // we haven't linked any OIs yet.
+; 2933 :          zmemset( cOI_Linked, 0, sizeof( cOI_Linked ) );
+
+	push	400					; 00000190H
+	push	0
+	lea	eax, DWORD PTR _cOI_Linked$[ebp]
+	push	eax
+	call	_memset
+	add	esp, 12					; 0000000cH
+
+; 2934 : 
+; 2935 :          // Loop through each of the linked instances and see if there is
+; 2936 :          // any interlinking.  Stop looping if we find that there is
+; 2937 :          // interlinking.
+; 2938 :          for ( lpLinked = zGETPTR( lpEntityInstance->hNextLinked );
+; 2939 :                lpLinked != lpEntityInstance;
+; 2940 :                lpLinked = zGETPTR( lpLinked->hNextLinked ) )
+
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+42]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpLinked$8674[ebp], eax
+	jmp	SHORT $L8679
+$L8680:
+	mov	eax, DWORD PTR _lpLinked$8674[ebp]
+	mov	ecx, DWORD PTR [eax+42]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpLinked$8674[ebp], eax
+$L8679:
+	mov	edx, DWORD PTR _lpLinked$8674[ebp]
+	cmp	edx, DWORD PTR _lpEntityInstance$[ebp]
+	je	$L8681
+
+; 2942 :             zSHORT j;
+; 2943 : 
+; 2944 :             // Don't look at EI's that are part of the same OI.
+; 2945 :             if ( lpLinked->hViewOI == lpViewCsr->hViewOI )
+
+	mov	eax, DWORD PTR _lpLinked$8674[ebp]
+	mov	ecx, DWORD PTR _lpViewCsr$[ebp]
+	mov	edx, DWORD PTR [eax+10]
+	cmp	edx, DWORD PTR [ecx+10]
+	jne	SHORT $L8683
+
+; 2946 :                continue;
+
+	jmp	SHORT $L8680
+$L8683:
+
+; 2947 : 
+; 2948 :             // See if the linked instance belongs to another OI.
+; 2949 :             for ( j = 0; j < nViewCount; j++ )
+
+	mov	WORD PTR _j$8682[ebp], 0
+	jmp	SHORT $L8684
+$L8685:
+	mov	ax, WORD PTR _j$8682[ebp]
+	add	ax, 1
+	mov	WORD PTR _j$8682[ebp], ax
+$L8684:
+	movsx	ecx, WORD PTR _j$8682[ebp]
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, edx
+	jge	$L8686
+
+; 2951 :                LPVIEWCSR lpTempViewCsr;
+; 2952 : 
+; 2953 :                if ( lpViewArray[ j ] == 0 )
+
+	movsx	eax, WORD PTR _j$8682[ebp]
+	mov	ecx, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [ecx+eax*4], 0
+	jne	SHORT $L8688
+
+; 2954 :                   continue;
+
+	jmp	SHORT $L8685
+$L8688:
+
+; 2955 : 
+; 2956 :                // If lpLinked is not part of the OI specified by
+; 2957 :                // lpViewArray[ j ] then skip it.
+; 2958 :                lpTempViewCsr = zGETPTR( lpViewArray[ j ]->hViewCsr );
+
+	movsx	edx, WORD PTR _j$8682[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpTempViewCsr$8687[ebp], eax
+
+; 2959 :                if ( lpTempViewCsr->hViewOI != lpLinked->hViewOI )
+
+	mov	eax, DWORD PTR _lpTempViewCsr$8687[ebp]
+	mov	ecx, DWORD PTR _lpLinked$8674[ebp]
+	mov	edx, DWORD PTR [eax+10]
+	cmp	edx, DWORD PTR [ecx+10]
+	je	SHORT $L8690
+
+; 2960 :                   continue;
+
+	jmp	SHORT $L8685
+$L8690:
+
+; 2961 : 
+; 2962 :                // At this point 'k' is the index pointing to the lpView for
+; 2963 :                // lpEntityInstance and 'j' is the index pointing to the lpView
+; 2964 :                // that lpLinked is part of.
+; 2965 :                if ( j < k )
+
+	movsx	eax, WORD PTR _j$8682[ebp]
+	movsx	ecx, WORD PTR _k$[ebp]
+	cmp	eax, ecx
+	jge	SHORT $L8691
+
+; 2967 :                   // We've found an interlink but lpLinked belongs to an
+; 2968 :                   // OI that we've already searched.  This means that we've
+; 2969 :                   // already added info to the link buffer and doesn't need
+; 2970 :                   // to be done for the current set of linked instances.
+; 2971 :                   nLinkInfo = 2;
+
+	mov	WORD PTR _nLinkInfo$8672[ebp], 2
+
+; 2972 :                   break;
+
+	jmp	$L8686
+$L8691:
+
+; 2974 : 
+; 2975 :                // Check to see if we've already found a linked EI in this
+; 2976 :                // view.  We only need to find 1 since all the linked EIs in
+; 2977 :                // the OI are already linked together.
+; 2978 :                if ( cOI_Linked[ j ] == TRUE )
+
+	movsx	edx, WORD PTR _j$8682[ebp]
+	movsx	eax, BYTE PTR _cOI_Linked$[ebp+edx]
+	cmp	eax, 1
+	jne	SHORT $L8692
+
+; 2979 :                   break;
+
+	jmp	$L8686
+$L8692:
+
+; 2980 : 
+; 2981 :                // Set flag to indicate we've linked this OI.
+; 2982 :                cOI_Linked[ j ] = TRUE;
+
+	movsx	ecx, WORD PTR _j$8682[ebp]
+	mov	BYTE PTR _cOI_Linked$[ebp+ecx], 1
+
+; 2983 : 
+; 2984 :                // If this is the first EI that we've found add a paren to
+; 2985 :                // start things and then add lpEntityInstance.
+; 2986 :                if ( nLinkInfo == 0 )
+
+	movsx	edx, WORD PTR _nLinkInfo$8672[ebp]
+	test	edx, edx
+	jne	SHORT $L8693
+
+; 2988 :                   *pchBufferEnd++ = '(';
+
+	mov	eax, DWORD PTR _pchBufferEnd$[ebp]
+	mov	BYTE PTR [eax], 40			; 00000028H
+	mov	ecx, DWORD PTR _pchBufferEnd$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _pchBufferEnd$[ebp], ecx
+
+; 2989 :                   zsprintf( pchBufferEnd, "%x:%lx", k,
+; 2990 :                             lpEntityInstance->lHierCount );
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	eax, DWORD PTR [edx+54]
+	push	eax
+	movsx	ecx, WORD PTR _k$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_06CEIK@?$CFx?3?$CFlx?$AA@ ; `string'
+	mov	edx, DWORD PTR _pchBufferEnd$[ebp]
+	push	edx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 16					; 00000010H
+
+; 2991 :                   pchBufferEnd += zstrlen( pchBufferEnd );
+
+	mov	eax, DWORD PTR _pchBufferEnd$[ebp]
+	push	eax
+	call	_strlen
+	add	esp, 4
+	mov	ecx, DWORD PTR _pchBufferEnd$[ebp]
+	add	ecx, eax
+	mov	DWORD PTR _pchBufferEnd$[ebp], ecx
+$L8693:
+
+; 2993 : 
+; 2994 :                // Add a slash to seperate EI data.
+; 2995 :                *pchBufferEnd++ = '/';
+
+	mov	edx, DWORD PTR _pchBufferEnd$[ebp]
+	mov	BYTE PTR [edx], 47			; 0000002fH
+	mov	eax, DWORD PTR _pchBufferEnd$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _pchBufferEnd$[ebp], eax
+
+; 2996 : 
+; 2997 :                // Set flag to indicate that we've found interlinking and
+; 2998 :                // that we're adding it to the buffer.
+; 2999 :                nLinkInfo = 1;
+
+	mov	WORD PTR _nLinkInfo$8672[ebp], 1
+
+; 3000 : 
+; 3001 :                //
+; 3002 :                zsprintf( pchBufferEnd, "%x:%lx", j, lpLinked->lHierCount );
+
+	mov	ecx, DWORD PTR _lpLinked$8674[ebp]
+	mov	edx, DWORD PTR [ecx+54]
+	push	edx
+	movsx	eax, WORD PTR _j$8682[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_06CEIK@?$CFx?3?$CFlx?$AA@ ; `string'
+	mov	ecx, DWORD PTR _pchBufferEnd$[ebp]
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 16					; 00000010H
+
+; 3003 :                pchBufferEnd += zstrlen( pchBufferEnd );
+
+	mov	edx, DWORD PTR _pchBufferEnd$[ebp]
+	push	edx
+	call	_strlen
+	add	esp, 4
+	mov	ecx, DWORD PTR _pchBufferEnd$[ebp]
+	add	ecx, eax
+	mov	DWORD PTR _pchBufferEnd$[ebp], ecx
+
+; 3004 : 
+; 3005 :             } // for ( j...)...
+
+	jmp	$L8685
+$L8686:
+
+; 3006 : 
+; 3007 :             if ( nLinkInfo == 2 )
+
+	movsx	edx, WORD PTR _nLinkInfo$8672[ebp]
+	cmp	edx, 2
+	jne	SHORT $L8695
+
+; 3008 :                break;
+
+	jmp	SHORT $L8681
+$L8695:
+
+; 3009 : 
+; 3010 :          } // for ( lpLinked...)...
+
+	jmp	$L8680
+$L8681:
+
+; 3011 : 
+; 3012 :          // If nLinkInfo is 2 then we don't need to add information to the
+; 3013 :          // link buffer for the current entity so reset pchBufferEnd.
+; 3014 :          if ( nLinkInfo == 2 )
+
+	movsx	eax, WORD PTR _nLinkInfo$8672[ebp]
+	cmp	eax, 2
+	jne	SHORT $L8696
+
+; 3015 :             pchBufferEnd = pchSave;
+
+	mov	ecx, DWORD PTR _pchSave$8673[ebp]
+	mov	DWORD PTR _pchBufferEnd$[ebp], ecx
+
+; 3016 :          else
+
+	jmp	SHORT $L8698
+$L8696:
+
+; 3017 :          if ( nLinkInfo == 1 )
+
+	movsx	edx, WORD PTR _nLinkInfo$8672[ebp]
+	cmp	edx, 1
+	jne	SHORT $L8698
+
+; 3018 :             *pchBufferEnd++ = ')';
+
+	mov	eax, DWORD PTR _pchBufferEnd$[ebp]
+	mov	BYTE PTR [eax], 41			; 00000029H
+	mov	ecx, DWORD PTR _pchBufferEnd$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _pchBufferEnd$[ebp], ecx
+$L8698:
+
+; 3019 : 
+; 3020 :       } // for ( lpEntityInstance...)...
+
+	jmp	$L8670
+$L8671:
+
+; 3021 : 
+; 3022 :    } // for ( k...)...
+
+	jmp	$L8662
+$L8663:
+
+; 3023 : 
+; 3024 :    *pchBufferEnd++ = 0;
+
+	mov	edx, DWORD PTR _pchBufferEnd$[ebp]
+	mov	BYTE PTR [edx], 0
+	mov	eax, DWORD PTR _pchBufferEnd$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _pchBufferEnd$[ebp], eax
+
+; 3025 : 
+; 3026 :    *plLinkBufferLth = (zLONG) (pchBufferEnd - pchLinkBuffer);
+
+	mov	ecx, DWORD PTR _pchBufferEnd$[ebp]
+	sub	ecx, DWORD PTR _pchLinkBuffer$[ebp]
+	mov	edx, DWORD PTR _plLinkBufferLth$[ebp]
+	mov	DWORD PTR [edx], ecx
+
+; 3027 : // TraceBuffer( "(kzoeneta) ** LinkBuffer = ", pchLinkBuffer,
+; 3028 : //              (zSHORT) *plLinkBufferLth );
+; 3029 : 
+; 3030 :    return( 0 );
+
+	xor	ax, ax
+$L8617:
+
+; 3031 : 
+; 3032 : } // fnSetLinkBuffer
+
+	mov	esp, ebp
+	pop	ebp
+	ret	20					; 00000014H
+_fnSetLinkBuffer@20 ENDP
+_TEXT	ENDS
+PUBLIC	_fnMergeViews@8
+PUBLIC	??_C@_0CI@JLMD@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5Old?5en@ ; `string'
+PUBLIC	??_C@_0CI@FPHM@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5New?5en@ ; `string'
+PUBLIC	??_C@_0BH@BKMF@?$CImerge?$CJ?5lpOld?5?5?5?5?5?5?5?$DN?5?$AA@ ; `string'
+PUBLIC	??_C@_0BH@LDLJ@?$CImerge?$CJ?5lpNew?9?$DOlTag?5?$DN?5?$AA@ ; `string'
+PUBLIC	??_C@_0BN@ONLK@?$CImerge?$CJ?5Extra?5New?5entity?$CB?5?$DN?5?$AA@ ; `string'
+EXTRN	_fnGetAttrAddrFromEntityInstance:NEAR
+EXTRN	_fnStoreValueInEntityInstance:NEAR
+EXTRN	_TraceLineX@8:NEAR
+EXTRN	_fnGetAttribFlagsPtr@8:NEAR
+;	COMDAT ??_C@_0CI@JLMD@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5Old?5en@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CI@JLMD@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5Old?5en@ DB '(merg'
+	DB	'e) Tags don''t match! Old entity = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@FPHM@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5New?5en@
+_DATA	SEGMENT
+??_C@_0CI@FPHM@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5New?5en@ DB '(merg'
+	DB	'e) Tags don''t match! New entity = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BH@BKMF@?$CImerge?$CJ?5lpOld?5?5?5?5?5?5?5?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0BH@BKMF@?$CImerge?$CJ?5lpOld?5?5?5?5?5?5?5?$DN?5?$AA@ DB '(merge) '
+	DB	'lpOld       = ', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BH@LDLJ@?$CImerge?$CJ?5lpNew?9?$DOlTag?5?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0BH@LDLJ@?$CImerge?$CJ?5lpNew?9?$DOlTag?5?$DN?5?$AA@ DB '(merge) lp'
+	DB	'New->lTag = ', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@ONLK@?$CImerge?$CJ?5Extra?5New?5entity?$CB?5?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0BN@ONLK@?$CImerge?$CJ?5Extra?5New?5entity?$CB?5?$DN?5?$AA@ DB '(me'
+	DB	'rge) Extra New entity! = ', 00H		; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_vNew$ = 8
+_vOld$ = 12
+_lpOldViewCsr$ = -24
+_lpOldViewOI$ = -32
+_lpNewViewCsr$ = -20
+_lpNewViewOI$ = -28
+_lpNew$ = -16
+_lpOld$ = -8
+_bGetNextOld$ = -12
+_lpViewOD$ = -4
+_lpViewEntity$8725 = -36
+_lpViewAttrib$8726 = -40
+_lpValue$8749 = -48
+_uLth$8750 = -56
+_lpOldAttribFlags$8751 = -52
+_lpNewAttribFlags$8752 = -60
+_lpViewEntity$8759 = -68
+_fnMergeViews@8 PROC NEAR
+
+; 3051 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 76					; 0000004cH
+
+; 3052 :    LPVIEWCSR         lpOldViewCsr = zGETPTR( vOld->hViewCsr );
+
+	mov	eax, DWORD PTR _vOld$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpOldViewCsr$[ebp], eax
+
+; 3053 :    LPVIEWOI          lpOldViewOI  = zGETPTR( lpOldViewCsr->hViewOI );
+
+	mov	edx, DWORD PTR _lpOldViewCsr$[ebp]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpOldViewOI$[ebp], eax
+
+; 3054 :    LPVIEWCSR         lpNewViewCsr = zGETPTR( vNew->hViewCsr );
+
+	mov	ecx, DWORD PTR _vNew$[ebp]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNewViewCsr$[ebp], eax
+
+; 3055 :    LPVIEWOI          lpNewViewOI  = zGETPTR( lpNewViewCsr->hViewOI );
+
+	mov	eax, DWORD PTR _lpNewViewCsr$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNewViewOI$[ebp], eax
+
+; 3056 :    LPENTITYINSTANCE  lpNew;
+; 3057 :    LPENTITYINSTANCE  lpOld;
+; 3058 :    zBOOL             bGetNextOld;
+; 3059 : 
+; 3060 : #ifdef DEBUG
+; 3061 :    LPVIEWOD          lpViewOD = zGETPTR( vNew->hViewOD );
+
+	mov	edx, DWORD PTR _vNew$[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOD$[ebp], eax
+
+; 3062 : #endif
+; 3063 : 
+; 3064 :    // Loop through each entity instance and merge data from new to old.
+; 3065 : 
+; 3066 :    // Loop through all the old instances and try to merge the new instances.
+; 3067 :    lpNew = zGETPTR( lpNewViewOI->hRootEntityInstance );
+
+	mov	ecx, DWORD PTR _lpNewViewOI$[ebp]
+	mov	edx, DWORD PTR [ecx+26]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNew$[ebp], eax
+
+; 3068 :    for ( lpOld = zGETPTR( lpOldViewOI->hRootEntityInstance );
+; 3069 :          lpOld;
+; 3070 :          lpOld = (bGetNextOld ? zGETPTR( lpOld->hNextHier ) : lpOld) )
+
+	mov	eax, DWORD PTR _lpOldViewOI$[ebp]
+	mov	ecx, DWORD PTR [eax+26]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpOld$[ebp], eax
+	jmp	SHORT $L8722
+$L8723:
+	mov	edx, DWORD PTR _bGetNextOld$[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	je	SHORT $L10255
+	mov	eax, DWORD PTR _lpOld$[ebp]
+	mov	ecx, DWORD PTR [eax+14]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR -72+[ebp], eax
+	jmp	SHORT $L10256
+$L10255:
+	mov	edx, DWORD PTR _lpOld$[ebp]
+	mov	DWORD PTR -72+[ebp], edx
+$L10256:
+	mov	eax, DWORD PTR -72+[ebp]
+	mov	DWORD PTR _lpOld$[ebp], eax
+$L8722:
+	cmp	DWORD PTR _lpOld$[ebp], 0
+	je	$L8724
+
+; 3072 :       LPVIEWENTITY lpViewEntity;
+; 3073 :       LPVIEWATTRIB lpViewAttrib;
+; 3074 : 
+; 3075 :       // We'll assume here that the next iteration of the 'for' loop should
+; 3076 :       // get the next lpOld.
+; 3077 :       bGetNextOld = TRUE;
+
+	mov	BYTE PTR _bGetNextOld$[ebp], 1
+$L8728:
+
+; 3078 : 
+; 3079 :       // Skip old entity instances if they are "dead".  If they are dead then
+; 3080 :       // they were not sent to the server so they won't show up in the new OI.
+; 3081 :       while ( lpOld && fnEntityInstanceIsDead( lpOld ) )
+
+	cmp	DWORD PTR _lpOld$[ebp], 0
+	je	SHORT $L8729
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	push	ecx
+	call	_fnEntityInstanceIsDead@4
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8729
+
+; 3082 :          lpOld = zGETPTR( lpOld->hNextHier );
+
+	mov	eax, DWORD PTR _lpOld$[ebp]
+	mov	ecx, DWORD PTR [eax+14]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpOld$[ebp], eax
+	jmp	SHORT $L8728
+$L8729:
+
+; 3083 : 
+; 3084 :       if ( lpOld == 0 )
+
+	cmp	DWORD PTR _lpOld$[ebp], 0
+	jne	SHORT $L8731
+
+; 3085 :          break;
+
+	jmp	$L8724
+$L8731:
+
+; 3086 : 
+; 3087 :       // Compare the tag of the new instance with the pointer of the old
+; 3088 :       // instance.  If they are not the same then something happened:
+; 3089 :       // o  A commit object operation on the server created or deleted an
+; 3090 :       //    entity.
+; 3091 :       if ( (zLONG) lpOld != lpNew->lTag )
+
+	mov	edx, DWORD PTR _lpNew$[ebp]
+	mov	eax, DWORD PTR _lpOld$[ebp]
+	cmp	eax, DWORD PTR [edx+46]
+	je	SHORT $L8733
+
+; 3093 :          zLONG lSomethingNeedsToBeDoneHere;
+; 3094 : 
+; 3095 :          // We'll worry about handling server commit operations that create/
+; 3096 :          // delete entities later.  For now we'll just assume that lpOld
+; 3097 :          // wasn't sent to the server...so skip it.
+; 3098 : 
+; 3099 :          // NOTE: We can determine if the lpNew entity was created on the
+; 3100 :          // server by checking the value of lpNew->lTag.  If it is 0 then
+; 3101 :          // the entity was created on the server.
+; 3102 : 
+; 3103 :          lpViewEntity = zGETPTR( lpOld->hViewEntity );
+
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	mov	edx, DWORD PTR [ecx+2]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$8725[ebp], eax
+
+; 3104 :          TraceLineS( "(merge) Tags don't match! Old entity = ", lpViewEntity->szName );
+
+	mov	eax, DWORD PTR _lpViewEntity$8725[ebp]
+	add	eax, 14					; 0000000eH
+	push	eax
+	push	OFFSET FLAT:??_C@_0CI@JLMD@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5Old?5en@ ; `string'
+	call	_TraceLineS@8
+
+; 3105 :          lpViewEntity = zGETPTR( lpNew->hViewEntity );
+
+	mov	ecx, DWORD PTR _lpNew$[ebp]
+	mov	edx, DWORD PTR [ecx+2]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$8725[ebp], eax
+
+; 3106 :          TraceLineS( "(merge) Tags don't match! New entity = ", lpViewEntity->szName );
+
+	mov	eax, DWORD PTR _lpViewEntity$8725[ebp]
+	add	eax, 14					; 0000000eH
+	push	eax
+	push	OFFSET FLAT:??_C@_0CI@FPHM@?$CImerge?$CJ?5Tags?5don?8t?5match?$CB?5New?5en@ ; `string'
+	call	_TraceLineS@8
+
+; 3107 :          TraceLineX( "(merge) lpOld       = ", (zLONG) lpOld );
+
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BH@BKMF@?$CImerge?$CJ?5lpOld?5?5?5?5?5?5?5?$DN?5?$AA@ ; `string'
+	call	_TraceLineX@8
+
+; 3108 :          TraceLineX( "(merge) lpNew->lTag = ", lpNew->lTag );
+
+	mov	edx, DWORD PTR _lpNew$[ebp]
+	mov	eax, DWORD PTR [edx+46]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BH@LDLJ@?$CImerge?$CJ?5lpNew?9?$DOlTag?5?$DN?5?$AA@ ; `string'
+	call	_TraceLineX@8
+
+; 3109 : 
+; 3110 :          continue;
+
+	jmp	$L8723
+$L8733:
+
+; 3112 : 
+; 3113 :       // If we get here then the tag for the new entity matches the pointer
+; 3114 :       // for the old entity.  They must be the same instance.
+; 3115 :       lpViewEntity = zGETPTR( lpOld->hViewEntity );
+
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	mov	edx, DWORD PTR [ecx+2]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$8725[ebp], eax
+
+; 3116 :       if ( lpViewEntity->bDerived == FALSE &&
+; 3117 :            lpViewEntity->bDerivedPath == FALSE &&
+; 3118 :            lpViewEntity->bHasDB_Oper == FALSE ) // added Phil/Doug 2005.10.17
+
+	mov	eax, DWORD PTR _lpViewEntity$8725[ebp]
+	mov	ecx, DWORD PTR [eax+235]
+	shr	ecx, 13					; 0000000dH
+	and	ecx, 1
+	test	ecx, ecx
+	jne	$L8748
+	mov	edx, DWORD PTR _lpViewEntity$8725[ebp]
+	mov	eax, DWORD PTR [edx+235]
+	shr	eax, 14					; 0000000eH
+	and	eax, 1
+	test	eax, eax
+	jne	$L8748
+	mov	ecx, DWORD PTR _lpViewEntity$8725[ebp]
+	mov	edx, DWORD PTR [ecx+239]
+	and	edx, 1
+	test	edx, edx
+	jne	$L8748
+
+; 3120 :          // Copy each of the attribute values.
+; 3121 :          for ( lpViewAttrib = zGETPTR( lpViewEntity->hFirstOD_Attrib );
+; 3122 :                lpViewAttrib;
+; 3123 :                lpViewAttrib = zGETPTR( lpViewAttrib->hNextOD_Attrib ) )
+
+	mov	eax, DWORD PTR _lpViewEntity$8725[ebp]
+	mov	ecx, DWORD PTR [eax+179]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewAttrib$8726[ebp], eax
+	jmp	SHORT $L8746
+$L8747:
+	mov	edx, DWORD PTR _lpViewAttrib$8726[ebp]
+	mov	eax, DWORD PTR [edx+2]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewAttrib$8726[ebp], eax
+$L8746:
+	cmp	DWORD PTR _lpViewAttrib$8726[ebp], 0
+	je	SHORT $L8748
+
+; 3125 :             zPVOID        lpValue;
+; 3126 :             zULONG        uLth;
+; 3127 :             LPATTRIBFLAGS lpOldAttribFlags;
+; 3128 :             LPATTRIBFLAGS lpNewAttribFlags;
+; 3129 : 
+; 3130 :             if ( lpViewAttrib->bPersist == FALSE )
+
+	mov	ecx, DWORD PTR _lpViewAttrib$8726[ebp]
+	mov	edx, DWORD PTR [ecx+193]
+	and	edx, 1
+	test	edx, edx
+	jne	SHORT $L8753
+
+; 3131 :                continue;
+
+	jmp	SHORT $L8747
+$L8753:
+
+; 3132 : 
+; 3133 :             fnGetAttrAddrFromEntityInstance( (zCOREMEM) &lpValue, &uLth,
+; 3134 :                                              lpNew, lpViewAttrib );
+
+	mov	eax, DWORD PTR _lpViewAttrib$8726[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNew$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _uLth$8750[ebp]
+	push	edx
+	lea	eax, DWORD PTR _lpValue$8749[ebp]
+	push	eax
+	call	_fnGetAttrAddrFromEntityInstance
+	add	esp, 16					; 00000010H
+
+; 3135 :             fnStoreValueInEntityInstance( lpOld, lpViewEntity, lpViewAttrib,
+; 3136 :                                           lpValue, uLth );
+
+	mov	ecx, DWORD PTR _uLth$8750[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpValue$8749[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpViewAttrib$8726[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpViewEntity$8725[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpOld$[ebp]
+	push	edx
+	call	_fnStoreValueInEntityInstance
+	add	esp, 20					; 00000014H
+
+; 3137 : 
+; 3138 :             lpNewAttribFlags = fnGetAttribFlagsPtr( lpNew, lpViewAttrib );
+
+	mov	eax, DWORD PTR _lpViewAttrib$8726[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNew$[ebp]
+	push	ecx
+	call	_fnGetAttribFlagsPtr@8
+	mov	DWORD PTR _lpNewAttribFlags$8752[ebp], eax
+
+; 3139 :             lpOldAttribFlags = fnGetAttribFlagsPtr( lpOld, lpViewAttrib );
+
+	mov	edx, DWORD PTR _lpViewAttrib$8726[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpOld$[ebp]
+	push	eax
+	call	_fnGetAttribFlagsPtr@8
+	mov	DWORD PTR _lpOldAttribFlags$8751[ebp], eax
+
+; 3140 :             lpOldAttribFlags->u.uFlags = lpNewAttribFlags->u.uFlags;
+
+	mov	ecx, DWORD PTR _lpOldAttribFlags$8751[ebp]
+	mov	edx, DWORD PTR _lpNewAttribFlags$8752[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	DWORD PTR [ecx], eax
+
+; 3141 : 
+; 3142 :          } // for...
+
+	jmp	$L8747
+$L8748:
+
+; 3144 : 
+; 3145 :       lpOld->u.nIndicators = lpNew->u.nIndicators;
+
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	mov	edx, DWORD PTR _lpNew$[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	mov	DWORD PTR [ecx+6], eax
+
+; 3146 : 
+; 3147 :       lpNew = zGETPTR( lpNew->hNextHier );
+
+	mov	ecx, DWORD PTR _lpNew$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNew$[ebp], eax
+
+; 3148 :       if ( lpNew == 0 )
+
+	cmp	DWORD PTR _lpNew$[ebp], 0
+	jne	SHORT $L8756
+
+; 3149 :          break;
+
+	jmp	SHORT $L8724
+$L8756:
+
+; 3150 : 
+; 3151 :    } // for ( lpOld )...
+
+	jmp	$L8723
+$L8724:
+
+; 3152 : 
+; 3153 :    if ( lpNew )
+
+	cmp	DWORD PTR _lpNew$[ebp], 0
+	je	SHORT $L8757
+
+; 3155 :       zLONG        lSomethingNeedsToBeDoneHereToo;
+; 3156 :       LPVIEWENTITY lpViewEntity;
+; 3157 : 
+; 3158 :       // If we get here then we've gone through all the old entities but we
+; 3159 :       // still have new entities left.  This means that some entities were
+; 3160 :       // created on the server.  We should merge them in.
+; 3161 :       lpViewEntity = zGETPTR( lpNew->hViewEntity );
+
+	mov	eax, DWORD PTR _lpNew$[ebp]
+	mov	ecx, DWORD PTR [eax+2]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$8759[ebp], eax
+
+; 3162 :       TraceLineS( "(merge) Extra New entity! = ", lpViewEntity->szName );
+
+	mov	edx, DWORD PTR _lpViewEntity$8759[ebp]
+	add	edx, 14					; 0000000eH
+	push	edx
+	push	OFFSET FLAT:??_C@_0BN@ONLK@?$CImerge?$CJ?5Extra?5New?5entity?$CB?5?$DN?5?$AA@ ; `string'
+	call	_TraceLineS@8
+
+; 3163 :       TraceLineX( "(merge) lpNew->lTag = ", lpNew->lTag );
+
+	mov	eax, DWORD PTR _lpNew$[ebp]
+	mov	ecx, DWORD PTR [eax+46]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BH@LDLJ@?$CImerge?$CJ?5lpNew?9?$DOlTag?5?$DN?5?$AA@ ; `string'
+	call	_TraceLineX@8
+$L8757:
+
+; 3165 : 
+; 3166 :    // Now loop through again but just copy the EI flags.
+; 3167 : 
+; 3168 :    lpNew = zGETPTR( lpNewViewOI->hRootEntityInstance );
+
+	mov	edx, DWORD PTR _lpNewViewOI$[ebp]
+	mov	eax, DWORD PTR [edx+26]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNew$[ebp], eax
+
+; 3169 :    for ( lpOld = zGETPTR( lpOldViewOI->hRootEntityInstance );
+; 3170 :          lpOld;
+; 3171 :          lpOld = ( bGetNextOld ? zGETPTR( lpOld->hNextHier ) : lpOld ) )
+
+	mov	ecx, DWORD PTR _lpOldViewOI$[ebp]
+	mov	edx, DWORD PTR [ecx+26]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpOld$[ebp], eax
+	jmp	SHORT $L8765
+$L8766:
+	mov	eax, DWORD PTR _bGetNextOld$[ebp]
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	je	SHORT $L10257
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR -76+[ebp], eax
+	jmp	SHORT $L10258
+$L10257:
+	mov	eax, DWORD PTR _lpOld$[ebp]
+	mov	DWORD PTR -76+[ebp], eax
+$L10258:
+	mov	ecx, DWORD PTR -76+[ebp]
+	mov	DWORD PTR _lpOld$[ebp], ecx
+$L8765:
+	cmp	DWORD PTR _lpOld$[ebp], 0
+	je	SHORT $L8767
+
+; 3173 :       // We'll assume here that the next iteration of the 'for' loop should
+; 3174 :       // get the next lpOld.
+; 3175 :       bGetNextOld = TRUE;
+
+	mov	BYTE PTR _bGetNextOld$[ebp], 1
+$L8769:
+
+; 3176 : 
+; 3177 :       while ( lpOld && fnEntityInstanceIsDead( lpOld ) )
+
+	cmp	DWORD PTR _lpOld$[ebp], 0
+	je	SHORT $L8770
+	mov	edx, DWORD PTR _lpOld$[ebp]
+	push	edx
+	call	_fnEntityInstanceIsDead@4
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8770
+
+; 3178 :          lpOld = zGETPTR( lpOld->hNextHier );
+
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpOld$[ebp], eax
+	jmp	SHORT $L8769
+$L8770:
+
+; 3179 : 
+; 3180 :       if ( lpOld == 0 )
+
+	cmp	DWORD PTR _lpOld$[ebp], 0
+	jne	SHORT $L8772
+
+; 3181 :          break;
+
+	jmp	SHORT $L8767
+$L8772:
+
+; 3182 : 
+; 3183 :       // Compare the tag of the new instance with the pointer of the old
+; 3184 :       // instance.  If they are not the same then one of two things happened:
+; 3185 :       // o  For some reason lpOld wasn't sent to the server--maybe it's
+; 3186 :       //    dead.
+; 3187 :       // o  A commit object operation on the server created or deleted an
+; 3188 :       //    entity.
+; 3189 :       if ( (zLONG) lpOld != lpNew->lTag )
+
+	mov	eax, DWORD PTR _lpNew$[ebp]
+	mov	ecx, DWORD PTR _lpOld$[ebp]
+	cmp	ecx, DWORD PTR [eax+46]
+	je	SHORT $L8774
+
+; 3190 :          continue;
+
+	jmp	SHORT $L8766
+$L8774:
+
+; 3191 : 
+; 3192 :       // If we get here then the tag for the new entity matches the pointer
+; 3193 :       // for the old entity.  They must be the same instance.
+; 3194 : 
+; 3195 :       lpOld->u.nIndicators = lpNew->u.nIndicators;
+
+	mov	edx, DWORD PTR _lpOld$[ebp]
+	mov	eax, DWORD PTR _lpNew$[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	mov	DWORD PTR [edx+6], ecx
+
+; 3196 : 
+; 3197 :       lpNew = zGETPTR( lpNew->hNextHier );
+
+	mov	edx, DWORD PTR _lpNew$[ebp]
+	mov	eax, DWORD PTR [edx+14]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNew$[ebp], eax
+
+; 3198 :       if ( lpNew == 0 )
+
+	cmp	DWORD PTR _lpNew$[ebp], 0
+	jne	SHORT $L8776
+
+; 3199 :          break;
+
+	jmp	SHORT $L8767
+$L8776:
+
+; 3200 : 
+; 3201 :    } // for ( lpOld )...
+
+	jmp	$L8766
+$L8767:
+
+; 3202 : 
+; 3203 :    return( 0 );
+
+	xor	ax, ax
+
+; 3204 : 
+; 3205 : } // fnMergeViews
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_fnMergeViews@8 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CH@DJGN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Commit?5OI?5@ ; `string'
+PUBLIC	??_C@_0CM@DEHH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Appl?5Name?3?5?$CFs?5?5Use@ ; `string'
+PUBLIC	??_C@_0CO@ODIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5View?5Count?3?5?$CFs?5?5OD@ ; `string'
+PUBLIC	??_C@_0BJ@LCNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5OD?5Names?3?5?$AA@ ; `string'
+PUBLIC	??_C@_0BH@CGMJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5LB?5Lth?3?5?$AA@ ; `string'
+PUBLIC	??_C@_0CE@BDJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5OIs?5to?5com@ ; `string'
+PUBLIC	??_C@_0CL@GOMF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5OI?5f@ ; `string'
+PUBLIC	??_C@_0CG@CNJI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5return@ ; `string'
+PUBLIC	??_C@_0CP@PMCB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+PUBLIC	??_C@_0CJ@NGEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5bytes?5but@ ; `string'
+PUBLIC	??_C@_0CA@EJON@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5commit?5?$DN?5?$AA@ ; `string'
+PUBLIC	_NetCommitOI@28
+EXTRN	_fnCleanupInstance:NEAR
+EXTRN	_fnDropSubtask:NEAR
+EXTRN	_TraceBuffer@12:NEAR
+EXTRN	_SfCreateSubtask@12:NEAR
+EXTRN	_fnReclaimHiddenInstances@4:NEAR
+;	COMDAT ??_C@_0CH@DJGN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Commit?5OI?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CH@DJGN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Commit?5OI?5@ DB '(kz'
+	DB	'oeneta) ** Sending Commit OI packet', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@DEHH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Appl?5Name?3?5?$CFs?5?5Use@
+_DATA	SEGMENT
+??_C@_0CM@DEHH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Appl?5Name?3?5?$CFs?5?5Use@ DB '('
+	DB	'kzoeneta) ** Appl Name: %s  User Name: %s ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@ODIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5View?5Count?3?5?$CFs?5?5OD@
+_DATA	SEGMENT
+??_C@_0CO@ODIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5View?5Count?3?5?$CFs?5?5OD@ DB '('
+	DB	'kzoeneta) ** View Count: %s  OD Name Lth: %d', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BJ@LCNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5OD?5Names?3?5?$AA@
+_DATA	SEGMENT
+??_C@_0BJ@LCNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5OD?5Names?3?5?$AA@ DB '(kzoene'
+	DB	'ta) ** OD Names: ', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BH@CGMJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5LB?5Lth?3?5?$AA@
+_DATA	SEGMENT
+??_C@_0BH@CGMJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5LB?5Lth?3?5?$AA@ DB '(kzoeneta'
+	DB	') ** LB Lth: ', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@BDJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5OIs?5to?5com@
+_DATA	SEGMENT
+??_C@_0CE@BDJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5OIs?5to?5com@ DB '(kz'
+	DB	'oeneta) ** Sending OIs to commit', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@GOMF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5OI?5f@
+_DATA	SEGMENT
+??_C@_0CL@GOMF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5OI?5f@ DB '(kz'
+	DB	'oeneta) ** Error sending OI for Commit!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@CNJI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5return@
+_DATA	SEGMENT
+??_C@_0CG@CNJI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5return@ DB '(kzo'
+	DB	'eneta) ** Waiting for returned OI', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@PMCB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@
+_DATA	SEGMENT
+??_C@_0CP@PMCB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ DB '(kzo'
+	DB	'eneta) ** Error receiving OI after commit!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@NGEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5bytes?5but@
+_DATA	SEGMENT
+??_C@_0CJ@NGEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5bytes?5but@ DB '(kzo'
+	DB	'eneta) ** Received bytes but no ACK!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CA@EJON@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5commit?5?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0CA@EJON@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5commit?5?$DN?5?$AA@ DB '('
+	DB	'kzoeneta) ** RC from commit = ', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_pchNetworkName$ = 8
+_pchAddress$ = 12
+_lpViewCluster$ = 16
+_lpViewArray$ = 20
+_nViewCount$ = 24
+_pnViewErrorIdx$ = 28
+_lControl$ = 32
+_nRC$ = -36
+_k$ = -528
+_vSubtask$ = -532
+_cPacketType$ = -256
+_lPacketData$ = -8
+_lpNetwork$ = -524
+_pvConn$ = -32
+_lpReferenceViewOD$ = -540
+_lpViewOD$ = -28
+_lpViewCsr$ = -4
+_CommitPacket$ = -252
+_lpTask$ = -76
+_vReferenceView$ = -520
+_lpTaskView$ = -24
+_pchObjectNameBuffer$ = -548
+_pch$ = -20
+_nObjectNameLth$ = -516
+_bConnectionMade$ = -16
+_lpNewViewArray$ = -12
+_pchLinkBuffer$ = -536
+_lLinkBufferLth$ = -544
+_szServer$ = -512
+_szAppName$ = -72
+_CommitInfo$ = -92
+_lpEntityInstance$8828 = -552
+_lpViewOI$8829 = -560
+_bChanged$8830 = -556
+_szControl$8878 = -584
+_szLth$8879 = -572
+_lLth$8880 = -564
+_lpViewCsr$8920 = -588
+_lpViewOI$8921 = -592
+_lpNewViewOI$8922 = -596
+_lpDropSubtask$8932 = -600
+_lpViewOI$8941 = -604
+_NetCommitOI@28 PROC NEAR
+
+; 3248 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 604				; 0000025cH
+	push	esi
+	push	edi
+
+; 3249 :    zSHORT        nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 3250 :    zSHORT        k;
+; 3251 :    zVIEW         vSubtask = 0;
+
+	mov	DWORD PTR _vSubtask$[ebp], 0
+
+; 3252 :    zCHAR         cPacketType;
+; 3253 :    zLONG         lPacketData;
+; 3254 :    LPNETWORK     lpNetwork;
+; 3255 :    zPVOID        pvConn = 0;
+
+	mov	DWORD PTR _pvConn$[ebp], 0
+
+; 3256 :    LPVIEWOD      lpReferenceViewOD;
+; 3257 :    LPVIEWOD      lpViewOD;
+; 3258 :    LPVIEWCSR     lpViewCsr;
+; 3259 :    zCommitPacket CommitPacket;
+; 3260 :    LPTASK        lpTask;
+; 3261 :    zVIEW         vReferenceView = 0;
+
+	mov	DWORD PTR _vReferenceView$[ebp], 0
+
+; 3262 :    zVIEW         lpTaskView = 0;
+
+	mov	DWORD PTR _lpTaskView$[ebp], 0
+
+; 3263 :    zPCHAR        pchObjectNameBuffer = 0;
+
+	mov	DWORD PTR _pchObjectNameBuffer$[ebp], 0
+
+; 3264 :    zPCHAR        pch;
+; 3265 :    zSHORT        nObjectNameLth;
+; 3266 :    zBOOL         bConnectionMade = FALSE;
+
+	mov	BYTE PTR _bConnectionMade$[ebp], 0
+
+; 3267 :    zPVIEW        lpNewViewArray = 0;
+
+	mov	DWORD PTR _lpNewViewArray$[ebp], 0
+
+; 3268 :    zPCHAR        pchLinkBuffer = 0;
+
+	mov	DWORD PTR _pchLinkBuffer$[ebp], 0
+
+; 3269 :    zLONG         lLinkBufferLth;
+; 3270 :    zCHAR         szServer[ 256 ] = "";
+
+	mov	al, BYTE PTR ??_C@_00A@?$AA@		; `string'
+	mov	BYTE PTR _szServer$[ebp], al
+	mov	ecx, 63					; 0000003fH
+	xor	eax, eax
+	lea	edi, DWORD PTR _szServer$[ebp+1]
+	rep stosd
+	stosw
+	stosb
+
+; 3271 :    zCHAR         szAppName[ zZEIDON_NAME_LTH + 1 ];
+; 3272 :    ServDirCommitRecord CommitInfo;
+; 3273 : 
+; 3274 :    // Find a view that can be used as the task view.
+; 3275 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8816
+$L8817:
+	mov	cx, WORD PTR _k$[ebp]
+	add	cx, 1
+	mov	WORD PTR _k$[ebp], cx
+$L8816:
+	movsx	edx, WORD PTR _k$[ebp]
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	edx, eax
+	jge	SHORT $L8818
+
+; 3277 :       if ( lpViewArray[ k ] )
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [edx+ecx*4], 0
+	je	SHORT $L8819
+
+; 3279 :          lpTaskView = lpViewArray[ k ];
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpViewArray$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*4]
+	mov	DWORD PTR _lpTaskView$[ebp], edx
+
+; 3280 :          break;
+
+	jmp	SHORT $L8818
+$L8819:
+
+; 3282 :    }
+
+	jmp	SHORT $L8817
+$L8818:
+
+; 3283 : 
+; 3284 :    // No views to commit? Just return.
+; 3285 :    if ( lpTaskView == 0 )
+
+	cmp	DWORD PTR _lpTaskView$[ebp], 0
+	jne	SHORT $L8820
+
+; 3286 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L8791
+$L8820:
+
+; 3287 : 
+; 3288 :    // If task not active or disabled, return zCALL_ERROR.
+; 3289 :    if ( (lpTask = fnOperationCall( iNetCommitOI, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	501					; 000001f5H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8821
+
+; 3291 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8791
+$L8821:
+
+; 3293 : 
+; 3294 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8822
+
+; 3296 :       fnOperationReturn( iNetCommitOI, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	501					; 000001f5H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 3297 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8791
+$L8822:
+
+; 3299 : 
+; 3300 :    // Create a buffer to store object names.  We'll arbitrarily allocate
+; 3301 :    // 32000 bytes.
+; 3302 :    pchObjectNameBuffer = (zPCHAR) fnAllocDataspace( lpTask->hFirstDataHeader,
+; 3303 :                                                     32000, TRUE, 0, 0 );
+
+	push	0
+	push	0
+	push	1
+	push	32000					; 00007d00H
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	mov	edx, DWORD PTR [ecx+94]
+	push	edx
+	call	_fnAllocDataspace
+	add	esp, 20					; 00000014H
+	mov	DWORD PTR _pchObjectNameBuffer$[ebp], eax
+
+; 3304 :    pchObjectNameBuffer = zGETPTR( pchObjectNameBuffer );
+
+	mov	eax, DWORD PTR _pchObjectNameBuffer$[ebp]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _pchObjectNameBuffer$[ebp], eax
+
+; 3305 :    pch = pchObjectNameBuffer;
+
+	mov	ecx, DWORD PTR _pchObjectNameBuffer$[ebp]
+	mov	DWORD PTR _pch$[ebp], ecx
+
+; 3306 : 
+; 3307 :    // The reference view is just the last valid view in the array.
+; 3308 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8825
+$L8826:
+	mov	dx, WORD PTR _k$[ebp]
+	add	dx, 1
+	mov	WORD PTR _k$[ebp], dx
+$L8825:
+	movsx	eax, WORD PTR _k$[ebp]
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	eax, ecx
+	jge	$L8827
+
+; 3310 :       LPENTITYINSTANCE lpEntityInstance;
+; 3311 :       LPVIEWOI         lpViewOI;
+; 3312 :       zBOOL            bChanged;
+; 3313 : 
+; 3314 :       if ( lpViewArray[ k ] == 0 )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [eax+edx*4], 0
+	jne	SHORT $L8831
+
+; 3316 :          // Store a 0 for the object name.
+; 3317 :          if ( nViewCount > 1 )
+
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, 1
+	jle	SHORT $L8832
+
+; 3318 :             *pch++ = 0;
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	mov	BYTE PTR [edx], 0
+	mov	eax, DWORD PTR _pch$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _pch$[ebp], eax
+$L8832:
+
+; 3319 : 
+; 3320 :          continue;
+
+	jmp	SHORT $L8826
+$L8831:
+
+; 3322 : 
+; 3323 :       lpViewOD  = zGETPTR( lpViewArray[ k ]->hViewOD );
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _lpViewArray$[ebp]
+	mov	eax, DWORD PTR [edx+ecx*4]
+	mov	ecx, DWORD PTR [eax+6]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOD$[ebp], eax
+
+; 3324 :       lpViewCsr = zGETPTR( lpViewArray[ k ]->hViewCsr );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 3325 :       lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	eax, DWORD PTR _lpViewCsr$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$8829[ebp], eax
+
+; 3326 : 
+; 3327 :       // If OI hasn't been updated then forget about it UNLESS...
+; 3328 :       // there is pessimistic locking.  Then we need to continue so that any
+; 3329 :       // pessimistic locks are dropped.
+; 3330 :       if ( (lpViewOI->lActivateControl & zACTIVATE_WITH_LOCKING) == 0 )
+
+	mov	edx, DWORD PTR _lpViewOI$8829[ebp]
+	mov	eax, DWORD PTR [edx+48]
+	and	eax, 67108864				; 04000000H
+	test	eax, eax
+	jne	$L8847
+
+; 3332 :          bChanged  = FALSE;
+
+	mov	BYTE PTR _bChanged$8830[ebp], 0
+
+; 3333 :          if ( lpViewOI->bUpdated )
+
+	mov	ecx, DWORD PTR _lpViewOI$8829[ebp]
+	mov	edx, DWORD PTR [ecx+36]
+	shr	edx, 4
+	and	edx, 1
+	test	edx, edx
+	je	$L8842
+
+; 3335 :             // Make sure that the OI really is changed.
+; 3336 :             for ( lpEntityInstance = zGETPTR( lpViewOI->hRootEntityInstance );
+; 3337 :                   lpEntityInstance;
+; 3338 :                   lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier ) )
+
+	mov	eax, DWORD PTR _lpViewOI$8829[ebp]
+	mov	ecx, DWORD PTR [eax+26]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$8828[ebp], eax
+	jmp	SHORT $L8840
+$L8841:
+	mov	edx, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	eax, DWORD PTR [edx+14]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$8828[ebp], eax
+$L8840:
+	cmp	DWORD PTR _lpEntityInstance$8828[ebp], 0
+	je	$L8842
+
+; 3340 :                // If the entity is created AND deleted then the OI really
+; 3341 :                // hasn't changed.
+; 3342 :                if ( lpEntityInstance->u.nInd.bCreated  &&
+; 3343 :                     lpEntityInstance->u.nInd.bDeleted )
+
+	mov	ecx, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	edx, DWORD PTR [ecx+6]
+	shr	edx, 1
+	and	edx, 1
+	test	edx, edx
+	je	SHORT $L8843
+	mov	eax, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	shr	ecx, 3
+	and	ecx, 1
+	test	ecx, ecx
+	je	SHORT $L8843
+
+; 3345 :                   continue;
+
+	jmp	SHORT $L8841
+$L8843:
+
+; 3347 : 
+; 3348 :                // If the entity is included AND excluded then the OI really
+; 3349 :                // hasn't changed.
+; 3350 :                if ( lpEntityInstance->u.nInd.bIncluded &&
+; 3351 :                     lpEntityInstance->u.nInd.bExcluded )
+
+	mov	edx, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	shr	eax, 5
+	and	eax, 1
+	test	eax, eax
+	je	SHORT $L8844
+	mov	ecx, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	edx, DWORD PTR [ecx+6]
+	shr	edx, 4
+	and	edx, 1
+	test	edx, edx
+	je	SHORT $L8844
+
+; 3353 :                   continue;
+
+	jmp	SHORT $L8841
+$L8844:
+
+; 3355 : 
+; 3356 :                if ( lpEntityInstance->u.nInd.bUpdated  ||
+; 3357 :                     lpEntityInstance->u.nInd.bCreated  ||
+; 3358 :                     lpEntityInstance->u.nInd.bDeleted  ||
+; 3359 :                     lpEntityInstance->u.nInd.bIncluded ||
+; 3360 :                     lpEntityInstance->u.nInd.bExcluded )
+
+	mov	eax, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	shr	ecx, 2
+	and	ecx, 1
+	test	ecx, ecx
+	jne	SHORT $L8846
+	mov	edx, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	shr	eax, 1
+	and	eax, 1
+	test	eax, eax
+	jne	SHORT $L8846
+	mov	ecx, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	edx, DWORD PTR [ecx+6]
+	shr	edx, 3
+	and	edx, 1
+	test	edx, edx
+	jne	SHORT $L8846
+	mov	eax, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	shr	ecx, 5
+	and	ecx, 1
+	test	ecx, ecx
+	jne	SHORT $L8846
+	mov	edx, DWORD PTR _lpEntityInstance$8828[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	shr	eax, 4
+	and	eax, 1
+	test	eax, eax
+	je	SHORT $L8845
+$L8846:
+
+; 3362 :                   bChanged = TRUE;
+
+	mov	BYTE PTR _bChanged$8830[ebp], 1
+
+; 3363 :                   break;
+
+	jmp	SHORT $L8842
+$L8845:
+
+; 3365 :             } // for...
+
+	jmp	$L8841
+$L8842:
+
+; 3367 : 
+; 3368 :          if ( bChanged == FALSE )
+
+	mov	ecx, DWORD PTR _bChanged$8830[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	jne	SHORT $L8847
+
+; 3370 :             // View isn't really changed so forget it.
+; 3371 :             lpViewArray[ k ] = 0;
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	DWORD PTR [eax+edx*4], 0
+
+; 3372 : 
+; 3373 :             // Store a 0 for the object name.
+; 3374 :             if ( nViewCount > 1 )
+
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, 1
+	jle	SHORT $L8848
+
+; 3375 :                *pch++ = 0;
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	mov	BYTE PTR [edx], 0
+	mov	eax, DWORD PTR _pch$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _pch$[ebp], eax
+$L8848:
+
+; 3376 : 
+; 3377 :             // Get rid of entity instances that are dead--instances that
+; 3378 :             // have been created AND deleted, etc.
+; 3379 :             fnReclaimHiddenInstances( lpViewOI );
+
+	mov	ecx, DWORD PTR _lpViewOI$8829[ebp]
+	push	ecx
+	call	_fnReclaimHiddenInstances@4
+
+; 3380 : 
+; 3381 :             lpViewOI->bUpdated = lpViewOI->bUpdatedFile = FALSE;
+
+	mov	edx, DWORD PTR _lpViewOI$8829[ebp]
+	mov	eax, DWORD PTR [edx+36]
+	and	al, -33					; ffffffdfH
+	mov	ecx, DWORD PTR _lpViewOI$8829[ebp]
+	mov	DWORD PTR [ecx+36], eax
+	mov	edx, DWORD PTR _lpViewOI$8829[ebp]
+	mov	eax, DWORD PTR [edx+36]
+	and	al, -17					; ffffffefH
+	mov	ecx, DWORD PTR _lpViewOI$8829[ebp]
+	mov	DWORD PTR [ecx+36], eax
+
+; 3382 : 
+; 3383 :             continue;
+
+	jmp	$L8826
+$L8847:
+
+; 3386 : 
+; 3387 :       if ( vReferenceView == 0 )
+
+	cmp	DWORD PTR _vReferenceView$[ebp], 0
+	jne	SHORT $L8849
+
+; 3389 :          vReferenceView    = lpViewArray[ k ];
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	mov	DWORD PTR _vReferenceView$[ebp], ecx
+
+; 3390 :          lpReferenceViewOD = lpViewOD;
+
+	mov	edx, DWORD PTR _lpViewOD$[ebp]
+	mov	DWORD PTR _lpReferenceViewOD$[ebp], edx
+$L8849:
+
+; 3392 : 
+; 3393 :       // Store the object name.
+; 3394 :       pch = zstrcpyp( pch, lpViewOD->szName );
+
+	mov	eax, DWORD PTR _lpViewOD$[ebp]
+	add	eax, 10					; 0000000aH
+	push	eax
+	mov	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	call	_strcpy
+	add	esp, 8
+	mov	esi, eax
+	mov	edx, DWORD PTR _pch$[ebp]
+	push	edx
+	call	_strlen
+	add	esp, 4
+	add	esi, eax
+	mov	DWORD PTR _pch$[ebp], esi
+
+; 3395 :       pch++;  // Skip past null terminator.
+
+	mov	eax, DWORD PTR _pch$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _pch$[ebp], eax
+
+; 3396 : 
+; 3397 :       // Get rid of entity instances that are dead--instances that
+; 3398 :       // have been created AND deleted, etc.
+; 3399 :       fnReclaimHiddenInstances( lpViewOI );
+
+	mov	ecx, DWORD PTR _lpViewOI$8829[ebp]
+	push	ecx
+	call	_fnReclaimHiddenInstances@4
+
+; 3400 :    }
+
+	jmp	$L8826
+$L8827:
+
+; 3401 : 
+; 3402 :    // If vReferenceView is 0 then we didn't find any OIs that have changes so
+; 3403 :    // we can forget about committing anything.
+; 3404 :    if ( vReferenceView == 0 )
+
+	cmp	DWORD PTR _vReferenceView$[ebp], 0
+	jne	SHORT $L8851
+
+; 3406 :       nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 3407 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8851:
+
+; 3409 : 
+; 3410 :    fnRetrieveAppName( vReferenceView, szAppName );
+
+	lea	edx, DWORD PTR _szAppName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vReferenceView$[ebp]
+	push	eax
+	call	_fnRetrieveAppName@8
+
+; 3411 :    SfCreateSubtask( &vSubtask, vReferenceView, szAppName );
+
+	lea	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vReferenceView$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_SfCreateSubtask@12
+
+; 3412 : 
+; 3413 :    // Set up info for commit request.
+; 3414 :    CommitInfo.pszNetworkName         = lpNetwork->szNetworkName;
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 20					; 00000014H
+	mov	DWORD PTR _CommitInfo$[ebp], ecx
+
+; 3415 :    CommitInfo.vOI                    = vReferenceView;
+
+	mov	edx, DWORD PTR _vReferenceView$[ebp]
+	mov	DWORD PTR _CommitInfo$[ebp+12], edx
+
+; 3416 :    CommitInfo.lControl               = lControl;
+
+	mov	eax, DWORD PTR _lControl$[ebp]
+	mov	DWORD PTR _CommitInfo$[ebp+8], eax
+
+; 3417 :    CommitInfo.pszUserSuppliedAddress = pchAddress;
+
+	mov	ecx, DWORD PTR _pchAddress$[ebp]
+	mov	DWORD PTR _CommitInfo$[ebp+4], ecx
+
+; 3418 : 
+; 3419 :    // Open connection.
+; 3420 :    if ( fnAddConnectionToNetwork( lpTask, lpNetwork, szServer,
+; 3421 :                                   &pvConn, TRUE, zAPPLREQ_COMMIT,
+; 3422 :                                   &CommitInfo, lpTaskView ) < 0 )
+
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _CommitInfo$[ebp]
+	push	eax
+	push	2
+	push	1
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szServer$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	call	_fnAddConnectionToNetwork@32
+	movsx	edx, ax
+	test	edx, edx
+	jge	SHORT $L8853
+
+; 3424 :       nRC = zNETWORK_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -6			; fffffffaH
+
+; 3425 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8853:
+
+; 3427 : 
+; 3428 :    bConnectionMade = TRUE;
+
+	mov	BYTE PTR _bConnectionMade$[ebp], 1
+
+; 3429 : 
+; 3430 :    if ( lpNetwork->nTraceLevel > 1 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	cmp	ecx, 1
+	jle	SHORT $L8854
+
+; 3431 :       TraceLineS( "(kzoeneta) ** Sending Commit OI packet", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@DJGN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Commit?5OI?5@ ; `string'
+	call	_TraceLineS@8
+$L8854:
+
+; 3432 : 
+; 3433 :    //=======================================================================
+; 3434 :    // Transmitting data.
+; 3435 :    //
+; 3436 :    // Until further notice, the following code only SENDS data over the
+; 3437 :    // network.
+; 3438 :    //=======================================================================
+; 3439 : 
+; 3440 :    // First send the header for the server driver and then the regular
+; 3441 :    // packet for the function structure.
+; 3442 :    if ( fnSendHeaderPacket( lpNetwork, &pvConn, zPACKET_COMMITOI,
+; 3443 :                             szAppName ) != 0 )
+
+	lea	edx, DWORD PTR _szAppName$[ebp]
+	push	edx
+	push	67					; 00000043H
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendHeaderPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L8856
+
+; 3445 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8856:
+
+; 3447 : 
+; 3448 :    if ( fnSendTraceSwitches( lpNetwork, &pvConn, lpTask ) != 0 )
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendTraceSwitches@12
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8857
+
+; 3449 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8857:
+
+; 3450 : 
+; 3451 :    if ( fnSendDataPacket( lpNetwork, &pvConn, zPACKET_COMMITOI, 0 ) != 0 )
+
+	push	0
+	push	67					; 00000043H
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8858
+
+; 3452 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8858:
+
+; 3453 : 
+; 3454 :    // Set up the commit information.  We initialize the structure to 0's so
+; 3455 :    // that the network stack can better compress the data.
+; 3456 :    zmemset( &CommitPacket, 0, sizeof( zCommitPacket ) );
+
+	push	158					; 0000009eH
+	push	0
+	lea	ecx, DWORD PTR _CommitPacket$[ebp]
+	push	ecx
+	call	_memset
+	add	esp, 12					; 0000000cH
+
+; 3457 :    zstrcpy( CommitPacket.szVersion, zCURRENT_PROTOCOL_VERSION );
+
+	push	OFFSET FLAT:??_C@_02LFP@1b?$AA@		; `string'
+	lea	edx, DWORD PTR _CommitPacket$[ebp]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+
+; 3458 :    zstrcpy( CommitPacket.szAppName, szAppName );
+
+	lea	eax, DWORD PTR _szAppName$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+35]
+	push	ecx
+	call	_strcpy
+	add	esp, 8
+
+; 3459 :    SysGetUserID( lpTaskView, CommitPacket.szUserName, CommitPacket.szPassword );
+
+	lea	edx, DWORD PTR _CommitPacket$[ebp+110]
+	push	edx
+	lea	eax, DWORD PTR _CommitPacket$[ebp+77]
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	call	_SysGetUserID@12
+
+; 3460 :    zltox( nViewCount, CommitPacket.szViewCount );
+
+	push	16					; 00000010H
+	lea	edx, DWORD PTR _CommitPacket$[ebp+143]
+	push	edx
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	push	eax
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 3461 :    zltox( lControl, CommitPacket.szControl );
+
+	push	16					; 00000010H
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+68]
+	push	ecx
+	mov	edx, DWORD PTR _lControl$[ebp]
+	push	edx
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 3462 : 
+; 3463 :    nObjectNameLth = (zSHORT) (pch - pchObjectNameBuffer);
+
+	mov	eax, DWORD PTR _pch$[ebp]
+	sub	eax, DWORD PTR _pchObjectNameBuffer$[ebp]
+	mov	WORD PTR _nObjectNameLth$[ebp], ax
+
+; 3464 :    zltox( (zLONG) nObjectNameLth, CommitPacket.szObjectNameLth );
+
+	push	16					; 00000010H
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+146]
+	push	ecx
+	movsx	edx, WORD PTR _nObjectNameLth$[ebp]
+	push	edx
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 3465 : 
+; 3466 :    // Set up the link buffer.  This buffer contains a list of all entity
+; 3467 :    // instances that are linked with each other in lpViewArray.
+; 3468 :    fnSetLinkBuffer( lpTask, lpViewArray, nViewCount,
+; 3469 :                     &pchLinkBuffer, &lLinkBufferLth );
+
+	lea	eax, DWORD PTR _lLinkBufferLth$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pchLinkBuffer$[ebp]
+	push	ecx
+	mov	dx, WORD PTR _nViewCount$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	call	_fnSetLinkBuffer@20
+
+; 3470 : 
+; 3471 :    zltox( lLinkBufferLth, CommitPacket.szLinkBufferLth );
+
+	push	16					; 00000010H
+	lea	edx, DWORD PTR _CommitPacket$[ebp+154]
+	push	edx
+	mov	eax, DWORD PTR _lLinkBufferLth$[ebp]
+	push	eax
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 3472 : 
+; 3473 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L8862
+
+; 3475 :       TraceLine( "(kzoeneta) ** Appl Name: %s  User Name: %s ",
+; 3476 :                  CommitPacket.szAppName, CommitPacket.szUserName );
+
+	lea	eax, DWORD PTR _CommitPacket$[ebp+77]
+	push	eax
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+35]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CM@DEHH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Appl?5Name?3?5?$CFs?5?5Use@ ; `string'
+	call	_TraceLine
+	add	esp, 12					; 0000000cH
+
+; 3477 :       if ( nViewCount > 1 )
+
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	edx, 1
+	jle	SHORT $L8864
+
+; 3479 :          TraceLine( "(kzoeneta) ** View Count: %s  OD Name Lth: %d",
+; 3480 :                     CommitPacket.szViewCount, nObjectNameLth );
+
+	movsx	eax, WORD PTR _nObjectNameLth$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+143]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CO@ODIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5View?5Count?3?5?$CFs?5?5OD@ ; `string'
+	call	_TraceLine
+	add	esp, 12					; 0000000cH
+
+; 3481 :          TraceBuffer( "(kzoeneta) ** OD Names: ",
+; 3482 :                       pchObjectNameBuffer, nObjectNameLth );
+
+	movsx	edx, WORD PTR _nObjectNameLth$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pchObjectNameBuffer$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BJ@LCNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5OD?5Names?3?5?$AA@ ; `string'
+	call	_TraceBuffer@12
+$L8864:
+
+; 3484 : 
+; 3485 :       TraceLineS( "(kzoeneta) ** LB Lth: ", CommitPacket.szLinkBufferLth );
+
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+154]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BH@CGMJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5LB?5Lth?3?5?$AA@ ; `string'
+	call	_TraceLineS@8
+$L8862:
+
+; 3487 : 
+; 3488 :    // Send server commit info.
+; 3489 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 3490 :                                 &CommitPacket, sizeof( zCommitPacket ),
+; 3491 :                                 zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	158					; 0000009eH
+	lea	edx, DWORD PTR _CommitPacket$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+170]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8869
+
+; 3493 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8869:
+
+; 3495 : 
+; 3496 :    // Send the object names.
+; 3497 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 3498 :                                 pchObjectNameBuffer, nObjectNameLth,
+; 3499 :                                 zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	movsx	ecx, WORD PTR _nObjectNameLth$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pchObjectNameBuffer$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+170]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8870
+
+; 3501 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8870:
+
+; 3503 : 
+; 3504 :    // Send the link buffer info if we have any.
+; 3505 :    if ( lLinkBufferLth > 0 )
+
+	cmp	DWORD PTR _lLinkBufferLth$[ebp], 0
+	jle	SHORT $L8872
+
+; 3507 :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 3508 :                                    pchLinkBuffer, lLinkBufferLth,
+; 3509 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	mov	ecx, DWORD PTR _lLinkBufferLth$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pchLinkBuffer$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+170]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8872
+
+; 3511 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8872:
+
+; 3514 : 
+; 3515 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L8873
+
+; 3516 :       TraceLineS( "(kzoeneta) ** Sending OIs to commit", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CE@BDJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5OIs?5to?5com@ ; `string'
+	call	_TraceLineS@8
+$L8873:
+
+; 3517 : 
+; 3518 :    // Send the OIs to the server to be committed.  Send entity tags so we can
+; 3519 :    // compare/merge later.
+; 3520 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8875
+$L8876:
+	mov	ax, WORD PTR _k$[ebp]
+	add	ax, 1
+	mov	WORD PTR _k$[ebp], ax
+$L8875:
+	movsx	ecx, WORD PTR _k$[ebp]
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, edx
+	jge	$L8877
+
+; 3522 :       zCHAR szControl[ 10 ];
+; 3523 :       zCHAR szLth[ 5 ];
+; 3524 :       zLONG lLth;
+; 3525 : 
+; 3526 :       if ( lpViewArray[ k ] == 0 )
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [ecx+eax*4], 0
+	jne	SHORT $L8881
+
+; 3527 :          continue;
+
+	jmp	SHORT $L8876
+$L8881:
+
+; 3528 : 
+; 3529 :       if ( fnSendOI( &pvConn, lpNetwork, lpViewArray[ k ],
+; 3530 :                      zINCREMENTAL | zENTITY_TAGS ) == zCALL_ERROR )
+
+	push	589824					; 00090000H
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	call	_fnSendOI@16
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L8882
+
+; 3532 :          TraceLineS( "(kzoeneta) ** Error sending OI for Commit!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CL@GOMF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5OI?5f@ ; `string'
+	call	_TraceLineS@8
+
+; 3533 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8882:
+
+; 3535 : 
+; 3536 :       // Send the control value for the view.  We'll store the length of the
+; 3537 :       // string containing the control value in the first 2 bytes.  We'll assume
+; 3538 :       // that the length can be sent as a 2-digit hex value.
+; 3539 :       zltox( lpViewCluster[ k ].lControl, &szControl[ 2 ] );
+
+	push	16					; 00000010H
+	lea	edx, DWORD PTR _szControl$8878[ebp+2]
+	push	edx
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpViewCluster$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*8+4]
+	push	edx
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 3540 :       lLth = zstrlen( &szControl[ 2 ] ) + 1;
+
+	lea	eax, DWORD PTR _szControl$8878[ebp+2]
+	push	eax
+	call	_strlen
+	add	esp, 4
+	add	eax, 1
+	mov	DWORD PTR _lLth$8880[ebp], eax
+
+; 3541 :       zltox( lLth, szLth );
+
+	push	16					; 00000010H
+	lea	ecx, DWORD PTR _szLth$8879[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lLth$8880[ebp]
+	push	edx
+	call	DWORD PTR __imp___ltoa
+	add	esp, 12					; 0000000cH
+
+; 3542 :       szControl[ 0 ] = szLth[ 0 ];  // Copy lth to first two bytes.
+
+	mov	al, BYTE PTR _szLth$8879[ebp]
+	mov	BYTE PTR _szControl$8878[ebp], al
+
+; 3543 :       szControl[ 1 ] = szLth[ 1 ];
+
+	mov	cl, BYTE PTR _szLth$8879[ebp+1]
+	mov	BYTE PTR _szControl$8878[ebp+1], cl
+
+; 3544 :       // First, send the length, then the data.
+; 3545 :       //  The strings must be written and read synchronously.
+; 3546 :       //  According to network handler interface, you cannot write
+; 3547 :       //  length + data information in one message and retrieve it
+; 3548 :       //  in two messages.
+; 3549 :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 3550 :                                    szControl, 2,
+; 3551 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	2
+	lea	edx, DWORD PTR _szControl$8878[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+170]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8884
+
+; 3553 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8884:
+
+; 3555 : 
+; 3556 :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 3557 :                                    szControl + 2, lLth,
+; 3558 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	mov	ecx, DWORD PTR _lLth$8880[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szControl$8878[ebp+2]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+170]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8885
+
+; 3560 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8885:
+
+; 3562 :    }
+
+	jmp	$L8876
+$L8877:
+
+; 3563 : 
+; 3564 :    // Tell network handler to flush the send buffer.
+; 3565 :    if ( fnFlushBuffer( lpNetwork, &pvConn ) != 0 )
+
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnFlushBuffer@8
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8886
+
+; 3566 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8886:
+
+; 3567 : 
+; 3568 :    //=======================================================================
+; 3569 :    // Receiving data.
+; 3570 :    //
+; 3571 :    // From here until we close the connection we will only RECEIVE data over
+; 3572 :    // the network.
+; 3573 :    //=======================================================================
+; 3574 : 
+; 3575 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L8887
+
+; 3576 :       TraceLineS( "(kzoeneta) ** Waiting for returned OI", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@CNJI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5return@ ; `string'
+	call	_TraceLineS@8
+$L8887:
+
+; 3577 : 
+; 3578 :    // Wait for Ack.
+; 3579 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lPacketData ) != 0 )
+
+	lea	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cPacketType$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnReceiveDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8889
+
+; 3581 :       TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 3582 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8889:
+
+; 3584 : 
+; 3585 :    if ( cPacketType == zPACKET_RC )
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	cmp	edx, 35					; 00000023H
+	jne	SHORT $L8890
+
+; 3587 :       // If we received the RC packet, then there was an error committing
+; 3588 :       // the OIs on the server.  Get the return code and go to the end of the
+; 3589 :       // function.
+; 3590 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L8891
+
+; 3591 :          TraceLineS( "(kzoeneta) ** Received RC - error in Commit", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CM@NFHD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5RC?5?9?5erro@ ; `string'
+	call	_TraceLineS@8
+$L8891:
+
+; 3592 : 
+; 3593 :       nRC = (zSHORT) lPacketData;
+
+	mov	dx, WORD PTR _lPacketData$[ebp]
+	mov	WORD PTR _nRC$[ebp], dx
+
+; 3594 : 
+; 3595 :       // Get the index that indicates what view wasn't committed.
+; 3596 :       if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lPacketData ) != 0 )
+
+	lea	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cPacketType$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnReceiveDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L8893
+
+; 3598 :          TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 3599 :          nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 3600 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8893:
+
+; 3602 : 
+; 3603 :       if ( pnViewErrorIdx )
+
+	cmp	DWORD PTR _pnViewErrorIdx$[ebp], 0
+	je	SHORT $L8894
+
+; 3604 :          *pnViewErrorIdx = (zSHORT) lPacketData;
+
+	mov	edx, DWORD PTR _pnViewErrorIdx$[ebp]
+	mov	ax, WORD PTR _lPacketData$[ebp]
+	mov	WORD PTR [edx], ax
+$L8894:
+
+; 3605 : 
+; 3606 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8890:
+
+; 3608 : 
+; 3609 :    // Allocate an array for the incoming views.
+; 3610 :    lpNewViewArray = (zPVIEW) fnAllocDataspace( lpTask->hFirstDataHeader,
+; 3611 :                                                sizeof( zVIEW ) * (zULONG) nViewCount,
+; 3612 :                                                TRUE, 0, 0 );
+
+	push	0
+	push	0
+	push	1
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	shl	ecx, 2
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	eax, DWORD PTR [edx+94]
+	push	eax
+	call	_fnAllocDataspace
+	add	esp, 20					; 00000014H
+	mov	DWORD PTR _lpNewViewArray$[ebp], eax
+
+; 3613 :    lpNewViewArray = zGETPTR( lpNewViewArray );
+
+	mov	ecx, DWORD PTR _lpNewViewArray$[ebp]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNewViewArray$[ebp], eax
+
+; 3614 : 
+; 3615 :    // Retrieve all the views.
+; 3616 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8900
+$L8901:
+	mov	dx, WORD PTR _k$[ebp]
+	add	dx, 1
+	mov	WORD PTR _k$[ebp], dx
+$L8900:
+	movsx	eax, WORD PTR _k$[ebp]
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	eax, ecx
+	jge	$L8902
+
+; 3618 :       if ( lpViewArray[ k ] == 0 )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	cmp	DWORD PTR [eax+edx*4], 0
+	jne	SHORT $L8903
+
+; 3619 :          continue;
+
+	jmp	SHORT $L8901
+$L8903:
+
+; 3620 : 
+; 3621 :       lpViewOD = zGETPTR( lpViewArray[ k ]->hViewOD );
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _lpViewArray$[ebp]
+	mov	eax, DWORD PTR [edx+ecx*4]
+	mov	ecx, DWORD PTR [eax+6]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOD$[ebp], eax
+
+; 3622 : 
+; 3623 :       if ( cPacketType == zPACKET_EMPTYOI )
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	cmp	edx, 101				; 00000065H
+	jne	SHORT $L8905
+
+; 3630 :       else
+
+	jmp	SHORT $L8910
+$L8905:
+
+; 3631 :       if ( cPacketType == zPACKET_ACK )
+
+	movsx	eax, BYTE PTR _cPacketType$[ebp]
+	cmp	eax, 75					; 0000004bH
+	jne	SHORT $L8907
+
+; 3633 :          // The server committed the OI and now must send back the resulting OI.
+; 3634 :          if ( fnReceiveOI( &pvConn, lpNetwork, &lpNewViewArray[ k ],
+; 3635 :                            lpViewArray[ k ], lpViewOD->szName,
+; 3636 :                            zMULTIPLE ) == zCALL_ERROR )
+
+	push	256					; 00000100H
+	mov	ecx, DWORD PTR _lpViewOD$[ebp]
+	add	ecx, 10					; 0000000aH
+	push	ecx
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	push	ecx
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpNewViewArray$[ebp]
+	lea	ecx, DWORD PTR [eax+edx*4]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	call	_fnReceiveOI@24
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L8908
+
+; 3638 :             TraceLineS( "(kzoeneta) ** Error receiving OI after commit!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CP@PMCB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 3639 :             goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8908:
+
+; 3642 :       else
+
+	jmp	SHORT $L8910
+$L8907:
+
+; 3644 :          TraceLineS( "(kzoeneta) ** Received bytes but no ACK!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@NGEM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5bytes?5but@ ; `string'
+	call	_TraceLineS@8
+
+; 3645 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8910:
+
+; 3647 : 
+; 3648 :       // Get the next packet.
+; 3649 :       if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType,
+; 3650 :                                 &lPacketData ) != 0 )
+
+	lea	edx, DWORD PTR _lPacketData$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _cPacketType$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnReceiveDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L8912
+
+; 3652 :          TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 3653 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8912:
+
+; 3655 : 
+; 3656 :    } // for ( k...)...
+
+	jmp	$L8901
+$L8902:
+
+; 3657 : 
+; 3658 :    if ( cPacketType != zPACKET_RC )
+
+	movsx	ecx, BYTE PTR _cPacketType$[ebp]
+	cmp	ecx, 35					; 00000023H
+	je	SHORT $L8913
+
+; 3660 :       TraceLineS( "(kzoeneta) ** No return code for Commit!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@BGHJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@ ; `string'
+	call	_TraceLineS@8
+
+; 3661 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$8852
+$L8913:
+
+; 3663 : 
+; 3664 :    nRC = (zSHORT) lPacketData;
+
+	mov	dx, WORD PTR _lPacketData$[ebp]
+	mov	WORD PTR _nRC$[ebp], dx
+
+; 3665 : 
+; 3666 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L8915
+
+; 3667 :       TraceLineI( "(kzoeneta) ** RC from commit = ", nRC );
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CA@EJON@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5commit?5?$DN?5?$AA@ ; `string'
+	call	_TraceLineI@8
+$L8915:
+
+; 3668 : 
+; 3669 :    //=======================================================================
+; 3670 :    // We have sent the user's OIs (lpViewArray) to the server and they've been
+; 3671 :    // committed and sent back to us (as lpNewViewArray).  We must now merge the
+; 3672 :    // changes from new to lpView.  We can't just drop lpView because that will
+; 3673 :    // invalidate all other views to the OI referenced by lpView.  In addition,
+; 3674 :    // all the names for lpView will be dropped.  Lastly, it will not "update"
+; 3675 :    // any linked instances.
+; 3676 :    //
+; 3677 :    // If we merge the changes from vNew to lpView, then all the views to
+; 3678 :    // the OI will still be valid, the view names will be preserved, and the
+; 3679 :    // linked instances will also be "updated".
+; 3680 :    //=======================================================================
+; 3681 : 
+; 3682 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8917
+$L8918:
+	mov	ax, WORD PTR _k$[ebp]
+	add	ax, 1
+	mov	WORD PTR _k$[ebp], ax
+$L8917:
+	movsx	ecx, WORD PTR _k$[ebp]
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, edx
+	jge	$EndOfFunction$8852
+
+; 3684 :       LPVIEWCSR lpViewCsr;
+; 3685 :       LPVIEWOI  lpViewOI;
+; 3686 :       LPVIEWOI  lpNewViewOI;
+; 3687 : 
+; 3688 :       if ( lpNewViewArray[ k ] == 0 )
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpNewViewArray$[ebp]
+	cmp	DWORD PTR [ecx+eax*4], 0
+	jne	SHORT $L8923
+
+; 3689 :          continue;
+
+	jmp	SHORT $L8918
+$L8923:
+
+; 3690 : 
+; 3691 :       if ( fnMergeViews( lpNewViewArray[ k ],
+; 3692 :                          lpViewArray[ k ] ) == zCALL_ERROR )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	push	ecx
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpNewViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	push	ecx
+	call	_fnMergeViews@8
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L8924
+
+; 3694 :          nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 3695 :          continue;
+
+	jmp	SHORT $L8918
+$L8924:
+
+; 3697 : 
+; 3698 :       // Call operation to clean up the OI. This will also drop
+; 3699 :       // all the deleted/excluded entity instances.
+; 3700 :       fnCleanupInstance( lpViewArray[ k ], 1 );
+
+	push	1
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpViewArray$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*4]
+	push	edx
+	call	_fnCleanupInstance
+	add	esp, 8
+
+; 3701 : 
+; 3702 :       // Turn off the update flags.
+; 3703 :       lpViewCsr = zGETPTR( lpViewArray[ k ]->hViewCsr );
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpViewArray$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*4]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$8920[ebp], eax
+
+; 3704 :       lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	ecx, DWORD PTR _lpViewCsr$8920[ebp]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$8921[ebp], eax
+
+; 3705 :       lpViewOI->bUpdated = lpViewOI->bUpdatedFile = FALSE;
+
+	mov	eax, DWORD PTR _lpViewOI$8921[ebp]
+	mov	ecx, DWORD PTR [eax+36]
+	and	ecx, -33				; ffffffdfH
+	mov	edx, DWORD PTR _lpViewOI$8921[ebp]
+	mov	DWORD PTR [edx+36], ecx
+	mov	eax, DWORD PTR _lpViewOI$8921[ebp]
+	mov	ecx, DWORD PTR [eax+36]
+	and	ecx, -17				; ffffffefH
+	mov	edx, DWORD PTR _lpViewOI$8921[ebp]
+	mov	DWORD PTR [edx+36], ecx
+
+; 3706 : 
+; 3707 :       lpViewCsr   = zGETPTR( lpNewViewArray[ k ]->hViewCsr );
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpNewViewArray$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*4]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$8920[ebp], eax
+
+; 3708 :       lpNewViewOI = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	ecx, DWORD PTR _lpViewCsr$8920[ebp]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpNewViewOI$8922[ebp], eax
+
+; 3709 :       lpViewOI->bIsLocked = lpNewViewOI->bIsLocked;
+
+	mov	eax, DWORD PTR _lpNewViewOI$8922[ebp]
+	mov	ecx, DWORD PTR [eax+36]
+	shr	ecx, 7
+	and	ecx, 1
+	and	ecx, 1
+	shl	ecx, 7
+	mov	edx, DWORD PTR _lpViewOI$8921[ebp]
+	mov	eax, DWORD PTR [edx+36]
+	and	al, 127					; 0000007fH
+	or	eax, ecx
+	mov	ecx, DWORD PTR _lpViewOI$8921[ebp]
+	mov	DWORD PTR [ecx+36], eax
+
+; 3710 : 
+; 3711 :    } // for k...
+
+	jmp	$L8918
+$EndOfFunction$8852:
+
+; 3712 : 
+; 3713 : EndOfFunction:
+; 3714 :    if ( vSubtask && bConnectionMade &&
+; 3715 :         fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, vReferenceView ) < 0 )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L8929
+	mov	edx, DWORD PTR _bConnectionMade$[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	je	SHORT $L8929
+	mov	eax, DWORD PTR _vReferenceView$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnRetrieveMsgAndTraceObj@12
+	movsx	eax, ax
+	test	eax, eax
+	jge	SHORT $L8929
+
+; 3717 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8929:
+
+; 3719 : 
+; 3720 :    if ( bConnectionMade &&
+; 3721 :         fnRemoveConnectionFromNetwork( lpNetwork, &pvConn,
+; 3722 :                                        TRUE ) == zCALL_ERROR )
+
+	mov	ecx, DWORD PTR _bConnectionMade$[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	je	SHORT $L8930
+	push	1
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnRemoveConnectionFromNetwork@12
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L8930
+
+; 3724 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L8930:
+
+; 3726 : 
+; 3727 :    if ( vSubtask )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L8931
+
+; 3728 :       DROPSUBTASK( vSubtask );
+
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	mov	eax, DWORD PTR [edx+18]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpDropSubtask$8932[ebp], eax
+	push	0
+	mov	ecx, DWORD PTR _lpDropSubtask$8932[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpDropSubtask$8932[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_fnDropSubtask
+	add	esp, 12					; 0000000cH
+$L8931:
+
+; 3729 : 
+; 3730 :    if ( pchObjectNameBuffer )
+
+	cmp	DWORD PTR _pchObjectNameBuffer$[ebp], 0
+	je	SHORT $L8935
+
+; 3731 :       fnFreeDataspace( pchObjectNameBuffer );
+
+	mov	ecx, DWORD PTR _pchObjectNameBuffer$[ebp]
+	push	ecx
+	call	_fnFreeDataspace
+	add	esp, 4
+$L8935:
+
+; 3732 : 
+; 3733 :    if ( pchLinkBuffer )
+
+	cmp	DWORD PTR _pchLinkBuffer$[ebp], 0
+	je	SHORT $L8936
+
+; 3734 :       fnFreeDataspace( pchLinkBuffer );
+
+	mov	edx, DWORD PTR _pchLinkBuffer$[ebp]
+	push	edx
+	call	_fnFreeDataspace
+	add	esp, 4
+$L8936:
+
+; 3735 : 
+; 3736 :    if ( lpNewViewArray )
+
+	cmp	DWORD PTR _lpNewViewArray$[ebp], 0
+	je	$L8937
+
+; 3738 :       for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L8938
+$L8939:
+	mov	ax, WORD PTR _k$[ebp]
+	add	ax, 1
+	mov	WORD PTR _k$[ebp], ax
+$L8938:
+	movsx	ecx, WORD PTR _k$[ebp]
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, edx
+	jge	SHORT $L8940
+
+; 3740 :          LPVIEWOI lpViewOI;
+; 3741 : 
+; 3742 :          if ( lpNewViewArray[ k ] == 0 )
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpNewViewArray$[ebp]
+	cmp	DWORD PTR [ecx+eax*4], 0
+	jne	SHORT $L8942
+
+; 3743 :             continue;
+
+	jmp	SHORT $L8939
+$L8942:
+
+; 3744 : 
+; 3745 :          lpViewCsr = zGETPTR( lpNewViewArray[ k ]->hViewCsr );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpNewViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 3746 :          lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	eax, DWORD PTR _lpViewCsr$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$8941[ebp], eax
+
+; 3747 : 
+; 3748 :          // To keep any possible pessimistic locks from being dropped let's
+; 3749 :          // turn off the bIsLocked flag.  Note that this only happens if the
+; 3750 :          // user indicated that locks are to be left in place after the commit.
+; 3751 :          lpViewOI->bIsLocked = 0;
+
+	mov	edx, DWORD PTR _lpViewOI$8941[ebp]
+	mov	eax, DWORD PTR [edx+36]
+	and	al, 127					; 0000007fH
+	mov	ecx, DWORD PTR _lpViewOI$8941[ebp]
+	mov	DWORD PTR [ecx+36], eax
+
+; 3752 : 
+; 3753 :          fnDropView( lpNewViewArray[ k ] );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpNewViewArray$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	push	ecx
+	call	_fnDropView@4
+
+; 3754 :       }
+
+	jmp	$L8939
+$L8940:
+
+; 3755 : 
+; 3756 :       fnFreeDataspace( lpNewViewArray );
+
+	mov	edx, DWORD PTR _lpNewViewArray$[ebp]
+	push	edx
+	call	_fnFreeDataspace
+	add	esp, 4
+$L8937:
+
+; 3758 : 
+; 3759 :    fnOperationReturn( iNetCommitOI, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	501					; 000001f5H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 3760 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+$L8791:
+
+; 3761 : 
+; 3762 : } // NetCommitOI
+
+	pop	edi
+	pop	esi
+	mov	esp, ebp
+	pop	ebp
+	ret	28					; 0000001cH
+_NetCommitOI@28 ENDP
+_TEXT	ENDS
+PUBLIC	_NetCommitOI_ToFile@20
+_TEXT	SEGMENT
+_NetCommitOI_ToFile@20 PROC NEAR
+
+; 3798 : {
+
+	push	ebp
+	mov	ebp, esp
+
+; 3799 :    return( 0 );
+
+	xor	ax, ax
+
+; 3800 : 
+; 3801 : // 2001.06.28
+; 3802 : // DGC Not supported at the moment (security risk).
+; 3803 : #if 0
+; 3804 :    zSHORT        nRC = zCALL_ERROR;
+; 3805 :    zCHAR         cPacketType;
+; 3806 :    zLONG         lPacketData;
+; 3807 :    LPNETWORK     lpNetwork;
+; 3808 :    zPVOID        pvConn = 0;
+; 3809 :    zCommitPacket CommitPacket;
+; 3810 :    LPTASK        lpTask;
+; 3811 :    LPVIEWOD      lpViewOD;
+; 3812 :    LAD_InfoRecord LAD_Info;
+; 3813 : 
+; 3814 :    zmemset( &LAD_Info, 0, sizeof( LAD_Info ) );
+; 3815 : 
+; 3816 :    // If task not active or disabled, return zCALL_ERROR.
+; 3817 :    if ( (lpTask = fnOperationCall( iNetCommitOI_ToFile ... )) == 0 )
+; 3818 :       return( zCALL_ERROR );
+; 3819 : 
+; 3820 :    if ( fnValidView( lpTask, lpView ) == 0 )
+; 3821 :    {
+; 3822 :       fnOperationReturn( iNetCommitOI_ToFile, lpTask );
+; 3823 :       return( zCALL_ERROR );
+; 3824 :    }
+; 3825 : 
+; 3826 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+; 3827 :    {
+; 3828 :       fnOperationReturn( iNetCommitOI_ToFile, lpTask );
+; 3829 :       return( zCALL_ERROR );
+; 3830 :    }
+; 3831 : 
+; 3832 :    lpViewOD = zGETPTR( lpView->hViewOD );
+; 3833 : 
+; 3834 :    LAD_Info.lpTask     = lpTask;
+; 3835 :    LAD_Info.lpNetwork  = lpNetwork;
+; 3836 :    LAD_Info.nObjType   = zLADTYPE_LOD_COMMIT_FILE;
+; 3837 :    LAD_Info.pchObjName = lpViewOD->szName;
+; 3838 :    fnRetrieveAppName( lpView, LAD_Info.szAppName );
+; 3839 :    SysGetUserID( lpView, LAD_Info.szUserName, LAD_Info.szPassword );
+; 3840 : 
+; 3841 :    if ( fnGetApplAddress( &LAD_Info, pchAddress ) == zCALL_ERROR )
+; 3842 :    {
+; 3843 :       fnOperationReturn( iNetCommitOI_ToFile, lpTask );
+; 3844 :       return( zCALL_ERROR );
+; 3845 :    }
+; 3846 : 
+; 3847 :    // Open connection.
+; 3848 :    if ( fnAddConnectionToNetwork( &LAD_Info, &pvConn,
+; 3849 :                                   TRUE, lpView ) == zCALL_ERROR )
+; 3850 :    {
+; 3851 :       fnOperationReturn( iNetCommitOI_ToFile, lpTask );
+; 3852 :       return( zCALL_ERROR );
+; 3853 :    }
+; 3854 : 
+; 3855 :    if ( lpNetwork->nTraceLevel > 1 )
+; 3856 :       TraceLineS( "(kzoeneta) ** Sending Commit OI packet", "" );
+; 3857 : 
+; 3858 :    //=======================================================================
+; 3859 :    // Transmitting data.
+; 3860 :    //
+; 3861 :    // Until further notice, the following code only SENDS data over the
+; 3862 :    // network.
+; 3863 :    //=======================================================================
+; 3864 : 
+; 3865 :    // First send the header for the server driver and then the regular
+; 3866 :    // packet for the function structure.
+; 3867 :    if ( fnSendHeaderPacket( lpNetwork, &pvConn, zPACKET_COMMITOITOFILE,
+; 3868 :                             LAD_Info.szAppName ) != 0 )
+; 3869 :    {
+; 3870 :       goto EndOfFunction;
+; 3871 :    }
+; 3872 : 
+; 3873 :    if ( fnSendTraceSwitches( lpNetwork, &pvConn, lpTask) != 0)
+; 3874 :       goto EndOfFunction;
+; 3875 : 
+; 3876 :    if ( fnSendDataPacket( lpNetwork, &pvConn, zPACKET_COMMITOITOFILE, 0 ) != 0 )
+; 3877 :       goto EndOfFunction;
+; 3878 : 
+; 3879 :    // Set up the commit information.  We initialize the structure to 0's so
+; 3880 :    // that the network stack can better compress the data.
+; 3881 :    zmemset( &CommitPacket, 0, sizeof( zCommitPacket ) );
+; 3882 :    zstrcpy( CommitPacket.szVersion, zCURRENT_PROTOCOL_VERSION );
+; 3883 :    zstrcpy( CommitPacket.szObjectDef, lpViewOD->szName );
+; 3884 :    zltox( lControl, CommitPacket.szControl );
+; 3885 :    zltox( (zLONG) zstrlen( pchFileName ) + 1, CommitPacket.szFileNameLth );
+; 3886 :    zstrcpy( CommitPacket.szAppName, LAD_Info.szAppName );
+; 3887 :    SysGetUserID( lpView, CommitPacket.szUserName, CommitPacket.szPassword );
+; 3888 : 
+; 3889 :    if ( lpNetwork->nTraceLevel > 0 )
+; 3890 :    {
+; 3891 :       TraceLineS( "(kzoeneta) ** Appl Name: %s  Object Def: %s  "
+; 3892 :                     "User Name: %s  File Name: %s",
+; 3893 :                   CommitPacket.szAppName, CommitPacket.szObjectDef,
+; 3894 :                   CommitPacket.szUserName, pchFileName );
+; 3895 :    }
+; 3896 : 
+; 3897 :    // Send server commit info.
+; 3898 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 3899 :                                 &CommitPacket, sizeof( zCommitPacket ),
+; 3900 :                                 zTYPE_STRING ) != 0 )
+; 3901 :    {
+; 3902 :       goto EndOfFunction;
+; 3903 :    }
+; 3904 : 
+; 3905 :    // Send server file name.
+; 3906 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 3907 :                                 pchFileName, zstrlen( pchFileName ) + 1,
+; 3908 :                                 zTYPE_STRING ) != 0 )
+; 3909 :    {
+; 3910 :       goto EndOfFunction;
+; 3911 :    }
+; 3912 : 
+; 3913 :    if ( lpNetwork->nTraceLevel > 0 )
+; 3914 :       TraceLineS( "(kzoeneta) ** Sending OI to commit file", "" );
+; 3915 : 
+; 3916 :    // Send the OI to the server to be committed.
+; 3917 :    if ( fnSendOI( &pvConn, lpNetwork, lpView, zINCREMENTAL ) == zCALL_ERROR )
+; 3918 :    {
+; 3919 :       TraceLineS( "(kzoeneta) ** Error sending OI for Commit!", "" );
+; 3920 :       goto EndOfFunction;
+; 3921 :    }
+; 3922 : 
+; 3923 :    // Tell network handler to flush the send buffer.
+; 3924 :    if ( fnFlushBuffer( lpNetwork, &pvConn ) != 0 )
+; 3925 :       goto EndOfFunction;
+; 3926 : 
+; 3927 :    //=======================================================================
+; 3928 :    // Receiving data.
+; 3929 :    //
+; 3930 :    // From here until we close the connection we will only RECEIVE data over
+; 3931 :    // the network.
+; 3932 :    //=======================================================================
+; 3933 : 
+; 3934 :    if ( lpNetwork->nTraceLevel > 0 )
+; 3935 :       TraceLineS( "(kzoeneta) ** Waiting for ACK", "" );
+; 3936 : 
+; 3937 :    // Wait for return code.
+; 3938 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lPacketData ) != 0 )
+; 3939 :    {
+; 3940 :       TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+; 3941 :       goto EndOfFunction;
+; 3942 :    }
+; 3943 : 
+; 3944 :    if ( cPacketType != zPACKET_RC )
+; 3945 :    {
+; 3946 :       TraceLineS( "(kzoeneta) ** No return code for CommitOI_ToFile!", "" );
+; 3947 :       goto EndOfFunction;
+; 3948 :    }
+; 3949 : 
+; 3950 :    nRC = (zSHORT) lPacketData;
+; 3951 : 
+; 3952 :    if ( lpNetwork->nTraceLevel > 0 )
+; 3953 :       TraceLineI( "(kzoeneta) ** RC from commit OI to file = ", nRC );
+; 3954 : 
+; 3955 :    if ( fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, lpView ) < 0 )
+; 3956 :    {
+; 3957 :       nRC = zCALL_ERROR;
+; 3958 :       goto EndOfFunction;
+; 3959 :    }
+; 3960 : 
+; 3961 : EndOfFunction:
+; 3962 :    if ( fnRemoveConnectionFromNetwork( lpNetwork, &pvConn,
+; 3963 :                                        TRUE ) == zCALL_ERROR )
+; 3964 :    {
+; 3965 :       nRC = zCALL_ERROR;
+; 3966 :    }
+; 3967 : 
+; 3968 :    fnOperationReturn( iNetCommitOI_ToFile, lpTask );
+; 3969 :    return( nRC );
+; 3970 : #endif
+; 3971 : 
+; 3972 : } // NetCommitOI_ToFile
+
+	pop	ebp
+	ret	20					; 00000014H
+_NetCommitOI_ToFile@20 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_08FNEA@kztranwo?$AA@			; `string'
+PUBLIC	??_C@_09GMMJ@Operation?$AA@			; `string'
+PUBLIC	??_C@_0BA@FCJM@ApplicationName?$AA@		; `string'
+PUBLIC	??_C@_08DJIK@OperName?$AA@			; `string'
+PUBLIC	??_C@_01KGOM@T?$AA@				; `string'
+PUBLIC	??_C@_0O@LJID@OperationType?$AA@		; `string'
+PUBLIC	??_C@_0L@OKBL@ObjectName?$AA@			; `string'
+PUBLIC	??_C@_01PACF@G?$AA@				; `string'
+PUBLIC	??_C@_08PMAN@DLL_Name?$AA@			; `string'
+PUBLIC	??_C@_0L@JGJO@ReturnType?$AA@			; `string'
+PUBLIC	??_C@_01PCJP@Y?$AA@				; `string'
+PUBLIC	??_C@_0P@EDLM@ReturnArgument?$AA@		; `string'
+PUBLIC	??_C@_0N@GJDM@PointerValue?$AA@			; `string'
+PUBLIC	??_C@_0N@EPJI@SendArgument?$AA@			; `string'
+PUBLIC	??_C@_08FNON@DataType?$AA@			; `string'
+PUBLIC	_NetCallOperation
+PUBLIC	??_C@_01OAK@N?$AA@				; `string'
+PUBLIC	??_C@_0M@ONNJ@SubtaskView?$AA@			; `string'
+PUBLIC	??_C@_0CK@EIIH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Transforma@ ; `string'
+PUBLIC	??_C@_0CE@OPPG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5Arg?5@ ; `string'
+PUBLIC	??_C@_01PDMC@V?$AA@				; `string'
+PUBLIC	??_C@_0CJ@EPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5argu@ ; `string'
+PUBLIC	??_C@_0BO@PLHK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5ACK?$AA@ ; `string'
+PUBLIC	??_C@_0DD@NHEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@ ; `string'
+PUBLIC	??_C@_0CN@JCDO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+PUBLIC	??_C@_0M@BKKK@ReturnValue?$AA@			; `string'
+PUBLIC	??_C@_01KFAL@E?$AA@				; `string'
+PUBLIC	??_C@_0N@LNAH@ViewReturned?$AA@			; `string'
+PUBLIC	??_C@_0CN@KEIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+PUBLIC	??_C@_0CF@NMFO@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5transactio@ ; `string'
+EXTRN	_GetDecimalFromAttribute@16:NEAR
+EXTRN	_SetAttributeFromDecimal@52:NEAR
+EXTRN	_GetBlobFromAttribute@20:NEAR
+EXTRN	_SetAttributeFromBlob@20:NEAR
+EXTRN	_fnValidView:NEAR
+EXTRN	_GetAddrForAttribute@16:NEAR
+EXTRN	_SetCursorFirstEntityByString@20:NEAR
+EXTRN	_SetCursorNextEntityByString@20:NEAR
+;	COMDAT ??_C@_08FNEA@kztranwo?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_08FNEA@kztranwo?$AA@ DB 'kztranwo', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09GMMJ@Operation?$AA@
+_DATA	SEGMENT
+??_C@_09GMMJ@Operation?$AA@ DB 'Operation', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@FCJM@ApplicationName?$AA@
+_DATA	SEGMENT
+??_C@_0BA@FCJM@ApplicationName?$AA@ DB 'ApplicationName', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08DJIK@OperName?$AA@
+_DATA	SEGMENT
+??_C@_08DJIK@OperName?$AA@ DB 'OperName', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01KGOM@T?$AA@
+_DATA	SEGMENT
+??_C@_01KGOM@T?$AA@ DB 'T', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@LJID@OperationType?$AA@
+_DATA	SEGMENT
+??_C@_0O@LJID@OperationType?$AA@ DB 'OperationType', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@OKBL@ObjectName?$AA@
+_DATA	SEGMENT
+??_C@_0L@OKBL@ObjectName?$AA@ DB 'ObjectName', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01PACF@G?$AA@
+_DATA	SEGMENT
+??_C@_01PACF@G?$AA@ DB 'G', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08PMAN@DLL_Name?$AA@
+_DATA	SEGMENT
+??_C@_08PMAN@DLL_Name?$AA@ DB 'DLL_Name', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@JGJO@ReturnType?$AA@
+_DATA	SEGMENT
+??_C@_0L@JGJO@ReturnType?$AA@ DB 'ReturnType', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01PCJP@Y?$AA@
+_DATA	SEGMENT
+??_C@_01PCJP@Y?$AA@ DB 'Y', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@EDLM@ReturnArgument?$AA@
+_DATA	SEGMENT
+??_C@_0P@EDLM@ReturnArgument?$AA@ DB 'ReturnArgument', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@GJDM@PointerValue?$AA@
+_DATA	SEGMENT
+??_C@_0N@GJDM@PointerValue?$AA@ DB 'PointerValue', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@EPJI@SendArgument?$AA@
+_DATA	SEGMENT
+??_C@_0N@EPJI@SendArgument?$AA@ DB 'SendArgument', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08FNON@DataType?$AA@
+_DATA	SEGMENT
+??_C@_08FNON@DataType?$AA@ DB 'DataType', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01OAK@N?$AA@
+_DATA	SEGMENT
+??_C@_01OAK@N?$AA@ DB 'N', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@ONNJ@SubtaskView?$AA@
+_DATA	SEGMENT
+??_C@_0M@ONNJ@SubtaskView?$AA@ DB 'SubtaskView', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@EIIH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Transforma@
+_DATA	SEGMENT
+??_C@_0CK@EIIH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Transforma@ DB '(kzoe'
+	DB	'neta) ** Sending Transformation Call', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@OPPG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5Arg?5@
+_DATA	SEGMENT
+??_C@_0CE@OPPG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5Arg?5@ DB '(kz'
+	DB	'oeneta) ** Error sending Arg OI!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01PDMC@V?$AA@
+_DATA	SEGMENT
+??_C@_01PDMC@V?$AA@ DB 'V', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@EPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5argu@
+_DATA	SEGMENT
+??_C@_0CJ@EPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5argu@ DB '(kzo'
+	DB	'eneta) ** Error sending argument OI!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BO@PLHK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5ACK?$AA@
+_DATA	SEGMENT
+??_C@_0BO@PLHK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5ACK?$AA@ DB '(kz'
+	DB	'oeneta) ** Waiting for ACK', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DD@NHEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@
+_DATA	SEGMENT
+??_C@_0DD@NHEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@ DB '(kz'
+	DB	'oeneta) ** No return code for NetCallOperation!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@JCDO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@
+_DATA	SEGMENT
+??_C@_0CN@JCDO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ DB '(kz'
+	DB	'oeneta) ** Not able to retrieve Arg List!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@BKKK@ReturnValue?$AA@
+_DATA	SEGMENT
+??_C@_0M@BKKK@ReturnValue?$AA@ DB 'ReturnValue', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01KFAL@E?$AA@
+_DATA	SEGMENT
+??_C@_01KFAL@E?$AA@ DB 'E', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@LNAH@ViewReturned?$AA@
+_DATA	SEGMENT
+??_C@_0N@LNAH@ViewReturned?$AA@ DB 'ViewReturned', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@KEIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@
+_DATA	SEGMENT
+??_C@_0CN@KEIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ DB '(kz'
+	DB	'oeneta) ** Not able to retrieve new view!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@NMFO@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5transactio@
+_DATA	SEGMENT
+??_C@_0CF@NMFO@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5transactio@ DB '(kzo'
+	DB	'eneta) ** RC from transaction = ', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_pchNetworkName$ = 8
+_pchAddress$ = 12
+_vSubtask$ = 16
+_bTransformation$ = 20
+_pchInfo$ = 24
+_pchOperName$ = 28
+_pvReturn$ = 32
+_pchArgList$ = 36
+_lpNetwork$ = -340
+_pvConn$ = -32
+_lpTask$ = -76
+_szReturnType$ = -348
+_vArgs$ = -72
+_vaList$ = -352
+_cPacketType$ = -80
+_szAppName$ = -68
+_szServer$ = -336
+_OperInfo$ = -20
+_lRC$ = -24
+_nReturnCode$ = -344
+_nRC$ = -28
+_szDataType$9009 = -364
+_pvoid$9010 = -360
+_bPointer$9011 = -356
+_pch$9034 = -368
+_pc$9044 = -372
+_c$9048 = -376
+_pl$9059 = -380
+_l$9063 = -384
+_pd$9073 = -388
+_d$9077 = -428
+_ps$9087 = -432
+_n$9092 = -436
+_pv$9107 = -444
+_lpViewOD$9109 = -440
+_v$9117 = -448
+_lpSubtask$9128 = -452
+_lpApp$9130 = -456
+_szTempAppName$9134 = -496
+_lpViewOD$9135 = -460
+_vSendView$9160 = -500
+_pv$9164 = -504
+_l$9184 = -508
+_pvView$9194 = -512
+_pchObjName$9195 = -516
+_NetCallOperation PROC NEAR
+
+; 4037 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 532				; 00000214H
+	push	esi
+	push	edi
+
+; 4038 :    LPNETWORK     lpNetwork;
+; 4039 :    zPVOID        pvConn = 0;
+
+	mov	DWORD PTR _pvConn$[ebp], 0
+
+; 4040 :    LPTASK        lpTask;
+; 4041 :    zCHAR         szReturnType[ 2 ];
+; 4042 :    zVIEW         vArgs = 0;
+
+	mov	DWORD PTR _vArgs$[ebp], 0
+
+; 4043 :    va_list       vaList;
+; 4044 :    zCHAR         cPacketType;
+; 4045 :    zCHAR         szAppName[ zZEIDON_NAME_LTH + 1 ];
+; 4046 :    zCHAR         szServer[ 256 ];
+; 4047 :    ServDirOperRecord OperInfo;
+; 4048 :    zLONG         lRC;
+; 4049 :    zSHORT        nReturnCode = zCALL_ERROR;
+
+	mov	WORD PTR _nReturnCode$[ebp], -16	; fffffff0H
+
+; 4050 :    zSHORT        nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 4051 : 
+; 4052 :    // If task not active or disabled, return zCALL_ERROR.
+; 4053 :    if ( (lpTask = fnOperationCall( iNetCallOperation, vSubtask, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	push	513					; 00000201H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L8986
+
+; 4055 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8972
+$L8986:
+
+; 4057 : 
+; 4058 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L8987
+
+; 4060 :       fnOperationReturn( iNetCallOperation, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	513					; 00000201H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4061 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8972
+$L8987:
+
+; 4063 : 
+; 4064 :    //
+; 4065 :    // Try creating the argument object from the argument list.
+; 4066 :    //
+; 4067 : 
+; 4068 :    SfActivateSysEmptyOI( &vArgs, "kztranwo", vSubtask, zSINGLE );
+
+	push	0
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_08FNEA@kztranwo?$AA@	; `string'
+	lea	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SfActivateSysEmptyOI@16
+
+; 4069 :    if ( vArgs == 0 )
+
+	cmp	DWORD PTR _vArgs$[ebp], 0
+	jne	SHORT $L8989
+
+; 4071 :       fnOperationReturn( iNetCallOperation, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	513					; 00000201H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4072 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L8972
+$L8989:
+
+; 4074 : 
+; 4075 :    fnRetrieveAppName( vSubtask, szAppName );
+
+	lea	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_fnRetrieveAppName@8
+
+; 4076 : 
+; 4077 :    CreateEntity( vArgs, "Operation", zPOS_AFTER );
+
+	push	3
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_CreateEntity@12
+
+; 4078 :    SetAttributeFromString( vArgs, "Operation", "ApplicationName", szAppName );
+
+	lea	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BA@FCJM@ApplicationName?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 4079 :    SetAttributeFromString( vArgs, "Operation", "OperName", pchOperName );
+
+	mov	eax, DWORD PTR _pchOperName$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_08DJIK@OperName?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 4080 :    if ( bTransformation )
+
+	mov	edx, DWORD PTR _bTransformation$[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	je	SHORT $L8994
+
+; 4082 :       SetAttributeFromString( vArgs, "Operation", "OperationType", zTYPE_TRAN );
+
+	push	OFFSET FLAT:??_C@_01KGOM@T?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0O@LJID@OperationType?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4083 :       SetAttributeFromString( vArgs, "Operation", "ObjectName", pchInfo );
+
+	mov	ecx, DWORD PTR _pchInfo$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0L@OKBL@ObjectName?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 4085 :    else
+
+	jmp	SHORT $L9000
+$L8994:
+
+; 4087 :       SetAttributeFromString( vArgs, "Operation", "OperationType", zTYPE_GOPER );
+
+	push	OFFSET FLAT:??_C@_01PACF@G?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0O@LJID@OperationType?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4088 :       if ( pchInfo && *pchInfo )
+
+	cmp	DWORD PTR _pchInfo$[ebp], 0
+	je	SHORT $L9000
+	mov	ecx, DWORD PTR _pchInfo$[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	test	edx, edx
+	je	SHORT $L9000
+
+; 4089 :          SetAttributeFromString( vArgs, "Operation", "DLL_Name", pchInfo );
+
+	mov	eax, DWORD PTR _pchInfo$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_08PMAN@DLL_Name?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+$L9000:
+
+; 4091 : 
+; 4092 :    // First value in the arg list is the return type.
+; 4093 :    szReturnType[ 0 ] = *pchArgList++;
+
+	mov	edx, DWORD PTR _pchArgList$[ebp]
+	mov	al, BYTE PTR [edx]
+	mov	BYTE PTR _szReturnType$[ebp], al
+	mov	ecx, DWORD PTR _pchArgList$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _pchArgList$[ebp], ecx
+
+; 4094 :    szReturnType[ 1 ] = 0;
+
+	mov	BYTE PTR _szReturnType$[ebp+1], 0
+
+; 4095 :    SetAttributeFromString( vArgs, "Operation", "ReturnType", szReturnType );
+
+	lea	edx, DWORD PTR _szReturnType$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0L@JGJO@ReturnType?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4096 : 
+; 4097 :    // Loop through each of the arguments and add them to vArg.
+; 4098 :    va_start( vaList, pchArgList );
+
+	lea	ecx, DWORD PTR _pchArgList$[ebp+4]
+	mov	DWORD PTR _vaList$[ebp], ecx
+$L9007:
+
+; 4099 :    while ( *pchArgList )
+
+	mov	edx, DWORD PTR _pchArgList$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	test	eax, eax
+	je	$L9008
+
+; 4101 :       zCHAR  szDataType[ 2 ];
+; 4102 :       zPVOID pvoid;
+; 4103 :       zBOOL  bPointer;
+; 4104 : 
+; 4105 :       CreateEntity( vArgs, szlArgument, zPOS_AFTER );
+
+	push	3
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_CreateEntity@12
+
+; 4106 : 
+; 4107 :       if ( *pchArgList == 'p' )
+
+	mov	edx, DWORD PTR _pchArgList$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	cmp	eax, 112				; 00000070H
+	jne	$L9013
+
+; 4109 :          bPointer = TRUE;
+
+	mov	BYTE PTR _bPointer$9011[ebp], 1
+
+; 4110 :          pchArgList++;
+
+	mov	ecx, DWORD PTR _pchArgList$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _pchArgList$[ebp], ecx
+
+; 4111 :          SetAttributeFromString( vArgs, szlArgument, "ReturnArgument", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0P@EDLM@ReturnArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 4112 :          pvoid = va_arg( vaList, zPVOID );
+
+	mov	eax, DWORD PTR _vaList$[ebp]
+	add	eax, 4
+	mov	DWORD PTR _vaList$[ebp], eax
+	mov	ecx, DWORD PTR _vaList$[ebp]
+	mov	edx, DWORD PTR [ecx-4]
+	mov	DWORD PTR _pvoid$9010[ebp], edx
+
+; 4113 :          SetAttributeFromBlob( vArgs, szlArgument, "PointerValue",
+; 4114 :                                &pvoid, sizeof( pvoid ) );
+
+	push	4
+	lea	eax, DWORD PTR _pvoid$9010[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0N@GJDM@PointerValue?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromBlob@20
+
+; 4115 :          if ( pvoid )
+
+	cmp	DWORD PTR _pvoid$9010[ebp], 0
+	je	SHORT $L9024
+
+; 4116 :             SetAttributeFromString( vArgs, szlArgument, "SendArgument", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+$L9024:
+
+; 4118 :       else
+
+	jmp	SHORT $L9026
+$L9013:
+
+; 4119 :          bPointer = FALSE;
+
+	mov	BYTE PTR _bPointer$9011[ebp], 0
+$L9026:
+
+; 4120 : 
+; 4121 :       szDataType[ 0 ] = *pchArgList;
+
+	mov	eax, DWORD PTR _pchArgList$[ebp]
+	mov	cl, BYTE PTR [eax]
+	mov	BYTE PTR _szDataType$9009[ebp], cl
+
+; 4122 :       szDataType[ 1 ] = 0;
+
+	mov	BYTE PTR _szDataType$9009[ebp+1], 0
+
+; 4123 :       SetAttributeFromString( vArgs, szlArgument, "DataType", szDataType );
+
+	lea	edx, DWORD PTR _szDataType$9009[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4124 : 
+; 4125 :       switch ( *pchArgList++ )
+; 4126 :       {
+
+	mov	ecx, DWORD PTR _pchArgList$[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	mov	DWORD PTR -520+[ebp], edx
+	mov	eax, DWORD PTR _pchArgList$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _pchArgList$[ebp], eax
+	mov	ecx, DWORD PTR -520+[ebp]
+	mov	DWORD PTR -524+[ebp], ecx
+	mov	edx, DWORD PTR -524+[ebp]
+	sub	edx, 76					; 0000004cH
+	mov	DWORD PTR -524+[ebp], edx
+	cmp	DWORD PTR -524+[ebp], 13		; 0000000dH
+	ja	$L9029
+	mov	ecx, DWORD PTR -524+[ebp]
+	xor	eax, eax
+	mov	al, BYTE PTR $L10264[ecx]
+	jmp	DWORD PTR $L10265[eax*4]
+$L9033:
+
+; 4136 :             zPCHAR pch = va_arg( vaList, zPCHAR );
+
+	mov	edx, DWORD PTR _vaList$[ebp]
+	add	edx, 4
+	mov	DWORD PTR _vaList$[ebp], edx
+	mov	eax, DWORD PTR _vaList$[ebp]
+	mov	ecx, DWORD PTR [eax-4]
+	mov	DWORD PTR _pch$9034[ebp], ecx
+
+; 4137 :             SetAttributeFromString( vArgs, szlArgument, "Value", pch );
+
+	mov	edx, DWORD PTR _pch$9034[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4138 :             break;
+
+	jmp	$L9029
+$L9042:
+
+; 4140 : 
+; 4141 :          case 'Y':      // Byte
+; 4142 :             if ( bPointer )
+
+	mov	ecx, DWORD PTR _bPointer$9011[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	je	SHORT $L9043
+
+; 4144 :                zPCHAR pc = (zPCHAR) pvoid;
+
+	mov	edx, DWORD PTR _pvoid$9010[ebp]
+	mov	DWORD PTR _pc$9044[ebp], edx
+
+; 4145 :                if ( pc )
+
+	cmp	DWORD PTR _pc$9044[ebp], 0
+	je	SHORT $L9046
+
+; 4146 :                   SetAttributeFromInteger( vArgs, szlArgument, "Value", *pc );
+
+	mov	eax, DWORD PTR _pc$9044[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	push	ecx
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromInteger@16
+$L9046:
+
+; 4148 :             else
+
+	jmp	SHORT $L9047
+$L9043:
+
+; 4150 :                zCHAR c = (zCHAR) va_arg( vaList, VA_ARG_CHAR );
+
+	mov	eax, DWORD PTR _vaList$[ebp]
+	add	eax, 4
+	mov	DWORD PTR _vaList$[ebp], eax
+	mov	ecx, DWORD PTR _vaList$[ebp]
+	mov	dl, BYTE PTR [ecx-4]
+	mov	BYTE PTR _c$9048[ebp], dl
+
+; 4151 :                SetAttributeFromInteger( vArgs, szlArgument, "Value", c );
+
+	movsx	eax, BYTE PTR _c$9048[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromInteger@16
+$L9047:
+
+; 4153 : 
+; 4154 :             break;
+
+	jmp	$L9029
+$L9057:
+
+; 4155 : 
+; 4156 :          case 'L':      // Long integer
+; 4157 :             if ( bPointer )
+
+	mov	edx, DWORD PTR _bPointer$9011[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	je	SHORT $L9058
+
+; 4159 :                zPLONG pl = (zPLONG) pvoid;
+
+	mov	eax, DWORD PTR _pvoid$9010[ebp]
+	mov	DWORD PTR _pl$9059[ebp], eax
+
+; 4160 :                if ( pl )
+
+	cmp	DWORD PTR _pl$9059[ebp], 0
+	je	SHORT $L9061
+
+; 4161 :                   SetAttributeFromInteger( vArgs, szlArgument, "Value", *pl );
+
+	mov	ecx, DWORD PTR _pl$9059[ebp]
+	mov	edx, DWORD PTR [ecx]
+	push	edx
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromInteger@16
+$L9061:
+
+; 4163 :             else
+
+	jmp	SHORT $L9062
+$L9058:
+
+; 4165 :                zLONG l = va_arg( vaList, zLONG );
+
+	mov	ecx, DWORD PTR _vaList$[ebp]
+	add	ecx, 4
+	mov	DWORD PTR _vaList$[ebp], ecx
+	mov	edx, DWORD PTR _vaList$[ebp]
+	mov	eax, DWORD PTR [edx-4]
+	mov	DWORD PTR _l$9063[ebp], eax
+
+; 4166 :                SetAttributeFromInteger( vArgs, szlArgument, "Value", l );
+
+	mov	ecx, DWORD PTR _l$9063[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromInteger@16
+$L9062:
+
+; 4168 : 
+; 4169 :             break;
+
+	jmp	$L9029
+$L9071:
+
+; 4170 : 
+; 4171 :          case zTYPE_DECIMAL:      // Decimal
+; 4172 :          case 'R':      // ??? Real ???
+; 4173 :             if ( bPointer )
+
+	mov	eax, DWORD PTR _bPointer$9011[ebp]
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	je	SHORT $L9072
+
+; 4175 :                zPDECIMAL pd = (zPDECIMAL) pvoid;
+
+	mov	ecx, DWORD PTR _pvoid$9010[ebp]
+	mov	DWORD PTR _pd$9073[ebp], ecx
+
+; 4176 : 
+; 4177 :                if ( pd )
+
+	cmp	DWORD PTR _pd$9073[ebp], 0
+	je	SHORT $L9075
+
+; 4178 :                   SetAttributeFromDecimal( vArgs, szlArgument, "Value", *pd );
+
+	sub	esp, 40					; 00000028H
+	mov	ecx, 10					; 0000000aH
+	mov	esi, DWORD PTR _pd$9073[ebp]
+	mov	edi, esp
+	rep movsd
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromDecimal@52
+$L9075:
+
+; 4180 :             else
+
+	jmp	SHORT $L9076
+$L9072:
+
+; 4182 :                zDECIMAL d;
+; 4183 : 
+; 4184 :                d = va_arg( vaList, zDECIMAL );
+
+	mov	eax, DWORD PTR _vaList$[ebp]
+	add	eax, 40					; 00000028H
+	mov	DWORD PTR _vaList$[ebp], eax
+	mov	esi, DWORD PTR _vaList$[ebp]
+	sub	esi, 40					; 00000028H
+	mov	ecx, 10					; 0000000aH
+	lea	edi, DWORD PTR _d$9077[ebp]
+	rep movsd
+
+; 4185 :                SetAttributeFromDecimal( vArgs, szlArgument, "Value", d );
+
+	sub	esp, 40					; 00000028H
+	mov	ecx, 10					; 0000000aH
+	lea	esi, DWORD PTR _d$9077[ebp]
+	mov	edi, esp
+	rep movsd
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromDecimal@52
+$L9076:
+
+; 4187 : 
+; 4188 :             break;
+
+	jmp	$L9029
+$L9085:
+
+; 4189 : 
+; 4190 :          case 'N':      // Short integer
+; 4191 :             if ( bPointer )
+
+	mov	edx, DWORD PTR _bPointer$9011[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	je	SHORT $L9086
+
+; 4193 :                zPSHORT ps = (zPSHORT) pvoid;
+
+	mov	eax, DWORD PTR _pvoid$9010[ebp]
+	mov	DWORD PTR _ps$9087[ebp], eax
+
+; 4194 : 
+; 4195 :                if ( ps )
+
+	cmp	DWORD PTR _ps$9087[ebp], 0
+	je	SHORT $L9089
+
+; 4196 :                   SetAttributeFromInteger( vArgs, szlArgument, "Value",
+; 4197 :                                            (zLONG) *ps );
+
+	mov	ecx, DWORD PTR _ps$9087[ebp]
+	movsx	edx, WORD PTR [ecx]
+	push	edx
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromInteger@16
+$L9089:
+
+; 4199 :             else
+
+	jmp	SHORT $L9091
+$L9086:
+
+; 4201 :                zSHORT n = (zSHORT) va_arg( vaList, VA_ARG_SHORT );
+
+	mov	ecx, DWORD PTR _vaList$[ebp]
+	add	ecx, 4
+	mov	DWORD PTR _vaList$[ebp], ecx
+	mov	edx, DWORD PTR _vaList$[ebp]
+	mov	ax, WORD PTR [edx-4]
+	mov	WORD PTR _n$9092[ebp], ax
+
+; 4202 : 
+; 4203 :                SetAttributeFromInteger( vArgs, szlArgument, "Value", n );
+
+	movsx	ecx, WORD PTR _n$9092[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromInteger@16
+$L9091:
+
+; 4205 : 
+; 4206 :             break;
+
+	jmp	$L9029
+$L9105:
+
+; 4207 : 
+; 4208 :          case 'F':      // Float
+; 4209 :             break;
+; 4210 : 
+; 4211 :          case 'D':      // Date
+; 4212 :             break;
+; 4213 : 
+; 4214 :          case 'H':      // Time
+; 4215 :             break;
+; 4216 : 
+; 4217 :          case 'B':      // Blob
+; 4218 :             break;
+; 4219 : 
+; 4220 :          case 'V':      // View
+; 4221 :             if ( bPointer )
+
+	mov	eax, DWORD PTR _bPointer$9011[ebp]
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	je	$L9106
+
+; 4223 :                zPVIEW   pv = (zPVIEW) pvoid;
+
+	mov	ecx, DWORD PTR _pvoid$9010[ebp]
+	mov	DWORD PTR _pv$9107[ebp], ecx
+
+; 4224 :                LPVIEWOD lpViewOD;
+; 4225 : 
+; 4226 :                // If the view is empty, then set flag to indicate we are NOT
+; 4227 :                // sending the OI.
+; 4228 :                if ( *pv == 0 )
+
+	mov	edx, DWORD PTR _pv$9107[ebp]
+	cmp	DWORD PTR [edx], 0
+	jne	SHORT $L9110
+
+; 4229 :                   SetAttributeFromString( vArgs, szlArgument, "SendArgument", "N" );
+
+	push	OFFSET FLAT:??_C@_01OAK@N?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4230 :                else
+
+	jmp	SHORT $L9112
+$L9110:
+
+; 4232 :                   // Make sure the view is valid.
+; 4233 :                   if ( fnValidView( lpTask, *pv ) == 0 )
+
+	mov	ecx, DWORD PTR _pv$9107[ebp]
+	mov	edx, DWORD PTR [ecx]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnValidView
+	add	esp, 8
+	movsx	ecx, ax
+	test	ecx, ecx
+	jne	SHORT $L9113
+
+; 4234 :                      goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9113:
+
+; 4235 : 
+; 4236 :                   lpViewOD = zGETPTR( (*pv)->hViewOD );
+
+	mov	edx, DWORD PTR _pv$9107[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR [eax+6]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOD$9109[ebp], eax
+
+; 4237 :                   SetAttributeFromString( vArgs, szlArgument, "ObjectName",
+; 4238 :                                           lpViewOD->szName );
+
+	mov	edx, DWORD PTR _lpViewOD$9109[ebp]
+	add	edx, 10					; 0000000aH
+	push	edx
+	push	OFFSET FLAT:??_C@_0L@OKBL@ObjectName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4239 :                   SetAttributeFromString( vArgs, szlArgument, "SendArgument", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+$L9112:
+
+; 4242 :             else
+
+	jmp	$L9133
+$L9106:
+
+; 4244 :                zVIEW v = va_arg( vaList, zVIEW );
+
+	mov	edx, DWORD PTR _vaList$[ebp]
+	add	edx, 4
+	mov	DWORD PTR _vaList$[ebp], edx
+	mov	eax, DWORD PTR _vaList$[ebp]
+	mov	ecx, DWORD PTR [eax-4]
+	mov	DWORD PTR _v$9117[ebp], ecx
+
+; 4245 : 
+; 4246 :                if ( v == 0 )
+
+	cmp	DWORD PTR _v$9117[ebp], 0
+	jne	SHORT $L9125
+
+; 4248 :                   SetAttributeFromString( vArgs, szlArgument, "SendArgument", "N" );
+
+	push	OFFSET FLAT:??_C@_01OAK@N?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 4250 :                else
+
+	jmp	$L9133
+$L9125:
+
+; 4251 :                // Check to see if view is a subtask view.
+; 4252 :                if ( v->hSubtask )
+
+	mov	eax, DWORD PTR _v$9117[ebp]
+	cmp	DWORD PTR [eax+18], 0
+	je	SHORT $L9127
+
+; 4254 :                   LPSUBTASK lpSubtask = zGETPTR( v->hSubtask );
+
+	mov	ecx, DWORD PTR _v$9117[ebp]
+	mov	edx, DWORD PTR [ecx+18]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpSubtask$9128[ebp], eax
+
+; 4255 :                   LPAPP     lpApp     = zGETPTR( lpSubtask->hApp );
+
+	mov	eax, DWORD PTR _lpSubtask$9128[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpApp$9130[ebp], eax
+
+; 4256 : 
+; 4257 :                   // We've got a subtask view--there is no OI to send but there
+; 4258 :                   // is an application name.
+; 4259 :                   SetAttributeFromString( vArgs, szlArgument,
+; 4260 :                                           "SubtaskView", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0M@ONNJ@SubtaskView?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 4261 :                   SetAttributeFromString( vArgs, szlArgument,
+; 4262 :                                           "ApplicationName", lpApp->szName );
+
+	mov	eax, DWORD PTR _lpApp$9130[ebp]
+	add	eax, 6
+	push	eax
+	push	OFFSET FLAT:??_C@_0BA@FCJM@ApplicationName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 4263 :                   SetAttributeFromString( vArgs, szlArgument,
+; 4264 :                                           "SendArgument", "N" );
+
+	push	OFFSET FLAT:??_C@_01OAK@N?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 4266 :                else
+
+	jmp	$L9133
+$L9127:
+
+; 4268 :                   zCHAR    szTempAppName[ zAPPL_NAME_LTH ];
+; 4269 :                   LPVIEWOD lpViewOD;
+; 4270 : 
+; 4271 :                   if ( fnValidView( lpTask, v ) == 0 )
+
+	mov	eax, DWORD PTR _v$9117[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	call	_fnValidView
+	add	esp, 8
+	movsx	edx, ax
+	test	edx, edx
+	jne	SHORT $L9136
+
+; 4273 :                      va_end( vaList );
+
+	mov	DWORD PTR _vaList$[ebp], 0
+
+; 4274 :                      goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9136:
+
+; 4276 : 
+; 4277 :                   lpViewOD = zGETPTR( v->hViewOD );
+
+	mov	eax, DWORD PTR _v$9117[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOD$9135[ebp], eax
+
+; 4278 : 
+; 4279 :                   // Check to see if the app name for the view matches the
+; 4280 :                   // "global" app name for this transformation.  If it doesn't
+; 4281 :                   // then we need to set the application name for the view.
+; 4282 :                   fnRetrieveAppName( v, szTempAppName );
+
+	lea	edx, DWORD PTR _szTempAppName$9134[ebp]
+	push	edx
+	mov	eax, DWORD PTR _v$9117[ebp]
+	push	eax
+	call	_fnRetrieveAppName@8
+
+; 4283 :                   if ( zstrcmp( szTempAppName, szAppName ) != 0 )
+
+	movsx	ecx, BYTE PTR _szTempAppName$9134[ebp]
+	movsx	edx, BYTE PTR _szAppName$[ebp]
+	cmp	ecx, edx
+	jne	SHORT $L10262
+	lea	eax, DWORD PTR _szAppName$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _szTempAppName$9134[ebp]
+	push	ecx
+	call	_strcmp
+	add	esp, 8
+	mov	DWORD PTR -528+[ebp], eax
+	jmp	SHORT $L10263
+$L10262:
+	movsx	edx, BYTE PTR _szTempAppName$9134[ebp]
+	movsx	eax, BYTE PTR _szAppName$[ebp]
+	sub	edx, eax
+	xor	ecx, ecx
+	test	edx, edx
+	setle	cl
+	dec	ecx
+	and	ecx, 2
+	add	ecx, -1
+	mov	DWORD PTR -528+[ebp], ecx
+$L10263:
+	cmp	DWORD PTR -528+[ebp], 0
+	je	SHORT $L9145
+
+; 4285 :                      SetAttributeFromString( vArgs, szlArgument,
+; 4286 :                                              "ApplicationName",
+; 4287 :                                              szTempAppName );
+
+	lea	edx, DWORD PTR _szTempAppName$9134[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BA@FCJM@ApplicationName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+$L9145:
+
+; 4289 : 
+; 4290 :                   SetAttributeFromBlob( vArgs, szlArgument, "PointerValue",
+; 4291 :                                         &v, sizeof( v ) );
+
+	push	4
+	lea	ecx, DWORD PTR _v$9117[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0N@GJDM@PointerValue?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromBlob@20
+
+; 4292 :                   SetAttributeFromString( vArgs, szlArgument, "SendArgument", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 4293 :                   SetAttributeFromString( vArgs, szlArgument, "ObjectName",
+; 4294 :                                           lpViewOD->szName );
+
+	mov	ecx, DWORD PTR _lpViewOD$9135[ebp]
+	add	ecx, 10					; 0000000aH
+	push	ecx
+	push	OFFSET FLAT:??_C@_0L@OKBL@ObjectName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+$L9133:
+$L9029:
+
+; 4301 : 
+; 4302 :    } // while ( *pchArgList )...
+
+	jmp	$L9007
+$L9008:
+
+; 4303 : 
+; 4304 :    va_end( vaList );
+
+	mov	DWORD PTR _vaList$[ebp], 0
+
+; 4305 : 
+; 4306 :    // Set up info for activate request.
+; 4307 :    OperInfo.pszNetworkName         = lpNetwork->szNetworkName;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 20					; 00000014H
+	mov	DWORD PTR _OperInfo$[ebp], eax
+
+; 4308 :    OperInfo.vSubtask               = vSubtask;
+
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	mov	DWORD PTR _OperInfo$[ebp+12], ecx
+
+; 4309 :    OperInfo.lControl               = 0;
+
+	mov	DWORD PTR _OperInfo$[ebp+8], 0
+
+; 4310 :    OperInfo.pszUserSuppliedAddress = pchAddress;
+
+	mov	edx, DWORD PTR _pchAddress$[ebp]
+	mov	DWORD PTR _OperInfo$[ebp+4], edx
+
+; 4311 :    OperInfo.pszOperName            = pchOperName;
+
+	mov	eax, DWORD PTR _pchOperName$[ebp]
+	mov	DWORD PTR _OperInfo$[ebp+16], eax
+
+; 4312 : 
+; 4313 :    // Open connection.
+; 4314 :    if ( fnAddConnectionToNetwork( lpTask, lpNetwork, szServer,
+; 4315 :                                   &pvConn, TRUE, zAPPLREQ_OPER,
+; 4316 :                                   &OperInfo, vSubtask ) < 0 )
+
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _OperInfo$[ebp]
+	push	edx
+	push	4
+	push	1
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _szServer$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnAddConnectionToNetwork@32
+	movsx	ecx, ax
+	test	ecx, ecx
+	jge	SHORT $L9147
+
+; 4318 :       nReturnCode = zNETWORK_ERROR;
+
+	mov	WORD PTR _nReturnCode$[ebp], -6		; fffffffaH
+
+; 4319 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9147:
+
+; 4321 : 
+; 4322 :    if ( lpNetwork->nTraceLevel > 1 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	cmp	eax, 1
+	jle	SHORT $L9148
+
+; 4323 :       TraceLineS( "(kzoeneta) ** Sending Transformation Call", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@EIIH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Transforma@ ; `string'
+	call	_TraceLineS@8
+$L9148:
+
+; 4324 : 
+; 4325 :    //=======================================================================
+; 4326 :    // Transmitting data.
+; 4327 :    //
+; 4328 :    // Until further notice, the following code only SENDS data over the
+; 4329 :    // network.
+; 4330 :    //=======================================================================
+; 4331 :    // First send the header for the server driver and then the regular
+; 4332 :    // packet for the function structure.
+; 4333 :    if ( fnSendHeaderPacket( lpNetwork, &pvConn, zPACKET_CALLOPERATION,
+; 4334 :                             szAppName ) != 0 )
+
+	lea	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	push	79					; 0000004fH
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendHeaderPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9150
+
+; 4336 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9150:
+
+; 4338 : 
+; 4339 :    if ( fnSendTraceSwitches( lpNetwork, &pvConn, lpTask) != 0 )
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendTraceSwitches@12
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9151
+
+; 4340 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9151:
+
+; 4341 : 
+; 4342 :    if ( fnSendDataPacket( lpNetwork, &pvConn, zPACKET_CALLOPERATION, 0 ) != 0 )
+
+	push	0
+	push	79					; 0000004fH
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9152
+
+; 4343 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9152:
+
+; 4344 : 
+; 4345 :    // Send the app name.
+; 4346 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 4347 :                                 szAppName, zAPPL_NAME_LTH,
+; 4348 :                                 zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	33					; 00000021H
+	lea	eax, DWORD PTR _szAppName$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+170]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9153
+
+; 4350 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9153:
+
+; 4352 : 
+; 4353 :    // Send the Argument list OI to the server to be committed.
+; 4354 :    if ( fnSendOI( &pvConn, lpNetwork, vArgs, 0 ) == zCALL_ERROR )
+
+	push	0
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	call	_fnSendOI@16
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L9154
+
+; 4356 :       TraceLineS( "(kzoeneta) ** Error sending Arg OI!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CE@OPPG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5Arg?5@ ; `string'
+	call	_TraceLineS@8
+
+; 4357 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9154:
+
+; 4359 : 
+; 4360 :    // Loop through each of the arguments looking for views.  If one is found
+; 4361 :    // send it to the server.
+; 4362 :    for ( nRC = SetCursorFirstEntityByString( vArgs, szlArgument, "DataType",
+; 4363 :                                              "V", 0 );
+; 4364 :          nRC >= zCURSOR_SET;
+; 4365 :          nRC = SetCursorNextEntityByString( vArgs, szlArgument, "DataType",
+; 4366 :                                             "V", 0 ) )
+
+	push	0
+	push	OFFSET FLAT:??_C@_01PDMC@V?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetCursorFirstEntityByString@20
+	mov	WORD PTR _nRC$[ebp], ax
+	jmp	SHORT $L9156
+$L9157:
+	push	0
+	push	OFFSET FLAT:??_C@_01PDMC@V?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetCursorNextEntityByString@20
+	mov	WORD PTR _nRC$[ebp], ax
+$L9156:
+	movsx	edx, WORD PTR _nRC$[ebp]
+	test	edx, edx
+	jl	$L9158
+
+; 4368 :       zVIEW  vSendView;
+; 4369 : 
+; 4370 :       // If view is a Subtask View then we don't need to send anything.
+; 4371 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 4372 :                                      "SubtaskView", "Y" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0M@ONNJ@SubtaskView?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_CompareAttributeToString@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	jne	SHORT $L9161
+
+; 4374 :          continue;
+
+	jmp	SHORT $L9157
+$L9161:
+
+; 4376 : 
+; 4377 :       // If we're not sending the view, skip it.
+; 4378 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 4379 :                                      "SendArgument", "N" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01OAK@N?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	movsx	eax, ax
+	test	eax, eax
+	jne	SHORT $L9162
+
+; 4381 :          continue;
+
+	jmp	SHORT $L9157
+$L9162:
+
+; 4383 : 
+; 4384 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 4385 :                                      "ReturnArgument", "Y" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0P@EDLM@ReturnArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_CompareAttributeToString@16
+	movsx	edx, ax
+	test	edx, edx
+	jne	SHORT $L9163
+
+; 4387 :          zPVIEW pv;
+; 4388 : 
+; 4389 :          GetBlobFromAttribute( &pv, 0, vArgs, szlArgument, "PointerValue" );
+
+	push	OFFSET FLAT:??_C@_0N@GJDM@PointerValue?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	push	0
+	lea	ecx, DWORD PTR _pv$9164[ebp]
+	push	ecx
+	call	_GetBlobFromAttribute@20
+
+; 4390 :          vSendView = *pv;
+
+	mov	edx, DWORD PTR _pv$9164[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	DWORD PTR _vSendView$9160[ebp], eax
+
+; 4392 :       else
+
+	jmp	SHORT $L9165
+$L9163:
+
+; 4393 :          GetBlobFromAttribute( &vSendView, 0, vArgs,
+; 4394 :                                szlArgument, "PointerValue" );
+
+	push	OFFSET FLAT:??_C@_0N@GJDM@PointerValue?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	push	0
+	lea	edx, DWORD PTR _vSendView$9160[ebp]
+	push	edx
+	call	_GetBlobFromAttribute@20
+$L9165:
+
+; 4395 : 
+; 4396 :       // We need to send the view to the server...
+; 4397 :       if ( fnSendOI( &pvConn, lpNetwork, vSendView,
+; 4398 :                      zINCREMENTAL | zSAVE_CURSORS ) == zCALL_ERROR )
+
+	push	327680					; 00050000H
+	mov	eax, DWORD PTR _vSendView$9160[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	call	_fnSendOI@16
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L9166
+
+; 4400 :          TraceLineS( "(kzoeneta) ** Error sending argument OI!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@EPEH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5argu@ ; `string'
+	call	_TraceLineS@8
+
+; 4401 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9166:
+
+; 4403 : 
+; 4404 :    } // for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 )...
+
+	jmp	$L9157
+$L9158:
+
+; 4405 : 
+; 4406 :    // Tell network handler to flush the send buffer.
+; 4407 :    if ( fnFlushBuffer( lpNetwork, &pvConn ) != 0 )
+
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnFlushBuffer@8
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9168
+
+; 4408 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9168:
+
+; 4409 : 
+; 4410 :    // We don't need it anymore so...
+; 4411 :    fnDropView( vArgs );
+
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_fnDropView@4
+
+; 4412 :    vArgs = 0;
+
+	mov	DWORD PTR _vArgs$[ebp], 0
+
+; 4413 : 
+; 4414 :    //=======================================================================
+; 4415 :    // Receiving data.
+; 4416 :    //
+; 4417 :    // From here until we close the connection we will only RECEIVE data over
+; 4418 :    // the network.
+; 4419 :    //=======================================================================
+; 4420 : 
+; 4421 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9169
+
+; 4422 :       TraceLineS( "(kzoeneta) ** Waiting for ACK", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0BO@PLHK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Waiting?5for?5ACK?$AA@ ; `string'
+	call	_TraceLineS@8
+$L9169:
+
+; 4423 : 
+; 4424 :    // Wait for return code.
+; 4425 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType, &lRC ) != 0 )
+
+	lea	ecx, DWORD PTR _lRC$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _cPacketType$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnReceiveDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9171
+
+; 4427 :       TraceLineS( "(kzoeneta) ** Error receiving OI ACK!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@DAND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 4428 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9171:
+
+; 4430 : 
+; 4431 :    if ( cPacketType != zPACKET_RC )
+
+	movsx	eax, BYTE PTR _cPacketType$[ebp]
+	cmp	eax, 35					; 00000023H
+	je	SHORT $L9172
+
+; 4433 :       TraceLineS( "(kzoeneta) ** No return code for NetCallOperation!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DD@NHEI@?$CIkzoeneta?$CJ?5?$CK?$CK?5No?5return?5code?5for@ ; `string'
+	call	_TraceLineS@8
+
+; 4434 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9172:
+
+; 4436 : 
+; 4437 :    if ( fnReceiveOI( &pvConn, lpNetwork, &vArgs, vSubtask, "kztranwo",
+; 4438 :                      zSINGLE | zACTIVATE_SYSTEM ) == zCALL_ERROR )
+
+	push	536870912				; 20000000H
+	push	OFFSET FLAT:??_C@_08FNEA@kztranwo?$AA@	; `string'
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pvConn$[ebp]
+	push	ecx
+	call	_fnReceiveOI@24
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L9174
+
+; 4440 :       TraceLineS( "(kzoeneta) ** Not able to retrieve Arg List!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@JCDO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+	call	_TraceLineS@8
+
+; 4441 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9114
+$L9174:
+
+; 4443 : 
+; 4444 :    // Set the return value.
+; 4445 :    switch ( szReturnType[ 0 ] )
+; 4446 :    {
+
+	movsx	eax, BYTE PTR _szReturnType$[ebp]
+	mov	DWORD PTR -532+[ebp], eax
+	mov	ecx, DWORD PTR -532+[ebp]
+	sub	ecx, 76					; 0000004cH
+	mov	DWORD PTR -532+[ebp], ecx
+	cmp	DWORD PTR -532+[ebp], 8
+	ja	SHORT $L9177
+	mov	edx, DWORD PTR -532+[ebp]
+	jmp	DWORD PTR $L10266[edx*4]
+$L9180:
+
+; 4447 :       case zTYPE_INTEGER:
+; 4448 :          GetIntegerFromAttribute( (zPLONG) pvReturn,
+; 4449 :                                   vArgs, "Operation", "ReturnValue" );
+
+	push	OFFSET FLAT:??_C@_0M@BKKK@ReturnValue?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pvReturn$[ebp]
+	push	ecx
+	call	_GetIntegerFromAttribute@16
+
+; 4450 :          break;
+
+	jmp	SHORT $L9177
+$L9183:
+
+; 4454 :          zLONG l;
+; 4455 : 
+; 4456 :          GetIntegerFromAttribute( &l, vArgs, "Operation", "ReturnValue" );
+
+	push	OFFSET FLAT:??_C@_0M@BKKK@ReturnValue?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _l$9184[ebp]
+	push	eax
+	call	_GetIntegerFromAttribute@16
+
+; 4457 :          *((zPSHORT) pvReturn) = (zSHORT) l;
+
+	mov	ecx, DWORD PTR _pvReturn$[ebp]
+	mov	dx, WORD PTR _l$9184[ebp]
+	mov	WORD PTR [ecx], dx
+
+; 4458 :          break;
+
+	jmp	SHORT $L9177
+$L9187:
+
+; 4460 : 
+; 4461 :       case zTYPE_DATETIME:  // Date/time returned as a string.
+; 4462 :       case zTYPE_STRING:
+; 4463 :          GetStringFromAttribute( (zPCHAR) pvReturn,
+; 4464 :                                  vArgs, "Operation", "ReturnValue" );
+
+	push	OFFSET FLAT:??_C@_0M@BKKK@ReturnValue?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pvReturn$[ebp]
+	push	ecx
+	call	_GetStringFromAttribute@16
+
+; 4465 :          break;
+
+	jmp	SHORT $L9177
+$L9189:
+
+; 4466 : 
+; 4467 :       case 'R':
+; 4468 :       case zTYPE_DECIMAL:
+; 4469 :          GetDecimalFromAttribute( (zPDECIMAL) pvReturn,
+; 4470 :                                   vArgs, "Operation", "ReturnValue" );
+
+	push	OFFSET FLAT:??_C@_0M@BKKK@ReturnValue?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pvReturn$[ebp]
+	push	eax
+	call	_GetDecimalFromAttribute@16
+$L9177:
+
+; 4473 : 
+; 4474 :    for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 );
+; 4475 :          nRC >= zCURSOR_SET;
+; 4476 :          nRC = SetCursorNextEntity( vArgs, szlArgument, 0 ) )
+
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+	jmp	SHORT $L9191
+$L9192:
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+$L9191:
+	movsx	eax, WORD PTR _nRC$[ebp]
+	test	eax, eax
+	jl	$L9193
+
+; 4478 :       zPVIEW pvView;
+; 4479 :       zPCHAR pchObjName;
+; 4480 : 
+; 4481 :       // If the argument is not a view, then don't worry about it.
+; 4482 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 4483 :                                      "DataType", "V" ) != 0 )
+
+	push	OFFSET FLAT:??_C@_01PDMC@V?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_CompareAttributeToString@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9196
+
+; 4485 :          continue;
+
+	jmp	SHORT $L9192
+$L9196:
+
+; 4487 : 
+; 4488 :       // If view is a Subtask View then we don't need to retrieve anything.
+; 4489 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 4490 :                                      "SubtaskView", "Y" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0M@ONNJ@SubtaskView?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_CompareAttributeToString@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	jne	SHORT $L9197
+
+; 4492 :          continue;
+
+	jmp	SHORT $L9192
+$L9197:
+
+; 4494 : 
+; 4495 :       GetBlobFromAttribute( &pvView, 0, vArgs, szlArgument, "PointerValue" );
+
+	push	OFFSET FLAT:??_C@_0N@GJDM@PointerValue?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	push	0
+	lea	eax, DWORD PTR _pvView$9194[ebp]
+	push	eax
+	call	_GetBlobFromAttribute@20
+
+; 4496 :       GetAddrForAttribute( &pchObjName, vArgs, szlArgument, "ObjectName" );
+
+	push	OFFSET FLAT:??_C@_0L@OKBL@ObjectName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pchObjName$9195[ebp]
+	push	edx
+	call	_GetAddrForAttribute@16
+
+; 4497 : 
+; 4498 :       // If the view is flagged as empty, then activate an empty OI.
+; 4499 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 4500 :                                      "ViewReturned", "E" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01KFAL@E?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@LNAH@ViewReturned?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_CompareAttributeToString@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	jne	SHORT $L9198
+
+; 4502 : 
+; 4503 :          ActivateEmptyObjectInstance( pvView, pchObjName, vSubtask, zMULTIPLE );
+
+	push	256					; 00000100H
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pchObjName$9195[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pvView$9194[ebp]
+	push	ecx
+	call	_ActivateEmptyObjectInstance@16
+
+; 4504 :          continue;
+
+	jmp	$L9192
+$L9198:
+
+; 4506 : 
+; 4507 :       // If the view is flagged as being returned, retrieve it.
+; 4508 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 4509 :                                      "ViewReturned", "Y" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@LNAH@ViewReturned?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	movsx	eax, ax
+	test	eax, eax
+	jne	SHORT $L9202
+
+; 4511 :          if ( fnReceiveOI( &pvConn, lpNetwork, pvView, vSubtask,
+; 4512 :                            pchObjName, zMULTIPLE ) == zCALL_ERROR )
+
+	push	256					; 00000100H
+	mov	ecx, DWORD PTR _pchObjName$9195[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pvView$9194[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	call	_fnReceiveOI@24
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L9202
+
+; 4514 :             TraceLineS( "(kzoeneta) ** Not able to retrieve new view!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@KEIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+	call	_TraceLineS@8
+
+; 4515 :             goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9114
+$L9202:
+
+; 4518 : 
+; 4519 :    } // for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 )...
+
+	jmp	$L9192
+$L9193:
+
+; 4520 : 
+; 4521 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L9204
+
+; 4522 :       TraceLineI( "(kzoeneta) ** RC from transaction = ", nRC );
+
+	movsx	eax, WORD PTR _nRC$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0CF@NMFO@?$CIkzoeneta?$CJ?5?$CK?$CK?5RC?5from?5transactio@ ; `string'
+	call	_TraceLineI@8
+$L9204:
+
+; 4523 : 
+; 4524 :    if ( fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, vSubtask ) < 0 )
+
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnRetrieveMsgAndTraceObj@12
+	movsx	ecx, ax
+	test	ecx, ecx
+	jge	SHORT $L9206
+
+; 4525 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9114
+$L9206:
+
+; 4526 : 
+; 4527 :    // If we got here, then everything's OK.
+; 4528 :    nReturnCode = 0;
+
+	mov	WORD PTR _nReturnCode$[ebp], 0
+$EndOfFunction$9114:
+
+; 4529 : 
+; 4530 : EndOfFunction:
+; 4531 :    if ( pvConn && fnRemoveConnectionFromNetwork( lpNetwork, &pvConn,
+; 4532 :                                                  TRUE ) == zCALL_ERROR )
+
+	cmp	DWORD PTR _pvConn$[ebp], 0
+	je	SHORT $L9207
+	push	1
+	lea	edx, DWORD PTR _pvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnRemoveConnectionFromNetwork@12
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9207
+
+; 4534 :       nReturnCode = zCALL_ERROR;
+
+	mov	WORD PTR _nReturnCode$[ebp], -16	; fffffff0H
+$L9207:
+
+; 4536 : 
+; 4537 :    if ( vArgs )
+
+	cmp	DWORD PTR _vArgs$[ebp], 0
+	je	SHORT $L9208
+
+; 4538 :       fnDropView( vArgs );
+
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_fnDropView@4
+$L9208:
+
+; 4539 : 
+; 4540 :    fnOperationReturn( iNetCallOperation, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	513					; 00000201H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4541 :    return( nReturnCode );
+
+	mov	ax, WORD PTR _nReturnCode$[ebp]
+$L8972:
+
+; 4542 : 
+; 4543 : } // NetCallOperation
+
+	pop	edi
+	pop	esi
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+$L10265:
+	DD	$L9057
+	DD	$L9071
+	DD	$L9085
+	DD	$L9033
+	DD	$L9105
+	DD	$L9042
+	DD	$L9029
+$L10264:
+	DB	0
+	DB	1
+	DB	2
+	DB	6
+	DB	6
+	DB	6
+	DB	1
+	DB	3
+	DB	6
+	DB	6
+	DB	4
+	DB	6
+	DB	6
+	DB	5
+$L10266:
+	DD	$L9180
+	DD	$L9189
+	DD	$L9183
+	DD	$L9177
+	DD	$L9177
+	DD	$L9177
+	DD	$L9189
+	DD	$L9187
+	DD	$L9187
+_NetCallOperation ENDP
+_TEXT	ENDS
+PUBLIC	_NetSendFile@28
+_TEXT	SEGMENT
+_NetSendFile@28 PROC NEAR
+
+; 4582 : {
+
+	push	ebp
+	mov	ebp, esp
+
+; 4583 :    return( 0 );
+
+	xor	ax, ax
+
+; 4584 : 
+; 4585 : // 2001.06.28
+; 4586 : // DGC Not supported at the moment (security risk).
+; 4587 : #if 0
+; 4588 :    zSHORT      nRC = zCALL_ERROR;
+; 4589 :    zULONG      usBytesRead;
+; 4590 :    zSHORT      iLineCount;
+; 4591 :    zSHORT      nFileNameLth;
+; 4592 :    zLONG       hFile = -1;
+; 4593 :    LPNETWORK   lpNetwork;
+; 4594 :    zPVOID      pvConn = 0;
+; 4595 :    zPCHAR      pchLine = 0;
+; 4596 :    zPCHAR      pchBuffer = 0;
+; 4597 :    zBOOL       bConnOpen = FALSE;
+; 4598 :    zCHAR       cDataType;
+; 4599 :    zCHAR       cPacketType;
+; 4600 :    zLONG       lPacketData;
+; 4601 :    LPTASK      lpTask;
+; 4602 :    SendFileRecord sf;
+; 4603 :    LAD_InfoRecord LAD_Info;
+; 4604 : 
+; 4605 :    zmemset( &LAD_Info, 0, sizeof( LAD_Info ) );
+; 4606 : 
+; 4607 :    // If task not active or disabled, return zCALL_ERROR.
+; 4608 :    if ( (lpTask = fnOperationCall( iNetSendFile ... )) == 0 )
+; 4609 :    {
+; 4610 :       return( zCALL_ERROR );
+; 4611 :    }
+; 4612 : 
+; 4613 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+; 4614 :       goto EndOfFunction;
+; 4615 : 
+; 4616 :    fnRetrieveAppName( vSubtask, sf.szAppName );
+; 4617 :    nFileNameLth = zstrlen( pchServerFileName ) +
+; 4618 :                            zstrlen( pchServerDirectory ) + 2;
+; 4619 :    zltox( nFileNameLth, sf.szFileNameLth );
+; 4620 : 
+; 4621 :    // Try opening the file.
+; 4622 :    hFile = SysOpenFile( vSubtask, pchLocalFileName, COREFILE_READ );
+; 4623 :    if ( hFile == -1 )
+; 4624 :    {
+; 4625 :       TraceLineS( "(kzoeneta) ** Can't open file ", pchLocalFileName );
+; 4626 :       SysMessageBox( szlNetworkError, "Can't open file for NetSendFile", 1 );
+; 4627 :       goto EndOfFunction;
+; 4628 :    }
+; 4629 : 
+; 4630 :    LAD_Info.lpTask     = lpTask;
+; 4631 :    LAD_Info.lpNetwork  = lpNetwork;
+; 4632 :    LAD_Info.vSubtask   = vSubtask;
+; 4633 :    LAD_Info.nObjType   = zLADTYPE_SEND_FILE;
+; 4634 :    SysGetUserID( vSubtask, LAD_Info.szUserName, LAD_Info.szPassword );
+; 4635 : 
+; 4636 :    if ( fnGetApplAddress( &LAD_Info, pchAddress ) == zCALL_ERROR )
+; 4637 :    {
+; 4638 :       fnOperationReturn( iNetSendFile, lpTask );
+; 4639 :       return( zCALL_ERROR );
+; 4640 :    }
+; 4641 : 
+; 4642 :    // Open connection.
+; 4643 :    if ( fnAddConnectionToNetwork( &LAD_Info, &pvConn,
+; 4644 :                                   TRUE, vSubtask ) == zCALL_ERROR )
+; 4645 :    {
+; 4646 :       goto EndOfFunction;
+; 4647 :    }
+; 4648 : 
+; 4649 :    bConnOpen = TRUE;
+; 4650 : 
+; 4651 :    if ( lpNetwork->nTraceLevel > 1 )
+; 4652 :       TraceLineS( "(kzoeneta) ** Sending file ", pchLocalFileName );
+; 4653 : 
+; 4654 :    // If we're sending a binary file then we need to set up a buffer.
+; 4655 :    if ( bBinaryFile )
+; 4656 :    {
+; 4657 :       pchLine = (zPCHAR) fnAllocDataspace( lpTask->hFirstDataHeader,
+; 4658 :                                            zSENDFILE_BUFFER, TRUE, 0, 0 );
+; 4659 :       pchLine = (zPCHAR) zGETPTR( pchLine );
+; 4660 :       if ( pchLine == 0 )
+; 4661 :          goto EndOfFunction;
+; 4662 : 
+; 4663 :       sf.bBinaryFile = 'Y';
+; 4664 :       cPacketType = zPACKET_SENDLTHB;
+; 4665 :       cDataType   = zTYPE_BLOB;
+; 4666 :    }
+; 4667 :    else
+; 4668 :    {
+; 4669 :       sf.bBinaryFile = 'N';
+; 4670 :       cPacketType = zPACKET_SENDLTHS;
+; 4671 :       cDataType   = zTYPE_STRING;
+; 4672 :    }
+; 4673 : 
+; 4674 :    //=======================================================================
+; 4675 :    // Transmitting data.
+; 4676 :    //
+; 4677 :    // Until further notice, the following code only SENDS data over the
+; 4678 :    // network.
+; 4679 :    //
+; 4680 :    //=======================================================================
+; 4681 : 
+; 4682 :    // First send the header for the server driver and then the regular
+; 4683 :    // packet for the function structure.
+; 4684 :    if ( fnSendHeaderPacket( lpNetwork, &pvConn, zPACKET_SENDFILE,
+; 4685 :                             sf.szAppName ) != 0 )
+; 4686 :    {
+; 4687 :       goto EndOfFunction;
+; 4688 :    }
+; 4689 : 
+; 4690 :    if ( fnSendTraceSwitches( lpNetwork, &pvConn, lpTask) != 0)
+; 4691 :       goto EndOfFunction;
+; 4692 : 
+; 4693 :    if ( fnSendDataPacket( lpNetwork, &pvConn, zPACKET_SENDFILE, 0 ) != 0 )
+; 4694 :       goto EndOfFunction;
+; 4695 : 
+; 4696 :    // Send the file information.
+; 4697 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 4698 :                                 (zPCHAR) &sf, sizeof( sf ),
+; 4699 :                                 zTYPE_STRING ) != 0 )
+; 4700 :    {
+; 4701 :       goto EndOfFunction;
+; 4702 :    }
+; 4703 : 
+; 4704 :    // Send the directory/filename.
+; 4705 :    pchBuffer = (zPCHAR) fnAllocDataspace( lpTask->hFirstDataHeader,
+; 4706 :                                           nFileNameLth, TRUE, 0, 0 );
+; 4707 :    pchBuffer = (zPCHAR) zGETPTR( pchBuffer );
+; 4708 :    zstrcpy( pchBuffer, pchServerDirectory );
+; 4709 :    zstrcpy( &pchBuffer[ zstrlen( pchBuffer ) + 1 ], pchServerFileName );
+; 4710 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 4711 :                                 pchBuffer, nFileNameLth,
+; 4712 :                                 zTYPE_STRING ) != 0 )
+; 4713 :    {
+; 4714 :       goto EndOfFunction;
+; 4715 :    }
+; 4716 : 
+; 4717 :    // Now send each line of the file.
+; 4718 :    iLineCount = 0;
+; 4719 :    while ( TRUE )
+; 4720 :    {
+; 4721 :       if ( bBinaryFile )
+; 4722 :       {
+; 4723 :          usBytesRead = SysReadFile( vSubtask, hFile,
+; 4724 :                                     pchLine, zSENDFILE_BUFFER );
+; 4725 :          if ( usBytesRead == 0 )
+; 4726 :             break;
+; 4727 :       }
+; 4728 :       else
+; 4729 :       {
+; 4730 :          if ( SysReadLine( vSubtask, (zCOREMEM) &pchLine, hFile ) != 1 )
+; 4731 :             break;
+; 4732 : 
+; 4733 :          usBytesRead = zstrlen( pchLine ) + 1;
+; 4734 :       }
+; 4735 : 
+; 4736 :       iLineCount++;
+; 4737 : 
+; 4738 :       // Send the length of the line.
+; 4739 :       if ( fnSendDataPacket( lpNetwork, &pvConn, cPacketType,
+; 4740 :                              usBytesRead ) != 0 )
+; 4741 :          goto EndOfFunction;
+; 4742 : 
+; 4743 :       // Send the line.
+; 4744 :       if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, &pvConn,
+; 4745 :                                    pchLine, usBytesRead, cDataType ) != 0 )
+; 4746 :       {
+; 4747 :          // Send 0 "length" to indicate we are done.
+; 4748 :          fnSendDataPacket( lpNetwork, &pvConn, cPacketType, 0 );
+; 4749 :          goto EndOfFunction;
+; 4750 :       }
+; 4751 : 
+; 4752 :       // If we're reading a binary file then check to see if we are at the
+; 4753 :       // end of the file.
+; 4754 :       if ( bBinaryFile )
+; 4755 :       {
+; 4756 :          if ( usBytesRead < zSENDFILE_BUFFER )
+; 4757 :             break;
+; 4758 :       }
+; 4759 : 
+; 4760 :    } // for (;;)...
+; 4761 : 
+; 4762 :    // Send 0 "length" to indicate we are done.
+; 4763 :    if ( fnSendDataPacket( lpNetwork, &pvConn, cPacketType, 0 ) != 0 )
+; 4764 :       goto EndOfFunction;
+; 4765 : 
+; 4766 :    // Tell network handler to flush the send buffer.
+; 4767 :    if ( fnFlushBuffer( lpNetwork, &pvConn ) != 0 )
+; 4768 :       goto EndOfFunction;
+; 4769 : 
+; 4770 :    //=======================================================================
+; 4771 :    // Receiving data.
+; 4772 :    //
+; 4773 :    // From here until we close the connection we will only RECEIVE data over
+; 4774 :    // the network.
+; 4775 :    //=======================================================================
+; 4776 : 
+; 4777 :    // Now wait for ack.
+; 4778 :    if ( fnReceiveDataPacket( lpNetwork, &pvConn, &cPacketType,
+; 4779 :                              &lPacketData ) != 0 )
+; 4780 :       goto EndOfFunction;
+; 4781 : 
+; 4782 :    if ( cPacketType != zPACKET_RC )
+; 4783 :    {
+; 4784 :       TraceLineI( "(kzoeneta) ** Network error #", lPacketData );
+; 4785 :       if ( lPacketData == zNETERR_OUTOFMEMORY )
+; 4786 :       {
+; 4787 :          SysMessageBox( "Server Transaction Crash ",
+; 4788 :                         "*Out Of Memory*", 1 );
+; 4789 :       }
+; 4790 :    }
+; 4791 :    else
+; 4792 :    if ( lPacketData != iLineCount )
+; 4793 :       TraceLineS( "(kzoeneta) ** Lines don't match up!", "" );
+; 4794 :    else
+; 4795 :       // If we get here then everything's OK.
+; 4796 :       nRC = 0;
+; 4797 : 
+; 4798 :    if ( fnRetrieveMsgAndTraceObj( lpNetwork, &pvConn, vSubtask ) < 0 )
+; 4799 :    {
+; 4800 :       nRC = zCALL_ERROR;
+; 4801 :       goto EndOfFunction;
+; 4802 :    }
+; 4803 : 
+; 4804 : EndOfFunction:
+; 4805 :    if ( nRC == zCALL_ERROR )
+; 4806 :    {
+; 4807 :       zCHAR szMsg[ zMAX_FILENAME_LTH + 40 ];
+; 4808 : 
+; 4809 :       zsprintf( szMsg, "Error sending file '%s' to server.", pchLocalFileName );
+; 4810 :       SysMessageBox( szlNetworkError, szMsg, 1 );
+; 4811 :    }
+; 4812 : 
+; 4813 :    if ( bConnOpen && fnRemoveConnectionFromNetwork( lpNetwork, &pvConn,
+; 4814 :                                                     TRUE ) == zCALL_ERROR )
+; 4815 :    {
+; 4816 :       nRC = zCALL_ERROR;
+; 4817 :    }
+; 4818 : 
+; 4819 :    if ( pchBuffer )
+; 4820 :       fnFreeDataspace( pchBuffer );
+; 4821 : 
+; 4822 :    if ( hFile != -1 )
+; 4823 :       SysCloseFile( vSubtask, hFile, 0 );
+; 4824 : 
+; 4825 :    if ( pchLine && bBinaryFile )
+; 4826 :       fnFreeDataspace( pchLine );
+; 4827 : 
+; 4828 :    fnOperationReturn( iNetSendFile, lpTask );
+; 4829 :    return( nRC );
+; 4830 : #endif
+; 4831 : 
+; 4832 : } // NetSendFile
+
+	pop	ebp
+	ret	28					; 0000001cH
+_NetSendFile@28 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CK@EJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Setting?5Net?5trace?5@ ; `string'
+PUBLIC	_NetSetTraceLevel@12
+;	COMDAT ??_C@_0CK@EJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Setting?5Net?5trace?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CK@EJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Setting?5Net?5trace?5@ DB '(kz'
+	DB	'oeneta) ** Setting Net trace level to ', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_nTraceLevel$ = 16
+_lpTask$ = -4
+_lpNetwork$ = -8
+_NetSetTraceLevel@12 PROC NEAR
+
+; 4862 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+
+; 4863 :    LPTASK         lpTask;
+; 4864 :    LPNETWORK      lpNetwork;
+; 4865 : 
+; 4866 :    // If task not active or disabled, return zCALL_ERROR.
+; 4867 :    if ( (lpTask = fnOperationCall( iNetSetTraceLevel, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	506					; 000001faH
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L9233
+
+; 4869 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9230
+$L9233:
+
+; 4871 : 
+; 4872 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L9234
+
+; 4874 :       fnOperationReturn( iNetSetTraceLevel, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	506					; 000001faH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4875 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9230
+$L9234:
+
+; 4877 : 
+; 4878 :    lpNetwork->nTraceLevel = nTraceLevel;
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	mov	dx, WORD PTR _nTraceLevel$[ebp]
+	mov	WORD PTR [ecx+140], dx
+
+; 4879 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9235
+
+; 4881 :       TraceLineI( "(kzoeneta) ** Setting Net trace level to ", nTraceLevel );
+
+	movsx	edx, WORD PTR _nTraceLevel$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CK@EJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Setting?5Net?5trace?5@ ; `string'
+	call	_TraceLineI@8
+$L9235:
+
+; 4883 : 
+; 4884 :    fnOperationReturn( iNetSetTraceLevel, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	506					; 000001faH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4885 :    return( 0 );
+
+	xor	ax, ax
+$L9230:
+
+; 4886 : 
+; 4887 : } // NetSetTraceLevel
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_NetSetTraceLevel@12 ENDP
+_TEXT	ENDS
+PUBLIC	_NetGetTraceLevel@8
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_lpTask$ = -4
+_lpNetwork$ = -8
+_NetGetTraceLevel@8 PROC NEAR
+
+; 4911 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+
+; 4912 :    LPTASK         lpTask;
+; 4913 :    LPNETWORK      lpNetwork;
+; 4914 : 
+; 4915 :    // If task not active or disabled, return zCALL_ERROR.
+; 4916 :    if ( (lpTask = fnOperationCall( iNetGetTraceLevel, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	503					; 000001f7H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L9244
+
+; 4918 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9241
+$L9244:
+
+; 4920 : 
+; 4921 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L9245
+
+; 4923 :       fnOperationReturn( iNetGetTraceLevel, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	503					; 000001f7H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4924 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9241
+$L9245:
+
+; 4926 : 
+; 4927 :    fnOperationReturn( iNetGetTraceLevel, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	503					; 000001f7H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4928 :    return( lpNetwork->nTraceLevel );
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	ax, WORD PTR [edx+140]
+$L9241:
+
+; 4929 : 
+; 4930 : } // NetGetTraceLevel
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_NetGetTraceLevel@8 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_09GPO@?$CKdefault?$CK?$AA@		; `string'
+PUBLIC	??_C@_0DG@BKII@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?3?5no@ ; `string'
+PUBLIC	??_C@_0CL@KFLK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?5for@ ; `string'
+PUBLIC	??_C@_0CG@PDGB@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5ru@ ; `string'
+PUBLIC	??_C@_0CM@ENIE@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Connection@ ; `string'
+PUBLIC	??_C@_0CI@DBIM@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5li@ ; `string'
+PUBLIC	_NetStatus@8
+;	COMDAT ??_C@_09GPO@?$CKdefault?$CK?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_09GPO@?$CKdefault?$CK?$AA@ DB '*default*', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DG@BKII@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?3?5no@
+_DATA	SEGMENT
+??_C@_0DG@BKII@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?3?5no@ DB '(kz'
+	DB	'oeneta) ** Network status: no network running for ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@KFLK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?5for@
+_DATA	SEGMENT
+??_C@_0CL@KFLK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?5for@ DB '(kzo'
+	DB	'eneta) ** Network status for network: ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@PDGB@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5ru@
+_DATA	SEGMENT
+??_C@_0CG@PDGB@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5ru@ DB '('
+	DB	'kzoeneta)         ** Network running', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@ENIE@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Connection@
+_DATA	SEGMENT
+??_C@_0CM@ENIE@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Connection@ DB '('
+	DB	'kzoeneta)         ** Connections running: ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@DBIM@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5li@
+_DATA	SEGMENT
+??_C@_0CI@DBIM@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5li@ DB '('
+	DB	'kzoeneta)         ** Network listening', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_pchNetworkName$ = 12
+_lpTask$ = -4
+_lpNetwork$ = -8
+_nStatus$ = -12
+_NetStatus@8 PROC NEAR
+
+; 4957 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 4958 :    LPTASK         lpTask;
+; 4959 :    LPNETWORK      lpNetwork;
+; 4960 :    zSHORT         nStatus;
+; 4961 : 
+; 4962 :    // If task not active or disabled, return zCALL_ERROR.
+; 4963 :    if ( (lpTask = fnOperationCall( iNetStatus, lpTaskView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpTaskView$[ebp]
+	push	eax
+	push	508					; 000001fcH
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L9254
+
+; 4965 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L9250
+$L9254:
+
+; 4967 : 
+; 4968 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, FALSE )) == 0 )
+
+	push	0
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L9255
+
+; 4970 :       if ( pchNetworkName == 0 )
+
+	cmp	DWORD PTR _pchNetworkName$[ebp], 0
+	jne	SHORT $L9256
+
+; 4971 :          pchNetworkName = DEFAULT_NETWORK;
+
+	mov	DWORD PTR _pchNetworkName$[ebp], OFFSET FLAT:??_C@_09GPO@?$CKdefault?$CK?$AA@ ; `string'
+$L9256:
+
+; 4972 : 
+; 4973 :       TraceLineS( "(kzoeneta) ** Network status: no network running for ",
+; 4974 :                   pchNetworkName );
+
+	mov	eax, DWORD PTR _pchNetworkName$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0DG@BKII@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?3?5no@ ; `string'
+	call	_TraceLineS@8
+
+; 4975 :       fnOperationReturn( iNetStatus, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	508					; 000001fcH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 4976 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L9250
+$L9255:
+
+; 4978 : 
+; 4979 :    nStatus = zNETSTAT_STARTED;
+
+	mov	WORD PTR _nStatus$[ebp], 1
+
+; 4980 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9259
+
+; 4982 :       TraceLineS( "(kzoeneta) ** Network status for network: ",
+; 4983 :                   lpNetwork->szNetworkName );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 20					; 00000014H
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CL@KFLK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Network?5status?5for@ ; `string'
+	call	_TraceLineS@8
+
+; 4984 :       TraceLineS( "(kzoeneta)         ** Network running", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@PDGB@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5ru@ ; `string'
+	call	_TraceLineS@8
+$L9259:
+
+; 4986 : 
+; 4987 :    if ( lpNetwork->nConnCount > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+148]
+	test	eax, eax
+	jle	SHORT $L9263
+
+; 4989 :       nStatus |= zNETSTAT_OPENCONNECTION;
+
+	mov	cx, WORD PTR _nStatus$[ebp]
+	or	cl, 2
+	mov	WORD PTR _nStatus$[ebp], cx
+
+; 4990 : 
+; 4991 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9263
+
+; 4993 :          TraceLineI( "(kzoeneta)         ** Connections running: ",
+; 4994 :                      lpNetwork->nConnCount );
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+148]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CM@ENIE@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Connection@ ; `string'
+	call	_TraceLineI@8
+$L9263:
+
+; 4997 : 
+; 4998 :    if ( lpNetwork->bListen )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	ecx, DWORD PTR [eax+154]
+	and	ecx, 1
+	test	ecx, ecx
+	je	SHORT $L9266
+
+; 5000 :       nStatus |= zNETSTAT_LISTEN;
+
+	mov	dx, WORD PTR _nStatus$[ebp]
+	or	dl, 4
+	mov	WORD PTR _nStatus$[ebp], dx
+
+; 5001 : 
+; 5002 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9266
+
+; 5004 :          TraceLineS( "(kzoeneta)         ** Network listening", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@DBIM@?$CIkzoeneta?$CJ?5?5?5?5?5?5?5?5?5?$CK?$CK?5Network?5li@ ; `string'
+	call	_TraceLineS@8
+$L9266:
+
+; 5007 : 
+; 5008 :    fnOperationReturn( iNetStatus, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	508					; 000001fcH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 5009 :    return( nStatus );
+
+	mov	ax, WORD PTR _nStatus$[ebp]
+$L9250:
+
+; 5010 : 
+; 5011 : } // NetStatus
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_NetStatus@8 ENDP
+_lpView$ = 8
+_pchNetworkName$ = 12
+_pchHostAddress$ = 16
+_lpTask$ = -4
+_lpNetwork$ = -8
+_NetGetLocalHostAddress@12 PROC NEAR
+
+; 5036 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+
+; 5037 :    LPTASK         lpTask;
+; 5038 :    LPNETWORK      lpNetwork;
+; 5039 : 
+; 5040 :    // If task not active or disabled, return zCALL_ERROR.
+; 5041 :    if ( (lpTask = fnOperationCall( iNetGetLocalHostAddress, lpView, 0 )) == 0 )
+
+	push	0
+	mov	eax, DWORD PTR _lpView$[ebp]
+	push	eax
+	push	514					; 00000202H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	jne	SHORT $L9277
+
+; 5043 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9274
+$L9277:
+
+; 5045 : 
+; 5046 :    if ( (lpNetwork = fnFindNetwork( lpTask, pchNetworkName, TRUE )) == 0 )
+
+	push	1
+	mov	ecx, DWORD PTR _pchNetworkName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnFindNetwork@12
+	mov	DWORD PTR _lpNetwork$[ebp], eax
+	cmp	DWORD PTR _lpNetwork$[ebp], 0
+	jne	SHORT $L9278
+
+; 5048 :       fnOperationReturn( iNetStatus, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	508					; 000001fcH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 5049 :       return( 0 );
+
+	xor	ax, ax
+	jmp	SHORT $L9274
+$L9278:
+
+; 5051 : 
+; 5052 :    if ( (*lpNetwork->lpfnGetAddress)( lpView, &lpNetwork->pNetworkHandle,
+; 5053 :                                       0, 'L', pchHostAddress ) != 0 )
+
+	mov	ecx, DWORD PTR _pchHostAddress$[ebp]
+	push	ecx
+	push	76					; 0000004cH
+	push	0
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpView$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+190]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9279
+
+; 5055 :       fnOperationReturn( iNetStatus, lpTask );
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	push	508					; 000001fcH
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 5056 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9274
+$L9279:
+
+; 5058 : 
+; 5059 :    fnOperationReturn( iNetGetLocalHostAddress, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	514					; 00000202H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 5060 :    return( 0 );
+
+	xor	ax, ax
+$L9274:
+
+; 5061 : 
+; 5062 : } // NetGetLocalHostAddress
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_NetGetLocalHostAddress@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CB@NPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Read?5Data?5error?5?$DN?5@ ; `string'
+PUBLIC	??_C@_0BJ@COP@Invalid?5Entity?5name?5?$DN?5?$CFs?$AA@ ; `string'
+PUBLIC	??_C@_0BK@NKPC@Invalid?5Entity?5level?5?$DN?5?$CFs?$AA@ ; `string'
+PUBLIC	??_C@_0CO@GNNE@Maximum?5number?5of?5entities?5in?5st@ ; `string'
+PUBLIC	??_C@_0CC@PAOB@Invalid?5Attr?5name?5for?5Entity?5?$DN?5?$CF@ ; `string'
+PUBLIC	??_C@_0CH@GEHO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5SE@ ; `string'
+PUBLIC	??_C@_0CG@LDBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5OI?5END?5me@ ; `string'
+PUBLIC	??_C@_0CK@KHFM@Error?5transmitting?5OI?5?9?9?5some?5li@ ; `string'
+PUBLIC	??_C@_0CM@BNG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Packet?5ER@ ; `string'
+PUBLIC	??_C@_0DG@KIBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5packet?5typ@ ; `string'
+PUBLIC	??_C@_0CO@HIHC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5SENDLTH?5p@ ; `string'
+PUBLIC	??_C@_0CD@ICDP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5da@ ; `string'
+PUBLIC	_fnReadDataFromNet@20
+EXTRN	_fnIssueCoreError:NEAR
+;	COMDAT ??_C@_0CB@NPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Read?5Data?5error?5?$DN?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CB@NPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Read?5Data?5error?5?$DN?5@ DB '('
+	DB	'kzoeneta) ** Read Data error = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BJ@COP@Invalid?5Entity?5name?5?$DN?5?$CFs?$AA@
+_DATA	SEGMENT
+??_C@_0BJ@COP@Invalid?5Entity?5name?5?$DN?5?$CFs?$AA@ DB 'Invalid Entity '
+	DB	'name = %s', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BK@NKPC@Invalid?5Entity?5level?5?$DN?5?$CFs?$AA@
+_DATA	SEGMENT
+??_C@_0BK@NKPC@Invalid?5Entity?5level?5?$DN?5?$CFs?$AA@ DB 'Invalid Entit'
+	DB	'y level = %s', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@GNNE@Maximum?5number?5of?5entities?5in?5st@
+_DATA	SEGMENT
+??_C@_0CO@GNNE@Maximum?5number?5of?5entities?5in?5st@ DB 'Maximum number '
+	DB	'of entities in stream exceeded', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@PAOB@Invalid?5Attr?5name?5for?5Entity?5?$DN?5?$CF@
+_DATA	SEGMENT
+??_C@_0CC@PAOB@Invalid?5Attr?5name?5for?5Entity?5?$DN?5?$CF@ DB 'Invalid '
+	DB	'Attr name for Entity = %s', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@GEHO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5SE@
+_DATA	SEGMENT
+??_C@_0CH@GEHO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5SE@ DB '(kzo'
+	DB	'eneta) ** Error receiving SENDLTH!', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@LDBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5OI?5END?5me@
+_DATA	SEGMENT
+??_C@_0CG@LDBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5OI?5END?5me@ DB '(kz'
+	DB	'oeneta) ** Received OI END message', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@KHFM@Error?5transmitting?5OI?5?9?9?5some?5li@
+_DATA	SEGMENT
+??_C@_0CK@KHFM@Error?5transmitting?5OI?5?9?9?5some?5li@ DB 'Error transmi'
+	DB	'tting OI -- some lines lost.', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@BNG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Packet?5ER@
+_DATA	SEGMENT
+??_C@_0CM@BNG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Packet?5ER@ DB '(kzoe'
+	DB	'neta) ** Received Packet ERROR code = ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DG@KIBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5packet?5typ@
+_DATA	SEGMENT
+??_C@_0DG@KIBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5packet?5typ@ DB '(kzo'
+	DB	'eneta) ** Invalid packet type--expecting SENDLTH!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CO@HIHC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5SENDLTH?5p@
+_DATA	SEGMENT
+??_C@_0CO@HIHC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5SENDLTH?5p@ DB '(kzo'
+	DB	'eneta) ** Received SENDLTH packet. Lth = ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CD@ICDP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5da@
+_DATA	SEGMENT
+??_C@_0CD@ICDP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5da@ DB '(kzo'
+	DB	'eneta) ** Error receiving data', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpView$ = 8
+_pvData$ = 12
+_ppchReturnBuffer$ = 16
+_nErrorNum$ = 24
+_lpAct$ = -20
+_lpNetwork$ = -24
+_ppvConn$ = -16
+_cDataType$ = -8
+_cPacketType$ = -12
+_lPacketData$ = -4
+_szMsg$9299 = -528
+_pchExtraData$9300 = -28
+_lpTask$9321 = -532
+_fnReadDataFromNet@20 PROC NEAR
+
+; 5077 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 536				; 00000218H
+
+; 5078 :    LPACTIVATE  lpAct = (LPACTIVATE) pvData;
+
+	mov	eax, DWORD PTR _pvData$[ebp]
+	mov	DWORD PTR _lpAct$[ebp], eax
+
+; 5079 :    LPNETWORK   lpNetwork = lpAct->lpNetwork;
+
+	mov	ecx, DWORD PTR _lpAct$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	DWORD PTR _lpNetwork$[ebp], edx
+
+; 5080 :    zPVOID      *ppvConn = lpAct->ppvConn;
+
+	mov	eax, DWORD PTR _lpAct$[ebp]
+	mov	ecx, DWORD PTR [eax+4]
+	mov	DWORD PTR _ppvConn$[ebp], ecx
+
+; 5081 :    zCHAR       cDataType;
+; 5082 :    zCHAR       cPacketType;
+; 5083 :    zLONG       lPacketData;
+; 5084 : 
+; 5085 :    // If nErrorNum is not 0, then flash the error message and get out.
+; 5086 :    if ( nErrorNum )
+
+	movsx	edx, WORD PTR _nErrorNum$[ebp]
+	test	edx, edx
+	je	$L9298
+
+; 5088 :       zCHAR szMsg[ 500 ];
+; 5089 : 
+; 5090 :       zPCHAR pchExtraData = (zPCHAR) ppchReturnBuffer;
+
+	mov	eax, DWORD PTR _ppchReturnBuffer$[ebp]
+	mov	DWORD PTR _pchExtraData$9300[ebp], eax
+
+; 5091 : 
+; 5092 :       TraceLineI( "(kzoeneta) ** Read Data error = ", nErrorNum );
+
+	movsx	ecx, WORD PTR _nErrorNum$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CB@NPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Read?5Data?5error?5?$DN?5@ ; `string'
+	call	_TraceLineI@8
+
+; 5093 :       switch ( nErrorNum )
+; 5094 :       {
+
+	movsx	edx, WORD PTR _nErrorNum$[ebp]
+	mov	DWORD PTR -536+[ebp], edx
+	mov	eax, DWORD PTR -536+[ebp]
+	sub	eax, 74					; 0000004aH
+	mov	DWORD PTR -536+[ebp], eax
+	cmp	DWORD PTR -536+[ebp], 30		; 0000001eH
+	ja	SHORT $L9304
+	mov	edx, DWORD PTR -536+[ebp]
+	xor	ecx, ecx
+	mov	cl, BYTE PTR $L10273[edx]
+	jmp	DWORD PTR $L10274[ecx*4]
+$L9307:
+
+; 5095 :          case 74:
+; 5096 :             // "KZOEE074 - Invalid Entity name on line "
+; 5097 :             zsprintf( szMsg, "Invalid Entity name = %s", pchExtraData );
+
+	mov	eax, DWORD PTR _pchExtraData$9300[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BJ@COP@Invalid?5Entity?5name?5?$DN?5?$CFs?$AA@ ; `string'
+	lea	ecx, DWORD PTR _szMsg$9299[ebp]
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 5098 :             break;
+
+	jmp	SHORT $L9304
+$L9309:
+
+; 5099 : 
+; 5100 :          case 75:
+; 5101 :             // "KZOEE075 - Invalid Entity level on line "
+; 5102 :             zsprintf( szMsg, "Invalid Entity level = %s", pchExtraData );
+
+	mov	edx, DWORD PTR _pchExtraData$9300[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BK@NKPC@Invalid?5Entity?5level?5?$DN?5?$CFs?$AA@ ; `string'
+	lea	eax, DWORD PTR _szMsg$9299[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 5103 :             break;
+
+	jmp	SHORT $L9304
+$L9311:
+
+; 5104 : 
+; 5105 :          case 90:
+; 5106 :             // "KZOEE090 - Maximum number of entites in portable file exceeded"
+; 5107 :             zstrcpy( szMsg, "Maximum number of entities in stream exceeded" );
+
+	push	OFFSET FLAT:??_C@_0CO@GNNE@Maximum?5number?5of?5entities?5in?5st@ ; `string'
+	lea	ecx, DWORD PTR _szMsg$9299[ebp]
+	push	ecx
+	call	_strcpy
+	add	esp, 8
+
+; 5108 :             break;
+
+	jmp	SHORT $L9304
+$L9313:
+
+; 5109 : 
+; 5110 :          case 104:
+; 5111 :             // "KZOEE104 - Invalid Attribute name for Entity"
+; 5112 :             zsprintf( szMsg, "Invalid Attr name for Entity = %s",
+; 5113 :                       pchExtraData );
+
+	mov	edx, DWORD PTR _pchExtraData$9300[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CC@PAOB@Invalid?5Attr?5name?5for?5Entity?5?$DN?5?$CF@ ; `string'
+	lea	eax, DWORD PTR _szMsg$9299[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+$L9304:
+
+; 5117 : 
+; 5118 :       SysMessageBox( lpView, szlNetworkError, szMsg, 1 );
+
+	push	1
+	lea	ecx, DWORD PTR _szMsg$9299[ebp]
+	push	ecx
+	push	OFFSET FLAT:_szlNetworkError
+	mov	edx, DWORD PTR _lpView$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 5119 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L9290
+$L9298:
+
+; 5122 : 
+; 5123 :    // The first few bytes should be the Zeidon network packet indicating the
+; 5124 :    // length of the incoming line or that there is no more incoming data.
+; 5125 :    if ( fnReceiveDataPacket( lpNetwork, ppvConn, &cPacketType, &lPacketData ) != 0 )
+
+	lea	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cPacketType$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnReceiveDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9315
+
+; 5127 :       TraceLineS( "(kzoeneta) ** Error receiving SENDLTH!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@GEHO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5SE@ ; `string'
+	call	_TraceLineS@8
+
+; 5128 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L9290
+$L9315:
+
+; 5130 : 
+; 5131 :    if ( cPacketType == zPACKET_END )
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	cmp	edx, 69					; 00000045H
+	jne	SHORT $L9317
+
+; 5133 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9318
+
+; 5134 :          TraceLineS( "(kzoeneta) ** Received OI END message", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@LDBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5OI?5END?5me@ ; `string'
+	call	_TraceLineS@8
+$L9318:
+
+; 5135 : 
+; 5136 :       if ( lPacketData != lpAct->lLineCount )
+
+	mov	edx, DWORD PTR _lpAct$[ebp]
+	mov	eax, DWORD PTR _lPacketData$[ebp]
+	cmp	eax, DWORD PTR [edx+8]
+	je	SHORT $L9320
+
+; 5138 :          LPTASK lpTask = zGETPTR( lpView->hTask );
+
+	mov	ecx, DWORD PTR _lpView$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpTask$9321[ebp], eax
+
+; 5139 :          // "KZOEE400 - Error transmitting lines. "
+; 5140 :          fnIssueCoreError( lpTask, lpView, 16, 400, 0,
+; 5141 :                            "Error transmitting OI -- some lines lost.", 0 );
+
+	push	0
+	push	OFFSET FLAT:??_C@_0CK@KHFM@Error?5transmitting?5OI?5?9?9?5some?5li@ ; `string'
+	push	0
+	push	400					; 00000190H
+	push	16					; 00000010H
+	mov	eax, DWORD PTR _lpView$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTask$9321[ebp]
+	push	ecx
+	call	_fnIssueCoreError
+	add	esp, 28					; 0000001cH
+
+; 5142 :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L9290
+$L9320:
+
+; 5144 : 
+; 5145 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L9290
+$L9317:
+
+; 5147 : 
+; 5148 :    if ( cPacketType == zPACKET_ERROR )
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	cmp	edx, 42					; 0000002aH
+	jne	SHORT $L9324
+
+; 5150 :       TraceLineI( "(kzoeneta) ** Received Packet ERROR code = ", lPacketData );
+
+	mov	eax, DWORD PTR _lPacketData$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0CM@BNG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Packet?5ER@ ; `string'
+	call	_TraceLineI@8
+
+; 5151 :       return( 0 );
+
+	xor	ax, ax
+	jmp	$L9290
+$L9324:
+
+; 5153 : 
+; 5154 :    if ( cPacketType == zPACKET_SENDLTHS )
+
+	movsx	ecx, BYTE PTR _cPacketType$[ebp]
+	cmp	ecx, 83					; 00000053H
+	jne	SHORT $L9326
+
+; 5155 :       cDataType = zTYPE_STRING;
+
+	mov	BYTE PTR _cDataType$[ebp], 83		; 00000053H
+
+; 5156 :    else
+
+	jmp	SHORT $L9329
+$L9326:
+
+; 5157 :    if ( cPacketType == zPACKET_SENDLTHB )
+
+	movsx	edx, BYTE PTR _cPacketType$[ebp]
+	cmp	edx, 66					; 00000042H
+	jne	SHORT $L9328
+
+; 5158 :       cDataType = zTYPE_BLOB;
+
+	mov	BYTE PTR _cDataType$[ebp], 66		; 00000042H
+
+; 5159 :    else
+
+	jmp	SHORT $L9329
+$L9328:
+
+; 5161 :       TraceLineS( "(kzoeneta) ** Invalid packet type--expecting SENDLTH!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DG@KIBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5packet?5typ@ ; `string'
+	call	_TraceLineS@8
+
+; 5162 :       return( 0 );
+
+	xor	ax, ax
+	jmp	SHORT $L9290
+$L9329:
+
+; 5164 : 
+; 5165 :    if ( lpNetwork->nTraceLevel > 1 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	cmp	ecx, 1
+	jle	SHORT $L9331
+
+; 5167 :       TraceLineI( "(kzoeneta) ** Received SENDLTH packet. Lth = ", lPacketData );
+
+	mov	edx, DWORD PTR _lPacketData$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CO@HIHC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5SENDLTH?5p@ ; `string'
+	call	_TraceLineI@8
+$L9331:
+
+; 5169 : 
+; 5170 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle,
+; 5171 :                                    ppvConn, ppchReturnBuffer,
+; 5172 :                                    lPacketData, cDataType ) != 0 )
+
+	mov	al, BYTE PTR _cDataType$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lPacketData$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppchReturnBuffer$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9333
+
+; 5174 :       TraceLineS( "(kzoeneta) ** Error receiving data", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CD@ICDP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5da@ ; `string'
+	call	_TraceLineS@8
+
+; 5175 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9290
+$L9333:
+
+; 5177 : 
+; 5178 :    lpAct->lLineCount++;
+
+	mov	ecx, DWORD PTR _lpAct$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	add	edx, 1
+	mov	eax, DWORD PTR _lpAct$[ebp]
+	mov	DWORD PTR [eax+8], edx
+
+; 5179 : 
+; 5180 :    return( 1 );
+
+	mov	ax, 1
+$L9290:
+
+; 5181 : 
+; 5182 : } // fnReadDataFromNet
+
+	mov	esp, ebp
+	pop	ebp
+	ret	20					; 00000014H
+$L10274:
+	DD	$L9307
+	DD	$L9309
+	DD	$L9311
+	DD	$L9313
+	DD	$L9304
+$L10273:
+	DB	0
+	DB	1
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	2
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	3
+_fnReadDataFromNet@20 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CH@BNNI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Initiating?5receive@ ; `string'
+PUBLIC	??_C@_0CL@KNHF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receive?5OI?5OK?4?5?5Se@ ; `string'
+PUBLIC	??_C@_0DJ@MJAH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+EXTRN	_SfActivateOI_FromStream@24:NEAR
+;	COMDAT ??_C@_0CH@BNNI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Initiating?5receive@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CH@BNNI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Initiating?5receive@ DB '(kzoe'
+	DB	'neta) ** Initiating receive of OI', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@KNHF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receive?5OI?5OK?4?5?5Se@
+_DATA	SEGMENT
+??_C@_0CL@KNHF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receive?5OI?5OK?4?5?5Se@ DB '('
+	DB	'kzoeneta) ** Receive OI OK.  Sending ack.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DJ@MJAH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@
+_DATA	SEGMENT
+??_C@_0DJ@MJAH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ DB '(kzo'
+	DB	'eneta) ** Error receiving OI.  Sending error packet.', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_ppvConn$ = 8
+_lpNetwork$ = 12
+_pvOI$ = 16
+_vSubtask$ = 20
+_pchObjectDef$ = 24
+_lControl$ = 28
+_ar$ = -16
+_nRC$ = -4
+_fnReceiveOI@24 PROC NEAR
+
+; 5194 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 16					; 00000010H
+
+; 5195 :    ActivateRecord ar;
+; 5196 :    zSHORT      nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 5197 : 
+; 5198 :    ar.lpNetwork  = lpNetwork;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR _ar$[ebp], eax
+
+; 5199 :    ar.ppvConn    = ppvConn;
+
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	mov	DWORD PTR _ar$[ebp+4], ecx
+
+; 5200 :    ar.lLineCount = 0;
+
+	mov	DWORD PTR _ar$[ebp+8], 0
+
+; 5201 : 
+; 5202 :    if ( lpNetwork->nTraceLevel > 1 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	cmp	eax, 1
+	jle	SHORT $L9350
+
+; 5204 :       TraceLineS( "(kzoeneta) ** Initiating receive of OI", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@BNNI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Initiating?5receive@ ; `string'
+	call	_TraceLineS@8
+$L9350:
+
+; 5206 : 
+; 5207 :    lControl |= zACTIVATE_NOCONSTRAINTS;
+
+	mov	ecx, DWORD PTR _lControl$[ebp]
+	or	ecx, 16777216				; 01000000H
+	mov	DWORD PTR _lControl$[ebp], ecx
+
+; 5208 : 
+; 5209 :    nRC = SfActivateOI_FromStream( pvOI, pchObjectDef, vSubtask,
+; 5210 :                                   lControl, fnReadDataFromNet, &ar );
+
+	lea	edx, DWORD PTR _ar$[ebp]
+	push	edx
+	push	OFFSET FLAT:_fnReadDataFromNet@20
+	mov	eax, DWORD PTR _lControl$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pchObjectDef$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pvOI$[ebp]
+	push	eax
+	call	_SfActivateOI_FromStream@24
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 5211 :    if ( nRC != zCALL_ERROR )
+
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	cmp	ecx, -16				; fffffff0H
+	je	SHORT $L9352
+
+; 5213 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9353
+
+; 5215 :          TraceLineS( "(kzoeneta) ** Receive OI OK.  Sending ack.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CL@KNHF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receive?5OI?5OK?4?5?5Se@ ; `string'
+	call	_TraceLineS@8
+$L9353:
+
+; 5218 :    else
+
+	jmp	SHORT $L9355
+$L9352:
+
+; 5220 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 5221 :       TraceLineS( "(kzoeneta) ** Error receiving OI.  Sending error packet.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DJ@MJAH@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5receiving?5OI@ ; `string'
+	call	_TraceLineS@8
+$L9355:
+
+; 5223 : 
+; 5224 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+
+; 5225 : 
+; 5226 : } // fnReceiveOI
+
+	mov	esp, ebp
+	pop	ebp
+	ret	24					; 00000018H
+_fnReceiveOI@24 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CM@DIGI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+PUBLIC	??_C@_0CG@HNMP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5data@ ; `string'
+PUBLIC	_fnSendOI_Data@20
+;	COMDAT ??_C@_0CM@DIGI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CM@DIGI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ DB '(kzo'
+	DB	'eneta) ** Error sending zPACKET_SENDLTH', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@HNMP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5data@
+_DATA	SEGMENT
+??_C@_0CG@HNMP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5data@ DB '(kzo'
+	DB	'eneta) ** Error sending data line', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpvData$ = 12
+_pchBuffer$ = 16
+_uLth$ = 20
+_cDataType$ = 24
+_cPacketType$ = -4
+_lpAct$ = -8
+_lpNetwork$ = -12
+_fnSendOI_Data@20 PROC NEAR
+
+; 5241 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+
+; 5242 :    zCHAR       cPacketType;
+; 5243 :    LPACTIVATE  lpAct = (LPACTIVATE) lpvData;
+
+	mov	eax, DWORD PTR _lpvData$[ebp]
+	mov	DWORD PTR _lpAct$[ebp], eax
+
+; 5244 :    LPNETWORK   lpNetwork = lpAct->lpNetwork;
+
+	mov	ecx, DWORD PTR _lpAct$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	DWORD PTR _lpNetwork$[ebp], edx
+
+; 5245 : 
+; 5246 :    if ( uLth == 0 )
+
+	cmp	DWORD PTR _uLth$[ebp], 0
+	jne	SHORT $L9372
+
+; 5247 :       uLth = zstrlen( pchBuffer ) + 1;
+
+	mov	eax, DWORD PTR _pchBuffer$[ebp]
+	push	eax
+	call	_strlen
+	add	esp, 4
+	add	eax, 1
+	mov	DWORD PTR _uLth$[ebp], eax
+$L9372:
+
+; 5248 : 
+; 5249 :    if ( cDataType == zTYPE_STRING )
+
+	movsx	ecx, BYTE PTR _cDataType$[ebp]
+	cmp	ecx, 83					; 00000053H
+	jne	SHORT $L9373
+
+; 5250 :       cPacketType = zPACKET_SENDLTHS;
+
+	mov	BYTE PTR _cPacketType$[ebp], 83		; 00000053H
+
+; 5251 :    else
+
+	jmp	SHORT $L9374
+$L9373:
+
+; 5252 :       cPacketType = zPACKET_SENDLTHB;
+
+	mov	BYTE PTR _cPacketType$[ebp], 66		; 00000042H
+$L9374:
+
+; 5253 : 
+; 5254 :    // Send the length packet.
+; 5255 :    if ( fnSendDataPacket( lpNetwork, lpAct->ppvConn, cPacketType, uLth ) != 0 )
+
+	mov	edx, DWORD PTR _uLth$[ebp]
+	push	edx
+	mov	al, BYTE PTR _cPacketType$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpAct$[ebp]
+	mov	edx, DWORD PTR [ecx+4]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9375
+
+; 5257 :       TraceLineS( "(kzoeneta) ** Error sending zPACKET_SENDLTH", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CM@DIGI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+
+; 5258 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9367
+$L9375:
+
+; 5260 : 
+; 5261 :    // Send the actual data.
+; 5262 :    if ( (*lpNetwork->lpfnSend)( &lpNetwork->pNetworkHandle, lpAct->ppvConn,
+; 5263 :                                 pchBuffer, uLth, cDataType ) != 0 )
+
+	mov	dl, BYTE PTR _cDataType$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _uLth$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pchBuffer$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpAct$[ebp]
+	mov	eax, DWORD PTR [edx+4]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+170]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9377
+
+; 5265 :       TraceLineS( "(kzoeneta) ** Error sending data line", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@HNMP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5data@ ; `string'
+	call	_TraceLineS@8
+
+; 5266 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9367
+$L9377:
+
+; 5268 : 
+; 5269 :    lpAct->lLineCount++;
+
+	mov	ecx, DWORD PTR _lpAct$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	add	edx, 1
+	mov	eax, DWORD PTR _lpAct$[ebp]
+	mov	DWORD PTR [eax+8], edx
+
+; 5270 : 
+; 5271 :    return( 0 );
+
+	xor	ax, ax
+$L9367:
+
+; 5272 : }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	20					; 00000014H
+_fnSendOI_Data@20 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0BC@MJJP@NetSendCompressed?$AA@		; `string'
+PUBLIC	??_C@_06OFMK@NETACT?$AA@			; `string'
+PUBLIC	??_C@_0CC@IGND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5END?5packet@ ; `string'
+EXTRN	__imp__toupper:NEAR
+EXTRN	_SfWriteOI_ToStream@20:NEAR
+;	COMDAT ??_C@_0BC@MJJP@NetSendCompressed?$AA@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0BC@MJJP@NetSendCompressed?$AA@ DB 'NetSendCompressed', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06OFMK@NETACT?$AA@
+_DATA	SEGMENT
+??_C@_06OFMK@NETACT?$AA@ DB 'NETACT', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@IGND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5END?5packet@
+_DATA	SEGMENT
+??_C@_0CC@IGND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5END?5packet@ DB '(kzo'
+	DB	'eneta) ** Sending END packet.', 00H		; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_ppvConn$ = 8
+_lpNetwork$ = 12
+_vOI$ = 16
+_lControl$ = 20
+_nRC$ = -4
+_ar$ = -16
+_szCompressed$9392 = -28
+_lpViewOD$9396 = -32
+_fnSendOI@16 PROC NEAR
+
+; 5284 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 32					; 00000020H
+
+; 5285 :    zSHORT         nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 5286 :    ActivateRecord ar;
+; 5287 : 
+; 5288 :    ar.lpNetwork  = lpNetwork;
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	mov	DWORD PTR _ar$[ebp], eax
+
+; 5289 :    ar.ppvConn    = ppvConn;
+
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	mov	DWORD PTR _ar$[ebp+4], ecx
+
+; 5290 :    ar.lLineCount = 0;
+
+	mov	DWORD PTR _ar$[ebp+8], 0
+
+; 5291 : 
+; 5292 :    if ( g_chNetSendCompressed == 0 )
+
+	movsx	edx, BYTE PTR _g_chNetSendCompressed
+	test	edx, edx
+	jne	SHORT $L9391
+
+; 5294 :       zCHAR szCompressed[ 10 ];
+; 5295 : 
+; 5296 :       SysReadZeidonIni( -1, "[Zeidon]", "NetSendCompressed", szCompressed );
+
+	lea	eax, DWORD PTR _szCompressed$9392[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BC@MJJP@NetSendCompressed?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_08KBJI@?$FLZeidon?$FN?$AA@ ; `string'
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 5297 :       g_chNetSendCompressed = ztoupper( szCompressed[ 0 ] ) == 'N' ? 'N' : 'Y';
+
+	movsx	ecx, BYTE PTR _szCompressed$9392[ebp]
+	push	ecx
+	call	DWORD PTR __imp__toupper
+	add	esp, 4
+	sub	eax, 78					; 0000004eH
+	neg	eax
+	sbb	eax, eax
+	and	eax, 11					; 0000000bH
+	add	eax, 78					; 0000004eH
+	mov	BYTE PTR _g_chNetSendCompressed, al
+$L9391:
+
+; 5299 : 
+; 5300 :    if ( g_chNetSendCompressed != 'N' )
+
+	movsx	edx, BYTE PTR _g_chNetSendCompressed
+	cmp	edx, 78					; 0000004eH
+	je	SHORT $L9394
+
+; 5301 :       lControl |= zCOMPRESSED;
+
+	mov	eax, DWORD PTR _lControl$[ebp]
+	or	eax, 131072				; 00020000H
+	mov	DWORD PTR _lControl$[ebp], eax
+
+; 5302 :    else
+
+	jmp	SHORT $L9398
+$L9394:
+
+; 5304 :       LPVIEWOD lpViewOD = zGETPTR( vOI->hViewOD );
+
+	mov	ecx, DWORD PTR _vOI$[ebp]
+	mov	edx, DWORD PTR [ecx+6]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOD$9396[ebp], eax
+
+; 5305 :       if ( lpViewOD->bNetCompress )
+
+	mov	eax, DWORD PTR _lpViewOD$9396[ebp]
+	mov	ecx, DWORD PTR [eax+240]
+	shr	ecx, 12					; 0000000cH
+	and	ecx, 1
+	test	ecx, ecx
+	je	SHORT $L9398
+
+; 5306 :          lControl |= zCOMPRESSED;
+
+	mov	edx, DWORD PTR _lControl$[ebp]
+	or	edx, 131072				; 00020000H
+	mov	DWORD PTR _lControl$[ebp], edx
+$L9398:
+
+; 5308 : 
+; 5309 :    nRC = SfWriteOI_ToStream( vOI, "NETACT", lControl,
+; 5310 :                              fnSendOI_Data, (zPVOID) &ar );
+
+	lea	eax, DWORD PTR _ar$[ebp]
+	push	eax
+	push	OFFSET FLAT:_fnSendOI_Data@20
+	mov	ecx, DWORD PTR _lControl$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_06OFMK@NETACT?$AA@	; `string'
+	mov	edx, DWORD PTR _vOI$[ebp]
+	push	edx
+	call	_SfWriteOI_ToStream@20
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 5311 : 
+; 5312 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9401
+
+; 5314 :       TraceLineS( "(kzoeneta) ** Sending END packet.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CC@IGND@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5END?5packet@ ; `string'
+	call	_TraceLineS@8
+$L9401:
+
+; 5316 : 
+; 5317 :    // Send a message to say we're done sending the OI
+; 5318 :    if ( nRC != zCALL_ERROR )
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	cmp	edx, -16				; fffffff0H
+	je	SHORT $L9403
+
+; 5320 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_END,
+; 5321 :                              ar.lLineCount ) != 0 )
+
+	mov	eax, DWORD PTR _ar$[ebp+8]
+	push	eax
+	push	69					; 00000045H
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9404
+
+; 5323 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+
+; 5324 :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9388
+$L9404:
+
+; 5327 :    else
+
+	jmp	SHORT $L9406
+$L9403:
+
+; 5329 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 5330 :                              zNETERR_SENDOI ) != 0 )
+
+	push	6
+	push	42					; 0000002aH
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9406
+
+; 5332 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+
+; 5333 :          return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9388
+$L9406:
+
+; 5336 : 
+; 5337 :    return( 0 );
+
+	xor	ax, ax
+$L9388:
+
+; 5338 : 
+; 5339 : } // fnSendOI
+
+	mov	esp, ebp
+	pop	ebp
+	ret	16					; 00000010H
+_fnSendOI@16 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CM@CNPK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Activate?5@ ; `string'
+PUBLIC	??_C@_0CI@HEFB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Activat@ ; `string'
+PUBLIC	??_C@_0CJ@NJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0DK@IDJC@?$CIkzoeneta?$CJ?5?$CK?$CK?5User?5Name?3?5?$CFs?5?5App@ ; `string'
+PUBLIC	??_C@_0CC@CFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5App?5name?5?$DN@ ; `string'
+PUBLIC	??_C@_0CB@CKJN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5OD?5name?5?$DN?5@ ; `string'
+PUBLIC	??_C@_0CB@OJNA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5Qual?5OI?4@ ; `string'
+PUBLIC	??_C@_08ILBJ@KZDBHQUA?$AA@			; `string'
+PUBLIC	??_C@_0CN@OGJE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5indica@ ; `string'
+PUBLIC	??_C@_0CN@MMFL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5ACK?5re@ ; `string'
+PUBLIC	??_C@_0CE@NMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activated?5@ ; `string'
+PUBLIC	??_C@_0CH@BBPE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@ ; `string'
+PUBLIC	??_C@_0CJ@NKCF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Retu@ ; `string'
+EXTRN	_ActivateObjectInstance@20:NEAR
+EXTRN	_memcpy:NEAR
+EXTRN	_ActivateViewObject@12:NEAR
+;	COMDAT ??_C@_0CM@CNPK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Activate?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CM@CNPK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Activate?5@ DB '(kzo'
+	DB	'eneta) ** Received Activate OI message.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@HEFB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Activat@
+_DATA	SEGMENT
+??_C@_0CI@HEFB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Activat@ DB '(kzoe'
+	DB	'neta) ** Retrieving Activate info.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@NJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0CJ@NJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Act info', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@IDJC@?$CIkzoeneta?$CJ?5?$CK?$CK?5User?5Name?3?5?$CFs?5?5App@
+_DATA	SEGMENT
+??_C@_0DK@IDJC@?$CIkzoeneta?$CJ?5?$CK?$CK?5User?5Name?3?5?$CFs?5?5App@ DB '('
+	DB	'kzoeneta) ** User Name: %s  App Name: %s  Object Def: %s', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@CFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5App?5name?5?$DN@
+_DATA	SEGMENT
+??_C@_0CC@CFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5App?5name?5?$DN@ DB '('
+	DB	'kzoeneta) ** Invalid App name = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CB@CKJN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5OD?5name?5?$DN?5@
+_DATA	SEGMENT
+??_C@_0CB@CKJN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5OD?5name?5?$DN?5@ DB '('
+	DB	'kzoeneta) ** Invalid OD name = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CB@OJNA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5Qual?5OI?4@
+_DATA	SEGMENT
+??_C@_0CB@OJNA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5Qual?5OI?4@ DB '(kz'
+	DB	'oeneta) ** Receiving Qual OI.', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08ILBJ@KZDBHQUA?$AA@
+_DATA	SEGMENT
+??_C@_08ILBJ@KZDBHQUA?$AA@ DB 'KZDBHQUA', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@OGJE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5indica@
+_DATA	SEGMENT
+??_C@_0CN@OGJE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5indica@ DB '(kz'
+	DB	'oeneta) ** Not able to indicate empty OI!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@MMFL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5ACK?5re@
+_DATA	SEGMENT
+??_C@_0CN@MMFL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5ACK?5re@ DB '(k'
+	DB	'zoeneta) ** Not able to ACK request of OI!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CE@NMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activated?5@
+_DATA	SEGMENT
+??_C@_0CE@NMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activated?5@ DB '(kzoe'
+	DB	'neta) ** Sending Activated OI.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@BBPE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@
+_DATA	SEGMENT
+??_C@_0CH@BBPE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@ DB '(kz'
+	DB	'oeneta) ** Sending RC packet. RC = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@NKCF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Retu@
+_DATA	SEGMENT
+??_C@_0CJ@NKCF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Retu@ DB '(kz'
+	DB	'oeneta) ** Not able send Return code!', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_lpNetwork$ = 12
+_ppvConn$ = 16
+_lpTask$ = -168
+_vSubtask$ = -176
+_vQual$ = -172
+_vOI$ = -8
+_lControl$ = -180
+_bFlushNeeded$ = -164
+_ActPacket$ = -160
+_lpActPacket$ = -4
+_nRC$ = -12
+_lpViewCsr$9461 = -184
+_lpViewOI$9463 = -188
+_lpDropSubtask$9467 = -192
+_fnProcessActivateOI@12 PROC NEAR
+
+; 5349 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+
+; 5350 :    LPTASK         lpTask = 0;
+
+	mov	DWORD PTR _lpTask$[ebp], 0
+
+; 5351 :    zVIEW          vSubtask = 0;
+
+	mov	DWORD PTR _vSubtask$[ebp], 0
+
+; 5352 :    zVIEW          vQual = 0;
+
+	mov	DWORD PTR _vQual$[ebp], 0
+
+; 5353 :    zVIEW          vOI = 0;
+
+	mov	DWORD PTR _vOI$[ebp], 0
+
+; 5354 :    zLONG          lControl;
+; 5355 :    zBOOL          bFlushNeeded = FALSE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 0
+
+; 5356 :    zActivatePacket ActPacket;
+; 5357 :    LPACTPACKET    lpActPacket;
+; 5358 :    zSHORT         nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 5359 : 
+; 5360 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9423
+
+; 5362 :       TraceLineS( "(kzoeneta) ** Received Activate OI message.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CM@CNPK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Activate?5@ ; `string'
+	call	_TraceLineS@8
+
+; 5363 :       TraceLineS( "(kzoeneta) ** Retrieving Activate info.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@HEFB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Activat@ ; `string'
+	call	_TraceLineS@8
+$L9423:
+
+; 5365 : 
+; 5366 :    //=======================================================================
+; 5367 :    // Receiving data.
+; 5368 :    //
+; 5369 :    // Until noted below, we will only RECEIVE data over the network.
+; 5370 :    //=======================================================================
+; 5371 : 
+; 5372 :    // First thing to do is retrieve the activate info.
+; 5373 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 5374 :                                    &lpActPacket, sizeof( zActivatePacket ),
+; 5375 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	147					; 00000093H
+	lea	edx, DWORD PTR _lpActPacket$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9427
+
+; 5377 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Act info", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@NJAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 5378 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9429
+$L9427:
+
+; 5380 : 
+; 5381 :    // Store the info locally -- as soon as we perform the next network IO
+; 5382 :    // operation we aren't assured that lpActPacket points to valid data.
+; 5383 :    zmemcpy( &ActPacket, lpActPacket, sizeof( zActivatePacket ) );
+
+	push	147					; 00000093H
+	mov	ecx, DWORD PTR _lpActPacket$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _ActPacket$[ebp]
+	push	edx
+	call	_memcpy
+	add	esp, 12					; 0000000cH
+
+; 5384 :    lControl = zxtol( ActPacket.szControl );
+
+	push	16					; 00000010H
+	push	0
+	lea	eax, DWORD PTR _ActPacket$[ebp+35]
+	push	eax
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lControl$[ebp], eax
+
+; 5385 : 
+; 5386 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L9431
+
+; 5388 :       TraceLine( "(kzoeneta) ** User Name: %s  App Name: %s  Object Def: %s",
+; 5389 :                  ActPacket.szUserName, ActPacket.szAppName,
+; 5390 :                  ActPacket.szObjectDef );
+
+	lea	eax, DWORD PTR _ActPacket$[ebp+3]
+	push	eax
+	lea	ecx, DWORD PTR _ActPacket$[ebp+45]
+	push	ecx
+	lea	edx, DWORD PTR _ActPacket$[ebp+78]
+	push	edx
+	push	OFFSET FLAT:??_C@_0DK@IDJC@?$CIkzoeneta?$CJ?5?$CK?$CK?5User?5Name?3?5?$CFs?5?5App@ ; `string'
+	call	_TraceLine
+	add	esp, 16					; 00000010H
+$L9431:
+
+; 5392 : 
+; 5393 :    // Try to create a subtask view using the application name passed.
+; 5394 :    if ( SfCreateSubtask( &vSubtask, lpTaskView, ActPacket.szAppName ) == zCALL_ERROR )
+
+	lea	eax, DWORD PTR _ActPacket$[ebp+45]
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_SfCreateSubtask@12
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L9433
+
+; 5396 :       TraceLineS( "(kzoeneta) ** Invalid App name = ", ActPacket.szAppName );
+
+	lea	ecx, DWORD PTR _ActPacket$[ebp+45]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CC@CFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5App?5name?5?$DN@ ; `string'
+	call	_TraceLineS@8
+
+; 5397 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 5398 :                              zNETERR_INVALIDAPP ) != 0 )
+
+	push	1
+	push	42					; 0000002aH
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9435
+
+; 5400 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9435:
+
+; 5402 : 
+; 5403 :       bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 5404 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9429
+$L9433:
+
+; 5406 : 
+; 5407 :    lpTask = fnOperationCall( iNetActivateOI, vSubtask, 0 );
+
+	push	0
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	push	500					; 000001f4H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+
+; 5408 :    fnCreateMsgObj( vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_fnCreateMsgObj@4
+
+; 5409 : 
+; 5410 :    // Make sure request is for valid OD.
+; 5411 :    if ( ActivateViewObject( vSubtask, ActPacket.szObjectDef, FALSE ) == 0 )
+
+	push	0
+	lea	ecx, DWORD PTR _ActPacket$[ebp+3]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_ActivateViewObject@12
+	test	eax, eax
+	jne	SHORT $L9436
+
+; 5413 :       TraceLineS( "(kzoeneta) ** Invalid OD name = ", ActPacket.szObjectDef );
+
+	lea	eax, DWORD PTR _ActPacket$[ebp+3]
+	push	eax
+	push	OFFSET FLAT:??_C@_0CB@CKJN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5OD?5name?5?$DN?5@ ; `string'
+	call	_TraceLineS@8
+
+; 5414 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 5415 :                              zNETERR_INVALIDOD ) != 0 )
+
+	push	2
+	push	42					; 0000002aH
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9438
+
+; 5417 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9438:
+
+; 5419 : 
+; 5420 :       bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 5421 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9429
+$L9436:
+
+; 5423 : 
+; 5424 :    if ( ActPacket.cUseQualification == 'Y' )
+
+	movsx	ecx, BYTE PTR _ActPacket$[ebp+44]
+	cmp	ecx, 89					; 00000059H
+	jne	SHORT $L9442
+
+; 5426 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9440
+
+; 5428 :          TraceLineS( "(kzoeneta) ** Receiving Qual OI.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CB@OJNA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5Qual?5OI?4@ ; `string'
+	call	_TraceLineS@8
+$L9440:
+
+; 5430 : 
+; 5431 :       if ( fnReceiveOI( ppvConn, lpNetwork, &vQual, vSubtask, "KZDBHQUA",
+; 5432 :                         zMULTIPLE | zACTIVATE_SYSTEM ) == zCALL_ERROR )
+
+	push	536871168				; 20000100H
+	push	OFFSET FLAT:??_C@_08ILBJ@KZDBHQUA?$AA@	; `string'
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _vQual$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	call	_fnReceiveOI@24
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L9442
+
+; 5434 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9429
+$L9442:
+
+; 5437 : 
+; 5438 :    //=======================================================================
+; 5439 :    // Transmitting data.
+; 5440 :    //
+; 5441 :    // Until we close the connection, the following code only SENDS data over
+; 5442 :    // the network.
+; 5443 :    //=======================================================================
+; 5444 : 
+; 5445 :    bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 5446 : 
+; 5447 :    // For now we don't want to execute activate constraints on the server.
+; 5448 :    lControl |= zACTIVATE_NOCONSTRAINTS;
+
+	mov	eax, DWORD PTR _lControl$[ebp]
+	or	eax, 16777216				; 01000000H
+	mov	DWORD PTR _lControl$[ebp], eax
+
+; 5449 : 
+; 5450 :    // Force activate to be local.
+; 5451 :    lControl |= zACTIVATE_LOCAL;
+
+	mov	ecx, DWORD PTR _lControl$[ebp]
+	or	ecx, 1073741824				; 40000000H
+	mov	DWORD PTR _lControl$[ebp], ecx
+
+; 5452 : 
+; 5453 :    // Activate the OI but force the activate to occur locally.
+; 5454 :    nRC = ActivateObjectInstance( &vOI, ActPacket.szObjectDef, vSubtask, vQual,
+; 5455 :                                  lControl );
+
+	mov	edx, DWORD PTR _lControl$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vQual$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _ActPacket$[ebp+3]
+	push	edx
+	lea	eax, DWORD PTR _vOI$[ebp]
+	push	eax
+	call	_ActivateObjectInstance@20
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 5456 : 
+; 5457 :    if ( vOI )
+
+	cmp	DWORD PTR _vOI$[ebp], 0
+	je	$L9453
+
+; 5459 :       if ( nRC < 0 )
+
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	test	ecx, ecx
+	jge	SHORT $L9445
+
+; 5461 :          // If we have an object instance (vOI is not 0) but the return code was
+; 5462 :          // less than 0, there was nothing on the DB to activate so the OI is
+; 5463 :          // empty.  Instead of sending an empty OI across the network we'll
+; 5464 :          // just send an indication that we have an empty OI and we'll let the
+; 5465 :          // client activate an empty OI on it's side.
+; 5466 :          if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_EMPTYOI, 0 ) != 0 )
+
+	push	0
+	push	101					; 00000065H
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9446
+
+; 5468 :             TraceLineS( "(kzoeneta) ** Not able to indicate empty OI!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@OGJE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5indica@ ; `string'
+	call	_TraceLineS@8
+
+; 5469 :             nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 5470 :             goto EndOfFunction;
+
+	jmp	$EndOfFunction$9429
+$L9446:
+
+; 5473 :       else
+
+	jmp	SHORT $L9453
+$L9445:
+
+; 5475 :          // Send Ack to signal we got this far.
+; 5476 :          if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ACK, 0 ) != 0 )
+
+	push	0
+	push	75					; 0000004bH
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9449
+
+; 5478 :             TraceLineS( "(kzoeneta) ** Not able to ACK request of OI!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@MMFL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5ACK?5re@ ; `string'
+	call	_TraceLineS@8
+
+; 5479 :             nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 5480 :             goto EndOfFunction;
+
+	jmp	$EndOfFunction$9429
+$L9449:
+
+; 5482 : 
+; 5483 :          if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9451
+
+; 5485 :             TraceLineS( "(kzoeneta) ** Sending Activated OI.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CE@NMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5Activated?5@ ; `string'
+	call	_TraceLineS@8
+$L9451:
+
+; 5487 : 
+; 5488 :          // Now send the oi.
+; 5489 :          if ( fnSendOI( ppvConn, lpNetwork, vOI, zINCREMENTAL ) == zCALL_ERROR )
+
+	push	65536					; 00010000H
+	mov	ecx, DWORD PTR _vOI$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	call	_fnSendOI@16
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9453
+
+; 5491 :             nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 5492 :             goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9429
+$L9453:
+
+; 5496 : 
+; 5497 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9454
+
+; 5498 :       TraceLineI( "(kzoeneta) ** Sending RC packet. RC = ", nRC );
+
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CH@BBPE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@ ; `string'
+	call	_TraceLineI@8
+$L9454:
+
+; 5499 : 
+; 5500 :    // Send return code.
+; 5501 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_RC, nRC ) != 0 )
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	push	edx
+	push	35					; 00000023H
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9456
+
+; 5503 :       TraceLineS( "(kzoeneta) ** Not able send Return code!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@NKCF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Retu@ ; `string'
+	call	_TraceLineS@8
+
+; 5504 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 5505 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9429
+$L9456:
+
+; 5507 : 
+; 5508 :    // If we get here then everything's OK and we already sent the return code
+; 5509 :    // back to the client so let's set it to 0.
+; 5510 :    nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+$EndOfFunction$9429:
+
+; 5511 : 
+; 5512 : EndOfFunction:
+; 5513 :    if ( vSubtask &&
+; 5514 :         fnSendMsgAndTraceObj( lpNetwork, ppvConn, vSubtask ) == zCALL_ERROR )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L9458
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendMsgAndTraceObj@12
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L9458
+
+; 5516 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L9458:
+
+; 5518 : 
+; 5519 :    if ( bFlushNeeded && fnFlushBuffer( lpNetwork, ppvConn ) != 0 )
+
+	mov	ecx, DWORD PTR _bFlushNeeded$[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	je	SHORT $L9459
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnFlushBuffer@8
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9459
+
+; 5521 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L9459:
+
+; 5523 : 
+; 5524 :    if ( vOI )
+
+	cmp	DWORD PTR _vOI$[ebp], 0
+	je	SHORT $L9460
+
+; 5526 :       LPVIEWCSR lpViewCsr = zGETPTR( vOI->hViewCsr );
+
+	mov	edx, DWORD PTR _vOI$[ebp]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$9461[ebp], eax
+
+; 5527 :       LPVIEWOI  lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	ecx, DWORD PTR _lpViewCsr$9461[ebp]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$9463[ebp], eax
+
+; 5528 : 
+; 5529 :       // It's possible that we've activated the OI with pessimistic locking.
+; 5530 :       // This means that there are records in the DB to lock out the OI.  But
+; 5531 :       // Core automatically deletes those records when the OI is dropped.  This
+; 5532 :       // is not good because the client that requested this OI obviously wants
+; 5533 :       // the locks left in place.  To keep the locks we'll turn off the flag
+; 5534 :       // that says the OI has pessimistic locking.  This will keep Core from
+; 5535 :       // deleting the locks when we drop the view.
+; 5536 :       lpViewOI->bIsLocked = 0;
+
+	mov	eax, DWORD PTR _lpViewOI$9463[ebp]
+	mov	ecx, DWORD PTR [eax+36]
+	and	cl, 127					; 0000007fH
+	mov	edx, DWORD PTR _lpViewOI$9463[ebp]
+	mov	DWORD PTR [edx+36], ecx
+
+; 5537 : 
+; 5538 :       fnDropView( vOI );
+
+	mov	eax, DWORD PTR _vOI$[ebp]
+	push	eax
+	call	_fnDropView@4
+$L9460:
+
+; 5540 : 
+; 5541 :    if ( vQual )
+
+	cmp	DWORD PTR _vQual$[ebp], 0
+	je	SHORT $L9465
+
+; 5542 :       fnDropView( vQual );
+
+	mov	ecx, DWORD PTR _vQual$[ebp]
+	push	ecx
+	call	_fnDropView@4
+$L9465:
+
+; 5543 : 
+; 5544 :    if ( vSubtask )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L9466
+
+; 5545 :       DROPSUBTASK( vSubtask );
+
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	mov	eax, DWORD PTR [edx+18]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpDropSubtask$9467[ebp], eax
+	push	0
+	mov	ecx, DWORD PTR _lpDropSubtask$9467[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpDropSubtask$9467[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_fnDropSubtask
+	add	esp, 12					; 0000000cH
+$L9466:
+
+; 5546 : 
+; 5547 :    if ( lpTask )
+
+	cmp	DWORD PTR _lpTask$[ebp], 0
+	je	SHORT $L9470
+
+; 5548 :       fnOperationReturn( iNetActivateOI, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	500					; 000001f4H
+	call	_fnOperationReturn
+	add	esp, 8
+$L9470:
+
+; 5549 : 
+; 5550 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+
+; 5551 : 
+; 5552 : } // fnProcessActivateOI
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnProcessActivateOI@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CO@OODD@fnProcessActivateOI_FromFile?$CI?5?$CJ?5@ ; `string'
+PUBLIC	??_C@_0P@JNC@?$CIkzoeneta?$CJ?5?$CK?$CK?5?$AA@	; `string'
+;	COMDAT ??_C@_0CO@OODD@fnProcessActivateOI_FromFile?$CI?5?$CJ?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CO@OODD@fnProcessActivateOI_FromFile?$CI?5?$CJ?5@ DB 'fnProcessAct'
+	DB	'ivateOI_FromFile( ) is deprecated', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@JNC@?$CIkzoeneta?$CJ?5?$CK?$CK?5?$AA@
+_DATA	SEGMENT
+??_C@_0P@JNC@?$CIkzoeneta?$CJ?5?$CK?$CK?5?$AA@ DB '(kzoeneta) ** ', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_fnProcessActivateOI_FromFile@8 PROC NEAR
+
+; 5561 : {
+
+	push	ebp
+	mov	ebp, esp
+
+; 5562 :    TraceLineS( "(kzoeneta) ** ", "fnProcessActivateOI_FromFile( ) is deprecated" );
+
+	push	OFFSET FLAT:??_C@_0CO@OODD@fnProcessActivateOI_FromFile?$CI?5?$CJ?5@ ; `string'
+	push	OFFSET FLAT:??_C@_0P@JNC@?$CIkzoeneta?$CJ?5?$CK?$CK?5?$AA@ ; `string'
+	call	_TraceLineS@8
+
+; 5563 :    return( 0 );
+
+	xor	ax, ax
+
+; 5564 : 
+; 5565 : #if 0
+; 5566 :    zSHORT nRC;
+; 5567 :    zBOOL  bFlushNeeded = FALSE;
+; 5568 :    zVIEW  vSubtask = 0;
+; 5569 :    zVIEW  vOI = 0;
+; 5570 :    zLONG  lControl;
+; 5571 :    zCHAR  szFileName[ zMAX_FILENAME_LTH + 1 ];
+; 5572 :    zPCHAR pch;
+; 5573 :    zSHORT nFileNameLth;
+; 5574 :    zActivatePacket ActPacket;
+; 5575 :    LPACTPACKET     lpActPacket;
+; 5576 : 
+; 5577 :    if ( lpNetwork->nTraceLevel > 0 )
+; 5578 :    {
+; 5579 :       TraceLineS( "(kzoeneta) ** Received Activate OI From File message.", "" );
+; 5580 :       TraceLineS( "(kzoeneta) ** Retrieving Activate info.", "" );
+; 5581 :    }
+; 5582 : 
+; 5583 :    //=======================================================================
+; 5584 :    // Receiving data.
+; 5585 :    //
+; 5586 :    // Until noted below, we will only RECEIVE data over the network.
+; 5587 :    //=======================================================================
+; 5588 : 
+; 5589 :    // First thing to do is retrieve the activate info.
+; 5590 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 5591 :                                    &lpActPacket, sizeof( zActivatePacket ),
+; 5592 :                                    zTYPE_STRING ) != 0 )
+; 5593 :    {
+; 5594 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Act info", "" );
+; 5595 :       nRC = zCALL_ERROR;
+; 5596 :       goto EndOfFunction;
+; 5597 :    }
+; 5598 : 
+; 5599 :    // Store the info locally -- as soon as we perform the next network IO
+; 5600 :    // operation we aren't assured that lpActPacket points to valid data.
+; 5601 :    zmemcpy( &ActPacket, lpActPacket, sizeof( zActivatePacket ) );
+; 5602 :    lControl = zxtol( ActPacket.szControl );
+; 5603 : 
+; 5604 :    // Retrieve the file name.  Use a dummy pointer to get the file name and
+; 5605 :    // then copy it into the allocated buffer.
+; 5606 :    nFileNameLth = (zSHORT) zxtol( ActPacket.szFileNameLth );
+; 5607 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 5608 :                                    &pch, nFileNameLth, zTYPE_STRING ) != 0 )
+; 5609 :    {
+; 5610 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve file name.", "" );
+; 5611 :       nRC = zCALL_ERROR;
+; 5612 :       goto EndOfFunction;
+; 5613 :    }
+; 5614 : 
+; 5615 :    zstrcpy( szFileName, pch );
+; 5616 : 
+; 5617 :    if ( lpNetwork->nTraceLevel > 0 )
+; 5618 :    {
+; 5619 :       TraceLine( "(kzoeneta) ** User Name: %s  App Name: %s  "
+; 5620 :                    "Object Def: %s  File Name: %s",
+; 5621 :                  ActPacket.szUserName, ActPacket.szAppName,
+; 5622 :                  ActPacket.szObjectDef, szFileName );
+; 5623 :    }
+; 5624 : 
+; 5625 :    //=======================================================================
+; 5626 :    // Transmitting data.
+; 5627 :    //
+; 5628 :    // Until we close the connection, the following code only SENDS data over
+; 5629 :    // the network.
+; 5630 :    //=======================================================================
+; 5631 : 
+; 5632 :    bFlushNeeded = TRUE;
+; 5633 : 
+; 5634 :    // Try to create a subtask view using the application name passed.
+; 5635 :    if ( CREATESUBTASK( &vSubtask, ActPacket.szAppName ) == zCALL_ERROR )
+; 5636 :    {
+; 5637 :       TraceLineS( "(kzoeneta) ** Invalid App name = ", ActPacket.szAppName );
+; 5638 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 5639 :                              zNETERR_INVALIDAPP ) != 0 )
+; 5640 :       {
+; 5641 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+; 5642 :       }
+; 5643 : 
+; 5644 :       nRC = zCALL_ERROR;
+; 5645 :       goto EndOfFunction;
+; 5646 :    }
+; 5647 : 
+; 5648 :    fnCreateMsgObj( vSubtask );
+; 5649 : 
+; 5650 :    // Make sure request is for valid OD.
+; 5651 :    if ( ActivateViewObject( vSubtask, ActPacket.szObjectDef, FALSE ) == 0 )
+; 5652 :    {
+; 5653 :       TraceLineS( "(kzoeneta) ** Invalid OD name = ", ActPacket.szObjectDef );
+; 5654 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 5655 :                              zNETERR_INVALIDOD ) != 0 )
+; 5656 :       {
+; 5657 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+; 5658 :       }
+; 5659 : 
+; 5660 :       nRC = zCALL_ERROR;
+; 5661 :       goto EndOfFunction;
+; 5662 :    }
+; 5663 : 
+; 5664 :    if ( fnCheckForClientAuthority( ppvConn, lpNetwork, ActPacket.szAppName,
+; 5665 :                                    ActPacket.szUserName, ActPacket.szPassword,
+; 5666 :                                    ActPacket.szObjectDef,
+; 5667 :                                    zLADTYPE_LOD_ACTIVATE_FILE ) < 0 )
+; 5668 :    {
+; 5669 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 5670 :                               zNETERR_NOAUTHORITY ) != 0 )
+; 5671 :       {
+; 5672 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_ERROR", "" );
+; 5673 :       }
+; 5674 : 
+; 5675 :       nRC = zCALL_ERROR;
+; 5676 :       goto EndOfFunction;
+; 5677 :    }
+; 5678 : 
+; 5679 :    // For right now we will assume that activated files are in the Bin dir
+; 5680 :    // of the application.
+; 5681 : 
+; 5682 :    // Activate the OI.
+; 5683 :    nRC = ActivateOI_FromFile( &vOI, ActPacket.szObjectDef, vSubtask,
+; 5684 :                               szFileName, lControl );
+; 5685 : 
+; 5686 :    if ( vOI )
+; 5687 :    {
+; 5688 :       // Send Ack to signal we got this far.
+; 5689 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ACK, 0 ) != 0 )
+; 5690 :       {
+; 5691 :          TraceLineS( "(kzoeneta) ** Not able to ACK request of OI!", "" );
+; 5692 :          nRC = zCALL_ERROR;
+; 5693 :          goto EndOfFunction;
+; 5694 :       }
+; 5695 : 
+; 5696 :       if ( lpNetwork->nTraceLevel > 0 )
+; 5697 :          TraceLineS( "(kzoeneta) ** Sending Activated OI.", "" );
+; 5698 : 
+; 5699 :       if ( fnSendOI( ppvConn, lpNetwork, vOI,
+; 5700 :                      zINCREMENTAL | zSAVE_CURSORS ) == zCALL_ERROR )
+; 5701 :       {
+; 5702 :          nRC = zCALL_ERROR;
+; 5703 :          goto EndOfFunction;
+; 5704 :       }
+; 5705 :    }
+; 5706 : 
+; 5707 :    if ( lpNetwork->nTraceLevel > 0 )
+; 5708 :    {
+; 5709 :       TraceLineI( "(kzoeneta) ** Sending RC packet. RC = ", nRC );
+; 5710 :    }
+; 5711 : 
+; 5712 :    // Send return code.
+; 5713 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_RC, nRC ) != 0 )
+; 5714 :    {
+; 5715 :       TraceLineS( "(kzoeneta) ** Not able send Return code!", "" );
+; 5716 :       nRC = zCALL_ERROR;
+; 5717 :       goto EndOfFunction;
+; 5718 :    }
+; 5719 : 
+; 5720 :    nRC = 0;
+; 5721 : 
+; 5722 : EndOfFunction:
+; 5723 :    if ( vSubtask &&
+; 5724 :         fnSendMsgAndTraceObj( lpNetwork, ppvConn, vSubtask ) == zCALL_ERROR )
+; 5725 :    {
+; 5726 :       nRC = zCALL_ERROR;
+; 5727 :    }
+; 5728 : 
+; 5729 :    if ( bFlushNeeded && fnFlushBuffer( lpNetwork, ppvConn ) != 0 )
+; 5730 :    {
+; 5731 :       nRC = zCALL_ERROR;
+; 5732 :    }
+; 5733 : 
+; 5734 :    if ( vOI )
+; 5735 :       fnDropView( vOI );
+; 5736 : 
+; 5737 :    if ( vSubtask )
+; 5738 :       DROPSUBTASK( vSubtask );
+; 5739 : 
+; 5740 :    return( nRC );
+; 5741 : #endif
+; 5742 : 
+; 5743 : } // fnProcesssActivateOI_FromFile
+
+	pop	ebp
+	ret	8
+_fnProcessActivateOI_FromFile@8 ENDP
+_TEXT	ENDS
+PUBLIC	_fnRelinkOIs@16
+PUBLIC	??_C@_0CF@LGAL@Link?5buffer?5doesn?8t?5start?5with?5a@ ; `string'
+PUBLIC	??_C@_0CC@EEDE@Link?5buffer?3?5expecting?5hex?5digit@ ; `string'
+PUBLIC	??_C@_0CJ@COO@Link?5buffer?3?5expecting?5?8?3?8?5after@ ; `string'
+PUBLIC	??_C@_0CJ@PJGO@Link?5buffer?3?5Could?5find?5OI?5match@ ; `string'
+PUBLIC	??_C@_0CF@ODDL@Link?5buffer?3?5expecting?5hex?5digit@ ; `string'
+PUBLIC	??_C@_0CM@EIKB@Link?5buffer?3?5expecting?5?8?$CJ?1?8?5afte@ ; `string'
+PUBLIC	??_C@_0DA@IOBN@Link?5buffer?3?5Could?5find?5EI?5match@ ; `string'
+PUBLIC	??_C@_0DC@HFCF@Link?5buffer?3?5Link?5EIs?5don?8t?5have@ ; `string'
+EXTRN	__imp___pctype:DWORD
+EXTRN	__imp___isctype:NEAR
+EXTRN	__imp____mb_cur_max:DWORD
+EXTRN	_SysAllocMemory@20:NEAR
+EXTRN	_fnRelinkInstanceToInstance:NEAR
+EXTRN	__imp__strtol:NEAR
+EXTRN	_SysFreeMemory@4:NEAR
+;	COMDAT ??_C@_0CF@LGAL@Link?5buffer?5doesn?8t?5start?5with?5a@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CF@LGAL@Link?5buffer?5doesn?8t?5start?5with?5a@ DB 'Link buffer do'
+	DB	'esn''t start with a ''(''', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@EEDE@Link?5buffer?3?5expecting?5hex?5digit@
+_DATA	SEGMENT
+??_C@_0CC@EEDE@Link?5buffer?3?5expecting?5hex?5digit@ DB 'Link buffer: ex'
+	DB	'pecting hex digit.', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@COO@Link?5buffer?3?5expecting?5?8?3?8?5after@
+_DATA	SEGMENT
+??_C@_0CJ@COO@Link?5buffer?3?5expecting?5?8?3?8?5after@ DB 'Link buffer: '
+	DB	'expecting '':'' after OI tag.', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CJ@PJGO@Link?5buffer?3?5Could?5find?5OI?5match@
+_DATA	SEGMENT
+??_C@_0CJ@PJGO@Link?5buffer?3?5Could?5find?5OI?5match@ DB 'Link buffer: C'
+	DB	'ould find OI matching Tag.', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@ODDL@Link?5buffer?3?5expecting?5hex?5digit@
+_DATA	SEGMENT
+??_C@_0CF@ODDL@Link?5buffer?3?5expecting?5hex?5digit@ DB 'Link buffer: ex'
+	DB	'pecting hex digit(2).', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@EIKB@Link?5buffer?3?5expecting?5?8?$CJ?1?8?5afte@
+_DATA	SEGMENT
+??_C@_0CM@EIKB@Link?5buffer?3?5expecting?5?8?$CJ?1?8?5afte@ DB 'Link buff'
+	DB	'er: expecting '')/'' after Hier Num.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DA@IOBN@Link?5buffer?3?5Could?5find?5EI?5match@
+_DATA	SEGMENT
+??_C@_0DA@IOBN@Link?5buffer?3?5Could?5find?5EI?5match@ DB 'Link buffer: C'
+	DB	'ould find EI matching Hier Count.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@HFCF@Link?5buffer?3?5Link?5EIs?5don?8t?5have@
+_DATA	SEGMENT
+??_C@_0DC@HFCF@Link?5buffer?3?5Link?5EIs?5don?8t?5have@ DB 'Link buffer: '
+	DB	'Link EIs don''t have matching tokens.', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTask$ = 8
+_lpViewCluster$ = 12
+_nViewCount$ = 16
+_pchLinkBuffer$ = 20
+_lHierCount$ = -32
+_hBuffer$ = -20
+_lpEntityInstance$ = -12
+_lpLastEI$ = -16
+_plpViewCsr$ = -8
+_plpViewOI$ = -36
+_pchBuffer$ = -24
+_pch$ = -4
+_k$ = -28
+_nOI_Idx$9521 = -40
+_lpViewEntity$9538 = -48
+_lpLastViewEntity$9540 = -44
+_fnRelinkOIs@16 PROC NEAR
+
+; 5756 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 56					; 00000038H
+
+; 5757 :    zLONG             lHierCount;
+; 5758 :    zLONG             hBuffer = 0;
+
+	mov	DWORD PTR _hBuffer$[ebp], 0
+
+; 5759 :    LPENTITYINSTANCE  lpEntityInstance;
+; 5760 :    LPENTITYINSTANCE  lpLastEI;
+; 5761 :    LPVIEWCSR         *plpViewCsr;
+; 5762 :    LPVIEWOI          *plpViewOI;
+; 5763 :    zPCHAR            pchBuffer;
+; 5764 :    zPCHAR            pch;
+; 5765 :    zSHORT            k;
+; 5766 : 
+; 5767 :    // First allocate enough space to save some pointers.
+; 5768 :    hBuffer = SysAllocMemory( &pchBuffer, nViewCount * sizeof( LPVIEWOI ) * 2,
+; 5769 :                              0, zCOREMEM_ALLOC, 0 );
+
+	push	0
+	push	32768					; 00008000H
+	push	0
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	shl	eax, 2
+	shl	eax, 1
+	push	eax
+	lea	ecx, DWORD PTR _pchBuffer$[ebp]
+	push	ecx
+	call	_SysAllocMemory@20
+	mov	DWORD PTR _hBuffer$[ebp], eax
+
+; 5770 :    if ( hBuffer == 0 )
+
+	cmp	DWORD PTR _hBuffer$[ebp], 0
+	jne	SHORT $L9498
+
+; 5771 :       return;
+
+	jmp	$L9487
+$L9498:
+
+; 5772 : 
+; 5773 :    zmemset( pchBuffer, 0, nViewCount * sizeof( LPVIEWOI ) * 2 );
+
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	shl	edx, 2
+	shl	edx, 1
+	push	edx
+	push	0
+	mov	eax, DWORD PTR _pchBuffer$[ebp]
+	push	eax
+	call	_memset
+	add	esp, 12					; 0000000cH
+
+; 5774 : 
+; 5775 :    plpViewCsr = (LPVIEWCSR *) pchBuffer;
+
+	mov	ecx, DWORD PTR _pchBuffer$[ebp]
+	mov	DWORD PTR _plpViewCsr$[ebp], ecx
+
+; 5776 :    plpViewOI  = (LPVIEWOI *) (pchBuffer + sizeof( LPVIEWCSR ) * nViewCount);
+
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	mov	eax, DWORD PTR _pchBuffer$[ebp]
+	lea	ecx, DWORD PTR [eax+edx*4]
+	mov	DWORD PTR _plpViewOI$[ebp], ecx
+
+; 5777 : 
+; 5778 :    // First thing is to set the hier # for all the entity instances.
+; 5779 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L9503
+$L9504:
+	mov	dx, WORD PTR _k$[ebp]
+	add	dx, 1
+	mov	WORD PTR _k$[ebp], dx
+$L9503:
+	movsx	eax, WORD PTR _k$[ebp]
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	eax, ecx
+	jge	$L9505
+
+; 5781 :       if ( lpViewCluster[ k ].vOI == 0 )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewCluster$[ebp]
+	cmp	DWORD PTR [eax+edx*8], 0
+	jne	SHORT $L9506
+
+; 5782 :          continue;
+
+	jmp	SHORT $L9504
+$L9506:
+
+; 5783 : 
+; 5784 :       // Get ViewCsrs/ViewOIs for all the views.
+; 5785 :       plpViewCsr[ k ] = zGETPTR( lpViewCluster[ k ].vOI->hViewCsr );
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _lpViewCluster$[ebp]
+	mov	eax, DWORD PTR [edx+ecx*8]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _plpViewCsr$[ebp]
+	mov	DWORD PTR [ecx+edx*4], eax
+
+; 5786 :       plpViewOI[ k ]  = zGETPTR( plpViewCsr[ k ]->hViewOI );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _plpViewCsr$[ebp]
+	mov	ecx, DWORD PTR [eax+edx*4]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _plpViewOI$[ebp]
+	mov	DWORD PTR [edx+ecx*4], eax
+
+; 5787 : 
+; 5788 :       lHierCount = 0;
+
+	mov	DWORD PTR _lHierCount$[ebp], 0
+
+; 5789 :       for ( lpEntityInstance = zGETPTR( plpViewOI[ k ]->hRootEntityInstance );
+; 5790 :             lpEntityInstance;
+; 5791 :             lpEntityInstance = zGETPTR( lpEntityInstance->hNextHier ) )
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _plpViewOI$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*4]
+	mov	eax, DWORD PTR [edx+26]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+	jmp	SHORT $L9511
+$L9512:
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+14]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+$L9511:
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	je	SHORT $L9513
+
+; 5793 :          if ( fnEntityInstanceIsDead( lpEntityInstance ) )
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	push	eax
+	call	_fnEntityInstanceIsDead@4
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9514
+
+; 5794 :             continue;
+
+	jmp	SHORT $L9512
+$L9514:
+
+; 5795 : 
+; 5796 :          lpEntityInstance->lHierCount = lHierCount++;
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	eax, DWORD PTR _lHierCount$[ebp]
+	mov	DWORD PTR [edx+54], eax
+	mov	ecx, DWORD PTR _lHierCount$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _lHierCount$[ebp], ecx
+
+; 5797 :       }
+
+	jmp	SHORT $L9512
+$L9513:
+
+; 5798 :    }
+
+	jmp	$L9504
+$L9505:
+
+; 5799 : 
+; 5800 :    // Now go through the link buffer.  The first char had better be a '('.
+; 5801 :    // (OI-idx:EI-hier#/OI-idx:EI-her#/...)(...)...
+; 5802 :    pch = pchLinkBuffer;
+
+	mov	edx, DWORD PTR _pchLinkBuffer$[ebp]
+	mov	DWORD PTR _pch$[ebp], edx
+
+; 5803 :    if ( *pch++ != '(' )
+
+	mov	eax, DWORD PTR _pch$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	mov	edx, DWORD PTR _pch$[ebp]
+	add	edx, 1
+	mov	DWORD PTR _pch$[ebp], edx
+	cmp	ecx, 40					; 00000028H
+	je	SHORT $L9515
+
+; 5805 :       fnSysMessageBox( lpTask, szlNetworkError,
+; 5806 :                        "Link buffer doesn't start with a '('", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0CF@LGAL@Link?5buffer?5doesn?8t?5start?5with?5a@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnSysMessageBox@16
+
+; 5807 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9517
+$L9515:
+
+; 5809 : 
+; 5810 :    lpLastEI = 0;
+
+	mov	DWORD PTR _lpLastEI$[ebp], 0
+$L9519:
+
+; 5811 : 
+; 5812 :    // Loop through the link buffer and try to link up EIs.
+; 5813 :    while ( *pch )
+
+	mov	ecx, DWORD PTR _pch$[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	test	edx, edx
+	je	$EndOfFunction$9517
+
+; 5815 :       zSHORT nOI_Idx;
+; 5816 : 
+; 5817 :       // Skip opening paren if it's there -- they're harmless.
+; 5818 :       if ( *pch == '(' )
+
+	mov	eax, DWORD PTR _pch$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	cmp	ecx, 40					; 00000028H
+	jne	SHORT $L9522
+
+; 5819 :          pch++;
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	add	edx, 1
+	mov	DWORD PTR _pch$[ebp], edx
+$L9522:
+
+; 5820 : 
+; 5821 :       if ( !zisalnum( *pch ) )
+
+	mov	eax, DWORD PTR __imp____mb_cur_max
+	cmp	DWORD PTR [eax], 1
+	jle	SHORT $L10281
+	push	263					; 00000107H
+	mov	ecx, DWORD PTR _pch$[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	push	edx
+	call	DWORD PTR __imp___isctype
+	add	esp, 8
+	mov	DWORD PTR -52+[ebp], eax
+	jmp	SHORT $L10282
+$L10281:
+	mov	eax, DWORD PTR _pch$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	mov	edx, DWORD PTR __imp___pctype
+	mov	eax, DWORD PTR [edx]
+	xor	edx, edx
+	mov	dx, WORD PTR [eax+ecx*2]
+	and	edx, 263				; 00000107H
+	mov	DWORD PTR -52+[ebp], edx
+$L10282:
+	cmp	DWORD PTR -52+[ebp], 0
+	jne	SHORT $L9523
+
+; 5823 :          fnSysMessageBox( lpTask, szlNetworkError,
+; 5824 :                           "Link buffer: expecting hex digit.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0CC@EEDE@Link?5buffer?3?5expecting?5hex?5digit@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnSysMessageBox@16
+
+; 5825 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9517
+$L9523:
+
+; 5827 : 
+; 5828 :       // Get the OI idx;  pch then contains the char that stopped the scan.
+; 5829 :       nOI_Idx = (zSHORT) zstrtol( pch, &pch, 16 );
+
+	push	16					; 00000010H
+	lea	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pch$[ebp]
+	push	edx
+	call	DWORD PTR __imp__strtol
+	add	esp, 12					; 0000000cH
+	mov	WORD PTR _nOI_Idx$9521[ebp], ax
+
+; 5830 : 
+; 5831 :       // The next char had better be a ':'!
+; 5832 :       if ( *pch++ != ':' )
+
+	mov	eax, DWORD PTR _pch$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	mov	edx, DWORD PTR _pch$[ebp]
+	add	edx, 1
+	mov	DWORD PTR _pch$[ebp], edx
+	cmp	ecx, 58					; 0000003aH
+	je	SHORT $L9526
+
+; 5834 :          fnSysMessageBox( lpTask, szlNetworkError,
+; 5835 :                           "Link buffer: expecting ':' after OI tag.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0CJ@COO@Link?5buffer?3?5expecting?5?8?3?8?5after@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnSysMessageBox@16
+
+; 5836 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9517
+$L9526:
+
+; 5838 : 
+; 5839 :       if ( nOI_Idx == nViewCount )
+
+	movsx	ecx, WORD PTR _nOI_Idx$9521[ebp]
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	cmp	ecx, edx
+	jne	SHORT $L9528
+
+; 5841 :          fnSysMessageBox( lpTask, szlNetworkError,
+; 5842 :                           "Link buffer: Could find OI matching Tag.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0CJ@PJGO@Link?5buffer?3?5Could?5find?5OI?5match@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnSysMessageBox@16
+
+; 5843 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9517
+$L9528:
+
+; 5845 : 
+; 5846 :       if ( !zisalnum( *pch ) )
+
+	mov	ecx, DWORD PTR __imp____mb_cur_max
+	cmp	DWORD PTR [ecx], 1
+	jle	SHORT $L10283
+	push	263					; 00000107H
+	mov	edx, DWORD PTR _pch$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	push	eax
+	call	DWORD PTR __imp___isctype
+	add	esp, 8
+	mov	DWORD PTR -56+[ebp], eax
+	jmp	SHORT $L10284
+$L10283:
+	mov	ecx, DWORD PTR _pch$[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	mov	eax, DWORD PTR __imp___pctype
+	mov	ecx, DWORD PTR [eax]
+	xor	eax, eax
+	mov	ax, WORD PTR [ecx+edx*2]
+	and	eax, 263				; 00000107H
+	mov	DWORD PTR -56+[ebp], eax
+$L10284:
+	cmp	DWORD PTR -56+[ebp], 0
+	jne	SHORT $L9530
+
+; 5848 :          fnSysMessageBox( lpTask, szlNetworkError,
+; 5849 :                           "Link buffer: expecting hex digit(2).", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0CF@ODDL@Link?5buffer?3?5expecting?5hex?5digit@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	call	_fnSysMessageBox@16
+
+; 5850 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9517
+$L9530:
+
+; 5852 : 
+; 5853 :       // Get the hier number.
+; 5854 :       lHierCount = zstrtol( pch, &pch, 16 );
+
+	push	16					; 00000010H
+	lea	edx, DWORD PTR _pch$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pch$[ebp]
+	push	eax
+	call	DWORD PTR __imp__strtol
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lHierCount$[ebp], eax
+
+; 5855 : 
+; 5856 :       // The next char had better be a ')' or a '/'!
+; 5857 :       if ( *pch != ')' && *pch != '/' )
+
+	mov	ecx, DWORD PTR _pch$[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	cmp	edx, 41					; 00000029H
+	je	SHORT $L9532
+	mov	eax, DWORD PTR _pch$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	cmp	ecx, 47					; 0000002fH
+	je	SHORT $L9532
+
+; 5859 :          fnSysMessageBox( lpTask, szlNetworkError,
+; 5860 :                           "Link buffer: expecting ')/' after Hier Num.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0CM@EIKB@Link?5buffer?3?5expecting?5?8?$CJ?1?8?5afte@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnSysMessageBox@16
+
+; 5861 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9517
+$L9532:
+
+; 5863 : 
+; 5864 :       // Find the entity instance that matches lHierCount.
+; 5865 :       lpEntityInstance = zGETPTR( plpViewOI[ nOI_Idx ]->hRootEntityInstance );
+
+	movsx	eax, WORD PTR _nOI_Idx$9521[ebp]
+	mov	ecx, DWORD PTR _plpViewOI$[ebp]
+	mov	edx, DWORD PTR [ecx+eax*4]
+	mov	eax, DWORD PTR [edx+26]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+
+; 5866 :       lpEntityInstance = fnFindEntityInstanceByHierCount( lpEntityInstance,
+; 5867 :                                                           lHierCount );
+
+	mov	ecx, DWORD PTR _lHierCount$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	push	edx
+	call	_fnFindEntityInstanceByHierCount@8
+	mov	DWORD PTR _lpEntityInstance$[ebp], eax
+
+; 5868 :       if ( lpEntityInstance == 0 )
+
+	cmp	DWORD PTR _lpEntityInstance$[ebp], 0
+	jne	SHORT $L9535
+
+; 5870 :          fnSysMessageBox( lpTask, szlNetworkError,
+; 5871 :                           "Link buffer: Could find EI matching Hier Count.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0DA@IOBN@Link?5buffer?3?5Could?5find?5EI?5match@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnSysMessageBox@16
+
+; 5872 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9517
+$L9535:
+
+; 5874 : 
+; 5875 :       if ( lpLastEI )
+
+	cmp	DWORD PTR _lpLastEI$[ebp], 0
+	je	SHORT $L9537
+
+; 5877 : 
+; 5878 : #ifdef DEBUG
+; 5879 :          LPVIEWENTITY lpViewEntity = zGETPTR( lpEntityInstance->hViewEntity );
+
+	mov	ecx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	edx, DWORD PTR [ecx+2]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewEntity$9538[ebp], eax
+
+; 5880 :          LPVIEWENTITY lpLastViewEntity = zGETPTR( lpLastEI->hViewEntity );
+
+	mov	eax, DWORD PTR _lpLastEI$[ebp]
+	mov	ecx, DWORD PTR [eax+2]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpLastViewEntity$9540[ebp], eax
+
+; 5881 : 
+; 5882 :          if ( lpViewEntity->lEREntTok != lpLastViewEntity->lEREntTok )
+
+	mov	edx, DWORD PTR _lpViewEntity$9538[ebp]
+	mov	eax, DWORD PTR _lpLastViewEntity$9540[ebp]
+	mov	ecx, DWORD PTR [edx+195]
+	cmp	ecx, DWORD PTR [eax+195]
+	je	SHORT $L9542
+
+; 5884 :             fnSysMessageBox( lpTask, szlNetworkError,
+; 5885 :                              "Link buffer: Link EIs don't have matching tokens.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0DC@HFCF@Link?5buffer?3?5Link?5EIs?5don?8t?5have@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	call	_fnSysMessageBox@16
+
+; 5886 :             goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9517
+$L9542:
+
+; 5888 : 
+; 5889 : #endif
+; 5890 :          fnRelinkInstanceToInstance( lpLastEI, lpEntityInstance );
+
+	mov	eax, DWORD PTR _lpEntityInstance$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpLastEI$[ebp]
+	push	ecx
+	call	_fnRelinkInstanceToInstance
+	add	esp, 8
+$L9537:
+
+; 5893 : 
+; 5894 :       // Set lpLastEI so that the next EI we read can be linked to
+; 5895 :       // it.
+; 5896 :       lpLastEI = lpEntityInstance;
+
+	mov	edx, DWORD PTR _lpEntityInstance$[ebp]
+	mov	DWORD PTR _lpLastEI$[ebp], edx
+
+; 5897 : 
+; 5898 :       // If pch point to a close paren then we just linked the last EI in the
+; 5899 :       // current EI list.  Set lpLastEI to 0 to indicate that the
+; 5900 :       // next EI we read is the first in a linked chain.
+; 5901 :       if ( *pch == ')' )
+
+	mov	eax, DWORD PTR _pch$[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	cmp	ecx, 41					; 00000029H
+	jne	SHORT $L9544
+
+; 5902 :          lpLastEI = 0;
+
+	mov	DWORD PTR _lpLastEI$[ebp], 0
+$L9544:
+
+; 5903 : 
+; 5904 :       pch++;
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	add	edx, 1
+	mov	DWORD PTR _pch$[ebp], edx
+
+; 5905 : 
+; 5906 :    } // while ( *pch )...
+
+	jmp	$L9519
+$EndOfFunction$9517:
+
+; 5907 : 
+; 5908 : EndOfFunction:
+; 5909 : 
+; 5910 :    SysFreeMemory( hBuffer );
+
+	mov	eax, DWORD PTR _hBuffer$[ebp]
+	push	eax
+	call	_SysFreeMemory@4
+$L9487:
+
+; 5911 : 
+; 5912 : } // fnRelinkOIs
+
+	mov	esp, ebp
+	pop	ebp
+	ret	16					; 00000010H
+_fnRelinkOIs@16 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CK@CFI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Commit?5OI@ ; `string'
+PUBLIC	??_C@_0CI@IEBE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Commit?5@ ; `string'
+PUBLIC	??_C@_0CM@NBGD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0DC@MIAE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0DB@EHAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0BN@PGA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Link?5Buffer?5?$DN?5?$AA@ ; `string'
+PUBLIC	??_C@_0DK@HDFN@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5Obje@ ; `string'
+PUBLIC	??_C@_0CH@LPBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5OIs?5to?5c@ ; `string'
+PUBLIC	??_C@_0DD@CJKL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+PUBLIC	??_C@_0CF@KJBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5committed?5@ ; `string'
+PUBLIC	??_C@_0CI@KGJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@ ; `string'
+PUBLIC	??_C@_0CM@HING@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Erro@ ; `string'
+EXTRN	_CommitMultipleOIs@16:NEAR
+;	COMDAT ??_C@_0CK@CFI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Commit?5OI@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CK@CFI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Commit?5OI@ DB '(kzoe'
+	DB	'neta) ** Received Commit OI message.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@IEBE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Commit?5@
+_DATA	SEGMENT
+??_C@_0CI@IEBE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Commit?5@ DB '(kzo'
+	DB	'eneta) ** Retrieving Commit packet.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@NBGD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0CM@NBGD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Commit info', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@MIAE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0DC@MIAE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve the object names.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DB@EHAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0DB@EHAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve the link buffer.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@PGA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Link?5Buffer?5?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0BN@PGA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Link?5Buffer?5?$DN?5?$AA@ DB '('
+	DB	'kzoeneta) ** Link Buffer = ', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@HDFN@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5Obje@
+_DATA	SEGMENT
+??_C@_0DK@HDFN@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5Obje@ DB '('
+	DB	'kzoeneta) ** App Name: %s  Object Def: %s  User Name: %s', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CH@LPBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5OIs?5to?5c@
+_DATA	SEGMENT
+??_C@_0CH@LPBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5OIs?5to?5c@ DB '(kz'
+	DB	'oeneta) ** Receiving OIs to commit.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DD@CJKL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@
+_DATA	SEGMENT
+??_C@_0DD@CJKL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ DB '(kz'
+	DB	'oeneta) ** Not able to retrieve OIs for commit!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CF@KJBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5committed?5@
+_DATA	SEGMENT
+??_C@_0CF@KJBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5committed?5@ DB '(kzo'
+	DB	'eneta) ** Sending committed OI #', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@KGJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@
+_DATA	SEGMENT
+??_C@_0CI@KGJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@ DB '(kz'
+	DB	'oeneta) ** Sending RC packet.  RC = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@HING@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Erro@
+_DATA	SEGMENT
+??_C@_0CM@HING@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Erro@ DB '(kz'
+	DB	'oeneta) ** Not able send Error Idx code!', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_lpNetwork$ = 12
+_ppvConn$ = 16
+_lpTask$ = -828
+_vSubtask$ = -1004
+_lpViewCluster$ = -820
+_lpViewCsr$ = -4
+_lpViewOI$ = -1020
+_CommitPacket$ = -996
+_lpCommitPacket$ = -836
+_pchOD_Names$ = -12
+_pch$ = -16
+_pchLinkBuffer$ = -1016
+_lLinkBufferLth$ = -1024
+_lCommitControl$ = -1012
+_bFlushNeeded$ = -824
+_nOD_NameLth$ = -8
+_nViewErrorIdx$ = -1008
+_nViewCount$ = -832
+_k$ = -1000
+_nRC$ = -20
+_szLth$9613 = -1036
+_pch2$9614 = -1040
+_lLth$9615 = -1028
+_lpDropSubtask$9656 = -1044
+_fnProcessCommitOI@12 PROC NEAR
+
+; 5922 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 1044				; 00000414H
+	push	edi
+
+; 5923 :    LPTASK            lpTask;
+; 5924 :    zVIEW             vSubtask = 0;
+
+	mov	DWORD PTR _vSubtask$[ebp], 0
+
+; 5925 :    ViewClusterRecord lpViewCluster[ 100 ] = { 0 };
+
+	mov	DWORD PTR _lpViewCluster$[ebp], 0
+	mov	ecx, 199				; 000000c7H
+	xor	eax, eax
+	lea	edi, DWORD PTR _lpViewCluster$[ebp+4]
+	rep stosd
+
+; 5926 :    LPVIEWCSR         lpViewCsr;
+; 5927 :    LPVIEWOI          lpViewOI;
+; 5928 :    zCommitPacket     CommitPacket;
+; 5929 :    LPCOMMITPACKET    lpCommitPacket;
+; 5930 :    zPCHAR            pchOD_Names = 0;
+
+	mov	DWORD PTR _pchOD_Names$[ebp], 0
+
+; 5931 :    zPCHAR            pch;
+; 5932 :    zPCHAR            pchLinkBuffer = 0;
+
+	mov	DWORD PTR _pchLinkBuffer$[ebp], 0
+
+; 5933 :    zLONG             lLinkBufferLth;
+; 5934 :    zLONG             lCommitControl = 0;
+
+	mov	DWORD PTR _lCommitControl$[ebp], 0
+
+; 5935 :    zBOOL             bFlushNeeded = FALSE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 0
+
+; 5936 :    zSHORT            nOD_NameLth;
+; 5937 :    zSHORT            nViewErrorIdx;
+; 5938 :    zSHORT            nViewCount = 0;
+
+	mov	WORD PTR _nViewCount$[ebp], 0
+
+; 5939 :    zSHORT            k;
+; 5940 :    zSHORT            nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 5941 : 
+; 5942 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9570
+
+; 5944 :       TraceLineS( "(kzoeneta) ** Received Commit OI message.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@CFI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Commit?5OI@ ; `string'
+	call	_TraceLineS@8
+
+; 5945 :       TraceLineS( "(kzoeneta) ** Retrieving Commit packet.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@IEBE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5Commit?5@ ; `string'
+	call	_TraceLineS@8
+$L9570:
+
+; 5947 : 
+; 5948 :    //=======================================================================
+; 5949 :    // Receiving data.
+; 5950 :    //
+; 5951 :    // Until noted below, we will only RECEIVE data over the network.
+; 5952 :    //=======================================================================
+; 5953 : 
+; 5954 :    // First thing to do is retrieve the commit info.
+; 5955 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 5956 :                                    &lpCommitPacket, sizeof( zCommitPacket ),
+; 5957 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	158					; 0000009eH
+	lea	edx, DWORD PTR _lpCommitPacket$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9574
+
+; 5959 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Commit info", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CM@NBGD@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 5960 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9574:
+
+; 5962 : 
+; 5963 :    // Store the info locally -- as soon as we perform the next network IO
+; 5964 :    // operation we aren't assured that lpCommitPacket points to valid data.
+; 5965 :    zmemcpy( &CommitPacket, lpCommitPacket, sizeof( zCommitPacket ) );
+
+	push	158					; 0000009eH
+	mov	ecx, DWORD PTR _lpCommitPacket$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _CommitPacket$[ebp]
+	push	edx
+	call	_memcpy
+	add	esp, 12					; 0000000cH
+
+; 5966 : 
+; 5967 :    nViewCount     = (zSHORT) zxtol( CommitPacket.szViewCount );
+
+	push	16					; 00000010H
+	push	0
+	lea	eax, DWORD PTR _CommitPacket$[ebp+143]
+	push	eax
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	WORD PTR _nViewCount$[ebp], ax
+
+; 5968 :    nOD_NameLth    = (zSHORT) zxtol( CommitPacket.szObjectNameLth );
+
+	push	16					; 00000010H
+	push	0
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+146]
+	push	ecx
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	WORD PTR _nOD_NameLth$[ebp], ax
+
+; 5969 :    lLinkBufferLth = zxtol( CommitPacket.szLinkBufferLth );
+
+	push	16					; 00000010H
+	push	0
+	lea	edx, DWORD PTR _CommitPacket$[ebp+154]
+	push	edx
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lLinkBufferLth$[ebp], eax
+
+; 5970 :    lCommitControl = zxtol( CommitPacket.szControl );
+
+	push	16					; 00000010H
+	push	0
+	lea	eax, DWORD PTR _CommitPacket$[ebp+68]
+	push	eax
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lCommitControl$[ebp], eax
+
+; 5971 : 
+; 5972 :    // Get the list of object names.
+; 5973 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 5974 :                                    &pch, nOD_NameLth, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	movsx	ecx, WORD PTR _nOD_NameLth$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pch$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9580
+
+; 5976 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve the object names.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DC@MIAE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 5977 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9580:
+
+; 5979 : 
+; 5980 :    // Try to create a subtask view using the application name passed.
+; 5981 :    if ( SfCreateSubtask( &vSubtask, lpTaskView, CommitPacket.szAppName ) == zCALL_ERROR )
+
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+35]
+	push	ecx
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_SfCreateSubtask@12
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9582
+
+; 5983 :       TraceLineS( "(kzoeneta) ** Invalid App name = ", CommitPacket.szAppName );
+
+	lea	edx, DWORD PTR _CommitPacket$[ebp+35]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CC@CFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5App?5name?5?$DN@ ; `string'
+	call	_TraceLineS@8
+
+; 5984 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 5985 :                              zNETERR_INVALIDAPP ) != 0 )
+
+	push	1
+	push	42					; 0000002aH
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9583
+
+; 5987 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9583:
+
+; 5989 : 
+; 5990 :       bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 5991 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9582:
+
+; 5993 : 
+; 5994 :    lpTask = fnOperationCall( iNetCommitOI, vSubtask, 0 );
+
+	push	0
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	push	501					; 000001f5H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+
+; 5995 :    pchOD_Names = fnAllocDataspace( lpTask->hFirstDataHeader,
+; 5996 :                                    nOD_NameLth, TRUE, 0, 0 );
+
+	push	0
+	push	0
+	push	1
+	movsx	ecx, WORD PTR _nOD_NameLth$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	eax, DWORD PTR [edx+94]
+	push	eax
+	call	_fnAllocDataspace
+	add	esp, 20					; 00000014H
+	mov	DWORD PTR _pchOD_Names$[ebp], eax
+
+; 5997 :    if ( pchOD_Names == 0 )
+
+	cmp	DWORD PTR _pchOD_Names$[ebp], 0
+	jne	SHORT $L9584
+
+; 5998 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9584:
+
+; 5999 : 
+; 6000 :    pchOD_Names = zGETPTR( pchOD_Names );
+
+	mov	ecx, DWORD PTR _pchOD_Names$[ebp]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _pchOD_Names$[ebp], eax
+
+; 6001 :    zmemcpy( pchOD_Names, pch, nOD_NameLth );
+
+	movsx	edx, WORD PTR _nOD_NameLth$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pch$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pchOD_Names$[ebp]
+	push	ecx
+	call	_memcpy
+	add	esp, 12					; 0000000cH
+
+; 6002 : 
+; 6003 :    if ( lLinkBufferLth > 0 )
+
+	cmp	DWORD PTR _lLinkBufferLth$[ebp], 0
+	jle	$L9592
+
+; 6005 :       pchLinkBuffer = fnAllocDataspace( lpTask->hFirstDataHeader,
+; 6006 :                                         lLinkBufferLth, TRUE, 0, 0 );
+
+	push	0
+	push	0
+	push	1
+	mov	edx, DWORD PTR _lLinkBufferLth$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	mov	ecx, DWORD PTR [eax+94]
+	push	ecx
+	call	_fnAllocDataspace
+	add	esp, 20					; 00000014H
+	mov	DWORD PTR _pchLinkBuffer$[ebp], eax
+
+; 6007 :       if ( pchLinkBuffer == 0 )
+
+	cmp	DWORD PTR _pchLinkBuffer$[ebp], 0
+	jne	SHORT $L9587
+
+; 6008 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9587:
+
+; 6009 : 
+; 6010 :       pchLinkBuffer = zGETPTR( pchLinkBuffer );
+
+	mov	edx, DWORD PTR _pchLinkBuffer$[ebp]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _pchLinkBuffer$[ebp], eax
+
+; 6011 : 
+; 6012 :       if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6013 :                                       &pch, lLinkBufferLth,
+; 6014 :                                       zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	mov	eax, DWORD PTR _lLinkBufferLth$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	add	eax, 12					; 0000000cH
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+174]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9589
+
+; 6016 :          TraceLineS( "(kzoeneta) ** Couldn't retrieve the link buffer.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DB@EHAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 6017 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9589:
+
+; 6019 : 
+; 6020 :       zmemcpy( pchLinkBuffer, pch, (zSHORT) lLinkBufferLth );
+
+	movsx	eax, WORD PTR _lLinkBufferLth$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _pchLinkBuffer$[ebp]
+	push	edx
+	call	_memcpy
+	add	esp, 12					; 0000000cH
+
+; 6021 : 
+; 6022 :       if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9592
+
+; 6023 :          TraceBuffer( "(kzoeneta) ** Link Buffer = ", pch, (zSHORT) lLinkBufferLth );
+
+	movsx	edx, WORD PTR _lLinkBufferLth$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pch$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0BN@PGA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Link?5Buffer?5?$DN?5?$AA@ ; `string'
+	call	_TraceBuffer@12
+$L9592:
+
+; 6025 : 
+; 6026 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L9597
+
+; 6028 :       TraceLine( "(kzoeneta) ** App Name: %s  Object Def: %s  User Name: %s",
+; 6029 :                  CommitPacket.szAppName, CommitPacket.szObjectDef,
+; 6030 :                  CommitPacket.szUserName );
+
+	lea	eax, DWORD PTR _CommitPacket$[ebp+77]
+	push	eax
+	lea	ecx, DWORD PTR _CommitPacket$[ebp+3]
+	push	ecx
+	lea	edx, DWORD PTR _CommitPacket$[ebp+35]
+	push	edx
+	push	OFFSET FLAT:??_C@_0DK@HDFN@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5Obje@ ; `string'
+	call	_TraceLine
+	add	esp, 16					; 00000010H
+
+; 6031 :       if ( nViewCount > 1 )
+
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	eax, 1
+	jle	SHORT $L9597
+
+; 6033 :          TraceLine( "(kzoeneta) ** View Count: %s  OD Name Lth: %d",
+; 6034 :                     CommitPacket.szViewCount, nOD_NameLth );
+
+	movsx	ecx, WORD PTR _nOD_NameLth$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _CommitPacket$[ebp+143]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CO@ODIF@?$CIkzoeneta?$CJ?5?$CK?$CK?5View?5Count?3?5?$CFs?5?5OD@ ; `string'
+	call	_TraceLine
+	add	esp, 12					; 0000000cH
+
+; 6035 :          TraceBuffer( "(kzoeneta) ** OD Names: ",
+; 6036 :                       pchOD_Names, nOD_NameLth );
+
+	movsx	eax, WORD PTR _nOD_NameLth$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _pchOD_Names$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0BJ@LCNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5OD?5Names?3?5?$AA@ ; `string'
+	call	_TraceBuffer@12
+$L9597:
+
+; 6039 : 
+; 6040 :    fnCreateMsgObj( vSubtask );
+
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_fnCreateMsgObj@4
+
+; 6041 : 
+; 6042 :    // Make sure request is for valid ODs.
+; 6043 :    for ( k = 0, pch = pchOD_Names; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	mov	eax, DWORD PTR _pchOD_Names$[ebp]
+	mov	DWORD PTR _pch$[ebp], eax
+	jmp	SHORT $L9598
+$L9599:
+	mov	cx, WORD PTR _k$[ebp]
+	add	cx, 1
+	mov	WORD PTR _k$[ebp], cx
+$L9598:
+	movsx	edx, WORD PTR _k$[ebp]
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	edx, eax
+	jge	$L9600
+
+; 6045 :       if ( k > 0 )
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	test	ecx, ecx
+	jle	SHORT $L9604
+$L9603:
+
+; 6047 :          // Skip to the beginning of the next name.
+; 6048 :          while ( *pch++ )
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	mov	ecx, DWORD PTR _pch$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _pch$[ebp], ecx
+	test	eax, eax
+	je	SHORT $L9604
+
+; 6049 :             ;
+
+	jmp	SHORT $L9603
+$L9604:
+
+; 6051 : 
+; 6052 :       // If *pch is 0 then there is no OD name.  If there is no OD name then
+; 6053 :       // this particular view is skipped.
+; 6054 :       if ( pch[ 0 ] == 0 )
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	test	eax, eax
+	jne	SHORT $L9605
+
+; 6055 :          continue;
+
+	jmp	SHORT $L9599
+$L9605:
+
+; 6056 : 
+; 6057 :       if ( ActivateViewObject( vSubtask, pch, FALSE ) == 0 )
+
+	push	0
+	mov	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_ActivateViewObject@12
+	test	eax, eax
+	jne	SHORT $L9606
+
+; 6059 :          TraceLineS( "(kzoeneta) ** Invalid OD name = ", pch );
+
+	mov	eax, DWORD PTR _pch$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0CB@CKJN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5OD?5name?5?$DN?5@ ; `string'
+	call	_TraceLineS@8
+
+; 6060 :          if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6061 :                                 zNETERR_INVALIDOD ) != 0 )
+
+	push	2
+	push	42					; 0000002aH
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9607
+
+; 6063 :             TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9607:
+
+; 6065 : 
+; 6066 :          bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 6067 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9606:
+
+; 6069 :    }
+
+	jmp	$L9599
+$L9600:
+
+; 6070 : 
+; 6071 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L9608
+
+; 6072 :       TraceLineS( "(kzoeneta) ** Receiving OIs to commit.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CH@LPBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5OIs?5to?5c@ ; `string'
+	call	_TraceLineS@8
+$L9608:
+
+; 6073 : 
+; 6074 :    // Retrieve the OIs we need to commit.
+; 6075 :    for ( k = 0, pch = pchOD_Names; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	mov	eax, DWORD PTR _pchOD_Names$[ebp]
+	mov	DWORD PTR _pch$[ebp], eax
+	jmp	SHORT $L9610
+$L9611:
+	mov	cx, WORD PTR _k$[ebp]
+	add	cx, 1
+	mov	WORD PTR _k$[ebp], cx
+$L9610:
+	movsx	edx, WORD PTR _k$[ebp]
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	edx, eax
+	jge	$L9612
+
+; 6077 :       zCHAR  szLth[ 5 ];
+; 6078 :       zPCHAR pch2;
+; 6079 :       zLONG  lLth;
+; 6080 : 
+; 6081 :       if ( k > 0 )
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	test	ecx, ecx
+	jle	SHORT $L9619
+$L9618:
+
+; 6083 :          // Skip to the beginning of the next name.
+; 6084 :          while ( *pch++ )
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	mov	ecx, DWORD PTR _pch$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _pch$[ebp], ecx
+	test	eax, eax
+	je	SHORT $L9619
+
+; 6085 :             ;
+
+	jmp	SHORT $L9618
+$L9619:
+
+; 6087 : 
+; 6088 :       // If *pch is 0 then there is no OD name.  If there is no OD name then
+; 6089 :       // this particular view is skipped.
+; 6090 :       if ( pch[ 0 ] == 0 )
+
+	mov	edx, DWORD PTR _pch$[ebp]
+	movsx	eax, BYTE PTR [edx]
+	test	eax, eax
+	jne	SHORT $L9620
+
+; 6091 :          continue;
+
+	jmp	SHORT $L9611
+$L9620:
+
+; 6092 : 
+; 6093 :       // Retrieve the OI.
+; 6094 :       if ( fnReceiveOI( ppvConn, lpNetwork, &lpViewCluster[ k ].vOI, vSubtask,
+; 6095 :                         pch, zMULTIPLE ) == zCALL_ERROR )
+
+	push	256					; 00000100H
+	mov	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	movsx	eax, WORD PTR _k$[ebp]
+	lea	ecx, DWORD PTR _lpViewCluster$[ebp+eax*8]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	call	_fnReceiveOI@24
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9621
+
+; 6097 :          TraceLineS( "(kzoeneta) ** Not able to retrieve OIs for commit!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DD@CJKL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+	call	_TraceLineS@8
+
+; 6098 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9621:
+
+; 6100 : 
+; 6101 :       // Get the *length* of the control value for the view.
+; 6102 :       if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6103 :                                       &pch2, 2, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	2
+	lea	edx, DWORD PTR _pch2$9614[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9623
+
+; 6105 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9623:
+
+; 6107 : 
+; 6108 :       szLth[ 0 ] = *pch2++;
+
+	mov	ecx, DWORD PTR _pch2$9614[ebp]
+	mov	dl, BYTE PTR [ecx]
+	mov	BYTE PTR _szLth$9613[ebp], dl
+	mov	eax, DWORD PTR _pch2$9614[ebp]
+	add	eax, 1
+	mov	DWORD PTR _pch2$9614[ebp], eax
+
+; 6109 :       szLth[ 1 ] = *pch2;
+
+	mov	ecx, DWORD PTR _pch2$9614[ebp]
+	mov	dl, BYTE PTR [ecx]
+	mov	BYTE PTR _szLth$9613[ebp+1], dl
+
+; 6110 :       szLth[ 2 ] = 0;
+
+	mov	BYTE PTR _szLth$9613[ebp+2], 0
+
+; 6111 :       lLth = zxtol( szLth );
+
+	push	16					; 00000010H
+	push	0
+	lea	eax, DWORD PTR _szLth$9613[ebp]
+	push	eax
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lLth$9615[ebp], eax
+
+; 6112 : 
+; 6113 :       // Get the *length* of the control value for the view.
+; 6114 :       if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6115 :                                       &pch2, lLth, zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	mov	ecx, DWORD PTR _lLth$9615[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pch2$9614[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9624
+
+; 6117 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9624:
+
+; 6119 : 
+; 6120 :       lpViewCluster[ k ].lControl = zxtol( pch2 );
+
+	push	16					; 00000010H
+	push	0
+	mov	ecx, DWORD PTR _pch2$9614[ebp]
+	push	ecx
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	DWORD PTR _lpViewCluster$[ebp+edx*8+4], eax
+
+; 6121 : 
+; 6122 :       // Turn on the flag to commit the OI on the current pc.
+; 6123 :       lpViewCsr = zGETPTR( lpViewCluster[ k ].vOI->hViewCsr );
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _lpViewCluster$[ebp+eax*8]
+	mov	edx, DWORD PTR [ecx+10]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 6124 :       lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	eax, DWORD PTR _lpViewCsr$[ebp]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$[ebp], eax
+
+; 6125 :       lpViewOI->lActivateControl |= zACTIVATE_LOCAL;
+
+	mov	edx, DWORD PTR _lpViewOI$[ebp]
+	mov	eax, DWORD PTR [edx+48]
+	or	eax, 1073741824				; 40000000H
+	mov	ecx, DWORD PTR _lpViewOI$[ebp]
+	mov	DWORD PTR [ecx+48], eax
+
+; 6126 :    }
+
+	jmp	$L9611
+$L9612:
+
+; 6127 : 
+; 6128 : #ifdef DGC
+; 6129 :    if ( lpNetwork->nTraceLevel > 0 )
+; 6130 :    {
+; 6131 :       zCHAR szTempFileName[ zMAX_FILENAME_LTH + 1 ];
+; 6132 : 
+; 6133 :       SysGetEnvVar( szTempFileName, "TEMP", zMAX_FILENAME_LTH + 1 );
+; 6134 :       SysAppendcDirSep( szTempFileName );
+; 6135 :       zstrcat( szTempFileName, "commitoi.por" );
+; 6136 :       CommitOI_ToFile( vOI, szTempFileName, zINCREMENTAL );
+; 6137 :    }
+; 6138 : #endif
+; 6139 : 
+; 6140 :    //=======================================================================
+; 6141 :    // Transmitting data.
+; 6142 :    //
+; 6143 :    // Until we close the connection, the following code only SENDS data over
+; 6144 :    // the network.
+; 6145 :    //=======================================================================
+; 6146 : 
+; 6147 :    bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 6148 : 
+; 6149 :    // For now we won't execute constraints on the server.
+; 6150 :    lCommitControl |= zCOMMIT_NOCONSTRAINTS;
+
+	mov	edx, DWORD PTR _lCommitControl$[ebp]
+	or	edx, 16777216				; 01000000H
+	mov	DWORD PTR _lCommitControl$[ebp], edx
+
+; 6151 : 
+; 6152 :    // If we received any link information we must now do relinking.
+; 6153 :    if ( lLinkBufferLth > 0 )
+
+	cmp	DWORD PTR _lLinkBufferLth$[ebp], 0
+	jle	SHORT $L9627
+
+; 6154 :       fnRelinkOIs( lpTask, lpViewCluster, nViewCount, pchLinkBuffer );
+
+	mov	eax, DWORD PTR _pchLinkBuffer$[ebp]
+	push	eax
+	mov	cx, WORD PTR _nViewCount$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _lpViewCluster$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	push	eax
+	call	_fnRelinkOIs@16
+$L9627:
+
+; 6155 : 
+; 6156 :    // Tell commit that we don't want to clean up the OI and to leave the
+; 6157 :    // entity flags.
+; 6158 :    lCommitControl |= zCOMMIT_NOCLEANUP;
+
+	mov	ecx, DWORD PTR _lCommitControl$[ebp]
+	or	ch, 1
+	mov	DWORD PTR _lCommitControl$[ebp], ecx
+
+; 6159 : 
+; 6160 :    // Commit the OI but tell Core not to clean up the deleted/excluded
+; 6161 :    // instances.  We do this so that when we send the OI back to the client,
+; 6162 :    // it can merge the committed OI with the original OI.
+; 6163 :    nRC = CommitMultipleOIs( lpViewCluster, nViewCount,
+; 6164 :                             &nViewErrorIdx, lCommitControl );
+
+	mov	edx, DWORD PTR _lCommitControl$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _nViewErrorIdx$[ebp]
+	push	eax
+	mov	cx, WORD PTR _nViewCount$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _lpViewCluster$[ebp]
+	push	edx
+	call	_CommitMultipleOIs@16
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 6165 : 
+; 6166 :    // Turn off the flag to commit the OI on the current pc.
+; 6167 :    lpViewOI->lActivateControl &= ~zACTIVATE_LOCAL;
+
+	mov	eax, DWORD PTR _lpViewOI$[ebp]
+	mov	ecx, DWORD PTR [eax+48]
+	and	ecx, -1073741825			; bfffffffH
+	mov	edx, DWORD PTR _lpViewOI$[ebp]
+	mov	DWORD PTR [edx+48], ecx
+
+; 6168 : 
+; 6169 :    if ( nRC == 0 )
+
+	movsx	eax, WORD PTR _nRC$[ebp]
+	test	eax, eax
+	jne	$L9631
+
+; 6171 :       for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L9629
+$L9630:
+	mov	cx, WORD PTR _k$[ebp]
+	add	cx, 1
+	mov	WORD PTR _k$[ebp], cx
+$L9629:
+	movsx	edx, WORD PTR _k$[ebp]
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	edx, eax
+	jge	$L9631
+
+; 6173 :          if ( lpViewCluster[ k ].vOI == 0 )
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	cmp	DWORD PTR _lpViewCluster$[ebp+ecx*8], 0
+	jne	SHORT $L9632
+
+; 6174 :             continue;
+
+	jmp	SHORT $L9630
+$L9632:
+
+; 6175 : 
+; 6176 :          if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9633
+
+; 6177 :             TraceLineI( "(kzoeneta) ** Sending committed OI #", k );
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CF@KJBC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5committed?5@ ; `string'
+	call	_TraceLineI@8
+$L9633:
+
+; 6178 : 
+; 6179 :          if ( fnEmptyOI( lpViewCluster[ k ].vOI ) )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewCluster$[ebp+edx*8]
+	push	eax
+	call	_fnEmptyOI@4
+	and	eax, 255				; 000000ffH
+	test	eax, eax
+	je	SHORT $L9635
+
+; 6181 :             if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_EMPTYOI, 0 ) != 0 )
+
+	push	0
+	push	101					; 00000065H
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9636
+
+; 6183 :                TraceLineS( "(kzoeneta) ** Not able to ACK request of OI!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@MMFL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5ACK?5re@ ; `string'
+	call	_TraceLineS@8
+
+; 6184 :                nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6185 :                goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9636:
+
+; 6188 :          else
+
+	jmp	SHORT $L9639
+$L9635:
+
+; 6190 :             // Send Ack to signal we got this far.
+; 6191 :             if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ACK, 0 ) != 0 )
+
+	push	0
+	push	75					; 0000004bH
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9638
+
+; 6193 :                TraceLineS( "(kzoeneta) ** Not able to ACK request of OI!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@MMFL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5ACK?5re@ ; `string'
+	call	_TraceLineS@8
+
+; 6194 :                nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6195 :                goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9638:
+
+; 6197 : 
+; 6198 :             if ( fnSendOI( ppvConn, lpNetwork, lpViewCluster[ k ].vOI,
+; 6199 :                            zINCREMENTAL ) == zCALL_ERROR )
+
+	push	65536					; 00010000H
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _lpViewCluster$[ebp+ecx*8]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	call	_fnSendOI@16
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L9639
+
+; 6201 :                nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6202 :                goto EndOfFunction;
+
+	jmp	$EndOfFunction$9576
+$L9639:
+
+; 6205 :       } // for...
+
+	jmp	$L9630
+$L9631:
+
+; 6207 : 
+; 6208 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9640
+
+; 6209 :       TraceLineI( "(kzoeneta) ** Sending RC packet.  RC = ", nRC );
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CI@KGJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@ ; `string'
+	call	_TraceLineI@8
+$L9640:
+
+; 6210 : 
+; 6211 :    // Send return code.
+; 6212 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_RC, nRC ) != 0 )
+
+	movsx	eax, WORD PTR _nRC$[ebp]
+	push	eax
+	push	35					; 00000023H
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9642
+
+; 6214 :       TraceLineS( "(kzoeneta) ** Not able send Return code!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@NKCF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Retu@ ; `string'
+	call	_TraceLineS@8
+
+; 6215 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6216 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9576
+$L9642:
+
+; 6218 : 
+; 6219 :    // If we got an error then send the error idx.
+; 6220 :    if ( nRC < 0 &&
+; 6221 :         fnSendDataPacket( lpNetwork, ppvConn, zPACKET_RC, nViewErrorIdx ) != 0 )
+
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	test	ecx, ecx
+	jge	SHORT $L9643
+	movsx	edx, WORD PTR _nViewErrorIdx$[ebp]
+	push	edx
+	push	35					; 00000023H
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	call	_fnSendDataPacket@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9643
+
+; 6223 :       TraceLineS( "(kzoeneta) ** Not able send Error Idx code!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CM@HING@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Erro@ ; `string'
+	call	_TraceLineS@8
+
+; 6224 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6225 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9576
+$L9643:
+
+; 6227 : 
+; 6228 :    nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+$EndOfFunction$9576:
+
+; 6229 : 
+; 6230 : EndOfFunction:
+; 6231 :    if ( vSubtask &&
+; 6232 :         fnSendMsgAndTraceObj( lpNetwork, ppvConn, vSubtask ) == zCALL_ERROR )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L9645
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendMsgAndTraceObj@12
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L9645
+
+; 6234 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L9645:
+
+; 6236 : 
+; 6237 :    if ( bFlushNeeded && fnFlushBuffer( lpNetwork, ppvConn ) != 0 )
+
+	mov	ecx, DWORD PTR _bFlushNeeded$[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	je	SHORT $L9646
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnFlushBuffer@8
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9646
+
+; 6239 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+$L9646:
+
+; 6241 : 
+; 6242 :    if ( pchOD_Names )
+
+	cmp	DWORD PTR _pchOD_Names$[ebp], 0
+	je	SHORT $L9647
+
+; 6243 :       fnFreeDataspace( pchOD_Names );
+
+	mov	edx, DWORD PTR _pchOD_Names$[ebp]
+	push	edx
+	call	_fnFreeDataspace
+	add	esp, 4
+$L9647:
+
+; 6244 : 
+; 6245 :    if ( pchLinkBuffer )
+
+	cmp	DWORD PTR _pchLinkBuffer$[ebp], 0
+	je	SHORT $L9648
+
+; 6246 :       fnFreeDataspace( pchLinkBuffer );
+
+	mov	eax, DWORD PTR _pchLinkBuffer$[ebp]
+	push	eax
+	call	_fnFreeDataspace
+	add	esp, 4
+$L9648:
+
+; 6247 : 
+; 6248 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L9649
+$L9650:
+	mov	cx, WORD PTR _k$[ebp]
+	add	cx, 1
+	mov	WORD PTR _k$[ebp], cx
+$L9649:
+	movsx	edx, WORD PTR _k$[ebp]
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	edx, eax
+	jge	SHORT $L9651
+
+; 6250 :       if ( lpViewCluster[ k ].vOI == 0 )
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	cmp	DWORD PTR _lpViewCluster$[ebp+ecx*8], 0
+	jne	SHORT $L9652
+
+; 6251 :          continue;
+
+	jmp	SHORT $L9650
+$L9652:
+
+; 6252 : 
+; 6253 :       lpViewCsr = zGETPTR( lpViewCluster[ k ].vOI->hViewCsr );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpViewCluster$[ebp+edx*8]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$[ebp], eax
+
+; 6254 :       lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	edx, DWORD PTR _lpViewCsr$[ebp]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$[ebp], eax
+
+; 6255 : 
+; 6256 :       // It's possible that we've activated the OI with pessimistic locking.
+; 6257 :       // This means that there are records in the DB to lock out the OI.  But
+; 6258 :       // Core automatically deletes those records when the OI is dropped.  This
+; 6259 :       // is not good because the client that requested this OI obviously wants
+; 6260 :       // the locks left in place.  To keep the locks we'll turn off the flag
+; 6261 :       // that says the OI has pessimistic locking.  This will keep Core from
+; 6262 :       // deleting the locks when we drop the view.
+; 6263 :       lpViewOI->bIsLocked = 0;
+
+	mov	ecx, DWORD PTR _lpViewOI$[ebp]
+	mov	edx, DWORD PTR [ecx+36]
+	and	dl, 127					; 0000007fH
+	mov	eax, DWORD PTR _lpViewOI$[ebp]
+	mov	DWORD PTR [eax+36], edx
+
+; 6264 : 
+; 6265 :       fnDropView( lpViewCluster[ k ].vOI );
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _lpViewCluster$[ebp+ecx*8]
+	push	edx
+	call	_fnDropView@4
+
+; 6266 :    }
+
+	jmp	$L9650
+$L9651:
+
+; 6267 : 
+; 6268 :    if ( vSubtask )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L9655
+
+; 6269 :       DROPSUBTASK( vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	mov	ecx, DWORD PTR [eax+18]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpDropSubtask$9656[ebp], eax
+	push	0
+	mov	edx, DWORD PTR _lpDropSubtask$9656[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpDropSubtask$9656[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_fnDropSubtask
+	add	esp, 12					; 0000000cH
+$L9655:
+
+; 6270 : 
+; 6271 :    fnOperationReturn( iNetCommitOI, lpTask );
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	push	edx
+	push	501					; 000001f5H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 6272 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+
+; 6273 : 
+; 6274 : } // fnProcesssCommitOI
+
+	pop	edi
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnProcessCommitOI@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CK@HFCJ@fnProcessCommitOI_ToFile?$CI?5?$CJ?5is?5D@ ; `string'
+;	COMDAT ??_C@_0CK@HFCJ@fnProcessCommitOI_ToFile?$CI?5?$CJ?5is?5D@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CK@HFCJ@fnProcessCommitOI_ToFile?$CI?5?$CJ?5is?5D@ DB 'fnProcessCo'
+	DB	'mmitOI_ToFile( ) is Deprecated', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_fnProcessCommitOI_ToFile@8 PROC NEAR
+
+; 6283 : {
+
+	push	ebp
+	mov	ebp, esp
+
+; 6284 :    TraceLineS( "(kzoeneta) ** ", "fnProcessCommitOI_ToFile( ) is Deprecated" );
+
+	push	OFFSET FLAT:??_C@_0CK@HFCJ@fnProcessCommitOI_ToFile?$CI?5?$CJ?5is?5D@ ; `string'
+	push	OFFSET FLAT:??_C@_0P@JNC@?$CIkzoeneta?$CJ?5?$CK?$CK?5?$AA@ ; `string'
+	call	_TraceLineS@8
+
+; 6285 :    return( 0 );
+
+	xor	ax, ax
+
+; 6286 : 
+; 6287 : #if 0
+; 6288 :    zSHORT nRC = 0;
+; 6289 :    zBOOL  bFlushNeeded = FALSE;
+; 6290 :    zVIEW  vSubtask = 0;
+; 6291 :    zVIEW  vOI = 0;
+; 6292 :    zPCHAR pch;
+; 6293 :    zSHORT nFileNameLth;
+; 6294 :    zBOOL  bSystem;
+; 6295 :    zLONG  lControl;
+; 6296 :    zCHAR  szFileName[ zMAX_FILENAME_LTH + 1 ];
+; 6297 :    zCommitPacket  CommitPacket;
+; 6298 :    LPCOMMITPACKET lpCommitPacket;
+; 6299 : 
+; 6300 :    if ( lpNetwork->nTraceLevel > 0 )
+; 6301 :    {
+; 6302 :       TraceLineS( "(kzoeneta) ** Received Commit OI message.", "" );
+; 6303 :       TraceLineS( "(kzoeneta) ** Retrieving Commit packet.", "" );
+; 6304 :    }
+; 6305 : 
+; 6306 :    //=======================================================================
+; 6307 :    // Receiving data.
+; 6308 :    //
+; 6309 :    // Until noted below, we will only RECEIVE data over the network.
+; 6310 :    //=======================================================================
+; 6311 : 
+; 6312 :    // First thing to do is retrieve the commit info.
+; 6313 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6314 :                                    &lpCommitPacket, sizeof( zCommitPacket ),
+; 6315 :                                    zTYPE_STRING ) != 0 )
+; 6316 :    {
+; 6317 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Commit info", "" );
+; 6318 :       nRC = zCALL_ERROR;
+; 6319 :       goto EndOfFunction;
+; 6320 :    }
+; 6321 : 
+; 6322 :    // Store the info locally -- as soon as we perform the next network IO
+; 6323 :    // operation we aren't assured that lpCommitPacket points to valid data.
+; 6324 :    zmemcpy( &CommitPacket, lpCommitPacket, sizeof( zCommitPacket ) );
+; 6325 :    lControl = zxtol( CommitPacket.szControl );
+; 6326 : 
+; 6327 :    // Retrieve the file name.
+; 6328 :    nFileNameLth = (zSHORT) zxtol( CommitPacket.szFileNameLth );
+; 6329 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6330 :                                    &pch, nFileNameLth,
+; 6331 :                                    zTYPE_STRING ) != 0 )
+; 6332 :    {
+; 6333 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve file name.", "" );
+; 6334 :       nRC = zCALL_ERROR;
+; 6335 :       goto EndOfFunction;
+; 6336 :    }
+; 6337 : 
+; 6338 :    zstrcpy( szFileName, pch );
+; 6339 : 
+; 6340 : #if 0
+; 6341 :    /* this code doesn't work unless client changed, HH, 08.11.1996
+; 6342 :    */
+; 6343 :    zstrcpy( szFileName, vSubtask->hSubtask->hApp->hObjectDir );
+; 6344 :    SysAppendcDirSep( szFileName );
+; 6345 :    zstrcat( szFileName, pch );
+; 6346 : #endif
+; 6347 : 
+; 6348 :    if ( lpNetwork->nTraceLevel > 0 )
+; 6349 :    {
+; 6350 :       TraceLine( "(kzoeneta) ** User Name: %s  App Name: %s  "
+; 6351 :                    "Object Def: %s  File Name: %s",
+; 6352 :                  CommitPacket.szUserName, CommitPacket.szAppName,
+; 6353 :                  CommitPacket.szObjectDef, pch );
+; 6354 :    }
+; 6355 : 
+; 6356 :    // Try to create a subtask view using the application name passed.
+; 6357 :    if ( CREATESUBTASK( &vSubtask, CommitPacket.szAppName ) == zCALL_ERROR )
+; 6358 :    {
+; 6359 :       TraceLineS( "(kzoeneta) ** Invalid App name = ", CommitPacket.szAppName );
+; 6360 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6361 :                              zNETERR_INVALIDAPP ) != 0 )
+; 6362 :       {
+; 6363 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+; 6364 :       }
+; 6365 : 
+; 6366 :       nRC = zCALL_ERROR;
+; 6367 :       bFlushNeeded = TRUE;
+; 6368 :       goto EndOfFunction;
+; 6369 :    }
+; 6370 : 
+; 6371 :    fnCreateMsgObj( vSubtask );
+; 6372 : 
+; 6373 :    if ( lpNetwork->nTraceLevel > 0 )
+; 6374 :       TraceLineS( "(kzoeneta) ** Full name  = ", szFileName );
+; 6375 : 
+; 6376 :    // Make sure request is for valid OD.
+; 6377 :    if ( lControl & zACTIVATE_SYSTEM )
+; 6378 :       bSystem = TRUE;
+; 6379 :    else
+; 6380 :       bSystem = FALSE;
+; 6381 :    if ( ActivateViewObject( vSubtask, CommitPacket.szObjectDef, bSystem ) == 0 )
+; 6382 :    {
+; 6383 :       TraceLineS( "(kzoeneta) ** Invalid OD name = ", CommitPacket.szObjectDef );
+; 6384 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6385 :                              zNETERR_INVALIDOD ) != 0 )
+; 6386 :       {
+; 6387 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+; 6388 :       }
+; 6389 : 
+; 6390 :       nRC = zCALL_ERROR;
+; 6391 :       bFlushNeeded = TRUE;
+; 6392 :       goto EndOfFunction;
+; 6393 :    }
+; 6394 : 
+; 6395 :    if ( lpNetwork->nTraceLevel > 0 )
+; 6396 :    {
+; 6397 :       TraceLineS( "(kzoeneta) ** Receiving OI to commit.", "" );
+; 6398 :    }
+; 6399 : 
+; 6400 :    // Retrieve the OI we need to commit.  Add the zACTIVATE_SYSTEM flag if it
+; 6401 :    // is specified in lControl.
+; 6402 :    nRC = fnReceiveOI( ppvConn, lpNetwork, &vOI, vSubtask,
+; 6403 :                       CommitPacket.szObjectDef,
+; 6404 :                       zMULTIPLE | ( lControl & zACTIVATE_SYSTEM ) );
+; 6405 :    if ( nRC == zCALL_ERROR )
+; 6406 :    {
+; 6407 :       TraceLineS( "(kzoeneta) ** Not able to retrieve OI for commit!", "" );
+; 6408 :       nRC = zCALL_ERROR;
+; 6409 :       goto EndOfFunction;
+; 6410 :    }
+; 6411 : 
+; 6412 :    //=======================================================================
+; 6413 :    // Transmitting data.
+; 6414 :    //
+; 6415 :    // Until we close the connection, the following code only SENDS data over
+; 6416 :    // the network.
+; 6417 :    //=======================================================================
+; 6418 : 
+; 6419 :    bFlushNeeded = TRUE;
+; 6420 : 
+; 6421 :    if ( fnCheckForClientAuthority( ppvConn, lpNetwork,
+; 6422 :                                    CommitPacket.szAppName,
+; 6423 :                                    CommitPacket.szUserName,
+; 6424 :                                    CommitPacket.szPassword,
+; 6425 :                                    CommitPacket.szObjectDef,
+; 6426 :                                    zLADTYPE_LOD_COMMIT_FILE ) < 0 )
+; 6427 :    {
+; 6428 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6429 :                               zNETERR_NOAUTHORITY ) != 0 )
+; 6430 :       {
+; 6431 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_ERROR", "" );
+; 6432 :       }
+; 6433 : 
+; 6434 :       nRC = zCALL_ERROR;
+; 6435 :       goto EndOfFunction;
+; 6436 :    }
+; 6437 : 
+; 6438 :    SetNameForView( vOI, "__NetCommitWIP", 0, zLEVEL_TASK );
+; 6439 : 
+; 6440 :    // For right now we will assume that we commit files to the Bin dir
+; 6441 :    // of the application.
+; 6442 : 
+; 6443 :    // Commit the OI but force the activate to occur locally.
+; 6444 :    nRC = CommitOI_ToFile( vOI, szFileName, lControl | zACTIVATE_LOCAL );
+; 6445 : 
+; 6446 :    if ( lpNetwork->nTraceLevel > 0 )
+; 6447 :       TraceLineI( "(kzoeneta) ** Sending RC packet.  RC = ", nRC );
+; 6448 : 
+; 6449 :    // Send return code.
+; 6450 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_RC, nRC ) != 0 )
+; 6451 :    {
+; 6452 :       TraceLineS( "(kzoeneta) ** Not able send Return code!", "" );
+; 6453 :       nRC = zCALL_ERROR;
+; 6454 :       goto EndOfFunction;
+; 6455 :    }
+; 6456 : 
+; 6457 :    nRC = 0;
+; 6458 : 
+; 6459 : EndOfFunction:
+; 6460 :    if ( vSubtask &&
+; 6461 :         fnSendMsgAndTraceObj( lpNetwork, ppvConn, vSubtask ) == zCALL_ERROR )
+; 6462 :    {
+; 6463 :       nRC = zCALL_ERROR;
+; 6464 :    }
+; 6465 : 
+; 6466 :    if ( bFlushNeeded && fnFlushBuffer( lpNetwork, ppvConn ) != 0 )
+; 6467 :    {
+; 6468 :       nRC = zCALL_ERROR;
+; 6469 :    }
+; 6470 : 
+; 6471 :    if ( vOI )
+; 6472 :       fnDropView( vOI );
+; 6473 : 
+; 6474 :    if ( vSubtask )
+; 6475 :       DROPSUBTASK( vSubtask );
+; 6476 : 
+; 6477 :    return( nRC );
+; 6478 : #endif
+; 6479 : 
+; 6480 : } // fnProcesssCommitOI_ToFile
+
+	pop	ebp
+	ret	8
+_fnProcessCommitOI_ToFile@8 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CK@CBKM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Send?5File@ ; `string'
+PUBLIC	??_C@_0CP@MGKA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0CL@LCMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0CK@LFPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5File@ ; `string'
+PUBLIC	??_C@_0BO@IIAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5file?4?$AA@ ; `string'
+PUBLIC	??_C@_0CP@HMBJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0CK@FILB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5writing?5line@ ; `string'
+PUBLIC	??_C@_0CM@OHAI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5?$CD?5of?5lines@ ; `string'
+PUBLIC	??_C@_0CI@FLJJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5line@ ; `string'
+EXTRN	_SysOpenFile@12:NEAR
+EXTRN	_SysWriteFile@16:NEAR
+EXTRN	_SysWriteLine@12:NEAR
+EXTRN	_SysAppendcDirSep@4:NEAR
+EXTRN	_SysCloseFile@12:NEAR
+;	COMDAT ??_C@_0CK@CBKM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Send?5File@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CK@CBKM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Send?5File@ DB '(kzo'
+	DB	'eneta) ** Received Send File message.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@MGKA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0CP@MGKA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve send file info', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CL@LCMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0CL@LCMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve file name.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@LFPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5File@
+_DATA	SEGMENT
+??_C@_0CK@LFPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5File@ DB '('
+	DB	'kzoeneta) ** App Name: %s  File Name: %s', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BO@IIAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5file?4?$AA@
+_DATA	SEGMENT
+??_C@_0BO@IIAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5file?4?$AA@ DB '(kz'
+	DB	'oeneta) ** Receiving file.', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CP@HMBJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0CP@HMBJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve send file line', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@FILB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5writing?5line@
+_DATA	SEGMENT
+??_C@_0CK@FILB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5writing?5line@ DB '(kzo'
+	DB	'eneta) ** Error writing line to file.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CM@OHAI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5?$CD?5of?5lines@
+_DATA	SEGMENT
+??_C@_0CM@OHAI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5?$CD?5of?5lines@ DB '('
+	DB	'kzoeneta) ** Sending # of lines.  Lines = ', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CI@FLJJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5line@
+_DATA	SEGMENT
+??_C@_0CI@FLJJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5line@ DB '(kz'
+	DB	'oeneta) ** Not able send line count!', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_lpNetwork$ = 12
+_ppvConn$ = 16
+_vSubtask$ = -332
+_pch$ = -268
+_nFileNameLth$ = -328
+_f$ = -280
+_szFileName$ = -264
+_cDataType$ = -276
+_sf$ = -320
+_lpSendFile$ = -324
+_iLineCount$ = -4
+_nRC$ = -272
+_cPacketType$9702 = -344
+_lPacketData$9703 = -336
+_pchLine$9704 = -340
+_lpDropSubtask$9725 = -348
+_fnProcessSendFile@12 PROC NEAR
+
+; 6488 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 348				; 0000015cH
+
+; 6489 :    zVIEW  vSubtask = 0;
+
+	mov	DWORD PTR _vSubtask$[ebp], 0
+
+; 6490 :    zPCHAR pch;
+; 6491 :    zSHORT nFileNameLth;
+; 6492 :    zLONG  f = -1;
+
+	mov	DWORD PTR _f$[ebp], -1
+
+; 6493 :    zCHAR  szFileName[ zMAX_FILENAME_LTH + 1 ];
+; 6494 :    zCHAR  cDataType;
+; 6495 :    SendFileRecord sf;
+; 6496 :    LPSENDFILE     lpSendFile;
+; 6497 :    zSHORT iLineCount;
+; 6498 :    zSHORT nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+
+; 6499 : 
+; 6500 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9682
+
+; 6501 :       TraceLineS( "(kzoeneta) ** Received Send File message.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@CBKM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Send?5File@ ; `string'
+	call	_TraceLineS@8
+$L9682:
+
+; 6502 : 
+; 6503 :    //=======================================================================
+; 6504 :    // Receiving data.
+; 6505 :    //
+; 6506 :    // Until noted below, we will only RECEIVE data over the network.
+; 6507 :    //=======================================================================
+; 6508 : 
+; 6509 :    // First thing to do is retrieve the commit info.
+; 6510 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6511 :                                    &lpSendFile, sizeof( sf ),
+; 6512 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	37					; 00000025H
+	lea	edx, DWORD PTR _lpSendFile$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9684
+
+; 6514 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve send file info", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CP@MGKA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 6515 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6516 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9684:
+
+; 6518 : 
+; 6519 :    // Store the info locally -- as soon as we perform the next network IO
+; 6520 :    // operation we aren't assured that lpCommitPacket points to valid data.
+; 6521 :    zmemcpy( &sf, lpSendFile, sizeof( sf ) );
+
+	push	37					; 00000025H
+	mov	ecx, DWORD PTR _lpSendFile$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _sf$[ebp]
+	push	edx
+	call	_memcpy
+	add	esp, 12					; 0000000cH
+
+; 6522 : 
+; 6523 :    // Retrieve the file name.
+; 6524 :    nFileNameLth = (zSHORT) zxtol( sf.szFileNameLth );
+
+	push	16					; 00000010H
+	push	0
+	lea	eax, DWORD PTR _sf$[ebp+33]
+	push	eax
+	call	DWORD PTR __imp__strtoul
+	add	esp, 12					; 0000000cH
+	mov	WORD PTR _nFileNameLth$[ebp], ax
+
+; 6525 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6526 :                                    &pch, nFileNameLth,
+; 6527 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	movsx	ecx, WORD PTR _nFileNameLth$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pch$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9688
+
+; 6529 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve file name.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CL@LCMO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 6530 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6531 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9688:
+
+; 6533 : 
+; 6534 :    // Store the filename to a more static location.
+; 6535 :    zstrcpy( szFileName, pch );
+
+	mov	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szFileName$[ebp]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+
+; 6536 :    SysAppendcDirSep( szFileName );
+
+	lea	eax, DWORD PTR _szFileName$[ebp]
+	push	eax
+	call	_SysAppendcDirSep@4
+
+; 6537 :    zstrcat( szFileName, &pch[ zstrlen( pch ) + 1 ] );
+
+	mov	ecx, DWORD PTR _pch$[ebp]
+	push	ecx
+	call	_strlen
+	add	esp, 4
+	mov	edx, DWORD PTR _pch$[ebp]
+	lea	eax, DWORD PTR [edx+eax+1]
+	push	eax
+	lea	ecx, DWORD PTR _szFileName$[ebp]
+	push	ecx
+	call	_strcat
+	add	esp, 8
+
+; 6538 : 
+; 6539 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9690
+
+; 6541 :       TraceLine( "(kzoeneta) ** App Name: %s  File Name: %s",
+; 6542 :                  sf.szAppName, szFileName );
+
+	lea	ecx, DWORD PTR _szFileName$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _sf$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CK@LFPJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5App?5Name?3?5?$CFs?5?5File@ ; `string'
+	call	_TraceLine
+	add	esp, 12					; 0000000cH
+$L9690:
+
+; 6544 : 
+; 6545 :    // Try to create a subtask view using the application name passed.
+; 6546 :    if ( SfCreateSubtask( &vSubtask, lpTaskView, sf.szAppName ) == zCALL_ERROR )
+
+	lea	eax, DWORD PTR _sf$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpTaskView$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_SfCreateSubtask@12
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L9692
+
+; 6548 :       TraceLineS( "(kzoeneta) ** Invalid App name = ", sf.szAppName );
+
+	lea	ecx, DWORD PTR _sf$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CC@CFA@?$CIkzoeneta?$CJ?5?$CK?$CK?5Invalid?5App?5name?5?$DN@ ; `string'
+	call	_TraceLineS@8
+
+; 6549 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6550 :                              zNETERR_INVALIDAPP ) != 0 )
+
+	push	1
+	push	42					; 0000002aH
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9693
+
+; 6552 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9693:
+
+; 6554 : 
+; 6555 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6556 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9692:
+
+; 6558 : 
+; 6559 :    fnCreateMsgObj( vSubtask );
+
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_fnCreateMsgObj@4
+
+; 6560 : 
+; 6561 :    f = SysOpenFile( vSubtask, szFileName, COREFILE_WRITE );
+
+	push	64					; 00000040H
+	lea	eax, DWORD PTR _szFileName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	call	_SysOpenFile@12
+	mov	DWORD PTR _f$[ebp], eax
+
+; 6562 :    if ( f == -1 )
+
+	cmp	DWORD PTR _f$[ebp], -1
+	jne	SHORT $L9694
+
+; 6564 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6565 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9694:
+
+; 6567 : 
+; 6568 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9695
+
+; 6569 :       TraceLineS( "(kzoeneta) ** Receiving file.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0BO@IIAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Receiving?5file?4?$AA@ ; `string'
+	call	_TraceLineS@8
+$L9695:
+
+; 6570 : 
+; 6571 :    if ( sf.bBinaryFile == 'Y' )
+
+	movsx	ecx, BYTE PTR _sf$[ebp+36]
+	cmp	ecx, 89					; 00000059H
+	jne	SHORT $L9697
+
+; 6573 :       cDataType = zTYPE_BLOB;
+
+	mov	BYTE PTR _cDataType$[ebp], 66		; 00000042H
+
+; 6575 :    else
+
+	jmp	SHORT $L9698
+$L9697:
+
+; 6576 :       cDataType = zTYPE_STRING;
+
+	mov	BYTE PTR _cDataType$[ebp], 83		; 00000053H
+$L9698:
+
+; 6577 : 
+; 6578 :    iLineCount = 0;
+
+	mov	WORD PTR _iLineCount$[ebp], 0
+$L9700:
+
+; 6579 :    while ( TRUE )
+
+	mov	edx, 1
+	test	edx, edx
+	je	$L9701
+
+; 6581 :       zCHAR   cPacketType;
+; 6582 :       zULONG  lPacketData;
+; 6583 :       zPCHAR  pchLine;
+; 6584 : 
+; 6585 :       if ( fnReceiveDataPacket( lpNetwork, ppvConn, &cPacketType,
+; 6586 :                                 (zPLONG) &lPacketData ) != 0 )
+
+	lea	eax, DWORD PTR _lPacketData$9703[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _cPacketType$9702[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnReceiveDataPacket@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9706
+
+; 6588 :          nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6589 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9706:
+
+; 6591 : 
+; 6592 :       // lPacketData is the length of the line.  If it is 0, then we're at the
+; 6593 :       // end of the file.
+; 6594 :       if ( lPacketData == 0 )
+
+	cmp	DWORD PTR _lPacketData$9703[ebp], 0
+	jne	SHORT $L9707
+
+; 6595 :          break;
+
+	jmp	$L9701
+$L9707:
+
+; 6596 : 
+; 6597 :       iLineCount++;
+
+	mov	dx, WORD PTR _iLineCount$[ebp]
+	add	dx, 1
+	mov	WORD PTR _iLineCount$[ebp], dx
+
+; 6598 : 
+; 6599 :       if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6600 :                                       &pchLine, lPacketData,
+; 6601 :                                       cDataType ) != 0 )
+
+	mov	al, BYTE PTR _cDataType$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lPacketData$9703[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pchLine$9704[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	add	ecx, 12					; 0000000cH
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [edx+174]
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9708
+
+; 6603 :          TraceLineS( "(kzoeneta) ** Couldn't retrieve send file line", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CP@HMBJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 6604 :          nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6605 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9708:
+
+; 6607 : 
+; 6608 :       if ( sf.bBinaryFile == 'Y' )
+
+	movsx	ecx, BYTE PTR _sf$[ebp+36]
+	cmp	ecx, 89					; 00000059H
+	jne	SHORT $L9710
+
+; 6610 :          if ( SysWriteFile( vSubtask, f, (zCPCHAR) pchLine,
+; 6611 :                             lPacketData ) < lPacketData )
+
+	mov	edx, DWORD PTR _lPacketData$9703[ebp]
+	push	edx
+	mov	eax, DWORD PTR _pchLine$9704[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _f$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_SysWriteFile@16
+	cmp	eax, DWORD PTR _lPacketData$9703[ebp]
+	jae	SHORT $L9712
+
+; 6613 :             TraceLineS( "(kzoeneta) ** Error writing line to file.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@FILB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5writing?5line@ ; `string'
+	call	_TraceLineS@8
+
+; 6614 :             nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6615 :             goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9712:
+
+; 6618 :       else
+
+	jmp	SHORT $L9716
+$L9710:
+
+; 6620 :          if ( SysWriteLine( vSubtask, f, (zCPCHAR) pchLine ) < 0 )
+
+	mov	eax, DWORD PTR _pchLine$9704[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _f$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_SysWriteLine@12
+	test	eax, eax
+	jge	SHORT $L9716
+
+; 6622 :             TraceLineS( "(kzoeneta) ** Error writing line to file.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@FILB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5writing?5line@ ; `string'
+	call	_TraceLineS@8
+
+; 6623 :             nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6624 :             goto EndOfFunction;
+
+	jmp	$EndOfFunction$9686
+$L9716:
+
+; 6627 : 
+; 6628 :    } // while ( TRUE )...
+
+	jmp	$L9700
+$L9701:
+
+; 6629 : 
+; 6630 :    //=======================================================================
+; 6631 :    // Transmitting data.
+; 6632 :    //
+; 6633 :    // Until we close the connection, the following code only SENDS data over
+; 6634 :    // the network.
+; 6635 :    //=======================================================================
+; 6636 : 
+; 6637 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9717
+
+; 6639 :       TraceLineI( "(kzoeneta) ** Sending # of lines.  Lines = ", iLineCount );
+
+	movsx	edx, WORD PTR _iLineCount$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CM@OHAI@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5?$CD?5of?5lines@ ; `string'
+	call	_TraceLineI@8
+$L9717:
+
+; 6641 : 
+; 6642 :    // Send number of lines received.
+; 6643 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_RC, iLineCount ) != 0 )
+
+	movsx	eax, WORD PTR _iLineCount$[ebp]
+	push	eax
+	push	35					; 00000023H
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9719
+
+; 6645 :       TraceLineS( "(kzoeneta) ** Not able send line count!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FLJJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5line@ ; `string'
+	call	_TraceLineS@8
+
+; 6646 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6647 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9686
+$L9719:
+
+; 6649 : 
+; 6650 :    if ( fnSendMsgAndTraceObj( lpNetwork, ppvConn, vSubtask ) == zCALL_ERROR )
+
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnSendMsgAndTraceObj@12
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9721
+
+; 6652 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6653 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9686
+$L9721:
+
+; 6655 : 
+; 6656 :    if ( fnFlushBuffer( lpNetwork, ppvConn ) != 0 )
+
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnFlushBuffer@8
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9722
+
+; 6658 :       nRC = zCALL_ERROR;
+
+	mov	WORD PTR _nRC$[ebp], -16		; fffffff0H
+
+; 6659 :       goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9686
+$L9722:
+
+; 6661 : 
+; 6662 :    nRC = 0;
+
+	mov	WORD PTR _nRC$[ebp], 0
+$EndOfFunction$9686:
+
+; 6663 : 
+; 6664 : EndOfFunction:
+; 6665 :    if ( f != -1 )
+
+	cmp	DWORD PTR _f$[ebp], -1
+	je	SHORT $L9723
+
+; 6666 :       SysCloseFile( vSubtask, f, 0 );
+
+	push	0
+	mov	edx, DWORD PTR _f$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_SysCloseFile@12
+$L9723:
+
+; 6667 : 
+; 6668 :    if ( vSubtask )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L9724
+
+; 6669 :       DROPSUBTASK( vSubtask );
+
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	mov	edx, DWORD PTR [ecx+18]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpDropSubtask$9725[ebp], eax
+	push	0
+	mov	eax, DWORD PTR _lpDropSubtask$9725[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpDropSubtask$9725[ebp]
+	mov	edx, DWORD PTR [ecx+6]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_fnDropSubtask
+	add	esp, 12					; 0000000cH
+$L9724:
+
+; 6670 : 
+; 6671 :    return( nRC );
+
+	mov	ax, WORD PTR _nRC$[ebp]
+
+; 6672 : 
+; 6673 : } // fnProcesssSendFile
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnProcessSendFile@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0CP@HAIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Transform@ ; `string'
+PUBLIC	??_C@_0CK@FNOC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5the?5Arg@ ; `string'
+PUBLIC	??_C@_0CK@NHGB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_01JME@l?$AA@				; `string'
+PUBLIC	??_C@_08BJPE@UserName?$AA@			; `string'
+PUBLIC	??_C@_08NKKK@Password?$AA@			; `string'
+PUBLIC	??_C@_0CK@IDNN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+PUBLIC	??_C@_0CK@CBOP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5l@ ; `string'
+PUBLIC	??_C@_0BM@HBIG@Can?8t?5find?5global?5oper?5lib?4?$AA@ ; `string'
+PUBLIC	??_C@_09FGAN@_zCall_?$CFs?$AA@			; `string'
+PUBLIC	??_C@_0CC@KOAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5?$DN@ ; `string'
+PUBLIC	??_C@_0BL@LONK@Can?8t?5find?5_zCall?4?4?4?5func?4?$AA@ ; `string'
+PUBLIC	??_C@_0DC@FCON@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5vArg@ ; `string'
+PUBLIC	??_C@_0DK@BJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5view@ ; `string'
+EXTRN	_SfGetApplicationForSubtask@8:NEAR
+;	COMDAT ??_C@_0CP@HAIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Transform@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CP@HAIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Transform@ DB '(kzoe'
+	DB	'neta) ** Received Transformation message.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@FNOC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5the?5Arg@
+_DATA	SEGMENT
+??_C@_0CK@FNOC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5the?5Arg@ DB '(kzo'
+	DB	'eneta) ** Retrieving the Argument OI.', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@NHGB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+_DATA	SEGMENT
+??_C@_0CK@NHGB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve app name.', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_01JME@l?$AA@
+_DATA	SEGMENT
+??_C@_01JME@l?$AA@ DB 'l', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08BJPE@UserName?$AA@
+_DATA	SEGMENT
+??_C@_08BJPE@UserName?$AA@ DB 'UserName', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08NKKK@Password?$AA@
+_DATA	SEGMENT
+??_C@_08NKKK@Password?$AA@ DB 'Password', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@IDNN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@
+_DATA	SEGMENT
+??_C@_0CK@IDNN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ DB '(kzo'
+	DB	'eneta) ** Error sending zPACKET_ERROR', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@CBOP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5l@
+_DATA	SEGMENT
+??_C@_0CK@CBOP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5l@ DB '(kzo'
+	DB	'eneta) ** Global operation library = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BM@HBIG@Can?8t?5find?5global?5oper?5lib?4?$AA@
+_DATA	SEGMENT
+??_C@_0BM@HBIG@Can?8t?5find?5global?5oper?5lib?4?$AA@ DB 'Can''t find glo'
+	DB	'bal oper lib.', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09FGAN@_zCall_?$CFs?$AA@
+_DATA	SEGMENT
+??_C@_09FGAN@_zCall_?$CFs?$AA@ DB '_zCall_%s', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CC@KOAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5?$DN@
+_DATA	SEGMENT
+??_C@_0CC@KOAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5?$DN@ DB '('
+	DB	'kzoeneta) ** Global operation = ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BL@LONK@Can?8t?5find?5_zCall?4?4?4?5func?4?$AA@
+_DATA	SEGMENT
+??_C@_0BL@LONK@Can?8t?5find?5_zCall?4?4?4?5func?4?$AA@ DB 'Can''t find _z'
+	DB	'Call... func.', 00H				; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DC@FCON@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5vArg@
+_DATA	SEGMENT
+??_C@_0DC@FCON@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5vArg@ DB '(kz'
+	DB	'oeneta) ** Not able send vArgs back to client!', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0DK@BJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5view@
+_DATA	SEGMENT
+??_C@_0DK@BJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5view@ DB '(kz'
+	DB	'oeneta) ** Not able send view argument back to client!', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpTaskView$ = 8
+_lpNetwork$ = 12
+_ppvConn$ = 16
+_lpTask$ = -336
+_bFlushNeeded$ = -332
+_bTransformation$ = -276
+_lRC$ = -280
+_vSubtask$ = -692
+_vArgs$ = -328
+_szAppName$ = -324
+_pchAppName$ = -684
+_pchObjectName$ = -696
+_pchUserName$ = -288
+_pchPassword$ = -688
+_pchOperName$ = -672
+_pchDLL_Name$ = -272
+_vViewList$ = -504
+_pvViewList$ = -668
+_nViewCount$ = -344
+_szName$ = -268
+_lpApp$ = -508
+_lpViewOD$ = -8
+_hLibrary$ = -4
+_pfnOper$ = -340
+_nReturnCode$ = -680
+_nRC$ = -284
+_k$ = -676
+_pchApplName$9773 = -704
+_vViewSubtask$9774 = -700
+_szClientAddress$9777 = -904
+_lpDropSubtask$9785 = -908
+_lpWkViewOD$9814 = -916
+_lpViewCsr$9815 = -912
+_lpViewOI$9816 = -920
+_lpDropSubtask$9844 = -924
+_lpDropSubtask$9850 = -928
+_fnProcessOperation@12 PROC NEAR
+
+; 6682 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 928				; 000003a0H
+
+; 6683 :    LPTASK    lpTask;
+; 6684 :    zBOOL     bFlushNeeded = FALSE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 0
+
+; 6685 :    zBOOL     bTransformation;
+; 6686 :    zLONG     lRC;
+; 6687 :    zVIEW     vSubtask = 0;
+
+	mov	DWORD PTR _vSubtask$[ebp], 0
+
+; 6688 :    zVIEW     vArgs = 0;
+
+	mov	DWORD PTR _vArgs$[ebp], 0
+
+; 6689 :    zCHAR     szAppName[ zAPPL_NAME_LTH ];
+; 6690 :    zPCHAR    pchAppName;
+; 6691 :    zPCHAR    pchObjectName;
+; 6692 :    zPCHAR    pchUserName;
+; 6693 :    zPCHAR    pchPassword;
+; 6694 :    zPCHAR    pchOperName;
+; 6695 :    zPCHAR    pchDLL_Name;
+; 6696 :    zVIEW     vViewList[ 40 ];        // Max 40 views passed to transformation.
+; 6697 :    zPVIEW    pvViewList[ 40 ];
+; 6698 :    zSHORT    nViewCount = -1;
+
+	mov	WORD PTR _nViewCount$[ebp], -1
+
+; 6699 :    zCHAR     szName[ zMAX_FILENAME_LTH + 1 ];
+; 6700 :    LPAPP     lpApp;
+; 6701 :    LPVIEWOD  lpViewOD;
+; 6702 :    LPLIBRARY hLibrary;
+; 6703 :    LPFN_CALLOPER pfnOper;
+; 6704 :    zSHORT    nReturnCode = zCALL_ERROR;
+
+	mov	WORD PTR _nReturnCode$[ebp], -16	; fffffff0H
+
+; 6705 :    zSHORT    nRC;
+; 6706 :    zSHORT    k;
+; 6707 : 
+; 6708 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9759
+
+; 6710 :       TraceLineS( "(kzoeneta) ** Received Transformation message.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CP@HAIB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Transform@ ; `string'
+	call	_TraceLineS@8
+
+; 6711 :       TraceLineS( "(kzoeneta) ** Retrieving the Argument OI.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@FNOC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Retrieving?5the?5Arg@ ; `string'
+	call	_TraceLineS@8
+$L9759:
+
+; 6713 : 
+; 6714 :    zmemset( vViewList, 0, sizeof( vViewList ) );
+
+	push	160					; 000000a0H
+	push	0
+	lea	edx, DWORD PTR _vViewList$[ebp]
+	push	edx
+	call	_memset
+	add	esp, 12					; 0000000cH
+
+; 6715 : 
+; 6716 :    //=======================================================================
+; 6717 :    // Receiving data.
+; 6718 :    //
+; 6719 :    // Until noted below, we will only RECEIVE data over the network.
+; 6720 :    //=======================================================================
+; 6721 :    // First retrieve the app name.
+; 6722 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 6723 :                                    &pchAppName, zAPPL_NAME_LTH,
+; 6724 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	33					; 00000021H
+	lea	eax, DWORD PTR _pchAppName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+174]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9762
+
+; 6726 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve app name.", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@NHGB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 6727 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9762:
+
+; 6729 : 
+; 6730 :    zstrcpy( szAppName, pchAppName );
+
+	mov	edx, DWORD PTR _pchAppName$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szAppName$[ebp]
+	push	eax
+	call	_strcpy
+	add	esp, 8
+
+; 6731 : 
+; 6732 :    if ( SfCreateSubtask( &vSubtask, lpTaskView, szAppName ) == zCALL_ERROR )
+
+	lea	ecx, DWORD PTR _szAppName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_SfCreateSubtask@12
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9765
+
+; 6733 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9765:
+
+; 6734 : 
+; 6735 :    lpTask = fnOperationCall( iNetCallOperation, vSubtask, 0 );
+
+	push	0
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	push	513					; 00000201H
+	call	_fnOperationCall
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR _lpTask$[ebp], eax
+
+; 6736 :    fnCreateMsgObj( vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_fnCreateMsgObj@4
+
+; 6737 : 
+; 6738 :    if ( fnReceiveOI( ppvConn, lpNetwork, &vArgs, vSubtask, "kztranwo",
+; 6739 :                      zSINGLE | zACTIVATE_SYSTEM ) == zCALL_ERROR )
+
+	push	536870912				; 20000000H
+	push	OFFSET FLAT:??_C@_08FNEA@kztranwo?$AA@	; `string'
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	call	_fnReceiveOI@24
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L9766
+
+; 6741 :       TraceLineS( "(kzoeneta) ** Not able to retrieve Arg List!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@JCDO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+	call	_TraceLineS@8
+
+; 6742 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9766:
+
+; 6744 : 
+; 6745 :    bTransformation = (CompareAttributeToString( vArgs, "Operation",
+; 6746 :                                                 "OperationType",
+; 6747 :                                                 zTYPE_TRAN ) == 0);
+
+	push	OFFSET FLAT:??_C@_01KGOM@T?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0O@LJID@OperationType?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_CompareAttributeToString@16
+	movsx	ecx, ax
+	neg	ecx
+	sbb	ecx, ecx
+	inc	ecx
+	mov	BYTE PTR _bTransformation$[ebp], cl
+
+; 6748 : 
+; 6749 :    // Make sure it's a valid object.
+; 6750 :    if ( bTransformation )
+
+	mov	edx, DWORD PTR _bTransformation$[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	je	SHORT $L9768
+
+; 6752 :       GetAddrForAttribute( &pchObjectName, vArgs, "Operation", "ObjectName" );
+
+	push	OFFSET FLAT:??_C@_0L@OKBL@ObjectName?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pchObjectName$[ebp]
+	push	ecx
+	call	_GetAddrForAttribute@16
+
+; 6753 :       lpViewOD = ActivateViewObject( vSubtask, pchObjectName, FALSE );
+
+	push	0
+	mov	edx, DWORD PTR _pchObjectName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_ActivateViewObject@12
+	mov	DWORD PTR _lpViewOD$[ebp], eax
+
+; 6754 :       if ( lpViewOD == 0 )
+
+	cmp	DWORD PTR _lpViewOD$[ebp], 0
+	jne	SHORT $L9768
+
+; 6756 :          if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6757 :                                 zNETERR_INVALIDOD ) != 0 )
+
+	push	2
+	push	42					; 0000002aH
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9769
+
+; 6759 :             TraceLineS( "(kzoeneta) ** Error sending zPACKET_END", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CI@FBNM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9769:
+
+; 6761 : 
+; 6762 :          bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 6763 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9768:
+
+; 6766 : 
+; 6767 :    // Loop through each of the arguments looking for views.  If one is found
+; 6768 :    // check to see if it was sent to us.  If so, retrieve it.
+; 6769 :    for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 );
+; 6770 :          nRC >= zCURSOR_SET;
+; 6771 :          nRC = SetCursorNextEntity( vArgs, szlArgument, 0 ) )
+
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+	jmp	SHORT $L9770
+$L9771:
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+$L9770:
+	movsx	eax, WORD PTR _nRC$[ebp]
+	test	eax, eax
+	jl	$L9772
+
+; 6773 :       zPCHAR pchApplName;
+; 6774 :       zVIEW  vViewSubtask;
+; 6775 : 
+; 6776 :       // If the DataType is 'l', then this argument represents the client's
+; 6777 :       // address ('l' for local).  To keep people from cheating, we will
+; 6778 :       // retrieve the client address directly from the network.
+; 6779 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 6780 :                                      "DataType", "l" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01JME@l?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_CompareAttributeToString@16
+	movsx	edx, ax
+	test	edx, edx
+	jne	SHORT $L9775
+
+; 6782 :          zCHAR szClientAddress[ 200 ];
+; 6783 : 
+; 6784 :          // Call network handler to get address of the remote node.
+; 6785 :          if ( (*lpNetwork->lpfnGetAddress)( vSubtask,
+; 6786 :                                             &lpNetwork->pNetworkHandle,
+; 6787 :                                             ppvConn, 'R',
+; 6788 :                                             szClientAddress ) != 0 )
+
+	lea	eax, DWORD PTR _szClientAddress$9777[ebp]
+	push	eax
+	push	82					; 00000052H
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [ecx+190]
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9778
+
+; 6790 :             goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9778:
+
+; 6792 : 
+; 6793 :          SetAttributeFromString( vArgs, szlArgument, "Value", szClientAddress );
+
+	lea	eax, DWORD PTR _szClientAddress$9777[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 6794 :          continue;
+
+	jmp	$L9771
+$L9775:
+
+; 6796 : 
+; 6797 :       // If the argument is not a view, then don't worry about it.
+; 6798 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 6799 :                                      "DataType", "V" ) != 0 )
+
+	push	OFFSET FLAT:??_C@_01PDMC@V?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9779
+
+; 6801 :          continue;
+
+	jmp	$L9771
+$L9779:
+
+; 6803 : 
+; 6804 :       nViewCount++;
+
+	mov	cx, WORD PTR _nViewCount$[ebp]
+	add	cx, 1
+	mov	WORD PTR _nViewCount$[ebp], cx
+
+; 6805 :       vViewList[ nViewCount ] = 0;
+
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	mov	DWORD PTR _vViewList$[ebp+edx*4], 0
+
+; 6806 : 
+; 6807 :       GetAddrForAttribute( &pchApplName, vArgs, szlArgument,
+; 6808 :                            "ApplicationName" );
+
+	push	OFFSET FLAT:??_C@_0BA@FCJM@ApplicationName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pchApplName$9773[ebp]
+	push	ecx
+	call	_GetAddrForAttribute@16
+
+; 6809 : 
+; 6810 :       // If SubtaskView is 'Y', then the view is a subtask view so nothing
+; 6811 :       // was sent but we do need to set up a subtask view.
+; 6812 :       if ( CompareAttributeToString( vArgs, szlArgument, "SubtaskView",
+; 6813 :                                      "Y" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0M@ONNJ@SubtaskView?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	movsx	eax, ax
+	test	eax, eax
+	jne	SHORT $L9780
+
+; 6815 :          // ** Not Sure Which VIEW to use -----------------------\/
+; 6816 :          SfCreateSubtask( &vViewList[ nViewCount ], lpTaskView, pchApplName );
+
+	mov	ecx, DWORD PTR _pchApplName$9773[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpTaskView$[ebp]
+	push	edx
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	lea	ecx, DWORD PTR _vViewList$[ebp+eax*4]
+	push	ecx
+	call	_SfCreateSubtask@12
+
+; 6817 :          continue;
+
+	jmp	$L9771
+$L9780:
+
+; 6819 : 
+; 6820 :       // If the client didn't send the argument, then continue.  The view
+; 6821 :       // in vViewList has already been set to 0.
+; 6822 :       if ( CompareAttributeToString( vArgs, szlArgument, "SendArgument",
+; 6823 :                                      "N" ) == 0 )
+
+	push	OFFSET FLAT:??_C@_01OAK@N?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@EPJI@SendArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	movsx	eax, ax
+	test	eax, eax
+	jne	SHORT $L9781
+
+; 6825 :          continue;
+
+	jmp	$L9771
+$L9781:
+
+; 6827 : 
+; 6828 :       // If application name was supplied then the current view argument is
+; 6829 :       // for an object def from another application.  Create a temporary
+; 6830 :       // subtask view for that application.
+; 6831 :       if ( pchApplName && *pchApplName )
+
+	cmp	DWORD PTR _pchApplName$9773[ebp], 0
+	je	SHORT $L9782
+	mov	ecx, DWORD PTR _pchApplName$9773[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	test	edx, edx
+	je	SHORT $L9782
+
+; 6832 :          SfCreateSubtask( &vViewSubtask, vSubtask, pchApplName );
+
+	mov	eax, DWORD PTR _pchApplName$9773[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _vViewSubtask$9774[ebp]
+	push	edx
+	call	_SfCreateSubtask@12
+
+; 6833 :       else
+
+	jmp	SHORT $L9783
+$L9782:
+
+; 6834 :          vViewSubtask = vSubtask;  // Use "global" subtask.
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	mov	DWORD PTR _vViewSubtask$9774[ebp], eax
+$L9783:
+
+; 6835 : 
+; 6836 :       // Try retrieving the view from the network.
+; 6837 :       GetAddrForAttribute( &pchObjectName, vArgs, szlArgument, "ObjectName" );
+
+	push	OFFSET FLAT:??_C@_0L@OKBL@ObjectName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pchObjectName$[ebp]
+	push	edx
+	call	_GetAddrForAttribute@16
+
+; 6838 :       nRC = fnReceiveOI( ppvConn, lpNetwork, &vViewList[ nViewCount ],
+; 6839 :                          vViewSubtask, pchObjectName, zSINGLE );
+
+	push	0
+	mov	eax, DWORD PTR _pchObjectName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vViewSubtask$9774[ebp]
+	push	ecx
+	movsx	edx, WORD PTR _nViewCount$[ebp]
+	lea	eax, DWORD PTR _vViewList$[ebp+edx*4]
+	push	eax
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	call	_fnReceiveOI@24
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 6840 : 
+; 6841 :       // If we created a temp subtask drop it.
+; 6842 :       if ( pchApplName && *pchApplName )
+
+	cmp	DWORD PTR _pchApplName$9773[ebp], 0
+	je	SHORT $L9784
+	mov	eax, DWORD PTR _pchApplName$9773[ebp]
+	movsx	ecx, BYTE PTR [eax]
+	test	ecx, ecx
+	je	SHORT $L9784
+
+; 6843 :          DROPSUBTASK( vViewSubtask );
+
+	mov	edx, DWORD PTR _vViewSubtask$9774[ebp]
+	mov	eax, DWORD PTR [edx+18]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpDropSubtask$9785[ebp], eax
+	push	0
+	mov	ecx, DWORD PTR _lpDropSubtask$9785[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpDropSubtask$9785[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_fnDropSubtask
+	add	esp, 12					; 0000000cH
+$L9784:
+
+; 6844 : 
+; 6845 :       // Check return code from fnReceiveOI.
+; 6846 :       if ( nRC == zCALL_ERROR )
+
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9788
+
+; 6848 :          TraceLineS( "(kzoeneta) ** Not able to retrieve Arg List!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CN@JCDO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5to?5retrie@ ; `string'
+	call	_TraceLineS@8
+
+; 6849 :          goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9788:
+
+; 6851 : 
+; 6852 :    } // for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 )...
+
+	jmp	$L9771
+$L9772:
+
+; 6853 : 
+; 6854 :    //=======================================================================
+; 6855 :    // Transmitting data.
+; 6856 :    //
+; 6857 :    // Until we close the connection, the following code only SENDS data over
+; 6858 :    // the network.
+; 6859 :    //=======================================================================
+; 6860 : 
+; 6861 :    bFlushNeeded = TRUE;
+
+	mov	BYTE PTR _bFlushNeeded$[ebp], 1
+
+; 6862 : 
+; 6863 :    GetAddrForAttribute( &pchUserName, vArgs, "Operation", "UserName" );
+
+	push	OFFSET FLAT:??_C@_08BJPE@UserName?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pchUserName$[ebp]
+	push	eax
+	call	_GetAddrForAttribute@16
+
+; 6864 :    GetAddrForAttribute( &pchPassword, vArgs, "Operation", "Password" );
+
+	push	OFFSET FLAT:??_C@_08NKKK@Password?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _pchPassword$[ebp]
+	push	edx
+	call	_GetAddrForAttribute@16
+
+; 6865 :    GetAddrForAttribute( &pchOperName, vArgs, "Operation", "OperName" );
+
+	push	OFFSET FLAT:??_C@_08DJIK@OperName?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _pchOperName$[ebp]
+	push	ecx
+	call	_GetAddrForAttribute@16
+
+; 6866 : 
+; 6867 :    SfGetApplicationForSubtask( &lpApp, vSubtask );
+
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _lpApp$[ebp]
+	push	eax
+	call	_SfGetApplicationForSubtask@8
+
+; 6868 : 
+; 6869 :    // Set up the view pointer list.
+; 6870 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L9791
+$L9792:
+	mov	cx, WORD PTR _k$[ebp]
+	add	cx, 1
+	mov	WORD PTR _k$[ebp], cx
+$L9791:
+	movsx	edx, WORD PTR _k$[ebp]
+	movsx	eax, WORD PTR _nViewCount$[ebp]
+	cmp	edx, eax
+	jge	SHORT $L9793
+
+; 6871 :       pvViewList[ k ] = &vViewList[ k ];
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	lea	edx, DWORD PTR _vViewList$[ebp+ecx*4]
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	DWORD PTR _pvViewList$[ebp+eax*4], edx
+	jmp	SHORT $L9792
+$L9793:
+
+; 6872 : 
+; 6873 :    pvViewList[ k ] = 0;
+
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	DWORD PTR _pvViewList$[ebp+ecx*4], 0
+
+; 6874 :    zstrcpy( szName, lpApp->szLibraryDir );
+
+	mov	edx, DWORD PTR _lpApp$[ebp]
+	add	edx, 90					; 0000005aH
+	push	edx
+	lea	eax, DWORD PTR _szName$[ebp]
+	push	eax
+	call	_strcpy
+	add	esp, 8
+
+; 6875 :    SysAppendcDirSep( szName );
+
+	lea	ecx, DWORD PTR _szName$[ebp]
+	push	ecx
+	call	_SysAppendcDirSep@4
+
+; 6876 : 
+; 6877 :    if ( bTransformation )
+
+	mov	edx, DWORD PTR _bTransformation$[ebp]
+	and	edx, 255				; 000000ffH
+	test	edx, edx
+	je	SHORT $L9794
+
+; 6879 :       SfGetApplicationForSubtask( &lpApp, vSubtask );
+
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _lpApp$[ebp]
+	push	ecx
+	call	_SfGetApplicationForSubtask@8
+
+; 6880 : 
+; 6881 :       zstrcpy( szName, lpApp->szLibraryDir );
+
+	mov	edx, DWORD PTR _lpApp$[ebp]
+	add	edx, 90					; 0000005aH
+	push	edx
+	lea	eax, DWORD PTR _szName$[ebp]
+	push	eax
+	call	_strcpy
+	add	esp, 8
+
+; 6882 :       SysAppendcDirSep( szName );
+
+	lea	ecx, DWORD PTR _szName$[ebp]
+	push	ecx
+	call	_SysAppendcDirSep@4
+
+; 6883 :       pchDLL_Name = lpViewOD->szOperLibname;
+
+	mov	edx, DWORD PTR _lpViewOD$[ebp]
+	add	edx, 142				; 0000008eH
+	mov	DWORD PTR _pchDLL_Name$[ebp], edx
+
+; 6884 :       zstrcat( szName, lpViewOD->szOperLibname );
+
+	mov	eax, DWORD PTR _lpViewOD$[ebp]
+	add	eax, 142				; 0000008eH
+	push	eax
+	lea	ecx, DWORD PTR _szName$[ebp]
+	push	ecx
+	call	_strcat
+	add	esp, 8
+
+; 6886 :    else
+
+	jmp	SHORT $L9796
+$L9794:
+
+; 6888 :       // Call the global operation.
+; 6889 :       GetAddrForAttribute( &pchDLL_Name, vArgs, "Operation", "DLL_Name" );
+
+	push	OFFSET FLAT:??_C@_08PMAN@DLL_Name?$AA@	; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _pchDLL_Name$[ebp]
+	push	eax
+	call	_GetAddrForAttribute@16
+
+; 6890 :       if ( pchDLL_Name && *pchDLL_Name )
+
+	cmp	DWORD PTR _pchDLL_Name$[ebp], 0
+	je	SHORT $L9796
+	mov	ecx, DWORD PTR _pchDLL_Name$[ebp]
+	movsx	edx, BYTE PTR [ecx]
+	test	edx, edx
+	je	SHORT $L9796
+
+; 6892 :          zstrcat( szName, pchDLL_Name );
+
+	mov	eax, DWORD PTR _pchDLL_Name$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _szName$[ebp]
+	push	ecx
+	call	_strcat
+	add	esp, 8
+$L9796:
+
+; 6895 : 
+; 6896 :    hLibrary = SysLoadLibrary( vSubtask, szName );
+
+	lea	edx, DWORD PTR _szName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_SysLoadLibrary@8
+	mov	DWORD PTR _hLibrary$[ebp], eax
+
+; 6897 :    if ( hLibrary == 0 )
+
+	cmp	DWORD PTR _hLibrary$[ebp], 0
+	jne	SHORT $L9797
+
+; 6899 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6900 :                              zNETERR_NOEXECUTABLE ) != 0 )
+
+	push	8
+	push	42					; 0000002aH
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9798
+
+; 6902 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_ERROR", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@IDNN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9798:
+
+; 6904 : 
+; 6905 :       TraceLineS( "(kzoeneta) ** Global operation library = ", szName );
+
+	lea	ecx, DWORD PTR _szName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CK@CBOP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5l@ ; `string'
+	call	_TraceLineS@8
+
+; 6906 :       SysMessageBox( vSubtask, szlNetworkError,
+; 6907 :                      "Can't find global oper lib.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0BM@HBIG@Can?8t?5find?5global?5oper?5lib?4?$AA@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 6908 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9797:
+
+; 6910 : 
+; 6911 :    zsprintf( szName, "_zCall_%s", pchOperName );
+
+	mov	eax, DWORD PTR _pchOperName$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_09FGAN@_zCall_?$CFs?$AA@ ; `string'
+	lea	ecx, DWORD PTR _szName$[ebp]
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 6912 :    pfnOper = (LPFN_CALLOPER) SysGetProc( hLibrary, szName );
+
+	lea	edx, DWORD PTR _szName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	call	_SysGetProc@8
+	mov	DWORD PTR _pfnOper$[ebp], eax
+
+; 6913 :    if ( pfnOper == 0 )
+
+	cmp	DWORD PTR _pfnOper$[ebp], 0
+	jne	SHORT $L9804
+
+; 6915 :       if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_ERROR,
+; 6916 :                              zNETERR_NOOPER ) != 0 )
+
+	push	9
+	push	42					; 0000002aH
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9805
+
+; 6918 :          TraceLineS( "(kzoeneta) ** Error sending zPACKET_ERROR", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@IDNN@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5sending?5zPAC@ ; `string'
+	call	_TraceLineS@8
+$L9805:
+
+; 6920 : 
+; 6921 :       TraceLineS( "(kzoeneta) ** Global operation = ", szName );
+
+	lea	ecx, DWORD PTR _szName$[ebp]
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CC@KOAJ@?$CIkzoeneta?$CJ?5?$CK?$CK?5Global?5operation?5?$DN@ ; `string'
+	call	_TraceLineS@8
+
+; 6922 :       SysMessageBox( vSubtask, szlNetworkError,
+; 6923 :                      "Can't find _zCall... func.", 1 );
+
+	push	1
+	push	OFFSET FLAT:??_C@_0BL@LONK@Can?8t?5find?5_zCall?4?4?4?5func?4?$AA@ ; `string'
+	push	OFFSET FLAT:_szlNetworkError
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	push	edx
+	call	_SysMessageBox@16
+
+; 6924 :       SysFreeLibrary( vSubtask, hLibrary );
+
+	mov	eax, DWORD PTR _hLibrary$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vSubtask$[ebp]
+	push	ecx
+	call	_SysFreeLibrary@8
+
+; 6925 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9804:
+
+; 6927 : 
+; 6928 :    // Set up the view pointer list.
+; 6929 :    for ( k = 0; k < nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L9808
+$L9809:
+	mov	dx, WORD PTR _k$[ebp]
+	add	dx, 1
+	mov	WORD PTR _k$[ebp], dx
+$L9808:
+	movsx	eax, WORD PTR _k$[ebp]
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	eax, ecx
+	jge	SHORT $L9810
+
+; 6930 :       pvViewList[ k ] = &vViewList[ k ];
+
+	movsx	edx, WORD PTR _k$[ebp]
+	lea	eax, DWORD PTR _vViewList$[ebp+edx*4]
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	DWORD PTR _pvViewList$[ebp+ecx*4], eax
+	jmp	SHORT $L9809
+$L9810:
+
+; 6931 : 
+; 6932 :    pvViewList[ k ] = 0;
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	DWORD PTR _pvViewList$[ebp+edx*4], 0
+
+; 6933 : 
+; 6934 :    // Ok, boys, this is it--call the transformation shell.
+; 6935 :    lRC = (*pfnOper)( vArgs, pvViewList );
+
+	lea	eax, DWORD PTR _pvViewList$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	DWORD PTR _pfnOper$[ebp]
+	mov	DWORD PTR _lRC$[ebp], eax
+
+; 6936 : 
+; 6937 :    SysFreeLibrary( vSubtask, hLibrary );
+
+	mov	edx, DWORD PTR _hLibrary$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	call	_SysFreeLibrary@8
+
+; 6938 : 
+; 6939 :    // Loop through each of the arguments looking for views that need to be
+; 6940 :    // returned.  Later on we'll send the arg list object back to the client.
+; 6941 :    // To save transmission time we'll null out the values of arguments that
+; 6942 :    // we don't have to send back.
+; 6943 :    k = -1;
+
+	mov	WORD PTR _k$[ebp], -1
+
+; 6944 :    for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 );
+; 6945 :          nRC >= zCURSOR_SET;
+; 6946 :          nRC = SetCursorNextEntity( vArgs, szlArgument, 0 ) )
+
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+	jmp	SHORT $L9811
+$L9812:
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+$L9811:
+	movsx	eax, WORD PTR _nRC$[ebp]
+	test	eax, eax
+	jl	$L9813
+
+; 6948 :       LPVIEWOD  lpWkViewOD;
+; 6949 :       LPVIEWCSR lpViewCsr;
+; 6950 :       LPVIEWOI  lpViewOI;
+; 6951 : 
+; 6952 :       // If the argument is not a view, then don't worry about it.
+; 6953 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 6954 :                                      "DataType", "V" ) != 0 )
+
+	push	OFFSET FLAT:??_C@_01PDMC@V?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_CompareAttributeToString@16
+	movsx	edx, ax
+	test	edx, edx
+	je	SHORT $L9817
+
+; 6956 :          // If we aren't sending the argument back then set it to null.
+; 6957 :          if ( CompareAttributeToString( vArgs, szlArgument,
+; 6958 :                                         "ReturnArgument", "Y" ) != 0 )
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0P@EDLM@ReturnArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_CompareAttributeToString@16
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9818
+
+; 6960 :             SetAttributeFromString( vArgs, szlArgument, "Value", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_05KBGO@Value?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+$L9818:
+
+; 6962 : 
+; 6963 :          continue;
+
+	jmp	$L9812
+$L9817:
+
+; 6965 : 
+; 6966 :       k++; // Keep track of number of views.
+
+	mov	ax, WORD PTR _k$[ebp]
+	add	ax, 1
+	mov	WORD PTR _k$[ebp], ax
+
+; 6967 : 
+; 6968 :       // If the view is not flagged as a returned view, forget it.
+; 6969 :       nRC = CompareAttributeToString( vArgs, szlArgument,
+; 6970 :                                       "ReturnArgument", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0P@EDLM@ReturnArgument?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_CompareAttributeToString@16
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 6971 :       if ( nRC )
+
+	movsx	edx, WORD PTR _nRC$[ebp]
+	test	edx, edx
+	je	SHORT $L9819
+
+; 6972 :          continue;
+
+	jmp	$L9812
+$L9819:
+
+; 6973 : 
+; 6974 :       // Don't bother sending back the view if it is null.
+; 6975 :       if ( vViewList[ k ] == 0 || vViewList[ k ]->hViewCsr == 0 )
+
+	movsx	eax, WORD PTR _k$[ebp]
+	cmp	DWORD PTR _vViewList$[ebp+eax*4], 0
+	je	SHORT $L9821
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _vViewList$[ebp+ecx*4]
+	cmp	DWORD PTR [edx+10], 0
+	jne	SHORT $L9820
+$L9821:
+
+; 6976 :          continue;
+
+	jmp	$L9812
+$L9820:
+
+; 6977 : 
+; 6978 :       lpWkViewOD = zGETPTR( vViewList[ k ]->hViewOD );
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _vViewList$[ebp+eax*4]
+	mov	edx, DWORD PTR [ecx+6]
+	push	edx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpWkViewOD$9814[ebp], eax
+
+; 6979 :       SetAttributeFromString( vArgs, szlArgument, "ObjectName",
+; 6980 :                               lpWkViewOD->szName );
+
+	mov	eax, DWORD PTR _lpWkViewOD$9814[ebp]
+	add	eax, 10					; 0000000aH
+	push	eax
+	push	OFFSET FLAT:??_C@_0L@OKBL@ObjectName?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_SetAttributeFromString@16
+
+; 6981 : 
+; 6982 :       lpViewCsr = zGETPTR( vViewList[ k ]->hViewCsr );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _vViewList$[ebp+edx*4]
+	mov	ecx, DWORD PTR [eax+10]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewCsr$9815[ebp], eax
+
+; 6983 :       lpViewOI  = zGETPTR( lpViewCsr->hViewOI );
+
+	mov	edx, DWORD PTR _lpViewCsr$9815[ebp]
+	mov	eax, DWORD PTR [edx+10]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpViewOI$9816[ebp], eax
+
+; 6984 : 
+; 6985 :       // If there is no root entity instance, then the OI is empty.
+; 6986 :       if ( lpViewOI->hRootEntityInstance == 0 )
+
+	mov	ecx, DWORD PTR _lpViewOI$9816[ebp]
+	cmp	DWORD PTR [ecx+26], 0
+	jne	SHORT $L9825
+
+; 6988 :          SetAttributeFromString( vArgs, szlArgument, "ViewReturned", "E" );
+
+	push	OFFSET FLAT:??_C@_01KFAL@E?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@LNAH@ViewReturned?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetAttributeFromString@16
+
+; 6989 :          continue;
+
+	jmp	$L9812
+$L9825:
+
+; 6991 : 
+; 6992 :       // Set flag to indicate we are returning the view.
+; 6993 :       SetAttributeFromString( vArgs, szlArgument, "ViewReturned", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@LNAH@ViewReturned?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetAttributeFromString@16
+
+; 6994 : 
+; 6995 :    } // for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 )...
+
+	jmp	$L9812
+$L9813:
+
+; 6996 : 
+; 6997 :    // Send return code.
+; 6998 :    GetIntegerFromAttribute( &lRC, vArgs, "Operation", "ReturnValue" );
+
+	push	OFFSET FLAT:??_C@_0M@BKKK@ReturnValue?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_09GMMJ@Operation?$AA@	; `string'
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _lRC$[ebp]
+	push	edx
+	call	_GetIntegerFromAttribute@16
+
+; 6999 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	test	ecx, ecx
+	jle	SHORT $L9826
+
+; 7000 :       TraceLineI( "(kzoeneta) ** Sending RC packet.  RC = ", lRC );
+
+	mov	edx, DWORD PTR _lRC$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0CI@KGJB@?$CIkzoeneta?$CJ?5?$CK?$CK?5Sending?5RC?5packet?4@ ; `string'
+	call	_TraceLineI@8
+$L9826:
+
+; 7001 : 
+; 7002 :    if ( fnSendDataPacket( lpNetwork, ppvConn, zPACKET_RC, lRC ) != 0 )
+
+	mov	eax, DWORD PTR _lRC$[ebp]
+	push	eax
+	push	35					; 00000023H
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendDataPacket@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9827
+
+; 7004 :       TraceLineS( "(kzoeneta) ** Not able send Return code!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@NKCF@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5Retu@ ; `string'
+	call	_TraceLineS@8
+
+; 7005 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9827:
+
+; 7007 : 
+; 7008 :    // Send the vArgs view back to the client.
+; 7009 :    if ( fnSendOI( ppvConn, lpNetwork, vArgs, 0 ) == zCALL_ERROR )
+
+	push	0
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _ppvConn$[ebp]
+	push	eax
+	call	_fnSendOI@16
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9828
+
+; 7011 :       TraceLineS( "(kzoeneta) ** Not able send vArgs back to client!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DC@FCON@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5vArg@ ; `string'
+	call	_TraceLineS@8
+
+; 7012 :       goto EndOfFunction;
+
+	jmp	$EndOfFunction$9764
+$L9828:
+
+; 7014 : 
+; 7015 :    // Loop through each of the arguments looking for views we need to send
+; 7016 :    // back to the client.
+; 7017 :    k = -1;
+
+	mov	WORD PTR _k$[ebp], -1
+
+; 7018 :    for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 );
+; 7019 :          nRC >= zCURSOR_SET;
+; 7020 :          nRC = SetCursorNextEntity( vArgs, szlArgument, 0 ) )
+
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_SetCursorFirstEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+	jmp	SHORT $L9830
+$L9831:
+	push	0
+	push	OFFSET FLAT:_szlArgument
+	mov	eax, DWORD PTR _vArgs$[ebp]
+	push	eax
+	call	_SetCursorNextEntity@12
+	mov	WORD PTR _nRC$[ebp], ax
+$L9830:
+	movsx	ecx, WORD PTR _nRC$[ebp]
+	test	ecx, ecx
+	jl	$L9832
+
+; 7022 :       // If the argument is not a view, then don't worry about it.
+; 7023 :       if ( CompareAttributeToString( vArgs, szlArgument,
+; 7024 :                                      "DataType", "V" ) != 0 )
+
+	push	OFFSET FLAT:??_C@_01PDMC@V?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_08FNON@DataType?$AA@	; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	movsx	eax, ax
+	test	eax, eax
+	je	SHORT $L9833
+
+; 7025 :          continue;
+
+	jmp	SHORT $L9831
+$L9833:
+
+; 7026 : 
+; 7027 :       k++;
+
+	mov	cx, WORD PTR _k$[ebp]
+	add	cx, 1
+	mov	WORD PTR _k$[ebp], cx
+
+; 7028 : 
+; 7029 :       // Don't worry about the view if we're not sending it back.
+; 7030 :       nRC = CompareAttributeToString( vArgs, szlArgument, "ViewReturned", "Y" );
+
+	push	OFFSET FLAT:??_C@_01PCJP@Y?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0N@LNAH@ViewReturned?$AA@ ; `string'
+	push	OFFSET FLAT:_szlArgument
+	mov	edx, DWORD PTR _vArgs$[ebp]
+	push	edx
+	call	_CompareAttributeToString@16
+	mov	WORD PTR _nRC$[ebp], ax
+
+; 7031 :       if ( nRC )
+
+	movsx	eax, WORD PTR _nRC$[ebp]
+	test	eax, eax
+	je	SHORT $L9834
+
+; 7032 :          continue;
+
+	jmp	$L9831
+$L9834:
+
+; 7033 : 
+; 7034 : #ifdef DGC
+; 7035 :       if ( lpNetwork->nTraceLevel > 0 )
+; 7036 :       {
+; 7037 :          zCHAR szTempFileName[ zMAX_FILENAME_LTH + 1 ];
+; 7038 : 
+; 7039 :          SysGetEnvVar( szTempFileName, "TEMP", zMAX_FILENAME_LTH + 1 );
+; 7040 :          SysAppendcDirSep( szTempFileName );
+; 7041 :          zstrcat( szTempFileName, "tranoi.por" );
+; 7042 :          CommitOI_ToFile( vViewList[ k ], szTempFileName,
+; 7043 :                           zINCREMENTAL | zSAVE_CURSORS );
+; 7044 :       }
+; 7045 : #endif
+; 7046 : 
+; 7047 :       // Send the vArgs view back to the client.
+; 7048 :       if ( fnSendOI( ppvConn, lpNetwork, vViewList[ k ],
+; 7049 :                      zINCREMENTAL | zSAVE_CURSORS ) == zCALL_ERROR )
+
+	push	327680					; 00050000H
+	movsx	ecx, WORD PTR _k$[ebp]
+	mov	edx, DWORD PTR _vViewList$[ebp+ecx*4]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	call	_fnSendOI@16
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	jne	SHORT $L9835
+
+; 7051 :          TraceLineS( "(kzoeneta) ** Not able send view argument back to client!", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DK@BJBO@?$CIkzoeneta?$CJ?5?$CK?$CK?5Not?5able?5send?5view@ ; `string'
+	call	_TraceLineS@8
+
+; 7052 :          goto EndOfFunction;
+
+	jmp	SHORT $EndOfFunction$9764
+$L9835:
+
+; 7054 : 
+; 7055 :    } // for ( nRC = SetCursorFirstEntity( vArgs, szlArgument, 0 )...
+
+	jmp	$L9831
+$L9832:
+
+; 7056 : 
+; 7057 :    // If we get here then everything's fine...
+; 7058 :    nReturnCode = 0;
+
+	mov	WORD PTR _nReturnCode$[ebp], 0
+$EndOfFunction$9764:
+
+; 7059 : 
+; 7060 : EndOfFunction:
+; 7061 :    if ( vSubtask &&
+; 7062 :         fnSendMsgAndTraceObj( lpNetwork, ppvConn, vSubtask ) == zCALL_ERROR )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L9837
+	mov	eax, DWORD PTR _vSubtask$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	push	edx
+	call	_fnSendMsgAndTraceObj@12
+	movsx	eax, ax
+	cmp	eax, -16				; fffffff0H
+	jne	SHORT $L9837
+
+; 7064 :       nReturnCode = zCALL_ERROR;
+
+	mov	WORD PTR _nReturnCode$[ebp], -16	; fffffff0H
+$L9837:
+
+; 7066 : 
+; 7067 :    if ( bFlushNeeded && fnFlushBuffer( lpNetwork, ppvConn ) != 0 )
+
+	mov	ecx, DWORD PTR _bFlushNeeded$[ebp]
+	and	ecx, 255				; 000000ffH
+	test	ecx, ecx
+	je	SHORT $L9838
+	mov	edx, DWORD PTR _ppvConn$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	push	eax
+	call	_fnFlushBuffer@8
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9838
+
+; 7068 :       nReturnCode = zCALL_ERROR;
+
+	mov	WORD PTR _nReturnCode$[ebp], -16	; fffffff0H
+$L9838:
+
+; 7069 : 
+; 7070 :    for ( k = 0; k <= nViewCount; k++ )
+
+	mov	WORD PTR _k$[ebp], 0
+	jmp	SHORT $L9839
+$L9840:
+	mov	dx, WORD PTR _k$[ebp]
+	add	dx, 1
+	mov	WORD PTR _k$[ebp], dx
+$L9839:
+	movsx	eax, WORD PTR _k$[ebp]
+	movsx	ecx, WORD PTR _nViewCount$[ebp]
+	cmp	eax, ecx
+	jg	$L9841
+
+; 7072 :       if ( vViewList[ k ] )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	cmp	DWORD PTR _vViewList$[ebp+edx*4], 0
+	je	SHORT $L9847
+
+; 7074 :          if ( vViewList[ k ]->hSubtask )
+
+	movsx	eax, WORD PTR _k$[ebp]
+	mov	ecx, DWORD PTR _vViewList$[ebp+eax*4]
+	cmp	DWORD PTR [ecx+18], 0
+	je	SHORT $L9843
+
+; 7076 :             DROPSUBTASK( vViewList[ k ] );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _vViewList$[ebp+edx*4]
+	mov	ecx, DWORD PTR [eax+18]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpDropSubtask$9844[ebp], eax
+	push	0
+	mov	edx, DWORD PTR _lpDropSubtask$9844[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpDropSubtask$9844[ebp]
+	mov	ecx, DWORD PTR [eax+6]
+	push	ecx
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_fnDropSubtask
+	add	esp, 12					; 0000000cH
+
+; 7078 :          else
+
+	jmp	SHORT $L9847
+$L9843:
+
+; 7079 :             fnDropView( vViewList[ k ] );
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _vViewList$[ebp+edx*4]
+	push	eax
+	call	_fnDropView@4
+$L9847:
+
+; 7081 :    }
+
+	jmp	$L9840
+$L9841:
+
+; 7082 : 
+; 7083 :    if ( vArgs )
+
+	cmp	DWORD PTR _vArgs$[ebp], 0
+	je	SHORT $L9848
+
+; 7084 :       fnDropView( vArgs );
+
+	mov	ecx, DWORD PTR _vArgs$[ebp]
+	push	ecx
+	call	_fnDropView@4
+$L9848:
+
+; 7085 : 
+; 7086 :    if ( vSubtask )
+
+	cmp	DWORD PTR _vSubtask$[ebp], 0
+	je	SHORT $L9849
+
+; 7087 :       DROPSUBTASK( vSubtask );
+
+	mov	edx, DWORD PTR _vSubtask$[ebp]
+	mov	eax, DWORD PTR [edx+18]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	mov	DWORD PTR _lpDropSubtask$9850[ebp], eax
+	push	0
+	mov	ecx, DWORD PTR _lpDropSubtask$9850[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpDropSubtask$9850[ebp]
+	mov	eax, DWORD PTR [edx+6]
+	push	eax
+	call	DWORD PTR _g_pfnGetPtr
+	push	eax
+	call	_fnDropSubtask
+	add	esp, 12					; 0000000cH
+$L9849:
+
+; 7088 : 
+; 7089 :    fnOperationReturn( iNetCallOperation, lpTask );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	push	ecx
+	push	513					; 00000201H
+	call	_fnOperationReturn
+	add	esp, 8
+
+; 7090 :    return( nReturnCode );
+
+	mov	ax, WORD PTR _nReturnCode$[ebp]
+
+; 7091 : 
+; 7092 : } // fnProcesssOperation
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnProcessOperation@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0DF@EBAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0CN@EFKG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Trace?5Swi@ ; `string'
+;	COMDAT ??_C@_0DF@EBAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0DF@EBAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Trace Switch Message', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CN@EFKG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Trace?5Swi@
+_DATA	SEGMENT
+??_C@_0CN@EFKG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Trace?5Swi@ DB '(kzo'
+	DB	'eneta) ** Received Trace Switch message.', 00H ; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_lpTask$ = 16
+_szTraceSwitch$ = -16
+_pch$ = -4
+_k$ = -8
+_fnProcessTraceSwitches@12 PROC NEAR
+
+; 7097 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 16					; 00000010H
+
+; 7098 :    zCHAR szTraceSwitch[ L_TRACE_SWITCH_MSG + 1 ];
+; 7099 :    zPCHAR pch;
+; 7100 :    zSHORT k;
+; 7101 : 
+; 7102 :    // Retrieve the trace switch message.
+; 7103 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 7104 :                                    &pch, L_TRACE_SWITCH_MSG,
+; 7105 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	6
+	lea	eax, DWORD PTR _pch$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+174]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9863
+
+; 7107 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Trace Switch Message", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DF@EBAP@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 7108 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	$L9859
+$L9863:
+
+; 7110 : 
+; 7111 :    zmemcpy( &szTraceSwitch, pch, L_TRACE_SWITCH_MSG );
+
+	push	6
+	mov	edx, DWORD PTR _pch$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szTraceSwitch$[ebp]
+	push	eax
+	call	_memcpy
+	add	esp, 12					; 0000000cH
+
+; 7112 :    szTraceSwitch[ L_TRACE_SWITCH_MSG ] = 0;
+
+	mov	BYTE PTR _szTraceSwitch$[ebp+6], 0
+
+; 7113 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	ecx, DWORD PTR _lpNetwork$[ebp]
+	movsx	edx, WORD PTR [ecx+140]
+	test	edx, edx
+	jle	SHORT $L9865
+
+; 7114 :       TraceLineS( "(kzoeneta) ** Received Trace Switch message.", szTraceSwitch );
+
+	lea	eax, DWORD PTR _szTraceSwitch$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0CN@EFKG@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Trace?5Swi@ ; `string'
+	call	_TraceLineS@8
+$L9865:
+
+; 7115 : 
+; 7116 :    // server network tracelevel
+; 7117 :    k = (zSHORT) zatol( szTraceSwitch + 4 );
+
+	lea	ecx, DWORD PTR _szTraceSwitch$[ebp+4]
+	push	ecx
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	mov	WORD PTR _k$[ebp], ax
+
+; 7118 :    if ( k > lpNetwork->nTraceLevel )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	movsx	ecx, WORD PTR [eax+140]
+	cmp	edx, ecx
+	jle	SHORT $L9868
+
+; 7119 :       lpNetwork->nTraceLevel = k;
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	mov	ax, WORD PTR _k$[ebp]
+	mov	WORD PTR [edx+140], ax
+$L9868:
+
+; 7120 : 
+; 7121 :    // server DBHandler tracelevel
+; 7122 :    szTraceSwitch[ 4 ] = 0;
+
+	mov	BYTE PTR _szTraceSwitch$[ebp+4], 0
+
+; 7123 :    k = (zSHORT) zatol( szTraceSwitch + 2 );
+
+	lea	ecx, DWORD PTR _szTraceSwitch$[ebp+2]
+	push	ecx
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	mov	WORD PTR _k$[ebp], ax
+
+; 7124 :    if ( k > lpTask->nDBHandlerTraceLevel )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	movsx	ecx, WORD PTR [eax+92]
+	cmp	edx, ecx
+	jle	SHORT $L9870
+
+; 7125 :       lpTask->nDBHandlerTraceLevel = k;
+
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	ax, WORD PTR _k$[ebp]
+	mov	WORD PTR [edx+92], ax
+$L9870:
+
+; 7126 : 
+; 7127 :    // server core tracelevel
+; 7128 :    szTraceSwitch[ 2 ] = 0;
+
+	mov	BYTE PTR _szTraceSwitch$[ebp+2], 0
+
+; 7129 :    k = (zSHORT) zatol( szTraceSwitch );
+
+	lea	ecx, DWORD PTR _szTraceSwitch$[ebp]
+	push	ecx
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	mov	WORD PTR _k$[ebp], ax
+
+; 7130 :    if ( k > 0 )
+
+	movsx	edx, WORD PTR _k$[ebp]
+	test	edx, edx
+	jle	SHORT $L9872
+
+; 7131 :       lpTask->bTrace = TRUE;
+
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	mov	ecx, DWORD PTR [eax+443]
+	or	ecx, 4
+	mov	edx, DWORD PTR _lpTask$[ebp]
+	mov	DWORD PTR [edx+443], ecx
+$L9872:
+
+; 7132 : 
+; 7133 :    return( 0 );
+
+	xor	ax, ax
+$L9859:
+
+; 7134 : 
+; 7135 : } // fnProcessTraceSwitches
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnProcessTraceSwitches@12 ENDP
+_TEXT	ENDS
+PUBLIC	??_C@_0DC@OJLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+PUBLIC	??_C@_0CK@DIDM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Timestamp@ ; `string'
+;	COMDAT ??_C@_0DC@OJLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0DC@OJLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ DB '(kz'
+	DB	'oeneta) ** Couldn''t retrieve Timestamp Message', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@DIDM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Timestamp@
+_DATA	SEGMENT
+??_C@_0CK@DIDM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Timestamp@ DB '(kzoe'
+	DB	'neta) ** Received Timestamp message.', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpNetwork$ = 8
+_ppvConn$ = 12
+_lpTask$ = 16
+_pch$ = -4
+_fnProcessTimestamp@12 PROC NEAR
+
+; 7140 : {
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+
+; 7141 :    zPCHAR pch;
+; 7142 : 
+; 7143 :    // Retrieve the timestamp message.
+; 7144 :    if ( (*lpNetwork->lpfnReceive)( &lpNetwork->pNetworkHandle, ppvConn,
+; 7145 :                                    &pch, L_TIMESTAMP_MSG,
+; 7146 :                                    zTYPE_STRING ) != 0 )
+
+	push	83					; 00000053H
+	push	18					; 00000012H
+	lea	eax, DWORD PTR _pch$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _ppvConn$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	add	edx, 12					; 0000000cH
+	push	edx
+	mov	eax, DWORD PTR _lpNetwork$[ebp]
+	call	DWORD PTR [eax+174]
+	movsx	ecx, ax
+	test	ecx, ecx
+	je	SHORT $L9881
+
+; 7148 :       TraceLineS( "(kzoeneta) ** Couldn't retrieve Timestamp Message", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0DC@OJLL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Couldn?8t?5retrieve?5@ ; `string'
+	call	_TraceLineS@8
+
+; 7149 :       return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9879
+$L9881:
+
+; 7151 : 
+; 7152 :    // Set task timestamp from Server timestamp.
+; 7153 :    zmemcpy( lpTask->szTimeStamp, pch, L_TIMESTAMP_MSG );
+
+	push	18					; 00000012H
+	mov	edx, DWORD PTR _pch$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpTask$[ebp]
+	add	eax, 174				; 000000aeH
+	push	eax
+	call	_memcpy
+	add	esp, 12					; 0000000cH
+
+; 7154 :    lpTask->szTimeStamp[ L_TIMESTAMP_MSG ] = 0;
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	mov	BYTE PTR [ecx+192], 0
+
+; 7155 :    if ( lpNetwork->nTraceLevel > 0 )
+
+	mov	edx, DWORD PTR _lpNetwork$[ebp]
+	movsx	eax, WORD PTR [edx+140]
+	test	eax, eax
+	jle	SHORT $L9883
+
+; 7156 :       TraceLineS( "(kzoeneta) ** Received Timestamp message.", lpTask->szTimeStamp );
+
+	mov	ecx, DWORD PTR _lpTask$[ebp]
+	add	ecx, 174				; 000000aeH
+	push	ecx
+	push	OFFSET FLAT:??_C@_0CK@DIDM@?$CIkzoeneta?$CJ?5?$CK?$CK?5Received?5Timestamp@ ; `string'
+	call	_TraceLineS@8
+$L9883:
+
+; 7157 : 
+; 7158 :    return( 0 );
+
+	xor	ax, ax
+$L9879:
+
+; 7159 : 
+; 7160 : } // fnProcessTimestamp
+
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+_fnProcessTimestamp@12 ENDP
+_TEXT	ENDS
+PUBLIC	_SfStartNetworks@8
+PUBLIC	??_C@_0CJ@DNEK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Trying?5to?5startup?5@ ; `string'
+PUBLIC	??_C@_09MJBF@Network?$CFd?$AA@			; `string'
+PUBLIC	??_C@_09IBKJ@?$FLNetwork?$FN?$AA@		; `string'
+PUBLIC	??_C@_07KNL@Startup?$AA@			; `string'
+PUBLIC	??_C@_0BJ@JIDC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5?$DN?5?$AA@ ; `string'
+PUBLIC	??_C@_08DOHO@ExecName?$AA@			; `string'
+PUBLIC	??_C@_0CG@HEFO@?$CIkzoeneta?$CJ?5?$CKMainTask?$CK?5Starting?5L@ ; `string'
+PUBLIC	??_C@_0CG@LJDE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetL@ ; `string'
+PUBLIC	??_C@_0CK@JOAC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetS@ ; `string'
+PUBLIC	??_C@_0CK@IJNL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5networks?5s@ ; `string'
+;	COMDAT ??_C@_0CJ@DNEK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Trying?5to?5startup?5@
+; File C:\10C\A\oe\KZOENETA.C
+_DATA	SEGMENT
+??_C@_0CJ@DNEK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Trying?5to?5startup?5@ DB '(kz'
+	DB	'oeneta) ** Trying to startup networks', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09MJBF@Network?$CFd?$AA@
+_DATA	SEGMENT
+??_C@_09MJBF@Network?$CFd?$AA@ DB 'Network%d', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09IBKJ@?$FLNetwork?$FN?$AA@
+_DATA	SEGMENT
+??_C@_09IBKJ@?$FLNetwork?$FN?$AA@ DB '[Network]', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_07KNL@Startup?$AA@
+_DATA	SEGMENT
+??_C@_07KNL@Startup?$AA@ DB 'Startup', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BJ@JIDC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5?$DN?5?$AA@
+_DATA	SEGMENT
+??_C@_0BJ@JIDC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5?$DN?5?$AA@ DB '(kzoe'
+	DB	'neta) ** Startup = ', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08DOHO@ExecName?$AA@
+_DATA	SEGMENT
+??_C@_08DOHO@ExecName?$AA@ DB 'ExecName', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@HEFO@?$CIkzoeneta?$CJ?5?$CKMainTask?$CK?5Starting?5L@
+_DATA	SEGMENT
+??_C@_0CG@HEFO@?$CIkzoeneta?$CJ?5?$CKMainTask?$CK?5Starting?5L@ DB '(kzoe'
+	DB	'neta) *MainTask* Starting Listen', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CG@LJDE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetL@
+_DATA	SEGMENT
+??_C@_0CG@LJDE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetL@ DB '(kzo'
+	DB	'eneta) ** Error calling NetListen', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@JOAC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetS@
+_DATA	SEGMENT
+??_C@_0CK@JOAC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetS@ DB '(kzo'
+	DB	'eneta) ** Error calling NetStartup!! ', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0CK@IJNL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5networks?5s@
+_DATA	SEGMENT
+??_C@_0CK@IJNL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5networks?5s@ DB '(kzo'
+	DB	'eneta) ** Startup networks successful', 00H	; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_lpView$ = 8
+_szValue$ = -128
+_szStartup$ = -64
+_szNetName$ = -192
+_szGroupName$ = -324
+_szExecName$ = -256
+_k$ = -260
+_SfStartNetworks@8 PROC NEAR
+
+; 7184 : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 324				; 00000144H
+
+; 7185 :    zCHAR  szValue[ 61 ];
+; 7186 :    zCHAR  szStartup[ 61 ];
+; 7187 :    zCHAR  szNetName[ 61 ];
+; 7188 :    zCHAR  szGroupName[ 61 ];
+; 7189 :    zCHAR  szExecName[ 61 ];
+; 7190 :    int   k;
+; 7191 : 
+; 7192 :    // If user has specified a startup network, then start it up.
+; 7193 :    TraceLineS( "(kzoeneta) ** Trying to startup networks", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CJ@DNEK@?$CIkzoeneta?$CJ?5?$CK?$CK?5Trying?5to?5startup?5@ ; `string'
+	call	_TraceLineS@8
+
+; 7194 : 
+; 7195 :    szValue[ 0 ] = 0;
+
+	mov	BYTE PTR _szValue$[ebp], 0
+
+; 7196 :    szNetName[ 0 ] = 0;
+
+	mov	BYTE PTR _szNetName$[ebp], 0
+
+; 7197 : 
+; 7198 :    // Try starting all the networks.  They will be listed in the [network]
+; 7199 :    // group as:
+; 7200 :    //    [Network]
+; 7201 :    //    Network1=zWinSock
+; 7202 :    //    Network2=zNetBuei
+; 7203 :    //    etc...
+; 7204 :    for ( k = 1; TRUE; k++ )
+
+	mov	DWORD PTR _k$[ebp], 1
+	jmp	SHORT $L9897
+$L9898:
+	mov	eax, DWORD PTR _k$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _k$[ebp], eax
+$L9897:
+	mov	ecx, 1
+	test	ecx, ecx
+	je	$L9899
+
+; 7206 :       zsprintf( szNetName, "Network%d", k );
+
+	mov	edx, DWORD PTR _k$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_09MJBF@Network?$CFd?$AA@ ; `string'
+	lea	eax, DWORD PTR _szNetName$[ebp]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 7207 :    // TraceLineS( "(kzoeneta) ** Looking for Net = ", szNetName );
+; 7208 : 
+; 7209 :       szValue[ 0 ] = 0;
+
+	mov	BYTE PTR _szValue$[ebp], 0
+
+; 7210 :       SysReadZeidonIni( -1, "[Network]", szNetName, szValue );
+
+	lea	ecx, DWORD PTR _szValue$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szNetName$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_09IBKJ@?$FLNetwork?$FN?$AA@ ; `string'
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 7211 :       if ( szValue[ 0 ] == 0 )
+
+	movsx	eax, BYTE PTR _szValue$[ebp]
+	test	eax, eax
+	jne	SHORT $L9902
+
+; 7212 :          break;               // No network# item so break loop.
+
+	jmp	$L9899
+$L9902:
+
+; 7213 : 
+; 7214 :       zstrcpy( szNetName, szValue );
+
+	lea	ecx, DWORD PTR _szValue$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR _szNetName$[ebp]
+	push	edx
+	call	_strcpy
+	add	esp, 8
+
+; 7215 :       zsprintf( szGroupName, "[%s]", szValue );
+
+	lea	eax, DWORD PTR _szValue$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_04GKDJ@?$FL?$CFs?$FN?$AA@ ; `string'
+	lea	ecx, DWORD PTR _szGroupName$[ebp]
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+	add	esp, 12					; 0000000cH
+
+; 7216 :       SysReadZeidonIni( -1, szGroupName, "Startup", szStartup );
+
+	lea	edx, DWORD PTR _szStartup$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_07KNL@Startup?$AA@	; `string'
+	lea	eax, DWORD PTR _szGroupName$[ebp]
+	push	eax
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 7217 :       if ( szValue[ 0 ] == 0 )
+
+	movsx	ecx, BYTE PTR _szValue$[ebp]
+	test	ecx, ecx
+	jne	SHORT $L9904
+
+; 7218 :          continue;
+
+	jmp	$L9898
+$L9904:
+
+; 7219 : 
+; 7220 :       TraceLineS( "(kzoeneta) ** Startup = ", szStartup );
+
+	lea	edx, DWORD PTR _szStartup$[ebp]
+	push	edx
+	push	OFFSET FLAT:??_C@_0BJ@JIDC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5?$DN?5?$AA@ ; `string'
+	call	_TraceLineS@8
+
+; 7221 : 
+; 7222 :       // If Startup is NO, 0, or FALSE don't start it.
+; 7223 :       if ( ztoupper( szStartup[ 0 ] ) == 'N' || szStartup[ 0 ] == '0' ||
+; 7224 :            ztoupper( szStartup[ 0 ] ) == 'F' )
+
+	movsx	eax, BYTE PTR _szStartup$[ebp]
+	push	eax
+	call	DWORD PTR __imp__toupper
+	add	esp, 4
+	cmp	eax, 78					; 0000004eH
+	je	SHORT $L9907
+	movsx	ecx, BYTE PTR _szStartup$[ebp]
+	cmp	ecx, 48					; 00000030H
+	je	SHORT $L9907
+	movsx	edx, BYTE PTR _szStartup$[ebp]
+	push	edx
+	call	DWORD PTR __imp__toupper
+	add	esp, 4
+	cmp	eax, 70					; 00000046H
+	jne	SHORT $L9906
+$L9907:
+
+; 7226 :          continue;
+
+	jmp	$L9898
+$L9906:
+
+; 7228 : 
+; 7229 :       SysReadZeidonIni( -1, szGroupName, "ExecName", szExecName );
+
+	lea	eax, DWORD PTR _szExecName$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_08DOHO@ExecName?$AA@	; `string'
+	lea	ecx, DWORD PTR _szGroupName$[ebp]
+	push	ecx
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 7230 :       if ( szExecName[ 0 ] == 0 )
+
+	movsx	edx, BYTE PTR _szExecName$[ebp]
+	test	edx, edx
+	jne	SHORT $L9909
+
+; 7231 :          zstrcpy( szExecName, szNetName );
+
+	lea	eax, DWORD PTR _szNetName$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _szExecName$[ebp]
+	push	ecx
+	call	_strcpy
+	add	esp, 8
+$L9909:
+
+; 7232 : 
+; 7233 :       // If network is started see if we need to do a listen.
+; 7234 :       if ( NetStartup( lpView, szNetName, szExecName ) != zCALL_ERROR )
+
+	lea	edx, DWORD PTR _szExecName$[ebp]
+	push	edx
+	lea	eax, DWORD PTR _szNetName$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _lpView$[ebp]
+	push	ecx
+	call	_NetStartup@12
+	movsx	edx, ax
+	cmp	edx, -16				; fffffff0H
+	je	$L9910
+
+; 7236 :          SysReadZeidonIni( -1, szGroupName, "TraceLevel", szValue );
+
+	lea	eax, DWORD PTR _szValue$[ebp]
+	push	eax
+	push	OFFSET FLAT:??_C@_0L@ODNC@TraceLevel?$AA@ ; `string'
+	lea	ecx, DWORD PTR _szGroupName$[ebp]
+	push	ecx
+	push	-1
+	call	_SysReadZeidonIni@16
+
+; 7237 :          if ( szValue[ 0 ] )
+
+	movsx	edx, BYTE PTR _szValue$[ebp]
+	test	edx, edx
+	je	SHORT $L9911
+
+; 7238 :             NetSetTraceLevel( lpView, szNetName, (zSHORT) zatol( szValue ) );
+
+	lea	eax, DWORD PTR _szValue$[ebp]
+	push	eax
+	call	DWORD PTR __imp__atol
+	add	esp, 4
+	push	eax
+	lea	ecx, DWORD PTR _szNetName$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _lpView$[ebp]
+	push	edx
+	call	_NetSetTraceLevel@12
+$L9911:
+
+; 7239 : 
+; 7240 :          // TODO: CHANGE THIS
+; 7241 :          // (BC) Not sure why this is Here, Listen is called in NetStartup
+; 7242 :          //        so no need for it here
+; 7243 : 
+; 7244 :          // We only automatically start a listen for the main task.
+; 7245 :          if ( ztoupper( szStartup[ 0 ] ) == 'L' &&
+; 7246 :               (AnchorBlock->hMainTask == 0 ||
+; 7247 :                AnchorBlock->hMainTask == lpView->hTask) )
+
+	movsx	eax, BYTE PTR _szStartup$[ebp]
+	push	eax
+	call	DWORD PTR __imp__toupper
+	add	esp, 4
+	cmp	eax, 76					; 0000004cH
+	jne	SHORT $L9916
+	mov	ecx, DWORD PTR _AnchorBlock
+	cmp	DWORD PTR [ecx+106], 0
+	je	SHORT $L9914
+	mov	edx, DWORD PTR _AnchorBlock
+	mov	eax, DWORD PTR _lpView$[ebp]
+	mov	ecx, DWORD PTR [edx+106]
+	cmp	ecx, DWORD PTR [eax+14]
+	jne	SHORT $L9916
+$L9914:
+
+; 7249 :             TraceLineS( "(kzoeneta) *MainTask* Starting Listen", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@HEFO@?$CIkzoeneta?$CJ?5?$CKMainTask?$CK?5Starting?5L@ ; `string'
+	call	_TraceLineS@8
+
+; 7250 :             if ( NetListen( lpView, szNetName ) == zCALL_ERROR )
+
+	lea	edx, DWORD PTR _szNetName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpView$[ebp]
+	push	eax
+	call	_NetListen@8
+	movsx	ecx, ax
+	cmp	ecx, -16				; fffffff0H
+	jne	SHORT $L9916
+
+; 7252 :                TraceLineS( "(kzoeneta) ** Error calling NetListen", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CG@LJDE@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetL@ ; `string'
+	call	_TraceLineS@8
+
+; 7253 :                NetClose( lpView, szNetName );
+
+	lea	edx, DWORD PTR _szNetName$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _lpView$[ebp]
+	push	eax
+	call	_NetClose@8
+
+; 7254 :                return( zCALL_ERROR );
+
+	mov	ax, -16					; fffffff0H
+	jmp	SHORT $L9889
+$L9916:
+
+; 7258 :      else
+
+	jmp	SHORT $L9918
+$L9910:
+
+; 7259 :         TraceLineS( "(kzoeneta) ** Error calling NetStartup!! ", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@JOAC@?$CIkzoeneta?$CJ?5?$CK?$CK?5Error?5calling?5NetS@ ; `string'
+	call	_TraceLineS@8
+$L9918:
+
+; 7260 : 
+; 7261 : 
+; 7262 :    } // for k...
+
+	jmp	$L9898
+$L9899:
+
+; 7263 : 
+; 7264 :    TraceLineS( "(kzoeneta) ** Startup networks successful", "" );
+
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0CK@IJNL@?$CIkzoeneta?$CJ?5?$CK?$CK?5Startup?5networks?5s@ ; `string'
+	call	_TraceLineS@8
+
+; 7265 : 
+; 7266 :    return( 0 );
+
+	xor	ax, ax
+$L9889:
+
+; 7267 : 
+; 7268 : } // SfStartNetworks
+
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+_SfStartNetworks@8 ENDP
+_TEXT	ENDS
+END

@@ -1,0 +1,442 @@
+# Microsoft Developer Studio Generated Dependency File, included by JPegLib.mak
+
+.\Jcapimin.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcapistd.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jccoefct.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jccolor.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcdctmgr.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jchuff.c : \
+	".\Jchuff.h"\
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcinit.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcmainct.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcmarker.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcmaster.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcomapi.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcparam.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcphuff.c : \
+	".\Jchuff.h"\
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcprepct.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jcsample.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jctrans.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdapimin.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdapistd.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdatadst.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdatasrc.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdcoefct.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdcolor.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jddctmgr.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdhuff.c : \
+	".\Jconfig.h"\
+	".\Jdhuff.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdinput.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdmainct.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdmarker.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdmaster.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdmerge.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdphuff.c : \
+	".\Jconfig.h"\
+	".\Jdhuff.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdpostct.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdsample.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jdtrans.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jerror.c : \
+	"..\..\..\w\incr\kzoeenaa.h"\
+	"..\..\incr\kzoegdef.h"\
+	"..\..\incr\kzoengaa.h"\
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpeglib.h"\
+	".\Jversion.h"\
+	
+
+.\Jfdctflt.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jfdctfst.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jfdctint.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jidctflt.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jidctfst.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jidctint.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jidctred.c : \
+	".\Jconfig.h"\
+	".\Jdct.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jmemmgr.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmemsys.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jmemnobs.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmemsys.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jpegtran.c : \
+	".\Cderror.h"\
+	".\Cdjpeg.h"\
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpeglib.h"\
+	".\Jversion.h"\
+	
+
+.\Jquant1.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jquant2.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	
+
+.\Jutils.c : \
+	".\Jconfig.h"\
+	".\Jerror.h"\
+	".\Jinclude.h"\
+	".\Jmorecfg.h"\
+	".\Jpegint.h"\
+	".\Jpeglib.h"\
+	

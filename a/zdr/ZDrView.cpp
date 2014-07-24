@@ -1566,18 +1566,13 @@ ZDrView::OnEraseBkgnd( CDC *pDC )
    {
       // Set brush to desired background color.
       // Save old brush.
-      CBrush brush;
-      brush.CreateSysColorBrush( COLOR_BTNFACE );
-
-      // Select the brush into the device context. 
-      CBrush *pOldBrush = (CBrush *) pDC->SelectObject( &brush );
-
-   // if ( m_pBrushBk )
-   // {
-   //    m_pBrushBk->UnrealizeObject( );
-   //    pDC->SetBrushOrg( 0, 0 );
-   //    pOldBrush = pDC->SelectObject( m_pBrushBk );
-   // }
+      CBrush *pOldBrush = 0;
+      if ( m_pBrushBk )
+      {
+         m_pBrushBk->UnrealizeObject( );
+         pDC->SetBrushOrg( 0, 0 );
+         pOldBrush = pDC->SelectObject( m_pBrushBk );
+      }
 
       pDC->PatBlt( rect.left, rect.top, rect.Width( ),
                    rect.Height( ), PATCOPY );

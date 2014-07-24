@@ -58,7 +58,7 @@ public:
    int     m_t;           // debugging only
 
 private:
-   
+
    CString m_csName;      // name of this attribute
    CString m_csValue;     // value of this attribute
    char    m_chDelimiter; // delimiter for the value of this attribute (i.e. " or ')

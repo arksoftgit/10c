@@ -1,12 +1,12 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "ZDRVROPR.H" 
- 
+#include "KZOENGAA.H"
+#include "ZDRVROPR.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 zOPER_EXPORT zSHORT OPERATION
@@ -67,16 +67,16 @@ o_zwTZCMREVD_IsSysadm( zVIEW     vSubtask );
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVO_DeleteReviewType( zVIEW     vSubtask )
 {
-   zCHAR     szMsg[ 151 ] = { 0 }; 
+   zCHAR     szMsg[ 151 ] = { 0 };
    //:STRING ( 32) szType
-   zCHAR     szType[ 33 ] = { 0 }; 
+   zCHAR     szType[ 33 ] = { 0 };
    //:INTEGER      nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
 
    //:VIEW TZCMREVO REGISTERED AS TZCMREVO
-   zVIEW     TZCMREVO = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZCMREVO = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZCMREVO, "TZCMREVO", vSubtask, zLEVEL_TASK );
 
@@ -92,17 +92,17 @@ zwTZCMREVO_DeleteReviewType( zVIEW     vSubtask )
 
    //:IF nRC = zRESPONSE_YES
    if ( nRC == zRESPONSE_YES )
-   { 
+   {
       //:nRC = SetCursorFirstSelectedEntity( TZCMREVO, "RevEvent", "" )
       nRC = SetCursorFirstSelectedEntity( TZCMREVO, "RevEvent", "" );
 
       //:LOOP WHILE nRC >= zCURSOR_SET
       while ( nRC >= zCURSOR_SET )
-      { 
+      {
          //:  IF TZCMREVO.AuditTrail EXISTS
          lTempInteger_0 = CheckExistenceOfEntity( TZCMREVO, "AuditTrail" );
          if ( lTempInteger_0 == 0 )
-         { 
+         {
             //:  szType = TZCMREVO.RevEvent.Type
             GetVariableFromAttribute( szType, 0, 'S', 33, TZCMREVO, "RevEvent", "Type", "", 0 );
             //:  szMsg = "Review Event '" + szType  + "' cannot be deleted " + zNEW_LINE +
@@ -118,25 +118,25 @@ zwTZCMREVO_DeleteReviewType( zVIEW     vSubtask )
             //:  SetSelectStateOfEntity( TZCMREVO, "RevEvent", FALSE )
             SetSelectStateOfEntity( TZCMREVO, "RevEvent", FALSE );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:  DeleteEntity( TZCMREVO, "RevEvent", zREPOS_NONE )
             DeleteEntity( TZCMREVO, "RevEvent", zREPOS_NONE );
-         } 
+         }
 
          //:  END
          //:  nRC = SetCursorNextSelectedEntity( TZCMREVO, "RevEvent", "" )
          nRC = SetCursorNextSelectedEntity( TZCMREVO, "RevEvent", "" );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -151,11 +151,11 @@ o_zwTZCMREVO_DeleteEmptyInstances( zVIEW     vView,
                                    zPCHAR    szErrorText,
                                    zPLONG    nColumn )
 {
-   zCHAR     szValue[ 255 ] = { 0 }; 
+   zCHAR     szValue[ 255 ] = { 0 };
    //: STRING (254)  szDesc
-   zCHAR     szDesc[ 255 ] = { 0 }; 
+   zCHAR     szDesc[ 255 ] = { 0 };
    //: INTEGER       nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
 
 
    //: nRC = SetCursorFirstEntity( vView, szEntityName, "" )
@@ -163,7 +163,7 @@ o_zwTZCMREVO_DeleteEmptyInstances( zVIEW     vView,
 
    //: LOOP WHILE nRC >= zCURSOR_SET
    while ( nRC >= zCURSOR_SET )
-   { 
+   {
       //:   GetStringFromAttribute( szValue, vView, szEntityName, szAttributeName )
       GetStringFromAttribute( szValue, vView, szEntityName, szAttributeName );
       //:   GetStringFromAttribute( szDesc, vView, szEntityName, "Desc" )
@@ -171,16 +171,16 @@ o_zwTZCMREVO_DeleteEmptyInstances( zVIEW     vView,
 
       //:   IF szValue = "" AND szDesc = ""
       if ( ZeidonStringCompare( szValue, 1, 0, "", 1, 0, 255 ) == 0 && ZeidonStringCompare( szDesc, 1, 0, "", 1, 0, 255 ) == 0 )
-      { 
+      {
          //:   DeleteEntity( vView, szEntityName, zREPOS_NONE )
          DeleteEntity( vView, szEntityName, zREPOS_NONE );
          //:ELSE
-      } 
+      }
       else
-      { 
+      {
          //:   IF szValue = "" AND szDesc != ""
          if ( ZeidonStringCompare( szValue, 1, 0, "", 1, 0, 255 ) == 0 && ZeidonStringCompare( szDesc, 1, 0, "", 1, 0, 255 ) != 0 )
-         { 
+         {
             //:   szErrorText = "Type"
             ZeidonStringCopy( szErrorText, 1, 0, "Type", 1, 0, 33 );
             //:   nColumn = 0
@@ -188,38 +188,38 @@ o_zwTZCMREVO_DeleteEmptyInstances( zVIEW     vView,
             //:   RETURN -1
             return( -1 );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:   IF szValue != "" AND szDesc = ""
             if ( ZeidonStringCompare( szValue, 1, 0, "", 1, 0, 255 ) != 0 && ZeidonStringCompare( szDesc, 1, 0, "", 1, 0, 255 ) == 0 )
-            { 
+            {
                //:   szErrorText = "Desc"
                ZeidonStringCopy( szErrorText, 1, 0, "Desc", 1, 0, 33 );
                //:   nColumn = 1
                *nColumn = 1;
                //:   RETURN -1
                return( -1 );
-            } 
+            }
 
             //:   END
-         } 
+         }
 
          //:   END
-      } 
+      }
 
       //:   END
 
       //:  nRC = SetCursorNextEntity( vView, szEntityName, "" )
       nRC = SetCursorNextEntity( vView, szEntityName, "" );
-   } 
+   }
 
    //: END
 
    //: RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -229,8 +229,8 @@ o_zwTZCMREVO_DeleteEmptyInstances( zVIEW     vView,
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVD_CreateReviewType( zVIEW     vSubtask )
 {
-   zVIEW     TZCMREVO = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZCMREVO = 0;
+   zSHORT    RESULT;
 
    RESULT = GetViewByName( &TZCMREVO, "TZCMREVO", vSubtask, zLEVEL_TASK );
 
@@ -243,7 +243,7 @@ zwTZCMREVD_CreateReviewType( zVIEW     vSubtask )
    TG_SetActiveCell( vSubtask, "tgReviewType", -1, 0 );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -253,13 +253,13 @@ zwTZCMREVD_CreateReviewType( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVD_PreBuild( zVIEW     vSubtask )
 {
-   zLONG     lRepo_ViewCluster = 0; 
+   zLONG     lRepo_ViewCluster = 0;
 
    //:VIEW TZCMREPO BASED ON LOD TZCMREPO
-   zVIEW     TZCMREPO = 0; 
+   zVIEW     TZCMREPO = 0;
    //:VIEW TZCMREVO BASED ON LOD TZCMREVO
-   zVIEW     TZCMREVO = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZCMREVO = 0;
+   zSHORT    RESULT;
 
 
    //:GET VIEW TZCMREPO NAMED "TZCMREPO"
@@ -269,7 +269,7 @@ zwTZCMREVD_PreBuild( zVIEW     vSubtask )
 
    //:IF RESULT < 0
    if ( RESULT < 0 )
-   { 
+   {
       //:ACTIVATE TZCMREVO MULTIPLE
       RESULT = ActivateObjectInstance( &TZCMREVO, "TZCMREVO", vSubtask, 0, zMULTIPLE );
       //:NAME VIEW TZCMREVO "TZCMREVO"
@@ -280,12 +280,12 @@ zwTZCMREVD_PreBuild( zVIEW     vSubtask )
       GetIntegerFromAttribute( &lRepo_ViewCluster, TZCMREPO, "Installation", "Repo_ViewCluster" );
       //:AddToViewCluster( lRepo_ViewCluster, TZCMREVO, 0 )
       AddToViewCluster( lRepo_ViewCluster, TZCMREVO, 0 );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -295,23 +295,23 @@ zwTZCMREVD_PreBuild( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVD_CommitReviewType( zVIEW     vSubtask )
 {
-   zCHAR     szErrorText[ 33 ] = { 0 }; 
+   zCHAR     szErrorText[ 33 ] = { 0 };
    //:STRING ( 16 )  szIntegerValue
-   zCHAR     szIntegerValue[ 17 ] = { 0 }; 
+   zCHAR     szIntegerValue[ 17 ] = { 0 };
    //:STRING ( 60 )  szMsg
-   zCHAR     szMsg[ 61 ] = { 0 }; 
+   zCHAR     szMsg[ 61 ] = { 0 };
    //:INTEGER        nColumn
-   zLONG     nColumn = 0; 
+   zLONG     nColumn = 0;
 
    //:VIEW TZCMREPO BASED ON LOD TZCMREPO
-   zVIEW     TZCMREPO = 0; 
+   zVIEW     TZCMREPO = 0;
    //:VIEW TZCMREVO REGISTERED AS TZCMREVO
-   zVIEW     TZCMREVO = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zSHORT    lTempInteger_3; 
+   zVIEW     TZCMREVO = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zSHORT    lTempInteger_3;
 
    RESULT = GetViewByName( &TZCMREVO, "TZCMREVO", vSubtask, zLEVEL_TASK );
 
@@ -323,17 +323,17 @@ zwTZCMREVD_CommitReviewType( zVIEW     vSubtask )
    //:IF zwTZCMREVD_IsSysadm( vSubtask ) = 0
    lTempInteger_0 = o_zwTZCMREVD_IsSysadm( vSubtask );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:RETURN 0
       return( 0 );
-   } 
+   }
 
    //:END
 
    //:IF zwTZCMREVO_DeleteEmptyInstances( TZCMREVO, "RevEvent", "Type", szErrorText, nColumn ) < 0
    lTempInteger_1 = o_zwTZCMREVO_DeleteEmptyInstances( TZCMREVO, "RevEvent", "Type", szErrorText, &nColumn );
    if ( lTempInteger_1 < 0 )
-   { 
+   {
       //:szMsg = "Event " + szErrorText + " is required."
       ZeidonStringCopy( szMsg, 1, 0, "Event ", 1, 0, 61 );
       ZeidonStringConcat( szMsg, 1, 0, szErrorText, 1, 0, 61 );
@@ -349,7 +349,7 @@ zwTZCMREVD_CommitReviewType( zVIEW     vSubtask )
       TG_SetActiveCell( vSubtask, "tgReviewType", -1, nColumn );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -358,7 +358,7 @@ zwTZCMREVD_CommitReviewType( zVIEW     vSubtask )
    //:IF zwTZCMREVO_CheckUniqueInteger( TZCMREVO, "RevEvent", "Type", szIntegerValue ) < 0
    lTempInteger_2 = o_zwTZCMREVO_CheckUniqueInteger( TZCMREVO, "RevEvent", "Type", szIntegerValue );
    if ( lTempInteger_2 < 0 )
-   { 
+   {
       //:szMsg = "Event Type '" + szIntegerValue + "' is not unique."
       ZeidonStringCopy( szMsg, 1, 0, "Event Type '", 1, 0, 61 );
       ZeidonStringConcat( szMsg, 1, 0, szIntegerValue, 1, 0, 61 );
@@ -374,22 +374,22 @@ zwTZCMREVD_CommitReviewType( zVIEW     vSubtask )
       TG_SetActiveCell( vSubtask, "tgReviewType", -1, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
    //:IF ObjectInstanceUpdated( TZCMREVO ) = 1
    lTempInteger_3 = ObjectInstanceUpdated( TZCMREVO );
    if ( lTempInteger_3 == 1 )
-   { 
+   {
       //:TZCMREPO.Installation.UpdateAuditTrail = 1
       SetAttributeFromInteger( TZCMREPO, "Installation", "UpdateAuditTrail", 1 );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -403,13 +403,13 @@ o_zwTZCMREVO_CheckUniqueInteger( zVIEW     vView,
                                  zPCHAR    szAttributeName,
                                  zPCHAR    szIntegerValue )
 {
-   zLONG     nValue = 0; 
+   zLONG     nValue = 0;
    //: INTEGER nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
    //: VIEW    vReviewView
-   zVIEW     vReviewView = 0; 
+   zVIEW     vReviewView = 0;
    //: VIEW    vReviewView1
-   zVIEW     vReviewView1 = 0; 
+   zVIEW     vReviewView1 = 0;
 
 
    //: CreateViewFromViewForTask( vReviewView, vView, vView )
@@ -425,7 +425,7 @@ o_zwTZCMREVO_CheckUniqueInteger( zVIEW     vView,
 
    //: LOOP WHILE nRC >= zCURSOR_SET
    while ( nRC >= zCURSOR_SET )
-   { 
+   {
       //:   GetIntegerFromAttribute( nValue, vReviewView, szEntityName, szAttributeName )
       GetIntegerFromAttribute( &nValue, vReviewView, szEntityName, szAttributeName );
 
@@ -436,7 +436,7 @@ o_zwTZCMREVO_CheckUniqueInteger( zVIEW     vView,
 
       //:   IF nRC >= zCURSOR_SET
       if ( nRC >= zCURSOR_SET )
-      { 
+      {
          //:   SetCursorFirstEntityByInteger( vView, szEntityName, szAttributeName, nValue, "" )
          SetCursorFirstEntityByInteger( vView, szEntityName, szAttributeName, nValue, "" );
          //:   SetCursorNextEntityByInteger( vView, szEntityName, szAttributeName, nValue, "" )
@@ -449,13 +449,13 @@ o_zwTZCMREVO_CheckUniqueInteger( zVIEW     vView,
          DropView( vReviewView1 );
          //:   RETURN -1
          return( -1 );
-      } 
+      }
 
       //:   END
 
       //:   nRC = SetCursorNextEntity( vReviewView, szEntityName, "" )
       nRC = SetCursorNextEntity( vReviewView, szEntityName, "" );
-   } 
+   }
 
    //: END
 
@@ -467,7 +467,7 @@ o_zwTZCMREVO_CheckUniqueInteger( zVIEW     vView,
    //: RETURN 0
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -477,10 +477,10 @@ o_zwTZCMREVO_CheckUniqueInteger( zVIEW     vView,
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVD_DisableAutoSort( zVIEW     vSubtask )
 {
-   zLONG     bSysadm = 0; 
+   zLONG     bSysadm = 0;
    //: SHORT bLockColumn
-   zSHORT    bLockColumn = 0; 
-   zSHORT    lTempInteger_0; 
+   zSHORT    bLockColumn = 0;
+   zSHORT    lTempInteger_0;
 
 
    //: TG_EnableAutosort( vSubtask, "tgReviewType", FALSE )
@@ -489,20 +489,20 @@ zwTZCMREVD_DisableAutoSort( zVIEW     vSubtask )
    //: IF zwTZCMREVD_IsSysadm( vSubtask ) = 1
    lTempInteger_0 = o_zwTZCMREVD_IsSysadm( vSubtask );
    if ( lTempInteger_0 == 1 )
-   { 
+   {
       //: bSysadm     = TRUE
       bSysadm = TRUE;
       //: bLockColumn = FALSE
       bLockColumn = FALSE;
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //: bSysadm     = FALSE
       bSysadm = FALSE;
       //: bLockColumn = TRUE
       bLockColumn = TRUE;
-   } 
+   }
 
    //: END
 
@@ -519,7 +519,7 @@ zwTZCMREVD_DisableAutoSort( zVIEW     vSubtask )
    TG_LockColumn( vSubtask, "tgReviewType", 2, (zLONG) bLockColumn );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -529,8 +529,8 @@ zwTZCMREVD_DisableAutoSort( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVD_CreateSubEvent( zVIEW     vSubtask )
 {
-   zVIEW     TZCMREVO = 0; 
-   zSHORT    RESULT; 
+   zVIEW     TZCMREVO = 0;
+   zSHORT    RESULT;
 
    RESULT = GetViewByName( &TZCMREVO, "TZCMREVO", vSubtask, zLEVEL_TASK );
 
@@ -543,7 +543,7 @@ zwTZCMREVD_CreateSubEvent( zVIEW     vSubtask )
    TG_SetActiveCell( vSubtask, "tgReviewType", -1, 0 );
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -553,16 +553,16 @@ zwTZCMREVD_CreateSubEvent( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVO_DeleteSubEvent( zVIEW     vSubtask )
 {
-   zCHAR     szMsg[ 151 ] = { 0 }; 
+   zCHAR     szMsg[ 151 ] = { 0 };
    //:STRING ( 32) szSubType
-   zCHAR     szSubType[ 33 ] = { 0 }; 
+   zCHAR     szSubType[ 33 ] = { 0 };
    //:INTEGER      nRC
-   zLONG     nRC = 0; 
+   zLONG     nRC = 0;
 
    //:VIEW TZCMREVO REGISTERED AS TZCMREVO
-   zVIEW     TZCMREVO = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
+   zVIEW     TZCMREVO = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
 
    RESULT = GetViewByName( &TZCMREVO, "TZCMREVO", vSubtask, zLEVEL_TASK );
 
@@ -578,17 +578,17 @@ zwTZCMREVO_DeleteSubEvent( zVIEW     vSubtask )
 
    //:IF nRC = zRESPONSE_YES
    if ( nRC == zRESPONSE_YES )
-   { 
+   {
       //:nRC = SetCursorFirstSelectedEntity( TZCMREVO, "RevSubEvent", "" )
       nRC = SetCursorFirstSelectedEntity( TZCMREVO, "RevSubEvent", "" );
 
       //:LOOP WHILE nRC >= zCURSOR_SET
       while ( nRC >= zCURSOR_SET )
-      { 
+      {
          //:  IF TZCMREVO.SubAuditTrail EXISTS
          lTempInteger_0 = CheckExistenceOfEntity( TZCMREVO, "SubAuditTrail" );
          if ( lTempInteger_0 == 0 )
-         { 
+         {
             //:  szSubType = TZCMREVO.RevSubEvent.Subtype
             GetVariableFromAttribute( szSubType, 0, 'S', 33, TZCMREVO, "RevSubEvent", "Subtype", "", 0 );
             //:  szMsg = "SubEvent '" + szSubType  + "' cannot be deleted " + zNEW_LINE +
@@ -604,25 +604,25 @@ zwTZCMREVO_DeleteSubEvent( zVIEW     vSubtask )
             //:  SetSelectStateOfEntity( TZCMREVO, "RevSubEvent", FALSE )
             SetSelectStateOfEntity( TZCMREVO, "RevSubEvent", FALSE );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:  DeleteEntity( TZCMREVO, "RevSubEvent", zREPOS_NONE )
             DeleteEntity( TZCMREVO, "RevSubEvent", zREPOS_NONE );
-         } 
+         }
 
          //:  END
          //:  nRC = SetCursorNextSelectedEntity( TZCMREVO, "RevSubEvent", "" )
          nRC = SetCursorNextSelectedEntity( TZCMREVO, "RevSubEvent", "" );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:DIALOG OPERATION
@@ -632,21 +632,21 @@ zwTZCMREVO_DeleteSubEvent( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMREVD_AcceptSubEvent( zVIEW     vSubtask )
 {
-   zCHAR     szErrorText[ 33 ] = { 0 }; 
+   zCHAR     szErrorText[ 33 ] = { 0 };
    //:STRING ( 16 )  szIntegerValue
-   zCHAR     szIntegerValue[ 17 ] = { 0 }; 
+   zCHAR     szIntegerValue[ 17 ] = { 0 };
    //:STRING ( 60 )  szMsg
-   zCHAR     szMsg[ 61 ] = { 0 }; 
+   zCHAR     szMsg[ 61 ] = { 0 };
    //:INTEGER        nColumn
-   zLONG     nColumn = 0; 
+   zLONG     nColumn = 0;
 
    //:VIEW TZCMREVO REGISTERED AS TZCMREVO
-   zVIEW     TZCMREVO = 0; 
-   zSHORT    RESULT; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
-   zSHORT    lTempInteger_3; 
+   zVIEW     TZCMREVO = 0;
+   zSHORT    RESULT;
+   zSHORT    lTempInteger_0;
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
+   zSHORT    lTempInteger_3;
 
    RESULT = GetViewByName( &TZCMREVO, "TZCMREVO", vSubtask, zLEVEL_TASK );
    //:nColumn = 0
@@ -655,19 +655,19 @@ zwTZCMREVD_AcceptSubEvent( zVIEW     vSubtask )
    //:IF zwTZCMREVD_IsSysadm( vSubtask ) = 0
    lTempInteger_0 = o_zwTZCMREVD_IsSysadm( vSubtask );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:CancelSubobject( TZCMREVO, "RevEvent" )
       CancelSubobject( TZCMREVO, "RevEvent" );
       //:RETURN 0
       return( 0 );
-   } 
+   }
 
    //:END
 
    //:IF zwTZCMREVO_DeleteEmptyInstances( TZCMREVO, "RevSubEvent", "Subtype", szErrorText, nColumn ) < 0
    lTempInteger_1 = o_zwTZCMREVO_DeleteEmptyInstances( TZCMREVO, "RevSubEvent", "Subtype", szErrorText, &nColumn );
    if ( lTempInteger_1 < 0 )
-   { 
+   {
       //:szMsg = "SubEvent " + szErrorText + " is required."
       ZeidonStringCopy( szMsg, 1, 0, "SubEvent ", 1, 0, 61 );
       ZeidonStringConcat( szMsg, 1, 0, szErrorText, 1, 0, 61 );
@@ -683,7 +683,7 @@ zwTZCMREVD_AcceptSubEvent( zVIEW     vSubtask )
       TG_SetActiveCell( vSubtask, "tgReviewType", -1, nColumn );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -692,7 +692,7 @@ zwTZCMREVD_AcceptSubEvent( zVIEW     vSubtask )
    //:IF zwTZCMREVO_CheckUniqueInteger( TZCMREVO, "RevSubEvent", "Subtype", szIntegerValue ) < 0
    lTempInteger_2 = o_zwTZCMREVO_CheckUniqueInteger( TZCMREVO, "RevSubEvent", "Subtype", szIntegerValue );
    if ( lTempInteger_2 < 0 )
-   { 
+   {
       //:szMsg = "Subtype '" + szIntegerValue + "' is not unique."
       ZeidonStringCopy( szMsg, 1, 0, "Subtype '", 1, 0, 61 );
       ZeidonStringConcat( szMsg, 1, 0, szIntegerValue, 1, 0, 61 );
@@ -708,24 +708,24 @@ zwTZCMREVD_AcceptSubEvent( zVIEW     vSubtask )
       TG_SetActiveCell( vSubtask, "tgReviewType", -1, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
    //:IF AcceptSubobject( TZCMREVO, "RevEvent" ) < 0
    lTempInteger_3 = AcceptSubobject( TZCMREVO, "RevEvent" );
    if ( lTempInteger_3 < 0 )
-   { 
+   {
       //:RefreshCtrl( vSubtask, "tgReviewType" )
       RefreshCtrl( vSubtask, "tgReviewType" );
       //:SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, "", "" )
       SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, "", "" );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:LOCAL OPERATION
@@ -735,12 +735,12 @@ zwTZCMREVD_AcceptSubEvent( zVIEW     vSubtask )
 static zSHORT
 o_zwTZCMREVD_IsSysadm( zVIEW     vSubtask )
 {
-   zVIEW     vTZCMREPO = 0; 
+   zVIEW     vTZCMREPO = 0;
    //:VIEW vTZCMWIPO BASED ON LOD TZCMWIPO
-   zVIEW     vTZCMWIPO = 0; 
+   zVIEW     vTZCMWIPO = 0;
 
    //:SHORT nSysadm
-   zSHORT    nSysadm = 0; 
+   zSHORT    nSysadm = 0;
 
 
    //:nSysadm = 0
@@ -753,20 +753,20 @@ o_zwTZCMREVD_IsSysadm( zVIEW     vSubtask )
 
    //:IF vTZCMWIPO.ROOT.UserName = vTZCMREPO.Installation.Sysadm
    if ( CompareAttributeToAttribute( vTZCMWIPO, "ROOT", "UserName", vTZCMREPO, "Installation", "Sysadm" ) == 0 )
-   { 
+   {
       //:nSysadm = 1
       nSysadm = 1;
-   } 
+   }
 
    //:END
 
    //:RETURN nSysadm
    return( nSysadm );
 // END
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif

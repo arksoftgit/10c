@@ -314,11 +314,8 @@ oTZZOXODO_SaveXOD( zVIEW vSubtask, zVIEW vTZZOLODO )
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
    if ( vTaskLPLR )
    {
-      zCHAR  szXMD_FileTemp[ zMAX_FILESPEC_LTH + 1 ];
-
-      GetStringFromAttribute( szXMD_FileTemp, vTaskLPLR, "LPLR", "ExecDir" );
-      zstrcat( szXMD_FileTemp, "\\ZEIDON.XMD" );
-      SysConvertEnvironmentString( szXMD_FileSpec, szXMD_FileTemp );
+      GetStringFromAttribute( szXMD_FileSpec, vTaskLPLR, "LPLR", "ExecDir" );
+      zstrcat( szXMD_FileSpec, "\\ZEIDON.XMD" );
       hXMD_File = SysOpenFile( vTaskLPLR, szXMD_FileSpec, COREFILE_READ );
       if ( hXMD_File >= 0 )
       {
@@ -748,7 +745,11 @@ ofnTZZOXODO_BldXOD( zVIEW vSubtask, zVIEW vTZZOXODO_Root,
       pszNetwork = pszParadigm = "";
    }
 
-   // Always set the Siron DB Type indicator regardless of type.
+   // Set the SourceFile Extension, if there is a SourceFile for Scala, as the OE needs
+   // to know if it is Scala.
+   if ( SetCursorFirstEntityByString( vTZZOLODO, "SourceFile",
+                                      "Extension", "Scala", 0 ) >= zCURSOR_SET )
+      SetAttributeFromString( vTZZOXODO, "OBJECT", "OCSRCTYPE", "Scala" );
 
    // If network is not null, then set network information.
    if ( *pszNetwork )
@@ -1884,6 +1885,20 @@ ofnTZZOXODO_BldXODAttrib( zVIEW vSubtask, zVIEW vTZZOXODO,
                                   "ParticipatesInKey", "Y" ) == 0 )
    {
       SetAttributeFromString( vTZZOXODO, "ATTRIB", "KEY", "Y" );
+   }
+
+   // Hashkey Specification
+   if ( CompareAttributeToString( vTZZOLOD1, "LOD_AttributeRec",
+                                  "HashkeyType", "G" ) == 0 )
+   {
+      SetAttributeFromString( vTZZOXODO, "ATTRIB", "HASHKEY", "GLOBAL" );
+   }
+   if ( CompareAttributeToString( vTZZOLOD1, "LOD_AttributeRec",
+                                  "HashkeyType", "P" ) == 0 )
+   {
+      SetAttributeFromString( vTZZOXODO, "ATTRIB", "HASHKEY", "UNDER_PARENT" );
+      SetAttributeFromAttribute( vTZZOXODO, "ATTRIB", "HASHKEY_PARENT",
+                                 vTZZOLOD1, "LOD_AttributeRec", "HashkeyParentEntityName" );
    }
 
    if ( CompareAttributeToString( vTZZOLOD1, "ER_AttributeRec",

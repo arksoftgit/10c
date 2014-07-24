@@ -1906,7 +1906,7 @@ SysGetShortDateFormat( zPCHAR pchReturnString )
    }
 }
 
-// Converts environment strings in pchSource.
+// Converts evironment strings in pchSource.
 //   For example:            %kzd%:%kzv%\bin
 //   Could be converted to:  c:\10e\bin
 void LOCALOPER
@@ -6340,7 +6340,6 @@ SysSetFileTime( zCPCHAR cpcFileName, zCPCHAR cpcDateTime, zLONG lControl )
    SYSTEMTIME SysTime;
    HANDLE     hFile;
    zCHAR      szTemp[ 10 ];
-   zCHAR      szFileName[ zMAX_FILESPEC_LTH + 1 ];
 
    zstrncpy( szTemp, cpcDateTime, 4 );
    szTemp[ 4 ] = 0;
@@ -6353,12 +6352,11 @@ SysSetFileTime( zCPCHAR cpcFileName, zCPCHAR cpcDateTime, zLONG lControl )
    SysTime.wMilliseconds = (WORD) atoi( cpcDateTime + 14 );
    SystemTimeToFileTime( &SysTime, &ftTime );
 
-   SysConvertEnvironmentString( szFileName, cpcFileName );
-   hFile = CreateFile( szFileName, GENERIC_WRITE, FILE_SHARE_READ, 0,
+   hFile = CreateFile( cpcFileName, GENERIC_WRITE, FILE_SHARE_READ, 0,
                        OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0 );
    if ( hFile == INVALID_HANDLE_VALUE )
    {
-      TraceLineS( "SysSetFileTime: Couldn't open file ", szFileName );
+      TraceLineS( "SysSetFileTime: Couldn't open file ", cpcFileName );
       return( zCALL_ERROR );
    }
 

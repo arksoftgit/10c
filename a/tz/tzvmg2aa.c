@@ -1962,8 +1962,8 @@ GenerateNewExpression( zVIEW vSubtask, zPCHAR pchOutputString )
          nLth = zstrlen( szNewOperationClassStatement );
          nOutputIdx -= nLth;
          zmemcpy( g_pchOutputExprStr + nOutputIdx + 1, szNewOperationClassStatement, nLth );
-         g_pchOutputExprStr[ nOutputIdx-- ] = ' ';	
-		 szNewOperationClassStatement[ 0 ] = 0;
+         g_pchOutputExprStr[ nOutputIdx-- ] = ' ';
+       szNewOperationClassStatement[ 0 ] = 0;
       }
 
       if ( szThrowsException[ 0 ] == 'Y' )
@@ -2024,10 +2024,10 @@ GenerateNewExpression( zVIEW vSubtask, zPCHAR pchOutputString )
          }
       }
 
-	  // KJS 08/29/12 - I realize this would not be the "correct" place to change this but I am going to just see what happens...
-	  // DG is now returning an object from set cursor methods so RESULT is not correct if we are to keep the view.cursor("Entity").setFirst...
-	  // format.  I changed these back to SetCursorFirstEntity etc. when generating java. So I am commenting this out...
-	  /*
+     // KJS 08/29/12 - I realize this would not be the "correct" place to change this but I am going to just see what happens...
+     // DG is now returning an object from set cursor methods so RESULT is not correct if we are to keep the view.cursor("Entity").setFirst...
+     // format.  I changed these back to SetCursorFirstEntity etc. when generating java. So I am commenting this out...
+     /*
       if ( (pch = zstrstr( pchOutputString, "RESULT >= zCURSOR_SET" )) != 0 )
       //if ( (pch = zstrstr( pchOutputString, "RESULT > zCURSOR_UNCHANGED" )) != 0 )
       {
@@ -2035,7 +2035,7 @@ GenerateNewExpression( zVIEW vSubtask, zPCHAR pchOutputString )
          zstrcpy( pch + 10, pch + 21 );
          //zstrcat( pch, " )" );
       }
-	  */
+     */
 
    }
 

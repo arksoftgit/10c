@@ -1,0 +1,144 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzcmlpld.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzcmlpld.dll
+
+           0 characteristics
+    5356CF3B time date stamp Tue Apr 22 16:21:15 2014
+        0.00 version
+           1 ordinal base
+         116 number of functions
+         116 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000124E _ACCEPT_User@4
+          2    1 000010CD _ANALYZE_MinMaxZKeyValues@4
+          3    2 00001014 _CLOSE_UsersForLPLR@4
+          4    3 000010D7 _DELETE_User@4
+          5    4 00001163 _GOTO_UpdateUserZKeys@4
+          6    5 0000113B _GetDLL_Instance@4
+          7    6 00001258 _INITIALIZE_UserStartingGenZKey@4
+          8    7 000011A9 _SAVE_UsersForLPLR@4
+          9    8 000010AA _zwTZCMLPLD_ActivateCPLR@4
+         10    9 000011BD _zwTZCMLPLD_AddUser@4
+         11    A 00001136 _zwTZCMLPLD_BuildCI_List@4
+         12    B 00001082 _zwTZCMLPLD_BuildCO_List@4
+         13    C 0000100F _zwTZCMLPLD_BuildCPLR_List@4
+         14    D 00001118 _zwTZCMLPLD_BuildDialogExecs@4
+         15    E 0000105F _zwTZCMLPLD_BuildSelectedCompList@4
+         16    F 0000109B _zwTZCMLPLD_BuildServerExecs@4
+         17   10 00001212 _zwTZCMLPLD_BuildUserWkList@4
+         18   11 00001208 _zwTZCMLPLD_CancelAddUser@4
+         19   12 000011C2 _zwTZCMLPLD_CancelCheckIn@4
+         20   13 000011A4 _zwTZCMLPLD_CancelFromNewLPLR@4
+         21   14 00001168 _zwTZCMLPLD_CancelFromOpen@4
+         22   15 0000107D _zwTZCMLPLD_CancelUser@4
+         23   16 000010F0 _zwTZCMLPLD_CheckDuplicateERD_TE@12
+         24   17 00001172 _zwTZCMLPLD_CheckDuplicateName@12
+         25   18 00001096 _zwTZCMLPLD_CheckDuplicatePPE@12
+         26   19 00001195 _zwTZCMLPLD_CheckForSave@4
+         27   1A 00001073 _zwTZCMLPLD_CheckInAll@4
+         28   1B 000011DB _zwTZCMLPLD_CheckInMeta@4
+         29   1C 000011E0 _zwTZCMLPLD_CheckInReus@4
+         30   1D 0000105A _zwTZCMLPLD_CheckInSetTabSize@4
+         31   1E 000010E6 _zwTZCMLPLD_CheckOutPostBuild@4
+         32   1F 000010A5 _zwTZCMLPLD_CheckOutSnglClk@4
+         33   20 0000115E _zwTZCMLPLD_CheckOutSource@4
+         34   21 000011EF _zwTZCMLPLD_CheckShadowDirectory@8
+         35   22 000011B8 _zwTZCMLPLD_CheckUser@4
+         36   23 00001262 _zwTZCMLPLD_CleanCM_Views@4
+         37   24 0000112C _zwTZCMLPLD_CommitMessageTextOI@4
+         38   25 000011B3 _zwTZCMLPLD_CompListDropViews@4
+         39   26 000010E1 _zwTZCMLPLD_CopyDirs@4
+         40   27 000010DC _zwTZCMLPLD_CopyText@4
+         41   28 000011F9 _zwTZCMLPLD_CreateNewLPLR@4
+         42   29 00001154 _zwTZCMLPLD_DefaultDir@4
+         43   2A 0000102D _zwTZCMLPLD_DeleteLPLR@4
+         44   2B 00001127 _zwTZCMLPLD_DisableRepositoryOK@4
+         45   2C 0000121C _zwTZCMLPLD_DropRepoView@4
+         46   2D 00001037 _zwTZCMLPLD_DropTZCMCPRL@4
+         47   2E 00001023 _zwTZCMLPLD_ExcludeActive@4
+         48   2F 000010B9 _zwTZCMLPLD_ExitDialog@4
+         49   30 00001145 _zwTZCMLPLD_ExternalLPLR@4
+         50   31 00001078 _zwTZCMLPLD_FillAuditTrail@4
+         51   32 0000123A _zwTZCMLPLD_GenApplicationShell@4
+         52   33 0000101E _zwTZCMLPLD_GenerateZeidonOp_h@4
+         53   34 00001050 _zwTZCMLPLD_GetWorkDir@8
+         54   35 000011D1 _zwTZCMLPLD_GetZeidonApp@12
+         55   36 0000117C _zwTZCMLPLD_HelpAbout@4
+         56   37 000010AF _zwTZCMLPLD_HelpBasics@4
+         57   38 0000103C _zwTZCMLPLD_HelpOnHelp@4
+         58   39 00001249 _zwTZCMLPLD_ImportTextFile@4
+         59   3A 0000110E _zwTZCMLPLD_IncludeCPLR@4
+         60   3B 00001055 _zwTZCMLPLD_InitCheckOut@4
+         61   3C 00001186 _zwTZCMLPLD_InitDialog@4
+         62   3D 00001217 _zwTZCMLPLD_InitDialogoLD@4
+         63   3E 00001221 _zwTZCMLPLD_InitMenu@4
+         64   3F 00001140 _zwTZCMLPLD_InitNonreposWKS@8
+         65   40 00001019 _zwTZCMLPLD_LoadAuditTrailC@4
+         66   41 0000100A _zwTZCMLPLD_LoadAuditTrailM@4
+         67   42 00001177 _zwTZCMLPLD_LoadCompListPopup@4
+         68   43 00001087 _zwTZCMLPLD_LoadLPLR@4
+         69   44 0000120D _zwTZCMLPLD_NewLPLR_Init@4
+         70   45 0000123F _zwTZCMLPLD_NewMessageTextOI@4
+         71   46 00001091 _zwTZCMLPLD_OKUser@4
+         72   47 00001032 _zwTZCMLPLD_OpenMessageTextOI@4
+         73   48 00001109 _zwTZCMLPLD_OptionRefresh@4
+         74   49 000010FA _zwTZCMLPLD_OptionRefreshFromRepo@16
+         75   4A 00001028 _zwTZCMLPLD_PostBuildCompList@4
+         76   4B 0000122B _zwTZCMLPLD_PreBldCompDetail@4
+         77   4C 00001104 _zwTZCMLPLD_PreBuildCompList@4
+         78   4D 00001041 _zwTZCMLPLD_PrebuildNewLPLR@4
+         79   4E 0000114A _zwTZCMLPLD_RefreshParentWindow@4
+         80   4F 00001235 _zwTZCMLPLD_RefreshUserDefined@4
+         81   50 000011D6 _zwTZCMLPLD_RetrieveProfile@4
+         82   51 00001064 _zwTZCMLPLD_ReturnFromSubWindow@4
+         83   52 00001253 _zwTZCMLPLD_SaveLPLR@4
+         84   53 000011AE _zwTZCMLPLD_SaveLPLR_Desc@4
+         85   54 0000125D _zwTZCMLPLD_SendBootstrapFiles@4
+         86   55 0000114F _zwTZCMLPLD_SetButtonPos@4
+         87   56 000010EB _zwTZCMLPLD_SetCtrlPos_Users@4
+         88   57 00001122 _zwTZCMLPLD_SetLPLR_Type@4
+         89   58 00001069 _zwTZCMLPLD_SetTabSize@4
+         90   59 00001244 _zwTZCMLPLD_SignOnOK@4
+         91   5A 000010F5 _zwTZCMLPLD_SignOnPostBuild@4
+         92   5B 000010D2 _zwTZCMLPLD_SignOnPreBuild@4
+         93   5C 000011F4 _zwTZCMLPLD_TaskCountCheck@4
+         94   5D 00001005 _zwTZCMLPLD_ToolHelp@4
+         95   5E 000011CC _zwTZCMLPLD_UpdateUser@4
+         96   5F 0000116D _zwTZCMLPLD_UpdateWorkDirectory@8
+         97   60 00001267 _zwTZCMLPLD_ViewRefreshReport@4
+         98   61 00001190 _zwTZCMLPLD_XferToAddUser@4
+         99   62 00001230 _zwTZCMLPLD_XferToUpdateUser@4
+        100   63 0000119F _zwTZCMLPLD_fnCheckOutSourceAbort@12
+        101   64 000011E5 _zwTZCMLPLD_selectUser2@4
+        102   65 00001113 _zwTZCMLPLD_selectUser@4
+        103   66 000010B4 _zwfnTZCMLPLD_ActivateCPLR_Meta@16
+        104   67 000011C7 _zwfnTZCMLPLD_BuildActiveNew@12
+        105   68 00001159 _zwfnTZCMLPLD_BuildActiveUpdated@12
+        106   69 000010A0 _zwfnTZCMLPLD_BuildAllActive@8
+        107   6A 0000104B _zwfnTZCMLPLD_BuildCheckedOutAll@12
+        108   6B 000011EA _zwfnTZCMLPLD_BuildCheckedOutByUser@20
+        109   6C 0000118B _zwfnTZCMLPLD_BuildRefreshAll@12
+        110   6D 0000119A _zwfnTZCMLPLD_BuildRefreshNew@12
+        111   6E 00001226 _zwfnTZCMLPLD_BuildRefreshUpdate@12
+        112   6F 0000111D _zwfnTZCMLPLD_CheckDialogDeps@16
+        113   70 000010FF _zwfnTZCMLPLD_CheckInEdits@4
+        114   71 00001131 _zwfnTZCMLPLD_CheckOutMeta@28
+        115   72 00001203 _zwfnTZCMLPLD_CopyMetaEntry@12
+        116   73 000010BE _zwfnTZCMLPLD_SwitchLPLR@8
+
+  Summary
+
+        5000 .data
+        2000 .idata
+        2000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       17000 .text

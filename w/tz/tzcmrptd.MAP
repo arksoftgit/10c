@@ -1,0 +1,222 @@
+ tzcmrptd
+
+ Timestamp is 5356cf40 (Tue Apr 22 16:21:20 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00002a04H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 0000058aH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 0000069bH .data                   DATA
+ 0003:00000aac 00000038H .bss                    DATA
+ 0004:00000000 00000064H .idata$2                DATA
+ 0004:00000064 00000014H .idata$3                DATA
+ 0004:00000078 0000019cH .idata$4                DATA
+ 0004:00000214 0000019cH .idata$5                DATA
+ 0004:000003b0 00000234H .idata$6                DATA
+ 0005:00000000 000001d8H .rsrc$01                DATA
+ 0005:000001e0 00000499H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:000000a0       _DllMain@12                100010a0 f   zdllinst.obj
+ 0001:000000c6       _GetDLL_Instance@4         100010c6 f   zdllinst.obj
+ 0001:000000e0       _zwTZCMRPTD_LoadAudittrail@4 100010e0 f   tzcmrptd.obj
+ 0001:000002ab       _zwTZCMRPTD_LoadDesc_AUX@12 100012ab f   tzcmrptd.obj
+ 0001:000004da       _zwTZCMRPTD_LoadDesc_AU2O@4 100014da f   tzcmrptd.obj
+ 0001:00000543       _zwTZCMRPTD_LoadDesc_AUDO@4 10001543 f   tzcmrptd.obj
+ 0001:000005ac       _zwTZCMRPTD_ExportTextAUX@8 100015ac f   tzcmrptd.obj
+ 0001:000008fb       _zwTZCMRPTD_ExportTextFile@4 100018fb f   tzcmrptd.obj
+ 0001:00000a08       _zwTZCMRPTD_RefreshAllComponents@4 10001a08 f   tzcmrptd.obj
+ 0001:00000b07       _zwTZCMRPTD_CloseRefresh@4 10001b07 f   tzcmrptd.obj
+ 0001:00000b5c       _zwTZCMRPTD_RefreshSelComponents@4 10001b5c f   tzcmrptd.obj
+ 0001:00000d5e       _zwTZCMRPTD_LoadNewAudittrail@4 10001d5e f   tzcmrptd.obj
+ 0001:0000102e       _zwTZCMRPTD_DropViewForAudittrail@4 1000202e f   tzcmrptd.obj
+ 0001:000010a7       _zwTZCMRPTD_SetCPLR_Desc@4 100020a7 f   tzcmrptd.obj
+ 0001:00001139       _zwTZCMRPTD_SetMinWindowSize@4 10002139 f   tzcmrptd.obj
+ 0001:00001614       _zwTZCMLPLD_OptionRefreshFromRepo@16 10002614 f   tzcmlpld:tzcmlpld.dll
+ 0001:0000161a       _zwTZCMLPLD_RefreshUserDefined@4 1000261a f   tzcmlpld:tzcmlpld.dll
+ 0001:00001620       _GetSystemDirectoryA@8     10002620 f   kernel32:KERNEL32.dll
+ 0001:00001626       _MessageSend@24            10002626 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000162c       _DropObjectInstance@4      1000262c f   kzoengaa:KZOENGAA.DLL
+ 0001:00001632       _ActivateObjectInstance@20 10002632 f   kzoengaa:KZOENGAA.DLL
+ 0001:00001638       _SetAttributeFromString@16 10002638 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000163e       _GetIntegerFromAttribute@16 1000263e f   kzoengaa:KZOENGAA.DLL
+ 0001:00001644       _CreateEntity@12           10002644 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000164a       _SetNameForView@16         1000264a f   kzoengaa:KZOENGAA.DLL
+ 0001:00001650       _ActivateEmptyObjectInstance@16 10002650 f   kzoengaa:KZOENGAA.DLL
+ 0001:00001656       _CheckExistenceOfEntity@8  10002656 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000165c       _GetViewByName@16          1000265c f   kzoengaa:KZOENGAA.DLL
+ 0001:00001662       _GetStringFromAttribute@16 10002662 f   kzoengaa:KZOENGAA.DLL
+ 0001:00001668       _IssueError@16             10002668 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000166e       _SysCloseFile@12           1000266e f   kzoengaa:KZOENGAA.DLL
+ 0001:00001674       _GetAddrForAttribute@16    10002674 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000167a       _GetStringFromAttributeByContext@24 1000267a f   kzoengaa:KZOENGAA.DLL
+ 0001:00001680       _SysWriteLine@12           10002680 f   kzoengaa:KZOENGAA.DLL
+ 0001:00001686       _SysOpenFile@12            10002686 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000168c       _MessagePrompt@32          1000268c f   kzoengaa:KZOENGAA.DLL
+ 0001:00001692       _CompareAttributeToInteger@16 10002692 f   kzoengaa:KZOENGAA.DLL
+ 0001:00001698       _SetCursorFirstSelectedEntity@12 10002698 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000169e       __ltoa                     1000269e f   msvcrtd:MSVCRTD.dll
+ 0001:000016a4       _strcat                    100026a4 f   msvcrtd:MSVCRTD.dll
+ 0001:000016aa       _strcpy                    100026aa f   msvcrtd:MSVCRTD.dll
+ 0001:000016b0       _strlen                    100026b0 f   msvcrtd:MSVCRTD.dll
+ 0001:000016c0       __CRT_INIT@12              100026c0 f   msvcrtd:crtdll.obj
+ 0001:000017d0       __DllMainCRTStartup@12     100027d0 f   msvcrtd:crtdll.obj
+ 0001:000018c4       __free_dbg                 100028c4 f   msvcrtd:MSVCRTD.dll
+ 0001:000018ca       __initterm                 100028ca f   msvcrtd:MSVCRTD.dll
+ 0001:000018d0       __onexit                   100028d0 f   msvcrtd:atonexit.obj
+ 0001:00001910       _atexit                    10002910 f   msvcrtd:atonexit.obj
+ 0001:00001928       __malloc_dbg               10002928 f   msvcrtd:MSVCRTD.dll
+ 0001:0000192e       ___dllonexit               1000292e f   msvcrtd:MSVCRTD.dll
+ 0001:00001934       _SetWindowActionBehavior@16 10002934 f   zdrapp:ZDrApp.dll
+ 0001:0000193a       _OperatorPromptForFile@24  1000293a f   zdrapp:ZDrApp.dll
+ 0001:00001940       _RefreshWindow@4           10002940 f   zdrapp:ZDrApp.dll
+ 0001:00001946       _RefreshCtrl@8             10002946 f   zdrapp:ZDrApp.dll
+ 0001:0000194c       _GetParentWindow@8         1000294c f   zdrapp:ZDrApp.dll
+ 0001:00001952       _SetCtrlText@12            10002952 f   zdrapp:ZDrApp.dll
+ 0001:00001958       _SetCtrlPosition@20        10002958 f   zdrapp:ZDrApp.dll
+ 0001:0000195e       _GetCtrlSize@20            1000295e f   zdrapp:ZDrApp.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000401c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10005000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10005104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10005208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000530c     msvcrtd:cinitexe.obj
+ 0003:00000410       _pcNoCompoents             10005410     tzcmrptd.obj
+ 0003:00000414       ??_C@_0O@DOLF@No?5Compoments?$AA@ 10005414     tzcmrptd.obj
+ 0003:00000424       ??_C@_07PHEK@CM00299?$AA@  10005424     tzcmrptd.obj
+ 0003:00000430       ??_C@_0N@NAGE@Audit?5Trail?3?$AA@ 10005430     tzcmrptd.obj
+ 0003:00000440       ??_C@_0EE@NBFH@There?5are?5no?5AuditTrail?9Informat@ 10005440     tzcmrptd.obj
+ 0003:00000494       ??_C@_0L@LCGA@AuditTrail?$AA@ 10005494     tzcmrptd.obj
+ 0003:000004a4       ??_C@_08FPIJ@TZBRAUDO?$AA@ 100054a4     tzcmrptd.obj
+ 0003:000004b0       ??_C@_05KBGO@Value?$AA@    100054b0     tzcmrptd.obj
+ 0003:000004b8       ??_C@_04FKDH@Oper?$AA@     100054b8     tzcmrptd.obj
+ 0003:000004c0       ??_C@_01KPOD@?$DN?$AA@     100054c0     tzcmrptd.obj
+ 0003:000004c4       ??_C@_0O@JICG@AttributeName?$AA@ 100054c4     tzcmrptd.obj
+ 0003:000004d4       ??_C@_0L@LOJF@EntityName?$AA@ 100054d4     tzcmrptd.obj
+ 0003:000004e4       ??_C@_04BBDM@ZKey?$AA@     100054e4     tzcmrptd.obj
+ 0003:000004ec       ??_C@_0L@DIOI@QualAttrib?$AA@ 100054ec     tzcmrptd.obj
+ 0003:000004fc       ??_C@_0L@EIGE@EntitySpec?$AA@ 100054fc     tzcmrptd.obj
+ 0003:0000050c       ??_C@_08ILBJ@KZDBHQUA?$AA@ 1000550c     tzcmrptd.obj
+ 0003:00000518       ??_C@_09OIHM@Z_MetaDef?$AA@ 10005518     tzcmrptd.obj
+ 0003:00000524       ??_C@_08ODJO@TZCMRPTO?$AA@ 10005524     tzcmrptd.obj
+ 0003:00000530       ??_C@_0DH@MEAL@There?5are?5no?5AuditTrail?9Informat@ 10005530     tzcmrptd.obj
+ 0003:00000574       ??_C@_09KIEB@TimeStamp?$AA@ 10005574     tzcmrptd.obj
+ 0003:00000580       ??_C@_03LACO@AND?$AA@      10005580     tzcmrptd.obj
+ 0003:00000584       ??_C@_04IDHG@CPLR?$AA@     10005584     tzcmrptd.obj
+ 0003:0000058c       ??_C@_08CLIC@TZBRAU3O?$AA@ 1000558c     tzcmrptd.obj
+ 0003:00000598       ??_C@_08DNCI@TZBRAU2O?$AA@ 10005598     tzcmrptd.obj
+ 0003:000005a4       ??_C@_0DK@MIGH@Object?5TZCMAU3O?5does?5not?5exist?5?$CI@ 100055a4     tzcmrptd.obj
+ 0003:000005ec       ??_C@_04DKMG@Desc?$AA@     100055ec     tzcmrptd.obj
+ 0003:000005f4       ??_C@_09GNHM@ShortDesc?$AA@ 100055f4     tzcmrptd.obj
+ 0003:00000600       ??_C@_0M@MDLH@ShortDesc?3?7?$AA@ 10005600     tzcmrptd.obj
+ 0003:00000610       ??_C@_08GGOK@UserDesc?$AA@ 10005610     tzcmrptd.obj
+ 0003:0000061c       ??_C@_01FCOA@?5?$AA@       1000561c     tzcmrptd.obj
+ 0003:00000620       ??_C@_08BJPE@UserName?$AA@ 10005620     tzcmrptd.obj
+ 0003:0000062c       ??_C@_07CGOE@User?3?7?7?$AA@ 1000562c     tzcmrptd.obj
+ 0003:00000638       ??_C@_0BE@FEMB@DD?4MM?4YYYY?5HH?3MM?3SS?$AA@ 10005638     tzcmrptd.obj
+ 0003:00000650       ??_C@_07JNIG@Date?3?7?7?$AA@ 10005650     tzcmrptd.obj
+ 0003:0000065c       ??_C@_04EFNI@Name?$AA@     1000565c     tzcmrptd.obj
+ 0003:00000664       ??_C@_07CNMA@CPLR?3?7?7?$AA@ 10005664     tzcmrptd.obj
+ 0003:00000670       ??_C@_0CO@OICD@?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9@ 10005670     tzcmrptd.obj
+ 0003:000006a8       ??_C@_0CO@NP@AuditTrail?5Print?5created?5with?5?$CIc@ 100056a8     tzcmrptd.obj
+ 0003:000006e0       ??_C@_07PFCA@CM00xxx?$AA@  100056e0     tzcmrptd.obj
+ 0003:000006ec       ??_C@_0BJ@JFDF@Configuration?5Management?$AA@ 100056ec     tzcmrptd.obj
+ 0003:0000070c       ??_C@_02ENCN@?8?4?$AA@     1000570c     tzcmrptd.obj
+ 0003:00000710       ??_C@_0BJ@HFAC@Error?5writing?5the?5File?5?8?$AA@ 10005710     tzcmrptd.obj
+ 0003:00000730       ??_C@_03NDCL@?8?5?$DP?$AA@ 10005730     tzcmrptd.obj
+ 0003:00000734       ??_C@_0BM@JKHF@Override?5the?5current?5File?5?8?$AA@ 10005734     tzcmrptd.obj
+ 0003:00000758       ??_C@_0BK@IEKP@Text?5Files?5?$CI?$CK?4TXT?$CJ?$HM?$CK?4txt?$HM?$AA@ 10005758     tzcmrptd.obj
+ 0003:00000778       ??_C@_03DPCO@TXT?$AA@      10005778     tzcmrptd.obj
+ 0003:0000077c       ??_C@_08JAOE@CompList?$AA@ 1000577c     tzcmrptd.obj
+ 0003:00000788       ??_C@_07DFOB@CM00279?$AA@  10005788     tzcmrptd.obj
+ 0003:00000794       ??_C@_0CD@JALL@?8?5has?5been?5successfully?5refreshe@ 10005794     tzcmrptd.obj
+ 0003:000007c0       ??_C@_04FDFI@LPLR?$AA@     100057c0     tzcmrptd.obj
+ 0003:000007c8       ??_C@_09PKPI@Project?5?8?$AA@ 100057c8     tzcmrptd.obj
+ 0003:000007d4       ??_C@_0N@PLLG@TZCMRPTO_New?$AA@ 100057d4     tzcmrptd.obj
+ 0003:000007e4       ??_C@_0CP@GIDG@?8?5has?5been?5successfully?5refreshe@ 100057e4     tzcmrptd.obj
+ 0003:0000081c       ??_C@_0BD@EFBL@ComponentRefreshed?$AA@ 1000581c     tzcmrptd.obj
+ 0003:00000834       ??_C@_07FKKG@CM00241?$AA@  10005834     tzcmrptd.obj
+ 0003:00000840       ??_C@_0CC@NGNF@No?5Component?5selected?5to?5Refresh@ 10005840     tzcmrptd.obj
+ 0003:00000868       ??_C@_0L@MDBE@ReportLine?$AA@ 10005868     tzcmrptd.obj
+ 0003:00000878       ??_C@_0BB@NCPM@TZCM_ChkInWindow?$AA@ 10005878     tzcmrptd.obj
+ 0003:0000088c       ??_C@_0L@GFFF@lbCPLRList?$AA@ 1000588c     tzcmrptd.obj
+ 0003:0000089c       ??_C@_06IBJ@txtCPL?$AA@    1000589c     tzcmrptd.obj
+ 0003:000008a4       ??_C@_06HEME@?5CPL?3?5?$AA@ 100058a4     tzcmrptd.obj
+ 0003:000008ac       ??_C@_03OILJ@CPL?$AA@      100058ac     tzcmrptd.obj
+ 0003:000008b0       ??_C@_07INKD@TZCMCPL?$AA@  100058b0     tzcmrptd.obj
+ 0003:000008bc       ??_C@_0EA@NJI@There?5are?5no?5Audit?5Trail?5Informa@ 100058bc     tzcmrptd.obj
+ 0003:00000908       ??_C@_07LKCG@txtDesc?$AA@  10005908     tzcmrptd.obj
+ 0003:00000914       ??_C@_07EBDN@?5Desc?3?5?$AA@ 10005914     tzcmrptd.obj
+ 0003:00000920       ??_C@_0N@IMCN@pbAuditTrail?$AA@ 10005920     tzcmrptd.obj
+ 0003:00000930       ??_C@_08MLKE@pbDetail?$AA@ 10005930     tzcmrptd.obj
+ 0003:0000093c       ??_C@_0N@CKOL@pbRefreshAll?$AA@ 1000593c     tzcmrptd.obj
+ 0003:0000094c       ??_C@_09BDPL@pbRefresh?$AA@ 1000594c     tzcmrptd.obj
+ 0003:00000958       ??_C@_07PBAO@pbClose?$AA@  10005958     tzcmrptd.obj
+ 0003:00000964       ??_C@_0O@GLEO@lbRefreshList?$AA@ 10005964     tzcmrptd.obj
+ 0003:00000aac       _g_hInstanceDLL            10005aac     zdllinst.obj
+ 0003:00000ab0       ??_C@_00A@?$AA@            10005ab0     tzcmrptd.obj
+ 0003:00000ab8       __adjust_fdiv              10005ab8     <common>
+ 0003:00000ac4       ___onexitend               10005ac4     <common>
+ 0003:00000ad4       ___onexitbegin             10005ad4     <common>
+ 0003:00000ad8       __pRawDllMain              10005ad8     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzcmlpld 10006000     tzcmlpld:tzcmlpld.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KERNEL32 10006014     kernel32:KERNEL32.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_KZOENGAA 10006028     kzoengaa:KZOENGAA.DLL
+ 0004:0000003c       __IMPORT_DESCRIPTOR_MSVCRTD 1000603c     msvcrtd:MSVCRTD.dll
+ 0004:00000050       __IMPORT_DESCRIPTOR_ZDrApp 10006050     zdrapp:ZDrApp.dll
+ 0004:00000064       __NULL_IMPORT_DESCRIPTOR   10006064     tzcmlpld:tzcmlpld.dll
+ 0004:00000214       __imp__GetSystemDirectoryA@8 10006214     kernel32:KERNEL32.dll
+ 0004:00000218       \177KERNEL32_NULL_THUNK_DATA 10006218     kernel32:KERNEL32.dll
+ 0004:00000244       __imp__SetCursorFirstSelectedEntity@12 10006244     kzoengaa:KZOENGAA.DLL
+ 0004:00000248       __imp__CompareAttributeToInteger@16 10006248     kzoengaa:KZOENGAA.DLL
+ 0004:0000024c       __imp__MessageSend@24      1000624c     kzoengaa:KZOENGAA.DLL
+ 0004:00000250       __imp__DropObjectInstance@4 10006250     kzoengaa:KZOENGAA.DLL
+ 0004:00000254       __imp__ActivateObjectInstance@20 10006254     kzoengaa:KZOENGAA.DLL
+ 0004:00000258       __imp__SetAttributeFromString@16 10006258     kzoengaa:KZOENGAA.DLL
+ 0004:0000025c       __imp__GetIntegerFromAttribute@16 1000625c     kzoengaa:KZOENGAA.DLL
+ 0004:00000260       __imp__CreateEntity@12     10006260     kzoengaa:KZOENGAA.DLL
+ 0004:00000264       __imp__SetNameForView@16   10006264     kzoengaa:KZOENGAA.DLL
+ 0004:00000268       __imp__ActivateEmptyObjectInstance@16 10006268     kzoengaa:KZOENGAA.DLL
+ 0004:0000026c       __imp__CheckExistenceOfEntity@8 1000626c     kzoengaa:KZOENGAA.DLL
+ 0004:00000270       __imp__GetViewByName@16    10006270     kzoengaa:KZOENGAA.DLL
+ 0004:00000274       __imp__GetStringFromAttribute@16 10006274     kzoengaa:KZOENGAA.DLL
+ 0004:00000278       __imp__IssueError@16       10006278     kzoengaa:KZOENGAA.DLL
+ 0004:0000027c       __imp__SysCloseFile@12     1000627c     kzoengaa:KZOENGAA.DLL
+ 0004:00000280       __imp__GetAddrForAttribute@16 10006280     kzoengaa:KZOENGAA.DLL
+ 0004:00000284       __imp__GetStringFromAttributeByContext@24 10006284     kzoengaa:KZOENGAA.DLL
+ 0004:00000288       __imp__SysWriteLine@12     10006288     kzoengaa:KZOENGAA.DLL
+ 0004:0000028c       __imp__SysOpenFile@12      1000628c     kzoengaa:KZOENGAA.DLL
+ 0004:00000290       __imp__MessagePrompt@32    10006290     kzoengaa:KZOENGAA.DLL
+ 0004:00000294       \177KZOENGAA_NULL_THUNK_DATA 10006294     kzoengaa:KZOENGAA.DLL
+ 0004:000002d0       __imp___free_dbg           100062d0     msvcrtd:MSVCRTD.dll
+ 0004:000002d4       __imp____dllonexit         100062d4     msvcrtd:MSVCRTD.dll
+ 0004:000002d8       __imp___ltoa               100062d8     msvcrtd:MSVCRTD.dll
+ 0004:000002dc       __imp__strcat              100062dc     msvcrtd:MSVCRTD.dll
+ 0004:000002e0       __imp__strcpy              100062e0     msvcrtd:MSVCRTD.dll
+ 0004:000002e4       __imp__strlen              100062e4     msvcrtd:MSVCRTD.dll
+ 0004:000002e8       __imp___onexit             100062e8     msvcrtd:MSVCRTD.dll
+ 0004:000002ec       __imp___initterm           100062ec     msvcrtd:MSVCRTD.dll
+ 0004:000002f0       __imp___malloc_dbg         100062f0     msvcrtd:MSVCRTD.dll
+ 0004:000002f4       __imp___adjust_fdiv        100062f4     msvcrtd:MSVCRTD.dll
+ 0004:000002f8       \177MSVCRTD_NULL_THUNK_DATA 100062f8     msvcrtd:MSVCRTD.dll
+ 0004:0000032c       __imp__SetCtrlPosition@20  1000632c     zdrapp:ZDrApp.dll
+ 0004:00000330       __imp__GetCtrlSize@20      10006330     zdrapp:ZDrApp.dll
+ 0004:00000334       __imp__SetWindowActionBehavior@16 10006334     zdrapp:ZDrApp.dll
+ 0004:00000338       __imp__OperatorPromptForFile@24 10006338     zdrapp:ZDrApp.dll
+ 0004:0000033c       __imp__RefreshWindow@4     1000633c     zdrapp:ZDrApp.dll
+ 0004:00000340       __imp__RefreshCtrl@8       10006340     zdrapp:ZDrApp.dll
+ 0004:00000344       __imp__GetParentWindow@8   10006344     zdrapp:ZDrApp.dll
+ 0004:00000348       __imp__SetCtrlText@12      10006348     zdrapp:ZDrApp.dll
+ 0004:0000034c       \177ZDrApp_NULL_THUNK_DATA 1000634c     zdrapp:ZDrApp.dll
+ 0004:0000037c       __imp__zwTZCMLPLD_RefreshUserDefined@4 1000637c     tzcmlpld:tzcmlpld.dll
+ 0004:00000380       __imp__zwTZCMLPLD_OptionRefreshFromRepo@16 10006380     tzcmlpld:tzcmlpld.dll
+ 0004:00000384       \177tzcmlpld_NULL_THUNK_DATA 10006384     tzcmlpld:tzcmlpld.dll
+
+ entry point at        0001:000017d0
+

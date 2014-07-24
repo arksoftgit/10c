@@ -320,7 +320,7 @@ Generate3GL( zVIEW   lpVSSubtask,        // pointer to the vml task
    }
 
    SetNameForView( g_lpZOListView, "_GenTZOPGRPO", lpVSSubtask, zLEVEL_SUBTASK );
-   
+
    // KJS 04/23/13 - I am testing whether it is feasible to have two different zeidon operations one for c generation and one for java.
    // Loop through operations and delete the ones that are not for the language we are currently generating.
    nRC = SetCursorFirstEntity( g_lpZOListView, "Operation", "" );
@@ -328,15 +328,15 @@ Generate3GL( zVIEW   lpVSSubtask,        // pointer to the vml task
    {
       szOpGenType[ 0 ] = 0;
       GetStringFromAttribute( szOpGenType, g_lpZOListView, "Operation", "GenerationType" );
-	  if ( szOpGenType[0] == 'C' && g_szGenLang[ 0 ] == 'J' )
-	  {
-	     DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
-	  }
-	  else
-	  if ( szOpGenType[0] == 'J' && g_szGenLang[ 0 ] == 'C' )
-	  {
-	     DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
-	  }
+     if ( szOpGenType[0] == 'C' && g_szGenLang[ 0 ] == 'J' )
+     {
+        DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
+     }
+     else
+     if ( szOpGenType[0] == 'J' && g_szGenLang[ 0 ] == 'C' )
+     {
+        DropEntity( g_lpZOListView, "Operation", zREPOS_NONE );
+     }
       nRC = SetCursorNextEntity( g_lpZOListView, "Operation", "" );
    }
 

@@ -1,0 +1,37 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzrepoad.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzrepoad.dll
+
+           0 characteristics
+    5356CF62 time date stamp Tue Apr 22 16:21:54 2014
+        0.00 version
+           1 ordinal base
+           9 number of functions
+           9 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001023 _GetDLL_Instance@4
+          2    1 0000104B _zwTZREPOAD_CompareMeta@4
+          3    2 00001005 _zwTZREPOAD_ExitDialog@4
+          4    3 0000103C _zwTZREPOAD_Off@4
+          5    4 0000101E _zwTZREPOAD_On@4
+          6    5 00001050 _zwTZREPOAD_PostBuild@4
+          7    6 00001041 _zwTZREPOAD_PreBuild@4
+          8    7 0000102D _zwTZREPOAD_PrepareSystemForLoad@4
+          9    8 00001028 _zwTZREPOAD_SelectMetaType@4
+
+  Summary
+
+        3000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        A000 .text

@@ -1,0 +1,186 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzrpupdd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzrpupdd.dll
+
+           0 characteristics
+    5356CF61 time date stamp Tue Apr 22 16:21:53 2014
+        0.00 version
+           1 ordinal base
+         158 number of functions
+         158 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001078 _ActionInitPrebuild@4
+          2    1 0000119F _AddBlockAttribute@4
+          3    2 0000117C _AutoDesignReport@4
+          4    3 00001109 _BlockCancel@4
+          5    4 0000100A _BlockOK@4
+          6    5 000012EE _BlockPostBuild@4
+          7    6 00001348 _BlockPostBuild_DisableCtrls@4
+          8    7 0000132A _BlockUpdateColor@4
+          9    8 000011A9 _ChangeCtrlType@4
+         10    9 00001195 _ChangeDrivingView@4
+         11    A 00001096 _ChangeRptTags@4
+         12    B 000010C8 _ChangeSelectedViewMapping@4
+         13    C 0000108C _ChgCtrlChangeType@4
+         14    D 00001082 _ChgCtrlPickNewType@4
+         15    E 000012C1 _ChgCtrlPostbuild@4
+         16    F 000011DB _ChgCtrlToggleCheck@4
+         17   10 00001352 _CopyClipboardToSelectedCtrl@4
+         18   11 0000132F _CopySelectedCtrlsToClipboard@4
+         19   12 000012B2 _CreateEntityGroupSet@8
+         20   13 000010EB _CreateEntityGroupSetA@4
+         21   14 0000127B _CreateEntityGroupSetHorizontal@4
+         22   15 00001311 _CreateEntityGroupSetVertical@4
+         23   16 00001258 _CreatePageFooter@4
+         24   17 000011C7 _CreatePageHeader@4
+         25   18 000012F3 _CtrlContextMappingInit@4
+         26   19 000012E9 _CtrlListAddMapEntity@4
+         27   1A 00001316 _CtrlListBuildContextList@4
+         28   1B 000011EA _CtrlListChangeMappingViewGS@4
+         29   1C 00001249 _CtrlListChangeMappingViewRpt@4
+         30   1D 000012F8 _CtrlListContextSelect@4
+         31   1E 00001271 _CtrlListDeleteCtrl@4
+         32   1F 000012CB _CtrlListDeleteMapAttribute@4
+         33   20 000011F9 _CtrlListDeleteMapEntity@4
+         34   21 0000123A _CtrlListDetail@4
+         35   22 00001320 _CtrlListMapping@4
+         36   23 00001285 _CtrlListPopup@4
+         37   24 000010F5 _DeleteBlockAttribute@4
+         38   25 000011D1 _DeleteGroupSetForEntity@4
+         39   26 00001145 _DropMultiSelectOI@4
+         40   27 00001118 _FontColor@4
+         41   28 000012D0 _FontSpecs@4
+         42   29 0000102D _GENERATE_XSLT_File@4
+         43   2A 00001055 _GOTO_AddGroupSet@4
+         44   2B 00001190 _GetDLL_Instance@4
+         45   2C 00001230 _HideReportControlBar@4
+         46   2D 00001131 _InitMenu@4
+         47   2E 000012BC _InitPopup@4
+         48   2F 00001019 _LandScapeChanged@4
+         49   30 00001104 _MigrateReports@4
+         50   31 0000129E _PageListClose@4
+         51   32 00001087 _PainterSelectedCallback@32
+         52   33 0000110E _PopupMaintenance@4
+         53   34 000012D5 _PreBuildUserSpec@4
+         54   35 000011C2 _PrebuildCtrlList@4
+         55   36 0000105F _Redo@4
+         56   37 0000111D _RefreshPropertyAttribute@4
+         57   38 0000134D _RepaintZeidonControl@4
+         58   39 000010AF _ReportDetailOK@4
+         59   3A 000011E0 _ReportDetailPostBuild@4
+         60   3B 00001177 _ReturnFromCtrlList@4
+         61   3C 00001307 _ReturnFromSubwindow@4
+         62   3D 0000106E _ReturnToCtrlList@4
+         63   3E 000011AE _SaveCtrlList@4
+         64   3F 00001028 _SaveCtrlList_CheckControlValues@4
+         65   40 00001221 _SetGroupSetEntity@4
+         66   41 00001325 _SetSelectedAttributeMapping@4
+         67   42 0000115E _SetSelectedEntityMapping@4
+         68   43 00001212 _SetToolBox@4
+         69   44 00001276 _SetupMultiChangeRptText@4
+         70   45 00001294 _ShapeCancel@4
+         71   46 000011FE _ShapeOK@4
+         72   47 000010BE _ShapePostBuild@4
+         73   48 00001032 _ShapePostBuild_DisableCtrls@4
+         74   49 00001334 _ShapeUpdateColor@4
+         75   4A 00001262 _ShowCtrlList@4
+         76   4B 0000122B _ShowCtrlListForCurrentEntity@8
+         77   4C 00001122 _ShowCtrlListForCurrentGroup@4
+         78   4D 0000120D _ShowCtrlListForCurrentGroupSet@4
+         79   4E 0000107D _ShowCtrlListForUnknownEntity@8
+         80   4F 00001064 _ShowCtrlList_SetState@8
+         81   50 000010FA _ShowHideReportControlBar@4
+         82   51 00001046 _ShowReportControlBar@4
+         83   52 000011B3 _ShowReportMappingPopup@4
+         84   53 000012DF _TZRPUP2D_AbutHorizontal@4
+         85   54 00001280 _TZRPUP2D_AbutVertical@4
+         86   55 00001267 _TZRPUP2D_AlignBottom@4
+         87   56 00001208 _TZRPUP2D_AlignLeft@4
+         88   57 00001339 _TZRPUP2D_AlignRight@4
+         89   58 000012AD _TZRPUP2D_AlignTop@4
+         90   59 0000114F _TZRPUP2D_CheckNameForCheckOut@4
+         91   5A 000011EF _TZRPUP2D_Check_CheckOutStatus@4
+         92   5B 00001023 _TZRPUP2D_DeleteControls@4
+         93   5C 0000125D _TZRPUP2D_EqualHeight@4
+         94   5D 00001127 _TZRPUP2D_EqualWidth@4
+         95   5E 00001037 _TZRPUP2D_EqualWidthHeight@4
+         96   5F 0000126C _TZRPUP2D_EquiSpaceHorizontal@4
+         97   60 00001244 _TZRPUP2D_EquiSpaceVertical@4
+         98   61 000011D6 _TZRPUP2D_NewReport@4
+         99   62 0000103C _TZRPUP2D_OpenReport@4
+        100   63 00001050 _TZRPUP2D_SaveAsCancel@4
+        101   64 0000118B _TZRPUP2D_SaveAsKeepCurrentDesc@4
+        102   65 000010D7 _TZRPUP2D_SaveAsPostBuild@4
+        103   66 0000119A _TZRPUP2D_SaveAsReport@4
+        104   67 0000116D _TZRPUP2D_SaveNewReport@20
+        105   68 000012A8 _TZRPUP2D_SetSaveAsName@4
+        106   69 00001014 _TZRPUP2D_UpdateZeidonWindows@4
+        107   6A 000011BD _TZRPUPDD_AskForSave@4
+        108   6B 000010C3 _TZRPUPDD_DeleteCurrentPageWnd@4
+        109   6C 0000121C _TZRPUPDD_DeletePage@4
+        110   6D 0000114A _TZRPUPDD_DeletePageFromList@4
+        111   6E 000010AA _TZRPUPDD_DeleteReport@4
+        112   6F 0000100F _TZRPUPDD_DisplayPageList@4
+        113   70 0000131B _TZRPUPDD_EnablePainterWindows@4
+        114   71 000011A4 _TZRPUPDD_ExitReport@4
+        115   72 00001136 _TZRPUPDD_HelpAbout@4
+        116   73 000010D2 _TZRPUPDD_HelpBasics@4
+        117   74 0000123F _TZRPUPDD_HelpContents@4
+        118   75 00001154 _TZRPUPDD_HelpOnHelp@4
+        119   76 00001253 _TZRPUPDD_NewPage@4
+        120   77 000010B9 _TZRPUPDD_NewReportFile@4
+        121   78 000012FD _TZRPUPDD_OpenReportFile@4
+        122   79 0000133E _TZRPUPDD_PageListPopup@4
+        123   7A 00001217 _TZRPUPDD_PrebuildPageList@4
+        124   7B 00001172 _TZRPUPDD_ReportPostBuild@4
+        125   7C 00001186 _TZRPUPDD_ReportPreBuild@4
+        126   7D 000012E4 _TZRPUPDD_RetrieveMetaList@4
+        127   7E 000010A0 _TZRPUPDD_SaveReportFile@4
+        128   7F 000010F0 _TZRPUPDD_SelectPageFromList@4
+        129   80 0000105A _TZRPUPDD_SortByDate@4
+        130   81 00001069 _TZRPUPDD_SortByName@4
+        131   82 00001091 _TZRPUPDD_SortWindows@4
+        132   83 000011CC _TZRPUPDD_SwitchLPLR@4
+        133   84 00001073 _TZRPUPDD_SystemActivate@4
+        134   85 00001181 _TZRPUPDD_SystemMinimize@4
+        135   86 00001357 _TZRPUPDD_SystemRestore@4
+        136   87 0000104B _TZRPUPDD_UpdatePageFromList@4
+        137   88 000012C6 _UPD_BmpCtlBrowseFileName@4
+        138   89 00001235 _UPD_BmpCtlOK@4
+        139   8A 0000113B _UPD_BmpCtlPostBuild@4
+        140   8B 000010DC _UPD_EDIT_TEXT_Init@4
+        141   8C 0000128F _UPD_GROUPSET_CheckValues@4
+        142   8D 00001005 _UPD_GROUPSET_OK@4
+        143   8E 00001168 _UPD_GROUPSET_PostBuild@4
+        144   8F 000011B8 _UPD_GROUP_OK@4
+        145   90 000010B4 _UPD_GROUP_PostBuild@4
+        146   91 0000124E _UPD_GROUP_SetPrintOptions@4
+        147   92 000010FF _UPD_TEXT_Cancel@4
+        148   93 00001113 _UPD_TEXT_OK@4
+        149   94 000011E5 _UPD_TEXT_PostBuild@4
+        150   95 000012A3 _UPD_TEXT_PostBuild_DisableCtrls@4
+        151   96 000010A5 _Undo@4
+        152   97 00001159 _UpdateBlockAttribute@4
+        153   98 000011F4 _UpdateFontFaceNameInPlace@4
+        154   99 00001343 _UpdateFontSizeInPlace@4
+        155   9A 00001226 _UpdateTagInPlace@4
+        156   9B 0000101E _UpdateTextInPlace@4
+        157   9C 00001299 _fnChangeMappingViewR@20
+        158   9D 000010E6 _fnContextMappingInit@4
+
+  Summary
+
+        3000 .data
+        1000 .idata
+        2000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       12000 .text

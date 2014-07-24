@@ -1805,46 +1805,6 @@ MergeIncludeDomain( VIEW vSubtask,
 
 END
 
-
-TRANSFORMATION OPERATION
-AnalyzeZKeys( VIEW vERD BASED ON LOD TZEREMDO )
-
-   VIEW          vERD2 BASED ON LOD TZEREMDO
-   STRING( 200 ) szMsg
-
-   // Analyze Duplicates for ER_Relink.
-   FOR EACH vERD.ER_RelLink WITHIN vERD.EntpER_Model
-      CreateViewFromViewForTask( vERD2, vERD, 0 )
-      SET CURSOR NEXT vERD2.ER_RelLink WITHIN vERD.EntpER_Model WHERE
-           vERD2.ER_RelLink.ZKey = vERD.ER_RelLink.ZKey
-      IF RESULT >= zCURSOR_SET
-         szMsg = "Duplicate ZKey for Entity: " + vERD.ER_Entity.Name + NEW_LINE +
-                 "RelLink: " + vERD.ER_RelLink.Name +
-                 " " + vERD.ER_Entity_Other.Name
-         MessageSend( vERD, "ER00404", "ERD Migrate",
-                      szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
-      END
-      DropView( vERD2 )
-   END
-
-   // Analyze Duplicates for ER_RelinkIdentifier.
-   FOR EACH vERD.ER_RelLinkIdentifier WITHIN vERD.EntpER_Model
-      CreateViewFromViewForTask( vERD2, vERD, 0 )
-      SET CURSOR NEXT vERD2.ER_RelLinkIdentifier WITHIN vERD.EntpER_Model WHERE
-           vERD2.ER_RelLinkIdentifier.ZKey = vERD.ER_RelLinkIdentifier.ZKey
-      IF RESULT >= zCURSOR_SET
-         szMsg = "Duplicate ZKey for Entity: " + vERD.ER_Entity.Name + NEW_LINE +
-                 "Identifier RelLink: " + vERD.ER_RelLinkIdentifier.Name +
-                 " " + vERD.ER_Entity_Other_Identifier.Name
-         MessageSend( vERD, "ER00404", "ERD Migrate",
-                      szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
-      END
-      DropView( vERD2 )
-   END
-
-END
-
-
 ENTITY CONSTRAINT OPERATION
 IdentifierConstraints( VIEW vERD BASED ON LOD TZEREMDO,
                        STRING ( 32 ) sEntityName,

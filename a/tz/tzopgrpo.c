@@ -128,26 +128,26 @@ oTZOPGRPO_GetViewForXGO( zPVIEW pvTZOPGRPO,
             return( -1 );
       }
       else
-	  {
-	     // KJS 04/24/13 - We have a couple of TZOPSIGK operations that are different when generating to c or to java. I have implemented a new Operation Generation Type for a
-		 // TZOPSIGK operation where you can choose Java or C and so for some operations we have two declarations one for java and one for c. 
-		 // I am wondering if we should have a flag perhaps in the zeidon.ini file and/or on the "Operation Insert" screen to indicate what operations you want
-		 // to see in the list but because for right now the operations are exactly the same except the C versions have some parameters as pointers (Return Value),
-		 // I am going to limit the list to show only the C version of an operation. That way when the user tries to insert an operation they are not confused by
-		 // seeing two. This is only for a couple of operations like StoreValueInRecord and SetEntityCursor etc.
+     {
+        // KJS 04/24/13 - We have a couple of TZOPSIGK operations that are different when generating to c or to java. I have implemented a new Operation Generation Type for a
+       // TZOPSIGK operation where you can choose Java or C and so for some operations we have two declarations one for java and one for c.
+       // I am wondering if we should have a flag perhaps in the zeidon.ini file and/or on the "Operation Insert" screen to indicate what operations you want
+       // to see in the list but because for right now the operations are exactly the same except the C versions have some parameters as pointers (Return Value),
+       // I am going to limit the list to show only the C version of an operation. That way when the user tries to insert an operation they are not confused by
+       // seeing two. This is only for a couple of operations like StoreValueInRecord and SetEntityCursor etc.
          nRC = SetCursorFirstEntity( vT, "Operation", "" );
          while ( nRC >= zCURSOR_SET )
          {
             szOpGenType[ 0 ] = 0;
             GetStringFromAttribute( szOpGenType, vT, "Operation", "GenerationType" );
-	        if ( szOpGenType[0] == 'J' )
-	        {
-	           DropEntity( vT, "Operation", zREPOS_NONE );
-	        }
+           if ( szOpGenType[0] == 'J' )
+           {
+              DropEntity( vT, "Operation", zREPOS_NONE );
+           }
             nRC = SetCursorNextEntity( vT, "Operation", "" );
          }
          nRC = SetNameForView( vT, szAppViewName, 0, zLEVEL_APPLICATION );
-	  }
+     }
    }
 
    nRC = CreateViewFromViewForTask( pvTZOPGRPO, vT, 0 );

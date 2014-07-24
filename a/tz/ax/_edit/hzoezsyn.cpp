@@ -82,9 +82,8 @@ ZeidonSyntax::ZeidonSyntax( CTBEditor *pT, char *pData, HWND hWnd )
     m_pHash = new char* [HASH_ARR_SIZE];
 
     long cZeidonSize = sizeof( cZeidon ) / KEY_ARR_SIZE;
-    int i;
 
-    for( i = 0; i < HASH_ARR_SIZE; i++ )
+    for( int i = 0; i < HASH_ARR_SIZE; i++ )
         m_pHash[i] = NULL;
 
     //Hash-Tabelle fuellen

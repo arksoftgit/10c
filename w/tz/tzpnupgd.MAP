@@ -1,0 +1,62 @@
+ tzpnupgd
+
+ Timestamp is 5356cf5e (Tue Apr 22 16:21:50 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000013cbH .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 000002d6H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00000034H .bss                    DATA
+ 0004:00000000 00000014H .idata$2                DATA
+ 0004:00000014 00000014H .idata$3                DATA
+ 0004:00000028 00000048H .idata$4                DATA
+ 0004:00000070 00000048H .idata$5                DATA
+ 0004:000000b8 00000163H .idata$6                DATA
+ 0005:00000000 00000113H .rsrc$01                DATA
+ 0005:00000120 00000000H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000050       _DllMain@12                10001050 f   zdllinst.obj
+ 0001:00000076       _GetDLL_Instance@4         10001076 f   zdllinst.obj
+ 0001:00000090       _UpgradeDialog1@8          10001090 f   tzpnupgd.obj
+ 0001:0000009a       _UpgradeControl@20         1000109a f   tzpnupgd.obj
+ 0001:000000a4       _UpgradeCtrlMap@12         100010a4 f   tzpnupgd.obj
+ 0001:000000ae       _IncludeAttributeMapping@12 100010ae f   tzpnupgd.obj
+ 0001:000000b8       _UpgradeAction@8           100010b8 f   tzpnupgd.obj
+ 0001:000000d0       __CRT_INIT@12              100010d0 f   msvcrtd:crtdll.obj
+ 0001:000001e0       __DllMainCRTStartup@12     100011e0 f   msvcrtd:crtdll.obj
+ 0001:000002d4       __free_dbg                 100012d4 f   msvcrtd:MSVCRTD.dll
+ 0001:000002da       __initterm                 100012da f   msvcrtd:MSVCRTD.dll
+ 0001:000002e0       __onexit                   100012e0 f   msvcrtd:atonexit.obj
+ 0001:00000320       _atexit                    10001320 f   msvcrtd:atonexit.obj
+ 0001:00000338       __malloc_dbg               10001338 f   msvcrtd:MSVCRTD.dll
+ 0001:0000033e       ___dllonexit               1000133e f   msvcrtd:MSVCRTD.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000301c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10004000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10004104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10004208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000430c     msvcrtd:cinitexe.obj
+ 0003:00000410       _g_hInstanceDLL            10004410     zdllinst.obj
+ 0003:00000418       __adjust_fdiv              10004418     <common>
+ 0003:00000424       ___onexitend               10004424     <common>
+ 0003:00000434       ___onexitbegin             10004434     <common>
+ 0003:00000438       __pRawDllMain              10004438     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_MSVCRTD 10005000     msvcrtd:MSVCRTD.dll
+ 0004:00000014       __NULL_IMPORT_DESCRIPTOR   10005014     msvcrtd:MSVCRTD.dll
+ 0004:00000070       __imp___initterm           10005070     msvcrtd:MSVCRTD.dll
+ 0004:00000074       __imp___malloc_dbg         10005074     msvcrtd:MSVCRTD.dll
+ 0004:00000078       __imp___adjust_fdiv        10005078     msvcrtd:MSVCRTD.dll
+ 0004:0000007c       __imp____dllonexit         1000507c     msvcrtd:MSVCRTD.dll
+ 0004:00000080       __imp___onexit             10005080     msvcrtd:MSVCRTD.dll
+ 0004:00000084       __imp___free_dbg           10005084     msvcrtd:MSVCRTD.dll
+ 0004:00000088       \177MSVCRTD_NULL_THUNK_DATA 10005088     msvcrtd:MSVCRTD.dll
+
+ entry point at        0001:000001e0
+

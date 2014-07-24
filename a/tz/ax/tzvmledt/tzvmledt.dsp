@@ -85,7 +85,7 @@ LINK32=link.exe
 # SUBTRACT LINK32 /pdb:none /incremental:no
 # Begin Special Build Tool
 ProjDir=.
-TargetDir=\10c\w\bin
+TargetDir=\10e\w\bin
 SOURCE="$(InputPath)"
 PostBuild_Desc=copy ini settings
 PostBuild_Cmds=copy "$(ProjDir)\*.ini" "$(TargetDir)\*.*"

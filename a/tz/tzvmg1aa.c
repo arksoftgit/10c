@@ -1096,8 +1096,6 @@ GenerateC_Prototype( zVIEW   vSubtask,
 
    // Get the operation name.
    GetStringFromAttribute( pchOutputString, g_lpPIView, "Operation", "C_GeneratedOperationName" );
-// if ( zstrstr( pchOutputString, "dRefCount" ) != 0 )  //dks???
-//    TraceLineS( "Generating operation: ", pchOutputString );
 
    // If we have any variables of any sort ...
    nRC = SetCursorFirstEntity( g_lpPIView, "Variable", "" );
@@ -1479,7 +1477,7 @@ GenerateC_LocalVariableList( zVIEW  vSubtask,
          if ( pch == 0 )
             pch = zstrstr( pchOutputString, "lZRetCode" );
 
-         if ( pch == 0 )  // if you want a return code, specify one ... no automatics dks 2013.03.26
+         if ( pch == 0 )
             OutputLine( vSubtask, lfTempCFileHandle, pchOutputString, 0 );
          else
             pchOutputString[ 0 ] = 0;

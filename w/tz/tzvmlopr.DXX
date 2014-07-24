@@ -1,0 +1,80 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzvmlopr.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzvmlopr.dll
+
+           0 characteristics
+    5356CF2C time date stamp Tue Apr 22 16:21:00 2014
+        0.00 version
+           1 ordinal base
+          52 number of functions
+          52 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000108C _CallInterp@20
+          2    1 0000110E _ConvertZeidonTypeToVMLTypeS@4
+          3    2 00001136 _Copy@4
+          4    3 00001195 _EvaluateExpression@20
+          5    4 0000104B _Exec_Go@4
+          6    5 000010B4 _Exec_ResumeFromDebugger@12
+          7    6 000011B3 _Exec_SfCreateSubtask@8
+          8    7 000010E6 _Exec_SfCreateSystemSubtask@8
+          9    8 00001127 _Exec_Skip@4
+         10    9 0000101E _Exec_StepForward@4
+         11    A 0000116D _Exec_StepOnce@4
+         12    B 0000105A _Generate3GL@24
+         13    C 000011A4 _GenerateC_Source@20
+         14    D 00001186 _GenerateJavaSource@24
+         15    E 0000102D _GenerateNewExpression@8
+         16    F 000010F0 _GetDLL_Instance@4
+         17   10 00001177 _GetDefineInternalValue@8
+         18   11 000010AA _GetExecMode@20
+         19   12 0000119A _GetExecModeByZKey@12
+         20   13 00001104 _GetOperationModuleName@16
+         21   14 00001140 _GetOperationParmList@20
+         22   15 000011BD _GetParmPushSize@4
+         23   16 00001159 _Go@12
+         24   17 0000115E _IncrementStackPtr@0
+         25   18 000010D2 _InitInterp@12
+         26   19 0000113B _InvokeInterp@20
+         27   1A 0000111D _LoadXPG@16
+         28   1B 000010C3 _Operate@12
+         29   1C 000010CD _PostBuild@4
+         30   1D 0000117C _PostGenerateC@20
+         31   1E 00001181 _PostGenerateJava@20
+         32   1F 00001078 _PreBuild@4
+         33   20 00001046 _PreGenerateWork@8
+         34   21 000011CC _RestoreLastOperCall@8
+         35   22 00001028 _RtnFromSubWnd@4
+         36   23 00001037 _SetPointerValues@8
+         37   24 00001122 _SetPointerValuesFromLocalCall@8
+         38   25 000011C2 _SetStackObjectFromViews@16
+         39   26 00001041 _SetUpOperationCall@8
+         40   27 000010EB _SetupInterp@8
+         41   28 0000107D _Skip@4
+         42   29 0000114A _StageBrowser@8
+         43   2A 0000119F _StageOperationCall@16
+         44   2B 000011B8 _StepOnce@12
+         45   2C 00001109 _UpdateStackObjectFromViews@20
+         46   2D 000010F5 _WRKS_Close@4
+         47   2E 000010A5 _WRKS_Get@12
+         48   2F 000010AF _WRKS_Init@4
+         49   30 000010FA _WRKS_Reset@4
+         50   31 0000114F _zwTZVSEDAW_InitializeDialog@4
+         51   32 000011D1 _zwTZVSEDAW_OpenSourceFile@4
+         52   33 00001168 _zwTZVSEDAW_TerminateDialog@4
+
+  Summary
+
+       1C000 .data
+        1000 .didat
+        1000 .idata
+        1000 .rdata
+        3000 .reloc
+       1C000 .text

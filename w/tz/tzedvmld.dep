@@ -1,0 +1,37 @@
+# Microsoft Developer Studio Generated Dependency File, included by tzedvmld.mak
+
+..\..\a\tz\tzedvmld.C : \
+	"..\..\a\incr\kzoedeca.h"\
+	"..\..\a\incr\kzoegdef.h"\
+	"..\..\a\incr\kzoemeaa.h"\
+	"..\..\a\incr\kzoengaa.h"\
+	"..\..\a\incr\kzoep1aa.h"\
+	"..\..\a\incr\kzoessaa.h"\
+	"..\..\a\incr\kzwdlgxo.hst"\
+	"..\..\a\incr\zdrvropr.h"\
+	"..\..\a\incr\zstdafx.h"\
+	"..\..\a\incz\kzoeidaa.h"\
+	"..\..\a\incz\kzoemiaa.h"\
+	"..\..\a\incz\kzoep0aa.h"\
+	"..\..\a\incz\kzoetdaa.h"\
+	"..\..\a\incz\tz__oprs.h"\
+	"..\..\a\incz\tzctlopr.h"\
+	"..\..\a\incz\tzlodopr.h"\
+	"..\..\a\incz\tzwdlgso.hst"\
+	"..\..\a\TZ\ax\tzvmledt\tzcswrpr.h"\
+	"..\..\a\TZ\ax\tzvmledt\tzvmlcst.h"\
+	"..\..\a\TZ\ax\tzvmledt\tzvmledt.h"\
+	"..\..\a\TZ\ax\tzvmledt\zcmddef.h"\
+	"..\..\a\TZ\ax\tzvmledt\zstring.h"\
+	"..\..\a\TZ\ax\tzvmledt\zviewdef.h"\
+	"..\..\a\tz\zeidonop.h"\
+	"..\..\a\zdr\JPegLib\Jconfig.h"\
+	"..\..\a\zdr\JPegLib\Jmorecfg.h"\
+	"..\..\a\zdr\JPegLib\Jpeglib.h"\
+	"..\..\a\zdr\TzCtl.h"\
+	"..\..\a\zdr\ZdCtl.h"\
+	"..\..\a\zdr\ZDr.h"\
+	"..\..\a\zdr\ZDrApp.h"\
+	"..\..\a\zdr\zdrtwain.h"\
+	"..\incr\kzoeenaa.h"\
+	

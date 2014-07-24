@@ -396,7 +396,7 @@ TZPainterBar::DeleteWebCtrls( )
    if ( m_pZMIXWebCtrl )
    {
       TZWebCtrl *pWebCtrl;
-      zLONG      k;
+      zSHORT    k;
 
       for ( k = m_pZMIXWebCtrl->GetCount( ) - 1; k >= 0; k-- )
       {
@@ -3259,7 +3259,7 @@ void TZSizingControlBar::OnPaint()
     CPaintDC dc(this);
 }
 
-LRESULT TZSizingControlBar::OnNcHitTest(CPoint point)
+UINT TZSizingControlBar::OnNcHitTest(CPoint point)
 {
     CRect rcBar, rcEdge;
     GetWindowRect(rcBar);
@@ -3615,9 +3615,8 @@ BOOL TZSizingControlBar::NegotiateSpace(int nLengthTotal, BOOL bHorz)
     int nLengthMin = 2;
     int nWidthMax = 0;
     TZSizingControlBar* pBar;
-    int i;
 
-    for (i = nFirst; i <= nLast; i++)
+    for (int i = nFirst; i <= nLast; i++)
     {
         pBar = (TZSizingControlBar*) m_pDockBar->m_arrBars[i];
         if (HIWORD(pBar) == 0) continue; // placeholder
@@ -3695,20 +3694,18 @@ BOOL TZSizingControlBar::NegotiateSpace(int nLengthTotal, BOOL bHorz)
     }
 
     // make all the bars the same width
-    for ( i = 0; i < nNumBars; i++)
-    {
+    for (i = 0; i < nNumBars; i++)
         if (bHorz)
             arrSCBars[i]->m_szHorz.cy = nWidthMax;
         else
             arrSCBars[i]->m_szVert.cx = nWidthMax;
-    }
 
     // distribute the difference between the bars,
     // but don't shrink them below their minsizes
     while (nDelta != 0)
     {
         int nDeltaOld = nDelta;
-        for ( i = 0; i < nNumBars; i++)
+        for (i = 0; i < nNumBars; i++)
         {
             pBar = arrSCBars[i];
             int nLMin = bHorz ?
@@ -3728,10 +3725,8 @@ BOOL TZSizingControlBar::NegotiateSpace(int nLengthTotal, BOOL bHorz)
         }
         // clear m_bKeepSize flags
         if ((nDeltaOld == nDelta) || (nDelta == 0))
-        {
-            for ( i = 0; i < nNumBars; i++)
+            for (i = 0; i < nNumBars; i++)
                 arrSCBars[i]->m_bKeepSize = FALSE;
-        }
     }
 
     return TRUE;
@@ -4249,7 +4244,7 @@ void TZSizingControlBarG::NcPaintGripper(CDC* pDC, CRect rcClient)
     m_biHide.Paint(pDC);
 }
 
-LRESULT TZSizingControlBarG::OnNcHitTest(CPoint point)
+UINT TZSizingControlBarG::OnNcHitTest(CPoint point)
 {
     CRect rcBar;
     GetWindowRect(rcBar);

@@ -2050,9 +2050,9 @@ GenerateXRP_CtrlMap( VIEW NewReport     BASED ON LOD TZRPSRCO,
 END
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: InitReportStructure
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 InitReportStructure( VIEW vReportDef BASED ON LOD TZRPSRCO )
@@ -2061,12 +2061,12 @@ InitReportStructure( VIEW vReportDef BASED ON LOD TZRPSRCO )
    VIEW vDrivingLOD      BASED ON LOD TZZOLODO
    SHORT nRC
    SHORT iOrder
-   
+
    TraceLineS("*** InitReportStructure *** ", "")
 
    // If the ReportEntity subobject within the DrivingViewObjRef doesn't exist, build it here from the
    // GroupSet subobject and the LOD structure.
-   
+
    // Make sure that a Driving Object has been defined.
    /*
    IF vReportDef.DrivingViewObjRef DOES NOT EXIST
@@ -2079,70 +2079,70 @@ InitReportStructure( VIEW vReportDef BASED ON LOD TZRPSRCO )
    IF vReportDef.DrivingViewObjRef DOES NOT EXIST
       RETURN 0
    END
-   
+
    // Just return if the subobject already exists.
    // KJS - Wondering if we should rebuild this everytime...
    IF vReportDef.FullReportEntity EXISTS
-      DELETE ENTITY vReportDef.FullReportEntity 
+      DELETE ENTITY vReportDef.FullReportEntity
       //RETURN 0
    END
    IF vReportDef.PartialReportEntity EXISTS
-      DELETE ENTITY vReportDef.PartialReportEntity 
+      DELETE ENTITY vReportDef.PartialReportEntity
       //RETURN 0
    END
-   
+
    // I want to create an order for the GroupSets
    OrderEntityForView( vReportDef, "GroupSet", "PSDLG_Y A" )
    iOrder = 1
    FOR EACH vReportDef.GroupSet
       vReportDef.GroupSet.Order = iOrder
    END
-   // Not sure I need to do this...   
+   // Not sure I need to do this...
    SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PF"
    IF RESULT >= zCURSOR_SET
       // Setting to a random high number
       vReportDef.GroupSet.Order = 100
-   END 
-   
+   END
+
    IssueError( vReportDef,0,0, "start" )
-   
+
    // Get Driving LOD
    nRC = ActivateMetaOI_ByName( vReportDef, vDrivingLOD, 0, zREFER_LOD_META,
                                 zSINGLE, vReportDef.DrivingLOD.Name, 0 )
-   // KJS - WHY DON"T WE JUST USE vDrivingLOD? Can't remember why we need all stored in the report?    
+   // KJS - WHY DON"T WE JUST USE vDrivingLOD? Can't remember why we need all stored in the report?
    TraceLineS("*** Activate DrivingLOD *** ",   vReportDef.DrivingLOD.Name )
-   TraceLineI("*** Activate returncode *** ", nRC )                       
-                                   
+   TraceLineI("*** Activate returncode *** ", nRC )
+
    IF nRC >= 0
       // Set up recursive Report view and process LOD recursively to create Report Structure subobject, setting
       // the ReportDisplayFlag to indicate if an entity is to drive a GroupSet on the report.
       NAME VIEW vDrivingLOD "DrivingLOD"
       CreateViewFromView( vReportDefRecurs, vReportDef )
       NAME VIEW vReportDefRecurs "vReportDefRecurs"
-      
+
       nRC = InitReportStructureR( vReportDef,
                                   vReportDefRecurs,
                                   vDrivingLOD )
-      
+
       DropView( vReportDefRecurs )
 
       CreateViewFromView( vReportDefRecurs, vReportDef )
       NAME VIEW vReportDefRecurs "vReportDefRecurs"
-      
+
       TraceLineS("*** Before CrtePartialLODStructR *** ", "")
-      
+
       nRC = CrtePartialLODStructR( vReportDef,
                                    vReportDefRecurs,
                                    vDrivingLOD )
-      
+
       DropView( vReportDefRecurs )
-      
+
       // Now run through and delete all entities with no D or S.
       CreateViewFromView( vReportDefRecurs, vReportDef )
-      DeleteNonDisplayEntsR( vReportDefRecurs )     
+      DeleteNonDisplayEntsR( vReportDefRecurs )
       DropView( vReportDefRecurs )
-      SET CURSOR FIRST vReportDef.FullReportEntity 
-      SET CURSOR FIRST vReportDef.PartialReportEntity   
+      SET CURSOR FIRST vReportDef.FullReportEntity
+      SET CURSOR FIRST vReportDef.PartialReportEntity
 
    END
    CreateViewFromViewForTask( vReportDefRecurs, vReportDef, 0 )
@@ -2151,9 +2151,9 @@ InitReportStructure( VIEW vReportDef BASED ON LOD TZRPSRCO )
 END
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: InitReportStructureR
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 InitReportStructureR( VIEW vReportDef       BASED ON LOD TZRPSRCO,
@@ -2168,23 +2168,23 @@ InitReportStructureR( VIEW vReportDef       BASED ON LOD TZRPSRCO,
    // setting the ReportDisplayFlag entity for any entity with a corresponding GroupSet entity in the report, or having
    // a FullReportEntityChild entity with a corresponding GroupSet entity. The flag is set to "D" if the entity has
    // a corresponding GroupSet entity and to a "C" if it has a child with a corresponding GroupSet entity.
-   
-   FOR EACH vDrivingLOD.LOD_EntityParent 
-   
-      szDrivingEntityName = vDrivingLOD.LOD_EntityParent.Name 
-      
+
+   FOR EACH vDrivingLOD.LOD_EntityParent
+
+      szDrivingEntityName = vDrivingLOD.LOD_EntityParent.Name
+
       // Create corresponding FullReportEntity entity.
-      CREATE ENTITY vReportDefRecurs.FullReportEntity 
+      CREATE ENTITY vReportDefRecurs.FullReportEntity
       vReportDefRecurs.FullReportEntity.Name = szDrivingEntityName
    IssueError( vReportDef,0,0, szDrivingEntityName )
-      
+
       // Process corresponding report GroupSet entity, if there is one
       SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Tag = szDrivingEntityName
-      IF RESULT >= zCURSOR_SET 
+      IF RESULT >= zCURSOR_SET
          vReportDefRecurs.FullReportEntity.ReportDisplayFlag = "D"
          szHasGroupSetFlag = "Y"
       END
-      
+
       // Process any LOD subentities.
       IF vDrivingLOD.LOD_EntityChild EXISTS
          SetViewToSubobject( vDrivingLOD, "LOD_EntityChild" )
@@ -2194,20 +2194,20 @@ InitReportStructureR( VIEW vReportDef       BASED ON LOD TZRPSRCO,
                                      vDrivingLOD )
          ResetViewFromSubobject( vDrivingLOD )
          ResetViewFromSubobject( vReportDefRecurs )
-         
+
          // If the current entity does not have the Display Flag set to "D" but the return code indicates a child
          // entity does have its Display Flag set to "D", then set the Display Flag to "S" to indicate this condition.
-         IF vReportDefRecurs.FullReportEntity.ReportDisplayFlag = "" AND nRC = 1 
+         IF vReportDefRecurs.FullReportEntity.ReportDisplayFlag = "" AND nRC = 1
             vReportDefRecurs.FullReportEntity.ReportDisplayFlag = "S"
          END
-         
+
          // If any child has its Display Flag set, so indicate to the calling operation.
          IF nRC = 1
              szHasGroupSetFlag = "Y"
          END
       END
    END
-   
+
    IF szHasGroupSetFlag = "Y"
       RETURN 1     // Indicate a child has a corresponding GroupSet entity.
    ELSE
@@ -2217,30 +2217,30 @@ InitReportStructureR( VIEW vReportDef       BASED ON LOD TZRPSRCO,
 END
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: BuildReportDispObject
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 BuildReportDispObject( VIEW vReportDefSource BASED ON LOD TZRPSRCO )
 
    VIEW  vReportDefTarget BASED ON LOD TZRPSRCO
    SHORT nRC
-   
+
    // Build the PartialLOD_Entity Report subobject from the FullReportEntity subobject.
    CreateViewFromView( vReportDefTarget, vReportDefSource )
-      
+
    nRC = BuildReportDispObjectR( vReportDefSource,
                                  vReportDefTarget )
-   
+
    DropView( vReportDefTarget )
 
 END
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: BuildReportDispObjectR
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 BuildReportDispObjectR( VIEW vReportDefSource BASED ON LOD TZRPSRCO,
@@ -2253,62 +2253,62 @@ END
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CreateEntityGroupSet
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 CreateEntityGroupSet( VIEW vReportDef  BASED ON LOD TZRPSRCO )
-     
-   VIEW vDrivingLOD      REGISTERED AS DrivingLOD                 
-   VIEW vReportDefRecurs BASED ON LOD  TZRPSRCO                  
+
+   VIEW vDrivingLOD      REGISTERED AS DrivingLOD
+   VIEW vReportDefRecurs BASED ON LOD  TZRPSRCO
    STRING ( 32 ) szEntityName
    STRING ( 32 ) szName
    INTEGER lControl
    INTEGER lGroupPosY
    INTEGER nRC
-   
+
    TraceLineS("*** In CreateEntityGroupSet *****", "")
-   
-   szEntityName = vReportDef.DrivingViewObjRef.wGroupSetName 
+
+   szEntityName = vReportDef.DrivingViewObjRef.wGroupSetName
    TraceLineS("*** Group Set Name ***** ", szEntityName)
-   
+
    // First check if the entity already exists.
    SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Tag = szEntityName
 
    // Build the GroupSet for the report from the selected entity
    IF RESULT < zCURSOR_SET
    TraceLineS("*** Creating GroupSet *** ", "")
-   
+
       CREATE ENTITY vReportDef.GroupSet
-      vReportDef.GroupSet.Tag = szEntityName 
-   
+      vReportDef.GroupSet.Tag = szEntityName
+
       vReportDef.GroupSet.PSDLG_X  = 0
       vReportDef.GroupSet.PSDLG_Y  = 4 * 16
       vReportDef.GroupSet.SZDLG_X  = vReportDef.Page.SizeX
       // KJS - I don't know what PPE_Type is...
       vReportDef.GroupSet.PPE_Type    = 3000
-         
-      
+
+
       IF vReportDef.DrivingViewObjRef.wGroupSetType = "PH" OR vReportDef.DrivingViewObjRef.wPageFooter = "PF"
-      
+
          vReportDef.GroupSet.Type = vReportDef.DrivingViewObjRef.wGroupSetType
-         IF vReportDef.GroupSet.Type = "PH" 
+         IF vReportDef.GroupSet.Type = "PH"
             szName = "PageHeader"
          ELSE
             szName = "PageFooter"
          END
          IF vReportDef.GroupSet.Tag = ""
-            vReportDef.GroupSet.Tag = szName 
+            vReportDef.GroupSet.Tag = szName
          END
          CREATE ENTITY vReportDef.Group
          vReportDef.Group.Tag = "Header"
          vReportDef.Group.Type = "ga"
-         
+
       ELSE
          vReportDef.GroupSet.Type = "E"
          lGroupPosY = 0
-         
+
          // See if there is a group header
          IF vReportDef.DrivingViewObjRef.wGroupHeader = "Y"
             CREATE ENTITY vReportDef.Group
@@ -2320,8 +2320,8 @@ CreateEntityGroupSet( VIEW vReportDef  BASED ON LOD TZRPSRCO )
             vReportDef.Group.SZDLG_Y = 50
             vReportDef.Group.PPE_Type             = 3010
             lGroupPosY = lGroupPosY + vReportDef.Group.SZDLG_Y
-         END 
-         
+         END
+
          // Create group detail
          CREATE ENTITY vReportDef.Group
          vReportDef.Group.Tag = "Detail"
@@ -2332,7 +2332,7 @@ CreateEntityGroupSet( VIEW vReportDef  BASED ON LOD TZRPSRCO )
          vReportDef.Group.SZDLG_Y = 50
          vReportDef.Group.PPE_Type             = 3010
          lGroupPosY = lGroupPosY + vReportDef.Group.SZDLG_Y
-         
+
          // See if there is a group footer.
          IF vReportDef.DrivingViewObjRef.wGroupFooter = "Y"
             CREATE ENTITY vReportDef.Group
@@ -2344,41 +2344,41 @@ CreateEntityGroupSet( VIEW vReportDef  BASED ON LOD TZRPSRCO )
             vReportDef.Group.SZDLG_Y = 50
             lGroupPosY = lGroupPosY + vReportDef.Group.SZDLG_Y
             vReportDef.Group.PPE_Type             = 3010
-         END 
-      END      
-      
+         END
+      END
+
       vReportDef.GroupSet.SZDLG_Y  = lGroupPosY + 100
-      
+
    END
-   
-   
-   
-   
+
+
+
+
    // Need to look at attributes as well?
    IF vReportDef.PartialReportEntity EXISTS
-      DELETE ENTITY vReportDef.PartialReportEntity 
+      DELETE ENTITY vReportDef.PartialReportEntity
    END
-   
+
    CreateViewFromView( vReportDefRecurs, vReportDef )
    NAME VIEW vReportDefRecurs "vReportDefRecurs"
-   
+
    nRC = CrtePartialLODStructR( vReportDef,
                                 vReportDefRecurs,
                                 vDrivingLOD )
-   
+
    //DropView( vReportDefRecurs )
-   
+
    // Now run through and delete all entities with no D or S.
    //CreateViewFromView( vReportDefRecurs, vReportDef )
-   DeleteNonDisplayEntsR( vReportDefRecurs )     
+   DeleteNonDisplayEntsR( vReportDefRecurs )
    DropView( vReportDefRecurs )
 END
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CrtePartialLODStructR
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 CrtePartialLODStructR( VIEW vReportDef BASED ON LOD TZRPSRCO,
@@ -2393,24 +2393,24 @@ CrtePartialLODStructR( VIEW vReportDef BASED ON LOD TZRPSRCO,
    // setting the ReportDisplayFlag entity for any entity with a corresponding GroupSet entity in the report, or having
    // a PartialReportEntityChild entity with a corresponding GroupSet entity. The flag is set to "D" if the entity has
    // a corresponding GroupSet entity and to a "C" if it has a child with a corresponding GroupSet entity.
-   
-   FOR EACH vDrivingLOD.LOD_EntityParent 
-   
-      szDrivingEntityName = vDrivingLOD.LOD_EntityParent.Name 
-      
+
+   FOR EACH vDrivingLOD.LOD_EntityParent
+
+      szDrivingEntityName = vDrivingLOD.LOD_EntityParent.Name
+
       TraceLineS("*** Creating PartialReportEntity - ", szDrivingEntityName )
-      
+
       // Create corresponding PartialReportEntity entity.
-      CREATE ENTITY vReportDefRecurs.PartialReportEntity 
+      CREATE ENTITY vReportDefRecurs.PartialReportEntity
       vReportDefRecurs.PartialReportEntity.Name = szDrivingEntityName
-      
+
       // Process corresponding report GroupSet entity, if there is one
       SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Tag = szDrivingEntityName
-      IF RESULT >= zCURSOR_SET 
+      IF RESULT >= zCURSOR_SET
          vReportDefRecurs.PartialReportEntity.ReportDisplayFlag = "D"
          szHasGroupSetFlag = "Y"
       END
-      
+
       // Process any LOD subentities.
       IF vDrivingLOD.LOD_EntityChild EXISTS
          SetViewToSubobject( vDrivingLOD, "LOD_EntityChild" )
@@ -2420,20 +2420,20 @@ CrtePartialLODStructR( VIEW vReportDef BASED ON LOD TZRPSRCO,
                                       vDrivingLOD )
          ResetViewFromSubobject( vDrivingLOD )
          ResetViewFromSubobject( vReportDefRecurs )
-         
+
          // If the current entity does not have the Display Flag set to "D" but the return code indicates a child
          // entity does have its Display Flag set to "D", then set the Display Flag to "S" to indicate this condition.
-         IF vReportDefRecurs.PartialReportEntity.ReportDisplayFlag = "" AND nRC = 1 
+         IF vReportDefRecurs.PartialReportEntity.ReportDisplayFlag = "" AND nRC = 1
             vReportDefRecurs.PartialReportEntity.ReportDisplayFlag = "S"
          END
-         
+
          // If any child has its Display Flag set, so indicate to the calling operation.
          IF nRC = 1
              szHasGroupSetFlag = "Y"
          END
       END
    END
-   
+
    IF szHasGroupSetFlag = "Y"
       RETURN 1     // Indicate a child has a corresponding GroupSet entity.
    ELSE
@@ -2443,26 +2443,26 @@ END
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: DeleteNonDisplayEntsR
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 DeleteNonDisplayEntsR( VIEW vReportDefRecurs BASED ON LOD TZRPSRCO )
 
    INTEGER nRC
-   
-   FOR EACH vReportDefRecurs.PartialReportEntity  
-   
+
+   FOR EACH vReportDefRecurs.PartialReportEntity
+
       IF vReportDefRecurs.PartialReportEntity.ReportDisplayFlag = ""
          DELETE ENTITY vReportDefRecurs.PartialReportEntity NONE
-      ELSE 
+      ELSE
          // Process any LOD subentities.
          IF vReportDefRecurs.PartialReportEntityChild EXISTS
             SetViewToSubobject( vReportDefRecurs, "PartialReportEntityChild" )
             nRC = DeleteNonDisplayEntsR( vReportDefRecurs )
             ResetViewFromSubobject( vReportDefRecurs )
-         END            
+         END
       END
    END
 
@@ -2471,55 +2471,55 @@ END
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: DeleteGroupSet
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 DeleteGroupSet( VIEW vReportDef BASED ON LOD TZRPSRCO )
-   
+
    VIEW vReportOutliner  BASED ON LOD TZRPSRCO
    VIEW vReportDefRecurs BASED ON LOD TZRPSRCO
    VIEW vDrivingLOD      BASED ON LOD TZZOLODO
    STRING ( 32 ) szEntity
    SHORT nRC
-   
+
    TraceLineS("*** DeleteGroupSet *** ", "")
-   
+
    nRC = GetViewByName( vReportOutliner, "TZRPTOUTLINER", vReportDef, zLEVEL_TASK )
-   
-   IF nRC >= 0 
-      szEntity = vReportOutliner.PartialReportEntity.Name 
-      SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Tag = szEntity 
-      IF RESULT >= zCURSOR_SET 
+
+   IF nRC >= 0
+      szEntity = vReportOutliner.PartialReportEntity.Name
+      SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Tag = szEntity
+      IF RESULT >= zCURSOR_SET
          TraceLineS("*** DELETING groupset *** ", szEntity )
          DeleteEntity( vReportDef, "GroupSet", zREPOS_NEXT )
       END
    END
-   
+
    DropView( vReportOutliner )
 
    nRC = GetViewByName( vDrivingLOD, "DrivingLOD", vReportDef, zLEVEL_TASK )
 
    // Need to look at attributes as well?
    IF vReportDef.PartialReportEntity EXISTS
-      DELETE ENTITY vReportDef.PartialReportEntity 
+      DELETE ENTITY vReportDef.PartialReportEntity
    END
-   
+
    CreateViewFromView( vReportDefRecurs, vReportDef )
    NAME VIEW vReportDefRecurs "vReportDefRecurs"
-   
+
    nRC = CrtePartialLODStructR( vReportDef,
                                 vReportDefRecurs,
                                 vDrivingLOD )
-   
+
    //DropView( vReportDefRecurs )
-   
+
    // Now run through and delete all entities with no D or S.
    //CreateViewFromView( vReportDefRecurs, vReportDef )
-   DeleteNonDisplayEntsR( vReportDefRecurs )     
+   DeleteNonDisplayEntsR( vReportDefRecurs )
    DropView( vReportDefRecurs )
-   
+
    CreateViewFromView( vReportOutliner, vReportDef )
    NAME VIEW  vReportOutliner  "TZRPTOUTLINER"
 
@@ -2528,14 +2528,14 @@ END
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CreateFieldsForGrpSet
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 CreateFieldsForGrpSet( VIEW vReportDef BASED ON LOD TZRPSRCO,
                        VIEW vDrivingLOD BASED ON LOD TZZOLODO )
-                       
+
    VIEW vPE_Control   BASED ON LOD TZPESRCO
    VIEW       vDefaults BASED ON LOD TZADCSDO
    STRING(32) szNameWork
@@ -2569,15 +2569,15 @@ CreateFieldsForGrpSet( VIEW vReportDef BASED ON LOD TZRPSRCO,
    STRING(2)  szAttributePrefix
    STRING(2)  szPositioningType
    INTEGER    nControlEndPosition
-   
+
 
    IF vReportDef.DrivingViewObjRef.wGroupHeader = "Y"
-   
-      SET CURSOR FIRST vReportDef.Group WHERE vReportDef.Group.Type = "gh" 
+
+      SET CURSOR FIRST vReportDef.Group WHERE vReportDef.Group.Type = "gh"
 
       // Add Header Group
       //CreateMetaEntity( vSubtask, vReportDef, "Group", zPOS_AFTER )
-      CREATE ENTITY vReportDef.Group 
+      CREATE ENTITY vReportDef.Group
       vReportDef.Group.Tag                  = "GroupHeader"
       vReportDef.Group.Type                 = "gh"
       vReportDef.Group.PSDLG_X              = 0
@@ -2595,11 +2595,11 @@ CreateFieldsForGrpSet( VIEW vReportDef BASED ON LOD TZRPSRCO,
       // Start the attribute count with 1 for the generation of unique names.
       lAttributeCnt         = 1
 
-      FOR EACH vDrivingLOD.LOD_AttributeRec 
+      FOR EACH vDrivingLOD.LOD_AttributeRec
 
          // For each attribute create the title. Control Type is 10 for title.
          //CreateMetaEntity( vSubtask, vReportDef, "Control", zPOS_AFTER )
-         CREATE ENTITY vReportDef.Control 
+         CREATE ENTITY vReportDef.Control
          ConvertIntegerToString( lAttributeCnt, szAttributePrefix, 2 )
          szNameWork                 = vDrivingLOD.ER_AttributeRec.Name
               vReportDef.Control.Tag     = "T_" + szAttributePrefix + "_" + szNameWork[1:26]
@@ -2672,7 +2672,7 @@ CreateFieldsForGrpSet( VIEW vReportDef BASED ON LOD TZRPSRCO,
    // Build the Group for the attribute Controls (and the titles, if
    // positioning is vertical).
    //CreateMetaEntity( vSubtask, vReportDef, "Group", zPOS_AFTER )
-   CREATE ENTITY vReportDef.Group 
+   CREATE ENTITY vReportDef.Group
    vReportDef.Group.Tag      = "Detail"
    vReportDef.Group.Type     = "ga"
    vReportDef.Group.PSDLG_X  = 0
@@ -2702,7 +2702,7 @@ CreateFieldsForGrpSet( VIEW vReportDef BASED ON LOD TZRPSRCO,
 
       // For each attribute create the control. Control Type is 20 for control.
       //CreateMetaEntity( vSubtask, vReportDef, "Control", zPOS_AFTER )
-      CREATE ENTITY vReportDef.Control 
+      CREATE ENTITY vReportDef.Control
       vReportDef.Control.Tag  = "A_" + szAttributePrefix + "_" + szNameWork[1:26]
       vReportDef.Control.Type = 20
 
@@ -2718,9 +2718,9 @@ CreateFieldsForGrpSet( VIEW vReportDef BASED ON LOD TZRPSRCO,
       INCLUDE vReportDef.ControlDef FROM vPE_Control.ControlDef
 
       //CreateMetaEntity( vSubtask, vReportDef, "CtrlMap", zPOS_AFTER )
-      CREATE ENTITY vReportDef.CtrlMap 
+      CREATE ENTITY vReportDef.CtrlMap
       INCLUDE vReportDef.CtrlMapLOD_Attribute FROM vDrivingLOD.LOD_AttributeRec
-      INCLUDE vReportDef.CtrlMapView FROM vReportDef.DrivingViewObjRef 
+      INCLUDE vReportDef.CtrlMapView FROM vReportDef.DrivingViewObjRef
 
       // KJS - Assuming we are always doing horizontal...
       // Now determine the control position and increment the positions, based on
@@ -2775,105 +2775,105 @@ END
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CreatePageFooter
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 CreatePageFooter( VIEW vReportDef BASED ON LOD TZRPSRCO )
 
-   VIEW vDrivingLOD      REGISTERED AS DrivingLOD                 
+   VIEW vDrivingLOD      REGISTERED AS DrivingLOD
    STRING ( 32 ) szEntityName
    STRING ( 32 ) szName
    INTEGER lControl
    INTEGER lGroupPosY
    INTEGER nRC
-   
+
    TraceLineS("*** In CreateEntityGroupSet *****", "")
-   
-   szEntityName = vReportDef.DrivingViewObjRef.wGroupSetName 
+
+   szEntityName = vReportDef.DrivingViewObjRef.wGroupSetName
    TraceLineS("*** Group Set Name ***** ", "PageFooter" )
-   
+
    // First check if the entity already exists.
    SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PF"
 
    // Build the GroupSet for the report from the selected entity
    IF RESULT < zCURSOR_SET
       TraceLineS("*** Creating Page Header GroupSet *** ", "")
-   
+
       CREATE ENTITY vReportDef.GroupSet
       vReportDef.GroupSet.Type = "PF"
-      vReportDef.GroupSet.Tag = "PageFooter" 
-   
+      vReportDef.GroupSet.Tag = "PageFooter"
+
       vReportDef.GroupSet.PSDLG_X  = 0
       vReportDef.GroupSet.PSDLG_Y  = 4 * 16
       vReportDef.GroupSet.SZDLG_X  = vReportDef.Page.SizeX
       // KJS - I don't know what PPE_Type is...
       vReportDef.GroupSet.PPE_Type    = 3000
-         
-            
+
+
       CREATE ENTITY vReportDef.Group
       vReportDef.Group.Tag = "Footer"
       vReportDef.Group.Type = "ga"
-      
+
       // Should I add a couple of default fields like a text field and page number?
-         
-      
+
+
       vReportDef.GroupSet.SZDLG_Y  = lGroupPosY + 100
-      
+
    END
 
 END
 
 
 /*************************************************************************************************
-**    
+**
 **    OPERATION: CreatePageHeader
-**    
+**
 *************************************************************************************************/
 TRANSFORMATION OPERATION
 CreatePageHeader( VIEW vReportDef BASED ON LOD TZRPSRCO )
 
-   VIEW vDrivingLOD      REGISTERED AS DrivingLOD                 
+   VIEW vDrivingLOD      REGISTERED AS DrivingLOD
    STRING ( 32 ) szEntityName
    STRING ( 32 ) szName
    INTEGER lControl
    INTEGER lGroupPosY
    INTEGER nRC
-   
+
    TraceLineS("*** In CreateEntityGroupSet *****", "")
-   
-   szEntityName = vReportDef.DrivingViewObjRef.wGroupSetName 
+
+   szEntityName = vReportDef.DrivingViewObjRef.wGroupSetName
    TraceLineS("*** Group Set Name ***** ", "PageHeader" )
-   
+
    // First check if the entity already exists.
    SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PH"
 
    // Build the GroupSet for the report from the selected entity
    IF RESULT < zCURSOR_SET
       TraceLineS("*** Creating Page Header GroupSet *** ", "")
-   
+
       CREATE ENTITY vReportDef.GroupSet
-      vReportDef.GroupSet.Tag = "PageHeader" 
-      vReportDef.GroupSet.Type = "PH" 
-   
+      vReportDef.GroupSet.Tag = "PageHeader"
+      vReportDef.GroupSet.Type = "PH"
+
       vReportDef.GroupSet.PSDLG_X  = 0
       vReportDef.GroupSet.PSDLG_Y  = 4 * 16
       vReportDef.GroupSet.SZDLG_X  = vReportDef.Page.SizeX
       // KJS - I don't know what PPE_Type is...
       vReportDef.GroupSet.PPE_Type    = 3000
-         
-            
+
+
       CREATE ENTITY vReportDef.Group
       vReportDef.Group.Tag = "Header"
       vReportDef.Group.Type = "ga"
-      
+
       // Should I add a couple of default fields like a heading and page number?
-         
-      
+
+
       vReportDef.GroupSet.SZDLG_Y  = lGroupPosY + 100
-      
+
    END
-   
+
 
 END

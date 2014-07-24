@@ -2062,13 +2062,12 @@ ZEditBar::CalcLayout( DWORD dwMode, int nLength )
 
       if ( dwMode & LM_COMMIT )
       {
-         int k;
          _AFX_CONTROLPOS *pControl = 0;
          int nControlCount = 0;
          zBOOL bIsDelayed = m_bDelayedButtonLayout;
          m_bDelayedButtonLayout = FALSE;
 
-         for ( k = 0; k < nCount; k++ )
+         for ( int k = 0; k < nCount; k++ )
          {
             if ( (pData[ k ].fsStyle & TBSTYLE_SEP) &&
                  (pData[ k ].idCommand != 0) )
@@ -2082,7 +2081,7 @@ ZEditBar::CalcLayout( DWORD dwMode, int nLength )
             pControl = new _AFX_CONTROLPOS[ nControlCount ];
             nControlCount = 0;
 
-            for ( k = 0; k < nCount; k++ )
+            for ( int k = 0; k < nCount; k++ )
             {
                if ( (pData[ k ].fsStyle & TBSTYLE_SEP) &&
                     (pData[ k ].idCommand != 0) )
@@ -3573,7 +3572,7 @@ ZTB_Popup::Display( CWnd *pControl, CWnd *pCaller,
    if ( pt.y < 0 )
       pt.y = 0;
 
-   if ( !CMiniFrameWnd::Create( 0, _T(""),
+   if ( !CMiniFrameWnd::Create( 0, &afxChNil,
                                 WS_POPUP | (m_pCaller ? MFS_SYNCACTIVE : 0),
                                 CRect( pt.x, pt.y,
                                        pt.x + rectCtrl.Width( ),
@@ -4686,7 +4685,7 @@ void ZSizingControlBar::OnPaint()
     CPaintDC dc(this);
 }
 
-LRESULT ZSizingControlBar::OnNcHitTest(CPoint point)
+UINT ZSizingControlBar::OnNcHitTest(CPoint point)
 {
     CRect rcBar, rcEdge;
     GetWindowRect(rcBar);
@@ -5034,7 +5033,6 @@ BOOL ZSizingControlBar::NegotiateSpace(int nLengthTotal, BOOL bHorz)
 {
     ASSERT(bHorz == IsHorzDocked());
 
-    int k;
     int nFirst, nLast, nThis;
     GetRowInfo(nFirst, nLast, nThis);
 
@@ -5122,20 +5120,20 @@ BOOL ZSizingControlBar::NegotiateSpace(int nLengthTotal, BOOL bHorz)
     }
 
     // make all the bars the same width
-    for ( k = 0; k < nNumBars; k++)
+    for (i = 0; i < nNumBars; i++)
         if (bHorz)
-            arrSCBars[k]->m_szHorz.cy = nWidthMax;
+            arrSCBars[i]->m_szHorz.cy = nWidthMax;
         else
-            arrSCBars[k]->m_szVert.cx = nWidthMax;
+            arrSCBars[i]->m_szVert.cx = nWidthMax;
 
     // distribute the difference between the bars,
     // but don't shrink them below their minsizes
     while (nDelta != 0)
     {
         int nDeltaOld = nDelta;
-        for ( k = 0; k < nNumBars; k++)
+        for (i = 0; i < nNumBars; i++)
         {
-            pBar = arrSCBars[k];
+            pBar = arrSCBars[i];
             int nLMin = bHorz ?
                 pBar->m_szMinHorz.cx : pBar->m_szMinVert.cy;
             int nL = bHorz ? pBar->m_szHorz.cx : pBar->m_szVert.cy;
@@ -5151,11 +5149,10 @@ BOOL ZSizingControlBar::NegotiateSpace(int nLengthTotal, BOOL bHorz)
             nDelta -= nDelta2;
             if (nDelta == 0) break;
         }
-
         // clear m_bKeepSize flags
         if ((nDeltaOld == nDelta) || (nDelta == 0))
-            for ( k = 0; k < nNumBars; k++)
-                arrSCBars[k]->m_bKeepSize = FALSE;
+            for (i = 0; i < nNumBars; i++)
+                arrSCBars[i]->m_bKeepSize = FALSE;
     }
 
     return TRUE;
@@ -5411,7 +5408,7 @@ BOOL ZSCBMiniDockFrameWnd::Create(CWnd* pParent, DWORD dwBarStyle)
 #endif
 
     if (!CMiniFrameWnd::CreateEx(dwExStyle,
-        NULL, _T(""), dwStyle, rectDefault, pParent))
+        NULL, &afxChNil, dwStyle, rectDefault, pParent))
     {
         m_bInRecalcLayout = FALSE;
         return FALSE;
@@ -5683,7 +5680,7 @@ void ZSizingControlBarG::NcPaintGripper(CDC* pDC, CRect rcClient)
     m_biHide.Paint(pDC);
 }
 
-LRESULT ZSizingControlBarG::OnNcHitTest(CPoint point)
+UINT ZSizingControlBarG::OnNcHitTest(CPoint point)
 {
     CRect rcBar;
     GetWindowRect(rcBar);

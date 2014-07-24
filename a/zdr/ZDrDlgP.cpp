@@ -106,7 +106,7 @@ PrintActiveWindow( zVIEW vSubtask )
             zstrcpy( szMessage, *(pZSubtask->m_pzsDlgTag) );
             zstrcat( szMessage, "." );
             zstrcat( szMessage, *(pZSubtask->m_pzsWndTag) );
-            return( PrintWnd( vSubtask, szMessage ) );
+            return( PrintWindow( vSubtask, szMessage ) );
          }
       }
       else
@@ -127,7 +127,7 @@ PrintActiveWindow( zVIEW vSubtask )
          {
             PumpMessages( vSubtask );  // let repainting occur to remove prompt
             szMessage[ zstrlen( szMessage ) - 1 ] = 0;  // knock out the '?'
-            return( PrintWnd( vSubtask, szMessage + 19 ) );
+            return( PrintWindow( vSubtask, szMessage + 19 ) );
          }
 #ifdef _DEBUG
          else
@@ -258,7 +258,7 @@ SaveActiveCtrlToCSV( zVIEW vSubtask )
          if ( nRC == zRESPONSE_YES )
          {
             szMessage[ zstrlen( szMessage ) - 1 ] = 0;  // knock out the '?'
-            return( PrintWnd( vSubtask, szMessage + 19 ) );
+            return( PrintWindow( vSubtask, szMessage + 19 ) );
          }
 #ifdef _DEBUG
          else
@@ -902,11 +902,11 @@ CopyWindowToDIB( HWND hWnd )
    return( hDib );
 }
 
-//./ ADD NAME=PrintWnd
+//./ ADD NAME=PrintWindow
 // Source Module=zdrdlgp.cpp
 /////////////////////////////////////////////////////////////////////////////
 //
-//  DIALOG OPERATION: PrintWnd
+//  DIALOG OPERATION: PrintWindow
 //                                              05/20/93 Modified: 09/07/98
 //
 //  PURPOSE:   To print the window image to a printer or bitmap or both.
@@ -973,8 +973,8 @@ CopyWindowToDIB( HWND hWnd )
 /////////////////////////////////////////////////////////////////////////////
 //./ END + 3
 zOPER_EXPORT zSHORT OPERATION
-PrintWnd( zVIEW   vSubtask,
-          zCPCHAR cpcTitle )
+PrintWindow( zVIEW   vSubtask,
+             zCPCHAR cpcTitle )
 {
    ZSubtask *pZSubtask;
 

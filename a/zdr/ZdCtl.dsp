@@ -324,7 +324,7 @@ SOURCE=.\DROPOKMM.cur
 # End Source File
 # Begin Source File
 
-SOURCE=.\HAND1.cur
+SOURCE=.\HAND.cur
 # End Source File
 # Begin Source File
 

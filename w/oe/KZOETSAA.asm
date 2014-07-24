@@ -1,0 +1,64 @@
+	TITLE	C:\10C\A\oe\KZOETSAA.c
+	.386P
+include listing.inc
+if @Version gt 510
+.model FLAT
+else
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+_BSS	SEGMENT DWORD USE32 PUBLIC 'BSS'
+_BSS	ENDS
+$$SYMBOLS	SEGMENT BYTE USE32 'DEBSYM'
+$$SYMBOLS	ENDS
+$$TYPES	SEGMENT BYTE USE32 'DEBTYP'
+$$TYPES	ENDS
+_TLS	SEGMENT DWORD USE32 PUBLIC 'TLS'
+_TLS	ENDS
+;	COMDAT ??_C@_0BF@IFEK@Apr?522?52014?516?304?346?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@FBPI@Compile?5Date?1Time?5for?5OE?5is?5?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+FLAT	GROUP _DATA, CONST, _BSS
+	ASSUME	CS: FLAT, DS: FLAT, SS: FLAT
+endif
+PUBLIC	_fnTraceCompileTime@0
+PUBLIC	??_C@_0BF@IFEK@Apr?522?52014?516?304?346?$AA@	; `string'
+PUBLIC	??_C@_0BN@FBPI@Compile?5Date?1Time?5for?5OE?5is?5?$AA@ ; `string'
+EXTRN	_TraceLineS@8:NEAR
+;	COMDAT ??_C@_0BF@IFEK@Apr?522?52014?516?304?346?$AA@
+; File C:\10C\A\oe\KZOETSAA.c
+_DATA	SEGMENT
+??_C@_0BF@IFEK@Apr?522?52014?516?304?346?$AA@ DB 'Apr 22 2014 16:04:46', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BN@FBPI@Compile?5Date?1Time?5for?5OE?5is?5?$AA@
+_DATA	SEGMENT
+??_C@_0BN@FBPI@Compile?5Date?1Time?5for?5OE?5is?5?$AA@ DB 'Compile Date/T'
+	DB	'ime for OE is ', 00H			; `string'
+_DATA	ENDS
+_TEXT	SEGMENT
+_fnTraceCompileTime@0 PROC NEAR
+
+; 32   : {
+
+	push	ebp
+	mov	ebp, esp
+
+; 33   :    TraceLineS( "Compile Date/Time for OE is ", __DATE__ " " __TIME__ );
+
+	push	OFFSET FLAT:??_C@_0BF@IFEK@Apr?522?52014?516?304?346?$AA@ ; `string'
+	push	OFFSET FLAT:??_C@_0BN@FBPI@Compile?5Date?1Time?5for?5OE?5is?5?$AA@ ; `string'
+	call	_TraceLineS@8
+
+; 34   : }
+
+	pop	ebp
+	ret	0
+_fnTraceCompileTime@0 ENDP
+_TEXT	ENDS
+END

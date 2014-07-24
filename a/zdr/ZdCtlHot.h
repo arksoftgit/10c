@@ -117,7 +117,7 @@ protected:
    afx_msg void OnSetFocus( CWnd *pOldWnd );
    afx_msg void OnKillFocus( CWnd* pNewWnd );
    afx_msg void OnKeyDown( UINT uChar, UINT uRepeatCnt, UINT uFlags );
-   afx_msg LRESULT OnNcHitTest( CPoint pt );
+   afx_msg UINT OnNcHitTest( CPoint pt );
    afx_msg void OnLButtonDown( UINT uFlags, CPoint pt );
    //}}AFX_MSG
 

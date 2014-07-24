@@ -917,7 +917,7 @@ GenJSP_CrteListBox( VIEW vDialog,
 
          szWriteBuffer = "      v" + szCtrlTag + ".CreateViewFromView( strSessionId, " + vDialog.CtrlMapView.Name + " );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-         szWriteBuffer = "      nComboCnt = 0;"
+         szWriteBuffer = "      ComboCount = 0;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "      strComboSelectedValue = ^0^;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
@@ -956,7 +956,7 @@ GenJSP_CrteListBox( VIEW vDialog,
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "<%"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "            strComboSelectedValue = Integer.toString( nComboCnt );"
+         szWriteBuffer = "            strComboSelectedValue = Integer.toString( ComboCount );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         }"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -972,7 +972,7 @@ GenJSP_CrteListBox( VIEW vDialog,
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         }"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-         szWriteBuffer = "         nComboCnt++;"
+         szWriteBuffer = "         ComboCount++;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          IF lSubtype = 0
             szWriteBuffer = "         nRC =  v" + szCtrlTag +
@@ -1130,12 +1130,17 @@ GenJSP_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
    szGroupParentType = ""
    IF vGroupParent != 0
       // Override Style if parent group requests relative positioning
+      // KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+      // out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
+      /*
       SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
       IF RESULT >= zCURSOR_SET
          szGroupParentType = "RelativePos"
       ELSE
          szGroupParentType = vGroupParent.Control.WebCtrlType
       END
+      */
+      szGroupParentType = vGroupParent.Control.WebCtrlType
       IF szGroupParentType = "RelativePos" OR szGroupParentType = "Span"
          szStyle = "style=^position:relative;^"
       END
@@ -2391,7 +2396,7 @@ GenJSP_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
 
          szWriteBuffer = "      v" + szCtrlTag + ".CreateViewFromView( strSessionId, " + vList.CtrlMapView.Name + " );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "      nComboCnt = 0;"
+         szWriteBuffer = "      ComboCount = 0;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "      strComboSelectedValue = ^0^;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -2406,9 +2411,9 @@ GenJSP_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             // and wants to use the "No null in list" checkbox in the painter.  I would need to
             // change this code but I'm not sure how because I can't tell from DoInputMapping what
             // the value of combobox.selectedindex[0] is, I only know they selected the index 0.
-            szWriteBuffer = "      // For Auto Include, process null entry."
+            szWriteBuffer = "      // For Auto Include, always add a null entry to the combo box.s"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      nComboCnt++;"
+            szWriteBuffer = "      ComboCount++;"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "      if ( strComboCurrentValue == null )"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -2464,6 +2469,21 @@ GenJSP_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          END
 
+
+         // KJS 05/20/14 - There were some issues for auto include when the "list view" already had a blank entry, then
+         // two blank entries were in the list and this caused errors. For auto include check if one of these entries is
+         // blank, don't add it if it is.
+         IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
+            szWriteBuffer = "         // For Auto Include, we have already created a blank entry for the combobox, check to make "
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "         // we don't add another blank entry. That will cause errors. "
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "         if ( !StringUtils.isBlank( strErrorMapValue ) )"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "         {"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         END
+
          szWriteBuffer = "         if ( strComboCurrentValue.equals( strErrorMapValue ) )"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         {"
@@ -2474,7 +2494,7 @@ GenJSP_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "<%"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "            strComboSelectedValue = Integer.toString( nComboCnt );"
+         szWriteBuffer = "            strComboSelectedValue = Integer.toString( ComboCount );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         }"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -2490,7 +2510,13 @@ GenJSP_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         }"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-         szWriteBuffer = "         nComboCnt++;"
+
+         IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
+            szWriteBuffer = "         } // if ( !StringUtils.isBlank( strErrorMapValue ) )"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+         END
+
+         szWriteBuffer = "         ComboCount++;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          IF lSubtype = 0
             szWriteBuffer = "         nRC =  v" + szCtrlTag +

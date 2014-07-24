@@ -84,9 +84,9 @@ PreBuild( zVIEW vSubtask )
 
    CreateEntity( vTZVSINIT, "ROOT", zPOS_AFTER );
    SetAttributeFromString( vTZVSINIT, "ROOT", "SourceOfSourceCopy",
-                           "C:\\10C\\A\\BIN\\SYS" );
+                           "C:\\10E\\A\\BIN\\SYS" );
    SetAttributeFromString( vTZVSINIT, "ROOT", "SourceOfExeCopy",
-                           "C:\\10C\\W\\BIN\\SYS" );
+                           "C:\\10E\\W\\BIN\\SYS" );
    if ( vLPLR )
    {
       SetAttributeFromAttribute( vTZVSINIT, "ROOT", "TargetOfSourceCopy",

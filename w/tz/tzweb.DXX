@@ -1,0 +1,73 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzweb.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzweb.dll
+
+           0 characteristics
+    5356CF8B time date stamp Tue Apr 22 16:22:35 2014
+        0.00 version
+           1 ordinal base
+          46 number of functions
+          46 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001032 _BuildMainNavSection@12
+          2    1 000010E6 _BuildSideNavSection@20
+          3    2 00001014 _BuildSideNavSectionJ@20
+          4    3 0000107D _CreateAbsolPosString@16
+          5    4 000010EB _CreateAbsolPosStringTable@16
+          6    5 00001037 _CreateAbsolStyleString@20
+          7    6 00001005 _CreateDisabledString@8
+          8    7 00001046 _CreateNoPosStyleString@12
+          9    8 0000100F _CreateRelPosString@16
+         10    9 000010C3 _CreateRelStyleString@20
+         11    A 0000106E _CreateSizeString@8
+         12    B 00001023 _CreateTabIndexString@8
+         13    C 000010B4 _FixStyleString@16
+         14    D 00001050 _GenJSPJ_Action@28
+         15    E 00001064 _GenJSPJ_CrteCalendar@44
+         16    F 00001091 _GenJSPJ_CrteCheckBox@44
+         17   10 000010CD _GenJSPJ_CrteComboBox@40
+         18   11 00001055 _GenJSPJ_CrteCtrlsRadio@36
+         19   12 000010D7 _GenJSPJ_CrteCtrlsRecurs@44
+         20   13 0000101E _GenJSPJ_CrteEditBox@44
+         21   14 000010DC _GenJSPJ_CrteGroupTable@36
+         22   15 00001028 _GenJSPJ_CrteJPG@32
+         23   16 0000108C _GenJSPJ_CrteListBox@32
+         24   17 00001082 _GenJSPJ_CrteMLEdit@44
+         25   18 00001019 _GenJSPJ_CrteText@48
+         26   19 0000105F _GenJSPJ_InputMapRecurs@24
+         27   1A 0000104B _GenJSPJ_OutputMapRecurs@20
+         28   1B 000010A5 _GenJSP_Action@28
+         29   1C 0000105A _GenJSP_ChildFunctions@16
+         30   1D 000010AA _GenJSP_CrteCalendar@40
+         31   1E 000010A0 _GenJSP_CrteCheckBox@40
+         32   1F 000010B9 _GenJSP_CrteComboBox@36
+         33   20 000010AF _GenJSP_CrteCtrlsRadio@32
+         34   21 000010C8 _GenJSP_CrteCtrlsRecurs@40
+         35   22 000010BE _GenJSP_CrteEditBox@40
+         36   23 000010D2 _GenJSP_CrteGroupTable@32
+         37   24 0000109B _GenJSP_CrteJPG@32
+         38   25 0000100A _GenJSP_CrteListBox@32
+         39   26 00001096 _GenJSP_CrteText@44
+         40   27 000010E1 _GenJSP_EmailEntries@20
+         41   28 0000103C _GenJSP_InputMapRecurs@20
+         42   29 00001087 _GenJSP_MenuFunctions@24
+         43   2A 00001073 _GenJSP_OutputMapRecurs@16
+         44   2B 00001069 _GenJSP_TableExport@16
+         45   2C 00001078 _GetDLL_Instance@4
+         46   2D 0000102D _PIX_PER_DU@8
+
+  Summary
+
+       14000 .data
+        1000 .idata
+        1000 .rdata
+        A000 .reloc
+       9D000 .text

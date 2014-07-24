@@ -1,0 +1,962 @@
+ tzvmpopr
+
+ Timestamp is 5356cf31 (Tue Apr 22 16:21:05 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0002d2e0H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 00002368H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 000078e3H .data                   DATA
+ 0003:00007cf8 0001cf50H .bss                    DATA
+ 0004:00000000 0000003cH .idata$2                DATA
+ 0004:0000003c 00000014H .idata$3                DATA
+ 0004:00000050 00000260H .idata$4                DATA
+ 0004:000002b0 00000260H .idata$5                DATA
+ 0004:00000510 00000328H .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000660       _DllMain@12                10001660 f   zdllinst.obj
+ 0001:00000686       _GetDLL_Instance@4         10001686 f   zdllinst.obj
+ 0001:000006a0       _qqlex@0                   100016a0 f   tzvmplaa.obj
+ 0001:00001757       _qqSaveScan@4              10002757 f   tzvmplaa.obj
+ 0001:00001826       _qqRestoreScan@4           10002826 f   tzvmplaa.obj
+ 0001:000018b1       _qq_reset@0                100028b1 f   tzvmplaa.obj
+ 0001:000018ea       _input@0                   100028ea f   tzvmplaa.obj
+ 0001:000019bb       _unput@4                   100029bb f   tzvmplaa.obj
+ 0001:00001a4a       _SetQReturnCodes@12        10002a4a f   tzvmplaa.obj
+ 0001:00001b9d       _qqcomment@8               10002b9d f   tzvmplaa.obj
+ 0001:00001cd2       _qqwrap@0                  10002cd2 f   tzvmplaa.obj
+ 0001:00001cdc       _qqerror@8                 10002cdc f   tzvmplaa.obj
+ 0001:00002290       _qqparse@4                 10003290 f   tzvmpyaa.obj
+ 0001:000042c0       _ActionQ@8                 100052c0 f   tzvmp1aa.obj
+ 0001:00009a1e       _GenerateSetCursorWithScope@8 1000aa1e f   tzvmp1aa.obj
+ 0001:0000b130       _PreBuildOperation@8       1000c130 f   tzvmp2aa.obj
+ 0001:0000b151       _AddOperationEntityToPI@12 1000c151 f   tzvmp2aa.obj
+ 0001:0000b517       _ResetOperation@4          1000c517 f   tzvmp2aa.obj
+ 0001:0000b5e6       _AddVariableEntityToPI@20  1000c5e6 f   tzvmp2aa.obj
+ 0001:0000b9fa       _AddStatementEntityToPI@20 1000c9fa f   tzvmp2aa.obj
+ 0001:0000bc87       _AddStatementEntityWithStringToPI@32 1000cc87 f   tzvmp2aa.obj
+ 0001:0000beb3       _AddExprNodeEntityToView@32 1000ceb3 f   tzvmp2aa.obj
+ 0001:0000c161       _AddExpressionEntryToString@40 1000d161 f   tzvmp2aa.obj
+ 0001:0000c3c9       _AddOperatorToView@12      1000d3c9 f   tzvmp2aa.obj
+ 0001:0000c8db       _InsertExprNodeValuesToEntity@36 1000d8db f   tzvmp2aa.obj
+ 0001:0000c9ac       _IsCondOperator@4          1000d9ac f   tzvmp2aa.obj
+ 0001:0000c9fb       _CreateConvertZeidonStrOp@20 1000d9fb f   tzvmp2aa.obj
+ 0001:0000cfcc       _AddEntityOperWithScope@52 1000dfcc f   tzvmp2aa.obj
+ 0001:0000db6c       _AddJavaWhileWithScope@8   1000eb6c f   tzvmp2aa.obj
+ 0001:0000ea1a       _AddSetEntityCursor@20     1000fa1a f   tzvmp2aa.obj
+ 0001:0000f3ab       _AddEntityOperWithNoScope@32 100103ab f   tzvmp2aa.obj
+ 0001:0000f7f5       _AddEntityOperWithEntity@48 100107f5 f   tzvmp2aa.obj
+ 0001:0000fd35       _GermanUmlautHack@16       10010d35 f   tzvmp2aa.obj
+ 0001:00011700       _LoadSourceForMeta@12      10012700 f   tzvmp3aa.obj
+ 0001:0001173c       _LoadSourceForMetaList@16  1001273c f   tzvmp3aa.obj
+ 0001:000117b6       _AddResult@4               100127b6 f   tzvmp3aa.obj
+ 0001:000117f1       _AddRetCode@4              100127f1 f   tzvmp3aa.obj
+ 0001:0001182c       _AddResultCondEqual@12     1001282c f   tzvmp3aa.obj
+ 0001:0001198e       _AddResultAndLoopControlToView@24 1001298e f   tzvmp3aa.obj
+ 0001:00011ab3       _CreateIntegerExpression@32 10012ab3 f   tzvmp3aa.obj
+ 0001:00011bf3       _AddResultCondExprToView@16 10012bf3 f   tzvmp3aa.obj
+ 0001:00011c95       _AddCompareToView@32       10012c95 f   tzvmp3aa.obj
+ 0001:0001216a       _AddGetOrSetAttribute@56   1001316a f   tzvmp3aa.obj
+ 0001:00012644       _AddGetOrSetAttributeWithString@56 10013644 f   tzvmp3aa.obj
+ 0001:00012bba       _CreateOperationCallUsingAQ@60 10013bba f   tzvmp3aa.obj
+ 0001:00012f9f       _CompareDataTypesForConsistency@16 10013f9f f   tzvmp3aa.obj
+ 0001:00012fda       _CompareTargetTypeForConsistency@20 10013fda f   tzvmp3aa.obj
+ 0001:00013090       _AddGetVariableFromAttribute@56 10014090 f   tzvmp3aa.obj
+ 0001:00014060       _GetDefineZKey@12          10015060 f   tzvmp4aa.obj
+ 0001:00014610       _GetVariableID@8           10015610 f   tzvmp4aa.obj
+ 0001:00014676       _GetVariableName@8         10015676 f   tzvmp4aa.obj
+ 0001:000146d2       _GetVariableLength@8       100156d2 f   tzvmp4aa.obj
+ 0001:00014797       _GetVariableDataType@4     10015797 f   tzvmp4aa.obj
+ 0001:000147f5       _GetClassBasedOnType@4     100157f5 f   tzvmp4aa.obj
+ 0001:0001491e       _GetVariableDataClass@4    1001591e f   tzvmp4aa.obj
+ 0001:0001496f       _GetOperationInformation@36 1001596f f   tzvmp4aa.obj
+ 0001:00014c5d       _GetOperationClass@12      10015c5d f   tzvmp4aa.obj
+ 0001:00014cf9       _IsLocalOperation@4        10015cf9 f   tzvmp4aa.obj
+ 0001:00014e29       _IsGlobalOperation@4       10015e29 f   tzvmp4aa.obj
+ 0001:00014e76       _IsZeidonOperation@4       10015e76 f   tzvmp4aa.obj
+ 0001:00014efa       _ParserIsObjectOperation@12 10015efa f   tzvmp4aa.obj
+ 0001:00015028       _IsKnownObjectOperation@16 10016028 f   tzvmp4aa.obj
+ 0001:000150cb       _GetOperationZKey@12       100160cb f   tzvmp4aa.obj
+ 0001:0001520d       _GetOperationParmListPM@20 1001620d f   tzvmp4aa.obj
+ 0001:000155e8       _GetOperationParmListFromSource@16 100165e8 f   tzvmp4aa.obj
+ 0001:000157d8       _Priority@4                100167d8 f   tzvmp4aa.obj
+ 0001:0001595f       _SplitQualifier@16         1001695f f   tzvmp4aa.obj
+ 0001:00015ab3       _VerifyQualifier@32        10016ab3 f   tzvmp4aa.obj
+ 0001:00015e91       _GetLengthFromAttribute@12 10016e91 f   tzvmp4aa.obj
+ 0001:00015fd7       _CreateLoopControlWithView@12 10016fd7 f   tzvmp4aa.obj
+ 0001:00016109       _GenerateTempVariable@12   10017109 f   tzvmp4aa.obj
+ 0001:00016128       _NewGenerateTempVariable@16 10017128 f   tzvmp4aa.obj
+ 0001:00016330       _ReuseTempVariable@4       10017330 f   tzvmp4aa.obj
+ 0001:0001637e       _AddReturnStatement@20     1001737e f   tzvmp4aa.obj
+ 0001:00016489       _ConvertZeidonTypeToVMLType@4 10017489 f   tzvmp4aa.obj
+ 0001:00016545       _ConvertVMLTypeToZeidonType@8 10017545 f   tzvmp4aa.obj
+ 0001:000165fb       _GetZeidonOperTypeFromVMLType@8 100175fb f   tzvmp4aa.obj
+ 0001:00016715       _GetOppositeOperator@4     10017715 f   tzvmp4aa.obj
+ 0001:000167c0       _ReverseOperator@4         100177c0 f   tzvmp4aa.obj
+ 0001:000173c0       _InsertForWithWhere@4      100183c0 f   tzvmp5aa.obj
+ 0001:00018ce0       _InsertSetCursorWithWhere@4 10019ce0 f   tzvmp6aa.obj
+ 0001:000199b9       _AddResultGreaterThan@12   1001a9b9 f   tzvmp6aa.obj
+ 0001:0001a9f0       _OptimizeExpression@12     1001b9f0 f   tzvmp7aa.obj
+ 0001:0001afb2       _fnAnalyzeAssignmentStatement@8 1001bfb2 f   tzvmp7aa.obj
+ 0001:0001b371       _OptimizeSimpleNumericExpression@20 1001c371 f   tzvmp7aa.obj
+ 0001:0001b3fc       _fnOptimizeComplexExpression@16 1001c3fc f   tzvmp7aa.obj
+ 0001:0001b9e4       _fnReArrangeLogOper@4      1001c9e4 f   tzvmp7aa.obj
+ 0001:0001bbc5       _fnHandleUnaryMinus@12     1001cbc5 f   tzvmp7aa.obj
+ 0001:0001bc56       _fnHandleOperatorTab@36    1001cc56 f   tzvmp7aa.obj
+ 0001:0001c059       _fnMoveOR@8                1001d059 f   tzvmp7aa.obj
+ 0001:0001c099       _fnCopyExprWithExtract@12  1001d099 f   tzvmp7aa.obj
+ 0001:0001c35d       _fnOptNumExpr@24           1001d35d f   tzvmp7aa.obj
+ 0001:0001c900       _fnGenVarOpCall@20         1001d900 f   tzvmp7aa.obj
+ 0001:0001ca07       _fnGenAnyVar@20            1001da07 f   tzvmp7aa.obj
+ 0001:0001ca92       _fnGenVarAttr@20           1001da92 f   tzvmp7aa.obj
+ 0001:0001ce5d       _fnGenConstOpCall@20       1001de5d f   tzvmp7aa.obj
+ 0001:0001cf25       _fnGenConstAttr@20         1001df25 f   tzvmp7aa.obj
+ 0001:0001d1dd       _fnGenAttrOpCall@20        1001e1dd f   tzvmp7aa.obj
+ 0001:0001d2b3       _fnGenAttrVar@40           1001e2b3 f   tzvmp7aa.obj
+ 0001:0001d7c3       _fnGenAttrAttr@44          1001e7c3 f   tzvmp7aa.obj
+ 0001:0001da99       _fnGenOpCallOpCall@16      1001ea99 f   tzvmp7aa.obj
+ 0001:0001db5f       _fnGenOpCallAttr@32        1001eb5f f   tzvmp7aa.obj
+ 0001:0001dd8b       _OptimizeSimpleTextExpression@20 1001ed8b f   tzvmp7aa.obj
+ 0001:0001e12d       _fnOptTextExpr@24          1001f12d f   tzvmp7aa.obj
+ 0001:0001f2cd       _AtomizeAQ@32              100202cd f   tzvmp7aa.obj
+ 0001:0001f34b       _CreateSourceZeidonStrOp@16 1002034b f   tzvmp7aa.obj
+ 0001:0001f6c6       _CreateSourceZeidonStrOpS@28 100206c6 f   tzvmp7aa.obj
+ 0001:0001fba8       _CreateSourceZeidonStrOpWithID@16 10020ba8 f   tzvmp7aa.obj
+ 0001:0001fd0c       _CreateSourceZeidonStrOpSWithID@28 10020d0c f   tzvmp7aa.obj
+ 0001:0001feb0       _CreateTargetZeidonStrOp@16 10020eb0 f   tzvmp7aa.obj
+ 0001:000202c1       _CreateTargetZeidonStrOpS@28 100212c1 f   tzvmp7aa.obj
+ 0001:000207c1       _CreateTargetZeidonStrOpWithID@16 100217c1 f   tzvmp7aa.obj
+ 0001:00020924       _CreateTargetZeidonStrOpSWithID@28 10021924 f   tzvmp7aa.obj
+ 0001:00020ac7       _ExtractOperationCallWithView@20 10021ac7 f   tzvmp7aa.obj
+ 0001:0002136d       _AddRetCodeLong@4          1002236d f   tzvmp7aa.obj
+ 0001:000213a8       _fnCopyExprNode@16         100223a8 f   tzvmp7aa.obj
+ 0001:00021438       _fnAnalyzeComplexExpression@16 10022438 f   tzvmp7aa.obj
+ 0001:0002161b       _flDataTypeCode@4          1002261b f   tzvmp7aa.obj
+ 0001:00021696       _SetOPosFromStack@4        10022696 f   tzvmp7aa.obj
+ 0001:000216d8       _flDataType@28             100226d8 f   tzvmp7aa.obj
+ 0001:00021d3f       _CaseExpression@12         10022d3f f   tzvmp7aa.obj
+ 0001:00023bc0       _MoveStringExprToView@20   10024bc0 f   tzvmp8aa.obj
+ 0001:00023d5f       _MoveViewToStringExpr@24   10024d5f f   tzvmp8aa.obj
+ 0001:00023f5a       _ParseSourceFromEditor@32  10024f5a f   tzvmp8aa.obj
+ 0001:000240e0       _PositionAtCallingOperation@0 100250e0 f   tzvmp9aa.obj
+ 0001:0002411e       _PositionAtNewOperation@0  1002511e f   tzvmp9aa.obj
+ 0001:0002418a       _SetupActivate@8           1002518a f   tzvmp9aa.obj
+ 0001:00024324       _GenerateLocalOperationName@8 10025324 f   tzvmp9aa.obj
+ 0001:000244e2       _InsertActivateIntoCurrentOperation@8 100254e2 f   tzvmp9aa.obj
+ 0001:00024629       _InsertActivateNoWhere@8   10025629 f   tzvmp9aa.obj
+ 0001:00024708       _InsertActivateEmpty@8     10025708 f   tzvmp9aa.obj
+ 0001:000247dc       _BuildCallToLocalFunction@12 100257dc f   tzvmp9aa.obj
+ 0001:00024c53       _BuildDropView@8           10025c53 f   tzvmp9aa.obj
+ 0001:00024e11       _BuildActivateEmpty@8      10025e11 f   tzvmp9aa.obj
+ 0001:00025110       _BuildActivateEmptyLocal@16 10026110 f   tzvmp9aa.obj
+ 0001:00025521       _BuildActivate@20          10026521 f   tzvmp9aa.obj
+ 0001:000259b5       _BuildWhereStatements@8    100269b5 f   tzvmp9aa.obj
+ 0001:0002634b       _fnBuildSetAttributeConstant@16 1002734b f   tzvmp9aa.obj
+ 0001:000266a4       _GetRootEntityName@4       100276a4 f   tzvmp9aa.obj
+ 0001:0002672d       _GetStringForSQLOperator@8 1002772d f   tzvmp9aa.obj
+ 0001:00026a69       _BuildGetView@24           10027a69 f   tzvmp9aa.obj
+ 0001:00026f08       _BuildNameView@24          10027f08 f   tzvmp9aa.obj
+ 0001:0002728d       _BuildCommitView@8         1002828d f   tzvmp9aa.obj
+ 0001:000281c0       _ParseVMLSource@20         100291c0 f   tzvmpaaa.obj
+ 0001:00028226       _ParseSource@40            10029226 f   tzvmpaaa.obj
+ 0001:00029377       _PositionAtOperationInSource@4 1002a377 f   tzvmpaaa.obj
+ 0001:00029477       _DeleteAllOpersForSource@4 1002a477 f   tzvmpaaa.obj
+ 0001:00029543       _DeleteOneOperForSource@4  1002a543 f   tzvmpaaa.obj
+ 0001:000295d6       _InitReadBuffer@12         1002a5d6 f   tzvmpaaa.obj
+ 0001:00029674       _InitGlobalDataForParse@0  1002a674 f   tzvmpaaa.obj
+ 0001:00029790       _InitErrorObject@12        1002a790 f   tzvmpaaa.obj
+ 0001:00029883       _InitExpressionObject@0    1002a883 f   tzvmpaaa.obj
+ 0001:00029911       _GetTextLine@0             1002a911 f   tzvmpaaa.obj
+ 0001:00029959       _SaveTextLine@0            1002a959 f   tzvmpaaa.obj
+ 0001:00029b59       _GetProfileData@20         1002ab59 f   tzvmpaaa.obj
+ 0001:00029c85       _ReInitOperation@0         1002ac85 f   tzvmpaaa.obj
+ 0001:00029ca3       _CompareFileToXPG@4        1002aca3 f   tzvmpaaa.obj
+ 0001:00029d60       _SkipRemainingFile@0       1002ad60 f   tzvmpaaa.obj
+ 0001:00029dbc       _IncludeCoreHeader@8       1002adbc f   tzvmpaaa.obj
+ 0001:00029fd2       _PrintXPG@4                1002afd2 f   tzvmpaaa.obj
+ 0001:0002b9f0       _SyntaxError@12            1002c9f0 f   tzvmpeaa.obj
+ 0001:0002bd90       _oTZVSPOOO_C_GenOperationName@16 1002cd90 f   tzvmpmoo.obj
+ 0001:0002bf04       _DropMetaOI@8              1002cf04 f   tzlodopr:tzlodopr.dll
+ 0001:0002bf0a       _ActivateMetaOI@20         1002cf0a f   tzlodopr:tzlodopr.dll
+ 0001:0002bf10       _CreateMetaEntity@16       1002cf10 f   tzlodopr:tzlodopr.dll
+ 0001:0002bf16       _RetrieveViewForMetaList@12 1002cf16 f   tzlodopr:tzlodopr.dll
+ 0001:0002bf1c       _zgGetZeidonToolsDir@12    1002cf1c f   tzlodopr:tzlodopr.dll
+ 0001:0002bf22       _oTZ__PRFO_GetViewToProfile@16 1002cf22 f   tzlodopr:tzlodopr.dll
+ 0001:0002bf28       _TraceLineI@8              1002cf28 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf2e       _CompareAttributeToString@16 1002cf2e f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf34       _IncludeSubobjectFromSubobject@20 1002cf34 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf3a       _SetNameForView@16         1002cf3a f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf40       _DropObjectInstance@4      1002cf40 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf46       _GetViewByName@16          1002cf46 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf4c       _SetCursorFirstEntity@12   1002cf4c f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf52       _SetCursorPrevEntity@12    1002cf52 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf58       _DropView@4                1002cf58 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf5e       _DeleteEntity@12           1002cf5e f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf64       _ResetViewFromSubobject@4  1002cf64 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf6a       _CheckExistenceOfEntity@8  1002cf6a f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf70       _SetCursorLastEntity@12    1002cf70 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf76       _SetCursorNextEntityByInteger@20 1002cf76 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf7c       _SetCursorFirstEntityByInteger@20 1002cf7c f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf82       _CreateViewFromViewForTask@12 1002cf82 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf88       _CreateEntity@12           1002cf88 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf8e       _MessageSend@24            1002cf8e f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf94       _SetCursorFirstEntityByAttr@28 1002cf94 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bf9a       _GetIntegerFromAttribute@16 1002cf9a f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfa0       _SetCursorFirstEntityByString@20 1002cfa0 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfa6       _SetCursorNextEntity@12    1002cfa6 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfac       _SetAttributeFromAttribute@24 1002cfac f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfb2       _SetMatchingAttributesByName@20 1002cfb2 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfb8       _SetAttributeFromString@16 1002cfb8 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfbe       _GetStringFromAttribute@16 1002cfbe f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfc4       _CountEntitiesForView@8    1002cfc4 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfca       _SetAttributeFromInteger@16 1002cfca f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfd0       _AddToAttributeFromInteger@16 1002cfd0 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfd6       _SetEntityCursor@40        1002cfd6 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfdc       _ActivateEmptyObjectInstance@16 1002cfdc f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfe2       _GetAddrForAttribute@16    1002cfe2 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfe8       _SetViewFromView@8         1002cfe8 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bfee       _SetViewToSubobject@8      1002cfee f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bff4       _SetAttributeFromBlob@20   1002cff4 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002bffa       _MoveSubobject@24          1002cffa f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c000       _TraceLineS@8              1002d000 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c006       _CompareAttributeToAttribute@24 1002d006 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c00c       _MiGetParentEntityNameForView@12 1002d00c f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c012       _MiGetObjectNameForView@8  1002d012 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c018       _ResetView@4               1002d018 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c01e       _CompareAttributeToInteger@16 1002d01e f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c024       _GetStructFromEntityAttrs@12 1002d024 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c02a       _GetRelativeEntityNumber@16 1002d02a f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c030       _SysMessageBox@16          1002d030 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c036       _SetCursorRelativeEntity@16 1002d036 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c03c       _SysGetProc@8              1002d03c f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c042       _SysLoadLibrary@8          1002d042 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c048       _SysReadZeidonIni@16       1002d048 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c04e       _SysSetFileTime@12         1002d04e f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c054       _SysGetFileDateTime@8      1002d054 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c05a       _CommitOI_ToFile@12        1002d05a f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c060       _SysCloseFile@12           1002d060 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c066       _SysWriteLine@12           1002d066 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c06c       _SysReadLine@12            1002d06c f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c072       _SysOpenFile@12            1002d072 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c078       _SysGetDateTime@4          1002d078 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c07e       _DropEntity@12             1002d07e f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c084       _ActivateOI_FromFile@20    1002d084 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c08a       _SysAppendcDirSep@4        1002d08a f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c090       _SysConvertEnvironmentString@8 1002d090 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c096       _ExcludeEntity@12          1002d096 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c09c       _GetBlobFromAttribute@20   1002d09c f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c0a2       _SetCursorNextEntityByString@20 1002d0a2 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c0a8       _StoreValueInRecord@20     1002d0a8 f   kzoengaa:KZOENGAA.DLL
+ 0001:0002c0ae       _putc                      1002d0ae f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0b4       _memmove                   1002d0b4 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0ba       _memcpy                    1002d0ba f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0c0       _malloc                    1002d0c0 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0c6       _free                      1002d0c6 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0cc       _strcpy                    1002d0cc f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0d2       _strncpy                   1002d0d2 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0d8       _strcmp                    1002d0d8 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0de       _strlen                    1002d0de f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0e4       _strcat                    1002d0e4 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0ea       _sprintf                   1002d0ea f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0f0       _atol                      1002d0f0 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0f6       __isctype                  1002d0f6 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c0fc       _strncat                   1002d0fc f   msvcrtd:MSVCRTD.dll
+ 0001:0002c102       _memcmp                    1002d102 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c108       _longjmp                   1002d108 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c10e       _strchr                    1002d10e f   msvcrtd:MSVCRTD.dll
+ 0001:0002c114       __ltoa                     1002d114 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c11a       _memset                    1002d11a f   msvcrtd:MSVCRTD.dll
+ 0001:0002c120       _strncmp                   1002d120 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c130       __alloca_probe             1002d130 f   msvcrtd:chkstk.obj
+ 0001:0002c130       __chkstk                   1002d130 f   msvcrtd:chkstk.obj
+ 0001:0002c160       __setjmp3                  1002d160 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c170       __CRT_INIT@12              1002d170 f   msvcrtd:crtdll.obj
+ 0001:0002c280       __DllMainCRTStartup@12     1002d280 f   msvcrtd:crtdll.obj
+ 0001:0002c374       __free_dbg                 1002d374 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c37a       __initterm                 1002d37a f   msvcrtd:MSVCRTD.dll
+ 0001:0002c380       __onexit                   1002d380 f   msvcrtd:atonexit.obj
+ 0001:0002c3c0       _atexit                    1002d3c0 f   msvcrtd:atonexit.obj
+ 0001:0002c3d8       __malloc_dbg               1002d3d8 f   msvcrtd:MSVCRTD.dll
+ 0001:0002c3de       ___dllonexit               1002d3de f   msvcrtd:MSVCRTD.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1002f01c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10032000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10032104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10032208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1003230c     msvcrtd:cinitexe.obj
+ 0003:000030d4       _qqlineno                  100350d4     tzvmplaa.obj
+ 0003:000039dc       ??_C@_02BOOO@?$CK?1?$AA@   100359dc     tzvmplaa.obj
+ 0003:000039e0       ??_C@_0BH@LLKC@end?5of?5file?5in?5comment?$AA@ 100359e0     tzvmplaa.obj
+ 0003:000050d8       ??_C@_0N@GABD@Syntax?5error?$AA@ 100370d8     tzvmpyaa.obj
+ 0003:000050e8       ??_C@_0BG@NCJJ@Parser?5stack?5overflow?$AA@ 100370e8     tzvmpyaa.obj
+ 0003:00005108       ??_C@_0BD@INGN@zSINGLE_FOR_UPDATE?$AA@ 10037108     tzvmp1aa.obj
+ 0003:00005120       ??_C@_0BM@DMLL@zACTIVATE_ROOTONLY_CONTINUE?$AA@ 10037120     tzvmp1aa.obj
+ 0003:00005144       ??_C@_0BM@ICMG@zACTIVATE_MULTIPLE_CONTINUE?$AA@ 10037144     tzvmp1aa.obj
+ 0003:00005168       ??_C@_0BM@LCEL@zACTIVATE_ROOTONLY_MULTIPLE?$AA@ 10037168     tzvmp1aa.obj
+ 0003:0000518c       ??_C@_0BD@BCDE@zACTIVATE_ROOTONLY?$AA@ 1003718c     tzvmp1aa.obj
+ 0003:000051a4       ??_C@_09JECC@zMULTIPLE?$AA@ 100371a4     tzvmp1aa.obj
+ 0003:000051b0       ??_C@_07OJNC@zSINGLE?$AA@  100371b0     tzvmp1aa.obj
+ 0003:000051bc       ??_C@_0BK@LEOM@Operation?5Class?5UNKNOWN?3?5?$AA@ 100371bc     tzvmp1aa.obj
+ 0003:000051dc       ??_C@_0BL@LAPK@DomainAndGlobalOpGroupName?$AA@ 100371dc     tzvmp1aa.obj
+ 0003:000051fc       ??_C@_0BF@MDKP@GlobalOperationGroup?$AA@ 100371fc     tzvmp1aa.obj
+ 0003:00005218       ??_C@_0L@CAKM@SourceType?$AA@ 10037218     tzvmp1aa.obj
+ 0003:00005228       ??_C@_06JDBI@Object?$AA@   10037228     tzvmp1aa.obj
+ 0003:00005230       ??_C@_0L@DHJL@SourceName?$AA@ 10037230     tzvmp1aa.obj
+ 0003:00005240       ??_C@_0N@FDLC@MetaDLL_Name?$AA@ 10037240     tzvmp1aa.obj
+ 0003:00005250       ??_C@_08PMAN@DLL_Name?$AA@ 10037250     tzvmp1aa.obj
+ 0003:0000525c       ??_C@_0L@JLBE@SourceFile?$AA@ 1003725c     tzvmp1aa.obj
+ 0003:0000526c       ??_C@_0L@GDHP@SourceZKey?$AA@ 1003726c     tzvmp1aa.obj
+ 0003:0000527c       ??_C@_0BC@KOHI@ExternalOperation?$AA@ 1003727c     tzvmp1aa.obj
+ 0003:00005294       ??_C@_04BBDM@ZKey?$AA@     10037294     tzvmp1aa.obj
+ 0003:0000529c       ??_C@_0O@LGN@g_vGlobalView?$AA@ 1003729c     tzvmp1aa.obj
+ 0003:000052ac       ??_C@_0L@MEBN@g_lpPIView?$AA@ 100372ac     tzvmp1aa.obj
+ 0003:000052bc       ??_C@_04GOCP@null?$AA@     100372bc     tzvmp1aa.obj
+ 0003:000052c4       ??_C@_0BE@IJGG@attribute?5qualifier?$AA@ 100372c4     tzvmp1aa.obj
+ 0003:000052dc       ??_C@_0CH@KDBB@?9?5data?5type?5must?5be?5INTEGER?5or?5D@ 100372dc     tzvmp1aa.obj
+ 0003:0000530c       ??_C@_0BI@BBNG@?9?5not?5valid?5with?5DEFINE?$AA@ 1003730c     tzvmp1aa.obj
+ 0003:00005328       ??_C@_06BGAI@DEFINE?$AA@   10037328     tzvmp1aa.obj
+ 0003:00005330       ??_C@_0BB@PNBC@indexed?5variable?$AA@ 10037330     tzvmp1aa.obj
+ 0003:00005344       ??_C@_01PJCK@?4?$AA@       10037344     tzvmp1aa.obj
+ 0003:00005348       ??_C@_0P@KGPJ@operation?5call?$AA@ 10037348     tzvmp1aa.obj
+ 0003:0000535c       ??_C@_05CKBG@Error?$AA@    1003735c     tzvmp1aa.obj
+ 0003:00005364       ??_C@_08JFAM@TZVMEROO?$AA@ 10037364     tzvmp1aa.obj
+ 0003:00005370       ??_C@_0BG@PJDI@?5Parameter?5Number?5?$CFld?$AA@ 10037370     tzvmp1aa.obj
+ 0003:0000538c       ??_C@_09PDKN@zPOS_NEXT?$AA@ 1003738c     tzvmp1aa.obj
+ 0003:00005398       ??_C@_0M@PCLB@zREPOS_PREV?$AA@ 10037398     tzvmp1aa.obj
+ 0003:000053a8       ??_C@_0M@IHGB@zREPOS_LAST?$AA@ 100373a8     tzvmp1aa.obj
+ 0003:000053b8       ??_C@_0N@LANI@zREPOS_FIRST?$AA@ 100373b8     tzvmp1aa.obj
+ 0003:000053c8       ??_C@_0N@NKPH@DeleteEntity?$AA@ 100373c8     tzvmp1aa.obj
+ 0003:000053d8       ??_C@_09HPPI@zPOS_LAST?$AA@ 100373d8     tzvmp1aa.obj
+ 0003:000053e4       ??_C@_0L@BGCA@zPOS_FIRST?$AA@ 100373e4     tzvmp1aa.obj
+ 0003:000053f4       ??_C@_0N@BOMB@CreateEntity?$AA@ 100373f4     tzvmp1aa.obj
+ 0003:00005404       ??_C@_0M@CBBN@zREPOS_NONE?$AA@ 10037404     tzvmp1aa.obj
+ 0003:00005414       ??_C@_0O@LEJH@zREPOS_BEFORE?$AA@ 10037414     tzvmp1aa.obj
+ 0003:00005424       ??_C@_0O@PHBL@ExcludeEntity?$AA@ 10037424     tzvmp1aa.obj
+ 0003:00005434       ??_C@_0N@OFP@zREPOS_AFTER?$AA@ 10037434     tzvmp1aa.obj
+ 0003:00005444       ??_C@_0L@KIKH@zPOS_AFTER?$AA@ 10037444     tzvmp1aa.obj
+ 0003:00005454       ??_C@_0BO@NBLH@IncludeSubobjectFromSubobject?$AA@ 10037454     tzvmp1aa.obj
+ 0003:00005478       ??_C@_0M@LKDB@zPOS_BEFORE?$AA@ 10037478     tzvmp1aa.obj
+ 0003:00005488       ??_C@_0L@GLBI@zLEVEL_ANY?$AA@ 10037488     tzvmp1aa.obj
+ 0003:00005498       ??_C@_0O@FFMP@zLEVEL_SYSTEM?$AA@ 10037498     tzvmp1aa.obj
+ 0003:000054a8       ??_C@_0BD@GKEB@zLEVEL_APPLICATION?$AA@ 100374a8     tzvmp1aa.obj
+ 0003:000054c0       ??_C@_0P@NADN@zLEVEL_SUBTASK?$AA@ 100374c0     tzvmp1aa.obj
+ 0003:000054d4       ??_C@_0BH@NEFL@CheckExistenceOfEntity?$AA@ 100374d4     tzvmp1aa.obj
+ 0003:000054f0       ??_C@_01PLJA@0?$AA@        100374f0     tzvmp1aa.obj
+ 0003:000054f4       ??_C@_09GMMJ@Operation?$AA@ 100374f4     tzvmp1aa.obj
+ 0003:00005500       ??_C@_0P@HFCP@ReturnDataType?$AA@ 10037500     tzvmp1aa.obj
+ 0003:00005514       ??_C@_09IND@Statement?$AA@ 10037514     tzvmp1aa.obj
+ 0003:00005520       ??_C@_05LCAF@Class?$AA@    10037520     tzvmp1aa.obj
+ 0003:00005528       ??_C@_06BGLH@Offset?$AA@   10037528     tzvmp1aa.obj
+ 0003:00005530       ??_C@_08NKBA@ExprNode?$AA@ 10037530     tzvmp1aa.obj
+ 0003:0000553c       ??_C@_0N@PGPI@ElementClass?$AA@ 1003753c     tzvmp1aa.obj
+ 0003:0000554c       ??_C@_0L@CEJO@Expression?$AA@ 1003754c     tzvmp1aa.obj
+ 0003:0000555c       ??_C@_0M@HEEE@zLEVEL_TASK?$AA@ 1003755c     tzvmp1aa.obj
+ 0003:0000556c       ??_C@_02GMH@ID?$AA@        1003756c     tzvmp1aa.obj
+ 0003:00005570       ??_C@_07ILKO@VM00101?$AA@  10037570     tzvmp1aa.obj
+ 0003:0000557c       ??_C@_0L@IJPD@VML?5Parser?$AA@ 1003757c     tzvmp1aa.obj
+ 0003:0000558c       ??_C@_0DA@IAGC@Error?5in?5Named?5View?5list?4?5?5Call?5@ 1003758c     tzvmp1aa.obj
+ 0003:000055c8       ??_C@_03CMHN@LOD?$AA@      100375c8     tzvmp1aa.obj
+ 0003:000055cc       ??_C@_05KBGO@Value?$AA@    100375cc     tzvmp1aa.obj
+ 0003:000055d4       ??_C@_09DBFF@W_MetaDef?$AA@ 100375d4     tzvmp1aa.obj
+ 0003:000055e0       ??_C@_09GNHM@ShortDesc?$AA@ 100375e0     tzvmp1aa.obj
+ 0003:000055ec       ??_C@_04EFNI@Name?$AA@     100375ec     tzvmp1aa.obj
+ 0003:000055f4       ??_C@_08FNON@DataType?$AA@ 100375f4     tzvmp1aa.obj
+ 0003:00005600       ??_C@_01PCJP@Y?$AA@        10037600     tzvmp1aa.obj
+ 0003:00005604       ??_C@_0O@KAPH@ParameterFlag?$AA@ 10037604     tzvmp1aa.obj
+ 0003:00005614       ??_C@_05FEGA@PFlag?$AA@    10037614     tzvmp1aa.obj
+ 0003:0000561c       ??_C@_08LOHJ@Variable?$AA@ 1003761c     tzvmp1aa.obj
+ 0003:00005628       ??_C@_05HENA@UFlag?$AA@    10037628     tzvmp1aa.obj
+ 0003:00005630       ??_C@_0BK@JJGI@?5?9?5wrong?5number?5of?5params?$AA@ 10037630     tzvmp1aa.obj
+ 0003:00005650       ??_C@_09IOKP@Parameter?$AA@ 10037650     tzvmp1aa.obj
+ 0003:0000565c       ??_C@_0BA@MKNH@OperationSource?$AA@ 1003765c     tzvmp1aa.obj
+ 0003:00005670       ??_C@_0L@ODA@LineNumber?$AA@ 10037670     tzvmp1aa.obj
+ 0003:00005680       ??_C@_05PGGH@Level?$AA@    10037680     tzvmp1aa.obj
+ 0003:00005688       ??_C@_04PNFB@Root?$AA@     10037688     tzvmp1aa.obj
+ 0003:00005690       ??_C@_08NMJM@TZVSEXPO?$AA@ 10037690     tzvmp1aa.obj
+ 0003:0000569c       ??_C@_04BNNJ@Text?$AA@     1003769c     tzvmp1aa.obj
+ 0003:000056a4       ??_C@_09CAK@DataClass?$AA@ 100376a4     tzvmp1aa.obj
+ 0003:000056b0       ??_C@_03IPNG@0?40?$AA@     100376b0     tzvmp1aa.obj
+ 0003:000056b4       ??_C@_0M@MBIB@VML_XSource?$AA@ 100376b4     tzvmp1aa.obj
+ 0003:000056c4       ??_C@_08PJNG@MetaName?$AA@ 100376c4     tzvmp1aa.obj
+ 0003:000056d0       ??_C@_08EDN@TZZOLODO?$AA@  100376d0     tzvmp1aa.obj
+ 0003:000056dc       ??_C@_01GJD@?9?$AA@        100376dc     tzvmp1aa.obj
+ 0003:000056e0       ??_C@_01FBAH@1?$AA@        100376e0     tzvmp1aa.obj
+ 0003:000056e4       ??_C@_0M@EFCG@zCURSOR_SET?$AA@ 100376e4     tzvmp1aa.obj
+ 0003:000056f4       ??_C@_0BC@GJNC@zCURSOR_UNCHANGED?$AA@ 100376f4     tzvmp1aa.obj
+ 0003:0000570c       ??_C@_0BE@MAGO@SetCursorPrevEntity?$AA@ 1003770c     tzvmp1aa.obj
+ 0003:00005724       ??_C@_0BE@PPIN@SetCursorNextEntity?$AA@ 10037724     tzvmp1aa.obj
+ 0003:0000573c       ??_C@_0BE@HACO@SetCursorLastEntity?$AA@ 1003773c     tzvmp1aa.obj
+ 0003:00005754       ??_C@_0BF@NEDK@SetCursorFirstEntity?$AA@ 10037754     tzvmp1aa.obj
+ 0003:00005770       ??_C@_0M@FGOI@vSourceMeta?$AA@ 10037770     tzvmp2aa.obj
+ 0003:00005780       ??_C@_01OAK@N?$AA@         10037780     tzvmp2aa.obj
+ 0003:00005784       ??_C@_04FCOP@Type?$AA@     10037784     tzvmp2aa.obj
+ 0003:0000578c       ??_C@_07GLLC@fnLocal?$AA@  1003778c     tzvmp2aa.obj
+ 0003:00005798       ??_C@_0CH@JMPF@Found?5operations?5with?5duplicate?5@ 10037798     tzvmp2aa.obj
+ 0003:000057c8       ??_C@_0M@NPBA@daSTATEMENT?$AA@ 100377c8     tzvmp2aa.obj
+ 0003:000057d8       ??_C@_09PPNI@NElements?$AA@ 100377d8     tzvmp2aa.obj
+ 0003:000057e4       ??_C@_07HHGD@VMLType?$AA@  100377e4     tzvmp2aa.obj
+ 0003:000057f0       ??_C@_06KMCC@Modify?$AA@   100377f0     tzvmp2aa.obj
+ 0003:000057f8       ??_C@_0N@FOPJ@Substatement?$AA@ 100377f8     tzvmp2aa.obj
+ 0003:00005808       ??_C@_08FNCN@ExprText?$AA@ 10037808     tzvmp2aa.obj
+ 0003:00005814       ??_C@_06KIEF@Number?$AA@   10037814     tzvmp2aa.obj
+ 0003:0000581c       ??_C@_0BD@KBFM@RelativeLineNumber?$AA@ 1003781c     tzvmp2aa.obj
+ 0003:00005834       ??_C@_05KCLG@Flags?$AA@    10037834     tzvmp2aa.obj
+ 0003:0000583c       ??_C@_0O@CGIL@?$CK?$CK?$CKTargetView?$AA@ 1003783c     tzvmp2aa.obj
+ 0003:0000584c       ??_C@_01PJM@D?$AA@         1003784c     tzvmp2aa.obj
+ 0003:00005850       ??_C@_01FLOP@I?$AA@        10037850     tzvmp2aa.obj
+ 0003:00005854       ??_C@_08OMCC@ZDRVROPR?$AA@ 10037854     tzvmp2aa.obj
+ 0003:00005860       ??_C@_0BO@MNJO@ZeidonStringConvertFromNumber?$AA@ 10037860     tzvmp2aa.obj
+ 0003:00005884       ??_C@_0M@PGOM@ScopeEntity?$AA@ 10037884     tzvmp2aa.obj
+ 0003:00005894       ??_C@_06HAAG@Attrib?$AA@   10037894     tzvmp2aa.obj
+ 0003:0000589c       ??_C@_01KMMP@?$CJ?$AA@     1003789c     tzvmp2aa.obj
+ 0003:000058a0       ??_C@_06LDNL@Entity?$AA@   100378a0     tzvmp2aa.obj
+ 0003:000058a8       ??_C@_01GFI@?$CI?$AA@      100378a8     tzvmp2aa.obj
+ 0003:000058ac       ??_C@_06BMBC@cursor?$AA@   100378ac     tzvmp2aa.obj
+ 0003:000058b4       ??_C@_06PDFE@ViewID?$AA@   100378b4     tzvmp2aa.obj
+ 0003:000058bc       ??_C@_01KPOD@?$DN?$AA@     100378bc     tzvmp2aa.obj
+ 0003:000058c0       ??_C@_06DMG@RESULT?$AA@    100378c0     tzvmp2aa.obj
+ 0003:000058c8       ??_C@_0BA@ECPG@setNextContinue?$AA@ 100378c8     tzvmp2aa.obj
+ 0003:000058dc       ??_C@_0N@FMNI@?6?5?5?5?5?5?5?5?5?5?5?5?$AA@ 100378dc     tzvmp2aa.obj
+ 0003:000058ec       ??_C@_08BBDB@?$DN?$DN?5false?$AA@ 100378ec     tzvmp2aa.obj
+ 0003:000058f8       ??_C@_03JPGF@?$CC?5?$CJ?$AA@ 100378f8     tzvmp2aa.obj
+ 0003:000058fc       ??_C@_0BO@GBKG@?$CC?5?$CJ?4getStringFromAttribute?$CI?5?$CC?$AA@ 100378fc     tzvmp2aa.obj
+ 0003:00005920       ??_C@_0L@KJNI@?4cursor?$CI?5?$CC?$AA@ 10037920     tzvmp2aa.obj
+ 0003:00005930       ??_C@_06PNG@equals?$AA@    10037930     tzvmp2aa.obj
+ 0003:00005938       ??_C@_0BH@NNDG@getStringFromAttribute?$AA@ 10037938     tzvmp2aa.obj
+ 0003:00005954       ??_C@_0BC@FHIL@?6?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?$AA@ 10037954     tzvmp2aa.obj
+ 0003:0000596c       ??_C@_0BD@EKAP@?6?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?$CI?$AA@ 1003796c     tzvmp2aa.obj
+ 0003:00005984       ??_C@_02FKBE@?$HM?$HM?$AA@ 10037984     tzvmp2aa.obj
+ 0003:00005988       ??_C@_02PDP@?$CG?$CG?$AA@  10037988     tzvmp2aa.obj
+ 0003:0000598c       ??_C@_03NBPM@CSR?$AA@      1003798c     tzvmp2aa.obj
+ 0003:00005990       ??_C@_01FAFK@?$DO?$AA@     10037990     tzvmp2aa.obj
+ 0003:00005994       ??_C@_06ONDJ@while?5?$AA@  10037994     tzvmp2aa.obj
+ 0003:0000599c       ??_C@_07DECK@Context?$AA@  1003799c     tzvmp2aa.obj
+ 0003:000059a8       ??_C@_0BA@LKJK@SrcEntityAttrib?$AA@ 100379a8     tzvmp2aa.obj
+ 0003:000059bc       ??_C@_09EPGA@QualValue?$AA@ 100379bc     tzvmp2aa.obj
+ 0003:000059c8       ??_C@_03JFOM@?$CFld?$AA@   100379c8     tzvmp2aa.obj
+ 0003:000059cc       ??_C@_08OHJM@EntityID?$AA@ 100379cc     tzvmp2aa.obj
+ 0003:000059d8       ??_C@_08MHGG@setFirst?$AA@ 100379d8     tzvmp2aa.obj
+ 0003:000059e4       ??_C@_0BA@KGPF@SetEntityCursor?$AA@ 100379e4     tzvmp2aa.obj
+ 0003:000059f8       ??_C@_06GIEJ@Result?$AA@   100379f8     tzvmp2aa.obj
+ 0003:00005a00       ??_C@_09KEFL@ScopeView?$AA@ 10037a00     tzvmp2aa.obj
+ 0003:00005a0c       ??_C@_0BO@PBCJ@GermanUmlautHack?5PIPE?5found?3?5?$AA@ 10037a0c     tzvmp2aa.obj
+ 0003:00005a30       ??_C@_09JNPO@nZRetCode?$AA@ 10037a30     tzvmp3aa.obj
+ 0003:00005a3c       ??_C@_03LACO@AND?$AA@      10037a3c     tzvmp3aa.obj
+ 0003:00005a40       ??_C@_09DKEP@CONDEQUAL?$AA@ 10037a40     tzvmp3aa.obj
+ 0003:00005a4c       ??_C@_08EGN@ResultID?$AA@  10037a4c     tzvmp3aa.obj
+ 0003:00005a58       ??_C@_01KMAE@?0?$AA@       10037a58     tzvmp3aa.obj
+ 0003:00005a5c       ??_C@_04DOFG@RCID?$AA@     10037a5c     tzvmp3aa.obj
+ 0003:00005a64       ??_C@_02LHCA@RC?$AA@       10037a64     tzvmp3aa.obj
+ 0003:00005a68       ??_C@_01PDAJ@S?$AA@        10037a68     tzvmp3aa.obj
+ 0003:00005a6c       ??_C@_07ODEH@OPERSIG?$AA@  10037a6c     tzvmp4aa.obj
+ 0003:00005a78       ??_C@_0BD@PMGM@ExternalHeaderFile?$AA@ 10037a78     tzvmp4aa.obj
+ 0003:00005a90       ??_C@_0L@KMKO@HeaderFile?$AA@ 10037a90     tzvmp4aa.obj
+ 0003:00005aa0       ??_C@_0BA@CDP@HeaderFile_Oper?$AA@ 10037aa0     tzvmp4aa.obj
+ 0003:00005ab4       ??_C@_0M@PDKK@DefinedItem?$AA@ 10037ab4     tzvmp4aa.obj
+ 0003:00005ac4       ??_C@_0O@CKCG@ExternalValue?$AA@ 10037ac4     tzvmp4aa.obj
+ 0003:00005ad4       ??_C@_07JBOC@VM00401?$AA@  10037ad4     tzvmp4aa.obj
+ 0003:00005ae0       ??_C@_0DJ@KFMH@Local?5operation?5can?5only?5be?5used@ 10037ae0     tzvmp4aa.obj
+ 0003:00005b24       ??_C@_0BG@IBMF@SourceFileOfOperation?$AA@ 10037b24     tzvmp4aa.obj
+ 0003:00005b40       ??_C@_08NDPM@TZOGSRCO?$AA@ 10037b40     tzvmp4aa.obj
+ 0003:00005b4c       ??_C@_06CDGA@Domain?$AA@   10037b4c     tzvmp4aa.obj
+ 0003:00005b54       ??_C@_0BA@IIHO@DerivedDataType?$AA@ 10037b54     tzvmp4aa.obj
+ 0003:00005b68       ??_C@_0N@IKDH@ER_Attribute?$AA@ 10037b68     tzvmp4aa.obj
+ 0003:00005b78       ??_C@_0L@BHII@LOD_Entity?$AA@ 10037b78     tzvmp4aa.obj
+ 0003:00005b88       ??_C@_0BE@LHIE@DerivedMaxStringLth?$AA@ 10037b88     tzvmp4aa.obj
+ 0003:00005ba0       ??_C@_03LBCJ@Lth?$AA@      10037ba0     tzvmp4aa.obj
+ 0003:00005ba4       ??_C@_0O@CIPA@kTempVariable?$AA@ 10037ba4     tzvmp4aa.obj
+ 0003:00005bb4       ??_C@_0O@FBG@vTempViewVar_?$AA@ 10037bb4     tzvmp4aa.obj
+ 0003:00005bc4       ??_C@_0O@MBDL@dTempDecimal_?$AA@ 10037bc4     tzvmp4aa.obj
+ 0003:00005bd4       ??_C@_0O@NHBG@lTempInteger_?$AA@ 10037bd4     tzvmp4aa.obj
+ 0003:00005be4       ??_C@_0O@GDMF@cTempCharact_?$AA@ 10037be4     tzvmp4aa.obj
+ 0003:00005bf4       ??_C@_0O@FAPL@szTempString_?$AA@ 10037bf4     tzvmp4aa.obj
+ 0003:00005c04       ??_C@_07DBJI@Decimal?$AA@  10037c04     tzvmp5aa.obj
+ 0003:00005c10       ??_C@_07HDOI@Integer?$AA@  10037c10     tzvmp5aa.obj
+ 0003:00005c1c       ??_C@_06PINC@String?$AA@   10037c1c     tzvmp5aa.obj
+ 0003:00005c24       ??_C@_09CJCM@Attribute?$AA@ 10037c24     tzvmp5aa.obj
+ 0003:00005c30       ??_C@_0BD@OHMI@CompareAttributeTo?$AA@ 10037c30     tzvmp5aa.obj
+ 0003:00005c48       ??_C@_08KHJE@ByString?$AA@ 10037c48     tzvmp5aa.obj
+ 0003:00005c54       ??_C@_09OALH@ByInteger?$AA@ 10037c54     tzvmp5aa.obj
+ 0003:00005c60       ??_C@_09KCMH@ByDecimal?$AA@ 10037c60     tzvmp5aa.obj
+ 0003:00005c6c       ??_C@_0BE@FHEN@StringFromAttribute?$AA@ 10037c6c     tzvmp5aa.obj
+ 0003:00005c84       ??_C@_0BF@BDEJ@IntegerFromAttribute?$AA@ 10037c84     tzvmp5aa.obj
+ 0003:00005ca0       ??_C@_0BF@HEEC@DecimalFromAttribute?$AA@ 10037ca0     tzvmp5aa.obj
+ 0003:00005cbc       ??_C@_03PMDA@Get?$AA@      10037cbc     tzvmp5aa.obj
+ 0003:00005cc0       ??_C@_0N@IEFN@zCURSOR_NULL?$AA@ 10037cc0     tzvmp5aa.obj
+ 0003:00005cd0       ??_C@_0BM@GMMM@Operator?5not?5found?5in?5Table?$AA@ 10037cd0     tzvmp7aa.obj
+ 0003:00005cf4       ??_C@_0CC@NCDF@unexpected?5error?5during?5VML?5pars@ 10037cf4     tzvmp7aa.obj
+ 0003:00005d1c       ??_C@_0BJ@GEPK@Operation?5call?5not?5found?$AA@ 10037d1c     tzvmp7aa.obj
+ 0003:00005d3c       ??_C@_0L@BJHK@TZVMP7AA?51?$AA@ 10037d3c     tzvmp7aa.obj
+ 0003:00005d4c       ??_C@_0BM@KDEF@Unexpected?5Error?5Situation?5?$AA@ 10037d4c     tzvmp7aa.obj
+ 0003:00005d70       ??_C@_0L@OGMD@TZVMP7AA?52?$AA@ 10037d70     tzvmp7aa.obj
+ 0003:00005d80       ??_C@_0BH@IPDO@GetStringFromAttribute?$AA@ 10037d80     tzvmp7aa.obj
+ 0003:00005d9c       ??_C@_0BI@FFJB@GetIntegerFromAttribute?$AA@ 10037d9c     tzvmp7aa.obj
+ 0003:00005db8       ??_C@_0BI@DCJK@GetDecimalFromAttribute?$AA@ 10037db8     tzvmp7aa.obj
+ 0003:00005dd4       ??_C@_0BK@PHPD@CompareAttributeToInteger?$AA@ 10037dd4     tzvmp7aa.obj
+ 0003:00005df4       ??_C@_0BK@LFID@CompareAttributeToDecimal?$AA@ 10037df4     tzvmp7aa.obj
+ 0003:00005e14       ??_C@_0BJ@IFI@GetVariableFromAttribute?$AA@ 10037e14     tzvmp7aa.obj
+ 0003:00005e34       ??_C@_0BH@MMIK@SetAttributeFromString?$AA@ 10037e34     tzvmp7aa.obj
+ 0003:00005e50       ??_C@_0BI@CNM@SetAttributeFromInteger?$AA@ 10037e50     tzvmp7aa.obj
+ 0003:00005e6c       ??_C@_0BI@EAKM@SetAttributeFromDecimal?$AA@ 10037e6c     tzvmp7aa.obj
+ 0003:00005e88       ??_C@_0BM@OPHA@CompareAttributeToAttribute?$AA@ 10037e88     tzvmp7aa.obj
+ 0003:00005eac       ??_C@_0BK@MLHG@SetAttributeFromAttribute?$AA@ 10037eac     tzvmp7aa.obj
+ 0003:00005ecc       ??_C@_0BJ@ODPJ@CompareAttributeToString?$AA@ 10037ecc     tzvmp7aa.obj
+ 0003:00005eec       ??_C@_0BE@MAAK@ZeidonStringCompare?$AA@ 10037eec     tzvmp7aa.obj
+ 0003:00005f04       ??_C@_0BD@KGOM@ZeidonStringConcat?$AA@ 10037f04     tzvmp7aa.obj
+ 0003:00005f1c       ??_C@_0BB@LHNO@ZeidonStringCopy?$AA@ 10037f1c     tzvmp7aa.obj
+ 0003:00005f30       ??_C@_02HNAB@?91?$AA@      10037f30     tzvmp7aa.obj
+ 0003:00005f34       ??_C@_09BJGO@lZRetCode?$AA@ 10037f34     tzvmp7aa.obj
+ 0003:00005f40       ??_C@_0M@EKBJ@ParseSource?$AA@ 10037f40     tzvmp8aa.obj
+ 0003:00005f50       ??_C@_08NFEI@TZVSPMAA?$AA@ 10037f50     tzvmp8aa.obj
+ 0003:00005f5c       ??_C@_0M@POCC@vQualObject?$AA@ 10037f5c     tzvmp9aa.obj
+ 0003:00005f6c       ??_C@_08NCCJ@vSubtask?$AA@ 10037f6c     tzvmp9aa.obj
+ 0003:00005f78       ??_C@_0CF@BEMP@found?5operation?5with?5reserved?5na@ 10037f78     tzvmp9aa.obj
+ 0003:00005fa4       ??_C@_09MNKE@BuildQual?$AA@ 10037fa4     tzvmp9aa.obj
+ 0003:00005fb0       ??_C@_01NON@_?$AA@         10037fb0     tzvmp9aa.obj
+ 0003:00005fb4       ??_C@_04ODNG@View?$AA@     10037fb4     tzvmp9aa.obj
+ 0003:00005fbc       ??_C@_08JNKD@DropView?$AA@ 10037fbc     tzvmp9aa.obj
+ 0003:00005fc8       ??_C@_0BK@HMFO@zSINGLE?1MULTIPLE?1READONLY?$AA@ 10037fc8     tzvmp9aa.obj
+ 0003:00005fe8       ??_C@_08ILBJ@KZDBHQUA?$AA@ 10037fe8     tzvmp9aa.obj
+ 0003:00005ff4       ??_C@_0BF@PCON@SfActivateSysEmptyOI?$AA@ 10037ff4     tzvmp9aa.obj
+ 0003:00006010       ??_C@_0BM@OIBJ@ActivateEmptyObjectInstance?$AA@ 10038010     tzvmp9aa.obj
+ 0003:00006034       ??_C@_0BA@MLBE@SINGLE?1MULTIPLE?$AA@ 10038034     tzvmp9aa.obj
+ 0003:00006048       ??_C@_08ONBN@QualView?$AA@ 10038048     tzvmp9aa.obj
+ 0003:00006054       ??_C@_0BH@NOPG@ActivateObjectInstance?$AA@ 10038054     tzvmp9aa.obj
+ 0003:00006070       ??_C@_0N@NIIK@SourceViewID?$AA@ 10038070     tzvmp9aa.obj
+ 0003:00006080       ??_C@_0BB@CPOO@SourceEntityName?$AA@ 10038080     tzvmp9aa.obj
+ 0003:00006094       ??_C@_0O@JICG@AttributeName?$AA@ 10038094     tzvmp9aa.obj
+ 0003:000060a4       ??_C@_04FKDH@Oper?$AA@     100380a4     tzvmp9aa.obj
+ 0003:000060ac       ??_C@_0L@DIOI@QualAttrib?$AA@ 100380ac     tzvmp9aa.obj
+ 0003:000060bc       ??_C@_0L@LOJF@EntityName?$AA@ 100380bc     tzvmp9aa.obj
+ 0003:000060cc       ??_C@_0L@EIGE@EntitySpec?$AA@ 100380cc     tzvmp9aa.obj
+ 0003:000060dc       ??_C@_0BB@LMNF@SetAttributeFrom?$AA@ 100380dc     tzvmp9aa.obj
+ 0003:000060f0       ??_C@_0BB@NHDL@LOD_EntityParent?$AA@ 100380f0     tzvmp9aa.obj
+ 0003:00006104       ??_C@_01KFMA@?$EA?$AA@     10038104     tzvmp9aa.obj
+ 0003:00006108       ??_C@_0M@ELME@IS?5NOT?5NULL?$AA@ 10038108     tzvmp9aa.obj
+ 0003:00006118       ??_C@_07HGBL@IS?5NULL?$AA@ 10038118     tzvmp9aa.obj
+ 0003:00006124       ??_C@_02PKFC@IS?$AA@       10038124     tzvmp9aa.obj
+ 0003:00006128       ??_C@_0L@NLOM@NOT?5EXISTS?$AA@ 10038128     tzvmp9aa.obj
+ 0003:00006138       ??_C@_06MBBB@EXISTS?$AA@   10038138     tzvmp9aa.obj
+ 0003:00006140       ??_C@_04CNFB@LIKE?$AA@     10038140     tzvmp9aa.obj
+ 0003:00006148       ??_C@_01FAJB@?$DL?$AA@     10038148     tzvmp9aa.obj
+ 0003:0000614c       ??_C@_01PIHH@?$CB?$AA@     1003814c     tzvmp9aa.obj
+ 0003:00006150       ??_C@_02CHDK@OR?$AA@       10038150     tzvmp9aa.obj
+ 0003:00006154       ??_C@_02GMBL@?$CB?$DN?$AA@ 10038154     tzvmp9aa.obj
+ 0003:00006158       ??_C@_01FDLN@?1?$AA@       10038158     tzvmp9aa.obj
+ 0003:0000615c       ??_C@_01FDHG@?$CK?$AA@     1003815c     tzvmp9aa.obj
+ 0003:00006160       ??_C@_01PJOB@?$CL?$AA@     10038160     tzvmp9aa.obj
+ 0003:00006164       ??_C@_01FHE@?$DM?$AA@      10038164     tzvmp9aa.obj
+ 0003:00006168       ??_C@_02PPOG@?$DM?$DN?$AA@ 10038168     tzvmp9aa.obj
+ 0003:0000616c       ??_C@_02NCLD@?$DO?$DN?$AA@ 1003816c     tzvmp9aa.obj
+ 0003:00006170       ??_C@_0L@FENC@View?5Level?$AA@ 10038170     tzvmp9aa.obj
+ 0003:00006180       ??_C@_0O@LOIG@GetViewByName?$AA@ 10038180     tzvmp9aa.obj
+ 0003:00006190       ??_C@_0P@CBGO@SetNameForView?$AA@ 10038190     tzvmp9aa.obj
+ 0003:000061a4       ??_C@_0BF@GELD@CommitObjectInstance?$AA@ 100381a4     tzvmp9aa.obj
+ 0003:000061c0       _szMessageListParse        100381c0     tzvmpaaa.obj
+ 0003:000061f4       ??_C@_0DE@FGLE@11?5?9Could?5not?5write?5to?5temp?5file@ 100381f4     tzvmpaaa.obj
+ 0003:00006234       ??_C@_0DK@BLJH@10?5?9The?5expression?5is?5too?5big?5fo@ 10038234     tzvmpaaa.obj
+ 0003:0000627c       ??_C@_0DP@KPLN@9?5?9Could?5not?5get?5a?5list?5of?5Regis@ 1003827c     tzvmpaaa.obj
+ 0003:000062c8       ??_C@_0DL@LFEJ@8?5?9Source?5file?5Meta?5could?5not?5be@ 100382c8     tzvmpaaa.obj
+ 0003:00006310       ??_C@_0DC@EFGP@7?5?9Could?5not?5Load?5Error?5Object?0?5@ 10038310     tzvmpaaa.obj
+ 0003:0000634c       ??_C@_0DD@BPMF@6?5?9Could?5not?5get?5a?5list?5of?5LODs?0@ 1003834c     tzvmpaaa.obj
+ 0003:0000638c       ??_C@_0DJ@CFMF@5?5?9TZOPSIGK?4XGO?5could?5not?5be?5acc@ 1003838c     tzvmpaaa.obj
+ 0003:000063d0       ??_C@_0DF@CJPN@4?5?9TaskLPLR?5could?5not?5be?5accesse@ 100383d0     tzvmpaaa.obj
+ 0003:00006410       ??_C@_0GN@MEOC@3?5?9Application?8s?5Global?5Operatio@ 10038410     tzvmpaaa.obj
+ 0003:00006494       ??_C@_0DO@PKIB@2?5?9Expression?5Object?5could?5not?5b@ 10038494     tzvmpaaa.obj
+ 0003:000064e0       ??_C@_0DL@CJMN@1?5?9Profile?5Object?5could?5not?5be?5a@ 100384e0     tzvmpaaa.obj
+ 0003:00006528       ??_C@_09KJED@No?5errors?$AA@ 10038528     tzvmpaaa.obj
+ 0003:00006534       ??_C@_03EFM@XPG?$AA@       10038534     tzvmpaaa.obj
+ 0003:00006538       ??_C@_0CB@MMPB@Parse?5aborted?5due?5to?5fatal?5error@ 10038538     tzvmpaaa.obj
+ 0003:00006560       ??_C@_08KBJI@?$FLZeidon?$FN?$AA@ 10038560     tzvmpaaa.obj
+ 0003:0000656c       ??_C@_08FILE@PrintXPG?$AA@ 1003856c     tzvmpaaa.obj
+ 0003:00006578       ??_C@_0N@DEM@Must?5Reparse?$AA@ 10038578     tzvmpaaa.obj
+ 0003:00006588       ??_C@_08NKPA@KZOENGAA?$AA@ 10038588     tzvmpaaa.obj
+ 0003:00006594       ??_C@_07OKEA@VM01011?$AA@  10038594     tzvmpaaa.obj
+ 0003:000065a0       ??_C@_0M@MFMJ@z__temp?4vml?$AA@ 100385a0     tzvmpaaa.obj
+ 0003:000065b0       ??_C@_0P@IBFN@ParseTimeStamp?$AA@ 100385b0     tzvmpaaa.obj
+ 0003:000065c4       ??_C@_0O@MNBI@ParserVersion?$AA@ 100385c4     tzvmpaaa.obj
+ 0003:000065d4       ??_C@_08BIAE@TZVSPOOO?$AA@ 100385d4     tzvmpaaa.obj
+ 0003:000065e0       ??_C@_07KJAP@VM01006?$AA@  100385e0     tzvmpaaa.obj
+ 0003:000065ec       ??_C@_07FGLG@VM01005?$AA@  100385ec     tzvmpaaa.obj
+ 0003:000065f8       ??_C@_0P@BFOE@GenerationType?$AA@ 100385f8     tzvmpaaa.obj
+ 0003:0000660c       ??_C@_07PMCB@VM01004?$AA@  1003860c     tzvmpaaa.obj
+ 0003:00006618       ??_C@_08CAGM@TZOPGRPO?$AA@ 10038618     tzvmpaaa.obj
+ 0003:00006624       ??_C@_07KJME@VM01003?$AA@  10038624     tzvmpaaa.obj
+ 0003:00006630       ??_C@_04FLGC@?4XPG?$AA@    10038630     tzvmpaaa.obj
+ 0003:00006638       ??_C@_04PBB@?4XPJ?$AA@     10038638     tzvmpaaa.obj
+ 0003:00006640       ??_C@_0P@OGDL@GOP_SourceFile?$AA@ 10038640     tzvmpaaa.obj
+ 0003:00006654       ??_C@_08MABN@TZDGSRCO?$AA@ 10038654     tzvmpaaa.obj
+ 0003:00006660       ??_C@_0P@INKH@DGP_SourceFile?$AA@ 10038660     tzvmpaaa.obj
+ 0003:00006674       ??_C@_07LMFN@ExecDir?$AA@  10038674     tzvmpaaa.obj
+ 0003:00006680       ??_C@_07DFD@VM01002?$AA@   10038680     tzvmpaaa.obj
+ 0003:0000668c       ??_C@_0N@MMLL@TZOPSIGK?4XGO?$AA@ 1003868c     tzvmpaaa.obj
+ 0003:0000669c       ??_C@_04HEBP@?4ERR?$AA@    1003869c     tzvmpaaa.obj
+ 0003:000066a4       ??_C@_04BPFM@?4VML?$AA@    100386a4     tzvmpaaa.obj
+ 0003:000066ac       ??_C@_04FDFI@LPLR?$AA@     100386ac     tzvmpaaa.obj
+ 0003:000066b4       ??_C@_09JPDJ@PgmSrcDir?$AA@ 100386b4     tzvmpaaa.obj
+ 0003:000066c0       ??_C@_08HHLD@TaskLPLR?$AA@ 100386c0     tzvmpaaa.obj
+ 0003:000066cc       ??_C@_0L@PDNB@vParseMeta?$AA@ 100386cc     tzvmpaaa.obj
+ 0003:000066dc       ??_C@_07PMOK@VM01001?$AA@  100386dc     tzvmpaaa.obj
+ 0003:000066e8       ??_C@_0O@PGLF@OperationText?$AA@ 100386e8     tzvmpaaa.obj
+ 0003:000066f8       ??_C@_0BB@FKNK@File?5Open?5Error?$CB?$AA@ 100386f8     tzvmpaaa.obj
+ 0003:0000670c       ??_C@_0P@KHKB@SourceFileName?$AA@ 1003870c     tzvmpaaa.obj
+ 0003:00006720       ??_C@_07DJI@VM01007?$AA@   10038720     tzvmpaaa.obj
+ 0003:0000672c       ??_C@_07CMF@VM01008?$AA@   1003872c     tzvmpaaa.obj
+ 0003:00006738       ??_C@_0N@KIPF@PreParseText?$AA@ 10038738     tzvmpaaa.obj
+ 0003:00006748       ??_C@_02HCBE@OP?$AA@       10038748     tzvmpaaa.obj
+ 0003:0000674c       ??_C@_0M@DEHM@PassedName1?$AA@ 1003874c     tzvmpaaa.obj
+ 0003:0000675c       ??_C@_0M@FHIL@XPGFileName?$AA@ 1003875c     tzvmpaaa.obj
+ 0003:0000676c       ??_C@_03BKIH@Dir?$AA@      1003876c     tzvmpaaa.obj
+ 0003:00006770       ??_C@_0L@OHEL@ParseLimit?$AA@ 10038770     tzvmpaaa.obj
+ 0003:00006780       ??_C@_0M@JMKN@ParseAction?$AA@ 10038780     tzvmpaaa.obj
+ 0003:00006790       ??_C@_03EAGC@VML?$AA@      10038790     tzvmpaaa.obj
+ 0003:00006794       ??_C@_0CM@FNAH@Operation?$DN?$CFs?5ZKey?$DN?$CFld?5Type?$DN?$CFs?5Re@ 10038794     tzvmpaaa.obj
+ 0003:000067c8       ??_C@_0GM@HLEO@?5?5?5Variable?$DN?$CFs?5ID?$DN?$CFld?5Parameter?$DN@ 100387c8     tzvmpaaa.obj
+ 0003:0000684c       ??_C@_0BD@DAFJ@?$CFs?5ExpressionText?$DN?$AA@ 1003884c     tzvmpaaa.obj
+ 0003:00006864       ??_C@_0CJ@FEIF@?$CKSTATEMENT?$CK?5LineNumber?$DN?$CFld?5Class@ 10038864     tzvmpaaa.obj
+ 0003:00006898       ??_C@_04MAFD@qFOR?$AA@     10038898     tzvmpaaa.obj
+ 0003:000068a0       ??_C@_03OHOK@qIF?$AA@      100388a0     tzvmpaaa.obj
+ 0003:000068a4       ??_C@_07EJIP@qRETURN?$AA@  100388a4     tzvmpaaa.obj
+ 0003:000068b0       ??_C@_04HGMA@qEND?$AA@     100388b0     tzvmpaaa.obj
+ 0003:000068b8       ??_C@_06KBBI@qWHILE?$AA@   100388b8     tzvmpaaa.obj
+ 0003:000068c0       ??_C@_0M@NFAN@qEXPRESSION?$AA@ 100388c0     tzvmpaaa.obj
+ 0003:000068d0       ??_C@_03MFGH@?5?5?5?$AA@   100388d0     tzvmpaaa.obj
+ 0003:000068d4       ??_C@_0EF@NFEO@?$CFs?5DataClass?$DN?$CFs?$CI?$CFld?$CJ?5DataType?$DN?$CFs@ 100388d4     tzvmpaaa.obj
+ 0003:00006928       ??_C@_09LJMO@qTUNKNOWN?$AA@ 10038928     tzvmpaaa.obj
+ 0003:00006934       ??_C@_0M@EOND@qTCHARACTER?$AA@ 10038934     tzvmpaaa.obj
+ 0003:00006944       ??_C@_08KBIJ@qTSTRING?$AA@ 10038944     tzvmpaaa.obj
+ 0003:00006950       ??_C@_07KBCI@qTSHORT?$AA@  10038950     tzvmpaaa.obj
+ 0003:0000695c       ??_C@_09HKCB@qTDECIMAL?$AA@ 1003895c     tzvmpaaa.obj
+ 0003:00006968       ??_C@_09DIFB@qTINTEGER?$AA@ 10038968     tzvmpaaa.obj
+ 0003:00006974       ??_C@_08JMLN@qNUMERIC?$AA@ 10038974     tzvmpaaa.obj
+ 0003:00006980       ??_C@_05HHDA@qTEXT?$AA@    10038980     tzvmpaaa.obj
+ 0003:00006988       ??_C@_0P@JIMA@qOPERATIONCALL?$AA@ 10038988     tzvmpaaa.obj
+ 0003:0000699c       ??_C@_0BE@MACK@qATTRIBUTEQUALIFIER?$AA@ 1003899c     tzvmpaaa.obj
+ 0003:000069b4       ??_C@_09CICL@qCONSTANT?$AA@ 100389b4     tzvmpaaa.obj
+ 0003:000069c0       ??_C@_07KGBL@qDEFINE?$AA@  100389c0     tzvmpaaa.obj
+ 0003:000069cc       ??_C@_09IOIC@qVARIABLE?$AA@ 100389cc     tzvmpaaa.obj
+ 0003:000069d8       ??_C@_0BJ@LPHM@qOPERATOR?5Offset?$DN?$CFs?$CI?$CFld?$CJ?$AA@ 100389d8     tzvmpaaa.obj
+ 0003:000069f8       ??_C@_03JDDJ@qOR?$AA@      100389f8     tzvmpaaa.obj
+ 0003:000069fc       ??_C@_04DOJK@qAND?$AA@     100389fc     tzvmpaaa.obj
+ 0003:00006a04       ??_C@_04KPJE@qNOT?$AA@     10038a04     tzvmpaaa.obj
+ 0003:00006a0c       ??_C@_09OPOB@qNOTEQUAL?$AA@ 10038a0c     tzvmpaaa.obj
+ 0003:00006a18       ??_C@_0N@GOMF@qGREATERTHAN?$AA@ 10038a18     tzvmpaaa.obj
+ 0003:00006a28       ??_C@_0BC@OGLC@qGREATERTHANEQUAL?$AA@ 10038a28     tzvmpaaa.obj
+ 0003:00006a40       ??_C@_09DCHH@qLESSTHAN?$AA@ 10038a40     tzvmpaaa.obj
+ 0003:00006a4c       ??_C@_0P@LEOE@qLESSTHANEQUAL?$AA@ 10038a4c     tzvmpaaa.obj
+ 0003:00006a60       ??_C@_0L@EBHC@qCONDEQUAL?$AA@ 10038a60     tzvmpaaa.obj
+ 0003:00006a70       ??_C@_09FHOO@qDIVISION?$AA@ 10038a70     tzvmpaaa.obj
+ 0003:00006a7c       ??_C@_0BA@IHEM@qMULTIPLICATION?$AA@ 10038a7c     tzvmpaaa.obj
+ 0003:00006a90       ??_C@_09FEOI@qADDITION?$AA@ 10038a90     tzvmpaaa.obj
+ 0003:00006a9c       ??_C@_06OGEL@qMINUS?$AA@   10038a9c     tzvmpaaa.obj
+ 0003:00006aa4       ??_C@_06EHBK@qEQUAL?$AA@   10038aa4     tzvmpaaa.obj
+ 0003:00006aac       ??_C@_07NGMN@qPERIOD?$AA@  10038aac     tzvmpaaa.obj
+ 0003:00006ab8       ??_C@_06CNMK@qCOMMA?$AA@   10038ab8     tzvmpaaa.obj
+ 0003:00006ac0       ??_C@_0L@OHPH@qCLOSEOPER?$AA@ 10038ac0     tzvmpaaa.obj
+ 0003:00006ad0       ??_C@_09DPDG@qOPENOPER?$AA@ 10038ad0     tzvmpaaa.obj
+ 0003:00006adc       ??_C@_07DLMM@qRPAREN?$AA@  10038adc     tzvmpaaa.obj
+ 0003:00006ae8       ??_C@_07LBAP@qLPAREN?$AA@  10038ae8     tzvmpaaa.obj
+ 0003:00006af4       _g_szMessages              10038af4     tzvmpeaa.obj
+ 0003:00006c0c       ??_C@_0DG@NOMJ@Qualifying?5view?5must?5be?5availabl@ 10038c0c     tzvmpeaa.obj
+ 0003:00006c4c       ??_C@_0DH@MKDE@Multiple?5return?5arguments?5invali@ 10038c4c     tzvmpeaa.obj
+ 0003:00006c90       ??_C@_0CD@BMHE@Unary?5Operator?5Invalid?5in?5Contex@ 10038c90     tzvmpeaa.obj
+ 0003:00006cbc       ??_C@_0BM@DDDG@Invalid?5Function?5Definition?$AA@ 10038cbc     tzvmpeaa.obj
+ 0003:00006ce0       ??_C@_0CP@FIAK@A?5Function?5call?5contains?5an?5inva@ 10038ce0     tzvmpeaa.obj
+ 0003:00006d18       ??_C@_0EE@MILE@A?5complex?5expression?5contains?5an@ 10038d18     tzvmpeaa.obj
+ 0003:00006d6c       ??_C@_0EC@OJOE@Parentheses?5are?5not?5allowed?5in?5a@ 10038d6c     tzvmpeaa.obj
+ 0003:00006dbc       ??_C@_0GB@NDEL@A?5WHERE?5condition?5contains?5inval@ 10038dbc     tzvmpeaa.obj
+ 0003:00006e30       ??_C@_0CM@HEMN@A?5WHERE?5condition?5refers?5to?5an?5i@ 10038e30     tzvmpeaa.obj
+ 0003:00006e64       ??_C@_0DG@MNIF@A?5string?5constant?5must?5be?5delimi@ 10038e64     tzvmpeaa.obj
+ 0003:00006ea4       ??_C@_0CO@PHLB@Too?5many?5expressions?5in?5IF?5state@ 10038ea4     tzvmpeaa.obj
+ 0003:00006edc       ??_C@_0DJ@PPA@Arithmetic?5expressions?5are?5not?5a@ 10038edc     tzvmpeaa.obj
+ 0003:00006f20       ??_C@_0EH@PNJG@An?5operation?5must?5have?5a?5view?5in@ 10038f20     tzvmpeaa.obj
+ 0003:00006f78       ??_C@_0DH@GGNF@The?5target?5string?5cannot?5be?5one?5@ 10038f78     tzvmpeaa.obj
+ 0003:00006fbc       ??_C@_0CA@OBN@The?5view?5declaration?5is?5invalid?$AA@ 10038fbc     tzvmpeaa.obj
+ 0003:00006fe4       ??_C@_0CO@PKPF@The?5Registered?5view?5referenced?5w@ 10038fe4     tzvmpeaa.obj
+ 0003:0000701c       ??_C@_0DL@CNIE@The?5attribute?5qualifier?5is?5undef@ 1003901c     tzvmpeaa.obj
+ 0003:00007064       ??_C@_0DN@PIBK@An?5index?5was?5placed?5on?5a?5variabl@ 10039064     tzvmpeaa.obj
+ 0003:000070b0       ??_C@_0DG@GGOB@An?5operation?5was?5referenced?5that@ 100390b0     tzvmpeaa.obj
+ 0003:000070f0       ??_C@_0BB@IBCK@Invalid?5Syntax?5?9?$AA@ 100390f0     tzvmpeaa.obj
+ 0003:00007104       ??_C@_0DJ@CCMG@Too?5many?5parameters?5were?5supplie@ 10039104     tzvmpeaa.obj
+ 0003:00007148       ??_C@_0DI@HHNG@Too?5few?5parameters?5were?5supplied@ 10039148     tzvmpeaa.obj
+ 0003:0000718c       ??_C@_0EG@DEOO@A?5define?5was?5used?5where?5a?5variab@ 1003918c     tzvmpeaa.obj
+ 0003:000071e0       ??_C@_0CA@KODL@Only?5text?5data?5can?5be?5indexed?4?5?$AA@ 100391e0     tzvmpeaa.obj
+ 0003:00007208       ??_C@_0CH@ONHO@Defines?5cannot?5be?5indexed?5as?5str@ 10039208     tzvmpeaa.obj
+ 0003:00007238       ??_C@_0DH@FEJH@An?5invalid?5token?5was?5found?5where@ 10039238     tzvmpeaa.obj
+ 0003:0000727c       ??_C@_0CD@LDAN@The?5LOD?5given?5could?5not?5be?5loade@ 1003927c     tzvmpeaa.obj
+ 0003:000072a8       ??_C@_0EI@DBJH@Unknown?5token?5type?5or?5character?5@ 100392a8     tzvmpeaa.obj
+ 0003:00007300       ??_C@_0DN@PLAH@This?5combination?5of?5data?5types?5i@ 10039300     tzvmpeaa.obj
+ 0003:0000734c       ??_C@_0BN@FAID@Invalid?5compound?5expression?4?$AA@ 1003934c     tzvmpeaa.obj
+ 0003:00007370       ??_C@_0BP@EJOG@OF?5cannot?5follow?5an?5otherwise?4?$AA@ 10039370     tzvmpeaa.obj
+ 0003:00007398       ??_C@_0CF@JONH@CASE?5was?5not?5terminated?5with?5an?5@ 10039398     tzvmpeaa.obj
+ 0003:000073c4       ??_C@_0BM@EEGN@CASE?5Needs?5a?5value?5to?5test?4?$AA@ 100393c4     tzvmpeaa.obj
+ 0003:000073e8       ??_C@_0CG@DFEL@WHILE?5was?5not?5terminated?5with?5an@ 100393e8     tzvmpeaa.obj
+ 0003:00007418       ??_C@_0CE@HGJF@No?5condition?5given?5after?5the?5WHI@ 10039418     tzvmpeaa.obj
+ 0003:00007444       ??_C@_0CE@OLBD@No?5condition?5given?5after?5the?5UNT@ 10039444     tzvmpeaa.obj
+ 0003:00007470       ??_C@_0CD@OFGD@IF?5was?5not?5terminated?5with?5an?5EN@ 10039470     tzvmpeaa.obj
+ 0003:0000749c       ??_C@_0CB@EFHK@No?5condition?5given?5after?5the?5IF?4@ 1003949c     tzvmpeaa.obj
+ 0003:000074c4       ??_C@_0BN@BIIE@Invalid?5BASED?5ON?5LOD?5Phrase?4?$AA@ 100394c4     tzvmpeaa.obj
+ 0003:000074e8       ??_C@_0CD@KJDD@Statements?5cannot?5follow?5a?5retur@ 100394e8     tzvmpeaa.obj
+ 0003:00007514       ??_C@_0CP@LPNE@No?5object?5type?5given?5for?5the?5vie@ 10039514     tzvmpeaa.obj
+ 0003:0000754c       ??_C@_0DF@DJPD@The?5view?5name?5was?5not?5given?5in?5t@ 1003954c     tzvmpeaa.obj
+ 0003:0000758c       ??_C@_0CE@KOHL@No?5length?5was?5given?5for?5the?5stri@ 1003958c     tzvmpeaa.obj
+ 0003:000075b8       ??_C@_0EC@OENA@All?5declarations?5must?5precede?5th@ 100395b8     tzvmpeaa.obj
+ 0003:00007608       ??_C@_0CI@EJIE@Parameters?5must?5be?5delimited?5by?5@ 10039608     tzvmpeaa.obj
+ 0003:00007638       ??_C@_0ED@JPKL@The?5attribute?5name?5referenced?5wa@ 10039638     tzvmpeaa.obj
+ 0003:00007688       ??_C@_0FE@JPOO@The?5attribute?5name?5referenced?5wa@ 10039688     tzvmpeaa.obj
+ 0003:000076ec       ??_C@_0EA@JMPC@The?5entity?5name?5referenced?5was?5n@ 100396ec     tzvmpeaa.obj
+ 0003:00007738       ??_C@_0EO@FOMD@The?5entity?5name?5referenced?5was?5n@ 10039738     tzvmpeaa.obj
+ 0003:00007798       ??_C@_0FK@GODM@Attempting?5to?5use?5a?5variable?5as?5@ 10039798     tzvmpeaa.obj
+ 0003:00007804       ??_C@_0DM@DLHM@Attempting?5to?5reference?5a?5view?5t@ 10039804     tzvmpeaa.obj
+ 0003:0000784c       ??_C@_0DP@MMM@Attempting?5to?5reference?5a?5variab@ 1003984c     tzvmpeaa.obj
+ 0003:00007898       ??_C@_0DM@JFFE@The?5variable?5name?5is?5missing?5fro@ 10039898     tzvmpeaa.obj
+ 0003:000078e0       ??_C@_0DP@BJGE@A?5variable?5by?5this?5name?5was?5alre@ 100398e0     tzvmpeaa.obj
+ 0003:0000792c       ??_C@_0GC@FBLD@Parse?5problem?5caused?5by?5invalid?5@ 1003992c     tzvmpeaa.obj
+ 0003:000079a4       ??_C@_0DE@HJP@The?5name?5of?5the?5operation?5was?5no@ 100399a4     tzvmpeaa.obj
+ 0003:000079e4       ??_C@_0EA@KPPH@Attempting?5to?5redefine?5an?5operat@ 100399e4     tzvmpeaa.obj
+ 0003:00007a30       ??_C@_0BF@HCMM@VML?5Parsing?5ERROR?5?9?9?$AA@ 10039a30     tzvmpeaa.obj
+ 0003:00007a4c       ??_C@_0CA@JMHI@VML?5Parsing?5STOPPED?5on?5ERROR?5?9?9?$AA@ 10039a4c     tzvmpeaa.obj
+ 0003:00007a74       ??_C@_0M@KPAF@ErrorNumber?$AA@ 10039a74     tzvmpeaa.obj
+ 0003:00007a84       ??_C@_09JJBF@LastToken?$AA@ 10039a84     tzvmpeaa.obj
+ 0003:00007a90       ??_C@_0N@CBLG@?5Last?5Token?5?$AA@ 10039a90     tzvmpeaa.obj
+ 0003:00007aa0       ??_C@_02HFBK@?3?5?$AA@     10039aa0     tzvmpeaa.obj
+ 0003:00007aa4       ??_C@_0L@PGPE@?$CJ?5?3?5error?5?$AA@ 10039aa4     tzvmpeaa.obj
+ 0003:00007cf8       _g_hInstanceDLL            10039cf8     zdllinst.obj
+ 0003:00007d00       _hModule                   10039d00     tzvmpopr.obj
+ 0003:00007d08       _g_sWhereLeft              10039d08     tzvmpopr.obj
+ 0003:0000f850       _g_sWhereRight             10041850     tzvmpopr.obj
+ 0003:0001ad04       _qqin                      1004cd04     tzvmplaa.obj
+ 0003:0001ad10       _qqleng                    1004cd10     tzvmplaa.obj
+ 0003:0001aeb8       ??_C@_01A@?$AA?$AA@        1004ceb8     tzvmplaa.obj
+ 0003:0001aebc       ??_C@_00A@?$AA@            1004cebc     tzvmpyaa.obj
+ 0003:0001b4c0       _sExprStruct               1004d4c0     tzvmp2aa.obj
+ 0003:0001b9b0       _sGExprStruct              1004d9b0     tzvmp7aa.obj
+ 0003:0001bdd0       _sLeftStruct               1004ddd0     tzvmp7aa.obj
+ 0003:0001c1f0       _sRightStruct              1004e1f0     tzvmp7aa.obj
+ 0003:0001c610       _sOperatorStruct           1004e610     tzvmp7aa.obj
+ 0003:0001cd7c       _lLocal9Text               1004ed7c     <common>
+ 0003:0001cf24       _lLocal9Code               1004ef24     <common>
+ 0003:0001cf40       _szLocal9Text              1004ef40     <common>
+ 0003:0001d340       _szLocal9Code              1004f340     <common>
+ 0003:0001d740       _lGlobalRightID            1004f740     <common>
+ 0003:0001d900       _szLocal7Text              1004f900     <common>
+ 0003:0001dd00       _szLocal7Code              1004fd00     <common>
+ 0003:0001e100       _szGlobalTempNumber        10050100     <common>
+ 0003:0001e10c       _vGlobalView               1005010c     <common>
+ 0003:0001e110       _lGlobalTempID             10050110     <common>
+ 0003:0001e114       _lLocal7Text               10050114     <common>
+ 0003:0001e118       _lLocal7Code               10050118     <common>
+ 0003:0001e120       _szLocal3Text              10050120     <common>
+ 0003:0001e6e0       _szLocal3Code              100506e0     <common>
+ 0003:0001eae0       _lLocal3Text               10050ae0     <common>
+ 0003:0001eae4       _lLocal3Code               10050ae4     <common>
+ 0003:0001eae8       _lLocal2Text               10050ae8     <common>
+ 0003:0001f548       _lLocal2Code               10051548     <common>
+ 0003:0001f560       _szLocal2Text              10051560     <common>
+ 0003:0001fa20       _szLocal2Code              10051a20     <common>
+ 0003:00022900       _nParameterCount           10054900     <common>
+ 0003:0002290c       _nCheckParameterCount      1005490c     <common>
+ 0003:0002290e       _nParameterErrorMessage    1005490e     <common>
+ 0003:00022910       _yyerrflag                 10054910     <common>
+ 0003:00022924       _yypvt                     10054924     <common>
+ 0003:00022928       _yyval                     10054928     <common>
+ 0003:00022930       _yynerrs                   10054930     <common>
+ 0003:00022938       _qqlval                    10054938     <common>
+ 0003:00022940       _qqchar                    10054940     <common>
+ 0003:00022944       _qqout                     10054944     <common>
+ 0003:00022a20       _qqtext                    10054a20     <common>
+ 0003:00022e24       _g_lNeedExtraEnd           10054e24     <common>
+ 0003:00023d98       _g_lpLastLOD               10055d98     <common>
+ 0003:00023d9c       _g_lLeftDataClass          10055d9c     <common>
+ 0003:00023da0       _g_lParmList               10055da0     <common>
+ 0003:00023df0       _g_lParseSource            10055df0     <common>
+ 0003:00023df4       _g_lpGOListView            10055df4     <common>
+ 0003:00023df8       _g_lLastTypeDeclared       10055df8     <common>
+ 0003:00023dfc       _g_lpExprView              10055dfc     <common>
+ 0003:00023e00       _g_szAttributeName         10055e00     <common>
+ 0003:00023e40       _g_lWhereJoin              10055e40     <common>
+ 0003:00023eb8       _g_lViewID                 10055eb8     <common>
+ 0003:00023ebc       _g_lAttributeID            10055ebc     <common>
+ 0003:00023ec0       _g_lScopeViewID            10055ec0     <common>
+ 0003:00023ec4       _g_vStatementView          10055ec4     <common>
+ 0003:00023ee0       _g_lParmListExt            10055ee0     <common>
+ 0003:00023f30       _g_lLoopControlID          10055f30     <common>
+ 0003:00023f34       _g_lCount                  10055f34     <common>
+ 0003:00023f38       _g_lOldParseLimit          10055f38     <common>
+ 0003:00023f3c       _g_lpSGView                10055f3c     <common>
+ 0003:00023f40       _g_lDeclaredStringLength   10055f40     <common>
+ 0003:00023f60       _jbFatalError              10055f60     <common>
+ 0003:00023fa0       _g_szOperationName         10055fa0     <common>
+ 0003:00023fc4       _g_lParseAction            10055fc4     <common>
+ 0003:00023fe0       _g_szEntityName            10055fe0     <common>
+ 0003:00024004       _g_lParmListIndex          10056004     <common>
+ 0003:00024008       _g_lOperationClass         10056008     <common>
+ 0003:0002400c       _g_szGenLang               1005600c     <common>
+ 0003:00024010       _g_lNumber                 10056010     <common>
+ 0003:00024020       _g_szViewName              10056020     <common>
+ 0003:00024044       _g_lSaveText               10056044     <common>
+ 0003:00024048       _g_vSourceMeta             10056048     <common>
+ 0003:00024060       _g_szScopeAttributeName    10056060     <common>
+ 0003:00024084       _g_lOperationZKey          10056084     <common>
+ 0003:00024088       _g_nStackPtr               10056088     <common>
+ 0003:0002408c       _g_lfErrorHandle           1005608c     <common>
+ 0003:00024090       _g_lAddNextStatementBeforeSave 10056090     <common>
+ 0003:00024094       _lpGlobalSubtask           10056094     <common>
+ 0003:000240a0       _g_szLoadControl           100560a0     <common>
+ 0003:000240e0       _g_lWhereOp                100560e0     <common>
+ 0003:00024158       _g_lTargetDataType         10056158     <common>
+ 0003:0002415c       _g_vSaveStmtView           1005615c     <common>
+ 0003:00024160       _g_lEntityNameLength       10056160     <common>
+ 0003:00024180       _g_szScopeEntityName       10056180     <common>
+ 0003:000241a4       _g_lPriorityFudgeFactor    100561a4     <common>
+ 0003:000241a8       _g_lSetFNPL                100561a8     <common>
+ 0003:000241c0       _g_nOperStack              100561c0     <common>
+ 0003:00024240       _g_szFatalErrorMsg         10056240     <common>
+ 0003:00024340       _g_lpPIView                10056340     <common>
+ 0003:00024344       _g_lEntityID               10056344     <common>
+ 0003:00024348       _g_lAttributeNameLength    10056348     <common>
+ 0003:0002434c       _g_lpZOListView            1005634c     <common>
+ 0003:00024350       _g_lfHandle                10056350     <common>
+ 0003:00024354       _g_vVORList                10056354     <common>
+ 0003:00024358       _g_lOperationFlag          10056358     <common>
+ 0003:0002435c       _g_lAddNextStatementBefore 1005635c     <common>
+ 0003:00024360       _g_lScopeAttributeID       10056360     <common>
+ 0003:00024364       _lGlobalReadRetCode        10056364     <common>
+ 0003:00024368       _g_lFlag                   10056368     <common>
+ 0003:0002436c       _g_vGlobalView             1005636c     <common>
+ 0003:00024370       _g_lWhereIndex             10056370     <common>
+ 0003:00024380       _g_szSourceMetaObjectName  10056380     <common>
+ 0003:000243a4       _g_lParseLimit             100563a4     <common>
+ 0003:000243a8       _g_vLODList                100563a8     <common>
+ 0003:000243c0       _sQToken                   100563c0     <common>
+ 0003:00024bd8       _g_lOperationType          10056bd8     <common>
+ 0003:00024bdc       _g_lLeftDataType           10056bdc     <common>
+ 0003:00024be0       _g_szScopeViewName         10056be0     <common>
+ 0003:00024c01       _g_bActivate               10056c01     <common>
+ 0003:00024c04       _g_lOperationUnknownFlag   10056c04     <common>
+ 0003:00024c08       _g_lGetViewID              10056c08     <common>
+ 0003:00024c0c       _g_lAddToSrc               10056c0c     <common>
+ 0003:00024c10       _g_lScopeEntityID          10056c10     <common>
+ 0003:00024c14       _g_vSavePIView             10056c14     <common>
+ 0003:00024c18       _g_lRelativeLineNumber     10056c18     <common>
+ 0003:00024c1c       __adjust_fdiv              10056c1c     <common>
+ 0003:00024c28       ___onexitend               10056c28     <common>
+ 0003:00024c38       ___onexitbegin             10056c38     <common>
+ 0003:00024c3c       __pRawDllMain              10056c3c     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 10057000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KZOENGAA 10057014     kzoengaa:KZOENGAA.DLL
+ 0004:00000028       __IMPORT_DESCRIPTOR_MSVCRTD 10057028     msvcrtd:MSVCRTD.dll
+ 0004:0000003c       __NULL_IMPORT_DESCRIPTOR   1005703c     tzlodopr:tzlodopr.dll
+ 0004:000002b0       __imp__SysMessageBox@16    100572b0     kzoengaa:KZOENGAA.DLL
+ 0004:000002b4       __imp__StoreValueInRecord@20 100572b4     kzoengaa:KZOENGAA.DLL
+ 0004:000002b8       __imp__SetCursorNextEntityByString@20 100572b8     kzoengaa:KZOENGAA.DLL
+ 0004:000002bc       __imp__GetBlobFromAttribute@20 100572bc     kzoengaa:KZOENGAA.DLL
+ 0004:000002c0       __imp__ExcludeEntity@12    100572c0     kzoengaa:KZOENGAA.DLL
+ 0004:000002c4       __imp__SysConvertEnvironmentString@8 100572c4     kzoengaa:KZOENGAA.DLL
+ 0004:000002c8       __imp__SysAppendcDirSep@4  100572c8     kzoengaa:KZOENGAA.DLL
+ 0004:000002cc       __imp__TraceLineI@8        100572cc     kzoengaa:KZOENGAA.DLL
+ 0004:000002d0       __imp__CompareAttributeToString@16 100572d0     kzoengaa:KZOENGAA.DLL
+ 0004:000002d4       __imp__IncludeSubobjectFromSubobject@20 100572d4     kzoengaa:KZOENGAA.DLL
+ 0004:000002d8       __imp__SetNameForView@16   100572d8     kzoengaa:KZOENGAA.DLL
+ 0004:000002dc       __imp__DropObjectInstance@4 100572dc     kzoengaa:KZOENGAA.DLL
+ 0004:000002e0       __imp__GetViewByName@16    100572e0     kzoengaa:KZOENGAA.DLL
+ 0004:000002e4       __imp__SetCursorFirstEntity@12 100572e4     kzoengaa:KZOENGAA.DLL
+ 0004:000002e8       __imp__SetCursorPrevEntity@12 100572e8     kzoengaa:KZOENGAA.DLL
+ 0004:000002ec       __imp__DropView@4          100572ec     kzoengaa:KZOENGAA.DLL
+ 0004:000002f0       __imp__DeleteEntity@12     100572f0     kzoengaa:KZOENGAA.DLL
+ 0004:000002f4       __imp__ResetViewFromSubobject@4 100572f4     kzoengaa:KZOENGAA.DLL
+ 0004:000002f8       __imp__CheckExistenceOfEntity@8 100572f8     kzoengaa:KZOENGAA.DLL
+ 0004:000002fc       __imp__SetCursorLastEntity@12 100572fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000300       __imp__SetCursorNextEntityByInteger@20 10057300     kzoengaa:KZOENGAA.DLL
+ 0004:00000304       __imp__SetCursorFirstEntityByInteger@20 10057304     kzoengaa:KZOENGAA.DLL
+ 0004:00000308       __imp__CreateViewFromViewForTask@12 10057308     kzoengaa:KZOENGAA.DLL
+ 0004:0000030c       __imp__CreateEntity@12     1005730c     kzoengaa:KZOENGAA.DLL
+ 0004:00000310       __imp__MessageSend@24      10057310     kzoengaa:KZOENGAA.DLL
+ 0004:00000314       __imp__SetCursorFirstEntityByAttr@28 10057314     kzoengaa:KZOENGAA.DLL
+ 0004:00000318       __imp__GetIntegerFromAttribute@16 10057318     kzoengaa:KZOENGAA.DLL
+ 0004:0000031c       __imp__SetCursorFirstEntityByString@20 1005731c     kzoengaa:KZOENGAA.DLL
+ 0004:00000320       __imp__SetCursorNextEntity@12 10057320     kzoengaa:KZOENGAA.DLL
+ 0004:00000324       __imp__SetAttributeFromAttribute@24 10057324     kzoengaa:KZOENGAA.DLL
+ 0004:00000328       __imp__SetMatchingAttributesByName@20 10057328     kzoengaa:KZOENGAA.DLL
+ 0004:0000032c       __imp__SetAttributeFromString@16 1005732c     kzoengaa:KZOENGAA.DLL
+ 0004:00000330       __imp__GetStringFromAttribute@16 10057330     kzoengaa:KZOENGAA.DLL
+ 0004:00000334       __imp__CountEntitiesForView@8 10057334     kzoengaa:KZOENGAA.DLL
+ 0004:00000338       __imp__SetAttributeFromInteger@16 10057338     kzoengaa:KZOENGAA.DLL
+ 0004:0000033c       __imp__AddToAttributeFromInteger@16 1005733c     kzoengaa:KZOENGAA.DLL
+ 0004:00000340       __imp__SetEntityCursor@40  10057340     kzoengaa:KZOENGAA.DLL
+ 0004:00000344       __imp__ActivateEmptyObjectInstance@16 10057344     kzoengaa:KZOENGAA.DLL
+ 0004:00000348       __imp__GetAddrForAttribute@16 10057348     kzoengaa:KZOENGAA.DLL
+ 0004:0000034c       __imp__SetViewFromView@8   1005734c     kzoengaa:KZOENGAA.DLL
+ 0004:00000350       __imp__SetViewToSubobject@8 10057350     kzoengaa:KZOENGAA.DLL
+ 0004:00000354       __imp__SetAttributeFromBlob@20 10057354     kzoengaa:KZOENGAA.DLL
+ 0004:00000358       __imp__MoveSubobject@24    10057358     kzoengaa:KZOENGAA.DLL
+ 0004:0000035c       __imp__TraceLineS@8        1005735c     kzoengaa:KZOENGAA.DLL
+ 0004:00000360       __imp__CompareAttributeToAttribute@24 10057360     kzoengaa:KZOENGAA.DLL
+ 0004:00000364       __imp__MiGetParentEntityNameForView@12 10057364     kzoengaa:KZOENGAA.DLL
+ 0004:00000368       __imp__MiGetObjectNameForView@8 10057368     kzoengaa:KZOENGAA.DLL
+ 0004:0000036c       __imp__ResetView@4         1005736c     kzoengaa:KZOENGAA.DLL
+ 0004:00000370       __imp__CompareAttributeToInteger@16 10057370     kzoengaa:KZOENGAA.DLL
+ 0004:00000374       __imp__GetStructFromEntityAttrs@12 10057374     kzoengaa:KZOENGAA.DLL
+ 0004:00000378       __imp__GetRelativeEntityNumber@16 10057378     kzoengaa:KZOENGAA.DLL
+ 0004:0000037c       __imp__ActivateOI_FromFile@20 1005737c     kzoengaa:KZOENGAA.DLL
+ 0004:00000380       __imp__SetCursorRelativeEntity@16 10057380     kzoengaa:KZOENGAA.DLL
+ 0004:00000384       __imp__SysGetProc@8        10057384     kzoengaa:KZOENGAA.DLL
+ 0004:00000388       __imp__SysLoadLibrary@8    10057388     kzoengaa:KZOENGAA.DLL
+ 0004:0000038c       __imp__SysReadZeidonIni@16 1005738c     kzoengaa:KZOENGAA.DLL
+ 0004:00000390       __imp__SysSetFileTime@12   10057390     kzoengaa:KZOENGAA.DLL
+ 0004:00000394       __imp__SysGetFileDateTime@8 10057394     kzoengaa:KZOENGAA.DLL
+ 0004:00000398       __imp__CommitOI_ToFile@12  10057398     kzoengaa:KZOENGAA.DLL
+ 0004:0000039c       __imp__SysCloseFile@12     1005739c     kzoengaa:KZOENGAA.DLL
+ 0004:000003a0       __imp__SysWriteLine@12     100573a0     kzoengaa:KZOENGAA.DLL
+ 0004:000003a4       __imp__SysReadLine@12      100573a4     kzoengaa:KZOENGAA.DLL
+ 0004:000003a8       __imp__SysOpenFile@12      100573a8     kzoengaa:KZOENGAA.DLL
+ 0004:000003ac       __imp__SysGetDateTime@4    100573ac     kzoengaa:KZOENGAA.DLL
+ 0004:000003b0       __imp__DropEntity@12       100573b0     kzoengaa:KZOENGAA.DLL
+ 0004:000003b4       \177KZOENGAA_NULL_THUNK_DATA 100573b4     kzoengaa:KZOENGAA.DLL
+ 0004:00000414       __imp___initterm           10057414     msvcrtd:MSVCRTD.dll
+ 0004:00000418       __imp___malloc_dbg         10057418     msvcrtd:MSVCRTD.dll
+ 0004:0000041c       __imp___adjust_fdiv        1005741c     msvcrtd:MSVCRTD.dll
+ 0004:00000420       __imp____dllonexit         10057420     msvcrtd:MSVCRTD.dll
+ 0004:00000424       __imp___free_dbg           10057424     msvcrtd:MSVCRTD.dll
+ 0004:00000428       __imp___onexit             10057428     msvcrtd:MSVCRTD.dll
+ 0004:0000042c       __imp__putc                1005742c     msvcrtd:MSVCRTD.dll
+ 0004:00000430       __imp__memmove             10057430     msvcrtd:MSVCRTD.dll
+ 0004:00000434       __imp__memcpy              10057434     msvcrtd:MSVCRTD.dll
+ 0004:00000438       __imp__malloc              10057438     msvcrtd:MSVCRTD.dll
+ 0004:0000043c       __imp__free                1005743c     msvcrtd:MSVCRTD.dll
+ 0004:00000440       __imp__strcpy              10057440     msvcrtd:MSVCRTD.dll
+ 0004:00000444       __imp__strncpy             10057444     msvcrtd:MSVCRTD.dll
+ 0004:00000448       __imp__strcmp              10057448     msvcrtd:MSVCRTD.dll
+ 0004:0000044c       __imp__strlen              1005744c     msvcrtd:MSVCRTD.dll
+ 0004:00000450       __imp__strcat              10057450     msvcrtd:MSVCRTD.dll
+ 0004:00000454       __imp__sprintf             10057454     msvcrtd:MSVCRTD.dll
+ 0004:00000458       __imp__atol                10057458     msvcrtd:MSVCRTD.dll
+ 0004:0000045c       __imp___pctype             1005745c     msvcrtd:MSVCRTD.dll
+ 0004:00000460       __imp___isctype            10057460     msvcrtd:MSVCRTD.dll
+ 0004:00000464       __imp____mb_cur_max        10057464     msvcrtd:MSVCRTD.dll
+ 0004:00000468       __imp__strncat             10057468     msvcrtd:MSVCRTD.dll
+ 0004:0000046c       __imp__memcmp              1005746c     msvcrtd:MSVCRTD.dll
+ 0004:00000470       __imp__longjmp             10057470     msvcrtd:MSVCRTD.dll
+ 0004:00000474       __imp__strchr              10057474     msvcrtd:MSVCRTD.dll
+ 0004:00000478       __imp___ltoa               10057478     msvcrtd:MSVCRTD.dll
+ 0004:0000047c       __imp__memset              1005747c     msvcrtd:MSVCRTD.dll
+ 0004:00000480       __imp__strncmp             10057480     msvcrtd:MSVCRTD.dll
+ 0004:00000484       __imp___setjmp3            10057484     msvcrtd:MSVCRTD.dll
+ 0004:00000488       \177MSVCRTD_NULL_THUNK_DATA 10057488     msvcrtd:MSVCRTD.dll
+ 0004:000004c8       __imp__oTZ__PRFO_GetViewToProfile@16 100574c8     tzlodopr:tzlodopr.dll
+ 0004:000004cc       __imp__zgGetZeidonToolsDir@12 100574cc     tzlodopr:tzlodopr.dll
+ 0004:000004d0       __imp__RetrieveViewForMetaList@12 100574d0     tzlodopr:tzlodopr.dll
+ 0004:000004d4       __imp__CreateMetaEntity@16 100574d4     tzlodopr:tzlodopr.dll
+ 0004:000004d8       __imp__ActivateMetaOI@20   100574d8     tzlodopr:tzlodopr.dll
+ 0004:000004dc       __imp__DropMetaOI@8        100574dc     tzlodopr:tzlodopr.dll
+ 0004:000004e0       \177tzlodopr_NULL_THUNK_DATA 100574e0     tzlodopr:tzlodopr.dll
+
+ entry point at        0001:0002c280
+

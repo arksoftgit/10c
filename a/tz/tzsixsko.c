@@ -67,7 +67,7 @@ zoTZSIXSKO_SaveXSK( zVIEW vTZZOXODO, zVIEW vTZTENVRO )
    zVIEW  vTaskLPLR;
    zSHORT nRC;
    zCHAR  szFileName[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR  szMetaName[ 9 ];
+   zCHAR  szMetaName[ 33 ];
    zLONG  lTE_ZKey = 0;
    zSHORT nAttrCount = 0;
    zSHORT nDS_Count = 0;

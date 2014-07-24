@@ -345,14 +345,14 @@ InsertForWithWhere( zVIEW vSubtask )
    // this was above...
    if ( g_lSetFNPL == qEACH )
    {
-	  /* KJS - 09/04/12
+     /* KJS - 09/04/12
       if ( g_szGenLang[ 0 ] == 'J' )
-	     // KJS 09/04/12 - Changing because we are now using SetCursorNextEntity instead of setNextContinue...
+        // KJS 09/04/12 - Changing because we are now using SetCursorNextEntity instead of setNextContinue...
          //zstrcpy( szOperationName, "setFirst" );
          zstrcpy( szOperationName, "SetCursorFirstEntity" );
       else
       {
-	  */
+     */
          zstrcpy( szOperationName, "SetCursorFirstEntity" );
          switch ( g_sWhereRight[ lUseFirst ].lDataClass )
          {
@@ -575,7 +575,7 @@ InsertForWithWhere( zVIEW vSubtask )
    if ( g_szGenLang[ 0 ] == 'J' )
    {
       bSetNextJava = TRUE;
-	  // KJS 09/04/12 - Changing because we are now using SetCursorNextEntity instead of setNextContinue...
+     // KJS 09/04/12 - Changing because we are now using SetCursorNextEntity instead of setNextContinue...
       //zstrcpy( szOperationName, "setNextContinue" );
       zstrcpy( szOperationName, "SetCursorNextEntity" );
    }

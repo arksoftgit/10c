@@ -1,0 +1,46 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzapdmaa.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzapdmaa.dll
+
+           0 characteristics
+    5356CF11 time date stamp Tue Apr 22 16:20:33 2014
+        0.00 version
+           1 ordinal base
+          18 number of functions
+          18 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000010A5 _fnDyamicT_fnLocalBuildQual_0@12
+          2    1 00001078 _zdmAlphaNumeric@8
+          3    2 0000107D _zdmDate@8
+          4    3 00001037 _zdmDateTime@8
+          5    4 0000103C _zdmDecimal@8
+          6    5 0000101E _zdmDynamicTable@8
+          7    6 0000102D _zdmDynamicTableM@8
+          8    7 00001064 _zdmExpandEnvVar@8
+          9    8 00001050 _zdmFileName@8
+         10    9 00001087 _zdmHTML@8
+         11    A 0000104B _zdmInteger@8
+         12    B 0000109B _zdmPassword@8
+         13    C 0000105F _zdmPasswordUL@8
+         14    D 00001014 _zdmQSName@8
+         15    E 000010AA _zdmText@8
+         16    F 00001046 _zdmTime@8
+         17   10 00001041 _zdmXRA_Tag@8
+         18   11 00001005 _zdmXRA_Text@8
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       13000 .text

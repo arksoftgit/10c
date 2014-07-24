@@ -1,0 +1,124 @@
+ KZHGENKY
+
+ Timestamp is 5356cb65 (Tue Apr 22 16:04:53 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001948H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 0000015aH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 0000028aH .data                   DATA
+ 0003:0000069c 00000034H .bss                    DATA
+ 0004:00000000 0000003cH .idata$2                DATA
+ 0004:0000003c 00000014H .idata$3                DATA
+ 0004:00000050 00000110H .idata$4                DATA
+ 0004:00000160 00000110H .idata$5                DATA
+ 0004:00000270 000001a0H .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000030       _GKH_MsgProc@20            10001030 f   KZHGENKY.OBJ
+ 0001:00000134       _InitializeGenkeyObject    10001134 f   KZHGENKY.OBJ
+ 0001:0000036f       _GetNextGenkey             1000136f f   KZHGENKY.OBJ
+ 0001:00000550       _DropView@4                10001550 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000556       _SysMutexUnlock@12         10001556 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000055c       _CommitMultipleOIs@16      1000155c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000562       _AddToAttributeFromInteger@16 10001562 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000568       _GetIntegerFromAttribute@16 10001568 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000056e       _SetAttributeFromAttribute@24 1000156e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000574       _SetAttributeFromInteger@16 10001574 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000057a       _SetAttributeFromString@16 1000157a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000580       _CreateEntity@12           10001580 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000586       _SetCursorFirstEntityByString@20 10001586 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000058c       _GetAddrForAttribute@16    1000158c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000592       _SetCursorNextEntity@12    10001592 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000598       _SetCursorFirstEntity@12   10001598 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000059e       _SetNameForView@16         1000159e f   kzoengaa:KZOENGAA.DLL
+ 0001:000005a4       _ActivateObjectInstance@20 100015a4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000005aa       _SysMutexLock@16           100015aa f   kzoengaa:KZOENGAA.DLL
+ 0001:000005b0       _TraceLineI@8              100015b0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000005b6       _TraceLineS@8              100015b6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000005bc       _GetTaskDBHandlerTraceLevel@4 100015bc f   kzoengaa:KZOENGAA.DLL
+ 0001:000005c2       _StoreValueInRecord@20     100015c2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000005c8       _SysGetPointerFromHandle@4 100015c8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000005ce       _IssueError@16             100015ce f   kzoengaa:KZOENGAA.DLL
+ 0001:000005d4       _SetCursorFirstEntityByInteger@20 100015d4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000005e0       __CRT_INIT@12              100015e0 f   MSVCRTD:crtdll.obj
+ 0001:000006f0       __DllMainCRTStartup@12     100016f0 f   MSVCRTD:crtdll.obj
+ 0001:000007e4       __free_dbg                 100017e4 f   MSVCRTD:MSVCRTD.dll
+ 0001:000007ea       __initterm                 100017ea f   MSVCRTD:MSVCRTD.dll
+ 0001:000007f0       __onexit                   100017f0 f   MSVCRTD:atonexit.obj
+ 0001:00000830       _atexit                    10001830 f   MSVCRTD:atonexit.obj
+ 0001:00000848       __malloc_dbg               10001848 f   MSVCRTD:MSVCRTD.dll
+ 0001:00000850       _DllMain@12                10001850 f   MSVCRTD:dllmain.obj
+ 0001:00000876       ___dllonexit               10001876 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000087c       _DisableThreadLibraryCalls@4 1000187c f   kernel32:KERNEL32.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000301c     MSVCRTD:crtdll.obj
+ 0003:00000000       ___xc_a                    10004000     MSVCRTD:cinitexe.obj
+ 0003:00000104       ___xc_z                    10004104     MSVCRTD:cinitexe.obj
+ 0003:00000208       ___xi_a                    10004208     MSVCRTD:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000430c     MSVCRTD:cinitexe.obj
+ 0003:00000410       ??_C@_0DD@GONE@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5End?5of?5Genkey?5Crea@ 10004410     KZHGENKY.OBJ
+ 0003:00000450       ??_C@_0M@KMCA@EntityCount?$AA@ 10004450     KZHGENKY.OBJ
+ 0003:00000460       ??_C@_0O@FAPB@CurrentGenkey?$AA@ 10004460     KZHGENKY.OBJ
+ 0003:00000470       ??_C@_0BC@ICCK@ZeidonGenkeyTable?$AA@ 10004470     KZHGENKY.OBJ
+ 0003:00000488       ??_C@_09JMBN@TableName?$AA@ 10004488     KZHGENKY.OBJ
+ 0003:00000494       ??_C@_06JEOF@Genkey?$AA@   10004494     KZHGENKY.OBJ
+ 0003:0000049c       ??_C@_09POBG@_GENKEYWO?$AA@ 1000449c     KZHGENKY.OBJ
+ 0003:000004a8       ??_C@_08BFCG@GENKEYWO?$AA@ 100044a8     KZHGENKY.OBJ
+ 0003:000004b4       ??_C@_0L@KGHJ@Zeidon?5GKH?$AA@ 100044b4     KZHGENKY.OBJ
+ 0003:000004c4       ??_C@_0BE@NCKJ@KZHGENKY?5Version?51?4?$AA@ 100044c4     KZHGENKY.OBJ
+ 0003:000004dc       ??_C@_0DF@MBMJ@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5?5Genkey?5Creat@ 100044dc     KZHGENKY.OBJ
+ 0003:0000051c       ??_C@_0DD@EOHK@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN@ 1000451c     KZHGENKY.OBJ
+ 0003:0000055c       ??_C@_0CD@DAMP@lpViewEntity?5not?5found?5in?5KZGKHW@ 1000455c     KZHGENKY.OBJ
+ 0003:00000588       ??_C@_08OHJM@EntityID?$AA@ 10004588     KZHGENKY.OBJ
+ 0003:0000069c       ??_C@_00A@?$AA@            1000469c     KZHGENKY.OBJ
+ 0003:000006a4       __adjust_fdiv              100046a4     <common>
+ 0003:000006b0       ___onexitend               100046b0     <common>
+ 0003:000006c0       ___onexitbegin             100046c0     <common>
+ 0003:000006c4       __pRawDllMain              100046c4     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_KZOENGAA 10005000     kzoengaa:KZOENGAA.DLL
+ 0004:00000014       __IMPORT_DESCRIPTOR_MSVCRTD 10005014     MSVCRTD:MSVCRTD.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_KERNEL32 10005028     kernel32:KERNEL32.dll
+ 0004:0000003c       __NULL_IMPORT_DESCRIPTOR   1000503c     kzoengaa:KZOENGAA.DLL
+ 0004:00000160       __imp__DisableThreadLibraryCalls@4 10005160     kernel32:KERNEL32.dll
+ 0004:00000164       \177KERNEL32_NULL_THUNK_DATA 10005164     kernel32:KERNEL32.dll
+ 0004:00000190       __imp__CommitMultipleOIs@16 10005190     kzoengaa:KZOENGAA.DLL
+ 0004:00000194       __imp__AddToAttributeFromInteger@16 10005194     kzoengaa:KZOENGAA.DLL
+ 0004:00000198       __imp__GetIntegerFromAttribute@16 10005198     kzoengaa:KZOENGAA.DLL
+ 0004:0000019c       __imp__SetAttributeFromAttribute@24 1000519c     kzoengaa:KZOENGAA.DLL
+ 0004:000001a0       __imp__SetAttributeFromInteger@16 100051a0     kzoengaa:KZOENGAA.DLL
+ 0004:000001a4       __imp__SetAttributeFromString@16 100051a4     kzoengaa:KZOENGAA.DLL
+ 0004:000001a8       __imp__CreateEntity@12     100051a8     kzoengaa:KZOENGAA.DLL
+ 0004:000001ac       __imp__SetCursorFirstEntityByString@20 100051ac     kzoengaa:KZOENGAA.DLL
+ 0004:000001b0       __imp__GetAddrForAttribute@16 100051b0     kzoengaa:KZOENGAA.DLL
+ 0004:000001b4       __imp__SetCursorNextEntity@12 100051b4     kzoengaa:KZOENGAA.DLL
+ 0004:000001b8       __imp__SysMutexUnlock@12   100051b8     kzoengaa:KZOENGAA.DLL
+ 0004:000001bc       __imp__SetNameForView@16   100051bc     kzoengaa:KZOENGAA.DLL
+ 0004:000001c0       __imp__ActivateObjectInstance@20 100051c0     kzoengaa:KZOENGAA.DLL
+ 0004:000001c4       __imp__SysMutexLock@16     100051c4     kzoengaa:KZOENGAA.DLL
+ 0004:000001c8       __imp__TraceLineI@8        100051c8     kzoengaa:KZOENGAA.DLL
+ 0004:000001cc       __imp__TraceLineS@8        100051cc     kzoengaa:KZOENGAA.DLL
+ 0004:000001d0       __imp__GetTaskDBHandlerTraceLevel@4 100051d0     kzoengaa:KZOENGAA.DLL
+ 0004:000001d4       __imp__StoreValueInRecord@20 100051d4     kzoengaa:KZOENGAA.DLL
+ 0004:000001d8       __imp__SysGetPointerFromHandle@4 100051d8     kzoengaa:KZOENGAA.DLL
+ 0004:000001dc       __imp__IssueError@16       100051dc     kzoengaa:KZOENGAA.DLL
+ 0004:000001e0       __imp__SetCursorFirstEntityByInteger@20 100051e0     kzoengaa:KZOENGAA.DLL
+ 0004:000001e4       __imp__SetCursorFirstEntity@12 100051e4     kzoengaa:KZOENGAA.DLL
+ 0004:000001e8       __imp__DropView@4          100051e8     kzoengaa:KZOENGAA.DLL
+ 0004:000001ec       \177KZOENGAA_NULL_THUNK_DATA 100051ec     kzoengaa:KZOENGAA.DLL
+ 0004:00000228       __imp___adjust_fdiv        10005228     MSVCRTD:MSVCRTD.dll
+ 0004:0000022c       __imp____dllonexit         1000522c     MSVCRTD:MSVCRTD.dll
+ 0004:00000230       __imp___onexit             10005230     MSVCRTD:MSVCRTD.dll
+ 0004:00000234       __imp___free_dbg           10005234     MSVCRTD:MSVCRTD.dll
+ 0004:00000238       __imp___malloc_dbg         10005238     MSVCRTD:MSVCRTD.dll
+ 0004:0000023c       __imp___initterm           1000523c     MSVCRTD:MSVCRTD.dll
+ 0004:00000240       \177MSVCRTD_NULL_THUNK_DATA 10005240     MSVCRTD:MSVCRTD.dll
+
+ entry point at        0001:000006f0
+

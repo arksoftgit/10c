@@ -1,0 +1,146 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzpeupdd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzpeupdd.dll
+
+           0 characteristics
+    5356CF57 time date stamp Tue Apr 22 16:21:43 2014
+        0.00 version
+           1 ordinal base
+         118 number of functions
+         118 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000111D _GetDLL_Instance@4
+          2    1 0000123F _fnTZPESRCO_GetRidOfInvisible@12
+          3    2 000011DB _zwTZPESRCO_DelInvisibleCtrlDef@4
+          4    3 00001221 _zwTZPESRCO_DelInvisibleFont@4
+          5    4 00001145 _zwTZPEUPDD_AcceptColorOption@4
+          6    5 000011CC _zwTZPEUPDD_AcceptCtrlColor@4
+          7    6 00001028 _zwTZPEUPDD_AcceptCtrlEventDef@4
+          8    7 00001140 _zwTZPEUPDD_AcceptCtrlFont@4
+          9    8 00001212 _zwTZPEUPDD_AcceptFontOption@4
+         10    9 0000100A _zwTZPEUPDD_AcceptSubobject@12
+         11    A 0000114A _zwTZPEUPDD_AcceptWindowStyle@4
+         12    B 0000106E _zwTZPEUPDD_AcceptWndStyleEvent@4
+         13    C 000010DC _zwTZPEUPDD_AddActiveX_EventToPE@4
+         14    D 00001041 _zwTZPEUPDD_AddMapDef@4
+         15    E 000010FA _zwTZPEUPDD_AddNewCtrlDef@4
+         16    F 00001073 _zwTZPEUPDD_BuildActiveX_CtrlList@4
+         17   10 0000105F _zwTZPEUPDD_BuildActiveX_EventLst@4
+         18   11 00001168 _zwTZPEUPDD_ColorOptionPostbuild@4
+         19   12 000010E1 _zwTZPEUPDD_ControlDefSetVisible@4
+         20   13 00001014 _zwTZPEUPDD_CreateEventDefEntity@4
+         21   14 000011E5 _zwTZPEUPDD_CreateNewColor@4
+         22   15 000010F5 _zwTZPEUPDD_CreateNewColorOption@4
+         23   16 000010A5 _zwTZPEUPDD_CreateNewControlDef@4
+         24   17 000011AE _zwTZPEUPDD_CreateNewCtrlColor@4
+         25   18 000011FE _zwTZPEUPDD_CreateNewCtrlFont@4
+         26   19 000010B4 _zwTZPEUPDD_CreateNewEvent@4
+         27   1A 00001050 _zwTZPEUPDD_CreateNewFont@4
+         28   1B 000010AF _zwTZPEUPDD_CreateNewFontOption@4
+         29   1C 0000117C _zwTZPEUPDD_CreateNewPresEnv@4
+         30   1D 000011EF _zwTZPEUPDD_CreateNewWindowStyle@4
+         31   1E 00001235 _zwTZPEUPDD_CrtlDefPostbuild@4
+         32   1F 0000119A _zwTZPEUPDD_CtrlDefOK@4
+         33   20 000011B3 _zwTZPEUPDD_DeleteActiveX_Event@4
+         34   21 000011B8 _zwTZPEUPDD_DeleteColor@4
+         35   22 00001087 _zwTZPEUPDD_DeleteColorOption@4
+         36   23 00001113 _zwTZPEUPDD_DeleteControlDef@4
+         37   24 0000101E _zwTZPEUPDD_DeleteConvertables@4
+         38   25 00001091 _zwTZPEUPDD_DeleteCtrlColor@4
+         39   26 000010EB _zwTZPEUPDD_DeleteCtrlEventDef@4
+         40   27 000011A4 _zwTZPEUPDD_DeleteCtrlFont@4
+         41   28 0000109B _zwTZPEUPDD_DeleteFont@4
+         42   29 0000100F _zwTZPEUPDD_DeleteFontOption@4
+         43   2A 00001122 _zwTZPEUPDD_DeleteMapDef@4
+         44   2B 00001186 _zwTZPEUPDD_DeletePresEnv@4
+         45   2C 0000124E _zwTZPEUPDD_DeleteSubobject@16
+         46   2D 00001181 _zwTZPEUPDD_DeleteValidChildren@4
+         47   2E 000010C8 _zwTZPEUPDD_DeleteValidParents@4
+         48   2F 000011EA _zwTZPEUPDD_DeleteWindowEvent@4
+         49   30 00001195 _zwTZPEUPDD_DeleteWindowStyle@4
+         50   31 000011E0 _zwTZPEUPDD_EnableCtrlForActiveX@4
+         51   32 000011BD _zwTZPEUPDD_ExitPresEnv@4
+         52   33 000010D2 _zwTZPEUPDD_FontOptionPostbuild@4
+         53   34 00001163 _zwTZPEUPDD_FontSetVisible@4
+         54   35 000011A9 _zwTZPEUPDD_GenerateCode@4
+         55   36 00001046 _zwTZPEUPDD_GenerateCodePostBuild@4
+         56   37 00001023 _zwTZPEUPDD_GrayOptions@4
+         57   38 00001253 _zwTZPEUPDD_InitPE_ForLPLR@4
+         58   39 0000103C _zwTZPEUPDD_LoadColorPopup@4
+         59   3A 00001082 _zwTZPEUPDD_LoadControlDefPopup@4
+         60   3B 00001172 _zwTZPEUPDD_LoadConvertablesPopup@4
+         61   3C 000010CD _zwTZPEUPDD_LoadCtrlColorPopup@4
+         62   3D 000010D7 _zwTZPEUPDD_LoadCtrlEventPopup@4
+         63   3E 00001217 _zwTZPEUPDD_LoadCtrlFontPopup@4
+         64   3F 0000105A _zwTZPEUPDD_LoadFontPopup@4
+         65   40 0000104B _zwTZPEUPDD_LoadMappingPopup@4
+         66   41 00001244 _zwTZPEUPDD_LoadPopup@24
+         67   42 0000119F _zwTZPEUPDD_LoadStyleColorsPopup@4
+         68   43 000010BE _zwTZPEUPDD_LoadStyleFontsPopup@4
+         69   44 00001118 _zwTZPEUPDD_LoadValidChildPopup@4
+         70   45 000011C2 _zwTZPEUPDD_LoadValidParentPopup@4
+         71   46 000011C7 _zwTZPEUPDD_LoadValidPopup@20
+         72   47 00001190 _zwTZPEUPDD_LoadWindowEventPopup@4
+         73   48 000011F9 _zwTZPEUPDD_LoadWindowStylePopup@4
+         74   49 00001032 _zwTZPEUPDD_MainRtnFromSubWnd@4
+         75   4A 000010B9 _zwTZPEUPDD_MapDefOK@4
+         76   4B 0000118B _zwTZPEUPDD_NextColorOption@4
+         77   4C 0000123A _zwTZPEUPDD_NextControlDef@4
+         78   4D 0000114F _zwTZPEUPDD_NextControlMapping@4
+         79   4E 00001127 _zwTZPEUPDD_NextCtrlColor@4
+         80   4F 000011D6 _zwTZPEUPDD_NextCtrlEventDef@4
+         81   50 00001019 _zwTZPEUPDD_NextCtrlFont@4
+         82   51 0000116D _zwTZPEUPDD_NextFontOption@4
+         83   52 00001037 _zwTZPEUPDD_NextWindowStyle@4
+         84   53 0000110E _zwTZPEUPDD_NextWindowStyleEvent@4
+         85   54 00001078 _zwTZPEUPDD_PreBuildPE@4
+         86   55 00001249 _zwTZPEUPDD_PrevColorOption@4
+         87   56 000010F0 _zwTZPEUPDD_PrevControlDef@4
+         88   57 0000121C _zwTZPEUPDD_PrevControlMapping@4
+         89   58 00001136 _zwTZPEUPDD_PrevCtrlColor@4
+         90   59 00001096 _zwTZPEUPDD_PrevCtrlEventDef@4
+         91   5A 0000120D _zwTZPEUPDD_PrevCtrlFont@4
+         92   5B 000010FF _zwTZPEUPDD_PrevFontOption@4
+         93   5C 0000108C _zwTZPEUPDD_PrevWindowStyle@4
+         94   5D 0000115E _zwTZPEUPDD_PrevWindowStyleEvent@4
+         95   5E 000010C3 _zwTZPEUPDD_PropertyAdd@4
+         96   5F 00001055 _zwTZPEUPDD_PropertyCancel@4
+         97   60 00001226 _zwTZPEUPDD_PropertyOK@4
+         98   61 00001154 _zwTZPEUPDD_PropertyUpdate@4
+         99   62 00001109 _zwTZPEUPDD_SaveActiveX_EventList@4
+        100   63 00001005 _zwTZPEUPDD_SavePresEnv@4
+        101   64 0000112C _zwTZPEUPDD_SelectConvertables@4
+        102   65 00001203 _zwTZPEUPDD_SelectValidChildren@4
+        103   66 000011D1 _zwTZPEUPDD_SelectValidParents@4
+        104   67 000010E6 _zwTZPEUPDD_SetActiveX_GUID@4
+        105   68 00001208 _zwTZPEUPDD_SetCursWndStyleEvent@8
+        106   69 000011F4 _zwTZPEUPDD_SetCursorColorOption@8
+        107   6A 00001230 _zwTZPEUPDD_SetCursorControlDef@8
+        108   6B 0000102D _zwTZPEUPDD_SetCursorControlMapp@8
+        109   6C 00001159 _zwTZPEUPDD_SetCursorCtrlColor@8
+        110   6D 000010AA _zwTZPEUPDD_SetCursorCtrlFont@8
+        111   6E 000010A0 _zwTZPEUPDD_SetCursorEventDef@8
+        112   6F 00001069 _zwTZPEUPDD_SetCursorFontOption@8
+        113   70 00001177 _zwTZPEUPDD_SetCursorWindowStyle@8
+        114   71 0000107D _zwTZPEUPDD_SetTitle@4
+        115   72 0000122B _zwTZPEUPDD_SwitchLPLR@4
+        116   73 00001131 _zwTZPEUPDD_UpdateColor@4
+        117   74 00001104 _zwTZPEUPDD_UpdateControlDef@4
+        118   75 0000113B _zwTZPEUPDD_UpdateFont@4
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        6000 .text

@@ -1,0 +1,72 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzedcmpd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzedcmpd.dll
+
+           0 characteristics
+    5356CF42 time date stamp Tue Apr 22 16:21:22 2014
+        0.00 version
+           1 ordinal base
+          44 number of functions
+          44 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001014 _BuildCompilerEntity@4
+          2    1 000010DC _CloseCompilerSpecification@4
+          3    2 000010C8 _CopyCompilerSpec@4
+          4    3 0000101E _CopyCompilerSpecification@4
+          5    4 00001005 _CreateMakeIncludeFile@12
+          6    5 000010C3 _DeleteCompilerSpec@4
+          7    6 0000100A _DeleteCompilerSpecification@4
+          8    7 00001078 _EditCompilerSpecification@4
+          9    8 0000100F _ExternalTargetCreateList@4
+         10    9 00001055 _ExternalTargetLibFile_AddNew@4
+         11    A 00001050 _ExternalTargetLibFile_Browse@4
+         12    B 000010E1 _ExternalTargetLibFile_Delete@4
+         13    C 00001073 _ExternalTargetLibFile_New@4
+         14    D 0000105A _ExternalTargetObjFile_AddNew@4
+         15    E 0000108C _ExternalTargetObjFile_Browse@4
+         16    F 00001037 _ExternalTargetObjFile_Delete@4
+         17   10 00001064 _ExternalTargetObjFile_New@4
+         18   11 000010EB _ExternalTargetPrebuild@4
+         19   12 000010A5 _ExternalTargetRebuildTargetList@4
+         20   13 000010F0 _ExternalTargetRefresh@4
+         21   14 000010CD _FindComponent@4
+         22   15 000010AA _GetCurrentPath@4
+         23   16 0000105F _GetCurrentPathPostBuild@4
+         24   17 00001091 _GetDLL_Instance@4
+         25   18 00001082 _IncludeFile_AddNew@4
+         26   19 0000107D _IncludeFile_Delete@4
+         27   1A 0000103C _IncludeFile_New@4
+         28   1B 00001046 _LibFile_AddNew@4
+         29   1C 00001069 _LibFile_Delete@4
+         30   1D 0000106E _LibFile_New@4
+         31   1E 000010E6 _MakeC_Target@4
+         32   1F 00001019 _MakeJavaTarget@4
+         33   20 000010BE _MakeTarget@8
+         34   21 00001023 _NewCompilerSpecification@4
+         35   22 00001041 _NextCompilerSpecification@4
+         36   23 000010AF _PostbuildTargetList@4
+         37   24 000010F5 _Prebuild_Init@4
+         38   25 000010D7 _PrevCompilerSpecification@4
+         39   26 000010D2 _RebuildTargetList@4
+         40   27 000010B9 _RefreshTargetList@4
+         41   28 00001087 _RetrieveCurrentCompileSpec@4
+         42   29 0000109B _SetCurrentCompilerSpec@4
+         43   2A 0000102D _SystemClose_Init@4
+         44   2B 000010A0 _VerifyCompilerSpecOptions@4
+
+  Summary
+
+        3000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        2000 .rsrc
+        A000 .text

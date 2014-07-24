@@ -1,0 +1,48 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzcmlpmd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzcmlpmd.dll
+
+           0 characteristics
+    5356CF3E time date stamp Tue Apr 22 16:21:18 2014
+        0.00 version
+           1 ordinal base
+          20 number of functions
+          20 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000100F _ActivateTZWDLCVO@4
+          2    1 00001032 _BuildTargetLPLR_List@4
+          3    2 00001037 _CleanUpVORs@4
+          4    3 00001064 _CommitTZWDLCVO@4
+          5    4 00001028 _ConvertTextInDialogs@4
+          6    5 0000103C _DialogCompareDataModels@4
+          7    6 0000102D _DropPPE_View@4
+          8    7 00001041 _GetDLL_Instance@4
+          9    8 00001023 _InitializeTZWDLCVO@4
+         10    9 00001014 _MergeSAsToER@4
+         11    A 00001069 _MigrateCompilerSubobjects@4
+         12    B 0000100A _MigrateMeta@4
+         13    C 0000105A _RefreshListBoxes@4
+         14    D 00001050 _SelectLPLR@4
+         15    E 0000104B _SelectLPLR_ForSAMerge@4
+         16    F 00001055 _SelectNewLanguageCode@4
+         17   10 0000101E _SetCheckoutState@4
+         18   11 00001005 _UpdateLanguageText@4
+         19   12 00001046 _oTZPESRCO_MergePPE@12
+         20   13 0000105F _oTZPESRCO_MigratePPE@12
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        A000 .text

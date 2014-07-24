@@ -1,0 +1,396 @@
+ ZWINSOCK
+
+ Timestamp is 5356cb64 (Tue Apr 22 16:04:52 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00004441H .text                   CODE
+ 0002:00000000 0000013eH .rdata                  DATA
+ 0002:00000140 000002abH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00001116H .data                   DATA
+ 0003:00001528 00000050H .bss                    DATA
+ 0004:00000000 00000064H .idata$2                DATA
+ 0004:00000064 00000014H .idata$3                DATA
+ 0004:00000078 00000278H .idata$4                DATA
+ 0004:000002f0 00000278H .idata$5                DATA
+ 0004:00000568 0000031fH .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:000000b0       ?fnShowError@@YAXPAD@Z     100010b0 f   ZWINSOCK.OBJ
+ 0001:0000051d       _zNetSend@20               1000151d f   ZWINSOCK.OBJ
+ 0001:000007b1       _zNetReceive@20            100017b1 f   ZWINSOCK.OBJ
+ 0001:00000b0b       _zNetOpenConnection@16     10001b0b f   ZWINSOCK.OBJ
+ 0001:00001118       _zNetCloseConnection@8     10002118 f   ZWINSOCK.OBJ
+ 0001:00001202       _fnProcessConnectionThreadProc@4 10002202 f   ZWINSOCK.OBJ
+ 0001:00001400       _fnListenThreadProc@4      10002400 f   ZWINSOCK.OBJ
+ 0001:000016ab       _zNetListen@12             100026ab f   ZWINSOCK.OBJ
+ 0001:0000172c       _zNetStopListen@8          1000272c f   ZWINSOCK.OBJ
+ 0001:00001832       _zNetGetHostAddress@20     10002832 f   ZWINSOCK.OBJ
+ 0001:000019c4       _zNetStart@8               100029c4 f   ZWINSOCK.OBJ
+ 0001:00001b51       _zNetClose@8               10002b51 f   ZWINSOCK.OBJ
+ 0001:00001bbe       _GetDirectoryList@8        10002bbe f   ZWINSOCK.OBJ
+ 0001:00001dc9       _CompareFiles@4            10002dc9 f   ZWINSOCK.OBJ
+ 0001:000022a4       __zCall_CompareFiles@8     100032a4 f   ZWINSOCK.OBJ
+ 0001:000022d8       _PerformApplicationUpdate@4 100032d8 f   ZWINSOCK.OBJ
+ 0001:00002eb8       _wsprintfA                 10003eb8 f   user32:USER32.dll
+ 0001:00002ebe       _ReleaseMutex@4            10003ebe f   kernel32:KERNEL32.dll
+ 0001:00002ec4       _WaitForSingleObject@8     10003ec4 f   kernel32:KERNEL32.dll
+ 0001:00002eca       _CreateMutexA@12           10003eca f   kernel32:KERNEL32.dll
+ 0001:00002ed0       _CloseHandle@4             10003ed0 f   kernel32:KERNEL32.dll
+ 0001:00002ed6       _Sleep@4                   10003ed6 f   kernel32:KERNEL32.dll
+ 0001:00002edc       _FindClose@4               10003edc f   kernel32:KERNEL32.dll
+ 0001:00002ee2       _FindNextFileA@8           10003ee2 f   kernel32:KERNEL32.dll
+ 0001:00002ee8       _FileTimeToSystemTime@8    10003ee8 f   kernel32:KERNEL32.dll
+ 0001:00002eee       _FindFirstFileA@8          10003eee f   kernel32:KERNEL32.dll
+ 0001:00002ef4       _TraceLineS@8              10003ef4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002efa       _TraceBuffer@12            10003efa f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f00       _TraceLineI@8              10003f00 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f06       _SysMessageBox@16          10003f06 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f0c       _NetGetTraceLevel@8        10003f0c f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f12       _SysGetTickCount@0         10003f12 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f18       _SysReadZeidonIni@16       10003f18 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f1e       _UnregisterZeidonApplication@4 10003f1e f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f24       _NetProcessMessage@12      10003f24 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f2a       _RegisterZeidonApplication@28 10003f2a f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f30       _SysGetPointerFromHandle@4 10003f30 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f36       _TraceLineX@8              10003f36 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f3c       _OrderEntityForView@12     10003f3c f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f42       _SetAttributeFromInteger@16 10003f42 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f48       _SetAttributeFromString@16 10003f48 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f4e       _SysAppendcDirSep@4        10003f4e f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f54       _GetStringFromAttribute@16 10003f54 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f5a       _SetAttributeFromAttribute@24 10003f5a f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f60       _CreateEntity@12           10003f60 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f66       _SfActivateSysEmptyOI@16   10003f66 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f6c       _DeleteEntity@12           10003f6c f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f72       _SetCursorFirstEntityByString@20 10003f72 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f78       _GetIntegerFromAttribute@16 10003f78 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f7e       _SetBlobFromFile@16        10003f7e f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f84       _CompareAttributeToAttribute@24 10003f84 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f8a       _SetMatchingAttributesByName@20 10003f8a f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f90       _SetCursorNextEntity@12    10003f90 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f96       _SetCursorFirstEntity@12   10003f96 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002f9c       _SetNameForView@16         10003f9c f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fa2       _GetViewByName@16          10003fa2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fa8       _SetCursorFirstEntityByAttr@28 10003fa8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fae       _SfActivateSysOI_FromFile@20 10003fae f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fb4       _SysGetEnvVar@12           10003fb4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fba       _DropView@4                10003fba f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fc0       _SysSetFileTime@12         10003fc0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fc6       _WriteBlobToFile@16        10003fc6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fcc       _NetCallOperation          10003fcc f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fd2       _GetAddrForAttribute@16    10003fd2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002fd8       _WSAGetLastError@0         10003fd8 f   wsock32:WSOCK32.dll
+ 0001:00002fde       _send@16                   10003fde f   wsock32:WSOCK32.dll
+ 0001:00002fe4       _recv@16                   10003fe4 f   wsock32:WSOCK32.dll
+ 0001:00002fea       _closesocket@4             10003fea f   wsock32:WSOCK32.dll
+ 0001:00002ff0       _connect@12                10003ff0 f   wsock32:WSOCK32.dll
+ 0001:00002ff6       _htons@4                   10003ff6 f   wsock32:WSOCK32.dll
+ 0001:00002ffc       _gethostbyname@4           10003ffc f   wsock32:WSOCK32.dll
+ 0001:00003002       _ioctlsocket@12            10004002 f   wsock32:WSOCK32.dll
+ 0001:00003008       _socket@12                 10004008 f   wsock32:WSOCK32.dll
+ 0001:0000300e       _accept@12                 1000400e f   wsock32:WSOCK32.dll
+ 0001:00003014       _listen@8                  10004014 f   wsock32:WSOCK32.dll
+ 0001:0000301a       _bind@12                   1000401a f   wsock32:WSOCK32.dll
+ 0001:00003020       _gethostname@8             10004020 f   wsock32:WSOCK32.dll
+ 0001:00003026       _gethostbyaddr@12          10004026 f   wsock32:WSOCK32.dll
+ 0001:0000302c       _getpeername@12            1000402c f   wsock32:WSOCK32.dll
+ 0001:00003032       _WSACleanup@0              10004032 f   wsock32:WSOCK32.dll
+ 0001:00003038       _WSAStartup@8              10004038 f   wsock32:WSOCK32.dll
+ 0001:0000303e       _memcpy                    1000403e f   MSVCRTD:MSVCRTD.dll
+ 0001:00003044       _free                      10004044 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000304a       _malloc                    1000404a f   MSVCRTD:MSVCRTD.dll
+ 0001:00003050       _strlen                    10004050 f   MSVCRTD:MSVCRTD.dll
+ 0001:00003056       _sprintf                   10004056 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000305c       _atol                      1000405c f   MSVCRTD:MSVCRTD.dll
+ 0001:00003062       _strchr                    10004062 f   MSVCRTD:MSVCRTD.dll
+ 0001:00003068       _strcpy                    10004068 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000306e       _calloc                    1000406e f   MSVCRTD:MSVCRTD.dll
+ 0001:00003080       _atoi                      10004080 f   MSVCRTD:MSVCRTD.dll
+ 0001:00003086       ??3@YAXPAX@Z               10004086 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000308c       __beginthreadex            1000408c f   MSVCRTD:MSVCRTD.dll
+ 0001:00003092       ??2@YAPAXI@Z               10004092 f   MSVCRTD:MSVCRTD.dll
+ 0001:00003098       _strcat                    10004098 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000309e       __stricmp                  1000409e f   MSVCRTD:MSVCRTD.dll
+ 0001:000030b0       __CRT_INIT@12              100040b0 f   MSVCRTD:crtdll.obj
+ 0001:000031c0       __DllMainCRTStartup@12     100041c0 f   MSVCRTD:crtdll.obj
+ 0001:000032b4       __free_dbg                 100042b4 f   MSVCRTD:MSVCRTD.dll
+ 0001:000032ba       __initterm                 100042ba f   MSVCRTD:MSVCRTD.dll
+ 0001:000032c0       __onexit                   100042c0 f   MSVCRTD:atonexit.obj
+ 0001:00003300       _atexit                    10004300 f   MSVCRTD:atonexit.obj
+ 0001:00003318       __malloc_dbg               10004318 f   MSVCRTD:MSVCRTD.dll
+ 0001:00003320       _DllMain@12                10004320 f   MSVCRTD:dllmain.obj
+ 0001:00003346       ___dllonexit               10004346 f   MSVCRTD:MSVCRTD.dll
+ 0001:0000334c       _DisableThreadLibraryCalls@4 1000434c f   kernel32:KERNEL32.dll
+ 0002:00000020       __real@8@4008fa00000000000000 10006020     ZWINSOCK.OBJ
+ 0002:0000002c       ??_C@_08JKC@crtdll?4c?$AA@ 1000602c     MSVCRTD:crtdll.obj
+ 0003:00000000       ___xc_a                    10007000     MSVCRTD:cinitexe.obj
+ 0003:00000104       ___xc_z                    10007104     MSVCRTD:cinitexe.obj
+ 0003:00000208       ___xi_a                    10007208     MSVCRTD:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000730c     MSVCRTD:cinitexe.obj
+ 0003:00000410       ?szlErrorTitle@@3PADA      10007410     ZWINSOCK.OBJ
+ 0003:00000420       _g_nApplPort               10007420     ZWINSOCK.OBJ
+ 0003:00000422       _g_nListenPort             10007422     ZWINSOCK.OBJ
+ 0003:00000428       ??_C@_0DA@BAAC@?$CIzwinsock?$CJ?5Unknown?5WinSock?5error@ 10007428     ZWINSOCK.OBJ
+ 0003:00000464       ??_C@_0CL@BOGL@?$CIzwinsock?$CJ?5WinSock?5error?5Func?5?$DN?5@ 10007464     ZWINSOCK.OBJ
+ 0003:00000498       ??_C@_0BC@HCBF@WSANOTINITIALISED?$AA@ 10007498     ZWINSOCK.OBJ
+ 0003:000004b0       ??_C@_0BD@PKID@WSAVERNOTSUPPORTED?$AA@ 100074b0     ZWINSOCK.OBJ
+ 0003:000004c8       ??_C@_0P@BMGD@WSASYSNOTREADY?$AA@ 100074c8     ZWINSOCK.OBJ
+ 0003:000004dc       ??_C@_0L@ELPL@WSAEREMOTE?$AA@ 100074dc     ZWINSOCK.OBJ
+ 0003:000004ec       ??_C@_09MAPE@WSAESTALE?$AA@ 100074ec     ZWINSOCK.OBJ
+ 0003:000004f8       ??_C@_09EDGJ@WSAEDQUOT?$AA@ 100074f8     ZWINSOCK.OBJ
+ 0003:00000504       ??_C@_09EMMP@WSAEUSERS?$AA@ 10007504     ZWINSOCK.OBJ
+ 0003:00000510       ??_C@_0M@JCAC@WSAEPROCLIM?$AA@ 10007510     ZWINSOCK.OBJ
+ 0003:00000520       ??_C@_0N@BKLD@WSAENOTEMPTY?$AA@ 10007520     ZWINSOCK.OBJ
+ 0003:00000530       ??_C@_0BA@GDKP@WSAEHOSTUNREACH?$AA@ 10007530     ZWINSOCK.OBJ
+ 0003:00000544       ??_C@_0N@CHFC@WSAEHOSTDOWN?$AA@ 10007544     ZWINSOCK.OBJ
+ 0003:00000554       ??_C@_0BA@CAFH@WSAENAMETOOLONG?$AA@ 10007554     ZWINSOCK.OBJ
+ 0003:00000568       ??_C@_08KIHD@WSAELOOP?$AA@ 10007568     ZWINSOCK.OBJ
+ 0003:00000574       ??_C@_0BA@KHJO@WSAECONNREFUSED?$AA@ 10007574     ZWINSOCK.OBJ
+ 0003:00000588       ??_C@_0N@IOAI@WSAETIMEDOUT?$AA@ 10007588     ZWINSOCK.OBJ
+ 0003:00000598       ??_C@_0BA@JKLP@WSAETOOMANYREFS?$AA@ 10007598     ZWINSOCK.OBJ
+ 0003:000005ac       ??_C@_0N@IIJE@WSAESHUTDOWN?$AA@ 100075ac     ZWINSOCK.OBJ
+ 0003:000005bc       ??_C@_0M@FHGM@WSAENOTCONN?$AA@ 100075bc     ZWINSOCK.OBJ
+ 0003:000005cc       ??_C@_0L@GMEH@WSAEISCONN?$AA@ 100075cc     ZWINSOCK.OBJ
+ 0003:000005dc       ??_C@_0L@HPDK@WSAENOBUFS?$AA@ 100075dc     ZWINSOCK.OBJ
+ 0003:000005ec       ??_C@_0O@LFGK@WSAECONNRESET?$AA@ 100075ec     ZWINSOCK.OBJ
+ 0003:000005fc       ??_C@_0BA@DAMK@WSAECONNABORTED?$AA@ 100075fc     ZWINSOCK.OBJ
+ 0003:00000610       ??_C@_0N@KFEB@WSAENETRESET?$AA@ 10007610     ZWINSOCK.OBJ
+ 0003:00000620       ??_C@_0P@BMAL@WSAENETUNREACH?$AA@ 10007620     ZWINSOCK.OBJ
+ 0003:00000634       ??_C@_0M@OCME@WSAENETDOWN?$AA@ 10007634     ZWINSOCK.OBJ
+ 0003:00000644       ??_C@_0BB@CAPK@WSAEADDRNOTAVAIL?$AA@ 10007644     ZWINSOCK.OBJ
+ 0003:00000658       ??_C@_0O@HEEI@WSAEADDRINUSE?$AA@ 10007658     ZWINSOCK.OBJ
+ 0003:00000668       ??_C@_0BA@JGHB@WSAEAFNOSUPPORT?$AA@ 10007668     ZWINSOCK.OBJ
+ 0003:0000067c       ??_C@_0BA@NEAC@WSAEPFNOSUPPORT?$AA@ 1000767c     ZWINSOCK.OBJ
+ 0003:00000690       ??_C@_0O@CKGP@WSAEOPNOTSUPP?$AA@ 10007690     ZWINSOCK.OBJ
+ 0003:000006a0       ??_C@_0BD@BHGL@WSAESOCKTNOSUPPORT?$AA@ 100076a0     ZWINSOCK.OBJ
+ 0003:000006b8       ??_C@_0BD@NNFA@WSAEPROTONOSUPPORT?$AA@ 100076b8     ZWINSOCK.OBJ
+ 0003:000006d0       ??_C@_0P@CMMD@WSAENOPROTOOPT?$AA@ 100076d0     ZWINSOCK.OBJ
+ 0003:000006e4       ??_C@_0O@MMIF@WSAEPROTOTYPE?$AA@ 100076e4     ZWINSOCK.OBJ
+ 0003:000006f4       ??_C@_0M@EFDP@WSAEMSGSIZE?$AA@ 100076f4     ZWINSOCK.OBJ
+ 0003:00000704       ??_C@_0BA@LDNB@WSAEDESTADDRREQ?$AA@ 10007704     ZWINSOCK.OBJ
+ 0003:00000718       ??_C@_0M@PLNC@WSAENOTSOCK?$AA@ 10007718     ZWINSOCK.OBJ
+ 0003:00000728       ??_C@_0M@FDKM@WSAEALREADY?$AA@ 10007728     ZWINSOCK.OBJ
+ 0003:00000738       ??_C@_0P@DGNH@WSAEINPROGRESS?$AA@ 10007738     ZWINSOCK.OBJ
+ 0003:0000074c       ??_C@_0P@HEMP@WSAEWOULDBLOCK?$AA@ 1000774c     ZWINSOCK.OBJ
+ 0003:00000760       ??_C@_09IMGE@WSAEMFILE?$AA@ 10007760     ZWINSOCK.OBJ
+ 0003:0000076c       ??_C@_09COKE@WSAEINVAL?$AA@ 1000776c     ZWINSOCK.OBJ
+ 0003:00000778       ??_C@_09GNPN@WSAEFAULT?$AA@ 10007778     ZWINSOCK.OBJ
+ 0003:00000784       ??_C@_09HMKF@WSAEACCES?$AA@ 10007784     ZWINSOCK.OBJ
+ 0003:00000790       ??_C@_08PJGE@WSAEBADF?$AA@ 10007790     ZWINSOCK.OBJ
+ 0003:0000079c       ??_C@_08PLFD@WSAEINTR?$AA@ 1000779c     ZWINSOCK.OBJ
+ 0003:000007a8       ??_C@_0CH@ILFB@?$CIzwinsock?$CJ?5Adding?5bytes?5to?5send?5@ 100077a8     ZWINSOCK.OBJ
+ 0003:000007d8       ??_C@_0CO@LLBN@?$CIzwinsock?$CJ?5Sending?5incoming?5buff@ 100077d8     ZWINSOCK.OBJ
+ 0003:00000810       ??_C@_0CA@PJII@?$CIzwinsock?$CJ?5Bytes?5sent?5for?5send?5?$AA@ 10007810     ZWINSOCK.OBJ
+ 0003:00000838       ??_C@_04PJAD@send?$AA@     10007838     ZWINSOCK.OBJ
+ 0003:00000840       ??_C@_0BK@EAKH@?$CIzwinsock?$CJ?5send?5?9?9?5Error?$CB?$AA@ 10007840     ZWINSOCK.OBJ
+ 0003:00000860       ??_C@_0L@BHID@?$CIzwinsock?$CJ?$AA@ 10007860     ZWINSOCK.OBJ
+ 0003:00000870       ??_C@_0CF@GOKI@?$CIzwinsock?$CJ?5Sending?5buffer?5of?5len@ 10007870     ZWINSOCK.OBJ
+ 0003:0000089c       ??_C@_0CD@ENDI@?$CIzwinsock?$CJ?5Total?5bytes?5received?5@ 1000789c     ZWINSOCK.OBJ
+ 0003:000008c8       ??_C@_0BP@CEPC@?$CIzwinsock?$CJ?5zNetSend?5?9?9?5uLth?5?$DN?5?$AA@ 100078c8     ZWINSOCK.OBJ
+ 0003:000008f0       ??_C@_0DB@HDJN@?$CIzwinsock?$CJ?5Buffer?5still?5doens?8t?5@ 100078f0     ZWINSOCK.OBJ
+ 0003:0000092c       ??_C@_0BP@LKJJ@?$CIzwinsock?$CJ?5Tracing?5buffer?5?4?4?4?5?$AA@ 1000792c     ZWINSOCK.OBJ
+ 0003:00000954       ??_C@_0BJ@CDMN@?$CIzwinsock?$CJ?5Bytes?5read?5?$DN?5?$AA@ 10007954     ZWINSOCK.OBJ
+ 0003:00000974       ??_C@_0DB@EPNP@?$CIzwinsock?$CJ?5Error?5trying?5to?5exten@ 10007974     ZWINSOCK.OBJ
+ 0003:000009b0       ??_C@_04NJFL@recv?$AA@     100079b0     ZWINSOCK.OBJ
+ 0003:000009b8       ??_C@_0O@MNOP@Out?5of?5memory?$AA@ 100079b8     ZWINSOCK.OBJ
+ 0003:000009c8       ??_C@_0CE@EBL@?$CIzwinsock?$CJ?5Allocating?5bigger?5buf@ 100079c8     ZWINSOCK.OBJ
+ 0003:000009f4       ??_C@_0DA@CFAO@?$CIzwinsock?$CJ?5Trying?5to?5consolidate@ 100079f4     ZWINSOCK.OBJ
+ 0003:00000a30       ??_C@_0BP@MHKI@?$CIzwinsock?$CJ?5Total?5bytes?5sent?5?$DN?5?$AA@ 10007a30     ZWINSOCK.OBJ
+ 0003:00000a58       ??_C@_0CA@PABN@?$CIzwinsock?$CJ?5Flushing?5send?5buffer?$AA@ 10007a58     ZWINSOCK.OBJ
+ 0003:00000a80       ??_C@_0CC@JAKC@?$CIzwinsock?$CJ?5zNetReceive?5?9?9?5uLth?5?$DN@ 10007a80     ZWINSOCK.OBJ
+ 0003:00000aa8       ??_C@_0CG@POCG@?$CIzwinsock?$CJ?5Connection?5to?5server?5@ 10007aa8     ZWINSOCK.OBJ
+ 0003:00000ad8       ??_C@_08GPBK@zWinSock?$AA@ 10007ad8     ZWINSOCK.OBJ
+ 0003:00000ae4       ??_C@_0IE@JLHI@Connection?5to?5server?5?8?$CFs?8?5failed@ 10007ae4     ZWINSOCK.OBJ
+ 0003:00000b84       ??_C@_07DHIJ@connect?$AA@  10007b84     ZWINSOCK.OBJ
+ 0003:00000b90       ??_C@_0CC@ELKH@?$CIzWinSock?$CJ?5WARNING?5connect?$CI?$CJ?5for@ 10007b90     ZWINSOCK.OBJ
+ 0003:00000bb8       ??_C@_0HH@CDEA@Couldn?8t?5resolve?5network?5address@ 10007bb8     ZWINSOCK.OBJ
+ 0003:00000c48       ??_C@_0O@BLIP@gethostbyname?$AA@ 10007c48     ZWINSOCK.OBJ
+ 0003:00000c58       ??_C@_0CI@JKFE@?$CIzWinSock?$CJ?5WARNING?5gethostbyname@ 10007c58     ZWINSOCK.OBJ
+ 0003:00000c88       ??_C@_0BF@BHE@?$CFs?5took?5?$CFlf?5seconds?4?$AA@ 10007c88     ZWINSOCK.OBJ
+ 0003:00000ca4       ??_C@_0BF@LEIK@ioctlsocket?$CI?$CJ?5failed?$AA@ 10007ca4     ZWINSOCK.OBJ
+ 0003:00000cc0       ??_C@_0M@LOFA@ioctlsocket?$AA@ 10007cc0     ZWINSOCK.OBJ
+ 0003:00000cd0       ??_C@_0BA@HGG@socket?$CI?$CJ?5failed?$AA@ 10007cd0     ZWINSOCK.OBJ
+ 0003:00000ce4       ??_C@_06KDPK@socket?$AA@   10007ce4     ZWINSOCK.OBJ
+ 0003:00000cec       ??_C@_0L@IGEO@?$FLzWinSock?$FN?$AA@ 10007cec     ZWINSOCK.OBJ
+ 0003:00000cfc       ??_C@_08PDEL@ApplPort?$AA@ 10007cfc     ZWINSOCK.OBJ
+ 0003:00000d08       ??_C@_0M@BGOH@closesocket?$AA@ 10007d08     ZWINSOCK.OBJ
+ 0003:00000d18       ??_C@_0CN@JPKP@?$CIzwinsock?$CJ?5A?5message?5has?5been?5re@ 10007d18     ZWINSOCK.OBJ
+ 0003:00000d50       ??_C@_0BB@LFCK@?2?2Zeidon?5System?2?$AA@ 10007d50     ZWINSOCK.OBJ
+ 0003:00000d64       ??_C@_0BD@ODND@WINSOCK_WORKAROUND?$AA@ 10007d64     ZWINSOCK.OBJ
+ 0003:00000d7c       ??_C@_0BB@BIOA@SyncServerAccess?$AA@ 10007d7c     ZWINSOCK.OBJ
+ 0003:00000d90       ??_C@_0BP@JNNA@accept?$CIsock?$CJ?5failed?5for?5listen?$AA@ 10007d90     ZWINSOCK.OBJ
+ 0003:00000db8       ??_C@_06JGM@accept?$AA@    10007db8     ZWINSOCK.OBJ
+ 0003:00000dc0       ??_C@_0DA@DDGE@fnListenThreadProc?5trying?5to?5clo@ 10007dc0     ZWINSOCK.OBJ
+ 0003:00000dfc       ??_C@_0CN@KLFH@?$CIzWinSock?$CJ?5Waiting?5for?5client?5co@ 10007dfc     ZWINSOCK.OBJ
+ 0003:00000e34       ??_C@_0BA@IPOC@listen?$CI?$CJ?5failed?$AA@ 10007e34     ZWINSOCK.OBJ
+ 0003:00000e48       ??_C@_06IODP@listen?$AA@   10007e48     ZWINSOCK.OBJ
+ 0003:00000e50       ??_C@_0O@PGKE@bind?$CI?$CJ?5failed?$AA@ 10007e50     ZWINSOCK.OBJ
+ 0003:00000e60       ??_C@_04FBJP@bind?$AA@     10007e60     ZWINSOCK.OBJ
+ 0003:00000e68       ??_C@_0L@DNJN@ListenPort?$AA@ 10007e68     ZWINSOCK.OBJ
+ 0003:00000e78       ??_C@_0BK@BAFL@?$CIzwinsock?$CJ?5Listen?5stopped?$AA@ 10007e78     ZWINSOCK.OBJ
+ 0003:00000e98       ??_C@_0DH@IIDH@NetStopListen?5wait?5for?5socket?5to@ 10007e98     ZWINSOCK.OBJ
+ 0003:00000edc       ??_C@_0CN@ENIM@?$CIzwinsock?$CJ?5Error?5shutting?5down?5l@ 10007edc     ZWINSOCK.OBJ
+ 0003:00000f14       ??_C@_0BN@LIOO@?$CIzwinsock?$CJ?5No?5Listen?5socket?$CB?$AA@ 10007f14     ZWINSOCK.OBJ
+ 0003:00000f38       ??_C@_0BL@GKON@?$CIzwinsock?$CJ?5Stopping?5listen?$AA@ 10007f38     ZWINSOCK.OBJ
+ 0003:00000f58       ??_C@_0CB@GPA@?$CIzwinsock?$CJ?5Local?5host?5address?5?$DN?5@ 10007f58     ZWINSOCK.OBJ
+ 0003:00000f80       ??_C@_0BH@BEDG@gethostbyaddr?$CI?$CJ?5failed?$AA@ 10007f80     ZWINSOCK.OBJ
+ 0003:00000f9c       ??_C@_0O@IOIG@gethostbyaddr?$AA@ 10007f9c     ZWINSOCK.OBJ
+ 0003:00000fac       ??_C@_0BF@GJMF@getpeername?$CI?$CJ?5failed?$AA@ 10007fac     ZWINSOCK.OBJ
+ 0003:00000fc8       ??_C@_0M@PJMM@getpeername?$AA@ 10007fc8     ZWINSOCK.OBJ
+ 0003:00000fd8       ??_C@_0CH@OIJA@?$CIzwinsock?$CJ?5Getting?5local?5host?5ad@ 10007fd8     ZWINSOCK.OBJ
+ 0003:00001008       ??_C@_0CE@PEIO@Out?5of?5memory?5starting?5network?5?8@ 10008008     ZWINSOCK.OBJ
+ 0003:00001034       ??_C@_0CC@NMMM@?$CIzwinsock?$CJ?5Max?5UPD?5datagram?5?5?5?5?$DN@ 10008034     ZWINSOCK.OBJ
+ 0003:0000105c       ??_C@_0CC@BDKG@?$CIzwinsock?$CJ?5Max?5sockets?5?5?5?5?5?5?5?5?5?$DN@ 1000805c     ZWINSOCK.OBJ
+ 0003:00001084       ??_C@_0CC@OHKN@?$CIzwinsock?$CJ?5System?5status?5?5?5?5?5?5?5?$DN@ 10008084     ZWINSOCK.OBJ
+ 0003:000010ac       ??_C@_0CC@KOGD@?$CIzwinsock?$CJ?5WinSock?5Description?5?$DN@ 100080ac     ZWINSOCK.OBJ
+ 0003:000010d4       ??_C@_0CC@GEAN@?$CIzwinsock?$CJ?5WinSock?5HighVersion?5?$DN@ 100080d4     ZWINSOCK.OBJ
+ 0003:000010fc       ??_C@_0CC@KNMK@?$CIzwinsock?$CJ?5WinSock?5Version?5?5?5?5?5?$DN@ 100080fc     ZWINSOCK.OBJ
+ 0003:00001124       ??_C@_0CD@JNBC@Error?5loading?5starting?5WinSock?3?5@ 10008124     ZWINSOCK.OBJ
+ 0003:00001150       ??_C@_0CK@EMAI@?$CIzwinsock?$CJ?5Shutting?5down?5network@ 10008150     ZWINSOCK.OBJ
+ 0003:00001184       ??_C@_08INFO@FileSize?$AA@ 10008184     ZWINSOCK.OBJ
+ 0003:00001190       ??_C@_07LNLK@ModDate?$AA@  10008190     ZWINSOCK.OBJ
+ 0003:0000119c       ??_C@_0BJ@DKAG@?$CFd?$CF02d?$CF02d?$CF02d?$CF02d?$CF02d?$CFd?$AA@ 1000819c     ZWINSOCK.OBJ
+ 0003:000011bc       ??_C@_08NJLM@FileName?$AA@ 100081bc     ZWINSOCK.OBJ
+ 0003:000011c8       ??_C@_04OJFH@File?$AA@     100081c8     ZWINSOCK.OBJ
+ 0003:000011d0       ??_C@_01FDHG@?$CK?$AA@     100081d0     ZWINSOCK.OBJ
+ 0003:000011d4       ??_C@_0L@GHPH@APP_ADOBIN?$AA@ 100081d4     ZWINSOCK.OBJ
+ 0003:000011e4       ??_C@_0BA@FCJM@ApplicationName?$AA@ 100081e4     ZWINSOCK.OBJ
+ 0003:000011f8       ??_C@_0M@LKKI@APPLICATION?$AA@ 100081f8     ZWINSOCK.OBJ
+ 0003:00001208       ??_C@_08NHNM@APP_NAME?$AA@ 10008208     ZWINSOCK.OBJ
+ 0003:00001214       ??_C@_08LFLP@KZFXFERO?$AA@ 10008214     ZWINSOCK.OBJ
+ 0003:00001220       ??_C@_04EGOH@Data?$AA@     10008220     ZWINSOCK.OBJ
+ 0003:00001228       ??_C@_07MIME@Updated?$AA@  10008228     ZWINSOCK.OBJ
+ 0003:00001234       ??_C@_01PCJP@Y?$AA@        10008234     ZWINSOCK.OBJ
+ 0003:00001238       ??_C@_0BG@DMEC@_ExecutableSourceList?$AA@ 10008238     ZWINSOCK.OBJ
+ 0003:00001254       ??_C@_0CI@PKND@Performing?5Application?5Update?5fo@ 10008254     ZWINSOCK.OBJ
+ 0003:00001284       ??_C@_0BB@GEOD@MaxTotalFileSize?$AA@ 10008284     ZWINSOCK.OBJ
+ 0003:00001298       ??_C@_0BJ@KHCK@Application?5Update?5Error?$AA@ 10008298     ZWINSOCK.OBJ
+ 0003:000012b8       ??_C@_0CB@EELN@Error?3?5Couldn?8t?5find?5application@ 100082b8     ZWINSOCK.OBJ
+ 0003:000012e0       ??_C@_08IHGG@KZAPPLOO?$AA@ 100082e0     ZWINSOCK.OBJ
+ 0003:000012ec       ??_C@_0L@IIHF@ZEIDON?4APP?$AA@ 100082ec     ZWINSOCK.OBJ
+ 0003:000012fc       ??_C@_06HLLH@ZEIDON?$AA@   100082fc     ZWINSOCK.OBJ
+ 0003:00001304       ??_C@_09GMMJ@Operation?$AA@ 10008304     ZWINSOCK.OBJ
+ 0003:00001310       ??_C@_0M@BKKK@ReturnValue?$AA@ 10008310     ZWINSOCK.OBJ
+ 0003:00001320       ??_C@_0L@IOMJ@FileName?3?5?$AA@ 10008320     ZWINSOCK.OBJ
+ 0003:00001330       ??_C@_0CO@HHPG@?$DN?$DN?$DN?$DN?$DN?5Files?5that?5being?5downloade@ 10008330     ZWINSOCK.OBJ
+ 0003:00001368       ??_C@_0N@OJBC@CompareFiles?$AA@ 10008368     ZWINSOCK.OBJ
+ 0003:00001378       ??_C@_03BPPE@NpV?$AA@      10008378     ZWINSOCK.OBJ
+ 0003:0000137c       ??_C@_0CI@ECNA@Performing?5application?5update?5fo@ 1000837c     ZWINSOCK.OBJ
+ 0003:000013ac       ??_C@_0N@FJNC@SourceServer?$AA@ 100083ac     ZWINSOCK.OBJ
+ 0003:00001528       ?g_hListenThread@@3KA      10008528     ZWINSOCK.OBJ
+ 0003:0000152c       ?g_dwListenThreadID@@3IA   1000852c     ZWINSOCK.OBJ
+ 0003:00001530       ?g_bListenThreadStarted@@3EA 10008530     ZWINSOCK.OBJ
+ 0003:00001531       ?g_bClosingListenSocket@@3EA 10008531     ZWINSOCK.OBJ
+ 0003:00001544       ??_C@_00A@?$AA@            10008544     ZWINSOCK.OBJ
+ 0003:0000154c       __adjust_fdiv              1000854c     <common>
+ 0003:00001558       ___onexitend               10008558     <common>
+ 0003:00001568       ___onexitbegin             10008568     <common>
+ 0003:0000156c       __pRawDllMain              1000856c     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_USER32 10009000     user32:USER32.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KERNEL32 10009014     kernel32:KERNEL32.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_KZOENGAA 10009028     kzoengaa:KZOENGAA.DLL
+ 0004:0000003c       __IMPORT_DESCRIPTOR_WSOCK32 1000903c     wsock32:WSOCK32.dll
+ 0004:00000050       __IMPORT_DESCRIPTOR_MSVCRTD 10009050     MSVCRTD:MSVCRTD.dll
+ 0004:00000064       __NULL_IMPORT_DESCRIPTOR   10009064     user32:USER32.dll
+ 0004:000002f0       __imp__DisableThreadLibraryCalls@4 100092f0     kernel32:KERNEL32.dll
+ 0004:000002f4       __imp__FindFirstFileA@8    100092f4     kernel32:KERNEL32.dll
+ 0004:000002f8       __imp__ReleaseMutex@4      100092f8     kernel32:KERNEL32.dll
+ 0004:000002fc       __imp__WaitForSingleObject@8 100092fc     kernel32:KERNEL32.dll
+ 0004:00000300       __imp__CreateMutexA@12     10009300     kernel32:KERNEL32.dll
+ 0004:00000304       __imp__CloseHandle@4       10009304     kernel32:KERNEL32.dll
+ 0004:00000308       __imp__Sleep@4             10009308     kernel32:KERNEL32.dll
+ 0004:0000030c       __imp__FindClose@4         1000930c     kernel32:KERNEL32.dll
+ 0004:00000310       __imp__FindNextFileA@8     10009310     kernel32:KERNEL32.dll
+ 0004:00000314       __imp__FileTimeToSystemTime@8 10009314     kernel32:KERNEL32.dll
+ 0004:00000318       \177KERNEL32_NULL_THUNK_DATA 10009318     kernel32:KERNEL32.dll
+ 0004:0000034c       __imp__TraceLineS@8        1000934c     kzoengaa:KZOENGAA.DLL
+ 0004:00000350       __imp__TraceBuffer@12      10009350     kzoengaa:KZOENGAA.DLL
+ 0004:00000354       __imp__TraceLineI@8        10009354     kzoengaa:KZOENGAA.DLL
+ 0004:00000358       __imp__SysMessageBox@16    10009358     kzoengaa:KZOENGAA.DLL
+ 0004:0000035c       __imp__NetGetTraceLevel@8  1000935c     kzoengaa:KZOENGAA.DLL
+ 0004:00000360       __imp__SysGetTickCount@0   10009360     kzoengaa:KZOENGAA.DLL
+ 0004:00000364       __imp__SysReadZeidonIni@16 10009364     kzoengaa:KZOENGAA.DLL
+ 0004:00000368       __imp__UnregisterZeidonApplication@4 10009368     kzoengaa:KZOENGAA.DLL
+ 0004:0000036c       __imp__NetProcessMessage@12 1000936c     kzoengaa:KZOENGAA.DLL
+ 0004:00000370       __imp__RegisterZeidonApplication@28 10009370     kzoengaa:KZOENGAA.DLL
+ 0004:00000374       __imp__SysGetPointerFromHandle@4 10009374     kzoengaa:KZOENGAA.DLL
+ 0004:00000378       __imp__TraceLineX@8        10009378     kzoengaa:KZOENGAA.DLL
+ 0004:0000037c       __imp__OrderEntityForView@12 1000937c     kzoengaa:KZOENGAA.DLL
+ 0004:00000380       __imp__SetAttributeFromInteger@16 10009380     kzoengaa:KZOENGAA.DLL
+ 0004:00000384       __imp__SetAttributeFromString@16 10009384     kzoengaa:KZOENGAA.DLL
+ 0004:00000388       __imp__SysAppendcDirSep@4  10009388     kzoengaa:KZOENGAA.DLL
+ 0004:0000038c       __imp__GetStringFromAttribute@16 1000938c     kzoengaa:KZOENGAA.DLL
+ 0004:00000390       __imp__SetAttributeFromAttribute@24 10009390     kzoengaa:KZOENGAA.DLL
+ 0004:00000394       __imp__CreateEntity@12     10009394     kzoengaa:KZOENGAA.DLL
+ 0004:00000398       __imp__SfActivateSysEmptyOI@16 10009398     kzoengaa:KZOENGAA.DLL
+ 0004:0000039c       __imp__DeleteEntity@12     1000939c     kzoengaa:KZOENGAA.DLL
+ 0004:000003a0       __imp__SetCursorFirstEntityByString@20 100093a0     kzoengaa:KZOENGAA.DLL
+ 0004:000003a4       __imp__GetIntegerFromAttribute@16 100093a4     kzoengaa:KZOENGAA.DLL
+ 0004:000003a8       __imp__SetBlobFromFile@16  100093a8     kzoengaa:KZOENGAA.DLL
+ 0004:000003ac       __imp__CompareAttributeToAttribute@24 100093ac     kzoengaa:KZOENGAA.DLL
+ 0004:000003b0       __imp__SetMatchingAttributesByName@20 100093b0     kzoengaa:KZOENGAA.DLL
+ 0004:000003b4       __imp__SetCursorNextEntity@12 100093b4     kzoengaa:KZOENGAA.DLL
+ 0004:000003b8       __imp__SetCursorFirstEntity@12 100093b8     kzoengaa:KZOENGAA.DLL
+ 0004:000003bc       __imp__SetNameForView@16   100093bc     kzoengaa:KZOENGAA.DLL
+ 0004:000003c0       __imp__GetViewByName@16    100093c0     kzoengaa:KZOENGAA.DLL
+ 0004:000003c4       __imp__SetCursorFirstEntityByAttr@28 100093c4     kzoengaa:KZOENGAA.DLL
+ 0004:000003c8       __imp__SfActivateSysOI_FromFile@20 100093c8     kzoengaa:KZOENGAA.DLL
+ 0004:000003cc       __imp__SysGetEnvVar@12     100093cc     kzoengaa:KZOENGAA.DLL
+ 0004:000003d0       __imp__DropView@4          100093d0     kzoengaa:KZOENGAA.DLL
+ 0004:000003d4       __imp__SysSetFileTime@12   100093d4     kzoengaa:KZOENGAA.DLL
+ 0004:000003d8       __imp__WriteBlobToFile@16  100093d8     kzoengaa:KZOENGAA.DLL
+ 0004:000003dc       __imp__NetCallOperation    100093dc     kzoengaa:KZOENGAA.DLL
+ 0004:000003e0       __imp__GetAddrForAttribute@16 100093e0     kzoengaa:KZOENGAA.DLL
+ 0004:000003e4       \177KZOENGAA_NULL_THUNK_DATA 100093e4     kzoengaa:KZOENGAA.DLL
+ 0004:0000042c       __imp__malloc              1000942c     MSVCRTD:MSVCRTD.dll
+ 0004:00000430       __imp___onexit             10009430     MSVCRTD:MSVCRTD.dll
+ 0004:00000434       __imp____dllonexit         10009434     MSVCRTD:MSVCRTD.dll
+ 0004:00000438       __imp___adjust_fdiv        10009438     MSVCRTD:MSVCRTD.dll
+ 0004:0000043c       __imp___malloc_dbg         1000943c     MSVCRTD:MSVCRTD.dll
+ 0004:00000440       __imp___initterm           10009440     MSVCRTD:MSVCRTD.dll
+ 0004:00000444       __imp___free_dbg           10009444     MSVCRTD:MSVCRTD.dll
+ 0004:00000448       __imp___stricmp            10009448     MSVCRTD:MSVCRTD.dll
+ 0004:0000044c       __imp__strcat              1000944c     MSVCRTD:MSVCRTD.dll
+ 0004:00000450       __imp_??2@YAPAXI@Z         10009450     MSVCRTD:MSVCRTD.dll
+ 0004:00000454       __imp___beginthreadex      10009454     MSVCRTD:MSVCRTD.dll
+ 0004:00000458       __imp_??3@YAXPAX@Z         10009458     MSVCRTD:MSVCRTD.dll
+ 0004:0000045c       __imp__atoi                1000945c     MSVCRTD:MSVCRTD.dll
+ 0004:00000460       __imp__calloc              10009460     MSVCRTD:MSVCRTD.dll
+ 0004:00000464       __imp__strcpy              10009464     MSVCRTD:MSVCRTD.dll
+ 0004:00000468       __imp__strchr              10009468     MSVCRTD:MSVCRTD.dll
+ 0004:0000046c       __imp__atol                1000946c     MSVCRTD:MSVCRTD.dll
+ 0004:00000470       __imp__sprintf             10009470     MSVCRTD:MSVCRTD.dll
+ 0004:00000474       __imp__memcpy              10009474     MSVCRTD:MSVCRTD.dll
+ 0004:00000478       __imp__free                10009478     MSVCRTD:MSVCRTD.dll
+ 0004:0000047c       __imp__strlen              1000947c     MSVCRTD:MSVCRTD.dll
+ 0004:00000480       \177MSVCRTD_NULL_THUNK_DATA 10009480     MSVCRTD:MSVCRTD.dll
+ 0004:000004bc       __imp__wsprintfA           100094bc     user32:USER32.dll
+ 0004:000004c0       \177USER32_NULL_THUNK_DATA 100094c0     user32:USER32.dll
+ 0004:000004ec       __imp__WSAStartup@8        100094ec     wsock32:WSOCK32.dll
+ 0004:000004f0       __imp__WSACleanup@0        100094f0     wsock32:WSOCK32.dll
+ 0004:000004f4       __imp__getpeername@12      100094f4     wsock32:WSOCK32.dll
+ 0004:000004f8       __imp__gethostbyaddr@12    100094f8     wsock32:WSOCK32.dll
+ 0004:000004fc       __imp__gethostname@8       100094fc     wsock32:WSOCK32.dll
+ 0004:00000500       __imp__bind@12             10009500     wsock32:WSOCK32.dll
+ 0004:00000504       __imp__listen@8            10009504     wsock32:WSOCK32.dll
+ 0004:00000508       __imp__accept@12           10009508     wsock32:WSOCK32.dll
+ 0004:0000050c       __imp__socket@12           1000950c     wsock32:WSOCK32.dll
+ 0004:00000510       __imp__ioctlsocket@12      10009510     wsock32:WSOCK32.dll
+ 0004:00000514       __imp__gethostbyname@4     10009514     wsock32:WSOCK32.dll
+ 0004:00000518       __imp__htons@4             10009518     wsock32:WSOCK32.dll
+ 0004:0000051c       __imp__connect@12          1000951c     wsock32:WSOCK32.dll
+ 0004:00000520       __imp__closesocket@4       10009520     wsock32:WSOCK32.dll
+ 0004:00000524       __imp__recv@16             10009524     wsock32:WSOCK32.dll
+ 0004:00000528       __imp__send@16             10009528     wsock32:WSOCK32.dll
+ 0004:0000052c       __imp__WSAGetLastError@0   1000952c     wsock32:WSOCK32.dll
+ 0004:00000530       \177WSOCK32_NULL_THUNK_DATA 10009530     wsock32:WSOCK32.dll
+
+ entry point at        0001:000031c0
+

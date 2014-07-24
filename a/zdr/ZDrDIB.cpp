@@ -1319,7 +1319,8 @@ ZDib2::CreateGammaCurve( )
 
    for ( k = 0; k < 256; k++ )
    {
-      m_ucGamma[ k ] = (int) (255 * pow( (double) k / 255, (double) m_fGamma ) + (double) 0.5 );
+      m_ucGamma[ k ] = (int) (255 * pow( (double) k / 255, m_fGamma ) +
+                                                             (double) 0.5);
    }
 }
 

@@ -249,6 +249,8 @@ GenJSPJ_ProcessFileIn( VIEW             vDialog BASED ON LOD TZWDLGSO,
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   int i = in.readLine(line, 0, 256);"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "   int iFileLth = 0;"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   boolean holdNewLine = false;"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
@@ -261,6 +263,23 @@ GenJSPJ_ProcessFileIn( VIEW             vDialog BASED ON LOD TZWDLGSO,
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   {"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   //**********************************
+   szWriteBuffer = "      iFileLth = iFileLth + i;"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   // Put a limit on the upload file. This should be determined by the user.
+   szWriteBuffer = "      if ( iFileLth > 10485760 )"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "      {"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "         file.close();"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "         file = null;"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "         break;"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "      }"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   //************************************
    szWriteBuffer = "      boolean hasNewLine = i>=2 && line[i-1]==crlf[1] "
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "         && line[i-2]== crlf[0];"
@@ -847,13 +866,14 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    // Also this one http://htmlhelp.com/tools/validator/doctype.html
    // KJS 10/03/12 - Jeff wants to use HTML5 instead of 4.01. I am putting this in the zeidon.ini at least for now because
    // I'm not sure if we want to use 5 or not...
-   IF szDOCTYPE = "" OR szDOCTYPE = "4.01"
-      szWriteBuffer = "<!DOCTYPE HTML PUBLIC ^-//W3C//DTD HTML 4.01 Transitional//EN^ ^http://www.w3.org/TR/html4/loose.dtd^>"
-   ELSE
-   IF szDOCTYPE = "5" 
+   // I think we should always be HTML5 now...
+   //IF szDOCTYPE = "" OR szDOCTYPE = "4.01"
+   //   szWriteBuffer = "<!DOCTYPE HTML PUBLIC ^-//W3C//DTD HTML 4.01 Transitional//EN^ ^http://www.w3.org/TR/html4/loose.dtd^>"
+   //ELSE
+   //IF szDOCTYPE = "5" 
       szWriteBuffer = "<!DOCTYPE HTML>"
-   END 
-   END
+   //END 
+   //END
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    szWriteBuffer = "<%-- " + szFormName + " --%>"
@@ -1248,7 +1268,8 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    nRC = zSearchSubString( szFormName, "Login", "f", 0 )
    IF nRC >= 0  OR vDialog.Window.WEB_RegisterZeidonWindow = "Y" // "wStartUpLogin"
 
-      szWriteBuffer = "   task = objectEngine.createTask( ^" + vLPLR.LPLR.Name + "^, true );"
+      // KJS 04/21/14 - changing from createTask( "lplr", true ) to createTask( "lplr", session.getId())
+      szWriteBuffer = "   task = objectEngine.createTask( ^" + vLPLR.LPLR.Name + "^, session.getId() );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   session.setAttribute( ^ZeidonTaskId^, task.getTaskId() );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -4181,9 +4202,18 @@ DKS_TRACE_END */
       szWriteBuffer = "   <input name=^zAction^ id=^zAction^ type=^hidden^ value=^HELP^>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
+      CreateAbsolStyleString( vDialogTemp, szStyle, lSizeX, lSizeY, "" )
+      
+      szClass = ""
+      IF vDialogTemp.Control.CSS_Class != ""
+         szClass = " class=^" + vDialogTemp.Control.CSS_Class + "^"
+      END
+      szWriteBuffer = "<div" + szStyle + szClass + ">  <!-- " + vDialogTemp.Control.Tag + " --> "
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+
       // Get Group positions for adding to subcontrols.
-      lSizeX = vDialogTemp.Control.PSDLG_X * dDLUnits
-      lSizeY = vDialogTemp.Control.PSDLG_Y * dDLUnits
+      //lSizeX = vDialogTemp.Control.PSDLG_X * dDLUnits
+      //lSizeY = vDialogTemp.Control.PSDLG_Y * dDLUnits
 
       // Generate hidden field zTargetFileName, with JSP to retrieve name.
       // We are currently positioned on the GroupBox and need to reposition on the subcontrol Button
@@ -4216,8 +4246,8 @@ DKS_TRACE_END */
                szWriteBuffer = "      if ( nRC >= 0 )"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                szWriteBuffer = "         strErrorMapValue = " +
-                               vDialogTemp.CtrlMapView.Name + ".cursor.getStringFromAttribute( ^" +
-                               vDialogTemp.CtrlMapRelatedEntity.Name + "^, ^" +
+                               vDialogTemp.CtrlMapView.Name + ".cursor(^" + vDialogTemp.CtrlMapRelatedEntity.Name + 
+                               "^).getStringFromAttribute( ^" +
                                vDialogTemp.CtrlMapER_Attribute.Name + "^ );"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                szWriteBuffer = "   }"
@@ -4290,6 +4320,8 @@ DKS_TRACE_END */
       END
       ResetViewFromSubobject( vDialogTemp )
 
+      szWriteBuffer = "</div>"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "</form>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 

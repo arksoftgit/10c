@@ -631,7 +631,7 @@ TZRPUPSD_AskForSave( zVIEW vSubtask )
    zVIEW  vReport;
    zSHORT nRC;
    zBOOL  nSaveAs = FALSE;
-   zCHAR  szReportName[9];
+   zCHAR  szReportName[33];
    zCHAR  szMessageText[ zMAX_MESSAGE_LTH + 1 ];
 
    if ( GetViewByName( &vReport, "TZOPENRPT", vSubtask, zLEVEL_TASK ) < 0 )
@@ -848,7 +848,7 @@ TZRPUPSD_NewReportFile( zVIEW vSubtask )
    zVIEW   vMetaList;
    zVIEW   vLOD_LPLR;
    zCHAR   szFileName[ zMAX_FILENAME_LTH + 1 ];
-   zCHAR   szReportName[ 9 ];
+   zCHAR   szReportName[ 33 ];
    zSHORT  nIdx;
 
    // get the C++ class pointer to the painter object from the
@@ -1739,8 +1739,8 @@ fnTZRPUPSD_SaveAsCheckName( zVIEW  vSubtask,
                             zVIEW  vSaveAs,
                             zPCHAR szOutName )
 {
-   zCHAR  szNewName[9];
-   zCHAR  szSourceName[9];
+   zCHAR  szNewName[33];
+   zCHAR  szSourceName[33];
 
    // Report Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
@@ -1815,8 +1815,8 @@ fnTZRPUPSD_SaveAsGetFileName( zVIEW  vView,
                               zPCHAR szSourceFileName )
 {
    zVIEW    vTaskLPLR;
-   zCHAR    szNewName[9];
-   zCHAR    szFileName[9];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
 
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
 
@@ -1936,8 +1936,8 @@ TZRPUPSD_SaveAsReport( zVIEW vSubtask )
    zVIEW  vTZRPSRCO_New;
    zVIEW  vCM_List;
    zVIEW  vSaveAs;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zVIEW  vTaskLPLR;
    zVIEW  vSourceLPLR;
 
@@ -2155,10 +2155,10 @@ TZRPUPSD_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vCM_List;
    zVIEW   vCM_List_Copy;
-   zCHAR   szNewName[9];
-   zCHAR   szOutName[9];
+   zCHAR   szNewName[33];
+   zCHAR   szOutName[33];
 
-   GetCtrlText( vSubtask, "edReportName", szNewName, 9 );
+   GetCtrlText( vSubtask, "edReportName", szNewName, 33 );
    UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -2386,8 +2386,8 @@ zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 TZRPUPSD_SaveAsSetDefaults( zVIEW vSubtask )
 {
    zVIEW  vSaveAs;
-   zCHAR  szNewName[9];
-   zCHAR  szOutName[9];
+   zCHAR  szNewName[33];
+   zCHAR  szOutName[33];
 
    GetViewByName( &vSaveAs, "TZSAVEAS", vSubtask, zLEVEL_TASK );
 

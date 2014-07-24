@@ -1,0 +1,163 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzcmcpld.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzcmcpld.dll
+
+           0 characteristics
+    5356CF3D time date stamp Tue Apr 22 16:21:17 2014
+        0.00 version
+           1 ordinal base
+         135 number of functions
+         135 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000119A _GetDLL_Instance@4
+          2    1 00001078 _zwTZCMCPLD_AcceptCPL@4
+          3    2 00001299 _zwTZCMCPLD_AddAnother@4
+          4    3 00001127 _zwTZCMCPLD_AddAnotherTextLimit@4
+          5    4 0000107D _zwTZCMCPLD_AddCPL@4
+          6    5 0000106E _zwTZCMCPLD_AddCPLR_Users@4
+          7    6 000011D1 _zwTZCMCPLD_AddInstallUser@4
+          8    7 000011C7 _zwTZCMCPLD_AddReusableSetBtnText@4
+          9    8 000010E6 _zwTZCMCPLD_AddUserToCPLR@4
+         10    9 00001217 _zwTZCMCPLD_BuildAdminList@4
+         11    A 00001195 _zwTZCMCPLD_BuildFileList@4
+         12    B 00001177 _zwTZCMCPLD_BuildMetaList@4
+         13    C 0000110E _zwTZCMCPLD_BuildReusCPLR_List@4
+         14    D 000010BE _zwTZCMCPLD_BuildUserOnWorkstList@4
+         15    E 00001226 _zwTZCMCPLD_BuildUserWkList@4
+         16    F 000010AA _zwTZCMCPLD_BuildWS_RefreshDetail@4
+         17   10 0000129E _zwTZCMCPLD_BuildWS_UserList@4
+         18   11 00001014 _zwTZCMCPLD_CPLR_Dependencies@4
+         19   12 0000123A _zwTZCMCPLD_CPLR_OK@4
+         20   13 0000105A _zwTZCMCPLD_CPL_PopUp@4
+         21   14 000011F4 _zwTZCMCPLD_CancelAddReusableCPLR@4
+         22   15 000012A3 _zwTZCMCPLD_CancelAddUser@4
+         23   16 00001037 _zwTZCMCPLD_CancelCPL@4
+         24   17 000012B2 _zwTZCMCPLD_CancelCPLR@4
+         25   18 0000100F _zwTZCMCPLD_CancelComponents@4
+         26   19 0000124E _zwTZCMCPLD_CancelReusableCPLR@4
+         27   1A 000011C2 _zwTZCMCPLD_CancelSignOn@4
+         28   1B 0000104B _zwTZCMCPLD_CancelUserToCPLR@4
+         29   1C 0000119F _zwTZCMCPLD_CheckOutItems@4
+         30   1D 000011FE _zwTZCMCPLD_CloseDependencies@4
+         31   1E 000011DB _zwTZCMCPLD_CloseUserOnWorkst@4
+         32   1F 0000101E _zwTZCMCPLD_CollapseAddReusable@4
+         33   20 0000121C _zwTZCMCPLD_CollapseAllCPLRs@4
+         34   21 00001019 _zwTZCMCPLD_CollapseAllReusable@4
+         35   22 00001073 _zwTZCMCPLD_CollapseAllSearchCPLR@4
+         36   23 000012C6 _zwTZCMCPLD_CollapseReusable@4
+         37   24 0000113B _zwTZCMCPLD_ComponentPostBuild@4
+         38   25 0000100A _zwTZCMCPLD_DeleteCPL@4
+         39   26 000010F5 _zwTZCMCPLD_DeleteCPLR@4
+         40   27 0000123F _zwTZCMCPLD_DeleteCPLR_WithEnq@4
+         41   28 00001294 _zwTZCMCPLD_DeleteCPLWithoutCPLR@4
+         42   29 000012DA _zwTZCMCPLD_DeleteFile@4
+         43   2A 0000122B _zwTZCMCPLD_DeleteInstallUser@4
+         44   2B 000010FF _zwTZCMCPLD_DeleteMeta@4
+         45   2C 00001118 _zwTZCMCPLD_DeleteMetaFromList@4
+         46   2D 00001168 _zwTZCMCPLD_DeleteMetaFromListAll@4
+         47   2E 000011B3 _zwTZCMCPLD_DeleteWorkstation@4
+         48   2F 000011B8 _zwTZCMCPLD_DisableButton@4
+         49   30 0000114F _zwTZCMCPLD_DisableCompCtrls@4
+         50   31 00001032 _zwTZCMCPLD_DisableControls@4
+         51   32 00001276 _zwTZCMCPLD_DropComponentViews@4
+         52   33 00001005 _zwTZCMCPLD_DropTZCMWULO@4
+         53   34 000012C1 _zwTZCMCPLD_DropUserView@4
+         54   35 000010E1 _zwTZCMCPLD_DropViewForCPLR_Users@4
+         55   36 000012D0 _zwTZCMCPLD_ErrorListSaveToFile@4
+         56   37 000012B7 _zwTZCMCPLD_ExitDialog@4
+         57   38 000011EF _zwTZCMCPLD_ExpandAddReusable@4
+         58   39 000010F0 _zwTZCMCPLD_ExpandAllCPLRs@4
+         59   3A 00001113 _zwTZCMCPLD_ExpandAllReusable@4
+         60   3B 00001271 _zwTZCMCPLD_ExpandAllSearchCPLR@4
+         61   3C 00001064 _zwTZCMCPLD_ExpandReusable@4
+         62   3D 000011E0 _zwTZCMCPLD_GetNextUser@4
+         63   3E 000010CD _zwTZCMCPLD_GetPrevUser@4
+         64   3F 000012BC _zwTZCMCPLD_GrayCPLR_User@4
+         65   40 00001221 _zwTZCMCPLD_GrayCPL_Detail@4
+         66   41 00001109 _zwTZCMCPLD_GrayInstallUsers@4
+         67   42 0000117C _zwTZCMCPLD_GrayReusableCPLR@4
+         68   43 000012E4 _zwTZCMCPLD_GrayUserMaintenance@4
+         69   44 0000127B _zwTZCMCPLD_GrayWorkstation@4
+         70   45 00001172 _zwTZCMCPLD_HelpAbout@4
+         71   46 0000116D _zwTZCMCPLD_HelpBasics@4
+         72   47 00001091 _zwTZCMCPLD_HelpContents@4
+         73   48 000012A8 _zwTZCMCPLD_HelpOnHelp@4
+         74   49 00001050 _zwTZCMCPLD_InitMenu@4
+         75   4A 000011CC _zwTZCMCPLD_InitSignOn@4
+         76   4B 00001159 _zwTZCMCPLD_ListAll@4
+         77   4C 00001280 _zwTZCMCPLD_ListPrefDisableUserCB@4
+         78   4D 00001181 _zwTZCMCPLD_ListPrefPostBuild@4
+         79   4E 00001104 _zwTZCMCPLD_ListPrefSetCPL_Name@4
+         80   4F 0000125D _zwTZCMCPLD_LoadAuditTrailC@4
+         81   50 000011A4 _zwTZCMCPLD_LoadAuditTrailM2@4
+         82   51 000011AE _zwTZCMCPLD_LoadAuditTrailM2_All@4
+         83   52 0000128F _zwTZCMCPLD_LoadAuditTrailM@4
+         84   53 000010A5 _zwTZCMCPLD_LoadCPLR_Users@4
+         85   54 000010B4 _zwTZCMCPLD_LoadCPLR_WithEnq@4
+         86   55 000010FA _zwTZCMCPLD_LoadCPRO_WithEnq@4
+         87   56 00001249 _zwTZCMCPLD_LoadNewReusedBy@4
+         88   57 00001028 _zwTZCMCPLD_LoadOperForAddReus@4
+         89   58 000010EB _zwTZCMCPLD_LoadOperForReusable@4
+         90   59 0000114A _zwTZCMCPLD_LoadPopupForAddReus@4
+         91   5A 000010DC _zwTZCMCPLD_LoadPopupForReusable@4
+         92   5B 00001055 _zwTZCMCPLD_LoadPopup_Users@4
+         93   5C 000011F9 _zwTZCMCPLD_LoadReusedBy@4
+         94   5D 000010B9 _zwTZCMCPLD_LoadUser@4
+         95   5E 00001190 _zwTZCMCPLD_Load_WithEnq_Cluster@4
+         96   5F 000011D6 _zwTZCMCPLD_MetaInfoInit@4
+         97   60 000010A0 _zwTZCMCPLD_MetaInfoInit_All@4
+         98   61 00001208 _zwTZCMCPLD_OKComponents@4
+         99   62 00001136 _zwTZCMCPLD_OKReusableCPLR@4
+        100   63 00001096 _zwTZCMCPLD_PasswordPostbuild@4
+        101   64 000012E9 _zwTZCMCPLD_Password_OK@4
+        102   65 0000111D _zwTZCMCPLD_PreBuildReusableCPLR@4
+        103   66 0000128A _zwTZCMCPLD_RefreshFileList@4
+        104   67 000011EA _zwTZCMCPLD_RefreshUserOnWorkst@4
+        105   68 0000105F _zwTZCMCPLD_RemoveAuthForSelUsers@4
+        106   69 000012DF _zwTZCMCPLD_RemoveCO_Status@4
+        107   6A 0000115E _zwTZCMCPLD_RemoveReusableCPLR@4
+        108   6B 000010AF _zwTZCMCPLD_ReusCreateErrorLod@4
+        109   6C 00001163 _zwTZCMCPLD_ReusRefreshErrorList@4
+        110   6D 000010D2 _zwTZCMCPLD_ReusSetCountError@4
+        111   6E 00001186 _zwTZCMCPLD_ReusableSetButtonText@4
+        112   6F 0000126C _zwTZCMCPLD_SaveAsCPLR@4
+        113   70 00001041 _zwTZCMCPLD_SaveAsCancel@4
+        114   71 000010C3 _zwTZCMCPLD_SaveAsCheckData@4
+        115   72 00001087 _zwTZCMCPLD_SaveAsInNewCPL@4
+        116   73 00001145 _zwTZCMCPLD_SaveAsPreBuild@4
+        117   74 000011E5 _zwTZCMCPLD_SaveAsSetAuditTrail@4
+        118   75 00001285 _zwTZCMCPLD_SaveAsSetCPLName@4
+        119   76 00001140 _zwTZCMCPLD_SaveInstall@4
+        120   77 000012D5 _zwTZCMCPLD_SearchComponents@4
+        121   78 00001082 _zwTZCMCPLD_Search_CPLR@4
+        122   79 00001122 _zwTZCMCPLD_SelectReusableCPLR@4
+        123   7A 00001023 _zwTZCMCPLD_SetAuthForSelUsers@4
+        124   7B 0000103C _zwTZCMCPLD_SetAuthority@4
+        125   7C 000010D7 _zwTZCMCPLD_SetButtonPos@4
+        126   7D 0000118B _zwTZCMCPLD_SetButtonPos_Select@4
+        127   7E 0000108C _zwTZCMCPLD_SetCPLR_CPL_Name@4
+        128   7F 00001258 _zwTZCMCPLD_SetCPL_Name@4
+        129   80 000012AD _zwTZCMCPLD_SetDIL_Message@4
+        130   81 00001212 _zwTZCMCPLD_SetMinCtrlPos_Depend@4
+        131   82 0000120D _zwTZCMCPLD_SetMinCtrlPos_Users@4
+        132   83 000011A9 _zwTZCMCPLD_SetOkButtonText@4
+        133   84 00001203 _zwTZCMCPLD_SignOnOK@4
+        134   85 0000112C _zwTZCMCPLD_TransferToAddCPLR@4
+        135   86 00001131 _zwTZCMCPLD_XferToAddUser@4
+
+  Summary
+
+        4000 .data
+        1000 .idata
+        2000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       14000 .text

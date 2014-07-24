@@ -506,7 +506,7 @@ zwTZBMUPDD_ReplaceBitmapPath( zVIEW vSubtask, zVIEW vMetaList, zPCHAR szOldPath,
                               zPCHAR szNewPath )
 {
    zVIEW   vDialog;
-   zCHAR   szDialogName[ 9 ];
+   zCHAR   szDialogName[ 33 ];
    zCHAR   szMsg[ 100 ];
 
    GetStringFromAttribute( szDialogName, vMetaList, "W_MetaDef", "Name" );
@@ -981,7 +981,7 @@ zOPER_EXPORT zSHORT /*LOCAL */  OPERATION
 zwTZBMUPDD_SearchBitmaps( zVIEW vSubtask, zVIEW vCM_List, zPCHAR szMetaSrcDir )
 {
    zVIEW  vDialog;
-   zCHAR  szDialogName[9];
+   zCHAR  szDialogName[33];
    zCHAR  szWindowName[ 33 ];
    zCHAR  szMsg[ 100 ];
    zCHAR  szFullName[ zMAX_FILESPEC_LTH + 1 ];

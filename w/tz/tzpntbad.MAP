@@ -1,0 +1,216 @@
+ tzpntbad
+
+ Timestamp is 5356cfa6 (Tue Apr 22 16:23:02 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00002758H .text                   CODE
+ 0002:00000000 000001dcH .rdata                  DATA
+ 0002:000001e0 000005eeH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 0000038aH .data                   DATA
+ 0003:000007a0 00000054H .bss                    DATA
+ 0004:00000000 00000078H .idata$2                DATA
+ 0004:00000078 00000014H .idata$3                DATA
+ 0004:0000008c 000001d4H .idata$4                DATA
+ 0004:00000260 000001d4H .idata$5                DATA
+ 0004:00000434 0000021eH .idata$6                DATA
+ 0005:00000000 000001d8H .rsrc$01                DATA
+ 0005:000001e0 00000499H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:000000c0       _DllMain@12                100010c0 f   zdllinst.obj
+ 0001:000000e6       _GetDLL_Instance@4         100010e6 f   zdllinst.obj
+ 0001:00000100       _ToolBarPreBuild@4         10001100 f   tzpntbad.obj
+ 0001:00000175       _ToolBarPostBuild@4        10001175 f   tzpntbad.obj
+ 0001:000003c4       _ToolBarUPD_OK@4           100013c4 f   tzpntbad.obj
+ 0001:00000618       _ToolBarUPD_Cancel@4       10001618 f   tzpntbad.obj
+ 0001:0000068a       _LocateBitmapFile@4        1000168a f   tzpntbad.obj
+ 0001:0000075b       _ToolBarAdd@4              1000175b f   tzpntbad.obj
+ 0001:000007fb       _ToolBarUpdate@4           100017fb f   tzpntbad.obj
+ 0001:0000082a       _ToolBarDelete@4           1000182a f   tzpntbad.obj
+ 0001:0000085b       _ToolBarItemPostBuild@4    1000185b f   tzpntbad.obj
+ 0001:00000966       _ToolBarItemUPD_OK@4       10001966 f   tzpntbad.obj
+ 0001:00000aa6       _ToolBarItemUPD_Cancel@4   10001aa6 f   tzpntbad.obj
+ 0001:00000b30       _ToolBarItemSelectAction@4 10001b30 f   tzpntbad.obj
+ 0001:00000bcc       _ToolBarItemAddAction@4    10001bcc f   tzpntbad.obj
+ 0001:00000cce       _ToolBarItemDeleteAction@4 10001cce f   tzpntbad.obj
+ 0001:00000d22       _ControlBarPostBuild@4     10001d22 f   tzpntbad.obj
+ 0001:00000e7f       _ControlBarUPD_OK@4        10001e7f f   tzpntbad.obj
+ 0001:00001362       _CreateTemporalMetaEntity@16 10002362 f   tzlodopr:tzlodopr.dll
+ 0001:00001368       _ComponentIsCheckedOut@12  10002368 f   tzlodopr:tzlodopr.dll
+ 0001:0000136e       _RepaintZeidonControl@4    1000236e f   tzpnctad:tzpnctad.dll
+ 0001:00001374       _SetViewToSubobject@8      10002374 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000137a       _SetNameForView@16         1000237a f   kzoengaa:KZOENGAA.DLL
+ 0001:00001380       _CreateViewFromViewForTask@12 10002380 f   kzoengaa:KZOENGAA.DLL
+ 0001:00001386       _GetViewByName@16          10002386 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000138c       _GetIntegerFromAttribute@16 1000238c f   kzoengaa:KZOENGAA.DLL
+ 0001:00001392       _GetBlobFromAttribute@20   10002392 f   kzoengaa:KZOENGAA.DLL
+ 0001:00001398       _AcceptSubobject@8         10002398 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000139e       _SetAttributeFromInteger@16 1000239e f   kzoengaa:KZOENGAA.DLL
+ 0001:000013a4       _SetAttributeFromBlob@20   100023a4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013aa       _DropView@4                100023aa f   kzoengaa:KZOENGAA.DLL
+ 0001:000013b0       _CancelSubobject@8         100023b0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013b6       _IncludeSubobjectFromSubobject@20 100023b6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013bc       _SetCursorFirstEntityByInteger@20 100023bc f   kzoengaa:KZOENGAA.DLL
+ 0001:000013c2       _CreateTemporalSubobjectVersion@8 100023c2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013c8       _DeleteEntity@12           100023c8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013ce       _GetStringFromAttribute@16 100023ce f   kzoengaa:KZOENGAA.DLL
+ 0001:000013d4       _SetViewFromView@8         100023d4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013da       _SetAttributeFromString@16 100023da f   kzoengaa:KZOENGAA.DLL
+ 0001:000013e0       _SetCursorFirstEntity@12   100023e0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013e6       _ResetViewFromSubobject@4  100023e6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013ec       _CheckExistenceOfEntity@8  100023ec f   kzoengaa:KZOENGAA.DLL
+ 0001:000013f2       _SetSelectStateOfEntityForSet@16 100023f2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013f8       _ExcludeEntity@12          100023f8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000013fe       _MessageSend@24            100023fe f   kzoengaa:KZOENGAA.DLL
+ 0001:00001404       _strchr                    10002404 f   msvcrtd:MSVCRTD.dll
+ 0001:0000140a       _strlen                    1000240a f   msvcrtd:MSVCRTD.dll
+ 0001:00001410       __CRT_INIT@12              10002410 f   msvcrtd:crtdll.obj
+ 0001:00001520       __DllMainCRTStartup@12     10002520 f   msvcrtd:crtdll.obj
+ 0001:00001614       __free_dbg                 10002614 f   msvcrtd:MSVCRTD.dll
+ 0001:0000161a       __initterm                 1000261a f   msvcrtd:MSVCRTD.dll
+ 0001:00001620       __onexit                   10002620 f   msvcrtd:atonexit.obj
+ 0001:00001660       _atexit                    10002660 f   msvcrtd:atonexit.obj
+ 0001:00001678       __malloc_dbg               10002678 f   msvcrtd:MSVCRTD.dll
+ 0001:0000167e       ___dllonexit               1000267e f   msvcrtd:MSVCRTD.dll
+ 0001:00001684       _SetCtrlTranslationList@16 10002684 f   zdrapp:ZDrApp.dll
+ 0001:0000168a       _SetCtrlState@16           1000268a f   zdrapp:ZDrApp.dll
+ 0001:00001690       _SetCtrlText@12            10002690 f   zdrapp:ZDrApp.dll
+ 0001:00001696       _GetCtrlState@12           10002696 f   zdrapp:ZDrApp.dll
+ 0001:0000169c       _GetCtrlText@16            1000269c f   zdrapp:ZDrApp.dll
+ 0001:000016a2       _OperatorPromptForFile@24  100026a2 f   zdrapp:ZDrApp.dll
+ 0001:000016a8       _SetWindowActionBehavior@16 100026a8 f   zdrapp:ZDrApp.dll
+ 0001:000016ae       _RefreshCtrl@8             100026ae f   zdrapp:ZDrApp.dll
+ 0001:000016b4       _ED_LimitTextLength@12     100026b4 f   zdctl:ZdCtl.dll
+ 0001:000016ba       _BMP_SetBitmapFileName@12  100026ba f   zdctl:ZdCtl.dll
+ 0002:00000020       _IID_IDocHostUIHandlerDispatch 10004020     tzpntbad.obj
+ 0002:00000038       _IID_IInternalConnection   10004038     tzpntbad.obj
+ 0002:00000050       _IID_IAxWinAmbientDispatch 10004050     tzpntbad.obj
+ 0002:00000068       _IID_IAxWinHostWindow      10004068     tzpntbad.obj
+ 0002:00000080       _IID_IRegistrar            10004080     tzpntbad.obj
+ 0002:00000098       _CLSID_Registrar           10004098     tzpntbad.obj
+ 0002:000000b0       _LIBID_ATLLib              100040b0     tzpntbad.obj
+ 0002:000000c4       ??_C@_08JKC@crtdll?4c?$AA@ 100040c4     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10005000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10005104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10005208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000530c     msvcrtd:cinitexe.obj
+ 0003:00000410       ?GUID_ATLVer30@ATL@@3U_GUID@@A 10005410     tzpntbad.obj
+ 0003:00000434       ??_C@_09OM@TZCTLMAP3?$AA@  10005434     tzpntbad.obj
+ 0003:00000440       ??_C@_08HCPL@CtrlCtrl?$AA@ 10005440     tzpntbad.obj
+ 0003:0000044c       ??_C@_09KKHL@TZCTLMAP2?$AA@ 1000544c     tzpntbad.obj
+ 0003:00000458       ??_C@_09GFFC@TZCONTROL?$AA@ 10005458     tzpntbad.obj
+ 0003:00000464       ??_C@_03PCGG@1?$DLY?$AA@   10005464     tzpntbad.obj
+ 0003:00000468       ??_C@_0M@KLKA@BarItemList?$AA@ 10005468     tzpntbad.obj
+ 0003:00000478       ??_C@_0CN@KIJG@1?$DLButton?$DL2?$DLDropButton?$DL3?$DLComboBox@ 10005478     tzpntbad.obj
+ 0003:000004b0       ??_C@_07KECI@ResName?$AA@  100054b0     tzpntbad.obj
+ 0003:000004bc       ??_C@_03BJDM@Top?$AA@      100054bc     tzpntbad.obj
+ 0003:000004c0       ??_C@_04MKGK@Left?$AA@     100054c0     tzpntbad.obj
+ 0003:000004c8       ??_C@_05PNPP@Right?$AA@    100054c8     tzpntbad.obj
+ 0003:000004d0       ??_C@_06LHCD@Bottom?$AA@   100054d0     tzpntbad.obj
+ 0003:000004d8       ??_C@_08FDMF@ToolTips?$AA@ 100054d8     tzpntbad.obj
+ 0003:000004e4       ??_C@_0L@BLLI@ButtonText?$AA@ 100054e4     tzpntbad.obj
+ 0003:000004f4       ??_C@_07NBFD@Palette?$AA@  100054f4     tzpntbad.obj
+ 0003:00000500       ??_C@_07MPLK@Subtype?$AA@  10005500     tzpntbad.obj
+ 0003:0000050c       ??_C@_06KLJN@Bitmap?$AA@   1000550c     tzpntbad.obj
+ 0003:00000514       ??_C@_0L@HANG@BitmapFile?$AA@ 10005514     tzpntbad.obj
+ 0003:00000524       ??_C@_03NDIP@DLL?$AA@      10005524     tzpntbad.obj
+ 0003:00000528       ??_C@_07FNBF@Control?$AA@  10005528     tzpntbad.obj
+ 0003:00000534       ??_C@_07MGL@CtrlBOI?$AA@   10005534     tzpntbad.obj
+ 0003:00000540       ??_C@_0CE@MFCD@?$CI?$CK?4bmp?$CJ?$HM?$CK?4bmp?$HMAll?5Files?5?$CI?$CK?4?$CK?$CJ?$HM?$CK?4@ 10005540     tzpntbad.obj
+ 0003:0000056c       ??_C@_0L@ELHM@ControlDef?$AA@ 1000556c     tzpntbad.obj
+ 0003:0000057c       ??_C@_03HAKM@Key?$AA@      1000557c     tzpntbad.obj
+ 0003:00000580       ??_C@_08IMNF@TZPESRCO?$AA@ 10005580     tzpntbad.obj
+ 0003:0000058c       ??_C@_04FCOP@Type?$AA@     1000558c     tzpntbad.obj
+ 0003:00000594       ??_C@_07CMPK@ToolTip?$AA@  10005594     tzpntbad.obj
+ 0003:000005a0       ??_C@_04BNNJ@Text?$AA@     100055a0     tzpntbad.obj
+ 0003:000005a8       ??_C@_05MJIN@Event?$AA@    100055a8     tzpntbad.obj
+ 0003:000005b0       ??_C@_08JAPK@EventAct?$AA@ 100055b0     tzpntbad.obj
+ 0003:000005bc       ??_C@_0BF@MKAA@ParentIsSelectAction?$AA@ 100055bc     tzpntbad.obj
+ 0003:000005d8       ??_C@_01FKHJ@C?$AA@        100055d8     tzpntbad.obj
+ 0003:000005dc       ??_C@_08OEMF@TZPNCTWO?$AA@ 100055dc     tzpntbad.obj
+ 0003:000005e8       ??_C@_08PFIK@TZWINDOW?$AA@ 100055e8     tzpntbad.obj
+ 0003:000005f4       ??_C@_03CHAC@Tag?$AA@      100055f4     tzpntbad.obj
+ 0003:000005f8       ??_C@_03MBCK@New?$AA@      100055f8     tzpntbad.obj
+ 0003:000005fc       ??_C@_06NMFG@Action?$AA@   100055fc     tzpntbad.obj
+ 0003:00000604       ??_C@_08DEPB@Grippers?$AA@ 10005604     tzpntbad.obj
+ 0003:00000610       ??_C@_09GKNB@TZWINDOWL?$AA@ 10005610     tzpntbad.obj
+ 0003:0000061c       ??_C@_07KDMK@PN00220?$AA@  1000561c     tzpntbad.obj
+ 0003:00000628       ??_C@_0BD@JJDJ@Dialog?5Maintenance?$AA@ 10005628     tzpntbad.obj
+ 0003:00000640       ??_C@_0DA@GPKD@ControlBar?5must?5be?5dockable?5on?5a@ 10005640     tzpntbad.obj
+ 0003:000007a0       _g_hInstanceDLL            100057a0     zdllinst.obj
+ 0003:000007a4       ?ATL_CREATE_OBJECT@CComApartment@ATL@@2IA 100057a4     tzpntbad.obj
+ 0003:000007a8       ?m_libid@CComModule@ATL@@2U_GUID@@A 100057a8     tzpntbad.obj
+ 0003:000007bc       ?_pModule@ATL@@3PAVCComModule@1@A 100057bc     tzpntbad.obj
+ 0003:000007c0       __afxForceEXCLUDE          100057c0     MFCS42:nolib.obj
+ 0003:000007c8       __adjust_fdiv              100057c8     <common>
+ 0003:000007d4       ___onexitend               100057d4     <common>
+ 0003:000007e4       ___onexitbegin             100057e4     <common>
+ 0003:000007e8       __pRawDllMain              100057e8     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 10006000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_tzpnctad 10006014     tzpnctad:tzpnctad.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_KZOENGAA 10006028     kzoengaa:KZOENGAA.DLL
+ 0004:0000003c       __IMPORT_DESCRIPTOR_MSVCRTD 1000603c     msvcrtd:MSVCRTD.dll
+ 0004:00000050       __IMPORT_DESCRIPTOR_ZDrApp 10006050     zdrapp:ZDrApp.dll
+ 0004:00000064       __IMPORT_DESCRIPTOR_ZdCtl  10006064     zdctl:ZdCtl.dll
+ 0004:00000078       __NULL_IMPORT_DESCRIPTOR   10006078     tzlodopr:tzlodopr.dll
+ 0004:00000260       __imp__CheckExistenceOfEntity@8 10006260     kzoengaa:KZOENGAA.DLL
+ 0004:00000264       __imp__MessageSend@24      10006264     kzoengaa:KZOENGAA.DLL
+ 0004:00000268       __imp__ExcludeEntity@12    10006268     kzoengaa:KZOENGAA.DLL
+ 0004:0000026c       __imp__SetSelectStateOfEntityForSet@16 1000626c     kzoengaa:KZOENGAA.DLL
+ 0004:00000270       __imp__SetViewToSubobject@8 10006270     kzoengaa:KZOENGAA.DLL
+ 0004:00000274       __imp__SetNameForView@16   10006274     kzoengaa:KZOENGAA.DLL
+ 0004:00000278       __imp__CreateViewFromViewForTask@12 10006278     kzoengaa:KZOENGAA.DLL
+ 0004:0000027c       __imp__GetViewByName@16    1000627c     kzoengaa:KZOENGAA.DLL
+ 0004:00000280       __imp__GetIntegerFromAttribute@16 10006280     kzoengaa:KZOENGAA.DLL
+ 0004:00000284       __imp__GetBlobFromAttribute@20 10006284     kzoengaa:KZOENGAA.DLL
+ 0004:00000288       __imp__AcceptSubobject@8   10006288     kzoengaa:KZOENGAA.DLL
+ 0004:0000028c       __imp__SetAttributeFromInteger@16 1000628c     kzoengaa:KZOENGAA.DLL
+ 0004:00000290       __imp__SetAttributeFromBlob@20 10006290     kzoengaa:KZOENGAA.DLL
+ 0004:00000294       __imp__DropView@4          10006294     kzoengaa:KZOENGAA.DLL
+ 0004:00000298       __imp__CancelSubobject@8   10006298     kzoengaa:KZOENGAA.DLL
+ 0004:0000029c       __imp__IncludeSubobjectFromSubobject@20 1000629c     kzoengaa:KZOENGAA.DLL
+ 0004:000002a0       __imp__SetCursorFirstEntityByInteger@20 100062a0     kzoengaa:KZOENGAA.DLL
+ 0004:000002a4       __imp__CreateTemporalSubobjectVersion@8 100062a4     kzoengaa:KZOENGAA.DLL
+ 0004:000002a8       __imp__DeleteEntity@12     100062a8     kzoengaa:KZOENGAA.DLL
+ 0004:000002ac       __imp__GetStringFromAttribute@16 100062ac     kzoengaa:KZOENGAA.DLL
+ 0004:000002b0       __imp__SetViewFromView@8   100062b0     kzoengaa:KZOENGAA.DLL
+ 0004:000002b4       __imp__SetAttributeFromString@16 100062b4     kzoengaa:KZOENGAA.DLL
+ 0004:000002b8       __imp__SetCursorFirstEntity@12 100062b8     kzoengaa:KZOENGAA.DLL
+ 0004:000002bc       __imp__ResetViewFromSubobject@4 100062bc     kzoengaa:KZOENGAA.DLL
+ 0004:000002c0       \177KZOENGAA_NULL_THUNK_DATA 100062c0     kzoengaa:KZOENGAA.DLL
+ 0004:000002fc       __imp___adjust_fdiv        100062fc     msvcrtd:MSVCRTD.dll
+ 0004:00000300       __imp____dllonexit         10006300     msvcrtd:MSVCRTD.dll
+ 0004:00000304       __imp___malloc_dbg         10006304     msvcrtd:MSVCRTD.dll
+ 0004:00000308       __imp___initterm           10006308     msvcrtd:MSVCRTD.dll
+ 0004:0000030c       __imp__strchr              1000630c     msvcrtd:MSVCRTD.dll
+ 0004:00000310       __imp__strlen              10006310     msvcrtd:MSVCRTD.dll
+ 0004:00000314       __imp___free_dbg           10006314     msvcrtd:MSVCRTD.dll
+ 0004:00000318       __imp___onexit             10006318     msvcrtd:MSVCRTD.dll
+ 0004:0000031c       \177MSVCRTD_NULL_THUNK_DATA 1000631c     msvcrtd:MSVCRTD.dll
+ 0004:0000034c       __imp__SetWindowActionBehavior@16 1000634c     zdrapp:ZDrApp.dll
+ 0004:00000350       __imp__RefreshCtrl@8       10006350     zdrapp:ZDrApp.dll
+ 0004:00000354       __imp__OperatorPromptForFile@24 10006354     zdrapp:ZDrApp.dll
+ 0004:00000358       __imp__GetCtrlText@16      10006358     zdrapp:ZDrApp.dll
+ 0004:0000035c       __imp__SetCtrlTranslationList@16 1000635c     zdrapp:ZDrApp.dll
+ 0004:00000360       __imp__SetCtrlState@16     10006360     zdrapp:ZDrApp.dll
+ 0004:00000364       __imp__SetCtrlText@12      10006364     zdrapp:ZDrApp.dll
+ 0004:00000368       __imp__GetCtrlState@12     10006368     zdrapp:ZDrApp.dll
+ 0004:0000036c       \177ZDrApp_NULL_THUNK_DATA 1000636c     zdrapp:ZDrApp.dll
+ 0004:0000039c       __imp__ED_LimitTextLength@12 1000639c     zdctl:ZdCtl.dll
+ 0004:000003a0       __imp__BMP_SetBitmapFileName@12 100063a0     zdctl:ZdCtl.dll
+ 0004:000003a4       \177ZdCtl_NULL_THUNK_DATA  100063a4     zdctl:ZdCtl.dll
+ 0004:000003d0       __imp__ComponentIsCheckedOut@12 100063d0     tzlodopr:tzlodopr.dll
+ 0004:000003d4       __imp__CreateTemporalMetaEntity@16 100063d4     tzlodopr:tzlodopr.dll
+ 0004:000003d8       \177tzlodopr_NULL_THUNK_DATA 100063d8     tzlodopr:tzlodopr.dll
+ 0004:00000404       __imp__RepaintZeidonControl@4 10006404     tzpnctad:tzpnctad.dll
+ 0004:00000408       \177tzpnctad_NULL_THUNK_DATA 10006408     tzpnctad:tzpnctad.dll
+
+ entry point at        0001:00001520
+

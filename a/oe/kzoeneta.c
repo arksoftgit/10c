@@ -7255,8 +7255,8 @@ SfStartNetworks( zVIEW lpView, zLONG lControl )
             }
          }/**/
       }
-	  else
-	     TraceLineS( "(kzoeneta) ** Error calling NetStartup!! ", "" );
+     else
+        TraceLineS( "(kzoeneta) ** Error calling NetStartup!! ", "" );
 
 
    } // for k...

@@ -1,0 +1,97 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzoprusd.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzoprusd.dll
+
+           0 characteristics
+    5356CF51 time date stamp Tue Apr 22 16:21:37 2014
+        0.00 version
+           1 ordinal base
+          69 number of functions
+          69 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000010AA _GetDLL_Instance@4
+          2    1 0000100A _LOCAL_DeleteRest@4
+          3    2 000010E1 _fnBuildOperationList@4
+          4    3 00001014 _fnSetButtonControls@8
+          5    4 000010A0 _fnSetEditControls@8
+          6    5 00001019 _fnTZOPRUSD_IncludeNewOperation@16
+          7    6 000010CD _fnTZOPRUSD_MoveOperation@16
+          8    7 00001131 _fnTZOPRUSD_SetNewOperationAssign@12
+          9    8 0000110E _wTZOPRUSD_AcceptSubobject@16
+         10    9 0000113B _wTZOPRUSD_AddOperation@4
+         11    A 00001154 _wTZOPRUSD_AddOperationForNewFile@4
+         12    B 0000103C _wTZOPRUSD_AddParameter@4
+         13    C 0000108C _wTZOPRUSD_AddSourceFile@4
+         14    D 00001087 _wTZOPRUSD_CheckActionForDeleteOp@16
+         15    E 00001159 _wTZOPRUSD_CheckExistsSourceFile@4
+         16    F 000010D2 _wTZOPRUSD_CopyOperation@4
+         17   10 00001032 _wTZOPRUSD_CreateDeleteLOD@4
+         18   11 0000105F _wTZOPRUSD_DeleteAllFiles@4
+         19   12 00001127 _wTZOPRUSD_DeleteAllOperations@4
+         20   13 0000114F _wTZOPRUSD_DeleteCurrentOperation@4
+         21   14 00001073 _wTZOPRUSD_DeleteOperFromFile@8
+         22   15 00001055 _wTZOPRUSD_DeleteOperation@8
+         23   16 00001050 _wTZOPRUSD_DeleteParameter@4
+         24   17 0000101E _wTZOPRUSD_DeleteSelectedOperat@4
+         25   18 000010F5 _wTZOPRUSD_DeleteSourceFile@4
+         26   19 00001136 _wTZOPRUSD_DestroyWindow@4
+         27   1A 000010EB _wTZOPRUSD_DisableSourceFile@4
+         28   1B 000010E6 _wTZOPRUSD_GoToUpdateOperation@4
+         29   1C 0000107D _wTZOPRUSD_InvokeEditor@4
+         30   1D 00001118 _wTZOPRUSD_LoadSourceFileDetail@4
+         31   1E 000010D7 _wTZOPRUSD_LoadSourceFiles@4
+         32   1F 000010B4 _wTZOPRUSD_MoveCheckFileType@4
+         33   20 00001104 _wTZOPRUSD_MoveCheckSelOperation@4
+         34   21 0000105A _wTZOPRUSD_MoveOperation@4
+         35   22 00001046 _wTZOPRUSD_MoveOperationCancel@4
+         36   23 00001082 _wTZOPRUSD_MoveOperationToFile@4
+         37   24 0000115E _wTZOPRUSD_MovePostbuild@4
+         38   25 00001064 _wTZOPRUSD_MovePrebuild@4
+         39   26 00001005 _wTZOPRUSD_MoveRtnFromSubwindow@4
+         40   27 000010FA _wTZOPRUSD_MoveSelOperations@4
+         41   28 00001140 _wTZOPRUSD_MoveSelPostbuild@4
+         42   29 00001028 _wTZOPRUSD_MoveSelPrebuild@4
+         43   2A 00001041 _wTZOPRUSD_NeedParmOfType@20
+         44   2B 000010A5 _wTZOPRUSD_NewOperation@4
+         45   2C 00001122 _wTZOPRUSD_OperActionsCreate@4
+         46   2D 000010C8 _wTZOPRUSD_OperActionsRemove@4
+         47   2E 00001145 _wTZOPRUSD_OperationPopup@4
+         48   2F 000010DC _wTZOPRUSD_ParameterAccept@4
+         49   30 0000114A _wTZOPRUSD_ParameterDelete@4
+         50   31 0000102D _wTZOPRUSD_ParameterNext@4
+         51   32 00001113 _wTZOPRUSD_ParameterPopup@4
+         52   33 000010FF _wTZOPRUSD_ParameterPrevious@4
+         53   34 00001023 _wTZOPRUSD_ReceiveFocus@4
+         54   35 0000106E _wTZOPRUSD_RemoveMultiSelByFile@4
+         55   36 0000111D _wTZOPRUSD_RemoveMultiSelection@4
+         56   37 0000104B _wTZOPRUSD_ReturnFromEdit@4
+         57   38 000010BE _wTZOPRUSD_SaveOperation@4
+         58   39 0000112C _wTZOPRUSD_SaveSourceFile@4
+         59   3A 000010C3 _wTZOPRUSD_SelectComboBox@4
+         60   3B 00001109 _wTZOPRUSD_SetCtrlState@4
+         61   3C 0000100F _wTZOPRUSD_SetUpTZOPRUSO_View@4
+         62   3D 00001096 _wTZOPRUSD_SourceFileCancel@4
+         63   3E 00001069 _wTZOPRUSD_SourceFilePopup@4
+         64   3F 00001091 _wTZOPRUSD_SourceFilePostbuild@4
+         65   40 00001078 _wTZOPRUSD_SourceFileUpdate@4
+         66   41 000010F0 _wTZOPRUSD_TransferToEditor@8
+         67   42 000010B9 _wTZOPRUSD_UpdateNextOperation@4
+         68   43 000010AF _wTZOPRUSD_UpdatePrevOperation@4
+         69   44 0000109B _wTZOPRUSD_VerifyParms@4
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        7000 .text

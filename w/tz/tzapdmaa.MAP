@@ -1,0 +1,421 @@
+ tzapdmaa
+
+ Timestamp is 5356cf12 (Tue Apr 22 16:20:34 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00012157H .text                   CODE
+ 0002:00000000 00000150H .rdata                  DATA
+ 0002:00000150 0000055cH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00000b9aH .data                   DATA
+ 0003:00000fac 00000a64H .bss                    DATA
+ 0004:00000000 0000003cH .idata$2                DATA
+ 0004:0000003c 00000014H .idata$3                DATA
+ 0004:00000050 0000023cH .idata$4                DATA
+ 0004:0000028c 0000023cH .idata$5                DATA
+ 0004:000004c8 000002b3H .idata$6                DATA
+ 0005:00000000 00000250H .rsrc$01                DATA
+ 0005:00000250 000003c6H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000180       _zdmQSName@8               10001180 f   tzapdmaa.obj
+ 0001:00000196       _zdmAlphaNumeric@8         10001196 f   tzapdmaa.obj
+ 0001:000001ac       _zdmExpandEnvVar@8         100011ac f   tzapdmaa.obj
+ 0001:00000235       _zdmText@8                 10001235 f   tzapdmaa.obj
+ 0001:0000024b       _zdmHTML@8                 1000124b f   tzapdmaa.obj
+ 0001:00000261       _zdmXRA_Tag@8              10001261 f   tzapdmaa.obj
+ 0001:00000277       _zdmXRA_Text@8             10001277 f   tzapdmaa.obj
+ 0001:0000028d       _zdmFileName@8             1000128d f   tzapdmaa.obj
+ 0001:000002a3       _fnText@12                 100012a3 f   tzapdmaa.obj
+ 0001:00001160       _zdmInteger@8              10002160 f   tzapdmaa.obj
+ 0001:00002cb7       _fnHexToLong@8             10003cb7 f   tzapdmaa.obj
+ 0001:00002e51       _zdmPassword@8             10003e51 f   tzapdmaa.obj
+ 0001:000035e6       _zdmPasswordUL@8           100045e6 f   tzapdmaa.obj
+ 0001:00003d67       _zdmDynamicTable@8         10004d67 f   tzapdmaa.obj
+ 0001:00004cfa       _fnDyamicT_fnLocalBuildQual_0@12 10005cfa f   tzapdmaa.obj
+ 0001:00004dc0       _zdmDynamicTableM@8        10005dc0 f   tzapdmaa.obj
+ 0001:00006ae0       _fnSpecialContext@8        10007ae0 f   tzapdmab.obj
+ 0001:00006bb6       _zdmDateTime@8             10007bb6 f   tzapdmab.obj
+ 0001:00006bcc       _zdmDate@8                 10007bcc f   tzapdmab.obj
+ 0001:00006d32       _zdmTime@8                 10007d32 f   tzapdmab.obj
+ 0001:00006d48       _fnDateTime@12             10007d48 f   tzapdmab.obj
+ 0001:00006f25       _fnSetDateTimeAttribute@12 10007f25 f   tzapdmab.obj
+ 0001:000082b0       _fnGetDateTimeAttribute@8  100092b0 f   tzapdmab.obj
+ 0001:000090d6       _fnCompareDateTimeAttribute@8 1000a0d6 f   tzapdmab.obj
+ 0001:00009d33       _fnGetDateTimeCompareValue@8 1000ad33 f   tzapdmab.obj
+ 0001:00009d71       _fnAddToDateTimeAttribute@8 1000ad71 f   tzapdmab.obj
+ 0001:0000ccf0       _zdmDecimal@8              1000dcf0 f   tzapdmac.obj
+ 0001:0000cdff       _fnSetDecimalAttribute@8   1000ddff f   tzapdmac.obj
+ 0001:0000d4b7       _fnGetDecimalAttribute@4   1000e4b7 f   tzapdmac.obj
+ 0001:0000e094       _fnAddToDecimalAttribute@4 1000f094 f   tzapdmac.obj
+ 0001:0000e863       _fnCompareDecimalAttribute@4 1000f863 f   tzapdmac.obj
+ 0001:0000f136       _fnGetCompValDecimalAttribute@4 10010136 f   tzapdmac.obj
+ 0001:0000f2ad       _fnDecIntContext@4         100102ad f   tzapdmac.obj
+ 0001:0000f3cd       _fnFormatDecimalString@16  100103cd f   tzapdmac.obj
+ 0001:0000f719       _fnEditFormatDecimalString@12 10010719 f   tzapdmac.obj
+ 0001:0000f8b4       _fnGetDecimalFmtStrings@16 100108b4 f   tzapdmac.obj
+ 0001:0000fb82       _fnStrToDec@32             10010b82 f   tzapdmac.obj
+ 0001:00010bcc       _GetLocaleInfoA@16         10011bcc f   kernel32:KERNEL32.dll
+ 0001:00010bd2       _SysCompareDecimalToDecimal@8 10011bd2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010bd8       _TrueName@8                10011bd8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010bde       _GetContext@12             10011bde f   kzoengaa:KZOENGAA.DLL
+ 0001:00010be4       _SysConvertStringToDecimal@8 10011be4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010bea       _SysConvertLongToDecimal@8 10011bea f   kzoengaa:KZOENGAA.DLL
+ 0001:00010bf0       _SysConvertEnvironmentString@8 10011bf0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010bf6       _GetValueFromRecord@24     10011bf6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010bfc       _StoreValueInRecord@20     10011bfc f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c02       _UfDateTimeToString@12     10011c02 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c08       _ConvertDecimalToString@52 10011c08 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c0e       _SysCompareDecimalToNull@4 10011c0e f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c14       _SendDomainError@28        10011c14 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c1a       _MessageSend@24            10011c1a f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c20       _SysGetPointerFromHandle@4 10011c20 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c26       _SysAddDecimalToDecimal@12 10011c26 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c2c       _SysConvertDecimalToLong@8 10011c2c f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c32       _SysGetNumberFormat@12     10011c32 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c38       _UfDecryptString@12        10011c38 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c3e       _UfEncryptString@12        10011c3e f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c44       _UfDecryptStringUL@16      10011c44 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c4a       _UfEncryptStringUL@16      10011c4a f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c50       _MiGetViewEntityForView@8  10011c50 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c56       _SetCursorPrevEntity@12    10011c56 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c5c       _SetCursorNextEntity@12    10011c5c f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c62       _SetCursorFirstEntity@12   10011c62 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c68       _GetStringFromRecord@20    10011c68 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c6e       _TraceLineI@8              10011c6e f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c74       _SysAssignDecimalFromDecimal@8 10011c74 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c7a       _SfGetCurrentTask@4        10011c7a f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c80       _SetCursorFirstEntityByInteger@20 10011c80 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c86       _TraceLineS@8              10011c86 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c8c       _GetIntegerFromAttribute@16 10011c8c f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c92       _GetStringFromAttribute@16 10011c92 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c98       _SetCursorFirstEntityByString@20 10011c98 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010c9e       _SysAssignDecimalFromNull@4 10011c9e f   kzoengaa:KZOENGAA.DLL
+ 0001:00010ca4       _CreateViewFromViewForTask@12 10011ca4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010caa       _SysMutexUnlock@12         10011caa f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cb0       _SetNameForView@16         10011cb0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cb6       _ActivateObjectInstance@20 10011cb6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cbc       _SysMutexLock@16           10011cbc f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cc2       _GetViewByName@16          10011cc2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cc8       _GetDefaultContext@8       10011cc8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cce       _SetAttributeFromString@16 10011cce f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cd4       _CreateEntity@12           10011cd4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cda       _SfActivateSysEmptyOI@16   10011cda f   kzoengaa:KZOENGAA.DLL
+ 0001:00010ce0       _GetAddrForAttribute@16    10011ce0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010ce6       _UfStringToDateTime@8      10011ce6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cec       _UfEditFormatDateTime@8    10011cec f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cf2       _SysGetTimeFormat@4        10011cf2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cf8       _SysGetShortDateFormat@4   10011cf8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010cfe       _SysGetLongDateFormat@4    10011cfe f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d04       _UfJulianToGregorian@8     10011d04 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d0a       _SysConvertDoubleToDecimal@12 10011d0a f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d10       _UfGetDayOfYear@4          10011d10 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d16       _UfGetDayOfWeek@4          10011d16 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d1c       _UfFormatDateTime@12       10011d1c f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d22       _UfGetWeekOfYear@4         10011d22 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d28       _UfAddToDateTime@12        10011d28 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d2e       _SysGetDateTime@4          10011d2e f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d34       _SysConvertDecimalToString@12 10011d34 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d3a       _SysSubtractDecimalFromDecimal@12 10011d3a f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d40       _SysCompareDecimalToDouble@12 10011d40 f   kzoengaa:KZOENGAA.DLL
+ 0001:00010d46       _strcmp                    10011d46 f   msvcrtd:MSVCRTD.dll
+ 0001:00010d4c       __stricmp                  10011d4c f   msvcrtd:MSVCRTD.dll
+ 0001:00010d52       _atol                      10011d52 f   msvcrtd:MSVCRTD.dll
+ 0001:00010d58       _strcpy                    10011d58 f   msvcrtd:MSVCRTD.dll
+ 0001:00010d5e       _strcat                    10011d5e f   msvcrtd:MSVCRTD.dll
+ 0001:00010d64       __ltoa                     10011d64 f   msvcrtd:MSVCRTD.dll
+ 0001:00010d6a       _strncat                   10011d6a f   msvcrtd:MSVCRTD.dll
+ 0001:00010d70       _strlen                    10011d70 f   msvcrtd:MSVCRTD.dll
+ 0001:00010d76       __isctype                  10011d76 f   msvcrtd:MSVCRTD.dll
+ 0001:00010d80       __alloca_probe             10011d80 f   msvcrtd:chkstk.obj
+ 0001:00010d80       __chkstk                   10011d80 f   msvcrtd:chkstk.obj
+ 0001:00010db0       _strncpy                   10011db0 f   msvcrtd:MSVCRTD.dll
+ 0001:00010db6       _sprintf                   10011db6 f   msvcrtd:MSVCRTD.dll
+ 0001:00010dbc       _strspn                    10011dbc f   msvcrtd:MSVCRTD.dll
+ 0001:00010dc2       _strchr                    10011dc2 f   msvcrtd:MSVCRTD.dll
+ 0001:00010dc8       _strncmp                   10011dc8 f   msvcrtd:MSVCRTD.dll
+ 0001:00010dce       _toupper                   10011dce f   msvcrtd:MSVCRTD.dll
+ 0001:00010dd4       _memcpy                    10011dd4 f   msvcrtd:MSVCRTD.dll
+ 0001:00010dda       _atof                      10011dda f   msvcrtd:MSVCRTD.dll
+ 0001:00010de0       _strpbrk                   10011de0 f   msvcrtd:MSVCRTD.dll
+ 0001:00010de6       _atoi                      10011de6 f   msvcrtd:MSVCRTD.dll
+ 0001:00010dec       _memset                    10011dec f   msvcrtd:MSVCRTD.dll
+ 0001:00010df2       _isdigit                   10011df2 f   msvcrtd:MSVCRTD.dll
+ 0001:00010e00       __CRT_INIT@12              10011e00 f   msvcrtd:crtdll.obj
+ 0001:00010f10       __DllMainCRTStartup@12     10011f10 f   msvcrtd:crtdll.obj
+ 0001:00011004       __free_dbg                 10012004 f   msvcrtd:MSVCRTD.dll
+ 0001:0001100a       __initterm                 1001200a f   msvcrtd:MSVCRTD.dll
+ 0001:00011010       __onexit                   10012010 f   msvcrtd:atonexit.obj
+ 0001:00011050       _atexit                    10012050 f   msvcrtd:atonexit.obj
+ 0001:00011068       __malloc_dbg               10012068 f   msvcrtd:MSVCRTD.dll
+ 0001:00011070       _DllMain@12                10012070 f   msvcrtd:dllmain.obj
+ 0001:00011096       ___dllonexit               10012096 f   msvcrtd:MSVCRTD.dll
+ 0001:0001109c       _DisableThreadLibraryCalls@4 1001209c f   kernel32:KERNEL32.dll
+ 0002:00000020       __real@8@4004f000000000000000 10014020     tzapdmab.obj
+ 0002:00000030       __real@8@4008fa00000000000000 10014030     tzapdmab.obj
+ 0002:0000003c       ??_C@_08JKC@crtdll?4c?$AA@ 1001403c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10015000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10015104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10015208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1001530c     msvcrtd:cinitexe.obj
+ 0003:00000410       _g_ZeidonMutexName         10015410     tzapdmaa.obj
+ 0003:00000450       _szlApplicationLogicError  10015450     tzapdmaa.obj
+ 0003:00000454       _szlDataValidationError    10015454     tzapdmaa.obj
+ 0003:00000458       _lNullInteger              10015458     tzapdmaa.obj
+ 0003:0000045c       _szlDecimalFraction        1001545c     tzapdmaa.obj
+ 0003:00000460       _szlDecimalInteger         10015460     tzapdmaa.obj
+ 0003:00000464       _szlDecimalIntegerRounded  10015464     tzapdmaa.obj
+ 0003:0000047c       ??_C@_0BG@HEJB@DecimalIntegerRounded?$AA@ 1001547c     tzapdmaa.obj
+ 0003:00000498       ??_C@_0P@JCC@DecimalInteger?$AA@ 10015498     tzapdmaa.obj
+ 0003:000004ac       ??_C@_0BA@GMMH@DecimalFraction?$AA@ 100154ac     tzapdmaa.obj
+ 0003:000004c0       ??_C@_0BG@FMPG@Data?5Validation?5Error?$AA@ 100154c0     tzapdmaa.obj
+ 0003:000004dc       ??_C@_0BI@KFDA@Application?5Logic?5Error?$AA@ 100154dc     tzapdmaa.obj
+ 0003:000004f8       ??_C@_0BO@FOCN@ZEIDON?5MUTEX?5?9?9?5NETWORK?5CHAIN?$AA@ 100154f8     tzapdmaa.obj
+ 0003:0000051c       ??_C@_0CB@LBIA@ZEIDON?5MUTEX?5?9?9?5PROC?5CHAIN?5WRITE@ 1001551c     tzapdmaa.obj
+ 0003:00000544       ??_C@_0BL@CPDB@ZEIDON?5MUTEX?5?9?9?5PROC?5CHAIN?$AA@ 10015544     tzapdmaa.obj
+ 0003:00000564       ??_C@_0BM@DIIE@ZEIDON?5MUTEX?5?9?9?5TASKPROCESS?$AA@ 10015564     tzapdmaa.obj
+ 0003:00000588       ??_C@_0BL@OEL@ZEIDON?5MUTEX?5?9?9?5ENTITY?5KEY?$AA@ 10015588     tzapdmaa.obj
+ 0003:000005a8       ??_C@_0BG@GGGI@ZEIDON?5MUTEX?5?9?9?5APPLA?$AA@ 100155a8     tzapdmaa.obj
+ 0003:000005c4       ??_C@_0CB@EGB@ZEIDON?5MUTEX?5?9?9?5PESSIMISTIC?5LOCK@ 100155c4     tzapdmaa.obj
+ 0003:000005ec       ??_C@_0BM@PPAA@ZEIDON?5MUTEX?5?9?9?5DEBUGCHANGE?$AA@ 100155ec     tzapdmaa.obj
+ 0003:00000610       ??_C@_0BG@OLDG@ZEIDON?5MUTEX?5?9?9?5MUTEX?$AA@ 10015610     tzapdmaa.obj
+ 0003:0000062c       ??_C@_0CB@FGNI@ZEIDON?5MUTEX?5?9?9?5TASK?5CHAIN?5WRITE@ 1001562c     tzapdmaa.obj
+ 0003:00000654       ??_C@_0BL@OFOI@ZEIDON?5MUTEX?5?9?9?5TASK?5CHAIN?$AA@ 10015654     tzapdmaa.obj
+ 0003:00000674       ??_C@_0BL@FIFA@ZEIDON?5MUTEX?5?9?9?5SHARED?5MEM?$AA@ 10015674     tzapdmaa.obj
+ 0003:00000694       ??_C@_0BM@GEKC@ZEIDON?5MUTEX?5?9?9?5ANCHOR?5INIT?$AA@ 10015694     tzapdmaa.obj
+ 0003:000006b8       ??_C@_0BN@JMMP@ZEIDON?5MUTEX?5?9?9?5ANCHOR?5BLOCK?$AA@ 100156b8     tzapdmaa.obj
+ 0003:000006dc       ??_C@_0CC@CFG@ZEIDON?5MUTEX?5?9?9?5MEMORY?5ALLOCATIO@ 100156dc     tzapdmaa.obj
+ 0003:00000704       ??_C@_0BJ@OCLO@ZEIDON?5MUTEX?5?9?9?5INITTERM?$AA@ 10015704     tzapdmaa.obj
+ 0003:00000724       ??_C@_04NILO@TEXT?$AA@     10015724     tzapdmaa.obj
+ 0003:0000072c       ??_C@_02GIEM@?0?5?$AA@     1001572c     tzapdmaa.obj
+ 0003:00000730       ??_C@_0DF@OBEK@Only?5AlphaNumeric?0?5space?5and?5?5?8_@ 10015730     tzapdmaa.obj
+ 0003:00000770       ??_C@_08GBDF@TZDME022?$AA@ 10015770     tzapdmaa.obj
+ 0003:0000077c       ??_C@_0BA@FOOE@Data?5Validation?$AA@ 1001577c     tzapdmaa.obj
+ 0003:00000790       ??_C@_0CN@DKNI@Only?5AlphaNumeric?5and?5?8_?8?5chars?5@ 10015790     tzapdmaa.obj
+ 0003:000007c8       ??_C@_0BB@HCOC@INTEGER_THOUSAND?$AA@ 100157c8     tzapdmaa.obj
+ 0003:000007dc       ??_C@_01PLJA@0?$AA@        100157dc     tzapdmaa.obj
+ 0003:000007e0       ??_C@_0L@JEGH@hexAddress?$AA@ 100157e0     tzapdmaa.obj
+ 0003:000007f0       ??_C@_03CMAA@Hex?$AA@      100157f0     tzapdmaa.obj
+ 0003:000007f4       ??_C@_08IMJL@00000000?$AA@ 100157f4     tzapdmaa.obj
+ 0003:00000800       ??_C@_0CL@INIG@Invalid?5external?5value?5for?5dynam@ 10015800     tzapdmaa.obj
+ 0003:00000834       ??_C@_0BC@POFE@External?5value?5?$DN?5?$AA@ 10015834     tzapdmaa.obj
+ 0003:0000084c       ??_C@_0P@JFHC@Domain?5name?5?$DN?5?$AA@ 1001584c     tzapdmaa.obj
+ 0003:00000860       ??_C@_0DD@PAJC@TZDME025?5attempting?5to?5set?5inval@ 10015860     tzapdmaa.obj
+ 0003:000008a0       ??_C@_0DB@PLOI@TZDME025?5attempting?5to?5set?5inval@ 100158a0     tzapdmaa.obj
+ 0003:000008dc       ??_C@_0CD@FFML@TZDME025?5attempting?5to?5set?5value@ 100158dc     tzapdmaa.obj
+ 0003:00000908       ??_C@_08MDKF@TZDMD003?$AA@ 10015908     tzapdmaa.obj
+ 0003:00000914       ??_C@_0BE@OBEH@Invalid?5input?5value?$AA@ 10015914     tzapdmaa.obj
+ 0003:0000092c       ??_C@_0BF@GHIG@InternalIntegerValue?$AA@ 1001592c     tzapdmaa.obj
+ 0003:00000948       ??_C@_0BE@CPIG@InternalStringValue?$AA@ 10015948     tzapdmaa.obj
+ 0003:00000960       ??_C@_0M@BEHB@DomainValue?$AA@ 10015960     tzapdmaa.obj
+ 0003:00000970       ??_C@_0BE@MMBL@ExternalDescription?$AA@ 10015970     tzapdmaa.obj
+ 0003:00000988       ??_C@_08GJDC@TZDMD002?$AA@ 10015988     tzapdmaa.obj
+ 0003:00000994       ??_C@_0BE@GHAA@?0?5cannot?5be?5loaded?4?$AA@ 10015994     tzapdmaa.obj
+ 0003:000009ac       ??_C@_0BD@NKNG@Validation?5table?0?5?$AA@ 100159ac     tzapdmaa.obj
+ 0003:000009c4       ??_C@_07OCKE@DOMAINT?$AA@  100159c4     tzapdmaa.obj
+ 0003:000009d0       ??_C@_0P@OPDK@DomainMutex_?$CFs?$AA@ 100159d0     tzapdmaa.obj
+ 0003:000009e4       ??_C@_02HILF@X_?$AA@       100159e4     tzapdmaa.obj
+ 0003:000009e8       ??_C@_04FKDH@Oper?$AA@     100159e8     tzapdmaa.obj
+ 0003:000009f0       ??_C@_01KPOD@?$DN?$AA@     100159f0     tzapdmaa.obj
+ 0003:000009f4       ??_C@_05KBGO@Value?$AA@    100159f4     tzapdmaa.obj
+ 0003:000009fc       ??_C@_0O@JICG@AttributeName?$AA@ 100159fc     tzapdmaa.obj
+ 0003:00000a0c       ??_C@_04EFNI@Name?$AA@     10015a0c     tzapdmaa.obj
+ 0003:00000a14       ??_C@_0L@DIOI@QualAttrib?$AA@ 10015a14     tzapdmaa.obj
+ 0003:00000a24       ??_C@_0L@LOJF@EntityName?$AA@ 10015a24     tzapdmaa.obj
+ 0003:00000a34       ??_C@_06CDGA@Domain?$AA@   10015a34     tzapdmaa.obj
+ 0003:00000a3c       ??_C@_0L@EIGE@EntitySpec?$AA@ 10015a3c     tzapdmaa.obj
+ 0003:00000a4c       ??_C@_08ILBJ@KZDBHQUA?$AA@ 10015a4c     tzapdmaa.obj
+ 0003:00000a58       ??_C@_08DMNH@TZDMD005?$AA@ 10015a58     tzapdmaa.obj
+ 0003:00000a64       ??_C@_0CL@ELGK@External?5Attribute?5definition?5is@ 10015a64     tzapdmaa.obj
+ 0003:00000a98       ??_C@_08JGEA@TZDMD004?$AA@ 10015a98     tzapdmaa.obj
+ 0003:00000aa4       ??_C@_0CL@MDCN@Internal?5Attribute?5definition?5is@ 10015aa4     tzapdmaa.obj
+ 0003:00000ad8       ??_C@_0CD@GOJM@Validation?5table?5cannot?5be?5loade@ 10015ad8     tzapdmaa.obj
+ 0003:00000b04       ??_C@_02CLHN@?5?7?$AA@     10015b04     tzapdmaa.obj
+ 0003:00000b08       _DT_Context                10015b08     tzapdmab.obj
+ 0003:00000b90       _nNbrContextEntries        10015b90     tzapdmab.obj
+ 0003:00000bec       ??_C@_08LIDF@December?$AA@ 10015bec     tzapdmab.obj
+ 0003:00000bf8       ??_C@_08NJLI@November?$AA@ 10015bf8     tzapdmab.obj
+ 0003:00000c04       ??_C@_07IAMM@October?$AA@  10015c04     tzapdmab.obj
+ 0003:00000c10       ??_C@_09MKGD@September?$AA@ 10015c10     tzapdmab.obj
+ 0003:00000c1c       ??_C@_06PADP@August?$AA@   10015c1c     tzapdmab.obj
+ 0003:00000c24       ??_C@_04PIJO@July?$AA@     10015c24     tzapdmab.obj
+ 0003:00000c2c       ??_C@_04ICFP@June?$AA@     10015c2c     tzapdmab.obj
+ 0003:00000c34       ??_C@_03MGHB@May?$AA@      10015c34     tzapdmab.obj
+ 0003:00000c38       ??_C@_05JFGC@April?$AA@    10015c38     tzapdmab.obj
+ 0003:00000c40       ??_C@_05FGPD@March?$AA@    10015c40     tzapdmab.obj
+ 0003:00000c48       ??_C@_08PGBA@February?$AA@ 10015c48     tzapdmab.obj
+ 0003:00000c54       ??_C@_07BPKJ@January?$AA@  10015c54     tzapdmab.obj
+ 0003:00000c60       ??_C@_01PDAJ@S?$AA@        10015c60     tzapdmab.obj
+ 0003:00000c64       ??_C@_08LDBG@FreeForm?$AA@ 10015c64     tzapdmab.obj
+ 0003:00000c70       ??_C@_04PJGI@YYYY?$AA@     10015c70     tzapdmab.obj
+ 0003:00000c78       ??_C@_02JBGN@YY?$AA@       10015c78     tzapdmab.obj
+ 0003:00000c7c       ??_C@_04LBHG@Year?$AA@     10015c7c     tzapdmab.obj
+ 0003:00000c84       ??_C@_0L@PEIM@WeekOfYear?$AA@ 10015c84     tzapdmab.obj
+ 0003:00000c94       ??_C@_06DJBP@Second?$AA@   10015c94     tzapdmab.obj
+ 0003:00000c9c       ??_C@_0BG@GKA@MSWindowsShortSetting?$AA@ 10015c9c     tzapdmab.obj
+ 0003:00000cb8       ??_C@_0BF@JFED@MSWindowsLongSetting?$AA@ 10015cb8     tzapdmab.obj
+ 0003:00000cd4       ??_C@_02DDAF@PS?$AA@       10015cd4     tzapdmab.obj
+ 0003:00000cd8       ??_C@_0BB@OLDP@MSWindowsSetting?$AA@ 10015cd8     tzapdmab.obj
+ 0003:00000cec       ??_C@_0M@NECN@MonthOfYear?$AA@ 10015cec     tzapdmab.obj
+ 0003:00000cfc       ??_C@_05FBPG@Month?$AA@    10015cfc     tzapdmab.obj
+ 0003:00000d04       ??_C@_06OFCE@Minute?$AA@   10015d04     tzapdmab.obj
+ 0003:00000d0c       ??_C@_03FHAF@LSM?$AA@      10015d0c     tzapdmab.obj
+ 0003:00000d10       ??_C@_04MFJO@Hour?$AA@     10015d10     tzapdmab.obj
+ 0003:00000d18       ??_C@_09EIPD@DayOfYear?$AA@ 10015d18     tzapdmab.obj
+ 0003:00000d24       ??_C@_09LAHK@DayOfWeek?$AA@ 10015d24     tzapdmab.obj
+ 0003:00000d30       ??_C@_02LGFC@LS?$AA@       10015d30     tzapdmab.obj
+ 0003:00000d34       ??_C@_0L@LLAP@DayOfMonth?$AA@ 10015d34     tzapdmab.obj
+ 0003:00000d44       ??_C@_01FLCE@L?$AA@        10015d44     tzapdmab.obj
+ 0003:00000d48       ??_C@_03ENC@Day?$AA@       10015d48     tzapdmab.obj
+ 0003:00000d4c       ??_C@_09NAHJ@ESLMMDDYY?$AA@ 10015d4c     tzapdmab.obj
+ 0003:00000d58       ??_C@_09EJNB@REVMMDDYY?$AA@ 10015d58     tzapdmab.obj
+ 0003:00000d64       ??_C@_08GGAM@19000101?$AA@ 10015d64     tzapdmab.obj
+ 0003:00000d70       ??_C@_09OBBM@000000000?$AA@ 10015d70     tzapdmab.obj
+ 0003:00000d7c       ??_C@_02CNFA@XX?$AA@       10015d7c     tzapdmab.obj
+ 0003:00000d80       ??_C@_04OMLL@Date?$AA@     10015d80     tzapdmab.obj
+ 0003:00000d88       ??_C@_0BC@NHIB@00000000000000000?$AA@ 10015d88     tzapdmab.obj
+ 0003:00000da0       ??_C@_05NBJO@?$CF02ld?$AA@ 10015da0     tzapdmab.obj
+ 0003:00000da8       ??_C@_05DNOJ@?$CF04ld?$AA@ 10015da8     tzapdmab.obj
+ 0003:00000db0       ??_C@_03DJNH@?4?1?9?$AA@   10015db0     tzapdmab.obj
+ 0003:00000db4       ??_C@_05IDII@?$CF03ld?$AA@ 10015db4     tzapdmab.obj
+ 0003:00000dbc       ??_C@_03OMNK@?3?4?0?$AA@   10015dbc     tzapdmab.obj
+ 0003:00000dc0       ??_C@_0BF@GBMK@0123456789aAmMpP?3?4?0?5?$AA@ 10015dc0     tzapdmab.obj
+ 0003:00000ddc       ??_C@_01FCOA@?5?$AA@       10015ddc     tzapdmab.obj
+ 0003:00000de0       ??_C@_03PGJ@?5AM?$AA@      10015de0     tzapdmab.obj
+ 0003:00000de4       ??_C@_03HDGK@?5PM?$AA@     10015de4     tzapdmab.obj
+ 0003:00000de8       ??_C@_04LGDF@?$CF02d?$AA@  10015de8     tzapdmab.obj
+ 0003:00000df0       ??_C@_01PJCK@?4?$AA@       10015df0     tzapdmac.obj
+ 0003:00000df4       ??_C@_01KMAE@?0?$AA@       10015df4     tzapdmac.obj
+ 0003:00000df8       ??_C@_02FKHH@?1L?$AA@      10015df8     tzapdmac.obj
+ 0003:00000dfc       ??_C@_03IPNG@0?40?$AA@     10015dfc     tzapdmac.obj
+ 0003:00000e00       ??_C@_02PCFK@?1S?$AA@      10015e00     tzapdmac.obj
+ 0003:00000e04       ??_C@_0L@KFJ@DecimalKey?$AA@ 10015e04     tzapdmac.obj
+ 0003:00000e14       ??_C@_0N@OEDJ@DecimalComma?$AA@ 10015e14     tzapdmac.obj
+ 0003:00000e24       ??_C@_0N@NMBN@DecimalPoint?$AA@ 10015e24     tzapdmac.obj
+ 0003:00000e34       ??_C@_07OOBD@DECIMAL?$AA@  10015e34     tzapdmac.obj
+ 0003:00000e40       ??_C@_0N@BFMA@CurrencyText?$AA@ 10015e40     tzapdmac.obj
+ 0003:00000fac       _g_ZeidonPageTable         10015fac     tzapdmaa.obj
+ 0003:000013ac       _g_FileMappingHandles      100163ac     tzapdmaa.obj
+ 0003:000017ac       _g_nOE_TraceWarning        100167ac     tzapdmaa.obj
+ 0003:000017b0       _g_vRealTaskView           100167b0     tzapdmaa.obj
+ 0003:000017b4       _g_vDefaultTaskView        100167b4     tzapdmaa.obj
+ 0003:000017b8       _g_lProcessID              100167b8     tzapdmaa.obj
+ 0003:000017bc       _g_ZeidonMutexTable        100167bc     tzapdmaa.obj
+ 0003:000017fc       _lpNullP                   100167fc     tzapdmaa.obj
+ 0003:00001800       _szNullS                   10016800     tzapdmaa.obj
+ 0003:000019b4       ??_C@_00A@?$AA@            100169b4     tzapdmaa.obj
+ 0003:000019d0       _g_pfnGetHndl              100169d0     <common>
+ 0003:000019e0       _g_pfnGetPtr               100169e0     <common>
+ 0003:000019e4       __adjust_fdiv              100169e4     <common>
+ 0003:000019f0       ___onexitend               100169f0     <common>
+ 0003:00001a00       ___onexitbegin             10016a00     <common>
+ 0003:00001a04       __pRawDllMain              10016a04     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_KERNEL32 10017000     kernel32:KERNEL32.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KZOENGAA 10017014     kzoengaa:KZOENGAA.DLL
+ 0004:00000028       __IMPORT_DESCRIPTOR_MSVCRTD 10017028     msvcrtd:MSVCRTD.dll
+ 0004:0000003c       __NULL_IMPORT_DESCRIPTOR   1001703c     kernel32:KERNEL32.dll
+ 0004:0000028c       __imp__GetLocaleInfoA@16   1001728c     kernel32:KERNEL32.dll
+ 0004:00000290       __imp__DisableThreadLibraryCalls@4 10017290     kernel32:KERNEL32.dll
+ 0004:00000294       \177KERNEL32_NULL_THUNK_DATA 10017294     kernel32:KERNEL32.dll
+ 0004:000002c0       __imp__TrueName@8          100172c0     kzoengaa:KZOENGAA.DLL
+ 0004:000002c4       __imp__GetContext@12       100172c4     kzoengaa:KZOENGAA.DLL
+ 0004:000002c8       __imp__SysConvertStringToDecimal@8 100172c8     kzoengaa:KZOENGAA.DLL
+ 0004:000002cc       __imp__SysConvertLongToDecimal@8 100172cc     kzoengaa:KZOENGAA.DLL
+ 0004:000002d0       __imp__SysConvertEnvironmentString@8 100172d0     kzoengaa:KZOENGAA.DLL
+ 0004:000002d4       __imp__GetValueFromRecord@24 100172d4     kzoengaa:KZOENGAA.DLL
+ 0004:000002d8       __imp__StoreValueInRecord@20 100172d8     kzoengaa:KZOENGAA.DLL
+ 0004:000002dc       __imp__UfDateTimeToString@12 100172dc     kzoengaa:KZOENGAA.DLL
+ 0004:000002e0       __imp__ConvertDecimalToString@52 100172e0     kzoengaa:KZOENGAA.DLL
+ 0004:000002e4       __imp__SysCompareDecimalToNull@4 100172e4     kzoengaa:KZOENGAA.DLL
+ 0004:000002e8       __imp__SendDomainError@28  100172e8     kzoengaa:KZOENGAA.DLL
+ 0004:000002ec       __imp__MessageSend@24      100172ec     kzoengaa:KZOENGAA.DLL
+ 0004:000002f0       __imp__SysGetPointerFromHandle@4 100172f0     kzoengaa:KZOENGAA.DLL
+ 0004:000002f4       __imp__SysAddDecimalToDecimal@12 100172f4     kzoengaa:KZOENGAA.DLL
+ 0004:000002f8       __imp__SysConvertDecimalToLong@8 100172f8     kzoengaa:KZOENGAA.DLL
+ 0004:000002fc       __imp__SysGetNumberFormat@12 100172fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000300       __imp__UfDecryptString@12  10017300     kzoengaa:KZOENGAA.DLL
+ 0004:00000304       __imp__UfEncryptString@12  10017304     kzoengaa:KZOENGAA.DLL
+ 0004:00000308       __imp__UfDecryptStringUL@16 10017308     kzoengaa:KZOENGAA.DLL
+ 0004:0000030c       __imp__UfEncryptStringUL@16 1001730c     kzoengaa:KZOENGAA.DLL
+ 0004:00000310       __imp__MiGetViewEntityForView@8 10017310     kzoengaa:KZOENGAA.DLL
+ 0004:00000314       __imp__SetCursorPrevEntity@12 10017314     kzoengaa:KZOENGAA.DLL
+ 0004:00000318       __imp__SetCursorNextEntity@12 10017318     kzoengaa:KZOENGAA.DLL
+ 0004:0000031c       __imp__SetCursorFirstEntity@12 1001731c     kzoengaa:KZOENGAA.DLL
+ 0004:00000320       __imp__GetStringFromRecord@20 10017320     kzoengaa:KZOENGAA.DLL
+ 0004:00000324       __imp__TraceLineI@8        10017324     kzoengaa:KZOENGAA.DLL
+ 0004:00000328       __imp__SysAssignDecimalFromDecimal@8 10017328     kzoengaa:KZOENGAA.DLL
+ 0004:0000032c       __imp__SfGetCurrentTask@4  1001732c     kzoengaa:KZOENGAA.DLL
+ 0004:00000330       __imp__SetCursorFirstEntityByInteger@20 10017330     kzoengaa:KZOENGAA.DLL
+ 0004:00000334       __imp__TraceLineS@8        10017334     kzoengaa:KZOENGAA.DLL
+ 0004:00000338       __imp__GetIntegerFromAttribute@16 10017338     kzoengaa:KZOENGAA.DLL
+ 0004:0000033c       __imp__GetStringFromAttribute@16 1001733c     kzoengaa:KZOENGAA.DLL
+ 0004:00000340       __imp__SetCursorFirstEntityByString@20 10017340     kzoengaa:KZOENGAA.DLL
+ 0004:00000344       __imp__SysAssignDecimalFromNull@4 10017344     kzoengaa:KZOENGAA.DLL
+ 0004:00000348       __imp__CreateViewFromViewForTask@12 10017348     kzoengaa:KZOENGAA.DLL
+ 0004:0000034c       __imp__SysMutexUnlock@12   1001734c     kzoengaa:KZOENGAA.DLL
+ 0004:00000350       __imp__SetNameForView@16   10017350     kzoengaa:KZOENGAA.DLL
+ 0004:00000354       __imp__ActivateObjectInstance@20 10017354     kzoengaa:KZOENGAA.DLL
+ 0004:00000358       __imp__SysMutexLock@16     10017358     kzoengaa:KZOENGAA.DLL
+ 0004:0000035c       __imp__GetViewByName@16    1001735c     kzoengaa:KZOENGAA.DLL
+ 0004:00000360       __imp__GetDefaultContext@8 10017360     kzoengaa:KZOENGAA.DLL
+ 0004:00000364       __imp__SetAttributeFromString@16 10017364     kzoengaa:KZOENGAA.DLL
+ 0004:00000368       __imp__CreateEntity@12     10017368     kzoengaa:KZOENGAA.DLL
+ 0004:0000036c       __imp__SfActivateSysEmptyOI@16 1001736c     kzoengaa:KZOENGAA.DLL
+ 0004:00000370       __imp__GetAddrForAttribute@16 10017370     kzoengaa:KZOENGAA.DLL
+ 0004:00000374       __imp__SysCompareDecimalToDecimal@8 10017374     kzoengaa:KZOENGAA.DLL
+ 0004:00000378       __imp__UfEditFormatDateTime@8 10017378     kzoengaa:KZOENGAA.DLL
+ 0004:0000037c       __imp__SysGetTimeFormat@4  1001737c     kzoengaa:KZOENGAA.DLL
+ 0004:00000380       __imp__SysGetShortDateFormat@4 10017380     kzoengaa:KZOENGAA.DLL
+ 0004:00000384       __imp__SysGetLongDateFormat@4 10017384     kzoengaa:KZOENGAA.DLL
+ 0004:00000388       __imp__UfJulianToGregorian@8 10017388     kzoengaa:KZOENGAA.DLL
+ 0004:0000038c       __imp__SysConvertDoubleToDecimal@12 1001738c     kzoengaa:KZOENGAA.DLL
+ 0004:00000390       __imp__UfGetDayOfYear@4    10017390     kzoengaa:KZOENGAA.DLL
+ 0004:00000394       __imp__UfGetDayOfWeek@4    10017394     kzoengaa:KZOENGAA.DLL
+ 0004:00000398       __imp__UfFormatDateTime@12 10017398     kzoengaa:KZOENGAA.DLL
+ 0004:0000039c       __imp__UfGetWeekOfYear@4   1001739c     kzoengaa:KZOENGAA.DLL
+ 0004:000003a0       __imp__UfAddToDateTime@12  100173a0     kzoengaa:KZOENGAA.DLL
+ 0004:000003a4       __imp__SysGetDateTime@4    100173a4     kzoengaa:KZOENGAA.DLL
+ 0004:000003a8       __imp__SysConvertDecimalToString@12 100173a8     kzoengaa:KZOENGAA.DLL
+ 0004:000003ac       __imp__SysSubtractDecimalFromDecimal@12 100173ac     kzoengaa:KZOENGAA.DLL
+ 0004:000003b0       __imp__SysCompareDecimalToDouble@12 100173b0     kzoengaa:KZOENGAA.DLL
+ 0004:000003b4       __imp__UfStringToDateTime@8 100173b4     kzoengaa:KZOENGAA.DLL
+ 0004:000003b8       \177KZOENGAA_NULL_THUNK_DATA 100173b8     kzoengaa:KZOENGAA.DLL
+ 0004:00000414       __imp___stricmp            10017414     msvcrtd:MSVCRTD.dll
+ 0004:00000418       __imp__atol                10017418     msvcrtd:MSVCRTD.dll
+ 0004:0000041c       __imp__strcpy              1001741c     msvcrtd:MSVCRTD.dll
+ 0004:00000420       __imp__strcat              10017420     msvcrtd:MSVCRTD.dll
+ 0004:00000424       __imp___ltoa               10017424     msvcrtd:MSVCRTD.dll
+ 0004:00000428       __imp__strncat             10017428     msvcrtd:MSVCRTD.dll
+ 0004:0000042c       __imp__strlen              1001742c     msvcrtd:MSVCRTD.dll
+ 0004:00000430       __imp___pctype             10017430     msvcrtd:MSVCRTD.dll
+ 0004:00000434       __imp___isctype            10017434     msvcrtd:MSVCRTD.dll
+ 0004:00000438       __imp____mb_cur_max        10017438     msvcrtd:MSVCRTD.dll
+ 0004:0000043c       __imp__strncpy             1001743c     msvcrtd:MSVCRTD.dll
+ 0004:00000440       __imp__sprintf             10017440     msvcrtd:MSVCRTD.dll
+ 0004:00000444       __imp__strspn              10017444     msvcrtd:MSVCRTD.dll
+ 0004:00000448       __imp__strchr              10017448     msvcrtd:MSVCRTD.dll
+ 0004:0000044c       __imp__strncmp             1001744c     msvcrtd:MSVCRTD.dll
+ 0004:00000450       __imp__toupper             10017450     msvcrtd:MSVCRTD.dll
+ 0004:00000454       __imp__memcpy              10017454     msvcrtd:MSVCRTD.dll
+ 0004:00000458       __imp__atof                10017458     msvcrtd:MSVCRTD.dll
+ 0004:0000045c       __imp__strpbrk             1001745c     msvcrtd:MSVCRTD.dll
+ 0004:00000460       __imp__atoi                10017460     msvcrtd:MSVCRTD.dll
+ 0004:00000464       __imp__memset              10017464     msvcrtd:MSVCRTD.dll
+ 0004:00000468       __imp__isdigit             10017468     msvcrtd:MSVCRTD.dll
+ 0004:0000046c       __imp___free_dbg           1001746c     msvcrtd:MSVCRTD.dll
+ 0004:00000470       __imp___initterm           10017470     msvcrtd:MSVCRTD.dll
+ 0004:00000474       __imp___malloc_dbg         10017474     msvcrtd:MSVCRTD.dll
+ 0004:00000478       __imp___adjust_fdiv        10017478     msvcrtd:MSVCRTD.dll
+ 0004:0000047c       __imp____dllonexit         1001747c     msvcrtd:MSVCRTD.dll
+ 0004:00000480       __imp___onexit             10017480     msvcrtd:MSVCRTD.dll
+ 0004:00000484       __imp__strcmp              10017484     msvcrtd:MSVCRTD.dll
+ 0004:00000488       \177MSVCRTD_NULL_THUNK_DATA 10017488     msvcrtd:MSVCRTD.dll
+
+ entry point at        0001:00010f10
+

@@ -1,0 +1,215 @@
+ tzadwebd
+
+ Timestamp is 52cd9618 (Wed Jan 08 13:16:56 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00003b48H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 0000033aH .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00000570H .data                   DATA
+ 0003:00000980 00000038H .bss                    DATA
+ 0004:00000000 00000050H .idata$2                DATA
+ 0004:00000050 00000014H .idata$3                DATA
+ 0004:00000064 00000174H .idata$4                DATA
+ 0004:000001d8 00000174H .idata$5                DATA
+ 0004:0000034c 00000231H .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000050       _DllMain@12                10001050 f   zdllinst.obj
+ 0001:00000076       _GetDLL_Instance@4         10001076 f   zdllinst.obj
+ 0001:00000090       _SELECT_VOR_ForAutodesign@4 10001090 f   tzadwebd.obj
+ 0001:000002b0       _REMOVE_PotentialAttributes@4 100012b0 f   tzadwebd.obj
+ 0001:0000035c       _AUTODESIGN_Group@4        1000135c f   tzadwebd.obj
+ 0001:00000ea2       _SELECT_TopEntityForAutodesign@4 10001ea2 f   tzadwebd.obj
+ 0001:0000155d       _SELECT_PotentialAttributes@4 1000255d f   tzadwebd.obj
+ 0001:0000273a       _ActivateEmptyMetaOI@16    1000373a f   tzlodopr:tzlodopr.dll
+ 0001:00002740       _ActivateMetaOI_ByZKey@28  10003740 f   tzlodopr:tzlodopr.dll
+ 0001:00002746       _fnPainterCall@16          10003746 f   tzlodopr:tzlodopr.dll
+ 0001:0000274c       _InsertSpacesInPrompt@16   1000374c f   tzlodopr:tzlodopr.dll
+ 0001:00002752       _CreateMetaEntity@16       10003752 f   tzlodopr:tzlodopr.dll
+ 0001:00002758       _GetStringLength@4         10003758 f   tzlodopr:tzlodopr.dll
+ 0001:0000275e       _SetMatchingAttributesByName@20 1000375e f   kzoengaa:KZOENGAA.DLL
+ 0001:00002764       _SetCursorNextEntity@12    10003764 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000276a       _SetCursorFirstEntity@12   1000376a f   kzoengaa:KZOENGAA.DLL
+ 0001:00002770       _DeleteEntity@12           10003770 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002776       _CheckExistenceOfEntity@8  10003776 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000277c       _CreateEntity@12           1000377c f   kzoengaa:KZOENGAA.DLL
+ 0001:00002782       _SetNameForView@16         10003782 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002788       _MessageSend@24            10003788 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000278e       _GetIntegerFromAttribute@16 1000378e f   kzoengaa:KZOENGAA.DLL
+ 0001:00002794       _GetViewByName@16          10003794 f   kzoengaa:KZOENGAA.DLL
+ 0001:0000279a       _GetSelectStateOfEntity@8  1000379a f   kzoengaa:KZOENGAA.DLL
+ 0001:000027a0       _GetVariableFromAttribute@36 100037a0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027a6       _AcceptSubobject@8         100037a6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027ac       _CompareAttributeToString@16 100037ac f   kzoengaa:KZOENGAA.DLL
+ 0001:000027b2       _ResetViewFromSubobject@4  100037b2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027b8       _ZeidonStringCompare@28    100037b8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027be       _GetStringFromAttribute@16 100037be f   kzoengaa:KZOENGAA.DLL
+ 0001:000027c4       _SetAttributeFromInteger@16 100037c4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027ca       _SetAttributeFromString@16 100037ca f   kzoengaa:KZOENGAA.DLL
+ 0001:000027d0       _ZeidonStringConcat@28     100037d0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027d6       _ZeidonStringCopy@28       100037d6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027dc       _IncludeSubobjectFromSubobject@20 100037dc f   kzoengaa:KZOENGAA.DLL
+ 0001:000027e2       _SetViewToSubobject@8      100037e2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027e8       _SetCursorFirstEntityByString@20 100037e8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027ee       _SetAttributeFromAttribute@24 100037ee f   kzoengaa:KZOENGAA.DLL
+ 0001:000027f4       _DropView@4                100037f4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000027fa       _CreateViewFromView@8      100037fa f   kzoengaa:KZOENGAA.DLL
+ 0001:00002800       _SetSelectStateOfEntity@12 10003800 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002806       _CompareAttributeToAttribute@24 10003806 f   kzoengaa:KZOENGAA.DLL
+ 0001:00002810       __CRT_INIT@12              10003810 f   msvcrtd:crtdll.obj
+ 0001:00002920       __DllMainCRTStartup@12     10003920 f   msvcrtd:crtdll.obj
+ 0001:00002a14       __free_dbg                 10003a14 f   msvcrtd:MSVCRTD.dll
+ 0001:00002a1a       __initterm                 10003a1a f   msvcrtd:MSVCRTD.dll
+ 0001:00002a20       __onexit                   10003a20 f   msvcrtd:atonexit.obj
+ 0001:00002a60       _atexit                    10003a60 f   msvcrtd:atonexit.obj
+ 0001:00002a78       __malloc_dbg               10003a78 f   msvcrtd:MSVCRTD.dll
+ 0001:00002a7e       ___dllonexit               10003a7e f   msvcrtd:MSVCRTD.dll
+ 0001:00002a84       _SetWindowActionBehavior@16 10003a84 f   zdrapp:ZDrApp.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000501c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10006000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10006104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10006208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000630c     msvcrtd:cinitexe.obj
+ 0003:00000410       ??_C@_0BL@DBOL@FlatListPotentialTopEntity?$AA@ 10006410     tzadwebd.obj
+ 0003:00000430       ??_C@_0L@BHII@LOD_Entity?$AA@ 10006430     tzadwebd.obj
+ 0003:00000440       ??_C@_0BK@IDKD@FlatListSelectedAttribute?$AA@ 10006440     tzadwebd.obj
+ 0003:00000460       ??_C@_0BL@DNPJ@FlatListPotentialAttribute?$AA@ 10006460     tzadwebd.obj
+ 0003:00000480       ??_C@_0BH@MDBC@FlatListSelectedEntity?$AA@ 10006480     tzadwebd.obj
+ 0003:0000049c       ??_C@_07FBKB@UI_Spec?$AA@  1000649c     tzadwebd.obj
+ 0003:000004a8       ??_C@_08IFDA@TZADCSDO?$AA@ 100064a8     tzadwebd.obj
+ 0003:000004b4       ??_C@_0BG@CHNE@AutodesignSelectedLOD?$AA@ 100064b4     tzadwebd.obj
+ 0003:000004d0       ??_C@_0BI@GGFD@Autodesign?5Window?5Group?$AA@ 100064d0     tzadwebd.obj
+ 0003:000004ec       ??_C@_0CC@PJEA@The?5Lod?5Object?5could?5not?5be?5read@ 100064ec     tzadwebd.obj
+ 0003:00000514       ??_C@_03CMHN@LOD?$AA@      10006514     tzadwebd.obj
+ 0003:00000518       ??_C@_04BBDM@ZKey?$AA@     10006518     tzadwebd.obj
+ 0003:00000520       ??_C@_09GKNB@TZWINDOWL?$AA@ 10006520     tzadwebd.obj
+ 0003:0000052c       ??_C@_01MHL@U?$AA@         1000652c     tzadwebd.obj
+ 0003:00000530       ??_C@_06FCEH@Window?$AA@   10006530     tzadwebd.obj
+ 0003:00000538       ??_C@_03CHAC@Tag?$AA@      10006538     tzadwebd.obj
+ 0003:0000053c       ??_C@_0BH@GDFI@WebAutodesignGroupType?$AA@ 1000653c     tzadwebd.obj
+ 0003:00000558       ??_C@_01PJM@D?$AA@         10006558     tzadwebd.obj
+ 0003:0000055c       ??_C@_07FNBF@Control?$AA@  1000655c     tzadwebd.obj
+ 0003:00000568       ??_C@_09GFFC@TZCONTROL?$AA@ 10006568     tzadwebd.obj
+ 0003:00000574       ??_C@_0O@JICG@AttributeName?$AA@ 10006574     tzadwebd.obj
+ 0003:00000584       ??_C@_0CJ@BPIP@At?5least?5one?5Attribute?5must?5be?5s@ 10006584     tzadwebd.obj
+ 0003:000005b8       ??_C@_0BF@KOMI@CtrlMapLOD_Attribute?$AA@ 100065b8     tzadwebd.obj
+ 0003:000005d4       ??_C@_0O@HMMI@LOD_Attribute?$AA@ 100065d4     tzadwebd.obj
+ 0003:000005e4       ??_C@_0N@IKDH@ER_Attribute?$AA@ 100065e4     tzadwebd.obj
+ 0003:000005f4       ??_C@_08GGOA@Calendar?$AA@ 100065f4     tzadwebd.obj
+ 0003:00000600       ??_C@_08KHC@Combobox?$AA@  10006600     tzadwebd.obj
+ 0003:0000060c       ??_C@_08FLPG@Checkbox?$AA@ 1000660c     tzadwebd.obj
+ 0003:00000618       ??_C@_0M@CJFC@ControlType?$AA@ 10006618     tzadwebd.obj
+ 0003:00000628       ??_C@_06LIHJ@Update?$AA@   10006628     tzadwebd.obj
+ 0003:00000630       ??_C@_08FGLH@Disabled?$AA@ 10006630     tzadwebd.obj
+ 0003:0000063c       ??_C@_01PCJP@Y?$AA@        1000663c     tzadwebd.obj
+ 0003:00000640       ??_C@_0M@OEDG@GridEditCtl?$AA@ 10006640     tzadwebd.obj
+ 0003:00000650       ??_C@_04BNNJ@Text?$AA@     10006650     tzadwebd.obj
+ 0003:00000658       ??_C@_08PNPF@GridCtrl?$AA@ 10006658     tzadwebd.obj
+ 0003:00000664       ??_C@_0N@FHMM@ControlWidth?$AA@ 10006664     tzadwebd.obj
+ 0003:00000674       ??_C@_0M@KDOF@CtrlMapView?$AA@ 10006674     tzadwebd.obj
+ 0003:00000684       ??_C@_0L@NDNG@ViewObjRef?$AA@ 10006684     tzadwebd.obj
+ 0003:00000694       ??_C@_0BC@CKIG@CtrlMapLOD_Entity?$AA@ 10006694     tzadwebd.obj
+ 0003:000006ac       ??_C@_04EFNI@Name?$AA@     100066ac     tzadwebd.obj
+ 0003:000006b4       ??_C@_07DAPJ@CtrlMap?$AA@  100066b4     tzadwebd.obj
+ 0003:000006c0       ??_C@_07DEAD@SZDLG_Y?$AA@  100066c0     tzadwebd.obj
+ 0003:000006cc       ??_C@_07JOJE@SZDLG_X?$AA@  100066cc     tzadwebd.obj
+ 0003:000006d8       ??_C@_07HPBM@PSDLG_Y?$AA@  100066d8     tzadwebd.obj
+ 0003:000006e4       ??_C@_07NFIL@PSDLG_X?$AA@  100066e4     tzadwebd.obj
+ 0003:000006f0       ??_C@_07KMLE@SyncKey?$AA@  100066f0     tzadwebd.obj
+ 0003:000006fc       ??_C@_0L@LOJF@EntityName?$AA@ 100066fc     tzadwebd.obj
+ 0003:0000070c       ??_C@_08HCPL@CtrlCtrl?$AA@ 1000670c     tzadwebd.obj
+ 0003:00000718       ??_C@_0L@ELHM@ControlDef?$AA@ 10006718     tzadwebd.obj
+ 0003:00000728       ??_C@_04GNHG@Grid?$AA@     10006728     tzadwebd.obj
+ 0003:00000730       ??_C@_08IMNF@TZPESRCO?$AA@ 10006730     tzadwebd.obj
+ 0003:0000073c       ??_C@_0BB@NHDL@LOD_EntityParent?$AA@ 1000673c     tzadwebd.obj
+ 0003:00000750       ??_C@_0BA@DPMI@LOD_EntityChild?$AA@ 10006750     tzadwebd.obj
+ 0003:00000764       ??_C@_01FLOP@I?$AA@        10006764     tzadwebd.obj
+ 0003:00000768       ??_C@_01PBLD@M?$AA@        10006768     tzadwebd.obj
+ 0003:0000076c       ??_C@_01FLCE@L?$AA@        1000676c     tzadwebd.obj
+ 0003:00000770       ??_C@_0N@FPPC@MaxStringLth?$AA@ 10006770     tzadwebd.obj
+ 0003:00000780       ??_C@_03LBCJ@Lth?$AA@      10006780     tzadwebd.obj
+ 0003:00000784       ??_C@_08FNON@DataType?$AA@ 10006784     tzadwebd.obj
+ 0003:00000790       ??_C@_01PDAJ@S?$AA@        10006790     tzadwebd.obj
+ 0003:00000794       ??_C@_07OLDF@Editbox?$AA@  10006794     tzadwebd.obj
+ 0003:000007a0       ??_C@_0L@ENLK@DomainType?$AA@ 100067a0     tzadwebd.obj
+ 0003:000007b0       ??_C@_01KGOM@T?$AA@        100067b0     tzadwebd.obj
+ 0003:000007b4       ??_C@_08GPOP@DateTime?$AA@ 100067b4     tzadwebd.obj
+ 0003:000007c0       ??_C@_04OMLL@Date?$AA@     100067c0     tzadwebd.obj
+ 0003:000007c8       ??_C@_03GJDK@Y?1N?$AA@     100067c8     tzadwebd.obj
+ 0003:000007cc       ??_C@_09GODH@DomainRec?$AA@ 100067cc     tzadwebd.obj
+ 0003:000007d8       ??_C@_0BA@IEON@ER_AttributeRec?$AA@ 100067d8     tzadwebd.obj
+ 0003:000007ec       ??_C@_0BB@CJOJ@LOD_AttributeRec?$AA@ 100067ec     tzadwebd.obj
+ 0003:00000800       ??_C@_0BB@EOAL@IndentEntityName?$AA@ 10006800     tzadwebd.obj
+ 0003:00000814       ??_C@_0L@EOEF@IndentName?$AA@ 10006814     tzadwebd.obj
+ 0003:00000824       ??_C@_04KEPD@Ctrl?$AA@     10006824     tzadwebd.obj
+ 0003:0000082c       ??_C@_06PPNH@Prompt?$AA@   1000682c     tzadwebd.obj
+ 0003:00000834       ??_C@_0M@KODA@PromptValue?$AA@ 10006834     tzadwebd.obj
+ 0003:00000844       ??_C@_01PKAG@?3?$AA@       10006844     tzadwebd.obj
+ 0003:00000980       _g_hInstanceDLL            10006980     zdllinst.obj
+ 0003:00000984       ??_C@_00A@?$AA@            10006984     tzadwebd.obj
+ 0003:0000098c       __adjust_fdiv              1000698c     <common>
+ 0003:00000998       ___onexitend               10006998     <common>
+ 0003:000009a8       ___onexitbegin             100069a8     <common>
+ 0003:000009ac       __pRawDllMain              100069ac     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 10007000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KZOENGAA 10007014     kzoengaa:KZOENGAA.DLL
+ 0004:00000028       __IMPORT_DESCRIPTOR_MSVCRTD 10007028     msvcrtd:MSVCRTD.dll
+ 0004:0000003c       __IMPORT_DESCRIPTOR_ZDrApp 1000703c     zdrapp:ZDrApp.dll
+ 0004:00000050       __NULL_IMPORT_DESCRIPTOR   10007050     tzlodopr:tzlodopr.dll
+ 0004:000001d8       __imp__GetStringFromAttribute@16 100071d8     kzoengaa:KZOENGAA.DLL
+ 0004:000001dc       __imp__CompareAttributeToAttribute@24 100071dc     kzoengaa:KZOENGAA.DLL
+ 0004:000001e0       __imp__SetSelectStateOfEntity@12 100071e0     kzoengaa:KZOENGAA.DLL
+ 0004:000001e4       __imp__CreateViewFromView@8 100071e4     kzoengaa:KZOENGAA.DLL
+ 0004:000001e8       __imp__DropView@4          100071e8     kzoengaa:KZOENGAA.DLL
+ 0004:000001ec       __imp__SetAttributeFromAttribute@24 100071ec     kzoengaa:KZOENGAA.DLL
+ 0004:000001f0       __imp__SetMatchingAttributesByName@20 100071f0     kzoengaa:KZOENGAA.DLL
+ 0004:000001f4       __imp__SetCursorNextEntity@12 100071f4     kzoengaa:KZOENGAA.DLL
+ 0004:000001f8       __imp__SetCursorFirstEntity@12 100071f8     kzoengaa:KZOENGAA.DLL
+ 0004:000001fc       __imp__DeleteEntity@12     100071fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000200       __imp__CheckExistenceOfEntity@8 10007200     kzoengaa:KZOENGAA.DLL
+ 0004:00000204       __imp__CreateEntity@12     10007204     kzoengaa:KZOENGAA.DLL
+ 0004:00000208       __imp__SetNameForView@16   10007208     kzoengaa:KZOENGAA.DLL
+ 0004:0000020c       __imp__MessageSend@24      1000720c     kzoengaa:KZOENGAA.DLL
+ 0004:00000210       __imp__GetIntegerFromAttribute@16 10007210     kzoengaa:KZOENGAA.DLL
+ 0004:00000214       __imp__GetViewByName@16    10007214     kzoengaa:KZOENGAA.DLL
+ 0004:00000218       __imp__GetSelectStateOfEntity@8 10007218     kzoengaa:KZOENGAA.DLL
+ 0004:0000021c       __imp__GetVariableFromAttribute@36 1000721c     kzoengaa:KZOENGAA.DLL
+ 0004:00000220       __imp__AcceptSubobject@8   10007220     kzoengaa:KZOENGAA.DLL
+ 0004:00000224       __imp__CompareAttributeToString@16 10007224     kzoengaa:KZOENGAA.DLL
+ 0004:00000228       __imp__ResetViewFromSubobject@4 10007228     kzoengaa:KZOENGAA.DLL
+ 0004:0000022c       __imp__ZeidonStringCompare@28 1000722c     kzoengaa:KZOENGAA.DLL
+ 0004:00000230       __imp__SetCursorFirstEntityByString@20 10007230     kzoengaa:KZOENGAA.DLL
+ 0004:00000234       __imp__SetAttributeFromInteger@16 10007234     kzoengaa:KZOENGAA.DLL
+ 0004:00000238       __imp__SetAttributeFromString@16 10007238     kzoengaa:KZOENGAA.DLL
+ 0004:0000023c       __imp__ZeidonStringConcat@28 1000723c     kzoengaa:KZOENGAA.DLL
+ 0004:00000240       __imp__ZeidonStringCopy@28 10007240     kzoengaa:KZOENGAA.DLL
+ 0004:00000244       __imp__IncludeSubobjectFromSubobject@20 10007244     kzoengaa:KZOENGAA.DLL
+ 0004:00000248       __imp__SetViewToSubobject@8 10007248     kzoengaa:KZOENGAA.DLL
+ 0004:0000024c       \177KZOENGAA_NULL_THUNK_DATA 1000724c     kzoengaa:KZOENGAA.DLL
+ 0004:0000028c       __imp___onexit             1000728c     msvcrtd:MSVCRTD.dll
+ 0004:00000290       __imp___malloc_dbg         10007290     msvcrtd:MSVCRTD.dll
+ 0004:00000294       __imp___adjust_fdiv        10007294     msvcrtd:MSVCRTD.dll
+ 0004:00000298       __imp____dllonexit         10007298     msvcrtd:MSVCRTD.dll
+ 0004:0000029c       __imp___initterm           1000729c     msvcrtd:MSVCRTD.dll
+ 0004:000002a0       __imp___free_dbg           100072a0     msvcrtd:MSVCRTD.dll
+ 0004:000002a4       \177MSVCRTD_NULL_THUNK_DATA 100072a4     msvcrtd:MSVCRTD.dll
+ 0004:000002d4       __imp__SetWindowActionBehavior@16 100072d4     zdrapp:ZDrApp.dll
+ 0004:000002d8       \177ZDrApp_NULL_THUNK_DATA 100072d8     zdrapp:ZDrApp.dll
+ 0004:00000304       __imp__GetStringLength@4   10007304     tzlodopr:tzlodopr.dll
+ 0004:00000308       __imp__CreateMetaEntity@16 10007308     tzlodopr:tzlodopr.dll
+ 0004:0000030c       __imp__InsertSpacesInPrompt@16 1000730c     tzlodopr:tzlodopr.dll
+ 0004:00000310       __imp__fnPainterCall@16    10007310     tzlodopr:tzlodopr.dll
+ 0004:00000314       __imp__ActivateMetaOI_ByZKey@28 10007314     tzlodopr:tzlodopr.dll
+ 0004:00000318       __imp__ActivateEmptyMetaOI@16 10007318     tzlodopr:tzlodopr.dll
+ 0004:0000031c       \177tzlodopr_NULL_THUNK_DATA 1000731c     tzlodopr:tzlodopr.dll
+
+ entry point at        0001:00002920
+

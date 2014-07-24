@@ -1,0 +1,74 @@
+ tzbrau2o
+
+ Timestamp is 5356cfa2 (Tue Apr 22 16:22:58 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000014a1H .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 000001d3H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00000143H .data                   DATA
+ 0003:00000554 00000038H .bss                    DATA
+ 0004:00000000 00000028H .idata$2                DATA
+ 0004:00000028 00000014H .idata$3                DATA
+ 0004:0000003c 00000080H .idata$4                DATA
+ 0004:000000bc 00000080H .idata$5                DATA
+ 0004:0000013c 00000172H .idata$6                DATA
+ 0005:00000000 00000113H .rsrc$01                DATA
+ 0005:00000120 00000000H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000030       _DllMain@12                10001030 f   zdllinst.obj
+ 0001:00000056       _GetDLL_Instance@4         10001056 f   zdllinst.obj
+ 0001:00000070       _oTZBRAU2O_DeletedText@16  10001070 f   tzbrau2o.obj
+ 0001:0000017a       _StoreValueInRecord@20     1000117a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000180       _ZeidonStringCopy@28       10001180 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000186       _CompareAttributeToString@16 10001186 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000190       __CRT_INIT@12              10001190 f   msvcrtd:crtdll.obj
+ 0001:000002a0       __DllMainCRTStartup@12     100012a0 f   msvcrtd:crtdll.obj
+ 0001:00000394       __free_dbg                 10001394 f   msvcrtd:MSVCRTD.dll
+ 0001:0000039a       __initterm                 1000139a f   msvcrtd:MSVCRTD.dll
+ 0001:000003a0       __onexit                   100013a0 f   msvcrtd:atonexit.obj
+ 0001:000003e0       _atexit                    100013e0 f   msvcrtd:atonexit.obj
+ 0001:000003f8       __malloc_dbg               100013f8 f   msvcrtd:MSVCRTD.dll
+ 0001:000003fe       ___dllonexit               100013fe f   msvcrtd:MSVCRTD.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000301c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10004000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10004104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10004208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000430c     msvcrtd:cinitexe.obj
+ 0003:00000410       ??_C@_07MIME@Updated?$AA@  10004410     tzbrau2o.obj
+ 0003:0000041c       ??_C@_01OAK@N?$AA@         1000441c     tzbrau2o.obj
+ 0003:00000420       ??_C@_07CEL@Deleted?$AA@   10004420     tzbrau2o.obj
+ 0003:0000042c       ??_C@_0P@KECP@AuditTrailMeta?$AA@ 1000442c     tzbrau2o.obj
+ 0003:00000440       ??_C@_08JMGB@bDeleted?$AA@ 10004440     tzbrau2o.obj
+ 0003:0000044c       ??_C@_01PCJP@Y?$AA@        1000444c     tzbrau2o.obj
+ 0003:00000554       _g_hInstanceDLL            10004554     zdllinst.obj
+ 0003:00000558       ??_C@_00A@?$AA@            10004558     tzbrau2o.obj
+ 0003:00000560       __adjust_fdiv              10004560     <common>
+ 0003:0000056c       ___onexitend               1000456c     <common>
+ 0003:0000057c       ___onexitbegin             1000457c     <common>
+ 0003:00000580       __pRawDllMain              10004580     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_KZOENGAA 10005000     kzoengaa:KZOENGAA.DLL
+ 0004:00000014       __IMPORT_DESCRIPTOR_MSVCRTD 10005014     msvcrtd:MSVCRTD.dll
+ 0004:00000028       __NULL_IMPORT_DESCRIPTOR   10005028     kzoengaa:KZOENGAA.DLL
+ 0004:000000bc       __imp__ZeidonStringCopy@28 100050bc     kzoengaa:KZOENGAA.DLL
+ 0004:000000c0       __imp__CompareAttributeToString@16 100050c0     kzoengaa:KZOENGAA.DLL
+ 0004:000000c4       __imp__StoreValueInRecord@20 100050c4     kzoengaa:KZOENGAA.DLL
+ 0004:000000c8       \177KZOENGAA_NULL_THUNK_DATA 100050c8     kzoengaa:KZOENGAA.DLL
+ 0004:000000f4       __imp___free_dbg           100050f4     msvcrtd:MSVCRTD.dll
+ 0004:000000f8       __imp___initterm           100050f8     msvcrtd:MSVCRTD.dll
+ 0004:000000fc       __imp___malloc_dbg         100050fc     msvcrtd:MSVCRTD.dll
+ 0004:00000100       __imp___adjust_fdiv        10005100     msvcrtd:MSVCRTD.dll
+ 0004:00000104       __imp____dllonexit         10005104     msvcrtd:MSVCRTD.dll
+ 0004:00000108       __imp___onexit             10005108     msvcrtd:MSVCRTD.dll
+ 0004:0000010c       \177MSVCRTD_NULL_THUNK_DATA 1000510c     msvcrtd:MSVCRTD.dll
+
+ entry point at        0001:000002a0
+

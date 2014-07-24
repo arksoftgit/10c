@@ -1,0 +1,610 @@
+ tzhkeyad
+
+ Timestamp is 5356cf4d (Tue Apr 22 16:21:33 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000203bH .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 000004f1H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00001370H .data                   DATA
+ 0003:00001780 00000a70H .bss                    DATA
+ 0004:00000000 00000050H .idata$2                DATA
+ 0004:00000050 00000014H .idata$3                DATA
+ 0004:00000064 00000188H .idata$4                DATA
+ 0004:000001ec 00000188H .idata$5                DATA
+ 0004:00000374 000001ffH .idata$6                DATA
+ 0005:00000000 000001d8H .rsrc$01                DATA
+ 0005:000001e0 00000499H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000090       _DllMain@12                10001090 f   zdllinst.obj
+ 0001:000000b6       _GetDLL_Instance@4         100010b6 f   zdllinst.obj
+ 0001:000000d0       _PostBSetVKey@4            100010d0 f   tzhkeyad.obj
+ 0001:00000198       _SaveVKey@4                10001198 f   tzhkeyad.obj
+ 0001:0000028b       _zwTZHKEYAD_SetTitle@4     1000128b f   tzhkeyad.obj
+ 0001:000002da       _zwTZHKEYAD_InitHK_ForLPLR@4 100012da f   tzhkeyad.obj
+ 0001:000003ff       _zwTZHKEYAD_SaveHK_ForLPLR@4 100013ff f   tzhkeyad.obj
+ 0001:00000719       _zwTZHKEYAD_PreBAppl@4     10001719 f   tzhkeyad.obj
+ 0001:00000743       _zwTZHKEYAD_MainRtnFromSubWnd@4 10001743 f   tzhkeyad.obj
+ 0001:0000077c       _zwTZHKEYAD_SwitchLPLR@4   1000177c f   tzhkeyad.obj
+ 0001:0000083b       _zwTZHKEYAD_ExitAppl@4     1000183b f   tzhkeyad.obj
+ 0001:000008f1       _zwTZHKEYAD_PreBHotkeyOpers@4 100018f1 f   tzhkeyad.obj
+ 0001:0000093d       _zwTZHKEYAD_IncludeOperation@4 1000193d f   tzhkeyad.obj
+ 0001:00000c20       _RetrieveViewForMetaList@12 10001c20 f   tzlodopr:tzlodopr.dll
+ 0001:00000c26       _InitializeLPLR@8          10001c26 f   tzlodopr:tzlodopr.dll
+ 0001:00000c2c       _ActivateMetaOI@20         10001c2c f   tzlodopr:tzlodopr.dll
+ 0001:00000c32       _GetBlobFromAttribute@20   10001c32 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c38       _CheckExistenceOfEntity@8  10001c38 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c3e       _GetViewByName@16          10001c3e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c44       _SetAttributeFromBlob@20   10001c44 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c4a       _GetIntegerFromAttribute@16 10001c4a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c50       _GetAddrForAttribute@16    10001c50 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c56       _CommitOI_ToFile@12        10001c56 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c5c       _CreateEntity@12           10001c5c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c62       _ActivateOI_FromFile@20    10001c62 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c68       _TraceLineS@8              10001c68 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c6e       _GetStringFromAttribute@16 10001c6e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c74       _MessageSend@24            10001c74 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c7a       _SetNameForView@16         10001c7a f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c80       _SfFreeTaskMemory@4        10001c80 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c86       _SfUnlockTaskMemory@4      10001c86 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c8c       _SetCursorNextEntity@12    10001c8c f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c92       _GetRelativeEntityNumber@16 10001c92 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c98       _SetAttributeFromAttribute@24 10001c98 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000c9e       _SetMatchingAttributesByName@20 10001c9e f   kzoengaa:KZOENGAA.DLL
+ 0001:00000ca4       _SetEntityCursor@40        10001ca4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000caa       _SfActivateSysEmptyOI@16   10001caa f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cb0       _SfLockTaskMemory@4        10001cb0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cb6       _SfAllocTaskMemory@12      10001cb6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cbc       _MiSetOI_ReleaseForView@8  10001cbc f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cc2       _DropObjectInstance@4      10001cc2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cc8       _MessagePrompt@32          10001cc8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cce       _ObjectInstanceUpdatedFromFile@4 10001cce f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cd4       _DropView@4                10001cd4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cda       _IncludeSubobjectFromSubobject@20 10001cda f   kzoengaa:KZOENGAA.DLL
+ 0001:00000ce0       _ExcludeEntity@12          10001ce0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000ce6       _SetCursorFirstEntity@12   10001ce6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00000cec       _memset                    10001cec f   msvcrtd:MSVCRTD.dll
+ 0001:00000cf2       _strcat                    10001cf2 f   msvcrtd:MSVCRTD.dll
+ 0001:00000cf8       _strcpy                    10001cf8 f   msvcrtd:MSVCRTD.dll
+ 0001:00000d00       __CRT_INIT@12              10001d00 f   msvcrtd:crtdll.obj
+ 0001:00000e10       __DllMainCRTStartup@12     10001e10 f   msvcrtd:crtdll.obj
+ 0001:00000f04       __free_dbg                 10001f04 f   msvcrtd:MSVCRTD.dll
+ 0001:00000f0a       __initterm                 10001f0a f   msvcrtd:MSVCRTD.dll
+ 0001:00000f10       __onexit                   10001f10 f   msvcrtd:atonexit.obj
+ 0001:00000f50       _atexit                    10001f50 f   msvcrtd:atonexit.obj
+ 0001:00000f68       __malloc_dbg               10001f68 f   msvcrtd:MSVCRTD.dll
+ 0001:00000f6e       ___dllonexit               10001f6e f   msvcrtd:MSVCRTD.dll
+ 0001:00000f74       _SetCtrlState@16           10001f74 f   zdrapp:ZDrApp.dll
+ 0001:00000f7a       _GetCtrlState@12           10001f7a f   zdrapp:ZDrApp.dll
+ 0001:00000f80       _SetWindowCaptionTitle@12  10001f80 f   zdrapp:ZDrApp.dll
+ 0001:00000f86       _SetWindowActionBehavior@16 10001f86 f   zdrapp:ZDrApp.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000401c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10005000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10005104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10005208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000530c     msvcrtd:cinitexe.obj
+ 0003:00000410       _g_ZeidonMutexName         10005410     tzhkeyad.obj
+ 0003:00000450       _szlReleaseCompatible      10005450     tzhkeyad.obj
+ 0003:00000454       _szlReleaseCurrent         10005454     tzhkeyad.obj
+ 0003:00000458       _szlShareSeg               10005458     tzhkeyad.obj
+ 0003:0000045c       _g_ulMaxRecordStringLth    1000545c     tzhkeyad.obj
+ 0003:00000460       _cDirSep                   10005460     tzhkeyad.obj
+ 0003:00000464       _szObjectEngineName        10005464     tzhkeyad.obj
+ 0003:00000468       _szObjectEngineDll         10005468     tzhkeyad.obj
+ 0003:0000046c       _szObjectSuffix            1000546c     tzhkeyad.obj
+ 0003:00000470       _szDllSuffix               10005470     tzhkeyad.obj
+ 0003:00000474       _szNullS                   10005474     tzhkeyad.obj
+ 0003:00000478       _lNullInteger              10005478     tzhkeyad.obj
+ 0003:0000047c       _stNullDateTime            1000547c     tzhkeyad.obj
+ 0003:00000484       _szlZEIDON                 10005484     tzhkeyad.obj
+ 0003:00000488       _szlAppFile                10005488     tzhkeyad.obj
+ 0003:0000048c       _szlDomainFile             1000548c     tzhkeyad.obj
+ 0003:00000490       _szlSystemDomainFile       10005490     tzhkeyad.obj
+ 0003:00000494       _szlMessageObject          10005494     tzhkeyad.obj
+ 0003:00000498       _szlNewPortableHeader      10005498     tzhkeyad.obj
+ 0003:0000049c       _szlmZeidon                1000549c     tzhkeyad.obj
+ 0003:000004a0       _szlAPPLICATION            100054a0     tzhkeyad.obj
+ 0003:000004a4       _szlOBJECT                 100054a4     tzhkeyad.obj
+ 0003:000004a8       _szlENTITY                 100054a8     tzhkeyad.obj
+ 0003:000004ac       _szlCHILDENTITY            100054ac     tzhkeyad.obj
+ 0003:000004b0       _szlATTRIB                 100054b0     tzhkeyad.obj
+ 0003:000004b4       _szlDOMAIN                 100054b4     tzhkeyad.obj
+ 0003:000004b8       _szlMODEL                  100054b8     tzhkeyad.obj
+ 0003:000004bc       _szlCONTEXT                100054bc     tzhkeyad.obj
+ 0003:000004c0       _szlNLS_TABLEENTRY         100054c0     tzhkeyad.obj
+ 0003:000004c4       _szlTABLEENTRY             100054c4     tzhkeyad.obj
+ 0003:000004c8       _szlREGULAREXPRESSION      100054c8     tzhkeyad.obj
+ 0003:000004cc       _szlZEIDON_BIN             100054cc     tzhkeyad.obj
+ 0003:000004d0       _szlZEIDON_SYS             100054d0     tzhkeyad.obj
+ 0003:000004d4       _szlZEIDON_LOC             100054d4     tzhkeyad.obj
+ 0003:000004d8       _szlZEIDON_SHR             100054d8     tzhkeyad.obj
+ 0003:000004dc       _szlAPP_NAME               100054dc     tzhkeyad.obj
+ 0003:000004e0       _szlAPP_DFLT_Dialog        100054e0     tzhkeyad.obj
+ 0003:000004e4       _szlAPP_DLL                100054e4     tzhkeyad.obj
+ 0003:000004e8       _szlAPP_ADOBIN             100054e8     tzhkeyad.obj
+ 0003:000004ec       _szlAPP_LOCAL              100054ec     tzhkeyad.obj
+ 0003:000004f0       _szlAPP_SHARED             100054f0     tzhkeyad.obj
+ 0003:000004f4       _szlAPP_QLPLR              100054f4     tzhkeyad.obj
+ 0003:000004f8       _szlAPP_QXODS              100054f8     tzhkeyad.obj
+ 0003:000004fc       _szlAPP_SOURCE             100054fc     tzhkeyad.obj
+ 0003:00000500       _szlAPDM_TOK               10005500     tzhkeyad.obj
+ 0003:00000504       _szlATTRIBUTETYPE          10005504     tzhkeyad.obj
+ 0003:00000508       _szlATTRIBUTEDECIMAL       10005508     tzhkeyad.obj
+ 0003:0000050c       _szlAUTOCREATE             1000550c     tzhkeyad.obj
+ 0003:00000510       _szlAUTOLOADFROMPARENT     10005510     tzhkeyad.obj
+ 0003:00000514       _szlAUTO_SEQ               10005514     tzhkeyad.obj
+ 0003:00000518       _szlXVAATT_TOK             10005518     tzhkeyad.obj
+ 0003:0000051c       _szlCARDMAX                1000551c     tzhkeyad.obj
+ 0003:00000520       _szlCARDMIN                10005520     tzhkeyad.obj
+ 0003:00000524       _szlCASESENS               10005524     tzhkeyad.obj
+ 0003:00000528       _szlCONTEXTRESTRICTION     10005528     tzhkeyad.obj
+ 0003:0000052c       _szlCREATE                 1000552c     tzhkeyad.obj
+ 0003:00000530       _szlCR_DATE                10005530     tzhkeyad.obj
+ 0003:00000534       _szlDATAFIELD              10005534     tzhkeyad.obj
+ 0003:00000538       _szlDATARECORD             10005538     tzhkeyad.obj
+ 0003:0000053c       _szlDATATYPE               1000553c     tzhkeyad.obj
+ 0003:00000540       _szlDBNAME                 10005540     tzhkeyad.obj
+ 0003:00000544       _szlDECIMAL                10005544     tzhkeyad.obj
+ 0003:00000548       _szlDECIMALFORMAT          10005548     tzhkeyad.obj
+ 0003:0000054c       _szlDELETE                 1000554c     tzhkeyad.obj
+ 0003:00000550       _szlDERIVED                10005550     tzhkeyad.obj
+ 0003:00000554       _szlDERIVEDF               10005554     tzhkeyad.obj
+ 0003:00000558       _szlDFT_DBNAME             10005558     tzhkeyad.obj
+ 0003:0000055c       _szlDFT_SERVER             1000555c     tzhkeyad.obj
+ 0003:00000560       _szlDLL_NAME               10005560     tzhkeyad.obj
+ 0003:00000564       _szlDOMAINTYPE             10005564     tzhkeyad.obj
+ 0003:00000568       _szlDUPENTIN               10005568     tzhkeyad.obj
+ 0003:0000056c       _szlDUPRELIN               1000556c     tzhkeyad.obj
+ 0003:00000570       _szlECACC                  10005570     tzhkeyad.obj
+ 0003:00000574       _szlECCAN                  10005574     tzhkeyad.obj
+ 0003:00000578       _szlECCR                   10005578     tzhkeyad.obj
+ 0003:0000057c       _szlECDEL                  1000557c     tzhkeyad.obj
+ 0003:00000580       _szlECEOPER                10005580     tzhkeyad.obj
+ 0003:00000584       _szlECEXC                  10005584     tzhkeyad.obj
+ 0003:00000588       _szlECINC                  10005588     tzhkeyad.obj
+ 0003:0000058c       _szlEDITSTRING             1000558c     tzhkeyad.obj
+ 0003:00000590       _szlERATT_TOK              10005590     tzhkeyad.obj
+ 0003:00000594       _szlEntityName             10005594     tzhkeyad.obj
+ 0003:00000598       _szlEntitySpec             10005598     tzhkeyad.obj
+ 0003:0000059c       _szlERENT_TOK              1000559c     tzhkeyad.obj
+ 0003:000005a0       _szlERREL_LINK             100055a0     tzhkeyad.obj
+ 0003:000005a4       _szlERREL_TOK              100055a4     tzhkeyad.obj
+ 0003:000005a8       _szlEXCLUDE                100055a8     tzhkeyad.obj
+ 0003:000005ac       _szlEXTERNALVALUE          100055ac     tzhkeyad.obj
+ 0003:000005b0       _szlFLDID                  100055b0     tzhkeyad.obj
+ 0003:000005b4       _szlFLDLTH                 100055b4     tzhkeyad.obj
+ 0003:000005b8       _szlFLDNAME                100055b8     tzhkeyad.obj
+ 0003:000005bc       _szlFLDOFFSET              100055bc     tzhkeyad.obj
+ 0003:000005c0       _szlFLDTYPE                100055c0     tzhkeyad.obj
+ 0003:000005c4       _szlFULLPERSIST            100055c4     tzhkeyad.obj
+ 0003:000005c8       _szlGENKEY                 100055c8     tzhkeyad.obj
+ 0003:000005cc       _szlGKHANDLER              100055cc     tzhkeyad.obj
+ 0003:000005d0       _szlHANDLER                100055d0     tzhkeyad.obj
+ 0003:000005d4       _szlHIDDEN                 100055d4     tzhkeyad.obj
+ 0003:000005d8       _szlId                     100055d8     tzhkeyad.obj
+ 0003:000005dc       _szlINCLSRC                100055dc     tzhkeyad.obj
+ 0003:000005e0       _szlINCLUDE                100055e0     tzhkeyad.obj
+ 0003:000005e4       _szlINCRLOAD               100055e4     tzhkeyad.obj
+ 0003:000005e8       _szlINIT                   100055e8     tzhkeyad.obj
+ 0003:000005ec       _szlINTERNALVALUE          100055ec     tzhkeyad.obj
+ 0003:000005f0       _szlISDEFAULT              100055f0     tzhkeyad.obj
+ 0003:000005f4       _szlKEY                    100055f4     tzhkeyad.obj
+ 0003:000005f8       _szlLanguageIndex          100055f8     tzhkeyad.obj
+ 0003:000005fc       _szlLNAME                  100055fc     tzhkeyad.obj
+ 0003:00000600       _szlLOCK                   10005600     tzhkeyad.obj
+ 0003:00000604       _szlLTH                    10005604     tzhkeyad.obj
+ 0003:00000608       _szlMAXSTRINGLTH           10005608     tzhkeyad.obj
+ 0003:0000060c       _szlMR_LIMIT               1000560c     tzhkeyad.obj
+ 0003:00000610       _szl__MSGQ                 10005610     tzhkeyad.obj
+ 0003:00000614       _szlNAME                   10005614     tzhkeyad.obj
+ 0003:00000618       _szlNETCOMPRESS            10005618     tzhkeyad.obj
+ 0003:0000061c       _szlNETWORK                1000561c     tzhkeyad.obj
+ 0003:00000620       _szlNumAtts                10005620     tzhkeyad.obj
+ 0003:00000624       _szlNumEnts                10005624     tzhkeyad.obj
+ 0003:00000628       _szlNumRels                10005628     tzhkeyad.obj
+ 0003:0000062c       _szlOCACT                  1000562c     tzhkeyad.obj
+ 0003:00000630       _szlOCACTE                 10005630     tzhkeyad.obj
+ 0003:00000634       _szlOCCOM                  10005634     tzhkeyad.obj
+ 0003:00000638       _szlOCDROP                 10005638     tzhkeyad.obj
+ 0003:0000063c       _szlOCEOPER                1000563c     tzhkeyad.obj
+ 0003:00000640       _szlOFRECID                10005640     tzhkeyad.obj
+ 0003:00000644       _szlOFBUFSZ                10005644     tzhkeyad.obj
+ 0003:00000648       _szlOPER_LIBNM             10005648     tzhkeyad.obj
+ 0003:0000064c       _szlOper                   1000564c     tzhkeyad.obj
+ 0003:00000650       _szlOWNER_MEMB             10005650     tzhkeyad.obj
+ 0003:00000654       _szlPDELETE                10005654     tzhkeyad.obj
+ 0003:00000658       _szlPERSIST                10005658     tzhkeyad.obj
+ 0003:0000065c       _szlPNAME                  1000565c     tzhkeyad.obj
+ 0003:00000660       _szlQualAttrib             10005660     tzhkeyad.obj
+ 0003:00000664       _szlRECID                  10005664     tzhkeyad.obj
+ 0003:00000668       _szlRECNAME                10005668     tzhkeyad.obj
+ 0003:0000066c       _szlRECURSIVE              1000566c     tzhkeyad.obj
+ 0003:00000670       _szlREL                    10005670     tzhkeyad.obj
+ 0003:00000674       _szlRELFIELD               10005674     tzhkeyad.obj
+ 0003:00000678       _szlRELRECORD              10005678     tzhkeyad.obj
+ 0003:0000067c       _szlRELXVAATT_TOK          1000567c     tzhkeyad.obj
+ 0003:00000680       _szlREQUIRED               10005680     tzhkeyad.obj
+ 0003:00000684       _szlRESTRICTED             10005684     tzhkeyad.obj
+ 0003:00000688       _szlSERVER                 10005688     tzhkeyad.obj
+ 0003:0000068c       _szlSEQUENCING             1000568c     tzhkeyad.obj
+ 0003:00000690       _szlSEQ_AD                 10005690     tzhkeyad.obj
+ 0003:00000694       _szlSETID1                 10005694     tzhkeyad.obj
+ 0003:00000698       _szlSETID2                 10005698     tzhkeyad.obj
+ 0003:0000069c       _szlSETNAME1               1000569c     tzhkeyad.obj
+ 0003:000006a0       _szlSETNAME2               100056a0     tzhkeyad.obj
+ 0003:000006a4       _szlSRCXVAATT_TOK          100056a4     tzhkeyad.obj
+ 0003:000006a8       _szlTask                   100056a8     tzhkeyad.obj
+ 0003:000006ac       _szlText                   100056ac     tzhkeyad.obj
+ 0003:000006b0       _szlTYPE                   100056b0     tzhkeyad.obj
+ 0003:000006b4       _szlUP_DATE                100056b4     tzhkeyad.obj
+ 0003:000006b8       _szlUSERID                 100056b8     tzhkeyad.obj
+ 0003:000006bc       _szlUPDATE                 100056bc     tzhkeyad.obj
+ 0003:000006c0       _szlZKEY                   100056c0     tzhkeyad.obj
+ 0003:000006c4       _szlApplicationLogicError  100056c4     tzhkeyad.obj
+ 0003:000006c8       _szlDataValidationError    100056c8     tzhkeyad.obj
+ 0003:000006cc       _szlOE_SystemError         100056cc     tzhkeyad.obj
+ 0003:000006d0       _szlAFTER                  100056d0     tzhkeyad.obj
+ 0003:000006d4       _szlBEFORE                 100056d4     tzhkeyad.obj
+ 0003:000006d8       _g_pchMQI                  100056d8     tzhkeyad.obj
+ 0003:000006e8       _szGAFANullS               100056e8     tzhkeyad.obj
+ 0003:000006ec       _g_pchMon                  100056ec     tzhkeyad.obj
+ 0003:0000071c       _g_pchDOW                  1000571c     tzhkeyad.obj
+ 0003:00000738       _szlINTL                   10005738     tzhkeyad.obj
+ 0003:0000073c       _szlICOUNTRY               1000573c     tzhkeyad.obj
+ 0003:00000740       _szlSCOUNTRY               10005740     tzhkeyad.obj
+ 0003:00000744       _szlSLANGUAGE              10005744     tzhkeyad.obj
+ 0003:00000748       _szlSLIST                  10005748     tzhkeyad.obj
+ 0003:0000074c       _szlIMEASURE               1000574c     tzhkeyad.obj
+ 0003:00000750       _szlITIME                  10005750     tzhkeyad.obj
+ 0003:00000754       _szlSTIME                  10005754     tzhkeyad.obj
+ 0003:00000758       _szlS1159                  10005758     tzhkeyad.obj
+ 0003:0000075c       _szlS2359                  1000575c     tzhkeyad.obj
+ 0003:00000760       _szlITLZERO                10005760     tzhkeyad.obj
+ 0003:00000764       _szlSSHORTDATE             10005764     tzhkeyad.obj
+ 0003:00000768       _szlSLONGDATE              10005768     tzhkeyad.obj
+ 0003:0000076c       _szlSCURRENCY              1000576c     tzhkeyad.obj
+ 0003:00000770       _szlICURRENCY              10005770     tzhkeyad.obj
+ 0003:00000774       _szlICURRDIGITS            10005774     tzhkeyad.obj
+ 0003:00000778       _szlINEGCURR               10005778     tzhkeyad.obj
+ 0003:0000077c       _szlSTHOUSAND              1000577c     tzhkeyad.obj
+ 0003:00000780       _szlSDECIMAL               10005780     tzhkeyad.obj
+ 0003:00000784       _szlIDIGITS                10005784     tzhkeyad.obj
+ 0003:00000788       _szlILZERO                 10005788     tzhkeyad.obj
+ 0003:00000840       ??_C@_06LENA@iLzero?$AA@   10005840     tzhkeyad.obj
+ 0003:00000848       ??_C@_07FACE@iDigits?$AA@  10005848     tzhkeyad.obj
+ 0003:00000854       ??_C@_08GFHF@sDecimal?$AA@ 10005854     tzhkeyad.obj
+ 0003:00000860       ??_C@_09BEPN@sThousand?$AA@ 10005860     tzhkeyad.obj
+ 0003:0000086c       ??_C@_08LHOD@iNegCurr?$AA@ 1000586c     tzhkeyad.obj
+ 0003:00000878       ??_C@_0M@LKGH@iCurrDigits?$AA@ 10005878     tzhkeyad.obj
+ 0003:00000888       ??_C@_09CBCN@iCurrency?$AA@ 10005888     tzhkeyad.obj
+ 0003:00000894       ??_C@_09JDHO@sCurrency?$AA@ 10005894     tzhkeyad.obj
+ 0003:000008a0       ??_C@_09JENF@sLongDate?$AA@ 100058a0     tzhkeyad.obj
+ 0003:000008ac       ??_C@_0L@NPLI@sShortDate?$AA@ 100058ac     tzhkeyad.obj
+ 0003:000008bc       ??_C@_07LDFB@iTLZero?$AA@  100058bc     tzhkeyad.obj
+ 0003:000008c8       ??_C@_05DJMD@s2359?$AA@    100058c8     tzhkeyad.obj
+ 0003:000008d0       ??_C@_05PCBI@s1159?$AA@    100058d0     tzhkeyad.obj
+ 0003:000008d8       ??_C@_05PLM@sTime?$AA@     100058d8     tzhkeyad.obj
+ 0003:000008e0       ??_C@_05EMIJ@iTime?$AA@    100058e0     tzhkeyad.obj
+ 0003:000008e8       ??_C@_08HHE@iMeasure?$AA@  100058e8     tzhkeyad.obj
+ 0003:000008f4       ??_C@_05NLOI@sList?$AA@    100058f4     tzhkeyad.obj
+ 0003:000008fc       ??_C@_09IMGC@sLanguage?$AA@ 100058fc     tzhkeyad.obj
+ 0003:00000908       ??_C@_08JMM@sCountry?$AA@  10005908     tzhkeyad.obj
+ 0003:00000914       ??_C@_08FKAM@iCountry?$AA@ 10005914     tzhkeyad.obj
+ 0003:00000920       ??_C@_04KGMK@Intl?$AA@     10005920     tzhkeyad.obj
+ 0003:00000928       ??_C@_08FAKH@Saturday?$AA@ 10005928     tzhkeyad.obj
+ 0003:00000934       ??_C@_06ONCK@Friday?$AA@   10005934     tzhkeyad.obj
+ 0003:0000093c       ??_C@_08CCFO@Thursday?$AA@ 1000593c     tzhkeyad.obj
+ 0003:00000948       ??_C@_09PBIN@Wednesday?$AA@ 10005948     tzhkeyad.obj
+ 0003:00000954       ??_C@_07BMBC@Tuesday?$AA@  10005954     tzhkeyad.obj
+ 0003:00000960       ??_C@_06CHLK@Monday?$AA@   10005960     tzhkeyad.obj
+ 0003:00000968       ??_C@_06OOEM@Sunday?$AA@   10005968     tzhkeyad.obj
+ 0003:00000970       ??_C@_08LIDF@December?$AA@ 10005970     tzhkeyad.obj
+ 0003:0000097c       ??_C@_08NJLI@November?$AA@ 1000597c     tzhkeyad.obj
+ 0003:00000988       ??_C@_07IAMM@October?$AA@  10005988     tzhkeyad.obj
+ 0003:00000994       ??_C@_09MKGD@September?$AA@ 10005994     tzhkeyad.obj
+ 0003:000009a0       ??_C@_06PADP@August?$AA@   100059a0     tzhkeyad.obj
+ 0003:000009a8       ??_C@_04PIJO@July?$AA@     100059a8     tzhkeyad.obj
+ 0003:000009b0       ??_C@_04ICFP@June?$AA@     100059b0     tzhkeyad.obj
+ 0003:000009b8       ??_C@_03MGHB@May?$AA@      100059b8     tzhkeyad.obj
+ 0003:000009bc       ??_C@_05JFGC@April?$AA@    100059bc     tzhkeyad.obj
+ 0003:000009c4       ??_C@_05FGPD@March?$AA@    100059c4     tzhkeyad.obj
+ 0003:000009cc       ??_C@_08PGBA@February?$AA@ 100059cc     tzhkeyad.obj
+ 0003:000009d8       ??_C@_07BPKJ@January?$AA@  100059d8     tzhkeyad.obj
+ 0003:000009e4       ??_C@_0BC@GMHO@MQ_MessagePresent?$AA@ 100059e4     tzhkeyad.obj
+ 0003:000009fc       ??_C@_0BJ@MAFE@MQ_MessagePromptForInput?$AA@ 100059fc     tzhkeyad.obj
+ 0003:00000a1c       ??_C@_0BB@MBCE@MQ_MessagePrompt?$AA@ 10005a1c     tzhkeyad.obj
+ 0003:00000a30       ??_C@_0P@BAHL@MQ_MessageSend?$AA@ 10005a30     tzhkeyad.obj
+ 0003:00000a44       ??_C@_06COI@BEFORE?$AA@    10005a44     tzhkeyad.obj
+ 0003:00000a4c       ??_C@_05HBLJ@AFTER?$AA@    10005a4c     tzhkeyad.obj
+ 0003:00000a54       ??_C@_0BA@ODOC@OE?5System?5Error?$AA@ 10005a54     tzhkeyad.obj
+ 0003:00000a68       ??_C@_0BG@FMPG@Data?5Validation?5Error?$AA@ 10005a68     tzhkeyad.obj
+ 0003:00000a84       ??_C@_0CK@BELJ@Object?5Services?5?9?5Application?5Lo@ 10005a84     tzhkeyad.obj
+ 0003:00000ab8       ??_C@_04JGIO@ZKEY?$AA@     10005ab8     tzhkeyad.obj
+ 0003:00000ac0       ??_C@_06NDPG@UPDATE?$AA@   10005ac0     tzhkeyad.obj
+ 0003:00000ac8       ??_C@_06PIPA@USERID?$AA@   10005ac8     tzhkeyad.obj
+ 0003:00000ad0       ??_C@_07KJPH@UP_DATE?$AA@  10005ad0     tzhkeyad.obj
+ 0003:00000adc       ??_C@_04JHII@TYPE?$AA@     10005adc     tzhkeyad.obj
+ 0003:00000ae4       ??_C@_04BNNJ@Text?$AA@     10005ae4     tzhkeyad.obj
+ 0003:00000aec       ??_C@_04HDAF@Task?$AA@     10005aec     tzhkeyad.obj
+ 0003:00000af4       ??_C@_0O@HOCN@SRCXVAATT_TOK?$AA@ 10005af4     tzhkeyad.obj
+ 0003:00000b04       ??_C@_08PKCB@SETNAME2?$AA@ 10005b04     tzhkeyad.obj
+ 0003:00000b10       ??_C@_08FJI@SETNAME1?$AA@  10005b10     tzhkeyad.obj
+ 0003:00000b1c       ??_C@_06CIFL@SETID2?$AA@   10005b1c     tzhkeyad.obj
+ 0003:00000b24       ??_C@_06NHOC@SETID1?$AA@   10005b24     tzhkeyad.obj
+ 0003:00000b2c       ??_C@_06LIHO@SEQ_AD?$AA@   10005b2c     tzhkeyad.obj
+ 0003:00000b34       ??_C@_0L@FLNJ@SEQUENCING?$AA@ 10005b34     tzhkeyad.obj
+ 0003:00000b44       ??_C@_06BJID@SERVER?$AA@   10005b44     tzhkeyad.obj
+ 0003:00000b4c       ??_C@_0L@GCMK@RESTRICTED?$AA@ 10005b4c     tzhkeyad.obj
+ 0003:00000b5c       ??_C@_08BGDD@REQUIRED?$AA@ 10005b5c     tzhkeyad.obj
+ 0003:00000b68       ??_C@_0O@DBKM@RELXVAATT_TOK?$AA@ 10005b68     tzhkeyad.obj
+ 0003:00000b78       ??_C@_09HINM@RELRECORD?$AA@ 10005b78     tzhkeyad.obj
+ 0003:00000b84       ??_C@_08PMNP@RELFIELD?$AA@ 10005b84     tzhkeyad.obj
+ 0003:00000b90       ??_C@_03LNGM@REL?$AA@      10005b90     tzhkeyad.obj
+ 0003:00000b94       ??_C@_09GDN@RECURSIVE?$AA@ 10005b94     tzhkeyad.obj
+ 0003:00000ba0       ??_C@_07NDLE@RECNAME?$AA@  10005ba0     tzhkeyad.obj
+ 0003:00000bac       ??_C@_05NKIC@RECID?$AA@    10005bac     tzhkeyad.obj
+ 0003:00000bb4       ??_C@_0L@DIOI@QualAttrib?$AA@ 10005bb4     tzhkeyad.obj
+ 0003:00000bc4       ??_C@_05ILLO@PNAME?$AA@    10005bc4     tzhkeyad.obj
+ 0003:00000bcc       ??_C@_07NIBE@PERSIST?$AA@  10005bcc     tzhkeyad.obj
+ 0003:00000bd8       ??_C@_07BAEJ@PDELETE?$AA@  10005bd8     tzhkeyad.obj
+ 0003:00000be4       ??_C@_0L@JCEP@OWNER_MEMB?$AA@ 10005be4     tzhkeyad.obj
+ 0003:00000bf4       ??_C@_04FKDH@Oper?$AA@     10005bf4     tzhkeyad.obj
+ 0003:00000bfc       ??_C@_0L@PJJC@OPER_LIBNM?$AA@ 10005bfc     tzhkeyad.obj
+ 0003:00000c0c       ??_C@_07GKEM@OFBUFSZ?$AA@  10005c0c     tzhkeyad.obj
+ 0003:00000c18       ??_C@_07NHGG@OFRECID?$AA@  10005c18     tzhkeyad.obj
+ 0003:00000c24       ??_C@_07HIHA@OCEOPER?$AA@  10005c24     tzhkeyad.obj
+ 0003:00000c30       ??_C@_06HHGH@OCDROP?$AA@   10005c30     tzhkeyad.obj
+ 0003:00000c38       ??_C@_05KPHB@OCCOM?$AA@    10005c38     tzhkeyad.obj
+ 0003:00000c40       ??_C@_06PJLI@OCACTE?$AA@   10005c40     tzhkeyad.obj
+ 0003:00000c48       ??_C@_05LDPN@OCACT?$AA@    10005c48     tzhkeyad.obj
+ 0003:00000c50       ??_C@_07PICA@NumRels?$AA@  10005c50     tzhkeyad.obj
+ 0003:00000c5c       ??_C@_07OOMM@NumEnts?$AA@  10005c5c     tzhkeyad.obj
+ 0003:00000c68       ??_C@_07GOHG@NumAtts?$AA@  10005c68     tzhkeyad.obj
+ 0003:00000c74       ??_C@_07KFPJ@NETWORK?$AA@  10005c74     tzhkeyad.obj
+ 0003:00000c80       ??_C@_0M@GNJA@NETCOMPRESS?$AA@ 10005c80     tzhkeyad.obj
+ 0003:00000c90       ??_C@_04IALP@NAME?$AA@     10005c90     tzhkeyad.obj
+ 0003:00000c98       ??_C@_06OMJI@__MSGQ?$AA@   10005c98     tzhkeyad.obj
+ 0003:00000ca0       ??_C@_08DHHO@MR_LIMIT?$AA@ 10005ca0     tzhkeyad.obj
+ 0003:00000cac       ??_C@_0N@LMHL@MAXSTRINGLTH?$AA@ 10005cac     tzhkeyad.obj
+ 0003:00000cbc       ??_C@_03DGJL@LTH?$AA@      10005cbc     tzhkeyad.obj
+ 0003:00000cc0       ??_C@_04NPLI@LOCK?$AA@     10005cc0     tzhkeyad.obj
+ 0003:00000cc8       ??_C@_05IFE@LNAME?$AA@     10005cc8     tzhkeyad.obj
+ 0003:00000cd0       ??_C@_0O@IHAG@LanguageIndex?$AA@ 10005cd0     tzhkeyad.obj
+ 0003:00000ce0       ??_C@_03PHBO@KEY?$AA@      10005ce0     tzhkeyad.obj
+ 0003:00000ce4       ??_C@_09ECEN@ISDEFAULT?$AA@ 10005ce4     tzhkeyad.obj
+ 0003:00000cf0       ??_C@_0O@HIL@INTERNALVALUE?$AA@ 10005cf0     tzhkeyad.obj
+ 0003:00000d00       ??_C@_04NJI@INIT?$AA@      10005d00     tzhkeyad.obj
+ 0003:00000d08       ??_C@_08FKFF@INCRLOAD?$AA@ 10005d08     tzhkeyad.obj
+ 0003:00000d14       ??_C@_07KOHG@INCLUDE?$AA@  10005d14     tzhkeyad.obj
+ 0003:00000d20       ??_C@_07KACF@INCLSRC?$AA@  10005d20     tzhkeyad.obj
+ 0003:00000d2c       ??_C@_02FECH@Id?$AA@       10005d2c     tzhkeyad.obj
+ 0003:00000d30       ??_C@_06IJMB@HIDDEN?$AA@   10005d30     tzhkeyad.obj
+ 0003:00000d38       ??_C@_07MHHO@HANDLER?$AA@  10005d38     tzhkeyad.obj
+ 0003:00000d44       ??_C@_09IICP@GKHANDLER?$AA@ 10005d44     tzhkeyad.obj
+ 0003:00000d50       ??_C@_06PPGK@GENKEY?$AA@   10005d50     tzhkeyad.obj
+ 0003:00000d58       ??_C@_0M@FLLI@FULLPERSIST?$AA@ 10005d58     tzhkeyad.obj
+ 0003:00000d68       ??_C@_07MPNE@FLDTYPE?$AA@  10005d68     tzhkeyad.obj
+ 0003:00000d74       ??_C@_09BHNG@FLDOFFSET?$AA@ 10005d74     tzhkeyad.obj
+ 0003:00000d80       ??_C@_07NIOD@FLDNAME?$AA@  10005d80     tzhkeyad.obj
+ 0003:00000d8c       ??_C@_06GKHE@FLDLTH?$AA@   10005d8c     tzhkeyad.obj
+ 0003:00000d94       ??_C@_05OJOB@FLDID?$AA@    10005d94     tzhkeyad.obj
+ 0003:00000d9c       ??_C@_0O@HLIE@EXTERNALVALUE?$AA@ 10005d9c     tzhkeyad.obj
+ 0003:00000dac       ??_C@_07EHEP@EXCLUDE?$AA@  10005dac     tzhkeyad.obj
+ 0003:00000db8       ??_C@_09DPNM@ERREL_TOK?$AA@ 10005db8     tzhkeyad.obj
+ 0003:00000dc4       ??_C@_0L@GJDI@ERREL_LINK?$AA@ 10005dc4     tzhkeyad.obj
+ 0003:00000dd4       ??_C@_09PPA@ERENT_TOK?$AA@ 10005dd4     tzhkeyad.obj
+ 0003:00000de0       ??_C@_0L@EIGE@EntitySpec?$AA@ 10005de0     tzhkeyad.obj
+ 0003:00000df0       ??_C@_0L@LOJF@EntityName?$AA@ 10005df0     tzhkeyad.obj
+ 0003:00000e00       ??_C@_09GJOF@ERATT_TOK?$AA@ 10005e00     tzhkeyad.obj
+ 0003:00000e0c       ??_C@_0L@LMLE@EDITSTRING?$AA@ 10005e0c     tzhkeyad.obj
+ 0003:00000e1c       ??_C@_05GHOJ@ECINC?$AA@    10005e1c     tzhkeyad.obj
+ 0003:00000e24       ??_C@_05KCFA@ECEXC?$AA@    10005e24     tzhkeyad.obj
+ 0003:00000e2c       ??_C@_07FBPG@ECEOPER?$AA@  10005e2c     tzhkeyad.obj
+ 0003:00000e38       ??_C@_05GCOG@ECDEL?$AA@    10005e38     tzhkeyad.obj
+ 0003:00000e40       ??_C@_04FPMK@ECCR?$AA@     10005e40     tzhkeyad.obj
+ 0003:00000e48       ??_C@_05NDAD@ECCAN?$AA@    10005e48     tzhkeyad.obj
+ 0003:00000e50       ??_C@_05OAI@ECACC?$AA@     10005e50     tzhkeyad.obj
+ 0003:00000e58       ??_C@_08DECF@DUPRELIN?$AA@ 10005e58     tzhkeyad.obj
+ 0003:00000e64       ??_C@_08KCDD@DUPENTIN?$AA@ 10005e64     tzhkeyad.obj
+ 0003:00000e70       ??_C@_0L@KGBA@DOMAINTYPE?$AA@ 10005e70     tzhkeyad.obj
+ 0003:00000e80       ??_C@_08DJGK@DLL_NAME?$AA@ 10005e80     tzhkeyad.obj
+ 0003:00000e8c       ??_C@_0L@JBCC@DFT_SERVER?$AA@ 10005e8c     tzhkeyad.obj
+ 0003:00000e9c       ??_C@_0L@HPIJ@DFT_DBNAME?$AA@ 10005e9c     tzhkeyad.obj
+ 0003:00000eac       ??_C@_08EALH@DERIVEDF?$AA@ 10005eac     tzhkeyad.obj
+ 0003:00000eb8       ??_C@_07FJF@DERIVED?$AA@   10005eb8     tzhkeyad.obj
+ 0003:00000ec4       ??_C@_06FMHL@DELETE?$AA@   10005ec4     tzhkeyad.obj
+ 0003:00000ecc       ??_C@_0O@GDML@DECIMALFORMAT?$AA@ 10005ecc     tzhkeyad.obj
+ 0003:00000edc       ??_C@_07OOBD@DECIMAL?$AA@  10005edc     tzhkeyad.obj
+ 0003:00000ee8       ??_C@_06PHCI@DBNAME?$AA@   10005ee8     tzhkeyad.obj
+ 0003:00000ef0       ??_C@_08PKJA@DATATYPE?$AA@ 10005ef0     tzhkeyad.obj
+ 0003:00000efc       ??_C@_0L@PPLE@DATARECORD?$AA@ 10005efc     tzhkeyad.obj
+ 0003:00000f0c       ??_C@_09JEIA@DATAFIELD?$AA@ 10005f0c     tzhkeyad.obj
+ 0003:00000f18       ??_C@_07IMJA@CR_DATE?$AA@  10005f18     tzhkeyad.obj
+ 0003:00000f24       ??_C@_06JBCM@CREATE?$AA@   10005f24     tzhkeyad.obj
+ 0003:00000f2c       ??_C@_0BD@DICE@CONTEXTRESTRICTION?$AA@ 10005f2c     tzhkeyad.obj
+ 0003:00000f44       ??_C@_08JHJH@CASESENS?$AA@ 10005f44     tzhkeyad.obj
+ 0003:00000f50       ??_C@_07KJPL@CARDMIN?$AA@  10005f50     tzhkeyad.obj
+ 0003:00000f5c       ??_C@_07EKKN@CARDMAX?$AA@  10005f5c     tzhkeyad.obj
+ 0003:00000f68       ??_C@_0L@CDIB@XVAATT_TOK?$AA@ 10005f68     tzhkeyad.obj
+ 0003:00000f78       ??_C@_08FEIG@AUTO_SEQ?$AA@ 10005f78     tzhkeyad.obj
+ 0003:00000f84       ??_C@_0BD@GGKI@AUTOLOADFROMPARENT?$AA@ 10005f84     tzhkeyad.obj
+ 0003:00000f9c       ??_C@_0L@CCEG@AUTOCREATE?$AA@ 10005f9c     tzhkeyad.obj
+ 0003:00000fac       ??_C@_0BB@CGIJ@ATTRIBUTEDECIMAL?$AA@ 10005fac     tzhkeyad.obj
+ 0003:00000fc0       ??_C@_0O@HAFL@ATTRIBUTETYPE?$AA@ 10005fc0     tzhkeyad.obj
+ 0003:00000fd0       ??_C@_08FEIL@APDM_TOK?$AA@ 10005fd0     tzhkeyad.obj
+ 0003:00000fdc       ??_C@_0L@NAIP@APP_SOURCE?$AA@ 10005fdc     tzhkeyad.obj
+ 0003:00000fec       ??_C@_09MKDP@APP_QXODS?$AA@ 10005fec     tzhkeyad.obj
+ 0003:00000ff8       ??_C@_09BKCL@APP_QLPLR?$AA@ 10005ff8     tzhkeyad.obj
+ 0003:00001004       ??_C@_0L@KNHE@APP_SHARED?$AA@ 10006004     tzhkeyad.obj
+ 0003:00001014       ??_C@_09HKKN@APP_LOCAL?$AA@ 10006014     tzhkeyad.obj
+ 0003:00001020       ??_C@_0L@GHPH@APP_ADOBIN?$AA@ 10006020     tzhkeyad.obj
+ 0003:00001030       ??_C@_07LAPC@APP_DLL?$AA@  10006030     tzhkeyad.obj
+ 0003:0000103c       ??_C@_0O@HKIJ@APP_DFLT_WDOD?$AA@ 1000603c     tzhkeyad.obj
+ 0003:0000104c       ??_C@_08NHNM@APP_NAME?$AA@ 1000604c     tzhkeyad.obj
+ 0003:00001058       ??_C@_0L@JFF@ZEIDON_SHR?$AA@ 10006058     tzhkeyad.obj
+ 0003:00001068       ??_C@_0L@GEFJ@ZEIDON_LOC?$AA@ 10006068     tzhkeyad.obj
+ 0003:00001078       ??_C@_0L@NPMB@ZEIDON_SYS?$AA@ 10006078     tzhkeyad.obj
+ 0003:00001088       ??_C@_0L@DLBH@ZEIDON_BIN?$AA@ 10006088     tzhkeyad.obj
+ 0003:00001098       ??_C@_0BC@JION@REGULAREXPRESSION?$AA@ 10006098     tzhkeyad.obj
+ 0003:000010b0       ??_C@_0L@EDPP@TABLEENTRY?$AA@ 100060b0     tzhkeyad.obj
+ 0003:000010c0       ??_C@_0P@NJID@NLS_TABLEENTRY?$AA@ 100060c0     tzhkeyad.obj
+ 0003:000010d4       ??_C@_07OLKB@CONTEXT?$AA@  100060d4     tzhkeyad.obj
+ 0003:000010e0       ??_C@_05NMBE@MODEL?$AA@    100060e0     tzhkeyad.obj
+ 0003:000010e8       ??_C@_06EIOP@DOMAIN?$AA@   100060e8     tzhkeyad.obj
+ 0003:000010f0       ??_C@_06BLIJ@ATTRIB?$AA@   100060f0     tzhkeyad.obj
+ 0003:000010f8       ??_C@_0M@PNOD@CHILDENTITY?$AA@ 100060f8     tzhkeyad.obj
+ 0003:00001108       ??_C@_06NIFE@ENTITY?$AA@   10006108     tzhkeyad.obj
+ 0003:00001110       ??_C@_06PIJH@OBJECT?$AA@   10006110     tzhkeyad.obj
+ 0003:00001118       ??_C@_0M@LKKI@APPLICATION?$AA@ 10006118     tzhkeyad.obj
+ 0003:00001128       ??_C@_06BADI@Zeidon?$AA@   10006128     tzhkeyad.obj
+ 0003:00001130       ??_C@_01FPMG@z?$AA@        10006130     tzhkeyad.obj
+ 0003:00001134       ??_C@_08JIIE@KZMSGQOO?$AA@ 10006134     tzhkeyad.obj
+ 0003:00001140       ??_C@_0N@DNNP@kzomdmoi?4xdm?$AA@ 10006140     tzhkeyad.obj
+ 0003:00001150       ??_C@_0L@LFFP@zeidon?4xdm?$AA@ 10006150     tzhkeyad.obj
+ 0003:00001160       ??_C@_0L@JLJG@zeidon?4app?$AA@ 10006160     tzhkeyad.obj
+ 0003:00001170       ??_C@_06HLLH@ZEIDON?$AA@   10006170     tzhkeyad.obj
+ 0003:00001178       ??_C@_04EJNG@?4dll?$AA@    10006178     tzhkeyad.obj
+ 0003:00001180       ??_C@_04NPBE@?4xod?$AA@    10006180     tzhkeyad.obj
+ 0003:00001188       ??_C@_0N@OAJM@kzoengaa?4dll?$AA@ 10006188     tzhkeyad.obj
+ 0003:00001198       ??_C@_0N@FLGE@kzoengwa?4exe?$AA@ 10006198     tzhkeyad.obj
+ 0003:000011a8       ??_C@_0BH@IOGD@?1SHAREMEM?1KZOENGAA?4SEG?$AA@ 100061a8     tzhkeyad.obj
+ 0003:000011c4       ??_C@_08BHMH@1?40b0?5?5?5?$AA@ 100061c4     tzhkeyad.obj
+ 0003:000011d0       ??_C@_08LNAM@1?40a2?5?5?5?$AA@ 100061d0     tzhkeyad.obj
+ 0003:000011dc       ??_C@_0BO@FOCN@ZEIDON?5MUTEX?5?9?9?5NETWORK?5CHAIN?$AA@ 100061dc     tzhkeyad.obj
+ 0003:00001200       ??_C@_0CB@LBIA@ZEIDON?5MUTEX?5?9?9?5PROC?5CHAIN?5WRITE@ 10006200     tzhkeyad.obj
+ 0003:00001228       ??_C@_0BL@CPDB@ZEIDON?5MUTEX?5?9?9?5PROC?5CHAIN?$AA@ 10006228     tzhkeyad.obj
+ 0003:00001248       ??_C@_0BM@DIIE@ZEIDON?5MUTEX?5?9?9?5TASKPROCESS?$AA@ 10006248     tzhkeyad.obj
+ 0003:0000126c       ??_C@_0BL@OEL@ZEIDON?5MUTEX?5?9?9?5ENTITY?5KEY?$AA@ 1000626c     tzhkeyad.obj
+ 0003:0000128c       ??_C@_0BG@GGGI@ZEIDON?5MUTEX?5?9?9?5APPLA?$AA@ 1000628c     tzhkeyad.obj
+ 0003:000012a8       ??_C@_0CB@EGB@ZEIDON?5MUTEX?5?9?9?5PESSIMISTIC?5LOCK@ 100062a8     tzhkeyad.obj
+ 0003:000012d0       ??_C@_0BM@PPAA@ZEIDON?5MUTEX?5?9?9?5DEBUGCHANGE?$AA@ 100062d0     tzhkeyad.obj
+ 0003:000012f4       ??_C@_0BG@OLDG@ZEIDON?5MUTEX?5?9?9?5MUTEX?$AA@ 100062f4     tzhkeyad.obj
+ 0003:00001310       ??_C@_0CB@FGNI@ZEIDON?5MUTEX?5?9?9?5TASK?5CHAIN?5WRITE@ 10006310     tzhkeyad.obj
+ 0003:00001338       ??_C@_0BL@OFOI@ZEIDON?5MUTEX?5?9?9?5TASK?5CHAIN?$AA@ 10006338     tzhkeyad.obj
+ 0003:00001358       ??_C@_0BL@FIFA@ZEIDON?5MUTEX?5?9?9?5SHARED?5MEM?$AA@ 10006358     tzhkeyad.obj
+ 0003:00001378       ??_C@_0BM@GEKC@ZEIDON?5MUTEX?5?9?9?5ANCHOR?5INIT?$AA@ 10006378     tzhkeyad.obj
+ 0003:0000139c       ??_C@_0BN@JMMP@ZEIDON?5MUTEX?5?9?9?5ANCHOR?5BLOCK?$AA@ 1000639c     tzhkeyad.obj
+ 0003:000013c0       ??_C@_0CC@CFG@ZEIDON?5MUTEX?5?9?9?5MEMORY?5ALLOCATIO@ 100063c0     tzhkeyad.obj
+ 0003:000013e8       ??_C@_0BJ@OCLO@ZEIDON?5MUTEX?5?9?9?5INITTERM?$AA@ 100063e8     tzhkeyad.obj
+ 0003:00001408       ??_C@_05MGOB@Shift?$AA@    10006408     tzhkeyad.obj
+ 0003:00001410       ??_C@_03LDLJ@Alt?$AA@      10006410     tzhkeyad.obj
+ 0003:00001414       ??_C@_04KEPD@Ctrl?$AA@     10006414     tzhkeyad.obj
+ 0003:0000141c       ??_C@_08OBJI@KeyCombo?$AA@ 1000641c     tzhkeyad.obj
+ 0003:00001428       ??_C@_06KFPB@Hotkey?$AA@   10006428     tzhkeyad.obj
+ 0003:00001430       ??_C@_08HJN@KZHKEYSO?$AA@  10006430     tzhkeyad.obj
+ 0003:0000143c       ??_C@_04KOOE@VKey?$AA@     1000643c     tzhkeyad.obj
+ 0003:00001444       ??_C@_04FDFI@LPLR?$AA@     10006444     tzhkeyad.obj
+ 0003:0000144c       ??_C@_04EFNI@Name?$AA@     1000644c     tzhkeyad.obj
+ 0003:00001454       ??_C@_08HHLD@TaskLPLR?$AA@ 10006454     tzhkeyad.obj
+ 0003:00001460       ??_C@_0M@DAJ@Application?$AA@ 10006460     tzhkeyad.obj
+ 0003:00001470       ??_C@_0BN@GMMP@Hotkey?5Dialog?5opening?5file?3?5?$AA@ 10006470     tzhkeyad.obj
+ 0003:00001494       ??_C@_0M@NDMI@?2ZEIDON?4PHK?$AA@ 10006494     tzhkeyad.obj
+ 0003:000014a4       ??_C@_0L@JDPM@MetaSrcDir?$AA@ 100064a4     tzhkeyad.obj
+ 0003:000014b4       ??_C@_07IMOE@HK00101?$AA@  100064b4     tzhkeyad.obj
+ 0003:000014c0       ??_C@_08IPPE@Hot?5Keys?$AA@ 100064c0     tzhkeyad.obj
+ 0003:000014cc       ??_C@_0BD@ICEH@Can?8t?5locate?5LPLR?$DP?$AA@ 100064cc     tzhkeyad.obj
+ 0003:000014e4       ??_C@_07IOAD@CM_List?$AA@  100064e4     tzhkeyad.obj
+ 0003:000014f0       ??_C@_0M@IENM@?2ZEIDON?4XKY?$AA@ 100064f0     tzhkeyad.obj
+ 0003:00001500       ??_C@_07LMFN@ExecDir?$AA@  10006500     tzhkeyad.obj
+ 0003:0000150c       ??_C@_03NDIP@DLL?$AA@      1000650c     tzhkeyad.obj
+ 0003:00001510       ??_C@_08PMAN@DLL_Name?$AA@ 10006510     tzhkeyad.obj
+ 0003:0000151c       ??_C@_03BIF@COP?$AA@       1000651c     tzhkeyad.obj
+ 0003:00001520       ??_C@_09GMMJ@Operation?$AA@ 10006520     tzhkeyad.obj
+ 0003:0000152c       ??_C@_03JMLC@App?$AA@      1000652c     tzhkeyad.obj
+ 0003:00001530       ??_C@_08IJDG@KZHKEYXO?$AA@ 10006530     tzhkeyad.obj
+ 0003:0000153c       ??_C@_07HDFN@HK00102?$AA@  1000653c     tzhkeyad.obj
+ 0003:00001548       ??_C@_08NADE@TZHKEYAD?$AA@ 10006548     tzhkeyad.obj
+ 0003:00001554       ??_C@_07NJMK@HK00103?$AA@  10006554     tzhkeyad.obj
+ 0003:00001560       ??_C@_0DB@EHFK@Do?5you?5wish?5to?5save?5current?5Appl@ 10006560     tzhkeyad.obj
+ 0003:0000159c       ??_C@_07IMCP@HK00104?$AA@  1000659c     tzhkeyad.obj
+ 0003:000015a8       ??_C@_07CGLI@HK00105?$AA@  100065a8     tzhkeyad.obj
+ 0003:000015b4       ??_C@_0BB@DCKO@HKEYSO?5not?5found?$AA@ 100065b4     tzhkeyad.obj
+ 0003:00001780       _g_hInstanceDLL            10006780     zdllinst.obj
+ 0003:00001784       _g_ZeidonPageTable         10006784     tzhkeyad.obj
+ 0003:00001b84       _g_FileMappingHandles      10006b84     tzhkeyad.obj
+ 0003:00001f84       _g_nOE_TraceWarning        10006f84     tzhkeyad.obj
+ 0003:00001f88       _g_vRealTaskView           10006f88     tzhkeyad.obj
+ 0003:00001f8c       _g_vDefaultTaskView        10006f8c     tzhkeyad.obj
+ 0003:00001f90       _g_lProcessID              10006f90     tzhkeyad.obj
+ 0003:00001f94       _g_ZeidonMutexTable        10006f94     tzhkeyad.obj
+ 0003:00001fd4       _g_hAnchorBlock            10006fd4     tzhkeyad.obj
+ 0003:00001fd8       _AnchorBlock               10006fd8     tzhkeyad.obj
+ 0003:00001fdc       _g_bServerMode             10006fdc     tzhkeyad.obj
+ 0003:00001fe0       _lpNullP                   10006fe0     tzhkeyad.obj
+ 0003:00001fe4       _pHab                      10006fe4     tzhkeyad.obj
+ 0003:00001fe8       _hModule                   10006fe8     tzhkeyad.obj
+ 0003:0000219c       ??_C@_08A@?$AA?$AA?$AA?$AA?$AA?$AA?$AA?$AA?$AA@ 1000719c     tzhkeyad.obj
+ 0003:000021a8       ??_C@_00A@?$AA@            100071a8     tzhkeyad.obj
+ 0003:000021b0       _g_pfnGetHndl              100071b0     <common>
+ 0003:000021c0       _g_pfnGetPtr               100071c0     <common>
+ 0003:000021c4       __adjust_fdiv              100071c4     <common>
+ 0003:000021d0       ___onexitend               100071d0     <common>
+ 0003:000021e0       ___onexitbegin             100071e0     <common>
+ 0003:000021e4       __pRawDllMain              100071e4     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 10008000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_KZOENGAA 10008014     kzoengaa:KZOENGAA.DLL
+ 0004:00000028       __IMPORT_DESCRIPTOR_MSVCRTD 10008028     msvcrtd:MSVCRTD.dll
+ 0004:0000003c       __IMPORT_DESCRIPTOR_ZDrApp 1000803c     zdrapp:ZDrApp.dll
+ 0004:00000050       __NULL_IMPORT_DESCRIPTOR   10008050     tzlodopr:tzlodopr.dll
+ 0004:000001ec       __imp__SfLockTaskMemory@4  100081ec     kzoengaa:KZOENGAA.DLL
+ 0004:000001f0       __imp__SetCursorFirstEntity@12 100081f0     kzoengaa:KZOENGAA.DLL
+ 0004:000001f4       __imp__ExcludeEntity@12    100081f4     kzoengaa:KZOENGAA.DLL
+ 0004:000001f8       __imp__GetBlobFromAttribute@20 100081f8     kzoengaa:KZOENGAA.DLL
+ 0004:000001fc       __imp__CheckExistenceOfEntity@8 100081fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000200       __imp__GetViewByName@16    10008200     kzoengaa:KZOENGAA.DLL
+ 0004:00000204       __imp__SetAttributeFromBlob@20 10008204     kzoengaa:KZOENGAA.DLL
+ 0004:00000208       __imp__GetIntegerFromAttribute@16 10008208     kzoengaa:KZOENGAA.DLL
+ 0004:0000020c       __imp__GetAddrForAttribute@16 1000820c     kzoengaa:KZOENGAA.DLL
+ 0004:00000210       __imp__CommitOI_ToFile@12  10008210     kzoengaa:KZOENGAA.DLL
+ 0004:00000214       __imp__CreateEntity@12     10008214     kzoengaa:KZOENGAA.DLL
+ 0004:00000218       __imp__ActivateOI_FromFile@20 10008218     kzoengaa:KZOENGAA.DLL
+ 0004:0000021c       __imp__TraceLineS@8        1000821c     kzoengaa:KZOENGAA.DLL
+ 0004:00000220       __imp__GetStringFromAttribute@16 10008220     kzoengaa:KZOENGAA.DLL
+ 0004:00000224       __imp__MessageSend@24      10008224     kzoengaa:KZOENGAA.DLL
+ 0004:00000228       __imp__SetNameForView@16   10008228     kzoengaa:KZOENGAA.DLL
+ 0004:0000022c       __imp__SfFreeTaskMemory@4  1000822c     kzoengaa:KZOENGAA.DLL
+ 0004:00000230       __imp__SfUnlockTaskMemory@4 10008230     kzoengaa:KZOENGAA.DLL
+ 0004:00000234       __imp__SetCursorNextEntity@12 10008234     kzoengaa:KZOENGAA.DLL
+ 0004:00000238       __imp__GetRelativeEntityNumber@16 10008238     kzoengaa:KZOENGAA.DLL
+ 0004:0000023c       __imp__SetAttributeFromAttribute@24 1000823c     kzoengaa:KZOENGAA.DLL
+ 0004:00000240       __imp__SetMatchingAttributesByName@20 10008240     kzoengaa:KZOENGAA.DLL
+ 0004:00000244       __imp__SetEntityCursor@40  10008244     kzoengaa:KZOENGAA.DLL
+ 0004:00000248       __imp__SfActivateSysEmptyOI@16 10008248     kzoengaa:KZOENGAA.DLL
+ 0004:0000024c       __imp__IncludeSubobjectFromSubobject@20 1000824c     kzoengaa:KZOENGAA.DLL
+ 0004:00000250       __imp__SfAllocTaskMemory@12 10008250     kzoengaa:KZOENGAA.DLL
+ 0004:00000254       __imp__MiSetOI_ReleaseForView@8 10008254     kzoengaa:KZOENGAA.DLL
+ 0004:00000258       __imp__DropObjectInstance@4 10008258     kzoengaa:KZOENGAA.DLL
+ 0004:0000025c       __imp__MessagePrompt@32    1000825c     kzoengaa:KZOENGAA.DLL
+ 0004:00000260       __imp__ObjectInstanceUpdatedFromFile@4 10008260     kzoengaa:KZOENGAA.DLL
+ 0004:00000264       __imp__DropView@4          10008264     kzoengaa:KZOENGAA.DLL
+ 0004:00000268       \177KZOENGAA_NULL_THUNK_DATA 10008268     kzoengaa:KZOENGAA.DLL
+ 0004:000002ac       __imp___free_dbg           100082ac     msvcrtd:MSVCRTD.dll
+ 0004:000002b0       __imp____dllonexit         100082b0     msvcrtd:MSVCRTD.dll
+ 0004:000002b4       __imp___adjust_fdiv        100082b4     msvcrtd:MSVCRTD.dll
+ 0004:000002b8       __imp__memset              100082b8     msvcrtd:MSVCRTD.dll
+ 0004:000002bc       __imp__strcat              100082bc     msvcrtd:MSVCRTD.dll
+ 0004:000002c0       __imp__strcpy              100082c0     msvcrtd:MSVCRTD.dll
+ 0004:000002c4       __imp___onexit             100082c4     msvcrtd:MSVCRTD.dll
+ 0004:000002c8       __imp___initterm           100082c8     msvcrtd:MSVCRTD.dll
+ 0004:000002cc       __imp___malloc_dbg         100082cc     msvcrtd:MSVCRTD.dll
+ 0004:000002d0       \177MSVCRTD_NULL_THUNK_DATA 100082d0     msvcrtd:MSVCRTD.dll
+ 0004:00000300       __imp__SetWindowCaptionTitle@12 10008300     zdrapp:ZDrApp.dll
+ 0004:00000304       __imp__GetCtrlState@12     10008304     zdrapp:ZDrApp.dll
+ 0004:00000308       __imp__SetWindowActionBehavior@16 10008308     zdrapp:ZDrApp.dll
+ 0004:0000030c       __imp__SetCtrlState@16     1000830c     zdrapp:ZDrApp.dll
+ 0004:00000310       \177ZDrApp_NULL_THUNK_DATA 10008310     zdrapp:ZDrApp.dll
+ 0004:0000033c       __imp__ActivateMetaOI@20   1000833c     tzlodopr:tzlodopr.dll
+ 0004:00000340       __imp__InitializeLPLR@8    10008340     tzlodopr:tzlodopr.dll
+ 0004:00000344       __imp__RetrieveViewForMetaList@12 10008344     tzlodopr:tzlodopr.dll
+ 0004:00000348       \177tzlodopr_NULL_THUNK_DATA 10008348     tzlodopr:tzlodopr.dll
+
+ entry point at        0001:00000e10
+

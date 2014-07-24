@@ -1,0 +1,219 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzzolodq.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzzolodq.dll
+
+           0 characteristics
+    5356CFAB time date stamp Tue Apr 22 16:23:07 2014
+        0.00 version
+           1 ordinal base
+         192 number of functions
+         192 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000122B _BeforeEntityChange@4
+          2    1 000011D6 _Cancel@4
+          3    2 00001087 _CopyEntityGroupEnd@4
+          4    3 00001159 _CopyEntityGroupMappingStart@4
+          5    4 0000105F _CopyMappingNameToClipBoard@4
+          6    5 0000116D _EntityAboutToBeChanged@4
+          7    6 00001262 _EntityChanged@4
+          8    7 000011F4 _GetDLL_Instance@4
+          9    8 00001334 _OK@4
+         10    9 00001190 _PostBuild@4
+         11    A 00001398 _Prebuild@4
+         12    B 0000123A _RemoveAll@4
+         13    C 000013D9 _fnTZZOLODD_MoveEntity@8
+         14    D 000011BD _oTZZOHDGO_CreateFromLOD@16
+         15    E 00001307 _oTZZOHDGO_CreateNode@12
+         16    F 00001181 _oTZZOHDGO_GraphicFromZKey@12
+         17   10 000010A5 _ofnTZZOHDGO_GraphicFromZKey@16
+         18   11 000011EF _wTZZOLODD_TransferToEditor@4
+         19   12 00001037 _zwTZZOLODD_AcceptAttribute@4
+         20   13 000013E3 _zwTZZOLODD_ActivateTE@4
+         21   14 000012E4 _zwTZZOLODD_AddAllER_Attribs@4
+         22   15 000010B4 _zwTZZOLODD_AddAttribute@4
+         23   16 000011AE _zwTZZOLODD_AddDerivedAttribute@4
+         24   17 0000127B _zwTZZOLODD_AddEntFromEREnt@4
+         25   18 0000102D _zwTZZOLODD_AddEntFromEREntAsDER@4
+         26   19 000012E9 _zwTZZOLODD_AddEntFromERRel@4
+         27   1A 00001140 _zwTZZOLODD_AddEntFromERRelAsCR@4
+         28   1B 000013C0 _zwTZZOLODD_AddEntFromERRelAsDSP@4
+         29   1C 000013C5 _zwTZZOLODD_AddEntFromERRelAsINC@4
+         30   1D 00001168 _zwTZZOLODD_AddEntFromERThruRel@4
+         31   1E 00001280 _zwTZZOLODD_AddOperation@4
+         32   1F 0000130C _zwTZZOLODD_AddParentEntity@4
+         33   20 0000105A _zwTZZOLODD_AddSelectedAttribs@4
+         34   21 000013CF _zwTZZOLODD_AddSelectedAttribsL@4
+         35   22 0000120D _zwTZZOLODD_AddSourceFile@4
+         36   23 000012A8 _zwTZZOLODD_AddWorkEntity@4
+         37   24 00001299 _zwTZZOLODD_AskForSave@4
+         38   25 00001041 _zwTZZOLODD_AttPopup@4
+         39   26 000011E5 _zwTZZOLODD_AttributePopup@4
+         40   27 00001393 _zwTZZOLODD_BuildTEList@4
+         41   28 000011EA _zwTZZOLODD_CancelAttribute@4
+         42   29 0000136B _zwTZZOLODD_CenterNode@4
+         43   2A 00001050 _zwTZZOLODD_CheckEntityType@8
+         44   2B 000012BC _zwTZZOLODD_CheckNameForCheckOut@4
+         45   2C 000011FE _zwTZZOLODD_Check_CheckoutStatus@4
+         46   2D 000010FF _zwTZZOLODD_CloseENTVIEW@4
+         47   2E 0000114A _zwTZZOLODD_CollapseNode@4
+         48   2F 0000123F _zwTZZOLODD_CopyAttributes@4
+         49   30 0000110E _zwTZZOLODD_CreateNewLOD@4
+         50   31 00001104 _zwTZZOLODD_CreateTemporalEntity@4
+         51   32 00001370 _zwTZZOLODD_DeleteAllAttrib@4
+         52   33 000012C6 _zwTZZOLODD_DeleteAllOperations@4
+         53   34 000010F0 _zwTZZOLODD_DeleteAllSourceFiles@4
+         54   35 000013B6 _zwTZZOLODD_DeleteAttrib@4
+         55   36 000011A4 _zwTZZOLODD_DeleteEntity@4
+         56   37 000010BE _zwTZZOLODD_DeleteLOD@4
+         57   38 00001096 _zwTZZOLODD_DeleteSelectedAttrib@4
+         58   39 0000119F _zwTZZOLODD_DeleteSelectedFile@4
+         59   3A 000010C8 _zwTZZOLODD_DeleteSelectedOperat@4
+         60   3B 0000131B _zwTZZOLODD_DetermineDialogEntry@4
+         61   3C 000010FA _zwTZZOLODD_DisableTE_List@4
+         62   3D 000010E6 _zwTZZOLODD_DisplayClientMenu@4
+         63   3E 00001366 _zwTZZOLODD_DisplayNodeMenu@4
+         64   3F 000010A0 _zwTZZOLODD_DisplaySaveStatus@4
+         65   40 00001244 _zwTZZOLODD_EditOperationcode@4
+         66   41 00001032 _zwTZZOLODD_EnableDBH_Info@4
+         67   42 00001136 _zwTZZOLODD_EntityAttributePopup@4
+         68   43 0000113B _zwTZZOLODD_EntityNext@4
+         69   44 0000119A _zwTZZOLODD_EntityPopup@4
+         70   45 000011B3 _zwTZZOLODD_EntityPrev@4
+         71   46 00001028 _zwTZZOLODD_ExitLOD@4
+         72   47 0000126C _zwTZZOLODD_ExpandAllNodes@4
+         73   48 00001316 _zwTZZOLODD_ExpandNode@4
+         74   49 00001203 _zwTZZOLODD_GenReportVML@4
+         75   4A 00001023 _zwTZZOLODD_GrRefreshAttSAWnd@4
+         76   4B 00001253 _zwTZZOLODD_GraphicToLOD@4
+         77   4C 00001064 _zwTZZOLODD_HD_Print@4
+         78   4D 00001113 _zwTZZOLODD_HelpAbout@4
+         79   4E 00001325 _zwTZZOLODD_HelpBasics@4
+         80   4F 000012B7 _zwTZZOLODD_HelpContents@4
+         81   50 000012DF _zwTZZOLODD_HelpOnHelp@4
+         82   51 00001217 _zwTZZOLODD_HideNode@4
+         83   52 000013A2 _zwTZZOLODD_IncludeDomain@4
+         84   53 00001302 _zwTZZOLODD_InitMenu@4
+         85   54 000011A9 _zwTZZOLODD_InitMenuDisableAll@4
+         86   55 00001294 _zwTZZOLODD_InitMenuForView@12
+         87   56 00001276 _zwTZZOLODD_InitializeDialog@4
+         88   57 0000100A _zwTZZOLODD_InvokeEditor2@4
+         89   58 00001078 _zwTZZOLODD_InvokeEditor3@4
+         90   59 000011C7 _zwTZZOLODD_InvokeEditor@4
+         91   5A 00001005 _zwTZZOLODD_LoadAttributeList@4
+         92   5B 00001014 _zwTZZOLODD_LoadEntityList@4
+         93   5C 00001357 _zwTZZOLODD_LoadLODList@4
+         94   5D 0000114F _zwTZZOLODD_LoadOperationList@4
+         95   5E 000012FD _zwTZZOLODD_LoadSourceFileList@4
+         96   5F 000012A3 _zwTZZOLODD_LocateRecursAttr@12
+         97   60 0000117C _zwTZZOLODD_LocateRecursAttrPost@8
+         98   61 0000124E _zwTZZOLODD_LocateRecursiveEntity@8
+         99   62 000013A7 _zwTZZOLODD_LodOpen@4
+        100   63 00001073 _zwTZZOLODD_MainRtnFromSubWnd@4
+        101   64 00001163 _zwTZZOLODD_MoveAttribute@4
+        102   65 0000132F _zwTZZOLODD_MoveEntityLeft@4
+        103   66 000011C2 _zwTZZOLODD_MoveEntityRight@4
+        104   67 000012DA _zwTZZOLODD_NewLOD@4
+        105   68 00001267 _zwTZZOLODD_NextAttribute@4
+        106   69 0000100F _zwTZZOLODD_NotDone@4
+        107   6A 000010CD _zwTZZOLODD_OKEntity@4
+        108   6B 000011F9 _zwTZZOLODD_OK_NewEntity@4
+        109   6C 0000112C _zwTZZOLODD_OkNewLOD@4
+        110   6D 000011D1 _zwTZZOLODD_OpenLOD@4
+        111   6E 0000115E _zwTZZOLODD_OrderBuild@4
+        112   6F 000010E1 _zwTZZOLODD_OrderBuildLocateAttr@12
+        113   70 00001348 _zwTZZOLODD_OrderBuildPostAct@4
+        114   71 0000118B _zwTZZOLODD_OrderCancel@4
+        115   72 00001069 _zwTZZOLODD_OrderCreatePostEntry@8
+        116   73 00001172 _zwTZZOLODD_OrderCreateRegEntry@8
+        117   74 000010D2 _zwTZZOLODD_OrderItemDeselect@4
+        118   75 0000104B _zwTZZOLODD_OrderItemSelect@4
+        119   76 00001109 _zwTZZOLODD_OrderOK@4
+        120   77 000011B8 _zwTZZOLODD_OrderSetAscending@4
+        121   78 00001145 _zwTZZOLODD_OrderSetDescending@4
+        122   79 000010DC _zwTZZOLODD_ParseDerivedExpr@4
+        123   7A 0000129E _zwTZZOLODD_PasteAttributes@4
+        124   7B 00001122 _zwTZZOLODD_PostBuildATTMAINT@4
+        125   7C 00001352 _zwTZZOLODD_PostBuildATTVIEW@4
+        126   7D 0000137A _zwTZZOLODD_PostBuildENTVIEW@4
+        127   7E 0000103C _zwTZZOLODD_PostBuildER_ENTVIEW@4
+        128   7F 00001249 _zwTZZOLODD_PostBuildEntmaint@4
+        129   80 000010B9 _zwTZZOLODD_PostBuildQueryView@4
+        130   81 000010AA _zwTZZOLODD_PostBuildSARELVIEW@4
+        131   82 00001361 _zwTZZOLODD_PreBuildATTMAINT@4
+        132   83 00001343 _zwTZZOLODD_PreBuildATTVIEW@4
+        133   84 0000135C _zwTZZOLODD_PreBuildENTMAINT@4
+        134   85 000013AC _zwTZZOLODD_PreBuildLOD@4
+        135   86 000012F3 _zwTZZOLODD_PreBuildSARELVIEW@4
+        136   87 0000125D _zwTZZOLODD_PrebuildNewLOD@4
+        137   88 0000107D _zwTZZOLODD_PrevAttribute@4
+        138   89 00001271 _zwTZZOLODD_PrintPartialReport@4
+        139   8A 000013CA _zwTZZOLODD_PrintReport@4
+        140   8B 00001389 _zwTZZOLODD_ProfileSave@4
+        141   8C 000010AF _zwTZZOLODD_ProfileSaveAndPrint@4
+        142   8D 000011E0 _zwTZZOLODD_QueryFrameSetUp@4
+        143   8E 0000134D _zwTZZOLODD_QueryFrameSetUpRecur@8
+        144   8F 00001186 _zwTZZOLODD_RebuildSelectedLODs@4
+        145   90 00001118 _zwTZZOLODD_RefreshAttributeDesc@4
+        146   91 00001091 _zwTZZOLODD_RefreshAttributeList@4
+        147   92 00001177 _zwTZZOLODD_RefreshEntityList@4
+        148   93 000012D0 _zwTZZOLODD_RefreshEntitySelect@4
+        149   94 0000101E _zwTZZOLODD_RefreshWndWithTitle@4
+        150   95 000012EE _zwTZZOLODD_ReplaceRootEntityOK@4
+        151   96 00001019 _zwTZZOLODD_ReplaceRootEntityPreB@4
+        152   97 00001226 _zwTZZOLODD_ReportLOD@4
+        153   98 00001375 _zwTZZOLODD_ResetAllSubSeqValues@4
+        154   99 00001055 _zwTZZOLODD_ReusOKEntity@4
+        155   9A 000010D7 _zwTZZOLODD_SaveAsCancel@4
+        156   9B 000012D5 _zwTZZOLODD_SaveAsKeepCurrentDesc@4
+        157   9C 00001235 _zwTZZOLODD_SaveAsLOD@4
+        158   9D 000013D4 _zwTZZOLODD_SaveAsPostBuild@4
+        159   9E 00001127 _zwTZZOLODD_SaveAsSetDefaults@4
+        160   9F 000011CC _zwTZZOLODD_SaveLOD@4
+        161   A0 0000133E _zwTZZOLODD_SaveLODForNetwork@4
+        162   A1 00001320 _zwTZZOLODD_SaveLODForTE@4
+        163   A2 00001258 _zwTZZOLODD_SaveLODWithoutTE@4
+        164   A3 00001221 _zwTZZOLODD_SaveSelAttribute@4
+        165   A4 00001154 _zwTZZOLODD_SaveSelectedAttribute@4
+        166   A5 000012B2 _zwTZZOLODD_SelectAttrDerOper@4
+        167   A6 000010EB _zwTZZOLODD_SelectConstraint@4
+        168   A7 000012CB _zwTZZOLODD_SelectEntConstraint@4
+        169   A8 000013B1 _zwTZZOLODD_SetAttributeType@8
+        170   A9 0000132A _zwTZZOLODD_SetSaveAsName@4
+        171   AA 00001082 _zwTZZOLODD_SetSubSeqValue@8
+        172   AB 0000128A _zwTZZOLODD_ShowPriorityList@4
+        173   AC 000010F5 _zwTZZOLODD_ShowPriorityListSub@12
+        174   AD 00001195 _zwTZZOLODD_SortAttByName@4
+        175   AE 0000106E _zwTZZOLODD_SortByDate@4
+        176   AF 0000109B _zwTZZOLODD_SortByDesc@4
+        177   B0 0000108C _zwTZZOLODD_SortByName@4
+        178   B1 0000137F _zwTZZOLODD_SwitchLPLR@4
+        179   B2 0000128F _zwTZZOLODD_SwitchOrientation@4
+        180   B3 00001208 _zwTZZOLODD_TransferToOperDLG@4
+        181   B4 00001131 _zwTZZOLODD_TransferToSetDBH@4
+        182   B5 000012AD _zwTZZOLODD_UnselectAllNodes@4
+        183   B6 0000139D _zwTZZOLODD_UpdateOperation@4
+        184   B7 00001212 _zwTZZOLODD_VerifyRelatedFunction@4
+        185   B8 000013BB _zwTZZOLODD_WarningForDerivEntity@4
+        186   B9 00001339 _zwTZZOLODD_WarningForWorkEntity@4
+        187   BA 0000111D _zwTZZOLODD_ZoomFit@4
+        188   BB 0000138E _zwTZZOLODD_ZoomIn@4
+        189   BC 000013DE _zwTZZOLODD_ZoomOut@4
+        190   BD 0000121C _zwTZZOLODD_ZoomRead@4
+        191   BE 00001046 _zwTZZOLODD_ZoomStandard@4
+        192   BF 000011DB _zwfnTZZOLODD_PositionNode@16
+
+  Summary
+
+        4000 .data
+        2000 .idata
+        3000 .rdata
+        3000 .reloc
+       17000 .text

@@ -1,0 +1,1137 @@
+ tzzolodq
+
+ Timestamp is 5356cfab (Tue Apr 22 16:23:07 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00016ab5H .text                   CODE
+ 0002:00000000 000001dcH .rdata                  DATA
+ 0002:000001e0 00004493H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00002b44H .data                   DATA
+ 0003:00002f58 0000031cH .bss                    DATA
+ 0004:00000000 000000a0H .idata$2                DATA
+ 0004:000000a0 00000014H .idata$3                DATA
+ 0004:000000b4 000004acH .idata$4                DATA
+ 0004:00000560 000004acH .idata$5                DATA
+ 0004:00000a0c 00000864H .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:000007d0       _DllMain@12                100017d0 f   zdllinst.obj
+ 0001:000007f6       _GetDLL_Instance@4         100017f6 f   zdllinst.obj
+ 0001:00000810       _oTZZOHDGO_CreateNode@12   10001810 f   tzzolodq.obj
+ 0001:000012fa       _oTZZOHDGO_CreateFromLOD@16 100022fa f   tzzolodq.obj
+ 0001:000013c7       _zwfnTZZOLODD_PositionNode@16 100023c7 f   tzzolodq.obj
+ 0001:000015cb       _zwTZZOLODD_GraphicToLOD@4 100025cb f   tzzolodq.obj
+ 0001:00001650       _ofnTZZOHDGO_GraphicFromZKey@16 10002650 f   tzzolodq.obj
+ 0001:00001703       _oTZZOHDGO_GraphicFromZKey@12 10002703 f   tzzolodq.obj
+ 0001:000017a2       _zwTZZOLODD_UnselectAllNodes@4 100027a2 f   tzzolodq.obj
+ 0001:0000187d       _zwTZZOLODD_InitializeDialog@4 1000287d f   tzzolodq.obj
+ 0001:00001ab2       _zwTZZOLODD_DetermineDialogEntry@4 10002ab2 f   tzzolodq.obj
+ 0001:00001bc2       _zwTZZOLODD_PostBuildQueryView@4 10002bc2 f   tzzolodq.obj
+ 0001:00001c5b       _zwTZZOLODD_InitMenuForEdit@12 10002c5b f   tzzolodq.obj
+ 0001:00001e45       _zwTZZOLODD_InitMenuForView@12 10002e45 f   tzzolodq.obj
+ 0001:00001fa9       _zwTZZOLODD_InitMenuDisableAll@4 10002fa9 f   tzzolodq.obj
+ 0001:0000200e       _zwTZZOLODD_InitMenu@4     1000300e f   tzzolodq.obj
+ 0001:000021d7       _zwTZZOLODD_MainRtnFromSubWnd@4 100031d7 f   tzzolodq.obj
+ 0001:00002368       _zwTZZOLODD_GrRefreshAttSAWnd@4 10003368 f   tzzolodq.obj
+ 0001:000025eb       _zwTZZOLODD_RefreshWndWithTitle@4 100035eb f   tzzolodq.obj
+ 0001:0000265a       _zwTZZOLODD_PostBuildER_ENTVIEW@4 1000365a f   tzzolodq.obj
+ 0001:00002716       _zwTZZOLODD_LoadLODList@4  10003716 f   tzzolodq.obj
+ 0001:00002871       _zwfnTZZOLODD_AskForSave@4 10003871 f   tzzolodq.obj
+ 0001:00002a3e       _zwTZZOLODD_AskForSave@4   10003a3e f   tzzolodq.obj
+ 0001:00002a51       _zwTZZOLODD_DisplaySaveStatus@4 10003a51 f   tzzolodq.obj
+ 0001:00002b84       _zwTZZOLODD_OpenLOD@4      10003b84 f   tzzolodq.obj
+ 0001:00002e4b       _zwTZZOLODD_CreateNewLOD@4 10003e4b f   tzzolodq.obj
+ 0001:000033da       _zwTZZOLODD_OkNewLOD@4     100043da f   tzzolodq.obj
+ 0001:000036cc       _zwTZZOLODD_SaveLODForTE@4 100046cc f   tzzolodq.obj
+ 0001:000038b4       _zwTZZOLODD_ActivateTE@4   100048b4 f   tzzolodq.obj
+ 0001:00003998       _zwTZZOLODD_SaveLOD@4      10004998 f   tzzolodq.obj
+ 0001:00004444       _zwTZZOLODD_SaveLODWithoutTE@4 10005444 f   tzzolodq.obj
+ 0001:000045eb       _zwTZZOLODD_SaveLODForNetwork@4 100055eb f   tzzolodq.obj
+ 0001:0000493a       _zwTZZOLODD_GenReportVML@4 1000593a f   tzzolodq.obj
+ 0001:00004996       _zwTZZOLODD_BuildTEList@4  10005996 f   tzzolodq.obj
+ 0001:00004aa7       _zwTZZOLODD_ReportLOD@4    10005aa7 f   tzzolodq.obj
+ 0001:00004c5f       _zwTZZOLODD_ExitLOD@4      10005c5f f   tzzolodq.obj
+ 0001:00004e25       _zwTZZOLODD_DeleteLOD@4    10005e25 f   tzzolodq.obj
+ 0001:00005010       _zwTZZOLODD_SwitchLPLR@4   10006010 f   tzzolodq.obj
+ 0001:0000512c       _zwTZZOLODD_SortByName@4   1000612c f   tzzolodq.obj
+ 0001:00005184       _zwTZZOLODD_SortByDate@4   10006184 f   tzzolodq.obj
+ 0001:000051dc       _zwTZZOLODD_SortByDesc@4   100061dc f   tzzolodq.obj
+ 0001:00005234       _zwTZZOLODD_SelectConstraint@4 10006234 f   tzzolodq.obj
+ 0001:000054bf       _zwTZZOLODD_EntityNext@4   100064bf f   tzzolodq.obj
+ 0001:0000557d       _zwTZZOLODD_EntityPrev@4   1000657d f   tzzolodq.obj
+ 0001:0000563b       _zwTZZOLODD_AddWorkEntity@4 1000663b f   tzzolodq.obj
+ 0001:00005788       _zwTZZOLODD_AddEntFromERRel@4 10006788 f   tzzolodq.obj
+ 0001:000057e3       _zwTZZOLODD_AddEntFromERRelAsCR@4 100067e3 f   tzzolodq.obj
+ 0001:00005914       _zwTZZOLODD_AddEntFromERRelAsINC@4 10006914 f   tzzolodq.obj
+ 0001:00005a45       _zwTZZOLODD_AddEntFromERRelAsDSP@4 10006a45 f   tzzolodq.obj
+ 0001:00005b76       _zwTZZOLODD_AddEntFromEREnt@4 10006b76 f   tzzolodq.obj
+ 0001:00005bd1       _zwTZZOLODD_AddEntFromEREntAsDER@4 10006bd1 f   tzzolodq.obj
+ 0001:00005d52       _zwTZZOLODD_AddEntFromERThruRel@4 10006d52 f   tzzolodq.obj
+ 0001:00005dd2       _zwTZZOLODD_DeleteEntity@4 10006dd2 f   tzzolodq.obj
+ 0001:00005fe2       _zwTZZOLODD_CheckEntityType@8 10006fe2 f   tzzolodq.obj
+ 0001:0000605c       _zwTZZOLODD_PostBuildEntmaint@4 1000705c f   tzzolodq.obj
+ 0001:00006253       _zwTZZOLODD_ReusOKEntity@4 10007253 f   tzzolodq.obj
+ 0001:000069b8       _zwTZZOLODD_OKEntity@4     100079b8 f   tzzolodq.obj
+ 0001:00006abb       _zwTZZOLODD_OK_NewEntity@4 10007abb f   tzzolodq.obj
+ 0001:00006ddd       _zwTZZOLODD_SelectEntConstraint@4 10007ddd f   tzzolodq.obj
+ 0001:00007018       _zwTZZOLODD_PreBuildATTVIEW@4 10008018 f   tzzolodq.obj
+ 0001:00007046       _zwTZZOLODD_PostBuildATTVIEW@4 10008046 f   tzzolodq.obj
+ 0001:00007050       _zwTZZOLODD_PreBuildATTMAINT@4 10008050 f   tzzolodq.obj
+ 0001:00007273       _zwTZZOLODD_SelectAttrDerOper@4 10008273 f   tzzolodq.obj
+ 0001:000072cf       _zwTZZOLODD_PostBuildATTMAINT@4 100082cf f   tzzolodq.obj
+ 0001:000075a4       _zwTZZOLODD_PreBuildENTMAINT@4 100085a4 f   tzzolodq.obj
+ 0001:000076a1       _zwTZZOLODD_PreBuildLOD@4  100086a1 f   tzzolodq.obj
+ 0001:0000772f       _zwTZZOLODD_AddAttribute@4 1000872f f   tzzolodq.obj
+ 0001:000078b0       _zwTZZOLODD_AddDerivedAttribute@4 100088b0 f   tzzolodq.obj
+ 0001:0000793d       _zwTZZOLODD_AddSelectedAttribsL@4 1000893d f   tzzolodq.obj
+ 0001:00007a4c       _zwTZZOLODD_AddSelectedAttribs@4 10008a4c f   tzzolodq.obj
+ 0001:00007cff       _zwTZZOLODD_AddAllER_Attribs@4 10008cff f   tzzolodq.obj
+ 0001:0000813d       _zwTZZOLODD_ParseDerivedExpr@4 1000913d f   tzzolodq.obj
+ 0001:00008187       _zwTZZOLODD_DeleteAttrib@4 10009187 f   tzzolodq.obj
+ 0001:00008270       _zwTZZOLODD_DeleteSelectedAttrib@4 10009270 f   tzzolodq.obj
+ 0001:00008317       _zwTZZOLODD_DeleteAllAttrib@4 10009317 f   tzzolodq.obj
+ 0001:000083c5       _zwTZZOLODD_SortAttByName@4 100093c5 f   tzzolodq.obj
+ 0001:0000841a       _zwTZZOLODD_IncludeDomain@4 1000941a f   tzzolodq.obj
+ 0001:0000861b       _zwTZZOLODD_ProfileSave@4  1000961b f   tzzolodq.obj
+ 0001:00008645       _zwTZZOLODD_ProfileSaveAndPrint@4 10009645 f   tzzolodq.obj
+ 0001:00008661       _zwTZZOLODD_ZoomStandard@4 10009661 f   tzzolodq.obj
+ 0001:00008699       _zwTZZOLODD_ZoomRead@4     10009699 f   tzzolodq.obj
+ 0001:000086df       _zwTZZOLODD_ZoomIn@4       100096df f   tzzolodq.obj
+ 0001:00008717       _zwTZZOLODD_ZoomOut@4      10009717 f   tzzolodq.obj
+ 0001:0000874f       _zwTZZOLODD_ZoomFit@4      1000974f f   tzzolodq.obj
+ 0001:00008787       _zwTZZOLODD_SwitchOrientation@4 10009787 f   tzzolodq.obj
+ 0001:000088e3       _zwTZZOLODD_DisplayClientMenu@4 100098e3 f   tzzolodq.obj
+ 0001:00008922       _zwTZZOLODD_DisplayNodeMenu@4 10009922 f   tzzolodq.obj
+ 0001:00008ac6       _zwTZZOLODD_CenterNode@4   10009ac6 f   tzzolodq.obj
+ 0001:00008afa       _zwTZZOLODD_ExpandNode@4   10009afa f   tzzolodq.obj
+ 0001:00008c56       _zfnTZZOLODD_RecursExpandNodes@4 10009c56 f   tzzolodq.obj
+ 0001:00008d14       _zwTZZOLODD_ExpandAllNodes@4 10009d14 f   tzzolodq.obj
+ 0001:00008da2       _zwTZZOLODD_CollapseNode@4 10009da2 f   tzzolodq.obj
+ 0001:00008e4f       _zwTZZOLODD_HideNode@4     10009e4f f   tzzolodq.obj
+ 0001:00008ec3       _zwTZZOLODD_HD_Print@4     10009ec3 f   tzzolodq.obj
+ 0001:00008f87       _zwTZZOLODD_HelpAbout@4    10009f87 f   tzzolodq.obj
+ 0001:00008fab       _zwTZZOLODD_HelpBasics@4   10009fab f   tzzolodq.obj
+ 0001:00008fc3       _zwTZZOLODD_HelpOnHelp@4   10009fc3 f   tzzolodq.obj
+ 0001:00008fdb       _zwTZZOLODD_HelpContents@4 10009fdb f   tzzolodq.obj
+ 0001:00008ff3       _fnRecursMergeLOD_WithDiagram@16 10009ff3 f   tzzolodq.obj
+ 0001:00009c68       _zfnTZZOLODD_MergeLOD_WithDiagram@12 1000ac68 f   tzzolodq.obj
+ 0001:00009d36       _zwTZZOLODD_PostBuildENTVIEW@4 1000ad36 f   tzzolodq.obj
+ 0001:00009e72       _zwTZZOLODD_RefreshEntitySelect@4 1000ae72 f   tzzolodq.obj
+ 0001:00009f71       _zwTZZOLODD_CloseENTVIEW@4 1000af71 f   tzzolodq.obj
+ 0001:0000a03f       _zwTZZOLODD_EntityPopup@4  1000b03f f   tzzolodq.obj
+ 0001:0000a150       _zwTZZOLODD_AttPopup@4     1000b150 f   tzzolodq.obj
+ 0001:0000a186       _zwTZZOLODD_AttributePopup@4 1000b186 f   tzzolodq.obj
+ 0001:0000a332       _zwTZZOLODD_NotDone@4      1000b332 f   tzzolodq.obj
+ 0001:0000a35b       _zwTZZOLODD_PrebuildNewLOD@4 1000b35b f   tzzolodq.obj
+ 0001:0000a47c       _zwTZZOLODD_PreBuildSARELVIEW@4 1000b47c f   tzzolodq.obj
+ 0001:0000a51a       _zwTZZOLODD_PostBuildSARELVIEW@4 1000b51a f   tzzolodq.obj
+ 0001:0000a563       _zwTZZOLODD_TransferToOperDLG@4 1000b563 f   tzzolodq.obj
+ 0001:0000a625       _zwTZZOLODD_VerifyRelatedFunction@4 1000b625 f   tzzolodq.obj
+ 0001:0000a6ae       _zwTZZOLODD_PrintReport@4  1000b6ae f   tzzolodq.obj
+ 0001:0000a6e8       _wTZZOLODD_TransferToEditor@4 1000b6e8 f   tzzolodq.obj
+ 0001:0000a750       _zwTZZOLODD_InvokeEditor@4 1000b750 f   tzzolodq.obj
+ 0001:0000a7e8       _zwTZZOLODD_InvokeEditor2@4 1000b7e8 f   tzzolodq.obj
+ 0001:0000a880       _zwTZZOLODD_InvokeEditor3@4 1000b880 f   tzzolodq.obj
+ 0001:0000a918       _zwTZZOLODD_PrintPartialReport@4 1000b918 f   tzzolodq.obj
+ 0001:0000a952       _zwTZZOLODD_LocateRecursiveEntity@8 1000b952 f   tzzolodq.obj
+ 0001:0000a9ec       _zwTZZOLODD_ShowPriorityListSub@12 1000b9ec f   tzzolodq.obj
+ 0001:0000abd9       _zwTZZOLODD_ShowPriorityList@4 1000bbd9 f   tzzolodq.obj
+ 0001:0000b214       _zwTZZOLODD_OrderCreateRegEntry@8 1000c214 f   tzzolodq.obj
+ 0001:0000b356       _zwTZZOLODD_LocateRecursAttr@12 1000c356 f   tzzolodq.obj
+ 0001:0000b45e       _zwTZZOLODD_OrderBuildLocateAttr@12 1000c45e f   tzzolodq.obj
+ 0001:0000b526       _zwTZZOLODD_OrderBuild@4   1000c526 f   tzzolodq.obj
+ 0001:0000b98c       _zwTZZOLODD_OrderCreatePostEntry@8 1000c98c f   tzzolodq.obj
+ 0001:0000bb2b       _zwTZZOLODD_LocateRecursAttrPost@8 1000cb2b f   tzzolodq.obj
+ 0001:0000bc10       _zwTZZOLODD_OrderBuildPostAct@4 1000cc10 f   tzzolodq.obj
+ 0001:0000bd7b       _zwTZZOLODD_ResetAllSubSeqValues@4 1000cd7b f   tzzolodq.obj
+ 0001:0000be7f       _zwTZZOLODD_SetSubSeqValue@8 1000ce7f f   tzzolodq.obj
+ 0001:0000bfd4       _zwTZZOLODD_OrderOK@4      1000cfd4 f   tzzolodq.obj
+ 0001:0000c255       _zwTZZOLODD_OrderCancel@4  1000d255 f   tzzolodq.obj
+ 0001:0000c27f       _zwTZZOLODD_OrderSetDescending@4 1000d27f f   tzzolodq.obj
+ 0001:0000c2b8       _zwTZZOLODD_OrderSetAscending@4 1000d2b8 f   tzzolodq.obj
+ 0001:0000c2f1       _zwTZZOLODD_OrderItemSelect@4 1000d2f1 f   tzzolodq.obj
+ 0001:0000c378       _zwTZZOLODD_OrderItemDeselect@4 1000d378 f   tzzolodq.obj
+ 0001:0000c3e7       _zwTZZOLODD_CopyAttributes@4 1000d3e7 f   tzzolodq.obj
+ 0001:0000c5a9       _zwTZZOLODD_PasteAttributes@4 1000d5a9 f   tzzolodq.obj
+ 0001:0000c808       _zwTZZOLODD_ReplaceRootEntityPreB@4 1000d808 f   tzzolodq.obj
+ 0001:0000c8b6       _zwTZZOLODD_ReplaceRootEntityOK@4 1000d8b6 f   tzzolodq.obj
+ 0001:0000cc5d       _zwTZZOLODD_AddSourceFile@4 1000dc5d f   tzzolodq.obj
+ 0001:0000cc70       _zwTZZOLODD_AddOperation@4 1000dc70 f   tzzolodq.obj
+ 0001:0000cc8c       _zwTZZOLODD_UpdateOperation@4 1000dc8c f   tzzolodq.obj
+ 0001:0000cc9f       _zwTZZOLODD_RefreshAttributeList@4 1000dc9f f   tzzolodq.obj
+ 0001:0000ccce       _zwTZZOLODD_RefreshEntityList@4 1000dcce f   tzzolodq.obj
+ 0001:0000cd02       _zwTZZOLODD_EditOperationcode@4 1000dd02 f   tzzolodq.obj
+ 0001:0000cd15       _zwTZZOLODD_DeleteSelectedFile@4 1000dd15 f   tzzolodq.obj
+ 0001:0000cd28       _zwTZZOLODD_DeleteSelectedOperat@4 1000dd28 f   tzzolodq.obj
+ 0001:0000cd3b       _zwTZZOLODD_DeleteAllSourceFiles@4 1000dd3b f   tzzolodq.obj
+ 0001:0000cd4e       _zwTZZOLODD_AcceptAttribute@4 1000dd4e f   tzzolodq.obj
+ 0001:0000cde1       _zwTZZOLODD_DeleteAllOperations@4 1000dde1 f   tzzolodq.obj
+ 0001:0000cdf4       _zwTZZOLODD_SetSaveAsName@4 1000ddf4 f   tzzolodq.obj
+ 0001:0000d196       _zwTZZOLODD_SaveAsLOD@4    1000e196 f   tzzolodq.obj
+ 0001:0000e411       _zwTZZOLODD_CreateTemporalEntity@4 1000f411 f   tzzolodq.obj
+ 0001:0000e440       _zwTZZOLODD_SaveAsPostBuild@4 1000f440 f   tzzolodq.obj
+ 0001:0000e636       _zwTZZOLODD_AddParentEntity@4 1000f636 f   tzzolodq.obj
+ 0001:0000eab3       _fnLocateLODDate@4         1000fab3 f   tzzolodq.obj
+ 0001:0000ec30       _zwTZZOLODD_Check_CheckoutStatus@4 1000fc30 f   tzzolodq.obj
+ 0001:0000ecbf       _zwTZZOLODD_CheckNameForCheckOut@4 1000fcbf f   tzzolodq.obj
+ 0001:0000ed95       _zwTZZOLODD_SaveAsCancel@4 1000fd95 f   tzzolodq.obj
+ 0001:0000ef0c       _zwTZZOLODD_NewLOD@4       1000ff0c f   tzzolodq.obj
+ 0001:0000ef85       _zwTZZOLODD_LodOpen@4      1000ff85 f   tzzolodq.obj
+ 0001:0000effe       _zwTZZOLODD_SaveSelectedAttribute@4 1000fffe f   tzzolodq.obj
+ 0001:0000f074       _zwTZZOLODD_SaveSelAttribute@4 10010074 f   tzzolodq.obj
+ 0001:0000f0ea       _zwTZZOLODD_MoveAttribute@4 100100ea f   tzzolodq.obj
+ 0001:0000f233       _fnTZZOLODD_MoveEntity@8   10010233 f   tzzolodq.obj
+ 0001:0000f4d8       _zwTZZOLODD_MoveEntityLeft@4 100104d8 f   tzzolodq.obj
+ 0001:0000f4ed       _zwTZZOLODD_MoveEntityRight@4 100104ed f   tzzolodq.obj
+ 0001:0000f502       _zwTZZOLODD_SaveAsSetDefaults@4 10010502 f   tzzolodq.obj
+ 0001:0000f66e       _zwTZZOLODD_SaveAsKeepCurrentDesc@4 1001066e f   tzzolodq.obj
+ 0001:0000f6e9       _zwTZZOLODD_LoadEntityList@4 100106e9 f   tzzolodq.obj
+ 0001:0000f730       _zwTZZOLODD_LoadAttributeList@4 10010730 f   tzzolodq.obj
+ 0001:0000f777       _zwTZZOLODD_LoadOperationList@4 10010777 f   tzzolodq.obj
+ 0001:0000f7bf       _zwTZZOLODD_LoadSourceFileList@4 100107bf f   tzzolodq.obj
+ 0001:0000f806       _zwTZZOLODD_EntityAttributePopup@4 10010806 f   tzzolodq.obj
+ 0001:0000f93e       _zwTZZOLODD_NextAttribute@4 1001093e f   tzzolodq.obj
+ 0001:0000fa18       _zwTZZOLODD_PrevAttribute@4 10010a18 f   tzzolodq.obj
+ 0001:0000faf2       _zwTZZOLODD_CancelAttribute@4 10010af2 f   tzzolodq.obj
+ 0001:0000fb63       _zwTZZOLODD_WarningForWorkEntity@4 10010b63 f   tzzolodq.obj
+ 0001:0000fc9c       _zwTZZOLODD_SetAttributeType@8 10010c9c f   tzzolodq.obj
+ 0001:0000feab       _zwTZZOLODD_EnableDBH_Info@4 10010eab f   tzzolodq.obj
+ 0001:0000ff64       _zwTZZOLODD_TransferToSetDBH@4 10010f64 f   tzzolodq.obj
+ 0001:0000ffcb       _zwTZZOLODD_WarningForDerivEntity@4 10010fcb f   tzzolodq.obj
+ 0001:000102f1       _zwTZZOLODD_DisableTE_List@4 100112f1 f   tzzolodq.obj
+ 0001:00010362       _zwTZZOLODD_QueryFrameSetUpRecur@8 10011362 f   tzzolodq.obj
+ 0001:000106b6       _zwTZZOLODD_QueryFrameSetUp@4 100116b6 f   tzzolodq.obj
+ 0001:000107f7       _zwTZZOLODD_RefreshAttributeDesc@4 100117f7 f   tzzolodq.obj
+ 0001:00010825       _zwTZZOLODD_RebuildSelectedLODs@4 10011825 f   tzzolodq.obj
+ 0001:00014980       _OK@4                      10015980 f   tzzoloq2.obj
+ 0001:000149c5       _CopyEntityGroupEnd@4      100159c5 f   tzzoloq2.obj
+ 0001:00014a44       _CopyEntityGroupMappingStart@4 10015a44 f   tzzoloq2.obj
+ 0001:00014b1f       _CopyMappingNameToClipBoard@4 10015b1f f   tzzoloq2.obj
+ 0001:00014c57       _BeforeEntityChange@4      10015c57 f   tzzoloq2.obj
+ 0001:00014cad       _EntityAboutToBeChanged@4  10015cad f   tzzoloq2.obj
+ 0001:00014cb7       _Prebuild@4                10015cb7 f   tzzoloq2.obj
+ 0001:00014cfc       _Cancel@4                  10015cfc f   tzzoloq2.obj
+ 0001:00014d41       _EntityChanged@4           10015d41 f   tzzoloq2.obj
+ 0001:00015072       _PostBuild@4               10016072 f   tzzoloq2.obj
+ 0001:000150e3       _RemoveAll@4               100160e3 f   tzzoloq2.obj
+ 0001:00015578       _ofnTZCMWKSO_AppendSlash@4 10016578 f   tzlodopr:tzlodopr.dll
+ 0001:0001557e       _InitializeLPLR@8          1001657e f   tzlodopr:tzlodopr.dll
+ 0001:00015584       _oTZ__PRFO_GetViewToProfile@16 10016584 f   tzlodopr:tzlodopr.dll
+ 0001:0001558a       _SetTitleWithCheckOutState@24 1001658a f   tzlodopr:tzlodopr.dll
+ 0001:00015590       _RetrieveViewForMetaList@12 10016590 f   tzlodopr:tzlodopr.dll
+ 0001:00015596       _ComponentIsCheckedOut@12  10016596 f   tzlodopr:tzlodopr.dll
+ 0001:0001559c       _ActivateMetaOI@20         1001659c f   tzlodopr:tzlodopr.dll
+ 0001:000155a2       _IssueToolMsg@32           100165a2 f   tzlodopr:tzlodopr.dll
+ 0001:000155a8       _oTZEREMDO_GetRefViewForER@12 100165a8 f   tzlodopr:tzlodopr.dll
+ 0001:000155ae       _DropMetaOI@8              100165ae f   tzlodopr:tzlodopr.dll
+ 0001:000155b4       _oTZZOLODO_SetAttributeSequence@4 100165b4 f   tzlodopr:tzlodopr.dll
+ 0001:000155ba       _CreateMetaEntity@16       100165ba f   tzlodopr:tzlodopr.dll
+ 0001:000155c0       _ActivateEmptyMetaOI@16    100165c0 f   tzlodopr:tzlodopr.dll
+ 0001:000155c6       _oTZZOLODO_SaveLOD_WithTE@12 100165c6 f   tzlodopr:tzlodopr.dll
+ 0001:000155cc       _oTZZOLODO_Constraint@16   100165cc f   tzlodopr:tzlodopr.dll
+ 0001:000155d2       _oTZZOLODO_SortAttributes@4 100165d2 f   tzlodopr:tzlodopr.dll
+ 0001:000155d8       _CommitMetaOI@12           100165d8 f   tzlodopr:tzlodopr.dll
+ 0001:000155de       _oTZZOLODO_DeleteAllPOD_Entities@4 100165de f   tzlodopr:tzlodopr.dll
+ 0001:000155e4       _oTZZOXODO_SaveXOD@8       100165e4 f   tzlodopr:tzlodopr.dll
+ 0001:000155ea       _oTZ__PRFO_CommitProfile@4 100165ea f   tzlodopr:tzlodopr.dll
+ 0001:000155f0       _oTZZOLODO_SummaryReport@8 100165f0 f   tzlodopr:tzlodopr.dll
+ 0001:000155f6       _TerminateLPLR@4           100165f6 f   tzlodopr:tzlodopr.dll
+ 0001:000155fc       _DeleteMetaOI@12           100165fc f   tzlodopr:tzlodopr.dll
+ 0001:00015602       _zDeleteFile@4             10016602 f   tzlodopr:tzlodopr.dll
+ 0001:00015608       _zgSortEntityWithinParent@20 10016608 f   tzlodopr:tzlodopr.dll
+ 0001:0001560e       _oTZZOLODO_AddEntity@12    1001660e f   tzlodopr:tzlodopr.dll
+ 0001:00015614       _CreateTemporalMetaEntity@16 10016614 f   tzlodopr:tzlodopr.dll
+ 0001:0001561a       _oTZZOLODO_NewAttributeSequence@4 1001661a f   tzlodopr:tzlodopr.dll
+ 0001:00015620       _oTZZOLODO_ParseDerivedExpr@8 10016620 f   tzlodopr:tzlodopr.dll
+ 0001:00015626       _zgSortEntityWithinParent4@40 10016626 f   tzlodopr:tzlodopr.dll
+ 0001:0001562c       _IssueToolAbout@20         1001662c f   tzlodopr:tzlodopr.dll
+ 0001:00015632       _StartZeidonHelp@8         10016632 f   tzlodopr:tzlodopr.dll
+ 0001:00015638       _TransferToEditor@16       10016638 f   tzlodopr:tzlodopr.dll
+ 0001:0001563e       _ActivateMetaOI_ByName@28  1001663e f   tzlodopr:tzlodopr.dll
+ 0001:00015644       _ActivateMetaOI_ByZKey@28  10016644 f   tzlodopr:tzlodopr.dll
+ 0001:0001564a       _oTZZOLODO_LOD_EntityCopy@48 1001664a f   tzlodopr:tzlodopr.dll
+ 0001:00015650       _oTZZOLODO_LOD_OperationCopy@16 10016650 f   tzlodopr:tzlodopr.dll
+ 0001:00015656       _CheckOutStateForCurrentWindow@8 10016656 f   tzlodopr:tzlodopr.dll
+ 0001:0001565c       _oTZZOLODO_MoveAttribInSequence@4 1001665c f   tzlodopr:tzlodopr.dll
+ 0001:00015662       _AddSpacesToString@4       10016662 f   tzlodopr:tzlodopr.dll
+ 0001:00015668       _FormatSubobjectOnDoc@20   10016668 f   kzrpsrco:kzrpsrco.dll
+ 0001:0001566e       _wTZOPRUSD_SetUpTZOPRUSO_View@4 1001666e f   tzoprusd:tzoprusd.dll
+ 0001:00015674       _wTZOPRUSD_AddSourceFile@4 10016674 f   tzoprusd:tzoprusd.dll
+ 0001:0001567a       _wTZOPRUSD_AddOperation@4  1001667a f   tzoprusd:tzoprusd.dll
+ 0001:00015680       _wTZOPRUSD_GoToUpdateOperation@4 10016680 f   tzoprusd:tzoprusd.dll
+ 0001:00015686       _wTZOPRUSD_InvokeEditor@4  10016686 f   tzoprusd:tzoprusd.dll
+ 0001:0001568c       _wTZOPRUSD_DeleteSourceFile@4 1001668c f   tzoprusd:tzoprusd.dll
+ 0001:00015692       _wTZOPRUSD_DeleteSelectedOperat@4 10016692 f   tzoprusd:tzoprusd.dll
+ 0001:00015698       _wTZOPRUSD_DeleteAllFiles@4 10016698 f   tzoprusd:tzoprusd.dll
+ 0001:0001569e       _wTZOPRUSD_DeleteAllOperations@4 1001669e f   tzoprusd:tzoprusd.dll
+ 0001:000156a4       _ResetViewFromSubobject@4  100166a4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156aa       _SetViewToSubobject@8      100166aa f   kzoengaa:KZOENGAA.DLL
+ 0001:000156b0       _SetCursorNextEntity@12    100166b0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156b6       _SetAttributeFromInteger@16 100166b6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156bc       _GetStringFromAttribute@16 100166bc f   kzoengaa:KZOENGAA.DLL
+ 0001:000156c2       _SetCursorFirstEntity@12   100166c2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156c8       _CompareAttributeToString@16 100166c8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156ce       _SetAttributeFromString@16 100166ce f   kzoengaa:KZOENGAA.DLL
+ 0001:000156d4       _CheckExistenceOfEntity@8  100166d4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156da       _SetAttributeFromAttribute@24 100166da f   kzoengaa:KZOENGAA.DLL
+ 0001:000156e0       _CreateEntity@12           100166e0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156e6       _ActivateEmptyObjectInstance@16 100166e6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156ec       _GetViewByName@16          100166ec f   kzoengaa:KZOENGAA.DLL
+ 0001:000156f2       _TraceLineS@8              100166f2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156f8       _SetEntityCursor@40        100166f8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000156fe       _SetSelectStateOfEntity@12 100166fe f   kzoengaa:KZOENGAA.DLL
+ 0001:00015704       _CompareAttributeToInteger@16 10016704 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001570a       _SetViewReadOnly@4         1001670a f   kzoengaa:KZOENGAA.DLL
+ 0001:00015710       _SetViewUpdate@4           10016710 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015716       _MiGetUpdateForView@4      10016716 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001571c       _ActivateOI_FromFile@20    1001671c f   kzoengaa:KZOENGAA.DLL
+ 0001:00015722       _ZeidonStringConcat@28     10016722 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015728       _GetAddrForAttribute@16    10016728 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001572e       _SetNameForView@16         1001672e f   kzoengaa:KZOENGAA.DLL
+ 0001:00015734       _SetCursorFirstEntityByEntityCsr@20 10016734 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001573a       _SetCursorFirstSelectedEntity@12 1001673a f   kzoengaa:KZOENGAA.DLL
+ 0001:00015740       _GetSelectStateOfEntity@8  10016740 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015746       _CreateViewFromViewForTask@12 10016746 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001574c       _DropObjectInstance@4      1001674c f   kzoengaa:KZOENGAA.DLL
+ 0001:00015752       _DropView@4                10016752 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015758       _OrderEntityForView@12     10016758 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001575e       _SetCursorFirstEntityByAttr@28 1001675e f   kzoengaa:KZOENGAA.DLL
+ 0001:00015764       _IncludeSubobjectFromSubobject@20 10016764 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001576a       _MessagePrompt@32          1001676a f   kzoengaa:KZOENGAA.DLL
+ 0001:00015770       _ObjectInstanceUpdatedFromFile@4 10016770 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015776       _MessageSend@24            10016776 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001577c       _SysGetPointerFromHandle@4 1001677c f   kzoengaa:KZOENGAA.DLL
+ 0001:00015782       _SetCursorFirstEntityByString@20 10016782 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015788       _UfCompressName@32         10016788 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001578e       _CommitOI_ToFile@12        1001678e f   kzoengaa:KZOENGAA.DLL
+ 0001:00015794       _SysReadZeidonIni@16       10016794 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001579a       _MoveSubobject@24          1001679a f   kzoengaa:KZOENGAA.DLL
+ 0001:000157a0       _SetCursorNextEntityHierarchical@12 100167a0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157a6       _GetRelativeEntityNumber@16 100167a6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157ac       _SetCursorFirstEntityByInteger@20 100167ac f   kzoengaa:KZOENGAA.DLL
+ 0001:000157b2       _GetIntegerFromAttribute@16 100167b2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157b8       _DefineHierarchicalCursor@8 100167b8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157be       _ResetView@4               100167be f   kzoengaa:KZOENGAA.DLL
+ 0001:000157c4       _DeleteEntity@12           100167c4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157ca       _SetCursorPrevEntity@12    100167ca f   kzoengaa:KZOENGAA.DLL
+ 0001:000157d0       _SetCursorNextEntityByString@20 100167d0 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157d6       _SetAllSelectStatesForEntity@16 100167d6 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157dc       _SetSelectSetForView@8     100167dc f   kzoengaa:KZOENGAA.DLL
+ 0001:000157e2       _CreateTemporalSubobjectVersion@8 100167e2 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157e8       _AcceptSubobject@8         100167e8 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157ee       _CompareAttributeToAttribute@24 100167ee f   kzoengaa:KZOENGAA.DLL
+ 0001:000157f4       _MessagePromptForInput@28  100167f4 f   kzoengaa:KZOENGAA.DLL
+ 0001:000157fa       _SetCursorNextSelectedEntity@12 100167fa f   kzoengaa:KZOENGAA.DLL
+ 0001:00015800       _DropHierarchicalCursor@4  10016800 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015806       _ExcludeEntity@12          10016806 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001580c       _SetCursorNextEntityByInteger@20 1001680c f   kzoengaa:KZOENGAA.DLL
+ 0001:00015812       _SetCursorNextEntityByAttr@28 10016812 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015818       _SetMatchingAttributesByName@20 10016818 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001581e       _SysCopyFile@16            1001681e f   kzoengaa:KZOENGAA.DLL
+ 0001:00015824       _SysOpenFile@12            10016824 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001582a       _GetStringFromAttributeByContext@24 1001682a f   kzoengaa:KZOENGAA.DLL
+ 0001:00015830       _CancelSubobject@8         10016830 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015836       _SetViewFromView@8         10016836 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001583c       _ZeidonStringCopy@28       1001683c f   kzoengaa:KZOENGAA.DLL
+ 0001:00015842       _GetVariableFromAttribute@36 10016842 f   kzoengaa:KZOENGAA.DLL
+ 0001:00015848       _ZeidonStringCompare@28    10016848 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001584e       _SetCursorAbsolutePosition@12 1001684e f   kzoengaa:KZOENGAA.DLL
+ 0001:00015854       _GetAbsolutePositionForEntity@12 10016854 f   kzoengaa:KZOENGAA.DLL
+ 0001:0001585a       _strlen                    1001685a f   msvcrtd:MSVCRTD.dll
+ 0001:00015860       _strcat                    10016860 f   msvcrtd:MSVCRTD.dll
+ 0001:00015866       _strcpy                    10016866 f   msvcrtd:MSVCRTD.dll
+ 0001:0001586c       _sprintf                   1001686c f   msvcrtd:MSVCRTD.dll
+ 0001:00015872       _memset                    10016872 f   msvcrtd:MSVCRTD.dll
+ 0001:00015878       _strcmp                    10016878 f   msvcrtd:MSVCRTD.dll
+ 0001:0001587e       _strncpy                   1001687e f   msvcrtd:MSVCRTD.dll
+ 0001:00015884       __ltoa                     10016884 f   msvcrtd:MSVCRTD.dll
+ 0001:0001588a       _atol                      1001688a f   msvcrtd:MSVCRTD.dll
+ 0001:00015890       _strrchr                   10016890 f   msvcrtd:MSVCRTD.dll
+ 0001:00015896       _strchr                    10016896 f   msvcrtd:MSVCRTD.dll
+ 0001:000158a0       __CRT_INIT@12              100168a0 f   msvcrtd:crtdll.obj
+ 0001:000159b0       __DllMainCRTStartup@12     100169b0 f   msvcrtd:crtdll.obj
+ 0001:00015aa4       __free_dbg                 10016aa4 f   msvcrtd:MSVCRTD.dll
+ 0001:00015aaa       __initterm                 10016aaa f   msvcrtd:MSVCRTD.dll
+ 0001:00015ab0       __onexit                   10016ab0 f   msvcrtd:atonexit.obj
+ 0001:00015af0       _atexit                    10016af0 f   msvcrtd:atonexit.obj
+ 0001:00015b08       __malloc_dbg               10016b08 f   msvcrtd:MSVCRTD.dll
+ 0001:00015b0e       ___dllonexit               10016b0e f   msvcrtd:MSVCRTD.dll
+ 0001:00015b14       ??1CString@@QAE@XZ         10016b14 f   mfc42d:MFC42D.DLL
+ 0001:00015b1a       ??BCString@@QBEPBDXZ       10016b1a f   mfc42d:MFC42D.DLL
+ 0001:00015b20       ??YCString@@QAEABV0@PBD@Z  10016b20 f   mfc42d:MFC42D.DLL
+ 0001:00015b26       ??4CString@@QAEABV0@PBD@Z  10016b26 f   mfc42d:MFC42D.DLL
+ 0001:00015b2c       ??0CString@@QAE@XZ         10016b2c f   mfc42d:MFC42D.DLL
+ 0001:00015b32       _RefreshWindow@4           10016b32 f   zdrapp:ZDrApp.dll
+ 0001:00015b38       _GetSubtaskForWindowName@12 10016b38 f   zdrapp:ZDrApp.dll
+ 0001:00015b3e       _SetWindowActionBehavior@16 10016b3e f   zdrapp:ZDrApp.dll
+ 0001:00015b44       _SetOptionState@16         10016b44 f   zdrapp:ZDrApp.dll
+ 0001:00015b4a       _RefreshAllSubwindows@4    10016b4a f   zdrapp:ZDrApp.dll
+ 0001:00015b50       _SetWindowCaptionTitle@12  10016b50 f   zdrapp:ZDrApp.dll
+ 0001:00015b56       _RefreshCtrl@8             10016b56 f   zdrapp:ZDrApp.dll
+ 0001:00015b5c       _EnableAction@12           10016b5c f   zdrapp:ZDrApp.dll
+ 0001:00015b62       _SetFocusToCtrl@8          10016b62 f   zdrapp:ZDrApp.dll
+ 0001:00015b68       _SetCtrlState@16           10016b68 f   zdrapp:ZDrApp.dll
+ 0001:00015b6e       _ActivateWindow@4          10016b6e f   zdrapp:ZDrApp.dll
+ 0001:00015b74       _GetCtrlText@16            10016b74 f   zdrapp:ZDrApp.dll
+ 0001:00015b7a       _CreateTrackingPopupMenu@24 10016b7a f   zdrapp:ZDrApp.dll
+ 0001:00015b80       _SetCtrlSize@20            10016b80 f   zdrapp:ZDrApp.dll
+ 0001:00015b86       _SetCtrlPosition@20        10016b86 f   zdrapp:ZDrApp.dll
+ 0001:00015b8c       _RefreshWindowExceptForCtrl@8 10016b8c f   zdrapp:ZDrApp.dll
+ 0001:00015b92       _GetCtrlPosition@20        10016b92 f   zdrapp:ZDrApp.dll
+ 0001:00015b98       _GetCtrlSize@20            10016b98 f   zdrapp:ZDrApp.dll
+ 0001:00015b9e       _GetCtrlState@12           10016b9e f   zdrapp:ZDrApp.dll
+ 0001:00015ba4       _GetParentWindow@8         10016ba4 f   zdrapp:ZDrApp.dll
+ 0001:00015baa       _SetWindowState@12         10016baa f   zdrapp:ZDrApp.dll
+ 0001:00015bb0       _SetClipboardBlob@12       10016bb0 f   zdrapp:ZDrApp.dll
+ 0001:00015bb6       _MapCtrl@8                 10016bb6 f   zdrapp:ZDrApp.dll
+ 0001:00015bbc       _HD_SetColors@36           10016bbc f   zdctl:ZdCtl.dll
+ 0001:00015bc2       _HD_SelectNode@8           10016bc2 f   zdctl:ZdCtl.dll
+ 0001:00015bc8       _HD_CenterNode@8           10016bc8 f   zdctl:ZdCtl.dll
+ 0001:00015bce       _HD_IsNodeVisible@8        10016bce f   zdctl:ZdCtl.dll
+ 0001:00015bd4       _MB_SetMessage@12          10016bd4 f   zdctl:ZdCtl.dll
+ 0001:00015bda       _CB_SetDisplaySelectSet@12 10016bda f   zdctl:ZdCtl.dll
+ 0001:00015be0       _HD_ZoomDiagram@16         10016be0 f   zdctl:ZdCtl.dll
+ 0001:00015be6       _HD_SetProperties@12       10016be6 f   zdctl:ZdCtl.dll
+ 0001:00015bec       _HD_GetPointerCoordinates@16 10016bec f   zdctl:ZdCtl.dll
+ 0001:00015bf2       _HD_PrintDiagram@16        10016bf2 f   zdctl:ZdCtl.dll
+ 0002:00000020       _IID_IDocHostUIHandlerDispatch 10018020     tzzolodq.obj
+ 0002:00000038       _IID_IInternalConnection   10018038     tzzolodq.obj
+ 0002:00000050       _IID_IAxWinAmbientDispatch 10018050     tzzolodq.obj
+ 0002:00000068       _IID_IAxWinHostWindow      10018068     tzzolodq.obj
+ 0002:00000080       _IID_IRegistrar            10018080     tzzolodq.obj
+ 0002:00000098       _CLSID_Registrar           10018098     tzzolodq.obj
+ 0002:000000b0       _LIBID_ATLLib              100180b0     tzzolodq.obj
+ 0002:000000c4       ??_C@_08JKC@crtdll?4c?$AA@ 100180c4     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    1001d000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    1001d104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    1001d208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1001d30c     msvcrtd:cinitexe.obj
+ 0003:00000410       ?GUID_ATLVer30@ATL@@3U_GUID@@A 1001d410     tzzolodq.obj
+ 0003:00000434       ??_C@_0N@EHOE@HD_ChildNode?$AA@ 1001d434     tzzolodq.obj
+ 0003:00000444       ??_C@_0BA@DPMI@LOD_EntityChild?$AA@ 1001d444     tzzolodq.obj
+ 0003:00000458       ??_C@_05HIMK@Color?$AA@    1001d458     tzzolodq.obj
+ 0003:00000460       ??_C@_05LDDM@Title?$AA@    1001d460     tzzolodq.obj
+ 0003:00000468       ??_C@_01KMMP@?$CJ?$AA@     1001d468     tzzolodq.obj
+ 0003:0000046c       ??_C@_07NHPD@CardMax?$AA@  1001d46c     tzzolodq.obj
+ 0003:00000478       ??_C@_07DEKF@CardMin?$AA@  1001d478     tzzolodq.obj
+ 0003:00000484       ??_C@_02NDAK@?5?$CI?$AA@   1001d484     tzzolodq.obj
+ 0003:00000488       ??_C@_0O@FFFI@ER_RelLinkRec?$AA@ 1001d488     tzzolodq.obj
+ 0003:00000498       ??_C@_03JPIP@DIL?$AA@      1001d498     tzzolodq.obj
+ 0003:0000049c       ??_C@_09GBDH@cnstrnts?3?$AA@ 1001d49c     tzzolodq.obj
+ 0003:000004a8       ??_C@_01FMOK@n?$AA@        1001d4a8     tzzolodq.obj
+ 0003:000004ac       ??_C@_0BB@JJAJ@CancelConstraint?$AA@ 1001d4ac     tzzolodq.obj
+ 0003:000004c0       ??_C@_01FNLH@a?$AA@        1001d4c0     tzzolodq.obj
+ 0003:000004c4       ??_C@_0BB@GDFF@AcceptConstraint?$AA@ 1001d4c4     tzzolodq.obj
+ 0003:000004d8       ??_C@_01KOI@x?$AA@         1001d4d8     tzzolodq.obj
+ 0003:000004dc       ??_C@_0BC@BKLI@ExcludeConstraint?$AA@ 1001d4dc     tzzolodq.obj
+ 0003:000004f4       ??_C@_01JAP@i?$AA@         1001d4f4     tzzolodq.obj
+ 0003:000004f8       ??_C@_0BC@LDJE@IncludeConstraint?$AA@ 1001d4f8     tzzolodq.obj
+ 0003:00000510       ??_C@_01FNHM@d?$AA@        1001d510     tzzolodq.obj
+ 0003:00000514       ??_C@_0BB@NMLI@DeleteConstraint?$AA@ 1001d514     tzzolodq.obj
+ 0003:00000528       ??_C@_01IJJ@c?$AA@         1001d528     tzzolodq.obj
+ 0003:0000052c       ??_C@_0BB@LJPM@CreateConstraint?$AA@ 1001d52c     tzzolodq.obj
+ 0003:00000540       ??_C@_04HLMA@pres?$AA@     1001d540     tzzolodq.obj
+ 0003:00000548       ??_C@_04NOEG@pexc?$AA@     1001d548     tzzolodq.obj
+ 0003:00000550       ??_C@_01KFAL@E?$AA@        1001d550     tzzolodq.obj
+ 0003:00000554       ??_C@_04BOPA@pdel?$AA@     1001d554     tzzolodq.obj
+ 0003:0000055c       ??_C@_0BD@FCKE@ParentDeleteBehave?$AA@ 1001d55c     tzzolodq.obj
+ 0003:00000574       ??_C@_01PJM@D?$AA@         1001d574     tzzolodq.obj
+ 0003:00000578       ??_C@_03HFKA@exc?$AA@      1001d578     tzzolodq.obj
+ 0003:0000057c       ??_C@_07JIME@Exclude?$AA@  1001d57c     tzzolodq.obj
+ 0003:00000588       ??_C@_03LABJ@inc?$AA@      1001d588     tzzolodq.obj
+ 0003:0000058c       ??_C@_07HBPN@Include?$AA@  1001d58c     tzzolodq.obj
+ 0003:00000598       ??_C@_02NCLG@de?$AA@       1001d598     tzzolodq.obj
+ 0003:0000059c       ??_C@_06DHPE@Delete?$AA@   1001d59c     tzzolodq.obj
+ 0003:000005a4       ??_C@_02HAO@up?$AA@        1001d5a4     tzzolodq.obj
+ 0003:000005a8       ??_C@_01KMAE@?0?$AA@       1001d5a8     tzzolodq.obj
+ 0003:000005ac       ??_C@_06LIHJ@Update?$AA@   1001d5ac     tzzolodq.obj
+ 0003:000005b4       ??_C@_02EPHG@cr?$AA@       1001d5b4     tzzolodq.obj
+ 0003:000005b8       ??_C@_06PKKD@Create?$AA@   1001d5b8     tzzolodq.obj
+ 0003:000005c0       ??_C@_07NKBO@Derived?$AA@  1001d5c0     tzzolodq.obj
+ 0003:000005cc       ??_C@_04HGJL@Work?$AA@     1001d5cc     tzzolodq.obj
+ 0003:000005d4       ??_C@_01PCJP@Y?$AA@        1001d5d4     tzzolodq.obj
+ 0003:000005d8       ??_C@_0N@KOEI@OutsideText5?$AA@ 1001d5d8     tzzolodq.obj
+ 0003:000005e8       ??_C@_0N@ENP@OutsideText4?$AA@ 1001d5e8     tzzolodq.obj
+ 0003:000005f8       ??_C@_0N@FBDK@OutsideText3?$AA@ 1001d5f8     tzzolodq.obj
+ 0003:00000608       ??_C@_0N@PLKN@OutsideText2?$AA@ 1001d608     tzzolodq.obj
+ 0003:00000618       ??_C@_0N@EBE@OutsideText1?$AA@ 1001d618     tzzolodq.obj
+ 0003:00000628       ??_C@_07NNPL@Purpose?$AA@  1001d628     tzzolodq.obj
+ 0003:00000634       ??_C@_0N@NFHJ@ER_EntityRec?$AA@ 1001d634     tzzolodq.obj
+ 0003:00000644       ??_C@_04BNNJ@Text?$AA@     1001d644     tzzolodq.obj
+ 0003:0000064c       ??_C@_08DBLP@XML_Name?$AA@ 1001d64c     tzzolodq.obj
+ 0003:00000658       ??_C@_04EFNI@Name?$AA@     1001d658     tzzolodq.obj
+ 0003:00000660       ??_C@_0BB@NHDL@LOD_EntityParent?$AA@ 1001d660     tzzolodq.obj
+ 0003:00000674       ??_C@_04BBDM@ZKey?$AA@     1001d674     tzzolodq.obj
+ 0003:0000067c       ??_C@_07BPHJ@HD_Node?$AA@  1001d67c     tzzolodq.obj
+ 0003:00000688       ??_C@_08NMHB@PrintBox?$AA@ 1001d688     tzzolodq.obj
+ 0003:00000694       ??_C@_0L@PHDI@PrintTitle?$AA@ 1001d694     tzzolodq.obj
+ 0003:000006a4       ??_C@_03CMHN@LOD?$AA@      1001d6a4     tzzolodq.obj
+ 0003:000006a8       ??_C@_0M@LBII@Orientation?$AA@ 1001d6a8     tzzolodq.obj
+ 0003:000006b8       ??_C@_0L@PPFM@HD_Diagram?$AA@ 1001d6b8     tzzolodq.obj
+ 0003:000006c8       ??_C@_08MMAE@TZZOHDGO?$AA@ 1001d6c8     tzzolodq.obj
+ 0003:000006d4       ??_C@_08JFNM@PNode?49?5?$AA@ 1001d6d4     tzzolodq.obj
+ 0003:000006e0       ??_C@_0CG@JDLJ@lvl?$DN?$CF2d?5?$CF?934s?5at?5?$CFd?5?5?5with?5MaxEd@ 1001d6e0     tzzolodq.obj
+ 0003:00000710       ??_C@_04DEDB@PosY?$AA@     1001d710     tzzolodq.obj
+ 0003:00000718       ??_C@_04JOKG@PosX?$AA@     1001d718     tzzolodq.obj
+ 0003:00000720       ??_C@_08JOCA@PNode?4?4?5?$AA@ 1001d720     tzzolodq.obj
+ 0003:0000072c       ??_C@_0DA@MLPE@lvl?$DN?$CF2d?5?$CF?934s?5has?5?$CFd?5chidren?3?5fi@ 1001d72c     tzzolodq.obj
+ 0003:00000768       ??_C@_0L@BHII@LOD_Entity?$AA@ 1001d768     tzzolodq.obj
+ 0003:00000778       ??_C@_08EDN@TZZOLODO?$AA@  1001d778     tzzolodq.obj
+ 0003:00000784       ??_C@_07ECFD@ATTVIEW?$AA@  1001d784     tzzolodq.obj
+ 0003:00000790       ??_C@_07CEEG@ENTVIEW?$AA@  1001d790     tzzolodq.obj
+ 0003:0000079c       ??_C@_08GIH@TZZOLODQ?$AA@  1001d79c     tzzolodq.obj
+ 0003:000007a8       ??_C@_0BB@DFCK@QueryViewDisplay?$AA@ 1001d7a8     tzzolodq.obj
+ 0003:000007bc       ??_C@_04HDED@?4LOD?$AA@    1001d7bc     tzzolodq.obj
+ 0003:000007c4       ??_C@_04FDFI@LPLR?$AA@     1001d7c4     tzzolodq.obj
+ 0003:000007cc       ??_C@_0L@JDPM@MetaSrcDir?$AA@ 1001d7cc     tzzolodq.obj
+ 0003:000007dc       ??_C@_08HHLD@TaskLPLR?$AA@ 1001d7dc     tzzolodq.obj
+ 0003:000007e8       ??_C@_0M@KAOE@QueryValues?$AA@ 1001d7e8     tzzolodq.obj
+ 0003:000007f8       ??_C@_0BA@NEEJ@QueryObjectName?$AA@ 1001d7f8     tzzolodq.obj
+ 0003:0000080c       ??_C@_06EMK@wXferO?$AA@    1001d80c     tzzolodq.obj
+ 0003:00000814       ??_C@_0BB@LDAG@StartupLPLR_Name?$AA@ 1001d814     tzzolodq.obj
+ 0003:00000828       ??_C@_0BD@BBPK@StartupLPLR_Option?$AA@ 1001d828     tzzolodq.obj
+ 0003:00000840       ??_C@_0M@CKE@ProfileXFER?$AA@ 1001d840     tzzolodq.obj
+ 0003:00000850       ??_C@_02PMJA@ZO?$AA@       1001d850     tzzolodq.obj
+ 0003:00000854       ??_C@_08KPDM@TZZOLODD?$AA@ 1001d854     tzzolodq.obj
+ 0003:00000860       ??_C@_0BH@BJEB@Query?5View?5Maintenance?$AA@ 1001d860     tzzolodq.obj
+ 0003:0000087c       ??_C@_08HKCA@TZZOOPLD?$AA@ 1001d87c     tzzolodq.obj
+ 0003:00000888       ??_C@_08OBBD@TZZONWLD?$AA@ 1001d888     tzzolodq.obj
+ 0003:00000894       ??_C@_09DBFF@W_MetaDef?$AA@ 1001d894     tzzolodq.obj
+ 0003:000008a0       ??_C@_08HDMK@TZZOLFLO?$AA@ 1001d8a0     tzzolodq.obj
+ 0003:000008ac       ??_C@_09GLDP@HierDiag1?$AA@ 1001d8ac     tzzolodq.obj
+ 0003:000008b8       ??_C@_0O@KDIB@Query?5View?5?9?5?$AA@ 1001d8b8     tzzolodq.obj
+ 0003:000008c8       ??_C@_0BB@BOHL@QueryViewATTVIEW?$AA@ 1001d8c8     tzzolodq.obj
+ 0003:000008dc       ??_C@_0BJ@NFPN@DeleteSelectedAttributes?$AA@ 1001d8dc     tzzolodq.obj
+ 0003:000008fc       ??_C@_0BA@KJMP@UpdateAttribute?$AA@ 1001d8fc     tzzolodq.obj
+ 0003:00000910       ??_C@_0BC@MNMD@AddWorkAttributes?$AA@ 1001d910     tzzolodq.obj
+ 0003:00000928       ??_C@_0BF@INJI@DeleteSelectedEntity?$AA@ 1001d928     tzzolodq.obj
+ 0003:00000944       ??_C@_0O@NIOB@AddWorkEntity?$AA@ 1001d944     tzzolodq.obj
+ 0003:00000954       ??_C@_0BB@CHNH@AddDerivedEntity?$AA@ 1001d954     tzzolodq.obj
+ 0003:00000968       ??_C@_0BB@KPEF@AddRelatedEntity?$AA@ 1001d968     tzzolodq.obj
+ 0003:0000097c       ??_C@_0BE@HNBN@DeleteAllAttributes?$AA@ 1001d97c     tzzolodq.obj
+ 0003:00000994       ??_C@_0O@HMMI@LOD_Attribute?$AA@ 1001d994     tzzolodq.obj
+ 0003:000009a4       ??_C@_0BG@HJN@AddSelectedAttributes?$AA@ 1001d9a4     tzzolodq.obj
+ 0003:000009c0       ??_C@_0BB@EJFE@AddAllAttributes?$AA@ 1001d9c0     tzzolodq.obj
+ 0003:000009d4       ??_C@_0N@PGML@UpdateEntity?$AA@ 1001d9d4     tzzolodq.obj
+ 0003:000009e4       ??_C@_0BI@INBP@OrderingListForActivate?$AA@ 1001d9e4     tzzolodq.obj
+ 0003:00000a00       ??_C@_0BK@IEMP@DeleteSelectedSourceFiles?$AA@ 1001da00     tzzolodq.obj
+ 0003:00000a20       ??_C@_0BB@CDJE@UpdateSourceFile?$AA@ 1001da20     tzzolodq.obj
+ 0003:00000a34       ??_C@_0L@JLBE@SourceFile?$AA@ 1001da34     tzzolodq.obj
+ 0003:00000a44       ??_C@_08EAMJ@TZOPRUSO?$AA@ 1001da44     tzzolodq.obj
+ 0003:00000a50       ??_C@_0P@NGFF@SourceFileList?$AA@ 1001da50     tzzolodq.obj
+ 0003:00000a64       ??_C@_07DOLH@SRCLIST?$AA@  1001da64     tzzolodq.obj
+ 0003:00000a70       ??_C@_0M@BDEM@ViewEntitys?$AA@ 1001da70     tzzolodq.obj
+ 0003:00000a80       ??_C@_0O@KPKA@ViewAttribute?$AA@ 1001da80     tzzolodq.obj
+ 0003:00000a90       ??_C@_04NKD@Open?$AA@      1001da90     tzzolodq.obj
+ 0003:00000a98       ??_C@_03MBCK@New?$AA@      1001da98     tzzolodq.obj
+ 0003:00000a9c       ??_C@_0BJ@ELI@DeleteSelectedOperations?$AA@ 1001da9c     tzzolodq.obj
+ 0003:00000abc       ??_C@_0O@JMPB@MoveOperation?$AA@ 1001dabc     tzzolodq.obj
+ 0003:00000acc       ??_C@_0BD@KIFB@EditOperationscode?$AA@ 1001dacc     tzzolodq.obj
+ 0003:00000ae4       ??_C@_0BA@OMCK@UpdateOperation?$AA@ 1001dae4     tzzolodq.obj
+ 0003:00000af8       ??_C@_08OPAD@OPERLIST?$AA@ 1001daf8     tzzolodq.obj
+ 0003:00000b04       ??_C@_0BE@KMFI@DeleteAllOperations?$AA@ 1001db04     tzzolodq.obj
+ 0003:00000b1c       ??_C@_0O@NPEA@OperationList?$AA@ 1001db1c     tzzolodq.obj
+ 0003:00000b2c       ??_C@_0BE@LNBG@DeleteAllSorceFiles?$AA@ 1001db2c     tzzolodq.obj
+ 0003:00000b44       ??_C@_07IBGM@?$CIDMUP?$CJ?5?$AA@ 1001db44     tzzolodq.obj
+ 0003:00000b50       ??_C@_0BC@MFDN@view?5is?5read?5only?$AA@ 1001db50     tzzolodq.obj
+ 0003:00000b68       ??_C@_08FAIF@TZZOLODG?$AA@ 1001db68     tzzolodq.obj
+ 0003:00000b74       ??_C@_09JHJM@SAENTVIEW?$AA@ 1001db74     tzzolodq.obj
+ 0003:00000b80       ??_C@_09KHLA@SARELVIEW?$AA@ 1001db80     tzzolodq.obj
+ 0003:00000b8c       ??_C@_0BC@MKIH@EntityDescription?$AA@ 1001db8c     tzzolodq.obj
+ 0003:00000ba4       ??_C@_04DKMG@Desc?$AA@     1001dba4     tzzolodq.obj
+ 0003:00000bac       ??_C@_05FOJK@?5?3?5?5?5?$AA@ 1001dbac     tzzolodq.obj
+ 0003:00000bb4       ??_C@_0BA@FEJL@lbAttributeList?$AA@ 1001dbb4     tzzolodq.obj
+ 0003:00000bc8       ??_C@_0M@DJDI@?5Attributes?$AA@ 1001dbc8     tzzolodq.obj
+ 0003:00000bd8       ??_C@_08JDHO@TZEREMDO?$AA@ 1001dbd8     tzzolodq.obj
+ 0003:00000be4       ??_C@_0BB@PGCF@LastUpdateDate?5D?$AA@ 1001dbe4     tzzolodq.obj
+ 0003:00000bf8       ??_C@_0P@GDPM@QueryW_MetaDef?$AA@ 1001dbf8     tzzolodq.obj
+ 0003:00000c0c       ??_C@_0BA@JIHK@QueryW_MetaType?$AA@ 1001dc0c     tzzolodq.obj
+ 0003:00000c20       ??_C@_0L@DBLM@LOD_SaveAs?$AA@ 1001dc20     tzzolodq.obj
+ 0003:00000c30       ??_C@_07IDCJ@DM00115?$AA@  1001dc30     tzzolodq.obj
+ 0003:00000c3c       ??_C@_0BL@KDFJ@Zeidon?5Objects?5Maintenance?$AA@ 1001dc3c     tzzolodq.obj
+ 0003:00000c5c       ??_C@_0BN@MIA@save?5it?5with?5differend?5name?$DP?$AA@ 1001dc5c     tzzolodq.obj
+ 0003:00000c80       ??_C@_0CK@LFOK@?8?5has?5been?5modified?4?5?6?6Would?5you@ 1001dc80     tzzolodq.obj
+ 0003:00000cb4       ??_C@_0CC@OLFB@LOD?5is?5not?5checked?5out?0?5but?5LOD?5@ 1001dcb4     tzzolodq.obj
+ 0003:00000cdc       ??_C@_01PJCK@?4?$AA@       1001dcdc     tzzolodq.obj
+ 0003:00000ce0       ??_C@_06PFKB@out?5TE?$AA@  1001dce0     tzzolodq.obj
+ 0003:00000ce8       ??_C@_0CB@DPGH@Status?3?5LOD?5is?5saved?5without?5TE?4@ 1001dce8     tzzolodq.obj
+ 0003:00000d10       ??_C@_0P@BCDD@TE_DBMS_Source?$AA@ 1001dd10     tzzolodq.obj
+ 0003:00000d24       ??_C@_0O@BFC@TE_SourceZKey?$AA@ 1001dd24     tzzolodq.obj
+ 0003:00000d34       ??_C@_0O@DNOO@TE_DB_Environ?$AA@ 1001dd34     tzzolodq.obj
+ 0003:00000d44       ??_C@_05HKLK@?5TE?3?5?$AA@ 1001dd44     tzzolodq.obj
+ 0003:00000d4c       ??_C@_0BK@NPGG@Status?3?5LOD?5is?5saved?5with?$AA@ 1001dd4c     tzzolodq.obj
+ 0003:00000d6c       ??_C@_03NFPI@POD?$AA@      1001dd6c     tzzolodq.obj
+ 0003:00000d70       ??_C@_0N@PGMG@TZEREMDO_REF?$AA@ 1001dd70     tzzolodq.obj
+ 0003:00000d80       ??_C@_07DLPA@ZO00106?$AA@  1001dd80     tzzolodq.obj
+ 0003:00000d8c       ??_C@_0BK@DID@Zeidon?5Object?5Maintenance?$AA@ 1001dd8c     tzzolodq.obj
+ 0003:00000dac       ??_C@_0DK@DBIF@OpenLOD?5unable?5to?5access?5LOD?5fil@ 1001ddac     tzzolodq.obj
+ 0003:00000df4       ??_C@_0N@NKPH@DeleteEntity?$AA@ 1001ddf4     tzzolodq.obj
+ 0003:00000e04       ??_C@_09ONA@Recursive?$AA@ 1001de04     tzzolodq.obj
+ 0003:00000e10       ??_C@_07DNHL@InclSrc?$AA@  1001de10     tzzolodq.obj
+ 0003:00000e1c       ??_C@_01OAK@N?$AA@         1001de1c     tzzolodq.obj
+ 0003:00000e20       ??_C@_09KLME@IndentLvl?$AA@ 1001de20     tzzolodq.obj
+ 0003:00000e2c       ??_C@_0L@EOEF@IndentName?$AA@ 1001de2c     tzzolodq.obj
+ 0003:00000e3c       ??_C@_07HMAC@NewDesc?$AA@  1001de3c     tzzolodq.obj
+ 0003:00000e48       ??_C@_07DKKN@ZO00109?$AA@  1001de48     tzzolodq.obj
+ 0003:00000e54       ??_C@_0EF@EBEL@?$CIzwTZZOLODD_CreateNewLOD?$CJ?5Unable@ 1001de54     tzzolodq.obj
+ 0003:00000ea8       ??_C@_07LDLG@ZO00165?$AA@  1001dea8     tzzolodq.obj
+ 0003:00000eb4       ??_C@_0CE@DJNP@A?5Dialog?5with?5the?5same?5name?5exis@ 1001deb4     tzzolodq.obj
+ 0003:00000ee0       ??_C@_07JADK@ZO00108?$AA@  1001dee0     tzzolodq.obj
+ 0003:00000eec       ??_C@_0CH@COCL@A?5LOD?5by?5the?5same?5name?5already?5e@ 1001deec     tzzolodq.obj
+ 0003:00000f1c       ??_C@_07JBGH@ZO00107?$AA@  1001df1c     tzzolodq.obj
+ 0003:00000f28       ??_C@_0BG@MPN@LOD?5Name?5is?5required?4?$AA@ 1001df28     tzzolodq.obj
+ 0003:00000f44       ??_C@_02JHIA@TZ?$AA@       1001df44     tzzolodq.obj
+ 0003:00000f48       ??_C@_0BA@IEON@ER_AttributeRec?$AA@ 1001df48     tzzolodq.obj
+ 0003:00000f5c       ??_C@_0BB@CJOJ@LOD_AttributeRec?$AA@ 1001df5c     tzzolodq.obj
+ 0003:00000f70       ??_C@_0N@IKDH@ER_Attribute?$AA@ 1001df70     tzzolodq.obj
+ 0003:00000f80       ??_C@_09CNO@ER_Entity?$AA@ 1001df80     tzzolodq.obj
+ 0003:00000f8c       ??_C@_07HILP@ZO00111?$AA@  1001df8c     tzzolodq.obj
+ 0003:00000f98       ??_C@_0CP@HFIK@Unable?5to?5Access?5ER?5Model?4?5?5ER?5m@ 1001df98     tzzolodq.obj
+ 0003:00000fd0       ??_C@_07NCCI@ZO00110?$AA@  1001dfd0     tzzolodq.obj
+ 0003:00000fdc       ??_C@_0EB@BNFG@?$CIzwTZZOLODD_OkNewLOD?$CJ?5Unable?5to?5@ 1001dfdc     tzzolodq.obj
+ 0003:0000102c       ??_C@_07DMAD@ZO00001?$AA@  1001e02c     tzzolodq.obj
+ 0003:00001038       ??_C@_0BG@KBDP@Query?5LOD?5Maintenance?$AA@ 1001e038     tzzolodq.obj
+ 0003:00001054       ??_C@_0CE@CKDA@The?5LOD?5name?5must?5begin?5with?5a?5?8@ 1001e054     tzzolodq.obj
+ 0003:00001080       ??_C@_04IALP@NAME?$AA@     1001e080     tzzolodq.obj
+ 0003:00001088       ??_C@_07EDIL@ZO00124?$AA@  1001e088     tzzolodq.obj
+ 0003:00001094       ??_C@_0BK@MPJE@Unable?5to?5Save?5empty?5LOD?4?$AA@ 1001e094     tzzolodq.obj
+ 0003:000010b4       ??_C@_07BGGO@ZO00123?$AA@  1001e0b4     tzzolodq.obj
+ 0003:000010c0       ??_C@_0DE@EKDL@Unable?5to?5Access?5Technical?5Env?4?5@ 1001e0c0     tzzolodq.obj
+ 0003:00001100       ??_C@_08CBKH@TZTENVRO?$AA@ 1001e100     tzzolodq.obj
+ 0003:0000110c       ??_C@_07LMPJ@ZO00122?$AA@  1001e10c     tzzolodq.obj
+ 0003:00001118       ??_C@_0EF@MCCB@?$CIzwTZZOLODD_SaveLODForTE?$CJ?5Unable@ 1001e118     tzzolodq.obj
+ 0003:0000116c       ??_C@_04PAMG@ZDMA?$AA@     1001e16c     tzzolodq.obj
+ 0003:00001174       ??_C@_0EF@MMKG@DefaultNetwork?5value?5from?5ZEIDON@ 1001e174     tzzolodq.obj
+ 0003:000011c8       ??_C@_07HKHC@Network?$AA@  1001e1c8     tzzolodq.obj
+ 0003:000011d4       ??_C@_0CO@ECBP@DefaultNetwork?5entry?5not?5found?5i@ 1001e1d4     tzzolodq.obj
+ 0003:0000120c       ??_C@_09IBKJ@?$FLNetwork?$FN?$AA@ 1001e20c     tzzolodq.obj
+ 0003:00001218       ??_C@_0P@BGAE@DefaultNetwork?$AA@ 1001e218     tzzolodq.obj
+ 0003:0000122c       ??_C@_0BB@HJAM@Query?5XOD?5Name?3?5?$AA@ 1001e22c     tzzolodq.obj
+ 0003:00001240       ??_C@_04BKHD@?4XOD?$AA@    1001e240     tzzolodq.obj
+ 0003:00001248       ??_C@_01PCFE@?2?$AA@       1001e248     tzzolodq.obj
+ 0003:0000124c       ??_C@_08MEFE@TZZOXODO?$AA@ 1001e24c     tzzolodq.obj
+ 0003:00001258       ??_C@_0EG@NEIC@The?5ServerExec?5entry?5in?5the?5ZEID@ 1001e258     tzzolodq.obj
+ 0003:000012ac       ??_C@_0L@BADD@ServerExec?$AA@ 1001e2ac     tzzolodq.obj
+ 0003:000012bc       ??_C@_08IIEM@tztedblo?$AA@ 1001e2bc     tzzolodq.obj
+ 0003:000012c8       ??_C@_0N@OEGK@tztedblo?4xdl?$AA@ 1001e2c8     tzzolodq.obj
+ 0003:000012d8       ??_C@_08IAKB@TZTEDBLO?$AA@ 1001e2d8     tzzolodq.obj
+ 0003:000012e4       ??_C@_0BD@HCLF@MS?5Access?5via?5ODBC?$AA@ 1001e2e4     tzzolodq.obj
+ 0003:000012fc       ??_C@_0BD@MOFG@SQLServer?5via?5ODBC?$AA@ 1001e2fc     tzzolodq.obj
+ 0003:00001314       ??_C@_07CBBH@?$FLQuery?$FN?$AA@ 1001e314     tzzolodq.obj
+ 0003:00001320       ??_C@_04EALC@DBMS?$AA@     1001e320     tzzolodq.obj
+ 0003:00001328       ??_C@_07PEA@ZO00171?$AA@   1001e328     tzzolodq.obj
+ 0003:00001334       ??_C@_0CP@JHCM@?0?5is?5for?5the?5same?5relationship?5a@ 1001e334     tzzolodq.obj
+ 0003:0000136c       ??_C@_0N@MPPF@LOD?5Entity?0?5?$AA@ 1001e36c     tzzolodq.obj
+ 0003:0000137c       ??_C@_0O@KEHB@ER_RelTypeRec?$AA@ 1001e37c     tzzolodq.obj
+ 0003:0000138c       ??_C@_07CMAH@ZO00119?$AA@  1001e38c     tzzolodq.obj
+ 0003:00001398       ??_C@_07IHMN@ZO00117?$AA@  1001e398     tzzolodq.obj
+ 0003:000013a4       ??_C@_0DF@DBEG@Unable?5to?5Access?5LOD?5List?4?5?5LOD?5@ 1001e3a4     tzzolodq.obj
+ 0003:000013e4       ??_C@_07CNFK@ZO00116?$AA@  1001e3e4     tzzolodq.obj
+ 0003:000013f0       ??_C@_0EA@DHJN@?$CIzwTZZOLODD_SaveLOD?$CJ?5Unable?5to?5A@ 1001e3f0     tzzolodq.obj
+ 0003:0000143c       ??_C@_07BHPI@ZO00129?$AA@  1001e43c     tzzolodq.obj
+ 0003:00001448       ??_C@_0BM@MNIF@Unable?5to?5Save?5LOD?5to?5LPLR?4?$AA@ 1001e448     tzzolodq.obj
+ 0003:0000146c       ??_C@_07CEPI@ZO00182?$AA@  1001e46c     tzzolodq.obj
+ 0003:00001478       ??_C@_0CM@IAPG@Delete?5all?5Properties?5for?5Join?5D@ 1001e478     tzzolodq.obj
+ 0003:000014ac       ??_C@_07LNGP@ZO00128?$AA@  1001e4ac     tzzolodq.obj
+ 0003:000014b8       ??_C@_07LMDC@ZO00127?$AA@  1001e4b8     tzzolodq.obj
+ 0003:000014c4       ??_C@_0EJ@HAPH@?$CIzwTZZOLODD_SaveLODWithoutTE?$CJ?5Un@ 1001e4c4     tzzolodq.obj
+ 0003:0000151c       ??_C@_07LMFN@ExecDir?$AA@  1001e51c     tzzolodq.obj
+ 0003:00001528       ??_C@_0P@EBND@Network?5Server?$AA@ 1001e528     tzzolodq.obj
+ 0003:0000153c       ??_C@_07BJHI@TE00426?$AA@  1001e53c     tzzolodq.obj
+ 0003:00001548       ??_C@_0BG@GEJB@Technical?5Environment?$AA@ 1001e548     tzzolodq.obj
+ 0003:00001564       ??_C@_0EO@OMEN@Default?5Network?5value?5not?5found?5@ 1001e564     tzzolodq.obj
+ 0003:000015c4       ??_C@_07FFCB@ZO00134?$AA@  1001e5c4     tzzolodq.obj
+ 0003:000015d0       ??_C@_0O@ONGE@?8?5for?5output?4?$AA@ 1001e5d0     tzzolodq.obj
+ 0003:000015e0       ??_C@_0BF@PPOH@Error?5opening?5file?5?8?$AA@ 1001e5e0     tzzolodq.obj
+ 0003:000015fc       ??_C@_07ME@ZO00133?$AA@    1001e5fc     tzzolodq.obj
+ 0003:00001608       ??_C@_02ENCN@?8?4?$AA@     1001e608     tzzolodq.obj
+ 0003:0000160c       ??_C@_0CA@HPEF@LOD?5Report?5produced?5to?5file?3?6?7?8?$AA@ 1001e60c     tzzolodq.obj
+ 0003:00001634       ??_C@_04DJDD@?4RPT?$AA@    1001e634     tzzolodq.obj
+ 0003:0000163c       ??_C@_06KAKI@LastSA?$AA@   1001e63c     tzzolodq.obj
+ 0003:00001644       ??_C@_0M@KDAL@SubjectArea?$AA@ 1001e644     tzzolodq.obj
+ 0003:00001654       ??_C@_0N@LIFB@TZERSASO_REF?$AA@ 1001e654     tzzolodq.obj
+ 0003:00001664       ??_C@_07NPCJ@LastLOD?$AA@  1001e664     tzzolodq.obj
+ 0003:00001670       ??_C@_01FLCE@L?$AA@        1001e670     tzzolodq.obj
+ 0003:00001674       ??_C@_0BC@MMGI@ActionAfterSaveAS?$AA@ 1001e674     tzzolodq.obj
+ 0003:0000168c       ??_C@_03EGK@Typ?$AA@       1001e68c     tzzolodq.obj
+ 0003:00001690       ??_C@_08OHHA@TZSAVEAS?$AA@ 1001e690     tzzolodq.obj
+ 0003:0000169c       ??_C@_0EH@NJJK@The?5ServerExec?5entry?5in?5the?5ZEID@ 1001e69c     tzzolodq.obj
+ 0003:000016f4       ??_C@_07PPLG@ZO00135?$AA@  1001e6f4     tzzolodq.obj
+ 0003:00001700       ??_C@_0DB@JIJH@Unable?5to?5Access?5LOD?5File?5List?4?5@ 1001e700     tzzolodq.obj
+ 0003:0000173c       ??_C@_08MIPL@TZTEDFLO?$AA@ 1001e73c     tzzolodq.obj
+ 0003:00001748       ??_C@_08PGMF@TZZOSFLO?$AA@ 1001e748     tzzolodq.obj
+ 0003:00001754       ??_C@_08FGJI@TZZOMFLO?$AA@ 1001e754     tzzolodq.obj
+ 0003:00001760       ??_C@_0P@MKJO@LastUpdateDate?$AA@ 1001e760     tzzolodq.obj
+ 0003:00001774       ??_C@_04FCOP@Type?$AA@     1001e774     tzzolodq.obj
+ 0003:0000177c       ??_C@_01FKHJ@C?$AA@        1001e77c     tzzolodq.obj
+ 0003:00001780       ??_C@_09GMMJ@Operation?$AA@ 1001e780     tzzolodq.obj
+ 0003:0000178c       ??_C@_08LFON@EditPush?$AA@ 1001e78c     tzzolodq.obj
+ 0003:00001798       ??_C@_0BE@JPBE@CheckDropConstraint?$AA@ 1001e798     tzzolodq.obj
+ 0003:000017b0       ??_C@_0BB@EMAA@DropOIConstraint?$AA@ 1001e7b0     tzzolodq.obj
+ 0003:000017c4       ??_C@_0BG@BJPP@CheckCommitConstraint?$AA@ 1001e7c4     tzzolodq.obj
+ 0003:000017e0       ??_C@_0BB@KLEG@CommitConstraint?$AA@ 1001e7e0     tzzolodq.obj
+ 0003:000017f4       ??_C@_0BI@GIHI@CheckActEmptyConstraint?$AA@ 1001e7f4     tzzolodq.obj
+ 0003:00001810       ??_C@_0BI@CKI@ActivateEmptyConstraint?$AA@ 1001e810     tzzolodq.obj
+ 0003:0000182c       ??_C@_0BD@LAEP@CheckActConstraint?$AA@ 1001e82c     tzzolodq.obj
+ 0003:00001844       ??_C@_0BD@BNBL@ActivateConstraint?$AA@ 1001e844     tzzolodq.obj
+ 0003:0000185c       ??_C@_0BD@NBBM@LOD_ConstraintOper?$AA@ 1001e85c     tzzolodq.obj
+ 0003:00001874       ??_C@_0BD@BFKC@ComboSelConstraint?$AA@ 1001e874     tzzolodq.obj
+ 0003:0000188c       ??_C@_01FJFF@W?$AA@        1001e88c     tzzolodq.obj
+ 0003:00001890       ??_C@_01FJJO@R?$AA@        1001e890     tzzolodq.obj
+ 0003:00001894       ??_C@_08OBPA@ENTMAINT?$AA@ 1001e894     tzzolodq.obj
+ 0003:000018a0       ??_C@_07GBFK@ZO00146?$AA@  1001e8a0     tzzolodq.obj
+ 0003:000018ac       ??_C@_0DA@GAEJ@Unable?5to?5Delete?5Root?5Entity?5in?5@ 1001e8ac     tzzolodq.obj
+ 0003:000018e8       ??_C@_0BJ@FCPG@LOD_EntityConstraintOper?$AA@ 1001e8e8     tzzolodq.obj
+ 0003:00001908       ??_C@_09KILI@DeleteBtn?$AA@ 1001e908     tzzolodq.obj
+ 0003:00001914       ??_C@_0BG@GMKH@ComboSelEntConstraint?$AA@ 1001e914     tzzolodq.obj
+ 0003:00001930       ??_C@_07KFNH@ZO00170?$AA@  1001e930     tzzolodq.obj
+ 0003:0000193c       ??_C@_0N@IMGB@of?5Restrict?4?$AA@ 1001e93c     tzzolodq.obj
+ 0003:0000194c       ??_C@_0DC@HKEF@parent?5of?5this?5entity?5has?5Parent@ 1001e94c     tzzolodq.obj
+ 0003:00001988       ??_C@_0DF@JABN@Parent?5Delete?5Behavior?5must?5be?5R@ 1001e988     tzzolodq.obj
+ 0003:000019c8       ??_C@_07ENFC@ZO00169?$AA@  1001e9c8     tzzolodq.obj
+ 0003:000019d4       ??_C@_0CE@BCLH@Parent?5Delete?5Behavior?5of?5Restri@ 1001e9d4     tzzolodq.obj
+ 0003:00001a00       ??_C@_0DB@MIIK@if?5any?5child?5of?5the?5entity?5does?5@ 1001ea00     tzzolodq.obj
+ 0003:00001a3c       ??_C@_0DE@GCAE@Parent?5Delete?5Behavior?5of?5Restri@ 1001ea3c     tzzolodq.obj
+ 0003:00001a7c       ??_C@_07OHMF@ZO00168?$AA@  1001ea7c     tzzolodq.obj
+ 0003:00001a88       ??_C@_0EB@LACB@Parent?5Delete?5Behavior?5of?5Restri@ 1001ea88     tzzolodq.obj
+ 0003:00001ad8       ??_C@_07OGJI@ZO00167?$AA@  1001ead8     tzzolodq.obj
+ 0003:00001ae4       ??_C@_0DB@NFNB@A?5Object?5Entity?5by?5the?5same?5name@ 1001eae4     tzzolodq.obj
+ 0003:00001b20       ??_C@_07GAAH@ZO00149?$AA@  1001eb20     tzzolodq.obj
+ 0003:00001b2c       ??_C@_0DD@FKE@Object?5Entity?5Name?5is?5not?5unique@ 1001eb2c     tzzolodq.obj
+ 0003:00001b6c       ??_C@_0BD@OANM@CheckCanConstraint?$AA@ 1001eb6c     tzzolodq.obj
+ 0003:00001b84       ??_C@_0BD@INBM@CheckAccConstraint?$AA@ 1001eb84     tzzolodq.obj
+ 0003:00001b9c       ??_C@_0BD@MPGI@CheckExcConstraint?$AA@ 1001eb9c     tzzolodq.obj
+ 0003:00001bb4       ??_C@_0BD@LDGH@CheckIncConstraint?$AA@ 1001ebb4     tzzolodq.obj
+ 0003:00001bcc       ??_C@_0BD@DEGI@CheckDelConstraint?$AA@ 1001ebcc     tzzolodq.obj
+ 0003:00001be4       ??_C@_0BC@CJOA@CheckCrConstraint?$AA@ 1001ebe4     tzzolodq.obj
+ 0003:00001bfc       ??_C@_01PFH@A?$AA@         1001ebfc     tzzolodq.obj
+ 0003:00001c00       ??_C@_0L@CLHJ@DomainList?$AA@ 1001ec00     tzzolodq.obj
+ 0003:00001c10       ??_C@_0BH@CLBI@LOD_AttrDerivationOper?$AA@ 1001ec10     tzzolodq.obj
+ 0003:00001c2c       ??_C@_0L@CIM@DomainText?$AA@ 1001ec2c     tzzolodq.obj
+ 0003:00001c3c       ??_C@_0M@JLJE@DomainCombo?$AA@ 1001ec3c     tzzolodq.obj
+ 0003:00001c4c       ??_C@_08BPGI@DerivedF?$AA@ 1001ec4c     tzzolodq.obj
+ 0003:00001c58       ??_C@_08JPOF@SeqOrder?$AA@ 1001ec58     tzzolodq.obj
+ 0003:00001c64       ??_C@_08MHLC@DomDText?$AA@ 1001ec64     tzzolodq.obj
+ 0003:00001c70       ??_C@_04HAOE@DLth?$AA@     1001ec70     tzzolodq.obj
+ 0003:00001c78       ??_C@_04ICCL@Alth?$AA@     1001ec78     tzzolodq.obj
+ 0003:00001c80       ??_C@_08DAOK@CaseSens?$AA@ 1001ec80     tzzolodq.obj
+ 0003:00001c8c       ??_C@_07OEIH@NotNull?$AA@  1001ec8c     tzzolodq.obj
+ 0003:00001c98       ??_C@_05DIGG@LPLth?$AA@    1001ec98     tzzolodq.obj
+ 0003:00001ca0       ??_C@_05PMAP@LPLit?$AA@    1001eca0     tzzolodq.obj
+ 0003:00001ca8       ??_C@_05LLIM@PPLth?$AA@    1001eca8     tzzolodq.obj
+ 0003:00001cb0       ??_C@_05HPOF@PPLit?$AA@    1001ecb0     tzzolodq.obj
+ 0003:00001cb8       ??_C@_0BD@JHHG@MultipleChildLimit?$AA@ 1001ecb8     tzzolodq.obj
+ 0003:00001cd0       ??_C@_0BB@CDNN@MULTI_ROOT_LIMIT?$AA@ 1001ecd0     tzzolodq.obj
+ 0003:00001ce4       ??_C@_08BJG@ATTMAINT?$AA@  1001ece4     tzzolodq.obj
+ 0003:00001cf0       ??_C@_07FKGO@ZO00173?$AA@  1001ecf0     tzzolodq.obj
+ 0003:00001cfc       ??_C@_0CL@FIAK@A?5Work?5Entity?5does?5not?5have?5ER?5A@ 1001ecfc     tzzolodq.obj
+ 0003:00001d30       ??_C@_0BA@LPFC@ShowParseErrors?$AA@ 1001ed30     tzzolodq.obj
+ 0003:00001d44       ??_C@_0CI@NAEO@OK?5to?5delete?5selected?5Entity?5Att@ 1001ed44     tzzolodq.obj
+ 0003:00001d74       ??_C@_0CD@DMJJ@OK?5to?5delete?5all?5Entity?5Attribut@ 1001ed74     tzzolodq.obj
+ 0003:00001da0       ??_C@_09LEOO@MaxStrLth?$AA@ 1001eda0     tzzolodq.obj
+ 0003:00001dac       ??_C@_06CDGA@Domain?$AA@   1001edac     tzzolodq.obj
+ 0003:00001db4       ??_C@_07EMME@ZO00163?$AA@  1001edb4     tzzolodq.obj
+ 0003:00001dc0       ??_C@_0CI@DBOG@Unable?5to?5Access?5Domain?5to?5be?5in@ 1001edc0     tzzolodq.obj
+ 0003:00001df0       ??_C@_07OGFD@ZO00162?$AA@  1001edf0     tzzolodq.obj
+ 0003:00001dfc       ??_C@_0BO@EHNA@Unable?5to?5Access?5Domain?5List?4?$AA@ 1001edfc     tzzolodq.obj
+ 0003:00001e20       ??_C@_07BJOK@ZO00161?$AA@  1001ee20     tzzolodq.obj
+ 0003:00001e2c       ??_C@_0BN@PHOM@Unable?5to?5Access?5LOD?5Object?4?$AA@ 1001ee2c     tzzolodq.obj
+ 0003:00001e50       ??_C@_0L@DHIA@ClientMenu?$AA@ 1001ee50     tzzolodq.obj
+ 0003:00001e60       ??_C@_08GHJH@NodeMenu?$AA@ 1001ee60     tzzolodq.obj
+ 0003:00001e6c       ??_C@_0BA@LBLP@MoveEntityRight?$AA@ 1001ee6c     tzzolodq.obj
+ 0003:00001e80       ??_C@_0P@IKNH@MoveEntityLeft?$AA@ 1001ee80     tzzolodq.obj
+ 0003:00001e94       ??_C@_0BC@JCAC@LoadAttributeList?$AA@ 1001ee94     tzzolodq.obj
+ 0003:00001eac       ??_C@_0BB@GDPG@ShowPriorityList?$AA@ 1001eeac     tzzolodq.obj
+ 0003:00001ec0       ??_C@_0BB@EHDH@ActivateOrdering?$AA@ 1001eec0     tzzolodq.obj
+ 0003:00001ed4       ??_C@_0BC@FGCD@ReplaceRootEntity?$AA@ 1001eed4     tzzolodq.obj
+ 0003:00001eec       ??_C@_09DHMC@FromSAEnt?$AA@ 1001eeec     tzzolodq.obj
+ 0003:00001ef8       ??_C@_09NLKK@FromSARel?$AA@ 1001eef8     tzzolodq.obj
+ 0003:00001f04       ??_C@_0P@EEMM@XferToENTMAINT?$AA@ 1001ef04     tzzolodq.obj
+ 0003:00001f18       ??_C@_09IFCK@Collapsed?$AA@ 1001ef18     tzzolodq.obj
+ 0003:00001f24       ??_C@_06OCEO@Hidden?$AA@   1001ef24     tzzolodq.obj
+ 0003:00001f2c       ??_C@_0BC@CHDJ@ZO_PrintAlgorithm?$AA@ 1001ef2c     tzzolodq.obj
+ 0003:00001f44       ??_C@_0BE@HCIN@ZO_PrintOrientation?$AA@ 1001ef44     tzzolodq.obj
+ 0003:00001f5c       ??_C@_0BA@DGGD@ZO_PrintPercent?$AA@ 1001ef5c     tzzolodq.obj
+ 0003:00001f70       ??_C@_0BG@JFLI@?4?4?2?4?4?2a?2tz?2tzzolodq?4c?$AA@ 1001ef70     tzzolodq.obj
+ 0003:00001f8c       ??_C@_0M@EKIC@Apr?522?52014?$AA@ 1001ef8c     tzzolodq.obj
+ 0003:00001f9c       ??_C@_08LOGG@16?323?305?$AA@ 1001ef9c     tzzolodq.obj
+ 0003:00001fa8       ??_C@_0N@NBPL@BasicsManual?$AA@ 1001efa8     tzzolodq.obj
+ 0003:00001fb8       ??_C@_0L@JNHO@SystemHelp?$AA@ 1001efb8     tzzolodq.obj
+ 0003:00001fc8       ??_C@_0L@DNLA@UsersGuide?$AA@ 1001efc8     tzzolodq.obj
+ 0003:00001fd8       ??_C@_07HPBM@PSDLG_Y?$AA@  1001efd8     tzzolodq.obj
+ 0003:00001fe4       ??_C@_07NFIL@PSDLG_X?$AA@  1001efe4     tzzolodq.obj
+ 0003:00001ff0       ??_C@_07DEAD@SZDLG_Y?$AA@  1001eff0     tzzolodq.obj
+ 0003:00001ffc       ??_C@_07JOJE@SZDLG_X?$AA@  1001effc     tzzolodq.obj
+ 0003:00002008       ??_C@_09LGAG@ZOENTVIEW?$AA@ 1001f008     tzzolodq.obj
+ 0003:00002014       ??_C@_0O@CPBN@EntityListBox?$AA@ 1001f014     tzzolodq.obj
+ 0003:00002024       ??_C@_08MMBJ@AttrList?$AA@ 1001f024     tzzolodq.obj
+ 0003:00002030       ??_C@_0M@BKAI@EntityPopup?$AA@ 1001f030     tzzolodq.obj
+ 0003:00002040       ??_C@_0O@BPAJ@NewWorkEntity?$AA@ 1001f040     tzzolodq.obj
+ 0003:00002050       ??_C@_0BB@OLMK@NewDerivedEntity?$AA@ 1001f050     tzzolodq.obj
+ 0003:00002064       ??_C@_0BJ@IIJI@NewEntityFromSubjectArea?$AA@ 1001f064     tzzolodq.obj
+ 0003:00002084       ??_C@_08HDCH@AttPopup?$AA@ 1001f084     tzzolodq.obj
+ 0003:00002090       ??_C@_0P@NCO@AttributePopup?$AA@ 1001f090     tzzolodq.obj
+ 0003:000020a4       ??_C@_0BA@NLBB@PasteAttributes?$AA@ 1001f0a4     tzzolodq.obj
+ 0003:000020b8       ??_C@_0P@CKJO@CopyAttributes?$AA@ 1001f0b8     tzzolodq.obj
+ 0003:000020cc       ??_C@_0BN@MALI@AddSelectedER_AttributesList?$AA@ 1001f0cc     tzzolodq.obj
+ 0003:000020f0       ??_C@_0BD@KCOG@AddAllERAttributes?$AA@ 1001f0f0     tzzolodq.obj
+ 0003:00002108       ??_C@_0BA@IGFK@DeleteAllAttrib?$AA@ 1001f108     tzzolodq.obj
+ 0003:0000211c       ??_C@_0BA@FJKN@DeleteAttribute?$AA@ 1001f11c     tzzolodq.obj
+ 0003:00002130       ??_C@_0N@FBIA@AddAttribute?$AA@ 1001f130     tzzolodq.obj
+ 0003:00002140       ??_C@_0BC@IIOL@LOD_AttributeCopy?$AA@ 1001f140     tzzolodq.obj
+ 0003:00002158       ??_C@_08EHHP@CopyWork?$AA@ 1001f158     tzzolodq.obj
+ 0003:00002164       ??_C@_07BJCB@ZO00164?$AA@  1001f164     tzzolodq.obj
+ 0003:00002170       ??_C@_0FJ@NHLJ@The?5function?5you?5have?5requested?5@ 1001f170     tzzolodq.obj
+ 0003:000021dc       ??_C@_08HEPB@LOD_Type?$AA@ 1001f1dc     tzzolodq.obj
+ 0003:000021e8       ??_C@_02LPDL@ER?$AA@       1001f1e8     tzzolodq.obj
+ 0003:000021ec       ??_C@_0N@IOOH@LanguageType?$AA@ 1001f1ec     tzzolodq.obj
+ 0003:000021fc       ??_C@_01PDMC@V?$AA@        1001f1fc     tzzolodq.obj
+ 0003:00002200       ??_C@_09FFKP@Extension?$AA@ 1001f200     tzzolodq.obj
+ 0003:0000220c       ??_C@_03EAGC@VML?$AA@      1001f20c     tzzolodq.obj
+ 0003:00002210       ??_C@_07EMAP@ZO00166?$AA@  1001f210     tzzolodq.obj
+ 0003:0000221c       ??_C@_0CH@GCOD@Related?5Entity?5invalid?5for?5Work?5@ 1001f21c     tzzolodq.obj
+ 0003:0000224c       ??_C@_06FMMM@LODRPT?$AA@   1001f24c     tzzolodq.obj
+ 0003:00002254       ??_C@_02KOMF@WD?$AA@       1001f254     tzzolodq.obj
+ 0003:00002258       ??_C@_06FPEO@Dialog?$AA@   1001f258     tzzolodq.obj
+ 0003:00002260       ??_C@_08PFIK@TZWINDOW?$AA@ 1001f260     tzzolodq.obj
+ 0003:0000226c       ??_C@_07FCJH@LODPART?$AA@  1001f26c     tzzolodq.obj
+ 0003:00002278       ??_C@_03PBIE@Asc?$AA@      1001f278     tzzolodq.obj
+ 0003:0000227c       ??_C@_09BBFG@OrderFlag?$AA@ 1001f27c     tzzolodq.obj
+ 0003:00002288       ??_C@_0BB@GKMO@PrioritySequence?$AA@ 1001f288     tzzolodq.obj
+ 0003:0000229c       ??_C@_0O@JICG@AttributeName?$AA@ 1001f29c     tzzolodq.obj
+ 0003:000022ac       ??_C@_0L@LOJF@EntityName?$AA@ 1001f2ac     tzzolodq.obj
+ 0003:000022bc       ??_C@_0BC@ODAC@SelectedAttribute?$AA@ 1001f2bc     tzzolodq.obj
+ 0003:000022d4       ??_C@_0M@HIDO@SeqPriority?$AA@ 1001f2d4     tzzolodq.obj
+ 0003:000022e4       ??_C@_01FBAH@1?$AA@        1001f2e4     tzzolodq.obj
+ 0003:000022e8       ??_C@_08HLJ@WorkRoot?$AA@  1001f2e8     tzzolodq.obj
+ 0003:000022f4       ??_C@_07PADC@ZO00177?$AA@  1001f2f4     tzzolodq.obj
+ 0003:00002300       ??_C@_0EI@IOBM@Activate?5Ordering?5is?5not?5valid?5f@ 1001f300     tzzolodq.obj
+ 0003:00002358       ??_C@_0L@MPDI@ER_RelLink?$AA@ 1001f358     tzzolodq.obj
+ 0003:00002368       ??_C@_08FHO@TZZOWK1O?$AA@  1001f368     tzzolodq.obj
+ 0003:00002374       ??_C@_0DB@JMI@?6There?5is?5no?5Attribute?5Ordering?5@ 1001f374     tzzolodq.obj
+ 0003:000023b0       ??_C@_07GGAB@ZO00208?$AA@  1001f3b0     tzzolodq.obj
+ 0003:000023bc       ??_C@_0BL@HHGP@Ordering?5List?5for?5Activate?$AA@ 1001f3bc     tzzolodq.obj
+ 0003:000023dc       ??_C@_02KCGI@?7?6?$AA@     1001f3dc     tzzolodq.obj
+ 0003:000023e0       ??_C@_0BA@GMGF@?7Type?3?5?5?5?5?5?5?5?6?6?$AA@ 1001f3e0     tzzolodq.obj
+ 0003:000023f4       ??_C@_0BA@BEIO@Attribute?5Name?3?$AA@ 1001f3f4     tzzolodq.obj
+ 0003:00002408       ??_C@_01POCP@?7?$AA@       1001f408     tzzolodq.obj
+ 0003:0000240c       ??_C@_01FCOA@?5?$AA@       1001f40c     tzzolodq.obj
+ 0003:00002410       ??_C@_0BJ@BCHF@?6?6Priority?3?7Entity?5Name?3?$AA@ 1001f410     tzzolodq.obj
+ 0003:00002430       ??_C@_0BD@HNLL@PrioritySequence?5A?$AA@ 1001f430     tzzolodq.obj
+ 0003:00002448       ??_C@_01BJG@?6?$AA@        1001f448     tzzolodq.obj
+ 0003:0000244c       ??_C@_0L@FACN@?6Entity?3?5?7?$AA@ 1001f44c     tzzolodq.obj
+ 0003:0000245c       ??_C@_0BD@GBJJ@PotentialAttribute?$AA@ 1001f45c     tzzolodq.obj
+ 0003:00002474       ??_C@_0N@ECKM@ER_RelType_O?$AA@ 1001f474     tzzolodq.obj
+ 0003:00002484       ??_C@_0BA@PJGE@TE_FieldDataRel?$AA@ 1001f484     tzzolodq.obj
+ 0003:00002498       ??_C@_0BD@HCLK@TE_FieldDataRel_PK?$AA@ 1001f498     tzzolodq.obj
+ 0003:000024b0       ??_C@_0N@ILIM@ContinueFlag?$AA@ 1001f4b0     tzzolodq.obj
+ 0003:000024c0       ??_C@_08DDD@Paradigm?$AA@  1001f4c0     tzzolodq.obj
+ 0003:000024cc       ??_C@_07HBNG@ZO00180?$AA@  1001f4cc     tzzolodq.obj
+ 0003:000024d8       ??_C@_0EL@FHGC@An?5ER?5Attribute?5is?5being?5copied?0@ 1001f4d8     tzzolodq.obj
+ 0003:00002534       ??_C@_0L@HIKM@DomainCopy?$AA@ 1001f534     tzzolodq.obj
+ 0003:00002544       ??_C@_0BB@BJEG@ER_AttributeCopy?$AA@ 1001f544     tzzolodq.obj
+ 0003:00002558       ??_C@_07KKJI@ZO00137?$AA@  1001f558     tzzolodq.obj
+ 0003:00002564       ??_C@_0BA@IDJE@LOD?5Maintenance?$AA@ 1001f564     tzzolodq.obj
+ 0003:00002578       ??_C@_0BC@IPOH@?8?5does?5not?5exist?4?$AA@ 1001f578     tzzolodq.obj
+ 0003:00002590       ??_C@_0CI@IDBO@?8?5cannot?5be?5created?0?5because?5?6Do@ 1001f590     tzzolodq.obj
+ 0003:000025c0       ??_C@_0M@KMJO@Attribute?5?8?$AA@ 1001f5c0     tzzolodq.obj
+ 0003:000025d0       ??_C@_01GJD@?9?$AA@        1001f5d0     tzzolodq.obj
+ 0003:000025d4       ??_C@_09LEEJ@edLODName?$AA@ 1001f5d4     tzzolodq.obj
+ 0003:000025e0       ??_C@_0L@NGF@SaveAsName?$AA@ 1001f5e0     tzzolodq.obj
+ 0003:000025f0       ??_C@_0BG@DDAC@LanguageType?5D?5Name?5A?$AA@ 1001f5f0     tzzolodq.obj
+ 0003:0000260c       ??_C@_08PMAN@DLL_Name?$AA@ 1001f60c     tzzolodq.obj
+ 0003:00002618       ??_C@_0BC@MACA@cbKeepCurrentDesc?$AA@ 1001f618     tzzolodq.obj
+ 0003:00002630       ??_C@_0M@NGCF@SaveAsName8?$AA@ 1001f630     tzzolodq.obj
+ 0003:00002640       ??_C@_01NON@_?$AA@         1001f640     tzzolodq.obj
+ 0003:00002644       ??_C@_07KLMF@ZO00138?$AA@  1001f644     tzzolodq.obj
+ 0003:00002650       ??_C@_0CK@BLHK@LOD?5already?5exists?4?5Replace?5exis@ 1001f650     tzzolodq.obj
+ 0003:00002684       ??_C@_07JFN@PN00221?$AA@   1001f684     tzzolodq.obj
+ 0003:00002690       ??_C@_09HPCO@edDLLName?$AA@ 1001f690     tzzolodq.obj
+ 0003:0000269c       ??_C@_0CN@DIO@Source?5File?5exists?5and?5DLL?5Name?5@ 1001f69c     tzzolodq.obj
+ 0003:000026d4       ??_C@_0BB@PKKH@?8?5is?5not?5unique?4?$AA@ 1001f6d4     tzzolodq.obj
+ 0003:000026e8       ??_C@_0BD@FCKA@Source?5File?5Name?5?8?$AA@ 1001f6e8     tzzolodq.obj
+ 0003:00002700       ??_C@_0N@FBBF@ssSourceFile?$AA@ 1001f700     tzzolodq.obj
+ 0003:00002710       ??_C@_0BO@EML@Source?5File?5Name?5is?5required?4?$AA@ 1001f710     tzzolodq.obj
+ 0003:00002734       ??_C@_0L@DHJL@SourceName?$AA@ 1001f734     tzzolodq.obj
+ 0003:00002744       ??_C@_0CJ@ECKN@?8?5already?5exists?4?5Replace?5existi@ 1001f744     tzzolodq.obj
+ 0003:00002778       ??_C@_0O@DINM@Source?5File?5?8?$AA@ 1001f778     tzzolodq.obj
+ 0003:00002788       ??_C@_0M@JIL@ReplaceFile?$AA@ 1001f788     tzzolodq.obj
+ 0003:00002798       ??_C@_09JPDJ@PgmSrcDir?$AA@ 1001f798     tzzolodq.obj
+ 0003:000027a4       ??_C@_0EE@JHFD@?$CIzwfnTZZOLODD_SaveAsLOD?$CJ?5Unable?5@ 1001f7a4     tzzolodq.obj
+ 0003:000027f8       ??_C@_07OOFA@Subtask?$AA@  1001f7f8     tzzolodq.obj
+ 0003:00002804       ??_C@_09GNHM@ShortDesc?$AA@ 1001f804     tzzolodq.obj
+ 0003:00002810       ??_C@_09IOKP@Parameter?$AA@ 1001f810     tzzolodq.obj
+ 0003:0000281c       ??_C@_0BM@FCKH@LanguageType?5D?5SourceName?5A?$AA@ 1001f81c     tzzolodq.obj
+ 0003:00002840       ??_C@_0BI@NNKD@DupRelationshipInstance?$AA@ 1001f840     tzzolodq.obj
+ 0003:0000285c       ??_C@_0BC@FHOK@DupEntityInstance?$AA@ 1001f85c     tzzolodq.obj
+ 0003:00002874       ??_C@_0BG@GFDN@NewParent?5Description?$AA@ 1001f874     tzzolodq.obj
+ 0003:00002890       ??_C@_0O@PKNF@NewParentWork?$AA@ 1001f890     tzzolodq.obj
+ 0003:000028a0       ??_C@_0EI@MGOP@?$CIzwTZZOLODD_AddParentEntity?$CJ?5Una@ 1001f8a0     tzzolodq.obj
+ 0003:000028f8       ??_C@_09LGFM@DeleteLOD?$AA@ 1001f8f8     tzzolodq.obj
+ 0003:00002904       ??_C@_02HAGF@OK?$AA@       1001f904     tzzolodq.obj
+ 0003:00002908       ??_C@_0M@MFEO@Save?5LOD?5as?$AA@ 1001f908     tzzolodq.obj
+ 0003:00002918       ??_C@_08MOOC@TZCMSLPD?$AA@ 1001f918     tzzolodq.obj
+ 0003:00002924       ??_C@_0L@DCBI@SwitchLPLR?$AA@ 1001f924     tzzolodq.obj
+ 0003:00002934       ??_C@_0BP@IIKE@wkSelectedAttributeForDragSort?$AA@ 1001f934     tzzolodq.obj
+ 0003:0000295c       ??_C@_0L@BMDA@wkSequence?$AA@ 1001f95c     tzzolodq.obj
+ 0003:0000296c       ??_C@_0BE@DAEF@QueryFrameAttribute?$AA@ 1001f96c     tzzolodq.obj
+ 0003:00002984       ??_C@_05IPMD@SeqNo?$AA@    1001f984     tzzolodq.obj
+ 0003:0000298c       ??_C@_06KIIA@edDesc?$AA@   1001f98c     tzzolodq.obj
+ 0003:00002994       ??_C@_0BB@KALM@AddAllER_Attribs?$AA@ 1001f994     tzzolodq.obj
+ 0003:000029a8       ??_C@_0BB@CKBI@AddWorkAttribute?$AA@ 1001f9a8     tzzolodq.obj
+ 0003:000029bc       ??_C@_07NLEB@ZO00181?$AA@  1001f9bc     tzzolodq.obj
+ 0003:000029c8       ??_C@_0CK@GMPE@Attributes?5to?5be?5turned?5to?5Type?5@ 1001f9c8     tzzolodq.obj
+ 0003:000029fc       ??_C@_0DC@JPLA@If?5you?5accept?5the?5change?0?5it?5wil@ 1001f9fc     tzzolodq.obj
+ 0003:00002a38       ??_C@_0DG@CNNO@all?5Properites?5for?5Join?5Definiti@ 1001fa38     tzzolodq.obj
+ 0003:00002a78       ??_C@_0CN@OPMG@Attributes?5to?5be?5turned?5to?5Type?5@ 1001fa78     tzzolodq.obj
+ 0003:00002ab0       ??_C@_0DD@DBJD@Setting?5the?5Entity?5Type?5to?5?8Work@ 1001fab0     tzzolodq.obj
+ 0003:00002af0       ??_C@_08GCAK@DBH_Info?$AA@ 1001faf0     tzzolodq.obj
+ 0003:00002afc       ??_C@_0O@DHCO@DBS_SubDialog?$AA@ 1001fafc     tzzolodq.obj
+ 0003:00002b0c       ??_C@_08PNJL@LOD_Main?$AA@ 1001fb0c     tzzolodq.obj
+ 0003:00002b18       ??_C@_06FCEH@Window?$AA@   1001fb18     tzzolodq.obj
+ 0003:00002b20       ??_C@_0CC@GJAB@Properties?5for?5Join?5Definition?4?6@ 1001fb20     tzzolodq.obj
+ 0003:00002b48       ??_C@_0DH@MIOM@Setting?5the?5Entity?5Type?5to?5?8Deri@ 1001fb48     tzzolodq.obj
+ 0003:00002b8c       ??_C@_0L@KKLH@POD_Entity?$AA@ 1001fb8c     tzzolodq.obj
+ 0003:00002b9c       ??_C@_0BA@EFGE@SaveWithNetwork?$AA@ 1001fb9c     tzzolodq.obj
+ 0003:00002bb0       ??_C@_06LPM@Alt?9F4?$AA@   1001fbb0     tzzolodq.obj
+ 0003:00002bb8       ??_C@_06PPNH@Prompt?$AA@   1001fbb8     tzzolodq.obj
+ 0003:00002bc0       ??_C@_0O@JGLN@vLOD_ViewTemp?$AA@ 1001fbc0     tzzolodq.obj
+ 0003:00002bd0       ??_C@_0BA@HJLB@vLOD_ViewRecurs?$AA@ 1001fbd0     tzzolodq.obj
+ 0003:00002be4       ??_C@_0BF@CJOP@AttributeDescription?$AA@ 1001fbe4     tzzolodq.obj
+ 0003:00002c00       ??_C@_09FEKK@CPLR_ZKey?$AA@ 1001fc00     tzzolodq.obj
+ 0003:00002c0c       ??_C@_06POFE@?$FLZ?3?$CDE?$FN?$AA@ 1001fc0c     tzzoloq2.obj
+ 0003:00002c14       ??_C@_01FIMD@?$FN?$AA@     1001fc14     tzzoloq2.obj
+ 0003:00002c18       ??_C@_06EBMH@?$FLZ?3?$CDS?3?$AA@ 1001fc18     tzzoloq2.obj
+ 0003:00002c20       ??_C@_03GAEF@?$FLZ?3?$AA@  1001fc20     tzzoloq2.obj
+ 0003:00002c24       ??_C@_09GKEO@JoinCheck?$AA@ 1001fc24     tzzoloq2.obj
+ 0003:00002c30       ??_C@_06FJMC@cbWork?$AA@   1001fc30     tzzoloq2.obj
+ 0003:00002c38       ??_C@_09NJOC@cbDerived?$AA@ 1001fc38     tzzoloq2.obj
+ 0003:00002c44       ??_C@_0O@CIAO@edDescription?$AA@ 1001fc44     tzzoloq2.obj
+ 0003:00002c54       ??_C@_09ILPB@?5JOIN?5?$DN?5N?$AA@ 1001fc54     tzzoloq2.obj
+ 0003:00002c60       ??_C@_0L@LBJA@WorkString?$AA@ 1001fc60     tzzoloq2.obj
+ 0003:00002c70       ??_C@_08PLGM@?5JOIN?5?$DN?5?$AA@ 1001fc70     tzzoloq2.obj
+ 0003:00002c7c       ??_C@_0BD@GNEF@SQL_JoinWithParent?$AA@ 1001fc7c     tzzoloq2.obj
+ 0003:00002c94       ??_C@_0BI@FMLJ@TE_DBMS_SourceForEntity?$AA@ 1001fc94     tzzoloq2.obj
+ 0003:00002cb0       ??_C@_0M@NIFH@pbRemoveAll?$AA@ 1001fcb0     tzzoloq2.obj
+ 0003:00002cc0       ??_C@_0M@CANN@pbSetXtoOne?$AA@ 1001fcc0     tzzoloq2.obj
+ 0003:00002f58       _g_hInstanceDLL            1001ff58     zdllinst.obj
+ 0003:00002f5c       _szDbg                     1001ff5c     tzzolodq.obj
+ 0003:00003160       _g_lDlgUnitCharX           10020160     tzzolodq.obj
+ 0003:00003162       _g_lDlgUnitCharY           10020162     tzzolodq.obj
+ 0003:00003164       _nMaxNodeEdge              10020164     tzzolodq.obj
+ 0003:000031a4       _lLevel                    100201a4     tzzolodq.obj
+ 0003:0000321c       ?ATL_CREATE_OBJECT@CComApartment@ATL@@2IA 1002021c     tzzolodq.obj
+ 0003:00003220       ?m_libid@CComModule@ATL@@2U_GUID@@A 10020220     tzzolodq.obj
+ 0003:00003234       ?_pModule@ATL@@3PAVCComModule@1@A 10020234     tzzolodq.obj
+ 0003:00003238       ??_C@_00A@?$AA@            10020238     tzzolodq.obj
+ 0003:0000323c       __afxForceEXCLUDE          1002023c     MFCS42:nolib.obj
+ 0003:00003240       __afxForceSTDAFX           10020240     MFCS42:stdafx.obj
+ 0003:00003248       __adjust_fdiv              10020248     <common>
+ 0003:00003254       ___onexitend               10020254     <common>
+ 0003:00003264       ___onexitbegin             10020264     <common>
+ 0003:00003268       __pRawDllMain              10020268     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 10021000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_kzrpsrco 10021014     kzrpsrco:kzrpsrco.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_tzoprusd 10021028     tzoprusd:tzoprusd.dll
+ 0004:0000003c       __IMPORT_DESCRIPTOR_KZOENGAA 1002103c     kzoengaa:KZOENGAA.DLL
+ 0004:00000050       __IMPORT_DESCRIPTOR_MSVCRTD 10021050     msvcrtd:MSVCRTD.dll
+ 0004:00000064       __IMPORT_DESCRIPTOR_MFC42D 10021064     mfc42d:MFC42D.DLL
+ 0004:00000078       __IMPORT_DESCRIPTOR_ZDrApp 10021078     zdrapp:ZDrApp.dll
+ 0004:0000008c       __IMPORT_DESCRIPTOR_ZdCtl  1002108c     zdctl:ZdCtl.dll
+ 0004:000000a0       __NULL_IMPORT_DESCRIPTOR   100210a0     tzlodopr:tzlodopr.dll
+ 0004:00000560       __imp__SysReadZeidonIni@16 10021560     kzoengaa:KZOENGAA.DLL
+ 0004:00000564       __imp__GetAbsolutePositionForEntity@12 10021564     kzoengaa:KZOENGAA.DLL
+ 0004:00000568       __imp__SetCursorAbsolutePosition@12 10021568     kzoengaa:KZOENGAA.DLL
+ 0004:0000056c       __imp__ZeidonStringCompare@28 1002156c     kzoengaa:KZOENGAA.DLL
+ 0004:00000570       __imp__GetVariableFromAttribute@36 10021570     kzoengaa:KZOENGAA.DLL
+ 0004:00000574       __imp__ZeidonStringCopy@28 10021574     kzoengaa:KZOENGAA.DLL
+ 0004:00000578       __imp__SetViewFromView@8   10021578     kzoengaa:KZOENGAA.DLL
+ 0004:0000057c       __imp__CancelSubobject@8   1002157c     kzoengaa:KZOENGAA.DLL
+ 0004:00000580       __imp__GetStringFromAttributeByContext@24 10021580     kzoengaa:KZOENGAA.DLL
+ 0004:00000584       __imp__SysOpenFile@12      10021584     kzoengaa:KZOENGAA.DLL
+ 0004:00000588       __imp__SysCopyFile@16      10021588     kzoengaa:KZOENGAA.DLL
+ 0004:0000058c       __imp__SetMatchingAttributesByName@20 1002158c     kzoengaa:KZOENGAA.DLL
+ 0004:00000590       __imp__SetCursorNextEntityByAttr@28 10021590     kzoengaa:KZOENGAA.DLL
+ 0004:00000594       __imp__SetCursorNextEntityByInteger@20 10021594     kzoengaa:KZOENGAA.DLL
+ 0004:00000598       __imp__ExcludeEntity@12    10021598     kzoengaa:KZOENGAA.DLL
+ 0004:0000059c       __imp__DropHierarchicalCursor@4 1002159c     kzoengaa:KZOENGAA.DLL
+ 0004:000005a0       __imp__SetCursorNextSelectedEntity@12 100215a0     kzoengaa:KZOENGAA.DLL
+ 0004:000005a4       __imp__MessagePromptForInput@28 100215a4     kzoengaa:KZOENGAA.DLL
+ 0004:000005a8       __imp__CompareAttributeToAttribute@24 100215a8     kzoengaa:KZOENGAA.DLL
+ 0004:000005ac       __imp__AcceptSubobject@8   100215ac     kzoengaa:KZOENGAA.DLL
+ 0004:000005b0       __imp__CreateTemporalSubobjectVersion@8 100215b0     kzoengaa:KZOENGAA.DLL
+ 0004:000005b4       __imp__SetSelectSetForView@8 100215b4     kzoengaa:KZOENGAA.DLL
+ 0004:000005b8       __imp__SetAllSelectStatesForEntity@16 100215b8     kzoengaa:KZOENGAA.DLL
+ 0004:000005bc       __imp__SetCursorNextEntityByString@20 100215bc     kzoengaa:KZOENGAA.DLL
+ 0004:000005c0       __imp__SetCursorPrevEntity@12 100215c0     kzoengaa:KZOENGAA.DLL
+ 0004:000005c4       __imp__DeleteEntity@12     100215c4     kzoengaa:KZOENGAA.DLL
+ 0004:000005c8       __imp__ResetView@4         100215c8     kzoengaa:KZOENGAA.DLL
+ 0004:000005cc       __imp__DefineHierarchicalCursor@8 100215cc     kzoengaa:KZOENGAA.DLL
+ 0004:000005d0       __imp__GetIntegerFromAttribute@16 100215d0     kzoengaa:KZOENGAA.DLL
+ 0004:000005d4       __imp__SetCursorFirstEntityByInteger@20 100215d4     kzoengaa:KZOENGAA.DLL
+ 0004:000005d8       __imp__GetRelativeEntityNumber@16 100215d8     kzoengaa:KZOENGAA.DLL
+ 0004:000005dc       __imp__SetCursorNextEntityHierarchical@12 100215dc     kzoengaa:KZOENGAA.DLL
+ 0004:000005e0       __imp__MoveSubobject@24    100215e0     kzoengaa:KZOENGAA.DLL
+ 0004:000005e4       __imp__CommitOI_ToFile@12  100215e4     kzoengaa:KZOENGAA.DLL
+ 0004:000005e8       __imp__UfCompressName@32   100215e8     kzoengaa:KZOENGAA.DLL
+ 0004:000005ec       __imp__SetCursorFirstEntityByString@20 100215ec     kzoengaa:KZOENGAA.DLL
+ 0004:000005f0       __imp__SysGetPointerFromHandle@4 100215f0     kzoengaa:KZOENGAA.DLL
+ 0004:000005f4       __imp__MessageSend@24      100215f4     kzoengaa:KZOENGAA.DLL
+ 0004:000005f8       __imp__ObjectInstanceUpdatedFromFile@4 100215f8     kzoengaa:KZOENGAA.DLL
+ 0004:000005fc       __imp__MessagePrompt@32    100215fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000600       __imp__IncludeSubobjectFromSubobject@20 10021600     kzoengaa:KZOENGAA.DLL
+ 0004:00000604       __imp__SetCursorFirstEntityByAttr@28 10021604     kzoengaa:KZOENGAA.DLL
+ 0004:00000608       __imp__OrderEntityForView@12 10021608     kzoengaa:KZOENGAA.DLL
+ 0004:0000060c       __imp__DropView@4          1002160c     kzoengaa:KZOENGAA.DLL
+ 0004:00000610       __imp__DropObjectInstance@4 10021610     kzoengaa:KZOENGAA.DLL
+ 0004:00000614       __imp__CreateViewFromViewForTask@12 10021614     kzoengaa:KZOENGAA.DLL
+ 0004:00000618       __imp__GetSelectStateOfEntity@8 10021618     kzoengaa:KZOENGAA.DLL
+ 0004:0000061c       __imp__SetCursorFirstSelectedEntity@12 1002161c     kzoengaa:KZOENGAA.DLL
+ 0004:00000620       __imp__SetCursorFirstEntityByEntityCsr@20 10021620     kzoengaa:KZOENGAA.DLL
+ 0004:00000624       __imp__SetNameForView@16   10021624     kzoengaa:KZOENGAA.DLL
+ 0004:00000628       __imp__GetAddrForAttribute@16 10021628     kzoengaa:KZOENGAA.DLL
+ 0004:0000062c       __imp__ZeidonStringConcat@28 1002162c     kzoengaa:KZOENGAA.DLL
+ 0004:00000630       __imp__ResetViewFromSubobject@4 10021630     kzoengaa:KZOENGAA.DLL
+ 0004:00000634       __imp__SetViewToSubobject@8 10021634     kzoengaa:KZOENGAA.DLL
+ 0004:00000638       __imp__SetCursorNextEntity@12 10021638     kzoengaa:KZOENGAA.DLL
+ 0004:0000063c       __imp__SetAttributeFromInteger@16 1002163c     kzoengaa:KZOENGAA.DLL
+ 0004:00000640       __imp__GetStringFromAttribute@16 10021640     kzoengaa:KZOENGAA.DLL
+ 0004:00000644       __imp__SetCursorFirstEntity@12 10021644     kzoengaa:KZOENGAA.DLL
+ 0004:00000648       __imp__CompareAttributeToString@16 10021648     kzoengaa:KZOENGAA.DLL
+ 0004:0000064c       __imp__SetAttributeFromString@16 1002164c     kzoengaa:KZOENGAA.DLL
+ 0004:00000650       __imp__CheckExistenceOfEntity@8 10021650     kzoengaa:KZOENGAA.DLL
+ 0004:00000654       __imp__SetAttributeFromAttribute@24 10021654     kzoengaa:KZOENGAA.DLL
+ 0004:00000658       __imp__CreateEntity@12     10021658     kzoengaa:KZOENGAA.DLL
+ 0004:0000065c       __imp__ActivateEmptyObjectInstance@16 1002165c     kzoengaa:KZOENGAA.DLL
+ 0004:00000660       __imp__GetViewByName@16    10021660     kzoengaa:KZOENGAA.DLL
+ 0004:00000664       __imp__TraceLineS@8        10021664     kzoengaa:KZOENGAA.DLL
+ 0004:00000668       __imp__SetEntityCursor@40  10021668     kzoengaa:KZOENGAA.DLL
+ 0004:0000066c       __imp__SetSelectStateOfEntity@12 1002166c     kzoengaa:KZOENGAA.DLL
+ 0004:00000670       __imp__CompareAttributeToInteger@16 10021670     kzoengaa:KZOENGAA.DLL
+ 0004:00000674       __imp__SetViewReadOnly@4   10021674     kzoengaa:KZOENGAA.DLL
+ 0004:00000678       __imp__SetViewUpdate@4     10021678     kzoengaa:KZOENGAA.DLL
+ 0004:0000067c       __imp__MiGetUpdateForView@4 1002167c     kzoengaa:KZOENGAA.DLL
+ 0004:00000680       __imp__ActivateOI_FromFile@20 10021680     kzoengaa:KZOENGAA.DLL
+ 0004:00000684       \177KZOENGAA_NULL_THUNK_DATA 10021684     kzoengaa:KZOENGAA.DLL
+ 0004:000006e8       __imp_??4CString@@QAEABV0@PBD@Z 100216e8     mfc42d:MFC42D.DLL
+ 0004:000006ec       __imp_??YCString@@QAEABV0@PBD@Z 100216ec     mfc42d:MFC42D.DLL
+ 0004:000006f0       __imp_??BCString@@QBEPBDXZ 100216f0     mfc42d:MFC42D.DLL
+ 0004:000006f4       __imp_??1CString@@QAE@XZ   100216f4     mfc42d:MFC42D.DLL
+ 0004:000006f8       __imp_??0CString@@QAE@XZ   100216f8     mfc42d:MFC42D.DLL
+ 0004:000006fc       \177MFC42D_NULL_THUNK_DATA 100216fc     mfc42d:MFC42D.DLL
+ 0004:0000072c       __imp___initterm           1002172c     msvcrtd:MSVCRTD.dll
+ 0004:00000730       __imp___malloc_dbg         10021730     msvcrtd:MSVCRTD.dll
+ 0004:00000734       __imp___free_dbg           10021734     msvcrtd:MSVCRTD.dll
+ 0004:00000738       __imp____dllonexit         10021738     msvcrtd:MSVCRTD.dll
+ 0004:0000073c       __imp___onexit             1002173c     msvcrtd:MSVCRTD.dll
+ 0004:00000740       __imp__strchr              10021740     msvcrtd:MSVCRTD.dll
+ 0004:00000744       __imp__strrchr             10021744     msvcrtd:MSVCRTD.dll
+ 0004:00000748       __imp__atol                10021748     msvcrtd:MSVCRTD.dll
+ 0004:0000074c       __imp___ltoa               1002174c     msvcrtd:MSVCRTD.dll
+ 0004:00000750       __imp___adjust_fdiv        10021750     msvcrtd:MSVCRTD.dll
+ 0004:00000754       __imp__strncpy             10021754     msvcrtd:MSVCRTD.dll
+ 0004:00000758       __imp__memset              10021758     msvcrtd:MSVCRTD.dll
+ 0004:0000075c       __imp__sprintf             1002175c     msvcrtd:MSVCRTD.dll
+ 0004:00000760       __imp__strcpy              10021760     msvcrtd:MSVCRTD.dll
+ 0004:00000764       __imp__strcat              10021764     msvcrtd:MSVCRTD.dll
+ 0004:00000768       __imp__strlen              10021768     msvcrtd:MSVCRTD.dll
+ 0004:0000076c       __imp__strcmp              1002176c     msvcrtd:MSVCRTD.dll
+ 0004:00000770       \177MSVCRTD_NULL_THUNK_DATA 10021770     msvcrtd:MSVCRTD.dll
+ 0004:000007a8       __imp__SetWindowCaptionTitle@12 100217a8     zdrapp:ZDrApp.dll
+ 0004:000007ac       __imp__RefreshCtrl@8       100217ac     zdrapp:ZDrApp.dll
+ 0004:000007b0       __imp__EnableAction@12     100217b0     zdrapp:ZDrApp.dll
+ 0004:000007b4       __imp__SetFocusToCtrl@8    100217b4     zdrapp:ZDrApp.dll
+ 0004:000007b8       __imp__SetCtrlState@16     100217b8     zdrapp:ZDrApp.dll
+ 0004:000007bc       __imp__RefreshAllSubwindows@4 100217bc     zdrapp:ZDrApp.dll
+ 0004:000007c0       __imp__GetCtrlText@16      100217c0     zdrapp:ZDrApp.dll
+ 0004:000007c4       __imp__CreateTrackingPopupMenu@24 100217c4     zdrapp:ZDrApp.dll
+ 0004:000007c8       __imp__SetCtrlSize@20      100217c8     zdrapp:ZDrApp.dll
+ 0004:000007cc       __imp__SetCtrlPosition@20  100217cc     zdrapp:ZDrApp.dll
+ 0004:000007d0       __imp__RefreshWindowExceptForCtrl@8 100217d0     zdrapp:ZDrApp.dll
+ 0004:000007d4       __imp__GetCtrlPosition@20  100217d4     zdrapp:ZDrApp.dll
+ 0004:000007d8       __imp__GetCtrlSize@20      100217d8     zdrapp:ZDrApp.dll
+ 0004:000007dc       __imp__GetCtrlState@12     100217dc     zdrapp:ZDrApp.dll
+ 0004:000007e0       __imp__GetParentWindow@8   100217e0     zdrapp:ZDrApp.dll
+ 0004:000007e4       __imp__SetWindowState@12   100217e4     zdrapp:ZDrApp.dll
+ 0004:000007e8       __imp__SetClipboardBlob@12 100217e8     zdrapp:ZDrApp.dll
+ 0004:000007ec       __imp__MapCtrl@8           100217ec     zdrapp:ZDrApp.dll
+ 0004:000007f0       __imp__RefreshWindow@4     100217f0     zdrapp:ZDrApp.dll
+ 0004:000007f4       __imp__GetSubtaskForWindowName@12 100217f4     zdrapp:ZDrApp.dll
+ 0004:000007f8       __imp__SetWindowActionBehavior@16 100217f8     zdrapp:ZDrApp.dll
+ 0004:000007fc       __imp__SetOptionState@16   100217fc     zdrapp:ZDrApp.dll
+ 0004:00000800       __imp__ActivateWindow@4    10021800     zdrapp:ZDrApp.dll
+ 0004:00000804       \177ZDrApp_NULL_THUNK_DATA 10021804     zdrapp:ZDrApp.dll
+ 0004:00000840       __imp__CB_SetDisplaySelectSet@12 10021840     zdctl:ZdCtl.dll
+ 0004:00000844       __imp__HD_ZoomDiagram@16   10021844     zdctl:ZdCtl.dll
+ 0004:00000848       __imp__HD_SetProperties@12 10021848     zdctl:ZdCtl.dll
+ 0004:0000084c       __imp__HD_GetPointerCoordinates@16 1002184c     zdctl:ZdCtl.dll
+ 0004:00000850       __imp__HD_PrintDiagram@16  10021850     zdctl:ZdCtl.dll
+ 0004:00000854       __imp__HD_IsNodeVisible@8  10021854     zdctl:ZdCtl.dll
+ 0004:00000858       __imp__HD_CenterNode@8     10021858     zdctl:ZdCtl.dll
+ 0004:0000085c       __imp__HD_SelectNode@8     1002185c     zdctl:ZdCtl.dll
+ 0004:00000860       __imp__HD_SetColors@36     10021860     zdctl:ZdCtl.dll
+ 0004:00000864       __imp__MB_SetMessage@12    10021864     zdctl:ZdCtl.dll
+ 0004:00000868       \177ZdCtl_NULL_THUNK_DATA  10021868     zdctl:ZdCtl.dll
+ 0004:0000089c       __imp__FormatSubobjectOnDoc@20 1002189c     kzrpsrco:kzrpsrco.dll
+ 0004:000008a0       \177kzrpsrco_NULL_THUNK_DATA 100218a0     kzrpsrco:kzrpsrco.dll
+ 0004:000008cc       __imp__oTZ__PRFO_GetViewToProfile@16 100218cc     tzlodopr:tzlodopr.dll
+ 0004:000008d0       __imp__SetTitleWithCheckOutState@24 100218d0     tzlodopr:tzlodopr.dll
+ 0004:000008d4       __imp__RetrieveViewForMetaList@12 100218d4     tzlodopr:tzlodopr.dll
+ 0004:000008d8       __imp__InitializeLPLR@8    100218d8     tzlodopr:tzlodopr.dll
+ 0004:000008dc       __imp__ActivateMetaOI@20   100218dc     tzlodopr:tzlodopr.dll
+ 0004:000008e0       __imp__IssueToolMsg@32     100218e0     tzlodopr:tzlodopr.dll
+ 0004:000008e4       __imp__oTZEREMDO_GetRefViewForER@12 100218e4     tzlodopr:tzlodopr.dll
+ 0004:000008e8       __imp__DropMetaOI@8        100218e8     tzlodopr:tzlodopr.dll
+ 0004:000008ec       __imp__ComponentIsCheckedOut@12 100218ec     tzlodopr:tzlodopr.dll
+ 0004:000008f0       __imp__CreateTemporalMetaEntity@16 100218f0     tzlodopr:tzlodopr.dll
+ 0004:000008f4       __imp__AddSpacesToString@4 100218f4     tzlodopr:tzlodopr.dll
+ 0004:000008f8       __imp__oTZZOLODO_MoveAttribInSequence@4 100218f8     tzlodopr:tzlodopr.dll
+ 0004:000008fc       __imp__CheckOutStateForCurrentWindow@8 100218fc     tzlodopr:tzlodopr.dll
+ 0004:00000900       __imp__oTZZOLODO_LOD_OperationCopy@16 10021900     tzlodopr:tzlodopr.dll
+ 0004:00000904       __imp__oTZZOLODO_LOD_EntityCopy@48 10021904     tzlodopr:tzlodopr.dll
+ 0004:00000908       __imp__ActivateMetaOI_ByZKey@28 10021908     tzlodopr:tzlodopr.dll
+ 0004:0000090c       __imp__ActivateMetaOI_ByName@28 1002190c     tzlodopr:tzlodopr.dll
+ 0004:00000910       __imp__TransferToEditor@16 10021910     tzlodopr:tzlodopr.dll
+ 0004:00000914       __imp__StartZeidonHelp@8   10021914     tzlodopr:tzlodopr.dll
+ 0004:00000918       __imp__IssueToolAbout@20   10021918     tzlodopr:tzlodopr.dll
+ 0004:0000091c       __imp__zgSortEntityWithinParent4@40 1002191c     tzlodopr:tzlodopr.dll
+ 0004:00000920       __imp__oTZZOLODO_ParseDerivedExpr@8 10021920     tzlodopr:tzlodopr.dll
+ 0004:00000924       __imp__oTZZOLODO_NewAttributeSequence@4 10021924     tzlodopr:tzlodopr.dll
+ 0004:00000928       __imp__ofnTZCMWKSO_AppendSlash@4 10021928     tzlodopr:tzlodopr.dll
+ 0004:0000092c       __imp__oTZZOLODO_AddEntity@12 1002192c     tzlodopr:tzlodopr.dll
+ 0004:00000930       __imp__zgSortEntityWithinParent@20 10021930     tzlodopr:tzlodopr.dll
+ 0004:00000934       __imp__zDeleteFile@4       10021934     tzlodopr:tzlodopr.dll
+ 0004:00000938       __imp__DeleteMetaOI@12     10021938     tzlodopr:tzlodopr.dll
+ 0004:0000093c       __imp__TerminateLPLR@4     1002193c     tzlodopr:tzlodopr.dll
+ 0004:00000940       __imp__oTZZOLODO_SummaryReport@8 10021940     tzlodopr:tzlodopr.dll
+ 0004:00000944       __imp__oTZ__PRFO_CommitProfile@4 10021944     tzlodopr:tzlodopr.dll
+ 0004:00000948       __imp__oTZZOXODO_SaveXOD@8 10021948     tzlodopr:tzlodopr.dll
+ 0004:0000094c       __imp__oTZZOLODO_DeleteAllPOD_Entities@4 1002194c     tzlodopr:tzlodopr.dll
+ 0004:00000950       __imp__CommitMetaOI@12     10021950     tzlodopr:tzlodopr.dll
+ 0004:00000954       __imp__oTZZOLODO_SortAttributes@4 10021954     tzlodopr:tzlodopr.dll
+ 0004:00000958       __imp__oTZZOLODO_Constraint@16 10021958     tzlodopr:tzlodopr.dll
+ 0004:0000095c       __imp__oTZZOLODO_SaveLOD_WithTE@12 1002195c     tzlodopr:tzlodopr.dll
+ 0004:00000960       __imp__ActivateEmptyMetaOI@16 10021960     tzlodopr:tzlodopr.dll
+ 0004:00000964       __imp__CreateMetaEntity@16 10021964     tzlodopr:tzlodopr.dll
+ 0004:00000968       __imp__oTZZOLODO_SetAttributeSequence@4 10021968     tzlodopr:tzlodopr.dll
+ 0004:0000096c       \177tzlodopr_NULL_THUNK_DATA 1002196c     tzlodopr:tzlodopr.dll
+ 0004:000009b8       __imp__wTZOPRUSD_SetUpTZOPRUSO_View@4 100219b8     tzoprusd:tzoprusd.dll
+ 0004:000009bc       __imp__wTZOPRUSD_AddSourceFile@4 100219bc     tzoprusd:tzoprusd.dll
+ 0004:000009c0       __imp__wTZOPRUSD_AddOperation@4 100219c0     tzoprusd:tzoprusd.dll
+ 0004:000009c4       __imp__wTZOPRUSD_GoToUpdateOperation@4 100219c4     tzoprusd:tzoprusd.dll
+ 0004:000009c8       __imp__wTZOPRUSD_InvokeEditor@4 100219c8     tzoprusd:tzoprusd.dll
+ 0004:000009cc       __imp__wTZOPRUSD_DeleteSourceFile@4 100219cc     tzoprusd:tzoprusd.dll
+ 0004:000009d0       __imp__wTZOPRUSD_DeleteSelectedOperat@4 100219d0     tzoprusd:tzoprusd.dll
+ 0004:000009d4       __imp__wTZOPRUSD_DeleteAllFiles@4 100219d4     tzoprusd:tzoprusd.dll
+ 0004:000009d8       __imp__wTZOPRUSD_DeleteAllOperations@4 100219d8     tzoprusd:tzoprusd.dll
+ 0004:000009dc       \177tzoprusd_NULL_THUNK_DATA 100219dc     tzoprusd:tzoprusd.dll
+
+ entry point at        0001:000159b0
+

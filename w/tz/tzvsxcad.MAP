@@ -1,0 +1,297 @@
+ tzvsxcad
+
+ Timestamp is 5356cf68 (Tue Apr 22 16:22:00 2014)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000516fH .text                   CODE
+ 0002:00000000 0000012cH .rdata                  DATA
+ 0002:00000130 00001274H .edata                  DATA
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIZ                DATA
+ 0003:00000410 00000504H .data                   DATA
+ 0003:00000914 00000038H .bss                    DATA
+ 0004:00000000 00000078H .idata$2                DATA
+ 0004:00000078 00000014H .idata$3                DATA
+ 0004:0000008c 0000022cH .idata$4                DATA
+ 0004:000002b8 0000022cH .idata$5                DATA
+ 0004:000004e4 0000027eH .idata$6                DATA
+ 0005:00000000 000001d8H .rsrc$01                DATA
+ 0005:000001e0 00000499H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000200       _DllMain@12                10001200 f   zdllinst.obj
+ 0001:00000226       _GetDLL_Instance@4         10001226 f   zdllinst.obj
+ 0001:00000240       _zwTZVSXCAD_BuildDialogSelectList@4 10001240 f   tzvsxcad.obj
+ 0001:00000387       _zwTZVSXCAD_ReuseInitializeDialog@12 10001387 f   tzvsxcad.obj
+ 0001:00000518       _zwTZVSXCAD_InitializeDialog@4 10001518 f   tzvsxcad.obj
+ 0001:000007a0       _zwTZVSXCAD_SwitchToDialogMeta@4 100017a0 f   tzvsxcad.obj
+ 0001:0000084e       _zwTZVSXCAD_BuildDialogMetaList@4 1000184e f   tzvsxcad.obj
+ 0001:000008e7       _zwTZVSXCAD_SwitchToObjectMeta@4 100018e7 f   tzvsxcad.obj
+ 0001:0000095a       _zwTZVSXCAD_SwitchToGlobalMeta@4 1000195a f   tzvsxcad.obj
+ 0001:000009d1       _zwTZVSXCAD_SaveSettings@4 100019d1 f   tzvsxcad.obj
+ 0001:00000a0d       _zwTZVSXCAD_Exit_X_Checker@4 10001a0d f   tzvsxcad.obj
+ 0001:00000a24       _zwTZVSXCAD_SaveSetupFile@4 10001a24 f   tzvsxcad.obj
+ 0001:00000a3b       _zwTZVSXCAD_SaveApplicSettings@12 10001a3b f   tzvsxcad.obj
+ 0001:00000e08       _zwTZVSXCAD_IncludeDialog@4 10001e08 f   tzvsxcad.obj
+ 0001:00000ff5       _zwTZVSXCAD_ExcludeDialog@4 10001ff5 f   tzvsxcad.obj
+ 0001:000010fe       _zwTZVSXCAD_PosOnDialogSource@4 100020fe f   tzvsxcad.obj
+ 0001:00001260       _zwTZVSXCAD_IncludeDOperation@4 10002260 f   tzvsxcad.obj
+ 0001:000013bd       _zwTZVSXCAD_ExcludeDOperation@4 100023bd f   tzvsxcad.obj
+ 0001:00001422       _LoadAllSourcesForLOD@8    10002422 f   tzvsxcad.obj
+ 0001:00001481       _zwTZVSXCAD_IncludeLOD@4   10002481 f   tzvsxcad.obj
+ 0001:000015a3       _zwTZVSXCAD_ExcludeLOD@4   100025a3 f   tzvsxcad.obj
+ 0001:000015d4       _zwTZVSXCAD_PosOnLODSource@4 100025d4 f   tzvsxcad.obj
+ 0001:000016aa       _zwTZVSXCAD_IncludeLOperation@4 100026aa f   tzvsxcad.obj
+ 0001:00001753       _zwTZVSXCAD_ExcludeLOperation@4 10002753 f   tzvsxcad.obj
+ 0001:00001784       _LoadAllSourcesForGlobal@8 10002784 f   tzvsxcad.obj
+ 0001:00001844       _zwTZVSXCAD_IncludeGlobal@4 10002844 f   tzvsxcad.obj
+ 0001:0000194c       _zwTZVSXCAD_ExcludeGlobal@4 1000294c f   tzvsxcad.obj
+ 0001:0000197d       _zwTZVSXCAD_SetupDLL@4     1000297d f   tzvsxcad.obj
+ 0001:00001b42       _zwTZVSXCAD_HelpAbout@4    10002b42 f   tzvsxcad.obj
+ 0001:00001b66       _zwTZVSXCAD_HelpBasics@4   10002b66 f   tzvsxcad.obj
+ 0001:00001b7e       _zwTZVSXCAD_HelpOnHelp@4   10002b7e f   tzvsxcad.obj
+ 0001:00001b96       _zwTZVSXCAD_HelpContents@4 10002b96 f   tzvsxcad.obj
+ 0001:00001bae       _zwTZVSXCAD_ReturnFromSubwindow@4 10002bae f   tzvsxcad.obj
+ 0001:00001e63       _zwTZVSXCAD_Debug@4        10002e63 f   tzvsxcad.obj
+ 0001:000020c3       _zwTZVSXCAD_AcceptOperationBreakp@4 100030c3 f   tzvsxcad.obj
+ 0001:000020fb       _zwTZVSXCAD_SetupInterp@4  100030fb f   tzvsxcad.obj
+ 0001:00002446       _zwTZVSXCAD_IncludeShowDialog@4 10003446 f   tzvsxcad.obj
+ 0001:00002574       _zwTZVSXCAD_ExcludeShowDialog@4 10003574 f   tzvsxcad.obj
+ 0001:00002699       _zwTZVSXCAD_InitializeShowDialog@4 10003699 f   tzvsxcad.obj
+ 0001:000028e1       _zwTZVSXCAD_SetDescriptionInDIL@4 100038e1 f   tzvsxcad.obj
+ 0001:0000299d       _zwTZVSXCAD_ShowAllDialogs@4 1000399d f   tzvsxcad.obj
+ 0001:00002b11       _zwTZVSXCAD_RemoveAllDialogs@4 10003b11 f   tzvsxcad.obj
+ 0001:00002c78       _zwTZVSXCAD_ShowDialogPreBuild@4 10003c78 f   tzvsxcad.obj
+ 0001:00002ced       _zwTZVSXCAD_ShowDialogCancel@4 10003ced f   tzvsxcad.obj
+ 0001:00002d62       _zwTZVSXCAD_ShowDialogOK@4 10003d62 f   tzvsxcad.obj
+ 0001:00002dd7       _zwTZVSXCAD_InitializeLaunch@4 10003dd7 f   tzvsxcad.obj
+ 0001:00002f29       _zwTZVSXCAD_PostBuildSetExeStatus@4 10003f29 f   tzvsxcad.obj
+ 0001:00002f7c       _zwTZVSXCAD_CancelSetExecStaus@4 10003f7c f   tzvsxcad.obj
+ 0001:00002fcf       _zwTZVSXCAD_SwitchExecuteStatus@4 10003fcf f   tzvsxcad.obj
+ 0001:0000313b       _zwTZVSXCAD_ExecuteDialog@4 1000413b f   tzvsxcad.obj
+ 0001:00003d62       _RetrieveViewForMetaList@12 10004d62 f   tzlodopr:tzlodopr.dll
+ 0001:00003d68       _InitializeDefaultLPL@4    10004d68 f   tzlodopr:tzlodopr.dll
+ 0001:00003d6e       _DropMetaOI@8              10004d6e f   tzlodopr:tzlodopr.dll
+ 0001:00003d74       _ActivateMetaOI@20         10004d74 f   tzlodopr:tzlodopr.dll
+ 0001:00003d7a       _IssueToolAbout@20         10004d7a f   tzlodopr:tzlodopr.dll
+ 0001:00003d80       _StartZeidonHelp@8         10004d80 f   tzlodopr:tzlodopr.dll
+ 0001:00003d86       _ActivateMetaOI_ByName@28  10004d86 f   tzlodopr:tzlodopr.dll
+ 0001:00003d8c       _SetupInterp@8             10004d8c f   tzvmlopr:tzvmlopr.dll
+ 0001:00003d92       _OrderEntityForView@12     10004d92 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003d98       _SetCursorNextEntity@12    10004d98 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003d9e       _SetMatchingAttributesByName@20 10004d9e f   kzoengaa:KZOENGAA.DLL
+ 0001:00003da4       _SetCursorFirstEntityByAttr@28 10004da4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003daa       _SetCursorFirstEntity@12   10004daa f   kzoengaa:KZOENGAA.DLL
+ 0001:00003db0       _SetNameForView@16         10004db0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003db6       _SetAttributeFromInteger@16 10004db6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dbc       _CreateEntity@12           10004dbc f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dc2       _ActivateEmptyObjectInstance@16 10004dc2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dc8       _GetViewByName@16          10004dc8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dce       _SetAttributeFromString@16 10004dce f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dd4       _DeleteEntity@12           10004dd4 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dda       _SetAttributeFromAttribute@24 10004dda f   kzoengaa:KZOENGAA.DLL
+ 0001:00003de0       _SetCursorFirstEntityByString@20 10004de0 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003de6       _GetStringFromAttribute@16 10004de6 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dec       _ActivateOI_FromFile@20    10004dec f   kzoengaa:KZOENGAA.DLL
+ 0001:00003df2       _ZeidonStringConcat@28     10004df2 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003df8       _CompareAttributeToAttribute@24 10004df8 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003dfe       _DropView@4                10004dfe f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e04       _AcceptSubobject@8         10004e04 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e0a       _CreateViewFromViewForTask@12 10004e0a f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e10       _CommitOI_ToFile@12        10004e10 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e16       _MessagePrompt@32          10004e16 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e1c       _CompareAttributeToInteger@16 10004e1c f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e22       _ObjectInstanceUpdatedFromFile@4 10004e22 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e28       _SetCursorNextSelectedEntity@12 10004e28 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e2e       _IncludeSubobjectFromSubobject@20 10004e2e f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e34       _SetCursorFirstSelectedEntity@12 10004e34 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e3a       _SetCursorLastEntity@12    10004e3a f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e40       _CheckExistenceOfEntity@8  10004e40 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e46       _SetCursorFirstEntityByInteger@20 10004e46 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e4c       _CreateTemporalSubobjectVersion@8 10004e4c f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e52       _GetIntegerFromAttribute@16 10004e52 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e58       _SetSelectStateOfEntity@12 10004e58 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e5e       _ExcludeEntity@12          10004e5e f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e64       _MessageSend@24            10004e64 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e6a       _SfCreateSubtask@12        10004e6a f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e70       _DropObjectInstance@4      10004e70 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e76       _CreateTemporalEntity@12   10004e76 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e7c       _ZeidonStringCopy@28       10004e7c f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e82       _ZeidonStringCompare@28    10004e82 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e88       _CompareAttributeToString@16 10004e88 f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e8e       _CancelSubobject@8         10004e8e f   kzoengaa:KZOENGAA.DLL
+ 0001:00003e94       _strcat                    10004e94 f   msvcrtd:MSVCRTD.dll
+ 0001:00003ea0       __CRT_INIT@12              10004ea0 f   msvcrtd:crtdll.obj
+ 0001:00003fb0       __DllMainCRTStartup@12     10004fb0 f   msvcrtd:crtdll.obj
+ 0001:000040a4       __free_dbg                 100050a4 f   msvcrtd:MSVCRTD.dll
+ 0001:000040aa       __initterm                 100050aa f   msvcrtd:MSVCRTD.dll
+ 0001:000040b0       __onexit                   100050b0 f   msvcrtd:atonexit.obj
+ 0001:000040f0       _atexit                    100050f0 f   msvcrtd:atonexit.obj
+ 0001:00004108       __malloc_dbg               10005108 f   msvcrtd:MSVCRTD.dll
+ 0001:0000410e       ___dllonexit               1000510e f   msvcrtd:MSVCRTD.dll
+ 0001:00004114       _RefreshCtrl@8             10005114 f   zdrapp:ZDrApp.dll
+ 0001:0000411a       _SetWindowActionBehavior@16 1000511a f   zdrapp:ZDrApp.dll
+ 0001:00004120       _SetNewApplicationSubtask@8 10005120 f   zdrapp:ZDrApp.dll
+ 0001:00004126       _RefreshWindow@4           10005126 f   zdrapp:ZDrApp.dll
+ 0001:0000412c       _MB_SetMessage@12          1000512c f   zdctl:ZdCtl.dll
+ 0002:0000001c       ??_C@_08JKC@crtdll?4c?$AA@ 1000701c     msvcrtd:crtdll.obj
+ 0003:00000000       ___xc_a                    10009000     msvcrtd:cinitexe.obj
+ 0003:00000104       ___xc_z                    10009104     msvcrtd:cinitexe.obj
+ 0003:00000208       ___xi_a                    10009208     msvcrtd:cinitexe.obj
+ 0003:0000030c       ___xi_z                    1000930c     msvcrtd:cinitexe.obj
+ 0003:00000410       ??_C@_06HGGI@Name?5A?$AA@  10009410     tzvsxcad.obj
+ 0003:00000418       ??_C@_06FPEO@Dialog?$AA@   10009418     tzvsxcad.obj
+ 0003:00000420       ??_C@_04EFNI@Name?$AA@     10009420     tzvsxcad.obj
+ 0003:00000428       ??_C@_09DBFF@W_MetaDef?$AA@ 10009428     tzvsxcad.obj
+ 0003:00000434       ??_C@_09HJPB@TZDIALOGS?$AA@ 10009434     tzvsxcad.obj
+ 0003:00000440       ??_C@_04FCOP@Type?$AA@     10009440     tzvsxcad.obj
+ 0003:00000448       ??_C@_0L@KGCI@W_MetaType?$AA@ 10009448     tzvsxcad.obj
+ 0003:00000458       ??_C@_04FDFI@LPLR?$AA@     10009458     tzvsxcad.obj
+ 0003:00000460       ??_C@_08JMDO@TZCMLPLO?$AA@ 10009460     tzvsxcad.obj
+ 0003:0000046c       ??_C@_08OKHL@TZVSXCOO?$AA@ 1000946c     tzvsxcad.obj
+ 0003:00000478       ??_C@_0M@NOBJ@CurrentMeta?$AA@ 10009478     tzvsxcad.obj
+ 0003:00000488       ??_C@_0M@KFNG@Non?9Interp?4?$AA@ 10009488     tzvsxcad.obj
+ 0003:00000498       ??_C@_0BC@BPAD@InterpretableFlag?$AA@ 10009498     tzvsxcad.obj
+ 0003:000004b0       ??_C@_07JMDD@Interp?4?$AA@ 100094b0     tzvsxcad.obj
+ 0003:000004bc       ??_C@_04BBDM@ZKey?$AA@     100094bc     tzvsxcad.obj
+ 0003:000004c4       ??_C@_09FEKK@CPLR_ZKey?$AA@ 100094c4     tzvsxcad.obj
+ 0003:000004d0       ??_C@_0BB@MAPL@GlobalOperations?$AA@ 100094d0     tzvsxcad.obj
+ 0003:000004e4       ??_C@_04BBMF@LODs?$AA@     100094e4     tzvsxcad.obj
+ 0003:000004ec       ??_C@_07EBLG@Dialogs?$AA@  100094ec     tzvsxcad.obj
+ 0003:000004f8       ??_C@_0O@EMCM@?2TZVSXC01?4POR?$AA@ 100094f8     tzvsxcad.obj
+ 0003:00000508       ??_C@_07LMFN@ExecDir?$AA@  10009508     tzvsxcad.obj
+ 0003:00000514       ??_C@_0M@LKKI@APPLICATION?$AA@ 10009514     tzvsxcad.obj
+ 0003:00000524       ??_C@_08HFDF@TZCMWKSO?$AA@ 10009524     tzvsxcad.obj
+ 0003:00000530       ??_C@_08CHAA@ZeidonCM?$AA@ 10009530     tzvsxcad.obj
+ 0003:0000053c       ??_C@_08PGNJ@ListBox1?$AA@ 1000953c     tzvsxcad.obj
+ 0003:00000548       ??_C@_0BE@PBGH@DialogMeta_Original?$AA@ 10009548     tzvsxcad.obj
+ 0003:00000560       ??_C@_09EPF@GroupName?$AA@ 10009560     tzvsxcad.obj
+ 0003:0000056c       ??_C@_04CCKA@?4XLP?$AA@    1000956c     tzvsxcad.obj
+ 0003:00000574       ??_C@_01PCFE@?2?$AA@       10009574     tzvsxcad.obj
+ 0003:00000578       ??_C@_07FEED@VS00103?$AA@  10009578     tzvsxcad.obj
+ 0003:00000584       ??_C@_0CC@BGBO@Application?5Animation?5Maintenanc@ 10009584     tzvsxcad.obj
+ 0003:000005ac       ??_C@_0P@MIBA@Save?5settings?$DP?$AA@ 100095ac     tzvsxcad.obj
+ 0003:000005c0       ??_C@_09GKND@SortOrder?$AA@ 100095c0     tzvsxcad.obj
+ 0003:000005cc       ??_C@_0BB@IPKG@DialogSourceFile?$AA@ 100095cc     tzvsxcad.obj
+ 0003:000005e0       ??_C@_0L@JLBE@SourceFile?$AA@ 100095e0     tzvsxcad.obj
+ 0003:000005f0       ??_C@_03CHAC@Tag?$AA@      100095f0     tzvsxcad.obj
+ 0003:000005f4       ??_C@_0BA@NOBL@DialogOperation?$AA@ 100095f4     tzvsxcad.obj
+ 0003:00000608       ??_C@_09GMMJ@Operation?$AA@ 10009608     tzvsxcad.obj
+ 0003:00000614       ??_C@_0O@NPEA@OperationList?$AA@ 10009614     tzvsxcad.obj
+ 0003:00000624       ??_C@_08BABA@TZWDLGSO?$AA@ 10009624     tzvsxcad.obj
+ 0003:00000630       ??_C@_0P@BODC@OperSourceFile?$AA@ 10009630     tzvsxcad.obj
+ 0003:00000644       ??_C@_08EDN@TZZOLODO?$AA@  10009644     tzvsxcad.obj
+ 0003:00000650       ??_C@_0O@BDBL@LODSourceFile?$AA@ 10009650     tzvsxcad.obj
+ 0003:00000660       ??_C@_03CMHN@LOD?$AA@      10009660     tzvsxcad.obj
+ 0003:00000664       ??_C@_0O@DJCN@LOD_Operation?$AA@ 10009664     tzvsxcad.obj
+ 0003:00000674       ??_C@_07BGN@VS00101?$AA@   10009674     tzvsxcad.obj
+ 0003:00000680       ??_C@_0BP@IFML@We?5don?8t?5expect?5to?5be?5here?5yet?$AA@ 10009680     tzvsxcad.obj
+ 0003:000006a8       ??_C@_0BA@BCMN@GlobalOperation?$AA@ 100096a8     tzvsxcad.obj
+ 0003:000006bc       ??_C@_0BB@OCGK@GlobalSourceFile?$AA@ 100096bc     tzvsxcad.obj
+ 0003:000006d0       ??_C@_0N@IBBO@TaskUseCount?$AA@ 100096d0     tzvsxcad.obj
+ 0003:000006e0       ??_C@_0L@FNHA@InterpMode?$AA@ 100096e0     tzvsxcad.obj
+ 0003:000006f0       ??_C@_08HHLD@TaskLPLR?$AA@ 100096f0     tzvsxcad.obj
+ 0003:000006fc       ??_C@_0O@EHPD@CM_ShowDialog?$AA@ 100096fc     tzvsxcad.obj
+ 0003:0000070c       ??_C@_0BG@NFNG@?4?4?2?4?4?2a?2tz?2tzvsxcad?4c?$AA@ 1000970c     tzvsxcad.obj
+ 0003:00000728       ??_C@_0M@EKIC@Apr?522?52014?$AA@ 10009728     tzvsxcad.obj
+ 0003:00000738       ??_C@_08EGCG@16?321?359?$AA@ 10009738     tzvsxcad.obj
+ 0003:00000744       ??_C@_0N@NBPL@BasicsManual?$AA@ 10009744     tzvsxcad.obj
+ 0003:00000754       ??_C@_0L@JNHO@SystemHelp?$AA@ 10009754     tzvsxcad.obj
+ 0003:00000764       ??_C@_0L@DNLA@UsersGuide?$AA@ 10009764     tzvsxcad.obj
+ 0003:00000774       ??_C@_07PONE@VS00102?$AA@  10009774     tzvsxcad.obj
+ 0003:00000780       ??_C@_0CE@OFGK@No?5Default?5Window?5Exists?5for?5Dia@ 10009780     tzvsxcad.obj
+ 0003:000007ac       ??_C@_07PGJN@DfltWnd?$AA@  100097ac     tzvsxcad.obj
+ 0003:000007b8       ??_C@_0N@NAIN@Zeidon_Tools?$AA@ 100097b8     tzvsxcad.obj
+ 0003:000007c8       ??_C@_04FEGC@TZ8C?$AA@     100097c8     tzvsxcad.obj
+ 0003:000007d0       ??_C@_0O@FGAA@CM_DialogList?$AA@ 100097d0     tzvsxcad.obj
+ 0003:000007e0       ??_C@_04DKMG@Desc?$AA@     100097e0     tzvsxcad.obj
+ 0003:00000914       _g_hInstanceDLL            10009914     zdllinst.obj
+ 0003:00000918       ??_C@_00A@?$AA@            10009918     tzvsxcad.obj
+ 0003:00000920       __adjust_fdiv              10009920     <common>
+ 0003:0000092c       ___onexitend               1000992c     <common>
+ 0003:0000093c       ___onexitbegin             1000993c     <common>
+ 0003:00000940       __pRawDllMain              10009940     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_tzlodopr 1000a000     tzlodopr:tzlodopr.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_tzvmlopr 1000a014     tzvmlopr:tzvmlopr.dll
+ 0004:00000028       __IMPORT_DESCRIPTOR_KZOENGAA 1000a028     kzoengaa:KZOENGAA.DLL
+ 0004:0000003c       __IMPORT_DESCRIPTOR_MSVCRTD 1000a03c     msvcrtd:MSVCRTD.dll
+ 0004:00000050       __IMPORT_DESCRIPTOR_ZDrApp 1000a050     zdrapp:ZDrApp.dll
+ 0004:00000064       __IMPORT_DESCRIPTOR_ZdCtl  1000a064     zdctl:ZdCtl.dll
+ 0004:00000078       __NULL_IMPORT_DESCRIPTOR   1000a078     tzlodopr:tzlodopr.dll
+ 0004:000002b8       __imp__ObjectInstanceUpdatedFromFile@4 1000a2b8     kzoengaa:KZOENGAA.DLL
+ 0004:000002bc       __imp__CancelSubobject@8   1000a2bc     kzoengaa:KZOENGAA.DLL
+ 0004:000002c0       __imp__CompareAttributeToString@16 1000a2c0     kzoengaa:KZOENGAA.DLL
+ 0004:000002c4       __imp__ZeidonStringCompare@28 1000a2c4     kzoengaa:KZOENGAA.DLL
+ 0004:000002c8       __imp__ZeidonStringCopy@28 1000a2c8     kzoengaa:KZOENGAA.DLL
+ 0004:000002cc       __imp__CreateTemporalEntity@12 1000a2cc     kzoengaa:KZOENGAA.DLL
+ 0004:000002d0       __imp__DropObjectInstance@4 1000a2d0     kzoengaa:KZOENGAA.DLL
+ 0004:000002d4       __imp__SfCreateSubtask@12  1000a2d4     kzoengaa:KZOENGAA.DLL
+ 0004:000002d8       __imp__MessageSend@24      1000a2d8     kzoengaa:KZOENGAA.DLL
+ 0004:000002dc       __imp__OrderEntityForView@12 1000a2dc     kzoengaa:KZOENGAA.DLL
+ 0004:000002e0       __imp__SetCursorNextEntity@12 1000a2e0     kzoengaa:KZOENGAA.DLL
+ 0004:000002e4       __imp__SetMatchingAttributesByName@20 1000a2e4     kzoengaa:KZOENGAA.DLL
+ 0004:000002e8       __imp__SetCursorFirstEntityByAttr@28 1000a2e8     kzoengaa:KZOENGAA.DLL
+ 0004:000002ec       __imp__SetCursorFirstEntity@12 1000a2ec     kzoengaa:KZOENGAA.DLL
+ 0004:000002f0       __imp__SetNameForView@16   1000a2f0     kzoengaa:KZOENGAA.DLL
+ 0004:000002f4       __imp__SetAttributeFromInteger@16 1000a2f4     kzoengaa:KZOENGAA.DLL
+ 0004:000002f8       __imp__CreateEntity@12     1000a2f8     kzoengaa:KZOENGAA.DLL
+ 0004:000002fc       __imp__ActivateEmptyObjectInstance@16 1000a2fc     kzoengaa:KZOENGAA.DLL
+ 0004:00000300       __imp__GetViewByName@16    1000a300     kzoengaa:KZOENGAA.DLL
+ 0004:00000304       __imp__SetAttributeFromString@16 1000a304     kzoengaa:KZOENGAA.DLL
+ 0004:00000308       __imp__DeleteEntity@12     1000a308     kzoengaa:KZOENGAA.DLL
+ 0004:0000030c       __imp__SetAttributeFromAttribute@24 1000a30c     kzoengaa:KZOENGAA.DLL
+ 0004:00000310       __imp__SetCursorFirstEntityByString@20 1000a310     kzoengaa:KZOENGAA.DLL
+ 0004:00000314       __imp__GetStringFromAttribute@16 1000a314     kzoengaa:KZOENGAA.DLL
+ 0004:00000318       __imp__ActivateOI_FromFile@20 1000a318     kzoengaa:KZOENGAA.DLL
+ 0004:0000031c       __imp__ZeidonStringConcat@28 1000a31c     kzoengaa:KZOENGAA.DLL
+ 0004:00000320       __imp__CompareAttributeToAttribute@24 1000a320     kzoengaa:KZOENGAA.DLL
+ 0004:00000324       __imp__DropView@4          1000a324     kzoengaa:KZOENGAA.DLL
+ 0004:00000328       __imp__AcceptSubobject@8   1000a328     kzoengaa:KZOENGAA.DLL
+ 0004:0000032c       __imp__CreateViewFromViewForTask@12 1000a32c     kzoengaa:KZOENGAA.DLL
+ 0004:00000330       __imp__CommitOI_ToFile@12  1000a330     kzoengaa:KZOENGAA.DLL
+ 0004:00000334       __imp__MessagePrompt@32    1000a334     kzoengaa:KZOENGAA.DLL
+ 0004:00000338       __imp__CompareAttributeToInteger@16 1000a338     kzoengaa:KZOENGAA.DLL
+ 0004:0000033c       __imp__ExcludeEntity@12    1000a33c     kzoengaa:KZOENGAA.DLL
+ 0004:00000340       __imp__SetCursorNextSelectedEntity@12 1000a340     kzoengaa:KZOENGAA.DLL
+ 0004:00000344       __imp__IncludeSubobjectFromSubobject@20 1000a344     kzoengaa:KZOENGAA.DLL
+ 0004:00000348       __imp__SetCursorFirstSelectedEntity@12 1000a348     kzoengaa:KZOENGAA.DLL
+ 0004:0000034c       __imp__SetCursorLastEntity@12 1000a34c     kzoengaa:KZOENGAA.DLL
+ 0004:00000350       __imp__CheckExistenceOfEntity@8 1000a350     kzoengaa:KZOENGAA.DLL
+ 0004:00000354       __imp__SetCursorFirstEntityByInteger@20 1000a354     kzoengaa:KZOENGAA.DLL
+ 0004:00000358       __imp__CreateTemporalSubobjectVersion@8 1000a358     kzoengaa:KZOENGAA.DLL
+ 0004:0000035c       __imp__GetIntegerFromAttribute@16 1000a35c     kzoengaa:KZOENGAA.DLL
+ 0004:00000360       __imp__SetSelectStateOfEntity@12 1000a360     kzoengaa:KZOENGAA.DLL
+ 0004:00000364       \177KZOENGAA_NULL_THUNK_DATA 1000a364     kzoengaa:KZOENGAA.DLL
+ 0004:000003b0       __imp___adjust_fdiv        1000a3b0     msvcrtd:MSVCRTD.dll
+ 0004:000003b4       __imp____dllonexit         1000a3b4     msvcrtd:MSVCRTD.dll
+ 0004:000003b8       __imp___onexit             1000a3b8     msvcrtd:MSVCRTD.dll
+ 0004:000003bc       __imp___free_dbg           1000a3bc     msvcrtd:MSVCRTD.dll
+ 0004:000003c0       __imp__strcat              1000a3c0     msvcrtd:MSVCRTD.dll
+ 0004:000003c4       __imp___initterm           1000a3c4     msvcrtd:MSVCRTD.dll
+ 0004:000003c8       __imp___malloc_dbg         1000a3c8     msvcrtd:MSVCRTD.dll
+ 0004:000003cc       \177MSVCRTD_NULL_THUNK_DATA 1000a3cc     msvcrtd:MSVCRTD.dll
+ 0004:000003fc       __imp__RefreshWindow@4     1000a3fc     zdrapp:ZDrApp.dll
+ 0004:00000400       __imp__SetWindowActionBehavior@16 1000a400     zdrapp:ZDrApp.dll
+ 0004:00000404       __imp__RefreshCtrl@8       1000a404     zdrapp:ZDrApp.dll
+ 0004:00000408       __imp__SetNewApplicationSubtask@8 1000a408     zdrapp:ZDrApp.dll
+ 0004:0000040c       \177ZDrApp_NULL_THUNK_DATA 1000a40c     zdrapp:ZDrApp.dll
+ 0004:00000438       __imp__MB_SetMessage@12    1000a438     zdctl:ZdCtl.dll
+ 0004:0000043c       \177ZdCtl_NULL_THUNK_DATA  1000a43c     zdctl:ZdCtl.dll
+ 0004:00000468       __imp__IssueToolAbout@20   1000a468     tzlodopr:tzlodopr.dll
+ 0004:0000046c       __imp__InitializeDefaultLPL@4 1000a46c     tzlodopr:tzlodopr.dll
+ 0004:00000470       __imp__ActivateMetaOI_ByName@28 1000a470     tzlodopr:tzlodopr.dll
+ 0004:00000474       __imp__StartZeidonHelp@8   1000a474     tzlodopr:tzlodopr.dll
+ 0004:00000478       __imp__RetrieveViewForMetaList@12 1000a478     tzlodopr:tzlodopr.dll
+ 0004:0000047c       __imp__ActivateMetaOI@20   1000a47c     tzlodopr:tzlodopr.dll
+ 0004:00000480       __imp__DropMetaOI@8        1000a480     tzlodopr:tzlodopr.dll
+ 0004:00000484       \177tzlodopr_NULL_THUNK_DATA 1000a484     tzlodopr:tzlodopr.dll
+ 0004:000004b4       __imp__SetupInterp@8       1000a4b4     tzvmlopr:tzvmlopr.dll
+ 0004:000004b8       \177tzvmlopr_NULL_THUNK_DATA 1000a4b8     tzvmlopr:tzvmlopr.dll
+
+ entry point at        0001:00003fb0
+

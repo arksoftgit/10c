@@ -1,0 +1,105 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzadcdod.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzadcdod.dll
+
+           0 characteristics
+    5356CF36 time date stamp Tue Apr 22 16:21:10 2014
+        0.00 version
+           1 ordinal base
+          77 number of functions
+          77 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000010E6 _GetDLL_Instance@4
+          2    1 00001163 _ofnTZADCSDO_SaveAttribSelection@12
+          3    2 0000102D _ofnTZADCSDO_SelectEntityForUpdt@4
+          4    3 00001055 _ofnTZADCSDO_fnSetWorkAttributes@8
+          5    4 000010AA _zwTZADCDOD_AcceptCase1@4
+          6    5 00001181 _zwTZADCDOD_AcceptCase1Tab@4
+          7    6 000010BE _zwTZADCDOD_AcceptCase2@4
+          8    7 000010D2 _zwTZADCDOD_AcceptCase3@4
+          9    8 000010CD _zwTZADCDOD_AcceptCase4@4
+         10    9 000010B9 _zwTZADCDOD_AcceptCase5@4
+         11    A 0000106E _zwTZADCDOD_AcceptCaseX@4
+         12    B 0000110E _zwTZADCDOD_AcceptTab@4
+         13    C 000010C3 _zwTZADCDOD_AddAttributes@4
+         14    D 0000101E _zwTZADCDOD_AddEntitiesToStyle@12
+         15    E 00001177 _zwTZADCDOD_AddMaintToList@4
+         16    F 00001096 _zwTZADCDOD_AddNewTabGroup@4
+         17   10 0000105F _zwTZADCDOD_AutodesignNone@4
+         18   11 00001087 _zwTZADCDOD_AutodesignReport@4
+         19   12 0000115E _zwTZADCDOD_BuildEntStructList@4
+         20   13 00001109 _zwTZADCDOD_BuildInclStructList@4
+         21   14 00001073 _zwTZADCDOD_CancelSaveAs@4
+         22   15 000010FF _zwTZADCDOD_CheckForSave@4
+         23   16 00001104 _zwTZADCDOD_CreateDialogStyle@20
+         24   17 00001154 _zwTZADCDOD_CreateNewStyle@4
+         25   18 00001168 _zwTZADCDOD_CreateReportStyle@20
+         26   19 00001159 _zwTZADCDOD_DeleteCustomWndInd@4
+         27   1A 0000109B _zwTZADCDOD_DeleteListAttrib@4
+         28   1B 0000113B _zwTZADCDOD_DeleteMaintAttrib@4
+         29   1C 0000111D _zwTZADCDOD_DeletePaintAttribute@4
+         30   1D 00001127 _zwTZADCDOD_DeleteStyleFile@4
+         31   1E 00001172 _zwTZADCDOD_DeleteTabAttrib@4
+         32   1F 000010B4 _zwTZADCDOD_Delete_I_LOD_Attrib@4
+         33   20 00001118 _zwTZADCDOD_DfltWndSpecOK@4
+         34   21 00001131 _zwTZADCDOD_EditSubobjInfo@4
+         35   22 00001028 _zwTZADCDOD_ExitNoSave@4
+         36   23 0000116D _zwTZADCDOD_ExitStyleDialogue@4
+         37   24 00001082 _zwTZADCDOD_GetDefaultWindow@4
+         38   25 000010F5 _zwTZADCDOD_GoToCaseDetail@4
+         39   26 000010D7 _zwTZADCDOD_GraySelAttribDelete@4
+         40   27 00001050 _zwTZADCDOD_GrayTabWndDataContent@4
+         41   28 00001136 _zwTZADCDOD_GrayWndDataContent@4
+         42   29 000010A0 _zwTZADCDOD_InclSubObjGrayItems@4
+         43   2A 0000108C _zwTZADCDOD_IncludeListVOR@4
+         44   2B 00001014 _zwTZADCDOD_InitGrayOptions@4
+         45   2C 00001078 _zwTZADCDOD_InitStyleDialogue@4
+         46   2D 0000112C _zwTZADCDOD_LoadFileList@4
+         47   2E 00001091 _zwTZADCDOD_LoadObjectFileList@4
+         48   2F 0000107D _zwTZADCDOD_MoveToMT_Attributes@4
+         49   30 0000104B _zwTZADCDOD_NewDialogSpec@4
+         50   31 000010DC _zwTZADCDOD_OpenStyleFile@4
+         51   32 00001113 _zwTZADCDOD_PostBuildCaseSelect@4
+         52   33 0000100A _zwTZADCDOD_PresentEntityPopup@4
+         53   34 00001019 _zwTZADCDOD_ProcessCaseForEntity@12
+         54   35 000010AF _zwTZADCDOD_RefreshCaseSelect@4
+         55   36 00001145 _zwTZADCDOD_RefreshDialogStyle@4
+         56   37 000010FA _zwTZADCDOD_ResetDefaults@4
+         57   38 00001069 _zwTZADCDOD_ResetToTop@4
+         58   39 0000114F _zwTZADCDOD_SaveSaveAs@4
+         59   3A 00001186 _zwTZADCDOD_SaveSelListAttribs@4
+         60   3B 0000105A _zwTZADCDOD_SaveSelMaintAttribs@4
+         61   3C 00001032 _zwTZADCDOD_SaveStyle@4
+         62   3D 000010C8 _zwTZADCDOD_SelectCase@4
+         63   3E 0000103C _zwTZADCDOD_SelectInclSubObject@4
+         64   3F 00001023 _zwTZADCDOD_SelectListSubObject@4
+         65   40 00001041 _zwTZADCDOD_SelectPaintEntity@4
+         66   41 0000100F _zwTZADCDOD_SelectSubObject@8
+         67   42 00001122 _zwTZADCDOD_SetCustomWndInd@4
+         68   43 00001005 _zwTZADCDOD_SetDefaultWndSizes@4
+         69   44 000010A5 _zwTZADCDOD_SetEliminateWndInd@4
+         70   45 00001037 _zwTZADCDOD_SetupCaseSelect@4
+         71   46 000010EB _zwTZADCDOD_SortByDate@4
+         72   47 000010E1 _zwTZADCDOD_SortByDesc@4
+         73   48 000010F0 _zwTZADCDOD_SortByName@4
+         74   49 0000117C _zwTZADCDOD_TransferToDefault@4
+         75   4A 00001064 _zwTZADCDOD_UpdateAttributes@4
+         76   4B 0000114A _zwTZADCDOD_WndDataGraying@4
+         77   4C 00001140 _zwTZADCDOD_WndDesignGrayItems@4
+
+  Summary
+
+        2000 .data
+        1000 .idata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        A000 .text

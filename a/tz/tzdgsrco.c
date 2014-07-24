@@ -1,13 +1,13 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "TZ__OPRS.H" 
-#include "ZDRVROPR.H" 
- 
+#include "KZOENGAA.H"
+#include "TZ__OPRS.H"
+#include "ZDRVROPR.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 zOPER_EXPORT zSHORT OPERATION
@@ -54,27 +54,27 @@ oTZDGSRCO_DIL_InheritedMessage( zVIEW     ViewToInstance,
                                 LPVIEWATTRIB InternalAttribStructure,
                                 zSHORT    GetOrSetFlag )
 {
-   zCHAR     DIL_Message[ 255 ] = { 0 }; 
+   zCHAR     DIL_Message[ 255 ] = { 0 };
 
 
    //:CASE GetOrSetFlag
    switch( GetOrSetFlag )
-   { 
+   {
       //:OF   zDERIVED_GET:
       case zDERIVED_GET :
 
          //:IF ViewToInstance.Context.Desc = ""
          if ( CompareAttributeToString( ViewToInstance, "Context", "Desc", "" ) == 0 )
-         { 
+         {
             //:DIL_Message = ViewToInstance.Domain.Desc
             GetVariableFromAttribute( DIL_Message, 0, 'S', 255, ViewToInstance, "Domain", "Desc", "", 0 );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:DIL_Message = ViewToInstance.Context.Desc
             GetVariableFromAttribute( DIL_Message, 0, 'S', 255, ViewToInstance, "Context", "Desc", "", 0 );
-         } 
+         }
 
          //:END
 
@@ -84,7 +84,7 @@ oTZDGSRCO_DIL_InheritedMessage( zVIEW     ViewToInstance,
          //:                  DIL_Message )
          StoreStringInRecord( ViewToInstance, InternalEntityStructure, InternalAttribStructure, DIL_Message );
          break ;
-   } 
+   }
 
 
    //:/* end zDERIVED_GET */
@@ -92,7 +92,7 @@ oTZDGSRCO_DIL_InheritedMessage( zVIEW     ViewToInstance,
    //:END  /* case */
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -110,10 +110,10 @@ oTZDGSRCO_DomainMigrate( zVIEW     NewDomainGroup,
                          zVIEW     SourceLPLR,
                          zVIEW     vSubtask )
 {
-   zVIEW     OldDomainGroup = 0; 
+   zVIEW     OldDomainGroup = 0;
    //:STRING ( 513 ) SourceFileName                 // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
-   zSHORT    RESULT; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
+   zSHORT    RESULT;
 
 
 
@@ -152,7 +152,7 @@ oTZDGSRCO_DomainMigrate( zVIEW     NewDomainGroup,
    CommitMetaOI( vSubtask, NewDomainGroup, 13 );
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -161,10 +161,10 @@ oTZDGSRCO_DomainMigrateReus( zVIEW     NewDomainGroup,
                              zVIEW     OldDomainGroup,
                              zVIEW     vSubtask )
 {
-   zSHORT    lTempInteger_0; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_1; 
+   zSHORT    lTempInteger_0;
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_1;
 
    //:DomainMigrateReus( VIEW NewDomainGroup BASED ON LOD TZDGSRCO,
    //:                VIEW OldDomainGroup BASED ON LOD TZDGSRCO,
@@ -174,14 +174,14 @@ oTZDGSRCO_DomainMigrateReus( zVIEW     NewDomainGroup,
    //:IF OldDomainGroup.SelectedOperation EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( OldDomainGroup, "SelectedOperation" );
    if ( lTempInteger_0 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST NewDomainGroup.Operation WHERE
       //:                 NewDomainGroup.Operation.Name = OldDomainGroup.SelectedOperation.Name
       GetStringFromAttribute( szTempString_0, OldDomainGroup, "SelectedOperation", "Name" );
       RESULT = SetCursorFirstEntityByString( NewDomainGroup, "Operation", "Name", szTempString_0, "" );
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      { 
+      {
          //:SET CURSOR LAST NewDomainGroup.Operation
          RESULT = SetCursorLastEntity( NewDomainGroup, "Operation", "" );
          //:CreateMetaEntity( vSubtask, NewDomainGroup, "Operation", zPOS_AFTER )
@@ -189,10 +189,10 @@ oTZDGSRCO_DomainMigrateReus( zVIEW     NewDomainGroup,
          //:SetMatchingAttributesByName ( NewDomainGroup, "Operation",
          //:                              OldDomainGroup, "Operation", zSET_NULL )
          SetMatchingAttributesByName( NewDomainGroup, "Operation", OldDomainGroup, "Operation", zSET_NULL );
-      } 
+      }
 
       //:END
-   } 
+   }
 
    //:END
 
@@ -205,7 +205,7 @@ oTZDGSRCO_DomainMigrateReus( zVIEW     NewDomainGroup,
    //:FOR EACH OldDomainGroup.Context
    RESULT = SetCursorFirstEntity( OldDomainGroup, "Context", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
 
       //:CreateMetaEntity( vSubtask, NewDomainGroup, "Context", zPOS_AFTER )
       CreateMetaEntity( vSubtask, NewDomainGroup, "Context", zPOS_AFTER );
@@ -215,32 +215,32 @@ oTZDGSRCO_DomainMigrateReus( zVIEW     NewDomainGroup,
       //:FOR EACH OldDomainGroup.TableEntry
       RESULT = SetCursorFirstEntity( OldDomainGroup, "TableEntry", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
          //:CreateMetaEntity( vSubtask, NewDomainGroup, "TableEntry", zPOS_AFTER )
          CreateMetaEntity( vSubtask, NewDomainGroup, "TableEntry", zPOS_AFTER );
          //:SetMatchingAttributesByName( NewDomainGroup, "TableEntry",
          //:                             OldDomainGroup, "TableEntry", zSET_NULL )
          SetMatchingAttributesByName( NewDomainGroup, "TableEntry", OldDomainGroup, "TableEntry", zSET_NULL );
          RESULT = SetCursorNextEntity( OldDomainGroup, "TableEntry", "" );
-      } 
+      }
 
       //:END
 
       //:FOR EACH OldDomainGroup.RegularExpression
       RESULT = SetCursorFirstEntity( OldDomainGroup, "RegularExpression", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
          //:CreateMetaEntity( vSubtask, NewDomainGroup, "RegularExpression", zPOS_AFTER )
          CreateMetaEntity( vSubtask, NewDomainGroup, "RegularExpression", zPOS_AFTER );
          //:SetMatchingAttributesByName( NewDomainGroup, "RegularExpression",
          //:                             OldDomainGroup, "RegularExpression", zSET_NULL )
          SetMatchingAttributesByName( NewDomainGroup, "RegularExpression", OldDomainGroup, "RegularExpression", zSET_NULL );
          RESULT = SetCursorNextEntity( OldDomainGroup, "RegularExpression", "" );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( OldDomainGroup, "Context", "" );
       //:END
-   } 
+   }
 
 
    //:END
@@ -248,19 +248,19 @@ oTZDGSRCO_DomainMigrateReus( zVIEW     NewDomainGroup,
    //:IF OldDomainGroup.SelectedOperation EXISTS
    lTempInteger_1 = CheckExistenceOfEntity( OldDomainGroup, "SelectedOperation" );
    if ( lTempInteger_1 == 0 )
-   { 
+   {
       //:SET CURSOR FIRST NewDomainGroup.Operation WHERE
       //:                 NewDomainGroup.Operation.Name = OldDomainGroup.SelectedOperation.Name
       GetStringFromAttribute( szTempString_0, OldDomainGroup, "SelectedOperation", "Name" );
       RESULT = SetCursorFirstEntityByString( NewDomainGroup, "Operation", "Name", szTempString_0, "" );
       //:INCLUDE NewDomainGroup.SelectedOperation FROM NewDomainGroup.Operation
       RESULT = IncludeSubobjectFromSubobject( NewDomainGroup, "SelectedOperation", NewDomainGroup, "Operation", zPOS_AFTER );
-   } 
+   }
 
    //:END
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -280,16 +280,16 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
                              zPCHAR    DomainName,
                              zVIEW     vSubtask )
 {
-   zVIEW     OldDomainGroup = 0; 
+   zVIEW     OldDomainGroup = 0;
    //:STRING ( 513 ) SourceFileName                 // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
    //:STRING ( 32 )  DomainGroupMetaName
-   zCHAR     DomainGroupMetaName[ 33 ] = { 0 }; 
+   zCHAR     DomainGroupMetaName[ 33 ] = { 0 };
    //:STRING ( 200 ) szMsg
-   zCHAR     szMsg[ 201 ] = { 0 }; 
+   zCHAR     szMsg[ 201 ] = { 0 };
    //:SHORT          nRC
-   zSHORT    nRC = 0; 
-   zSHORT    RESULT; 
+   zSHORT    nRC = 0;
+   zSHORT    RESULT;
 
 
    //:// Activate existing source meta OldDomainGroup. To do this, we must locate the Domain and DomainGroup in the  SourceLPLR.
@@ -297,21 +297,21 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
    RESULT = SetCursorFirstEntityByInteger( SourceLPLR, "W_MetaType", "Type", 2003, "" );
    //:IF RESULT < zCURSOR_SET
    if ( RESULT < zCURSOR_SET )
-   { 
+   {
       //:szMsg = "Invalid Source XLP."
       ZeidonStringCopy( szMsg, 1, 0, "Invalid Source XLP.", 1, 0, 201 );
       //:MessageSend( vSubtask, "", "Add/Merge Domain", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       MessageSend( vSubtask, "", "Add/Merge Domain", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    //:SET CURSOR FIRST SourceLPLR.W_MetaDef WHERE SourceLPLR.W_MetaDef.Name = DomainName
    RESULT = SetCursorFirstEntityByString( SourceLPLR, "W_MetaDef", "Name", DomainName, "" );
    //:IF RESULT < zCURSOR_SET
    if ( RESULT < zCURSOR_SET )
-   { 
+   {
       //:szMsg = "Domain (" + DomainName + ") was not found in Source LPLR."
       ZeidonStringCopy( szMsg, 1, 0, "Domain (", 1, 0, 201 );
       ZeidonStringConcat( szMsg, 1, 0, DomainName, 1, 0, 201 );
@@ -320,7 +320,7 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
       MessageSend( vSubtask, "", "Add/Merge Domain", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
    //:DomainGroupMetaName = SourceLPLR.W_MetaDef.GroupName
@@ -334,7 +334,7 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
    nRC = ActivateOI_FromFile( &OldDomainGroup, "TZDGSRCO", SourceLPLR, SourceFileName, 8192 );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:szMsg = "Domain Group (" + DomainGroupMetaName + ") was not found in Source LPLR."
       ZeidonStringCopy( szMsg, 1, 0, "Domain Group (", 1, 0, 201 );
       ZeidonStringConcat( szMsg, 1, 0, DomainGroupMetaName, 1, 0, 201 );
@@ -343,7 +343,7 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
       MessageSend( vSubtask, "", "Add/Merge Domain", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -352,7 +352,7 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
    nRC = ActivateMetaOI_ByName( vSubtask, NewDomainGroup, 0, zSOURCE_DOMAINGRP_META, zSINGLE, DomainGroupMetaName, 0 );
    //:IF nRC < 0
    if ( nRC < 0 )
-   { 
+   {
       //:szMsg = "Domain Group (" + DomainGroupMetaName + ") was not found in Target LPLR."
       ZeidonStringCopy( szMsg, 1, 0, "Domain Group (", 1, 0, 201 );
       ZeidonStringConcat( szMsg, 1, 0, DomainGroupMetaName, 1, 0, 201 );
@@ -361,7 +361,7 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
       MessageSend( vSubtask, "", "Add/Merge Domain", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:RETURN -1
       return( -1 );
-   } 
+   }
 
    //:END
 
@@ -375,10 +375,10 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
    RESULT = SetCursorFirstEntityByString( OldDomainGroup, "Domain", "Name", DomainName, "" );
    //:IF RESULT < zCURSOR_SET
    if ( RESULT < zCURSOR_SET )
-   { 
+   {
       //:IssueError( SourceLPLR,0,0, "Programming Error: Domain Name not in Domain Group" )
       IssueError( SourceLPLR, 0, 0, "Programming Error: Domain Name not in Domain Group" );
-   } 
+   }
 
    //:END
 
@@ -395,17 +395,17 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
    nRC = MessagePrompt( vSubtask, "", "Add/Merge Domain", szMsg, 1, zBUTTONS_YESNO, zRESPONSE_YES, 0 );
    //:IF nRC = zRESPONSE_YES
    if ( nRC == zRESPONSE_YES )
-   { 
+   {
       //:CommitMetaOI( vSubtask, NewDomainGroup, 13 )  // 13 is zSOURCE_DOMAINGRP_META
       CommitMetaOI( vSubtask, *NewDomainGroup, 13 );
       //:ELSE
-   } 
+   }
    else
-   { 
+   {
       //:// Indicate Domain wasn't saved, so that we won't save the LOD or ER.
       //:CurrentLPLR.LPLR.wMergeComponentError = "Y"
       SetAttributeFromString( CurrentLPLR, "LPLR", "wMergeComponentError", "Y" );
-   } 
+   }
 
    //:END
 
@@ -413,7 +413,7 @@ oTZDGSRCO_DomainAddForMerge( zPVIEW    NewDomainGroup,
    DropObjectInstance( OldDomainGroup );
    return( 0 );
 // END
-} 
+}
 
 
 //:DERIVED ATTRIBUTE OPERATION
@@ -435,7 +435,7 @@ oTZDGSRCO_DIL_TextMsg( zVIEW     ViewToInstance,
 
    //:CASE GetOrSetFlag
    switch( GetOrSetFlag )
-   { 
+   {
       //:OF   zDERIVED_GET:
       case zDERIVED_GET :
 
@@ -445,7 +445,7 @@ oTZDGSRCO_DIL_TextMsg( zVIEW     ViewToInstance,
          //:                  "" )
          StoreStringInRecord( ViewToInstance, InternalEntityStructure, InternalAttribStructure, "" );
          break ;
-   } 
+   }
 
 
    //:/* end zDERIVED_GET */
@@ -453,7 +453,7 @@ oTZDGSRCO_DIL_TextMsg( zVIEW     ViewToInstance,
    //:END  /* case */
    return( 0 );
 // END
-} 
+}
 
 
 //:TRANSFORMATION OPERATION
@@ -469,30 +469,30 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
                             zVIEW     SourceLPLR,
                             zVIEW     vSubtask )
 {
-   zVIEW     OldDomainGroup = 0; 
+   zVIEW     OldDomainGroup = 0;
    //:VIEW CurrentLPLR  BASED ON LOD TZCMLPLO
-   zVIEW     CurrentLPLR = 0; 
+   zVIEW     CurrentLPLR = 0;
 
    //:STRING ( 513 ) SourceFileName                 // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName[ 514 ] = { 0 };
    //:STRING ( 513 ) SourceFileName2                // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     SourceFileName2[ 514 ] = { 0 }; 
+   zCHAR     SourceFileName2[ 514 ] = { 0 };
    //:STRING ( 513 ) Msg                            // size according to zMAX_MESSAGE_LTH+1
-   zCHAR     Msg[ 514 ] = { 0 }; 
+   zCHAR     Msg[ 514 ] = { 0 };
    //:STRING ( 129 ) SourceName                     // size according to zBASE_FILENAME_LTH+1
-   zCHAR     SourceName[ 130 ] = { 0 }; 
+   zCHAR     SourceName[ 130 ] = { 0 };
 
    //:STRING ( 32 )  SourceMetaName
-   zCHAR     SourceMetaName[ 33 ] = { 0 }; 
+   zCHAR     SourceMetaName[ 33 ] = { 0 };
    //:STRING ( 32 )  ContextName
-   zCHAR     ContextName[ 33 ] = { 0 }; 
+   zCHAR     ContextName[ 33 ] = { 0 };
    //:INTEGER        nRC
-   zLONG     nRC = 0; 
-   zSHORT    lTempInteger_0; 
-   zSHORT    RESULT; 
-   zCHAR     szTempString_0[ 33 ]; 
-   zSHORT    lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
+   zLONG     nRC = 0;
+   zSHORT    lTempInteger_0;
+   zSHORT    RESULT;
+   zCHAR     szTempString_0[ 33 ];
+   zSHORT    lTempInteger_1;
+   zSHORT    lTempInteger_2;
 
 
    //:// Activate existing source meta OldDomain Group
@@ -514,7 +514,7 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
    //:IF NewDomainGroup.DomainGroup DOES NOT EXIST
    lTempInteger_0 = CheckExistenceOfEntity( NewDomainGroup, "DomainGroup" );
    if ( lTempInteger_0 != 0 )
-   { 
+   {
 
       //:// New Domain Group
       //:CreateMetaEntity( vSubtask, NewDomainGroup, "DomainGroup", zPOS_AFTER )
@@ -528,7 +528,7 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
       //:// is actually no source file, the CopyFile does no harm.
       //:IF OldDomainGroup.DomainGroup.Extension != ""
       if ( CompareAttributeToString( OldDomainGroup, "DomainGroup", "Extension", "" ) != 0 )
-      { 
+      {
          //:RetrieveViewForMetaList( vSubtask, CurrentLPLR, zSOURCE_ERD_META ) // Get view for directory info.
          RetrieveViewForMetaList( vSubtask, &CurrentLPLR, zSOURCE_ERD_META );
          //:ResetViewFromSubobject( CurrentLPLR )
@@ -537,18 +537,18 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
          GetVariableFromAttribute( SourceMetaName, 0, 'S', 33, NewDomainGroup, "DomainGroup", "Name", "", 0 );
          //:IF OldDomainGroup.DomainGroup.Extension = "C"
          if ( CompareAttributeToString( OldDomainGroup, "DomainGroup", "Extension", "C" ) == 0 )
-         { 
+         {
             //:SourceName = SourceMetaName + ".C"
             ZeidonStringCopy( SourceName, 1, 0, SourceMetaName, 1, 0, 130 );
             ZeidonStringConcat( SourceName, 1, 0, ".C", 1, 0, 130 );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:SourceName = SourceMetaName + ".VML"
             ZeidonStringCopy( SourceName, 1, 0, SourceMetaName, 1, 0, 130 );
             ZeidonStringConcat( SourceName, 1, 0, ".VML", 1, 0, 130 );
-         } 
+         }
 
          //:END
          //:SourceFileName = SourceLPLR.LPLR.PgmSrcDir + "\" + SourceName
@@ -563,10 +563,10 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
          SysCopyFile( vSubtask, SourceFileName, SourceFileName2, TRUE );
          //:DropMetaOI( vSubtask, CurrentLPLR )
          DropMetaOI( vSubtask, CurrentLPLR );
-      } 
+      }
 
       //:END
-   } 
+   }
 
 
    //:END
@@ -574,13 +574,13 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
    //:FOR EACH OldDomainGroup.Operation
    RESULT = SetCursorFirstEntity( OldDomainGroup, "Operation", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:SET CURSOR FIRST NewDomainGroup.Operation WHERE NewDomainGroup.Operation.Name = OldDomainGroup.Operation.Name
       GetStringFromAttribute( szTempString_0, OldDomainGroup, "Operation", "Name" );
       RESULT = SetCursorFirstEntityByString( NewDomainGroup, "Operation", "Name", szTempString_0, "" );
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      { 
+      {
          //:SET CURSOR LAST NewDomainGroup.Operation
          RESULT = SetCursorLastEntity( NewDomainGroup, "Operation", "" );
          //:CreateMetaEntity( vSubtask, NewDomainGroup, "Operation", zPOS_AFTER )
@@ -588,11 +588,11 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
          //:SetMatchingAttributesByName( NewDomainGroup, "Operation", OldDomainGroup,
          //:                             "Operation", zSET_NULL )
          SetMatchingAttributesByName( NewDomainGroup, "Operation", OldDomainGroup, "Operation", zSET_NULL );
-      } 
+      }
 
       RESULT = SetCursorNextEntity( OldDomainGroup, "Operation", "" );
       //:END
-   } 
+   }
 
    //:END
 
@@ -602,27 +602,27 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
    //:FOR EACH OldDomainGroup.Domain
    RESULT = SetCursorFirstEntity( OldDomainGroup, "Domain", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   { 
+   {
       //:// Add any Domains and/or Contexts in the Source LPLR not in the Target LPLR.
       //:SET CURSOR FIRST CurrentLPLR.W_MetaDef WHERE CurrentLPLR.W_MetaDef.Name = OldDomainGroup.Domain.Name
       GetStringFromAttribute( szTempString_0, OldDomainGroup, "Domain", "Name" );
       RESULT = SetCursorFirstEntityByString( CurrentLPLR, "W_MetaDef", "Name", szTempString_0, "" );
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      { 
+      {
          //:CreateMetaEntity( vSubtask, NewDomainGroup, "Domain", zPOS_AFTER )
          CreateMetaEntity( vSubtask, NewDomainGroup, "Domain", zPOS_AFTER );
          //:SetMatchingAttributesByName( NewDomainGroup, "Domain", OldDomainGroup,
          //:                             "Domain", zSET_NULL )
          SetMatchingAttributesByName( NewDomainGroup, "Domain", OldDomainGroup, "Domain", zSET_NULL );
-      } 
+      }
 
       //:END
 
       //:FOR EACH OldDomainGroup.Context
       RESULT = SetCursorFirstEntity( OldDomainGroup, "Context", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      { 
+      {
 
          //:ContextName = OldDomainGroup.Context.Name
          GetVariableFromAttribute( ContextName, 0, 'S', 33, OldDomainGroup, "Context", "Name", "", 0 );
@@ -630,7 +630,7 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
          RESULT = SetCursorFirstEntityByString( NewDomainGroup, "Context", "Name", ContextName, "" );
          //:IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         { 
+         {
             //:CreateMetaEntity( vSubtask, NewDomainGroup, "Context", zPOS_AFTER )
             CreateMetaEntity( vSubtask, NewDomainGroup, "Context", zPOS_AFTER );
             //:SetMatchingAttributesByName( NewDomainGroup, "Context", OldDomainGroup, "Context", zSET_NULL )
@@ -639,34 +639,34 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
             //:FOR EACH OldDomainGroup.TableEntry
             RESULT = SetCursorFirstEntity( OldDomainGroup, "TableEntry", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            { 
+            {
                //:CreateMetaEntity( vSubtask, NewDomainGroup, "TableEntry", zPOS_AFTER )
                CreateMetaEntity( vSubtask, NewDomainGroup, "TableEntry", zPOS_AFTER );
                //:SetMatchingAttributesByName( NewDomainGroup, "TableEntry", OldDomainGroup,
                //:                             "TableEntry", zSET_NULL )
                SetMatchingAttributesByName( NewDomainGroup, "TableEntry", OldDomainGroup, "TableEntry", zSET_NULL );
                RESULT = SetCursorNextEntity( OldDomainGroup, "TableEntry", "" );
-            } 
+            }
 
             //:END
 
             //:FOR EACH OldDomainGroup.RegularExpression
             RESULT = SetCursorFirstEntity( OldDomainGroup, "RegularExpression", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            { 
+            {
                //:CreateMetaEntity( vSubtask, NewDomainGroup, "RegularExpression", zPOS_AFTER )
                CreateMetaEntity( vSubtask, NewDomainGroup, "RegularExpression", zPOS_AFTER );
                //:SetMatchingAttributesByName( NewDomainGroup, "RegularExpression", OldDomainGroup, "RegularExpression", zSET_NULL )
                SetMatchingAttributesByName( NewDomainGroup, "RegularExpression", OldDomainGroup, "RegularExpression", zSET_NULL );
                RESULT = SetCursorNextEntity( OldDomainGroup, "RegularExpression", "" );
-            } 
+            }
 
             //:END
-         } 
+         }
 
          RESULT = SetCursorNextEntity( OldDomainGroup, "Context", "" );
          //:END
-      } 
+      }
 
 
       //:END
@@ -675,14 +675,14 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
       lTempInteger_1 = CheckExistenceOfEntity( OldDomainGroup, "SelectedOperation" );
       lTempInteger_2 = CheckExistenceOfEntity( NewDomainGroup, "SelectedOperation" );
       if ( lTempInteger_1 == 0 && lTempInteger_2 != 0 )
-      { 
+      {
          //:SET CURSOR FIRST NewDomainGroup.Operation WHERE
          //:                 NewDomainGroup.Operation.Name = OldDomainGroup.SelectedOperation.Name
          GetStringFromAttribute( szTempString_0, OldDomainGroup, "SelectedOperation", "Name" );
          RESULT = SetCursorFirstEntityByString( NewDomainGroup, "Operation", "Name", szTempString_0, "" );
          //:INCLUDE NewDomainGroup.SelectedOperation FROM NewDomainGroup.Operation
          RESULT = IncludeSubobjectFromSubobject( NewDomainGroup, "SelectedOperation", NewDomainGroup, "Operation", zPOS_AFTER );
-      } 
+      }
 
       //:END
 
@@ -690,7 +690,7 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
       //:oTZDMSRCO_ReplaceOrAddDomToXDM( vSubtask, NewDomainGroup, 1 )
       oTZDMSRCO_ReplaceOrAddDomToXDM( vSubtask, NewDomainGroup, 1 );
       RESULT = SetCursorNextEntity( OldDomainGroup, "Domain", "" );
-   } 
+   }
 
 
    //:END
@@ -701,7 +701,7 @@ oTZDGSRCO_DomainGrpMigrate( zVIEW     NewDomainGroup,
    CommitMetaOI( vSubtask, NewDomainGroup, 13 );
    return( 0 );
 // END
-} 
+}
 
 
 //:DERIVED ATTRIBUTE OPERATION
@@ -717,10 +717,10 @@ oTZDGSRCO_NLS_ExtValueText( zVIEW     vDG,
                             LPVIEWATTRIB lpAttribute,
                             zSHORT    GetOrSetFlag )
 {
-   zSHORT    nLanguageCode = 0; 
+   zSHORT    nLanguageCode = 0;
    //:STRING (254) szText
-   zCHAR     szText[ 255 ] = { 0 }; 
-   zSHORT    RESULT; 
+   zCHAR     szText[ 255 ] = { 0 };
+   zSHORT    RESULT;
 
 
    //:SysGetLanguageCode( nLanguageCode )
@@ -728,7 +728,7 @@ oTZDGSRCO_NLS_ExtValueText( zVIEW     vDG,
 
    //:CASE GetOrSetFlag
    switch( GetOrSetFlag )
-   { 
+   {
       //:OF   zDERIVED_GET:
       case zDERIVED_GET :
 
@@ -740,16 +740,16 @@ oTZDGSRCO_NLS_ExtValueText( zVIEW     vDG,
          RESULT = SetCursorFirstEntityByInteger( vDG, "ExtValueNLS_Text", "LanguageIndex", nLanguageCode, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:szText = vDG.ExtValueNLS_Text.Text
             GetVariableFromAttribute( szText, 0, 'S', 255, vDG, "ExtValueNLS_Text", "Text", "", 0 );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:szText = vDG.TableEntry.ExternalValue
             GetVariableFromAttribute( szText, 0, 'S', 255, vDG, "TableEntry", "ExternalValue", "", 0 );
-         } 
+         }
 
          //:END
 
@@ -769,27 +769,27 @@ oTZDGSRCO_NLS_ExtValueText( zVIEW     vDG,
          RESULT = SetCursorFirstEntityByInteger( vDG, "ExtValueNLS_Text", "LanguageIndex", nLanguageCode, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:vDG.ExtValueNLS_Text.Text = szText
             SetAttributeFromString( vDG, "ExtValueNLS_Text", "Text", szText );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:vDG.TableEntry.ExternalValue = szText
             SetAttributeFromString( vDG, "TableEntry", "ExternalValue", szText );
-         } 
+         }
 
          //:END
          break ;
-   } 
+   }
 
 
    //:     /* end zDERIVED_SET */
    //:END  /* case */
    return( 0 );
 // END
-} 
+}
 
 
 //:DERIVED ATTRIBUTE OPERATION
@@ -805,10 +805,10 @@ oTZDGSRCO_NLS_DIL_Text( zVIEW     vDG,
                         LPVIEWATTRIB lpAttribute,
                         zSHORT    GetOrSetFlag )
 {
-   zSHORT    nLanguageCode = 0; 
+   zSHORT    nLanguageCode = 0;
    //:STRING (254) szText
-   zCHAR     szText[ 255 ] = { 0 }; 
-   zSHORT    RESULT; 
+   zCHAR     szText[ 255 ] = { 0 };
+   zSHORT    RESULT;
 
 
    //:SysGetLanguageCode( nLanguageCode )
@@ -816,7 +816,7 @@ oTZDGSRCO_NLS_DIL_Text( zVIEW     vDG,
 
    //:CASE GetOrSetFlag
    switch( GetOrSetFlag )
-   { 
+   {
       //:OF   zDERIVED_GET:
       case zDERIVED_GET :
 
@@ -828,16 +828,16 @@ oTZDGSRCO_NLS_DIL_Text( zVIEW     vDG,
          RESULT = SetCursorFirstEntityByInteger( vDG, "DIL_NLS_Text", "LanguageIndex", nLanguageCode, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:szText = vDG.DIL_NLS_Text.Text
             GetVariableFromAttribute( szText, 0, 'S', 255, vDG, "DIL_NLS_Text", "Text", "", 0 );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:szText = vDG.Context.DIL_Text
             GetVariableFromAttribute( szText, 0, 'S', 255, vDG, "Context", "DIL_Text", "", 0 );
-         } 
+         }
 
          //:END
 
@@ -857,30 +857,30 @@ oTZDGSRCO_NLS_DIL_Text( zVIEW     vDG,
          RESULT = SetCursorFirstEntityByInteger( vDG, "DIL_NLS_Text", "LanguageIndex", nLanguageCode, "" );
          //:IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         { 
+         {
             //:vDG.DIL_NLS_Text.Text = szText
             SetAttributeFromString( vDG, "DIL_NLS_Text", "Text", szText );
             //:ELSE
-         } 
+         }
          else
-         { 
+         {
             //:vDG.Context.DIL_Text = szText
             SetAttributeFromString( vDG, "Context", "DIL_Text", szText );
-         } 
+         }
 
          //:END
          break ;
-   } 
+   }
 
 
    //:     /* end zDERIVED_SET */
    //:END  /* case */
    return( 0 );
 // END
-} 
+}
 
 
- 
+
 #ifdef __cplusplus
 }
 #endif

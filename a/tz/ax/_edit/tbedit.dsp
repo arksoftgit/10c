@@ -61,8 +61,8 @@ LINK32=link.exe
 # ADD LINK32 /nologo /subsystem:windows /dll /machine:I386 /out:"..\..\w\bin\tbedit.ocx"
 # Begin Custom Build - Registering ActiveX Control...
 OutDir=.\Release
-TargetPath=\10c\a\TZ\w\bin\tbedit.ocx
-InputPath=\10c\a\TZ\w\bin\tbedit.ocx
+TargetPath=\10e\a\TZ\w\bin\tbedit.ocx
+InputPath=\10e\a\TZ\w\bin\tbedit.ocx
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -100,8 +100,8 @@ LINK32=link.exe
 # ADD LINK32 /nologo /subsystem:windows /dll /debug /machine:I386 /out:"..\..\..\..\w\bin\tbedit.ocx" /pdbtype:sept
 # Begin Custom Build - Registering ActiveX Control...
 OutDir=.\Debug
-TargetPath=\10c\w\bin\tbedit.ocx
-InputPath=\10c\w\bin\tbedit.ocx
+TargetPath=\10e\w\bin\tbedit.ocx
+InputPath=\10e\w\bin\tbedit.ocx
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -140,8 +140,8 @@ LINK32=link.exe
 # ADD LINK32 /nologo /subsystem:windows /dll /debug /machine:I386 /out:"..\..\w\bin\tbedit.ocx" /pdbtype:sept
 # Begin Custom Build - Registering ActiveX Control...
 OutDir=.\DebugU
-TargetPath=\10c\a\TZ\w\bin\tbedit.ocx
-InputPath=\10c\a\TZ\w\bin\tbedit.ocx
+TargetPath=\10e\a\TZ\w\bin\tbedit.ocx
+InputPath=\10e\a\TZ\w\bin\tbedit.ocx
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -180,8 +180,8 @@ LINK32=link.exe
 # ADD LINK32 /nologo /subsystem:windows /dll /machine:I386 /out:"..\..\w\bin\tbedit.ocx"
 # Begin Custom Build - Registering ActiveX Control...
 OutDir=.\ReleaseU
-TargetPath=\10c\a\TZ\w\bin\tbedit.ocx
-InputPath=\10c\a\TZ\w\bin\tbedit.ocx
+TargetPath=\10e\a\TZ\w\bin\tbedit.ocx
+InputPath=\10e\a\TZ\w\bin\tbedit.ocx
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"

@@ -4572,7 +4572,7 @@ TZPainterWindow::CreateMetaEntity( zVIEW  vDlg,
 
 // TZPainterWindow - menu pre-dropdown
 void
-TZPainterWindow::OnInitMenu( CMenu *pMenu )
+TZPainterWindow::OnInitMenu( HMENU hMenu )
 {
 #ifdef DEBUG_ALL
    TraceLineS( "TZPainterWindow::OnInitMenu", "" );
@@ -4584,14 +4584,14 @@ TZPainterWindow::OnInitMenu( CMenu *pMenu )
 }
 
 void
-TZPainterWindow::OnInitMenuPopup( CMenu *pPopupMenu,
+TZPainterWindow::OnInitMenuPopup( HMENU hPopupMenu,
                                   UINT nIndex, BOOL bSysMenu )
 {
 #ifdef DEBUG_ALL
    TraceLineI( "TZPainterWindow::OnInitMenuPopup bSysMenu: ", bSysMenu );
 #endif
 
-   if ( bSysMenu || pPopupMenu == 0 )
+   if ( bSysMenu || hPopupMenu == 0 )
    {
       Default( );
       return;

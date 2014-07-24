@@ -1,0 +1,140 @@
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+Dump of file ..\..\w\bin\tzvmpopr.DLL
+
+File Type: DLL
+
+  Section contains the following exports for tzvmpopr.dll
+
+           0 characteristics
+    5356CF31 time date stamp Tue Apr 22 16:21:05 2014
+        0.00 version
+           1 ordinal base
+         113 number of functions
+         113 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001050 _ActionQ@8
+          2    1 00001032 _AddCompareToView@32
+          3    2 0000104B _AddEntityOperWithEntity@48
+          4    3 00001294 _AddEntityOperWithNoScope@32
+          5    4 00001177 _AddEntityOperWithScope@52
+          6    5 000011D6 _AddExprNodeEntityToView@32
+          7    6 0000130C _AddExpressionEntryToString@40
+          8    7 00001087 _AddGetOrSetAttribute@56
+          9    8 00001082 _AddGetOrSetAttributeWithString@56
+         10    9 0000118B _AddGetVariableFromAttribute@56
+         11    A 0000131B _AddJavaWhileWithScope@8
+         12    B 000011F9 _AddOperationEntityToPI@12
+         13    C 000012A8 _AddOperatorToView@12
+         14    D 00001311 _AddResult@4
+         15    E 000010B4 _AddResultAndLoopControlToView@24
+         16    F 0000122B _AddResultCondEqual@12
+         17   10 00001320 _AddResultCondExprToView@16
+         18   11 000010E6 _AddResultGreaterThan@12
+         19   12 00001131 _AddRetCode@4
+         20   13 00001307 _AddReturnStatement@20
+         21   14 00001159 _AddSetEntityCursor@20
+         22   15 000011A4 _AddStatementEntityToPI@20
+         23   16 000010FF _AddStatementEntityWithStringToPI@32
+         24   17 0000109B _AddVariableEntityToPI@20
+         25   18 00001280 _AtomizeAQ@32
+         26   19 00001014 _BuildActivate@20
+         27   1A 0000132A _BuildActivateEmpty@8
+         28   1B 0000108C _BuildActivateEmptyLocal@16
+         29   1C 00001163 _BuildCallToLocalFunction@12
+         30   1D 0000107D _BuildCommitView@8
+         31   1E 00001208 _BuildDropView@8
+         32   1F 00001069 _BuildGetView@24
+         33   20 000010A0 _BuildNameView@24
+         34   21 0000123F _BuildWhereStatements@8
+         35   22 0000102D _CaseExpression@12
+         36   23 0000119F _CompareDataTypesForConsistency@16
+         37   24 0000105A _CompareFileToXPG@4
+         38   25 000011E5 _CompareTargetTypeForConsistency@20
+         39   26 000012C6 _ConvertVMLTypeToZeidonType@8
+         40   27 000012FD _ConvertZeidonTypeToVMLType@4
+         41   28 0000128A _CreateConvertZeidonStrOp@20
+         42   29 00001005 _CreateIntegerExpression@32
+         43   2A 00001046 _CreateLoopControlWithView@12
+         44   2B 0000119A _CreateOperationCallUsingAQ@60
+         45   2C 00001212 _DeleteAllOpersForSource@4
+         46   2D 00001276 _DeleteOneOperForSource@4
+         47   2E 0000124E _GenerateLocalOperationName@8
+         48   2F 0000128F _GenerateTempVariable@12
+         49   30 000012CB _GermanUmlautHack@16
+         50   31 000010C3 _GetClassBasedOnType@4
+         51   32 000011A9 _GetDLL_Instance@4
+         52   33 000010D7 _GetDefineZKey@12
+         53   34 000010BE _GetLengthFromAttribute@12
+         54   35 0000101E _GetOperationClass@12
+         55   36 000012E4 _GetOperationInformation@36
+         56   37 00001195 _GetOperationParmListFromSource@16
+         57   38 00001064 _GetOperationParmListPM@20
+         58   39 000010A5 _GetOperationZKey@12
+         59   3A 00001019 _GetOppositeOperator@4
+         60   3B 000011AE _GetProfileData@20
+         61   3C 00001113 _GetRootEntityName@4
+         62   3D 00001028 _GetStringForSQLOperator@8
+         63   3E 0000114A _GetTextLine@0
+         64   3F 00001181 _GetVariableDataClass@4
+         65   40 00001230 _GetVariableDataType@4
+         66   41 0000115E _GetVariableID@8
+         67   42 000011B3 _GetVariableLength@8
+         68   43 00001186 _GetVariableName@8
+         69   44 00001302 _GetZeidonOperTypeFromVMLType@8
+         70   45 000012F8 _IncludeCoreHeader@8
+         71   46 000011E0 _InitErrorObject@12
+         72   47 00001258 _InitExpressionObject@0
+         73   48 000010F0 _InitGlobalDataForParse@0
+         74   49 000010AF _InitReadBuffer@12
+         75   4A 00001253 _InsertActivateEmpty@8
+         76   4B 000012EE _InsertActivateIntoCurrentOperation@8
+         77   4C 000012D0 _InsertActivateNoWhere@8
+         78   4D 000010F5 _InsertExprNodeValuesToEntity@36
+         79   4E 000010EB _InsertForWithWhere@4
+         80   4F 0000113B _InsertSetCursorWithWhere@4
+         81   50 00001271 _IsCondOperator@4
+         82   51 00001037 _IsGlobalOperation@4
+         83   52 00001262 _IsKnownObjectOperation@16
+         84   53 000011F4 _IsLocalOperation@4
+         85   54 00001217 _IsZeidonOperation@4
+         86   55 00001122 _LoadSourceForMeta@12
+         87   56 00001325 _LoadSourceForMetaList@16
+         88   57 00001140 _MoveStringExprToView@20
+         89   58 000010DC _MoveViewToStringExpr@24
+         90   59 000011CC _NewGenerateTempVariable@16
+         91   5A 00001109 _OptimizeExpression@12
+         92   5B 0000129E _OptimizeSimpleNumericExpression@20
+         93   5C 0000111D _OptimizeSimpleTextExpression@20
+         94   5D 00001041 _ParseSource@40
+         95   5E 0000114F _ParseSourceFromEditor@32
+         96   5F 0000100F _ParseVMLSource@20
+         97   60 00001127 _PositionAtCallingOperation@0
+         98   61 0000103C _PositionAtNewOperation@0
+         99   62 000012B7 _PositionAtOperationInSource@4
+        100   63 0000123A _PreBuildOperation@8
+        101   64 000012DA _PrintXPG@4
+        102   65 000012BC _Priority@4
+        103   66 000012E9 _ReInitOperation@0
+        104   67 0000126C _ResetOperation@4
+        105   68 00001168 _ReuseTempVariable@4
+        106   69 000012C1 _ReverseOperator@4
+        107   6A 000011EA _SaveTextLine@0
+        108   6B 00001136 _SetupActivate@8
+        109   6C 00001023 _SkipRemainingFile@0
+        110   6D 000010D2 _SplitQualifier@16
+        111   6E 00001055 _SyntaxError@12
+        112   6F 0000105F _VerifyQualifier@32
+        113   70 00001267 _oTZVSPOOO_C_GenOperationName@16
+
+  Summary
+
+       25000 .data
+        1000 .idata
+        2000 .rdata
+        5000 .reloc
+       2E000 .text
