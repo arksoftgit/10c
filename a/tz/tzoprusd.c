@@ -1035,7 +1035,7 @@ wTZOPRUSD_SaveSourceFile( zVIEW vSubtask )
                                  "C" );
       }
    }
-   
+
    // Accept the current SourceFile subobject.
    if ( wTZOPRUSD_AcceptSubobject( vSubtask, "SourceFile",
                                    "Name", "Source File" ) < 0 )

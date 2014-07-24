@@ -314,8 +314,11 @@ oTZZOXODO_SaveXOD( zVIEW vSubtask, zVIEW vTZZOLODO )
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
    if ( vTaskLPLR )
    {
-      GetStringFromAttribute( szXMD_FileSpec, vTaskLPLR, "LPLR", "ExecDir" );
-      zstrcat( szXMD_FileSpec, "\\ZEIDON.XMD" );
+      zCHAR  szXMD_FileTemp[ zMAX_FILESPEC_LTH + 1 ];
+
+      GetStringFromAttribute( szXMD_FileTemp, vTaskLPLR, "LPLR", "ExecDir" );
+      zstrcat( szXMD_FileTemp, "\\ZEIDON.XMD" );
+      SysConvertEnvironmentString( szXMD_FileSpec, szXMD_FileTemp );
       hXMD_File = SysOpenFile( vTaskLPLR, szXMD_FileSpec, COREFILE_READ );
       if ( hXMD_File >= 0 )
       {

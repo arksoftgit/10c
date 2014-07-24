@@ -867,7 +867,7 @@ ZER_Diagram::OnRButtonUp( UINT uModKeys, CPoint pt )
             if ( lIdx1 < tzERMAXGRID )
             {
                m_lDisplayPos = lIdx1;
-               ZoomDiagram( lScale + 100, 4 );
+               ZoomDiagram( (zSHORT) (lScale + 100), 4 );
             }
 
             return;

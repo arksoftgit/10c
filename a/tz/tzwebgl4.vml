@@ -287,7 +287,7 @@ GenJSPJ_CrteCalendar( VIEW vDialog BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "%>"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-      
+
       //**************** Get control event actions *********/
       
       // If there is an Event for the MLEdit, build code to insert in <textarea statement.
@@ -399,7 +399,7 @@ GenJSPJ_CrteCheckBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szUnChecked = szBlob
    END
   */
-   
+
    szWriteBuffer = "<%"
    WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   strErrorMapValue = ^^;"
@@ -943,7 +943,7 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
          END
          */
-         
+
          IF lSubtype = 0
             szWriteBuffer = "      csrRC = v" + szCtrlTag + ".cursor( ^" +
                                          szListEntityName + "^ ).setFirst( " + szScopingEntityName + " );"

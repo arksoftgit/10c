@@ -321,7 +321,7 @@ fnGetDirectorySpec( zVIEW vSubtask, zPCHAR pchDirectorySpec, zLONG lType, zBOOL 
 
    GetStringFromAttribute( szWork, vTaskLPLR, "LPLR", "MetaSrcDir" );
    if ( bConvertEnvironment )
-   SysConvertEnvironmentString( pchDirectorySpec, szWork );
+      SysConvertEnvironmentString( pchDirectorySpec, szWork );
    else
       zstrcpy( pchDirectorySpec, szWork );
 
@@ -4288,7 +4288,7 @@ CreateMetaEntity( zVIEW  vSubtask,
                    "The RepositoryClient View ID was not found. We should no longer get this call Don C.",
                    zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
       return( -1 );
-   }   
+   }
 
    GetIntegerFromAttribute( (zPLONG) &ulMaxZKey, WKS_View,
                             "LPLR", "MaxZKey" );

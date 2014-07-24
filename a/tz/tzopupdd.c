@@ -1915,7 +1915,7 @@ zwTZOPUPDD_MoveOperationPostBuil( zVIEW vSubtask )
    zVIEW  vTZOGSRCO;
    zVIEW  vMoveOperation;
    zCHAR  szOperationName[ 33 ];
-   zCHAR  szOperationGroup[33];
+   zCHAR  szOperationGroup[ 33 ];
    zCHAR  szType[ 4 ];
    zSHORT nRC = -1;
 
@@ -1972,7 +1972,7 @@ zwTZOPUPDD_MoveCheckGroupType( zVIEW  vSubtask,
    zCHAR    szMsg[ 100 ];
    zCHAR    szControltext[ 4 ];
    zCHAR    szLanguageType[ 4 ];
-   zCHAR    szGroupName[33];
+   zCHAR    szGroupName[ 33 ];
 
    GetViewByName( &vMoveOperation, "MoveOperation", vSubtask, zLEVEL_TASK );
    GetSubtaskForWindowName( vSubtask, &vWindow, "MoveOperation" );
@@ -2370,7 +2370,7 @@ zwTZOPUPDD_SetSaveAsName( zVIEW vSubtask )
    zVIEW   vMoveOperation;
    zVIEW   vProfileXFER;
    zVIEW   vTZOGSRCO;
-   zCHAR   szGroupName[33];
+   zCHAR   szGroupName[ 33 ];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CMLIST", vSubtask, zLEVEL_TASK );
@@ -2429,7 +2429,7 @@ zwTZOPUPDD_SetGroupName( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vMoveOperation;
    zVIEW   vProfileXFER;
-   zCHAR   szGroupName[33];
+   zCHAR   szGroupName[ 33 ];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CMLIST", vSubtask, zLEVEL_TASK );
@@ -2469,7 +2469,7 @@ zwTZOPUPDD_SaveAsInNewGroup( zVIEW vSubtask )
    zVIEW  vCM_List_Copy;
    zCHAR  szOutName[ 33 ];
    zCHAR  szNewName[ 33 ];
-   zCHAR  szGroupName[33];
+   zCHAR  szGroupName[ 33 ];
    zCHAR  szMsg[ 100 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -2677,7 +2677,7 @@ zwTZOPUPDD_SaveAsOperation( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vProfileXFER;
    zVIEW   vWindow;
-   zCHAR   szGroupName[33];
+   zCHAR   szGroupName[ 33 ];
    zCHAR   szOutName[ 33 ];
    zSHORT  nCopyCode = 0;
    zSHORT  nRC;
@@ -2757,7 +2757,7 @@ zwTZOPUPDD_SaveAsNewOperation( zVIEW  vSubtask,
    zVIEW   vCM_List;
    zVIEW   vCM_ListGroup;
    zVIEW   vMoveOperation;
-   zCHAR   szOperationGroup[33];
+   zCHAR   szOperationGroup[ 33 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
    GetViewByName( &vSource, "TZOGSRCO", vSubtask, zLEVEL_TASK );
@@ -3566,7 +3566,7 @@ zwTZOPUPDD_SaveAsRtnFromSubwnd( zVIEW vSubtask )
 {
    zVIEW    vProfileXFER;
    zVIEW    vMoveOperation;
-   zCHAR    szGroupName[33];
+   zCHAR    szGroupName[ 33 ];
    zCHAR    szLanguageType[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );

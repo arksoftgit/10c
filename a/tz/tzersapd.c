@@ -17,27 +17,37 @@
 /*
 AUTHOR:  Bianca Ludwig
 DATE:    2000.10.13
+
 CHANGE LOG
+
 2001.07.06   BL
    Set new Control Position
+
 2001.02.16   HH
    Move code for switching foreign keys to TZTENVRO, so that it can
    be reused by TE tool.
+
 2000.11.19   BL
    Postbuild Import Window: Set Default Values for Import, set new error
    messages, set new View Names
+
 2000.11.17   HH
    Improve handling if foreign key switch candidate was not found.
+
 2000.11.13   BL
    Modified Message Text and if close SAP Import Window, do not
    delete SAP View
+
 2000.11.10   HH
    use "lLeng" on attribute import.
    improved FK switching, function ReferenceBaseKey.
+
 2000.11.06   BL  Z10
    new Prototypes for SAP Logoff and GetRelationship
+
 2000.11.01   BL  Z10
    Modified SAP Import for Subject Areas and TE generation ....
+
 2000.10.13   BL  Z10
    Create this File for import SAP-Tables to Zeidon Data Models
 */

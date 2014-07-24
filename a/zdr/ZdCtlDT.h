@@ -195,7 +195,7 @@ protected:
    afx_msg void OnSizing( UINT uSide, LPRECT pRect );
    afx_msg void OnSize( UINT uType, int cx, int cy );
    afx_msg void OnMove( int x, int y );
-   afx_msg UINT OnNcHitTest( CPoint pt );
+   afx_msg LRESULT OnNcHitTest( CPoint pt );
    afx_msg void OnNcPaint( );
    afx_msg void OnWindowPosChanging( WINDOWPOS *pWndPos );
    afx_msg void OnKillFocus( CWnd *pWndGetFocus );

@@ -1,14 +1,14 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "TZ__OPRS.H" 
-#include "ZDRVROPR.H" 
-#include "tzlodopr.h" 
- 
+#include "KZOENGAA.H"
+#include "TZ__OPRS.H"
+#include "ZDRVROPR.H"
+#include "tzlodopr.h"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 zSHORT zwTZPNCW2D_CopyOperationToFile( zVIEW, zSHORT );

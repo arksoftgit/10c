@@ -708,7 +708,7 @@ void ZColumns::Dump(CDumpContext& dc) const
    POSITION pos = GetHeadPosition();
    while ( pos )
    {
-      CObject* p = GetNext( pos );
+      CObject* p = (CObject *) GetNext( pos );
       if( p )
          p->Dump( dc );
    }

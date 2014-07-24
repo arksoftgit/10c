@@ -12,6 +12,8 @@
 #include <tchar.h>
 #include "zsemail.h"
 
+#pragma warning(disable: 4996) // This function or variable may be unsafe
+
 // Default empty constructor.
 FormattedDate::FormattedDate( )
 {

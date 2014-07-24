@@ -2316,6 +2316,19 @@ DeleteTask( LPTASK lpTask )
 
    zUNLOCK_MUTEX( zMUTEX_ANCHORBLOCK );
 
+   // Send message that task deleted (before we delete the task).
+   if ( AnchorBlock->TraceFlags.bTaskMsgs )
+   {
+      zsprintf( szMsg, "(tm) Task (0x%08x) deleted for Process %d",
+                hTask, SysGetProcessID( 0 ) );
+
+      if ( lpTask && lpTask->szUserId[ 0 ] )
+      {
+         zstrcat( szMsg, "   UserName: " );
+         zstrcat( szMsg, lpTask->szUserId );
+      }
+   }
+
    // Free the stuff that is part of the system task's dataspace.
    fnFreeDataspace( zGETPTR( lpTask->hUserID ) );
    fnFreeDataspace( zGETPTR( lpTask->hPassword ) );
@@ -2325,19 +2338,10 @@ DeleteTask( LPTASK lpTask )
    fnFreeTaskDataspace( lpTask );
    fnFreeDataspace( lpTask );
 
-   // Send message that task deleted.
+
    if ( AnchorBlock->TraceFlags.bTaskMsgs )
    {
       // Use SysMessageList because TraceLineS expects a current task.
-      zsprintf( szMsg, "(tm) Task (0x%08x) deleted for Process %d",
-                hTask, SysGetProcessID( 0 ) );
-
-      if ( lpTask->szUserId[ 0 ] )
-      {
-         zstrcat( szMsg, "   UserName: " );
-         zstrcat( szMsg, lpTask->szUserId );
-      }
-
       SysMessageList( szMsg );
    // MiListOE_Memory( 0, 0 );
       SysDescribeZeidonPageTable( szMsg );

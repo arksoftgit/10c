@@ -200,7 +200,7 @@ EXPORTS
    PrintTextFile                                          @248
    PrintTextToCSV                                         @197
    PrintTextToHTML                                        @244
-   PrintWindow                                            @96
+   PrintWnd                                               @96
    ProcessAction                                          @253
    ProcessActionLoop                                      @128
    ProcessEvent                                           @116

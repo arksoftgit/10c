@@ -1274,6 +1274,7 @@ void
 CCalendarWeekdayWnd::OnSize( UINT uType, int cx, int cy )
 {
    CWnd::OnSize( uType, cx, cy );
+   int nWeekday;
 
    CRect rectClient;
    GetClientRect( &rectClient );
@@ -1281,7 +1282,7 @@ CCalendarWeekdayWnd::OnSize( UINT uType, int cx, int cy )
    int nDayWidth = (cx - 20) / zDAYS_IN_WEEK;
 
    // Define button locations:
-   for ( int nWeekday = 0; nWeekday < zDAYS_IN_WEEK; nWeekday++ )
+   for ( nWeekday = 0; nWeekday < zDAYS_IN_WEEK; nWeekday++ )
    {
       m_rectWeekdays[ nWeekday ] = rectClient;
 
@@ -2989,8 +2990,9 @@ CMultiSelCal::AlignSelectedDays( const COleDateTime& oldDate )
    int nOldYear = oldDate.GetYear( );
 
    // Save current selections:
+   POSITION pos;
    CList<int,int> oldSelectedDays;
-   for ( POSITION pos = m_SelectedDays.GetHeadPosition( ); pos; )
+   for ( pos = m_SelectedDays.GetHeadPosition( ); pos; )
    {
       oldSelectedDays.AddTail( m_SelectedDays.GetNext( pos ) );
    }

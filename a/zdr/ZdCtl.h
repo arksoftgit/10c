@@ -810,7 +810,7 @@ public:
 // Operations
 public:
    BOOL IsOptionalParameter( SHORT i);
-   IsOptionalParameter( CString strParam );
+   BOOL IsOptionalParameter( CString strParam );
    CString GetCPPDefinition();
    CString GetCPPDeclaration( zBOOL bHeader = TRUE );
    CString GetClassName();

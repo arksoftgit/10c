@@ -1184,6 +1184,7 @@ zwTZTEUPDD_GenerateSyncDDL( zVIEW vSubtask )
    zFARPROC_VVVPV pfn;
 // zSHORT    (POPERATION pfn)( zVIEW, zVIEW, zVIEW, zPCHAR, zVIEW );
    zCHAR     szFileName[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR     szTempFileName[ zMAX_FILESPEC_LTH + 1 ];
 
    GetViewByName( &vTZTEDBLO, "TZTEDBLO", vSubtask, zLEVEL_TASK );
    GetViewByName( &vDTE, "TE_DB_Environ", vSubtask, zLEVEL_ANY );
@@ -1203,7 +1204,8 @@ zwTZTEUPDD_GenerateSyncDDL( zVIEW vSubtask )
          zVIEW vTaskLPLR;
 
          GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
-         GetStringFromAttribute( szFileName, vTaskLPLR, "LPLR", "MetaSrcDir" );
+         GetStringFromAttribute( szTempFileName, vTaskLPLR, "LPLR", "MetaSrcDir" );
+         SysConvertEnvironmentString( szFileName, szTempFileName );
          SysAppendcDirSep( szFileName );
          (*pfn)( vDTE, vEMD, vTZTEDBLO, szFileName, vSubtask );
       }
@@ -3470,8 +3472,8 @@ zwTZTEUPDD_ReconstructERForForeignKey( zVIEW vSubtask, zVIEW vDTE, zVIEW vEMD)
    zVIEW  vDTE_Work;
    zVIEW  vDTE2;
 
-   zCHAR  szCatalogName[33];
-   zCHAR  szAttributeName[35];
+   zCHAR  szCatalogName[ 33 ];
+   zCHAR  szAttributeName[ 35 ];
 
    CreateViewFromViewForTask(&vDTE_Work, vDTE, 0 );
    SetNameForView(vDTE_Work, "vDTE_Work", vDTE, zLEVEL_TASK );

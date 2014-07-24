@@ -17,9 +17,9 @@
 	"..\incz\kzoetdaa.h"\
 	"..\incz\tzctlopr.h"\
 	"..\incz\tzwdlgso.hst"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
+	".\JPegLib\Jconfig.h"\
+	".\JPegLib\Jmorecfg.h"\
+	".\JPegLib\Jpeglib.h"\
 	".\TzCtl.h"\
 	".\tzctlgbl.h"\
 	".\ZdCtl.h"\

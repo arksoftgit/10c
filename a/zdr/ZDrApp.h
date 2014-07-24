@@ -89,6 +89,9 @@
 #error  C++ compilation is required (use a .cpp suffix)
 #endif
 
+#pragma warning(disable: 4996) // This function or variable may be unsafe
+#pragma warning(disable: 4297) // function assumed not to throw an exception but does
+
 #include "ZDrTwain.h"      // Standard Twain definitions
 #include "occimpl.h"       // for OnAmbientProperty methods
 #include "resource.h"      // main symbols

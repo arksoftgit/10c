@@ -1206,7 +1206,8 @@ fnWriteInclude_MSVC50( zVIEW  vTaskLPLR,
       return( 0 );
    }
 
-   pch = szExecDir;
+   SysConvertEnvironmentString( szFileName2, szExecDir );
+   pch = szFileName2;
 
    zsprintf( pchLine, "TARGET_DIR = %s", pch );
    SWL( vTaskLPLR, pchLine );
@@ -1227,7 +1228,8 @@ fnWriteInclude_MSVC50( zVIEW  vTaskLPLR,
       return( 0 );
    }
 
-   pchObj = szObj;
+   SysConvertEnvironmentString( szFileName2, szObj );
+   pchObj = szFileName2;
 
    zsprintf( pchLine, "OBJ_DIR    = %s", pchObj );
    SWL( vTaskLPLR, pchLine );
@@ -1244,7 +1246,8 @@ fnWriteInclude_MSVC50( zVIEW  vTaskLPLR,
       return( 0 );
    }
 
-   pch = szEnvDir;
+   SysConvertEnvironmentString( szFileName2, szEnvDir );
+   pch = szFileName2;
 
    zsprintf( pchLine, "ENV_DIR    = %s", pch );
    SWL( vTaskLPLR, pchLine );
@@ -1943,11 +1946,13 @@ fnRemoveSpace( zPCHAR szFileName )
 }
 
 static BOOL
-fnVerifyExternalLibFile( zVIEW vSubtask, zVIEW vTaskLPLR, zPCHAR szFileName )
+fnVerifyExternalLibFile( zVIEW vSubtask, zVIEW vTaskLPLR, zPCHAR pchFileName )
 {
-   // Remove leading spaces.
-   fnRemoveSpace( szFileName );
+   zCHAR szFileName[ zMAX_FILESPEC_LTH + 1 ];
 
+   // Remove leading spaces.
+   SysConvertEnvironmentString( szFileName, pchFileName );
+   fnRemoveSpace( szFileName );
    if ( zstrcmp( szFileName, "" ) == 0 )
    {
       DeleteEntity( vTaskLPLR, "ExternalLibFile", zREPOS_NONE );
@@ -2349,7 +2354,8 @@ VerifyCompilerSpecOptions( zVIEW vSubtask )
    if ( !VerifyDir( vSubtask, szFileName, "Resource Directory", TRUE ) )
       goto EndOfFunction;
 
-   GetStringFromAttribute( szFileName, vTaskLPLR, "Compiler", "CompilerDir" );
+   GetStringFromAttribute( szBaseDir, vTaskLPLR, "Compiler", "CompilerDir" );
+   SysConvertEnvironmentString( szFileName, szBaseDir );
    SysAppendcDirSep( szFileName );
    zstrcat( szFileName, "NMAKE.EXE" );
    if ( SysOpenFile( vSubtask, szFileName, COREFILE_EXIST ) == -1 )

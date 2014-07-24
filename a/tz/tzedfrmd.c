@@ -7250,7 +7250,7 @@ OpenFileForMoveAndDelete( ZDrTBEdt *oEditor,
                           zPCHAR   szSourceFileName,
                           zBOOL    bCreateFile )
 {
-   zCHAR  szName[33];
+   zCHAR  szName[ 33 ];
    zLONG  hFile;
    zBOOL  bCreateFileInfo = FALSE;
 

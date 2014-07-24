@@ -2698,7 +2698,7 @@ ZBmpFile::OnFileSavecolormappedbmp( CWnd *pWnd )
    RGBQUAD colormap[ 256 ];
 
    // num colors
-   int colors = (int) pow( 2, bitsperpixel );
+   int colors = (int) pow( (double) 2, bitsperpixel );
 
    BYTE *colorMappedBuffer = 0;
 

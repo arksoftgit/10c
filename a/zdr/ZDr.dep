@@ -40,7 +40,9 @@
 	".\DROPOKM.CUR"\
 	".\DROPOKM1.cur"\
 	".\DROPOKMM.cur"\
-	".\HAND.cur"\
+	".\HAND1.cur"\
+	".\hand2.cur"\
+	".\HandX.cur"\
 	".\HSPLIT.cur"\
 	".\prevend.bmp"\
 	".\prevhome.bmp"\
@@ -52,6 +54,7 @@
 	".\prevzin.bmp"\
 	".\prevzout.bmp"\
 	".\printer.bmp"\
+	".\RES\ACCTBAR.BMP"\
 	".\RES\ActiveX.bmp"\
 	".\RES\Alarm.bmp"\
 	".\RES\Appoint.bmp"\
@@ -73,6 +76,8 @@
 	".\res\zdr.rc2"\
 	".\RES\ZDrDoc.ico"\
 	".\RES\ZDX.ICO"\
+	".\TreeClosed.bmp"\
+	".\TreeOpened.bmp"\
 	".\VSPLIT.cur"\
 	".\XSPLIT.cur"\
 	

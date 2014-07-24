@@ -994,7 +994,7 @@ ZPushButton::DrawButtonText( CDC *pDC, CRect rect,
 
       // Draw the list of text.
       zSHORT nSize = arrayText.GetSize( );
-      zSHORT nOffsetY = (rect.Height( ) - (nSize * sizeText.cy)) / 2;
+      zSHORT nOffsetY = (zSHORT) (rect.Height( ) - (nSize * sizeText.cy)) / 2;
       if ( nOffsetY < -1 )
          nOffsetY = 0;
 
@@ -1651,7 +1651,7 @@ ZFontPicker::DestroyWindow( )
 void
 ZFontPicker::SetFontInUse( const CString& csFont )
 {
-   if ( csFont.IsEmpty == FALSE )
+   if ( csFont.IsEmpty( ) == FALSE )
    {
       ZCorrelatedItem *pItem;
 

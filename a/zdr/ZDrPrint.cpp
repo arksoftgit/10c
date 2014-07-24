@@ -1916,13 +1916,13 @@ ZPrintout::RemoteFilePrint( zVIEW vSubtask )
    {
       // Title is used to set the title (which is the reportname) for the document we are printing.
       csTitle = szReportFileName;
-     TraceLineS(" In RemoteFilePrint: ", csTitle );
+      TraceLineS(" In RemoteFilePrint: ", csTitle );
    }
    else
    {
       // We should never get here but this is if no report name was specified.
       csTitle = "ZeidonWEB";
-     TraceLineS(" Error In RemoteFilePrint reportname is somehow null so we are using: ", csTitle );
+      TraceLineS(" Error In RemoteFilePrint reportname is somehow null so we are using: ", csTitle );
    }
 
    m_szDefaultPrinter[ 0 ] = 0;

@@ -3141,7 +3141,7 @@ zwTZCMLPLD_SaveLPLR_Desc( zVIEW vSubtask )
 
    oTZCMWKSO_CommitWorkstation( vTZCMWKSO );
    oTZCMLPLO_CommitLPLR( vTZCMLPLO );
-   
+
    // Save the TZCMULWO object, if it's been modified.
    GetViewByName( &vTZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK );
    if ( ObjectInstanceUpdatedFromFile( vTZCMULWO ) == 1 )
@@ -8705,7 +8705,7 @@ zwfnTZCMLPLD_LoadMetaAndMerge( zVIEW  vSubtask, zVIEW  vTZCMLPLO,
 {
    zVIEW    vMeta;
    zCHAR    szMsg[ 254 ];
-   zCHAR    szMetaName[33];
+   zCHAR    szMetaName[ 33 ];
    zSHORT   nRC;
 
    for ( nRC = SetCursorFirstEntity( vTZCMLPLO, "W_MetaDef", "" );

@@ -540,7 +540,7 @@ TZText::OnPaint( )
       COLORREF colorOldBk;
       COLORREF colorBk;
       CRect rectClient;
-      zSHORT nQuadrant = ((m_lEscapement - 1) / 900) + 1;
+      zSHORT nQuadrant = (zSHORT) ((m_lEscapement - 1) / 900) + 1;
 
 //    GetUpdateRect( rect, 1 );
 //    CBrush brush( dc.GetBkColor( ) );

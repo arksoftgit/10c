@@ -1762,12 +1762,14 @@ DetermineSystemVersion( zPLONG plMajorVersion,
                   }
                }
                else
+#ifdef VER_SUITE_SERVERAPPLIANCE
                if ( osvi.wSuiteMask == VER_SUITE_SERVERAPPLIANCE )
                {
                   zstrcat( szVersion, "Web Server " );
                   nRC = 150;
                }
                else
+#endif
                {
                   zstrcat( szVersion, "Server " );
                   nRC = 100;
