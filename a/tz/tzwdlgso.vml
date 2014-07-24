@@ -535,7 +535,7 @@ CloneControl( VIEW vSourceLPLR BASED ON LOD TZCMLPLO,
       END
    END
 
-   FOR EACH vOrigWC.WebControlProperty  
+   FOR EACH vOrigWC.WebControlProperty
       CreateMetaEntity( vSubtask, vNewWC, "WebControlProperty", zPOS_AFTER )
       SetMatchingAttributesByName( vNewWC, "WebControlProperty",
                                    vOrigWC, "WebControlProperty", zSET_NULL )

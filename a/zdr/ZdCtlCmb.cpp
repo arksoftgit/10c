@@ -2340,8 +2340,9 @@ ZComboBox::MapToOI( zLONG lFlag )
                                                *m_pzsAName, szMap,
                                                zTYPE_STRING, 0,
                                                *m_pzsContext,
-                                               (zSHORT) (m_pzsContext->IsEmpty( ) ?
-                                                lFlag | zUSE_DEFAULT_CONTEXT : lFlag) );
+                                               m_pzsContext->IsEmpty( ) ?
+                                                lFlag | zUSE_DEFAULT_CONTEXT :
+                                                (zSHORT) lFlag );
                   }
                }
             }
@@ -2361,8 +2362,9 @@ ZComboBox::MapToOI( zLONG lFlag )
                                       *m_pzsAName, szMap,
                                       zTYPE_STRING, 0,
                                       *m_pzsContext,
-                                      (zSHORT) (m_pzsContext->IsEmpty( ) ?
-                                         lFlag | zUSE_DEFAULT_CONTEXT : lFlag) );
+                                      m_pzsContext->IsEmpty( ) ?
+                                         lFlag | zUSE_DEFAULT_CONTEXT :
+                                         (zSHORT) lFlag );
    }
 
 #ifndef zREMOTE_SERVER
@@ -2633,9 +2635,7 @@ ZComboBox::ProcessCommand( zUSHORT uNotificationCode, zLONG lSelectedIdx )
          // Save the subtype and turn off inclusion and foreign key assignment
          // so no REAL MAPPING takes place in MapToOI, ONLY POSITIONING.
          zULONG ulSave = m_ulSubtype;
-         if ( m_pzmaComposite == 0 || m_pzmaComposite->m_lKeyId != 2010 )
-            m_ulSubtype &= ~(zCOMBOBOX_INCLUDE | zCOMBOBOX_FOREIGN_KEY);
-
+         m_ulSubtype &= ~(zCOMBOBOX_INCLUDE | zCOMBOBOX_FOREIGN_KEY);
          MapToOI( 0 );
          m_ulSubtype = ulSave;
       }

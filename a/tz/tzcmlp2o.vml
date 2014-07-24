@@ -1,6 +1,5 @@
 /*
 CHANGE LOG
-
 2000.10.20    SR   Z2000  Size of path variables
    Modified size of FileName, XDM_Filename and XOD_FileName in function
    GenerateCallHeader, sz and sz2 in function GenerateTransShell
@@ -459,3 +458,100 @@ GenerateTransShell( VIEW vLPLR BASED ON LOD TZCMLPLO, VIEW vSubtask )
    END // FOR EACH vLPLR.W_MetaDef
 
 END // GenTransShell
+
+/*************************************************************************************************
+**    
+**    OPERATION: CheckOI_ForDupZKey
+**    
+*************************************************************************************************/
+TRANSFORMATION OPERATION
+CheckOI_ForDupZKey( VIEW vTZCMLPLO BASED ON LOD TZCMLPLO,
+                    VIEW vHierMetaOI_Orig,
+                    STRING ( 32 ) szRootEntityName )
+
+   VIEW vHierMetaOI
+   STRING ( 32 )   szCurrentEntityName
+   STRING ( 32 )   szPreviousEntityName
+   STRING ( 2000 ) szMsg
+   STRING ( 20 )   szZKey
+   INTEGER         lZKey
+   INTEGER         lLastZKey
+   SHORT           nHierRC
+   SHORT           nReturnLevel
+
+   // Check the vHierMetaOI object instance for a duplicate ZKey. Do this by creating a work
+   // subobject in vHierMetaOI of all ZKey values in the vHierMetaOI, then sorting and comparing them.
+   
+   FOR EACH vTZCMLPLO.EntityZKey 
+      DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+   END
+   FOR EACH vTZCMLPLO.DuplicateZKey 
+      DELETE ENTITY vTZCMLPLO.DuplicateZKey NONE 
+   END
+   
+   CreateViewFromView( vHierMetaOI, vHierMetaOI_Orig )
+   NAME VIEW vHierMetaOI "vHierMetaOIDuplicates"
+   SetCursorFirstEntity( vHierMetaOI, szRootEntityName, "" )
+   DefineHierarchicalCursor( vHierMetaOI, szRootEntityName )
+   nHierRC = zCURSOR_SET
+   // Create Root ZKey.
+   GetIntegerFromAttribute( lZKey, vHierMetaOI, szRootEntityName, "ZKey" )
+   CREATE ENTITY vTZCMLPLO.EntityZKey 
+   vTZCMLPLO.EntityZKey.ZKey       = lZKey
+   vTZCMLPLO.EntityZKey.EntityName = szRootEntityName
+   LOOP WHILE nHierRC >= zCURSOR_SET
+      nHierRC = SetCursorNextEntityHierarchical( nReturnLevel,
+                                                 szCurrentEntityName,
+                                                 vHierMetaOI )
+      IF nHierRC >= zCURSOR_SET
+         // Create ZKey, unless Entity is identified as No Duplicate Check.
+         SET CURSOR FIRST vTZCMLPLO.DuplicateCheckEntity WHERE vTZCMLPLO.DuplicateCheckEntity.EntityName = szCurrentEntityName
+         IF RESULT >= zCURSOR_SET 
+            GetIntegerFromAttribute( lZKey, vHierMetaOI, szCurrentEntityName, "ZKey" )
+            CREATE ENTITY vTZCMLPLO.EntityZKey 
+            vTZCMLPLO.EntityZKey.ZKey       = lZKey
+            vTZCMLPLO.EntityZKey.EntityName = szCurrentEntityName
+   
+            // For recursive subentity, step down a level.
+            IF nHierRC = zCURSOR_SET_RECURSIVECHILD
+               SetViewToSubobject( vHierMetaOI, szCurrentEntityName )
+            END
+         END
+      END
+   END
+   DropView( vHierMetaOI )
+   
+   // Sort ZKey entries and loop through each entry looking for duplicates.
+   OrderEntityForView( vTZCMLPLO, "EntityZKey", "ZKey A" )
+   SET CURSOR FIRST vTZCMLPLO.EntityZKey 
+   lLastZKey = 0
+   FOR EACH vTZCMLPLO.EntityZKey 
+      lZKey = vTZCMLPLO.EntityZKey.ZKey 
+      IF lLastZKey = lZKey
+         CREATE ENTITY vTZCMLPLO.DuplicateZKey 
+         vTZCMLPLO.DuplicateZKey.ZKey        = vTZCMLPLO.EntityZKey.ZKey 
+         vTZCMLPLO.DuplicateZKey.EntityName1 = vTZCMLPLO.EntityZKey.EntityName 
+         vTZCMLPLO.DuplicateZKey.EntityName2 = szPreviousEntityName
+      END
+      lLastZKey            = lZKey
+      szPreviousEntityName = vTZCMLPLO.EntityZKey.EntityName
+   END
+   
+   // If a duplicate ZKey was found, issue a message.
+   IF vTZCMLPLO.DuplicateZKey EXISTS
+      szMsg = "The following ZKeys and Entities are duplicates: " + NEW_LINE
+      FOR EACH vTZCMLPLO.DuplicateZKey 
+         szZKey = vTZCMLPLO.DuplicateZKey.ZKey 
+         szMsg = szMsg + "   " + szZKey + " / " + vTZCMLPLO.DuplicateZKey.EntityName1 + " / " + vTZCMLPLO.DuplicateZKey.EntityName2 + NEW_LINE
+      END
+      MessageSend( vTZCMLPLO, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
+   ELSE
+      MessageSend( vTZCMLPLO, "", "Configuration Management", "There were no duplicate keys in object.", zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
+   END
+   
+   // Remove temporary work entities.
+   FOR EACH vTZCMLPLO.EntityZKey 
+      DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+   END
+
+END

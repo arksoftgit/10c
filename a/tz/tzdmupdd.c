@@ -865,21 +865,25 @@ zwfnTZDMUPDD_SaveDomain( zVIEW vSubtask, zVIEW vDomainGrp )
    // We are updating a Domain if CM_List.W_MetaDef.CPLR_ZKey = the Domain
    // ZKey.  We compare the CM_List.W_MetaDef.Name value to the Domain name
    // to see if the Domain name has changed.
+   // However, we will only do this check if W_MetaDef exists, which it might not for the first Domain.
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
-   if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "CPLR_ZKey",
-                                     vDomainGrp, "Domain",    "ZKey" ) == 0 )
+   if ( CheckExistenceOfEntity( vCM_List, "W_MetaDef" ) >= zCURSOR_SET )
    {
-      if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "Name",
-                                        vDomainGrp, "Domain",    "Name" ) != 0 )
+      if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "CPLR_ZKey",
+                                        vDomainGrp, "Domain",    "ZKey" ) == 0 )
       {
-         // Domain Name has changed, so change Context Name as well, if there
-         // is one by the old name.
-         nRC = SetCursorFirstEntityByAttr( vDomainGrp, "Context",   "Name",
-                                           vCM_List,   "W_MetaDef", "Name", 0 );
-         if ( nRC >= zCURSOR_SET )
+         if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "Name",
+                                           vDomainGrp, "Domain",    "Name" ) != 0 )
          {
-            SetAttributeFromAttribute( vDomainGrp, "Context", "Name",
-                                       vDomainGrp, "Domain",  "Name" );
+            // Domain Name has changed, so change Context Name as well, if there
+            // is one by the old name.
+            nRC = SetCursorFirstEntityByAttr( vDomainGrp, "Context",   "Name",
+                                              vCM_List,   "W_MetaDef", "Name", 0 );
+            if ( nRC >= zCURSOR_SET )
+            {
+               SetAttributeFromAttribute( vDomainGrp, "Context", "Name",
+                                          vDomainGrp, "Domain",  "Name" );
+            }
          }
       }
    }
@@ -2339,27 +2343,21 @@ zwTZDMUPDD_CreateDomainParameter( zVIEW vSubtask, zVIEW vDomain )
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "Y" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "DataType" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "Data" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ContextName" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "V" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "View" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ViewEntity" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ViewAttrib" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "N" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "MaxStrLth" );
@@ -3245,7 +3243,7 @@ zwTZDMUPDD_MoveDomainPostBuild( zVIEW vSubtask )
    zVIEW  vTZDGSRCO;
    zVIEW  vMoveDomain;
    zCHAR  szDomainName[ 33 ];
-   zCHAR  szDomainGroup[9];
+   zCHAR  szDomainGroup[ 33];
    zCHAR  szType[ 4 ];
    zSHORT nRC = -1;
    zBOOL  bSelectedOperation = FALSE;
@@ -3442,7 +3440,7 @@ zwTZDMUPDD_SetSaveAsName( zVIEW vSubtask )
    zVIEW   vMoveDomain;
    zVIEW   vProfileXFER;
    zVIEW   vDomainData;
-   zCHAR   szGroupName[9];
+   zCHAR   szGroupName[ 33];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -3502,7 +3500,7 @@ zwTZDMUPDD_SetGroupName( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vMoveDomain;
    zVIEW   vProfileXFER;
-   zCHAR   szGroupName[9];
+   zCHAR   szGroupName[ 33];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -3654,7 +3652,7 @@ zwTZDMUPDD_SaveAsCheckValues( zVIEW  vSubtask,
    GetSubtaskForWindowName( vSubtask, &vWindow, "SaveAs" );
 
    //Domain Group Name is required
-   GetCtrlText( vWindow, "txtDomainGroup", szGroupName, 9 );
+   GetCtrlText( vWindow, "txtDomainGroup", szGroupName, 33 );
    if ( zstrcmp( szGroupName, "" ) == 0 )
    {
       zstrcpy( szMsg, "Target Group Name is required." );
@@ -3725,7 +3723,7 @@ zwTZDMUPDD_SaveAsDomain( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vProfileXFER;
    zVIEW   vWindow;
-   zCHAR   szGroupName[ 9 ];
+   zCHAR   szGroupName[ 33 ];
    zCHAR   szOutName[ 33 ];
    zSHORT  nCopyCode = 0;
    zSHORT  nRC;
@@ -3847,7 +3845,7 @@ zwTZDMUPDD_SaveAsNewDomain( zVIEW  vSubtask,
    zVIEW   vCM_List;
    zVIEW   vCM_ListGroup;
    zVIEW   vMoveDomain;
-   zCHAR   szDomainGroup[ 9 ];
+   zCHAR   szDomainGroup[ 33 ];
    zSHORT  nCopyCodeFlag;
    zULONG  ulZKey;
 
@@ -4237,7 +4235,7 @@ zwTZDMUPDD_MoveCheckGroupType( zVIEW  vSubtask,
    zCHAR    szMsg[ 100 ];
    zCHAR    szControlText[ 4 ];
    zCHAR    szLanguageType[ 4 ];
-   zCHAR    szGroupName[ 9 ];
+   zCHAR    szGroupName[ 33 ];
 
    GetViewByName( &vMoveDomain, "MoveDomain", vSubtask, zLEVEL_TASK );
    GetSubtaskForWindowName( vSubtask, &vWindow, "MoveDomain" );
@@ -4271,7 +4269,7 @@ zwTZDMUPDD_MoveCheckGroupType( zVIEW  vSubtask,
    // If source and target group identical ... error!
    if ( nCheckIdenticalGroup == 1 )
    {
-      GetCtrlText( vWindow, "txtDomainGroup", szGroupName, 9 );
+      GetCtrlText( vWindow, "txtDomainGroup", szGroupName, 33 );
       if ( CompareAttributeToString( vMoveDomain, "SourceFile", "Name",
                                      szGroupName ) == 0 )
       {
@@ -4353,7 +4351,7 @@ zwTZDMUPDD_MoveDomainOperToFile( zVIEW  vSubtask,
    zVIEW  vDeleteOp;
    zVIEW  vTZDGSRCO;
    zVIEW  vWindow;
-   zCHAR  szGroupName[9];
+   zCHAR  szGroupName[ 33];
    zCHAR  szOperationName[ 33 ];
 
    if ( nCopyOrMoveFlag <= 0 )
@@ -4378,7 +4376,7 @@ zwTZDMUPDD_MoveDomainOperToFile( zVIEW  vSubtask,
 
       // Create Source File
       CreateEntity( vDeleteOp, "SourceFile", zPOS_AFTER );
-      GetCtrlText( vWindow, "txtDomainGroup", szGroupName, 9 );
+      GetCtrlText( vWindow, "txtDomainGroup", szGroupName, 33 );
       SetCursorFirstEntityByString( vMoveDomain_Copy, "SourceFile", "Name",
                                     szGroupName, "" );
       SetMatchingAttributesByName( vDeleteOp, "SourceFile",
@@ -4613,7 +4611,7 @@ zwTZDMUPDD_AcceptDomainGroup( zVIEW vSubtask )
    zVIEW   vCM_ListGroup;
    zVIEW   vProfileXFER;
    zVIEW   vParentWindow;
-   zCHAR   szDomainGroup[9];
+   zCHAR   szDomainGroup[ 33];
    zCHAR   szControlText[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -4700,7 +4698,7 @@ zwTZDMUPDD_SaveAsInNewGroup( zVIEW vSubtask )
    zVIEW  vCM_List;
    zCHAR  szOutName[ 33 ];
    zCHAR  szNewName[ 33 ];
-   zCHAR  szGroupName[9];
+   zCHAR  szGroupName[ 33];
    zCHAR  szMsg[ 100 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -5149,7 +5147,7 @@ zwTZDMUPDD_SaveAsRtnFromSubwnd( zVIEW vSubtask )
 {
    zVIEW    vProfileXFER;
    zVIEW    vMoveDomain;
-   zCHAR    szGroupName[9];
+   zCHAR    szGroupName[ 33];
    zCHAR    szLanguageType[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -5165,7 +5163,7 @@ zwTZDMUPDD_SaveAsRtnFromSubwnd( zVIEW vSubtask )
                            zDM_SaveAsDomain );
 
    // save GroupName for set cursor to selected Domain Group
-   GetCtrlText( vSubtask, "txtDomainGroup", szGroupName, 9 );
+   GetCtrlText( vSubtask, "txtDomainGroup", szGroupName, 33 );
    zwTZDMUPDD_CreateWorkLOD( vSubtask );
 
    GetViewByName( &vMoveDomain, "MoveDomain", vSubtask, zLEVEL_TASK );

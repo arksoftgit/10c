@@ -1245,7 +1245,7 @@ oTZRPSRCO_XSLT_GetStyleShape( zVIEW     vReportDef,
       //:lBorder = lBorder / 2
       lBorder = lBorder / 2;
       //:SysConvertDecimalToString( lBorder, szBorderWidth, 1 )
-      SysConvertDecimalToString( &lBorder, szBorderWidth, 1 );  // dks change
+      SysConvertDecimalToString( &lBorder, szBorderWidth, 1 );
       //://SysConvertDecimalToString( DOUBLE /* pDecimal */,
       //://                           STRING /* ReturnString */,
       //://                           INTEGER /* nPrecision */ )

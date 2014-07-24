@@ -297,7 +297,6 @@ MainThrdWndProc( HWND   hWnd,         // window handle
       case WM_TIMER:
       {
          zCHAR szFileName[ zMAX_FILENAME_LTH + 1 ];
-         zCHAR szTempName[ zMAX_FILENAME_LTH + 1 ];
          UINT uIdTimer = wParam;
 
       // TraceLine( "WM_TIMER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %d  Wnd: 0x%08x", uIdTimer, hWnd );
@@ -345,11 +344,10 @@ MainThrdWndProc( HWND   hWnd,         // window handle
             KillTimer( g_hWndMainFrame, g_uKillTimerId );
             g_uKillTimerId = 0;
 
-            SysReadZeidonIni( -1, "[ObjectEngine]", "KillZeidon", szTempName );
-            SysConvertEnvironmentString( szFileName, szTempName );
-            TraceLineS( "KillZeidon: ", szFileName );
+            SysReadZeidonIni( -1, "[ObjectEngine]", "KillZeidon", szFileName );
             if ( szFileName[ 0 ] )
             {
+               TraceLineS( "KillZeidon: ", szFileName );
                Sleep( 5000 );
                WinExec( szFileName, SW_SHOWNORMAL );
             }
@@ -1097,10 +1095,8 @@ MainWndProc( HWND   hWnd,                // window handle
             if ( nResponse == IDYES )
             {
                zCHAR szFileName[ zMAX_FILENAME_LTH + 1 ];
-               zCHAR szTempName[ zMAX_FILENAME_LTH + 1 ];
 
-               SysReadZeidonIni( -1, "[ObjectEngine]", "KillZeidon", szTempName );
-               SysConvertEnvironmentString( szFileName, szTempName );
+               SysReadZeidonIni( -1, "[ObjectEngine]", "KillZeidon", szFileName );
                if ( szFileName[ 0 ] )
                   WinExec( szFileName, SW_SHOWNORMAL );
             }
@@ -2602,9 +2598,9 @@ InitInstance( HANDLE hInstance, // Current instance identifier.
       char    szIniPassword[ 32 ];
       char    szPassword[ 32 ];
       char    szUser[ 32 ];
-	   char    szEncrypted[ 1 ];
+	  char    szEncrypted[ 1 ];
       USHORT  uReturnLth;
-	   USHORT  uLth;
+	  USHORT  uLth;
       USHORT  uRC;
 
       SysReadZeidonIni( -1, szlWorkstation, szlUserID, szIniUser );
@@ -2634,28 +2630,28 @@ InitInstance( HANDLE hInstance, // Current instance identifier.
          if ( szEncrypted[ 0 ] == 'E' || szEncrypted[ 0 ] == 'e' )
          {
          /*
-            UfEncryptString( szUser, "sa", 26 );
-                             TraceLineS( "----Encrypted Username: ", szUser );
-            UfEncryptString( szPassword, "sql!4ever&ever", 26 );
-                             TraceLineS( "----Encrypted Password: ", szPassword );
+         UfEncryptString (szUser, "sa", 26 );
+                  TraceLineS( "----Encrypted Username: ", szUser );
+         UfEncryptString (szPassword, "sql!4ever&ever", 26 );
+                  TraceLineS( "----Encrypted Password: ", szPassword );
 
-                             UfDecryptString( szIniUser, szUser,  26 );
-                             TraceLineS( "----Decrypted Username: ", szIniUser );
-                             UfDecryptString( szIniPassword, szPassword, 26 );
-                             TraceLineS( "----Decrypted Password: ", szIniPassword );
+                  UfDecryptString( szIniUser, szUser,  26 );
+                  TraceLineS( "----Decrypted Username: ", szIniUser );
+                  UfDecryptString( szIniPassword, szPassword, 26 );
+                  TraceLineS( "----Decrypted Password: ", szIniPassword );
          */
 
-            uLth = zstrlen( szIniUser );
-            UfDecryptString( szUser, szIniUser, uLth );
-         // TraceLineS( "----Decrypted Username2: ", szUser );
-            uLth = zstrlen( szIniPassword );
-            UfDecryptString( szPassword, szIniPassword, uLth );
-         // TraceLineS( "----Decrypted Password2: ", szPassword );
+         uLth = zstrlen( szIniUser );
+                  UfDecryptString( szUser, szIniUser, uLth );
+                  //TraceLineS( "----Decrypted Username2: ", szUser );
+         uLth = zstrlen( szIniPassword );
+                  UfDecryptString( szPassword, szIniPassword, uLth );
+                  //TraceLineS( "----Decrypted Password2: ", szPassword );
          }
          else
          {
-            zstrcpy( szUser, szIniUser );
-            zstrcpy( szPassword, szIniPassword );
+                  zstrcpy( szUser, szIniUser );
+                  zstrcpy( szPassword, szIniPassword );
          }
 
       // if ( zstrlen( szIniPassword ) == 26 )

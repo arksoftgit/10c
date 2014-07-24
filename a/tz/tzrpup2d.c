@@ -755,7 +755,7 @@ zOPER_EXPORT zSHORT OPERATION
 TZRPUPDD_AskForSave( zVIEW vSubtask )
 {
    zVIEW  vReport;
-   zCHAR  szReportName[ 9 ];
+   zCHAR  szReportName[ 33 ];
    zCHAR  szMessageText[ 254 ];
    zBOOL  nSaveAs = FALSE;
    zSHORT nRC;
@@ -1206,7 +1206,7 @@ TZRPUPDD_NewReportFile( zVIEW vSubtask )
    zVIEW   vMetaList;
    zVIEW   vLOD_LPLR;
    zCHAR   szFileName[ 256 ];
-   zCHAR   szReportName[ 9 ];
+   zCHAR   szReportName[ 33 ];
    zSHORT  nIdx;
 
    // get the C++ class pointer to the painter object from the
@@ -2110,8 +2110,8 @@ TZRPUP2D_SaveAsReport( zVIEW vSubtask )
    zVIEW  vCM_List;
    zVIEW  vSaveAs;
    zVIEW  vTaskLPLR;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zVIEW  vProfileXFER;
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -2222,10 +2222,10 @@ TZRPUP2D_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vCM_List;
    zVIEW   vCM_List_Copy;
-   zCHAR   szNewName[ 9 ];
-   zCHAR   szOutName[ 9 ];
+   zCHAR   szNewName[ 33 ];
+   zCHAR   szOutName[ 33 ];
 
-   GetCtrlText( vSubtask, "edReportName", szNewName, 9 );
+   GetCtrlText( vSubtask, "edReportName", szNewName, 33 );
    UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );

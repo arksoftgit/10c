@@ -1021,9 +1021,21 @@ wTZOPRUSD_SaveSourceFile( zVIEW vSubtask )
       SetAttributeFromString( vMetaView, "SourceFile", "Extension",
                               "VML" );
    else
-      SetAttributeFromString( vMetaView, "SourceFile", "Extension",
-                              "C" );
-
+   {
+      if ( szLanguageType[ 0 ] == 'S' )
+         SetAttributeFromString( vMetaView, "SourceFile", "Extension",
+                                 "Scala" );
+      else
+      {
+      if ( szLanguageType[ 0 ] == 'J' )
+         SetAttributeFromString( vMetaView, "SourceFile", "Extension",
+                                 "Java" );
+      else
+         SetAttributeFromString( vMetaView, "SourceFile", "Extension",
+                                 "C" );
+      }
+   }
+   
    // Accept the current SourceFile subobject.
    if ( wTZOPRUSD_AcceptSubobject( vSubtask, "SourceFile",
                                    "Name", "Source File" ) < 0 )

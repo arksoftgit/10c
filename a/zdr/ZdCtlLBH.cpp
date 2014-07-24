@@ -4508,9 +4508,10 @@ ZListCtrl::OnLButtonUp( UINT uModKeys, CPoint pt )
 
                   DropView( vTgt );
 
-                  zSHORT nPrevSelSet = SetSelectSetForView( vSrc, m_nSelectSelSet );
+                  zSHORT nPrevSelSet =
+                              SetSelectSetForView( vSrc, m_nSelectSelSet );
                   if ( (m_ulFlag & zQUAL_SCOPE_OI) &&
-                       (m_pzsScope == 0 || *m_pzsScope == (zCPCHAR) 0) )
+                       (m_pzsScope == 0 || *m_pzsScope == 0) )
                   {
                      SetAllSelectStatesForEntity( vSrc, *m_pzsEName, FALSE,
                                                   (zCPCHAR) zSCOPE_OI );
@@ -8255,7 +8256,7 @@ ZSortedHeaderCtrl::DrawItem( LPDRAWITEMSTRUCT lpDIS )
 
    // Labels are offset by a certain amount.
    // This offset is related to the width of a space character.
-   zSHORT nOffset = (zSHORT) pDC->GetTextExtent( _T( " " ), 1 ).cx * 2;
+   zSHORT nOffset = pDC->GetTextExtent( _T( " " ), 1 ).cx * 2;
 
    // Get the column text and format.
    TCHAR   szBuffer[ 256 ];

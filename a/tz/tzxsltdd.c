@@ -157,21 +157,21 @@ zwfnTZXSLTDD_Load_PPE( zVIEW vSubtask )
    zVIEW   vTZPESRCO;
    zSHORT  nRC;
 
-   if ( GetViewByName( &vTZPESRCO, "TZPESRCO", vSubtask, zLEVEL_TASK ) > 0 ) 
-      return( 0 );                                                           
-                                                                             
-   RetrieveViewForMetaList( vSubtask, &vMetaList, zREFER_PENV_META );        
-   nRC = LoadZeidonPPE( vSubtask, &vTZPESRCO, zREFER_PENV_META, vMetaList,   
-                        "XSLT Maintenance",                                  
-                        "Painter cannot be started.");                       
-                                                                             
-   if ( nRC < 0 )                                                            
-   {                                                                         
-      SetWindowActionBehavior( vSubtask, zWAB_ReturnToParent, 0, 0 );        
+   if ( GetViewByName( &vTZPESRCO, "TZPESRCO", vSubtask, zLEVEL_TASK ) > 0 )
+      return( 0 );
+
+   RetrieveViewForMetaList( vSubtask, &vMetaList, zREFER_PENV_META );
+   nRC = LoadZeidonPPE( vSubtask, &vTZPESRCO, zREFER_PENV_META, vMetaList,
+                        "XSLT Maintenance",
+                        "Painter cannot be started.");
+
+   if ( nRC < 0 )
+   {
+      SetWindowActionBehavior( vSubtask, zWAB_ReturnToParent, 0, 0 );
       return( -16 );
-   }                                                                         
-                                                                             
-   if ( SetCursorFirstEntityByInteger( vTZPESRCO, "ControlDef",              
+   }
+
+   if ( SetCursorFirstEntityByInteger( vTZPESRCO, "ControlDef",
                                        "Key", 1000, 0 ) >= 0 )
    {
       SetNameForView( vTZPESRCO, "TZPESRCO", vSubtask, zLEVEL_TASK );
@@ -190,51 +190,51 @@ zwfnTZXSLTDD_Load_PPE( zVIEW vSubtask )
    return( 0 );
 }
 
-zOPER_EXPORT zSHORT OPERATION            
-TZXSLTDD_PreBuild( zVIEW vSubtask )            
-{            
-   zVIEW  vProfileXFER;            
-   zVIEW  vMetaList;            
-   
-   zVIEW  vTZXSLTSO;            
-   zVIEW  vTaskLPLR;            
-   zVIEW  vSaveAs;            
-   zCHAR  szApplName[ 34 ];            
-   zPCHAR pchLPLR_Name;            
+zOPER_EXPORT zSHORT OPERATION
+TZXSLTDD_PreBuild( zVIEW vSubtask )
+{
+   zVIEW  vProfileXFER;
+   zVIEW  vMetaList;
 
-   // Get the Profile information and            
-   // Call configuration management to set up the default LPLR.            
-   oTZ__PRFO_GetViewToProfile( &vProfileXFER, "WD", vSubtask, zCURRENT_OI );            
-   if ( vProfileXFER )            
-      SetNameForView( vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_TASK );            
-            
-   pchLPLR_Name = 0;            
+   zVIEW  vTZXSLTSO;
+   zVIEW  vTaskLPLR;
+   zVIEW  vSaveAs;
+   zCHAR  szApplName[ 34 ];
+   zPCHAR pchLPLR_Name;
+
+   // Get the Profile information and
+   // Call configuration management to set up the default LPLR.
+   oTZ__PRFO_GetViewToProfile( &vProfileXFER, "WD", vSubtask, zCURRENT_OI );
+   if ( vProfileXFER )
+      SetNameForView( vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_TASK );
+
+   pchLPLR_Name = 0;
    GetViewByName( &vTZXSLTSO, "__SysApplicationXSLT", vSubtask, zLEVEL_SYSTEM );
-                              
-   if ( vTZXSLTSO )            
-   {            
-      if ( GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK ) > 0 )            
-         DropObjectInstance( vTaskLPLR );            
-            
-      GetApplDirectoryFromView( szApplName, vTZXSLTSO, zAPPL_NAME, 33 );            
-      if ( InitializeLPLR( vSubtask, szApplName ) < 0 )            
-         return( -1 );            
-   }
-   else            
-   if ( CompareAttributeToString( vProfileXFER, "WD", "StartupLPLR_Option",
-                                  "D" ) == 0 )   // default LPLR            
-   {            
-      if ( InitializeLPLR( vSubtask, "" ) < 0 )
-         return( -1 );            
-   }            
-   else            
+
+   if ( vTZXSLTSO )
    {
-      GetAddrForAttribute( &pchLPLR_Name, vProfileXFER, "WD", "StartupLPLR_Name" );           
-                           
-      if ( InitializeLPLR( vSubtask, pchLPLR_Name ) < 0 )            
+      if ( GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK ) > 0 )
+         DropObjectInstance( vTaskLPLR );
+
+      GetApplDirectoryFromView( szApplName, vTZXSLTSO, zAPPL_NAME, 33 );
+      if ( InitializeLPLR( vSubtask, szApplName ) < 0 )
          return( -1 );
-   }            
-            
+   }
+   else
+   if ( CompareAttributeToString( vProfileXFER, "WD", "StartupLPLR_Option",
+                                  "D" ) == 0 )   // default LPLR
+   {
+      if ( InitializeLPLR( vSubtask, "" ) < 0 )
+         return( -1 );
+   }
+   else
+   {
+      GetAddrForAttribute( &pchLPLR_Name, vProfileXFER, "WD", "StartupLPLR_Name" );
+
+      if ( InitializeLPLR( vSubtask, pchLPLR_Name ) < 0 )
+         return( -1 );
+   }
+
    // Get a list of XSLTs
    if ( GetViewByName( &vMetaList, "CM_List", vSubtask, zLEVEL_TASK ) < 1 )
       RetrieveViewForMetaList( vSubtask, &vMetaList, zREFER_XSLT_META );
@@ -242,9 +242,9 @@ TZXSLTDD_PreBuild( zVIEW vSubtask )
    SetNameForView( vMetaList, "CM_List", vSubtask, zLEVEL_TASK );
 
    // Activate the presentation environment.
-   if ( zwfnTZXSLTDD_Load_PPE( vSubtask ) < 0 )   
+   if ( zwfnTZXSLTDD_Load_PPE( vSubtask ) < 0 )
       return( -1 );
-   
+
    // If the XSLT is not checked out and the user changes this XSLT,
    // then Zeidon calls the window "Save XSLT as".
    // We save the action after Save as in the View TZSAVEAS (for example:
@@ -263,96 +263,96 @@ TZXSLTDD_PreBuild( zVIEW vSubtask )
 }
 
 zOPER_EXPORT zSHORT OPERATION
-TZXSLTDD_PostBuild( zVIEW vSubtask )                                                     
-{                                                                                             
-   zVIEW  vMetaList;                                                                          
-   zVIEW  vTZPNCTWO;                                                                          
-   zVIEW  vNewXSLTL = 0;                                                                      
-   zVIEW  vPanelList;                                                                         
-   zVIEW  vTZXSLTSO;                                                                          
-   zVIEW  vProfileXFER;                                                                       
-   zCHAR  szPanelName[ 33 ];                                                                  
-                                                                                              
-   // Setup the List of XSLTs.                                                                
+TZXSLTDD_PostBuild( zVIEW vSubtask )
+{
+   zVIEW  vMetaList;
+   zVIEW  vTZPNCTWO;
+   zVIEW  vNewXSLTL = 0;
+   zVIEW  vPanelList;
+   zVIEW  vTZXSLTSO;
+   zVIEW  vProfileXFER;
+   zCHAR  szPanelName[ 33 ];
+
+   // Setup the List of XSLTs.
    GetViewByName( &vMetaList, "CM_List", vSubtask, zLEVEL_TASK );
-                                                                                              
-   // Name the subtask associated with the main page so we can set its                        
-   // title later.                                                                            
+
+   // Name the subtask associated with the main page so we can set its
+   // title later.
    SetNameForView( vSubtask, "TZPNMWIN", vSubtask, zLEVEL_TASK );
-                                                                                              
-   // Set the top entities to "XSLT" and "Panel" (rather than the default                     
-   // of "XSLT" and "Window") ... but do not do initialization.                             
+
+   // Set the top entities to "XSLT" and "Panel" (rather than the default
+   // of "XSLT" and "Window") ... but do not do initialization.
    fnPainterCall( zMSG_INITPAINTER, vSubtask, 0, (zPCHAR) -1 );
-              
+
    GetViewByName( &vTZXSLTSO, "__SysApplicationXSLT", vSubtask, zLEVEL_SYSTEM );
-   if ( vTZXSLTSO )                                                                           
-   {                                                                                          
-      // Drop the previous instance being worked on if it exists.                             
-      GetViewByName( &vNewXSLTL, "TZOPENRPT", vSubtask, zLEVEL_TASK );                        
-      if ( vNewXSLTL )                                                                        
-         DropMetaOI( vSubtask, vNewXSLTL );                                                   
-                                                                                              
-      OpenXSLT_File( vSubtask, vTZXSLTSO );                                        
-      GetViewByName( &vNewXSLTL, "PANELL", vSubtask, zLEVEL_TASK );                            
-      if ( SetCursorFirstEntityByString( vNewXSLTL, "Panel", "Tag",                           
+   if ( vTZXSLTSO )
+   {
+      // Drop the previous instance being worked on if it exists.
+      GetViewByName( &vNewXSLTL, "TZOPENRPT", vSubtask, zLEVEL_TASK );
+      if ( vNewXSLTL )
+         DropMetaOI( vSubtask, vNewXSLTL );
+
+      OpenXSLT_File( vSubtask, vTZXSLTSO );
+      GetViewByName( &vNewXSLTL, "PANELL", vSubtask, zLEVEL_TASK );
+      if ( SetCursorFirstEntityByString( vNewXSLTL, "Panel", "Tag",
                                          szPanelName, 0 ) >= zCURSOR_SET )
-      {                                                                                       
-      // TZXSLTDD_UpdatePanelFromList( vSubtask );                                            
-      }                                                                                       
-                                                                                              
-      if ( GetViewByName( &vPanelList, "TZPAGE_LIST", vSubtask, zLEVEL_TASK ) > 0 )           
-      {                                                                                       
-         SetWindowActionBehavior( vPanelList, zWAB_ReturnToParent |                           
+      {
+      // TZXSLTDD_UpdatePanelFromList( vSubtask );
+      }
+
+      if ( GetViewByName( &vPanelList, "TZPAGE_LIST", vSubtask, zLEVEL_TASK ) > 0 )
+      {
+         SetWindowActionBehavior( vPanelList, zWAB_ReturnToParent |
                                   zWAB_ProcessImmediateAction, 0, 0 );
-      }                                                                                       
-   }                                                                                          
-   else                                                                                       
-   {                                                                                          
-#ifndef __WIN32__                                                                             
-      if ( GetViewByName( &vPanelList, "TZPAGE_LIST", vSubtask, zLEVEL_TASK ) < 1 )           
-      {                                                                                       
-         SetWindowActionBehavior( vSubtask, zWAB_StartModelessSubwindow |                     
-                                            zWAB_ProcessImmediateAction,                      
-                                  "TZXSLTDD", "PanelList" );                                  
-      }                                                                                       
-#endif                                                                                        
-                                                                                              
-      // Transfer to the open report window                                                   
+      }
+   }
+   else
+   {
+#ifndef __WIN32__
+      if ( GetViewByName( &vPanelList, "TZPAGE_LIST", vSubtask, zLEVEL_TASK ) < 1 )
+      {
+         SetWindowActionBehavior( vSubtask, zWAB_StartModelessSubwindow |
+                                            zWAB_ProcessImmediateAction,
+                                  "TZXSLTDD", "PanelList" );
+      }
+#endif
+
+      // Transfer to the open report window
       if ( vMetaList )
-         SetWindowActionBehavior( vSubtask, zWAB_StartModalSubwindow |                        
-                                  zWAB_ProcessImmediateAction,                                
-                                  "TZXSLTDD", "XSLTList" );                                   
-   }                                                                                          
-                                                                                              
-   // Set window Title with check out state                                                   
-   SetTitleWithCheckOutState( vSubtask, "Zeidon XSLT Maintenance", "PANELL",                   
-                              vNewXSLTL, "XSLT", zSOURCE_XSLT_META );                         
+         SetWindowActionBehavior( vSubtask, zWAB_StartModalSubwindow |
+                                  zWAB_ProcessImmediateAction,
+                                  "TZXSLTDD", "XSLTList" );
+   }
 
-   // Initialize the TZPNCTWO work object.                                                    
-   ActivateEmptyObjectInstance( &vTZPNCTWO, "TZPNCTWO", vSubtask, zSINGLE );                  
-   CreateEntity( vTZPNCTWO, "TZPNCTWO", zPOS_AFTER );                                         
+   // Set window Title with check out state
+   SetTitleWithCheckOutState( vSubtask, "Zeidon XSLT Maintenance", "PANELL",
+                              vNewXSLTL, "XSLT", zSOURCE_XSLT_META );
+
+   // Initialize the TZPNCTWO work object.
+   ActivateEmptyObjectInstance( &vTZPNCTWO, "TZPNCTWO", vSubtask, zSINGLE );
+   CreateEntity( vTZPNCTWO, "TZPNCTWO", zPOS_AFTER );
    SetAttributeFromString( vTZPNCTWO, "TZPNCTWO", "PainterType", "X" ); // XSLT
-   SetNameForView( vTZPNCTWO, "TZPNCTWO", vSubtask, zLEVEL_TASK );                            
-                                                                                              
-   // Set the top entities to "XSLT" and "Panel" (rather than the default                     
-   // of "XSLT" and "Window") ... and do initialization.                                    
-   fnPainterCall( zMSG_INITPAINTER, vSubtask, 0, (zPCHAR) 2 );                                
-                                                                                              
-   if ( GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_TASK ) > 0 )            
-   {                                                                                          
-      zLONG lFlags;                                                                           
-      zSHORT nState;                                                                          
+   SetNameForView( vTZPNCTWO, "TZPNCTWO", vSubtask, zLEVEL_TASK );
 
-      lFlags = RestoreWindowPlacement( vSubtask, vProfileXFER );                              
-      nState = (lFlags & 0x00000001) ? 1 : 0;                                                 
-      fnPainterCall( zMSG_SETSCROLLBARS, vSubtask, 0, (zPCHAR) 1 );                           
-      nState = (zSHORT) fnPainterCall( zMSG_RESTORE_PLACEMENT, vSubtask, 0,                   
-                                       (zPCHAR) vProfileXFER );                               
-   }                                                                                          
+   // Set the top entities to "XSLT" and "Panel" (rather than the default
+   // of "XSLT" and "Window") ... and do initialization.
+   fnPainterCall( zMSG_INITPAINTER, vSubtask, 0, (zPCHAR) 2 );
 
-   return( 0 );                                                                               
-}                                                                                             
-                                                                                              
+   if ( GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_TASK ) > 0 )
+   {
+      zLONG lFlags;
+      zSHORT nState;
+
+      lFlags = RestoreWindowPlacement( vSubtask, vProfileXFER );
+      nState = (lFlags & 0x00000001) ? 1 : 0;
+      fnPainterCall( zMSG_SETSCROLLBARS, vSubtask, 0, (zPCHAR) 1 );
+      nState = (zSHORT) fnPainterCall( zMSG_RESTORE_PLACEMENT, vSubtask, 0,
+                                       (zPCHAR) vProfileXFER );
+   }
+
+   return( 0 );
+}
+
 zOPER_EXPORT zSHORT OPERATION
 ExitXSLT( zVIEW vSubtask )
 {
@@ -446,7 +446,7 @@ AskForSave( zVIEW vSubtask )
 {
    zVIEW  vXSLT;
    zBOOL  bSaveAs = FALSE;
-   zCHAR  szXSLTName[ 9 ];
+   zCHAR  szXSLTName[ 33 ];
    zCHAR  szMessageText[ 254 ];
    zSHORT nRC;
 
@@ -1442,10 +1442,10 @@ TZXSLTDD_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vTZXSLTS;
    zVIEW   vTZXSLTS_Copy;
-   zCHAR   szNewName[ 9 ];
-   zCHAR   szOutName[ 9 ];
+   zCHAR   szNewName[ 33 ];
+   zCHAR   szOutName[ 33 ];
 
-   GetCtrlText( vSubtask, "edXSLTName", szNewName, 9 );
+   GetCtrlText( vSubtask, "edXSLTName", szNewName, 33 );
    UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
 
    if ( GetViewByName( &vTZXSLTS, "TZXSLTS", vSubtask, zLEVEL_TASK ) < 0 )
@@ -1910,7 +1910,7 @@ TZXSLTDD_CreatePanelList( zVIEW vSubtask,
    }
    else
    {
-      zCHAR  szDlgTag[ 9 ];
+      zCHAR  szDlgTag[ 33 ];
       zCHAR  szWndTag[ 33 ];
 
       GetStringFromAttribute( szDlgTag, vNewXSLT, "XSLT", "Tag" );
@@ -1944,7 +1944,7 @@ TZXSLTDD_GenerateXSLT( zVIEW vSubtask )
    zVIEW   vTaskLPLR = 0;
    zVIEW   vXSLT = 0;
    zVIEW   vXRA = 0;
-   zCHAR   szXSLTName[ 9 ];
+   zCHAR   szXSLTName[ 33 ];
    zCHAR   szMsg[ zMAX_FILESPEC_LTH + 100 ];
    zCHAR   szRemotePath[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR   szFileSpec[ zMAX_FILESPEC_LTH + 1 ];
@@ -2741,7 +2741,7 @@ NewXSLT_File( zVIEW vSubtask )
    zVIEW   vNewOptions;
    zVIEW   vPrevXSLT;
    zVIEW   vPainter;
-   zCHAR   szXSLTName[ 9 ];
+   zCHAR   szXSLTName[ 33 ];
 
    szXSLTName[ 0 ] = 0;
 
@@ -8817,7 +8817,7 @@ fnPositionOnVOR( zVIEW     vTgt,
    zVIEW     vLOD;
    zVIEW     vLOD_List;
    zCHAR     szMsg[ 65 ];
-   zCHAR     szName[ 9 ];
+   zCHAR     szName[ 33 ];
    zSHORT    nRC;
 
    if ( SetCursorFirstEntityByString( vTgt, "ViewObjRef", "Name",
@@ -8867,7 +8867,7 @@ fnPositionOnVOR( zVIEW     vTgt,
          }
          else
          {
-            GetVariableFromAttribute( szName, 0, 'S', 9,
+            GetVariableFromAttribute( szName, 0, 'S', 33,
                                       vSrc, "LOD", "Name", "", 0 );
             zstrcpy( szMsg, "Non-existent LOD: " );
             zstrcat( szMsg, szName );
@@ -10572,8 +10572,8 @@ TZXSLTDD_SaveAsSetDefaults( zVIEW vSubtask )
    zVIEW  vSaveAs;
    zVIEW  vTZXSLTS;
    zVIEW  vTZXSLTCopy;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zSHORT nRC;
    zSHORT nIndex = -1;
 
@@ -10627,7 +10627,7 @@ zwfnTZXSLTDD_SaveAsSetSourceName( zVIEW   vSubtask,
                                   zVIEW   vXSLTData,
                                   zSHORT  nIndex )
 {
-   zCHAR  szNewName[9];
+   zCHAR  szNewName[33];
    zCHAR  szIndex[ 4 ];
    zSHORT nPosition = 0;
    zSHORT nRC;
@@ -10809,8 +10809,8 @@ zwfnTZXSLTDD_SaveAsCheckFileName( zVIEW    vSubtask,
 {
    zVIEW    vSaveAsCopy;
    zSHORT   nRC;
-   zCHAR    szNewName[9];
-   zCHAR    szFileName[9];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
    zCHAR    szMsg[ 100 ];
 
    CreateViewFromViewForTask( &vSaveAsCopy, vSaveAs, 0 );
@@ -10870,8 +10870,8 @@ zwfnTZXSLTDD_SaveAsCheckName( zVIEW    vSubtask,
 {
    zVIEW  vLOD_LPLR;
    zCHAR  szMsg[155];
-   zCHAR  szDLLName[9];
-   zCHAR  szNewName[9];
+   zCHAR  szDLLName[33];
+   zCHAR  szNewName[33];
 
    // XSLT Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
@@ -10965,8 +10965,8 @@ zwfnTZXSLTDD_SaveAsGetFileName( zVIEW  vTaskLPLR,
                                 zPCHAR szSourceFileName )
 {
    zCHAR    szExtension[ zMAX_EXTENSION_LTH + 1 ];
-   zCHAR    szNewName[ 9 ];
-   zCHAR    szFileName[ 9 ];
+   zCHAR    szNewName[ 33 ];
+   zCHAR    szFileName[ 33 ];
 
    GetStringFromAttribute( szNewName, vView, "SourceFile", szAttribute );
    UfCompressName( szNewName, szFileName, 8, "", "", "", "", 0 );
@@ -11095,8 +11095,8 @@ TZXSLTDD_SaveAsXSLT( zVIEW vSubtask )
    zVIEW  vTZXSLTS;
    zVIEW  vTZXSLTL;
    zVIEW  vSaveAs;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zCHAR  szMsg[ 255 ];
 
    GetViewByName( &vTZXSLTS, "TZXSLTS", vSubtask, zLEVEL_TASK );
@@ -11229,7 +11229,7 @@ TZXSLTDD_SaveAs( zVIEW   vSubtask,
    zSHORT    nRC;
    zCHAR     szViewObjRefName[ 33 ];
    zCHAR     szDfltWnd[ 33 ];
-   zCHAR     szOldXSLTName[ 9 ];
+   zCHAR     szOldXSLTName[ 33 ];
 
    GetViewByName( &vLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
    GetViewByName( &vOldXSLT, "TZXSLTL", vSubtask, zLEVEL_TASK );
@@ -15864,7 +15864,7 @@ fnSetTagType( zVIEW vFlow )
    }
 
    SetAttributeFromString( vFlow, "Widget", "TagType", szText );
-   
+
 }
 
 zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
@@ -15949,7 +15949,7 @@ BuildXSLTFlow( zVIEW vSubtask )
             }
 
             SetAttributeFromString( vFlow, "Action", "TagOperWAB_DlgWnd", szText );
-            
+
             if ( CheckExistenceOfEntity( vXSLT, "ActWndEvent" ) == 0 )
             {
                nRC = SetCursorFirstEntity( vXSLT, "ActWndEvent", 0 );
@@ -16019,7 +16019,7 @@ BuildXSLTFlow( zVIEW vSubtask )
 
          nRC = SetCursorNextEntity( vXSLT, "Window", 0 );
       }
-      
+
       DropView( vXSLT );
       return( 0 );
    }

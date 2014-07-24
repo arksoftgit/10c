@@ -1227,12 +1227,17 @@ GenJSP_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
             szParentWebType = ""
             IF vGroupParent != 0
+               // KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+               // out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
+               /*
                SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
                IF RESULT >= zCURSOR_SET
                   szParentWebType = "RelativePos"
                ELSE
                   szParentWebType = vGroupParent.Control.WebCtrlType
                END
+               */
+               szParentWebType = vGroupParent.Control.WebCtrlType
             END
             IF szParentWebType = "Div" OR szParentWebType = "DivScroll" OR
                szParentWebType = "Span"
@@ -2165,12 +2170,17 @@ GenJSP_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
             szWebCtrlType = ""
             IF vGroupParent != 0
+               // KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+               // out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
+               /*
                SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
                IF RESULT >= zCURSOR_SET
                   szWebCtrlType = "RelativePos"
                ELSE
                   szWebCtrlType = vGroupParent.Control.WebCtrlType
                END
+               */
+               szWebCtrlType = vGroupParent.Control.WebCtrlType
             END
 
             // KJS 6/19/08 - We want to add filtering on a table.  If the user chooses the web control property "Filter Rows" then
@@ -3411,7 +3421,7 @@ GenJSP_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
                                  szWriteBuffer = "      v" + szListCtrlTag + ".CreateViewFromView( strSessionId, " + vList.CtrlMapView.Name + " );"
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                                 szWriteBuffer = "      nComboCnt = 0;"
+                                 szWriteBuffer = "      ComboCount = 0;"
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     szWriteBuffer = "      strComboSelectedValue = ^0^;"
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -3422,7 +3432,7 @@ GenJSP_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     szWriteBuffer = "      // For Auto Include, process null entry."
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                                    szWriteBuffer = "      nComboCnt++;"
+                                    szWriteBuffer = "      ComboCount++;"
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     szWriteBuffer = "      if ( strComboCurrentValue == null )"
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -3495,7 +3505,7 @@ GenJSP_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  szWriteBuffer = "<%"
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                                    szWriteBuffer = "            strComboSelectedValue = Integer.toString( nComboCnt );"
+                                    szWriteBuffer = "            strComboSelectedValue = Integer.toString( ComboCount );"
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     szWriteBuffer = "         }"
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -3511,7 +3521,7 @@ GenJSP_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  szWriteBuffer = "         }"
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-                                 szWriteBuffer = "         nComboCnt++;"
+                                 szWriteBuffer = "         ComboCount++;"
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  IF lSubtype = 0
                                     szWriteBuffer = "         nRC =  v" + szListCtrlTag +
@@ -5851,6 +5861,78 @@ GenJSP_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       //filename that is being uploaded into that mapping.
 
       CreateViewFromView( vDialogTemp, vDialogCtrl )
+
+         // Aadit, wants there to be an upload file limit, so that for email attachment, the file isn't too big to bring
+         // down the mail server. This really needs to be an updatable field...
+         /*********************************************/
+         szWriteBuffer = "      if ( iFileLth > 10485760 )"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      {"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+
+
+         szWriteBuffer = "         strErrorMsg = ^Y\tFile\t\tAttachment File is too large!\t^;"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         session.setAttribute( ^FileUploadError^, strErrorMsg );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+ 
+         szWriteBuffer = "         vAppSubtask.TraceLine( ^File TOO big ERROR =======>> ^, strErrorMsg );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         nRC = -1;"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         break;"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+
+/*
+         szWriteBuffer = "         int iView = vAppSubtask.GetIntegerFromView( strSessionId );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         vAppSubtask.TraceLine( ^File TOO big ERROR =======>> ^, ^^ );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         nRC = vMsgQ.GetView( strSessionId, ^__MSGQ^, vAppSubtask );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         if ( nRC > 0 )"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         {"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            zeidon.zView v = new zeidon.zView( strSessionId );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            v.CreateViewFromView( strSessionId, vMsgQ );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            nRC = v.SetCursorFirst( strSessionId, ^Task^, ^Id^, iView, ^^ );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            if ( nRC == 0 )"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            {"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "               nRC = v.SetCursorFirst( strSessionId, ^QMsg^ );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "               if ( nRC == 0 )"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "               {"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "                  v.SetAttributeFromVariable( strSessionId, ^QMsg^, ^Title^, ^Attachment File is too large!^, 'S',"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "                                              24, ^^, 8 );"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "               }"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "               nRC = 0;"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            }"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            v.DropView( strSessionId);"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "            nRC = -1;"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         }"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         break;"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+  */
+         szWriteBuffer = "      }"
+         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+         /*********************************************/
+
       //I wanted to do the "SET CURSOR..." but because Control doesn't really have a parent
       //the c code that gets generated is only looking for ControlDef under Control (not all controls) and so
       //it is not finding it.

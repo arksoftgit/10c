@@ -3174,8 +3174,8 @@ GenJSP_CrteComboBox( zVIEW     vDialog,
          ZeidonStringConcat( szWriteBuffer, 1, 0, " );", 1, 0, 10001 );
          //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-         //:szWriteBuffer = "      nComboCnt = 0;"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "      nComboCnt = 0;", 1, 0, 10001 );
+         //:szWriteBuffer = "      ComboCount = 0;"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "      ComboCount = 0;", 1, 0, 10001 );
          //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
          //:szWriteBuffer = "      strComboSelectedValue = ^0^;"
@@ -3197,12 +3197,12 @@ GenJSP_CrteComboBox( zVIEW     vDialog,
             //:// and wants to use the "No null in list" checkbox in the painter.  I would need to
             //:// change this code but I'm not sure how because I can't tell from DoInputMapping what
             //:// the value of combobox.selectedindex[0] is, I only know they selected the index 0.
-            //:szWriteBuffer = "      // For Auto Include, process null entry."
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "      // For Auto Include, process null entry.", 1, 0, 10001 );
+            //:szWriteBuffer = "      // For Auto Include, always add a null entry to the combo box.s"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "      // For Auto Include, always add a null entry to the combo box.s", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-            //:szWriteBuffer = "      nComboCnt++;"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "      nComboCnt++;", 1, 0, 10001 );
+            //:szWriteBuffer = "      ComboCount++;"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "      ComboCount++;", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
             //:szWriteBuffer = "      if ( strComboCurrentValue == null )"
@@ -3336,6 +3336,33 @@ GenJSP_CrteComboBox( zVIEW     vDialog,
 
          //:END
 
+
+         //:// KJS 05/20/14 - There were some issues for auto include when the "list view" already had a blank entry, then
+         //:// two blank entries were in the list and this caused errors. For auto include check if one of these entries is
+         //:// blank, don't add it if it is.
+         //:IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
+         if ( CompareAttributeToInteger( vDialog, "Control", "Subtype", 20480 ) >= 0 && CompareAttributeToInteger( vDialog, "Control", "Subtype", 21252 ) <= 0 )
+         { 
+            //:szWriteBuffer = "         // For Auto Include, we have already created a blank entry for the combobox, check to make "
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "         // For Auto Include, we have already created a blank entry for the combobox, check to make ", 1, 0, 10001 );
+            //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+            //:szWriteBuffer = "         // we don't add another blank entry. That will cause errors. "
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "         // we don't add another blank entry. That will cause errors. ", 1, 0, 10001 );
+            //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+            //:szWriteBuffer = "         if ( !StringUtils.isBlank( strErrorMapValue ) )"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "         if ( !StringUtils.isBlank( strErrorMapValue ) )", 1, 0, 10001 );
+            //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+            //:szWriteBuffer = "         {"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "         {", 1, 0, 10001 );
+            //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+         } 
+
+         //:END
+
          //:szWriteBuffer = "         if ( strComboCurrentValue.equals( strErrorMapValue ) )"
          ZeidonStringCopy( szWriteBuffer, 1, 0, "         if ( strComboCurrentValue.equals( strErrorMapValue ) )", 1, 0, 10001 );
          //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -3356,8 +3383,8 @@ GenJSP_CrteComboBox( zVIEW     vDialog,
          ZeidonStringCopy( szWriteBuffer, 1, 0, "<%", 1, 0, 10001 );
          //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-         //:szWriteBuffer = "            strComboSelectedValue = Integer.toString( nComboCnt );"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "            strComboSelectedValue = Integer.toString( nComboCnt );", 1, 0, 10001 );
+         //:szWriteBuffer = "            strComboSelectedValue = Integer.toString( ComboCount );"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "            strComboSelectedValue = Integer.toString( ComboCount );", 1, 0, 10001 );
          //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
          //:szWriteBuffer = "         }"
@@ -3388,8 +3415,20 @@ GenJSP_CrteComboBox( zVIEW     vDialog,
          ZeidonStringCopy( szWriteBuffer, 1, 0, "         }", 1, 0, 10001 );
          //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
-         //:szWriteBuffer = "         nComboCnt++;"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "         nComboCnt++;", 1, 0, 10001 );
+
+         //:IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
+         if ( CompareAttributeToInteger( vDialog, "Control", "Subtype", 20480 ) >= 0 && CompareAttributeToInteger( vDialog, "Control", "Subtype", 21252 ) <= 0 )
+         { 
+            //:szWriteBuffer = "         } // if ( !StringUtils.isBlank( strErrorMapValue ) )"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "         } // if ( !StringUtils.isBlank( strErrorMapValue ) )", 1, 0, 10001 );
+            //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
+         } 
+
+         //:END
+
+         //:szWriteBuffer = "         ComboCount++;"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "         ComboCount++;", 1, 0, 10001 );
          //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
          //:IF lSubtype = 0
@@ -5089,22 +5128,18 @@ GenJSP_CrteText( zVIEW     vDialog,
    if ( vGroupParent != 0 )
    { 
       //:// Override Style if parent group requests relative positioning
+      //:// KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+      //:// out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
+      //:/*
       //:SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
-      RESULT = SetCursorFirstEntityByString( vGroupParent, "WebControlProperty", "Name", "Relative Positioning", "" );
       //:IF RESULT >= zCURSOR_SET
-      if ( RESULT >= zCURSOR_SET )
-      { 
-         //:szGroupParentType = "RelativePos"
-         ZeidonStringCopy( szGroupParentType, 1, 0, "RelativePos", 1, 0, 21 );
-         //:ELSE
-      } 
-      else
-      { 
-         //:szGroupParentType = vGroupParent.Control.WebCtrlType
-         GetVariableFromAttribute( szGroupParentType, 0, 'S', 21, vGroupParent, "Control", "WebCtrlType", "", 0 );
-      } 
-
+      //:   szGroupParentType = "RelativePos"
+      //:ELSE
+      //:   szGroupParentType = vGroupParent.Control.WebCtrlType
       //:END
+      //:*/
+      //:szGroupParentType = vGroupParent.Control.WebCtrlType
+      GetVariableFromAttribute( szGroupParentType, 0, 'S', 21, vGroupParent, "Control", "WebCtrlType", "", 0 );
       //:IF szGroupParentType = "RelativePos" OR szGroupParentType = "Span"
       if ( ZeidonStringCompare( szGroupParentType, 1, 0, "RelativePos", 1, 0, 21 ) == 0 || ZeidonStringCompare( szGroupParentType, 1, 0, "Span", 1, 0, 21 ) == 0 )
       { 
@@ -6017,8 +6052,8 @@ GenJSP_CrteListBox( zVIEW     vDialog,
       ZeidonStringConcat( szWriteBuffer, 1, 0, " );", 1, 0, 10001 );
       //:   WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
-      //:   szWriteBuffer = "      nComboCnt = 0;"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "      nComboCnt = 0;", 1, 0, 10001 );
+      //:   szWriteBuffer = "      ComboCount = 0;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      ComboCount = 0;", 1, 0, 10001 );
       //:   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
       //:   szWriteBuffer = "      strComboSelectedValue = ^0^;"
@@ -6110,8 +6145,8 @@ GenJSP_CrteListBox( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "<%", 1, 0, 10001 );
       //:   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-      //:   szWriteBuffer = "            strComboSelectedValue = Integer.toString( nComboCnt );"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "            strComboSelectedValue = Integer.toString( nComboCnt );", 1, 0, 10001 );
+      //:   szWriteBuffer = "            strComboSelectedValue = Integer.toString( ComboCount );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "            strComboSelectedValue = Integer.toString( ComboCount );", 1, 0, 10001 );
       //:   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
       //:   szWriteBuffer = "         }"
@@ -6142,8 +6177,8 @@ GenJSP_CrteListBox( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "         }", 1, 0, 10001 );
       //:   WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
-      //:   szWriteBuffer = "         nComboCnt++;"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "         nComboCnt++;", 1, 0, 10001 );
+      //:   szWriteBuffer = "         ComboCount++;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         ComboCount++;", 1, 0, 10001 );
       //:   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
       //:   IF lSubtype = 0

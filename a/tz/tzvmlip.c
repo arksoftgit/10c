@@ -1820,49 +1820,45 @@ zExpungeAllSubstring( zPCHAR pchOriginal,
 //    - pathname begins with "\\"
 //    output = pathname
 //  - pathname is not full qualified
-//    - pathname = "" or pathname = "." ==> output = basedir
+//    - pathname = "" or pathname = "." ==> outpur = basedir
 //    - otherwise: output = basedir + \ + pathname
 //
 //  Returncode: = 1, pathname was fully qualified
 //              = 0, relative path is build
-//              = -1, built pathname is too long
+//              = -1, builded pathname is too long
 //
 //----------------------------------------------------------------------
 */
 zOPER_EXPORT zSHORT OPERATION
-GenFullQualPathFromRelPath( zPCHAR pchPathName,  // Pathname or empty string
-                            zPCHAR pchBaseDir,   // base for relative paths
-                            zPCHAR pchOutput,    // Resultbuffer, must be great enough
+GenFullQualPathFromRelPath( zPCHAR pchPathName,  /* Pathname or empty string  */
+                            zPCHAR pchBaseDir,   /* base for relarive pathes  */
+                            zPCHAR pchOutput,    /* Resultbuffer, must be great enough */
                             zSHORT nMaxLth )
 {
-   zCHAR szTempPath[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR szTempBase[ zMAX_FILESPEC_LTH + 1 ];
    // if pathname = "" || "."
 // strcpy( pchOutput, pchBaseDir );
-   SysConvertEnvironmentString( szTempPath, pchPathName );
-   SysConvertEnvironmentString( szTempBase, pchBaseDir );
+   SysConvertEnvironmentString( pchOutput, pchBaseDir );
 
-   if ( strlen( szTempPath ) >= 2 )
+   if ( strlen( pchPathName ) >= 2 )
    {
-      /* Conditions for fully qualified pathnames:
+      /* Conditions for full qualified pathnames:
          (first character = a-z OT A-Z) AND second character = :
           or
           first character = \
       */
-      if ( (((szTempPath[ 0 ] >= 'a' && szTempPath[ 0 ] <= 'z') ||
-             (szTempPath[ 0 ] >= 'A' && szTempPath[ 0 ] <= 'Z')) &&
-           szTempPath[ 1 ] == ':') || szTempPath[ 0 ] == '\\' )
+      if ( (((pchPathName[ 0 ] >= 'a' && pchPathName[ 0 ] <= 'z') ||
+             (pchPathName[ 0 ] >= 'A' && pchPathName[ 0 ] <= 'Z')) &&
+           pchPathName[ 1 ] == ':') || pchPathName[ 0 ] == '\\' )
        {
-          strcpy( pchOutput, pchPathName ); // full qualified path
+          strcpy( pchOutput, pchPathName ); /* full qualified path  */
           return( 1 );
        }
        else
        {
-          strcpy( pchOutput, pchBaseDir );
-          if ( szTempBase[ strlen( szTempBase ) - 1 ] != '\\' )
-             strcat( pchOutput, "\\" );  // add backslash, if it's needed
+          if ( pchBaseDir[ strlen( pchBaseDir ) - 1 ] != '\\' )
+             strcat( pchOutput, "\\" );  /* add backslash, if it's needed */
 
-          strcat( pchOutput, pchPathName ); // add pathname after basedir
+          strcat( pchOutput, pchPathName ); /* add pathname after basedir */
       }
    }
 

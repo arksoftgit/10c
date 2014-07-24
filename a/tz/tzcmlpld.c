@@ -919,7 +919,7 @@ zwfnTZCMLPLD_SetNewWorkstationValue( zVIEW vSubtask, zVIEW vTZCMREPO, zPCHAR szW
 
 
 zOPER_EXPORT zSHORT OPERATION
-zwTZCMLPLD_InitDialog( zVIEW vSubtask )
+zwTZCMLPLD_InitDialogoLD( zVIEW vSubtask )
 {
    zVIEW    vTZCMWKSO;
    zVIEW    vTZCMREPO;
@@ -962,6 +962,47 @@ zwTZCMLPLD_InitDialog( zVIEW vSubtask )
    return( 0 );
 }
 
+zOPER_EXPORT zSHORT OPERATION
+zwTZCMLPLD_InitDialog( zVIEW vSubtask )
+{
+   zVIEW    vTZCMWKSO;
+   zVIEW    vZeidonCM;
+   zCHAR    szZeidonWKS[ 128 ];
+   zSHORT   nRC;
+
+   // Check to make sure that no other tools are up.
+   if ( zwfnTZCMLPLD_InitDialog( vSubtask ) < 0 )
+      return( 0 );
+
+   // Activate the Work Station object, giving an error and exiting if no object has been set up.
+   if ( oTZCMWKSO_GetWKS_FileName( szZeidonWKS ) == 0 )
+      ActivateOI_FromFile( &vTZCMWKSO, "TZCMWKSO", vSubtask, szZeidonWKS, zSINGLE | zNOI_OKAY | zIGNORE_ATTRIB_ERRORS );
+   else
+   {
+      MessageSend( vSubtask, "CM00202", "Configuration Management",
+                   "The Workstation object could not be activated.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+      return( -1 );
+   }
+   
+   // Make sure that there are no null entries in the list, which could occur if the system was aborted during the creation
+   // of a new LPLR.
+   for ( nRC = SetCursorFirstEntity( vTZCMWKSO, "LPLR", "" );
+         nRC >= zCURSOR_SET;
+         nRC = SetCursorNextEntity( vTZCMWKSO, "LPLR", "" ) )
+   {
+      if ( CompareAttributeToString( vTZCMWKSO, "LPLR", "Name", "" ) == 0 )
+          DeleteEntity( vTZCMWKSO, "LPLR", zREPOS_NONE );
+   }
+   
+   SetNameForView( vTZCMWKSO, "TZCMWKSO", vSubtask, zLEVEL_TASK );
+   GetViewByName( &vZeidonCM, "ZeidonCM", vSubtask, zLEVEL_APPLICATION );
+   SetNameForView( vTZCMWKSO, "TZCMWKSO", vZeidonCM, zLEVEL_SUBTASK );
+   
+   SetWindowActionBehavior( vSubtask, zWAB_StartModalSubwindow, "TZCMLPLD", "TZCMLPLL" );
+
+   return( 0 );
+}
 
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMLPLD_SignOnPreBuild( zVIEW vSubtask )
@@ -1508,7 +1549,7 @@ zwTZCMLPLD_NewLPLR_Init( zVIEW vSubtask )
    zSHORT   nZRetCode;
    zCHAR    szZeidonDirectory[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szWorkDirectory[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR    szName[ 9 ];
+   zCHAR    szName[ 33 ];
    zCHAR    szFromFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szToFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szPathName[ zMAX_FILESPEC_LTH + 1 ];
@@ -1644,7 +1685,7 @@ zwfnTZCMLPLD_ActivateOldXLP( zVIEW vSubtask, zPVIEW vTZCMLPLO, zVIEW vTZCMLPLO1,
 {
    zCHAR    szFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szMsg[ zSHORT_MESSAGE_LTH + 1 ];
-   zCHAR    szLPLR_Name[ 9 ];
+   zCHAR    szLPLR_Name[ 33 ];
    zCHAR    szReturnName[ zBASE_FILENAME_LTH + 1 ];
    zLONG    hFile;
    zSHORT   nRC;
@@ -1666,6 +1707,7 @@ zwfnTZCMLPLD_ActivateOldXLP( zVIEW vSubtask, zPVIEW vTZCMLPLO, zVIEW vTZCMLPLO1,
    hFile = SysOpenFile( vSubtask, szFileName, COREFILE_EXIST );
    if ( hFile < 0 )
    {
+      TraceLineS( "*** File Name: ", szFileName );
       zstrcpy( szMsg, "The name entered is not correct for the current Project.\n\n" );
       zstrcat( szMsg, "Enter OK to use this new name for the Project.\n" );
       zstrcat( szMsg, "Enter Cancel to rekey the name." );
@@ -2406,8 +2448,15 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
    zVIEW    vTaskLPLR;
    zVIEW    vTZCMLPLO;
    zVIEW    vTZCMWKSO;
+   zVIEW    vTZCMULWO;
    zCHAR    szLPLR_Type[ 2 ];
-   zCHAR    szLPLR_Name[ 9 ];
+   zCHAR    szLPLR_Name[ 33 ];
+   zCHAR    szUserName[ 33 ];
+   zCHAR    szFileName[ 255 ];
+   zLONG    lHighPrefix;
+   zLONG    lPrefix;
+   zLONG    lStartZKey;
+   zSHORT   nRC;
 
    // This routine creates the new LPLR entry.  It has three versions:
    //   1.  Create normal LPLR under Respository.
@@ -2461,10 +2510,27 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
 
       // This version of creating an LPLR initializes things just like
       // Case 1 above, except that no interface to the Repository has
-      // been extablished.  This version also initializes the PPE and XPE
+      // been established.  This version also initializes the PPE and XPE
       // objects in their correct directories.
       if ( zwfnTZCMLPLD_CreateEmptyProject( vSubtask, vTZCMLPLO ) < 0 )
          return( -1 );
+         
+      // Add the Installation object containing the current User and initial ZKey Prefix.
+      ActivateEmptyObjectInstance( &vTZCMULWO, "TZCMULWO", vSubtask, zSINGLE | zLEVEL_TASK );
+      CreateEntity( vTZCMULWO, "Installation", zPOS_AFTER );
+      SetAttributeFromInteger( vTZCMULWO, "Installation", "ZKey", 1 );
+      SetAttributeFromString( vTZCMULWO, "Installation", "Name", szLPLR_Name );
+
+      GetStringFromAttribute( szUserName, vTZCMWKSO, "User", "Name" );
+      CreateEntity( vTZCMULWO, "User", zPOS_AFTER );
+      SetAttributeFromInteger( vTZCMULWO, "User", "ZKey", 11 );
+      SetAttributeFromString( vTZCMULWO, "User", "Name", szUserName );
+      SetAttributeFromInteger( vTZCMULWO, "User", "GenerationStartZKeyPrefix", 11 );
+      SetAttributeFromInteger( vTZCMULWO, "User", "GenerationStartZKey", 110000000 );
+
+      GetStringFromAttribute( szFileName, vTZCMLPLO, "LPLR", "MetaSrcDir" );
+      zstrcat( szFileName, "\\TZCMULWO.POR" );
+      CommitOI_ToFile( vTZCMULWO, szFileName, zSINGLE );
    }
    else
    if ( szLPLR_Type[ 0 ] == '3' )
@@ -2477,6 +2543,44 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
          SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
          return( -1 );
       }
+
+     // Because the previous operation created a new vTZCMLPLO object, we must get its name again here.
+     GetViewByName( &vTZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
+
+      // Add this User to the existing Installation Object, if it doesn't already exist there.
+      GetStringFromAttribute( szFileName, vTZCMLPLO, "LPLR", "MetaSrcDir" );
+      zstrcat( szFileName, "\\TZCMULWO.POR" );
+      nRC = ActivateOI_FromFile( &vTZCMULWO, "TZCMULWO", vTZCMLPLO, szFileName, zSINGLE | zLEVEL_TASK | zIGNORE_ERRORS );
+      if ( nRC < 0 )
+      {
+         // The file doesn't exist, so create it.
+         ActivateEmptyObjectInstance( &vTZCMULWO, "TZCMULWO", vSubtask, zSINGLE | zLEVEL_TASK );
+         CreateEntity( vTZCMULWO, "Installation", zPOS_AFTER );
+         SetAttributeFromInteger( vTZCMULWO, "Installation", "ZKey", 1 );
+         SetAttributeFromString( vTZCMULWO, "Installation", "Name", szLPLR_Name );
+      }
+      GetStringFromAttribute( szUserName, vTZCMWKSO, "User", "Name" );
+      if ( SetCursorFirstEntityByString( vTZCMULWO, "User", "Name", szUserName, "" ) < zCURSOR_SET )
+      {
+         // User doesn't exist, so add it, making ZKey and the Prefix one higher than the current Prefix.
+         lHighPrefix = 0;
+         nRC = SetCursorFirstEntity( vTZCMULWO, "User", "" );
+         while ( nRC >= zCURSOR_SET )
+         {
+            GetIntegerFromAttribute( &lPrefix, vTZCMULWO, "User", "GenerationStartZKeyPrefix" );
+            if ( lPrefix > lHighPrefix )
+               lHighPrefix = lPrefix;
+            nRC = SetCursorNextEntity( vTZCMULWO, "User", "" );
+         }
+         lHighPrefix = lHighPrefix + 1;
+         CreateEntity( vTZCMULWO, "User", zPOS_AFTER );
+         SetAttributeFromInteger( vTZCMULWO, "User", "ZKey", lHighPrefix );
+         SetAttributeFromString( vTZCMULWO, "User", "Name", szUserName );
+         SetAttributeFromInteger( vTZCMULWO, "User", "GenerationStartZKeyPrefix", lHighPrefix );
+         lStartZKey = lHighPrefix * 10000000;
+         SetAttributeFromInteger( vTZCMULWO, "User", "GenerationStartZKey", lStartZKey );
+         CommitOI_ToFile( vTZCMULWO, szFileName, zSINGLE );
+      }
    }
 
    // Set the TaskLPLR to the new LPLR and force the TZCMLPLO named view
@@ -2484,13 +2588,13 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
    if ( GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK ) >= 0 )
       DropObjectInstance( vTaskLPLR );
 
-   GetViewByName( &vTZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
-   DropObjectInstance( vTZCMLPLO );
+   //GetViewByName( &vTZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
+   //DropObjectInstance( vTZCMLPLO );
 
    InitializeLPLR( vSubtask, szLPLR_Name );
 
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
-   SetNameForView( vTaskLPLR, "TZCMLPLO", vSubtask, zLEVEL_TASK );
+   SetNameForView( vTaskLPLR, "TZCMLPLOlHighPrefix", vSubtask, zLEVEL_TASK );
 
    if ( szLPLR_Type[ 0 ] == '1' )
    {
@@ -2500,8 +2604,8 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
    }
 
    // Make sure we set the Default ZKey and save the work object.
-   SetAttributeFromAttribute( vTZCMWKSO, "RepositoryClient", "DefaultLPLR_ZKey",
-                              vTaskLPLR, "LPLR", "ZKey" );
+   SetAttributeFromAttribute( vTZCMWKSO, "LPLR", "MaxZKey",
+                              vTZCMULWO, "User", "GenerationStartZKey" );
    oTZCMWKSO_CommitWorkstation( vTZCMWKSO );
 
    return( 0 );
@@ -2634,22 +2738,38 @@ zwTZCMLPLD_IncludeCPLR( zVIEW vSubtask )
    return( 0 );
 }
 
-
-
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMLPLD_PrebuildNewLPLR( zVIEW vSubtask )
 {
-   zVIEW    vTZCMWKSO;
    zVIEW    vTZCMLPLO;
+   zVIEW    vTZCMWKSO;
+   zLONG    lZKey;
+   zLONG    lHighZKey;
+   zSHORT   nRC;
 
    if ( GetViewByName( &vTZCMWKSO, "TZCMWKSO", vSubtask, zLEVEL_TASK ) > 0 )
-      CreateEntity( vTZCMWKSO, "LPLR", zPOS_AFTER );
-
-   if ( ActivateEmptyObjectInstance( &vTZCMLPLO, "TZCMLPLO", vSubtask,
-                              zSINGLE | zLEVEL_APPLICATION ) >= 0 )
+   // DonC added code on 2/26/2014 to initialize a unique ZKey here. Make it the next high ZKey for all LPLR's.
    {
-      if ( CreateMetaEntity( vSubtask, vTZCMLPLO, "LPLR", zPOS_AFTER ) >= 0 )
-         SetNameForView( vTZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
+      lHighZKey = 0;
+      nRC = SetCursorFirstEntity( vTZCMWKSO, "LPLR", "" );
+      while ( nRC >= zCURSOR_SET )
+      {
+         GetIntegerFromAttribute( &lZKey, vTZCMWKSO, "LPLR", "ZKey" );
+         if ( lZKey > lHighZKey )
+            lHighZKey = lZKey;
+         nRC = SetCursorNextEntity( vTZCMWKSO, "LPLR", "" );
+      }
+      lHighZKey = lHighZKey + 1;
+      CreateEntity( vTZCMWKSO, "LPLR", zPOS_AFTER );
+      SetAttributeFromInteger( vTZCMWKSO, "LPLR", "ZKey", lHighZKey );
+   }
+
+   if ( ActivateEmptyObjectInstance( &vTZCMLPLO, "TZCMLPLO", vSubtask, zSINGLE | zLEVEL_APPLICATION ) >= 0 )
+   {
+      // DonC replaced CreateMetaEntity by CreateEntity on 2/26/2014 because LPLR MetaZKey is not yet initialized.
+      CreateEntity( vTZCMLPLO, "LPLR", zPOS_AFTER );
+      SetNameForView( vTZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
+      SetAttributeFromInteger( vTZCMLPLO, "LPLR", "ZKey", lHighZKey );
    }
 
    // KJS 03/22/13 - Temporarily taking this out becuase we don't have a CPLR list (we don't have an
@@ -2668,7 +2788,7 @@ zwTZCMLPLD_DeleteLPLR( zVIEW vSubtask )
    zCHAR    szFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szSearchFileName[ zMAX_FILESPEC_LTH + 1  ];
    zCHAR    szERR_Msg[ zSHORT_MESSAGE_LTH + 1 ]; // at least length of szName + 89
-   zCHAR    szFilePref[ 9 ];
+   zCHAR    szFilePref[ 33 ];
    zCHAR    szName[ 34 ];
    zSHORT   nRC;
    zSHORT   nCount;
@@ -2684,8 +2804,8 @@ zwTZCMLPLD_DeleteLPLR( zVIEW vSubtask )
    GetStringFromAttribute( szFileName, vTZCMWKSO, "LPLR", "ExecDir" );
    ofnTZCMWKSO_AppendSlash( szFileName );
    zstrcpy( szSearchFileName, szFileName );
-   zstrncpy( szFilePref, szName, 9 );
-   for ( nRC = 0; nRC < 8; nRC++ )
+   zstrncpy( szFilePref, szName, 33 );
+   for ( nRC = 0; nRC < 32; nRC++ )
    {
       if ( !( szFilePref[ nRC ] ) )
          break;
@@ -2875,8 +2995,8 @@ zwTZCMLPLD_LoadLPLR( zVIEW vSubtask )
    zSHORT   nRC;
    zCHAR    szMsg[ zLONG_MESSAGE_LTH + 1 ]; // at least length of szFileName plus 20 char
    zCHAR    szFileName[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR    szFilePref[ 9 ];
-   zCHAR    szName[ 9 ];
+   zCHAR    szFilePref[ 33 ];
+   zCHAR    szName[ 33 ];
    zLONG    lZKey;
 
    GetViewByName( &vTZCMWKSO, "TZCMWKSO", vSubtask, zLEVEL_TASK );
@@ -2893,8 +3013,8 @@ zwTZCMLPLD_LoadLPLR( zVIEW vSubtask )
    GetStringFromAttribute( szName, vTZCMWKSO, "LPLR", "Name" );
    GetStringFromAttribute( szFileName, vTZCMWKSO, "LPLR", "ExecDir" );
    ofnTZCMWKSO_AppendSlash( szFileName );
-   zstrncpy( szFilePref, szName, 9 );
-   for ( nRC = 0; nRC < 8; nRC++ )
+   zstrncpy( szFilePref, szName, 33 );
+   for ( nRC = 0; nRC < 32; nRC++ )
    {
       if ( !( szFilePref[ nRC ] ) )
          break;
@@ -2913,12 +3033,16 @@ zwTZCMLPLD_LoadLPLR( zVIEW vSubtask )
    {
       // Get the ZKey from the LPLR just read and store it in the TZCMWKSO
       // object in both the default ZKey and the LPLR ZKey.
-      GetIntegerFromAttribute( &lZKey, vTZCMLPLO, "LPLR", "ZKey" );
+      // The following line of code was replaced by DonC on 12/19/13 because the TZCMLPLO OI doesn't
+      // always have the same ZKey as the TZCMWKSO.LPLR entity.
+      //GetIntegerFromAttribute( &lZKey, vTZCMLPLO, "LPLR", "ZKey" );
+      GetIntegerFromAttribute( &lZKey, vTZCMWKSO, "LPLR", "ZKey" );
       SetAttributeFromInteger( vTZCMWKSO, "RepositoryClient",
                                "DefaultLPLR_ZKey", lZKey );
       oTZCMWKSO_CommitWorkstation( vTZCMWKSO );
 
       zwfnTZCMLPLD_SwitchLPLR( vSubtask, vTZCMLPLO );
+
       SetNameForView( vTZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
       SetNameForView( vTZCMLPLO, "TaskLPLR", vSubtask, zLEVEL_TASK );
 
@@ -2999,10 +3123,12 @@ zwTZCMLPLD_SaveLPLR_Desc( zVIEW vSubtask )
 
    zVIEW    vTZCMLPLO;
    zVIEW    vTZCMWKSO;
+   zVIEW    vTZCMULWO;
    zVIEW    vKZAPPLOO = 0;
    zCHAR    szWorkDirectory[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szWorkEnv[ zMAX_FILESPEC_LTH + 1  ];
    zCHAR    szAppDirectory[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR    szFileName[ zMAX_FILESPEC_LTH + 1 ];
    zSHORT   nValid;
 
    GetViewByName( &vTZCMLPLO, "TZCMLPLO", vSubtask, zLEVEL_TASK );
@@ -3015,6 +3141,15 @@ zwTZCMLPLD_SaveLPLR_Desc( zVIEW vSubtask )
 
    oTZCMWKSO_CommitWorkstation( vTZCMWKSO );
    oTZCMLPLO_CommitLPLR( vTZCMLPLO );
+   
+   // Save the TZCMULWO object, if it's been modified.
+   GetViewByName( &vTZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK );
+   if ( ObjectInstanceUpdatedFromFile( vTZCMULWO ) == 1 )
+   {
+      GetStringFromAttribute( szFileName, vTZCMLPLO, "LPLR", "MetaSrcDir" );
+      zstrcat( szFileName, "\\TZCMULWO.POR" );
+      CommitOI_ToFile( vTZCMULWO, szFileName, zSINGLE );
+   }
 
    // Save Work Directory in Zeidon.app
    szWorkDirectory[ 0 ] = 0;
@@ -6839,7 +6974,11 @@ zwfnTZCMLPLD_SwitchLPLR( zVIEW vSubtask, zVIEW vTZCMLPLO )
    }
 
    // Get and set the new Default LPLR ZKey.
-   GetIntegerFromAttribute((zPLONG) &ulZKey, vTZCMLPLO, "LPLR", "ZKey" );
+   // The following line of code was replaced by DonC on 12/19/13 because the TZCMLPLO OI doesn't
+   // always have the same ZKey as the TZCMWKSO.LPLR entity.
+   //GetIntegerFromAttribute((zPLONG) &ulZKey, vTZCMLPLO, "LPLR", "ZKey" );
+   GetIntegerFromAttribute((zPLONG) &ulZKey, vTZCMWKSO, "LPLR", "ZKey" );
+
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
    if ( vTaskLPLR )  // View is there
    {
@@ -6854,6 +6993,7 @@ zwfnTZCMLPLD_SwitchLPLR( zVIEW vSubtask, zVIEW vTZCMLPLO )
 
    // Establish new position on workstation.
    InitializeDefaultLPL( vSubtask );
+
    oTZCMWKSO_CommitWorkstation( vTZCMWKSO );
 
    return( 1 );
@@ -8103,7 +8243,7 @@ zOPER_EXPORT zSHORT OPERATION
 zwTZCMLPLD_DefaultDir( zVIEW vSubtask )
 {
    zCHAR  szDirName[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR  szLPLR_Name[ 9 ];
+   zCHAR  szLPLR_Name[ 33 ];
    zCHAR  szZeidonDirectory[ zMAX_FILESPEC_LTH + 1 ];
 
    zVIEW    vKZAPPLOO = 0;
@@ -8565,7 +8705,7 @@ zwfnTZCMLPLD_LoadMetaAndMerge( zVIEW  vSubtask, zVIEW  vTZCMLPLO,
 {
    zVIEW    vMeta;
    zCHAR    szMsg[ 254 ];
-   zCHAR    szMetaName[9];
+   zCHAR    szMetaName[33];
    zSHORT   nRC;
 
    for ( nRC = SetCursorFirstEntity( vTZCMLPLO, "W_MetaDef", "" );

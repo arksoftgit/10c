@@ -125,6 +125,7 @@ GenerateXSLT_XML( VIEW vSourceOI,
    SysCloseFile( vReportDef, lFileHandle, 0 )
 END
 
+
 /*************************************************************************************************
 **
 **    OPERATION: GenerateXML_CtlRecurs
@@ -142,6 +143,7 @@ GenerateXML_CtlRecurs( VIEW vReportDef BASED ON LOD TZRPSRCO,
    STRING ( 32 )   szEntityName
    STRING ( 32 )   szAttributeName
    STRING ( 32 )   szMappingName
+   STRING ( 32 )   szContextName
    STRING ( 5000 ) szReturnedAttributeValue
    STRING ( 5000 ) szConvertedAttributeValue
    STRING ( 200 )  szMsg
@@ -172,13 +174,17 @@ GenerateXML_CtlRecurs( VIEW vReportDef BASED ON LOD TZRPSRCO,
             szConvertedAttributeValue = ""
             szAttributeName = vReportDef.CtrlMapER_Attribute.Name
             szEntityName    = vReportDef.CtrlMapRelatedEntity.Name
+            szContextName = ""
+            IF vReportDef.CtrlMapContext EXISTS
+               szContextName = vReportDef.CtrlMapContext.Name  
+            END
             IF vReportDef.CtrlMapView.Name = szDrivingObjectViewName   // Check if mapping if from Driving Object View.
-               GetStringFromAttributeByContext( szReturnedAttributeValue, vSourceOI, szEntityName, szAttributeName, "", 5000 )
+               GetStringFromAttributeByContext( szReturnedAttributeValue, vSourceOI, szEntityName, szAttributeName, szContextName, 5000 )
             ELSE
                // Mapping is from separate view.
                szMappingName = vReportDef.CtrlMapView.Name
                GET VIEW vMappingOI NAMED szMappingName
-               GetStringFromAttributeByContext( szReturnedAttributeValue, vMappingOI, szEntityName, szAttributeName, "", 5000 )
+               GetStringFromAttributeByContext( szReturnedAttributeValue, vMappingOI, szEntityName, szAttributeName, szContextName, 5000 )
             END
 
             ConvertXML_SpecialCharacters( vReportDef, szConvertedAttributeValue, szReturnedAttributeValue, 5000 )
@@ -190,7 +196,6 @@ GenerateXML_CtlRecurs( VIEW vReportDef BASED ON LOD TZRPSRCO,
          END
       END
    END
-
 END
 
 /*************************************************************************************************

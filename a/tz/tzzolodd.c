@@ -1668,7 +1668,7 @@ zwfnTZZOLODD_AskForSave( zVIEW vSubtask )
    zVIEW    vTZZOLODO;
    zSHORT   nRC;
    zBOOL    nSaveAs = FALSE;
-   zCHAR    szLodName[9];
+   zCHAR    szLodName[33];
    zCHAR    szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    // Get Access to LOD Object
@@ -1924,7 +1924,7 @@ zwTZZOLODD_CreateNewLOD( zVIEW vSubtask )
    zSHORT nRC;
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
    zCHAR  szInName[ 120 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szOutName[ 33 ];
 
 
    // A name must be entered.
@@ -1932,7 +1932,7 @@ zwTZZOLODD_CreateNewLOD( zVIEW vSubtask )
 
    // Validate LOD Name is OK
    GetStringFromAttribute( szInName, vProfileXFER, "TZ", "Name" );
-   UfCompressName( szInName, szOutName, 8, "", "", "", "", 0 );
+   UfCompressName( szInName, szOutName, 32, "", "", "", "", 0 );
    SetAttributeFromString( vProfileXFER, "TZ", "Name", szOutName );
 
    if ( CompareAttributeToString( vProfileXFER, "TZ", "Name", "" ) == 0 )
@@ -7909,7 +7909,7 @@ zwfnTZZOLODD_SaveAsSetSourceName( zVIEW   vSubtask,
                                   zVIEW   vLodData,
                                   zSHORT  nIndex )
 {
-   zCHAR  szNewName[9];
+   zCHAR  szNewName[33];
    zCHAR  szIndex[ 4 ];
    zSHORT nPosition = 0;
    zSHORT nRC;
@@ -8047,8 +8047,8 @@ zwfnTZZOLODD_SaveAsCheckFileName( zVIEW    vSubtask,
 {
    zVIEW    vSaveAsCopy;
    zSHORT   nRC;
-   zCHAR    szNewName[9];
-   zCHAR    szFileName[9];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
    zCHAR    szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    CreateViewFromViewForTask( &vSaveAsCopy, vSaveAs, 0 );
@@ -8059,7 +8059,7 @@ zwfnTZZOLODD_SaveAsCheckFileName( zVIEW    vSubtask,
    {
       // Source File Name is required
       GetStringFromAttribute( szNewName, vSaveAs, "SourceFile", "SaveAsName" );
-      UfCompressName( szNewName, szFileName, 8, "", "", "", "", 0 );
+      UfCompressName( szNewName, szFileName, 32, "", "", "", "", 0 );
       if ( zstrcmp( szFileName, "" ) == 0 )
       {
          MessageSend( vSubtask, "ZO00137", "LOD Maintenance",
@@ -8107,8 +8107,8 @@ zwfnTZZOLODD_SaveAsCheckName( zVIEW    vSubtask,
 {
    zVIEW  vDialog_LPLR;
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
-   zCHAR  szDLLName[9];
-   zCHAR  szNewName[9];
+   zCHAR  szDLLName[33];
+   zCHAR  szNewName[33];
 
    //Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
@@ -8123,7 +8123,7 @@ zwfnTZZOLODD_SaveAsCheckName( zVIEW    vSubtask,
 
    // DLL Name is required
    GetStringFromAttribute( szNewName, vSaveAs, "ActionAfterSaveAS", "DLL_Name" );
-   UfCompressName( szNewName, szDLLName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szDLLName, 32, "", "", "", "", 0 );
    if ( zstrcmp( szDLLName, "" ) == 0 &&
         CheckExistenceOfEntity( vTZZOLODO, "SourceFile" ) >= zCURSOR_SET )
    {
@@ -8200,11 +8200,11 @@ zwfnTZZOLODD_SaveAsGetFileName( zVIEW  vTaskLPLR,
                                 zPCHAR szSourceFileName )
 {
    zCHAR    szExtension[ zMAX_EXTENSION_LTH + 1 ];
-   zCHAR    szNewName[9];
-   zCHAR    szFileName[9];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
 
    GetStringFromAttribute( szNewName, vView, "SourceFile", szAttribute );
-   UfCompressName( szNewName, szFileName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szFileName, 32, "", "", "", "", 0 );
 
    GetStringFromAttribute( szSourceFileName, vTaskLPLR, "LPLR", "PgmSrcDir" );
    GetStringFromAttributeByContext( szExtension, vView, "SourceFile",
@@ -8330,17 +8330,18 @@ zwTZZOLODD_SaveAsLOD( zVIEW vSubtask )
    zVIEW  vTZZOLFLO;
    zVIEW  vTZZOLODO;
    zVIEW  vSaveAs;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    GetViewByName( &vTZZOLFLO, "TZZOLFLO", vSubtask, zLEVEL_TASK );
    GetViewByName( &vSaveAs, "TZSAVEAS", vSubtask, zLEVEL_TASK );
    GetViewByName( &vTZZOLODO, "TZZOLODO", vSubtask, zLEVEL_TASK );
+   TraceLineS( "*** Trace 1", "" );
 
    // Validate LOD Name is OK
    GetStringFromAttribute( szNewName, vSaveAs, "ActionAfterSaveAS", "SaveAsName8" );
-   UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szOutName, 32, "", "", "", "", 0 );
 
    //Name is required
    if ( zwfnTZZOLODD_SaveAsCheckName( vSubtask, vSaveAs,
@@ -8348,6 +8349,7 @@ zwTZZOLODD_SaveAsLOD( zVIEW vSubtask )
    {
       return( -1 );
    }
+   TraceLineS( "*** Trace 2", "" );
 
    // Name already exists
    if ( SetCursorFirstEntityByString( vTZZOLFLO, "W_MetaDef", "Name",
@@ -8385,8 +8387,9 @@ zwTZZOLODD_SaveAsLOD( zVIEW vSubtask )
          nRC = DeleteMetaOI( vSubtask, vTZZOLFLO, zSOURCE_LOD_META );
       }
    }
+   TraceLineS( "*** Trace 3", "" );
 
-  if ( zwfnTZZOLODD_SaveAsCopyFiles( vSubtask, vTZZOLODO, vSaveAs ) < 0 )
+   if ( zwfnTZZOLODD_SaveAsCopyFiles( vSubtask, vTZZOLODO, vSaveAs ) < 0 )
       return( -1 );
 
    SetAttributeFromString( vSaveAs, "ActionAfterSaveAS", "SaveAsName8", szOutName );
@@ -8398,6 +8401,7 @@ zwTZZOLODD_SaveAsLOD( zVIEW vSubtask )
       return( -1 );
    }
    zwfnTZZOLODD_CheckActionAfterSaveAs( vSubtask );
+   TraceLineS( "*** Trace 4", "" );
 
    return( 0 );
 } // zwTZZOLODD_SaveAsLOD
@@ -8635,7 +8639,7 @@ zwfnTZZOLODD_SaveAsLOD( zVIEW  vSubtask,
    SetNameForView( vERD_Source, "LOD_CopyERDSource", vSubtask, zLEVEL_TASK );
    CreateViewFromViewForTask( &vERD_Target, vERD_Source, 0 );
    SetNameForView( vERD_Target, "LOD_CopyERDTarget", vSubtask, zLEVEL_TASK );
-   
+
    for ( nRC = SetCursorFirstEntity( vLOD_Source, "LOD_EntityParent", 0 );
          nRC >= zCURSOR_SET;
          nRC = SetCursorNextEntity( vLOD_Source, "LOD_EntityParent", 0 ) )
@@ -8710,6 +8714,7 @@ zwTZZOLODD_SaveAsPostBuild( zVIEW vSubtask )
    zVIEW    vSourceFile;
    zSHORT   nRC;
 
+TraceLineS( "*** TraceA1,", "" );
    zwTZZOLODD_LoadLODList( vSubtask );
 
    GetViewByName( &vTZZOLODO, "TZZOLODO", vSubtask, zLEVEL_TASK );
@@ -8721,7 +8726,7 @@ zwTZZOLODD_SaveAsPostBuild( zVIEW vSubtask )
 
    SetAttributeFromString( vSaveAs, "ActionAfterSaveAS", "SaveAsName8", "" );
    SetAttributeFromString( vSaveAs, "ActionAfterSaveAS", "DLL_Name", "" );
-
+TraceLineS( "*** TraceA2,", "" );
    //set current Description
    SetCtrlState( vSubtask, "cbKeepCurrentDesc", zCONTROL_STATUS_CHECKED, 1 );
    SetAttributeFromAttribute( vSaveAs, "ActionAfterSaveAS", "Desc",
@@ -8734,6 +8739,7 @@ zwTZZOLODD_SaveAsPostBuild( zVIEW vSubtask )
    {
       nRC = DeleteEntity( vSaveAs, "SourceFile", zREPOS_NONE );
    }
+TraceLineS( "*** TraceA3,", "" );
 
    // create new source Files
    CreateViewFromViewForTask( &vSourceFile, vTZZOLODO, 0 );
@@ -8748,10 +8754,11 @@ zwTZZOLODD_SaveAsPostBuild( zVIEW vSubtask )
                                  vSourceFile, "SourceFile", "LanguageType" );
    }
    DropView( vSourceFile );
+TraceLineS( "*** TraceA4,", "" );
 
    if ( CheckExistenceOfEntity( vSaveAs, "SourceFile" ) >= zCURSOR_SET )
       OrderEntityForView( vSaveAs, "SourceFile", "LanguageType D SourceName A" );
-
+TraceLineS( "*** TraceA5,", "" );
    return( 0 );
 } // zwTZZOLODD_SaveAsPostBuild
 
@@ -9131,11 +9138,11 @@ zwTZZOLODD_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vTZZOLFLO;
    zVIEW   vTZZOLFLO_Copy;
-   zCHAR   szNewName[ 9 ];
-   zCHAR   szOutName[ 9 ];
+   zCHAR   szNewName[ 33 ];
+   zCHAR   szOutName[ 33 ];
 
-   GetCtrlText( vSubtask, "edLODName", szNewName, 9 );
-   UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
+   GetCtrlText( vSubtask, "edLODName", szNewName, 33 );
+   UfCompressName( szNewName, szOutName, 32, "", "", "", "", 0 );
 
    GetViewByName( &vTZZOLFLO, "TZZOLFLO", vSubtask, zLEVEL_TASK );
    CreateViewFromViewForTask( &vTZZOLFLO_Copy, vTZZOLFLO, 0 );
@@ -9510,8 +9517,8 @@ zwTZZOLODD_SaveAsSetDefaults( zVIEW vSubtask )
    zVIEW  vSaveAs;
    zVIEW  vTZZOLFLO;
    zVIEW  vTZLodList;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zSHORT nRC;
    zSHORT nIndex = -1;
 
@@ -9522,7 +9529,7 @@ zwTZZOLODD_SaveAsSetDefaults( zVIEW vSubtask )
 
    // if LOD Name not required, set default value
    GetStringFromAttribute( szNewName, vSaveAs, "ActionAfterSaveAS", "SaveAsName8" );
-   UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
+   UfCompressName( szNewName, szOutName, 32, "", "", "", "", 0 );
 
    //Name is required
    if ( zstrcmp( szOutName, "" ) != 0 )
@@ -10485,6 +10492,48 @@ zwTZZOLODD_CLOSE_MergeSelected( zVIEW vSubtask )
 
    return( 0 );
 } // zwTZZOLODD_LOD_MergeSelected
+
+/*************************************************************************************************
+**    
+**    OPERATION: zwTZZOLODD_AnalyzeDuplicateZKeys
+**    
+*************************************************************************************************/
+zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
+zwTZZOLODD_AnalyzeDuplicateZKeys( zVIEW vSubtask )
+{
+   zVIEW vTZZOLODO;
+   zVIEW vTaskLPLR;
+
+   // Refresh the hierarchical diagram.
+
+   if ( GetViewByName( &vTZZOLODO, "TZZOLODO", vSubtask, zLEVEL_TASK ) == zLEVEL_TASK )
+   {
+      GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+      
+      // Identify Entities that should not be part of duplicate check, since they are the same instances
+      // of other Entities in the object.
+      if ( CheckExistenceOfEntity( vTaskLPLR, "DuplicateCheckEntity" ) < 0 )
+      {
+         // No Duplicate Entities have not been defined for a LOD, so do it.
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "LOD_EntityParent" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "LOD_AttributeRec" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "SourceFile" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "Operation" );
+         CreateEntity( vTaskLPLR, "DuplicateCheckEntity", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DuplicateCheckEntity", "EntityName", "Parameter" );
+      }
+      
+      // Go to check for duplicates.
+      oTZCMLPLO_CheckOI_ForDupZKey( vTaskLPLR, vTZZOLODO, "LOD" );
+   }
+
+   return( 0 );
+} // zwTZZOLODD_AnalyzeDuplicateZKeys
+
 
 #ifdef __cplusplus
 }

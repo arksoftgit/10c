@@ -1251,7 +1251,7 @@ END
 DIALOG OPERATION
 SEL_CLONE_SetFileName( VIEW vSubtask )
 
-   STRING ( 8 ) szFileName
+   STRING ( 32 ) szFileName
 
    VIEW  vDialog       BASED ON LOD  TZWDLGSO
    VIEW  vDialog_Copy  BASED ON LOD  TZWDLGSO
@@ -1331,9 +1331,9 @@ LOCAL OPERATION
 SEL_CLONE_CreateWorkLod( VIEW vSubtask,
                          VIEW vOrigWindow BASED ON LOD TZWDLGSO,
                          VIEW vNewWindow  BASED ON LOD TZWDLGSO,
-                         STRING ( 8 ) szVML_Name,
-                         STRING ( 8 ) szC_Name )
-   STRING (   8 )  szName
+                         STRING ( 32 ) szVML_Name,
+                         STRING ( 32 ) szC_Name )
+   STRING (  32 )  szName
    STRING (  32 )  szOperationName
    STRING (   1 )  szLanguageType
    STRING (   3 )  szExtension
@@ -1478,8 +1478,8 @@ SEL_CLONE_CopyCode( VIEW vSubtask,
                     VIEW vOrigWindow    BASED ON LOD TZWDLGSO,
                     VIEW vNewWindow     BASED ON LOD TZWDLGSO )
 
-   STRING (  8 )  szVML_Name
-   STRING (  8 )  szC_Name
+   STRING (  32 ) szVML_Name
+   STRING (  32 ) szC_Name
    SHORT          nRC
 
    VIEW  CopyOperation REGISTERED AS CopyOperation
@@ -1538,8 +1538,8 @@ END
 LOCAL OPERATION
 SEL_CLONE_CreateSourceFile( VIEW vSubtask,
                             VIEW vDialog BASED ON LOD TZWDLGSO,
-                            STRING ( 1 ) szLanguageType,
-                            STRING ( 8 ) szName )
+                            STRING ( 1 )  szLanguageType,
+                            STRING ( 32 ) szName )
 
    // create the new Source File on FIRST position, because the operation
    // CloneWindow search the first source file with LanguageType
@@ -1570,8 +1570,8 @@ END
 DIALOG OPERATION
 SEL_CLONE_CheckSourceFile( VIEW vSubtask )
 
-   STRING ( 8 )  szVML_File
-   STRING ( 8 )  szC_File
+   STRING ( 32 )  szVML_File
+   STRING ( 32 )  szC_File
 
    VIEW  vDialog       BASED ON LOD  TZWDLGSO
    VIEW  vDialog_Copy  BASED ON LOD  TZWDLGSO
@@ -1672,12 +1672,12 @@ LOCAL OPERATION
 SEL_CLONE_GenerateSourceFileName( VIEW vSubtask,
                                   VIEW vTargetDialog BASED ON LOD TZWDLGSO,
                                   STRING ( 32 ) szControlTag,
-                                  STRING (  8 ) szFileName )
-   STRING ( 3 ) szIndex
-   STRING ( 8 ) szVMLControl
-   SHORT        nPosition
-   SHORT        nIndex
-   SHORT        nRC
+                                  STRING ( 32 ) szFileName )
+   STRING ( 3 )  szIndex
+   STRING ( 32 ) szVMLControl
+   SHORT         nPosition
+   SHORT         nIndex
+   SHORT         nRC
 
    VIEW CopyOperation REGISTERED AS CopyOperation
 
@@ -1725,3 +1725,626 @@ SEL_CLONE_GenerateSourceFileName( VIEW vSubtask,
 
    RETURN 0
 END
+
+/*************************************************************************************************
+**
+**    OPERATION: DIALOG_Compare
+**
+*************************************************************************************************/
+DIALOG OPERATION
+DIALOG_Compare( VIEW ViewToWindow )
+
+   VIEW TargetDialog     REGISTERED AS TZWINDOW
+   VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO
+   VIEW SourceDialog     BASED ON LOD  TZWDLGSO
+   VIEW SourceDialogRoot BASED ON LOD  TZWDLGSO
+   VIEW TaskLPLR         REGISTERED AS TaskLPLR
+   STRING ( 500 ) szConcatenatedControlTag
+   STRING ( 200 ) szFileName
+   STRING ( 1 )   szWindowDifferenceFlag
+   SHORT          nRC
+
+   // Activate the Source Dialog and compare it to the Dialog in memory by the same name.
+   GET VIEW TargetDialog NAMED "TZWINDOWL"
+   szFileName = TaskLPLR.LPLR.wFullyQualifiedDirectoryName + "\\" + TargetDialog.Dialog.Tag + ".PWD"
+   nRC = ActivateOI_FromFile( SourceDialog, "TZWDLGSO", ViewToWindow, szFileName, zSINGLE )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Compare Dialogs",
+                   "Invalid File Name",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END
+   NAME VIEW SourceDialog "SourceDialog"
+   NAME VIEW TargetDialog "TargetDialog"
+
+   // Compare source and target Dialogs.
+   CreateViewFromView( TargetDialogRoot, TargetDialog )
+   NAME VIEW TargetDialogRoot "TargetDialogRoot"
+   FOR EACH TargetDialogRoot.DisplayCompareResult
+      DELETE ENTITY TargetDialogRoot.DisplayCompareResult NONE
+   END
+   CreateViewFromView( SourceDialogRoot, SourceDialog )
+   NAME VIEW SourceDialogRoot "SourceDialogRoot"
+
+   // Compare Source to Target
+   FOR EACH SourceDialog.Window //WHERE SourceDialog.Window.Tag = "StudentDetail"
+      CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+      TargetDialogRoot.DisplayCompareResult.SourceWindowName = SourceDialog.Window.Tag
+      SET CURSOR FIRST TargetDialog.Window WHERE TargetDialog.Window.Tag = SourceDialog.Window.Tag
+      IF RESULT >= zCURSOR_SET
+
+         TargetDialogRoot.DisplayCompareResult.TargetWindowName = SourceDialog.Window.Tag
+
+         // There is a Target Window by the same name, so compare controls.
+         szWindowDifferenceFlag = ""    // Start indicating no difference.
+         FOR EACH SourceDialog.Control
+            SET CURSOR FIRST TargetDialog.Control WHERE TargetDialog.Control.Tag = SourceDialog.Control.Tag
+            IF RESULT < zCURSOR_SET
+               // There is a difference, so just stop with the difference.
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag = SourceDialog.Control.Tag
+               DIALOG_CompareNewControlSrc( TargetDialogRoot, SourceDialog )
+            ELSE
+
+               // There is a match by Control Tag, so continue compare.
+               szConcatenatedControlTag = ""    // Concatenated Name just starts out null.
+               CompareControlRecursiveSrc( TargetDialog,
+                                           SourceDialog,
+                                           TargetDialogRoot,
+                                           SourceDialogRoot,
+                                           szWindowDifferenceFlag,
+                                           szConcatenatedControlTag )
+
+            END
+         END
+
+      ELSE
+         // There is no corresponding Target window.
+         szWindowDifferenceFlag = "Y"
+         TargetDialogRoot.DisplayCompareResult.TargetWindowName = "(No Target Window)"
+      END
+
+      IF szWindowDifferenceFlag = ""
+         // The corresponding Target window matches the source.
+         TargetDialogRoot.DisplayCompareResult.TargetWindowName = "(Matching Target Window)"
+      END
+   END
+
+   // Create Display enties that define boundary of Source and Target compares.
+   CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+   CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+   TargetDialogRoot.DisplayCompareResult.SourceWindowName = "**** Target Compare ****"
+   CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+
+   // Compare Target to Source
+   FOR EACH TargetDialog.Window
+      CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+      TargetDialogRoot.DisplayCompareResult.TargetWindowName = TargetDialog.Window.Tag
+      SET CURSOR FIRST SourceDialog.Window WHERE SourceDialog.Window.Tag = TargetDialog.Window.Tag
+      IF RESULT >= zCURSOR_SET
+
+         TargetDialogRoot.DisplayCompareResult.SourceWindowName = TargetDialog.Window.Tag
+
+         // There is a Source Window by the same name, so compare controls.
+         szWindowDifferenceFlag = ""    // Start indicating no difference.
+         FOR EACH TargetDialog.Control
+            SET CURSOR FIRST SourceDialog.Control WHERE SourceDialog.Control.Tag = TargetDialog.Control.Tag
+            IF RESULT < zCURSOR_SET
+               // There is a difference, so just stop with the difference.
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag = TargetDialog.Control.Tag
+               DIALOG_CompareNewControlTgt( TargetDialogRoot, TargetDialog )
+            ELSE
+
+               // There is a match by Control Tag, so continue compare.
+               szConcatenatedControlTag = ""    // Concatenated Name just starts out null.
+               CompareControlRecursiveTgt( TargetDialog,
+                                           SourceDialog,
+                                           TargetDialogRoot,
+                                           SourceDialogRoot,
+                                           szWindowDifferenceFlag,
+                                           szConcatenatedControlTag )
+
+            END
+         END
+
+      ELSE
+         // There is no corresponding Source window.
+         szWindowDifferenceFlag = "Y"
+         TargetDialogRoot.DisplayCompareResult.SourceWindowName = "(No Source Window)"
+      END
+
+      IF szWindowDifferenceFlag = ""
+         // The corresponding Source window matches the Target.
+         TargetDialogRoot.DisplayCompareResult.SourceWindowName = "(Matching Source Window)"
+      END
+   END
+
+   DropView( TargetDialogRoot )
+
+END
+
+/*************************************************************************************************
+**
+**    OPERATION: CompareControlRecursiveSrc
+**
+*************************************************************************************************/
+LOCAL OPERATION
+CompareControlRecursiveSrc( VIEW TargetDialog     BASED ON LOD  TZWDLGSO,
+                            VIEW SourceDialog     BASED ON LOD  TZWDLGSO,
+                            VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+                            VIEW SourceDialogRoot BASED ON LOD  TZWDLGSO,
+                            STRING ( 1 )   szWindowDifferenceFlag,
+                            STRING ( 500 ) szConcatenatedControlTag )
+
+   STRING ( 500 ) szNewConcatenatedControlTag
+   STRING ( 500 ) szNewConcatenatedSubControlTag
+
+   // Compare two Controls as a recursive subobject.
+
+   // The concatenated name is the prior name plus the current name.
+   IF szConcatenatedControlTag = ""
+      szNewConcatenatedControlTag = SourceDialog.Control.Tag
+   ELSE
+      szNewConcatenatedControlTag = szConcatenatedControlTag + "/" + SourceDialog.Control.Tag
+   END
+
+   // First look for subcontrol.
+   IF SourceDialog.CtrlCtrl EXISTS
+      IF TargetDialog.CtrlCtrl EXISTS
+         // There is a matching subcontrol, so go down one level and look for match.
+         SetViewToSubobject( SourceDialog, "CtrlCtrl" )
+         SetViewToSubobject( TargetDialog, "CtrlCtrl" )
+         FOR EACH SourceDialog.Control
+            SET CURSOR FIRST TargetDialog.Control WHERE TargetDialog.Control.Tag = SourceDialog.Control.Tag
+            IF RESULT < zCURSOR_SET
+               // There is a difference, so just stop with the difference.
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               szNewConcatenatedSubControlTag = szNewConcatenatedControlTag + "/" + SourceDialog.Control.Tag
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag = szNewConcatenatedSubControlTag
+               DIALOG_CompareNewControlSrc( TargetDialogRoot, SourceDialog )
+            ELSE
+
+               // There is a match by Control Tag, so continue compare.
+               CompareControlRecursiveSrc( TargetDialog,
+                                           SourceDialog,
+                                           TargetDialogRoot,
+                                           SourceDialogRoot,
+                                           szWindowDifferenceFlag,
+                                           szNewConcatenatedControlTag )
+
+            END
+         END
+         ResetViewFromSubobject( SourceDialog )
+         ResetViewFromSubobject( TargetDialog )
+
+      ELSE
+         // There is no subcontrol match, so show difference.
+         szWindowDifferenceFlag = "Y"
+         CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         TargetDialogRoot.DisplayCompareResult.SourceControlTag = szNewConcatenatedControlTag
+      END
+   ELSE
+      // There is no subcontrol, so look for match on Control characteristics of Type, Mapping and Action.
+
+      // Type
+      IF SourceDialog.ControlDef.Tag != TargetDialog.ControlDef.Tag
+         szWindowDifferenceFlag = "Y"
+         CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         TargetDialogRoot.DisplayCompareResult.SourceControlTag  = szNewConcatenatedControlTag
+         TargetDialogRoot.DisplayCompareResult.TargetControlTag  = szNewConcatenatedControlTag
+         TargetDialogRoot.DisplayCompareResult.SourceControlType = SourceDialog.ControlDef.Tag
+
+      ELSE
+
+         // Text
+         IF SourceDialog.ControlDef.Tag = "Text"
+            IF SourceDialog.Control.Text != TargetDialog.Control.Text
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = QUOTES + SourceDialog.Control.Text + QUOTES
+               TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = QUOTES + TargetDialog.Control.Text + QUOTES
+            END
+         END
+
+         // Entity Only Mapping
+         IF SourceDialog.CtrlMapLOD_Entity EXISTS
+            SET CURSOR FIRST TargetDialog.CtrlMapLOD_Entity WITHIN TargetDialog.Control
+                       WHERE TargetDialog.CtrlMapLOD_Entity.Name = SourceDialog.CtrlMapLOD_Entity.Name
+            IF RESULT < zCURSOR_SET
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                                                                               SourceDialog.CtrlMapLOD_Entity.Name
+               TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                                                                               TargetDialog.CtrlMapLOD_Entity.Name
+            END
+         END
+
+         // Entity/Attribute Mapping
+         IF SourceDialog.CtrlMapLOD_Attribute EXISTS
+            IF TargetDialog.CtrlMapLOD_Attribute EXISTS
+               // Both Source and Target have mapping.
+               SET CURSOR FIRST TargetDialog.CtrlMapLOD_Attribute WITHIN TargetDialog.Control
+                          WHERE TargetDialog.CtrlMapER_Attribute.Name  = SourceDialog.CtrlMapER_Attribute.Name
+                            AND TargetDialog.CtrlMapRelatedEntity.Name = SourceDialog.CtrlMapRelatedEntity.Name
+               IF RESULT < zCURSOR_SET OR TargetDialog.CtrlMapView.Name != SourceDialog.CtrlMapView.Name
+                  szWindowDifferenceFlag = "Y"
+                  CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                                                                                  SourceDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                                  SourceDialog.CtrlMapER_Attribute.Name
+                  TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                                                                                  TargetDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                                  TargetDialog.CtrlMapER_Attribute.Name
+               END
+            ELSE
+               // The Source has mapping but the Target does not.
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                                                                               SourceDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                               SourceDialog.CtrlMapER_Attribute.Name
+            END
+         END
+
+         // Action
+         IF SourceDialog.EventAct EXISTS
+            SET CURSOR FIRST TargetDialog.EventAct WHERE TargetDialog.EventAct.Tag        = SourceDialog.EventAct.Tag
+                                                     AND TargetDialog.EventAct.DialogName = SourceDialog.EventAct.DialogName
+                                                     AND TargetDialog.EventAct.WindowName = SourceDialog.EventAct.WindowName
+            IF RESULT >= zCURSOR_SET
+               SET CURSOR FIRST SourceDialogRoot.Action WITHIN SourceDialogRoot.Dialog
+                          WHERE SourceDialogRoot.Action.ZKey = SourceDialog.EventAct.ZKey
+               SET CURSOR FIRST TargetDialogRoot.Action WITHIN TargetDialogRoot.Dialog
+                          WHERE TargetDialogRoot.Action.ZKey = TargetDialog.EventAct.ZKey
+               IF SourceDialogRoot.ActOpt EXISTS
+                  SET CURSOR FIRST TargetDialogRoot.ActOpt WHERE TargetDialogRoot.ActOpt.Tag = SourceDialogRoot.ActOpt.Tag
+                  IF RESULT < zCURSOR_SET
+                     // New or Different Action
+                     szWindowDifferenceFlag = "Y"
+                     CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                     TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                     TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                     TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.ActOpt.Tag
+                     TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.ActOpt.Tag
+                  END
+               END
+               IF SourceDialogRoot.Action.DialogName != TargetDialogRoot.Action.DialogName OR
+                  SourceDialogRoot.Action.WindowName != TargetDialogRoot.Action.WindowName
+
+                  // Different transfer window.
+                  szWindowDifferenceFlag = "Y"
+                  CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.Action.WindowName
+                  TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.Action.WindowName
+               END
+            ELSE
+               // New Action
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.EventAct.Tag
+            END
+
+         END
+      END
+   END
+
+END
+
+/*************************************************************************************************
+**
+**    OPERATION: CompareControlRecursiveTgt
+**
+*************************************************************************************************/
+LOCAL OPERATION
+CompareControlRecursiveTgt( VIEW TargetDialog     BASED ON LOD  TZWDLGSO,
+                            VIEW SourceDialog     BASED ON LOD  TZWDLGSO,
+                            VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+                            VIEW SourceDialogRoot BASED ON LOD  TZWDLGSO,
+                            STRING ( 1 )   szWindowDifferenceFlag,
+                            STRING ( 500 ) szConcatenatedControlTag )
+
+   STRING ( 500 ) szNewConcatenatedControlTag
+   STRING ( 500 ) szNewConcatenatedSubControlTag
+
+   // Compare two Controls as a recursive subobject.
+
+   // The concatenated name is the prior name plus the current name.
+   IF szConcatenatedControlTag = ""
+      szNewConcatenatedControlTag = SourceDialog.Control.Tag
+   ELSE
+      szNewConcatenatedControlTag = szConcatenatedControlTag + "/" + SourceDialog.Control.Tag
+   END
+
+   // First look for subcontrol.
+   IF TargetDialog.CtrlCtrl EXISTS
+      IF SourceDialog.CtrlCtrl EXISTS
+         // There is a matching subcontrol, so go down one level and look for match.
+         SetViewToSubobject( TargetDialog, "CtrlCtrl" )
+         SetViewToSubobject( SourceDialog, "CtrlCtrl" )
+         FOR EACH TargetDialog.Control
+            SET CURSOR FIRST SourceDialog.Control WHERE SourceDialog.Control.Tag = TargetDialog.Control.Tag
+            IF RESULT < zCURSOR_SET
+               // There is a difference, so just stop with the difference.
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               szNewConcatenatedSubControlTag = szNewConcatenatedControlTag + "/" + TargetDialog.Control.Tag
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag = szNewConcatenatedSubControlTag
+               DIALOG_CompareNewControlTgt( TargetDialogRoot, TargetDialog )
+            ELSE
+
+               // There is a match by Control Tag, so continue compare.
+               CompareControlRecursiveTgt( TargetDialog,
+                                           SourceDialog,
+                                           TargetDialogRoot,
+                                           SourceDialogRoot,
+                                           szWindowDifferenceFlag,
+                                           szNewConcatenatedControlTag )
+
+            END
+         END
+         ResetViewFromSubobject( TargetDialog )
+         ResetViewFromSubobject( SourceDialog )
+
+      ELSE
+         // There is no subcontrol match, so show difference.
+         szWindowDifferenceFlag = "Y"
+         CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         TargetDialogRoot.DisplayCompareResult.TargetControlTag = szNewConcatenatedControlTag
+      END
+   ELSE
+      // There is no subcontrol, so look for match on Control characteristics of Type, Mapping and Action.
+
+      // Type
+      IF TargetDialog.ControlDef.Tag != SourceDialog.ControlDef.Tag
+         szWindowDifferenceFlag = "Y"
+         CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         TargetDialogRoot.DisplayCompareResult.TargetControlTag  = szNewConcatenatedControlTag
+         TargetDialogRoot.DisplayCompareResult.TargetControlTag  = szNewConcatenatedControlTag
+         TargetDialogRoot.DisplayCompareResult.TargetControlType = TargetDialog.ControlDef.Tag
+
+      ELSE
+
+         // Text
+         IF TargetDialog.ControlDef.Tag = "Text"
+            IF TargetDialog.Control.Text != SourceDialog.Control.Text
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = QUOTES + TargetDialog.Control.Text + QUOTES
+               TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = QUOTES + SourceDialog.Control.Text + QUOTES
+            END
+         END
+
+         // Entity Only Mapping
+         IF TargetDialog.CtrlMapLOD_Entity EXISTS
+            SET CURSOR FIRST SourceDialog.CtrlMapLOD_Entity WITHIN SourceDialog.Control
+                       WHERE SourceDialog.CtrlMapLOD_Entity.Name = TargetDialog.CtrlMapLOD_Entity.Name
+            IF RESULT < zCURSOR_SET
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                                                                               TargetDialog.CtrlMapLOD_Entity.Name
+               TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                                                                               SourceDialog.CtrlMapLOD_Entity.Name
+            END
+         END
+
+         // Entity/Attribute Mapping
+         IF TargetDialog.CtrlMapLOD_Attribute EXISTS
+            IF SourceDialog.CtrlMapLOD_Attribute EXISTS
+               // Both Target and Source have mapping.
+               SET CURSOR FIRST SourceDialog.CtrlMapLOD_Attribute WITHIN SourceDialog.Control
+                          WHERE SourceDialog.CtrlMapER_Attribute.Name  = TargetDialog.CtrlMapER_Attribute.Name
+                            AND SourceDialog.CtrlMapRelatedEntity.Name = TargetDialog.CtrlMapRelatedEntity.Name
+               IF RESULT < zCURSOR_SET OR TargetDialog.CtrlMapView.Name != SourceDialog.CtrlMapView.Name
+                  szWindowDifferenceFlag = "Y"
+                  CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                                                                                  TargetDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                                  TargetDialog.CtrlMapER_Attribute.Name
+                  TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                                                                                  SourceDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                                  SourceDialog.CtrlMapER_Attribute.Name
+               END
+            ELSE
+               // The Target has mapping but the Source does not.
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                                                                               TargetDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                               TargetDialog.CtrlMapER_Attribute.Name
+            END
+         END
+
+         // Action
+         IF TargetDialog.EventAct EXISTS
+            SET CURSOR FIRST SourceDialog.EventAct WHERE SourceDialog.EventAct.Tag        = TargetDialog.EventAct.Tag
+                                                     AND SourceDialog.EventAct.DialogName = TargetDialog.EventAct.DialogName
+                                                     AND SourceDialog.EventAct.WindowName = TargetDialog.EventAct.WindowName
+            IF RESULT >= zCURSOR_SET
+               SET CURSOR FIRST SourceDialogRoot.Action WITHIN SourceDialogRoot.Dialog
+                          WHERE SourceDialogRoot.Action.ZKey = SourceDialog.EventAct.ZKey
+               SET CURSOR FIRST TargetDialogRoot.Action WITHIN TargetDialogRoot.Dialog
+                          WHERE TargetDialogRoot.Action.ZKey = TargetDialog.EventAct.ZKey
+               IF TargetDialogRoot.ActOpt EXISTS
+                  SET CURSOR FIRST SourceDialogRoot.ActOpt WHERE SourceDialogRoot.ActOpt.Tag = TargetDialogRoot.ActOpt.Tag
+                  IF RESULT < zCURSOR_SET
+                     // New or Different Action
+                     szWindowDifferenceFlag = "Y"
+                     CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                     TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                     TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                     TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.ActOpt.Tag
+                     TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.ActOpt.Tag
+                  END
+               END
+               IF SourceDialogRoot.Action.DialogName != TargetDialogRoot.Action.DialogName OR
+                  SourceDialogRoot.Action.WindowName != TargetDialogRoot.Action.WindowName
+
+                  // Different transfer window.
+                  szWindowDifferenceFlag = "Y"
+                  CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.Action.WindowName
+                  TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.Action.WindowName
+               END
+            ELSE
+               // New Action
+               szWindowDifferenceFlag = "Y"
+               CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.EventAct.Tag
+            END
+
+         END
+      END
+   END
+
+END
+
+/*************************************************************************************************
+**
+**    OPERATION: PostbuildExternalDialogOpen
+**
+*************************************************************************************************/
+DIALOG OPERATION
+PostbuildExternalDialogOpen( VIEW ViewToWindow )
+
+   VIEW TaskLPLR REGISTERED AS TaskLPLR
+
+   // If the file name work attribute is null, prefill it from the directory name that was used
+   // in compare.
+
+   IF TaskLPLR.LPLR.wFullyQualifiedFileName = ""
+      TaskLPLR.LPLR.wFullyQualifiedFileName = TaskLPLR.LPLR.wFullyQualifiedDirectoryName
+   END
+
+END
+
+/*************************************************************************************************
+**
+**    OPERATION: OPEN_ExternalDialog
+**
+*************************************************************************************************/
+DIALOG OPERATION
+OPEN_ExternalDialog( VIEW ViewToWindow )
+
+   VIEW ExternalDialog  BASED ON LOD  TZWDLGSO
+   VIEW ExternalDialog2 BASED ON LOD  TZWDLGSO
+   VIEW TaskLPLR        REGISTERED AS TaskLPLR
+   STRING ( 200 ) szFileName
+   SHORT          nRC
+
+   // Activate the Source Dialog and compare it to the Dialog in memory by the same name.
+   szFileName = TaskLPLR.LPLR.wFullyQualifiedFileName
+   nRC = ActivateOI_FromFile( ExternalDialog, "TZWDLGSO", ViewToWindow, szFileName, zSINGLE )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Open External Dialog",
+                   "Invalid File Name",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END
+   NAME VIEW ExternalDialog "TZWINDOW"
+   CreateViewFromView( ExternalDialog2, ExternalDialog )
+   NAME VIEW ExternalDialog2 "TZWINDOWL"
+   CreateViewFromView( ExternalDialog2, ExternalDialog )
+   NAME VIEW ExternalDialog2 "TZWINOPT"
+
+END
+
+/*************************************************************************************************
+**
+**    OPERATION: DIALOG_CompareNewControlSrc
+**
+*************************************************************************************************/
+LOCAL OPERATION
+DIALOG_CompareNewControlSrc( VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+                             VIEW SourceDialog     BASED ON LOD  TZWDLGSO )
+
+   // For a new Control, set compare values to diaplay.
+   TargetDialogRoot.DisplayCompareResult.SourceControlType = SourceDialog.ControlDef.Tag
+   IF SourceDialog.ControlDef.Tag = "Text" OR SourceDialog.ControlDef.Tag = "GroupBox"
+      TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = QUOTES + SourceDialog.Control.Text + QUOTES
+   END
+
+   // Entity Only Mapping
+   IF SourceDialog.CtrlMapLOD_Entity EXISTS
+      TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapLOD_Entity.Name
+   END
+
+   // Entity/Attribute Mapping
+   IF SourceDialog.CtrlMapLOD_Attribute EXISTS
+      TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                                                                      SourceDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                      SourceDialog.CtrlMapER_Attribute.Name
+   END
+
+   // Action
+   IF SourceDialog.EventAct EXISTS
+      TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.EventAct.Tag
+   END
+
+END
+
+/*************************************************************************************************
+**
+**    OPERATION: DIALOG_CompareNewControlTgt
+**
+*************************************************************************************************/
+LOCAL OPERATION
+DIALOG_CompareNewControlTgt( VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+                             VIEW TargetDialog     BASED ON LOD  TZWDLGSO )
+
+   // For a new Control, set compare values to diaplay.
+   TargetDialogRoot.DisplayCompareResult.TargetControlType = TargetDialog.ControlDef.Tag
+   IF TargetDialog.ControlDef.Tag = "Text" OR TargetDialog.ControlDef.Tag = "GroupBox"
+      TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = QUOTES + TargetDialog.Control.Text + QUOTES
+   END
+
+   // Entity Only Mapping
+   IF TargetDialog.CtrlMapLOD_Entity EXISTS
+      TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapLOD_Entity.Name
+   END
+
+   // Entity/Attribute Mapping
+   IF TargetDialog.CtrlMapLOD_Attribute EXISTS
+      TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                                                                      TargetDialog.CtrlMapRelatedEntity.Name + "." +
+                                                                      TargetDialog.CtrlMapER_Attribute.Name
+   END
+
+   // Action
+   IF TargetDialog.EventAct EXISTS
+      TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.EventAct.Tag
+   END
+
+END
+

@@ -776,7 +776,7 @@ zwTZWDVORD_Mapp_CreateTreeObject( zVIEW vSubtask,
    zLONG    lEntityNo = 0;
    zLONG    lAttributeNo;
    zCHAR    szViewAndLodName[ 71 ];
-   zCHAR    szLodName[ 9 ];
+   zCHAR    szLodName[ 33 ];
    zSHORT   nRC;
 
    RetrieveViewForMetaList( vSubtask, &vCM_List, zREFER_LOD_META );

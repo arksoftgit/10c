@@ -960,7 +960,7 @@ TZActiveX::WritePersistProperties( )
       mReleaseInit( lpStream );
 
       CFile fStg( m_csStorageFileName, CFile::modeRead );
-      dwMemoryLth = (DWORD) fStg.GetLength();
+      dwMemoryLth = fStg.GetLength();
 
       pMemPtr = new BYTE[ dwMemoryLth ];
       if ( !pMemPtr )
@@ -1246,7 +1246,7 @@ TZActiveX::GetRequiredMemoryLength( )
       DWORD dwFileLength = 0;
       if ( fileTemp.Open( csFileName, CFile::modeRead, &f ) )
       {
-         dwMemoryLth = (DWORD) fileTemp.GetLength( );
+         dwMemoryLth = fileTemp.GetLength( );
          fileTemp.Close( );
          DeleteFile( csFileName );
       }

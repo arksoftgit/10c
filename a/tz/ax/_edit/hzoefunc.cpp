@@ -1045,7 +1045,7 @@ DWORD CALLBACK CTBEditor::ReadCallback( DWORD dwCookie, LPBYTE pbBuff, LONG cb,
                                         LONG FAR *pcb )
 {
    DWORD result = 1;
-   CString strHelp( (char) 0x20, (int) m_lTabStop);// creating a string containing
+   CString strHelp ( 0x20, m_lTabStop);// creating a string containing
                                        // a blank per tabstop size
    BYTE b;
    unsigned long lReadCount = 1;
@@ -2389,8 +2389,8 @@ DWORD CALLBACK CTBEditor::ReadRTFFormat( DWORD dwCookie, LPBYTE pbBuff,
    char *pDatei;
    char cHilf[20];
 
-   static int bEnde = FALSE;
-   static int bFirst = TRUE;
+   static bEnde = FALSE;
+   static bFirst = TRUE;
    static char *pRTF;
    static char *q;
 

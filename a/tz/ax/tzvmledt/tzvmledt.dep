@@ -1,0 +1,106 @@
+# Microsoft Developer Studio Generated Dependency File, included by tzvmledt.mak
+
+.\tzcswrpr.cpp : \
+	"..\..\..\..\w\incr\kzoeenaa.h"\
+	"..\..\..\incr\kzoedeca.h"\
+	"..\..\..\incr\kzoegdef.h"\
+	"..\..\..\incr\kzoemeaa.h"\
+	"..\..\..\incr\kzoengaa.h"\
+	"..\..\..\incr\kzoep1aa.h"\
+	"..\..\..\incr\kzoessaa.h"\
+	"..\..\..\incr\kzwdlgxo.hst"\
+	"..\..\..\incr\zdrvropr.h"\
+	"..\..\..\incr\zstdafx.h"\
+	"..\..\..\incz\kzoeidaa.h"\
+	"..\..\..\incz\kzoemiaa.h"\
+	"..\..\..\incz\kzoep0aa.h"\
+	"..\..\..\incz\kzoetdaa.h"\
+	".\tzcswrpr.h"\
+	
+
+.\tzvmledt.cpp : \
+	"..\..\..\..\w\incr\kzoeenaa.h"\
+	"..\..\..\incr\kzoedeca.h"\
+	"..\..\..\incr\kzoegdef.h"\
+	"..\..\..\incr\kzoemeaa.h"\
+	"..\..\..\incr\kzoengaa.h"\
+	"..\..\..\incr\kzoep1aa.h"\
+	"..\..\..\incr\kzoessaa.h"\
+	"..\..\..\incr\kzwdlgxo.hst"\
+	"..\..\..\incr\zdrvropr.h"\
+	"..\..\..\incr\zstdafx.h"\
+	"..\..\..\incz\kzoeidaa.h"\
+	"..\..\..\incz\kzoemiaa.h"\
+	"..\..\..\incz\kzoep0aa.h"\
+	"..\..\..\incz\kzoetdaa.h"\
+	"..\..\..\incz\tz__oprs.h"\
+	"..\..\..\incz\tzlodopr.h"\
+	"..\..\..\zdr\JPegLib\Jconfig.h"\
+	"..\..\..\zdr\JPegLib\Jmorecfg.h"\
+	"..\..\..\zdr\JPegLib\Jpeglib.h"\
+	"..\..\..\zdr\ZdCtl.h"\
+	"..\..\..\zdr\ZDr.h"\
+	"..\..\..\zdr\ZDrApp.h"\
+	"..\..\..\zdr\zdrtwain.h"\
+	"..\..\zeidonop.h"\
+	".\tzcswrpr.h"\
+	".\tzvmlcst.h"\
+	".\tzvmledt.h"\
+	".\zcmddef.h"\
+	".\zstring.h"\
+	".\zviewdef.h"\
+	
+
+.\zcmddef.cpp : \
+	"..\..\..\..\w\incr\kzoeenaa.h"\
+	"..\..\..\incr\kzoedeca.h"\
+	"..\..\..\incr\kzoegdef.h"\
+	"..\..\..\incr\kzoemeaa.h"\
+	"..\..\..\incr\kzoengaa.h"\
+	"..\..\..\incr\kzoep1aa.h"\
+	"..\..\..\incr\kzoessaa.h"\
+	"..\..\..\incr\kzwdlgxo.hst"\
+	"..\..\..\incr\zdrvropr.h"\
+	"..\..\..\incr\zstdafx.h"\
+	"..\..\..\incz\kzoeidaa.h"\
+	"..\..\..\incz\kzoemiaa.h"\
+	"..\..\..\incz\kzoep0aa.h"\
+	"..\..\..\incz\kzoetdaa.h"\
+	".\zcmddef.h"\
+	
+
+.\zstring.cpp : \
+	"..\..\..\..\w\incr\kzoeenaa.h"\
+	"..\..\..\incr\kzoedeca.h"\
+	"..\..\..\incr\kzoegdef.h"\
+	"..\..\..\incr\kzoemeaa.h"\
+	"..\..\..\incr\kzoengaa.h"\
+	"..\..\..\incr\kzoep1aa.h"\
+	"..\..\..\incr\kzoessaa.h"\
+	"..\..\..\incr\kzwdlgxo.hst"\
+	"..\..\..\incr\zdrvropr.h"\
+	"..\..\..\incr\zstdafx.h"\
+	"..\..\..\incz\kzoeidaa.h"\
+	"..\..\..\incz\kzoemiaa.h"\
+	"..\..\..\incz\kzoep0aa.h"\
+	"..\..\..\incz\kzoetdaa.h"\
+	".\zstring.h"\
+	
+
+.\zviewdef.cpp : \
+	"..\..\..\..\w\incr\kzoeenaa.h"\
+	"..\..\..\incr\kzoedeca.h"\
+	"..\..\..\incr\kzoegdef.h"\
+	"..\..\..\incr\kzoemeaa.h"\
+	"..\..\..\incr\kzoengaa.h"\
+	"..\..\..\incr\kzoep1aa.h"\
+	"..\..\..\incr\kzoessaa.h"\
+	"..\..\..\incr\kzwdlgxo.hst"\
+	"..\..\..\incr\zdrvropr.h"\
+	"..\..\..\incr\zstdafx.h"\
+	"..\..\..\incz\kzoeidaa.h"\
+	"..\..\..\incz\kzoemiaa.h"\
+	"..\..\..\incz\kzoep0aa.h"\
+	"..\..\..\incz\kzoetdaa.h"\
+	".\zviewdef.h"\
+	

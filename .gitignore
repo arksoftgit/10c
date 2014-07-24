@@ -56,7 +56,9 @@ build/
 
 *_i.c
 *_p.c
+*.dxx
 *.ilk
+*.map
 *.meta
 *.obj
 *.pch

@@ -77,57 +77,43 @@ CHANGE LOG
    Fixed bug reported by Doug--we weren't properly taking into account the
    DBH-specific OI when determining if the FKs should be generated with
    table names.
-
 1999.09.03  RG Z9J, Z2000 VSAM
     'Init Tables': Update Tables for VSAM fixed
-
 1999.08.10  RG Z9J,Z2000 VSAM
    In function oTZTENVRO_BuildTablRecsFromEMD flag bModifyExistingTables is
    always TRUE for Siron Catalogs because we have to execute Identifier
    processing for Siron Catalogs always
-
 1999.08.05  RG Z9J,Z2000 VSAM
    Generate unique Tablename only for databases not for Siron Flat Files
-
 18.02.97    DonC
    Corrected RecursiveRelSearch and ImplementSQL_RelLnk to generate TE
    correctly for a chain of Attributive entities.
-
 21.02.97    DonC
    Corrected the generation of tables for a second DBMS when it is requested
    that only entities not in any DBMS be used to generate tables.
-
 05.05.97    DonC
    Added the generation of AUTOSEQ fields in the TE when requested on
    ER_RelLink entities.
-
 22.08.97    DonC
    Added setting of SQL_TableOwner in TE Table from TE_TableOwner in
    ER_Entity of ER.
-
 16.10.1997  DonC
    Modified generation of foreign key names to use TE_ColumnName or
    Attribute Name if the Suffix name doesn't exist.
-
 28.01.1998  DonC
    Modified oTZTENVRO_BuildTablRecsFromEMD so that a table resync into a
    DBMS_Source that has existing table entries will only add table and
    attribute entries, without processing identifiers.
-
 25.03.1998  DonC
    Modified ofnTZTENVRO_ImplementSQL_RelLink to correct foreign key suffix
    handling for generated keys. Also improved error message TE00117.
-
 15.07.1998  DonC
    Modified oTZTENVRO_BuildSQL_RelsFromEMD to order key entries made up
    of foreign keys.
-
 14.12.1998  HH
    Not change a colum name, if it was entered in the ER(TE_ColumnName).
-
 1998.03.09  DGC
    Changed how FK names were generated (added record name in some cases).
-
 */
 
 #include "tzlodopr.h"
@@ -196,7 +182,6 @@ zCHAR szDebug[ 512 ];
       1. Determine the TE_TablRec for the "parent" ER_Entity
       2. Add TE_FieldDataRel for each "key" in the "parent" table using a
          name that identifies the "relationship"
-
 */
 zOPER_EXPORT zSHORT OPERATION
 oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
@@ -207,7 +192,7 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
    zVIEW     vEMD;
    zVIEW     vDTE_save;
    zVIEW     vDTE3;
-   zCHAR     szName[ 33 ];
+   zCHAR     szName[ 255 ];
    zSHORT    RESULT;
    zCHAR     szTemp[ 1026 ];
    LPLIBRARY hLibrary;
@@ -306,7 +291,7 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
          {
             // Add the table entry, because it isn't there.
             SetCursorLastEntity( vDTE, "TE_TablRec", 0 );
-            CreateMetaEntity( vSubtask, vDTE, "TE_TablRec", zPOS_AFTER );
+            CreateTE_MetaEntity( vSubtask, vDTE, "TE_TablRec", zPOS_AFTER );
             IncludeSubobjectFromSubobject( vDTE, "ER_Entity", vEMD, "ER_Entity", zPOS_AFTER );
 
             // If there is a TE Table name, use it.  Otherwise use the ER
@@ -376,7 +361,7 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
             if ( CompareAttributeToString( vEMD, "ER_Attribute", "Work", "Y" ) == 0 )
                continue;
 
-            CreateMetaEntity( vSubtask, vDTE, "TE_FieldDataRel", zPOS_AFTER );
+            CreateTE_MetaEntity( vSubtask, vDTE, "TE_FieldDataRel", zPOS_AFTER );
 
             // If there is a TE Column name, use it.  Otherwise use the ER
             // Attribute name.
@@ -434,7 +419,7 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
                if ( RESULT >= zCURSOR_SET )
                   DeleteEntity( vDTE, "TE_TablRecKey", zREPOS_NONE );
 
-               CreateMetaEntity( vSubtask, vDTE, "TE_TablRecKey", zPOS_AFTER );
+               CreateTE_MetaEntity( vSubtask, vDTE, "TE_TablRecKey", zPOS_AFTER );
 
 
                // Use the TE Key Name for the IndexName.
@@ -534,9 +519,9 @@ ofnTZTENVRO_BldPrimaryKeyToken( zVIEW    vSubtask,
    // This routine is called when there is a System Maintained Key that
    // is not an attribute.
 
-   zCHAR  szName[ 33 ];
+   zCHAR  szName[ 255 ];
 
-   CreateMetaEntity( vSubtask, vDTE, "TE_FieldDataRel", zPOS_FIRST );
+   CreateTE_MetaEntity( vSubtask, vDTE, "TE_FieldDataRel", zPOS_FIRST );
 
    GetStringFromAttribute( szName, vDTE, "TE_TablRec", "Name" );
    zstrcat( szName, "_Token" );
@@ -860,9 +845,9 @@ ofnTZTENVRO_ImplementRelAs( zPSHORT nRelImplemented,
    zBOOL    bRelImplementedAsFkInSrc;
    zBOOL    bRelImplementedAsFkInTgt;
 
-   zCHAR   szSrcEntity[ 33 ];
-   zCHAR   szTgtEntity[ 33 ];
-   zCHAR   szSrcRelLink[ 33 ];
+   zCHAR   szSrcEntity[ 255 ];
+   zCHAR   szTgtEntity[ 255 ];
+   zCHAR   szSrcRelLink[ 255 ];
 
    *nRelImplemented = zREL_IMPLD_NOT;
 
@@ -1314,7 +1299,7 @@ oTZTENVRO_BuildAutoSeqField( zVIEW    vSubtask,
    SetCursorLastEntity( vDTE1, "TE_FieldDataRel", 0 );
 
    // Create the AutoSeq entity and set attributes.
-   CreateMetaEntity( vSubtask, vDTE1, "TE_FieldDataRel", zPOS_LAST );
+   CreateTE_MetaEntity( vSubtask, vDTE1, "TE_FieldDataRel", zPOS_LAST );
    zstrcpy( szTemp, "AutoSeq" );
 
    ofnTZTENVRO_GenerateUniqueName( vSubtask, vDTE1, szTemp,
@@ -1363,7 +1348,7 @@ oTZTENVRO_BuildSQL_RelsFromEMD( zVIEW    vSubtask,
    zSHORT    nImpl;
    zSHORT    nOuterLoopCount = 0;
    zSHORT    nCount;
-   zCHAR     szName[ 33 ];
+   zCHAR     szName[ 255 ];
    LPLIBRARY hLibrary;
    PFNGENERATENAME pfnGenerateName;
    zBOOL     bRelProcsIncomplete;
@@ -1659,7 +1644,7 @@ oTZTENVRO_BuildNET_RelsFromEMD( zVIEW    vSubtask,
    zSHORT    RESULT;
    zSHORT    nRelImplemented;
    zSHORT    nImpl;
-   zCHAR     szName[ 33 ];
+   zCHAR     szName[ 255 ];
    LPLIBRARY hLibrary;
    PFNGENERATENAME pfnGenerateName;
 
@@ -1901,7 +1886,7 @@ ofnTZTENVRO_ImplementSQL_RelLink( zVIEW    vSubtask,
    zVIEW    vDTE_t;
    zVIEW    vTZTEDBLO;
    zCHAR    szDesc[ 255 ];
-   zCHAR    szName[ 33 ];
+   zCHAR    szName[ 255 ];
    zSHORT   RESULT;
    zCHAR    szTemp[ 100 ];
    zCHAR    szTemp2[ 100 ];
@@ -1974,7 +1959,7 @@ ofnTZTENVRO_ImplementSQL_RelLink( zVIEW    vSubtask,
          RESULT > zCURSOR_UNCHANGED;
          RESULT = SetCursorNextEntity( vDTE_p, "TE_FieldDataRelKey", 0 ) )
    {
-      CreateMetaEntity( vSubtask, vDTE_c, "TE_FieldDataRel", zPOS_LAST );
+      CreateTE_MetaEntity( vSubtask, vDTE_c, "TE_FieldDataRel", zPOS_LAST );
       SetMatchingAttributesByName( vDTE_c, "TE_FieldDataRel",
                                    vDTE_p, "TE_FieldDataRelKey", zSET_NULL );
 
@@ -1999,8 +1984,8 @@ ofnTZTENVRO_ImplementSQL_RelLink( zVIEW    vSubtask,
          //    - if TE_ForeignKeyName and TE_ColumnName do not exist,
          //      use Name (logical Name of ER_Attribute)
 
-         zCHAR szPrefix[ 33 ];
-         zCHAR szColumnName[ 33 ];
+         zCHAR szPrefix[ 255 ];
+         zCHAR szColumnName[ 255 ];
          zCHAR szNoPrefix[ 2 ];
 
          CreateViewFromViewForTask( &vDTE_t, vDTE_p, 0 );
@@ -2129,7 +2114,7 @@ ofnTZTENVRO_ImplementSQL_RelLink( zVIEW    vSubtask,
       // Make sure the TablRecKey entity exists.
       if ( CheckExistenceOfEntity( vDTE_c, "TE_TablRecKey" ) < zCURSOR_SET )
       {
-         CreateMetaEntity( vSubtask, vDTE_c, "TE_TablRecKey", zPOS_LAST );
+         CreateTE_MetaEntity( vSubtask, vDTE_c, "TE_TablRecKey", zPOS_LAST );
          zstrcpy( szName, "ID_" );
          GetStringFromAttribute( szTemp, vDTE_c, "TE_TablRec", "Name" );
          zstrcat( szName, szTemp );
@@ -2198,13 +2183,13 @@ ofnTZTENVRO_ImplementNET_RelLink( zVIEW    vSubtask,
                                   zVIEW    vEMD_p,
                                   PFNGENERATENAME pfnGenerateName )
 {
-   zCHAR    szOwner[ 33 ];
-   zCHAR    szMember[ 33 ];
+   zCHAR    szOwner[ 255 ];
+   zCHAR    szMember[ 255 ];
    zCHAR    szSet[ 65 ];
    zCHAR    szDesc[ 255 ];
    zCHAR    szTemp[ 100 ];
 
-   CreateMetaEntity( vSubtask, vDTE, "TE_FieldDataRel", zPOS_AFTER );
+   CreateTE_MetaEntity( vSubtask, vDTE, "TE_FieldDataRel", zPOS_AFTER );
    IncludeSubobjectFromSubobject( vDTE, "ER_RelLink",
                                   vEMD_p, "ER_RelLink_2", zPOS_AFTER );
    SetAttributeFromString( vDTE, "TE_FieldDataRel",
@@ -2250,10 +2235,10 @@ ofnTZTENVRO_CreateRelTablRec( zVIEW    vSubtask,
                               PFNGENERATENAME pfnGenerateName )
 {
    zCHAR    szDesc[ 255 ];
-   zCHAR    szTemp[ 33 ];
+   zCHAR    szTemp[ 255 ];
 
    SetCursorLastEntity( vDTE_new, "TE_TablRec", "" );
-   CreateMetaEntity( vSubtask, vDTE_new, "TE_TablRec", zPOS_AFTER );
+   CreateTE_MetaEntity( vSubtask, vDTE_new, "TE_TablRec", zPOS_AFTER );
    IncludeSubobjectFromSubobject( vDTE_new, "ER_RelType",
                                   vEMD1, "ER_RelType", zPOS_AFTER );
 
@@ -2355,7 +2340,7 @@ oTZTENVRO_GetUpdViewForDTE_P( zVIEW vSubtask, zPVIEW pvTZTENVRO )
    zVIEW  vLPL;
    zVIEW  vCM_List;
    zSHORT nRC;
-   zCHAR  sz[ 33 ];
+   zCHAR  sz[ 255 ];
 
    *pvTZTENVRO = 0;
 
@@ -2389,7 +2374,7 @@ oTZTENVRO_GetUpdViewForDTE_P( zVIEW vSubtask, zPVIEW pvTZTENVRO )
       if ( vDTE == 0 )
          return( -2 );
 
-      CreateMetaEntity( vSubtask, vDTE, "TE_DB_Environ", zPOS_AFTER );
+      CreateTE_MetaEntity( vSubtask, vDTE, "TE_DB_Environ", zPOS_AFTER );
       SetAttributeFromString( vDTE, "TE_DB_Environ", "Name", sz );
       SetAttributeFromAttribute( vDTE, "TE_DB_Environ", "Desc",
                                  vLPL, "LPLR", "Desc" );
@@ -2442,7 +2427,7 @@ oTZTENVRO_GetUpdViewForDTE_P( zVIEW vSubtask, zPVIEW pvTZTENVRO )
       if ( !vDTE )
          return( -2 );
 
-      CreateMetaEntity( vSubtask, vDTE, "TE_DB_Environ", zPOS_AFTER );
+      CreateTE_MetaEntity( vSubtask, vDTE, "TE_DB_Environ", zPOS_AFTER );
       SetAttributeFromString( vDTE, "TE_DB_Environ", "Name", sz );
       SetAttributeFromAttribute( vDTE, "TE_DB_Environ", "Desc",
                                  vLPL, "LPLR", "Desc" );
@@ -2476,7 +2461,7 @@ oTZTENVRO_GetRefViewForDTE_P( zVIEW vSubtask, zPVIEW pvTZTENVRO )
    zVIEW  vLPL;
    zVIEW  vCM_List;
    zSHORT nRC;
-   zCHAR  sz[ 33 ];
+   zCHAR  sz[ 255 ];
 
    *pvTZTENVRO = 0;
 

@@ -11097,6 +11097,7 @@ SEL_ATTR_GeneralSelectCancel( zVIEW vSubtask )
    return( 0 );
 } // SEL_ATTR_GeneralSelectCancel
 
+
 #ifdef __cplusplus
 }
 #endif

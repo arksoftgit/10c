@@ -2625,7 +2625,7 @@ ZGrid::PrintZPage( zLONG  lPageNbr,
          m_nTextHeightBold = (zSHORT) sizeBold.cy;
          m_nLinesPerPage = (m_rectDraw.Height( ) - (m_nTextHeightBold * 4)) /
                                                                m_nTextHeight;
-         m_nMaxPage = (zSHORT) (GetRowCount( ) / m_nLinesPerPage) + 1;
+         m_nMaxPage = (GetRowCount( ) / m_nLinesPerPage) + 1;
          pDC->SetMapMode( nOldMapMode );
          pDC->SelectObject( pFontOld );
          pFontOld = 0;
@@ -3702,36 +3702,14 @@ GRID_SetColorAttributeName( zVIEW   vSubtask,
    if ( GetWindowAndCtrl( &pZSubtask, &pzma, vSubtask, cpcCtrlTag ) == 0 )
    {
       ZGrid *pGrid = DYNAMIC_DOWNCAST( ZGrid, pzma->m_pCtrl );
-      if ( pGrid )             // change dks 2013.11.09 to prevent crash
+      if ( pGrid && lColumn > 0 && lColumn <= pGrid->GetColumnCount( ) )
       {
-         if ( lColumn > 0 && lColumn <= pGrid->GetColumnCount( ) )
-         {
-            pGrid->SetColorAttribute( cpcAttributeName, (zSHORT) lColumn - 1 );
-            return( 0 );
-         }
-         else
-         if ( lColumn == 0 )
-         {
-            lColumn = pGrid->GetColumnCount( );
-            while ( lColumn > 0 )
-            {
-               lColumn--;
-               pGrid->SetColorAttribute( cpcAttributeName, (zSHORT) lColumn );
-            }
+         pGrid->SetColorAttribute( cpcAttributeName, (zSHORT) lColumn );
+         return( 0 );
+      }
 
-            return( 0 );
-         }
-         else
-         {
-            TraceLineI( "drvr - Invalid column number for GRID_SetColorAttributeName ",
-                        lColumn );
-         }
-      }
-      else
-      {
-         TraceLineS( "drvr - Invalid control type for GRID_SetColorAttributeName ",
-                     cpcCtrlTag );
-      }
+      TraceLineS( "drvr - Invalid control type for GRID_SetColorAttributeName ",
+                  cpcCtrlTag );
    }
 
    return( -1 );

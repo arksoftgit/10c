@@ -227,7 +227,7 @@ typedef zPLONG              zPINTEGER;
    #define zmemcpy                              memcpy
    #define zmemset                              memset
    #define zstrcat                              strcat
-   #define zstrchr                              (zPCHAR) strchr
+   #define zstrchr                              strchr
    #define zstrcmp( sz1, sz2 )                  ((*((char *) (sz1)) == *((char *) (sz2))) ? strcmp( (char *) (sz1), (char *) (sz2) ) : (*((char *) (sz1)) - *((char *) (sz2))) > 0 ? 1 : -1)
 // #define zstrcmp                              strcmp
    #define zstrcmpi                             _stricmp
@@ -239,7 +239,7 @@ typedef zPLONG              zPINTEGER;
    #define zstrncmp                             strncmp
    #define zstrncmpi                            _strnicmp
    #define zstrncpy                             strncpy
-   #define zstrrchr                             (zPCHAR) strrchr
+   #define zstrrchr                             strrchr
    #define zstrrev                              _strrev
    #define zstrstr                              strstr
    #define zstrtok                              strtok

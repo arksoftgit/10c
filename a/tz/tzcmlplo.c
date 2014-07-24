@@ -1598,14 +1598,14 @@ oTZCMLPLO_CommitLPLR( zVIEW vTZCMLPLO )
 {
    zCHAR    szFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szWork[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR    szLPLR_Name[ 9 ];
+   zCHAR    szLPLR_Name[ 33 ];
    zSHORT   nRC;
 
    GetStringFromAttribute( szWork, vTZCMLPLO, "LPLR", "ExecDir" );
    SysConvertEnvironmentString( szFileName, szWork );
    ofnTZCMWKSO_AppendSlash( szFileName );
    GetStringFromAttribute( szLPLR_Name, vTZCMLPLO, "LPLR", "Name" );
-   for ( nRC = 0; nRC < 8; nRC++ )
+   for ( nRC = 0; nRC < 32; nRC++ )
    {
       if ( !( szLPLR_Name[ nRC ] ) )
          break;

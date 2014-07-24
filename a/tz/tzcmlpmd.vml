@@ -537,14 +537,14 @@ SelectLPLR( VIEW vSubtask )
    VIEW CurrentLPLR BASED ON LOD TZCMLPLO
 
    STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
-   STRING ( 9 )   TruncatedName
+   STRING ( 32 )  TruncatedName
    INTEGER        TempType
 
    GET VIEW vCM NAMED "TZCMWKSO"
 
    // Activate OI and View to the source LPLR
    SourceFileName = vCM.LPLR.Name
-   TruncatedName = SourceFileName [1:8]
+   TruncatedName = SourceFileName [1:32]
    SourceFileName = vCM.LPLR.ExecDir + "\" +
                     TruncatedName + ".XLP"
    ActivateOI_FromFile( OrigLPLR, "TZCMLPLO", vSubtask,
@@ -559,6 +559,10 @@ SelectLPLR( VIEW vSubtask )
    CreateViewFromView( VOR_LPLR, CurrentLPLR )
    NAME VIEW VOR_LPLR "TargetVOR_LPLR"
    SET CURSOR FIRST VOR_LPLR.W_MetaType WHERE VOR_LPLR.W_MetaType.Type = 2009  // 2009 is the VOR.
+   
+   // Reposition work station view on original LPLR so that any ZKeys generated during migration will
+   // be created using the correct next ZKey.
+   SET CURSOR FIRST vCM.LPLR WHERE vCM.LPLR.Name = CurrentLPLR.LPLR.Name 
 
    // Copy the Orig members with Type >= 2000 to Source
    ACTIVATE SourceLPLR EMPTY
@@ -1183,13 +1187,13 @@ SelectLPLR_ForSAMerge( VIEW vSubtask )
    VIEW OrigLPLR BASED ON LOD TZCMLPLO
 
    STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
-   STRING ( 9 )   TruncatedName
+   STRING ( 32 )  TruncatedName
 
    GET VIEW vCM NAMED "TZCMWKSO"
 
    // Activate OI and View to the source LPLR
    SourceFileName = vCM.LPLR.Name
-   TruncatedName = SourceFileName [1:8]
+   TruncatedName = SourceFileName [1:32]
    SourceFileName = vCM.LPLR.ExecDir + "\" +
                     TruncatedName + ".XLP"
    ActivateOI_FromFile( OrigLPLR, "TZCMLPLO", vSubtask,
@@ -1342,14 +1346,14 @@ DialogCompareDataModels( VIEW vSubtask )
 
 
    STRING (512) FileName
-   STRING (9)   TruncatedName
+   STRING (32)  TruncatedName
    SHORT        nRC
 
    GET VIEW vCM NAMED "TZCMWKSO"
 
    // Activate Other LPLR.
    FileName = vCM.LPLR.Name
-   TruncatedName = FileName [1:8]
+   TruncatedName = FileName [1:32]
    FileName = vCM.LPLR.ExecDir + "\" + TruncatedName + ".XLP"
    nRC = ActivateOI_FromFile( OtherLPLR, "TZCMLPLO", vSubtask, FileName, zSINGLE )
    IF nRC < 0

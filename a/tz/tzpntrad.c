@@ -1108,7 +1108,7 @@ AskForSave( zVIEW vSubtask )
 {
    zVIEW  vDialog;
    zBOOL  bSaveAs = FALSE;
-   zCHAR  szDialogName[ 9 ];
+   zCHAR  szDialogName[ 33 ];
    zCHAR  szMessageText[ 254 ];
    zSHORT nRC;
 
@@ -1631,7 +1631,7 @@ zwTZPNTRAD_CreateWindowList( zVIEW vSubtask,
    }
    else
    {
-      zCHAR  szDlgTag[ 9 ];
+      zCHAR  szDlgTag[ 33 ];
       zCHAR  szWndTag[ 33 ];
 
       GetStringFromAttribute( szDlgTag, vNewDialog, "Dialog", "Tag" );
@@ -1665,7 +1665,7 @@ zwTZPNTRAD_GenerateXRA( zVIEW vSubtask )
    zVIEW   vTaskLPLR = 0;
    zVIEW   vDialog   = 0;
    zVIEW   vXRA;
-   zCHAR   szDialogName[ 9 ];
+   zCHAR   szDialogName[ 33 ];
    zCHAR   szMsg[ zMAX_FILESPEC_LTH + 100 ];
    zCHAR   szRemotePath[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR   szFileSpec[ zMAX_FILESPEC_LTH + 1 ];
@@ -2460,7 +2460,7 @@ NewDialogFile( zVIEW vSubtask )
    zVIEW   vNewOptions;
    zVIEW   vPrevDialog;
    zVIEW   vPainter;
-   zCHAR   szDialogName[ 9 ];
+   zCHAR   szDialogName[ 33 ];
 
    szDialogName[ 0 ] = 0;
 
@@ -9052,7 +9052,7 @@ fnPositionOnVOR( zVIEW     vTgt,
    zVIEW     vLOD;
    zVIEW     vLOD_List;
    zCHAR     szMsg[ 65 ];
-   zCHAR     szName[ 9 ];
+   zCHAR     szName[ 33 ];
    zSHORT    nRC;
 
    if ( SetCursorFirstEntityByString( vTgt, "ViewObjRef", "Name",
@@ -9102,7 +9102,7 @@ fnPositionOnVOR( zVIEW     vTgt,
          }
          else
          {
-            GetVariableFromAttribute( szName, 0, 'S', 9,
+            GetVariableFromAttribute( szName, 0, 'S', 33,
                                       vSrc, "LOD", "Name", "", 0 );
             zstrcpy( szMsg, "Non-existent LOD: " );
             zstrcat( szMsg, szName );
@@ -10197,10 +10197,10 @@ zwTZPNTRAD_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vTZDIALOGS;
    zVIEW   vTZDIALOGS_Copy;
-   zCHAR   szNewName[ 9 ];
-   zCHAR   szOutName[ 9 ];
+   zCHAR   szNewName[ 33 ];
+   zCHAR   szOutName[ 33 ];
 
-   GetCtrlText( vSubtask, "edDialogName", szNewName, 9 );
+   GetCtrlText( vSubtask, "edDialogName", szNewName, 33 );
    UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
 
    if ( GetViewByName( &vTZDIALOGS, "TZDIALOGS", vSubtask, zLEVEL_TASK ) < 0 )
@@ -11138,8 +11138,8 @@ zwTZPNTRAD_SaveAsSetDefaults( zVIEW vSubtask )
    zVIEW  vSaveAs;
    zVIEW  vTZDIALOGS;
    zVIEW  vTZDialogCopy;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zSHORT nRC;
    zSHORT nIndex = -1;
 
@@ -11193,7 +11193,7 @@ zwfnTZPNTRAD_SaveAsSetSourceName( zVIEW   vSubtask,
                                   zVIEW   vDialogData,
                                   zSHORT  nIndex )
 {
-   zCHAR  szNewName[9];
+   zCHAR  szNewName[33];
    zCHAR  szIndex[ 4 ];
    zSHORT nPosition = 0;
    zSHORT nRC;
@@ -11375,8 +11375,8 @@ zwfnTZPNTRAD_SaveAsCheckFileName( zVIEW    vSubtask,
 {
    zVIEW    vSaveAsCopy;
    zSHORT   nRC;
-   zCHAR    szNewName[9];
-   zCHAR    szFileName[9];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
    zCHAR    szMsg[ 100 ];
 
    CreateViewFromViewForTask( &vSaveAsCopy, vSaveAs, 0 );
@@ -11436,8 +11436,8 @@ zwfnTZPNTRAD_SaveAsCheckName( zVIEW    vSubtask,
 {
    zVIEW  vLOD_LPLR;
    zCHAR  szMsg[155];
-   zCHAR  szDLLName[9];
-   zCHAR  szNewName[9];
+   zCHAR  szDLLName[33];
+   zCHAR  szNewName[33];
 
    // Dialog Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
@@ -11531,8 +11531,8 @@ zwfnTZPNTRAD_SaveAsGetFileName( zVIEW  vTaskLPLR,
                                 zPCHAR szSourceFileName )
 {
    zCHAR    szExtension[ zMAX_EXTENSION_LTH + 1 ];
-   zCHAR    szNewName[ 9 ];
-   zCHAR    szFileName[ 9 ];
+   zCHAR    szNewName[ 33 ];
+   zCHAR    szFileName[ 33 ];
 
    GetStringFromAttribute( szNewName, vView, "SourceFile", szAttribute );
    UfCompressName( szNewName, szFileName, 8, "", "", "", "", 0 );
@@ -11661,8 +11661,8 @@ zwTZPNTRAD_SaveAsDialog( zVIEW vSubtask )
    zVIEW  vTZDIALOGS;
    zVIEW  vTZWINDOWL;
    zVIEW  vSaveAs;
-   zCHAR  szNewName[ 9 ];
-   zCHAR  szOutName[ 9 ];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
    zCHAR  szMsg[ 255 ];
 
    GetViewByName( &vTZDIALOGS, "TZDIALOGS", vSubtask, zLEVEL_TASK );
@@ -11795,7 +11795,7 @@ zwTZPNTRAD_SaveAs( zVIEW   vSubtask,
    zSHORT    nRC;
    zCHAR     szViewObjRefName[ 33 ];
    zCHAR     szDfltWnd[ 33 ];
-   zCHAR     szOldDialogName[ 9 ];
+   zCHAR     szOldDialogName[ 33 ];
 
    GetViewByName( &vLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
    GetViewByName( &vOldDialog, "TZWINDOWL", vSubtask, zLEVEL_TASK );
