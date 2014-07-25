@@ -1,0 +1,12367 @@
+z1000-Zeidon    TZTEUPDD TZWDLGSO 05/07/07   17:23:11 1.0b0    
+eDialog    1
+aTag       TZTEUPDD
+aDLL_Name  TZTEUPDD
+aZKey      1341399
+aDesc      TE Maintain Physical Model
+
+eDfltWnd   2
+aTag       Main
+aCaption   Physical Data Model
+aPSDLG_X   15
+aPSDLG_Y   2
+aSZDLG_X   21823909
+aSZDLG_Y   12124450
+aZKey      1341841
+aDIL_Active Y
+aGeneralFlag 0
+
+eWindow    2
+aTag       DataSrc
+aCaption   Data Source
+aPSDLG_X   14
+aPSDLG_Y   26
+aSZDLG_X   23527789
+aSZDLG_Y   15597824
+aDfltButton OK
+aZKey      1341537
+aDIL_Active Y
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       edName
+aZKey      1341578
+aSubtype   0
+aIdNbr     1
+aPSDLG_X   69
+aPSDLG_Y   10
+aSZDLG_X   121
+aSZDLG_Y   14
+aSyncKey   1
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      1341579
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328236
+aSeqNo_LOD_Entity 1
+aWork      N
+aUpdate    Y
+aSeqPriority 1
+
+eCtrlMapRelatedEntity 6
+aName      TE_DBMS_Source
+aIndentName    TE_DBMS_Source
+aIndentLvl 3
+aZKey      1328015
+aSeqNo     1
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator L
+
+eCtrlMapER_Attribute 6
+aName      Name
+aZKey      1321316
+aLth       32
+aNotNull   Y
+aDesc      Database Name
+aPromptPaintLit Name
+aListPaintLit Name
+
+eCtrlMapER_Domain 7
+aZKey      90000032
+aDesc      Any Character String
+aName      Text
+aDomainType E
+aDataType  S
+aMaxStringLth 254
+aContextRestriction N
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+aTag       EditBox
+aZKey      1010
+aKey       1010
+aRT_DLL_Name ZDCTL
+aRT_OperationName Edit
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZEditMsg
+aPainterConvertOperationName ConvertEditBox
+aPainterBitmap EDIT
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_EDIT
+aAcceptsAllParents Y
+aId        7
+aInvisible -1
+
+eControl   3
+aTag       MLEdit1
+aZKey      97342668
+aSubtype   0
+aPSDLG_X   69
+aPSDLG_Y   27
+aSZDLG_X   218
+aSZDLG_Y   51
+aSyncKey   2
+
+eCtrlMap   4
+aZKey      97342669
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328239
+aSeqNo_LOD_Entity 4
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      Desc
+aZKey      1321321
+aDesc      Converted from 6B
+aPromptPaintLit Description
+aPromptPaintLth 60
+aListPaintLit Description
+aListPaintLth 60
+
+eCtrlMapER_Domain 7
+aZKey      90000030
+aDesc      Standard Zeidon Description
+aName      Description
+aDomainType E
+aDataType  S
+aMaxStringLth 32000
+aContextRestriction N
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+aTag       MLEdit
+aZKey      1015
+aKey       1015
+aRT_DLL_Name ZDCTL
+aRT_OperationName MLE
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZMLEditMsg
+aPainterConvertOperationName ConvertMLE
+aPainterBitmap MLE
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_EDIT
+aAcceptsAllParents Y
+aId        18
+aInvisible -1
+
+eControl   3
+aTag       cbDBHandler
+aZKey      90020608
+aSubtype   12288
+aPSDLG_X   69
+aPSDLG_Y   81
+aSZDLG_X   218
+aSZDLG_Y   181
+aCtrlBOI   U22
+6]Q`]``41/0!,`````%X3/0!,`#``````
+`
+aSyncKey   3
+
+eCtrlMap   4
+aZKey      90020609
+
+eCtrlMapLOD_Attribute 5
+aZKey      90020438
+
+eCtrlMapRelatedEntity 6
+aName      TE_DBMS_Source
+aIndentName TE_DBMS_Source
+aIndentLvl 0
+aZKey      90020430
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      Database in the DBMS
+
+eCtrlMapER_Attribute 6
+aName      DBMS
+aZKey      1321323
+aLth       30
+aDesc      SQLBASE, SQLSERVER, IMS, etc.
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      90020452
+aName      TZTEDBLO
+aDesc      VOR automatically built from LOD Dialog
+
+eCtrlMap   4
+aZKey      90020610
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      90020611
+
+eCtrlMap   4
+aZKey      90020612
+
+eCtrlMap   4
+aZKey      90020613
+
+eEvent     4
+aType      256
+aZKey      90020614
+
+eEventAct  5
+aTag       SelectDBMS
+aType      2
+aZKey      90020949
+
+eControlDef 4
+aTag       ComboBox
+aZKey      1050
+aKey       1050
+aRT_DLL_Name ZDCTL
+aRT_OperationName ComboBox
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZComboBoxMsg
+aPainterConvertOperationName ConvertComboBox
+aPainterBitmap COMBO
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_COMBO
+aAcceptsAllParents Y
+aId        14
+aInvisible -1
+
+eControl   3
+aTag       DefaultOwner
+aZKey      90026382
+aIdNbr     1
+aPSDLG_X   69
+aPSDLG_Y   99
+aSZDLG_X   121
+aSZDLG_Y   14
+aSyncKey   4
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      90026383
+
+eCtrlMapLOD_Attribute 5
+aZKey      90020622
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      DefaultOwner
+aZKey      90020618
+aDesc      Default owner for tables.
+
+eCtrlMapER_Domain 7
+aZKey      90000038
+aDesc      QuinSoft Name
+aName      QSName
+aDomainType E
+aDataType  S
+aMaxStringLth 32
+aContextRestriction N
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+
+eControl   3
+aTag       KeepPhysChar
+aText      Keep Physical Characteristics for all Tables and all Columns
+aZKey      98167661
+aSubtype   536870912
+aPSDLG_X   8
+aPSDLG_Y   118
+aSZDLG_X   279
+aSZDLG_Y   12
+aCtrlBOI   U3
+#60``
+`
+aSyncKey   5
+
+eCtrlMap   4
+aZKey      98167662
+
+eCtrlMapLOD_Attribute 5
+aZKey      98169053
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      KeepPhysicalCharacteristicsFlag
+aZKey      98167658
+aDesc      When Y, the physical characteristics of the data source of  are passed to the new table andthe new  field created from a RebuildTableRelationships.
+
+eCtrlMapER_Domain 7
+aZKey      90000014
+aDesc      Yes or No
+aName      Y/N
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aContextRestriction N
+
+eCtrlMapContext 5
+aZKey      90000015
+aName      Y/N
+aIsDefault Y
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eEvent     4
+aType      1
+aZKey      98169356
+
+eEventAct  5
+aTag       SetAllKeepPhysChar
+aType      2
+aZKey      98169357
+
+eControlDef 4
+aTag       CheckBox
+aZKey      1040
+aKey       1040
+aRT_DLL_Name ZDCTL
+aRT_OperationName CheckBox
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZCheckMsg
+aPainterConvertOperationName ConvertCheckBox
+aPainterBitmap CHECK
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_CHECK
+aAcceptsAllParents Y
+aId        13
+aInvisible -1
+
+eControl   3
+aTag       ListBox1
+aText      ListBox1
+aZKey      1341623
+aSubtype   -2144141309
+aIdNbr     11
+aPSDLG_X   7
+aPSDLG_Y   135
+aSZDLG_X   343
+aSZDLG_Y   98
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P#````*P!-`%,Q````
+`
+aSyncKey   6
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       Table Name
+aText      Table / Records
+aZKey      1341624
+aSubtype   67108864
+aIdNbr     12
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   129
+aSZDLG_Y   14
+aSyncKey   6
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341625
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328219
+aSeqNo_LOD_Entity 1
+aWork      N
+aUpdate    Y
+aSeqPriority 1
+
+eCtrlMapRelatedEntity 7
+aName      TE_TablRec
+aIndentName       TE_TablRec
+aIndentLvl 6
+aZKey      1328016
+aSeqNo     1
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator L
+
+eCtrlMapER_Attribute 7
+aName      Name
+aZKey      1321362
+aLth       32
+aNotNull   Y
+aDesc      ( in SQL it is part 3 of 3 part table name)
+aPromptPaintLit NAME
+aListPaintLit NAME
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+aTag       ListBoxCtl
+aZKey      1081
+aKey       1081
+aRT_DLL_Name ZDCTL
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZListBoxMsg
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_LISTCTL
+aRequiresParent Y
+aId        27
+aInvisible -1
+
+eCtrlCtrl  4
+aTag       PhysicalChars
+aText      Physical Chars
+aZKey      98169054
+aSubtype   67108864
+aIdNbr     13
+aPSDLG_X   136
+aPSDLG_Y   0
+aSZDLG_X   33
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      98169055
+
+eCtrlMapLOD_Attribute 6
+aZKey      90472802
+aUpdate    Y
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      KeepPhysicalCharacteristicsFlag
+aZKey      90472801
+aDesc      When Y, the physical characteristics of the table are passed to the new table created from a RebuildTableRelationships.
+
+eCtrlMapER_Domain 8
+
+eCtrlMapContext 6
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Purpose
+aText      Purpose
+aZKey      1341626
+aSubtype   67108864
+aIdNbr     13
+aPSDLG_X   175
+aPSDLG_Y   0
+aSZDLG_X   33
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      1341627
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328221
+aSeqNo_LOD_Entity 3
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      DataOrRel
+aZKey      1321364
+aLth       1
+aNotNull   N
+aDesc      Subtype: D=Data R=Rel
+
+eCtrlMapER_Domain 8
+aZKey      1320294
+aDesc      Table is Data or Relationship
+aName      TE_DataOrRel
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aContextRestriction N
+aDecimalFormat 0
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListCtl1
+aText      Owner
+aZKey      90026518
+aSubtype   67108864
+aPSDLG_X   212
+aPSDLG_Y   0
+aSZDLG_X   30
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      90026519
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328225
+aSeqNo_LOD_Entity 7
+aUpdate    Y
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      SQL_TableOwner
+aZKey      1321366
+aLth       32
+aDesc      Owner ( part 2 of 3 part table name )
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Table Desc
+aText      Description
+aZKey      1341628
+aSubtype   67108864
+aIdNbr     14
+aPSDLG_X   242
+aPSDLG_Y   0
+aSZDLG_X   93
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      1341629
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328224
+aSeqNo_LOD_Entity 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      Desc
+aZKey      1321368
+aDesc      Converted from 6B
+aPromptPaintLit Description
+aPromptPaintLth 60
+aListPaintLit Description
+aListPaintLth 60
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      1341630
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1341631
+
+eCtrlMap   4
+aZKey      1341632
+
+eEvent     4
+aType      2
+aZKey      1341633
+
+eEventAct  5
+aTag       TableShow
+aType      34
+aZKey      1341572
+aDialogName TZTEUPDD
+aWindowName TableRecord
+aSB_ActionDisabling 8
+
+eEvent     4
+aType      12
+aZKey      97342684
+
+eEventAct  5
+aTag       TableRecPopup
+aType      1
+aZKey      1341575
+
+eControlDef 4
+aTag       ListBox
+aZKey      1080
+aKey       1080
+aRT_DLL_Name ZDCTL
+aRT_OperationName ListBox
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZListBoxMsg
+aPainterConvertOperationName ConvertListBox
+aPainterBitmap LIST
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_LIST
+aAcceptsAllParents Y
+aId        15
+aInvisible -1
+
+eControl   3
+aTag       OK
+aText      OK
+aZKey      1341635
+aSubtype   536870912
+aIdNbr     15
+aPSDLG_X   303
+aPSDLG_Y   3
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   7
+
+eEvent     4
+aType      1
+aZKey      1341636
+
+eEventAct  5
+aTag       Alt-F4
+aType      72
+aTypeData  Y
+aZKey      1341563
+
+eControlDef 4
+aTag       PushBtn
+aZKey      1020
+aKey       1020
+aRT_DLL_Name ZDCTL
+aRT_OperationName PushButton
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZPushMsg
+aPainterConvertOperationName ConvertButton
+aPainterBitmap PUSH
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_PUSH
+aAcceptsAllParents Y
+aId        8
+aInvisible -1
+
+eControl   3
+aTag       Cancel
+aText      Cancel
+aZKey      1341637
+aSubtype   536870912
+aIdNbr     16
+aPSDLG_X   303
+aPSDLG_Y   19
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   8
+
+eEvent     4
+aType      1
+aZKey      1341638
+
+eEventAct  5
+aTag       ESC
+aNoMap     Y
+aType      72
+aTypeData  Y
+aZKey      1341538
+aSB_SubAction 2
+
+eControlDef 4
+
+eControl   3
+aTag       Next
+aText      Ne&xt
+aZKey      1341639
+aSubtype   536870912
+aIdNbr     18
+aPSDLG_X   303
+aPSDLG_Y   39
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   9
+
+eEvent     4
+aType      1
+aZKey      1341640
+
+eEventAct  5
+aTag       DATABASE_BUTTON_Next
+aType      2
+aZKey      1341551
+aSB_ActionDisabling 2
+
+eControlDef 4
+
+eControl   3
+aTag       Prev
+aText      &Prev
+aZKey      1341641
+aSubtype   536870912
+aIdNbr     19
+aPSDLG_X   303
+aPSDLG_Y   55
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   10
+
+eEvent     4
+aType      1
+aZKey      1341642
+
+eEventAct  5
+aTag       DATABASE_BUTTON_Prev
+aType      2
+aZKey      1341554
+aSB_ActionDisabling 1
+
+eControlDef 4
+
+eControl   3
+aTag       Push2
+aText      &New
+aZKey      1341643
+aSubtype   536870912
+aIdNbr     17
+aPSDLG_X   303
+aPSDLG_Y   75
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   11
+
+eEvent     4
+aType      1
+aZKey      1341644
+
+eEventAct  5
+aTag       DataSrcAdd
+aType      2
+aZKey      1341560
+aSB_ActionDisabling 16
+
+eControlDef 4
+
+eControl   3
+aTag       Delete
+aText      &Delete
+aZKey      1341645
+aSubtype   536870912
+aIdNbr     17
+aPSDLG_X   303
+aPSDLG_Y   91
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   12
+
+eEvent     4
+aType      1
+aZKey      1341646
+
+eEventAct  5
+aTag       DeleteDatabase
+aNoMap     Y
+aType      2
+aTypeData  y
+aZKey      1341557
+aSB_ActionDisabling 16
+
+eControlDef 4
+
+eControl   3
+aTag       SetDBH
+aText      &Set DBH
+aZKey      90040832
+aSubtype   536870912
+aIdNbr     17
+aPSDLG_X   303
+aPSDLG_Y   112
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   13
+
+eEvent     4
+aType      1
+aZKey      90040834
+
+eEventAct  5
+aTag       DisplayDBH_Dialog
+aType      1
+aZKey      90040835
+
+eControlDef 4
+
+eControl   3
+aTag       Text3
+aText      Name:
+aZKey      1341584
+aSubtype   537395200
+aIdNbr     2
+aPSDLG_X   7
+aPSDLG_Y   12
+aSZDLG_X   60
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341585
+
+eControlDef 4
+aTag       Text
+aZKey      1000
+aKey       1000
+aRT_DLL_Name ZDCTL
+aRT_OperationName Text
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZTextMsg
+aPainterConvertOperationName ConvertText
+aPainterBitmap TEXT
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_TEXT
+aAcceptsAllParents Y
+aId        1
+aInvisible -1
+
+eControl   3
+aTag       Text1
+aText      Description:
+aZKey      1341588
+aSubtype   537395200
+aIdNbr     4
+aPSDLG_X   7
+aPSDLG_Y   28
+aSZDLG_X   60
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341589
+
+eControlDef 4
+
+eControl   3
+aTag       Text8
+aText      DB Handler:
+aZKey      90008934
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   82
+aSZDLG_X   60
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      90008935
+
+eControlDef 4
+
+eControl   3
+aTag       Text2
+aText      Default Owner:
+aZKey      90026380
+aSubtype   537395200
+aIdNbr     2
+aPSDLG_X   7
+aPSDLG_Y   101
+aSZDLG_X   60
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      90026381
+
+eControlDef 4
+
+eControl   3
+aTag       DIL1
+aZKey      1341647
+aSubtype   1
+aPSDLG_X   0
+aPSDLG_Y   242
+aSZDLG_X   363
+aSZDLG_Y   19
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341648
+
+eControlDef 4
+aTag       MsgBar
+aZKey      2020
+aKey       2020
+aRT_DLL_Name ZDCTL
+aRT_OperationName DIL
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZDilMsg
+aPainterConvertOperationName ConvertDIL
+aPainterBitmap DIL
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_DIL
+aId        20
+aInvisible -1
+
+eWndEvent  3
+aType      2
+aZKey      1341649
+
+eWndAct    4
+aTag       TemporaryGraying
+aNoMap     Y
+aType      1
+aZKey      1341542
+
+eWndEvent  3
+aType      1
+aZKey      90020598
+
+eWndAct    4
+aTag       Prebuild
+aNoMap     Y
+aType      1
+aZKey      90020599
+
+eAction    3
+
+eActMap    4
+aZKey      1341564
+
+eActMap    4
+aZKey      1341565
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SetParadigmFromDBMS
+aZKey      1341497
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+aZKey      1341400
+aCM_Managed Y
+aOwnerType D
+aLanguageType C
+aName      TZTEUPDD
+aExtension C
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_KeepPhysCharAll
+aZKey      98169360
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341552
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_NextDataSource
+aZKey      97347172
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341555
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_PrevDataSource
+aZKey      97347175
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341561
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DataSrcAssignZKey
+aZKey      1341421
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      98000297
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteDataSource
+aZKey      97347753
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       DeleteTablRec
+aNoMap     Y
+aType      2
+aZKey      1341569
+
+eActOpt    4
+aTag       Delete
+aText      &Delete Selected
+aSeparator Y
+aZKey      1341653
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteSelectedEntity
+aZKey      91038867
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      DisplayDBH_MainDialog
+aZKey      90040838
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341539
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActMap    4
+aZKey      1341541
+
+eActEvent  4
+
+eActCtrl   5
+
+eAction    3
+
+eActMap    4
+aZKey      90020600
+
+eActMap    4
+aZKey      90020601
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_DataSrc_Prebuild
+aZKey      90020602
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      90020950
+
+eActMap    4
+aZKey      90020951
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SelectDBMS
+aZKey      90020952
+aDesc      Special processing for a DBMS selection
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       SetTableKeepPhysChars
+aType      2
+aZKey      98169066
+
+eActOpt    4
+aTag       SetKeepPhysicalChars
+aText      Keep &Phys.Chars for Table
+aCheckMarkValueOn Y
+aSeparator Y
+aZKey      98169063
+
+eActOper   4
+aName      zwTZTEUPDD_KeepPhysCharTable
+aZKey      90472813
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       SetAllColumnKeepPhysChars
+aType      1
+aZKey      98169104
+
+eActOpt    4
+aTag       SetKeepPhysicalCharsForAllCol
+aText      Keep Phys.Chars for all &Columns
+aCheckMarkValueOn Y
+aZKey      98169101
+
+eActOper   4
+aName      zwTZTEUPDD_KeepPhysCharAllColumn
+aZKey      98169352
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_MainTableRecPopup
+aZKey      98000375
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341573
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOpt    4
+aTag       TableRec2
+aText      &Table / Record Detail...
+aZKey      1341651
+
+eActOper   4
+aName      zwTZTEUPDD_LoadTableDetail
+aZKey      97347053
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_DS_TemporaryGraying
+aZKey      1341419
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eMenu      3
+aTag       TableRec
+aZKey      1341650
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOptMap    5
+aZKey      98169077
+
+eOptMapLOD_Attribute 6
+
+eOptMapRelatedEntity 7
+
+eOptMapER_Attribute 7
+
+eOptMapER_Domain 8
+
+eOptMapContext 6
+
+eOptMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eOption    4
+
+eOptAct    5
+
+eOptMap    5
+aZKey      98169347
+
+eOptMapLOD_Attribute 6
+aZKey      98169097
+aUpdate    Y
+
+eOptMapRelatedEntity 7
+
+eOptMapER_Attribute 7
+aName      KeepPhysCharsFlagForAllColumns
+aZKey      98169096
+aDesc      set the physical characteristics flag for all Columns within table
+
+eOptMapER_Domain 8
+
+eOptMapContext 6
+
+eOptMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eWndStyle  3
+aTag       Sizeable Dialog Box
+aZKey      10024379
+aStyle     -2134114304
+
+eWindow    2
+aTag       FieldRelLink
+aCaption   Field Data / Relationship
+aPSDLG_X   18
+aPSDLG_Y   18
+aSZDLG_X   25493900
+aSZDLG_Y   16253195
+aZKey      1341654
+aDIL_Active Y
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       edName
+aZKey      1341703
+aSubtype   0
+aIdNbr     1
+aPSDLG_X   60
+aPSDLG_Y   26
+aSZDLG_X   173
+aSZDLG_Y   14
+aSyncKey   1
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      1341704
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328106
+aSeqNo_LOD_Entity 1
+aWork      N
+aUpdate    Y
+aSeqPriority 1
+
+eCtrlMapRelatedEntity 6
+aName      TE_FieldDataRel
+aIndentName          TE_FieldDataRel
+aIndentLvl 9
+aZKey      1328017
+aSeqNo     1
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator L
+
+eCtrlMapER_Attribute 6
+aName      Name
+aZKey      1321336
+aLth       32
+aNotNull   Y
+aDesc      Converted from 6B
+aPromptPaintLit Name
+aListPaintLit Name
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       MLEdit1
+aZKey      97342670
+aSubtype   0
+aPSDLG_X   60
+aPSDLG_Y   43
+aSZDLG_X   264
+aSZDLG_Y   38
+aSyncKey   2
+
+eCtrlMap   4
+aZKey      97342671
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328108
+aSeqNo_LOD_Entity 3
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      Desc
+aZKey      1321338
+aDesc      Description of physical field
+aPromptPaintLth 0
+aListPaintLth 0
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       DataOrRelfield
+aZKey      1341743
+aSubtype   0
+aIdNbr     6
+aPSDLG_X   60
+aPSDLG_Y   85
+aSZDLG_X   103
+aSZDLG_Y   72
+aSyncKey   3
+
+eCtrlMap   4
+aZKey      1341744
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328109
+aSeqNo_LOD_Entity 4
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      DataOrRelfieldOrSet
+aZKey      1321339
+aLth       1
+aNotNull   N
+aDesc      partitioning attr - data or rel
+
+eCtrlMapER_Domain 7
+aZKey      1320306
+aDesc      Column is Data or Rel -- Field is Data or Set
+aName      TE_DataOrRelfieldOrSet
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aContextRestriction N
+
+eCtrlMapContext 5
+aZKey      1320311
+aDerivedName Display
+aName      Display
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1341745
+
+eCtrlMap   4
+aZKey      1341746
+
+eCtrlMap   4
+aZKey      1341747
+
+eControlDef 4
+
+eControl   3
+aTag       DataType
+aZKey      90026530
+aSubtype   36864
+aPSDLG_X   60
+aPSDLG_Y   103
+aSZDLG_X   103
+aSZDLG_Y   68
+aCtrlBOI   U22
+6]Q`]``41/0!,`````%X3/0!,`)``````
+`
+aSyncKey   4
+
+eCtrlMap   4
+aZKey      90026534
+
+eCtrlMapLOD_Attribute 5
+aZKey      90026590
+aWork      Y
+aUpdate    Y
+aSeqOrder  A
+
+eCtrlMapRelatedEntity 6
+aName      DB_DataTypes
+aIndentName    DB_DataTypes
+aIndentLvl 3
+aZKey      90026587
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      List of all data types supported by a database/db-handler
+
+eCtrlMapER_Attribute 6
+aName      ExternalName
+aZKey      90026591
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      90020452
+aName      TZTEDBLO
+aDesc      VOR automatically built from LOD Dialog
+
+eCtrlMap   4
+aZKey      90026535
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+aZKey      90020452
+aName      TZTEDBLO
+aDesc      VOR automatically built from LOD Dialog
+
+eCtrlMap   4
+aZKey      90026592
+
+eCtrlMapLOD_Entity 5
+aName      DB_DataTypes
+aIndentName    DB_DataTypes
+aIndentLvl 3
+aZKey      90026587
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      List of all data types supported by a database/db-handler
+
+eCtrlMap   4
+aZKey      90026613
+
+eCtrlMap   4
+aZKey      1153509
+
+eEvent     4
+aType      1
+aZKey      90026536
+
+eEventAct  5
+aTag       DataTypeSelected
+aType      1
+aZKey      90026537
+
+eControlDef 4
+
+eControl   3
+aTag       Length
+aZKey      1341713
+aIdNbr     14
+aPSDLG_X   60
+aPSDLG_Y   119
+aSZDLG_X   28
+aSZDLG_Y   14
+aSyncKey   5
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      1341714
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328113
+aSeqNo_LOD_Entity 8
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      Length
+aZKey      1321343
+aLth       4
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit Length
+aListPaintLit Length
+
+eCtrlMapER_Domain 7
+aZKey      90000044
+aDesc      Integer numbers from -lots to +lots.
+aName      Integer
+aDomainType E
+aDataType  L
+aMaxStringLth 4
+aContextRestriction N
+aDecimalFormat 0
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       Check1
+aText      Key Participant
+aZKey      90026614
+aSubtype   603979776
+aPSDLG_X   7
+aPSDLG_Y   139
+aSZDLG_X   101
+aSZDLG_Y   12
+aCtrlBOI   U4
+$60!.````
+`
+aSyncKey   6
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      90026615
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328110
+aSeqNo_LOD_Entity 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      Key
+aZKey      1321340
+aLth       1
+aDesc      Physical key field
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+
+eControl   3
+aTag       KeepPhysChar
+aText      Keep Physical Characteristics
+aZKey      90472806
+aSubtype   536870912
+aPSDLG_X   7
+aPSDLG_Y   152
+aSZDLG_X   135
+aSZDLG_Y   12
+aCtrlBOI   U3
+#60``
+`
+aSyncKey   7
+
+eCtrlMap   4
+aZKey      90472807
+
+eCtrlMapLOD_Attribute 5
+aZKey      90472803
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      KeepPhysicalCharacteristicsFlag
+aZKey      90472800
+aDesc      When Y, the physical characteristics of the field are passed to the new field created from a RebuildTableRelationships.
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox1
+aText      Network
+aZKey      97346389
+aSubtype   537395200
+aPSDLG_X   199
+aPSDLG_Y   107
+aSZDLG_X   125
+aSZDLG_Y   55
+aSyncKey   8
+
+eCtrlCtrl  4
+aTag       Offset
+aZKey      1341717
+aIdNbr     21
+aPSDLG_X   54
+aPSDLG_Y   15
+aSZDLG_X   60
+aSZDLG_Y   14
+aSyncKey   8
+aExtendedStyle 16777216
+
+eCtrlMap   5
+aZKey      1341718
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328114
+aSeqNo_LOD_Entity 9
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      Offset
+aZKey      1321344
+aLth       4
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit Offset
+aListPaintLit Offset
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       DBMS ID
+aZKey      1341715
+aIdNbr     22
+aPSDLG_X   54
+aPSDLG_Y   32
+aSZDLG_X   60
+aSZDLG_Y   14
+aSyncKey   9
+aExtendedStyle 16777216
+
+eCtrlMap   5
+aZKey      1341716
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328111
+aSeqNo_LOD_Entity 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      DBMS_ID
+aZKey      1321341
+aLth       4
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit DBMS ID
+aListPaintLit DBMS ID
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Text7
+aText      Offset:
+aZKey      1341685
+aSubtype   537395200
+aIdNbr     20
+aPSDLG_X   9
+aPSDLG_Y   16
+aSZDLG_X   42
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      1341686
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Text6
+aText      DBMS ID:
+aZKey      1341683
+aSubtype   537395200
+aIdNbr     23
+aPSDLG_X   9
+aPSDLG_Y   33
+aSZDLG_X   42
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      1341684
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      97346390
+
+eControlDef 4
+aTag       GroupBox
+aZKey      1090
+aKey       1090
+aRT_DLL_Name ZDCTL
+aRT_OperationName GroupBox
+aPainterDLL_Name TZCTL
+aPainterC_OperationName TZGroupBoxMsg
+aPainterConvertOperationName ConvertGroupBox
+aPainterBitmap GRPBOX
+aMaintenanceDialog TZPNCTAD
+aMaintenanceWindow UPD_GROUP
+aAcceptsAllParents Y
+aAcceptsAllChildren Y
+aId        16
+aInvisible -1
+
+eControl   3
+aTag       GroupBox2
+aText      SQL
+aZKey      97346391
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   169
+aSZDLG_X   375
+aSZDLG_Y   61
+aSyncKey   10
+
+eCtrlCtrl  4
+aTag       Null
+aText      Not Null
+aZKey      98003335
+aSubtype   536870912
+aPSDLG_X   9
+aPSDLG_Y   18
+aSZDLG_X   46
+aSZDLG_Y   12
+aCtrlBOI   U3
+#60``
+`
+aSyncKey   10
+
+eCtrlMap   5
+aZKey      98003336
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328116
+aSeqNo_LOD_Entity 11
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      SQL_NULLS
+aZKey      1321346
+aLth       1
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit SQL Nulls
+aListPaintLit SQL Nulls
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Scale
+aZKey      1341723
+aIdNbr     29
+aPSDLG_X   97
+aPSDLG_Y   16
+aSZDLG_X   40
+aSZDLG_Y   14
+aSyncKey   11
+aExtendedStyle 16777216
+
+eCtrlMap   5
+aZKey      1341724
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328115
+aSeqNo_LOD_Entity 10
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      SQL_SCALE
+aZKey      1321345
+aLth       4
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit Sql Scale
+aListPaintLit Sql Scale
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Label
+aZKey      1341721
+aIdNbr     31
+aPSDLG_X   183
+aPSDLG_Y   16
+aSZDLG_X   181
+aSZDLG_Y   14
+aSyncKey   12
+aExtendedStyle 16777216
+
+eCtrlMap   5
+aZKey      1341722
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328117
+aSeqNo_LOD_Entity 12
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      SQL_LABEL
+aZKey      1321347
+aLth       30
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit SQL Label
+aListPaintLit SQL Label
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Remarks
+aZKey      1341719
+aIdNbr     32
+aPSDLG_X   57
+aPSDLG_Y   34
+aSZDLG_X   307
+aSZDLG_Y   14
+aSyncKey   13
+aExtendedStyle 16777216
+
+eCtrlMap   5
+aZKey      1341720
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328118
+aSeqNo_LOD_Entity 13
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      SQL_REMARKS
+aZKey      1321348
+aLth       254
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit SQL Remarks
+aListPaintLit SQL Remarks
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Text9
+aText      Scale:
+aZKey      1341689
+aSubtype   537395200
+aIdNbr     28
+aPSDLG_X   63
+aPSDLG_Y   18
+aSZDLG_X   31
+aSZDLG_Y   12
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341690
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Text10
+aText      Label:
+aZKey      1341691
+aSubtype   537395200
+aIdNbr     30
+aPSDLG_X   148
+aPSDLG_Y   18
+aSZDLG_X   32
+aSZDLG_Y   12
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341692
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Text11
+aText      Remarks:
+aZKey      1341693
+aSubtype   537395200
+aIdNbr     33
+aPSDLG_X   9
+aPSDLG_Y   36
+aSZDLG_X   45
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      1341694
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      97346392
+
+eControlDef 4
+
+eControl   3
+aTag       Push3
+aText      OK
+aZKey      1341737
+aSubtype   536870912
+aIdNbr     34
+aPSDLG_X   334
+aPSDLG_Y   8
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   14
+
+eEvent     4
+aType      1
+aZKey      1341738
+
+eEventAct  5
+aTag       Alt-F4
+aType      72
+aTypeData  Y
+aZKey      1341670
+
+eControlDef 4
+
+eControl   3
+aTag       Cancel
+aText      Cancel
+aZKey      1341735
+aSubtype   536870912
+aIdNbr     35
+aPSDLG_X   334
+aPSDLG_Y   24
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   15
+
+eEvent     4
+aType      1
+aZKey      1341736
+
+eEventAct  5
+aTag       ESC
+aNoMap     Y
+aType      71
+aTypeData  Y
+aZKey      1341655
+
+eControlDef 4
+
+eControl   3
+aTag       Next
+aText      Ne&xt
+aZKey      1341741
+aSubtype   536870912
+aIdNbr     37
+aPSDLG_X   334
+aPSDLG_Y   46
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   16
+
+eEvent     4
+aType      1
+aZKey      1341742
+
+eEventAct  5
+aTag       FIELD_BUTTON_Next
+aType      2
+aZKey      1341664
+aSB_ActionDisabling 2
+
+eControlDef 4
+
+eControl   3
+aTag       Prev
+aText      &Prev
+aZKey      1341739
+aSubtype   536870912
+aIdNbr     38
+aPSDLG_X   334
+aPSDLG_Y   62
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   17
+
+eEvent     4
+aType      1
+aZKey      1341740
+
+eEventAct  5
+aTag       FIELD_BUTTON_Prev
+aType      2
+aZKey      1341667
+aSB_ActionDisabling 1
+
+eControlDef 4
+
+eControl   3
+aTag       Delete
+aText      &Delete
+aZKey      1341733
+aSubtype   536870912
+aIdNbr     36
+aPSDLG_X   334
+aPSDLG_Y   86
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   19
+
+eEvent     4
+aType      1
+aZKey      1341734
+
+eEventAct  5
+aTag       FieldDelete
+aNoMap     Y
+aType      2
+aTypeData  y
+aZKey      1341661
+aSB_DeleteNull 1024
+aSB_ActionDisabling 16
+
+eControlDef 4
+
+eControl   3
+aTag       txtER_Rel
+aText      ER Relationship:
+aZKey      97346385
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   10
+aSZDLG_X   67
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97346386
+
+eControlDef 4
+
+eControl   3
+aTag       txtER_Attr
+aText      ER Attribute:
+aZKey      97346387
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   10
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97346388
+
+eControlDef 4
+
+eControl   3
+aTag       ER_Attr
+aText      'ER Attribute'
+aZKey      1341709
+aSubtype   524288
+aIdNbr     10
+aPSDLG_X   60
+aPSDLG_Y   10
+aSZDLG_X   173
+aSZDLG_Y   12
+aCtrlBOI   U64
+M`````````````/\```$`````````````````````````````````````````
+3````````````````````````````
+`
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341710
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328031
+aSeqNo_LOD_Entity 1
+aWork      N
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+aName      ER_Attribute
+aIndentName             ER_Attribute
+aIndentLvl 12
+aZKey      1328018
+aSeqNo     1
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator H
+
+eCtrlMapER_Attribute 6
+aName      Name
+aZKey      1320838
+aNotNull   Y
+aDesc      Converted from 6B
+aPromptPaintLit Attribute Name
+aListPaintLit Attribute Name
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       ER_Rel
+aText      'ER Relaionship'
+aZKey      1341711
+aSubtype   524288
+aIdNbr     13
+aPSDLG_X   78
+aPSDLG_Y   10
+aSZDLG_X   133
+aSZDLG_Y   12
+aCtrlBOI   U64
+M`````````````/\```$`````````````````````````````````````````
+3````````````````````````````
+`
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341712
+
+eCtrlMapLOD_Attribute 5
+aZKey      91052858
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+aName      ER_RelLink
+aIndentName             ER_RelLink
+aIndentLvl 12
+aZKey      1328043
+aSeqNo     2
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator H
+
+eCtrlMapER_Attribute 6
+aName      Name
+aZKey      1320875
+aLth       32
+aNotNull   Y
+aDesc      Converted from 6B
+aPromptPaintLit Relationship Name
+aListPaintLit Relationship Name
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       txtER_RelLinkMin
+aText      Min:
+aZKey      11034132
+aSubtype   537395200
+aPSDLG_X   219
+aPSDLG_Y   10
+aSZDLG_X   20
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      11034133
+
+eControlDef 4
+
+eControl   3
+aTag       ER_RelLinkMin
+aText      Min
+aZKey      1341727
+aSubtype   524288
+aIdNbr     16
+aPSDLG_X   242
+aPSDLG_Y   10
+aSZDLG_X   26
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341728
+
+eCtrlMapLOD_Attribute 5
+aZKey      91052860
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      CardMin
+aZKey      1320877
+aLth       8
+aDesc      Converted from 6B
+aPromptPaintLit Min Cardinality
+aListPaintLit Min Cardinality
+
+eCtrlMapER_Domain 7
+aZKey      90121803
+aDesc      Minimum Cardinality for a relationship - Integer
+aName      ERD_MinCardinality
+aDomainType A
+aDataType  S
+aMaxStringLth 8
+aContextRestriction N
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       txtER_RelLinkMax
+aText      Max:
+aZKey      11034134
+aSubtype   537395200
+aPSDLG_X   275
+aPSDLG_Y   10
+aSZDLG_X   21
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      11034135
+
+eControlDef 4
+
+eControl   3
+aTag       ER_RelLinkMax
+aText      Max
+aZKey      1341729
+aSubtype   524288
+aIdNbr     17
+aPSDLG_X   298
+aPSDLG_Y   10
+aSZDLG_X   26
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341730
+
+eCtrlMapLOD_Attribute 5
+aZKey      91052861
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      CardMax
+aZKey      1320878
+aLth       8
+aDesc      Converted from 6B
+aPromptPaintLit Max Cardinality
+aListPaintLit Max Cardinality
+
+eCtrlMapER_Domain 7
+aZKey      90055891
+aDesc      Maximum Cardinality for a relationship - m, M or integer
+aName      ERD_MaxCardinality
+aDomainType A
+aDataType  S
+aMaxStringLth 8
+aContextRestriction N
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       Text1
+aText      Name:
+aZKey      1341681
+aSubtype   537395200
+aIdNbr     2
+aPSDLG_X   7
+aPSDLG_Y   27
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341682
+
+eControlDef 4
+
+eControl   3
+aTag       Text2
+aText      Description:
+aZKey      1341679
+aSubtype   537395200
+aIdNbr     4
+aPSDLG_X   7
+aPSDLG_Y   44
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341680
+
+eControlDef 4
+
+eControl   3
+aTag       Text3
+aText      Purpose:
+aZKey      1341677
+aSubtype   537395200
+aIdNbr     5
+aPSDLG_X   7
+aPSDLG_Y   86
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341678
+
+eControlDef 4
+
+eControl   3
+aTag       Text4
+aText      Data Type:
+aZKey      1341675
+aSubtype   537395200
+aIdNbr     8
+aPSDLG_X   7
+aPSDLG_Y   104
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341676
+
+eControlDef 4
+
+eControl   3
+aTag       Text5
+aText      Length:
+aZKey      1341673
+aSubtype   537395200
+aIdNbr     15
+aPSDLG_X   7
+aPSDLG_Y   121
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341674
+
+eControlDef 4
+
+eControl   3
+aTag       DIL1
+aZKey      1341755
+aSubtype   1
+aPSDLG_X   4
+aPSDLG_Y   237
+aSZDLG_X   382
+aSZDLG_Y   20
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341756
+
+eControlDef 4
+
+eWndEvent  3
+aType      2
+aZKey      90026543
+
+eWndAct    4
+aTag       Postbuild
+aNoMap     Y
+aType      1
+aZKey      90026544
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_AcceptFieldRS
+aZKey      98000525
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      DataTypeSelected
+aZKey      90026540
+aDesc      New data type was selected -- change length.
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_CancelField
+aZKey      98001391
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341665
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActMap    4
+aZKey      1341666
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      FieldRelLink_NextFieldRelLink
+aZKey      90312000
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341668
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActMap    4
+aZKey      1341669
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      FieldRelLink_PrevFieldRelLink
+aZKey      90311998
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       FieldAdd
+aType      2
+aZKey      1341658
+aSB_ActionDisabling 16
+
+eActMap    4
+aZKey      1341659
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActOper   4
+aName      zwTZTEUPDD_FieldAssignZKey
+aZKey      1341441
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341662
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteField
+aZKey      98100493
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      90026545
+
+eActMap    4
+aZKey      90026546
+
+eActWndEvent 4
+
+eActOper   4
+aName      FieldRelLink_Postbuild
+aZKey      90026547
+aDesc      Set graying options, set data type to external name.
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eWndStyle  3
+aTag       Dialog Box
+aZKey      7008569
+aStyle     -2134376448
+aDesc      Dialog box with caption, non-sizable border
+aStyleEx   1
+
+eWindow    2
+aTag       KeyData
+aCaption   Key Info
+aPSDLG_X   3
+aPSDLG_Y   50
+aSZDLG_X   21627217
+aSZDLG_Y   14352622
+aZKey      1341757
+aDIL_Active Y
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       Text2
+aText      Description:
+aZKey      1341785
+aSubtype   537395200
+aIdNbr     6
+aPSDLG_X   7
+aPSDLG_Y   28
+aSZDLG_X   52
+aSZDLG_Y   12
+aSyncKey   4
+
+eCtrlMap   4
+aZKey      1341786
+
+eControlDef 4
+
+eControl   3
+aTag       Text1
+aText      Name:
+aZKey      1341787
+aSubtype   537395200
+aIdNbr     4
+aPSDLG_X   7
+aPSDLG_Y   12
+aSZDLG_X   52
+aSZDLG_Y   12
+aSyncKey   5
+
+eCtrlMap   4
+aZKey      1341788
+
+eControlDef 4
+
+eControl   3
+aTag       edName
+aZKey      1341789
+aSubtype   0
+aIdNbr     2
+aPSDLG_X   61
+aPSDLG_Y   10
+aSZDLG_X   128
+aSZDLG_Y   14
+aSyncKey   18
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      1341790
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328170
+aSeqNo_LOD_Entity 1
+aWork      N
+aUpdate    Y
+aSeqPriority 2
+
+eCtrlMapRelatedEntity 6
+aName      TE_TablRecKey
+aIndentName          TE_TablRecKey
+aIndentLvl 9
+aZKey      1328136
+aAcceptConstraint Y
+aSeqNo     4
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator L
+
+eCtrlMapER_Attribute 6
+aName      Name
+aZKey      1321372
+aLth       32
+aNotNull   Y
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       Delete
+aText      &Delete
+aZKey      1341793
+aSubtype   536870912
+aIdNbr     15
+aPSDLG_X   274
+aPSDLG_Y   105
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   41
+
+eEvent     4
+aType      1
+aZKey      1341794
+
+eEventAct  5
+aTag       KeyDelete
+aNoMap     Y
+aType      2
+aTypeData  y
+aZKey      1341773
+aSB_ActionDisabling 16
+
+eControlDef 4
+
+eControl   3
+aTag       Cancel
+aText      Cancel
+aZKey      1341795
+aSubtype   536870912
+aIdNbr     14
+aPSDLG_X   274
+aPSDLG_Y   22
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   42
+
+eEvent     4
+aType      1
+aZKey      1341796
+
+eEventAct  5
+aTag       ESC
+aNoMap     Y
+aType      71
+aTypeData  Y
+aZKey      1341758
+
+eControlDef 4
+
+eControl   3
+aTag       Push3
+aText      OK
+aZKey      1341797
+aSubtype   536870912
+aIdNbr     13
+aPSDLG_X   274
+aPSDLG_Y   7
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   43
+
+eEvent     4
+aType      1
+aZKey      1341798
+
+eEventAct  5
+aTag       Alt-F4
+aType      72
+aTypeData  Y
+aZKey      1341782
+
+eControlDef 4
+
+eControl   3
+aTag       Prev
+aText      &Prev
+aZKey      1341799
+aSubtype   536870912
+aIdNbr     17
+aPSDLG_X   274
+aPSDLG_Y   63
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   44
+
+eEvent     4
+aType      1
+aZKey      1341800
+
+eEventAct  5
+aTag       KEY_BUTTON_Prev
+aType      2
+aZKey      1341779
+aSB_ActionDisabling 1
+
+eControlDef 4
+
+eControl   3
+aTag       Next
+aText      Ne&xt
+aZKey      1341801
+aSubtype   536870912
+aIdNbr     16
+aPSDLG_X   274
+aPSDLG_Y   48
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   45
+
+eEvent     4
+aType      1
+aZKey      1341802
+
+eEventAct  5
+aTag       KEY_BUTTON_Next
+aType      2
+aZKey      1341776
+aSB_ActionDisabling 2
+
+eControlDef 4
+
+eControl   3
+aTag       Text3
+aText      Category:
+aZKey      1341803
+aSubtype   537395200
+aIdNbr     7
+aPSDLG_X   7
+aPSDLG_Y   73
+aSZDLG_X   52
+aSZDLG_Y   12
+aSyncKey   46
+
+eCtrlMap   4
+aZKey      1341804
+
+eControlDef 4
+
+eControl   3
+aTag       Category
+aZKey      1341805
+aSubtype   0
+aIdNbr     8
+aPSDLG_X   61
+aPSDLG_Y   72
+aSZDLG_X   128
+aSZDLG_Y   74
+aCtrlBOI   U22
+6]Q`]``41/0!,`````%X3/0!,````````
+`
+aSyncKey   47
+
+eCtrlMap   4
+aZKey      1341806
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328172
+aSeqNo_LOD_Entity 3
+aWork      N
+aUpdate    Y
+aSeqPriority 1
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      Category
+aZKey      1321374
+aLth       1
+aDesc      1 thru 6 = Genkey, 1-1-RelKey, Non-RelKey,  Seq-nbr RelKey, RelKey w/ Attrs, Multi-RelKeys, Other
+
+eCtrlMapER_Domain 7
+aZKey      1320335
+aDesc      System Maintained, Attributes only, etc.
+aName      TE_KeyCategory
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aContextRestriction N
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       Text4
+aText      for:
+aZKey      1341807
+aSubtype   537395200
+aIdNbr     1
+aPSDLG_X   7
+aPSDLG_Y   88
+aSZDLG_X   52
+aSZDLG_Y   12
+aSyncKey   48
+
+eCtrlMap   4
+aZKey      1341808
+
+eControlDef 4
+
+eControl   3
+aTag       ER Identifier
+aText      'ER Identifier'
+aZKey      1341809
+aSubtype   524288
+aIdNbr     3
+aPSDLG_X   62
+aPSDLG_Y   88
+aSZDLG_X   127
+aSZDLG_Y   12
+aSyncKey   49
+
+eCtrlMap   4
+aZKey      1341810
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328138
+aSeqNo_LOD_Entity 1
+
+eCtrlMapRelatedEntity 6
+aName      ER_EntIdentifier
+aIndentName             ER_EntIdentifier
+aIndentLvl 12
+aZKey      1328137
+aSeqNo     1
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator H
+
+eCtrlMapER_Attribute 6
+aName      Name
+aZKey      1320853
+aLth       32
+aNotNull   Y
+aDesc      Name of the identifier (can be same as single attribute)
+aPromptPaintLit Identifier
+aListPaintLit ID
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       KeyFieldList
+aText      KeyFieldList
+aZKey      1341813
+aSubtype   -2147409920
+aIdNbr     10
+aPSDLG_X   7
+aPSDLG_Y   129
+aSZDLG_X   140
+aSZDLG_Y   67
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`(```*P!-`%,Q````
+`
+aSyncKey   51
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       FieldName
+aText      Particpating Columns / Fields
+aZKey      1341814
+aSubtype   67108864
+aIdNbr     11
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   135
+aSZDLG_Y   14
+aSyncKey   55
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341815
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328157
+aSeqNo_LOD_Entity 1
+aWork      N
+aUpdate    Y
+aSeqPriority 1
+
+eCtrlMapRelatedEntity 7
+aName      TE_FieldDataRelKey
+aIndentName             TE_FieldDataRelKey
+aIndentLvl 12
+aZKey      1328142
+aSeqNo     2
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance Y
+aDupRelationshipInstance N
+aRelLinkIndicator H
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      1341816
+aName      TE_DTEnviron
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      1341817
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1341818
+
+eCtrlMap   4
+aZKey      1341819
+
+eEvent     4
+aType      2
+aZKey      1341820
+
+eEventAct  5
+aTag       KeyListExclude
+aType      2
+aZKey      1341764
+aSB_ActionDisabling 8
+
+eControlDef 4
+
+eControl   3
+aTag       MLEdit1
+aZKey      97342682
+aSubtype   0
+aPSDLG_X   61
+aPSDLG_Y   27
+aSZDLG_X   204
+aSZDLG_Y   42
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97342683
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328173
+aSeqNo_LOD_Entity 4
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      Desc
+aZKey      1321375
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+
+eControl   3
+aTag       New
+aText      &New
+aZKey      1341823
+aSubtype   536870912
+aIdNbr     15
+aPSDLG_X   274
+aPSDLG_Y   88
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   9999
+
+eEvent     4
+aType      1
+aZKey      1341824
+
+eEventAct  5
+aTag       KeyAdd
+aType      2
+aZKey      1341770
+aSB_ActionDisabling 16
+
+eControlDef 4
+
+eControl   3
+aTag       edIndexName
+aZKey      91053357
+aSubtype   0
+aPSDLG_X   61
+aPSDLG_Y   104
+aSZDLG_X   128
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      91053358
+
+eCtrlMapLOD_Attribute 5
+aZKey      91053354
+aUpdate    Y
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      IndexName
+aZKey      91053353
+aLth       32
+aDesc      If specified, the DB Handler DDL generator should use it to generate the index name.
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+
+eControl   3
+aTag       Text7
+aText      Index Name:
+aZKey      91053355
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   105
+aSZDLG_X   52
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      91053356
+
+eControlDef 4
+
+eControl   3
+aTag       TableFieldList
+aText      TableFieldList
+aZKey      1341825
+aSubtype   -2147409920
+aPSDLG_X   182
+aPSDLG_Y   129
+aSZDLG_X   140
+aSZDLG_Y   67
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`(```*P!-`%,Q````
+`
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListCtl1
+aText      Columns / Fields
+aZKey      1341826
+aSubtype   67108864
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   140
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341827
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      1341828
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1341829
+
+eCtrlMap   4
+aZKey      1341830
+
+eEvent     4
+aType      2
+aZKey      1341831
+
+eEventAct  5
+aTag       KeyListInclude
+aType      2
+aZKey      1341761
+aSB_ActionDisabling 8
+
+eControlDef 4
+
+eControl   3
+aTag       Push2
+aText      <--
+aZKey      1341832
+aSubtype   536870912
+aPSDLG_X   153
+aPSDLG_Y   149
+aSZDLG_X   24
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341833
+
+eEvent     4
+aType      1
+aZKey      1341834
+
+eEventAct  5
+
+eControlDef 4
+
+eControl   3
+aTag       Push4
+aText      -->
+aZKey      1341835
+aSubtype   536870912
+aPSDLG_X   153
+aPSDLG_Y   166
+aSZDLG_X   24
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341836
+
+eEvent     4
+aType      1
+aZKey      1341837
+
+eEventAct  5
+
+eControlDef 4
+
+eControl   3
+aTag       DIL1
+aZKey      1341838
+aSubtype   1
+aPSDLG_X   8
+aPSDLG_Y   204
+aSZDLG_X   382
+aSZDLG_Y   19
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1341839
+
+eControlDef 4
+
+eWndEvent  3
+aType      2
+aZKey      1341840
+
+eWndAct    4
+aTag       KeyListPostbuild
+aNoMap     Y
+aType      1
+aZKey      1341767
+
+eWndEvent  3
+aType      1
+aZKey      98093859
+
+eWndAct    4
+aTag       KeyListPrebuild
+aNoMap     Y
+aType      1
+aZKey      98093860
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_AcceptKeyData
+aZKey      98000527
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_KeyListPrebuild
+aZKey      98093863
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_CancelKeyData
+aZKey      98001388
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341777
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_NextKey
+aZKey      98000529
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341780
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_PrevKey
+aZKey      98000531
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341771
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_KeyAssignZKey
+aZKey      1341473
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341774
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteKey
+aZKey      98000537
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341762
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActMap    4
+aZKey      1341763
+
+eActEvent  4
+
+eActCtrl   5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_KeyListInclude
+aZKey      1341479
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_KeyListPostbuild
+aZKey      1341481
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341765
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_KeyListExclude
+aZKey      1341477
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eWndStyle  3
+
+eWindow    2
+aBarID     59451
+
+eControl   3
+aTag       TE_DBMS_Source
+aText      TE_DBMS_Source
+aZKey      1341944
+aSubtype   2236416
+aIdNbr     11
+aPSDLG_X   6
+aPSDLG_Y   6
+aSZDLG_X   401
+aSZDLG_Y   46
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`(```*P!-`%,Q````
+`
+aSyncKey   5
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       Name
+aText      Data Source
+aZKey      1341945
+aSubtype   67108864
+aIdNbr     12
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   84
+aSZDLG_Y   15
+aSyncKey   6
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341946
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListCtl1
+aText      DBMS
+aZKey      1341947
+aSubtype   67108864
+aPSDLG_X   84
+aPSDLG_Y   0
+aSZDLG_X   74
+aSZDLG_Y   15
+aSyncKey   7
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341948
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328243
+aSeqNo_LOD_Entity 8
+aUpdate    Y
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Desc
+aText      Description
+aZKey      1341951
+aSubtype   67108864
+aIdNbr     13
+aPSDLG_X   161
+aPSDLG_Y   0
+aSZDLG_X   218
+aSZDLG_Y   15
+aSyncKey   9
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341952
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      1341953
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1341954
+
+eCtrlMap   4
+aZKey      1341955
+
+eEvent     4
+aType      2
+aZKey      1341956
+
+eEventAct  5
+aTag       DataSrcDetail
+aType      34
+aZKey      1341928
+aDialogName TZTEUPDD
+aWindowName DataSrc
+aSB_ActionDisabling 8
+
+eEvent     4
+aType      12
+aZKey      97342685
+
+eEventAct  5
+aTag       DataSrcPopup
+aType      1
+aZKey      1341851
+
+eEvent     4
+aType      1
+aZKey      1341958
+
+eEventAct  5
+aTag       RefreshTablRecList
+aType      1
+aZKey      1341935
+
+eControlDef 4
+
+eControl   3
+aTag       TablRecList
+aText      TablRecList
+aZKey      1341965
+aSubtype   3276803
+aIdNbr     14
+aPSDLG_X   6
+aPSDLG_Y   58
+aSZDLG_X   401
+aSZDLG_Y   197
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P#````*P!-`%,Q````
+`
+aSyncKey   14
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       TablRecName
+aText      Tables / Records
+aZKey      1341966
+aSubtype   67108864
+aIdNbr     15
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   93
+aSZDLG_Y   15
+aSyncKey   15
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341967
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListCtl3
+aText      Owner
+aZKey      1341968
+aSubtype   67108864
+aPSDLG_X   149
+aPSDLG_Y   0
+aSZDLG_X   33
+aSZDLG_Y   15
+aSyncKey   16
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341969
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       TablRecDesc
+aText      Description
+aZKey      1341970
+aSubtype   67108864
+aIdNbr     16
+aPSDLG_X   184
+aPSDLG_Y   0
+aSZDLG_X   134
+aSZDLG_Y   15
+aSyncKey   18
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1341971
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       PhysicalChars
+aText      Physical Chars
+aZKey      98169056
+aSubtype   100663296
+aPSDLG_X   104
+aPSDLG_Y   0
+aSZDLG_X   33
+aSZDLG_Y   15
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      98169057
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapContext 6
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      1341972
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1341973
+
+eCtrlMap   4
+aZKey      1341974
+
+eEvent     4
+aType      12
+aZKey      1172877
+
+eEventAct  5
+aTag       TableRecPopup
+aType      1
+aZKey      1341857
+
+eEvent     4
+aType      2
+aZKey      98001438
+
+eEventAct  5
+aTag       TableDetail
+aType      39
+aZKey      1341932
+aDialogName TZTEUPDD
+aWindowName TableRecord
+aSB_ActionDisabling 8
+
+eEvent     4
+aType      1
+aZKey      98001417
+
+eEventAct  5
+aTag       RefreshTableDetail
+aType      1
+aZKey      98001135
+
+eControlDef 4
+
+eControl   3
+aTag       DIL1
+aZKey      1341977
+aSubtype   1
+aPSDLG_X   2
+aPSDLG_Y   252
+aSZDLG_X   324
+aSZDLG_Y   20
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      1341978
+
+eControlDef 4
+
+eWndEvent  3
+aType      8
+aZKey      1341980
+
+eWndAct    4
+aTag       MainRtnFromSubwnd
+aNoMap     Y
+aType      1
+aZKey      1341908
+
+eWndEvent  3
+aType      2
+aZKey      97347063
+
+eWndAct    4
+aTag       InitTool
+aNoMap     Y
+aType      1
+aZKey      1341905
+aSB_ActionDisabling 4
+
+eWndEvent  3
+aType      268435456
+aZKey      97347243
+
+eWndAct    4
+aTag       InitMenu
+aType      1
+aZKey      97347244
+
+eAction    3
+aTag       SetAllColumnKeepPhysChars
+aType      1
+aZKey      98169107
+
+eActOpt    4
+aTag       SetKeepPhysicalCharsForAllCol
+aText      Keep Phys.Chars for all &Columns
+aCheckMarkValueOn Y
+aZKey      98169099
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       GOTO_RebuildLODs
+aType      34
+aZKey      68360293
+aDialogName TZTEUPDD
+aWindowName RebuildLODs
+aSB_ActionDisabling 0
+
+eActOpt    4
+aTag       RebuildLODs
+aText      Rebuild &LODs
+aZKey      68360260
+
+eAction    3
+aTag       SyncDDL
+aType      1
+aZKey      90925351
+
+eActOpt    4
+aTag       SyncDDL
+aText      Build Sync DDL
+aZKey      90925348
+
+eActOper   4
+aName      zwTZTEUPDD_GenerateSyncDDL
+aZKey      90925349
+aDesc      Generates the DDL to sync a database with the current TE
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       AddDatabase
+aType      34
+aZKey      1341842
+aDialogName TZTEUPDD
+aWindowName DataSrc
+aSB_ActionDisabling 16
+
+eActMap    4
+aZKey      98000246
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActOpt    4
+aTag       New
+aText      &New...
+aSeparator Y
+aZKey      1342034
+
+eActOpt    4
+aTag       NewDataSource
+aText      &New Data Source...
+aZKey      97342494
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      New1
+aZKey      91036594
+aEventOptionType Menu Option
+
+eAction    3
+aTag       AddKey
+aType      34
+aZKey      97347154
+aDialogName TZTEUPDD
+aWindowName KeyData
+
+eActOpt    4
+aTag       AddKey
+aText      &Add Key...
+aZKey      98175882
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       Alt-F4
+aType      72
+aTypeData  Y
+aZKey      1341881
+
+eActMap    4
+aZKey      1341882
+
+eActMap    4
+aZKey      1341883
+
+eActOpt    4
+aTag       SaveExit
+aText      E&xit
+aSeparator Y
+aZKey      1341994
+
+eActOper   4
+aName      zwTZTEUPDD_ExitSaveModelDTE
+aZKey      1341435
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      SaveExit
+aZKey      91036595
+aEventOptionType Menu Option
+
+eAction    3
+aTag       DataSrcDelete
+aNoMap     Y
+aType      2
+aZKey      1341854
+
+eActOpt    4
+aTag       DataSrcDelete
+aText      &Delete
+aZKey      1342035
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      New2
+aZKey      91036597
+aEventOptionType Menu Option
+
+eAction    3
+
+eActMap    4
+aZKey      98001467
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOpt    4
+aTag       DS_Detail
+aText      Data &Source Detail...
+aZKey      1342033
+
+eActOper   4
+aName      zwTZTEUPDD_DataSrcDetail
+aZKey      98001465
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      TE_DBMS_Source
+aZKey      91036598
+aEventOptionType Control Event
+
+eEventList 4
+aName      DS_Detail
+aZKey      91036599
+aEventOptionType Menu Option
+
+eAction    3
+aTag       DataSrcDetailMenu
+aType      34
+aZKey      98001489
+aDialogName TZTEUPDD
+aWindowName DataSrc
+aSB_ActionDisabling 4
+
+eActMap    4
+aZKey      98001490
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActOpt    4
+aTag       OpenDataSource
+aText      &Open Data Source...
+aZKey      97342496
+
+eActOper   4
+aName      zwTZTEUPDD_DataSrcDetailMenu
+aZKey      98001492
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DataSrcPopup
+aZKey      1341423
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      TE_DBMS_Source
+aZKey      91036600
+aEventOptionType Control Event
+
+eAction    3
+aTag       DeleteAllTablRecs
+aType      2
+aZKey      1341874
+
+eActOpt    4
+aTag       DeleteAll
+aText      Delete &all
+aZKey      1342041
+
+eActOpt    4
+aTag       DeleteAll
+aText      Delete &all Tables / Records
+aZKey      97342530
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteAllTablRecs
+aZKey      1341425
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      New3
+aZKey      91036601
+aEventOptionType Menu Option
+
+eAction    3
+aTag       DeleteColumn/Field
+aType      1
+aZKey      97347218
+
+eActOpt    4
+aTag       DeleteColumn/Field
+aText      &Column / Field
+aSeparator Y
+aZKey      98001436
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteSelectedColumn
+aZKey      97347228
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       DeleteKey
+aType      1
+aZKey      97347215
+
+eActOpt    4
+aTag       DeleteKey
+aText      &Key
+aZKey      97347211
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteSelectedKeys
+aZKey      97347225
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       DeleteTablRec
+aType      2
+aZKey      1341875
+
+eActOpt    4
+aTag       DeleteSelected
+aText      &Delete Selected
+aSeparator Y
+aZKey      1342040
+
+eActOpt    4
+aTag       DeleteTable/Record
+aText      &Table / Record
+aZKey      97347209
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eActHot    4
+aTag       DeleteTable
+aZKey      90001557
+aKeyCombo  U4
+$X!8N````
+`
+aVKey      46
+
+eEventList 4
+aName      New2
+aZKey      91036602
+aEventOptionType Menu Option
+
+eAction    3
+aTag       GenerateDDL
+aType      2
+aZKey      1341890
+
+eActOpt    4
+aTag       GenerateDDL
+aText      &Generate DDL
+aSeparator Y
+aZKey      90024264
+
+eActOpt    4
+aTag       GenerateDDL
+aText      &Generate DDL
+aSeparator Y
+aZKey      97342508
+
+eActOper   4
+aName      zwTZTEUPDD_GenerateDDL
+aZKey      1341445
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      GenerateDDL
+aZKey      91036603
+aEventOptionType Menu Option
+
+eEventList 4
+aName      New4
+aZKey      91036604
+aEventOptionType Menu Option
+
+eAction    3
+aTag       GoToBuildXODs
+aType      34
+aZKey      91022910
+aDialogName TZTEUPDD
+aWindowName BuildXODs
+aSB_ActionDisabling 8
+
+eActMap    4
+aZKey      92060513
+
+eActMapLOD_Entity 5
+aName      TE_DB_Environ
+aIndentName TE_DB_Environ
+aIndentLvl 0
+aZKey      1328014
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActOpt    4
+aTag       New5
+aText      Build &XODs...
+aZKey      90024266
+
+eActOpt    4
+aTag       BuildXODs
+aText      Build &XODs...
+aZKey      97342510
+
+eEventList 4
+aName      New1
+aZKey      91036605
+aEventOptionType Menu Option
+
+eEventList 4
+aName      New5
+aZKey      91036606
+aEventOptionType Menu Option
+
+eAction    3
+aTag       GoToForKeyList
+aType      34
+aZKey      90388534
+aDialogName TZTEUPDD
+aWindowName ForKeyL
+
+eActOpt    4
+aTag       ForeignKeyMaintenance
+aText      &Foreign Key Maintenance...
+aSeparator Y
+aZKey      90388533
+
+eActOpt    4
+aTag       GoToForKey
+aText      &Foreign Key Maintenance...
+aSeparator Y
+aZKey      98000410
+
+eEventList 4
+aName      New6
+aZKey      91036607
+aEventOptionType Menu Option
+
+eAction    3
+aTag       HelpAbout
+aNoMap     Y
+aType      34
+aZKey      1341863
+aDialogName TZZMAIND
+aWindowName ToolAbout
+
+eActMap    4
+aZKey      1341864
+
+eActMap    4
+aZKey      1341865
+
+eActOpt    4
+aTag       About
+aText      &About...
+aSeparator Y
+aZKey      1342031
+
+eActOper   4
+aName      zwTZTEUPDD_HelpAbout
+aZKey      1341451
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      New6
+aZKey      91036608
+aEventOptionType Menu Option
+
+eAction    3
+aTag       HelpBasics
+aNoMap     Y
+aType      1
+aZKey      1341860
+
+eActMap    4
+aZKey      1341861
+
+eActMap    4
+aZKey      1341862
+
+eActOpt    4
+aTag       ZeidonBasics
+aText      &Zeidon Basics...
+aZKey      1342030
+
+eActOper   4
+aName      zwTZTEUPDD_HelpBasics
+aZKey      1341453
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      New5
+aZKey      91036609
+aEventOptionType Menu Option
+
+eAction    3
+aTag       HelpContents
+aType      1
+aZKey      1341845
+
+eActMap    4
+aZKey      1341846
+
+eActMap    4
+aZKey      1341847
+
+eActOpt    4
+aTag       Contents
+aText      &Contents
+aZKey      1342028
+
+eActOper   4
+aName      zwTZTEUPDD_HelpContents
+aZKey      1341455
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      New18
+aZKey      91036610
+aEventOptionType Menu Option
+
+eAction    3
+aTag       HelpOnHelp
+aType      1
+aZKey      1341848
+
+eActMap    4
+aZKey      1341849
+
+eActMap    4
+aZKey      1341850
+
+eActOpt    4
+aTag       HowToUseHelp
+aText      &How to Use Help
+aZKey      1342029
+
+eActOper   4
+aName      zwTZTEUPDD_HelpOnHelp
+aZKey      1341457
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      New9
+aZKey      91036611
+aEventOptionType Menu Option
+
+eAction    3
+aTag       ImportDB_Data
+aType      2
+aZKey      1341887
+
+eActOpt    4
+aTag       ImportData
+aText      &Import DB Data
+aSeparator Y
+aZKey      97342512
+
+eActOper   4
+aName      zwTZTEUPDD_ImportDB_Data
+aZKey      1341443
+aDesc      Imports DB schema data after database has been created.
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      ImportData
+aZKey      91036612
+aEventOptionType Menu Option
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_InitMenu
+aZKey      97347247
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1341906
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActMap    4
+aZKey      1341907
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_InitTool
+aZKey      1341465
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      Main
+aZKey      91036617
+aEventOptionType Window Event
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_MainRtnFromSubwnd
+aZKey      1341489
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      Main
+aZKey      91036618
+aEventOptionType Window Event
+
+eAction    3
+aTag       RebuildTablesRelationships
+aType      2
+aZKey      1341902
+
+eActOpt    4
+aTag       BuildTablRec
+aText      &Build/Rebuild Tables/Rels...
+aZKey      90026370
+
+eActOpt    4
+aTag       Build/RebuildTables/Rels
+aText      &Build/Rebuild Tables/Rels...
+aSeparator Y
+aZKey      90024268
+
+eActOper   4
+aName      zwTZTEUPDD_RebuildTablesRels
+aZKey      1341463
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      BuildTablRec
+aZKey      91036615
+aEventOptionType Menu Option
+
+eEventList 4
+aName      New8
+aZKey      91036616
+aEventOptionType Menu Option
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_RefreshTableDetail
+aZKey      98001138
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DataSrcSingleClick
+aZKey      98001484
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      TE_DBMS_Source
+aZKey      97347139
+aEventOptionType Control Event
+
+eAction    3
+aTag       SaveDTE
+aType      1
+aZKey      1341927
+
+eActOpt    4
+aTag       Save
+aText      &Save Physical Data Model
+aSeparator Y
+aZKey      97342498
+
+eActOper   4
+aName      zwTZTEUPDD_SaveModelDTE
+aZKey      1341495
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      Save
+aZKey      91036619
+aEventOptionType Menu Option
+
+eAction    3
+aTag       SetTableKeepPhysChars
+aType      2
+aZKey      90472810
+
+eActOpt    4
+aTag       SetKeepPhysicalChars
+aText      Keep &Phys.Chars for Table
+aCheckMarkValueOn Y
+aSeparator Y
+aZKey      90472809
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       SwitchLPLR
+aType      34
+aZKey      1341931
+aDialogName TZCMSLPD
+aWindowName SwitchLPLR
+
+eActOpt    4
+aTag       Switch
+aText      Switch &Project (LPLR)...
+aSeparator Y
+aZKey      1341992
+
+eActOper   4
+aName      zwTZTEUPDD_SwitchLPLR
+aZKey      1341509
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      Switch
+aZKey      91036624
+aEventOptionType Menu Option
+
+eAction    3
+aTag       SyncRelationship
+aType      34
+aZKey      90025373
+aDialogName TZTEUPDD
+aWindowName SyncRels
+
+eActOpt    4
+aTag       SyncRelationships
+aText      &Synchronize Relationships...
+aZKey      90026379
+
+eActOpt    4
+aTag       SyncRelationships
+aText      &Synchronize Relationships...
+aZKey      97346967
+
+eActOper   4
+aName      zwTZTEUPDD_SyncRelationships
+aZKey      90025388
+aDesc      Sync Logical Relationships to Physical
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      SyncRelationships
+aZKey      91036625
+aEventOptionType Menu Option
+
+eAction    3
+
+eActMap    4
+aZKey      127000005
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOpt    4
+aTag       TableDetail
+aText      &Table / Record Detail...
+aZKey      1342038
+
+eActOpt    4
+aTag       UpdateTable/Record
+aText      &Table / Record...
+aZKey      97342521
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eActHot    4
+aTag       Enter
+aZKey      90006797
+aKeyCombo  U4
+$.!<-````
+`
+aVKey      13
+
+eEventList 4
+aName      TablRecList
+aZKey      91036626
+aEventOptionType Control Event
+
+eEventList 4
+aName      TableDetail
+aZKey      91036627
+aEventOptionType Menu Option
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      TablRecList
+aZKey      91036629
+aEventOptionType Control Event
+
+eAction    3
+aTag       UpdateColumn/Field
+aType      34
+aZKey      97347160
+aDialogName TZTEUPDD
+aWindowName FieldRelLink
+aSB_SubAction 64
+
+eActMap    4
+aZKey      97347161
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActOpt    4
+aTag       UpdateColumn/Field
+aText      &Column / Field...
+aSeparator Y
+aZKey      98001435
+
+eAction    3
+aTag       UpdateKey
+aType      34
+aZKey      97347151
+aDialogName TZTEUPDD
+aWindowName KeyData
+aSB_SubAction 64
+
+eActMap    4
+aZKey      97347152
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActOpt    4
+aTag       UpdateKey
+aText      &Key...
+aZKey      97342523
+
+eMenu      3
+aTag       HauptMenu
+aZKey      1341982
+
+eOption    4
+aTag       &File
+aText      &File
+aZKey      1341983
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptMap    6
+aZKey      1341993
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptMap    6
+aZKey      1341995
+
+eOption    4
+aTag       Edit
+aText      &Edit
+aZKey      97342501
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+aTag       Update
+aText      &Update
+aZKey      97342520
+
+eOptOpt    6
+
+eOptAct    7
+
+eOptOpt    6
+
+eOptAct    7
+
+eOptOpt    6
+
+eOptAct    7
+
+eOptOpt    5
+aTag       Delete
+aText      &Delete Selected
+aSeparator Y
+aZKey      97342533
+
+eOptOpt    6
+
+eOptAct    7
+
+eOptOpt    6
+
+eOptAct    7
+
+eOptOpt    6
+
+eOptAct    7
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOption    4
+aTag       Database
+aText      &Database / DataModel
+aZKey      1342015
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOption    4
+aTag       New4
+aText      &Help
+aZKey      1342027
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eOptOpt    5
+
+eOptAct    6
+
+eMenu      3
+aTag       DataSrc
+aZKey      1342032
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eMenu      3
+aTag       TableRec
+aZKey      1342037
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOptMap    5
+aZKey      98000377
+
+eOptMapLOD_Attribute 6
+
+eOptMapRelatedEntity 7
+
+eOptMapER_Attribute 7
+
+eOptMapER_Domain 8
+
+eOptMapContext 6
+
+eOptMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eOption    4
+
+eOptAct    5
+
+eOptMap    5
+aZKey      98169346
+
+eOptMapLOD_Attribute 6
+
+eOptMapRelatedEntity 7
+
+eOptMapER_Attribute 7
+
+eOptMapER_Domain 8
+
+eOptMapContext 6
+
+eOptMapView 6
+
+eDfltMenu  3
+
+eWndStyle  3
+aTag       Primary Window
+aZKey      7008558
+aStyle     13565952
+aDesc      Overlapped window with caption, system menu, sizing border, min/
+
+eHotkey    3
+
+eHotAct    4
+
+eHotkey    3
+
+eHotAct    4
+
+eWindow    2
+aTag       TableRecord
+aCaption   Table / Records
+aPSDLG_X   2
+aPSDLG_Y   19
+aSZDLG_X   23855475
+aSZDLG_Y   19923266
+aZKey      1342044
+aDIL_Active Y
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       edName
+aZKey      1342087
+aSubtype   0
+aIdNbr     2
+aPSDLG_X   60
+aPSDLG_Y   21
+aSZDLG_X   147
+aSZDLG_Y   14
+aSyncKey   1
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      1342088
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       MLEdit1
+aZKey      97342690
+aSubtype   0
+aPSDLG_X   60
+aPSDLG_Y   38
+aSZDLG_X   238
+aSZDLG_Y   36
+aSyncKey   2
+
+eCtrlMap   4
+aZKey      97342691
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 4
+
+eControl   3
+aTag       DataOrRel
+aZKey      1342103
+aSubtype   0
+aIdNbr     8
+aPSDLG_X   60
+aPSDLG_Y   78
+aSZDLG_X   87
+aSZDLG_Y   158
+aSyncKey   3
+
+eCtrlMap   4
+aZKey      1342104
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapContext 5
+aZKey      1320298
+aDerivedName Display
+aName      Display
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1342105
+
+eCtrlMap   4
+aZKey      1342106
+
+eControlDef 4
+
+eControl   3
+aTag       DBMS_ID
+aZKey      1342107
+aIdNbr     9
+aPSDLG_X   60
+aPSDLG_Y   94
+aSZDLG_X   87
+aSZDLG_Y   14
+aSyncKey   4
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      1342108
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328222
+aSeqNo_LOD_Entity 4
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+aName      DBMS_ID
+aZKey      1321365
+aLth       4
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit DBMS ID
+aListPaintLit DBMS ID
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       Owner
+aZKey      90026368
+aIdNbr     9
+aPSDLG_X   203
+aPSDLG_Y   94
+aSZDLG_X   94
+aSZDLG_Y   14
+aSyncKey   5
+aExtendedStyle 16777216
+
+eCtrlMap   4
+aZKey      90026369
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       KeepPhysChar
+aText      Keep Physical Characteristics for Table
+aZKey      90472804
+aSubtype   536870912
+aPSDLG_X   8
+aPSDLG_Y   113
+aSZDLG_X   206
+aSZDLG_Y   12
+aCtrlBOI   U3
+#60``
+`
+aSyncKey   6
+aDIL_Text  Set Keep Physical Characteristics for Table Name only
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      90472805
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapContext 5
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       KeepPhysCharForAllColumns
+aText      Keep Physical Characteristics for all Columns
+aZKey      98169092
+aSubtype   536870912
+aPSDLG_X   8
+aPSDLG_Y   125
+aSZDLG_X   206
+aSZDLG_Y   12
+aCtrlBOI   U3
+#60``
+`
+aSyncKey   7
+aDIL_Text  Set Keep Physical Characteristics for all Columns
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      98169093
+
+eCtrlMapLOD_Attribute 5
+
+eCtrlMapRelatedEntity 6
+
+eCtrlMapER_Attribute 6
+
+eCtrlMapER_Domain 7
+
+eCtrlMapContext 5
+
+eCtrlMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eEvent     4
+aType      1
+aZKey      98169348
+
+eEventAct  5
+aTag       SetKeepPhysCharsForAllColumns
+aType      2
+aZKey      98169349
+aSB_ActionDisabling 16
+
+eControlDef 4
+
+eControl   3
+aTag       lbKeyList
+aText      lbKeyList
+aZKey      1342117
+aSubtype   -2147418109
+aIdNbr     15
+aPSDLG_X   7
+aPSDLG_Y   141
+aSZDLG_X   292
+aSZDLG_Y   39
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P#````*P!-`%,Q````
+`
+aSyncKey   8
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListCtl1
+aText      Key
+aZKey      1342118
+aSubtype   67108864
+aIdNbr     16
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   140
+aSZDLG_Y   15
+aSyncKey   8
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1342119
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListCtl2
+aText      Category
+aZKey      1342120
+aSubtype   67108864
+aIdNbr     17
+aPSDLG_X   143
+aPSDLG_Y   0
+aSZDLG_X   171
+aSZDLG_Y   15
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1342121
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      1342122
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1342123
+
+eCtrlMap   4
+aZKey      1342124
+
+eEvent     4
+aType      2
+aZKey      1342125
+
+eEventAct  5
+aTag       KeyShow
+aType      34
+aZKey      1342073
+aDialogName TZTEUPDD
+aWindowName KeyData
+aSB_SubAction 64
+aSB_ActionDisabling 8
+
+eEvent     4
+aType      12
+aZKey      97342686
+
+eEventAct  5
+aTag       KeyPopup
+aType      1
+aZKey      1342051
+
+eControlDef 4
+
+eControl   3
+aTag       lbColumnList
+aText      lbColumnList
+aZKey      1342140
+aSubtype   -2143944701
+aIdNbr     24
+aPSDLG_X   7
+aPSDLG_Y   185
+aSZDLG_X   349
+aSZDLG_Y   106
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P#````*P!-`%,Q````
+`
+aSyncKey   9
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       No
+aText      No
+aZKey      98096454
+aSubtype   67108864
+aIdNbr     25
+aPSDLG_X   2
+aPSDLG_Y   0
+aSZDLG_X   16
+aSZDLG_Y   15
+aSyncKey   9
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      98096455
+
+eCtrlMapLOD_Attribute 6
+aZKey      98096449
+aWork      Y
+aUpdate    Y
+aSeqOrder  Y
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      wkSequence
+aZKey      98096450
+aDesc      save field ordering
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Name
+aText      Column / Field
+aZKey      1342141
+aSubtype   67108864
+aIdNbr     25
+aPSDLG_X   22
+aPSDLG_Y   0
+aSZDLG_X   119
+aSZDLG_Y   15
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1342142
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       PhysicalChars
+aText      Physical Chars
+aZKey      98169094
+aSubtype   67108864
+aPSDLG_X   148
+aPSDLG_Y   0
+aSZDLG_X   43
+aSZDLG_Y   15
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      98169095
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapContext 6
+
+eCtrlMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListCtl3
+aText      ER Attribute
+aZKey      90206320
+aSubtype   67108864
+aPSDLG_X   196
+aPSDLG_Y   0
+aSZDLG_X   62
+aSZDLG_Y   15
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      90206321
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Usage
+aText      Usage
+aZKey      1342143
+aSubtype   67108864
+aIdNbr     26
+aPSDLG_X   263
+aPSDLG_Y   0
+aSZDLG_X   38
+aSZDLG_Y   15
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      1342144
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapContext 6
+aDerivedName Display
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Key
+aText      Key
+aZKey      1342145
+aSubtype   67108864
+aIdNbr     27
+aPSDLG_X   307
+aPSDLG_Y   0
+aSZDLG_X   19
+aSZDLG_Y   15
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      1342146
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListCtl4
+aText      Type
+aZKey      90026360
+aSubtype   67108864
+aPSDLG_X   330
+aPSDLG_Y   0
+aSZDLG_X   32
+aSZDLG_Y   15
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      90026361
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328112
+aSeqNo_LOD_Entity 7
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      DataType
+aZKey      1321342
+aLth       8
+aNotNull   N
+aDesc      Converted from 6B
+aPromptPaintLit Data Type
+aListPaintLit Data Type
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      1342147
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      1342148
+
+eCtrlMap   4
+aZKey      1342149
+
+eEvent     4
+aType      2
+aZKey      1342150
+
+eEventAct  5
+aTag       FieldShow
+aType      34
+aZKey      1342064
+aDialogName TZTEUPDD
+aWindowName FieldRelLink
+aSB_SubAction 64
+aSB_ActionDisabling 8
+
+eEvent     4
+aType      12
+aZKey      97342687
+
+eEventAct  5
+aTag       ColumnFieldPopup
+aType      1
+aZKey      1342052
+
+eEvent     4
+aType      1048578
+aZKey      98101472
+
+eEventAct  5
+aTag       SetNewFieldSequence
+aType      1
+aZKey      98101473
+
+eEvent     4
+aType      1
+aZKey      98101460
+
+eEventAct  5
+aTag       SaveSelectedField
+aType      1
+aZKey      98101461
+
+eControlDef 4
+
+eControl   3
+aTag       OK
+aText      OK
+aZKey      1342093
+aSubtype   536870912
+aIdNbr     29
+aPSDLG_X   307
+aPSDLG_Y   7
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   10
+
+eEvent     4
+aType      1
+aZKey      1342094
+
+eEventAct  5
+aTag       Alt-F4
+aType      72
+aTypeData  Y
+aZKey      1342076
+
+eControlDef 4
+
+eControl   3
+aTag       Cancel
+aText      Cancel
+aZKey      1342099
+aSubtype   536870912
+aIdNbr     30
+aPSDLG_X   307
+aPSDLG_Y   22
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   11
+
+eEvent     4
+aType      1
+aZKey      1342100
+
+eEventAct  5
+aTag       ESC
+aNoMap     Y
+aType      72
+aTypeData  Y
+aZKey      1342045
+
+eControlDef 4
+
+eControl   3
+aTag       Next
+aText      Ne&xt
+aZKey      1342111
+aSubtype   536870912
+aIdNbr     32
+aPSDLG_X   307
+aPSDLG_Y   46
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   12
+
+eEvent     4
+aType      1
+aZKey      1342112
+
+eEventAct  5
+aTag       TABLREC_BUTTON_Next
+aType      2
+aZKey      1342079
+aSB_ActionDisabling 2
+
+eControlDef 4
+
+eControl   3
+aTag       Prev
+aText      &Prev
+aZKey      1342127
+aSubtype   536870912
+aIdNbr     33
+aPSDLG_X   307
+aPSDLG_Y   62
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   13
+
+eEvent     4
+aType      1
+aZKey      1342128
+
+eEventAct  5
+aTag       TABLREC_BUTTON_Prev
+aType      2
+aZKey      1342082
+aSB_ActionDisabling 1
+
+eControlDef 4
+
+eControl   3
+aTag       Delete
+aText      &Delete
+aZKey      1342132
+aSubtype   536870912
+aIdNbr     31
+aPSDLG_X   307
+aPSDLG_Y   87
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   15
+
+eEvent     4
+aType      1
+aZKey      1342133
+
+eEventAct  5
+aTag       DeleteTablRec
+aNoMap     Y
+aType      2
+aTypeData  y
+aZKey      1342055
+aSB_DeleteNull 1024
+aSB_ActionDisabling 16
+
+eControlDef 4
+
+eControl   3
+aTag       Text4
+aText      ER Entity:
+aZKey      97342688
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   7
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97342689
+
+eControlDef 4
+
+eControl   3
+aTag       Text6
+aText      ER_Entity.Name
+aZKey      1342091
+aSubtype   524288
+aIdNbr     4
+aPSDLG_X   60
+aPSDLG_Y   7
+aSZDLG_X   147
+aSZDLG_Y   12
+aCtrlBOI   U64
+M`````````````/\```$`````````````````````````````````````````
+3````````````````````````````
+`
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1342092
+
+eCtrlMapLOD_Attribute 5
+aZKey      1328120
+aSeqNo_LOD_Entity 1
+
+eCtrlMapRelatedEntity 6
+aName      ER_Entity
+aIndentName          ER_Entity
+aIndentLvl 9
+aZKey      1328119
+aSeqNo     2
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance Y
+aDupRelationshipInstance N
+aRelLinkIndicator H
+
+eCtrlMapER_Attribute 6
+aName      Name
+aZKey      1320861
+aNotNull   Y
+aDesc      Converted from 6B
+aPromptPaintLit Entity Name
+aListPaintLit Entity Name
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+
+eControlDef 4
+
+eControl   3
+aTag       Text2
+aText      Name:
+aZKey      1342085
+aSubtype   537395200
+aIdNbr     1
+aPSDLG_X   7
+aPSDLG_Y   22
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1342086
+
+eControlDef 4
+
+eControl   3
+aTag       Text1
+aText      Description:
+aZKey      1342095
+aSubtype   537395200
+aIdNbr     5
+aPSDLG_X   7
+aPSDLG_Y   39
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1342096
+
+eControlDef 4
+
+eControl   3
+aTag       Text3
+aText      Purpose:
+aZKey      1342101
+aSubtype   537395200
+aIdNbr     7
+aPSDLG_X   7
+aPSDLG_Y   79
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1342102
+
+eControlDef 4
+
+eControl   3
+aTag       Text8
+aText      DBMS ID:
+aZKey      1342109
+aSubtype   537395200
+aIdNbr     10
+aPSDLG_X   7
+aPSDLG_Y   96
+aSZDLG_X   50
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      1342110
+
+eControlDef 4
+
+eControl   3
+aTag       Text14
+aText      Owner:
+aZKey      90026366
+aSubtype   537395200
+aIdNbr     10
+aPSDLG_X   171
+aPSDLG_Y   96
+aSZDLG_X   30
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      90026367
+
+eControlDef 4
+
+eControl   3
+aTag       MsgBar1
+aZKey      97342692
+aSubtype   1
+aPSDLG_X   9
+aPSDLG_Y   296
+aSZDLG_X   376
+aSZDLG_Y   20
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97342693
+
+eControlDef 4
+
+eWndEvent  3
+aType      2
+aZKey      90026524
+
+eWndAct    4
+aTag       Postbuild
+aNoMap     Y
+aType      1
+aZKey      90026525
+
+eWndEvent  3
+aType      512
+aZKey      98001125
+
+eWndAct    4
+aTag       SaveViewCursor
+aType      1
+aZKey      98001126
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_AcceptTableRecord
+aZKey      97347070
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_ColumnFieldPopup
+aZKey      1341411
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1342056
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteTable
+aZKey      98100473
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_CancelTableRecord
+aZKey      97347142
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       FieldDelete
+aType      1
+aZKey      1342061
+
+eActOpt    4
+aTag       New2
+aText      &Delete Selected
+aSeparator Y
+aZKey      1342161
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1342065
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOpt    4
+aTag       ColFieldDetail
+aText      &Column / Field Detail...
+aZKey      1342159
+
+eAction    3
+aTag       KeyAdd
+aType      34
+aZKey      1342067
+aDialogName TZTEUPDD
+aWindowName KeyData
+
+eActOpt    4
+aTag       File
+aText      &New...
+aSeparator Y
+aZKey      1342156
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       KeyDelete
+aNoMap     Y
+aType      2
+aZKey      1342070
+
+eActOpt    4
+aTag       Delete
+aText      &Delete Selected
+aZKey      1342157
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_KeyPopup
+aZKey      1341483
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1342074
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOpt    4
+aTag       New2
+aText      &Key Detail...
+aZKey      1342155
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      TableRecord_Postbuild
+aZKey      90026528
+aDesc      Gray out some options
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SaveSelectedField
+aZKey      98101466
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_SaveViewCursor
+aZKey      98001129
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+aTag       SetFieldKeepPhysChars
+aType      2
+aZKey      90472818
+
+eActOpt    4
+aTag       New3
+aText      Set Keep &Physical Chars
+aCheckMarkValueOn Y
+aSeparator Y
+aZKey      90472817
+
+eActOper   4
+aName      zwTZTEUPDD_KeepPhysCharField
+aZKey      90472821
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      98255213
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_MoveField
+aZKey      98101480
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1342080
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_NextTable
+aZKey      98100231
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      1342083
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_PrevTable
+aZKey      98100469
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eMenu      3
+aTag       Key
+aZKey      1342154
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eMenu      3
+aTag       ColumnField
+aZKey      1342158
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOption    4
+
+eOptAct    5
+
+eOptMap    5
+aZKey      98000444
+
+eOptMapLOD_Attribute 6
+
+eOptMapRelatedEntity 7
+
+eOptMapER_Attribute 7
+
+eOptMapER_Domain 8
+
+eOptMapContext 6
+
+eOptMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eWndStyle  3
+aTag       Sizeable Dialog Box
+aZKey      10024379
+aStyle     -2134114304
+
+eWindow    2
+aTag       SyncRels
+aCaption   Synchronize Relationships
+aPSDLG_X   2
+aPSDLG_Y   2
+aSZDLG_X   27984306
+aSZDLG_Y   13697251
+aZKey      90025218
+aDIL_Active Y
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       Push1
+aText      OK
+aZKey      90025367
+aSubtype   536870912
+aPSDLG_X   370
+aPSDLG_Y   8
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      90025368
+
+eEvent     4
+aType      1
+aZKey      90025392
+
+eEventAct  5
+aTag       Alt-F4
+aType      72
+aZKey      90025393
+
+eControlDef 4
+
+eControl   3
+aTag       Text1
+aText      Relationship (Source to Target):
+aZKey      97342709
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   10
+aSZDLG_X   125
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97342710
+
+eControlDef 4
+
+eControl   3
+aTag       Text3
+aText      source - ER RelLink - target
+aZKey      89000036
+aSubtype   524288
+aPSDLG_X   135
+aPSDLG_Y   10
+aSZDLG_X   221
+aSZDLG_Y   12
+aCtrlBOI   U64
+M`````````````/\```$`````````````````````````````````````````
+3````````````````````````````
+`
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+
+eCtrlMap   4
+aZKey      89000037
+
+eCtrlMapLOD_Attribute 5
+aZKey      90025564
+aSeqNo_LOD_Entity 1
+aWork      Y
+aUpdate    Y
+aSeqOrder  A
+
+eCtrlMapRelatedEntity 6
+aName      TE_Work
+aIndentName TE_Work
+aIndentLvl 0
+aZKey      90025333
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+
+eCtrlMapER_Attribute 6
+aName      RelationshipText
+aZKey      90025565
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      90025366
+aName      TZTEWRKO
+aDesc      VOR automatically built from LOD Dialog
+
+eControlDef 4
+
+eControl   3
+aTag       Push2
+aText      Cancel
+aZKey      90025369
+aSubtype   536870912
+aPSDLG_X   370
+aPSDLG_Y   24
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      90025370
+
+eEvent     4
+aType      1
+aZKey      90025398
+
+eEventAct  5
+aTag       ESC
+aType      71
+aZKey      90025399
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox3
+aText      Selected Foreign Keys for Relationship
+aZKey      90025223
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   36
+aSZDLG_X   177
+aSZDLG_Y   152
+aSyncKey   9999
+
+eCtrlCtrl  4
+aTag       SelectList
+aText      SelectList
+aZKey      90025242
+aSubtype   -2147418112
+aPSDLG_X   6
+aPSDLG_Y   16
+aSZDLG_X   164
+aSZDLG_Y   128
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`````*P!-`%,Q````
+`
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+aExtendedStyle 16777216
+
+eCtrlCtrl  5
+aTag       ListCtl4
+aText      Target Keys
+aZKey      90025245
+aSubtype   67108864
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   93
+aSZDLG_Y   14
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+
+eCtrlMap   6
+aZKey      90025515
+
+eCtrlMapLOD_Attribute 7
+aZKey      90025455
+aSeqNo_LOD_Entity 1
+
+eCtrlMapRelatedEntity 8
+aName      TargetKey
+aIndentName    TargetKey
+aIndentLvl 3
+aZKey      90025454
+aSeqNo     1
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aRecursive N
+aDerived   Y
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      Data Columns/Fields in the Data Table/Records
+
+eCtrlMapER_Attribute 8
+
+eCtrlMapER_Domain 9
+
+eCtrlMapView 7
+aZKey      90025366
+aName      TZTEWRKO
+aDesc      VOR automatically built from LOD Dialog
+
+eControlDef 6
+
+eCtrlCtrl  5
+aTag       ListCtl5
+aText      Source Keys
+aZKey      90025247
+aSubtype   67108864
+aPSDLG_X   98
+aPSDLG_Y   0
+aSZDLG_X   93
+aSZDLG_Y   14
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+
+eCtrlMap   6
+aZKey      90025516
+
+eCtrlMapLOD_Attribute 7
+aZKey      90025469
+aSeqNo_LOD_Entity 1
+
+eCtrlMapRelatedEntity 8
+aName      SourceKey
+aIndentName       SourceKey
+aIndentLvl 6
+aZKey      90025468
+aSeqNo     1
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aRecursive N
+aDerived   Y
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      Data Columns/Fields in the Data Table/Records
+
+eCtrlMapER_Attribute 8
+
+eCtrlMapER_Domain 9
+
+eCtrlMapView 7
+
+eControlDef 6
+
+eCtrlMap   5
+aZKey      90025244
+
+eCtrlMapLOD_Entity 6
+
+eCtrlMapView 6
+
+eCtrlMap   5
+aZKey      90025255
+
+eCtrlMap   5
+aZKey      90025514
+
+eEvent     5
+aType      2
+aZKey      90025414
+
+eEventAct  6
+aTag       DeselectTarget
+aType      2
+aZKey      90025415
+aSB_ActionDisabling 8
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      90025224
+
+eControlDef 4
+
+eControl   3
+aTag       C_TargetList
+aText      C_TargetList
+aZKey      90025232
+aSubtype   -2147409920
+aPSDLG_X   226
+aPSDLG_Y   40
+aSZDLG_X   133
+aSZDLG_Y   69
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`(```*P!-`%,Q````
+`
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListCtl2
+aText      Candidate Target Keys
+aZKey      90025235
+aSubtype   67108864
+aPSDLG_X   3
+aPSDLG_Y   0
+aSZDLG_X   166
+aSZDLG_Y   14
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+
+eCtrlMap   5
+aZKey      90025511
+
+eCtrlMapLOD_Attribute 6
+aZKey      90025483
+aSeqNo_LOD_Entity 1
+
+eCtrlMapRelatedEntity 7
+aName      CandidateTargetKey
+aIndentName    CandidateTargetKey
+aIndentLvl 3
+aZKey      90025482
+aSeqNo     2
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aRecursive N
+aDerived   Y
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      Data Columns/Fields in the Data Table/Records
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      90025234
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      90025256
+
+eCtrlMap   4
+aZKey      90025510
+
+eEvent     4
+aType      2
+aZKey      90025406
+
+eEventAct  5
+aTag       SelectC_Target
+aType      2
+aZKey      90025407
+aSB_ActionDisabling 8
+
+eControlDef 4
+
+eControl   3
+aTag       PushBtn1
+aText      &Next
+aZKey      91036243
+aSubtype   536870912
+aPSDLG_X   370
+aPSDLG_Y   48
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      91036244
+
+eEvent     4
+aType      1
+aZKey      91036245
+
+eEventAct  5
+aTag       NextRelation
+aType      2
+aZKey      91036246
+aSB_ActionDisabling 2
+
+eControlDef 4
+
+eControl   3
+aTag       PushBtn4
+aText      <--
+aZKey      97346815
+aSubtype   536870912
+aPSDLG_X   193
+aPSDLG_Y   63
+aSZDLG_X   24
+aSZDLG_Y   14
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! 
+
+eCtrlMap   4
+aZKey      97346816
+
+eEvent     4
+aType      1
+aZKey      97346817
+
+eEventAct  5
+
+eControlDef 4
+
+eControl   3
+aTag       PushBtn2
+aText      &Prev
+aZKey      97347008
+aSubtype   536870912
+aPSDLG_X   370
+aPSDLG_Y   63
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97347009
+
+eEvent     4
+aType      1
+aZKey      97347010
+
+eEventAct  5
+aTag       PrevRelationship
+aType      2
+aZKey      97347011
+aSB_ActionDisabling 1
+
+eControlDef 4
+
+eControl   3
+aTag       PushBtn3
+aText      -->
+aZKey      97342713
+aSubtype   536870912
+aPSDLG_X   193
+aPSDLG_Y   109
+aSZDLG_X   24
+aSZDLG_Y   14
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! 
+
+eCtrlMap   4
+aZKey      97342714
+
+eEvent     4
+aType      1
+aZKey      97342716
+
+eEventAct  5
+
+eControlDef 4
+
+eControl   3
+aTag       C_SourceList
+aText      C_SourceList
+aZKey      90025237
+aSubtype   -2147409920
+aPSDLG_X   226
+aPSDLG_Y   117
+aSZDLG_X   133
+aSZDLG_Y   69
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`(```*P!-`%,Q````
+`
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListCtl3
+aText      Candidate Source Keys
+aZKey      90025240
+aSubtype   67108864
+aPSDLG_X   3
+aPSDLG_Y   0
+aSZDLG_X   169
+aSZDLG_Y   14
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! Then press OK !
+
+eCtrlMap   5
+aZKey      90025513
+
+eCtrlMapLOD_Attribute 6
+aZKey      90025497
+aSeqNo_LOD_Entity 1
+
+eCtrlMapRelatedEntity 7
+aName      CandidateSourceKey
+aIndentName    CandidateSourceKey
+aIndentLvl 3
+aZKey      90025496
+aSeqNo     3
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aRecursive N
+aDerived   Y
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      Data Columns/Fields in the Data Table/Records
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      90025239
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      90025257
+
+eCtrlMap   4
+aZKey      90025512
+
+eEvent     4
+aType      2
+aZKey      90025410
+
+eEventAct  5
+aTag       SelectS_Target
+aType      2
+aZKey      90025411
+
+eControlDef 4
+
+eControl   3
+aTag       pbIncludeSourceKey
+aText      <--
+aZKey      97342711
+aSubtype   536870912
+aPSDLG_X   193
+aPSDLG_Y   151
+aSZDLG_X   24
+aSZDLG_Y   14
+aSyncKey   9999
+aDIL_Text  Please choose first Target key and then Source Key ! 
+
+eCtrlMap   4
+aZKey      97342712
+
+eEvent     4
+aType      1
+aZKey      97346818
+
+eEventAct  5
+
+eControlDef 4
+
+eControl   3
+aTag       MsgBar1
+aZKey      91036241
+aSubtype   1
+aPSDLG_X   149
+aPSDLG_Y   197
+aSZDLG_X   74
+aSZDLG_Y   19
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      91036242
+
+eControlDef 4
+
+eWndEvent  3
+aType      1
+aZKey      90025418
+
+eWndAct    4
+aTag       PreBuild
+aNoMap     Y
+aType      1
+aZKey      90025419
+
+eWndEvent  3
+aType      2
+aZKey      97346825
+
+eWndAct    4
+aTag       DisableButton
+aNoMap     Y
+aType      1
+aZKey      97346826
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SyncOK
+aZKey      90025390
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      Push1
+aZKey      91054814
+aEventOptionType Control Event
+
+eAction    3
+
+eActMap    4
+aZKey      90025416
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      90025366
+aName      TZTEWRKO
+aDesc      VOR automatically built from LOD Dialog
+
+eActEvent  4
+
+eActCtrl   5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SyncDeselectTarget
+aZKey      90025380
+aDesc      Remove a Selected Key Entry
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      SelectList
+aZKey      91054815
+aEventOptionType Control Event
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eAction    3
+
+eActMap    4
+aZKey      97347006
+
+eActMapLOD_Entity 5
+aName      ER_RelType
+aIndentName    ER_RelType
+aIndentLvl 3
+aZKey      1326725
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aHidden    N
+aRecursive N
+aSeqNo     2
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator L
+
+eActMapView 5
+aZKey      89000122
+aName      TZEREMDO_U
+aDesc      TE Update view to TZEREMDO
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SyncNext
+aZKey      90025396
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      97347012
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SyncPrev
+aZKey      97347017
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      90025420
+
+eActMap    4
+aZKey      90025421
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_SyncPreBuild
+aZKey      90025386
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_DisableButton
+aZKey      97346819
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      90025408
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SyncSelectC_Target
+aZKey      90025376
+aDesc      Select Candidate Target Key
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_SyncSelectC_Source
+aZKey      90025378
+aDesc      Select Source Target Key
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eEventList 4
+aName      C_SourceList
+aZKey      91054816
+aEventOptionType Control Event
+
+eWndStyle  3
+aTag       Dialog Box
+aZKey      7008569
+aStyle     -2134376448
+aDesc      Dialog box with caption, non-sizable border
+aStyleEx   1
+
+eWindow    2
+aTag       ForKeyM
+aCaption   Foreign Key Maintenance
+aPSDLG_X   2
+aPSDLG_Y   2
+aSZDLG_X   21168458
+aSZDLG_Y   19071286
+aZKey      90388409
+aDIL_Active Y
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       GroupBox1
+aText      Corresponding Parent Attribute
+aZKey      90388410
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   4
+aSZDLG_X   251
+aSZDLG_Y   60
+aSyncKey   9999
+
+eCtrlCtrl  4
+aTag       Edit1
+aZKey      90388418
+aPSDLG_X   38
+aPSDLG_Y   15
+aSZDLG_X   206
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlMap   5
+aZKey      90388419
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328067
+aSeqNo_LOD_Entity 1
+
+eCtrlMapRelatedEntity 7
+aName      TE_FieldDataRel_PK
+aIndentName             TE_FieldDataRel_PK
+aIndentLvl 12
+aZKey      1328066
+aSeqNo     3
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance N
+aDupRelationshipInstance Y
+aRelLinkIndicator H
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Text1
+aText      Name:
+aZKey      90388414
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   16
+aSZDLG_X   28
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      90388415
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Edit2
+aZKey      90388420
+aPSDLG_X   38
+aPSDLG_Y   32
+aSZDLG_X   206
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlMap   5
+aZKey      90388421
+
+eCtrlMapLOD_Attribute 6
+aZKey      1328069
+aSeqNo_LOD_Entity 3
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Text2
+aText      Desc:
+aZKey      90388416
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   33
+aSZDLG_X   28
+aSZDLG_Y   12
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      90388417
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      90388411
+
+eControlDef 4
+
+eControl   3
+aTag       Push1
+aText      &Close
+aZKey      90388430
+aSubtype   536870912
+aPSDLG_X   266
+aPSDLG_Y   9
+aSZDLG_X   50
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      90388431
+
+eEvent     4
+aType      1
+aZKey      90388432
+
+eEventAct  5
+aTag       Alt-F4
+aType      71
+aZKey      90388433
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox2
+aText      Other Foreign Keys Referencing This Attribute
+aZKey      90388412
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   72
+aSZDLG_X   310
+aSZDLG_Y   75
+aSyncKey   9999
+
+eCtrlCtrl  4
+aTag       ListBox1
+aText      ListBox1
+aZKey      90388422
+aSubtype   -2147418112
+aPSDLG_X   6
+aPSDLG_Y   16
+aSZDLG_X   297
+aSZDLG_Y   51
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`````*P!-`%,Q````
+`
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlCtrl  5
+aTag       ListCtl1
+aText      Name
+aZKey      90388425
+aSubtype   67108864
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   121
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   6
+aZKey      90388426
+
+eCtrlMapLOD_Attribute 7
+aZKey      1328081
+aSeqNo_LOD_Entity 1
+aWork      N
+aUpdate    Y
+aSeqPriority 1
+
+eCtrlMapRelatedEntity 8
+aName      TE_FieldDataRelFK_1
+aIndentName             TE_FieldDataRelFK_1
+aIndentLvl 12
+aZKey      1328080
+aSeqNo     4
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance N
+aDupRelationshipInstance Y
+aRelLinkIndicator L
+
+eCtrlMapER_Attribute 8
+
+eCtrlMapER_Domain 9
+
+eCtrlMapView 7
+
+eControlDef 6
+
+eCtrlCtrl  5
+aTag       ListCtl2
+aText      Description
+aZKey      90388427
+aSubtype   67108864
+aPSDLG_X   125
+aPSDLG_Y   0
+aSZDLG_X   209
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   6
+aZKey      90388428
+
+eCtrlMapLOD_Attribute 7
+aZKey      1328083
+aSeqNo_LOD_Entity 3
+
+eCtrlMapRelatedEntity 8
+
+eCtrlMapER_Attribute 8
+
+eCtrlMapER_Domain 9
+
+eCtrlMapView 7
+
+eControlDef 6
+
+eCtrlMap   5
+aZKey      90388423
+
+eCtrlMapLOD_Entity 6
+
+eCtrlMapView 6
+
+eCtrlMap   5
+aZKey      90388424
+
+eCtrlMap   5
+aZKey      90388429
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      90388413
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox3
+aText      Fields for Current Table
+aZKey      90388442
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   157
+aSZDLG_X   310
+aSZDLG_Y   115
+aSyncKey   9999
+
+eCtrlCtrl  4
+aTag       ListBox2
+aText      ListBox2
+aZKey      90388444
+aSubtype   -2147418112
+aPSDLG_X   6
+aPSDLG_Y   16
+aSZDLG_X   297
+aSZDLG_Y   72
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`````*P!-`%,Q````
+`
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlCtrl  5
+aTag       No
+aText      No
+aZKey      98102698
+aSubtype   67108864
+aPSDLG_X   6
+aPSDLG_Y   0
+aSZDLG_X   19
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   6
+aZKey      98102699
+
+eCtrlMapLOD_Attribute 7
+
+eCtrlMapRelatedEntity 8
+
+eCtrlMapER_Attribute 8
+
+eCtrlMapER_Domain 9
+
+eCtrlMapView 7
+aZKey      1341816
+aName      TE_DTEnviron
+
+eControlDef 6
+
+eCtrlCtrl  5
+aTag       ListCtl3
+aText      Name
+aZKey      90388447
+aSubtype   67108864
+aPSDLG_X   30
+aPSDLG_Y   0
+aSZDLG_X   151
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   6
+aZKey      90388448
+
+eCtrlMapLOD_Attribute 7
+
+eCtrlMapRelatedEntity 8
+
+eCtrlMapER_Attribute 8
+
+eCtrlMapER_Domain 9
+
+eCtrlMapView 7
+
+eControlDef 6
+
+eCtrlCtrl  5
+aTag       ListCtl4
+aText      Description
+aZKey      90388449
+aSubtype   67108864
+aPSDLG_X   184
+aPSDLG_Y   0
+aSZDLG_X   170
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   6
+aZKey      90388450
+
+eCtrlMapLOD_Attribute 7
+
+eCtrlMapRelatedEntity 8
+
+eCtrlMapER_Attribute 8
+
+eCtrlMapER_Domain 9
+
+eCtrlMapView 7
+
+eControlDef 6
+
+eCtrlMap   5
+aZKey      90388445
+
+eCtrlMapLOD_Entity 6
+
+eCtrlMapView 6
+
+eCtrlMap   5
+aZKey      90388446
+
+eCtrlMap   5
+aZKey      90388451
+
+eEvent     5
+aType      2
+aZKey      123036164
+
+eEventAct  6
+aTag       SwitchForKeys
+aType      72
+aZKey      90388461
+aSB_ActionDisabling 16
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       pbSwitchForeignKey
+aText      &Switch to Selected Foreign Key
+aZKey      90388452
+aSubtype   536870912
+aPSDLG_X   78
+aPSDLG_Y   93
+aSZDLG_X   140
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      90388453
+
+eEvent     5
+aType      1
+aZKey      90388460
+
+eEventAct  6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      90388443
+
+eControlDef 4
+
+eControl   3
+aTag       MsgBar1
+aZKey      97342680
+aSubtype   1
+aPSDLG_X   139
+aPSDLG_Y   279
+aSZDLG_X   90
+aSZDLG_Y   19
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97342681
+
+eControlDef 4
+
+eWndEvent  3
+aType      1
+aZKey      90388454
+
+eWndAct    4
+aTag       Prebuild
+aNoMap     Y
+aType      1
+aZKey      90388455
+
+eWndEvent  3
+aType      2
+aZKey      98003323
+
+eWndAct    4
+aTag       Postbuild
+aNoMap     Y
+aType      1
+aZKey      98003324
+
+eAction    3
+
+eActMap    4
+aZKey      90388434
+
+eActMap    4
+aZKey      90388435
+
+eActEvent  4
+
+eActCtrl   5
+
+eAction    3
+aTag       ESC
+aType      72
+aZKey      90006454
+
+eActMap    4
+aZKey      90006455
+
+eActMap    4
+aZKey      90006456
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_ForeignKeyPostbuild
+aZKey      98003327
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      90388456
+
+eActMap    4
+aZKey      90388457
+
+eActWndEvent 4
+
+eActOper   4
+aName      ForKeyM_Prebuild
+aZKey      90388458
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      90388462
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      ForKeyM_SwitchForKeys
+aZKey      90388464
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eWndStyle  3
+aTag       Dialog Box
+aZKey      7008569
+aStyle     -2134376448
+aDesc      Dialog box with caption, non-sizable border
+aStyleEx   1
+
+eWindow    2
+aTag       ForKeyL
+aCaption   Foreign Key Maintenance
+aPSDLG_X   2
+aPSDLG_Y   2
+aSZDLG_X   12320963
+aSZDLG_Y   8192143
+aZKey      90388511
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       ListBox1
+aText      ListBox1
+aZKey      90388512
+aSubtype   271646720
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   188
+aSZDLG_Y   125
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P`````*P!-`%,R````
+`
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListCtl1
+aText      Name
+aZKey      90388515
+aSubtype   67108864
+aPSDLG_X   2
+aPSDLG_Y   0
+aSZDLG_X   85
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      90388516
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      1341540
+aName      TE_DB_Environ
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListCtl2
+aText      Description
+aZKey      90388517
+aSubtype   67108864
+aPSDLG_X   92
+aPSDLG_Y   0
+aSZDLG_X   177
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      90388518
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      90388513
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      90388514
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMap   4
+aZKey      90388519
+
+eEvent     4
+aType      2
+aZKey      90388537
+
+eEventAct  5
+aTag       GoToForeignKeyMaintenance
+aType      34
+aZKey      90388529
+aDialogName TZTEUPDD
+aWindowName ForKeyM
+aSB_ActionDisabling 8
+
+eEvent     4
+aType      12
+aZKey      97342676
+
+eEventAct  5
+aTag       LoadPopup
+aType      40
+aZKey      97342677
+aSB_ActionDisabling 8
+aPopupMenuName Popup
+
+eControlDef 4
+
+eWndEvent  3
+aType      256
+aZKey      97342673
+
+eWndAct    4
+aTag       Alt-F4
+aNoMap     Y
+aType      71
+aZKey      90388525
+
+eWndEvent  3
+aType      2
+aZKey      97347426
+
+eWndAct    4
+aTag       SetCaption
+aNoMap     Y
+aType      1
+aZKey      97347427
+
+eAction    3
+
+eActMap    4
+aZKey      90388526
+
+eActMap    4
+aZKey      90388527
+
+eActWndEvent 4
+
+eAction    3
+aTag       ESC
+aType      72
+aZKey      90006457
+
+eActMap    4
+aZKey      90006458
+
+eActMap    4
+aZKey      90006459
+
+eAction    3
+
+eActMap    4
+aZKey      90388530
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOpt    4
+aTag       Detail
+aText      &Foreign Key Detail...
+aZKey      97342675
+
+eAction    3
+
+eActMap    4
+aZKey      98003331
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1341540
+aName      TE_DB_Environ
+
+eActEvent  4
+
+eActCtrl   5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_SetForeignKeyCaption
+aZKey      97347430
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eMenu      3
+aTag       Popup
+aZKey      97342674
+
+eOption    4
+
+eOptAct    5
+
+eWndStyle  3
+aTag       Sizeable Dialog Box
+aZKey      10024379
+aStyle     -2134114304
+
+eWindow    2
+aTag       BuildXODs
+aCaption   Build Executables for Data Source
+aPSDLG_X   2
+aPSDLG_Y   2
+aSZDLG_X   26804639
+aSZDLG_Y   17301789
+aZKey      91022879
+aDIL_Active Y
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       ListBox1
+aText      ListBox1
+aZKey      91022888
+aSubtype   -2146238461
+aPSDLG_X   5
+aPSDLG_Y   2
+aSZDLG_X   295
+aSZDLG_Y   231
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P#````*P!-`%,Q````
+`
+aSyncKey   1
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListCtl1
+aText      Name
+aZKey      91022891
+aSubtype   67108864
+aPSDLG_X   1
+aPSDLG_Y   0
+aSZDLG_X   49
+aSZDLG_Y   15
+aSyncKey   1
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      91022892
+
+eCtrlMapLOD_Attribute 6
+aZKey      1326025
+aUpdate    Y
+aSeqPriority 1
+aSeqOrder  A
+
+eCtrlMapRelatedEntity 7
+aName      W_MetaDef
+aIndentName       W_MetaDef
+aIndentLvl 6
+aZKey      1326021
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aRecursive N
+aDerived   N
+aParentDeleteBehave D
+aRelLinkIndicator L
+
+eCtrlMapER_Attribute 7
+aName      Name
+aZKey      1321565
+aLth       32
+aDesc      Name of the meta object instance
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      1334549
+aName      TZZOLFLO
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListBoxCtl1
+aText      LOD Last Updated
+aZKey      89407510
+aSubtype   537395200
+aPSDLG_X   51
+aPSDLG_Y   0
+aSZDLG_X   67
+aSZDLG_Y   15
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      89407511
+
+eCtrlMapLOD_Attribute 6
+aZKey      1326028
+aUpdate    Y
+aSeqOrder  A
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      LastUpdateDate
+aZKey      1321568
+aDesc      Time stamp of when the meta object was last updated
+
+eCtrlMapER_Domain 8
+aZKey      90000089
+aDesc      Basic Timestamp Domain
+aName      DateTime
+aDomainType A
+aDataType  T
+aMaxStringLth 20
+aContextRestriction N
+
+eCtrlMapContext 6
+aZKey      90000093
+aDesc      Date display YYYY/MM/DD HH:mm
+aName      ListDisplayNumeric
+aEditString YYYY/MM/DD - HH:MI
+
+eCtrlMapView 6
+aZKey      1334549
+aName      TZZOLFLO
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListBoxCtl2
+aText      Description
+aZKey      89407512
+aSubtype   537395200
+aPSDLG_X   117
+aPSDLG_Y   0
+aSZDLG_X   163
+aSZDLG_Y   15
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      89407513
+
+eCtrlMapLOD_Attribute 6
+aZKey      1326026
+aUpdate    Y
+aSeqOrder  A
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      Desc
+aZKey      1321566
+aDesc      Description of meta object instance duplicated from the meta object instance itself
+aPromptPaintLit Description:
+aPromptPaintLth 60
+aListPaintLit Description:
+aListPaintLth 60
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      91022889
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      91022890
+
+eCtrlMap   4
+aZKey      91022907
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox6
+aText      Build/Send DB to Server
+aZKey      89149520
+aSubtype   537395200
+aPSDLG_X   310
+aPSDLG_Y   58
+aSZDLG_X   92
+aSZDLG_Y   52
+aSyncKey   2
+aExtendedStyle 0
+
+eCtrlCtrl  4
+aTag       Push6
+aText      Selected &LODs
+aZKey      89149522
+aSubtype   536870912
+aPSDLG_X   14
+aPSDLG_Y   13
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   2
+
+eCtrlMap   5
+aZKey      89149523
+
+eEvent     5
+aType      1
+aZKey      89149524
+
+eEventAct  6
+aTag       BuildSelectedXODsOnServer
+aType      2
+aZKey      91022902
+aSB_ActionDisabling 8
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       Push7
+aText      &Domains
+aZKey      89149525
+aSubtype   536870912
+aPSDLG_X   14
+aPSDLG_Y   31
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   3
+
+eCtrlMap   5
+aZKey      89149526
+
+eEvent     5
+aType      1
+aZKey      89149527
+
+eEventAct  6
+aTag       BuildExecutableDomains
+aType      1
+aZKey      91022932
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      89149521
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox4
+aText      Build DB to Project
+aZKey      89149515
+aSubtype   537395200
+aPSDLG_X   310
+aPSDLG_Y   118
+aSZDLG_X   92
+aSZDLG_Y   37
+aSyncKey   4
+aExtendedStyle 0
+
+eCtrlCtrl  4
+aTag       Push5
+aText      &Selected LODs
+aZKey      89149517
+aSubtype   536870912
+aPSDLG_X   14
+aPSDLG_Y   15
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   4
+
+eCtrlMap   5
+aZKey      89149518
+
+eEvent     5
+aType      1
+aZKey      89149519
+
+eEventAct  6
+aTag       BuildSelectedXODsOnLPLR
+aType      2
+aZKey      11043494
+aSB_ActionDisabling 8
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      89149516
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox5
+aText      Build Network to Project
+aZKey      89149530
+aSubtype   537395200
+aPSDLG_X   310
+aPSDLG_Y   169
+aSZDLG_X   92
+aSZDLG_Y   37
+aSyncKey   5
+aExtendedStyle 0
+
+eCtrlCtrl  4
+aTag       Push8
+aText      Selected L&ODs
+aZKey      89149532
+aSubtype   536870912
+aPSDLG_X   14
+aPSDLG_Y   15
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   5
+
+eCtrlMap   5
+aZKey      89149533
+
+eEvent     5
+aType      1
+aZKey      89149575
+
+eEventAct  6
+aTag       BuildNetXODsOnLPLR
+aType      2
+aZKey      89149576
+aSB_ActionDisabling 8
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      89149531
+
+eControlDef 4
+
+eControl   3
+aTag       Push2
+aText      &Close
+aZKey      91022895
+aSubtype   536870912
+aPSDLG_X   324
+aPSDLG_Y   7
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   6
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      91022896
+
+eEvent     4
+aType      1
+aZKey      91022897
+
+eEventAct  5
+aTag       Alt-F4
+aType      71
+aZKey      91022898
+
+eControlDef 4
+
+eControl   3
+aTag       SelectAllLods
+aText      Select All LODs
+aZKey      1027757
+aSubtype   536870912
+aPSDLG_X   324
+aPSDLG_Y   27
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      1027758
+
+eEvent     4
+aType      1
+aZKey      1027760
+
+eEventAct  5
+aTag       SelectAllLODs
+aType      2
+aZKey      1027761
+aSB_ActionDisabling 0
+
+eControlDef 4
+
+eControl   3
+aTag       DIL1
+aZKey      91022905
+aSubtype   1
+aPSDLG_X   39
+aPSDLG_Y   242
+aSZDLG_X   252
+aSZDLG_Y   20
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      91022906
+
+eControlDef 4
+
+eWndEvent  3
+aType      1
+aZKey      91022928
+
+eWndAct    4
+aTag       BuildXODsLOD_List
+aNoMap     Y
+aType      1
+aZKey      91022881
+
+eAction    3
+
+eActMap    4
+aZKey      91022899
+
+eActMap    4
+aZKey      91022900
+
+eActEvent  4
+
+eActCtrl   5
+
+eActHot    4
+aTag       ESC
+aZKey      90010154
+aKeyCombo  U4
+$N"\;````
+`
+aVKey      27
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      SelectAllLODs
+aZKey      1027764
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      98000370
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+aZKey      1334549
+aName      TZZOLFLO
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_BuildNetXODsOnLPLR
+aZKey      89149580
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_BuildXMD_OnServer
+aZKey      91022935
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      98000366
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_BuildXODsOnServer
+aZKey      91022886
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      98000368
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_BuildXODsOnLPLR
+aZKey      70039689
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      91022882
+
+eActMap    4
+aZKey      91022883
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_BuildXODsLOD_List
+aZKey      91022884
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eWndStyle  3
+
+eHotkey    3
+
+eHotAct    4
+
+eWindow    2
+aTag       DelTables
+aCaption   Delete Message
+aPSDLG_X   2
+aPSDLG_Y   2
+aSZDLG_X   17629460
+aSZDLG_Y   4456535
+aZKey      91053356
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       PushBtn1
+aText      OK
+aZKey      91053357
+aSubtype   536870912
+aPSDLG_X   215
+aPSDLG_Y   7
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   1
+
+eCtrlMap   4
+aZKey      91053358
+
+eEvent     4
+aType      1
+aZKey      91053359
+
+eEventAct  5
+aTag       DeleteAll
+aType      72
+aZKey      91053360
+
+eControlDef 4
+
+eControl   3
+aTag       PushBtn2
+aText      Cancel
+aZKey      91053379
+aSubtype   536870912
+aPSDLG_X   215
+aPSDLG_Y   22
+aSZDLG_X   48
+aSZDLG_Y   14
+aSyncKey   2
+
+eCtrlMap   4
+aZKey      91053380
+
+eEvent     4
+aType      1
+aZKey      91053381
+
+eEventAct  5
+aTag       Alt-F4
+aType      71
+aZKey      91053382
+
+eControlDef 4
+
+eControl   3
+aTag       Text1
+aText      Text1
+aZKey      91053377
+aSubtype   537395200
+aPSDLG_X   7
+aPSDLG_Y   7
+aSZDLG_X   200
+aSZDLG_Y   54
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      97348396
+
+eCtrlMapLOD_Attribute 5
+aZKey      91053371
+aWork      Y
+aUpdate    Y
+aSeqOrder  Y
+
+eCtrlMapRelatedEntity 6
+aName      TZSIDEWK
+aIndentName TZSIDEWK
+aIndentLvl 0
+aZKey      91053368
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+
+eCtrlMapER_Attribute 6
+aName      wkShowMessage
+aZKey      91053372
+
+eCtrlMapER_Domain 7
+
+eCtrlMapView 5
+aZKey      91053375
+aName      TZSIDEWK
+aDesc      VOR automatically built from LOD Dialog
+
+eControlDef 4
+
+eWndEvent  3
+aType      1
+aZKey      91053391
+
+eWndAct    4
+aTag       PreBuildDelete
+aNoMap     Y
+aType      1
+aZKey      91053392
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_DeleteVsamTables
+aZKey      91053389
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_PreBuildDelete
+aZKey      91053395
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eWndStyle  3
+aTag       Dialog Box
+aZKey      7008569
+aStyle     -2134376448
+aDesc      Dialog box with caption, non-sizable border
+aStyleEx   1
+
+eWindow    2
+aTag       ErrorList
+aCaption   Error List for Build/Rebuild Tables/Rels
+aPSDLG_X   2
+aPSDLG_Y   2
+aSZDLG_X   16056571
+aSZDLG_Y   8781976
+aZKey      98093974
+aGeneralFlag 0
+aBarID     59451
+
+eControl   3
+aTag       lbErrorList
+aText      lbErrorList
+aZKey      98093975
+aSubtype   271712320
+aPSDLG_X   0
+aPSDLG_Y   0
+aSZDLG_X   244
+aSZDLG_Y   134
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4TX`8!,]`$P`````*P!-`%,Q````
+`
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListBoxCtl1
+aText      Entity / Table
+aZKey      98093978
+aSubtype   537395200
+aPSDLG_X   3
+aPSDLG_Y   0
+aSZDLG_X   68
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      98093979
+
+eCtrlMapLOD_Attribute 6
+aZKey      98219031
+aWork      Y
+aUpdate    Y
+aSeqOrder  Y
+
+eCtrlMapRelatedEntity 7
+aName      ErrorMsg
+aIndentName ErrorMsg
+aIndentLvl 0
+aZKey      98093982
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      Save Error Messages 
+
+eCtrlMapER_Attribute 7
+aName      EntityName
+aZKey      98219032
+aLth       32
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      98093985
+aName      TZTEERR
+aDesc      VOR automatically built from LOD Dialog
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListBoxCtl2
+aText      Error Text
+aZKey      98219033
+aSubtype   537395200
+aPSDLG_X   76
+aPSDLG_Y   0
+aSZDLG_X   166
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      98219034
+
+eCtrlMapLOD_Attribute 6
+aZKey      98093983
+aWork      Y
+aUpdate    Y
+aSeqOrder  Y
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+aName      MessageText
+aZKey      98093984
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      98093976
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      98093977
+
+eCtrlMap   4
+aZKey      98093980
+
+eControlDef 4
+
+eWndEvent  3
+aType      256
+aZKey      98093991
+
+eWndAct    4
+aTag       CloseWindow
+aType      71
+aZKey      98093992
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+aName      zwTZTEUPDD_DropErrorMsgView
+aZKey      98093995
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eWndStyle  3
+aTag       Sizeable Dialog Box
+aZKey      10024379
+aStyle     -2134114304
+
+eWindow    2
+aTag       RebuildLODs
+aCaption   Rebuild and Save LODs for Data Source
+aPSDLG_X   2
+aPSDLG_Y   2
+aSZDLG_X   26673565
+aSZDLG_Y   17105179
+aZKey      68360263
+aDIL_Active Y
+aGeneralFlag 0
+
+eControl   3
+aTag       ListBox2
+aText      ListBox1
+aZKey      68360270
+aSubtype   -2146238461
+aPSDLG_X   5
+aPSDLG_Y   2
+aSZDLG_X   295
+aSZDLG_Y   231
+aCtrlBOI   U34
+B]A`]`/D0/0!33@#_$#T`4UD`8!,]`$P#````*P!-`%,Q````
+`
+aSyncKey   9999
+aExtendedStyle 16777216
+
+eCtrlCtrl  4
+aTag       ListCtl2
+aText      Name
+aZKey      68360271
+aSubtype   67108864
+aPSDLG_X   1
+aPSDLG_Y   0
+aSZDLG_X   49
+aSZDLG_Y   15
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   5
+aZKey      68360272
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+aZKey      1334549
+aName      TZZOLFLO
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListBoxCtl2
+aText      LOD Last Updated
+aZKey      68360273
+aSubtype   537395200
+aPSDLG_X   51
+aPSDLG_Y   0
+aSZDLG_X   67
+aSZDLG_Y   15
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      68360274
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapContext 6
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlCtrl  4
+aTag       ListBoxCtl3
+aText      Description
+aZKey      68360275
+aSubtype   537395200
+aPSDLG_X   117
+aPSDLG_Y   0
+aSZDLG_X   163
+aSZDLG_Y   15
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      68360276
+
+eCtrlMapLOD_Attribute 6
+
+eCtrlMapRelatedEntity 7
+
+eCtrlMapER_Attribute 7
+
+eCtrlMapER_Domain 8
+
+eCtrlMapView 6
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      68360277
+
+eCtrlMapLOD_Entity 5
+
+eCtrlMapView 5
+
+eCtrlMap   4
+aZKey      68360278
+
+eCtrlMap   4
+aZKey      68360279
+
+eControlDef 4
+
+eControl   3
+aTag       Push3
+aText      &Close
+aZKey      68360285
+aSubtype   536870912
+aPSDLG_X   324
+aPSDLG_Y   7
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      68360286
+
+eEvent     4
+aType      1
+aZKey      68360287
+
+eEventAct  5
+aTag       Alt-F4
+aType      71
+aZKey      68360264
+
+eControlDef 4
+
+eControl   3
+aTag       SelectAllLods1
+aText      Select All LODs
+aZKey      68360288
+aSubtype   536870912
+aPSDLG_X   324
+aPSDLG_Y   24
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlMap   4
+aZKey      68360289
+
+eEvent     4
+aType      1
+aZKey      68360290
+
+eEventAct  5
+aTag       SelectAllLODs
+aType      2
+aZKey      68360267
+aSB_ActionDisabling 0
+
+eControlDef 4
+
+eControl   3
+aTag       GroupBox5
+aText      Build LODs for DB
+aZKey      68360280
+aSubtype   537395200
+aPSDLG_X   306
+aPSDLG_Y   49
+aSZDLG_X   92
+aSZDLG_Y   37
+aSyncKey   9999
+aExtendedStyle 0
+
+eCtrlCtrl  4
+aTag       Push6
+aText      &Selected LODs
+aZKey      68360281
+aSubtype   537001984
+aPSDLG_X   14
+aPSDLG_Y   15
+aSZDLG_X   64
+aSZDLG_Y   14
+aSyncKey   9999
+
+eCtrlMap   5
+aZKey      68360282
+
+eEvent     5
+aType      1
+aZKey      68360283
+
+eEventAct  6
+aTag       BuildSelectedXODsOnLPLR
+aType      2
+aZKey      68360268
+aSB_ActionDisabling 8
+
+eControlDef 5
+
+eCtrlMap   4
+aZKey      68360284
+
+eCtrlMap   4
+aZKey      68360296
+
+eCtrlMap   4
+aZKey      68360297
+
+eControlDef 4
+
+eControl   3
+aTag       DIL2
+aZKey      68360291
+aSubtype   1
+aPSDLG_X   39
+aPSDLG_Y   242
+aSZDLG_X   252
+aSZDLG_Y   20
+aSyncKey   9999
+
+eCtrlMap   4
+aZKey      68360292
+
+eControlDef 4
+
+eWndEvent  3
+aType      2
+aZKey      68360299
+
+eWndAct    4
+aTag       BuildXODsLOD_List
+aNoMap     Y
+aType      1
+aZKey      68360300
+aSB_ActionDisabling 0
+
+eAction    3
+
+eActMap    4
+aZKey      68360265
+
+eActMap    4
+aZKey      68360266
+
+eActEvent  4
+
+eActCtrl   5
+
+eAction    3
+
+eActWndEvent 4
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+
+eSourceFileForOper 5
+
+eAction    3
+
+eActMap    4
+aZKey      68360269
+
+eActMapLOD_Entity 5
+
+eActMapView 5
+
+eActEvent  4
+
+eActCtrl   5
+
+eActOper   4
+aName      zwTZTEUPDD_RebuildLODsOnLPLR
+aZKey      68360261
+aType      D
+aReturnDataType N
+
+eSourceFileForOper 5
+
+eWndStyle  3
+aTag       Dialog Box
+aZKey      7008569
+aStyle     -2134376448
+aDesc      Dialog box with caption, non-sizable border
+aStyleEx   1
+
+eViewObjRef 2
+aZKey      1342203
+aName      CM_DTE_List
+
+eLOD       3
+aZKey      1325977
+aName      TZCMLPLO
+aDesc      LPLR Object
+aDLL_Name  TZLODOPR
+
+eViewObjRef 2
+aZKey      98093985
+aName      TZTEERR
+aDesc      VOR automatically built from LOD Dialog
+
+eLOD       3
+aZKey      98093981
+aName      TZTEERR
+aDesc      Work object to save Error Messages for Build/Rebuild Tables/Relationships
+
+eViewObjRef 2
+aZKey      1332424
+aName      ProfileXFER
+
+eLOD       3
+aZKey      1326804
+aName      TZ__PRFO
+aDesc      Tools XFER & Profile Info.
+
+eViewObjRef 2
+aZKey      1341540
+aName      TE_DB_Environ
+
+eLOD       3
+aZKey      1327972
+aName      TZTENVRO
+aDesc      Technical Environment for any type
+aDLL_Name  TZLODOPR
+
+eViewObjRef 2
+aZKey      1341816
+aName      TE_DTEnviron
+
+eLOD       3
+
+eViewObjRef 2
+aZKey      1342239
+aName      TE_XAM
+
+eLOD       3
+
+eViewObjRef 2
+aZKey      1342360
+aName      TE_XAM_Wrk
+
+eLOD       3
+
+eViewObjRef 2
+aZKey      1334121
+aName      TZEREMDO
+
+eLOD       3
+aZKey      1326595
+aName      TZEREMDO
+aDesc      Enterprise Model ER Information
+aDLL_Name  TZLODOPR
+
+eViewObjRef 2
+aZKey      89000122
+aName      TZEREMDO_U
+aDesc      TE Update view to TZEREMDO
+
+eLOD       3
+
+eViewObjRef 2
+aZKey      91053375
+aName      TZSIDEWK
+aDesc      VOR automatically built from LOD Dialog
+
+eLOD       3
+aZKey      91053367
+aName      TZSIDEWK
+
+eViewObjRef 2
+aZKey      90020452
+aName      TZTEDBLO
+aDesc      VOR automatically built from LOD Dialog
+
+eLOD       3
+aZKey      90020429
+aName      TZTEDBLO
+aDesc      List of supported databases/db-handlers.
+
+eViewObjRef 2
+aZKey      90025366
+aName      TZTEWRKO
+aDesc      VOR automatically built from LOD Dialog
+
+eLOD       3
+aZKey      90025332
+aName      TZTEWRKO
+aDesc      Work object for TE functions
+
+eViewObjRef 2
+aZKey      1334549
+aName      TZZOLFLO
+
+eLOD       3
+
+eSourceFile 2
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341412
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      1341420
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341422
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341424
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001466
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341426
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90025377
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90025379
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90025381
+
+eOperation 3
+aName      zwTZTEUPDD_IdsEntityLoop
+aZKey      89000010
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc vSubtask
+aDataType  V
+aZKey      89000011
+
+eParameter 4
+aShortDesc LoopType: B - Beginning, C-Continuing
+aDataType  Y
+aZKey      89000012
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90025387
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90025389
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341436
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90025391
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90025397
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341442
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341444
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341446
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341452
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341454
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      1341456
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      1341458
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341464
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341466
+
+eOperation 3
+aName      zwTZTEUPDD_KeyAdd
+aZKey      1341471
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341472
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341474
+
+eOperation 3
+aName      zwTZTEUPDD_KeyDelete
+aZKey      1341475
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341476
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341478
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341480
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341482
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98093864
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341484
+
+eOperation 3
+aName      zwTZTEUPDD_ListRtnFromSubwnd
+aZKey      1341485
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341486
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341490
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341496
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      1341498
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90020953
+
+eOperation 3
+aName      zwTZTEUPDD_SortByDate
+aZKey      1341499
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341500
+
+eOperation 3
+aName      zwTZTEUPDD_SortByName
+aZKey      1341501
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341502
+
+eOperation 3
+aName      zwTZTEUPDD_SortDBs
+aZKey      1341503
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341504
+
+eOperation 3
+aName      zwTZTEUPDD_SortTRsByDesc
+aZKey      1341505
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341506
+
+eOperation 3
+aName      zwTZTEUPDD_SortTRsByName
+aZKey      1341507
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341508
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341510
+
+eOperation 3
+aName      zwTZTEUPDD_TableRecAssignZKey
+aZKey      1341515
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341516
+
+eOperation 3
+aName      zwTZTEUPDD_TableRecPopup
+aZKey      1341517
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View to Window
+aDataType  V
+aZKey      1341518
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      70039690
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90020603
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90026529
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90026541
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90026548
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90311999
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90312001
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90388459
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90388465
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      91022885
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      91022887
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      91022936
+
+eOperation 3
+aName      zwTZTEUPDD_SortTRsByOwner
+aZKey      11034142
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      11034143
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      89149581
+
+eOperation 3
+aName      zwfnTZTEUPDD_InitDTE
+aZKey      91033689
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc vSubtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      91033690
+
+eParameter 4
+aShortDesc vCM_List
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      91033691
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      91038868
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      91053390
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      91053396
+
+eOperation 3
+aName      zwTZTEUPDD_WindowDeleteVsam
+aZKey      91054228
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc Subtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      91054229
+
+eParameter 4
+aShortDesc lDelete
+aDataType  L
+aPFlag     N
+aUFlag     N
+aZKey      91054230
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90040839
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97346820
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347018
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347054
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347071
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98000526
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98000528
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347143
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347173
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98000530
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98000532
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347176
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347226
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347229
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347248
+
+eOperation 3
+aName      zwTZTEUPDD_InitMenuEdit
+aZKey      97347405
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc Subtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      97347406
+
+eParameter 4
+aShortDesc Window
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      92060524
+
+eParameter 4
+aShortDesc DTE
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      92060525
+
+eParameter 4
+aShortDesc IsCheckedOut
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      92060527
+
+eParameter 4
+aShortDesc szSironDB_Type
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98255531
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347431
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      97347754
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90472814
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90472822
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98100232
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98100470
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98100474
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98100494
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001392
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98000538
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98101467
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98101483
+
+eOperation 3
+aName      zwTZTEUPDD_LoadPopup
+aZKey      98000258
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc Subtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98000259
+
+eParameter 4
+aShortDesc EntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000260
+
+eParameter 4
+aShortDesc ActionNameForNew
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000262
+
+eParameter 4
+aShortDesc ActionNameForDelete
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000263
+
+eParameter 4
+aShortDesc PopupName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000264
+
+eOperation 3
+aName      zwTZTEUPDD_DeleteSubobject
+aZKey      98000282
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc Subtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98000283
+
+eParameter 4
+aShortDesc Object
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      98000284
+
+eParameter 4
+aShortDesc EntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000285
+
+eParameter 4
+aShortDesc CloseWindow
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      98000286
+
+eOperation 3
+aName      zwTZTEUPDD_RefreshWindows
+aZKey      98000293
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc Subtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98000294
+
+eParameter 4
+aShortDesc WindowName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000295
+
+eParameter 4
+aShortDesc EntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000296
+
+eOperation 3
+aName      zwTZTEUPDD_AcceptSubobject
+aZKey      98000357
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc Subtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98000358
+
+eParameter 4
+aShortDesc EntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000359
+
+eParameter 4
+aShortDesc MessageText
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98000360
+
+eParameter 4
+aShortDesc bCheck
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      98000514
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98000376
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001130
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001139
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001389
+
+eOperation 3
+aName      zwTZTEUPDD_CloseTablRecordWindow
+aZKey      98001442
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001443
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001485
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98001493
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98003328
+
+eOperation 3
+aName      zwTZTEUPDD_RemoveMultiSelection
+aZKey      98093843
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc Subtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98093844
+
+eParameter 4
+aShortDesc EntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98093846
+
+eParameter 4
+aShortDesc WindowName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98093847
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98093996
+
+eOperation 3
+aName      zwTZTEUPDD_ClearErrorWindow
+aZKey      98094590
+aType      D
+aReturnDataType N
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98094591
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98169353
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      98169361
+
+eOperation 3
+aName      zwTZTEUPDD_SetReadOnlyForSAP
+aZKey      98255216
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc vDTE
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98255217
+
+eOperation 3
+aName      zwTZTEUPDD_InitMenuForVSAM
+aZKey      98255225
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc vSubtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98255226
+
+eParameter 4
+aShortDesc vDTE
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98255227
+
+eParameter 4
+aShortDesc nIsCheckedOut
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      98255228
+
+eOperation 3
+aName      zwTZTEUPDD_InitMenuForTableWnd
+aZKey      98256060
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc vSubtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98256061
+
+eParameter 4
+aShortDesc vDTE
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98256062
+
+eParameter 4
+aShortDesc nIsCheckedOut
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      98256063
+
+eParameter 4
+aShortDesc szSironDB_Type
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      98256064
+
+eOperation 3
+aName      zwTZTEUPDD_DisableFieldWndForSAP
+aZKey      98259819
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc vSubtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98259820
+
+eOperation 3
+aName      zwTZTEUPDD_DisableKeyWndForSAP
+aZKey      98259822
+aType      L
+aReturnDataType N
+
+eParameter 4
+aShortDesc vSubtask
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      98259823
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      90925350
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      1027765
+
+eOperation 3
+
+eParameter 4
+aShortDesc View To Window
+aDataType  V
+aZKey      68360262
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+i14        6
+i24        8
+i27        21
+i28        22
+i29        23
+i30        8
+i31        25
+i41        6
+i45        10
+i49        6
+i63        8
+i64        9
+i69        61
+i71        51
+i72        52
+i73        9
+i74        65
+i78        61
+i81        9
+i82        65
+i86        61
+i88        8
+i90        65
+i94        61
+i96        16
+i97        9
+i98        65
+i100       61
+i101       9
+i116       112
+i120       112
+i124       112
+i128       112
+i132       112
+i136       112
+i142       139
+i145       139
+i148       139
+i156       111
+i159       110
+i160       109
+i163       55
+i164       54
+i165       46
+i167       162
+i168       119
+i170       6
+i172       118
+i173       117
+i175       162
+i176       123
+i178       6
+i180       122
+i181       121
+i183       162
+i184       127
+i186       6
+i188       126
+i189       125
+i191       162
+i192       131
+i194       6
+i196       130
+i197       129
+i199       162
+i203       162
+i204       135
+i205       134
+i206       133
+i208       162
+i209       115
+i211       6
+i212       171
+i214       114
+i215       113
+i216       155
+i219       154
+i221       162
+i222       36
+i225       35
+i226       19
+i228       162
+i232       162
+i236       162
+i237       107
+i238       106
+i239       57
+i241       162
+i242       105
+i244       61
+i245       171
+i246       104
+i247       57
+i250       162
+i251       153
+i252       152
+i254       162
+i256       248
+i257       105
+i258       201
+i259       200
+i260       230
+i261       229
+i263       68
+i264       61
+i265       70
+i266       51
+i267       52
+i269       234
+i270       233
+i273       61
+i275       51
+i276       52
+i285       8
+i286       9
+i287       10
+i291       283
+i293       16
+i294       17
+i295       18
+i299       283
+i303       9
+i307       37
+i313       8
+i316       310
+i317       311
+i318       312
+i319       8
+i320       311
+i328       37
+i332       283
+i335       9
+i336       10
+i340       283
+i342       8
+i344       56
+i348       283
+i350       51
+i352       56
+i357       283
+i359       334
+i360       9
+i361       10
+i365       283
+i367       334
+i368       9
+i369       10
+i372       139
+i375       139
+i382       283
+i384       8
+i386       56
+i390       283
+i392       334
+i393       9
+i394       10
+i398       283
+i400       8
+i401       9
+i402       10
+i406       283
+i408       8
+i409       9
+i410       10
+i413       139
+i416       139
+i419       139
+i421       377
+i425       112
+i429       112
+i433       112
+i437       112
+i441       112
+i444       139
+i447       139
+i453       43
+i454       9
+i455       139
+i461       8
+i462       9
+i463       139
+i466       139
+i470       459
+i473       9
+i474       139
+i477       139
+i481       459
+i484       9
+i485       139
+i488       139
+i491       139
+i494       139
+i497       139
+i500       139
+i503       151
+i506       424
+i507       423
+i508       422
+i510       162
+i511       327
+i512       326
+i513       308
+i515       162
+i516       428
+i517       427
+i518       426
+i520       162
+i521       432
+i523       283
+i524       9
+i526       431
+i527       430
+i529       162
+i530       436
+i532       283
+i533       9
+i535       435
+i536       434
+i538       162
+i541       283
+i544       162
+i545       440
+i547       283
+i548       171
+i549       439
+i550       438
+i552       162
+i553       505
+i556       504
+i558       162
+i563       139
+i566       139
+i572       8
+i573       9
+i574       10
+i578       112
+i582       112
+i586       112
+i590       112
+i594       112
+i597       139
+i601       570
+i604       9
+i605       37
+i608       139
+i614       8
+i615       9
+i616       139
+i622       284
+i623       8
+i625       65
+i627       621
+i628       9
+i633       108
+i637       570
+i639       16
+i641       18
+i645       112
+i649       570
+i651       8
+i653       10
+i656       139
+i660       282
+i661       283
+i662       284
+i663       8
+i664       9
+i665       65
+i667       283
+i668       9
+i673       108
+i677       672
+i678       112
+i682       632
+i683       112
+i686       151
+i691       585
+i692       584
+i693       583
+i695       162
+i696       690
+i697       689
+i699       162
+i700       581
+i701       580
+i702       579
+i704       162
+i705       593
+i707       570
+i708       9
+i709       592
+i710       591
+i712       162
+i713       589
+i715       570
+i716       9
+i717       588
+i718       587
+i720       162
+i721       644
+i723       570
+i725       643
+i726       642
+i728       162
+i729       577
+i731       570
+i732       171
+i733       576
+i734       575
+i736       162
+i737       672
+i739       283
+i740       171
+i742       671
+i743       657
+i744       676
+i745       674
+i747       162
+i748       688
+i749       687
+i751       162
+i752       632
+i754       621
+i755       9
+i756       631
+i757       617
+i758       681
+i759       679
+i761       162
+i762       559
+i763       1
+i767       5
+i768       6
+i769       7
+i770       8
+i771       9
+i772       65
+i776       6
+i777       23
+i778       8
+i779       9
+i780       65
+i783       13
+i784       6
+i785       15
+i786       16
+i787       9
+i788       65
+i790       6
+i791       9
+i800       108
+i804       60
+i805       61
+i806       62
+i807       8
+i808       9
+i809       65
+i812       85
+i813       61
+i814       87
+i815       8
+i816       9
+i817       65
+i820       93
+i821       61
+i822       95
+i823       16
+i824       9
+i825       65
+i828       68
+i829       61
+i830       70
+i831       51
+i832       52
+i833       9
+i834       65
+i836       61
+i837       9
+i846       108
+i849       151
+i858       235
+i859       162
+i865       162
+i868       6
+i872       190
+i873       162
+i877       727
+i878       162
+i884       162
+i888       198
+i889       162
+i891       795
+i893       6
+i895       794
+i896       764
+i899       162
+i904       6
+i908       162
+i909       797
+i910       796
+i911       764
+i913       162
+i919       162
+i924       162
+i928       162
+i932       202
+i933       162
+i940       162
+i960       162
+i967       162
+i974       162
+i981       162
+i986       162
+i988       855
+i989       854
+i991       162
+i992       853
+i994       6
+i995       171
+i997       852
+i999       162
+i1001      851
+i1002      850
+i1004      162
+i1010      162
+i1013      845
+i1014      844
+i1015      801
+i1017      162
+i1018      799
+i1019      798
+i1020      764
+i1022      162
+i1027      162
+i1031      231
+i1032      162
+i1036      162
+i1042      162
+i1044      843
+i1046      61
+i1048      842
+i1049      801
+i1052      249
+i1053      162
+i1057      841
+i1058      840
+i1059      801
+i1060      240
+i1061      162
+i1065      283
+i1070      570
+i1075      871
+i1076      866
+i1077      906
+i1078      902
+i1079      1025
+i1080      1024
+i1081      1034
+i1082      1033
+i1084      882
+i1085      879
+i1088      876
+i1089      875
+i1091      1051
+i1092      843
+i1093      1067
+i1094      1063
+i1095      1072
+i1096      1068
+i1098      931
+i1099      929
+i1100      922
+i1101      921
+i1102      926
+i1103      925
+i1104      917
+i1105      915
+i1106      953
+i1107      951
+i1109      1007
+i1110      1006
+i1111      1039
+i1112      1038
+i1113      938
+i1114      936
+i1115      863
+i1116      862
+i1117      948
+i1118      943
+i1119      861
+i1120      860
+i1121      984
+i1122      983
+i1124      972
+i1125      969
+i1126      979
+i1127      976
+i1128      965
+i1129      962
+i1130      958
+i1131      955
+i1133      897
+i1134      795
+i1135      870
+i1136      866
+i1137      887
+i1138      886
+i1139      937
+i1140      936
+i1141      947
+i1142      943
+i1144      1050
+i1145      843
+i1146      930
+i1147      929
+i1148      916
+i1149      915
+i1150      952
+i1151      951
+i1152      1008
+i1153      1006
+i1154      1040
+i1155      1038
+i1156      1030
+i1157      1029
+i1159      68
+i1160      61
+i1161      70
+i1162      51
+i1163      52
+i1165      857
+i1166      856
+i1168      272
+i1169      61
+i1170      274
+i1171      51
+i1172      52
+i1173      277
+i1174      1073
+i1176      934
+i1177      929
+i1178      1054
+i1179      843
+i1183      60
+i1184      61
+i1185      62
+i1186      8
+i1187      9
+i1188      10
+i1191      93
+i1192      61
+i1193      95
+i1194      16
+i1196      18
+i1199      77
+i1200      61
+i1201      79
+i1202      80
+i1204      9
+i1207      37
+i1211      61
+i1213      334
+i1214      9
+i1215      10
+i1218      85
+i1219      61
+i1220      87
+i1221      8
+i1222      9
+i1223      10
+i1226      68
+i1227      61
+i1228      70
+i1229      51
+i1230      52
+i1231      351
+i1232      56
+i1235      272
+i1236      61
+i1237      274
+i1238      51
+i1239      52
+i1243      56
+i1247      569
+i1248      570
+i1249      571
+i1250      8
+i1251      9
+i1252      65
+i1255      600
+i1256      570
+i1257      602
+i1258      603
+i1259      9
+i1260      65
+i1262      570
+i1263      9
+i1270      108
+i1275      283
+i1277      334
+i1278      9
+i1279      65
+i1282      282
+i1283      283
+i1284      284
+i1285      8
+i1286      9
+i1287      65
+i1290      347
+i1291      283
+i1292      349
+i1293      51
+i1294      52
+i1296      65
+i1299      450
+i1300      451
+i1301      452
+i1302      43
+i1303      1295
+i1304      65
+i1307      298
+i1308      283
+i1309      300
+i1310      301
+i1311      302
+i1312      9
+i1313      65
+i1316      339
+i1317      283
+i1318      341
+i1319      8
+i1320      9
+i1321      65
+i1325      283
+i1327      8
+i1328      44
+i1329      65
+i1331      283
+i1332      9
+i1343      108
+i1347      112
+i1351      112
+i1355      112
+i1359      112
+i1363      112
+i1366      139
+i1372      43
+i1373      9
+i1374      139
+i1377      139
+i1380      139
+i1383      139
+i1386      139
+i1389      139
+i1392      151
+i1397      1346
+i1398      1345
+i1399      1344
+i1401      162
+i1402      1338
+i1403      1337
+i1404      1271
+i1406      162
+i1407      1362
+i1409      61
+i1410      9
+i1411      1361
+i1412      1360
+i1414      162
+i1415      1350
+i1416      1349
+i1417      1348
+i1419      162
+i1422      923
+i1423      162
+i1424      1336
+i1426      283
+i1427      171
+i1428      1335
+i1429      1271
+i1433      727
+i1434      162
+i1437      927
+i1438      162
+i1439      1269
+i1440      1268
+i1441      1244
+i1443      162
+i1444      1267
+i1446      570
+i1447      171
+i1448      1266
+i1449      1244
+i1451      1394
+i1452      1393
+i1454      162
+i1455      1342
+i1456      1341
+i1457      1271
+i1459      162
+i1460      1396
+i1461      1395
+i1463      162
+i1467      162
+i1468      1242
+i1470      945
+i1472      1241
+i1473      1233
+i1474      235
+i1475      162
+i1476      1340
+i1477      1339
+i1478      1271
+i1480      162
+i1481      1354
+i1483      61
+i1484      171
+i1485      1353
+i1486      1352
+i1488      162
+i1489      1358
+i1491      61
+i1492      9
+i1493      1357
+i1494      1356
+i1496      162
+i1498      1450
+i1499      1267
+i1500      1432
+i1501      1431
+i1502      1436
+i1503      1435
+i1505      1430
+i1506      1336
+i1507      1421
+i1508      1420
+i1509      1465
+i1510      1464
+i1512      347
+i1513      283
+i1514      349
+i1515      51
+i1516      52
+i1524      112
+i1527      139
+i1533      8
+i1535      139
+i1540      112
+i1547      284
+i1548      8
+i1550      65
+i1555      284
+i1556      8
+i1557      1549
+i1558      65
+i1560      1546
+i1561      1549
+i1566      108
+i1568      377
+i1574      284
+i1575      8
+i1576      1549
+i1577      65
+i1579      1573
+i1580      1549
+i1585      108
+i1590      112
+i1594      1584
+i1595      112
+i1600      112
+i1604      1565
+i1605      112
+i1611      284
+i1612      8
+i1613      1549
+i1614      65
+i1616      1610
+i1617      1549
+i1622      108
+i1626      1621
+i1627      112
+i1630      151
+i1635      1523
+i1636      1522
+i1637      1520
+i1639      162
+i1641      1565
+i1643      1546
+i1645      1564
+i1646      1542
+i1647      1603
+i1648      1601
+i1650      162
+i1652      1539
+i1653      1538
+i1654      1536
+i1655      1589
+i1659      1588
+i1660      1586
+i1662      162
+i1663      1599
+i1665      1657
+i1666      1658
+i1667      1598
+i1668      1596
+i1670      162
+i1671      1632
+i1674      1631
+i1676      162
+i1677      1634
+i1678      1633
+i1680      162
+i1681      1584
+i1683      1573
+i1684      1644
+i1685      1583
+i1686      1569
+i1687      1593
+i1688      1591
+i1690      162
+i1691      1621
+i1692      1620
+i1693      1606
+i1694      1625
+i1695      1623
+i1697      162
+i1706      284
+i1707      8
+i1709      10
+i1712      139
+i1716      1705
+i1717      292
+i1718      16
+i1719      1708
+i1720      10
+i1723      139
+i1725      377
+i1730      112
+i1737      284
+i1738      8
+i1739      1708
+i1740      65
+i1744      1736
+i1745      292
+i1746      16
+i1747      1708
+i1748      65
+i1750      1736
+i1751      1708
+i1754      108
+i1756      377
+i1761      1274
+i1762      283
+i1763      1276
+i1764      334
+i1766      65
+i1769      282
+i1770      283
+i1771      284
+i1772      8
+i1773      1765
+i1774      65
+i1777      290
+i1778      283
+i1779      292
+i1780      16
+i1781      1765
+i1782      65
+i1784      283
+i1785      1765
+i1790      108
+i1794      1789
+i1795      112
+i1797      377
+i1800      151
+i1805      1729
+i1808      1728
+i1809      1726
+i1813      1804
+i1814      1803
+i1816      162
+i1817      1802
+i1820      1801
+i1822      162
+i1823      1789
+i1825      945
+i1827      1793
+i1828      1791
+i1829      1788
+i1830      1758
+i1832      162
+i1838      282
+i1839      283
+i1840      284
+i1841      8
+i1843      65
+i1846      290
+i1847      283
+i1848      292
+i1849      16
+i1850      1842
+i1851      65
+i1853      1705
+i1854      1842
+i1856      61
+i1862      108
+i1867      1864
+i1870      1863
+i1874      1859
+i1876      283
+i1878      1858
+i1879      1835
+i1881      1861
+i1883      1705
+i1885      1860
+i1886      1835
+i1887      1866
+i1888      1865
+i1890      162
+i1892      1880
+i1893      1859
+i1902      8
+i1904      65
+i1908      1900
+i1913      65
+i1917      1900
+i1919      16
+i1920      1912
+i1921      65
+i1923      1900
+i1924      1903
+i1927      108
+i1933      112
+i1938      112
+i1940      377
+i1946      112
+i1948      377
+i1954      112
+i1956      377
+i1961      112
+i1966      112
+i1969      151
+i1972      1960
+i1975      1959
+i1976      1957
+i1978      1965
+i1979      1964
+i1980      1962
+i1982      162
+i1983      1953
+i1985      1900
+i1987      1952
+i1988      1950
+i1990      162
+i1991      1937
+i1992      1936
+i1993      1934
+i1995      162
+i1996      1932
+i1998      1900
+i1999      1986
+i2000      1931
+i2001      1929
+i2003      162
+i2004      1945
+i2006      1900
+i2007      1986
+i2008      1944
+i2009      1942
+i2011      162
+i2012      1971
+i2015      1970
+i2017      162
+i2018      278
+i2019      1977
+i2020      1960
+i2026      112
+i2031      112
+i2037      8
+i2039      139
+i2042      2025
+i2043      2024
+i2044      2022
+i2046      162
+i2047      2041
+i2048      2040
+i2050      162
+i2051      2030
+i2052      2029
+i2053      2027
+i2062      8
+i2064      65
+i2068      2060
+i2070      8
+i2071      2063
+i2072      65
+i2074      2060
+i2075      2063
+i2078      108
+i2081      2080
+i2082      2079
+i2084      162
+i2090      1899
+i2091      1900
+i2092      1901
+i2093      8
+i2095      65
+i2098      1907
+i2099      1900
+i2100      1909
+i2101      1910
+i2102      1911
+i2103      2094
+i2104      65
+i2107      1916
+i2108      1900
+i2109      1918
+i2110      16
+i2111      2094
+i2112      65
+i2114      1900
+i2115      2094
+i2118      108
+i2123      112
+i2128      112
+i2134      112
+i2138      377
+i2141      151
+i2144      2122
+i2147      2121
+i2148      2119
+i2149      2143
+i2150      2142
+i2151      2016
+i2152      162
+i2153      2127
+i2154      2126
+i2155      2124
+i2156      1981
+i2157      162
+i2158      2133
+i2160      1900
+i2161      2094
+i2162      2132
+i2163      2130
+i2165      162
+i2176      2174
+i2178      2174
+i2180      2174
+i2184      2182
+i2192      2168
+i2193      162
+i2194      1405
+i2196      253
+i2198      190
+i2200      912
+i2202      898
+i2204      918
+i2206      1689
+i2208      1696
+i2210      1649
+i2215      1675
+i2217      1041
+i2219      883
+i2221      1638
+i2223      1661
+i2225      543
+i2227      985
+i2229      939
+i2231      959
+i2233      966
+i2235      973
+i2237      980
+i2239      1009
+i2241      998
+i2245      727
+i2249      760
+i2251      746
+i2253      750
+i2255      698
+i2257      1442
+i2261      1003
+i2263      1026
+i2265      161
+i2267      227
+i2279      1035
+i2285      2010
+i2287      220
+i2289      1453
+i2291      514
+i2293      557
+i2295      537
+i2297      528
+i2299      1821
+i2301      1831
+i2303      2016
+i2305      2002
+i2307      1994
+i2311      1989
+i2316      202
+i2318      2045
+i2320      2049
+i2325      207
+i2327      1679
+i2329      1669
+i2331      249
+i2333      1400
+i2335      509
+i2337      694
+i2339      1418
+i2341      174
+i2343      711
+i2345      719
+i2347      182
+i2349      927
+i2351      923
+i2353      990
+i2361      1889
+i2363      198
+i2365      231
+i2367      1466
+i2369      1487
+i2371      1495
+i2373      1413
+i2375      551
+i2377      519
+i2379      735
+i2381      1458
+i2383      1479
+i2405      240
+i2407      1462
+i2409      1016
+i2411      703
+i2415      1021
+i2417      907
+i2419      1815
+i2425      2083
+i2429      235
+i2431      166
+i2448      864
+i2450      1981
+i2452      2164
+i2454      514
+i2455      162
+i2456      207
+i2457      162
+i2458      528
+i2459      162
+i2460      557
+i2461      162
+i2462      537
+i2463      162
+i2464      1821
+i2465      162
+i2466      1831
+i2467      162
+i2468      1981
+i2469      162
+i2470      1453
+i2471      162
+i2472      2313
+i2473      162
+i2474      509
+i2475      162
+i2476      694
+i2477      162
+i2478      2400
+i2479      162
+i2480      1400
+i2481      162
+i2482      1989
+i2483      162
+i2484      1994
+i2485      162
+i2486      2016
+i2487      162
+i2488      2010
+i2489      162
+i2490      2002
+i2491      162
+i2492      519
+i2493      162
+i2494      703
+i2495      162
+i2496      1418
+i2497      162
+i2498      2427
+i2499      162
+i2500      2413
+i2501      162
+i2502      1405
+i2503      162
+i2504      220
+i2505      162
+i2506      190
+i2507      162
+i2508      898
+i2509      162
+i2510      907
+i2511      162
+i2512      912
+i2513      162
+i2514      1021
+i2515      162
+i2516      918
+i2517      162
+i2518      198
+i2519      162
+i2520      551
+i2521      162
+i2522      735
+i2523      162
+i2524      923
+i2525      162
+i2526      202
+i2527      162
+i2528      927
+i2529      162
+i2530      2391
+i2531      162
+i2532      1413
+i2533      162
+i2534      2045
+i2535      162
+i2536      1679
+i2537      162
+i2538      2444
+i2539      162
+i2540      2446
+i2541      162
+i2542      2083
+i2543      162
+i2544      253
+i2545      162
+i2546      883
+i2547      162
+i2548      543
+i2549      162
+i2550      1815
+i2551      162
+i2552      939
+i2553      162
+i2554      864
+i2555      162
+i2556      959
+i2557      162
+i2558      966
+i2559      162
+i2560      973
+i2561      162
+i2562      980
+i2563      162
+i2564      2212
+i2565      162
+i2566      985
+i2567      162
+i2568      990
+i2569      162
+i2570      2355
+i2571      162
+i2572      2439
+i2573      162
+i2574      2435
+i2575      162
+i2576      998
+i2577      162
+i2578      166
+i2579      162
+i2580      235
+i2581      162
+i2582      1466
+i2583      162
+i2584      231
+i2585      162
+i2586      2243
+i2587      162
+i2588      727
+i2589      162
+i2590      2247
+i2591      162
+i2592      760
+i2593      162
+i2594      746
+i2595      162
+i2596      750
+i2597      162
+i2598      698
+i2599      162
+i2600      1442
+i2601      162
+i2602      2259
+i2603      162
+i2604      2385
+i2605      162
+i2606      249
+i2607      162
+i2608      1003
+i2609      162
+i2610      240
+i2611      162
+i2612      1479
+i2613      162
+i2614      174
+i2615      162
+i2616      711
+i2617      162
+i2618      1487
+i2619      162
+i2620      2049
+i2621      162
+i2622      182
+i2623      162
+i2624      719
+i2625      162
+i2626      1495
+i2627      162
+i2628      2164
+i2629      162
+i2630      1009
+i2631      162
+i2632      1016
+i2633      162
+i2634      2396
+i2635      162
+i2636      2421
+i2637      162
+i2638      1026
+i2639      162
+i2640      1458
+i2641      162
+i2642      1462
+i2643      162
+i2644      227
+i2645      162
+i2646      1889
+i2647      162
+i2648      161
+i2649      162
+i2650      2433
+i2651      162
+i2652      2269
+i2653      162
+i2654      2271
+i2655      162
+i2656      2273
+i2657      162
+i2658      2275
+i2659      162
+i2660      2277
+i2661      162
+i2662      2309
+i2663      162
+i2664      1035
+i2665      162
+i2666      1649
+i2667      162
+i2668      1661
+i2669      162
+i2670      1638
+i2671      162
+i2672      1675
+i2673      162
+i2674      1669
+i2675      162
+i2676      1041
+i2677      162
+i2678      1696
+i2679      162
+i2680      1689
+i2681      162
+i2682      2281
+i2683      162
+i2684      2283
+i2685      162
+i2686      2322
+i2687      162

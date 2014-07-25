@@ -1,0 +1,10328 @@
+z1000-Zeidon    ZEIDON   TZCMLPLO 07/23/14   13:03:48 1.0a2    
+eLPLR      1
+aName      Zeidon
+aZKey      4106137
+aPgmSrcDir %kzd%:\%kzv%\a\tz
+aExecDir   %kzd%:\%kzv%\w\bin\sys
+aMetaSrcDir %kzd%:\%kzv%\a\bin\sys
+aTaskUseCount 0
+aJavaPackageName com.quinsoft.zeidon.zeidontools
+awFullyQualifiedFileName %kzd%:\%kzv%\a\bin\sys
+
+eW_MetaType 2
+
+eW_MetaType 2
+
+eW_MetaType 2
+
+eW_MetaType 2
+
+eW_MetaType 2
+
+eW_MetaType 2
+
+eW_MetaType 2
+aType      0
+
+eW_MetaDef 3
+aCPLR_ZKey 90000927
+aStatus    1
+aUpdateInd 2
+aName      KZMSGQAA
+aLastSyncDate 20130115160841366
+aLastUpdateDate 20130115160841366
+
+eW_MetaDef 3
+aCPLR_ZKey 164352
+aStatus    1
+aUpdateInd 2
+aName      KZOENGAA
+aDesc      Core Header File
+aLastSyncDate 20130115160837750
+aLastUpdateDate 20130115160837750
+
+eW_MetaDef 3
+aCPLR_ZKey 90000928
+aStatus    1
+aUpdateInd 2
+aName      TZVSECAA
+aDesc      VML Extternal Calls
+aLastSyncDate 20130115160836293
+aLastUpdateDate 20130115160836293
+
+eW_MetaDef 3
+aCPLR_ZKey 99328
+aStatus    1
+aUpdateInd 2
+aName      TZ__OPRS
+aDesc      Tools Global Operations
+aLastSyncDate 20130115160837136
+aLastUpdateDate 20130115160837136
+
+eW_MetaDef 3
+aCPLR_ZKey 164096
+aStatus    1
+aUpdateInd 2
+aName      ZDRVROPR
+aDesc      Dialog Header File
+aLastSyncDate 20130115160841161
+aLastUpdateDate 20130115160841161
+
+eW_MetaType 2
+aType      1
+
+eW_MetaType 2
+aType      2
+
+eW_MetaDef 3
+aCPLR_ZKey 1319604
+aStatus    1
+aUpdateInd 2
+aName      ActivateEmptyMetaOI
+
+eW_MetaDef 3
+aCPLR_ZKey 1319608
+aStatus    1
+aUpdateInd 2
+aName      ActivateMetaOI
+
+eW_MetaDef 3
+aCPLR_ZKey 1319613
+aStatus    1
+aUpdateInd 2
+aName      ActivateMetaOI_ByName
+
+eW_MetaDef 3
+aCPLR_ZKey 1319620
+aStatus    1
+aUpdateInd 2
+aName      ActivateMetaOI_ByZKey
+
+eW_MetaDef 3
+aCPLR_ZKey 1502623
+aStatus    1
+aUpdateInd 2
+aName      ActivateMetaOI_KeepList
+
+eW_MetaDef 3
+aCPLR_ZKey 88002174
+aStatus    1
+aUpdateInd 2
+aName      AddDaysToDate
+
+eW_MetaDef 3
+aCPLR_ZKey 92003073
+aStatus    1
+aUpdateInd 2
+aName      ADW_Exp_ReplaceHex
+
+eW_MetaDef 3
+aCPLR_ZKey 1319627
+aStatus    1
+aUpdateInd 2
+aName      AssignZKeyToMetaOI
+
+eW_MetaDef 3
+aCPLR_ZKey 1141825
+aStatus    1
+aUpdateInd 2
+aName      BuildMainNavSection
+
+eW_MetaDef 3
+aCPLR_ZKey 1141822
+aStatus    1
+aUpdateInd 2
+aName      BuildSideNavSection
+
+eW_MetaDef 3
+aCPLR_ZKey 4896725
+aStatus    1
+aUpdateInd 2
+aName      BuildSideNavSectionJ
+
+eW_MetaDef 3
+aCPLR_ZKey 91020918
+aStatus    1
+aUpdateInd 2
+aName      BuildWSK
+
+eW_MetaDef 3
+aCPLR_ZKey 97419311
+aStatus    1
+aUpdateInd 2
+aName      CheckAllDuplicateName
+
+eW_MetaDef 3
+aCPLR_ZKey 97419303
+aStatus    1
+aUpdateInd 2
+aName      CheckDuplicateComponents
+
+eW_MetaDef 3
+aCPLR_ZKey 70061434
+aStatus    1
+aUpdateInd 2
+aName      CheckDuplicateEntityByString
+
+eW_MetaDef 3
+aCPLR_ZKey 97420599
+aStatus    1
+aUpdateInd 2
+aName      CheckDuplicateName
+
+eW_MetaDef 3
+aCPLR_ZKey 97420604
+aStatus    1
+aUpdateInd 2
+aName      CheckDuplicateNameForRefresh
+
+eW_MetaDef 3
+aCPLR_ZKey 1319631
+aStatus    1
+aUpdateInd 2
+aName      CheckExistenceOfMetaOI
+
+eW_MetaDef 3
+aCPLR_ZKey 1319632
+aStatus    1
+aUpdateInd 2
+aName      CheckExistenceOfMetaOI_ByZKey
+
+eW_MetaDef 3
+aCPLR_ZKey 97367215
+aStatus    1
+aUpdateInd 2
+aName      CheckOutStateForCurrentWindow
+
+eW_MetaDef 3
+aCPLR_ZKey 1319635
+aStatus    1
+aUpdateInd 2
+aName      CommitMetaOI
+
+eW_MetaDef 3
+aCPLR_ZKey 97356512
+aStatus    1
+aUpdateInd 2
+aName      ComponentIsCheckedOut
+
+eW_MetaDef 3
+aCPLR_ZKey 91075123
+aStatus    1
+aUpdateInd 2
+aName      ComputeQueryOperationValue
+
+eW_MetaDef 3
+aCPLR_ZKey 70061811
+aStatus    1
+aUpdateInd 2
+aName      ConvertIntegerToString
+
+eW_MetaDef 3
+aCPLR_ZKey 90233641
+aStatus    1
+aUpdateInd 2
+aName      ConvertStringToQSName
+
+eW_MetaDef 3
+aCPLR_ZKey 4897615
+aStatus    1
+aUpdateInd 2
+aName      ConvertXML_SpecialCharacters
+
+eW_MetaDef 3
+aCPLR_ZKey 1159684
+aStatus    1
+aUpdateInd 2
+aName      CopyOperationCode
+
+eW_MetaDef 3
+aCPLR_ZKey 1141943
+aStatus    1
+aUpdateInd 2
+aName      CreateAbsolPosString
+
+eW_MetaDef 3
+aCPLR_ZKey 93089955
+aStatus    1
+aUpdateInd 2
+aName      CreateAbsolPosStringTable
+
+eW_MetaDef 3
+aCPLR_ZKey 1141928
+aStatus    1
+aUpdateInd 2
+aName      CreateAbsolStyleString
+
+eW_MetaDef 3
+aCPLR_ZKey 1158826
+aStatus    1
+aUpdateInd 2
+aName      CreateDisabledString
+
+eW_MetaDef 3
+aCPLR_ZKey 1319641
+aStatus    1
+aUpdateInd 2
+aName      CreateFileNameFromZKey
+
+eW_MetaDef 3
+aCPLR_ZKey 1319645
+aStatus    1
+aUpdateInd 2
+aName      CreateMetaEntity
+
+eW_MetaDef 3
+aCPLR_ZKey 89582408
+aStatus    1
+aUpdateInd 2
+aName      CreateNoPosStyleString
+
+eW_MetaDef 3
+aCPLR_ZKey 1141949
+aStatus    1
+aUpdateInd 2
+aName      CreateRelPosString
+
+eW_MetaDef 3
+aCPLR_ZKey 1141934
+aStatus    1
+aUpdateInd 2
+aName      CreateRelStyleString
+
+eW_MetaDef 3
+aCPLR_ZKey 90004777
+aStatus    1
+aUpdateInd 2
+aName      CreateSironWorkObjectList
+
+eW_MetaDef 3
+aCPLR_ZKey 1141940
+aStatus    1
+aUpdateInd 2
+aName      CreateSizeString
+
+eW_MetaDef 3
+aCPLR_ZKey 1141956
+aStatus    1
+aUpdateInd 2
+aName      CreateTabIndexString
+
+eW_MetaDef 3
+aCPLR_ZKey 90044298
+aStatus    1
+aUpdateInd 2
+aName      DBH_ActivateOI_FromXML
+
+eW_MetaDef 3
+aCPLR_ZKey 90044294
+aStatus    1
+aUpdateInd 2
+aName      DBH_WriteOI_ToXML
+
+eW_MetaDef 3
+aCPLR_ZKey 1319649
+aStatus    1
+aUpdateInd 2
+aName      DeleteMetaOI
+
+eW_MetaDef 3
+aCPLR_ZKey 1319652
+aStatus    1
+aUpdateInd 2
+aName      DropMetaOI
+
+eW_MetaDef 3
+aCPLR_ZKey 1502634
+aStatus    1
+aUpdateInd 2
+aName      DropMetaOI_FromList
+
+eW_MetaDef 3
+aCPLR_ZKey 1319655
+aStatus    1
+aUpdateInd 2
+aName      Exec_Go
+
+eW_MetaDef 3
+aCPLR_ZKey 1319657
+aStatus    1
+aUpdateInd 2
+aName      Exec_ResumeFromDebugger
+
+eW_MetaDef 3
+aCPLR_ZKey 1319661
+aStatus    1
+aUpdateInd 2
+aName      Exec_Skip
+
+eW_MetaDef 3
+aCPLR_ZKey 1319663
+aStatus    1
+aUpdateInd 2
+aName      Exec_StepForward
+
+eW_MetaDef 3
+aCPLR_ZKey 1319665
+aStatus    1
+aUpdateInd 2
+aName      Exec_StepOnce
+
+eW_MetaDef 3
+aCPLR_ZKey 1141923
+aStatus    1
+aUpdateInd 2
+aName      FixStyleString
+
+eW_MetaDef 3
+aCPLR_ZKey 1319668
+aStatus    1
+aUpdateInd 2
+aName      fnPainterCall
+
+eW_MetaDef 3
+aCPLR_ZKey 1419668
+aStatus    1
+aUpdateInd 2
+aName      fnPainterCall
+
+eW_MetaDef 3
+aCPLR_ZKey 91020983
+aStatus    1
+aUpdateInd 2
+aName      FreeHZVAFFZ
+
+eW_MetaDef 3
+aCPLR_ZKey 1141959
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_Action
+
+eW_MetaDef 3
+aCPLR_ZKey 1141828
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_ChildFunctions
+
+eW_MetaDef 3
+aCPLR_ZKey 1141839
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteCalendar
+
+eW_MetaDef 3
+aCPLR_ZKey 1141850
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteCheckBox
+
+eW_MetaDef 3
+aCPLR_ZKey 1141860
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteComboBox
+
+eW_MetaDef 3
+aCPLR_ZKey 1141870
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteCtrlsRadio
+
+eW_MetaDef 3
+aCPLR_ZKey 1141878
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteCtrlsRecurs
+
+eW_MetaDef 3
+aCPLR_ZKey 1141887
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteEditBox
+
+eW_MetaDef 3
+aCPLR_ZKey 89583371
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteGroupTable
+
+eW_MetaDef 3
+aCPLR_ZKey 4897605
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteJPG
+
+eW_MetaDef 3
+aCPLR_ZKey 1448549
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteListBox
+
+eW_MetaDef 3
+aCPLR_ZKey 1141898
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_CrteText
+
+eW_MetaDef 3
+aCPLR_ZKey 93056446
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_EmailEntries
+
+eW_MetaDef 3
+aCPLR_ZKey 1141908
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_InputMapRecurs
+
+eW_MetaDef 3
+aCPLR_ZKey 1141833
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_MenuFunctions
+
+eW_MetaDef 3
+aCPLR_ZKey 1141914
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_OutputMapRecurs
+
+eW_MetaDef 3
+aCPLR_ZKey 91933535
+aStatus    1
+aUpdateInd 2
+aName      GenJSP_TableExport
+
+eW_MetaDef 3
+aCPLR_ZKey 91724664
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_Action
+
+eW_MetaDef 3
+aCPLR_ZKey 4896831
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteCalendar
+
+eW_MetaDef 3
+aCPLR_ZKey 4896842
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteCheckBox
+
+eW_MetaDef 3
+aCPLR_ZKey 4896853
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteComboBox
+
+eW_MetaDef 3
+aCPLR_ZKey 4896863
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteCtrlsRadio
+
+eW_MetaDef 3
+aCPLR_ZKey 91724935
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteCtrlsRecurs
+
+eW_MetaDef 3
+aCPLR_ZKey 4896881
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteEditBox
+
+eW_MetaDef 3
+aCPLR_ZKey 4896872
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteGroupTable
+
+eW_MetaDef 3
+aCPLR_ZKey 4896904
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteJPG
+
+eW_MetaDef 3
+aCPLR_ZKey 4896913
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteListBox
+
+eW_MetaDef 3
+aCPLR_ZKey 4896892
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_CrteText
+
+eW_MetaDef 3
+aCPLR_ZKey 91724996
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_InputMapRecurs
+
+eW_MetaDef 3
+aCPLR_ZKey 91725459
+aStatus    1
+aUpdateInd 2
+aName      GenJSPJ_OutputMapRecurs
+
+eW_MetaDef 3
+aCPLR_ZKey 91020853
+aStatus    1
+aUpdateInd 2
+aName      GetAllCatalogNames
+
+eW_MetaDef 3
+aCPLR_ZKey 91020433
+aStatus    1
+aUpdateInd 2
+aName      GetAllServerNames
+
+eW_MetaDef 3
+aCPLR_ZKey 92717672
+aStatus    1
+aUpdateInd 2
+aName      GetBorderLineWidth
+
+eW_MetaDef 3
+aCPLR_ZKey 90004774
+aStatus    1
+aUpdateInd 2
+aName      GetSironWorkObjPathName
+
+eW_MetaDef 3
+aCPLR_ZKey 91105390
+aStatus    1
+aUpdateInd 2
+aName      GetStrFromAttrByContext
+
+eW_MetaDef 3
+aCPLR_ZKey 91302628
+aStatus    1
+aUpdateInd 2
+aName      GetStringFromControlBlob
+
+eW_MetaDef 3
+aCPLR_ZKey 70061796
+aStatus    1
+aUpdateInd 2
+aName      GetStringLength
+
+eW_MetaDef 3
+aCPLR_ZKey 1419673
+aStatus    1
+aUpdateInd 2
+aName      HotkeyToPainter
+
+eW_MetaDef 3
+aCPLR_ZKey 1319674
+aStatus    1
+aUpdateInd 2
+aName      InitializeDefaultLPL
+
+eW_MetaDef 3
+aCPLR_ZKey 1319676
+aStatus    1
+aUpdateInd 2
+aName      InitializeLPLR
+
+eW_MetaDef 3
+aCPLR_ZKey 121043349
+aStatus    1
+aUpdateInd 2
+aName      IntGenFullQualPathFromRelPath
+
+eW_MetaDef 3
+aCPLR_ZKey 89389057
+aStatus    1
+aUpdateInd 2
+aName      InvokeReportExitCode
+
+eW_MetaDef 3
+aCPLR_ZKey 89389242
+aStatus    1
+aUpdateInd 2
+aName      IsValidView
+
+eW_MetaDef 3
+aCPLR_ZKey 92813877
+aStatus    1
+aUpdateInd 2
+aName      JSP_StaticMainSection
+
+eW_MetaDef 3
+aCPLR_ZKey 92813873
+aStatus    1
+aUpdateInd 2
+aName      JSP_StaticSection1
+
+eW_MetaDef 3
+aCPLR_ZKey 1169920
+aStatus    1
+aUpdateInd 2
+aName      ListSubtasks
+
+eW_MetaDef 3
+aCPLR_ZKey 91021055
+aStatus    1
+aUpdateInd 2
+aName      LoadSironDLLs
+
+eW_MetaDef 3
+aCPLR_ZKey 97356455
+aStatus    1
+aUpdateInd 2
+aName      LoadZeidonPPE
+
+eW_MetaDef 3
+aCPLR_ZKey 89389247
+aStatus    1
+aUpdateInd 2
+aName      MakeIntegerFromView
+
+eW_MetaDef 3
+aCPLR_ZKey 89389249
+aStatus    1
+aUpdateInd 2
+aName      MakeViewFromInteger
+
+eW_MetaDef 3
+aCPLR_ZKey 70063945
+aStatus    1
+aUpdateInd 2
+aName      MergeGlobalPrototypes
+
+eW_MetaDef 3
+aCPLR_ZKey 1319680
+aStatus    1
+aUpdateInd 2
+aName      ParseLine4
+
+eW_MetaDef 3
+aCPLR_ZKey 1141920
+aStatus    1
+aUpdateInd 2
+aName      PIX_PER_DU
+
+eW_MetaDef 3
+aCPLR_ZKey 1419686
+aStatus    1
+aUpdateInd 2
+aName      PrintActiveWindow
+
+eW_MetaDef 3
+aCPLR_ZKey 1319686
+aStatus    1
+aUpdateInd 2
+aName      PrintActiveWindow
+
+eW_MetaDef 3
+aCPLR_ZKey 90019266
+aStatus    1
+aUpdateInd 2
+aName      RefreshDiagram
+
+eW_MetaDef 3
+aCPLR_ZKey 92003125
+aStatus    1
+aUpdateInd 2
+aName      ReplaceSpecialCharacter
+
+eW_MetaDef 3
+aCPLR_ZKey 1319692
+aStatus    1
+aUpdateInd 2
+aName      RetrieveViewForMetaList
+
+eW_MetaDef 3
+aCPLR_ZKey 1157959
+aStatus    1
+aUpdateInd 2
+aName      SaveActiveCtrlToCSV
+
+eW_MetaDef 3
+aCPLR_ZKey 97367559
+aStatus    1
+aUpdateInd 2
+aName      SaveSortOrder
+
+eW_MetaDef 3
+aCPLR_ZKey 91002326
+aStatus    1
+aUpdateInd 2
+aName      SearchSpecialCharacter
+
+eW_MetaDef 3
+aCPLR_ZKey 121059281
+aStatus    1
+aUpdateInd 2
+aName      SetCompSpecPaths
+
+eW_MetaDef 3
+aCPLR_ZKey 92717751
+aStatus    1
+aUpdateInd 2
+aName      SetRptShapeFromBlob
+
+eW_MetaDef 3
+aCPLR_ZKey 97367200
+aStatus    1
+aUpdateInd 2
+aName      SetTitleWithCheckOutState
+
+eW_MetaDef 3
+aCPLR_ZKey 1004637
+aStatus    1
+aUpdateInd 2
+aName      SetUpMapLOD
+
+eW_MetaDef 3
+aCPLR_ZKey 91056525
+aStatus    1
+aUpdateInd 2
+aName      SetWSKInLod
+
+eW_MetaDef 3
+aCPLR_ZKey 91022474
+aStatus    1
+aUpdateInd 2
+aName      SironCreateDataModel
+
+eW_MetaDef 3
+aCPLR_ZKey 97367563
+aStatus    1
+aUpdateInd 2
+aName      SortComponents
+
+eW_MetaDef 3
+aCPLR_ZKey 1319699
+aStatus    1
+aUpdateInd 2
+aName      SourceFileReadLine
+
+eW_MetaDef 3
+aCPLR_ZKey 1319702
+aStatus    1
+aUpdateInd 2
+aName      StageBrowser
+
+eW_MetaDef 3
+aCPLR_ZKey 90005054
+aStatus    1
+aUpdateInd 2
+aName      StartZeidonHelp
+
+eW_MetaDef 3
+aCPLR_ZKey 1319705
+aStatus    1
+aUpdateInd 2
+aName      TerminateLPLR
+
+eW_MetaDef 3
+aCPLR_ZKey 89389244
+aStatus    1
+aUpdateInd 2
+aName      TraceLineHex
+
+eW_MetaDef 3
+aCPLR_ZKey 90024051
+aStatus    1
+aUpdateInd 2
+aName      TransferToEditor
+
+eW_MetaDef 3
+aCPLR_ZKey 90025440
+aStatus    1
+aUpdateInd 2
+aName      TranslateStringToUpperCase
+
+eW_MetaDef 3
+aCPLR_ZKey 91301783
+aStatus    1
+aUpdateInd 2
+aName      WL_QC
+
+eW_MetaDef 3
+aCPLR_ZKey 1319707
+aStatus    1
+aUpdateInd 2
+aName      zAnsiUpper
+
+eW_MetaDef 3
+aCPLR_ZKey 90019524
+aStatus    1
+aUpdateInd 2
+aName      zDeleteFile
+
+eW_MetaDef 3
+aCPLR_ZKey 1319708
+aStatus    1
+aUpdateInd 2
+aName      zgCompressName
+
+eW_MetaDef 3
+aCPLR_ZKey 90019043
+aStatus    1
+aUpdateInd 2
+aName      zGetTickCount
+
+eW_MetaDef 3
+aCPLR_ZKey 1319709
+aStatus    1
+aUpdateInd 2
+aName      zgSortEntityWithinGParent4
+
+eW_MetaDef 3
+aCPLR_ZKey 1319710
+aStatus    1
+aUpdateInd 2
+aName      zgSortEntityWithinParent
+
+eW_MetaDef 3
+aCPLR_ZKey 1319711
+aStatus    1
+aUpdateInd 2
+aName      zgSortEntityWithinParent4
+
+eW_MetaDef 3
+aCPLR_ZKey 1419712
+aStatus    1
+aUpdateInd 2
+aName      zkCancel
+
+eW_MetaDef 3
+aCPLR_ZKey 1012098
+aStatus    1
+aUpdateInd 2
+aName      zkCtrlInfo
+
+eW_MetaDef 3
+aCPLR_ZKey 1419714
+aStatus    1
+aUpdateInd 2
+aName      zkExitCloseOK
+
+eW_MetaDef 3
+aCPLR_ZKey 1054540
+aStatus    1
+aUpdateInd 2
+aName      zkSelectAll
+
+eW_MetaDef 3
+aCPLR_ZKey 1319716
+aStatus    1
+aUpdateInd 2
+aName      zltoxa
+
+eW_MetaType 2
+aType      3
+
+eW_MetaDef 3
+aCPLR_ZKey 1320176
+aStatus    1
+aUpdateInd 2
+aName      SSN
+aLastUpdateDate 20130115160844656
+
+eW_MetaDef 3
+aCPLR_ZKey 1320468
+aStatus    1
+aUpdateInd 2
+aName      WD_ActionNoMap
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 92715091
+aStatus    1
+aUpdateInd 2
+aName      WD_TextAlignHorizontal
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 92709478
+aStatus    1
+aUpdateInd 2
+aName      WD_WebTextControlProperties
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 4899546
+aStatus    1
+aUpdateInd 2
+aName      WD_WebScriptLocation
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 4591424
+aStatus    1
+aUpdateInd 2
+aName      XSL_PageProperties
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 68567203
+aStatus    1
+aUpdateInd 2
+aName      MapTypeTextControl
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 68567201
+aStatus    1
+aUpdateInd 2
+aName      MapTypeGridColumnControl
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1158762
+aStatus    1
+aUpdateInd 2
+aName      MapTypeGeneral
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 68544962
+aStatus    1
+aUpdateInd 2
+aName      WD_WebPushControlProperties
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 68442297
+aStatus    1
+aUpdateInd 2
+aName      WD_WebGridControlProperties
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 68304446
+aStatus    1
+aUpdateInd 2
+aName      WD_WebEditControlProperties
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 68304365
+aStatus    1
+aUpdateInd 2
+aName      WD_WebGroupControlProperties
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 68304279
+aStatus    1
+aUpdateInd 2
+aName      WD_WebGridSubControlProperties
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1141800
+aStatus    1
+aUpdateInd 2
+aName      WD_WebCtrlType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1160237
+aStatus    1
+aUpdateInd 2
+aName      WD_MapDefType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 90258866
+aStatus    1
+aUpdateInd 2
+aName      ReportGroupSubType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 90258642
+aStatus    1
+aUpdateInd 2
+aName      ReportGroupSetType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1137350
+aStatus    1
+aUpdateInd 2
+aName      UserSpecType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1137330
+aStatus    1
+aUpdateInd 2
+aName      WD_CtrlDefVisible
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 90145806
+aStatus    1
+aUpdateInd 2
+aName      ReportGroupType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 90067466
+aStatus    1
+aUpdateInd 2
+aName      AutodesignDefaultText
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 90059367
+aStatus    1
+aUpdateInd 2
+aName      AutodesignCaseType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 70000607
+aStatus    1
+aUpdateInd 2
+aName      VerticalSpacingIncrement
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 70000605
+aStatus    1
+aUpdateInd 2
+aName      HorizontalControlSize
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 70000603
+aStatus    1
+aUpdateInd 2
+aName      VerticalControlSize
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 90026801
+aStatus    1
+aUpdateInd 2
+aName      DragDropType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320595
+aStatus    1
+aUpdateInd 2
+aName      WD__OutlinerFormatType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320593
+aStatus    1
+aUpdateInd 2
+aName      WD_WindowStyle
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320578
+aStatus    1
+aUpdateInd 2
+aName      WD_SB_SubAction
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320573
+aStatus    1
+aUpdateInd 2
+aName      WD_SB_NextPrev
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320568
+aStatus    1
+aUpdateInd 2
+aName      WD_SB_DeleteNull
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320560
+aStatus    1
+aUpdateInd 2
+aName      WD_SB_ActionDisabling
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320509
+aStatus    1
+aUpdateInd 2
+aName      WD_ControlSubtype
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320504
+aStatus    1
+aUpdateInd 2
+aName      WD_ComboBoxFormatType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320472
+aStatus    1
+aUpdateInd 2
+aName      WD_ActionType
+aLastUpdateDate 20130515172856000
+
+eW_MetaDef 3
+aCPLR_ZKey 90000129
+aStatus    1
+aUpdateInd 2
+aName      Decimal
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 91004756
+aStatus    1
+aUpdateInd 2
+aName      DecimalKey0
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90359337
+aStatus    1
+aUpdateInd 2
+aName      Decimal9
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90359335
+aStatus    1
+aUpdateInd 2
+aName      Decimal8
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90359333
+aStatus    1
+aUpdateInd 2
+aName      Decimal7
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90359331
+aStatus    1
+aUpdateInd 2
+aName      Decimal6
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90359329
+aStatus    1
+aUpdateInd 2
+aName      Decimal5
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90000152
+aStatus    1
+aUpdateInd 2
+aName      Decimal4
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90000175
+aStatus    1
+aUpdateInd 2
+aName      Decimal3
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90000198
+aStatus    1
+aUpdateInd 2
+aName      Decimal2
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90000221
+aStatus    1
+aUpdateInd 2
+aName      Decimal1
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90000244
+aStatus    1
+aUpdateInd 2
+aName      Decimal0
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 90000052
+aStatus    1
+aUpdateInd 2
+aName      Date
+aLastUpdateDate 20130115160843012
+
+eW_MetaDef 3
+aCPLR_ZKey 1051178
+aStatus    1
+aUpdateInd 2
+aName      Month
+aLastUpdateDate 20130115160843012
+
+eW_MetaDef 3
+aCPLR_ZKey 90000078
+aStatus    1
+aUpdateInd 2
+aName      Time
+aLastUpdateDate 20130115160843012
+
+eW_MetaDef 3
+aCPLR_ZKey 90000089
+aStatus    1
+aUpdateInd 2
+aName      DateTime
+aLastUpdateDate 20130115160843012
+
+eW_MetaDef 3
+aCPLR_ZKey 90000028
+aStatus    1
+aUpdateInd 2
+aName      AlphaNumeric
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 1158059
+aStatus    1
+aUpdateInd 2
+aName      Note
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 1084699
+aStatus    1
+aUpdateInd 2
+aName      PasswordUL
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 1005026
+aStatus    1
+aUpdateInd 2
+aName      XRA_YNA
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 1178141
+aStatus    1
+aUpdateInd 2
+aName      XRA_Text
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 1178138
+aStatus    1
+aUpdateInd 2
+aName      XRA_Tag
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 1165598
+aStatus    1
+aUpdateInd 2
+aName      QSFullPathName
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90145848
+aStatus    1
+aUpdateInd 2
+aName      MetaName
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000030
+aStatus    1
+aUpdateInd 2
+aName      Description
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000032
+aStatus    1
+aUpdateInd 2
+aName      Text
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000034
+aStatus    1
+aUpdateInd 2
+aName      QSNameUpper
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000036
+aStatus    1
+aUpdateInd 2
+aName      QSNameLJNS
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000038
+aStatus    1
+aUpdateInd 2
+aName      QSName
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000040
+aStatus    1
+aUpdateInd 2
+aName      QSFileName
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000042
+aStatus    1
+aUpdateInd 2
+aName      Password
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000044
+aStatus    1
+aUpdateInd 2
+aName      Integer
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 1320356
+aStatus    1
+aUpdateInd 2
+aName      TZ_StartupLPLR_Option
+aLastUpdateDate 20130115160840816
+
+eW_MetaDef 3
+aCPLR_ZKey 1320361
+aStatus    1
+aUpdateInd 2
+aName      VirtualKeys
+aLastUpdateDate 20130115160840816
+
+eW_MetaDef 3
+aCPLR_ZKey 1320294
+aStatus    1
+aUpdateInd 2
+aName      TE_DataOrRel
+aLastUpdateDate 20130115160844326
+
+eW_MetaDef 3
+aCPLR_ZKey 1320335
+aStatus    1
+aUpdateInd 2
+aName      TE_KeyCategory
+aLastUpdateDate 20130115160844326
+
+eW_MetaDef 3
+aCPLR_ZKey 1320330
+aStatus    1
+aUpdateInd 2
+aName      TE_DB_ConnectType
+aLastUpdateDate 20130115160844326
+
+eW_MetaDef 3
+aCPLR_ZKey 1320321
+aStatus    1
+aUpdateInd 2
+aName      TE_DBMS_Paradigm
+aLastUpdateDate 20130115160844326
+
+eW_MetaDef 3
+aCPLR_ZKey 1320315
+aStatus    1
+aUpdateInd 2
+aName      TE_DBMS
+aLastUpdateDate 20130115160844326
+
+eW_MetaDef 3
+aCPLR_ZKey 1320306
+aStatus    1
+aUpdateInd 2
+aName      TE_DataOrRelfieldOrSet
+aLastUpdateDate 20130115160844326
+
+eW_MetaDef 3
+aCPLR_ZKey 90000208
+aStatus    1
+aUpdateInd 2
+aName      SironDB_Type
+aLastUpdateDate 20130115160842100
+
+eW_MetaDef 3
+aCPLR_ZKey 91143965
+aStatus    1
+aUpdateInd 2
+aName      SironDB_SubType
+aLastUpdateDate 20130115160842100
+
+eW_MetaDef 3
+aCPLR_ZKey 1320147
+aStatus    1
+aUpdateInd 2
+aName      LOD_EntitySequence
+aLastUpdateDate 20130326210645543
+
+eW_MetaDef 3
+aCPLR_ZKey 4330375
+aStatus    1
+aUpdateInd 2
+aName      LOD_AttributeHashkeyType
+aLastUpdateDate 20130326210645543
+
+eW_MetaDef 3
+aCPLR_ZKey 90201051
+aStatus    1
+aUpdateInd 2
+aName      LOD_DB_DerivedValue
+aLastUpdateDate 20130326210645543
+
+eW_MetaDef 3
+aCPLR_ZKey 1320152
+aStatus    1
+aUpdateInd 2
+aName      LOD_ParentDeleteBehavior
+aLastUpdateDate 20130326210645543
+
+eW_MetaDef 3
+aCPLR_ZKey 1320109
+aStatus    1
+aUpdateInd 2
+aName      ERD_PrintAlgorithm
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 92002297
+aStatus    1
+aUpdateInd 2
+aName      Marks
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 90121803
+aStatus    1
+aUpdateInd 2
+aName      ERD_MinCardinality
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 90055891
+aStatus    1
+aUpdateInd 2
+aName      ERD_MaxCardinality
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 1320129
+aStatus    1
+aUpdateInd 2
+aName      ER_EntityPurpose
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 1320124
+aStatus    1
+aUpdateInd 2
+aName      ERD_ZoomAlgorithm
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 1320119
+aStatus    1
+aUpdateInd 2
+aName      ERD_ShowRelOption
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 1320114
+aStatus    1
+aUpdateInd 2
+aName      ERD_PrintOrientation
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 1319806
+aStatus    1
+aUpdateInd 2
+aName      DataType
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 92726977
+aStatus    1
+aUpdateInd 2
+aName      OperationGenerationType
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 90441895
+aStatus    1
+aUpdateInd 2
+aName      LockingOptions
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 70061913
+aStatus    1
+aUpdateInd 2
+aName      ReportPositioningType
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 90026793
+aStatus    1
+aUpdateInd 2
+aName      LanguageType
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320608
+aStatus    1
+aUpdateInd 2
+aName      ZeidonOperationTypes
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320158
+aStatus    1
+aUpdateInd 2
+aName      Operators
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320095
+aStatus    1
+aUpdateInd 2
+aName      DM_DomainType
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 1319867
+aStatus    1
+aUpdateInd 2
+aName      DataTypeDomain
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 1319844
+aStatus    1
+aUpdateInd 2
+aName      DataType3GL
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 1319720
+aStatus    1
+aUpdateInd 2
+aName      AccessAuthority
+aLastUpdateDate 20130115160837103
+
+eW_MetaDef 3
+aCPLR_ZKey 1319755
+aStatus    1
+aUpdateInd 2
+aName      CM_Type
+aLastUpdateDate 20130115160837103
+
+eW_MetaDef 3
+aCPLR_ZKey 1319747
+aStatus    1
+aUpdateInd 2
+aName      CM_MetaDefUpdated
+aLastUpdateDate 20130115160837103
+
+eW_MetaDef 3
+aCPLR_ZKey 1319742
+aStatus    1
+aUpdateInd 2
+aName      CM_MetaDefStatus
+aLastUpdateDate 20130115160837103
+
+eW_MetaDef 3
+aCPLR_ZKey 1319735
+aStatus    1
+aUpdateInd 2
+aName      CM_DataBaseMode
+aLastUpdateDate 20130115160837103
+
+eW_MetaDef 3
+aCPLR_ZKey 90000007
+aStatus    1
+aUpdateInd 2
+aName      Blob
+aLastUpdateDate 20140118205159177
+
+eW_MetaDef 3
+aCPLR_ZKey 90165355
+aStatus    1
+aUpdateInd 2
+aName      TimeStampEx
+aLastUpdateDate 20140118205159177
+
+eW_MetaDef 3
+aCPLR_ZKey 90000009
+aStatus    1
+aUpdateInd 2
+aName      J/N
+aLastUpdateDate 20140118205159177
+
+eW_MetaDef 3
+aCPLR_ZKey 90000014
+aStatus    1
+aUpdateInd 2
+aName      Y/N
+aLastUpdateDate 20140118205159177
+
+eW_MetaDef 3
+aCPLR_ZKey 1320180
+aStatus    1
+aUpdateInd 2
+aName      State
+aLastUpdateDate 20130115160844656
+
+eW_MetaDef 3
+aCPLR_ZKey 4531065
+aStatus    1
+aName      PositionSize
+aGroupName BASE
+
+eW_MetaDef 3
+aCPLR_ZKey 4531067
+aStatus    1
+aName      Color
+aGroupName BASE
+
+eW_MetaType 2
+aType      4
+
+eW_MetaDef 3
+aCPLR_ZKey 1320651
+aStatus    1
+aUpdateInd 2
+aName      ZEIDON9A
+aDesc      Enterprise Model
+aLastSyncDate 20140709112752726
+aLastUpdateDate 20140709112752726
+
+eW_MetaType 2
+aType      5
+
+eW_MetaDef 3
+aCPLR_ZKey 1323426
+aStatus    1
+aUpdateInd 2
+aName      APPL-CM
+aDesc      Application and Config. Mgmt
+aLastSyncDate 20130115160845936
+aLastUpdateDate 20130115160845936
+
+eW_MetaDef 3
+aCPLR_ZKey 1323368
+aStatus    1
+aUpdateInd 2
+aName      AUTODESG
+aLastSyncDate 20130115160836719
+aLastUpdateDate 20130115160836719
+
+eW_MetaDef 3
+aCPLR_ZKey 1323390
+aStatus    1
+aUpdateInd 2
+aName      AUTODSGN
+aDesc      Auto Design
+aLastSyncDate 20130115160843532
+aLastUpdateDate 20130115160843532
+
+eW_MetaDef 3
+aCPLR_ZKey 1323289
+aStatus    1
+aUpdateInd 2
+aName      DIALOGDR
+aDesc      Dialog Driver
+aLastSyncDate 20130115160836462
+aLastUpdateDate 20130115160836462
+
+eW_MetaDef 3
+aCPLR_ZKey 1323360
+aStatus    1
+aUpdateInd 2
+aName      DOMAINS
+aLastSyncDate 20130115160838137
+aLastUpdateDate 20130115160838137
+
+eW_MetaDef 3
+aCPLR_ZKey 1323180
+aStatus    1
+aUpdateInd 2
+aName      ER-OBJ
+aDesc      ER, TE, ZO
+aLastSyncDate 20130115160846422
+aLastUpdateDate 20130115160846422
+
+eW_MetaDef 3
+aCPLR_ZKey 1323259
+aStatus    1
+aUpdateInd 2
+aName      LOD
+aDesc      Entities to support LOD dialog
+aLastSyncDate 20130115160843479
+aLastUpdateDate 20130115160843479
+
+eW_MetaDef 3
+aCPLR_ZKey 1323073
+aStatus    1
+aUpdateInd 2
+aName      OPERS
+aDesc      Operations, etc.
+aLastSyncDate 20130115160838103
+aLastUpdateDate 20130115160838103
+
+eW_MetaDef 3
+aCPLR_ZKey 1323120
+aStatus    1
+aUpdateInd 2
+aName      OUTLINER
+aDesc      Outliner object - work
+aLastSyncDate 20130115160837299
+aLastUpdateDate 20130115160837299
+
+eW_MetaDef 3
+aCPLR_ZKey 89357122
+aStatus    1
+aUpdateInd 2
+aName      Qubon
+aDesc      XML schema for DWH - all work entities
+aLastSyncDate 20130115160837466
+aLastUpdateDate 20130115160837466
+
+eW_MetaDef 3
+aCPLR_ZKey 1323127
+aStatus    1
+aUpdateInd 2
+aName      TECHENV
+aDesc      Technical Environment
+aLastSyncDate 20130115160836557
+aLastUpdateDate 20130115160836557
+
+eW_MetaDef 3
+aCPLR_ZKey 1323028
+aStatus    1
+aUpdateInd 2
+aName      VML
+aLastSyncDate 20130115160839325
+aLastUpdateDate 20130115160839325
+
+eW_MetaDef 3
+aCPLR_ZKey 1322636
+aStatus    1
+aUpdateInd 2
+aName      ZEIDON
+aDesc      Full Zeidon Tools Meta Model
+aLastSyncDate 20130115160839564
+aLastUpdateDate 20130115160839564
+
+eW_MetaType 2
+aType      6
+
+eW_MetaDef 3
+aCPLR_ZKey 1323476
+aStatus    1
+aUpdateInd 2
+aName      Zeidon_T
+aDesc      Local Project Library Release 8C
+aLastSyncDate 20140709111051061
+aLastUpdateDate 20140709111051061
+
+eW_MetaType 2
+aType      7
+
+eW_MetaDef 3
+aCPLR_ZKey 1331198
+aStatus    1
+aUpdateInd 2
+aName      ACCOUNT
+aDesc      Test ZDR functionality
+aLastSyncDate 20140117154759295
+aLastUpdateDate 20140117154759295
+
+eW_MetaDef 3
+aCPLR_ZKey 1331251
+aStatus    1
+aUpdateInd 2
+aName      KZAPPLOO
+aDesc      Zeidon Application Object
+aLastSyncDate 20130115160845951
+aLastUpdateDate 20130115160845951
+
+eW_MetaDef 3
+aCPLR_ZKey 1331051
+aStatus    1
+aUpdateInd 2
+aName      KZDBHQUA
+aDesc      DB Handler Qualification Object
+aLastSyncDate 20130115160842744
+aLastUpdateDate 20130115160842744
+
+eW_MetaDef 3
+aCPLR_ZKey 1331075
+aStatus    1
+aUpdateInd 2
+aName      KZDBHWOB
+aDesc      Work object for Zeidon database handlers
+aLastSyncDate 20130115160846035
+aLastUpdateDate 20130115160846035
+
+eW_MetaDef 3
+aCPLR_ZKey 88046397
+aStatus    1
+aUpdateInd 2
+aName      KZFXFERO
+aDesc      File transfer object.  Used to upload/download files.
+aLastSyncDate 20130115160839580
+aLastUpdateDate 20130115160839580
+
+eW_MetaDef 3
+aCPLR_ZKey 1331115
+aStatus    1
+aUpdateInd 2
+aName      KZGKHWOB
+aDesc      Work object for Genkey Handlers
+aLastSyncDate 20130115160836445
+aLastUpdateDate 20130115160836445
+
+eW_MetaDef 3
+aCPLR_ZKey 1331132
+aStatus    1
+aUpdateInd 2
+aName      KZHKEYSO
+aDesc      Hot key object definition
+aLastSyncDate 20130115160839690
+aLastUpdateDate 20130115160839690
+
+eW_MetaDef 3
+aCPLR_ZKey 1331158
+aStatus    1
+aUpdateInd 2
+aName      KZHKEYXO
+aDesc      Executable version of the global hotkey object
+aLastSyncDate 20130115160836960
+aLastUpdateDate 20130115160836960
+
+eW_MetaDef 3
+aCPLR_ZKey 1331171
+aStatus    1
+aUpdateInd 2
+aName      KZMSGQOO
+aDesc      Message Queue Handler
+aLastSyncDate 20130115160836239
+aLastUpdateDate 20130115160836239
+
+eW_MetaDef 3
+aCPLR_ZKey 1330798
+aStatus    1
+aUpdateInd 2
+aName      KZPEXVOO
+aDesc      Driver execution time presentation environment
+aLastSyncDate 20130115160836359
+aLastUpdateDate 20130115160836359
+
+eW_MetaDef 3
+aCPLR_ZKey 92718988
+aStatus    1
+aUpdateInd 2
+aName      KZRESTRC
+aDesc      28
+(REST return code object)
+ 
+aLastSyncDate 20130326210645254
+aLastUpdateDate 20130326210645254
+
+eW_MetaDef 3
+aCPLR_ZKey 95057242
+aStatus    1
+aUpdateInd 2
+aName      KZSIRRPO
+aDesc      This Work Object is used by Siron Reports
+aLastSyncDate 20130115160846438
+aLastUpdateDate 20130115160846438
+
+eW_MetaDef 3
+aCPLR_ZKey 1330816
+aStatus    1
+aUpdateInd 2
+aName      KZSIXSKO
+aDesc      Executable Siron object for a LOD that matches XOD struct
+aLastSyncDate 20130115160843495
+aLastUpdateDate 20130115160843495
+
+eW_MetaDef 3
+aCPLR_ZKey 91043632
+aStatus    1
+aUpdateInd 2
+aName      KZTRACEO
+aDesc      Object to transfer a trace from server to client
+aLastSyncDate 20130115160838328
+aLastUpdateDate 20130115160838328
+
+eW_MetaDef 3
+aCPLR_ZKey 90007406
+aStatus    1
+aUpdateInd 2
+aName      KZTRANWO
+aDesc      Work object that will store operation information when calling transformations or global operations across the network.
+aLastSyncDate 20130115160837368
+aLastUpdateDate 20130115160837368
+
+eW_MetaDef 3
+aCPLR_ZKey 1330836
+aStatus    1
+aUpdateInd 2
+aName      KZWDLGXO
+aDesc      Executable Dialog Definition
+aLastSyncDate 20130115160843693
+aLastUpdateDate 20130115160843693
+
+eW_MetaDef 3
+aCPLR_ZKey 91301926
+aStatus    1
+aUpdateInd 2
+aName      KZXMLPGO
+aDesc      XML for window controls
+aLastSyncDate 20130115160839425
+aLastUpdateDate 20130115160839425
+
+eW_MetaDef 3
+aCPLR_ZKey 90417949
+aStatus    1
+aUpdateInd 2
+aName      KZXRA
+aDesc      Executable Remote Application
+aLastSyncDate 20130115160839888
+aLastUpdateDate 20130115160839888
+
+eW_MetaDef 3
+aCPLR_ZKey 1151049
+aStatus    1
+aUpdateInd 2
+aName      KZZDR
+aDesc      Zeidon Dialog Rendering object
+aLastSyncDate 20130115160843097
+aLastUpdateDate 20130115160843097
+
+eW_MetaDef 3
+aCPLR_ZKey 1326804
+aStatus    1
+aUpdateInd 2
+aName      TZ__PRFO
+aDesc      Tools XFER & Profile Info.
+aLastSyncDate 20130115160845819
+aLastUpdateDate 20130115160845819
+
+eW_MetaDef 3
+aCPLR_ZKey 1326102
+aStatus    1
+aUpdateInd 2
+aName      TZADCSDO
+aDesc      User information specification
+aLastSyncDate 20130115160844026
+aLastUpdateDate 20130115160844026
+
+eW_MetaDef 3
+aCPLR_ZKey 1330717
+aStatus    1
+aUpdateInd 2
+aName      TZADCWKO
+aLastSyncDate 20130115160842642
+aLastUpdateDate 20130115160842642
+
+eW_MetaDef 3
+aCPLR_ZKey 1330739
+aStatus    1
+aUpdateInd 2
+aName      TZADWKLO
+aDesc      User Spec Entity List
+aLastSyncDate 20130115160845690
+aLastUpdateDate 20130115160845690
+
+eW_MetaDef 3
+aCPLR_ZKey 1330759
+aStatus    1
+aUpdateInd 2
+aName      TZADWWKO
+aLastSyncDate 20130115160846711
+aLastUpdateDate 20130115160846711
+
+eW_MetaDef 3
+aCPLR_ZKey 127042456
+aStatus    1
+aUpdateInd 2
+aName      TZBMPATH
+aDesc      Work object for show all Bitmaps in a LPLR
+aLastSyncDate 20130115160840540
+aLastUpdateDate 20130115160840540
+
+eW_MetaDef 3
+aCPLR_ZKey 91012509
+aStatus    1
+aUpdateInd 2
+aName      TZBRAU2O
+aDesc      Browse V. AuditTrail (Root = CLPR)
+aLastSyncDate 20130115160842729
+aLastUpdateDate 20130115160842729
+
+eW_MetaDef 3
+aCPLR_ZKey 91036830
+aStatus    1
+aUpdateInd 2
+aName      TZBRAU3O
+aDesc      165
+Browse V. AuditTrail (Root = Audittrail)
+
+This is the only AuditTrailLOD with the whole Description 
+Please just do an Activate SINGLE because of performance !!! 
+aLastSyncDate 20130115160844365
+aLastUpdateDate 20130115160844365
+
+eW_MetaDef 3
+aCPLR_ZKey 91008192
+aStatus    1
+aUpdateInd 2
+aName      TZBRAUDO
+aDesc      Browse V. AuditTrail (Root = Z_MetaDef)
+aLastSyncDate 20130115160841459
+aLastUpdateDate 20130115160841459
+
+eW_MetaDef 3
+aCPLR_ZKey 90055770
+aStatus    1
+aUpdateInd 2
+aName      TZBRDMAO
+aDesc      Browse view for Attributes within Domain
+aLastSyncDate 20130115160837651
+aLastUpdateDate 20130115160837651
+
+eW_MetaDef 3
+aCPLR_ZKey 1330544
+aStatus    1
+aUpdateInd 2
+aName      TZBRENTO
+aDesc      Browse view of ER_Entity Detail
+aLastSyncDate 20130115160842305
+aLastUpdateDate 20130115160842305
+
+eW_MetaDef 3
+aCPLR_ZKey 1330494
+aStatus    1
+aUpdateInd 2
+aName      TZBRERDO
+aDesc      Browse List of ER_Entities/RelLinks for an ERD
+aLastSyncDate 20130115160844541
+aLastUpdateDate 20130115160844541
+
+eW_MetaDef 3
+aCPLR_ZKey 90126485
+aStatus    1
+aUpdateInd 2
+aName      TZBRERLO
+aDesc      Work object for ER_Entity analysis for LPLR.
+aLastSyncDate 20130115160836573
+aLastUpdateDate 20130115160836573
+
+eW_MetaDef 3
+aCPLR_ZKey 1330438
+aStatus    1
+aUpdateInd 2
+aName      TZBRLIAO
+aDesc      Browse view for listing LOD Attributes
+aLastSyncDate 20130115160837669
+aLastUpdateDate 20130115160837669
+
+eW_MetaDef 3
+aCPLR_ZKey 1330276
+aStatus    1
+aUpdateInd 2
+aName      TZBRLOAO
+aDesc      Browse view for Mapping of LOD Attributes
+aLastSyncDate 20130115160839544
+aLastUpdateDate 20130115160839544
+
+eW_MetaDef 3
+aCPLR_ZKey 1330158
+aStatus    1
+aUpdateInd 2
+aName      TZBRLOEO
+aDesc      Browse view for Mapping of LOD Entities
+aLastSyncDate 20130115160845969
+aLastUpdateDate 20130115160845969
+
+eW_MetaDef 3
+aCPLR_ZKey 89069397
+aStatus    1
+aUpdateInd 2
+aName      TZBRLOVO
+aDesc      Work Object for ERD CrossReferences
+aLastSyncDate 20130115160842584
+aLastUpdateDate 20130115160842584
+
+eW_MetaDef 3
+aCPLR_ZKey 1330076
+aStatus    1
+aUpdateInd 2
+aName      TZBRRELO
+aDesc      Browse view for Entity Use within CPLR
+aLastSyncDate 20130115160841218
+aLastUpdateDate 20130115160841218
+
+eW_MetaDef 3
+aCPLR_ZKey 91012559
+aStatus    1
+aUpdateInd 2
+aName      TZCMAUDO
+aDesc      LOD for Maintenance of the AuditTrail
+aLastSyncDate 20130115160841772
+aLastUpdateDate 20130115160841772
+
+eW_MetaDef 3
+aCPLR_ZKey 1329982
+aStatus    1
+aUpdateInd 2
+aName      TZCMAVLO
+aLastSyncDate 20130115160846314
+aLastUpdateDate 20130115160846314
+
+eW_MetaDef 3
+aCPLR_ZKey 127075837
+aStatus    1
+aUpdateInd 2
+aName      TZCMCOML
+aDesc      Object for CPLR Component / File List in System Administration
+aLastSyncDate 20130115160845294
+aLastUpdateDate 20130115160845294
+
+eW_MetaDef 3
+aCPLR_ZKey 127045119
+aStatus    1
+aUpdateInd 2
+aName      TZCMCOMP
+aDesc      Object for listing CPLRs all Components
+aLastSyncDate 20130115160840149
+aLastUpdateDate 20130115160840149
+
+eW_MetaDef 3
+aCPLR_ZKey 127085976
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPL
+aDesc      CM CPL and CPLR List for System Administration
+aLastSyncDate 20130115160840433
+aLastUpdateDate 20130115160840433
+
+eW_MetaDef 3
+aCPLR_ZKey 127076395
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPLR
+aDesc      CPLR Object for System Administration
+aLastSyncDate 20130115160843029
+aLastUpdateDate 20130115160843029
+
+eW_MetaDef 3
+aCPLR_ZKey 1329986
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPRO
+aDesc      CPLR Object
+aLastSyncDate 20130115160838170
+aLastUpdateDate 20130115160838170
+
+eW_MetaDef 3
+aCPLR_ZKey 1325947
+aStatus    1
+aUpdateInd 2
+aName      TZCMCRWO
+aDesc      Object for listing CPLRs available to User
+aLastSyncDate 20130115160840287
+aLastUpdateDate 20130115160840287
+
+eW_MetaDef 3
+aCPLR_ZKey 127075393
+aStatus    1
+aUpdateInd 2
+aName      TZCMCUSR
+aDesc      CPLR Users
+aLastSyncDate 20130115160843401
+aLastUpdateDate 20130115160843401
+
+eW_MetaDef 3
+aCPLR_ZKey 1329941
+aStatus    1
+aUpdateInd 2
+aName      TZCMENQO
+aDesc      Repository Enqueue Object
+aLastSyncDate 20130115160837192
+aLastUpdateDate 20130115160837192
+
+eW_MetaDef 3
+aCPLR_ZKey 127076173
+aStatus    1
+aUpdateInd 2
+aName      TZCMFILE
+aDesc      Object for CPLR Component  / File List  in System Administration
+aLastSyncDate 20130115160840062
+aLastUpdateDate 20130115160840062
+
+eW_MetaDef 3
+aCPLR_ZKey 90443326
+aStatus    1
+aUpdateInd 2
+aName      TZCMFILO
+aDesc      File object for storing LPLR files as objects
+aLastSyncDate 20130115160842657
+aLastUpdateDate 20130115160842657
+
+eW_MetaDef 3
+aCPLR_ZKey 1329957
+aStatus    1
+aUpdateInd 2
+aName      TZCMHDWO
+aDesc      Generated Header work object
+aLastSyncDate 20130115160844864
+aLastUpdateDate 20130115160844864
+
+eW_MetaDef 3
+aCPLR_ZKey 1325977
+aStatus    1
+aUpdateInd 2
+aName      TZCMLPLO
+aDesc      LPLR Object
+aLastSyncDate 20130419202438000
+aLastUpdateDate 20130419202438000
+
+eW_MetaDef 3
+aCPLR_ZKey 127091350
+aStatus    1
+aUpdateInd 2
+aName      TZCMLPLR
+aDesc      CPLR Object for Create New Repository Project
+aLastSyncDate 20130115160842714
+aLastUpdateDate 20130115160842714
+
+eW_MetaDef 3
+aCPLR_ZKey 90063285
+aStatus    1
+aUpdateInd 2
+aName      TZCMQCPO
+aDesc      255
+EnqueueObject for locking a CPLR
+
+This Object is created when an user:
+- ChecksOut an item   (Workstation-Admin.)
+- ChecksIn an item     (Workstation-Admin.)
+- Refreshes his LPLR (Workstation-Admin.)
+- edits the CPLR        (System-Administration). 
+aLastSyncDate 20130115160841881
+aLastUpdateDate 20130115160841881
+
+eW_MetaDef 3
+aCPLR_ZKey 90059225
+aStatus    1
+aUpdateInd 2
+aName      TZCMQSYO
+aDesc      127
+EnqueueObject for locking of the SystemAdministration
+
+This Object is created when an user anters the System-Administration. 
+aLastSyncDate 20130115160846149
+aLastUpdateDate 20130115160846149
+
+eW_MetaDef 3
+aCPLR_ZKey 1329909
+aStatus    1
+aUpdateInd 2
+aName      TZCMRCRO
+aDesc      Reusable CPLR Object
+aLastSyncDate 20130115160836588
+aLastUpdateDate 20130115160836588
+
+eW_MetaDef 3
+aCPLR_ZKey 91008261
+aStatus    1
+aUpdateInd 2
+aName      TZCMRE2O
+aDesc      LOD for Maintenance of the review-SUB types (for AuditTrail)
+aLastSyncDate 20130115160840207
+aLastUpdateDate 20130115160840207
+
+eW_MetaDef 3
+aCPLR_ZKey 127091239
+aStatus    1
+aUpdateInd 2
+aName      TZCMREFL
+aDesc      Object for Build Refresh User defined List in Workstation Administration
+aLastSyncDate 20130115160837686
+aLastUpdateDate 20130115160837686
+
+eW_MetaDef 3
+aCPLR_ZKey 127091282
+aStatus    1
+aUpdateInd 2
+aName      TZCMREFO
+aDesc      Object for Refresh LPLR from Repository in Workstation Administration
+aLastSyncDate 20130115160842147
+aLastUpdateDate 20130115160842147
+
+eW_MetaDef 3
+aCPLR_ZKey 1325883
+aStatus    1
+aUpdateInd 2
+aName      TZCMREPO
+aDesc      CM Repository Object
+aLastSyncDate 20130115160837225
+aLastUpdateDate 20130115160837225
+
+eW_MetaDef 3
+aCPLR_ZKey 127065673
+aStatus    1
+aUpdateInd 2
+aName      TZCMREUS
+aDesc      Work Object for Error List by add Reusable CPLR
+aLastSyncDate 20130115160840744
+aLastUpdateDate 20130115160840744
+
+eW_MetaDef 3
+aCPLR_ZKey 90086253
+aStatus    1
+aUpdateInd 2
+aName      TZCMREVO
+aDesc      LOD for Maintenance of the review-types (for AuditTrail)
+aLastSyncDate 20130115160836652
+aLastUpdateDate 20130115160836652
+
+eW_MetaDef 3
+aCPLR_ZKey 1329858
+aStatus    1
+aUpdateInd 2
+aName      TZCMRPTO
+aDesc      Work Object for Refresh Report
+aLastSyncDate 20130115160844740
+aLastUpdateDate 20130115160844740
+
+eW_MetaDef 3
+aCPLR_ZKey 1329892
+aStatus    1
+aUpdateInd 2
+aName      TZCMULWO
+aDesc      CM User list work Object
+aLastSyncDate 20130115160838041
+aLastUpdateDate 20130115160838041
+
+eW_MetaDef 3
+aCPLR_ZKey 1329836
+aStatus    1
+aUpdateInd 2
+aName      TZCMUSER
+aDesc      User authorization/delete
+aLastSyncDate 20130115160836667
+aLastUpdateDate 20130115160836667
+
+eW_MetaDef 3
+aCPLR_ZKey 1329718
+aStatus    1
+aUpdateInd 2
+aName      TZCMWIPO
+aDesc      Work Object for Configuration Management
+aLastSyncDate 20130115160846375
+aLastUpdateDate 20130115160846375
+
+eW_MetaDef 3
+aCPLR_ZKey 1329752
+aStatus    1
+aUpdateInd 2
+aName      TZCMWKSO
+aDesc      334
+Work Station Object
+
+This object is used for the following purposes:
+1.  It is primarily used to define the work station object, TZCMWKS8.POR,
+     which holds the list of all LPLRs on a work station.
+2.  It is also used for processing a delete of the RepositoryClient entity
+     (a work station) from the Repository database. 
+aLastSyncDate 20130115160844723
+aLastUpdateDate 20130115160844723
+
+eW_MetaDef 3
+aCPLR_ZKey 97121764
+aStatus    1
+aUpdateInd 2
+aName      TZCMWKUS
+aDesc      User On Workstations
+aLastSyncDate 20130115160842908
+aLastUpdateDate 20130115160842908
+
+eW_MetaDef 3
+aCPLR_ZKey 1329782
+aStatus    1
+aUpdateInd 2
+aName      TZCMWULO
+aDesc      CM Workstation User List
+aLastSyncDate 20130115160842614
+aLastUpdateDate 20130115160842614
+
+eW_MetaDef 3
+aCPLR_ZKey 127086757
+aStatus    1
+aUpdateInd 2
+aName      TZCMZKEY
+aDesc      CM saved the last ZKey for a Repository Entity
+aLastSyncDate 20130115160842036
+aLastUpdateDate 20130115160842036
+
+eW_MetaDef 3
+aCPLR_ZKey 1329707
+aStatus    1
+aUpdateInd 2
+aName      TZCTRWKO
+aDesc      Work object for the control's CtrlColor info
+aLastSyncDate 20130115160841443
+aLastUpdateDate 20130115160841443
+
+eW_MetaDef 3
+aCPLR_ZKey 90053008
+aStatus    1
+aUpdateInd 2
+aName      TZDBHDBO
+aDesc      DB2 object for storing DB2-specific information in DBHandlers
+aLastSyncDate 20130115160836524
+aLastUpdateDate 20130115160836524
+
+eW_MetaDef 3
+aCPLR_ZKey 90040820
+aStatus    1
+aUpdateInd 2
+aName      TZDBHODO
+aDesc      This is a db-handler object.  It is used to specify information that is specific to ODBC databases.
+aLastSyncDate 20130115160841075
+aLastUpdateDate 20130115160841075
+
+eW_MetaDef 3
+aCPLR_ZKey 90004370
+aStatus    1
+aUpdateInd 2
+aName      TZDBHTSO
+aDesc      The DB-Handler test work object.
+aLastSyncDate 20130115160843909
+aLastUpdateDate 20130115160843909
+
+eW_MetaDef 3
+aCPLR_ZKey 1325025
+aStatus    1
+aUpdateInd 2
+aName      TZDGSRCO
+aDesc      Domain Group source object
+aLastSyncDate 20130115160841867
+aLastUpdateDate 20130115160841867
+
+eW_MetaDef 3
+aCPLR_ZKey 1329552
+aStatus    1
+aUpdateInd 2
+aName      TZDMXGPO
+aDesc      Executable Group of Domains
+aLastSyncDate 20130115160836976
+aLastUpdateDate 20130115160836976
+
+eW_MetaDef 3
+aCPLR_ZKey 98071269
+aStatus    1
+aUpdateInd 2
+aName      TZEDWDEL
+aDesc      Work Object for Delete Operations from Source File
+aLastSyncDate 20130115160838308
+aLastUpdateDate 20130115160838308
+
+eW_MetaDef 3
+aCPLR_ZKey 1329464
+aStatus    1
+aUpdateInd 2
+aName      TZEDWRKO
+aDesc      Editor work object ( 1 per session )
+aLastSyncDate 20130115160837867
+aLastUpdateDate 20130115160837867
+
+eW_MetaDef 3
+aCPLR_ZKey 92002305
+aStatus    1
+aUpdateInd 2
+aName      TZERADWE
+aDesc      Work Object for ADW Export
+aLastSyncDate 20130115160845105
+aLastUpdateDate 20130115160845105
+
+eW_MetaDef 3
+aCPLR_ZKey 89000377
+aStatus    1
+aUpdateInd 2
+aName      TZERADWO
+aDesc      ADW intermediate work object
+aLastSyncDate 20130115160837157
+aLastUpdateDate 20130115160837157
+
+eW_MetaDef 3
+aCPLR_ZKey 70000029
+aStatus    1
+aUpdateInd 2
+aName      TZERATLO
+aDesc      Work object for Identifiers
+aLastSyncDate 20130115160840641
+aLastUpdateDate 20130115160840641
+
+eW_MetaDef 3
+aCPLR_ZKey 1326595
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDO
+aDesc      Enterprise Model ER Information
+aLastSyncDate 20130115160843514
+aLastUpdateDate 20130115160843514
+
+eW_MetaDef 3
+aCPLR_ZKey 1329358
+aStatus    1
+aUpdateInd 2
+aName      TZEREMXO
+aDesc      ER Model Executable
+aLastSyncDate 20130115160844992
+aLastUpdateDate 20130115160844992
+
+eW_MetaDef 3
+aCPLR_ZKey 1329389
+aStatus    1
+aUpdateInd 2
+aName      TZERENTO
+aDesc      ER Entity Only - for lists
+aLastSyncDate 20130115160840714
+aLastUpdateDate 20130115160840714
+
+eW_MetaDef 3
+aCPLR_ZKey 1329398
+aStatus    1
+aUpdateInd 2
+aName      TZERPOSO
+aDesc      Work for ERD Positioning algoritm
+aLastSyncDate 20130115160845091
+aLastUpdateDate 20130115160845091
+
+eW_MetaDef 3
+aCPLR_ZKey 89354858
+aStatus    1
+aUpdateInd 2
+aName      TZERQBDO
+aDesc      Qubon DWH Work LOD
+aLastSyncDate 20130115160839248
+aLastUpdateDate 20130115160839248
+
+eW_MetaDef 3
+aCPLR_ZKey 70000045
+aStatus    1
+aUpdateInd 2
+aName      TZERRLLO
+aDesc      Work object for Identifiers
+aLastSyncDate 20130115160842814
+aLastUpdateDate 20130115160842814
+
+eW_MetaDef 3
+aCPLR_ZKey 127047087
+aStatus    1
+aUpdateInd 2
+aName      TZERROR
+aDesc      Work object for Error List
+aLastSyncDate 20130115160840670
+aLastUpdateDate 20130115160840670
+
+eW_MetaDef 3
+aCPLR_ZKey 90397460
+aStatus    1
+aUpdateInd 2
+aName      TZERRPTO
+aDesc      Work object for ER Reports
+aLastSyncDate 20130115160842958
+aLastUpdateDate 20130115160842958
+
+eW_MetaDef 3
+aCPLR_ZKey 98184304
+aStatus    1
+aUpdateInd 2
+aName      TZERSAPO
+aDesc      Work object for SAP Import
+aLastSyncDate 20130115160840685
+aLastUpdateDate 20130115160840685
+
+eW_MetaDef 3
+aCPLR_ZKey 1329230
+aStatus    1
+aUpdateInd 2
+aName      TZERSASO
+aDesc      ER Subject Area
+aLastSyncDate 20130115160845449
+aLastUpdateDate 20130115160845449
+
+eW_MetaDef 3
+aCPLR_ZKey 4840870
+aStatus    1
+aUpdateInd 2
+aName      TZFLOW
+aDesc      Dialog Action Flow
+aLastSyncDate 20130115160838058
+aLastUpdateDate 20130115160838058
+
+eW_MetaDef 3
+aCPLR_ZKey 91000221
+aStatus    1
+aUpdateInd 2
+aName      TZHLPCXO
+aDesc      Mapping info between zeidon context tags and .hpj context IDs
+aLastSyncDate 20130115160843708
+aLastUpdateDate 20130115160843708
+
+eW_MetaDef 3
+aCPLR_ZKey 4530347
+aStatus    1
+aUpdateInd 2
+aName      TZLLD
+aDesc      Logical Label Definition
+aLastSyncDate 20140709113350376
+aLastUpdateDate 20140709113350376
+
+eW_MetaDef 3
+aCPLR_ZKey 1329118
+aStatus    1
+aUpdateInd 2
+aName      TZMSDGPO
+aDesc      Group of DIL Msgs for Listing
+aLastSyncDate 20130115160843973
+aLastUpdateDate 20130115160843973
+
+eW_MetaDef 3
+aCPLR_ZKey 1329122
+aStatus    1
+aUpdateInd 2
+aName      TZOBOIOO
+aDesc      Object Browser work object
+aLastSyncDate 20130115160843302
+aLastUpdateDate 20130115160843302
+
+eW_MetaDef 3
+aCPLR_ZKey 1329177
+aStatus    1
+aUpdateInd 2
+aName      TZOBRWOO
+aDesc      Object Browser work view
+aLastSyncDate 20130115160846504
+aLastUpdateDate 20130115160846504
+
+eW_MetaDef 3
+aCPLR_ZKey 1326765
+aStatus    1
+aUpdateInd 2
+aName      TZOGSRCO
+aDesc      Global Operation Group source object
+aLastSyncDate 20130115160842785
+aLastUpdateDate 20130115160842785
+
+eW_MetaDef 3
+aCPLR_ZKey 90005052
+aStatus    1
+aUpdateInd 2
+aName      TZOLOBWK
+aDesc      New Outliner work object
+aLastSyncDate 20130115160842799
+aLastUpdateDate 20130115160842799
+
+eW_MetaDef 3
+aCPLR_ZKey 1329043
+aStatus    1
+aUpdateInd 2
+aName      TZOLOBWO
+aDesc      Outliner object - work
+aLastSyncDate 20130115160837352
+aLastUpdateDate 20130115160837352
+
+eW_MetaDef 3
+aCPLR_ZKey 1328962
+aStatus    1
+aUpdateInd 2
+aName      TZOPGRPO
+aDesc      Group of Opers for Execution
+aLastSyncDate 20130423191636000
+aLastUpdateDate 20130423191636000
+
+eW_MetaDef 3
+aCPLR_ZKey 1329019
+aStatus    1
+aUpdateInd 2
+aName      TZOPHDRO
+aDesc      Header file 3GL
+aLastSyncDate 20130115160837849
+aLastUpdateDate 20130115160837849
+
+eW_MetaDef 3
+aCPLR_ZKey 1328897
+aStatus    1
+aUpdateInd 2
+aName      TZOPLSWO
+aDesc      Operation List work object
+aLastSyncDate 20130115160843250
+aLastUpdateDate 20130115160843250
+
+eW_MetaDef 3
+aCPLR_ZKey 1326055
+aStatus    1
+aUpdateInd 2
+aName      TZOPRUSO
+aDesc      Reusable LOD/Dialog View for Operation Processiing
+aLastSyncDate 20130115160843925
+aLastUpdateDate 20130115160843925
+
+eW_MetaDef 3
+aCPLR_ZKey 1328919
+aStatus    1
+aUpdateInd 2
+aName      TZOPSIGO
+aLastSyncDate 20130423191618000
+aLastUpdateDate 20130423191618000
+
+eW_MetaDef 3
+aCPLR_ZKey 1159719
+aStatus    1
+aUpdateInd 2
+aName      TZPEAXWO
+aDesc      Presentation Environment work object to load ActiveX control informatino from the Registry.
+aLastSyncDate 20130115160843807
+aLastUpdateDate 20130115160843807
+
+eW_MetaDef 3
+aCPLR_ZKey 1328675
+aStatus    1
+aUpdateInd 2
+aName      TZPESRCO
+aDesc      Presentation Environment
+aLastSyncDate 20130115160840701
+aLastUpdateDate 20130115160840701
+
+eW_MetaDef 3
+aCPLR_ZKey 1328555
+aStatus    1
+aUpdateInd 2
+aName      TZPEWRKO
+aDesc      Presentation Environment work object
+aLastSyncDate 20130115160842084
+aLastUpdateDate 20130115160842084
+
+eW_MetaDef 3
+aCPLR_ZKey 1328561
+aStatus    1
+aUpdateInd 2
+aName      TZPNCTWO
+aDesc      Work object for standard Windows Controls
+aLastSyncDate 20130115160843187
+aLastUpdateDate 20130115160843187
+
+eW_MetaDef 3
+aCPLR_ZKey 1328660
+aStatus    1
+aUpdateInd 2
+aName      TZPNEVWO
+aDesc      Work Object for listing events and actions
+aLastSyncDate 20130115160841700
+aLastUpdateDate 20130115160841700
+
+eW_MetaDef 3
+aCPLR_ZKey 98177767
+aStatus    1
+aUpdateInd 2
+aName      TZPNMAPP
+aDesc      Work Object for Mapping List
+aLastSyncDate 20130115160839724
+aLastUpdateDate 20130115160839724
+
+eW_MetaDef 3
+aCPLR_ZKey 1328437
+aStatus    1
+aUpdateInd 2
+aName      TZPNOPWO
+aDesc      Work object for listing Options
+aLastSyncDate 20130115160842208
+aLastUpdateDate 20130115160842208
+
+eW_MetaDef 3
+aCPLR_ZKey 98137083
+aStatus    1
+aUpdateInd 2
+aName      TZPNTBAR
+aDesc      WorkObject for ToolBar settings
+aLastSyncDate 20130115160846019
+aLastUpdateDate 20130115160846019
+
+eW_MetaDef 3
+aCPLR_ZKey 1328448
+aStatus    1
+aUpdateInd 2
+aName      TZPNTROO
+aDesc      Work Object for Painter Dialog
+aLastSyncDate 20130115160844220
+aLastUpdateDate 20130115160844220
+
+eW_MetaDef 3
+aCPLR_ZKey 1328465
+aStatus    1
+aUpdateInd 2
+aName      TZREPOWK
+aDesc      Repository testing work object
+aLastSyncDate 20130115160840496
+aLastUpdateDate 20130115160840496
+
+eW_MetaDef 3
+aCPLR_ZKey 90295881
+aStatus    1
+aUpdateInd 2
+aName      TZRPRDTO
+aDesc      Siron work object for passing parameters to the Siron Report Design Tool (RDT).
+aLastSyncDate 20130115160842132
+aLastUpdateDate 20130115160842132
+
+eW_MetaDef 3
+aCPLR_ZKey 90145850
+aStatus    1
+aUpdateInd 2
+aName      TZRPSRCO
+aDesc      Report Definition
+aLastSyncDate 20130308195026000
+aLastUpdateDate 20130308195026000
+
+eW_MetaDef 3
+aCPLR_ZKey 98188859
+aStatus    1
+aUpdateInd 2
+aName      TZSAPERR
+aDesc      Work object for Error List by ERD SAP Import
+aLastSyncDate 20130115160845432
+aLastUpdateDate 20130115160845432
+
+eW_MetaDef 3
+aCPLR_ZKey 98230194
+aStatus    1
+aUpdateInd 2
+aName      TZSAPRS
+aDesc      Work object for SAP Import to save the Relationships
+aLastSyncDate 20130115160840656
+aLastUpdateDate 20130115160840656
+
+eW_MetaDef 3
+aCPLR_ZKey 97367384
+aStatus    1
+aUpdateInd 2
+aName      TZSAVEAS
+aDesc      Work Object for save as for not checked out component
+aLastSyncDate 20130115160843080
+aLastUpdateDate 20130115160843080
+
+eW_MetaDef 3
+aCPLR_ZKey 91053367
+aStatus    1
+aUpdateInd 2
+aName      TZSIDEWK
+aLastSyncDate 20130115160837566
+aLastUpdateDate 20130115160837566
+
+eW_MetaDef 3
+aCPLR_ZKey 90004786
+aStatus    1
+aUpdateInd 2
+aName      TZSIIMLO
+aDesc      List of Siron work objects
+aLastSyncDate 20130115160841973
+aLastUpdateDate 20130115160841973
+
+eW_MetaDef 3
+aCPLR_ZKey 91020362
+aStatus    1
+aUpdateInd 2
+aName      TZSIIMWK
+aLastSyncDate 20130115160844064
+aLastUpdateDate 20130115160844064
+
+eW_MetaDef 3
+aCPLR_ZKey 1328469
+aStatus    1
+aUpdateInd 2
+aName      TZSIWK1O
+aDesc      Intermediate work object for Siron Katalog to Zeidon import
+aLastSyncDate 20130115160846229
+aLastUpdateDate 20130115160846229
+
+eW_MetaDef 3
+aCPLR_ZKey 90020429
+aStatus    1
+aUpdateInd 2
+aName      TZTEDBLO
+aDesc      List of supported databases/db-handlers.
+aLastSyncDate 20130115160842891
+aLastUpdateDate 20130115160842891
+
+eW_MetaDef 3
+aCPLR_ZKey 98093981
+aStatus    1
+aUpdateInd 2
+aName      TZTEERR
+aDesc      Work object to save Error Messages for Build/Rebuild Tables/Relationships
+aLastSyncDate 20130115160839907
+aLastUpdateDate 20130115160839907
+
+eW_MetaDef 3
+aCPLR_ZKey 1328311
+aStatus    1
+aUpdateInd 2
+aName      TZTEMPMO
+aDesc      Model Physical Mapping
+aLastSyncDate 20130115160840774
+aLastUpdateDate 20130115160840774
+
+eW_MetaDef 3
+aCPLR_ZKey 1327972
+aStatus    1
+aUpdateInd 2
+aName      TZTENVRO
+aDesc      Technical Environment for any type
+aLastSyncDate 20130115160842178
+aLastUpdateDate 20130115160842178
+
+eW_MetaDef 3
+aCPLR_ZKey 1327779
+aStatus    1
+aUpdateInd 2
+aName      TZTENVTO
+aDesc      Test new structure
+aLastSyncDate 20130115160845331
+aLastUpdateDate 20130115160845331
+
+eW_MetaDef 3
+aCPLR_ZKey 90025332
+aStatus    1
+aUpdateInd 2
+aName      TZTEWRKO
+aDesc      Work object for TE functions
+aLastSyncDate 20130115160843202
+aLastUpdateDate 20130115160843202
+
+eW_MetaDef 3
+aCPLR_ZKey 1327727
+aStatus    1
+aUpdateInd 2
+aName      TZUVIMPO
+aDesc      Userview import work object
+aLastSyncDate 20130115160846534
+aLastUpdateDate 20130115160846534
+
+eW_MetaDef 3
+aCPLR_ZKey 1327737
+aStatus    1
+aUpdateInd 2
+aName      TZVMEROO
+aDesc      VS Error Object
+aLastSyncDate 20130115160845854
+aLastUpdateDate 20130115160845854
+
+eW_MetaDef 3
+aCPLR_ZKey 1327746
+aStatus    1
+aUpdateInd 2
+aName      TZVSEXPO
+aDesc      Work Expression Object
+aLastSyncDate 20130115160843625
+aLastUpdateDate 20130115160843625
+
+eW_MetaDef 3
+aCPLR_ZKey 1327762
+aStatus    1
+aUpdateInd 2
+aName      TZVSINIT
+aDesc      LPL Init Work Object
+aLastSyncDate 20130115160838767
+aLastUpdateDate 20130115160838767
+
+eW_MetaDef 3
+aCPLR_ZKey 1327619
+aStatus    1
+aUpdateInd 2
+aName      TZVSPOOO
+aDesc      VML Program Object ( builds XPG )
+aLastSyncDate 20130419195636000
+aLastUpdateDate 20130419195636000
+
+eW_MetaDef 3
+aCPLR_ZKey 1327446
+aStatus    1
+aUpdateInd 2
+aName      TZVSRTOO
+aDesc      VML Runtime Stack
+aLastSyncDate 20130115160843115
+aLastUpdateDate 20130115160843115
+
+eW_MetaDef 3
+aCPLR_ZKey 1327468
+aStatus    1
+aUpdateInd 2
+aName      TZVSXCOO
+aDesc      This is the X-Checker Object
+aLastSyncDate 20130115160844204
+aLastUpdateDate 20130115160844204
+
+eW_MetaDef 3
+aCPLR_ZKey 1327514
+aStatus    1
+aUpdateInd 2
+aName      TZWDGRWO
+aDesc      Dialog Graph Work Object
+aLastSyncDate 20130115160842875
+aLastUpdateDate 20130115160842875
+
+eW_MetaDef 3
+aCPLR_ZKey 70047124
+aStatus    1
+aUpdateInd 2
+aName      TZWDLCVO
+aDesc      Conversion values for original dialog text to NLS languages.
+aLastSyncDate 20130115160844041
+aLastUpdateDate 20130115160844041
+
+eW_MetaDef 3
+aCPLR_ZKey 1325104
+aStatus    1
+aUpdateInd 2
+aName      TZWDLGSO
+aDesc      Source Dialog Definition
+aLastSyncDate 20140217124526588
+aLastUpdateDate 20140217124526588
+
+eW_MetaDef 3
+aCPLR_ZKey 1326496
+aStatus    1
+aUpdateInd 2
+aName      TZWDVORO
+aDesc      View Object Ref. for Dialogs
+aLastSyncDate 20130115160842452
+aLastUpdateDate 20130115160842452
+
+eW_MetaDef 3
+aCPLR_ZKey 4895888
+aStatus    1
+aUpdateInd 2
+aName      TZXSLTSO
+aDesc      XSLT Definition.  XSL stands for EXtensible Stylesheet Language, and is a style sheet language for XML documents. XSLT stands for XSL Transformations.
+aLastSyncDate 20130115160837906
+aLastUpdateDate 20130115160837906
+
+eW_MetaDef 3
+aCPLR_ZKey 1327408
+aStatus    1
+aUpdateInd 2
+aName      TZZOHDGO
+aDesc      Hier Diagram Object
+aLastSyncDate 20130115160839708
+aLastUpdateDate 20130115160839708
+
+eW_MetaDef 3
+aCPLR_ZKey 1324578
+aStatus    1
+aUpdateInd 2
+aName      TZZOLODO
+aDesc      LOD Object Def
+aLastSyncDate 20130326210646224
+aLastUpdateDate 20130326210646224
+
+eW_MetaDef 3
+aCPLR_ZKey 1327386
+aStatus    1
+aUpdateInd 2
+aName      TZZOTYPO
+aDesc      keep track of Oper by Type
+aLastSyncDate 20130115160839786
+aLastUpdateDate 20130115160839786
+
+eW_MetaDef 3
+aCPLR_ZKey 1091957
+aStatus    1
+aUpdateInd 2
+aName      TZZOVEAO
+aDesc      Object/View object ref/Entity/Attribute work object for use in painting
+aLastSyncDate 20130115160842829
+aLastUpdateDate 20130115160842829
+
+eW_MetaDef 3
+aCPLR_ZKey 11005135
+aStatus    1
+aUpdateInd 2
+aName      TZZOWK1O
+aDesc      134
+Work object for following functions:
+
+1. Processing sequencing attributes for an Entity, particularly to support Activate Continue. 
+aLastSyncDate 20130115160841011
+aLastUpdateDate 20130115160841011
+
+eW_MetaDef 3
+aCPLR_ZKey 1327175
+aStatus    1
+aUpdateInd 2
+aName      TZZOXODO
+aDesc      Executable Zeidon Object Definition
+aLastSyncDate 20130326210645708
+aLastUpdateDate 20130326210645708
+
+eW_MetaType 2
+aType      8
+
+eW_MetaType 2
+aType      9
+
+eW_MetaDef 3
+aCPLR_ZKey 538
+aStatus    1
+aUpdateInd 2
+aName      TZSAVEAS
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846681
+aLastUpdateDate 20130115160846681
+
+eW_MetaDef 3
+aCPLR_ZKey 1073809
+aStatus    1
+aUpdateInd 2
+aName      TZMULTICHANGE
+aLastSyncDate 20130115160844607
+aLastUpdateDate 20130115160844607
+
+eW_MetaDef 3
+aCPLR_ZKey 1092119
+aStatus    1
+aUpdateInd 2
+aName      TZZOVEAO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842701
+aLastUpdateDate 20130115160842701
+
+eW_MetaDef 3
+aCPLR_ZKey 1130110
+aStatus    1
+aUpdateInd 2
+aName      KZWDLGXO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160838903
+aLastUpdateDate 20130115160838903
+
+eW_MetaDef 3
+aCPLR_ZKey 1140047
+aStatus    1
+aUpdateInd 2
+aName      PAGECTRL
+aDesc      Report view for control maintenance
+aLastSyncDate 20130115160841805
+aLastUpdateDate 20130115160841805
+
+eW_MetaDef 3
+aCPLR_ZKey 1145114
+aStatus    1
+aUpdateInd 2
+aName      TZRPRDTO
+aLastSyncDate 20130115160840525
+aLastUpdateDate 20130115160840525
+
+eW_MetaDef 3
+aCPLR_ZKey 1146761
+aStatus    1
+aUpdateInd 2
+aName      TZCONTROLL
+aDesc      For use with hierarchical list of controls
+aLastSyncDate 20130115160845984
+aLastUpdateDate 20130115160845984
+
+eW_MetaDef 3
+aCPLR_ZKey 1151055
+aStatus    1
+aUpdateInd 2
+aName      KZZDR
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160838712
+aLastUpdateDate 20130115160838712
+
+eW_MetaDef 3
+aCPLR_ZKey 1152141
+aStatus    1
+aUpdateInd 2
+aName      KZTRACEO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840177
+aLastUpdateDate 20130115160840177
+
+eW_MetaDef 3
+aCPLR_ZKey 1159730
+aStatus    1
+aUpdateInd 2
+aName      TZPEAXWO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160845788
+aLastUpdateDate 20130115160845788
+
+eW_MetaDef 3
+aCPLR_ZKey 1159775
+aStatus    1
+aUpdateInd 2
+aName      KZPEXVOO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844294
+aLastUpdateDate 20130115160844294
+
+eW_MetaDef 3
+aCPLR_ZKey 1169100
+aStatus    1
+aUpdateInd 2
+aName      TZCMENQO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844754
+aLastUpdateDate 20130115160844754
+
+eW_MetaDef 3
+aCPLR_ZKey 1169947
+aStatus    1
+aUpdateInd 2
+aName      ZAXEVNTO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846068
+aLastUpdateDate 20130115160846068
+
+eW_MetaDef 3
+aCPLR_ZKey 1170036
+aStatus    1
+aUpdateInd 2
+aName      __HD_Compare2
+aLastSyncDate 20130115160836925
+aLastUpdateDate 20130115160836925
+
+eW_MetaDef 3
+aCPLR_ZKey 1170037
+aStatus    1
+aUpdateInd 2
+aName      __HD_Compare1
+aLastSyncDate 20130115160838217
+aLastUpdateDate 20130115160838217
+
+eW_MetaDef 3
+aCPLR_ZKey 1170128
+aStatus    1
+aUpdateInd 2
+aName      TZOBOIOO1
+aLastSyncDate 20130115160843132
+aLastUpdateDate 20130115160843132
+
+eW_MetaDef 3
+aCPLR_ZKey 1170129
+aStatus    1
+aUpdateInd 2
+aName      TZOBOIOO2
+aLastSyncDate 20130115160844443
+aLastUpdateDate 20130115160844443
+
+eW_MetaDef 3
+aCPLR_ZKey 1177990
+aStatus    1
+aUpdateInd 2
+aName      KZXRW
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840603
+aLastUpdateDate 20130115160840603
+
+eW_MetaDef 3
+aCPLR_ZKey 1178215
+aStatus    1
+aUpdateInd 2
+aName      ACCOUNT_DUMMY
+aLastSyncDate 20130115160843989
+aLastUpdateDate 20130115160843989
+
+eW_MetaDef 3
+aCPLR_ZKey 1178459
+aStatus    1
+aUpdateInd 2
+aName      KZXRA
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160838023
+aLastUpdateDate 20130115160838023
+
+eW_MetaDef 3
+aCPLR_ZKey 1331342
+aStatus    1
+aUpdateInd 2
+aName      TZOPRUSO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842671
+aLastUpdateDate 20130115160842671
+
+eW_MetaDef 3
+aCPLR_ZKey 1331903
+aStatus    1
+aUpdateInd 2
+aName      TZPESRCO
+aDesc      Presentation Environment Source Information
+aLastSyncDate 20130115160843660
+aLastUpdateDate 20130115160843660
+
+eW_MetaDef 3
+aCPLR_ZKey 1332007
+aStatus    1
+aUpdateInd 2
+aName      TZWINDOW
+aDesc      View for looking at whole Window subobject
+aLastSyncDate 20130115160840963
+aLastUpdateDate 20130115160840963
+
+eW_MetaDef 3
+aCPLR_ZKey 1332012
+aStatus    1
+aUpdateInd 2
+aName      TZWINDOWL
+aDesc      Work view of Dialog object for Actions and ViewObjRef
+aLastSyncDate 20130115160846469
+aLastUpdateDate 20130115160846469
+
+eW_MetaDef 3
+aCPLR_ZKey 1332040
+aStatus    1
+aUpdateInd 2
+aName      TZPNTROO
+aLastSyncDate 20130115160845545
+aLastUpdateDate 20130115160845545
+
+eW_MetaDef 3
+aCPLR_ZKey 1332058
+aStatus    1
+aUpdateInd 2
+aName      TZDIALOGS
+aLastSyncDate 20130115160838070
+aLastUpdateDate 20130115160838070
+
+eW_MetaDef 3
+aCPLR_ZKey 1332196
+aStatus    1
+aUpdateInd 2
+aName      TZWINOPT
+aLastSyncDate 20130115160836814
+aLastUpdateDate 20130115160836814
+
+eW_MetaDef 3
+aCPLR_ZKey 1332234
+aStatus    1
+aUpdateInd 2
+aName      TZPNEVWO
+aLastSyncDate 20130115160842599
+aLastUpdateDate 20130115160842599
+
+eW_MetaDef 3
+aCPLR_ZKey 1332267
+aStatus    1
+aUpdateInd 2
+aName      TZACTION
+aDesc      View for looking at Action subobject
+aLastSyncDate 20130115160836341
+aLastUpdateDate 20130115160836341
+
+eW_MetaDef 3
+aCPLR_ZKey 1332339
+aStatus    1
+aUpdateInd 2
+aName      MapDomain
+aLastSyncDate 20130115160845758
+aLastUpdateDate 20130115160845758
+
+eW_MetaDef 3
+aCPLR_ZKey 1332391
+aStatus    1
+aUpdateInd 2
+aName      SEL_LOD
+aLastSyncDate 20130115160846768
+aLastUpdateDate 20130115160846768
+
+eW_MetaDef 3
+aCPLR_ZKey 1332424
+aStatus    1
+aUpdateInd 2
+aName      ProfileXFER
+aLastSyncDate 20130115160841189
+aLastUpdateDate 20130115160841189
+
+eW_MetaDef 3
+aCPLR_ZKey 1332639
+aStatus    1
+aUpdateInd 2
+aName      TZCONTROL
+aDesc      View for looking at Control subobject
+aLastSyncDate 20130319202316000
+aLastUpdateDate 20130319202316000
+
+eW_MetaDef 3
+aCPLR_ZKey 1332872
+aStatus    1
+aUpdateInd 2
+aName      TZPNOPWO
+aLastSyncDate 20130115160836750
+aLastUpdateDate 20130115160836750
+
+eW_MetaDef 3
+aCPLR_ZKey 1333520
+aStatus    1
+aUpdateInd 2
+aName      DrivingLOD
+aLastSyncDate 20130326210645865
+aLastUpdateDate 20130326210645865
+
+eW_MetaDef 3
+aCPLR_ZKey 1333558
+aStatus    1
+aUpdateInd 2
+aName      DomainList
+aLastSyncDate 20130115160842570
+aLastUpdateDate 20130115160842570
+
+eW_MetaDef 3
+aCPLR_ZKey 1333610
+aStatus    1
+aUpdateInd 2
+aName      TZOPLSWO
+aDesc      Operation Work object to list from
+aLastSyncDate 20130115160841722
+aLastUpdateDate 20130115160841722
+
+eW_MetaDef 3
+aCPLR_ZKey 1333613
+aStatus    1
+aUpdateInd 2
+aName      TZOPDAWO
+aDesc      List of "Selected" entities ( opers of type DA )
+aLastSyncDate 20130115160845367
+aLastUpdateDate 20130115160845367
+
+eW_MetaDef 3
+aCPLR_ZKey 1333753
+aStatus    1
+aUpdateInd 2
+aName      TZOPECWO
+aDesc      selected entitys opers of type ent constraint
+aLastSyncDate 20130115160846666
+aLastUpdateDate 20130115160846666
+
+eW_MetaDef 3
+aCPLR_ZKey 1334000
+aStatus    1
+aUpdateInd 2
+aName      TZOPOCWO
+aDesc      list of selected object constraints
+aLastSyncDate 20130115160840626
+aLastUpdateDate 20130115160840626
+
+eW_MetaDef 3
+aCPLR_ZKey 1334091
+aStatus    1
+aUpdateInd 2
+aName      TZERSASO_REF
+aLastSyncDate 20130115160836188
+aLastUpdateDate 20130115160836188
+
+eW_MetaDef 3
+aCPLR_ZKey 1334121
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDO
+aLastSyncDate 20130115160837735
+aLastUpdateDate 20130115160837735
+
+eW_MetaDef 3
+aCPLR_ZKey 1334251
+aStatus    1
+aUpdateInd 2
+aName      TZTEDFLO
+aLastSyncDate 20130115160843838
+aLastUpdateDate 20130115160843838
+
+eW_MetaDef 3
+aCPLR_ZKey 1334385
+aStatus    1
+aUpdateInd 2
+aName      TZZOHDGO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841791
+aLastUpdateDate 20130115160841791
+
+eW_MetaDef 3
+aCPLR_ZKey 1334549
+aStatus    1
+aUpdateInd 2
+aName      TZZOLFLO
+aLastSyncDate 20130115160839189
+aLastUpdateDate 20130115160839189
+
+eW_MetaDef 3
+aCPLR_ZKey 1334584
+aStatus    1
+aUpdateInd 2
+aName      TZZOSFLO
+aLastSyncDate 20130115160846213
+aLastUpdateDate 20130115160846213
+
+eW_MetaDef 3
+aCPLR_ZKey 1335187
+aStatus    1
+aUpdateInd 2
+aName      TZDLG_List
+aLastSyncDate 20130115160843047
+aLastUpdateDate 20130115160843047
+
+eW_MetaDef 3
+aCPLR_ZKey 1335195
+aStatus    1
+aUpdateInd 2
+aName      TZWND_List
+aLastSyncDate 20130115160842320
+aLastUpdateDate 20130115160842320
+
+eW_MetaDef 3
+aCPLR_ZKey 1335240
+aStatus    1
+aUpdateInd 2
+aName      TZSCOPE
+aLastSyncDate 20130115160845578
+aLastUpdateDate 20130115160845578
+
+eW_MetaDef 3
+aCPLR_ZKey 1335242
+aStatus    1
+aUpdateInd 2
+aName      TZSCOPEL
+aDesc      Work object for creating scope entity list.
+aLastSyncDate 20130115160836428
+aLastUpdateDate 20130115160836428
+
+eW_MetaDef 3
+aCPLR_ZKey 1335324
+aStatus    1
+aUpdateInd 2
+aName      TZPNCTWO
+aLastSyncDate 20130115160841396
+aLastUpdateDate 20130115160841396
+
+eW_MetaDef 3
+aCPLR_ZKey 1335731
+aStatus    1
+aUpdateInd 2
+aName      TZPULL_Entity
+aLastSyncDate 20130115160839804
+aLastUpdateDate 20130115160839804
+
+eW_MetaDef 3
+aCPLR_ZKey 1335753
+aStatus    1
+aUpdateInd 2
+aName      TZPULL_Attribute
+aLastSyncDate 20130115160838752
+aLastUpdateDate 20130115160838752
+
+eW_MetaDef 3
+aCPLR_ZKey 1336051
+aStatus    1
+aUpdateInd 2
+aName      TZDATA_Attrib
+aLastSyncDate 20130115160837448
+aLastUpdateDate 20130115160837448
+
+eW_MetaDef 3
+aCPLR_ZKey 1337289
+aStatus    1
+aUpdateInd 2
+aName      TZDGSRCO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840192
+aLastUpdateDate 20130115160840192
+
+eW_MetaDef 3
+aCPLR_ZKey 1337405
+aStatus    1
+aUpdateInd 2
+aName      CM_ListGroup
+aDesc      Extra CM_List view for listing Domain and GOP groups
+aLastSyncDate 20130115160840831
+aLastUpdateDate 20130115160840831
+
+eW_MetaDef 3
+aCPLR_ZKey 1337500
+aStatus    1
+aUpdateInd 2
+aName      CM_List
+aLastSyncDate 20130115160838820
+aLastUpdateDate 20130115160838820
+
+eW_MetaDef 3
+aCPLR_ZKey 1337759
+aStatus    1
+aUpdateInd 2
+aName      TZCMSLPL
+aLastSyncDate 20130115160844624
+aLastUpdateDate 20130115160844624
+
+eW_MetaDef 3
+aCPLR_ZKey 1337807
+aStatus    1
+aUpdateInd 2
+aName      TargetLPLR
+aDesc      Component Migration - Target List
+aLastSyncDate 20130115160840757
+aLastUpdateDate 20130115160840757
+
+eW_MetaDef 3
+aCPLR_ZKey 1337820
+aStatus    1
+aUpdateInd 2
+aName      SourceLPLR
+aDesc      Source LPLR for Meta Migration
+aLastSyncDate 20130115160837953
+aLastUpdateDate 20130115160837953
+
+eW_MetaDef 3
+aCPLR_ZKey 1337825
+aStatus    1
+aUpdateInd 2
+aName      TZCMLPLO
+aLastSyncDate 20130115160836509
+aLastUpdateDate 20130115160836509
+
+eW_MetaDef 3
+aCPLR_ZKey 1337854
+aStatus    1
+aUpdateInd 2
+aName      TZCMWKSO
+aLastSyncDate 20130115160844081
+aLastUpdateDate 20130115160844081
+
+eW_MetaDef 3
+aCPLR_ZKey 1338086
+aStatus    1
+aUpdateInd 2
+aName      TZOBRWOO
+aDesc      Work object for Object Browser
+aLastSyncDate 20130115160838234
+aLastUpdateDate 20130115160838234
+
+eW_MetaDef 3
+aCPLR_ZKey 1338158
+aStatus    1
+aUpdateInd 2
+aName      TZOBOIOO
+aLastSyncDate 20130115160839657
+aLastUpdateDate 20130115160839657
+
+eW_MetaDef 3
+aCPLR_ZKey 1338252
+aStatus    1
+aUpdateInd 2
+aName      TZOBRWOD
+aLastSyncDate 20130115160846697
+aLastUpdateDate 20130115160846697
+
+eW_MetaDef 3
+aCPLR_ZKey 1338657
+aStatus    1
+aUpdateInd 2
+aName      KZAPPLOO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837416
+aLastUpdateDate 20130115160837416
+
+eW_MetaDef 3
+aCPLR_ZKey 1338840
+aStatus    1
+aUpdateInd 2
+aName      TZOLOBWO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160845593
+aLastUpdateDate 20130115160845593
+
+eW_MetaDef 3
+aCPLR_ZKey 1339035
+aStatus    1
+aUpdateInd 2
+aName      TZCMREPW
+aDesc      Temp work view of Repository Users
+aLastSyncDate 20130115160842555
+aLastUpdateDate 20130115160842555
+
+eW_MetaDef 3
+aCPLR_ZKey 1339042
+aStatus    1
+aUpdateInd 2
+aName      TZCMWIPO
+aLastSyncDate 20130115160844928
+aLastUpdateDate 20130115160844928
+
+eW_MetaDef 3
+aCPLR_ZKey 1339072
+aStatus    1
+aUpdateInd 2
+aName      TZCM_ChkInList
+aLastSyncDate 20130115160845720
+aLastUpdateDate 20130115160845720
+
+eW_MetaDef 3
+aCPLR_ZKey 1339101
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPRL
+aLastSyncDate 20130115160842686
+aLastUpdateDate 20130115160842686
+
+eW_MetaDef 3
+aCPLR_ZKey 1339144
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPRO
+aLastSyncDate 20130115160836846
+aLastUpdateDate 20130115160836846
+
+eW_MetaDef 3
+aCPLR_ZKey 1339232
+aStatus    1
+aUpdateInd 2
+aName      TZCMLPLW
+aLastSyncDate 20130115160846811
+aLastUpdateDate 20130115160846811
+
+eW_MetaDef 3
+aCPLR_ZKey 1339271
+aStatus    1
+aUpdateInd 2
+aName      TZLPLRLS
+aLastSyncDate 20130115160838186
+aLastUpdateDate 20130115160838186
+
+eW_MetaDef 3
+aCPLR_ZKey 1339506
+aStatus    1
+aUpdateInd 2
+aName      TZCMCRWO
+aLastSyncDate 20130115160841278
+aLastUpdateDate 20130115160841278
+
+eW_MetaDef 3
+aCPLR_ZKey 1340303
+aStatus    1
+aUpdateInd 2
+aName      ToolAbout
+aLastSyncDate 20130115160843893
+aLastUpdateDate 20130115160843893
+
+eW_MetaDef 3
+aCPLR_ZKey 1340371
+aStatus    1
+aUpdateInd 2
+aName      LPLR_VOR_Meta
+aLastSyncDate 20130115160838733
+aLastUpdateDate 20130115160838733
+
+eW_MetaDef 3
+aCPLR_ZKey 1340409
+aStatus    1
+aUpdateInd 2
+aName      ApplVOR
+aLastSyncDate 20130115160839594
+aLastUpdateDate 20130115160839594
+
+eW_MetaDef 3
+aCPLR_ZKey 1340426
+aStatus    1
+aUpdateInd 2
+aName      LPLR_LOD_Meta
+aLastSyncDate 20130115160836327
+aLastUpdateDate 20130115160836327
+
+eW_MetaDef 3
+aCPLR_ZKey 1340593
+aStatus    1
+aUpdateInd 2
+aName      DlgGraph
+aDesc      Work for Dialog Graph
+aLastSyncDate 20130115160845189
+aLastUpdateDate 20130115160845189
+
+eW_MetaDef 3
+aCPLR_ZKey 1340793
+aStatus    1
+aUpdateInd 2
+aName      CurrentMeta
+aLastSyncDate 20130115160839484
+aLastUpdateDate 20130115160839484
+
+eW_MetaDef 3
+aCPLR_ZKey 1340809
+aStatus    1
+aUpdateInd 2
+aName      TaskLPLR
+aLastSyncDate 20130115160841130
+aLastUpdateDate 20130115160841130
+
+eW_MetaDef 3
+aCPLR_ZKey 1340850
+aStatus    1
+aUpdateInd 2
+aName      TZVSXCOO
+aDesc      The Application Launch Manager Breakpoint thingy
+aLastSyncDate 20130115160837702
+aLastUpdateDate 20130115160837702
+
+eW_MetaDef 3
+aCPLR_ZKey 1340911
+aStatus    1
+aUpdateInd 2
+aName      SOURCEMETA
+aLastSyncDate 20130115160837969
+aLastUpdateDate 20130115160837969
+
+eW_MetaDef 3
+aCPLR_ZKey 1341134
+aStatus    1
+aUpdateInd 2
+aName      TZVSINIT
+aLastSyncDate 20130115160846050
+aLastUpdateDate 20130115160846050
+
+eW_MetaDef 3
+aCPLR_ZKey 1341240
+aStatus    1
+aUpdateInd 2
+aName      XPG
+aLastSyncDate 20130115160845801
+aLastUpdateDate 20130115160845801
+
+eW_MetaDef 3
+aCPLR_ZKey 1341256
+aStatus    1
+aUpdateInd 2
+aName      StackObject
+aDesc      Non-presistent data  store for use during VML interpretation
+aLastSyncDate 20130115160836734
+aLastUpdateDate 20130115160836734
+
+eW_MetaDef 3
+aCPLR_ZKey 1341380
+aStatus    1
+aUpdateInd 2
+aName      TZVMEROO
+aLastSyncDate 20130115160846244
+aLastUpdateDate 20130115160846244
+
+eW_MetaDef 3
+aCPLR_ZKey 1341540
+aStatus    1
+aUpdateInd 2
+aName      TE_DB_Environ
+aLastSyncDate 20130115160836704
+aLastUpdateDate 20130115160836704
+
+eW_MetaDef 3
+aCPLR_ZKey 1341816
+aStatus    1
+aUpdateInd 2
+aName      TE_DTEnviron
+aLastSyncDate 20130115160845869
+aLastUpdateDate 20130115160845869
+
+eW_MetaDef 3
+aCPLR_ZKey 1342203
+aStatus    1
+aUpdateInd 2
+aName      CM_DTE_List
+aLastSyncDate 20130115160837432
+aLastUpdateDate 20130115160837432
+
+eW_MetaDef 3
+aCPLR_ZKey 1342239
+aStatus    1
+aUpdateInd 2
+aName      TE_XAM
+aLastSyncDate 20130115160841742
+aLastUpdateDate 20130115160841742
+
+eW_MetaDef 3
+aCPLR_ZKey 1342360
+aStatus    1
+aUpdateInd 2
+aName      TE_XAM_Wrk
+aLastSyncDate 20130115160846328
+aLastUpdateDate 20130115160846328
+
+eW_MetaDef 3
+aCPLR_ZKey 1342454
+aStatus    1
+aUpdateInd 2
+aName      TZSIWK1O
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844411
+aLastUpdateDate 20130115160844411
+
+eW_MetaDef 3
+aCPLR_ZKey 1342528
+aStatus    1
+aUpdateInd 2
+aName      TZREPOWK
+aLastSyncDate 20130115160840090
+aLastUpdateDate 20130115160840090
+
+eW_MetaDef 3
+aCPLR_ZKey 1342535
+aStatus    1
+aUpdateInd 2
+aName      TZREPOML
+aLastSyncDate 20130115160838805
+aLastUpdateDate 20130115160838805
+
+eW_MetaDef 3
+aCPLR_ZKey 1342718
+aStatus    1
+aUpdateInd 2
+aName      TZCTLMAP2
+aDesc      Ctrl Mapping View
+aLastSyncDate 20130115160845676
+aLastUpdateDate 20130115160845676
+
+eW_MetaDef 3
+aCPLR_ZKey 1342729
+aStatus    1
+aUpdateInd 2
+aName      TZCTLMAP3
+aLastSyncDate 20130115160836494
+aLastUpdateDate 20130115160836494
+
+eW_MetaDef 3
+aCPLR_ZKey 1343013
+aStatus    1
+aUpdateInd 2
+aName      TZPNRECURS
+aLastSyncDate 20130115160836477
+aLastUpdateDate 20130115160836477
+
+eW_MetaDef 3
+aCPLR_ZKey 1343097
+aStatus    1
+aUpdateInd 2
+aName      TZOUTLINER
+aLastSyncDate 20130115160839921
+aLastUpdateDate 20130115160839921
+
+eW_MetaDef 3
+aCPLR_ZKey 1343862
+aStatus    1
+aUpdateInd 2
+aName      TZPESRCV
+aLastSyncDate 20130115160840449
+aLastUpdateDate 20130115160840449
+
+eW_MetaDef 3
+aCPLR_ZKey 1343979
+aStatus    1
+aUpdateInd 2
+aName      TZPEWRKV
+aLastSyncDate 20130115160837583
+aLastUpdateDate 20130115160837583
+
+eW_MetaDef 3
+aCPLR_ZKey 1344193
+aStatus    1
+aUpdateInd 2
+aName      TZPECTRL
+aLastSyncDate 20130115160845249
+aLastUpdateDate 20130115160845249
+
+eW_MetaDef 3
+aCPLR_ZKey 1345039
+aStatus    1
+aUpdateInd 2
+aName      HEADERCM
+aLastSyncDate 20130115160839293
+aLastUpdateDate 20130115160839293
+
+eW_MetaDef 3
+aCPLR_ZKey 1345096
+aStatus    1
+aUpdateInd 2
+aName      SRC_CM_List
+aDesc      View used for list of Source File Meta's
+aLastSyncDate 20130115160837051
+aLastUpdateDate 20130115160837051
+
+eW_MetaDef 3
+aCPLR_ZKey 1345141
+aStatus    1
+aUpdateInd 2
+aName      CMLIST
+aLastSyncDate 20130115160837987
+aLastUpdateDate 20130115160837987
+
+eW_MetaDef 3
+aCPLR_ZKey 1345237
+aStatus    1
+aUpdateInd 2
+aName      TZOGSRCO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839309
+aLastUpdateDate 20130115160839309
+
+eW_MetaDef 3
+aCPLR_ZKey 1345680
+aStatus    1
+aUpdateInd 2
+aName      SRC
+aLastSyncDate 20130115160838918
+aLastUpdateDate 20130115160838918
+
+eW_MetaDef 3
+aCPLR_ZKey 1345824
+aStatus    1
+aUpdateInd 2
+aName      TZOPSIGK
+aDesc      List of Zeidon operations
+aLastSyncDate 20130115160840014
+aLastUpdateDate 20130115160840014
+
+eW_MetaDef 3
+aCPLR_ZKey 1346267
+aStatus    1
+aUpdateInd 2
+aName      HEADERMETA
+aLastSyncDate 20130115160836413
+aLastUpdateDate 20130115160836413
+
+eW_MetaDef 3
+aCPLR_ZKey 1347134
+aStatus    1
+aUpdateInd 2
+aName      TZOPLSWO2
+aDesc      Second work view for work object
+aLastSyncDate 20130115160841336
+aLastUpdateDate 20130115160841336
+
+eW_MetaDef 3
+aCPLR_ZKey 1347196
+aStatus    1
+aUpdateInd 2
+aName      TZHKEYOO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160845025
+aLastUpdateDate 20130115160845025
+
+eW_MetaDef 3
+aCPLR_ZKey 1347200
+aStatus    1
+aUpdateInd 2
+aName      KZHKEYSO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842393
+aLastUpdateDate 20130115160842393
+
+eW_MetaDef 3
+aCPLR_ZKey 1347554
+aStatus    1
+aUpdateInd 2
+aName      TZERSASO
+aLastSyncDate 20130115160836943
+aLastUpdateDate 20130115160836943
+
+eW_MetaDef 3
+aCPLR_ZKey 1347675
+aStatus    1
+aUpdateInd 2
+aName      TZERENTO_List
+aLastSyncDate 20130115160842925
+aLastUpdateDate 20130115160842925
+
+eW_MetaDef 3
+aCPLR_ZKey 1347716
+aStatus    1
+aUpdateInd 2
+aName      TZERSFLO
+aLastSyncDate 20130115160839769
+aLastUpdateDate 20130115160839769
+
+eW_MetaDef 3
+aCPLR_ZKey 1347964
+aStatus    1
+aUpdateInd 2
+aName      TZERENLO
+aLastSyncDate 20130115160839278
+aLastUpdateDate 20130115160839278
+
+eW_MetaDef 3
+aCPLR_ZKey 1348492
+aStatus    1
+aUpdateInd 2
+aName      TZERRLLO
+aLastSyncDate 20130115160844572
+aLastUpdateDate 20130115160844572
+
+eW_MetaDef 3
+aCPLR_ZKey 1348548
+aStatus    1
+aUpdateInd 2
+aName      TZERATLO
+aLastSyncDate 20130115160842974
+aLastUpdateDate 20130115160842974
+
+eW_MetaDef 3
+aCPLR_ZKey 1348682
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDO_RLL
+aDesc      Used in code for identifier in TZERIDND  and for DimHier outline control maping in TZEREMDD
+aLastSyncDate 20130115160837085
+aLastUpdateDate 20130115160837085
+
+eW_MetaDef 3
+aCPLR_ZKey 1348953
+aStatus    1
+aUpdateInd 2
+aName      newTZEREMDO
+aLastSyncDate 20130115160840788
+aLastUpdateDate 20130115160840788
+
+eW_MetaDef 3
+aCPLR_ZKey 1350329
+aStatus    1
+aUpdateInd 2
+aName      TZEDFRMD_TZCMLPLO_List
+aLastSyncDate 20130115160844427
+aLastUpdateDate 20130115160844427
+
+eW_MetaDef 3
+aCPLR_ZKey 1350428
+aStatus    1
+aUpdateInd 2
+aName      TZEDWRKO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842290
+aLastUpdateDate 20130115160842290
+
+eW_MetaDef 3
+aCPLR_ZKey 1350509
+aStatus    1
+aUpdateInd 2
+aName      TZOPSRCO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841351
+aLastUpdateDate 20130115160841351
+
+eW_MetaDef 3
+aCPLR_ZKey 1350527
+aStatus    1
+aUpdateInd 2
+aName      EditorProfile
+aLastSyncDate 20130115160845628
+aLastUpdateDate 20130115160845628
+
+eW_MetaDef 3
+aCPLR_ZKey 1351178
+aStatus    1
+aUpdateInd 2
+aName      TZCMRPTO
+aDesc      Refresh Report Object view for CM
+aLastSyncDate 20130115160843676
+aLastUpdateDate 20130115160843676
+
+eW_MetaDef 3
+aCPLR_ZKey 1351377
+aStatus    1
+aUpdateInd 2
+aName      CPL_List
+aLastSyncDate 20130115160844959
+aLastUpdateDate 20130115160844959
+
+eW_MetaDef 3
+aCPLR_ZKey 1351380
+aStatus    1
+aUpdateInd 2
+aName      TZCMREPO
+aLastSyncDate 20130115160838290
+aLastUpdateDate 20130115160838290
+
+eW_MetaDef 3
+aCPLR_ZKey 1351468
+aStatus    1
+aUpdateInd 2
+aName      TZCMRUWK
+aLastSyncDate 20130115160841322
+aLastUpdateDate 20130115160841322
+
+eW_MetaDef 3
+aCPLR_ZKey 1351489
+aStatus    1
+aUpdateInd 2
+aName      TZCMCUWK
+aLastSyncDate 20130115160841474
+aLastUpdateDate 20130115160841474
+
+eW_MetaDef 3
+aCPLR_ZKey 1351579
+aStatus    1
+aUpdateInd 2
+aName      TZCMWULO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841104
+aLastUpdateDate 20130115160841104
+
+eW_MetaDef 3
+aCPLR_ZKey 1351751
+aStatus    1
+aUpdateInd 2
+aName      TZCM_CPLR_MetaList
+aDesc      VOR for building filtered Meta lists
+aLastSyncDate 20130115160845053
+aLastUpdateDate 20130115160845053
+
+eW_MetaDef 3
+aCPLR_ZKey 1351828
+aStatus    1
+aUpdateInd 2
+aName      TZCMUSER
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160838949
+aLastUpdateDate 20130115160838949
+
+eW_MetaDef 3
+aCPLR_ZKey 1352003
+aStatus    1
+aUpdateInd 2
+aName      TZCMRCRO_Select
+aLastSyncDate 20130115160842051
+aLastUpdateDate 20130115160842051
+
+eW_MetaDef 3
+aCPLR_ZKey 1352097
+aStatus    1
+aUpdateInd 2
+aName      TZBRENTO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840133
+aLastUpdateDate 20130115160840133
+
+eW_MetaDef 3
+aCPLR_ZKey 1352204
+aStatus    1
+aUpdateInd 2
+aName      TZBRERDO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837499
+aLastUpdateDate 20130115160837499
+
+eW_MetaDef 3
+aCPLR_ZKey 1352286
+aStatus    1
+aUpdateInd 2
+aName      TZBRRELO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837784
+aLastUpdateDate 20130115160837784
+
+eW_MetaDef 3
+aCPLR_ZKey 1352301
+aStatus    1
+aUpdateInd 2
+aName      TZBRRELO2
+aDesc      Second view to same TZBRRELO object
+aLastSyncDate 20130115160838202
+aLastUpdateDate 20130115160838202
+
+eW_MetaDef 3
+aCPLR_ZKey 1352364
+aStatus    1
+aUpdateInd 2
+aName      TZBRLOEO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160845039
+aLastUpdateDate 20130115160845039
+
+eW_MetaDef 3
+aCPLR_ZKey 1352401
+aStatus    1
+aUpdateInd 2
+aName      TZBRLIAO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846854
+aLastUpdateDate 20130115160846854
+
+eW_MetaDef 3
+aCPLR_ZKey 1352418
+aStatus    1
+aUpdateInd 2
+aName      TZBRLOAO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839609
+aLastUpdateDate 20130115160839609
+
+eW_MetaDef 3
+aCPLR_ZKey 1352545
+aStatus    1
+aUpdateInd 2
+aName      TZADWWKO
+aLastSyncDate 20130115160846404
+aLastUpdateDate 20130115160846404
+
+eW_MetaDef 3
+aCPLR_ZKey 1352547
+aStatus    1
+aUpdateInd 2
+aName      EntityList
+aLastSyncDate 20130115160838345
+aLastUpdateDate 20130115160838345
+
+eW_MetaDef 3
+aCPLR_ZKey 1352565
+aStatus    1
+aUpdateInd 2
+aName      UI_SpecList
+aLastSyncDate 20130115160842942
+aLastUpdateDate 20130115160842942
+
+eW_MetaDef 3
+aCPLR_ZKey 1352578
+aStatus    1
+aUpdateInd 2
+aName      AD_VOR_List
+aLastSyncDate 20130115160840801
+aLastUpdateDate 20130115160840801
+
+eW_MetaDef 3
+aCPLR_ZKey 1352610
+aStatus    1
+aUpdateInd 2
+aName      User_Spec
+aLastSyncDate 20130115160845350
+aLastUpdateDate 20130115160845350
+
+eW_MetaDef 3
+aCPLR_ZKey 1352687
+aStatus    1
+aUpdateInd 2
+aName      LOD_Object
+aLastSyncDate 20130115160836394
+aLastUpdateDate 20130115160836394
+
+eW_MetaDef 3
+aCPLR_ZKey 1352702
+aStatus    1
+aUpdateInd 2
+aName      FlatList
+aLastSyncDate 20130115160836799
+aLastUpdateDate 20130115160836799
+
+eW_MetaDef 3
+aCPLR_ZKey 1352902
+aStatus    1
+aUpdateInd 2
+aName      UIS_List
+aLastSyncDate 20130115160845401
+aLastUpdateDate 20130115160845401
+
+eW_MetaDef 3
+aCPLR_ZKey 1353229
+aStatus    1
+aUpdateInd 2
+aName      TZADCWKO
+aLastSyncDate 20130115160836172
+aLastUpdateDate 20130115160836172
+
+eW_MetaDef 3
+aCPLR_ZKey 1353845
+aStatus    1
+aUpdateInd 2
+aName      ACCOUNT
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842409
+aLastUpdateDate 20130115160842409
+
+eW_MetaDef 3
+aStatus    1
+aUpdateInd 2
+aLastSyncDate 20130115160839838
+aLastUpdateDate 20130115160839838
+
+eW_MetaDef 3
+aCPLR_ZKey 4530459
+aStatus    1
+aUpdateInd 2
+aName      TZLLD
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20140117161846542
+aLastUpdateDate 20140117161846542
+
+eW_MetaDef 3
+aCPLR_ZKey 4840887
+aStatus    1
+aUpdateInd 2
+aName      TZFLOW
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840885
+aLastUpdateDate 20130115160840885
+
+eW_MetaDef 3
+aCPLR_ZKey 4895908
+aStatus    1
+aUpdateInd 2
+aName      TZXSLTSO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841118
+aLastUpdateDate 20130115160841118
+
+eW_MetaDef 3
+aCPLR_ZKey 11005153
+aStatus    1
+aUpdateInd 2
+aName      TZZOWK1O
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842513
+aLastUpdateDate 20130115160842513
+
+eW_MetaDef 3
+aCPLR_ZKey 70007425
+aStatus    1
+aUpdateInd 2
+aName      TZOGSRCO_DETAIL
+aDesc      Used for the group detail within the TZOPUPDD dialog
+aLastSyncDate 20130115160837834
+aLastUpdateDate 20130115160837834
+
+eW_MetaDef 3
+aCPLR_ZKey 70023158
+aStatus    1
+aUpdateInd 2
+aName      KZMSGQOO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846753
+aLastUpdateDate 20130115160846753
+
+eW_MetaDef 3
+aCPLR_ZKey 70023186
+aStatus    1
+aUpdateInd 2
+aName      KZ_OverrideMsg
+aLastSyncDate 20130115160840163
+aLastUpdateDate 20130115160840163
+
+eW_MetaDef 3
+aCPLR_ZKey 70036522
+aStatus    1
+aUpdateInd 2
+aName      AD_VOR_List2
+aLastSyncDate 20130115160844267
+aLastUpdateDate 20130115160844267
+
+eW_MetaDef 3
+aCPLR_ZKey 70036542
+aStatus    1
+aUpdateInd 2
+aName      UserSpecRoot
+aLastSyncDate 20130115160840930
+aLastUpdateDate 20130115160840930
+
+eW_MetaDef 3
+aCPLR_ZKey 70046659
+aStatus    1
+aUpdateInd 2
+aName      TZOPENRPT
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130326210645614
+aLastUpdateDate 20130326210645614
+
+eW_MetaDef 3
+aCPLR_ZKey 70047136
+aStatus    1
+aUpdateInd 2
+aName      TZWDLCVO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846485
+aLastUpdateDate 20130115160846485
+
+eW_MetaDef 3
+aCPLR_ZKey 70061515
+aStatus    1
+aUpdateInd 2
+aName      TZOPGRPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839397
+aLastUpdateDate 20130115160839397
+
+eW_MetaDef 3
+aCPLR_ZKey 70061600
+aStatus    1
+aUpdateInd 2
+aName      TZOPHDRO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841233
+aLastUpdateDate 20130115160841233
+
+eW_MetaDef 3
+aCPLR_ZKey 88021509
+aStatus    1
+aUpdateInd 2
+aName      TZDMXGPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839965
+aLastUpdateDate 20130115160839965
+
+eW_MetaDef 3
+aCPLR_ZKey 88021511
+aStatus    1
+aUpdateInd 2
+aName      TZDGSRCO_NLS
+aDesc      View for NLS windows
+aLastSyncDate 20130115160842527
+aLastUpdateDate 20130115160842527
+
+eW_MetaDef 3
+aCPLR_ZKey 88032971
+aStatus    1
+aUpdateInd 2
+aName      TZDGSRCO_DETAIL
+aDesc      View for Domain Group Detail
+aLastSyncDate 20130115160842482
+aLastUpdateDate 20130115160842482
+
+eW_MetaDef 3
+aCPLR_ZKey 88044456
+aStatus    1
+aUpdateInd 2
+aName      ODBC_EntityInfo
+aDesc      Used to map entity information for ODBC data
+aLastSyncDate 20130115160836766
+aLastUpdateDate 20130115160836766
+
+eW_MetaDef 3
+aCPLR_ZKey 88046471
+aStatus    1
+aUpdateInd 2
+aName      MapDomain2
+aLastSyncDate 20130115160840105
+aLastUpdateDate 20130115160840105
+
+eW_MetaDef 3
+aCPLR_ZKey 89000122
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDO_U
+aDesc      TE Update view to TZEREMDO
+aLastSyncDate 20130115160844818
+aLastUpdateDate 20130115160844818
+
+eW_MetaDef 3
+aCPLR_ZKey 89000389
+aStatus    1
+aUpdateInd 2
+aName      TZERADWO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842843
+aLastUpdateDate 20130115160842843
+
+eW_MetaDef 3
+aCPLR_ZKey 89365216
+aStatus    1
+aUpdateInd 2
+aName      TZERQBDO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842350
+aLastUpdateDate 20130115160842350
+
+eW_MetaDef 3
+aCPLR_ZKey 89365549
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDO_sub
+aDesc      Is subobject view for dimension hierarchy processing
+aLastSyncDate 20130115160841412
+aLastUpdateDate 20130115160841412
+
+eW_MetaDef 3
+aCPLR_ZKey 89366484
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDO_tgt
+aDesc      used as a recursive target in DimHier processing
+aLastSyncDate 20130115160845263
+aLastUpdateDate 20130115160845263
+
+eW_MetaDef 3
+aCPLR_ZKey 89366621
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDO_OutlineT
+aLastSyncDate 20130115160837319
+aLastUpdateDate 20130115160837319
+
+eW_MetaDef 3
+aCPLR_ZKey 90000026
+aStatus    1
+aUpdateInd 2
+aName      KZSIXSKO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846839
+aLastUpdateDate 20130115160846839
+
+eW_MetaDef 3
+aCPLR_ZKey 90000225
+aStatus    1
+aUpdateInd 2
+aName      TZZOXODO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843416
+aLastUpdateDate 20130115160843416
+
+eW_MetaDef 3
+aCPLR_ZKey 90000922
+aStatus    1
+aUpdateInd 2
+aName      TZVSPOOO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841819
+aLastUpdateDate 20130115160841819
+
+eW_MetaDef 3
+aCPLR_ZKey 90000924
+aStatus    1
+aUpdateInd 2
+aName      TZWDGRWO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844187
+aLastUpdateDate 20130115160844187
+
+eW_MetaDef 3
+aCPLR_ZKey 90001493
+aStatus    1
+aUpdateInd 2
+aName      TZADCSDO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844879
+aLastUpdateDate 20130115160844879
+
+eW_MetaDef 3
+aCPLR_ZKey 90004386
+aStatus    1
+aUpdateInd 2
+aName      TZDBHTSO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844525
+aLastUpdateDate 20130115160844525
+
+eW_MetaDef 3
+aCPLR_ZKey 90004746
+aStatus    1
+aUpdateInd 2
+aName      KZDBHQUA
+aDesc      DB-Handler qualification object
+aLastSyncDate 20130115160840554
+aLastUpdateDate 20130115160840554
+
+eW_MetaDef 3
+aCPLR_ZKey 90004793
+aStatus    1
+aUpdateInd 2
+aName      TZSIIMLO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844769
+aLastUpdateDate 20130115160844769
+
+eW_MetaDef 3
+aCPLR_ZKey 90004898
+aStatus    1
+aUpdateInd 2
+aName      prfToolsForZeidon
+aDesc      Profile view for editor -- we should really get rid of this
+aLastSyncDate 20130115160837718
+aLastUpdateDate 20130115160837718
+
+eW_MetaDef 3
+aCPLR_ZKey 90005114
+aStatus    1
+aUpdateInd 2
+aName      TZOLOBWK
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843284
+aLastUpdateDate 20130115160843284
+
+eW_MetaDef 3
+aCPLR_ZKey 90006783
+aStatus    1
+aUpdateInd 2
+aName      TZBRLOVO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843336
+aLastUpdateDate 20130115160843336
+
+eW_MetaDef 3
+aCPLR_ZKey 90006829
+aStatus    1
+aUpdateInd 2
+aName      TZCMHDWO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841089
+aLastUpdateDate 20130115160841089
+
+eW_MetaDef 3
+aCPLR_ZKey 90007423
+aStatus    1
+aUpdateInd 2
+aName      KZTRANWO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160845312
+aLastUpdateDate 20130115160845312
+
+eW_MetaDef 3
+aCPLR_ZKey 90008681
+aStatus    1
+aUpdateInd 2
+aName      TZDBHTSO2
+aDesc      Secondary DBHandler test object
+aLastSyncDate 20130115160839857
+aLastUpdateDate 20130115160839857
+
+eW_MetaDef 3
+aCPLR_ZKey 90012899
+aStatus    1
+aUpdateInd 2
+aName      TZWDLGSO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837767
+aLastUpdateDate 20130115160837767
+
+eW_MetaDef 3
+aCPLR_ZKey 90013163
+aStatus    1
+aUpdateInd 2
+aName      TZ__PRFO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839469
+aLastUpdateDate 20130115160839469
+
+eW_MetaDef 3
+aCPLR_ZKey 90020452
+aStatus    1
+aUpdateInd 2
+aName      TZTEDBLO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846453
+aLastUpdateDate 20130115160846453
+
+eW_MetaDef 3
+aCPLR_ZKey 90025366
+aStatus    1
+aUpdateInd 2
+aName      TZTEWRKO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160836605
+aLastUpdateDate 20130115160836605
+
+eW_MetaDef 3
+aCPLR_ZKey 90026370
+aStatus    1
+aUpdateInd 2
+aName      ACCOUNTLST
+aLastSyncDate 20130115160846740
+aLastUpdateDate 20130115160846740
+
+eW_MetaDef 3
+aCPLR_ZKey 90034996
+aStatus    1
+aUpdateInd 2
+aName      TZHLPCXO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839440
+aLastUpdateDate 20130115160839440
+
+eW_MetaDef 3
+aCPLR_ZKey 90037522
+aStatus    1
+aUpdateInd 2
+aName      TZEDITOO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846198
+aLastUpdateDate 20130115160846198
+
+eW_MetaDef 3
+aCPLR_ZKey 90040826
+aStatus    1
+aUpdateInd 2
+aName      TZDBHODO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839822
+aLastUpdateDate 20130115160839822
+
+eW_MetaDef 3
+aCPLR_ZKey 90053015
+aStatus    1
+aUpdateInd 2
+aName      TZDBHDBO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844382
+aLastUpdateDate 20130115160844382
+
+eW_MetaDef 3
+aCPLR_ZKey 90055794
+aStatus    1
+aUpdateInd 2
+aName      TZBRDMAO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837173
+aLastUpdateDate 20130115160837173
+
+eW_MetaDef 3
+aCPLR_ZKey 90059385
+aStatus    1
+aUpdateInd 2
+aName      TZADWKLO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844944
+aLastUpdateDate 20130115160844944
+
+eW_MetaDef 3
+aCPLR_ZKey 90081067
+aStatus    1
+aUpdateInd 2
+aName      INCL_LOD_Object
+aLastSyncDate 20130115160838933
+aLastUpdateDate 20130115160838933
+
+eW_MetaDef 3
+aCPLR_ZKey 90121754
+aStatus    1
+aUpdateInd 2
+aName      AD_LOD_List
+aLastSyncDate 20130115160843727
+aLastUpdateDate 20130115160843727
+
+eW_MetaDef 3
+aCPLR_ZKey 90126534
+aStatus    1
+aUpdateInd 2
+aName      TZBRERLO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844118
+aLastUpdateDate 20130115160844118
+
+eW_MetaDef 3
+aCPLR_ZKey 90130509
+aStatus    1
+aUpdateInd 2
+aName      TZCMULWO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840510
+aLastUpdateDate 20130115160840510
+
+eW_MetaDef 3
+aCPLR_ZKey 90146054
+aStatus    1
+aUpdateInd 2
+aName      TZRPTLODENT
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130326210645583
+aLastUpdateDate 20130326210645583
+
+eW_MetaDef 3
+aCPLR_ZKey 90152594
+aStatus    1
+aUpdateInd 2
+aName      PAGEL
+aDesc      List of pages for a Report
+aLastSyncDate 20130115160841174
+aLastUpdateDate 20130115160841174
+
+eW_MetaDef 3
+aCPLR_ZKey 90153064
+aStatus    1
+aUpdateInd 2
+aName      TZOPRUSO2
+aLastSyncDate 20130115160842066
+aLastUpdateDate 20130115160842066
+
+eW_MetaDef 3
+aCPLR_ZKey 90201541
+aStatus    1
+aUpdateInd 2
+aName      TZZOLOD1
+aLastSyncDate 20130115160836991
+aLastUpdateDate 20130115160836991
+
+eW_MetaDef 3
+aCPLR_ZKey 90295899
+aStatus    1
+aUpdateInd 2
+aName      TZRPRDTO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160836862
+aLastUpdateDate 20130115160836862
+
+eW_MetaDef 3
+aCPLR_ZKey 90397490
+aStatus    1
+aUpdateInd 2
+aName      TZERRPTO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842194
+aLastUpdateDate 20130115160842194
+
+eW_MetaDef 3
+aCPLR_ZKey 90442010
+aStatus    1
+aUpdateInd 2
+aName      TZBRAUDO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842423
+aLastUpdateDate 20130115160842423
+
+eW_MetaDef 3
+aCPLR_ZKey 90443305
+aStatus    1
+aUpdateInd 2
+aName      KZDBHWOB
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846635
+aLastUpdateDate 20130115160846635
+
+eW_MetaDef 3
+aCPLR_ZKey 90443306
+aStatus    1
+aUpdateInd 2
+aName      KZGKHWOB
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160836223
+aLastUpdateDate 20130115160836223
+
+eW_MetaDef 3
+aCPLR_ZKey 90443307
+aStatus    1
+aUpdateInd 2
+aName      KZHKEYXO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837616
+aLastUpdateDate 20130115160837616
+
+eW_MetaDef 3
+aCPLR_ZKey 90443308
+aStatus    1
+aUpdateInd 2
+aName      TZCMAVLO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839411
+aLastUpdateDate 20130115160839411
+
+eW_MetaDef 3
+aCPLR_ZKey 90443309
+aStatus    1
+aUpdateInd 2
+aName      TZCMQCPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840729
+aLastUpdateDate 20130115160840729
+
+eW_MetaDef 3
+aCPLR_ZKey 90443310
+aStatus    1
+aUpdateInd 2
+aName      TZCMQSYO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841987
+aLastUpdateDate 20130115160841987
+
+eW_MetaDef 3
+aCPLR_ZKey 90443311
+aStatus    1
+aUpdateInd 2
+aName      TZCMRCRO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843151
+aLastUpdateDate 20130115160843151
+
+eW_MetaDef 3
+aCPLR_ZKey 90443312
+aStatus    1
+aUpdateInd 2
+aName      TZCMRE2O
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846796
+aLastUpdateDate 20130115160846796
+
+eW_MetaDef 3
+aCPLR_ZKey 90443313
+aStatus    1
+aUpdateInd 2
+aName      TZCMREVO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837482
+aLastUpdateDate 20130115160837482
+
+eW_MetaDef 3
+aCPLR_ZKey 90443314
+aStatus    1
+aUpdateInd 2
+aName      TZCTRWKO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839263
+aLastUpdateDate 20130115160839263
+
+eW_MetaDef 3
+aCPLR_ZKey 90443315
+aStatus    1
+aUpdateInd 2
+aName      TZEREMXO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840568
+aLastUpdateDate 20130115160840568
+
+eW_MetaDef 3
+aCPLR_ZKey 90443316
+aStatus    1
+aUpdateInd 2
+aName      TZERENTO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841848
+aLastUpdateDate 20130115160841848
+
+eW_MetaDef 3
+aCPLR_ZKey 90443317
+aStatus    1
+aUpdateInd 2
+aName      TZERPOSO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843063
+aLastUpdateDate 20130115160843063
+
+eW_MetaDef 3
+aCPLR_ZKey 90443318
+aStatus    1
+aUpdateInd 2
+aName      TZMSDGPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844252
+aLastUpdateDate 20130115160844252
+
+eW_MetaDef 3
+aCPLR_ZKey 90443319
+aStatus    1
+aUpdateInd 2
+aName      TZOPSIGO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160845706
+aLastUpdateDate 20130115160845706
+
+eW_MetaDef 3
+aCPLR_ZKey 90443320
+aStatus    1
+aUpdateInd 2
+aName      TZPEWRKO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846869
+aLastUpdateDate 20130115160846869
+
+eW_MetaDef 3
+aCPLR_ZKey 90443321
+aStatus    1
+aUpdateInd 2
+aName      TZTEMPMO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837549
+aLastUpdateDate 20130115160837549
+
+eW_MetaDef 3
+aCPLR_ZKey 90443322
+aStatus    1
+aUpdateInd 2
+aName      TZTENVTO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837919
+aLastUpdateDate 20130115160837919
+
+eW_MetaDef 3
+aCPLR_ZKey 90443323
+aStatus    1
+aUpdateInd 2
+aName      TZVSEXPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839754
+aLastUpdateDate 20130115160839754
+
+eW_MetaDef 3
+aCPLR_ZKey 90443324
+aStatus    1
+aUpdateInd 2
+aName      TZVSRTOO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841029
+aLastUpdateDate 20130115160841029
+
+eW_MetaDef 3
+aCPLR_ZKey 90443325
+aStatus    1
+aUpdateInd 2
+aName      TZZOTYPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842334
+aLastUpdateDate 20130115160842334
+
+eW_MetaDef 3
+aCPLR_ZKey 90443344
+aStatus    1
+aUpdateInd 2
+aName      TZCMFILO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160839872
+aLastUpdateDate 20130115160839872
+
+eW_MetaDef 3
+aCPLR_ZKey 91000225
+aStatus    1
+aUpdateInd 2
+aName      TZHLPCXO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843876
+aLastUpdateDate 20130115160843876
+
+eW_MetaDef 3
+aCPLR_ZKey 91006677
+aStatus    1
+aUpdateInd 2
+aName      TZTENVRO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160836540
+aLastUpdateDate 20130115160836540
+
+eW_MetaDef 3
+aCPLR_ZKey 91006682
+aStatus    1
+aUpdateInd 2
+aName      TZWDVORO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842541
+aLastUpdateDate 20130115160842541
+
+eW_MetaDef 3
+aCPLR_ZKey 91012558
+aStatus    1
+aUpdateInd 2
+aName      TZBRAU2O
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844833
+aLastUpdateDate 20130115160844833
+
+eW_MetaDef 3
+aCPLR_ZKey 91012602
+aStatus    1
+aUpdateInd 2
+aName      TZCMAUDO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844556
+aLastUpdateDate 20130115160844556
+
+eW_MetaDef 3
+aCPLR_ZKey 91020372
+aStatus    1
+aUpdateInd 2
+aName      TZSIIMWK
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843234
+aLastUpdateDate 20130115160843234
+
+eW_MetaDef 3
+aCPLR_ZKey 91023617
+aStatus    1
+aUpdateInd 2
+aName      KZSIRRPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844707
+aLastUpdateDate 20130115160844707
+
+eW_MetaDef 3
+aCPLR_ZKey 91023618
+aStatus    1
+aUpdateInd 2
+aName      TZUVIMPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846100
+aLastUpdateDate 20130115160846100
+
+eW_MetaDef 3
+aCPLR_ZKey 91036866
+aStatus    1
+aUpdateInd 2
+aName      TZBRAU3O
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843549
+aLastUpdateDate 20130115160843549
+
+eW_MetaDef 3
+aCPLR_ZKey 91038135
+aStatus    1
+aUpdateInd 2
+aName      TZCMREVOLST
+aLastSyncDate 20130115160846390
+aLastUpdateDate 20130115160846390
+
+eW_MetaDef 3
+aCPLR_ZKey 91038136
+aStatus    1
+aUpdateInd 2
+aName      TZZOLODO_Desc
+aLastSyncDate 20130115160837006
+aLastUpdateDate 20130115160837006
+
+eW_MetaDef 3
+aCPLR_ZKey 91043643
+aStatus    1
+aUpdateInd 2
+aName      KZTRACEO
+aLastSyncDate 20130115160840077
+aLastUpdateDate 20130115160840077
+
+eW_MetaDef 3
+aCPLR_ZKey 91043644
+aStatus    1
+aUpdateInd 2
+aName      KZTRACEOLST
+aLastSyncDate 20130115160841381
+aLastUpdateDate 20130115160841381
+
+eW_MetaDef 3
+aCPLR_ZKey 91053375
+aStatus    1
+aUpdateInd 2
+aName      TZSIDEWK
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844281
+aLastUpdateDate 20130115160844281
+
+eW_MetaDef 3
+aCPLR_ZKey 92002359
+aStatus    1
+aUpdateInd 2
+aName      TZERADWE
+aLastSyncDate 20130115160843167
+aLastUpdateDate 20130115160843167
+
+eW_MetaDef 3
+aCPLR_ZKey 92002360
+aStatus    1
+aUpdateInd 2
+aName      TZERADWELST
+aLastSyncDate 20130115160844509
+aLastUpdateDate 20130115160844509
+
+eW_MetaDef 3
+aCPLR_ZKey 92716435
+aStatus    1
+aUpdateInd 2
+aName      TZRPTOUTLINER
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130326210646419
+aLastUpdateDate 20130326210646419
+
+eW_MetaDef 3
+aCPLR_ZKey 92716670
+aStatus    1
+aUpdateInd 2
+aName      TZRPSRCO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130326210645434
+aLastUpdateDate 20130326210645434
+
+eW_MetaDef 3
+aCPLR_ZKey 92719001
+aStatus    1
+aUpdateInd 2
+aName      KZRESTRC
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130326210645966
+aLastUpdateDate 20130326210645966
+
+eW_MetaDef 3
+aCPLR_ZKey 92719623
+aStatus    1
+aUpdateInd 2
+aName      TZCONTROLR
+aLastSyncDate 20130319202408000
+aLastUpdateDate 20130319202408000
+
+eW_MetaDef 3
+aCPLR_ZKey 93077878
+aStatus    1
+aUpdateInd 2
+aName      KZXMLPGO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844913
+aLastUpdateDate 20130115160844913
+
+eW_MetaDef 3
+aCPLR_ZKey 97121778
+aStatus    1
+aUpdateInd 2
+aName      TZCMWKUS
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160836636
+aLastUpdateDate 20130115160836636
+
+eW_MetaDef 3
+aCPLR_ZKey 97152817
+aStatus    1
+aUpdateInd 2
+aName      CM_ShowDialog
+aLastSyncDate 20130115160842991
+aLastUpdateDate 20130115160842991
+
+eW_MetaDef 3
+aCPLR_ZKey 97152827
+aStatus    1
+aUpdateInd 2
+aName      CM_DialogList
+aLastSyncDate 20130115160844640
+aLastUpdateDate 20130115160844640
+
+eW_MetaDef 3
+aCPLR_ZKey 97365403
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPRO_New
+aDesc      View for Save CLPR as
+aLastSyncDate 20130115160842437
+aLastUpdateDate 20130115160842437
+
+eW_MetaDef 3
+aCPLR_ZKey 97367386
+aStatus    1
+aUpdateInd 2
+aName      TZSAVEAS
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160837936
+aLastUpdateDate 20130115160837936
+
+eW_MetaDef 3
+aCPLR_ZKey 98003862
+aStatus    1
+aUpdateInd 2
+aName      OrigLPLR
+aLastSyncDate 20130115160838085
+aLastUpdateDate 20130115160838085
+
+eW_MetaDef 3
+aCPLR_ZKey 98071280
+aStatus    1
+aUpdateInd 2
+aName      TZEDWDEL
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846115
+aLastUpdateDate 20130115160846115
+
+eW_MetaDef 3
+aCPLR_ZKey 98078823
+aStatus    1
+aUpdateInd 2
+aName      MoveOperation
+aDesc      move Operation in new Operation Group
+aLastSyncDate 20130115160840000
+aLastUpdateDate 20130115160840000
+
+eW_MetaDef 3
+aCPLR_ZKey 98078993
+aStatus    1
+aUpdateInd 2
+aName      TZOPRUSO_Move
+aLastSyncDate 20130115160846606
+aLastUpdateDate 20130115160846606
+
+eW_MetaDef 3
+aCPLR_ZKey 98086883
+aStatus    1
+aUpdateInd 2
+aName      MoveDomain
+aDesc      move Domain in new Domain Group
+aLastSyncDate 20130115160838005
+aLastUpdateDate 20130115160838005
+
+eW_MetaDef 3
+aCPLR_ZKey 98093985
+aStatus    1
+aUpdateInd 2
+aName      TZTEERR
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160846725
+aLastUpdateDate 20130115160846725
+
+eW_MetaDef 3
+aCPLR_ZKey 98137089
+aStatus    1
+aUpdateInd 2
+aName      TZPNTBAR
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160838155
+aLastUpdateDate 20130115160838155
+
+eW_MetaDef 3
+aCPLR_ZKey 98166040
+aStatus    1
+aUpdateInd 2
+aName      CopyOperation
+aLastSyncDate 20130115160842115
+aLastUpdateDate 20130115160842115
+
+eW_MetaDef 3
+aCPLR_ZKey 98177798
+aStatus    1
+aUpdateInd 2
+aName      TZPNMAPP
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840253
+aLastUpdateDate 20130115160840253
+
+eW_MetaDef 3
+aCPLR_ZKey 98178006
+aStatus    1
+aUpdateInd 2
+aName      MapTreeCtrl
+aLastSyncDate 20130115160842162
+aLastUpdateDate 20130115160842162
+
+eW_MetaDef 3
+aCPLR_ZKey 98184306
+aStatus    1
+aUpdateInd 2
+aName      TZERSAPO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160838784
+aLastUpdateDate 20130115160838784
+
+eW_MetaDef 3
+aCPLR_ZKey 98188866
+aStatus    1
+aUpdateInd 2
+aName      TZSAPERR
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160840119
+aLastUpdateDate 20130115160840119
+
+eW_MetaDef 3
+aCPLR_ZKey 98230197
+aStatus    1
+aUpdateInd 2
+aName      TZSAPRS
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160845920
+aLastUpdateDate 20130115160845920
+
+eW_MetaDef 3
+aCPLR_ZKey 123066102
+aStatus    1
+aUpdateInd 2
+aName      TZOPSIG2
+aDesc      Source for Copy Operation
+aLastSyncDate 20130115160846183
+aLastUpdateDate 20130115160846183
+
+eW_MetaDef 3
+aCPLR_ZKey 127042474
+aStatus    1
+aUpdateInd 2
+aName      TZBMPATH
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160843792
+aLastUpdateDate 20130115160843792
+
+eW_MetaDef 3
+aCPLR_ZKey 127042805
+aStatus    1
+aUpdateInd 2
+aName      TZERDERR
+aDesc      ERD Error List
+aLastSyncDate 20130115160837632
+aLastUpdateDate 20130115160837632
+
+eW_MetaDef 3
+aCPLR_ZKey 127045051
+aStatus    1
+aUpdateInd 2
+aName      ReusableCPLR
+aLastSyncDate 20130115160838871
+aLastUpdateDate 20130115160838871
+
+eW_MetaDef 3
+aCPLR_ZKey 127045137
+aStatus    1
+aUpdateInd 2
+aName      TZCMCOMP
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842260
+aLastUpdateDate 20130115160842260
+
+eW_MetaDef 3
+aCPLR_ZKey 127046961
+aStatus    1
+aUpdateInd 2
+aName      TZBMPERR
+aLastSyncDate 20130115160836375
+aLastUpdateDate 20130115160836375
+
+eW_MetaDef 3
+aCPLR_ZKey 127047101
+aStatus    1
+aUpdateInd 2
+aName      TZERROR
+aDesc      Error List Window
+aLastSyncDate 20130115160845279
+aLastUpdateDate 20130115160845279
+
+eW_MetaDef 3
+aCPLR_ZKey 127065684
+aStatus    1
+aUpdateInd 2
+aName      TZCMREUS
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160838378
+aLastUpdateDate 20130115160838378
+
+eW_MetaDef 3
+aCPLR_ZKey 127075417
+aStatus    1
+aUpdateInd 2
+aName      TZCMCUSR
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841145
+aLastUpdateDate 20130115160841145
+
+eW_MetaDef 3
+aCPLR_ZKey 127075569
+aStatus    1
+aUpdateInd 2
+aName      AllReusableCPLR
+aLastSyncDate 20130115160837515
+aLastUpdateDate 20130115160837515
+
+eW_MetaDef 3
+aCPLR_ZKey 127075904
+aStatus    1
+aUpdateInd 2
+aName      TZCMCOML
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842022
+aLastUpdateDate 20130115160842022
+
+eW_MetaDef 3
+aCPLR_ZKey 127076124
+aStatus    1
+aUpdateInd 2
+aName      CPLR_MetaList
+aLastSyncDate 20130115160843217
+aLastUpdateDate 20130115160843217
+
+eW_MetaDef 3
+aCPLR_ZKey 127076183
+aStatus    1
+aUpdateInd 2
+aName      TZCMFILE
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844133
+aLastUpdateDate 20130115160844133
+
+eW_MetaDef 3
+aCPLR_ZKey 127076211
+aStatus    1
+aUpdateInd 2
+aName      CPLR_AllMetas
+aLastSyncDate 20130115160842379
+aLastUpdateDate 20130115160842379
+
+eW_MetaDef 3
+aCPLR_ZKey 127076505
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPLR
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844849
+aLastUpdateDate 20130115160844849
+
+eW_MetaDef 3
+aCPLR_ZKey 127085990
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPL
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160841426
+aLastUpdateDate 20130115160841426
+
+eW_MetaDef 3
+aCPLR_ZKey 127086766
+aStatus    1
+aUpdateInd 2
+aName      TZCMZKEY
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160844671
+aLastUpdateDate 20130115160844671
+
+eW_MetaDef 3
+aCPLR_ZKey 127086978
+aStatus    1
+aUpdateInd 2
+aName      CompilerSpec
+aLastSyncDate 20130115160837384
+aLastUpdateDate 20130115160837384
+
+eW_MetaDef 3
+aCPLR_ZKey 127091267
+aStatus    1
+aUpdateInd 2
+aName      TZCMREFL
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160836310
+aLastUpdateDate 20130115160836310
+
+eW_MetaDef 3
+aCPLR_ZKey 127091301
+aStatus    1
+aUpdateInd 2
+aName      TZCMREFO
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842627
+aLastUpdateDate 20130115160842627
+
+eW_MetaDef 3
+aCPLR_ZKey 127091390
+aStatus    1
+aUpdateInd 2
+aName      TZCMLPLR
+aDesc      VOR automatically built from LOD Dialog
+aLastSyncDate 20130115160842365
+aLastUpdateDate 20130115160842365
+
+eW_MetaDef 3
+aCPLR_ZKey 190007231
+aStatus    1
+aUpdateInd 2
+aName      TZTRUEGRID_SCOPE
+aDesc      when a treugrid is active its mapping is positioned on the mapping that holds information about scope
+aLastSyncDate 20130115160846621
+aLastUpdateDate 20130115160846621
+
+eW_MetaDef 3
+aCPLR_ZKey 190007232
+aStatus    1
+aUpdateInd 2
+aName      TZTRUEGRID_LIST
+aDesc      when a treugrid is active its mapping is positioned on the mapping that holds information about the list entity
+aLastSyncDate 20130115160840028
+aLastUpdateDate 20130115160840028
+
+eW_MetaDef 3
+aCPLR_ZKey 190007233
+aStatus    1
+aUpdateInd 2
+aName      TZTRUEGRID_SUBCONTROL
+aDesc      when a treugrid is active its mapping is positioned to the subcontrols of the grid
+aLastSyncDate 20130115160841292
+aLastUpdateDate 20130115160841292
+
+eW_MetaType 2
+aType      10
+
+eW_MetaDef 3
+aCPLR_ZKey 5019543
+aStatus    1
+aUpdateInd 2
+aName      ZEIDON
+aLastSyncDate 20130115160838120
+aLastUpdateDate 20130115160838120
+
+eW_MetaType 2
+aType      11
+
+eW_MetaDef 3
+aCPLR_ZKey 1129950
+aStatus    1
+aUpdateInd 2
+aName      account
+aDesc      Test bed for Zeidon 10C
+aLastSyncDate 20130115160846361
+aLastUpdateDate 20130115160846361
+
+eW_MetaDef 3
+aCPLR_ZKey 90025052
+aStatus    1
+aUpdateInd 2
+aName      TZADCDOD
+aDesc      User Interface Spec
+aLastSyncDate 20130115160844345
+aLastUpdateDate 20130115160844345
+
+eW_MetaDef 3
+aCPLR_ZKey 90026320
+aStatus    1
+aUpdateInd 2
+aName      TZADOLAW
+aLastSyncDate 20130115160837208
+aLastUpdateDate 20130115160837208
+
+eW_MetaDef 3
+aCPLR_ZKey 90026295
+aStatus    1
+aUpdateInd 2
+aName      TZADOOAW
+aLastSyncDate 20130115160843318
+aLastUpdateDate 20130115160843318
+
+eW_MetaDef 3
+aCPLR_ZKey 90026074
+aStatus    1
+aUpdateInd 2
+aName      TZADWIAW
+aDesc      Auto design window
+aLastSyncDate 20130115160839673
+aLastUpdateDate 20130115160839673
+
+eW_MetaDef 3
+aCPLR_ZKey 90026031
+aStatus    1
+aUpdateInd 2
+aName      TZADWOAW
+aDesc      Auto Design Dialog
+aLastSyncDate 20130115160841061
+aLastUpdateDate 20130115160841061
+
+eW_MetaDef 3
+aCPLR_ZKey 190004118
+aStatus    1
+aUpdateInd 2
+aName      TZAXCFGD
+aDesc      Grid ActiveX Maint. 
+aLastSyncDate 20130115160845887
+aLastUpdateDate 20130115160845887
+
+eW_MetaDef 3
+aCPLR_ZKey 127046766
+aStatus    1
+aUpdateInd 2
+aName      TZBMUPDD
+aDesc      Replace absolute Bitmap Path through relative Path
+aLastSyncDate 20130115160844590
+aLastUpdateDate 20130115160844590
+
+eW_MetaDef 3
+aCPLR_ZKey 1352032
+aStatus    1
+aUpdateInd 2
+aName      TZBRENTD
+aDesc      CPLR browse of ER_Entity and ER_RelType
+aLastSyncDate 20130115160843356
+aLastUpdateDate 20130115160843356
+
+eW_MetaDef 3
+aCPLR_ZKey 1351225
+aStatus    1
+aUpdateInd 2
+aName      TZCMCPLD
+aDesc      CPLR Initialization
+aLastSyncDate 20130115160840588
+aLastUpdateDate 20130115160840588
+
+eW_MetaDef 3
+aCPLR_ZKey 1338932
+aStatus    1
+aUpdateInd 2
+aName      TZCMLPLD
+aDesc      Local Project Library Maintenence
+aLastSyncDate 20130326181436000
+aLastUpdateDate 20130326181436000
+
+eW_MetaDef 3
+aCPLR_ZKey 1337786
+aStatus    1
+aUpdateInd 2
+aName      TZCMLPMD
+aDesc      Migration, Override Msgs, Language Conversion
+aLastSyncDate 20130115160841910
+aLastUpdateDate 20130115160841910
+
+eW_MetaDef 3
+aCPLR_ZKey 90086260
+aStatus    1
+aUpdateInd 2
+aName      TZCMREVD
+aDesc      Maintenance of the review-types (for AuditTrail)
+aLastSyncDate 20130115160837885
+aLastUpdateDate 20130115160837885
+
+eW_MetaDef 3
+aCPLR_ZKey 1351160
+aStatus    1
+aUpdateInd 2
+aName      TZCMRPTD
+aDesc      Reusable Dialog for Reports/Lists of CPLRs and LPLRs
+aLastSyncDate 20130115160846131
+aLastUpdateDate 20130115160846131
+
+eW_MetaDef 3
+aCPLR_ZKey 1337740
+aStatus    1
+aUpdateInd 2
+aName      TZCMSLPD
+aDesc      Switch LPLR Subdialog
+aLastSyncDate 20130326191006000
+aLastUpdateDate 20130326191006000
+
+eW_MetaDef 3
+aCPLR_ZKey 90004387
+aStatus    1
+aUpdateInd 2
+aName      TZDBHTSD
+aDesc      DB-Handler test facility
+aLastSyncDate 20130115160845387
+aLastUpdateDate 20130115160845387
+
+eW_MetaDef 3
+aCPLR_ZKey 1337148
+aStatus    1
+aUpdateInd 2
+aName      TZDMUPDD
+aDesc      Domain Maint.
+aLastSyncDate 20130115160840271
+aLastUpdateDate 20130115160840271
+
+eW_MetaDef 3
+aCPLR_ZKey 90025935
+aStatus    1
+aUpdateInd 2
+aName      TZEDCMPD
+aDesc      Set compiler specification
+aLastSyncDate 20130115160844098
+aLastUpdateDate 20130115160844098
+
+eW_MetaDef 3
+aCPLR_ZKey 1350101
+aStatus    1
+aUpdateInd 2
+aName      TZEDCWZD
+aDesc      Subwindows to CW editor session
+aLastSyncDate 20130115160838253
+aLastUpdateDate 20130115160838253
+
+eW_MetaDef 3
+aCPLR_ZKey 90004018
+aStatus    1
+aUpdateInd 2
+aName      TZEDFRMD
+aDesc      Dialog Frame for Editor
+aLastSyncDate 20130115160845661
+aLastUpdateDate 20130115160845661
+
+eW_MetaDef 3
+aCPLR_ZKey 90037515
+aStatus    1
+aUpdateInd 2
+aName      TZEDITOD
+aDesc      Zeidon editor using Rich Edit Control
+aLastSyncDate 20140217134541284
+aLastUpdateDate 20140217134541284
+
+eW_MetaDef 3
+aCPLR_ZKey 190008888
+aStatus    1
+aUpdateInd 2
+aName      TZEDVMLD
+aDesc      VML Editor based on Codesense OCX implementation
+aLastSyncDate 20130115160839627
+aLastUpdateDate 20130115160839627
+
+eW_MetaDef 3
+aCPLR_ZKey 1349927
+aStatus    1
+aUpdateInd 2
+aName      TZERATRD
+aDesc      Data Model Attribute Maint
+aLastSyncDate 20130115160841307
+aLastUpdateDate 20130115160841307
+
+eW_MetaDef 3
+aCPLR_ZKey 1348701
+aStatus    1
+aUpdateInd 2
+aName      TZEREMDD
+aDesc      Data Model ER Diagram & Maint.
+aLastSyncDate 20131211154957501
+aLastUpdateDate 20131211154957501
+
+eW_MetaDef 3
+aCPLR_ZKey 1348132
+aStatus    1
+aUpdateInd 2
+aName      TZERIDND
+aDesc      Data Model Identifier Maint
+aLastSyncDate 20130115160842467
+aLastUpdateDate 20130115160842467
+
+eW_MetaDef 3
+aCPLR_ZKey 1347875
+aStatus    1
+aUpdateInd 2
+aName      TZERRELD
+aDesc      Data Model Relationship Maint
+aLastSyncDate 20130115160840949
+aLastUpdateDate 20130115160840949
+
+eW_MetaDef 3
+aCPLR_ZKey 127047041
+aStatus    1
+aUpdateInd 2
+aName      TZERRORD
+aDesc      Error List for all Tools
+aLastSyncDate 20130115160839227
+aLastUpdateDate 20130115160839227
+
+eW_MetaDef 3
+aCPLR_ZKey 1347332
+aStatus    1
+aUpdateInd 2
+aName      TZERSAMD
+aDesc      Data Model Subject Area Maint
+aLastSyncDate 20130115160836622
+aLastUpdateDate 20130115160836622
+
+eW_MetaDef 3
+aCPLR_ZKey 98184211
+aStatus    1
+aUpdateInd 2
+aName      TZERSAPD
+aDesc      Data Model Import SAP
+aLastSyncDate 20130115160841958
+aLastUpdateDate 20130115160841958
+
+eW_MetaDef 3
+aCPLR_ZKey 1347171
+aStatus    1
+aUpdateInd 2
+aName      TZHKEYAD
+aDesc      The HotKey Dialog at Application level
+aLastSyncDate 20130115160843586
+aLastUpdateDate 20130115160843586
+
+eW_MetaDef 3
+aCPLR_ZKey 91000234
+aStatus    1
+aUpdateInd 2
+aName      TZHLPCXD
+aDesc      Mapping info between help tags and context numbers
+aLastSyncDate 20130115160844976
+aLastUpdateDate 20130115160844976
+
+eW_MetaDef 3
+aCPLR_ZKey 1337871
+aStatus    1
+aUpdateInd 2
+aName      TZOBRWAD
+aDesc      System Object Browser
+aLastSyncDate 20130115160845738
+aLastUpdateDate 20130115160845738
+
+eW_MetaDef 3
+aCPLR_ZKey 1346123
+aStatus    1
+aUpdateInd 2
+aName      TZOPHDRD
+aDesc      Header File Select & Maintain
+aLastSyncDate 20130115160839740
+aLastUpdateDate 20130115160839740
+
+eW_MetaDef 3
+aCPLR_ZKey 1331281
+aStatus    1
+aUpdateInd 2
+aName      TZOPRUSD
+aDesc      Reusable Operation dialog for use by LOD and Dialog dialogs
+aLastSyncDate 20130115160845417
+aLastUpdateDate 20130115160845417
+
+eW_MetaDef 3
+aCPLR_ZKey 1345798
+aStatus    1
+aUpdateInd 2
+aName      TZOPSIGD
+aDesc      Zeidon Operations Maintenance
+aLastSyncDate 20130423191856000
+aLastUpdateDate 20130423191856000
+
+eW_MetaDef 3
+aCPLR_ZKey 1345166
+aStatus    1
+aUpdateInd 2
+aName      TZOPUPDD
+aDesc      Global Operations
+aLastSyncDate 20130115160838363
+aLastUpdateDate 20130115160838363
+
+eW_MetaDef 3
+aCPLR_ZKey 1343715
+aStatus    1
+aUpdateInd 2
+aName      TZPEUPDD
+aDesc      Presentation Environment Update
+aLastSyncDate 20130115160844008
+aLastUpdateDate 20130115160844008
+
+eW_MetaDef 3
+aCPLR_ZKey 1343386
+aStatus    1
+aUpdateInd 2
+aName      TZPNCGND
+aDesc      Painter Control Generic Dialog
+aLastSyncDate 20130115160846000
+aLastUpdateDate 20130115160846000
+
+eW_MetaDef 3
+aCPLR_ZKey 1356605
+aStatus    1
+aUpdateInd 2
+aName      TZPNCTAD
+aDesc      System delivered controls dialog
+aLastSyncDate 20130115160839946
+aLastUpdateDate 20130115160839946
+
+eW_MetaDef 3
+aCPLR_ZKey 1137589
+aStatus    1
+aUpdateInd 2
+aName      TZPNCTLD
+aDesc      Tab/Bmp/Timer/Icon/Calendar Maintenance
+aLastSyncDate 20130328172208956
+aLastUpdateDate 20130328172208956
+
+eW_MetaDef 3
+aCPLR_ZKey 1343335
+aStatus    1
+aUpdateInd 2
+aName      TZPNCWDD
+aDesc      Window Clone, NLS Text, Common Controls
+aLastSyncDate 20130326210645653
+aLastUpdateDate 20130326210645653
+
+eW_MetaDef 3
+aCPLR_ZKey 90005117
+aStatus    1
+aUpdateInd 2
+aName      TZPNOLAD
+aDesc      Outliner Control Maintenance
+aLastSyncDate 20130115160841264
+aLastUpdateDate 20130115160841264
+
+eW_MetaDef 3
+aCPLR_ZKey 1342604
+aStatus    1
+aUpdateInd 2
+aName      TZPNTBAD
+aDesc      ToolBar/Palette Maintenance
+aLastSyncDate 20130115160843268
+aLastUpdateDate 20130115160843268
+
+eW_MetaDef 3
+aCPLR_ZKey 1331622
+aStatus    1
+aUpdateInd 2
+aName      TZPNTRAD
+aDesc      Application Painter 
+aLastSyncDate 20130115160843462
+aLastUpdateDate 20130115160843462
+
+eW_MetaDef 3
+aCPLR_ZKey 2331622
+aStatus    1
+aUpdateInd 2
+aName      TZPNTRAK
+aDesc      Application Painter 
+aLastSyncDate 20100315132244000
+aLastUpdateDate 20100315132244000
+
+eW_MetaDef 3
+aCPLR_ZKey 1342486
+aStatus    1
+aUpdateInd 2
+aName      TZREPOAD
+aDesc      Repository Tester
+aLastSyncDate 20130115160842275
+aLastUpdateDate 20130115160842275
+
+eW_MetaDef 3
+aCPLR_ZKey 70061815
+aStatus    1
+aUpdateInd 2
+aName      TZRPUPDD
+aDesc      Siron Report Maintenance Dialog
+aLastSyncDate 20130115160836831
+aLastUpdateDate 20130115160836831
+
+eW_MetaDef 3
+aCPLR_ZKey 90303971
+aStatus    1
+aUpdateInd 2
+aName      TZRPUPZD
+aDesc      Zeidon Report Maintenance Dialog
+aLastSyncDate 20130319205636000
+aLastUpdateDate 20130319205636000
+
+eW_MetaDef 3
+aCPLR_ZKey 1342379
+aStatus    1
+aUpdateInd 2
+aName      TZSIIMPD
+aDesc      Import Siron Catalogs
+aLastSyncDate 20130115160839455
+aLastUpdateDate 20130115160839455
+
+eW_MetaDef 3
+aCPLR_ZKey 90020453
+aStatus    1
+aUpdateInd 2
+aName      TZTEDBLD
+aDesc      List/Edit DB types.
+aLastSyncDate 20130115160844170
+aLastUpdateDate 20130115160844170
+
+eW_MetaDef 3
+aCPLR_ZKey 1341399
+aStatus    1
+aUpdateInd 2
+aName      TZTEUPDD
+aDesc      TE Maintain Physical Model
+aLastSyncDate 20130115160845613
+aLastUpdateDate 20130115160845613
+
+eW_MetaDef 3
+aCPLR_ZKey 1341305
+aStatus    1
+aUpdateInd 2
+aName      TZVMTMPD
+aDesc      Temporary VML Parse & Gen
+aLastSyncDate 20130115160842223
+aLastUpdateDate 20130115160842223
+
+eW_MetaDef 3
+aCPLR_ZKey 1341165
+aStatus    1
+aUpdateInd 2
+aName      TZVSDBAD
+aDesc      The Debugger
+aLastSyncDate 20130115160837120
+aLastUpdateDate 20130115160837120
+
+eW_MetaDef 3
+aCPLR_ZKey 1341111
+aStatus    1
+aUpdateInd 2
+aName      TZVSINIT
+aDesc      LPLR File Init
+aLastSyncDate 20130115160843942
+aLastUpdateDate 20130115160843942
+
+eW_MetaDef 3
+aCPLR_ZKey 1340705
+aStatus    1
+aUpdateInd 2
+aName      TZVSXCAD
+aDesc      Application Animator
+aLastSyncDate 20130115160843435
+aLastUpdateDate 20130115160843435
+
+eW_MetaDef 3
+aCPLR_ZKey 1340460
+aStatus    1
+aUpdateInd 2
+aName      TZWDGRWD
+aDesc      Graphic of a Dialog
+aLastSyncDate 20130115160844151
+aLastUpdateDate 20130115160844151
+
+eW_MetaDef 3
+aCPLR_ZKey 1340316
+aStatus    1
+aUpdateInd 2
+aName      TZWDVORD
+aDesc      Registered View Dialog
+aLastSyncDate 20130115160843607
+aLastUpdateDate 20130115160843607
+
+eW_MetaDef 3
+aCPLR_ZKey 4894021
+aStatus    1
+aUpdateInd 2
+aName      TZXSLTDD
+aDesc      Zeidon XSLT Maintenance
+aLastSyncDate 20130115160846260
+aLastUpdateDate 20130115160846260
+
+eW_MetaDef 3
+aCPLR_ZKey 95042484
+aStatus    1
+aUpdateInd 2
+aName      TZZAPPSD
+aDesc      Zeidon Application Maintenance / Server Executables
+aLastSyncDate 20130115160844803
+aLastUpdateDate 20130115160844803
+
+eW_MetaDef 3
+aCPLR_ZKey 1339852
+aStatus    1
+aUpdateInd 2
+aName      TZZMAIND
+aDesc      Main program group dialog
+aLastSyncDate 20130115160841046
+aLastUpdateDate 20130115160841046
+
+eW_MetaDef 3
+aCPLR_ZKey 1333240
+aStatus    1
+aUpdateInd 2
+aName      TZZOLODD
+aDesc      LOD (Logical Object Defn) Maint.
+aLastSyncDate 20130326210646396
+aLastUpdateDate 20130326210646396
+
+eW_MetaDef 3
+aCPLR_ZKey 91076285
+aStatus    1
+aUpdateInd 2
+aName      TZZOLODQ
+aDesc      Query View Maintenance (Query Version of LOD Dialog)
+aLastSyncDate 20130115160842242
+aLastUpdateDate 20130115160842242
+
+eW_MetaDef 3
+aCPLR_ZKey 1158829
+aStatus    1
+aUpdateInd 2
+aName      wAccount
+aDesc      Web account
+aLastSyncDate 20130115160846549
+aLastUpdateDate 20130115160846549
+
+eW_MetaType 2
+aType      12
+
+eW_MetaDef 3
+aCPLR_ZKey 1129926
+aStatus    1
+aUpdateInd 2
+aName      account
+aLastSyncDate 20130115160845773
+aLastUpdateDate 20130115160845773
+
+eW_MetaDef 3
+aCPLR_ZKey 90141789
+aStatus    1
+aUpdateInd 2
+aName      DOMAINR
+aLastSyncDate 20130115160837599
+aLastUpdateDate 20130115160837599
+
+eW_MetaDef 3
+aCPLR_ZKey 90013292
+aStatus    1
+aUpdateInd 2
+aName      DOMRPT
+aDesc      Domain Report - Where used
+aLastSyncDate 20130115160837069
+aLastUpdateDate 20130115160837069
+
+eW_MetaDef 3
+aCPLR_ZKey 90013499
+aStatus    1
+aUpdateInd 2
+aName      ERDFULL
+aDesc      Full ERD Report
+aLastSyncDate 20130115160840047
+aLastUpdateDate 20130115160840047
+
+eW_MetaDef 3
+aCPLR_ZKey 90013544
+aStatus    1
+aUpdateInd 2
+aName      ERDPART
+aDesc      Partial ERD Report - 1 line descriptions
+aLastSyncDate 20130115160843776
+aLastUpdateDate 20130115160843776
+
+eW_MetaDef 3
+aCPLR_ZKey 90181893
+aStatus    1
+aUpdateInd 2
+aName      ERD_R1S
+aLastSyncDate 20130115160845010
+aLastUpdateDate 20130115160845010
+
+eW_MetaDef 3
+aCPLR_ZKey 90012857
+aStatus    1
+aUpdateInd 2
+aName      ERSARPT
+aDesc      ERD Subject Area Report
+aLastSyncDate 20130115160836911
+aLastUpdateDate 20130115160836911
+
+eW_MetaDef 3
+aCPLR_ZKey 90013590
+aStatus    1
+aUpdateInd 2
+aName      LODPART
+aDesc      Partial LOD Report - 1 line descriptions
+aLastSyncDate 20130115160836784
+aLastUpdateDate 20130115160836784
+
+eW_MetaDef 3
+aCPLR_ZKey 90012988
+aStatus    1
+aUpdateInd 2
+aName      LODRPT
+aDesc      Full LOD Report
+aLastSyncDate 20130115160840481
+aLastUpdateDate 20130115160840481
+
+eW_MetaType 2
+aType      13
+
+eW_MetaDef 3
+aCPLR_ZKey 1320175
+aStatus    1
+aUpdateInd 2
+aName      APP
+aLastSyncDate 20130115160844656
+aLastUpdateDate 20130115160844656
+
+eW_MetaDef 3
+aCPLR_ZKey 90000006
+aStatus    1
+aUpdateInd 2
+aName      BASE
+aLastSyncDate 20140118213312866
+aLastUpdateDate 20140118213312866
+
+eW_MetaDef 3
+aCPLR_ZKey 1319719
+aStatus    1
+aUpdateInd 2
+aName      CM
+aLastSyncDate 20130115160837103
+aLastUpdateDate 20130115160837103
+
+eW_MetaDef 3
+aCPLR_ZKey 1319805
+aStatus    1
+aUpdateInd 2
+aName      DATA
+aLastSyncDate 20130423190022000
+aLastUpdateDate 20130423190022000
+
+eW_MetaDef 3
+aCPLR_ZKey 1320108
+aStatus    1
+aUpdateInd 2
+aName      ERD
+aLastSyncDate 20130115160840239
+aLastUpdateDate 20130115160840239
+
+eW_MetaDef 3
+aCPLR_ZKey 1320146
+aStatus    1
+aUpdateInd 2
+aName      LOD
+aLastSyncDate 20130326210645543
+aLastUpdateDate 20130326210645543
+
+eW_MetaDef 3
+aCPLR_ZKey 90000207
+aStatus    1
+aUpdateInd 2
+aName      SIRON
+aDesc      Domains for Siron functions
+aLastSyncDate 20130115160842100
+aLastUpdateDate 20130115160842100
+
+eW_MetaDef 3
+aCPLR_ZKey 1320293
+aStatus    1
+aUpdateInd 2
+aName      TE
+aLastSyncDate 20130115160844326
+aLastUpdateDate 20130115160844326
+
+eW_MetaDef 3
+aCPLR_ZKey 1320355
+aStatus    1
+aUpdateInd 2
+aName      TZ
+aLastSyncDate 20130115160840816
+aLastUpdateDate 20130115160840816
+
+eW_MetaDef 3
+aCPLR_ZKey 90000023
+aStatus    1
+aUpdateInd 2
+aName      TZAPDMAA
+aLastSyncDate 20130326210645826
+aLastUpdateDate 20130326210645826
+
+eW_MetaDef 3
+aCPLR_ZKey 90000048
+aStatus    1
+aUpdateInd 2
+aName      TZAPDMAB
+aLastSyncDate 20130115160843012
+aLastUpdateDate 20130115160843012
+
+eW_MetaDef 3
+aCPLR_ZKey 90000127
+aStatus    1
+aUpdateInd 2
+aName      TZAPDMAC
+aLastSyncDate 20130115160844238
+aLastUpdateDate 20130115160844238
+
+eW_MetaDef 3
+aCPLR_ZKey 1320467
+aStatus    1
+aUpdateInd 2
+aName      WD
+aDesc      Web jsp generation control types 
+aLastSyncDate 20130515172856000
+aLastUpdateDate 20130515172856000
+
+eW_MetaType 2
+aType      14
+
+eW_MetaDef 3
+aCPLR_ZKey 1319667
+aStatus    1
+aUpdateInd 2
+aName      KZDRVRAA
+aLastSyncDate 20130115160846826
+aLastUpdateDate 20130115160846826
+
+eW_MetaDef 3
+aCPLR_ZKey 91075122
+aStatus    1
+aUpdateInd 2
+aName      KZRPQUER
+aLastSyncDate 20130115160843568
+aLastUpdateDate 20130115160843568
+
+eW_MetaDef 3
+aCPLR_ZKey 4897614
+aStatus    1
+aUpdateInd 2
+aName      KZRPSRCO
+aLastSyncDate 20120621164138409
+aLastUpdateDate 20120621164138409
+
+eW_MetaDef 3
+aCPLR_ZKey 92003072
+aStatus    1
+aUpdateInd 2
+aName      TZADWEXP
+aLastSyncDate 20130326210645153
+aLastUpdateDate 20130326210645153
+
+eW_MetaDef 3
+aCPLR_ZKey 1319603
+aStatus    1
+aUpdateInd 2
+aName      TZCM_OPR
+aDesc      CM operations
+aLastSyncDate 20130115160841249
+aLastUpdateDate 20130115160841249
+
+eW_MetaDef 3
+aCPLR_ZKey 92813872
+aStatus    1
+aUpdateInd 2
+aName      TZGLOJSP
+aDesc      JSP Generation operations
+aLastSyncDate 20130115160837400
+aLastUpdateDate 20130115160837400
+
+eW_MetaDef 3
+aCPLR_ZKey 90004773
+aStatus    1
+aUpdateInd 2
+aName      TZSIOPRS
+aDesc      Siron reusable operations
+aLastSyncDate 20130115160837245
+aLastUpdateDate 20130115160837245
+
+eW_MetaDef 3
+aCPLR_ZKey 1319654
+aStatus    1
+aUpdateInd 2
+aName      TZVSECAA
+aLastSyncDate 20130115160845643
+aLastUpdateDate 20130115160845643
+
+eW_MetaDef 3
+aCPLR_ZKey 1141821
+aStatus    1
+aUpdateInd 2
+aName      TZWEBGL1
+aDesc      JSP Generation operations for zeidon JAVA
+aLastSyncDate 20130115160840898
+aLastUpdateDate 20130115160840898
+
+eW_MetaDef 3
+aCPLR_ZKey 91724305
+aStatus    1
+aUpdateInd 2
+aName      TZWEBGL2
+aDesc      44
+JSP Generation operations for zeidon JAVA
+ 
+aLastSyncDate 20130115160838887
+aLastUpdateDate 20130115160838887
+
+eW_MetaDef 3
+aCPLR_ZKey 4896719
+aStatus    1
+aUpdateInd 2
+aName      TZWEBGL3
+aDesc      JSP Generation operations for zeidon JAVA
+aLastSyncDate 20130115160840375
+aLastUpdateDate 20130115160840375
+
+eW_MetaDef 3
+aCPLR_ZKey 4896724
+aStatus    1
+aUpdateInd 2
+aName      TZWEBGL4
+aDesc      JSP Generation operations for zeidon JAVA
+aLastSyncDate 20130326210645787
+aLastUpdateDate 20130326210645787
+
+eW_MetaDef 3
+aCPLR_ZKey 1319679
+aStatus    1
+aUpdateInd 2
+aName      TZ__OPRS
+aLastSyncDate 20130115160846342
+aLastUpdateDate 20130115160846342
+
+eW_MetaDef 3
+aCPLR_ZKey 88002173
+aStatus    1
+aUpdateInd 2
+aName      VIDEOGBL
+aLastSyncDate 20130115160837533
+aLastUpdateDate 20130115160837533
+
+eW_MetaDef 3
+aCPLR_ZKey 1419667
+aStatus    1
+aUpdateInd 2
+aName      ZDRAPP
+aLastSyncDate 20130115160843958
+aLastUpdateDate 20130115160843958
+
+eW_MetaType 2
+aType      15
+
+eW_MetaDef 3
+aCPLR_ZKey 1157335
+aStatus    1
+aUpdateInd 2
+aName      AccountR
+aLastSyncDate 20130115160842498
+aLastUpdateDate 20130115160842498
+
+eW_MetaDef 3
+aCPLR_ZKey 89853115
+aStatus    1
+aUpdateInd 2
+aName      AccountX
+aDesc      Test entity footer
+aLastSyncDate 20130115160839981
+aLastUpdateDate 20130115160839981
+
+eW_MetaDef 3
+aCPLR_ZKey 90013299
+aStatus    1
+aUpdateInd 2
+aName      DOMRPT
+aDesc      Domain Report
+aLastSyncDate 20130115160846782
+aLastUpdateDate 20130115160846782
+
+eW_MetaDef 3
+aCPLR_ZKey 90397675
+aStatus    1
+aUpdateInd 2
+aName      ERDCOMP
+aDesc      Compare 2 Data Models
+aLastSyncDate 20130115160837335
+aLastUpdateDate 20130115160837335
+
+eW_MetaDef 3
+aCPLR_ZKey 90020050
+aStatus    1
+aUpdateInd 2
+aName      ERDPART
+aDesc      ERD Partial Report - 1 line descriptions
+aLastSyncDate 20130115160842858
+aLastUpdateDate 20130115160842858
+
+eW_MetaDef 3
+aCPLR_ZKey 90007834
+aStatus    1
+aUpdateInd 2
+aName      ERDRPT1
+aDesc      ERD Full Report
+aLastSyncDate 20130115160844309
+aLastUpdateDate 20130115160844309
+
+eW_MetaDef 3
+aCPLR_ZKey 90012938
+aStatus    1
+aUpdateInd 2
+aName      ERSARPT
+aDesc      Subject Area Report
+aLastSyncDate 20130115160846651
+aLastUpdateDate 20130115160846651
+
+eW_MetaDef 3
+aCPLR_ZKey 90020056
+aStatus    1
+aUpdateInd 2
+aName      LODPART
+aDesc      LOD Partial Report - 1 Line Descriptions
+aLastSyncDate 20130115160846519
+aLastUpdateDate 20130115160846519
+
+eW_MetaDef 3
+aCPLR_ZKey 90013069
+aStatus    1
+aUpdateInd 2
+aName      LODRPT
+aDesc      LOD Full Report
+aLastSyncDate 20130115160839514
+aLastUpdateDate 20130115160839514
+
+eW_MetaType 2
+aType      16
+
+eW_MetaDef 3
+aCPLR_ZKey 90000927
+aStatus    1
+aUpdateInd 2
+aName      KZMSGQAA
+aLastSyncDate 20130115160841366
+aLastUpdateDate 20130115160841366
+
+eW_MetaDef 3
+aCPLR_ZKey 164352
+aStatus    1
+aUpdateInd 2
+aName      KZOENGAA
+aDesc      Core Header File
+aLastSyncDate 20130115160837750
+aLastUpdateDate 20130115160837750
+
+eW_MetaDef 3
+aCPLR_ZKey 90000928
+aStatus    1
+aUpdateInd 2
+aName      TZVSECAA
+aDesc      VML Extternal Calls
+aLastSyncDate 20130115160836293
+aLastUpdateDate 20130115160836293
+
+eW_MetaDef 3
+aCPLR_ZKey 99328
+aStatus    1
+aUpdateInd 2
+aName      TZ__OPRS
+aDesc      Tools Global Operations
+aLastSyncDate 20130115160837136
+aLastUpdateDate 20130115160837136
+
+eW_MetaDef 3
+aCPLR_ZKey 164096
+aStatus    1
+aUpdateInd 2
+aName      ZDRVROPR
+aDesc      Dialog Header File
+aLastSyncDate 20130115160841161
+aLastUpdateDate 20130115160841161
+
+eW_MetaType 2
+aType      2000
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2001
+
+eW_MetaType 2
+aType      2002
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName VIDEOGBL
+
+eW_MetaDef 3
+aGroupName TZADWEXP
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName KZRPQUER
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName KZRPSRCO
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZVSECAA
+
+eW_MetaDef 3
+aGroupName TZVSECAA
+
+eW_MetaDef 3
+aGroupName TZVSECAA
+
+eW_MetaDef 3
+aGroupName TZVSECAA
+
+eW_MetaDef 3
+aGroupName TZVSECAA
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName KZDRVRAA
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL3
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName TZWEBGL2
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL2
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL4
+
+eW_MetaDef 3
+aGroupName TZWEBGL2
+
+eW_MetaDef 3
+aGroupName TZWEBGL2
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZADWEXP
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZGLOJSP
+
+eW_MetaDef 3
+aGroupName TZGLOJSP
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZWEBGL1
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName KZDRVRAA
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZADWEXP
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZADWEXP
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZSIOPRS
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZVSECAA
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName TZ__OPRS
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName ZDRAPP
+
+eW_MetaDef 3
+aGroupName TZCM_OPR
+
+eW_MetaType 2
+aType      2003
+
+eW_MetaDef 3
+aGroupName CM
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName BASE
+
+eW_MetaDef 3
+aGroupName CM
+
+eW_MetaDef 3
+aGroupName CM
+
+eW_MetaDef 3
+aGroupName CM
+
+eW_MetaDef 3
+aGroupName CM
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName TZAPDMAB
+
+eW_MetaDef 3
+aGroupName TZAPDMAB
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAC
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName BASE
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName LOD
+
+eW_MetaDef 3
+aGroupName LOD
+
+eW_MetaDef 3
+aGroupName LOD
+
+eW_MetaDef 3
+aGroupName LOD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName ERD
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAB
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aCPLR_ZKey 4531065
+aStatus    1
+aName      PositionSize
+aLastUpdateDate 20140118205159177
+aGroupName BASE
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aGroupName SIRON
+
+eW_MetaDef 3
+aGroupName SIRON
+
+eW_MetaDef 3
+aGroupName APP
+
+eW_MetaDef 3
+aGroupName APP
+
+eW_MetaDef 3
+aGroupName TE
+
+eW_MetaDef 3
+aGroupName TE
+
+eW_MetaDef 3
+aGroupName TE
+
+eW_MetaDef 3
+aGroupName TE
+
+eW_MetaDef 3
+aGroupName TE
+
+eW_MetaDef 3
+aGroupName TE
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAB
+
+eW_MetaDef 3
+aGroupName BASE
+
+eW_MetaDef 3
+aGroupName TZ
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName TZ
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName TZAPDMAA
+
+eW_MetaDef 3
+aGroupName WD
+
+eW_MetaDef 3
+aGroupName BASE
+
+eW_MetaDef 3
+aGroupName DATA
+
+eW_MetaDef 3
+aCPLR_ZKey 4531067
+aStatus    1
+aName      Color
+aGroupName BASE
+
+eW_MetaType 2
+aType      2004
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2005
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2006
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2007
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2008
+
+eW_MetaType 2
+aType      2009
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2010
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2011
+
+eW_MetaDef 3
+aCPLR_ZKey 2331622
+aStatus    1
+aUpdateInd 2
+aName      TZPNTRBD
+aDesc      Application Painter 
+aLastSyncDate 20080514172630000
+aLastUpdateDate 20080514172630000
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2012
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2013
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2014
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2015
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaType 2
+aType      2016
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eW_MetaDef 3
+
+eCompiler  2
+aName      AutoGen
+aMakeOption 7
+aCurrentCompilerSpec N
+aCreateExternalList 0
+aBrowseInfo N
+
+eTargetExecutable 2
+aName      account
+
+eMeta      3
+aName      account
+aZKey      1129950
+aMetaType  2011
+
+eTargetExecutable 2
+aName      KZAPPLOO
+
+eMeta      3
+aName      TZVSINIT
+aZKey      1341111
+aMetaType  2011
+
+eTargetExecutable 2
+aName      KZDRVRAA
+
+eMeta      3
+aName      KZDRVRAA
+aZKey      1319667
+aMetaType  2014
+
+eTargetExecutable 2
+aName      KZOENGAA
+
+eMeta      3
+aName      KZWDLGXO
+aZKey      1330836
+aMetaType  2007
+
+eTargetExecutable 2
+aName      KZRPSRCO
+
+eMeta      3
+aName      KZRPQUER
+aZKey      91075122
+aMetaType  2014
+
+eMeta      3
+aName      KZXMLPGO
+aZKey      91301926
+aMetaType  2007
+
+eTargetExecutable 2
+aName      TZ__OPRS
+
+eMeta      3
+aName      TZ__OPRS
+aZKey      1319679
+aMetaType  2014
+
+eTargetExecutable 2
+aName      TZADCDOD
+
+eMeta      3
+aName      TZADCDOD
+aZKey      90025052
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZADWDOD
+
+eMeta      3
+aName      TZADOLAW
+aZKey      90026320
+aMetaType  2011
+
+eMeta      3
+aName      TZADWOAW
+aZKey      90026031
+aMetaType  2011
+
+eMeta      3
+aName      TZADWIAW
+aZKey      90026074
+aMetaType  2011
+
+eMeta      3
+aName      TZADOOAW
+aZKey      90026295
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZADWEXP
+
+eMeta      3
+aName      TZADWEXP
+aZKey      92003072
+aMetaType  2014
+
+eTargetExecutable 2
+aName      TZAXCFGD
+
+eMeta      3
+aName      TZAXCFGD
+aZKey      190004118
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZBMUPDD
+
+eMeta      3
+aName      TZBMUPDD
+aZKey      127046766
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZBRENTD
+
+eMeta      3
+aName      TZBRENTD
+aZKey      1352032
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZCMCPLD
+
+eMeta      3
+aName      TZCMCPLD
+aZKey      1351225
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZCMLPLD
+
+eMeta      3
+aName      TZCMLPLD
+aZKey      1338932
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZCMLPMD
+
+eMeta      3
+aName      TZCMLPMD
+aZKey      1337786
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZCMQSYO
+
+eMeta      3
+aName      TZCMQSYO
+aZKey      90059225
+aMetaType  2007
+
+eTargetExecutable 2
+aName      TZCMREVD
+
+eMeta      3
+aName      TZCMREVD
+aZKey      90086260
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZCMRPTD
+
+eMeta      3
+aName      TZCMRPTD
+aZKey      1351160
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZCMSLPD
+
+eMeta      3
+aName      TZCMSLPD
+aZKey      1337740
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZDBHTSD
+
+eMeta      3
+aName      TZDBHTSD
+aZKey      90004387
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZDMUPDD
+
+eMeta      3
+aName      TZDMUPDD
+aZKey      1337148
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZEDCMPD
+
+eMeta      3
+aName      TZEDCMPD
+aZKey      90025935
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZEDFRMD
+
+eMeta      3
+aName      TZEDCWZD
+aZKey      1350101
+aMetaType  2011
+
+eMeta      3
+aName      TZEDFRMD
+aZKey      90004018
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZEDITOD
+
+eMeta      3
+aName      TZEDITOD
+aZKey      90037515
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZEDVMLD
+
+eMeta      3
+aName      TZEDVMLD
+aZKey      190008888
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZEREMDD
+
+eMeta      3
+aName      TZERATRD
+aZKey      1349927
+aMetaType  2011
+
+eMeta      3
+aName      TZERSAPD
+aZKey      98184211
+aMetaType  2011
+
+eMeta      3
+aName      TZERSAMD
+aZKey      1347332
+aMetaType  2011
+
+eMeta      3
+aName      TZERRELD
+aZKey      1347875
+aMetaType  2011
+
+eMeta      3
+aName      TZERIDND
+aZKey      1348132
+aMetaType  2011
+
+eMeta      3
+aName      TZEREMDD
+aZKey      1348701
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZERRORD
+
+eMeta      3
+aName      TZERRORD
+aZKey      127047041
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZGLOJSP
+
+eMeta      3
+aName      TZGLOJSP
+aZKey      92813872
+aMetaType  2014
+
+eTargetExecutable 2
+aName      TZHKEYAD
+
+eMeta      3
+aName      TZHKEYAD
+aZKey      1347171
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZHLPCXD
+
+eMeta      3
+aName      TZHLPCXD
+aZKey      91000234
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZLODOPR
+
+eMeta      3
+aName      ERD
+aZKey      1320108
+aMetaType  2013
+
+eMeta      3
+aName      KZHKEYSO
+aZKey      1331132
+aMetaType  2007
+
+eMeta      3
+aName      TZADCSDO
+aZKey      1326102
+aMetaType  2007
+
+eMeta      3
+aName      TZBRAU2O
+aZKey      91012509
+aMetaType  2007
+
+eMeta      3
+aName      TZBRAUDO
+aZKey      91008192
+aMetaType  2007
+
+eMeta      3
+aName      TZCM_OPR
+aZKey      1319603
+aMetaType  2014
+
+eMeta      3
+aName      TZCMCRWO
+aZKey      1325947
+aMetaType  2007
+
+eMeta      3
+aName      TZCMLPLO
+aZKey      1325977
+aMetaType  2007
+
+eMeta      3
+aName      TZCMRCRO
+aZKey      1329909
+aMetaType  2007
+
+eMeta      3
+aName      TZCMREPO
+aZKey      1325883
+aMetaType  2007
+
+eMeta      3
+aName      TZDGSRCO
+aZKey      1325025
+aMetaType  2007
+
+eMeta      3
+aName      TZEREMDO
+aZKey      1326595
+aMetaType  2007
+
+eMeta      3
+aName      TZERSASO
+aZKey      1329230
+aMetaType  2007
+
+eMeta      3
+aName      TZOGSRCO
+aZKey      1326765
+aMetaType  2007
+
+eMeta      3
+aName      TZOPSIGO
+aZKey      1328919
+aMetaType  2007
+
+eMeta      3
+aName      TZPESRCO
+aZKey      1328675
+aMetaType  2007
+
+eMeta      3
+aName      TZTEMPMO
+aZKey      1328311
+aMetaType  2007
+
+eMeta      3
+aName      TZTENVRO
+aZKey      1327972
+aMetaType  2007
+
+eMeta      3
+aName      TZVSRTOO
+aZKey      1327446
+aMetaType  2007
+
+eMeta      3
+aName      TZWDGRWO
+aZKey      1327514
+aMetaType  2007
+
+eMeta      3
+aName      TZWDLGSO
+aZKey      1325104
+aMetaType  2007
+
+eMeta      3
+aName      TZZOLODO
+aZKey      1324578
+aMetaType  2007
+
+eTargetExecutable 2
+aName      TZOBRWAD
+
+eMeta      3
+aName      TZOBRWAD
+aZKey      1337871
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZOPHDRD
+
+eMeta      3
+aName      TZOPHDRD
+aZKey      1346123
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZOPRUSD
+
+eMeta      3
+aName      TZOPRUSD
+aZKey      1331281
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZOPSIGD
+
+eMeta      3
+aName      TZOPSIGD
+aZKey      1345798
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZOPUPDD
+
+eMeta      3
+aName      TZOPUPDD
+aZKey      1345166
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPEUPDD
+
+eMeta      3
+aName      TZPEUPDD
+aZKey      1343715
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNCGND
+
+eMeta      3
+aName      TZPNCGND
+aZKey      1343386
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNCTAD
+
+eMeta      3
+aName      TZPNCTAD
+aZKey      1356605
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNCTLD
+
+eMeta      3
+aName      TZPNCTLD
+aZKey      1137589
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNCWDD
+
+eMeta      3
+aName      TZPNCWDD
+aZKey      1343335
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNOLAD
+
+eMeta      3
+aName      TZPNOLAD
+aZKey      90005117
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNTBAD
+
+eMeta      3
+aName      TZPNTBAD
+aZKey      1342604
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNTRAD
+
+eMeta      3
+aName      TZPNTRAD
+aZKey      1331622
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNTRAK
+
+eMeta      3
+aName      TZPNTRAK
+aZKey      2331622
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZPNTRBD
+
+eMeta      3
+aName      TZPNTRBD
+aZKey      2331622
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZREPOAD
+
+eMeta      3
+aName      TZREPOAD
+aZKey      1342486
+aMetaType  2011
+
+eTargetExecutable 2
+aName      tzrpsrco
+
+eMeta      3
+aName      TZRPSRCO
+aZKey      90145850
+aMetaType  2007
+
+eTargetExecutable 2
+aName      TZRPUPDD
+
+eMeta      3
+aName      TZRPUPDD
+aZKey      70061815
+aMetaType  2011
+
+eMeta      3
+aName      TZRPUPZD
+aZKey      90303971
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZSIIMPD
+
+eMeta      3
+aName      TZSIIMPD
+aZKey      1342379
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZSIOPRS
+
+eMeta      3
+aName      TZSIOPRS
+aZKey      90004773
+aMetaType  2014
+
+eTargetExecutable 2
+aName      TZTEDBLD
+
+eMeta      3
+aName      TZTEDBLD
+aZKey      90020453
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZTEUPDD
+
+eMeta      3
+aName      TZTEUPDD
+aZKey      1341399
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZVMPOPR
+
+eMeta      3
+aName      TZVSPOOO
+aZKey      1327619
+aMetaType  2007
+
+eTargetExecutable 2
+aName      TZVMTMPD
+
+eMeta      3
+aName      TZVMTMPD
+aZKey      1341305
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZVSDBAD
+
+eMeta      3
+aName      TZVSDBAD
+aZKey      1341165
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZVSECAA
+
+eMeta      3
+aName      TZVSECAA
+aZKey      1319654
+aMetaType  2014
+
+eTargetExecutable 2
+aName      TZVSXCAD
+
+eMeta      3
+aName      TZVSXCAD
+aZKey      1340705
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZWDGRWD
+
+eMeta      3
+aName      TZWDGRWD
+aZKey      1340460
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZWDVORD
+
+eMeta      3
+aName      TZWDVORD
+aZKey      1340316
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZWEB
+
+eMeta      3
+aName      TZWEBGL1
+aZKey      1141821
+aMetaType  2014
+
+eMeta      3
+aName      TZWEBGL2
+aZKey      91724305
+aMetaType  2014
+
+eMeta      3
+aName      TZWEBGL3
+aZKey      4896719
+aMetaType  2014
+
+eMeta      3
+aName      TZWEBGL4
+aZKey      4896724
+aMetaType  2014
+
+eTargetExecutable 2
+aName      TZXSLTDD
+
+eMeta      3
+aName      TZXSLTDD
+aZKey      4894021
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZZAPPSD
+
+eMeta      3
+aName      TZZAPPSD
+aZKey      95042484
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZZMAIND
+
+eMeta      3
+aName      TZZMAIND
+aZKey      1339852
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZZOLODD
+
+eMeta      3
+aName      TZZOLODD
+aZKey      1333240
+aMetaType  2011
+
+eTargetExecutable 2
+aName      TZZOLODQ
+
+eMeta      3
+aName      TZZOLODQ
+aZKey      91076285
+aMetaType  2011
+
+eTargetExecutable 2
+aName      videogbl
+
+eMeta      3
+aName      VIDEOGBL
+aZKey      88002173
+aMetaType  2014
+
+eTargetExecutable 2
+aName      wAccount
+
+eMeta      3
+aName      wAccount
+aZKey      1158829
+aMetaType  2011
+
+eTargetExecutable 2
+aName      ZDRAPP
+
+eMeta      3
+aName      ZDRAPP
+aZKey      1419667
+aMetaType  2014
+
+i857       8
+i858       9
+i859       10
+i860       11
+i861       12
+i864       15
+i865       16
+i866       17
+i867       18
+i868       19
+i869       20
+i870       21
+i871       22
+i872       23
+i873       24
+i874       25
+i875       26
+i876       27
+i877       28
+i878       29
+i879       30
+i880       31
+i881       32
+i882       33
+i883       34
+i884       35
+i885       36
+i886       37
+i887       38
+i888       39
+i889       40
+i890       41
+i891       42
+i892       43
+i893       44
+i894       45
+i895       46
+i896       47
+i897       48
+i898       49
+i899       50
+i900       51
+i901       52
+i902       53
+i903       54
+i904       55
+i905       56
+i906       57
+i907       58
+i908       59
+i909       60
+i910       61
+i911       62
+i912       63
+i913       64
+i914       65
+i915       66
+i916       67
+i917       68
+i918       69
+i919       70
+i920       71
+i921       72
+i922       73
+i923       74
+i924       75
+i925       76
+i926       77
+i927       78
+i928       79
+i929       80
+i930       81
+i931       82
+i932       83
+i933       84
+i934       85
+i935       86
+i936       87
+i937       88
+i938       89
+i939       90
+i940       91
+i941       92
+i942       93
+i943       94
+i944       95
+i945       96
+i946       97
+i947       98
+i948       99
+i949       100
+i950       101
+i951       102
+i952       103
+i953       104
+i954       105
+i955       106
+i956       107
+i957       108
+i958       109
+i959       110
+i960       111
+i961       112
+i962       113
+i963       114
+i964       115
+i965       116
+i966       117
+i967       118
+i968       119
+i969       120
+i970       121
+i971       122
+i972       123
+i973       124
+i974       125
+i975       126
+i976       127
+i977       128
+i978       129
+i979       130
+i980       131
+i981       132
+i982       133
+i983       134
+i984       135
+i985       136
+i986       137
+i987       138
+i988       139
+i989       140
+i990       141
+i991       142
+i992       143
+i993       144
+i994       145
+i995       146
+i996       147
+i997       148
+i998       149
+i999       150
+i1000      151
+i1001      152
+i1002      153
+i1003      154
+i1004      155
+i1006      257
+i1007      209
+i1008      179
+i1009      178
+i1010      262
+i1011      261
+i1012      260
+i1013      259
+i1014      258
+i1015      247
+i1016      256
+i1017      255
+i1018      205
+i1019      208
+i1020      193
+i1021      204
+i1022      203
+i1023      202
+i1024      201
+i1025      200
+i1026      199
+i1027      198
+i1028      197
+i1029      196
+i1030      195
+i1031      194
+i1032      217
+i1033      254
+i1034      183
+i1035      243
+i1036      242
+i1037      241
+i1038      239
+i1039      246
+i1040      245
+i1041      244
+i1042      181
+i1043      224
+i1044      264
+i1045      251
+i1046      249
+i1047      236
+i1048      237
+i1049      235
+i1050      238
+i1051      165
+i1052      164
+i1053      163
+i1054      240
+i1055      216
+i1056      206
+i1057      210
+i1058      248
+i1059      253
+i1060      223
+i1061      211
+i1063      222
+i1064      215
+i1065      221
+i1066      220
+i1067      219
+i1068      174
+i1069      173
+i1070      177
+i1071      250
+i1072      234
+i1073      233
+i1074      157
+i1075      266
+i1076      227
+i1077      232
+i1078      229
+i1079      231
+i1080      230
+i1081      228
+i1082      218
+i1083      207
+i1084      263
+i1085      225
+i1086      175
+i1087      182
+i1088      180
+i1089      226
+i1090      184
+i1091      158
+i1092      192
+i1093      191
+i1094      190
+i1095      176
+i1096      172
+i1097      189
+i1098      188
+i1099      187
+i1100      186
+i1101      159
+i1102      171
+i1103      168
+i1104      167
+i1105      170
+i1106      169
+i1107      166
+i1108      161
+i1109      160
+i1110      185
+i1111      214
+i1112      213
+i1113      212
+i1114      162
+i1115      265
+i1116      252
+i1119      270
+i1121      272
+i1122      273
+i1123      274
+i1124      275
+i1125      276
+i1126      277
+i1127      278
+i1128      279
+i1129      280
+i1130      281
+i1131      282
+i1132      283
+i1133      284
+i1135      286
+i1137      288
+i1138      289
+i1139      290
+i1140      291
+i1141      292
+i1142      293
+i1143      294
+i1144      295
+i1145      296
+i1146      297
+i1147      298
+i1148      299
+i1149      300
+i1150      301
+i1151      302
+i1152      303
+i1153      304
+i1154      305
+i1155      306
+i1156      307
+i1157      308
+i1158      309
+i1159      310
+i1160      311
+i1161      312
+i1162      313
+i1163      314
+i1164      315
+i1165      316
+i1166      317
+i1167      318
+i1168      319
+i1169      320
+i1170      321
+i1171      322
+i1172      323
+i1173      324
+i1174      325
+i1175      326
+i1176      327
+i1177      328
+i1178      329
+i1179      330
+i1180      331
+i1181      332
+i1182      333
+i1183      334
+i1184      335
+i1185      336
+i1186      337
+i1187      338
+i1188      339
+i1189      340
+i1190      341
+i1191      342
+i1192      343
+i1193      344
+i1194      345
+i1195      346
+i1196      347
+i1197      348
+i1198      349
+i1199      350
+i1200      351
+i1201      352
+i1202      353
+i1203      354
+i1204      355
+i1205      356
+i1206      357
+i1207      358
+i1208      359
+i1209      360
+i1210      361
+i1211      362
+i1212      363
+i1213      364
+i1214      365
+i1215      366
+i1216      367
+i1217      368
+i1218      369
+i1219      370
+i1220      371
+i1221      372
+i1222      373
+i1223      374
+i1224      375
+i1225      376
+i1226      377
+i1227      378
+i1228      379
+i1229      380
+i1230      381
+i1231      382
+i1232      383
+i1233      384
+i1234      385
+i1235      386
+i1236      387
+i1237      388
+i1238      389
+i1239      390
+i1240      391
+i1241      392
+i1242      393
+i1243      394
+i1244      395
+i1245      396
+i1246      397
+i1247      398
+i1248      399
+i1249      400
+i1250      401
+i1251      402
+i1252      403
+i1253      404
+i1254      405
+i1255      406
+i1256      407
+i1257      408
+i1258      409
+i1259      410
+i1260      411
+i1261      412
+i1262      413
+i1263      414
+i1264      415
+i1265      416
+i1266      417
+i1267      418
+i1268      419
+i1269      420
+i1270      421
+i1271      422
+i1272      423
+i1273      424
+i1274      425
+i1275      426
+i1276      427
+i1277      428
+i1278      429
+i1279      430
+i1280      431
+i1281      432
+i1282      433
+i1283      434
+i1286      588
+i1287      451
+i1288      450
+i1289      587
+i1290      455
+i1291      631
+i1292      639
+i1293      581
+i1294      596
+i1295      719
+i1296      514
+i1297      694
+i1298      527
+i1299      493
+i1300      492
+i1301      693
+i1302      542
+i1303      727
+i1304      704
+i1305      563
+i1306      723
+i1307      721
+i1308      517
+i1309      516
+i1310      472
+i1311      471
+i1312      561
+i1313      579
+i1314      584
+i1315      540
+i1316      546
+i1317      638
+i1318      595
+i1319      502
+i1320      619
+i1321      649
+i1322      650
+i1323      549
+i1324      651
+i1325      594
+i1326      447
+i1327      689
+i1328      677
+i1329      613
+i1330      445
+i1331      682
+i1332      683
+i1333      625
+i1334      440
+i1335      691
+i1336      456
+i1337      454
+i1338      444
+i1339      583
+i1340      515
+i1341      513
+i1342      466
+i1343      606
+i1344      706
+i1345      701
+i1346      699
+i1347      557
+i1348      605
+i1349      697
+i1350      441
+i1351      643
+i1352      621
+i1353      468
+i1354      713
+i1355      467
+i1356      496
+i1357      520
+i1358      544
+i1359      541
+i1360      523
+i1361      495
+i1362      518
+i1363      525
+i1364      526
+i1365      528
+i1366      529
+i1367      512
+i1368      628
+i1369      465
+i1370      617
+i1371      586
+i1372      637
+i1373      578
+i1374      711
+i1375      715
+i1376      674
+i1377      679
+i1378      648
+i1379      636
+i1380      571
+i1381      572
+i1382      640
+i1383      576
+i1384      577
+i1385      575
+i1386      623
+i1387      573
+i1388      574
+i1389      506
+i1390      568
+i1391      675
+i1392      652
+i1393      720
+i1394      714
+i1395      725
+i1396      724
+i1397      507
+i1398      508
+i1399      695
+i1400      511
+i1401      718
+i1402      566
+i1403      448
+i1404      722
+i1405      670
+i1406      624
+i1407      497
+i1408      730
+i1409      509
+i1410      653
+i1411      654
+i1412      655
+i1413      570
+i1414      656
+i1415      728
+i1416      729
+i1417      564
+i1418      504
+i1419      717
+i1420      657
+i1421      680
+i1422      562
+i1423      565
+i1424      494
+i1425      641
+i1426      569
+i1427      505
+i1428      498
+i1429      692
+i1430      567
+i1431      726
+i1432      469
+i1433      443
+i1434      690
+i1435      533
+i1436      534
+i1437      658
+i1438      490
+i1439      635
+i1440      634
+i1441      618
+i1442      626
+i1443      491
+i1444      604
+i1445      603
+i1446      462
+i1447      483
+i1448      602
+i1449      558
+i1450      633
+i1451      698
+i1452      559
+i1453      685
+i1454      686
+i1455      608
+i1456      555
+i1457      712
+i1458      478
+i1459      612
+i1460      556
+i1461      610
+i1462      611
+i1463      607
+i1464      659
+i1465      553
+i1466      660
+i1467      551
+i1468      661
+i1469      609
+i1470      554
+i1471      716
+i1472      647
+i1473      707
+i1474      550
+i1475      477
+i1476      552
+i1477      590
+i1478      548
+i1479      632
+i1480      671
+i1481      589
+i1482      510
+i1483      662
+i1484      438
+i1485      500
+i1486      452
+i1487      453
+i1488      501
+i1489      499
+i1490      543
+i1491      593
+i1492      622
+i1493      503
+i1494      474
+i1495      475
+i1496      598
+i1497      600
+i1498      601
+i1499      473
+i1500      547
+i1501      476
+i1502      457
+i1503      644
+i1504      700
+i1505      710
+i1506      545
+i1507      663
+i1508      560
+i1509      536
+i1510      446
+i1511      539
+i1512      458
+i1513      537
+i1514      664
+i1515      538
+i1516      487
+i1517      464
+i1518      705
+i1519      470
+i1520      535
+i1521      703
+i1522      461
+i1523      489
+i1524      488
+i1525      532
+i1526      531
+i1527      442
+i1528      646
+i1529      688
+i1530      642
+i1531      687
+i1532      708
+i1533      709
+i1534      696
+i1535      437
+i1536      485
+i1537      486
+i1538      684
+i1539      620
+i1540      676
+i1541      530
+i1542      629
+i1543      479
+i1544      702
+i1545      665
+i1546      672
+i1547      666
+i1548      630
+i1549      732
+i1550      731
+i1551      733
+i1552      678
+i1553      524
+i1554      667
+i1555      521
+i1556      615
+i1557      668
+i1558      519
+i1559      616
+i1560      599
+i1561      627
+i1562      673
+i1563      459
+i1564      460
+i1565      463
+i1566      484
+i1567      591
+i1568      480
+i1569      481
+i1570      645
+i1571      681
+i1572      482
+i1573      669
+i1574      439
+i1575      592
+i1576      614
+i1577      580
+i1578      585
+i1579      582
+i1580      597
+i1581      522
+i1582      449
+i1584      735
+i1587      781
+i1588      764
+i1589      783
+i1590      789
+i1591      739
+i1592      749
+i1593      755
+i1594      772
+i1595      763
+i1596      785
+i1597      758
+i1598      741
+i1599      769
+i1600      775
+i1601      753
+i1602      746
+i1603      762
+i1604      796
+i1605      742
+i1606      778
+i1607      759
+i1608      748
+i1609      765
+i1610      788
+i1611      798
+i1612      782
+i1613      761
+i1614      779
+i1615      740
+i1616      745
+i1617      791
+i1618      780
+i1619      766
+i1620      793
+i1621      790
+i1622      773
+i1623      754
+i1624      792
+i1625      786
+i1626      738
+i1627      744
+i1628      795
+i1629      767
+i1630      752
+i1631      770
+i1632      787
+i1633      756
+i1634      768
+i1635      743
+i1636      774
+i1637      750
+i1638      794
+i1639      737
+i1640      799
+i1641      784
+i1642      747
+i1643      751
+i1644      777
+i1645      797
+i1646      776
+i1647      771
+i1648      760
+i1649      757
+i1651      801
+i1652      802
+i1653      803
+i1654      804
+i1655      805
+i1656      806
+i1657      807
+i1658      808
+i1659      809
+i1661      811
+i1662      812
+i1663      813
+i1664      814
+i1665      815
+i1666      816
+i1667      817
+i1668      818
+i1669      819
+i1670      820
+i1671      821
+i1672      822
+i1673      823
+i1675      825
+i1676      826
+i1677      827
+i1678      828
+i1679      829
+i1680      830
+i1681      831
+i1682      832
+i1683      833
+i1684      834
+i1685      835
+i1686      836
+i1687      837
+i1688      838
+i1689      839
+i1691      841
+i1692      842
+i1693      843
+i1694      844
+i1695      845
+i1696      846
+i1697      847
+i1698      848
+i1699      849
+i1701      851
+i1702      852
+i1703      853
+i1704      854
+i1705      855
