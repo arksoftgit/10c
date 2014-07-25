@@ -245,8 +245,8 @@ SetRptShapeFromBlob( zVIEW vReportDef )
 {
 
    zCHAR   szBlob[ 8 + (6 * sizeof( zLONG )) ];
-   zVIEW   vReport;
-   zLONG   lSubtype;
+// zVIEW   vReport;
+// zLONG   lSubtype;
    zULONG  ulPenColor = 0xFF000000;
    zULONG  ulShapeColor = 0xFF000000;
    zULONG  ulLth = sizeof( szBlob );

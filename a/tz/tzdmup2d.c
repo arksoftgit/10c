@@ -1,13 +1,13 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H" 
-#include "TZ__OPRS.H" 
-#include "ZDRVROPR.H" 
- 
+#include "KZOENGAA.H"
+#include "TZ__OPRS.H"
+#include "ZDRVROPR.H"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
- 
+
 #include "ZEIDONOP.H"
 
 zSHORT zwTZDMUPDD_RemoveOperFromGroup( zVIEW, zVIEW, zPCHAR );

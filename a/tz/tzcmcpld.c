@@ -6154,8 +6154,8 @@ zwTZCMCPLD_SaveAsFile( zVIEW vTZCMCPRO_Source,
    zVIEW         vTZCMFILO_New;
    zVIEW         vTZCMFILO_Source;
    zSHORT        nRC;
-   zCHAR         szMessage[250];
-   zCHAR         szName[33];
+   zCHAR         szMessage[ 250 ];
+   zCHAR         szName[ 33 ];
    zCHAR         szExtension[ 4 ];
    zBOOL         bFound;
 

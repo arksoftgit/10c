@@ -1955,7 +1955,7 @@ DrawLineToReport( zVIEW   vSubtask,
       lEndX1 = (lEndX1 * pZSubtask->m_pZPrintout->m_nPixelsPerInchX) / 256;
       lEndY1 = (lEndY1 * pZSubtask->m_pZPrintout->m_nPixelsPerInchY) / 256;
 
-      zSHORT k = (lPenWidth + 1) / 2;
+      zSHORT k = (zSHORT) ((lPenWidth + 1) / 2);
       lPosX1 -= k;
       lPosY1 -= k;
       lEndX1 -= k;
@@ -2791,14 +2791,13 @@ CreateFontForReport( zVIEW   vSubtask,
 
       nFontSize = -(nFontSize * 16) / 10;
       pZSubtask->m_pZPrintout->
-                 AddFont( vSubtask, cpcFontTag, nFontSize,
+                 AddFont( vSubtask, cpcFontTag, (zSHORT) nFontSize,
                        // -((nSize * pZSubtask->m_pZPrintout->m_pDC->
                        //    GetDeviceCaps( LOGPIXELSY )) / 72),
                           bBold ? FW_BOLD : FW_NORMAL,
                           bItalic, bUnderline, bStrikeout,
                           lTextColor, lTextBkColor,
-                          nEscapement *
-                            pZSubtask->m_pZPrintout->m_nEscapementFactor,
+                          (zSHORT) (nEscapement * pZSubtask->m_pZPrintout->m_nEscapementFactor),
                           cpcFaceName );
       return( 0 );
    }
@@ -2936,8 +2935,7 @@ GetTextWidth( zVIEW   vSubtask,
    // sizeExtent.cx += tm.tmExternalLeading * 2;
 
       pZSubtask->m_pZPrintout->m_pDC->DPtoLP( &sizeExtent );
-      zSHORT nWidth = (sizeExtent.cx * 256) /
-                                  pZSubtask->m_pZPrintout->m_nPixelsPerInchX;
+      zSHORT nWidth = (zSHORT) ((sizeExtent.cx * 256) / pZSubtask->m_pZPrintout->m_nPixelsPerInchX);
 
       if ( pFontOld )
       {
@@ -3031,8 +3029,7 @@ GetTextHeight( zVIEW   vSubtask,
    // sizeExtent.cy += tm.tmDescent;
 
       pZSubtask->m_pZPrintout->m_pDC->DPtoLP( &sizeExtent );
-      zSHORT nHeight = (sizeExtent.cy * 256) /
-                                  pZSubtask->m_pZPrintout->m_nPixelsPerInchY;
+      zSHORT nHeight = (zSHORT) ((sizeExtent.cy * 256) / pZSubtask->m_pZPrintout->m_nPixelsPerInchY);
 
       if ( pFontOld )
       {

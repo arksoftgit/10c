@@ -293,7 +293,7 @@ zkCtrlInfo( zVIEW vSubtask )
          szMsg[ lLth ] = '\n';
          zstrcpy( szMsg + lLth + 1, "Sub Ctrls: " );
          if ( ListSubCtrls( pzma, szMsg + lLth + 12, (zSHORT) lLth,
-                            sizeof( szMsg ) - lLth - 16 ) <= 0 )
+                            (zSHORT) (sizeof( szMsg ) - lLth - 16) ) <= 0 )
          {
             szMsg[ lLth ] = 0;
          }

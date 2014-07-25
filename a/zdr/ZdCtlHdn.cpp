@@ -732,7 +732,7 @@ ZHD_Node::CenterNode( )
    // Here we zoom the diagram to the current scale to ensure the
    // display position is altered if necessary so the right and bottom
    // edge aren't beyond the diagram space
-   m_pHD_Diagram->ZoomDiagram( m_pHD_Diagram->m_lScale + 100, 1 );
+   m_pHD_Diagram->ZoomDiagram( (zSHORT) m_pHD_Diagram->m_lScale + 100, 1 );
 }
 
 zSHORT

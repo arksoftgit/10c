@@ -125,7 +125,7 @@ BEGIN_MESSAGE_MAP( ZDrFrame, CFrameWnd )
    ON_WM_MOVE( )
    ON_WM_PAINT( )
    ON_WM_PALETTECHANGED( )
-   ON_WM_QUERYDRAGICON( )
+// ON_WM_QUERYDRAGICON( )
    ON_WM_ENABLE( )
    ON_WM_SETCURSOR( )
    ON_WM_SETFOCUS( )
@@ -1253,6 +1253,7 @@ ZDrFrame::OnCreateClient( LPCREATESTRUCT lpcs, CCreateContext *pContext )
       return( FALSE );   // can't continue without a view
    }
 
+#if 0   // Assume NT is dead ... dks 2012.10.09
    // Need to get Windows version for this.
    if ( afxData.bWin4 && (m_pZView->GetExStyle( ) & WS_EX_CLIENTEDGE) )
    {
@@ -1260,6 +1261,7 @@ ZDrFrame::OnCreateClient( LPCREATESTRUCT lpcs, CCreateContext *pContext )
       // Make sure to recalc the non-client area.
       ModifyStyleEx( WS_EX_CLIENTEDGE, 0, SWP_FRAMECHANGED );
    }
+#endif
 
    return( TRUE );
 

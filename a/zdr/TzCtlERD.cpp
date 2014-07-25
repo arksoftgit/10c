@@ -1938,7 +1938,7 @@ ZER_Diagram::DrawDiagramCell( zLONG lIdx,
             // First draw the required, optional indication.
             pt1.x = (PosX( lIdx ) - PosX( m_lDisplayPos )) * tzERCELLSIZE;
             pt1.y = (PosY( lIdx ) - PosY( m_lDisplayPos )) * tzERCELLSIZE;
-            nWidth   = (tzERCELLSIZE + 1) / 2;
+            nWidth = (zSHORT) ((tzERCELLSIZE + 1) / 2);
             pt1.x += (tzERCELLSIZE / 2);
             pt1.y += (tzERCELLSIZE / 2);
             m_hDC->MoveTo( pt1.x, pt1.y );

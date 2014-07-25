@@ -631,7 +631,7 @@ TZRPUPSD_AskForSave( zVIEW vSubtask )
    zVIEW  vReport;
    zSHORT nRC;
    zBOOL  nSaveAs = FALSE;
-   zCHAR  szReportName[33];
+   zCHAR  szReportName[ 33 ];
    zCHAR  szMessageText[ zMAX_MESSAGE_LTH + 1 ];
 
    if ( GetViewByName( &vReport, "TZOPENRPT", vSubtask, zLEVEL_TASK ) < 0 )
@@ -1739,8 +1739,8 @@ fnTZRPUPSD_SaveAsCheckName( zVIEW  vSubtask,
                             zVIEW  vSaveAs,
                             zPCHAR szOutName )
 {
-   zCHAR  szNewName[33];
-   zCHAR  szSourceName[33];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szSourceName[ 33 ];
 
    // Report Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
@@ -1815,8 +1815,8 @@ fnTZRPUPSD_SaveAsGetFileName( zVIEW  vView,
                               zPCHAR szSourceFileName )
 {
    zVIEW    vTaskLPLR;
-   zCHAR    szNewName[33];
-   zCHAR    szFileName[33];
+   zCHAR    szNewName[ 33 ];
+   zCHAR    szFileName[ 33 ];
 
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
 
@@ -2155,8 +2155,8 @@ TZRPUPSD_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vCM_List;
    zVIEW   vCM_List_Copy;
-   zCHAR   szNewName[33];
-   zCHAR   szOutName[33];
+   zCHAR   szNewName[ 33 ];
+   zCHAR   szOutName[ 33 ];
 
    GetCtrlText( vSubtask, "edReportName", szNewName, 33 );
    UfCompressName( szNewName, szOutName, 8, "", "", "", "", 0 );
@@ -2386,8 +2386,8 @@ zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
 TZRPUPSD_SaveAsSetDefaults( zVIEW vSubtask )
 {
    zVIEW  vSaveAs;
-   zCHAR  szNewName[33];
-   zCHAR  szOutName[33];
+   zCHAR  szNewName[ 33 ];
+   zCHAR  szOutName[ 33 ];
 
    GetViewByName( &vSaveAs, "TZSAVEAS", vSubtask, zLEVEL_TASK );
 

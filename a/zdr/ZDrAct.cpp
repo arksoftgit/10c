@@ -299,7 +299,7 @@ zPCHAR g_Actions[ 101 ] =
    "(55)ReCAPTCHA Replace Window",           //  55
    "", "", "", "",                           //  56-59
 
-   "(60)PrintWindow",                        //  60
+   "(60)PrintWnd",                           //  60
    "(61)StartSplitWindow",                   //  61
    "(62)ReplaceSplitWindow",                 //  62
    "(63)DeleteSplitWindow",                  //  63

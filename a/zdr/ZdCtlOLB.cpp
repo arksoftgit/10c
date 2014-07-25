@@ -137,7 +137,7 @@ ZOutlookBar::ZOutlookBar( ZSubtask *pZSubtask,
    m_nLeftMarginX = 5;
    m_nTopMarginY = 5;
 
-   m_hHandCursor = AfxGetApp( )->LoadCursor( IDC_HAND );
+   m_hHandCursor = AfxGetApp( )->LoadCursor( IDC_HAND1 );
    m_rectUpArrow = m_rectDownArrow = CRect( 0, 0, 0, 0 );
 
    m_bUpArrow = m_bDownArrow = FALSE;

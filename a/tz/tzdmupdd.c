@@ -3243,7 +3243,7 @@ zwTZDMUPDD_MoveDomainPostBuild( zVIEW vSubtask )
    zVIEW  vTZDGSRCO;
    zVIEW  vMoveDomain;
    zCHAR  szDomainName[ 33 ];
-   zCHAR  szDomainGroup[ 33];
+   zCHAR  szDomainGroup[ 33 ];
    zCHAR  szType[ 4 ];
    zSHORT nRC = -1;
    zBOOL  bSelectedOperation = FALSE;
@@ -3440,7 +3440,7 @@ zwTZDMUPDD_SetSaveAsName( zVIEW vSubtask )
    zVIEW   vMoveDomain;
    zVIEW   vProfileXFER;
    zVIEW   vDomainData;
-   zCHAR   szGroupName[ 33];
+   zCHAR   szGroupName[ 33 ];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -3500,7 +3500,7 @@ zwTZDMUPDD_SetGroupName( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vMoveDomain;
    zVIEW   vProfileXFER;
-   zCHAR   szGroupName[ 33];
+   zCHAR   szGroupName[ 33 ];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -4351,7 +4351,7 @@ zwTZDMUPDD_MoveDomainOperToFile( zVIEW  vSubtask,
    zVIEW  vDeleteOp;
    zVIEW  vTZDGSRCO;
    zVIEW  vWindow;
-   zCHAR  szGroupName[ 33];
+   zCHAR  szGroupName[ 33 ];
    zCHAR  szOperationName[ 33 ];
 
    if ( nCopyOrMoveFlag <= 0 )
@@ -4611,7 +4611,7 @@ zwTZDMUPDD_AcceptDomainGroup( zVIEW vSubtask )
    zVIEW   vCM_ListGroup;
    zVIEW   vProfileXFER;
    zVIEW   vParentWindow;
-   zCHAR   szDomainGroup[ 33];
+   zCHAR   szDomainGroup[ 33 ];
    zCHAR   szControlText[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -4698,7 +4698,7 @@ zwTZDMUPDD_SaveAsInNewGroup( zVIEW vSubtask )
    zVIEW  vCM_List;
    zCHAR  szOutName[ 33 ];
    zCHAR  szNewName[ 33 ];
-   zCHAR  szGroupName[ 33];
+   zCHAR  szGroupName[ 33 ];
    zCHAR  szMsg[ 100 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -5147,7 +5147,7 @@ zwTZDMUPDD_SaveAsRtnFromSubwnd( zVIEW vSubtask )
 {
    zVIEW    vProfileXFER;
    zVIEW    vMoveDomain;
-   zCHAR    szGroupName[ 33];
+   zCHAR    szGroupName[ 33 ];
    zCHAR    szLanguageType[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );

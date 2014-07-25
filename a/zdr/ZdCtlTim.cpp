@@ -413,7 +413,7 @@ ZTime::OnCreate( LPCREATESTRUCT lpCreateStruct )
    // "yy"   - The last two digits of the year (that is, 1996 would be displayed as "96").
    // "yyyy" - The full year (that is, 1996 would be displayed as "1996").
 
-   if ( (pch = zstrchr( *m_pzsTag, '@' )) != 0 )
+   if ( (pch = (zPCHAR) zstrchr( *m_pzsTag, '@' )) != 0 )
       m_DateTime.SetFormat( pch + 1 );
 
    return( nRC );

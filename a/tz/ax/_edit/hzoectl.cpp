@@ -93,6 +93,7 @@
 #include <commctrl.h>
 #include "hzoedlg.h"
 
+#pragma warning(disable: 4996) // This function or variable may be unsafe
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -626,7 +627,7 @@ void CTBEditor::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
             for ( int i = 0; i < m_lTabStop; i++ )
             {
                COleControl::OnChar( VK_SPACE, nRepCnt, nFlags);
-               strHelp += VK_SPACE;
+               strHelp += (unsigned char) VK_SPACE;
             }
 
             p = m_pUndo->MakeNewBuffer( strHelp );

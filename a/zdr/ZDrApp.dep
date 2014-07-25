@@ -39,9 +39,9 @@
 	"..\incz\kzoemiaa.h"\
 	"..\incz\kzoep0aa.h"\
 	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
+	".\JPegLib\Jconfig.h"\
+	".\JPegLib\Jmorecfg.h"\
+	".\JPegLib\Jpeglib.h"\
 	".\ZDr.h"\
 	".\ZDrApp.h"\
 	".\zdrgbl.h"\

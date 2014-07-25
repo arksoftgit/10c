@@ -1,1 +1,1 @@
-javac -d "%kzd%:\program files\apache group\tomcat 6.0\webapps\ROOT\WEB-INF\classes" HelloServlet2.java
+javac -d "%kzd%:\Program Files\Apache Group\Tomcat 6.0\webapps\ROOT\WEB-INF\classes" HelloServlet2.java

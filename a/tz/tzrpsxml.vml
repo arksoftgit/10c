@@ -125,7 +125,6 @@ GenerateXSLT_XML( VIEW vSourceOI,
    SysCloseFile( vReportDef, lFileHandle, 0 )
 END
 
-
 /*************************************************************************************************
 **
 **    OPERATION: GenerateXML_CtlRecurs

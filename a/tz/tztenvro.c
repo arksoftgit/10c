@@ -77,43 +77,57 @@ CHANGE LOG
    Fixed bug reported by Doug--we weren't properly taking into account the
    DBH-specific OI when determining if the FKs should be generated with
    table names.
+
 1999.09.03  RG Z9J, Z2000 VSAM
     'Init Tables': Update Tables for VSAM fixed
+
 1999.08.10  RG Z9J,Z2000 VSAM
    In function oTZTENVRO_BuildTablRecsFromEMD flag bModifyExistingTables is
    always TRUE for Siron Catalogs because we have to execute Identifier
    processing for Siron Catalogs always
+
 1999.08.05  RG Z9J,Z2000 VSAM
    Generate unique Tablename only for databases not for Siron Flat Files
+
 18.02.97    DonC
    Corrected RecursiveRelSearch and ImplementSQL_RelLnk to generate TE
    correctly for a chain of Attributive entities.
+
 21.02.97    DonC
    Corrected the generation of tables for a second DBMS when it is requested
    that only entities not in any DBMS be used to generate tables.
+
 05.05.97    DonC
    Added the generation of AUTOSEQ fields in the TE when requested on
    ER_RelLink entities.
+
 22.08.97    DonC
    Added setting of SQL_TableOwner in TE Table from TE_TableOwner in
    ER_Entity of ER.
+
 16.10.1997  DonC
    Modified generation of foreign key names to use TE_ColumnName or
    Attribute Name if the Suffix name doesn't exist.
+
 28.01.1998  DonC
    Modified oTZTENVRO_BuildTablRecsFromEMD so that a table resync into a
    DBMS_Source that has existing table entries will only add table and
    attribute entries, without processing identifiers.
+
 25.03.1998  DonC
    Modified ofnTZTENVRO_ImplementSQL_RelLink to correct foreign key suffix
    handling for generated keys. Also improved error message TE00117.
+
 15.07.1998  DonC
    Modified oTZTENVRO_BuildSQL_RelsFromEMD to order key entries made up
    of foreign keys.
+
 14.12.1998  HH
    Not change a colum name, if it was entered in the ER(TE_ColumnName).
+
 1998.03.09  DGC
    Changed how FK names were generated (added record name in some cases).
+
 */
 
 #include "tzlodopr.h"

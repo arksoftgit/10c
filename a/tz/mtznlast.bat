@@ -1,1 +1,1 @@
-set mtzn_last=tzteupdd
+set mtzn_last=tzeremdd

@@ -5115,7 +5115,9 @@ ZGrid::GetUnobstructedNonFixedCellRange( zBOOL bForceRecalculation /*=FALSE*/ )
 
    // calc bottom
    int bottom = GetFixedRowHeight( );
-   for ( int k = idTopLeft.m_lRow; k < GetRowCount( ); k++ )
+   int k;
+
+   for ( k = idTopLeft.m_lRow; k < GetRowCount( ); k++ )
    {
       bottom += GetRowHeight( k ) *(m_nExtraRowsPerItem + 1);
       if ( bottom >= rect.bottom )
@@ -5999,7 +6001,7 @@ ZGrid::InsertColumn( zCPCHAR cpcHeading,
       }
       else
       {
-         m_arColWidths.InsertAt( nCol, (int) 0 );
+         m_arColWidths.InsertAt( nCol, (CUIntArray *) 0 );
          if ( GetVirtualMode( ) == FALSE )
          {
             for ( long lRow = 0; lRow < m_lRows; lRow++ )
@@ -6077,7 +6079,7 @@ ZGrid::InsertRow( zCPCHAR cpcHeading, long lRow /* = -1 */ )
       }
       else
       {
-         m_arRowHeights.InsertAt( lRow, (int) 0 );
+         m_arRowHeights.InsertAt( lRow, (CUIntArray *) 0 );
          if ( GetVirtualMode( ) == FALSE )
             m_RowData.InsertAt( lRow, new GRID_ROW );
       }
@@ -7567,6 +7569,7 @@ ZGrid::ExpandColumnsToFit( zBOOL bExpandFixed /*=TRUE*/ )
 {
    int nColCnt = GetColumnCount( );
    int nFixedColCnt = GetFixedColumnCount( );
+   int nCol;
    if ( bExpandFixed )
    {
      if ( nColCnt <= 0 )
@@ -7586,7 +7589,7 @@ ZGrid::ExpandColumnsToFit( zBOOL bExpandFixed /*=TRUE*/ )
    int nFirstColumn = (bExpandFixed) ? 0 : nFixedColCnt;
 
    int nNbrColumnsAffected = 0;
-   for ( int nCol = nFirstColumn; nCol < nColCnt; nCol++ )
+   for ( nCol = nFirstColumn; nCol < nColCnt; nCol++ )
    {
       if ( m_arColWidths[ nCol ] > 0 )
          nNbrColumnsAffected++;
@@ -7691,10 +7694,11 @@ ZGrid::ExpandRowsToFit( zBOOL bExpandFixed /*=TRUE*/ )
    CRect rect;
    GetClientRect( rect );
 
+   long lRow;
    long lFirstRow = (bExpandFixed) ? 0 : nFixedRowCnt;
 
    long lNbrRowsAffected = 0;
-   for ( long lRow = lFirstRow; lRow < lRowCnt; lRow++ )
+   for ( lRow = lFirstRow; lRow < lRowCnt; lRow++ )
    {
       if ( m_arRowHeights[ lRow ] > 0 )
          lNbrRowsAffected++;

@@ -841,7 +841,7 @@ CString ZURLEncode::DecToHex( zCHAR ch, int nRadix )
    while ( nNumericCharValue >= nRadix )
    {
       nTmp = nNumericCharValue % nRadix;
-      nNumericCharValue = (int) floor( nNumericCharValue / nRadix );
+      nNumericCharValue = (int) floor( (double) nNumericCharValue / nRadix );
       csTmp = hexVals[ nTmp ];
    }
 

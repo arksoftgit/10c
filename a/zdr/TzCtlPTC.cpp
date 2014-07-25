@@ -92,6 +92,10 @@ static char THIS_FILE[] = __FILE__;
 
 // #define DEBUG_ALL
 // #define zDEBUG_CTRL
+#undef CX_BORDER
+#undef CY_BORDER
+#define CX_BORDER 1
+#define CY_BORDER 1
 
 void
 PainterCursorListener( zVIEW   pView,

@@ -1461,15 +1461,15 @@ ActiveDirectoryGetProperty( zCPCHAR cpcPathName,
                             zCPCHAR cpcUserName,
                             zCPCHAR cpcPassword,
                             zCPCHAR cpcPropertyName,
-                         zPCHAR  pchReturnString );
+                            zPCHAR  pchReturnString );
 
 zOPER_EXPORT zLONG  OPERATION
 ActiveDirectorySetProperty( zCPCHAR cpcPathName,
-                         zCPCHAR cpcAdminUserName,
+                            zCPCHAR cpcAdminUserName,
                             zCPCHAR cpcAdminUserPassword,
                             zCPCHAR cpcUserName,
-                         zCPCHAR cpcPropertyName,
-                         zCPCHAR cpcPropertyValue);
+                            zCPCHAR cpcPropertyName,
+                            zCPCHAR cpcPropertyValue);
 
 zOPER_EXPORT zLONG  OPERATION
 ActiveDirectoryAddUser( zCPCHAR cpcPathName, zCPCHAR cpcLoginUserName,
@@ -1642,7 +1642,7 @@ InvokeHelpWithContext( zVIEW   vSubtask,
 zOPER_EXPORT zSHORT OPERATION
 PrintActiveWindow( zVIEW vSubtask );
 zOPER_EXPORT zSHORT OPERATION
-PrintWindow( zVIEW   vSubtask,
+PrintWnd( zVIEW   vSubtask,
              zCPCHAR cpcTitle );
 zOPER_EXPORT zSHORT OPERATION
 PrintCtrl( zVIEW   vSubtask,

@@ -981,7 +981,7 @@ zOPER_EXPORT zSHORT /*LOCAL */  OPERATION
 zwTZBMUPDD_SearchBitmaps( zVIEW vSubtask, zVIEW vCM_List, zPCHAR szMetaSrcDir )
 {
    zVIEW  vDialog;
-   zCHAR  szDialogName[33];
+   zCHAR  szDialogName[ 33 ];
    zCHAR  szWindowName[ 33 ];
    zCHAR  szMsg[ 100 ];
    zCHAR  szFullName[ zMAX_FILESPEC_LTH + 1 ];

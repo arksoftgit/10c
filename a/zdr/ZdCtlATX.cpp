@@ -6098,12 +6098,12 @@ int ZTypeLibrary::GetMaxOrdinal( CFile *f, DWORD * dwOrdinalTokenPosition )
    LPSTR lpszBuffer = NULL;
 
    // get current position to reset it when leaving this function
-   DWORD dwLength    = f->GetLength();
+   DWORD dwLength = (DWORD) f->GetLength();
 
    if ( dwLength == 0 )
       return( 0 );
 
-   DWORD dwPosition  = f->GetPosition();
+   DWORD dwPosition = (DWORD) f->GetPosition();
 
    lpszBuffer = strHelp.GetBufferSetLength( dwLength );
 
@@ -6982,8 +6982,9 @@ ZGlobalDispatch::SetInterface( ZDispinterface *i )
 
    if ( i )
    {
+      POSITION pos;
       CObList *l = i->GetMethods();
-      for (POSITION pos = l->GetHeadPosition(); pos; l->GetNext(pos))
+      for (pos = l->GetHeadPosition(); pos; l->GetNext(pos))
       {
          m_lOperations.AddHead( new ZGlobalOperation( (ZFunction *)l->GetAt( pos ),
                                                       this ) );

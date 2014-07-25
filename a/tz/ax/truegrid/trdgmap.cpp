@@ -289,6 +289,7 @@ void ITrueDBGridCtrl::Init()
    m_bLock              = FALSE;
    m_pWndArray          = NULL;
    m_pWndDateCtrl       = NULL;
+   short i;
 
    SetRowInsertMode( FALSE );
 
@@ -333,14 +334,14 @@ void ITrueDBGridCtrl::Init()
          // retieve initial column colors
          Columns cols = Columns( GetColumns() );
          zLONG lColCount = cols.GetCount();
-         for ( short i = 0; i < lColCount; i++ )
+         for ( i = 0; i < lColCount; i++ )
          {
             Column c = cols.GetColumn( i );
             ZGridColumn *pGC = new ZGridColumn( this );
             pGC->SetColumnIndex( i );
             m_aGridCols.Add( pGC );
          }
-         // retieve initial Split colors
+         // retrieve initial Split colors
          Splits splits( GetSplits() );
          zLONG lSplitCount = splits.GetCount();
          for ( i = 0; i < lSplitCount; i++ )
