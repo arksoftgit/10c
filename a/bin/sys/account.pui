@@ -1,0 +1,739 @@
+z0100-Zeidon    ACCOUNT  TZADCSDO 06/20/97   16:45:34 1.0a     
+eUI_Spec   1,198
+aZKey      1129926
+aName      account
+
+eUIS_Entity 2,198
+aZKey      1129928
+aListTypeFlag L
+aReportOrientationFlag V
+aAutodesignCaseType 1A
+aRootIndicator Y
+
+eLOD_Entity 3,224
+aName      CUSTOMER
+aIndentName CUSTOMER
+aIndentLvl 0
+aZKey      1331199
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDesc      Account owner
+
+eUIS_ChildEntity 3,198
+aZKey      1129929
+aEliminateWnd N
+aListTypeFlag L
+aReportOrientationFlag V
+aAutodesignCaseType 1A
+
+eLOD_Entity 4,224
+aName      ACCOUNT
+aIndentName    ACCOUNT
+aIndentLvl 3
+aZKey      1331200
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDesc      Account detail
+aSeqNo     1
+
+eUIS_ChildEntity 4,198
+aZKey      1129930
+aEliminateWnd N
+aListTypeFlag L
+aAutodesignCaseType 1A
+
+eLOD_Entity 5,224
+aName      TRANSACTION
+aIndentName       TRANSACTION
+aIndentLvl 6
+aZKey      1331201
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDesc      Transaction log for this account
+aSeqNo     1
+
+eWndDesign 5,198
+aZKey      90061579
+aUsageStyle U
+
+eM_LOD_Attribute 5,224
+aZKey      1331202
+aWork      Y
+aSeqNo_LOD_Entity 1
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      Amount
+aZKey      1331203
+
+eM_Domain  7,224
+aZKey      90000198
+aName      Decimal2
+aDomainType E
+aDataType  M
+aDecimalFormat 2
+aDesc      Characters '0-9' precision ( 0.00 )
+aContextRestriction N
+
+eM_LOD_Attribute 5,224
+aZKey      1331204
+aWork      Y
+aSeqNo_LOD_Entity 2
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      Date
+aZKey      1331205
+aDesc      Date of transaction
+
+eM_Domain  7,224
+aZKey      90000089
+aName      DateTime
+aDomainType A
+aDataType  T
+aMaxStringLth 20
+aDesc      Basic Timestamp Domain
+
+eM_LOD_Attribute 5,228
+aZKey      1331206
+aWork      Y
+aUpdate    Y
+aSeqOrder  A
+aSeqNo_LOD_Entity 3
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,196
+aName      Description
+aZKey      1331207
+aLth       32000
+aCaseSens  Y
+
+eM_Domain  7,224
+aZKey      90000032
+aName      Text
+aDomainType E
+aDataType  S
+aMaxStringLth 254
+aDesc      Any Character String
+aContextRestriction N
+
+eM_LOD_Attribute 5,224
+aZKey      1331208
+aWork      Y
+aSeqNo_LOD_Entity 4
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      RefNbr
+aZKey      1331209
+aDesc      Reference number of this transaction
+
+eM_Domain  7,224
+aZKey      90000044
+aName      Integer
+aDomainType E
+aDataType  L
+aMaxStringLth 4
+aDecimalFormat 0
+aDesc      Integer numbers from -lots to +lots
+aContextRestriction N
+
+eM_LOD_Attribute 5,224
+aZKey      1331210
+aWork      Y
+aSeqNo_LOD_Entity 5
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      AccountNbr
+aZKey      1331211
+aLth       10
+aNotNull   Y
+
+eM_Domain  7,160
+
+eL_LOD_Attribute 5,160
+
+eL_LOD_Entity 6,128
+
+eL_ER_Attribute 6,128
+
+eL_Domain  7,160
+
+eL_LOD_Attribute 5,160
+
+eL_LOD_Entity 6,128
+
+eL_ER_Attribute 6,128
+
+eL_Domain  7,160
+
+eUIS_ChildEntity 4,198
+aZKey      1129931
+aEliminateWnd N
+aListTypeFlag L
+aAutodesignCaseType 1A
+
+eLOD_Entity 5,224
+aName      DRAFTS
+aIndentName       DRAFTS
+aIndentLvl 6
+aZKey      1331212
+aCreate    Y
+aDelete    Y
+aUpdate    Y
+aInclude   Y
+aInclSrc   Y
+aExclude   Y
+aHidden    N
+aRecursive N
+aAutoCreate N
+aDerived   N
+aWork      Y
+aParentDeleteBehave D
+aDupEntityInstance N
+aDupRelationshipInstance N
+aDesc      Check withdrawals from account
+aSeqNo     2
+
+eWndDesign 5,198
+aZKey      90061580
+aUsageStyle U
+
+eM_LOD_Attribute 5,224
+aZKey      1331213
+aWork      Y
+aSeqNo_LOD_Entity 1
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      CheckNbr
+aZKey      1331214
+aNotNull   Y
+
+eM_Domain  7,160
+
+eM_LOD_Attribute 5,224
+aZKey      1331215
+aWork      Y
+aSeqNo_LOD_Entity 2
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      Date
+aZKey      1331216
+
+eM_Domain  7,160
+
+eM_LOD_Attribute 5,224
+aZKey      1331217
+aWork      Y
+aSeqNo_LOD_Entity 3
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      Amount
+aZKey      1331218
+
+eM_Domain  7,160
+
+eM_LOD_Attribute 5,224
+aZKey      1331219
+aWork      Y
+aSeqNo_LOD_Entity 4
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      RefNbr
+aZKey      1331220
+aDesc      Reference number
+
+eM_Domain  7,160
+
+eM_LOD_Attribute 5,224
+aZKey      1331221
+aWork      Y
+aSeqNo_LOD_Entity 5
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 6,128
+
+eM_ER_Attribute 6,192
+aName      AccountNbr
+aZKey      1331222
+aLth       10
+
+eM_Domain  7,160
+
+eL_LOD_Attribute 5,160
+
+eL_LOD_Entity 6,128
+
+eL_ER_Attribute 6,128
+
+eL_Domain  7,160
+
+eL_LOD_Attribute 5,160
+
+eL_LOD_Entity 6,128
+
+eL_ER_Attribute 6,128
+
+eL_Domain  7,160
+
+eL_LOD_Attribute 5,160
+
+eL_LOD_Entity 6,128
+
+eL_ER_Attribute 6,128
+
+eL_Domain  7,160
+
+eWndDesign 4,198
+aZKey      90061578
+aAutoVersion N
+aUsageStyle U
+aUpdateDeleteAction N
+aUpdateNextAction N
+aUpdatePrevAction N
+aWndCaption Account Detail Caption
+aListGroupboxText Account List
+aWndDIL_Message N
+
+eM_LOD_Attribute 4,224
+aZKey      1331223
+aWork      Y
+aSeqNo_LOD_Entity 1
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 5,128
+
+eM_ER_Attribute 5,192
+aName      Type
+aZKey      1331224
+aLth       32
+
+eM_Domain  6,160
+
+eM_LOD_Attribute 4,224
+aZKey      1331225
+aWork      Y
+aSeqNo_LOD_Entity 2
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 5,128
+
+eM_ER_Attribute 5,192
+aName      Number
+aZKey      1331226
+aLth       10
+
+eM_Domain  6,160
+
+eM_LOD_Attribute 4,224
+aZKey      1331227
+aWork      Y
+aSeqNo_LOD_Entity 3
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 5,128
+
+eM_ER_Attribute 5,192
+aName      Balance
+aZKey      1331228
+aDesc      Current account balance
+
+eM_Domain  6,160
+
+eM_LOD_Attribute 4,224
+aZKey      1331229
+aWork      Y
+aSeqNo_LOD_Entity 4
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 5,128
+
+eM_ER_Attribute 5,192
+aName      PreviousBalance
+aZKey      1331230
+aDesc      Account previous balance
+
+eM_Domain  6,160
+
+eM_LOD_Attribute 4,224
+aZKey      1331231
+aWork      Y
+aSeqNo_LOD_Entity 5
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 5,128
+
+eM_ER_Attribute 5,192
+aName      CustomerIdNbr
+aZKey      1331232
+
+eM_Domain  6,160
+
+eL_LOD_Attribute 4,160
+
+eL_LOD_Entity 5,128
+
+eL_ER_Attribute 5,128
+
+eL_Domain  6,160
+
+eL_LOD_Attribute 4,160
+
+eL_LOD_Entity 5,128
+
+eL_ER_Attribute 5,128
+
+eL_Domain  6,160
+
+eL_LOD_Attribute 4,160
+
+eL_LOD_Entity 5,128
+
+eL_ER_Attribute 5,128
+
+eL_Domain  6,160
+
+eWndDesign 3,198
+aZKey      90061577
+aAutoVersion N
+aUpdateDeleteAction N
+aUpdateNextAction N
+aUpdatePrevAction N
+aWndCaption Customer Detail Caption
+aListQualFlag Y
+aListQualLikeFlag G
+aListQualWndCaption test1
+aListQualWndPrompt test2
+aListQualWndButtonText test3
+aListGroupboxText Customer List
+aWndDIL_Message N
+
+eM_LOD_Attribute 3,224
+aZKey      1331233
+aWork      Y
+aSeqNo_LOD_Entity 1
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      LastName
+aZKey      1331234
+aLth       32
+aNotNull   Y
+
+eM_Domain  5,160
+
+eM_LOD_Attribute 3,228
+aZKey      1331235
+aWork      Y
+aUpdate    Y
+aSeqOrder  A
+aSeqNo_LOD_Entity 2
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      FirstName
+aZKey      1331236
+aLth       32
+aNotNull   Y
+
+eM_Domain  5,224
+aZKey      90000028
+aName      AlphaNumeric
+aDomainType E
+aDataType  S
+aMaxStringLth 254
+aDecimalFormat 1234
+aDesc      Characters 'a-z', 'A-Z', '0-9'
+aContextRestriction N
+
+eM_LOD_Attribute 3,224
+aZKey      1331237
+aWork      Y
+aSeqNo_LOD_Entity 3
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      Address
+aZKey      1331238
+aLth       32
+
+eM_Domain  5,160
+
+eM_LOD_Attribute 3,224
+aZKey      1331239
+aWork      Y
+aSeqNo_LOD_Entity 4
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      City
+aZKey      1331240
+aLth       32
+
+eM_Domain  5,160
+
+eM_LOD_Attribute 3,224
+aZKey      1331241
+aWork      Y
+aUpdate    Y
+aSeqOrder  A
+aSeqNo_LOD_Entity 5
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      State
+aZKey      1331242
+aLth       32
+
+eM_Domain  5,192
+aZKey      1320180
+aName      State
+aDomainType T
+aDataType  S
+aMaxStringLth 2
+aDecimalFormat 1234
+aDesc      USA State abbreviations
+aContextRestriction N
+
+eM_LOD_Attribute 3,224
+aZKey      1331243
+aWork      Y
+aSeqNo_LOD_Entity 6
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      ZipCode
+aZKey      1331244
+aLth       5
+
+eM_Domain  5,160
+
+eM_LOD_Attribute 3,224
+aZKey      1331245
+aWork      Y
+aUpdate    Y
+aSeqNo_LOD_Entity 7
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      SSN
+aZKey      1331246
+aLth       11
+
+eM_Domain  5,192
+aZKey      1320176
+aName      SSN
+aDomainType F
+aDataType  S
+aMaxStringLth 11
+aDesc      Social Security Format
+
+eM_LOD_Attribute 3,224
+aZKey      1331247
+aWork      Y
+aSeqNo_LOD_Entity 8
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      IdNbr
+aZKey      1331248
+
+eM_Domain  5,160
+
+eM_LOD_Attribute 3,224
+aZKey      1331249
+aWork      Y
+aSeqNo_LOD_Entity 9
+aAUTOSEQ   1418657792
+
+eM_LOD_Entity 4,128
+
+eM_ER_Attribute 4,192
+aName      DateOfBirth
+aZKey      1331250
+
+eM_Domain  5,160
+
+eL_LOD_Attribute 3,160
+
+eL_LOD_Entity 4,128
+
+eL_ER_Attribute 4,128
+
+eL_Domain  5,160
+
+eL_LOD_Attribute 3,164
+
+eL_LOD_Entity 4,128
+
+eL_ER_Attribute 4,128
+
+eL_Domain  5,160
+
+eDfltWndDesign 2,198
+aZKey      1129927
+aAutoVersion Y
+aActionType B
+aUsageStyle U
+aUpdateCancelAction Y
+aUpdateDeleteAction Y
+aUpdateSaveAction Y
+aUpdateSaveText OK
+aListUpdateAction Y
+aWndRefresh Y
+
+eUIS_ViewObjRef 2,224
+aZKey      1353845
+aName      ACCOUNT
+aDesc      VOR automatically built from LOD Dialog
+aFK_ZKEY04 0
+
+eUIS_LOD   3,192
+aZKey      1331198
+aName      ACCOUNT
+aDesc      Test old ACDIAL1
+
+i9         6
+i13        6
+i17        6
+i21        6
+i25        6
+i27        19
+i28        8
+i29        6
+i30        10
+i31        11
+i32        12
+i33        6
+i34        14
+i35        15
+i40        37
+i42        23
+i44        37
+i46        15
+i48        37
+i50        11
+i52        37
+i54        23
+i56        37
+i58        19
+i59        39
+i60        37
+i61        41
+i62        23
+i63        43
+i64        37
+i65        45
+i66        15
+i67        47
+i68        37
+i69        49
+i70        11
+i73        4
+i75        19
+i77        4
+i79        19
+i81        4
+i83        11
+i85        4
+i87        11
+i89        4
+i91        23
+i92        72
+i93        4
+i94        74
+i95        19
+i96        76
+i97        4
+i98        78
+i99        19
+i100       80
+i101       4
+i102       82
+i103       11
+i106       2
+i108       19
+i110       2
+i114       2
+i116       19
+i118       2
+i120       19
+i122       2
+i126       2
+i128       19
+i130       2
+i134       2
+i136       23
+i138       2
+i140       15
+i141       105
+i142       2
+i143       107
+i144       19
+i145       109
+i146       2
+i147       111
+i148       112
