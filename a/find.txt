@@ -1,0 +1,230 @@
+bin\sys\tzadwklo.lod:aName      LOD_EntityZKey
+bin\sys\tzbrlovo.lod:aName      LOD_EntityZKey
+bin\sys\TZCMLPLO.LOD:aName      EntityZKey
+bin\sys\TZCMLPLO.LOD:aIndentName    EntityZKey
+bin\sys\tzerposo.lod:aName      EntityZKey
+bin\sys\tzpnctwo.lod:aName      LOD_EntityZKey
+bin\sys\TZPNTROO.LOD:aName      LastMapEntityZKey
+bin\sys\tztenvro.lod:aName      EntityZKey
+bin\sys\tztewrko.lod:aName      TargetER_EntityZKey
+bin\sys\tztewrko.lod:aName      SourceER_EntityZKey
+bin\sys\tzzolodo.lod:aShortDesc ChildEntityZKey
+bin\sys\ZEIDON9A.PMD:aName      EntityZKey
+tz\tzadcdod.c:         SetAttributeFromAttribute( vUIS_List, "W_Entity", "LOD_EntityZKey",
+tz\tzadcdod.c:      SetAttributeFromAttribute( vUIS_List, "W_Entity", "LOD_EntityZKey",
+tz\tzadcdod.c:   SetCursorFirstEntityByInteger( vUIS_List, "W_Entity", "LOD_EntityZKey",
+tz\tzadcdod.c:      SetAttributeFromAttribute( vUIS_List, "W_Entity", "LOD_EntityZKey",
+tz\tzadcdod.c:      SetAttributeFromAttribute( vUIS_List, "W_Entity", "LOD_EntityZKey",
+tz\tzadcdod.c:      SetAttributeFromAttribute( vStructObj, "W_Entity", "LOD_EntityZKey",
+tz\tzadcdod.c:   GetIntegerFromAttribute( &lZKey, vUIS_List, "W_Entity", "LOD_EntityZKey" );
+tz\tzadcdod.c:      SetAttributeFromAttribute( vStructObj, "W_Entity", "LOD_EntityZKey",
+tz\tzadcdod.c:   GetIntegerFromAttribute( &lZKey, vUIS_List, "W_Entity", "LOD_EntityZKey" );
+tz\tzadcdod.c:   GetIntegerFromAttribute( &lZKey, vUIS_List, "W_Entity", "LOD_EntityZKey" );
+tz\tzadwdod.c:                               "W_Entity", "LOD_EntityZKey" );
+tz\tzadwdod.c:                                           "LOD_EntityZKey", lZKey, 0 );
+tz\tzadwdod.c:         SetAttributeFromAttribute( vStructObj, "W_Entity",   "LOD_EntityZKey",
+tz\tzaxcfgd.c:                                       "LOD_EntityZKey", vLOD,
+tz\tzaxcfgd.c:                                                      "LOD_EntityZKey" );
+tz\tzaxcfgd.c:                                       "LOD_EntityZKey", vLOD,
+tz\tzcmlp2o.c:   //:FOR EACH vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.c:   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+tz\tzcmlp2o.c:      //:DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+tz\tzcmlp2o.c:      RESULT = DeleteEntity( vTZCMLPLO, "EntityZKey", zREPOS_NONE );
+tz\tzcmlp2o.c:      RESULT = SetCursorNextEntity( vTZCMLPLO, "EntityZKey", "" );
+tz\tzcmlp2o.c:   //:CREATE ENTITY vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.c:   RESULT = CreateEntity( vTZCMLPLO, "EntityZKey", zPOS_AFTER );
+tz\tzcmlp2o.c:   //:vTZCMLPLO.EntityZKey.ZKey       = lZKey
+tz\tzcmlp2o.c:   SetAttributeFromInteger( vTZCMLPLO, "EntityZKey", "ZKey", lZKey );
+tz\tzcmlp2o.c:   //:vTZCMLPLO.EntityZKey.EntityName = szRootEntityName
+tz\tzcmlp2o.c:   SetAttributeFromString( vTZCMLPLO, "EntityZKey", "EntityName", szRootEntityName );
+tz\tzcmlp2o.c:            //:CREATE ENTITY vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.c:            RESULT = CreateEntity( vTZCMLPLO, "EntityZKey", zPOS_AFTER );
+tz\tzcmlp2o.c:            //:vTZCMLPLO.EntityZKey.ZKey       = lZKey
+tz\tzcmlp2o.c:            SetAttributeFromInteger( vTZCMLPLO, "EntityZKey", "ZKey", lZKey );
+tz\tzcmlp2o.c:            //:vTZCMLPLO.EntityZKey.EntityName = szCurrentEntityName
+tz\tzcmlp2o.c:            SetAttributeFromString( vTZCMLPLO, "EntityZKey", "EntityName", szCurrentEntityName );
+tz\tzcmlp2o.c:   //:OrderEntityForView( vTZCMLPLO, "EntityZKey", "ZKey A" )
+tz\tzcmlp2o.c:   OrderEntityForView( vTZCMLPLO, "EntityZKey", "ZKey A" );
+tz\tzcmlp2o.c:   //:SET CURSOR FIRST vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.c:   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+tz\tzcmlp2o.c:   //:FOR EACH vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.c:   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+tz\tzcmlp2o.c:      //:lZKey = vTZCMLPLO.EntityZKey.ZKey 
+tz\tzcmlp2o.c:      GetIntegerFromAttribute( &lZKey, vTZCMLPLO, "EntityZKey", "ZKey" );
+tz\tzcmlp2o.c:         //:vTZCMLPLO.DuplicateZKey.ZKey        = vTZCMLPLO.EntityZKey.ZKey 
+tz\tzcmlp2o.c:         SetAttributeFromAttribute( vTZCMLPLO, "DuplicateZKey", "ZKey", vTZCMLPLO, "EntityZKey", "ZKey" );
+
+tz\tzcmlp2o.c:         //:vTZCMLPLO.DuplicateZKey.EntityName1 = vTZCMLPLO.EntityZKey.EntityName 
+tz\tzcmlp2o.c:         SetAttributeFromAttribute( vTZCMLPLO, "DuplicateZKey", "EntityName1", vTZCMLPLO, "EntityZKey", "EntityName" );
+tz\tzcmlp2o.c:      //:szPreviousEntityName = vTZCMLPLO.EntityZKey.EntityName
+tz\tzcmlp2o.c:      GetVariableFromAttribute( szPreviousEntityName, 0, 'S', 33, vTZCMLPLO, "EntityZKey", "EntityName", "", 0 );
+tz\tzcmlp2o.c:      RESULT = SetCursorNextEntity( vTZCMLPLO, "EntityZKey", "" );
+tz\tzcmlp2o.c:   //:FOR EACH vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.c:   RESULT = SetCursorFirstEntity( vTZCMLPLO, "EntityZKey", "" );
+tz\tzcmlp2o.c:      //:DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+tz\tzcmlp2o.c:      RESULT = DeleteEntity( vTZCMLPLO, "EntityZKey", zREPOS_NONE );
+tz\tzcmlp2o.c:      RESULT = SetCursorNextEntity( vTZCMLPLO, "EntityZKey", "" );
+tz\tzcmlp2o.vml:   FOR EACH vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.vml:      DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+tz\tzcmlp2o.vml:   CREATE ENTITY vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.vml:   vTZCMLPLO.EntityZKey.ZKey       = lZKey
+tz\tzcmlp2o.vml:   vTZCMLPLO.EntityZKey.EntityName = szRootEntityName
+tz\tzcmlp2o.vml:            CREATE ENTITY vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.vml:            vTZCMLPLO.EntityZKey.ZKey       = lZKey
+tz\tzcmlp2o.vml:            vTZCMLPLO.EntityZKey.EntityName = szCurrentEntityName
+tz\tzcmlp2o.vml:   OrderEntityForView( vTZCMLPLO, "EntityZKey", "ZKey A" )
+tz\tzcmlp2o.vml:   SET CURSOR FIRST vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.vml:   FOR EACH vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.vml:      lZKey = vTZCMLPLO.EntityZKey.ZKey 
+tz\tzcmlp2o.vml:         vTZCMLPLO.DuplicateZKey.ZKey        = vTZCMLPLO.EntityZKey.ZKey 
+tz\tzcmlp2o.vml:         vTZCMLPLO.DuplicateZKey.EntityName1 = vTZCMLPLO.EntityZKey.EntityName 
+tz\tzcmlp2o.vml:      szPreviousEntityName = vTZCMLPLO.EntityZKey.EntityName
+tz\tzcmlp2o.vml:   FOR EACH vTZCMLPLO.EntityZKey 
+tz\tzcmlp2o.vml:      DELETE ENTITY vTZCMLPLO.EntityZKey NONE 
+tz\tzeremdd.c:   zLONG  lEntityZKey;
+tz\tzeremdd.c:      nRC = GetIntegerFromAttribute( &lEntityZKey, vTZEREMDO, "ER_Entity_Other", "ZKey" );
+tz\tzeremdd.c:      nRC = SetCursorFirstEntityByInteger( vT, "ER_Entity", "ZKey", lEntityZKey, "" );
+tz\tzeremdd.c:   zLONG  lEntityZKey;
+tz\tzeremdd.c:   nRC = GetIntegerFromAttribute( &lEntityZKey, vT, "ER_Entity_Other", "ZKey" );
+tz\tzeremdd.c:   nRC = SetCursorFirstEntityByInteger( vT, "ER_Entity", "ZKey", lEntityZKey, "" );
+tz\tzeremdo.c:   zLONG    lEntityZKey;
+tz\tzeremdo.c:   nRC = GetIntegerFromAttribute( &lEntityZKey, vTZEREMD1, "ER_Entity", "ZKey" );
+tz\tzeremdo.c:                                        "ZKey", lEntityZKey,
+tz\tzeremdo.c:                                          "ZKey", lEntityZKey,
+tz\tzeremdt.vml:   Integer nEntityZKey
+tz\tzeremdt.vml:   nEntityZKey = vSubjectArea.ER_Entity.ZKey
+tz\tzeremdt.vml:                                       "ZKey", nEntityZKey,
+tz\tzersaso.c:   zLONG    lEntityZKey;
+tz\tzersaso.c:   nZRetCode = GetIntegerFromAttribute( &lEntityZKey, vSubjectArea,
+tz\tzersaso.c:                                        "ZKey", lEntityZKey, "" );
+tz\tzersaso.c:   zLONG  lEntityZKey;
+tz\tzersaso.c:   nRC = GetIntegerFromAttribute( &lEntityZKey,
+tz\tzersaso.c:                                        "ZKey", lEntityZKey,
+tz\tzersast.c:   zLONG    lEntityZKey;
+tz\tzersast.c:   GetIntegerFromAttribute( &lEntityZKey, vSubjectArea,
+tz\tzersast.c:                                        "ZKey", lEntityZKey, "" );
+tz\tzlooprs.c:   GetIntegerFromAttribute( &lZKey, vXfer, "Control", "LOD_EntityZKey" );
+tz\tzlooprs.c:                  SetAttributeFromAttribute( vXfer,    "Control",              "LOD_EntityZKey",
+tz\tzlooprs.c:                 SetAttributeFromAttribute( vXfer,    "Control",           "LOD_EntityZKey",
+tz\tzpnctad.c:                                       "LOD_EntityZKey", vLOD,
+tz\tzpnctad.c:                               "CtrlWork", "LastMapEntityZKey" );
+tz\tzpnctad.c:   SetAttributeFromAttribute( vTZPNTROO, "CtrlWork", "LastMapEntityZKey",
+
+tz\tzpnctad.c:                                       "LOD_EntityZKey", vLOD,
+tz\tzpnctad.c:   GetIntegerFromAttribute( &lZKey, vScopeL, "ScopeEntity", "LOD_EntityZKey" );
+tz\tzpnctad.c:                                       "LOD_EntityZKey", vLOD,
+tz\tzpnctad.c:                                                      "LOD_EntityZKey" );
+tz\tzpnctld.c:                                                      "LOD_EntityZKey" );
+tz\tzpntrad.bak:   SetAttributeFromAttribute( vTZPNTROO, "CtrlWork", "LastMapEntityZKey",
+tz\tzpntrad.bak:                                  "CtrlWork", "LastMapEntityZKey");
+tz\tzpntrad.c:   SetAttributeFromAttribute( vTZPNTROO, "CtrlWork", "LastMapEntityZKey",
+tz\tzpntrad.c:                                  "CtrlWork", "LastMapEntityZKey");
+tz\tzsixsko.c:   zLONG  lEntityZKey;
+tz\tzsixsko.c:     nRC = GetIntegerFromAttribute( &lEntityZKey, vTZZOXOD1, "ENTITY",
+tz\tzsixsko.c:                                          "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                                      "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                             "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                                         "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                                        "ZKey", lEntityZKey,
+tz\tzsixsko.c:   zLONG  lEntityZKey;
+tz\tzsixsko.c:         nRC = GetIntegerFromAttribute( &lEntityZKey, vTZZOXOD1,
+tz\tzsixsko.c:                                              "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                                "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                                "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                                  "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                                  "ZKey", lEntityZKey,
+tz\tzsixsko.c:                                   lEntityZKey );
+tz\tztenvro.c:         SetAttributeFromAttribute( vDTE,  "TempRelKey",                 "EntityZKey",
+tz\tztenvro.c:         SetAttributeFromAttribute( vDTE,  "TempRelKey",                 "EntityZKey",
+tz\tztenvro.c:   zLONG    lEntityZKey;
+tz\tztenvro.c:      GetIntegerFromAttribute( &lEntityZKey,
+tz\tztenvro.c:         if ( CompareAttributeToInteger( vDTE_c, "TempRelKey", "EntityZKey",
+tz\tztenvro.c:                                         lEntityZKey ) == 0 &&
+tz\tzteupdd.c:   SetAttributeFromAttribute( vTE_Work, "TE_Work", "TargetER_EntityZKey",
+tz\tzteupdd.c:   SetAttributeFromAttribute( vTE_Work, "TE_Work", "SourceER_EntityZKey",
+tz\tzteupdd.c:   GetIntegerFromAttribute( &lZKey, vTE_Work, "TE_Work", "TargetER_EntityZKey" );
+tz\tzteupdd.c:   GetIntegerFromAttribute( &lZKey, vTE_Work, "TE_Work", "SourceER_EntityZKey" );
+tz\tzxsltdd.c:   SetAttributeFromAttribute( vTZPNTROO, "CtrlWork", "LastMapEntityZKey",
+tz\tzxsltdd.c:                                  "CtrlWork", "LastMapEntityZKey");
+tz\tzzolo2o.c:                              zLONG     ChildEntityZKey,
+tz\tzzolo2o.c://:                    INTEGER ChildEntityZKey,
+tz\tzzolo2o.c:                              zLONG     ChildEntityZKey,
+tz\tzzolo2o.c:         //:IF vRecursLOD.LOD_EntityParent.ZKey = ChildEntityZKey AND
+tz\tzzolo2o.c:         if ( CompareAttributeToInteger( vRecursLOD, "LOD_EntityParent", "ZKey", ChildEntityZKey ) == 0 && CompareAttributeToInteger( vRecursLOD, "ER_RelLinkRec", "ZKey", RelationshipZKey ) == 0 )
+tz\tzzolo2o.c:         //:                    ChildEntityZKey,
+tz\tzzolo2o.c:         oTZZOLODO_fnLocateParentName( vRecursLOD, RelationshipZKey, ChildEntityZKey, ReturnedParentName );
+tz\tzzolo2o.c:   //:INTEGER     ChildEntityZKey
+tz\tzzolo2o.c:   zLONG     ChildEntityZKey = 0;
+tz\tzzolo2o.c:         //:ChildEntityZKey  = vLOD.LOD_Entity.ZKey
+tz\tzzolo2o.c:         GetIntegerFromAttribute( &ChildEntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolo2o.c:         //:                    ChildEntityZKey,
+tz\tzzolo2o.c:         oTZZOLODO_fnLocateParentName( vLOD, RelationshipZKey, ChildEntityZKey, ReturnedParentName );
+tz\tzzolo2o.vml:                    INTEGER ChildEntityZKey,
+tz\tzzolo2o.vml:         IF vRecursLOD.LOD_EntityParent.ZKey = ChildEntityZKey AND
+tz\tzzolo2o.vml:                             ChildEntityZKey,
+tz\tzzolo2o.vml:   INTEGER     ChildEntityZKey
+tz\tzzolo2o.vml:         ChildEntityZKey  = vLOD.LOD_Entity.ZKey
+tz\tzzolo2o.vml:                             ChildEntityZKey,
+tz\tzzolodd.c:                                  zLONG lLOD_EntityZKey );
+tz\tzzolodd.c:                                  zLONG lLOD_EntityZKey )
+tz\tzzolodd.c:                                      lLOD_EntityZKey ) == 0 )
+tz\tzzolodd.c:      nRC = zwTZZOLODD_LocateRecursiveEntity( vLOD, lLOD_EntityZKey );
+tz\tzzolodd.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodd.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodd.c:   nRC = zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodd.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodd.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodd.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodd.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodd.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodd.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodd.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodd.c:      GetIntegerFromAttribute( &lLOD_EntityZKey, vWork, "SelectedAttribute", "ZKey" );
+tz\tzzolodd.c:      zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodd.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodd.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodd.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodd.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodo.c:   zLONG    lEntityZKey;
+tz\tzzolodo.c:         nZRetCode = GetIntegerFromAttribute( &lEntityZKey, vTZZOLOD1, "ER_EntityRec", "ZKey" );
+tz\tzzolodo.c:         RESULT = SetCursorFirstEntityByInteger( vTZEREMD1, "ER_Entity", "ZKey", lEntityZKey, "" );
+tz\tzzolodo.c:   zLONG    lEntityZKey;
+tz\tzzolodo.c:            nZRetCode = GetIntegerFromAttribute( &lEntityZKey, vTZZOLOD1, "ER_EntityRec", "ZKey" );
+tz\tzzolodo.c:            RESULT = SetCursorFirstEntityByInteger( vTZEREMD1, "ER_Entity", "ZKey", lEntityZKey, "" );
+tz\tzzolodq.c:                                  zLONG lLOD_EntityZKey );
+tz\tzzolodq.c:                                  zLONG lLOD_EntityZKey )
+tz\tzzolodq.c:                                      lLOD_EntityZKey ) == 0 )
+tz\tzzolodq.c:      nRC = zwTZZOLODD_LocateRecursiveEntity( vLOD, lLOD_EntityZKey );
+tz\tzzolodq.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodq.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodq.c:   nRC = zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodq.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodq.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodq.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodq.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodq.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodq.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodq.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodq.c:      GetIntegerFromAttribute( &lLOD_EntityZKey, vWork, "SelectedAttribute", "ZKey" );
+tz\tzzolodq.c:      zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodq.c:   zLONG  lLOD_EntityZKey;
+tz\tzzolodq.c:   GetIntegerFromAttribute( &lLOD_EntityZKey, vLOD, "LOD_Entity", "ZKey" );
+tz\tzzolodq.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzolodq.c:   zwTZZOLODD_LocateRecursiveEntity( vLOD_R, lLOD_EntityZKey );
+tz\tzzoxodo.c:   zLONG  lEntityZKey;
+tz\tzzoxodo.c:      GetIntegerFromAttribute( &lEntityZKey, vTZZOLOD1, "ER_EntityRec", "ZKey" );
+tz\tzzoxodo.c:                                           "ZKey", lEntityZKey,
+tz\tzzoxodo.c:   zLONG  lEntityZKey;
+tz\tzzoxodo.c:         GetIntegerFromAttribute( &lEntityZKey, vTZZOLOD1, "ER_EntityRec", "ZKey" );
+tz\tzzoxodo.c:                                              "ZKey", lEntityZKey,
+tz\tzzoxodo.c:   zLONG  lEntityZKey;
+tz\tzzoxodo.c:         GetIntegerFromAttribute( &lEntityZKey, vTZZOXOD1, "ENTITY", "ERENT_TOK" );
+tz\tzzoxodo.c:                                              lEntityZKey, "TE_DBMS_Source" );
+tz\tzzoxodo.c:                                                 lEntityZKey, "TE_DBMS_Source" );
+tz\tzzoxodo.c:         GetIntegerFromAttribute( &lEntityZKey, vTZZOXODO, "ENTITY", "ERENT_TOK" );
+tz\tzzoxodo.c:                                              lEntityZKey, "TE_DBMS_Source" );
+tz\tzzoxodo.c:                                                 lEntityZKey, "TE_DBMS_Source" );
+tz\tzzoxodo.c:   zLONG  lEntityZKey;
+tz\tzzoxodo.c:   GetIntegerFromAttribute( &lEntityZKey, vTZZOXODO, "ENTITY", "ERENT_TOK" );
+tz\tzzoxodo.c:                                        "ZKey", lEntityZKey,
+tz\tzzoxodo.c:                                          "ZKey", lEntityZKey,
