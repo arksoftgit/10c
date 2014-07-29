@@ -1,4 +1,4 @@
-z1000-Zeidon    TZZOVEAO TZZOLODO 11/15/13   20:51:43 1.0a2    
+z1000-Zeidon    TZZOVEAO TZZOLODO 01/27/06   10:38:41 1.0a2    
 eLOD       1
 aZKey      1091957
 aName      TZZOVEAO
@@ -155,11 +155,11 @@ aER_DiagramPosY 262
 
 eER_RelLinkRec 7
 aName      is based on
-aAutoSeq   N
-aHangingForeignKeyEntity N
 aZKey      1322239
 aCardMin   0
 aCardMax   1
+aAutoSeq   N
+aHangingForeignKeyEntity N
 
 eER_RelTypeRec 8
 aZKey      1322237
@@ -195,11 +195,11 @@ aER_PortFactor 2
 
 eER_RelLinkRec 6
 aName      has fact
-aAutoSeq   Y
-aHangingForeignKeyEntity N
 aZKey      1322283
 aCardMin   0
 aCardMax   m
+aAutoSeq   Y
+aHangingForeignKeyEntity N
 
 eER_RelTypeRec 7
 aZKey      1322282
@@ -248,10 +248,10 @@ aER_DiagramPosY 142
 
 eER_RelLinkRec 5
 aName      has root
-aAutoSeq   N
 aZKey      1322280
 aCardMin   1
 aCardMax   1
+aAutoSeq   N
 
 eER_RelTypeRec 6
 aZKey      1322279
@@ -280,7 +280,7 @@ aZKey      90145848
 aName      MetaName
 aDomainType E
 aDataType  S
-aMaxStringLth 32
+aMaxStringLth 8
 aDesc      Name of a meta object (ie., LOD, Dialog, Report)
 aContextRestriction N
 
@@ -308,11 +308,11 @@ aER_PortFactor 2
 
 eER_RelLinkRec 4
 aName      is for
-aAutoSeq   N
-aHangingForeignKeyEntity N
 aZKey      1322314
 aCardMin   1
 aCardMax   1
+aAutoSeq   N
+aHangingForeignKeyEntity N
 
 eER_RelTypeRec 5
 aZKey      1322312
