@@ -1,4 +1,4 @@
-z1000-Zeidon    KZXMLPGO TZZOLODO 04/24/14   15:20:07 1.0a2    
+z1000-Zeidon    KZXMLPGO TZZOLODO 06/26/12   10:47:15 1.0a2    
 eLOD       1
 aZKey      91301926
 aName      KZXMLPGO
@@ -704,6 +704,7 @@ aSeqOrder  Y
 eER_AttributeRec 4
 aName      TaskID
 aZKey      4897621
+aLth       32
 
 eDomainRec 5
 
