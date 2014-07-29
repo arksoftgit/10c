@@ -1,4 +1,4 @@
-z1000-Zeidon    WD       TZDGSRCO 03/20/14   12:14:39 1.0a2    
+z1000-Zeidon    WD       TZDGSRCO 05/15/13   13:28:55 1.0a2    
 eDomainGroup 1
 aZKey      1320467
 aName      WD
@@ -356,7 +356,7 @@ aName      WD_WebEditControlProperties
 aIsDefault Y
 
 eTableEntry 4
-aZKey      130000004
+aZKey      92741378
 
 eTableEntry 4
 aZKey      68304448
@@ -383,11 +383,6 @@ aZKey      92741377
 aExternalValue wysiwyg TinyMCE
 aInternalValue wysiwyg TinyMCE
 
-eTableEntry 4
-aZKey      130000003
-aExternalValue Browse File
-aInternalValue Browse File
-
 eDomain    2
 aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68304365
@@ -404,7 +399,7 @@ aName      WD_WebGroupControlProperties
 aIsDefault Y
 
 eTableEntry 4
-aZKey      130000002
+aZKey      92741380
 
 eTableEntry 4
 aZKey      68304367
@@ -422,14 +417,14 @@ aExternalValue Table
 aInternalValue Table
 
 eTableEntry 4
-aZKey      4634994
-aExternalValue Fieldset
-aInternalValue Container
+aZKey      90754211
+aExternalValue Grid Grouping
+aInternalValue Grid Grouping
 
 eTableEntry 4
-aZKey      4634995
-aExternalValue Fieldset Absolute Pos
-aInternalValue Container Absolute Size
+aZKey      68304369
+aExternalValue Scrollable
+aInternalValue Scrollable
 
 eTableEntry 4
 aZKey      89853394
@@ -442,21 +437,6 @@ aExternalValue No Width
 aInternalValue No Width
 
 eTableEntry 4
-aZKey      89990860
-aExternalValue Include File
-aInternalValue Include File
-
-eTableEntry 4
-aZKey      130000001
-aExternalValue Absolute Pos
-aInternalValue Absolute Pos
-
-eTableEntry 4
-aZKey      90754211
-aExternalValue Grid Grouping
-aInternalValue Grid Grouping
-
-eTableEntry 4
 aZKey      92656449
 aExternalValue Show/Hide Toggle
 aInternalValue Show/Hide Toggle
@@ -467,6 +447,21 @@ aExternalValue Repeating Group
 aInternalValue Repeating Group
 
 eTableEntry 4
+aZKey      68442849
+aExternalValue Relative Positioning
+aInternalValue Relative Positioning
+
+eTableEntry 4
+aZKey      4634994
+aExternalValue Container
+aInternalValue Container
+
+eTableEntry 4
+aZKey      4634995
+aExternalValue Container Absolute Size
+aInternalValue Container Absolute Size
+
+eTableEntry 4
 aZKey      68544987
 aExternalValue File Transfer to Server
 aInternalValue File Transfer to Server
@@ -475,6 +470,11 @@ eTableEntry 4
 aZKey      92741379
 aExternalValue Survey Group
 aInternalValue Survey Group
+
+eTableEntry 4
+aZKey      89990860
+aExternalValue Include File
+aInternalValue Include File
 
 eTableEntry 4
 aZKey      90127802
@@ -490,11 +490,6 @@ eTableEntry 4
 aZKey      90044246
 aExternalValue Dashboard Group
 aInternalValue Dashboard Group
-
-eTableEntry 4
-aZKey      68304369
-aExternalValue Scrollable
-aInternalValue Scrollable
 
 eDomain    2
 aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
@@ -1904,6 +1899,6 @@ aType      13
 aLastUpdateDate 19950908094926000
 aLastCheckInDate 19951102203051110
 
-i192       189
-i195       189
-i352       189
+i191       188
+i194       188
+i351       188
