@@ -1,4 +1,4 @@
-z1000-Zeidon    ACCOUNT  TZZOLODO 03/22/14   17:08:06 1.0a2    
+z1000-Zeidon    ACCOUNT  TZZOLODO 05/30/13   19:52:17 1.0a2    
 eLOD       1
 aZKey      1331198
 aName      ACCOUNT
@@ -43,7 +43,6 @@ aDupEntityInstance N
 aDupRelationshipInstance N
 aDesc      Account detail
 aSeqNo     1
-aLazyLoadFlag Y
 
 eLOD_EntityChild 4
 aName      TRANSACTION
@@ -307,8 +306,6 @@ aZKey      1084623
 aWork      Y
 aUpdate    Y
 aSeqOrder  Y
-aHashkeyType P
-aHashkeyParentEntityName CUSTOMER
 
 eER_AttributeRec 5
 aName      Name
@@ -425,7 +422,7 @@ aUpdate    Y
 aInclude   N
 aInclSrc   Y
 aExclude   N
-aRecursive N
+aRecursive Y
 aDerived   N
 aWork      Y
 aParentDeleteBehave D
@@ -601,11 +598,7 @@ aContextRestriction N
 eLOD_AttributeRec 3
 aZKey      1331233
 aWork      Y
-aUpdate    Y
-aSeqOrder  A
 aSeqNo_LOD_Entity 1
-aHashkeyType P
-aHashkeyParentEntityName TestParent
 
 eER_AttributeRec 4
 aName      LastName
@@ -750,7 +743,7 @@ aDesc      Web subcontrol type for Grid subcontrols
 aContextRestriction N
 
 eLOD_Entity 2
-awkSelectedAttributeForDragSort 1
+awkSelectedAttributeForDragSort 9
 
 eLOD_Attribute 3
 awkSequence 1
@@ -823,7 +816,7 @@ eER_Attribute 4
 eDomain    5
 
 eLOD_Entity 2
-awkSelectedAttributeForDragSort 1
+awkSelectedAttributeForDragSort 8
 
 eLOD_Attribute 3
 awkSequence 1
@@ -1069,9 +1062,9 @@ eDomain    5
 
 eSourceFile 2
 aZKey      1130117
-aName      ACCOUNT
-aExtension C
-aLanguageType C
+aName      accounto
+aExtension VML
+aLanguageType V
 
 eOperation 3
 aName      test
@@ -1103,7 +1096,7 @@ aReturnDataType O
 ePOD       2
 aNAME      ACCOUNT
 aZKey      1149529
-aTE_SourceZKey 91005292
+aTE_SourceZKey 1148367
 
 eTE_DB_Environ 3
 aName      Zeidon_T
@@ -1112,9 +1105,47 @@ aDesc      Local Project Library Release 8C
 aType      P
 
 eTE_DBMS_Source 4
+aName      SQL_Rep
+aZKey      1148367
+aDesc      Last altered April 7, 1998
+aParadigm  R
+aDBMS      SQLServer via ODBC
+aGenerateExecutable kzhsqlsb
+aExecutable KZHSQLOA
+aGenKeyExecutable KZHGENKY
+aDisplayOwner Y
+aDisplayDBMS_ID N
+aDBH_Data  322
+TZDBHODO ********************************************************************************************************************************z10000Zeidon    ZBLOBOI  TZDBHODO 09/22/99   13:50:33 1.0a     
+eODBC      1
+aTimestampPrecision 3
+aTimestampAsString N
+aBlobsLast Y
+aDropTables Y
+aAddTableNameToFK_Override Y
+
+
+
+eTE_DBMS_Source 4
+aName      Zeidon
+aZKey      90031867
+aDesc      Zeidon repository on DB2 mainframe
+aParadigm  R
+aDBMS      MVS: DB2 deutsch
+aGenerateExecutable KZSIDB2
+aExecutable KZHSIRON
+aGenKeyExecutable KZHGENKY
+aConectionType O
+aSironDB_Type 2
+aDefaultOwner ZEIDON
+aDisplayOwner Y
+aDisplayDBMS_ID Y
+aSironDB_Subtype 4
+
+eTE_DBMS_Source 4
 aName      Repos9JA
 aZKey      91005292
-aDesc      The fact that this is defined as MS Access is immaterial, as the meta data will never be kept in a database, but will only remain as individual meta objects.
+aDesc      Repository MS-Access
 aParadigm  R
 aDBMS      MS Access via ODBC
 aGenerateExecutable KZHSQLAB
@@ -1314,7 +1345,7 @@ i267       9
 i268       100
 i269       101
 i270       21
-i281       272
-i282       271
 i283       276
 i284       271
+i285       272
+i286       271
