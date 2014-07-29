@@ -81,6 +81,8 @@ account.*
 *.scc
 *.xpj
 *.xpg
+*.XPG
+*.XPJ
 
 # Visual C++ cache files
 ipch/
@@ -220,3 +222,4 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 gitforcepull.bat
+!/gitforcepull.bat
