@@ -4004,23 +4004,27 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                ELSE
                   szContextName = ""
                END
+
                IF vDialog.CtrlMapER_Domain.MaxStringLth > 254
                   lMaxStringLength = vDialog.CtrlMapER_Domain.MaxStringLth
                   szMaxStringLength = lMaxStringLength
                ELSE
                   szMaxStringLength = "254"
                END
+
                szWriteBuffer = "            strErrorMapValue = " +
                                vDialog.CtrlMapView.Name + ".cursor( ^" +
                                vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
                                vDialog.CtrlMapER_Attribute.Name + "^, ^" +
                                szContextName + "^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
                // KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
                szWriteBuffer = "            if ( strErrorMapValue == null )"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "               strErrorMapValue = ^^;"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+
                szWriteBuffer = "            task.log( ).info( ^" + vDialog.CtrlMapRelatedEntity.Name + "." +
                                vDialog.CtrlMapER_Attribute.Name + ": ^ + strErrorMapValue );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -4043,31 +4047,39 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "         strErrorMapValue = ^" + vDialog.Control.Text + "^;"
                END
+
                // This doesn't work, but something like it may be necessary to remove special characters ... dks 2012.04.25
                // strErrorMapValue = strErrorMapValue.replace("/&/g", "&amp;").replace("/>/g", "&gt;").replace("/</g", "&lt;").replace("/\"/g", "&quot;").replace("/%/g", "&#037;");
+
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "%>"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+
                X_Size = vDialog.Control.SZDLG_X
                Size = X_Size / 4
                zIntegerToString( szSize, 10, Size )
                Y_Size = vDialog.Control.SZDLG_Y
                Size = Y_Size / 12
                zIntegerToString( szHeight, 10, Size )
+
                IF vDialog.Control.VisibleBorder = "Y"
                   zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:4px;border-style:groove;", "style=", "^" )
                ELSE
                   zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:2px;border-style:groove;", "style=", "^" )
                END
+
                szTinyMCEFlag = ""
                SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "wysiwyg TinyMCE"
                IF RESULT >= zCURSOR_SET
                   szTinyMCEFlag = "Y"
                END
+
                IF vDialog.Control.WebCtrlType = "wysiwygEditor" OR szTinyMCEFlag = "Y"
+
                // CreateTabIndexString( vDialog, szTabIndex )
                // CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
                // szAbsoluteStyle = szAbsoluteStyle + szTabIndex
+
                   GetViewByName( vLPLR, "TaskLPLR", vDialog, zLEVEL_TASK )
                   szText = vLPLR.LPLR.Name
                   szLPLR_Name = "[App." + szText + "]"
@@ -4075,6 +4087,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                   IF szClass = ""
                      szClass = "mceSimple"  // "mceSimple" is TinyMCE default
                   END
+
                   IF vDialog.Control.CSS_Class != ""
                      szClass = szClass + " " + vDialog.Control.CSS_Class
                   END
@@ -4083,12 +4096,14 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                                   szAbsoluteStyle + ">" +
                                // "^ rows="15" cols="80" style="width: 80%">" +
                                   "<%=strErrorMapValue%></textarea>"
+
                ELSE
                   szClass = vDialog.Control.CSS_Class
                   CreateTabIndexString( vDialog, szTabIndex )
                   szWriteBuffer = "<textarea name=^" + szCtrlTag + szRepeatGrpKey + "^ id=^" + szCtrlTag + szRepeatGrpKey + "^" + szTitleHTML +
                                   szAbsoluteStyle + szTabIndex + " wrap=^wrap^>" +
                                   "<%=strErrorMapValue%></textarea>"
+
                END
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
             END
