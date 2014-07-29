@@ -1,9 +1,9 @@
-z1000-Zeidon    TZWDLGSO TZZOXODO 04/16/14   12:00:01 1.0a2    
+z1000-Zeidon    TZWDLGSO TZZOXODO 02/17/14   12:45:26 1.0a2    
 eOBJECT    1
 aNAME      TZWDLGSO
 aZKey      1325104
 aOPER_LIBNM TZLODOPR
-aER_DATE   20140322175321721
+aER_DATE   20140217115820998
 
 eENTITY    2
 aNAME      Dialog
@@ -1903,6 +1903,83 @@ aUPDATE    Y
 aXVAATT_TOK 164
 
 eATTRIB    6
+aNAME      BorderWidth
+aERATT_TOK 92715201
+aPERSIST   Y
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 165
+
+eATTRIB    6
+aNAME      BorderStyle
+aERATT_TOK 92715390
+aPERSIST   Y
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 166
+
+eATTRIB    6
+aNAME      BorderTop
+aERATT_TOK 92715391
+aPERSIST   Y
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 167
+
+eATTRIB    6
+aNAME      BorderBottom
+aERATT_TOK 92715392
+aPERSIST   Y
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 168
+
+eATTRIB    6
+aNAME      BorderLeft
+aERATT_TOK 92715393
+aPERSIST   Y
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 169
+
+eATTRIB    6
+aNAME      BorderRight
+aERATT_TOK 92715394
+aPERSIST   Y
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 170
+
+eATTRIB    6
+aNAME      TextAlignHorizontal
+aERATT_TOK 92715395
+aPERSIST   Y
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       254
+aUPDATE    Y
+aXVAATT_TOK 171
+
+eATTRIB    6
 aNAME      VisibleBorder
 aERATT_TOK 91471497
 aPERSIST   Y
@@ -1911,7 +1988,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 165
+aXVAATT_TOK 172
 
 eATTRIB    6
 aNAME      CenterJustify
@@ -1922,7 +1999,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 166
+aXVAATT_TOK 173
 
 eATTRIB    6
 aNAME      RightJustify
@@ -1933,7 +2010,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 167
+aXVAATT_TOK 174
 
 eATTRIB    6
 aNAME      Disabled
@@ -1955,7 +2032,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 169
+aXVAATT_TOK 176
 
 eATTRIB    6
 aNAME      CSS_Id
@@ -1966,7 +2043,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 170
+aXVAATT_TOK 177
 
 eATTRIB    6
 aNAME      CSS_Font
@@ -1977,7 +2054,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 171
+aXVAATT_TOK 178
 
 eATTRIB    6
 aNAME      CSS_Position
@@ -1988,7 +2065,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 172
+aXVAATT_TOK 179
 
 eATTRIB    6
 aNAME      CSS_Size
@@ -1999,7 +2076,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 173
+aXVAATT_TOK 180
 
 eATTRIB    6
 aNAME      JavaScript
@@ -2010,7 +2087,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 174
+aXVAATT_TOK 181
 
 eATTRIB    6
 aNAME      RadioOrCheckboxValue
@@ -2021,7 +2098,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 175
+aXVAATT_TOK 182
 
 eATTRIB    6
 aNAME      WebFileName
@@ -2032,7 +2109,7 @@ aDOMAIN    QSFullPathName
 aTYPE      S
 aLTH       260
 aUPDATE    Y
-aXVAATT_TOK 176
+aXVAATT_TOK 183
 
 eATTRIB    6
 aNAME      WebCtrlType
@@ -2043,7 +2120,7 @@ aDOMAIN    WD_WebCtrlType
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 177
+aXVAATT_TOK 184
 
 eATTRIB    6
 aNAME      WebColumnSpan
@@ -2054,7 +2131,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 178
+aXVAATT_TOK 185
 
 eATTRIB    6
 aNAME      WebWrap
@@ -2065,7 +2142,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 179
+aXVAATT_TOK 186
 
 eATTRIB    6
 aNAME      WebNoGridDataMessage
@@ -2144,83 +2221,6 @@ aUPDATE    Y
 aXVAATT_TOK 136
 
 eATTRIB    6
-aNAME      BorderWidth
-aERATT_TOK 92715201
-aPERSIST   Y
-aAPDM_TOK  90000044
-aDOMAIN    Integer
-aTYPE      L
-aLTH       4
-aHIDDEN    Y
-aXVAATT_TOK 187
-
-eATTRIB    6
-aNAME      BorderStyle
-aERATT_TOK 92715390
-aPERSIST   Y
-aAPDM_TOK  90000044
-aDOMAIN    Integer
-aTYPE      L
-aLTH       4
-aHIDDEN    Y
-aXVAATT_TOK 188
-
-eATTRIB    6
-aNAME      BorderTop
-aERATT_TOK 92715391
-aPERSIST   Y
-aAPDM_TOK  90000044
-aDOMAIN    Integer
-aTYPE      L
-aLTH       4
-aHIDDEN    Y
-aXVAATT_TOK 189
-
-eATTRIB    6
-aNAME      BorderBottom
-aERATT_TOK 92715392
-aPERSIST   Y
-aAPDM_TOK  90000044
-aDOMAIN    Integer
-aTYPE      L
-aLTH       4
-aHIDDEN    Y
-aXVAATT_TOK 190
-
-eATTRIB    6
-aNAME      BorderLeft
-aERATT_TOK 92715393
-aPERSIST   Y
-aAPDM_TOK  90000044
-aDOMAIN    Integer
-aTYPE      L
-aLTH       4
-aHIDDEN    Y
-aXVAATT_TOK 191
-
-eATTRIB    6
-aNAME      BorderRight
-aERATT_TOK 92715394
-aPERSIST   Y
-aAPDM_TOK  90000044
-aDOMAIN    Integer
-aTYPE      L
-aLTH       4
-aHIDDEN    Y
-aXVAATT_TOK 192
-
-eATTRIB    6
-aNAME      TextAlignHorizontal
-aERATT_TOK 92715395
-aPERSIST   Y
-aAPDM_TOK  90000032
-aDOMAIN    Text
-aTYPE      S
-aLTH       254
-aHIDDEN    Y
-aXVAATT_TOK 193
-
-eATTRIB    6
 aNAME      FontSize
 aERATT_TOK 92716872
 aPERSIST   Y
@@ -2278,6 +2278,7 @@ aPDELETE   D
 aUPDATE    Y
 aINCLSRC   Y
 aMAX_LTH   99
+aHANG_FK   N
 
 eATTRIB    6
 aNAME      Tag
@@ -8159,7 +8160,7 @@ aCARDMAX   1
 aPDELETE   E
 aINCLSRC   Y
 aDUPENTIN  Y
-aMAX_LTH   32348
+aMAX_LTH   32097
 
 eATTRIB    7
 aNAME      ZKey
@@ -8248,7 +8249,7 @@ aPERSIST   Y
 aAPDM_TOK  90000028
 aDOMAIN    AlphaNumeric
 aTYPE      S
-aLTH       254
+aLTH       3
 aUPDATE    Y
 aXVAATT_TOK 689
 
@@ -13273,7 +13274,7 @@ aPDELETE   E
 aUPDATE    Y
 aINCLSRC   Y
 aDUPENTIN  Y
-aMAX_LTH   32603
+aMAX_LTH   32352
 
 eATTRIB    4
 aNAME      ZKey
@@ -13319,7 +13320,7 @@ aPERSIST   Y
 aAPDM_TOK  90000028
 aDOMAIN    AlphaNumeric
 aTYPE      S
-aLTH       254
+aLTH       3
 aUPDATE    Y
 aXVAATT_TOK 1098
 
@@ -14567,7 +14568,7 @@ aFULLPERSIST Y
 aCARDMIN   1
 aCARDMAX   1
 aPDELETE   E
-aMAX_LTH   32348
+aMAX_LTH   32097
 
 eATTRIB    5
 aNAME      ZKey
@@ -14612,7 +14613,7 @@ aPERSIST   Y
 aAPDM_TOK  90000028
 aDOMAIN    AlphaNumeric
 aTYPE      S
-aLTH       254
+aLTH       3
 aUPDATE    Y
 aXVAATT_TOK 1202
 
