@@ -52,6 +52,7 @@ build/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
+account.*
 *_i.c
 *_p.c
 *.bak
