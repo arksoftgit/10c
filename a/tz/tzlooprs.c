@@ -2253,7 +2253,7 @@ fnCreateDEF_IBMC20( zVIEW         lpTaskView,
       else
       {
          zsprintf( pchLine, "Error creating file '%s'.", szFileName );
-         MessageSend( vTaskLPLR, "LO00108a", "Zeidon Tools",
+         MessageSend( vTaskLPLR, "LO00108", "Zeidon Tools",
                       pchLine, zMSGQ_SYSTEM_ERROR, zBEEP );
       }
 
@@ -2409,7 +2409,7 @@ fnCreateRC( zPCHAR        pchTargetName,
          zsprintf( pchLine, "Error creating file: '%s'.  Check specification of "
                    "Environment directory for a valid directory name.",
                    szFileName );
-         MessageSend( vSubtask, "LO00108A", "Zeidon Tools",
+         MessageSend( vSubtask, "LO00108", "Zeidon Tools",
                       pchLine, zMSGQ_SYSTEM_ERROR, zBEEP );
 
          return( -1 );
@@ -2444,7 +2444,7 @@ fnCreateRC( zPCHAR        pchTargetName,
                    "Error creating file: '%s' ...  check specification of "
                    "Environment directory for a valid directory name.",
                    szFileNameTemp );
-         MessageSend( vSubtask, "LO00108b", "Zeidon Tools",
+         MessageSend( vSubtask, "LO00108", "Zeidon Tools",
                       pchLine, zMSGQ_SYSTEM_ERROR, zBEEP );
 
          return( -1 );
@@ -2457,7 +2457,7 @@ fnCreateRC( zPCHAR        pchTargetName,
          zsprintf( pchLine, "Error opening file '%s'.  Check specification of "
                   "Environment directory for a valid directory name.",
                   szFileName );
-         MessageSend( vSubtask, "LO00108B", "Zeidon Tools",
+         MessageSend( vSubtask, "LO00108", "Zeidon Tools",
                       pchLine, zMSGQ_SYSTEM_ERROR, zBEEP );
 
          SysCloseFile( vTaskLPLR, hOut, 0 );
@@ -2805,7 +2805,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
                    "Error creating file: '%s' ...  Check specification of "
                    "Environment directory for a valid directory name.",
                    szFileName );
-         MessageSend( vSubtask, "LO00108C", "Zeidon Tools",
+         MessageSend( vSubtask, "LO00108", "Zeidon Tools",
                       pchLine, zMSGQ_SYSTEM_ERROR, zBEEP );
 
          nReturnCode = 0;
@@ -2931,7 +2931,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
 
    GetStringFromAttribute( szFileName2, vTaskLPLR, "LPLR", "MetaSrcDir" );
    SysConvertEnvironmentString( szFileName, szFileName2 );
-   nLth = SysAppendcDirSep( szFileName );
+   nLth =  SysAppendcDirSep( szFileName );
    cdir.nSourceFiles = 0;
 
    // Load each meta.
@@ -3027,7 +3027,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
                   zsprintf( szMsg, "Error creating file '%s'.  Check "
                             "specification of Environment directory for a "
                             "valid directory name.", szFileName2 );
-                  MessageSend( vSubtask, "LO00108c", "Zeidon Tools",
+                  MessageSend( vSubtask, "LO00108", "Zeidon Tools",
                                szMsg, zMSGQ_SYSTEM_ERROR, zBEEP );
                }
                else
@@ -3067,7 +3067,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
             {
                zsprintf( pchLine, "Could not find XPG for '%s'.  This file "
                                "must be parsed!", pchXPG_Name );
-               MessageSend( vSubtask, "LO00108d", "Zeidon Tools",
+               MessageSend( vSubtask, "LO00108", "Zeidon Tools",
                             pchLine, zMSGQ_SYSTEM_ERROR, zBEEP );
 
                nReturnCode = 0;
@@ -3565,9 +3565,9 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
 {
    zPCHAR pchCompilerDir;
    zPCHAR pchMakefileDir;
-   zCHAR  szMakefileDir[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szMakefileDir[zMAX_FILESPEC_LTH + 1];
    zPCHAR pchEnvironmentDir;
-   zCHAR  szEnvironmentDir[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szEnvironmentDir[zMAX_FILESPEC_LTH + 1];
    zPCHAR pchPgmSrcDir;
    zCHAR  szFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szLocalDir[ zMAX_FILESPEC_LTH + 1 ];

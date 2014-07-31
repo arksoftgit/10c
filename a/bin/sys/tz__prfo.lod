@@ -1,4 +1,4 @@
-z1000-Zeidon    TZ__PRFO TZZOLODO 07/11/05   08:47:31 1.0b0    
+z1000-Zeidon    TZ__PRFO TZZOLODO 11/13/13   10:55:47 1.0b0    
 eLOD       1
 aZKey      1326804
 aName      TZ__PRFO
@@ -1592,7 +1592,7 @@ eER_AttributeRec 6
 aName      RelLink1HangingForeignKeyEntity
 aZKey      89149724
 aDesc      359
-A value of Y means that if a foreign key value exists in an Entity instance for this relationship but the foreign key does not point to an existing table entry (ie., the foreign key is left hanging), then during Activate an empty entity will be created to represent the missing table entry, with only the attribute corresponding to the foreign key being set.
+A value of Y means that if a foreign key value exists in an Entity instance for this relationship but the foreign key does not point to an existing table entry (ie., the foreign key is left hanging), then during Activate an empty entity will be created to represent the missing table entry, with only the attribute corresponding to the foreign key being set.0
 
 eDomainRec 7
 
@@ -1701,7 +1701,7 @@ eER_AttributeRec 6
 aName      RelLink2HangingForeignKeyEntity
 aZKey      89149736
 aDesc      359
-A value of Y means that if a foreign key value exists in an Entity instance for this relationship but the foreign key does not point to an existing table entry (ie., the foreign key is left hanging), then during Activate an empty entity will be created to represent the missing table entry, with only the attribute corresponding to the foreign key being set.
+A value of Y means that if a foreign key value exists in an Entity instance for this relationship but the foreign key does not point to an existing table entry (ie., the foreign key is left hanging), then during Activate an empty entity will be created to represent the missing table entry, with only the attribute corresponding to the foreign key being set.0
 
 eDomainRec 7
 
@@ -2432,7 +2432,7 @@ aZKey      90000040
 aName      QSFileName
 aDomainType E
 aDataType  S
-aMaxStringLth 8
+aMaxStringLth 32
 aDesc      QuinSoft File Name - 32 chars
 aContextRestriction N
 
@@ -3634,7 +3634,6 @@ aSeqNo_LOD_Entity 1
 eER_AttributeRec 4
 aName      Name
 aZKey      1327152
-aLth       8
 
 eDomainRec 5
 
@@ -3813,6 +3812,7 @@ aZKey      90013178
 eDomainRec 5
 
 eLOD_Entity 2
+awkSelectedAttributeForDragSort 1
 
 eLOD_Attribute 3
 awkSequence 1
@@ -5747,7 +5747,7 @@ aGenKeyExecutable KZHGENKY
 aDisplayOwner Y
 aDisplayDBMS_ID N
 aDBH_Data  U322
-M5%I$0DA/1$\`*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
+M5%I$0DA/1$\@*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
 M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
 M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
 M*BIZ,3`P,#!:96ED;VX@("`@6D),3T)/22`@5%I$0DA/1$\@,#DO,C(O.3D@
@@ -5785,7 +5785,7 @@ aGenKeyExecutable KZHGENKY
 aDisplayOwner Y
 aDisplayDBMS_ID N
 aDBH_Data  U322
-M5%I$0DA/1$\`*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
+M5%I$0DA/1$\`*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BH`*BHJ*BHJ*BHJ*BHJ
 M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
 M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
 M*BIZ,3`P,#!:96ED;VX@("`@6D),3T)/22`@5%I$0DA/1$\@,#,O,#$O,#`@

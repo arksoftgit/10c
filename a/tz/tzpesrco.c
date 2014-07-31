@@ -1,13 +1,13 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H"
-#include "TZ__OPRS.H"
-#include "ZDRVROPR.H"
-
+#include "KZOENGAA.H" 
+#include "TZ__OPRS.H" 
+#include "ZDRVROPR.H" 
+ 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
+ 
 #include "ZEIDONOP.H"
 
 static zSHORT
@@ -72,10 +72,10 @@ oTZPESRCO_MigratePPE( zPVIEW    NewPPE,
                       zVIEW     SourceLPLR,
                       zVIEW     vSubtask )
 {
-   zSHORT    nRC = 0;
+   zSHORT    nRC = 0; 
    //:VIEW OldPPE  BASED ON LOD TZPESRCO
-   zVIEW     OldPPE = 0;
-   zSHORT    RESULT;
+   zVIEW     OldPPE = 0; 
+   zSHORT    RESULT; 
 
 
    //://Check the PPE from SourceLPLR
@@ -84,10 +84,10 @@ oTZPESRCO_MigratePPE( zPVIEW    NewPPE,
    nRC = oTZPESRCO_CheckPPE_Format( &OldPPE, SourceLPLR );
    //:IF nRC < 0
    if ( nRC < 0 )
-   {
+   { 
       //:RETURN nRC
       return( nRC );
-   }
+   } 
 
    //:END
 
@@ -123,11 +123,11 @@ oTZPESRCO_MigratePPE( zPVIEW    NewPPE,
    //:FOR EACH OldPPE.WindowStyle
    RESULT = SetCursorFirstEntity( OldPPE, "WindowStyle", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //: CreateWindowStyle( vSubtask, NewPPE, OldPPE )
       oTZPESRCO_CreateWindowStyle( vSubtask, NewPPE, OldPPE );
       RESULT = SetCursorNextEntity( OldPPE, "WindowStyle", "" );
-   }
+   } 
 
    //:END
 
@@ -135,11 +135,11 @@ oTZPESRCO_MigratePPE( zPVIEW    NewPPE,
    //:FOR EACH OldPPE.ControlDef
    RESULT = SetCursorFirstEntity( OldPPE, "ControlDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //: CreateControlDef( vSubtask, NewPPE, OldPPE )
       oTZPESRCO_CreateControlDef( vSubtask, NewPPE, OldPPE );
       RESULT = SetCursorNextEntity( OldPPE, "ControlDef", "" );
-   }
+   } 
 
    //:END
 
@@ -163,7 +163,7 @@ oTZPESRCO_MigratePPE( zPVIEW    NewPPE,
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -177,21 +177,21 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
                     zVIEW     SourceLPLR,
                     zVIEW     vSubtask )
 {
-   zVIEW     OldPPE = 0;
+   zVIEW     OldPPE = 0; 
 
    //:STRING (256) MessageText
-   zCHAR     MessageText[ 257 ] = { 0 };
+   zCHAR     MessageText[ 257 ] = { 0 }; 
    //:SHORT        RESULT
-   zSHORT    RESULT = 0;
+   zSHORT    RESULT = 0; 
    //:SHORT        nRC
-   zSHORT    nRC = 0;
+   zSHORT    nRC = 0; 
    //:SHORT        nDoNotMergeCtrlDef
-   zSHORT    nDoNotMergeCtrlDef = 0;
+   zSHORT    nDoNotMergeCtrlDef = 0; 
    //:INTEGER      lVisible
-   zLONG     lVisible = 0;
-   zCHAR     szTempString_0[ 33 ];
-   zLONG     lTempInteger_0;
-   zSHORT    lTempInteger_1;
+   zLONG     lVisible = 0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zLONG     lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
 
 
    //://Check the PPE from SourceLPLR
@@ -200,10 +200,10 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
    nRC = oTZPESRCO_CheckPPE_Format( &OldPPE, SourceLPLR );
    //:IF nRC < 0
    if ( nRC < 0 )
-   {
+   { 
       //:RETURN nRC
       return( nRC );
-   }
+   } 
 
    //:END
 
@@ -215,10 +215,10 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
    //:// Merge Root Entity
    //:IF OldPPE.PresEnvDef.Desc != "" AND NewPPE.PresEnvDef.Desc = ""
    if ( CompareAttributeToString( OldPPE, "PresEnvDef", "Desc", "" ) != 0 && CompareAttributeToString( NewPPE, "PresEnvDef", "Desc", "" ) == 0 )
-   {
+   { 
       //:NewPPE.PresEnvDef.Desc = OldPPE.PresEnvDef.Desc
       SetAttributeFromAttribute( NewPPE, "PresEnvDef", "Desc", OldPPE, "PresEnvDef", "Desc" );
-   }
+   } 
 
    //:END
 
@@ -229,36 +229,36 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
    //:FOR EACH OldPPE.WindowStyle
    RESULT = SetCursorFirstEntity( OldPPE, "WindowStyle", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:RESULT = CheckExistenceOfEntity( NewPPE, "WindowStyle" )
       RESULT = CheckExistenceOfEntity( NewPPE, "WindowStyle" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      {
+      { 
          //:SET CURSOR FIRST NewPPE.WindowStyle WHERE
          //:    NewPPE.WindowStyle.Tag = OldPPE.WindowStyle.Tag
          GetStringFromAttribute( szTempString_0, OldPPE, "WindowStyle", "Tag" );
          RESULT = SetCursorFirstEntityByString( NewPPE, "WindowStyle", "Tag", szTempString_0, "" );
-      }
+      } 
 
       //:END
       //://WindowStyle does not exists, create new Style with all Sobobjects
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      {
+      { 
          //:CreateWindowStyle( vSubtask, NewPPE, OldPPE )
          oTZPESRCO_CreateWindowStyle( vSubtask, &NewPPE, OldPPE );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:MergeWindowStyleSubob( vSubtask, NewPPE, OldPPE )
          oTZPESRCO_MergeWindowStyleSubob( vSubtask, &NewPPE, OldPPE );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( OldPPE, "WindowStyle", "" );
       //:END
-   }
+   } 
 
    //:END
 
@@ -266,29 +266,29 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
    //:FOR EACH OldPPE.ControlDef
    RESULT = SetCursorFirstEntity( OldPPE, "ControlDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:RESULT = CheckExistenceOfEntity( NewPPE, "ControlDef" )
       RESULT = CheckExistenceOfEntity( NewPPE, "ControlDef" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      {
+      { 
          //:SET CURSOR FIRST NewPPE.ControlDef WHERE
          //:    NewPPE.ControlDef.Key = OldPPE.ControlDef.Key
          GetIntegerFromAttribute( &lTempInteger_0, OldPPE, "ControlDef", "Key" );
          RESULT = SetCursorFirstEntityByInteger( NewPPE, "ControlDef", "Key", lTempInteger_0, "" );
-      }
+      } 
 
       //:END
       //://ControlDef does not exists, create new ControlDef with all Subobjects
       //:IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      {
+      { 
          //:nDoNotMergeCtrlDef = 0
          nDoNotMergeCtrlDef = 0;
          //:IF NewPPE.ControlDef EXISTS
          lTempInteger_1 = CheckExistenceOfEntity( NewPPE, "ControlDef" );
          if ( lTempInteger_1 == 0 )
-         {
+         { 
             //://Check Tag
             //:SET CURSOR FIRST NewPPE.ControlDef WHERE
             //:    NewPPE.ControlDef.Tag = OldPPE.ControlDef.Tag
@@ -296,7 +296,7 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
             RESULT = SetCursorFirstEntityByString( NewPPE, "ControlDef", "Tag", szTempString_0, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
-            {
+            { 
                //://Error situation
                //:MessageText = NEW_LINE + "The control with Tag '" + NewPPE.ControlDef.Tag +
                //:              "' already exists with different key." +
@@ -314,59 +314,59 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
                nRC = MessagePrompt( vSubtask, "CM01013", "Configuration Management", MessageText, 1, zBUTTONS_YESNO, zRESPONSE_YES, 0 );
                //:IF nRC = zRESPONSE_NO
                if ( nRC == zRESPONSE_NO )
-               {
+               { 
                   //:DropObjectInstance( OldPPE )
                   DropObjectInstance( OldPPE );
                   //:RETURN -1
                   return( -1 );
                   //:ELSE
-               }
+               } 
                else
-               {
+               { 
                   //:nDoNotMergeCtrlDef = 1
                   nDoNotMergeCtrlDef = 1;
-               }
+               } 
 
                //:END
-            }
+            } 
 
             //:END
-         }
+         } 
 
          //:END
          //://Create ControlDef witch Subobject
          //:IF nDoNotMergeCtrlDef = 0
          if ( nDoNotMergeCtrlDef == 0 )
-         {
+         { 
             //:CreateControlDef( vSubtask, NewPPE, OldPPE )
             oTZPESRCO_CreateControlDef( vSubtask, &NewPPE, OldPPE );
             //:lVisible = NewPPE.ControlDef.Invisible
             GetIntegerFromAttribute( &lVisible, NewPPE, "ControlDef", "Invisible" );
             //:IF lVisible = 0 OR lVisible = -1
             if ( lVisible == 0 || lVisible == -1 )
-            {
+            { 
                //:AddToAttributeFromInteger( NewPPE, "PresEnvDef", "LastCtrl", 1 )
                AddToAttributeFromInteger( NewPPE, "PresEnvDef", "LastCtrl", 1 );
-            }
+            } 
 
             //:END
-         }
+         } 
 
          //:END
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:// Merge Subobjects
          //:SetCtrlDefVisible( NewPPE, OldPPE )
          oTZPESRCO_SetCtrlDefVisible( &NewPPE, OldPPE );
          //:MergeControlDefSubob( vSubtask, NewPPE, OldPPE )
          oTZPESRCO_MergeControlDefSubob( vSubtask, &NewPPE, OldPPE );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( OldPPE, "ControlDef", "" );
       //:END
-   }
+   } 
 
    //:END
 
@@ -391,7 +391,7 @@ oTZPESRCO_MergePPE( zVIEW     NewPPE,
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -400,7 +400,7 @@ oTZPESRCO_CreateWindowStyle( zVIEW     vSubtask,
                              zPVIEW    NewPPE,
                              zVIEW     OldPPE )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    //:CreateWindowStyle( VIEW vSubtask,
    //:                VIEW NewPPE BASED ON LOD TZPESRCO,
@@ -415,14 +415,14 @@ oTZPESRCO_CreateWindowStyle( zVIEW     vSubtask,
    //:FOR EACH OldPPE.EventDef
    RESULT = SetCursorFirstEntity( OldPPE, "EventDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:CreateMetaEntity( vSubtask, NewPPE, "EventDef", zPOS_AFTER )
       CreateMetaEntity( vSubtask, *NewPPE, "EventDef", zPOS_AFTER );
       //:SetMatchingAttributesByName( NewPPE, "EventDef",
       //:                             OldPPE, "EventDef", zSET_NULL )
       SetMatchingAttributesByName( *NewPPE, "EventDef", OldPPE, "EventDef", zSET_NULL );
       RESULT = SetCursorNextEntity( OldPPE, "EventDef", "" );
-   }
+   } 
 
    //:END
 
@@ -447,7 +447,7 @@ oTZPESRCO_CreateWindowStyle( zVIEW     vSubtask,
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -456,7 +456,7 @@ oTZPESRCO_CreateControlDef( zVIEW     vSubtask,
                             zPVIEW    NewPPE,
                             zVIEW     OldPPE )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    //:CreateControlDef( VIEW vSubtask,
    //:               VIEW NewPPE BASED ON LOD TZPESRCO,
@@ -471,14 +471,14 @@ oTZPESRCO_CreateControlDef( zVIEW     vSubtask,
    //:FOR EACH OldPPE.CtrlEventDef
    RESULT = SetCursorFirstEntity( OldPPE, "CtrlEventDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:CreateMetaEntity( vSubtask, NewPPE, "CtrlEventDef", zPOS_AFTER )
       CreateMetaEntity( vSubtask, *NewPPE, "CtrlEventDef", zPOS_AFTER );
       //:SetMatchingAttributesByName( NewPPE, "CtrlEventDef",
       //:                             OldPPE, "CtrlEventDef", zSET_NULL )
       SetMatchingAttributesByName( *NewPPE, "CtrlEventDef", OldPPE, "CtrlEventDef", zSET_NULL );
       RESULT = SetCursorNextEntity( OldPPE, "CtrlEventDef", "" );
-   }
+   } 
 
    //:END
 
@@ -503,21 +503,21 @@ oTZPESRCO_CreateControlDef( zVIEW     vSubtask,
    //:FOR EACH OldPPE.CtrlMapDef
    RESULT = SetCursorFirstEntity( OldPPE, "CtrlMapDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:CreateMetaEntity( vSubtask, NewPPE, "CtrlMapDef", zPOS_AFTER )
       CreateMetaEntity( vSubtask, *NewPPE, "CtrlMapDef", zPOS_AFTER );
       //:SetMatchingAttributesByName( NewPPE, "CtrlMapDef",
       //:                             OldPPE, "CtrlMapDef", zSET_NULL )
       SetMatchingAttributesByName( *NewPPE, "CtrlMapDef", OldPPE, "CtrlMapDef", zSET_NULL );
       RESULT = SetCursorNextEntity( OldPPE, "CtrlMapDef", "" );
-   }
+   } 
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -531,41 +531,41 @@ oTZPESRCO_MergeWindowStyleSubob( zVIEW     vSubtask,
                                  zPVIEW    NewPPE,
                                  zVIEW     OldPPE )
 {
-   zSHORT    RESULT = 0;
-   zCHAR     szTempString_0[ 33 ];
+   zSHORT    RESULT = 0; 
+   zCHAR     szTempString_0[ 33 ]; 
 
 
    //:// Merge Subobject EventDef.
    //:FOR EACH OldPPE.EventDef
    RESULT = SetCursorFirstEntity( OldPPE, "EventDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //: RESULT = CheckExistenceOfEntity( NewPPE, "EventDef" )
       RESULT = CheckExistenceOfEntity( *NewPPE, "EventDef" );
       //: IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      {
+      { 
          //:SET CURSOR FIRST NewPPE.EventDef WHERE
          //:    NewPPE.EventDef.Tag = OldPPE.EventDef.Tag
          GetStringFromAttribute( szTempString_0, OldPPE, "EventDef", "Tag" );
          RESULT = SetCursorFirstEntityByString( *NewPPE, "EventDef", "Tag", szTempString_0, "" );
-      }
+      } 
 
       //: END
       //: //EventDef does not exists, create it
       //: IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      {
+      { 
          //: CreateMetaEntity( vSubtask, NewPPE, "EventDef", zPOS_AFTER )
          CreateMetaEntity( vSubtask, *NewPPE, "EventDef", zPOS_AFTER );
          //: SetMatchingAttributesByName( NewPPE, "EventDef",
          //:                              OldPPE, "EventDef", zSET_NULL )
          SetMatchingAttributesByName( *NewPPE, "EventDef", OldPPE, "EventDef", zSET_NULL );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( OldPPE, "EventDef", "" );
       //: END
-   }
+   } 
 
    //:END
 
@@ -610,7 +610,7 @@ oTZPESRCO_MergeWindowStyleSubob( zVIEW     vSubtask,
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -624,41 +624,41 @@ oTZPESRCO_MergeControlDefSubob( zVIEW     vSubtask,
                                 zPVIEW    NewPPE,
                                 zVIEW     OldPPE )
 {
-   zSHORT    RESULT = 0;
-   zCHAR     szTempString_0[ 33 ];
+   zSHORT    RESULT = 0; 
+   zCHAR     szTempString_0[ 33 ]; 
 
 
    //:// Merge Subobject CtrlEventDef
    //:FOR EACH OldPPE.CtrlEventDef
    RESULT = SetCursorFirstEntity( OldPPE, "CtrlEventDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //: RESULT = CheckExistenceOfEntity( NewPPE, "CtrlEventDef" )
       RESULT = CheckExistenceOfEntity( *NewPPE, "CtrlEventDef" );
       //: IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      {
+      { 
          //: SET CURSOR FIRST NewPPE.CtrlEventDef WHERE
          //:     NewPPE.CtrlEventDef.Tag = OldPPE.CtrlEventDef.Tag
          GetStringFromAttribute( szTempString_0, OldPPE, "CtrlEventDef", "Tag" );
          RESULT = SetCursorFirstEntityByString( *NewPPE, "CtrlEventDef", "Tag", szTempString_0, "" );
-      }
+      } 
 
       //: END
       //: //CtrlEventDef does not exists, create it
       //: IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      {
+      { 
          //: CreateMetaEntity( vSubtask, NewPPE, "CtrlEventDef", zPOS_AFTER )
          CreateMetaEntity( vSubtask, *NewPPE, "CtrlEventDef", zPOS_AFTER );
          //: SetMatchingAttributesByName( NewPPE, "CtrlEventDef",
          //:                              OldPPE, "CtrlEventDef", zSET_NULL )
          SetMatchingAttributesByName( *NewPPE, "CtrlEventDef", OldPPE, "CtrlEventDef", zSET_NULL );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( OldPPE, "CtrlEventDef", "" );
       //:END
-   }
+   } 
 
    //:END
 
@@ -704,40 +704,40 @@ oTZPESRCO_MergeControlDefSubob( zVIEW     vSubtask,
    //:FOR EACH OldPPE.CtrlMapDef
    RESULT = SetCursorFirstEntity( OldPPE, "CtrlMapDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //: RESULT = CheckExistenceOfEntity( NewPPE, "CtrlMapDef" )
       RESULT = CheckExistenceOfEntity( *NewPPE, "CtrlMapDef" );
       //: IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      {
+      { 
          //: SET CURSOR FIRST NewPPE.CtrlMapDef WHERE
          //:     NewPPE.CtrlMapDef.Tag = OldPPE.CtrlMapDef.Tag
          GetStringFromAttribute( szTempString_0, OldPPE, "CtrlMapDef", "Tag" );
          RESULT = SetCursorFirstEntityByString( *NewPPE, "CtrlMapDef", "Tag", szTempString_0, "" );
-      }
+      } 
 
       //: END
       //: //CtrlMapDef does not exists, create it
       //: IF RESULT < zCURSOR_SET
       if ( RESULT < zCURSOR_SET )
-      {
+      { 
          //: CreateMetaEntity( vSubtask, NewPPE, "CtrlMapDef", zPOS_AFTER )
          CreateMetaEntity( vSubtask, *NewPPE, "CtrlMapDef", zPOS_AFTER );
          //: SetMatchingAttributesByName( NewPPE, "CtrlMapDef",
          //:                              OldPPE, "CtrlMapDef", zSET_NULL )
          SetMatchingAttributesByName( *NewPPE, "CtrlMapDef", OldPPE, "CtrlMapDef", zSET_NULL );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( OldPPE, "CtrlMapDef", "" );
       //: END
-   }
+   } 
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -749,9 +749,9 @@ static zSHORT
 oTZPESRCO_CheckPPE_Format( zPVIEW    OldPPE,
                            zVIEW     SourceLPLR )
 {
-   zCHAR     SourceFileName[ 514 ] = { 0 };
+   zCHAR     SourceFileName[ 514 ] = { 0 }; 
    //:INTEGER        nRC
-   zLONG     nRC = 0;
+   zLONG     nRC = 0; 
 
 
    //:GetStringFromAttribute( SourceFileName, SourceLPLR, "LPLR", "MetaSrcDir" )
@@ -762,33 +762,33 @@ oTZPESRCO_CheckPPE_Format( zPVIEW    OldPPE,
    nRC = ActivateOI_FromFile( OldPPE, "TZPESRCO", SourceLPLR, SourceFileName, 8192 );
    //:IF nRC >= 0
    if ( nRC >= 0 )
-   {
+   { 
       //:nRC = SetCursorFirstEntityByInteger( OldPPE, "ControlDef", "Key", 1000, 0 )
       nRC = SetCursorFirstEntityByInteger( *OldPPE, "ControlDef", "Key", 1000, 0 );
       //:IF nRC < 0
       if ( nRC < 0 )
-      {
+      { 
          //:DropView( OldPPE )
          DropView( *OldPPE );
          //:RETURN -16
          return( -16 );
-      }
+      } 
 
       //:END
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
       //:RETURN -1
       return( -1 );
-   }
+   } 
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -802,12 +802,12 @@ oTZPESRCO_CreateControlDefSubob( zVIEW     vSubtask,
                                  zPVIEW    NewPPE,
                                  zVIEW     OldPPE )
 {
-   zVIEW     NewPPE1 = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
-   zLONG     lTempInteger_3;
+   zVIEW     NewPPE1 = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
+   zLONG     lTempInteger_3; 
 
 
    //:CreateViewFromViewForTask( NewPPE1, NewPPE, 0 )
@@ -819,12 +819,12 @@ oTZPESRCO_CreateControlDefSubob( zVIEW     vSubtask,
    //:FOR EACH OldPPE.ControlDef
    RESULT = SetCursorFirstEntity( OldPPE, "ControlDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:FOR EACH OldPPE.ValidChild
       RESULT = SetCursorFirstEntity( OldPPE, "ValidChild", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //:SET CURSOR FIRST NewPPE1.ControlDef WHERE
          //:    NewPPE1.ControlDef.Key = OldPPE.ValidChild.Key
          GetIntegerFromAttribute( &lTempInteger_0, OldPPE, "ValidChild", "Key" );
@@ -832,14 +832,14 @@ oTZPESRCO_CreateControlDefSubob( zVIEW     vSubtask,
          //:INCLUDE NewPPE.ValidChild FROM NewPPE1.ControlDef
          RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ValidChild", NewPPE1, "ControlDef", zPOS_AFTER );
          RESULT = SetCursorNextEntity( OldPPE, "ValidChild", "" );
-      }
+      } 
 
       //:END
 
       //:FOR EACH OldPPE.ValidParent
       RESULT = SetCursorFirstEntity( OldPPE, "ValidParent", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //:SET CURSOR FIRST NewPPE1.ControlDef WHERE
          //:    NewPPE1.ControlDef.Key = OldPPE.ValidParent.Key
          GetIntegerFromAttribute( &lTempInteger_1, OldPPE, "ValidParent", "Key" );
@@ -847,14 +847,14 @@ oTZPESRCO_CreateControlDefSubob( zVIEW     vSubtask,
          //:INCLUDE NewPPE.ValidParent FROM NewPPE1.ControlDef
          RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ValidParent", NewPPE1, "ControlDef", zPOS_AFTER );
          RESULT = SetCursorNextEntity( OldPPE, "ValidParent", "" );
-      }
+      } 
 
       //:END
 
       //:FOR EACH OldPPE.ConvertsSelfToChild
       RESULT = SetCursorFirstEntity( OldPPE, "ConvertsSelfToChild", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //:SET CURSOR FIRST NewPPE1.ControlDef WHERE
          //:    NewPPE1.ControlDef.Key = OldPPE.ConvertsSelfToChild.Key
          GetIntegerFromAttribute( &lTempInteger_2, OldPPE, "ConvertsSelfToChild", "Key" );
@@ -862,14 +862,14 @@ oTZPESRCO_CreateControlDefSubob( zVIEW     vSubtask,
          //:INCLUDE NewPPE.ConvertsSelfToChild FROM NewPPE1.ControlDef
          RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ConvertsSelfToChild", NewPPE1, "ControlDef", zPOS_AFTER );
          RESULT = SetCursorNextEntity( OldPPE, "ConvertsSelfToChild", "" );
-      }
+      } 
 
       //:END
 
       //:FOR EACH OldPPE.ConvertableFrom
       RESULT = SetCursorFirstEntity( OldPPE, "ConvertableFrom", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //:SET CURSOR FIRST NewPPE1.ControlDef WHERE
          //:    NewPPE1.ControlDef.Key = OldPPE.ConvertableFrom.Key
          GetIntegerFromAttribute( &lTempInteger_3, OldPPE, "ConvertableFrom", "Key" );
@@ -877,14 +877,14 @@ oTZPESRCO_CreateControlDefSubob( zVIEW     vSubtask,
          //:INCLUDE NewPPE.ConvertableFrom FROM NewPPE1.ControlDef
          RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ConvertableFrom", NewPPE1, "ControlDef", zPOS_AFTER );
          RESULT = SetCursorNextEntity( OldPPE, "ConvertableFrom", "" );
-      }
+      } 
 
       //:END
 
       //:SET CURSOR NEXT NewPPE.ControlDef
       RESULT = SetCursorNextEntity( *NewPPE, "ControlDef", "" );
       RESULT = SetCursorNextEntity( OldPPE, "ControlDef", "" );
-   }
+   } 
 
 
    //:END //END FOR EACH OldPPE.ControlDef
@@ -895,7 +895,7 @@ oTZPESRCO_CreateControlDefSubob( zVIEW     vSubtask,
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -907,17 +907,17 @@ static zSHORT
 oTZPESRCO_MergeCtrlDefChilds( zPVIEW    NewPPE,
                               zVIEW     OldPPE )
 {
-   zVIEW     NewPPE1 = 0;
+   zVIEW     NewPPE1 = 0; 
    //:SHORT  RESULT
-   zSHORT    RESULT = 0;
-   zLONG     lTempInteger_0;
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
-   zLONG     lTempInteger_3;
-   zLONG     lTempInteger_4;
-   zLONG     lTempInteger_5;
-   zLONG     lTempInteger_6;
-   zLONG     lTempInteger_7;
+   zSHORT    RESULT = 0; 
+   zLONG     lTempInteger_0; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
+   zLONG     lTempInteger_3; 
+   zLONG     lTempInteger_4; 
+   zLONG     lTempInteger_5; 
+   zLONG     lTempInteger_6; 
+   zLONG     lTempInteger_7; 
 
 
    //:CreateViewFromViewForTask( NewPPE1, NewPPE, 0 )
@@ -928,40 +928,40 @@ oTZPESRCO_MergeCtrlDefChilds( zPVIEW    NewPPE,
    //:FOR EACH OldPPE.ControlDef
    RESULT = SetCursorFirstEntity( OldPPE, "ControlDef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:// Merge Subobject ValidChild
       //:FOR EACH OldPPE.ValidChild
       RESULT = SetCursorFirstEntity( OldPPE, "ValidChild", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //: RESULT = CheckExistenceOfEntity( NewPPE, "ValidChild" )
          RESULT = CheckExistenceOfEntity( *NewPPE, "ValidChild" );
          //: IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE.ValidChild WHERE
             //:     NewPPE.ValidChild.Key = OldPPE.ValidChild.Key
             GetIntegerFromAttribute( &lTempInteger_0, OldPPE, "ValidChild", "Key" );
             RESULT = SetCursorFirstEntityByInteger( *NewPPE, "ValidChild", "Key", lTempInteger_0, "" );
-         }
+         } 
 
          //: END
          //: //ValidChild does not exists, include it
          //: IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE1.ControlDef WHERE
             //:     NewPPE1.ControlDef.Key = OldPPE.ValidChild.Key
             GetIntegerFromAttribute( &lTempInteger_1, OldPPE, "ValidChild", "Key" );
             RESULT = SetCursorFirstEntityByInteger( NewPPE1, "ControlDef", "Key", lTempInteger_1, "" );
             //: INCLUDE NewPPE.ValidChild FROM NewPPE1.ControlDef
             RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ValidChild", NewPPE1, "ControlDef", zPOS_AFTER );
-         }
+         } 
 
          RESULT = SetCursorNextEntity( OldPPE, "ValidChild", "" );
          //: END
-      }
+      } 
 
       //:END
 
@@ -969,34 +969,34 @@ oTZPESRCO_MergeCtrlDefChilds( zPVIEW    NewPPE,
       //:FOR EACH OldPPE.ValidParent
       RESULT = SetCursorFirstEntity( OldPPE, "ValidParent", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //: RESULT = CheckExistenceOfEntity( NewPPE, "ValidParent" )
          RESULT = CheckExistenceOfEntity( *NewPPE, "ValidParent" );
          //: IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE.ValidParent WHERE
             //:     NewPPE.ValidParent.Key = OldPPE.ValidParent.Key
             GetIntegerFromAttribute( &lTempInteger_2, OldPPE, "ValidParent", "Key" );
             RESULT = SetCursorFirstEntityByInteger( *NewPPE, "ValidParent", "Key", lTempInteger_2, "" );
-         }
+         } 
 
          //: END
          //: //ValidParent does not exists, include it
          //: IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE1.ControlDef WHERE
             //:     NewPPE1.ControlDef.Key = OldPPE.ValidParent.Key
             GetIntegerFromAttribute( &lTempInteger_3, OldPPE, "ValidParent", "Key" );
             RESULT = SetCursorFirstEntityByInteger( NewPPE1, "ControlDef", "Key", lTempInteger_3, "" );
             //: INCLUDE NewPPE.ValidParent FROM NewPPE1.ControlDef
             RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ValidParent", NewPPE1, "ControlDef", zPOS_AFTER );
-         }
+         } 
 
          RESULT = SetCursorNextEntity( OldPPE, "ValidParent", "" );
          //: END
-      }
+      } 
 
       //:END
 
@@ -1004,34 +1004,34 @@ oTZPESRCO_MergeCtrlDefChilds( zPVIEW    NewPPE,
       //:FOR EACH OldPPE.ConvertsSelfToChild
       RESULT = SetCursorFirstEntity( OldPPE, "ConvertsSelfToChild", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //: RESULT = CheckExistenceOfEntity( NewPPE, "ConvertsSelfToChild" )
          RESULT = CheckExistenceOfEntity( *NewPPE, "ConvertsSelfToChild" );
          //: IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE.ConvertsSelfToChild WHERE
             //:     NewPPE.ConvertsSelfToChild.Key = OldPPE.ConvertsSelfToChild.Key
             GetIntegerFromAttribute( &lTempInteger_4, OldPPE, "ConvertsSelfToChild", "Key" );
             RESULT = SetCursorFirstEntityByInteger( *NewPPE, "ConvertsSelfToChild", "Key", lTempInteger_4, "" );
-         }
+         } 
 
          //: END
          //: //ConvertsSelfToChild does not exists, include it
          //: IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE1.ControlDef WHERE
             //:     NewPPE1.ControlDef.Key = OldPPE.ConvertsSelfToChild.Key
             GetIntegerFromAttribute( &lTempInteger_5, OldPPE, "ConvertsSelfToChild", "Key" );
             RESULT = SetCursorFirstEntityByInteger( NewPPE1, "ControlDef", "Key", lTempInteger_5, "" );
             //: INCLUDE NewPPE.ConvertsSelfToChild FROM NewPPE1.ControlDef
             RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ConvertsSelfToChild", NewPPE1, "ControlDef", zPOS_AFTER );
-         }
+         } 
 
          RESULT = SetCursorNextEntity( OldPPE, "ConvertsSelfToChild", "" );
          //: END
-      }
+      } 
 
       //:END
 
@@ -1039,41 +1039,41 @@ oTZPESRCO_MergeCtrlDefChilds( zPVIEW    NewPPE,
       //:FOR EACH OldPPE.ConvertableFrom
       RESULT = SetCursorFirstEntity( OldPPE, "ConvertableFrom", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //: RESULT = CheckExistenceOfEntity( NewPPE, "ConvertableFrom" )
          RESULT = CheckExistenceOfEntity( *NewPPE, "ConvertableFrom" );
          //: IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE.ConvertableFrom WHERE
             //:     NewPPE.ConvertableFrom.Key = OldPPE.ConvertableFrom.Key
             GetIntegerFromAttribute( &lTempInteger_6, OldPPE, "ConvertableFrom", "Key" );
             RESULT = SetCursorFirstEntityByInteger( *NewPPE, "ConvertableFrom", "Key", lTempInteger_6, "" );
-         }
+         } 
 
          //: END
          //: //ConvertableFrom does not exists, include it
          //: IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         {
+         { 
             //: SET CURSOR FIRST NewPPE1.ControlDef WHERE
             //:     NewPPE1.ControlDef.Key = OldPPE.ConvertableFrom.Key
             GetIntegerFromAttribute( &lTempInteger_7, OldPPE, "ConvertableFrom", "Key" );
             RESULT = SetCursorFirstEntityByInteger( NewPPE1, "ControlDef", "Key", lTempInteger_7, "" );
             //: INCLUDE NewPPE.ConvertableFrom FROM NewPPE1.ControlDef
             RESULT = IncludeSubobjectFromSubobject( *NewPPE, "ConvertableFrom", NewPPE1, "ControlDef", zPOS_AFTER );
-         }
+         } 
 
          RESULT = SetCursorNextEntity( OldPPE, "ConvertableFrom", "" );
          //: END
-      }
+      } 
 
       //:END
 
       //:SET CURSOR NEXT NewPPE.ControlDef
       RESULT = SetCursorNextEntity( *NewPPE, "ControlDef", "" );
       RESULT = SetCursorNextEntity( OldPPE, "ControlDef", "" );
-   }
+   } 
 
    //:END //END FOR EACH OldPPE.ControlDef
 
@@ -1083,7 +1083,7 @@ oTZPESRCO_MergeCtrlDefChilds( zPVIEW    NewPPE,
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -1134,7 +1134,7 @@ oTZPESRCO_MergeFontsAndColors( zVIEW     vSubtask,
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -1153,22 +1153,22 @@ oTZPESRCO_SetCtrlDefVisible( zPVIEW    NewPPE,
 
    //:IF NewPPE.ControlDef.Tag = "INVISIBLE" AND NewPPE.ControlDef.Invisible = 1
    if ( CompareAttributeToString( *NewPPE, "ControlDef", "Tag", "INVISIBLE" ) == 0 && CompareAttributeToInteger( *NewPPE, "ControlDef", "Invisible", 1 ) == 0 )
-   {
+   { 
       //:NewPPE.ControlDef.Tag = OldPPE.ControlDef.Tag
       SetAttributeFromAttribute( *NewPPE, "ControlDef", "Tag", OldPPE, "ControlDef", "Tag" );
       //:NewPPE.ControlDef.Invisible = OldPPE.ControlDef.Invisible
       SetAttributeFromAttribute( *NewPPE, "ControlDef", "Invisible", OldPPE, "ControlDef", "Invisible" );
-   }
+   } 
 
    //:END
 
    //:RETURN 0
    return( 0 );
 // END
-}
+} 
 
 
-
+ 
 #ifdef __cplusplus
 }
 #endif

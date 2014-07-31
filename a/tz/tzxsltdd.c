@@ -10627,7 +10627,7 @@ zwfnTZXSLTDD_SaveAsSetSourceName( zVIEW   vSubtask,
                                   zVIEW   vXSLTData,
                                   zSHORT  nIndex )
 {
-   zCHAR  szNewName[ 33 ];
+   zCHAR  szNewName[33];
    zCHAR  szIndex[ 4 ];
    zSHORT nPosition = 0;
    zSHORT nRC;
@@ -10809,8 +10809,8 @@ zwfnTZXSLTDD_SaveAsCheckFileName( zVIEW    vSubtask,
 {
    zVIEW    vSaveAsCopy;
    zSHORT   nRC;
-   zCHAR    szNewName[ 33 ];
-   zCHAR    szFileName[ 33 ];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
    zCHAR    szMsg[ 100 ];
 
    CreateViewFromViewForTask( &vSaveAsCopy, vSaveAs, 0 );
@@ -10869,9 +10869,9 @@ zwfnTZXSLTDD_SaveAsCheckName( zVIEW    vSubtask,
                               zPCHAR   szOutName )
 {
    zVIEW  vLOD_LPLR;
-   zCHAR  szMsg[ 155 ];
-   zCHAR  szDLLName[ 33 ];
-   zCHAR  szNewName[ 33];
+   zCHAR  szMsg[155];
+   zCHAR  szDLLName[33];
+   zCHAR  szNewName[33];
 
    // XSLT Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )

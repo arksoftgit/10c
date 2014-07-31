@@ -1805,7 +1805,7 @@ MergeIncludeDomain( VIEW vSubtask,
 
 END
 
-/* are we sure?  dks 2014.07.24
+
 TRANSFORMATION OPERATION
 AnalyzeZKeys( VIEW vERD BASED ON LOD TZEREMDO )
 
@@ -1843,7 +1843,7 @@ AnalyzeZKeys( VIEW vERD BASED ON LOD TZEREMDO )
    END
 
 END
-*/
+
 
 ENTITY CONSTRAINT OPERATION
 IdentifierConstraints( VIEW vERD BASED ON LOD TZEREMDO,

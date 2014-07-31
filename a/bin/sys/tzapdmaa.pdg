@@ -1,4 +1,4 @@
-z1000-Zeidon    TZAPDMAA TZDGSRCO 01/09/13   11:07:20 1.0a2    
+z1000-Zeidon    TZAPDMAA TZDGSRCO 11/15/13   20:50:46 1.0a2    
 eDomainGroup 1
 aZKey      90000023
 aName      TZAPDMAA
@@ -159,7 +159,7 @@ aName      MetaName
 aDesc      Name of a meta object (ie., LOD, Dialog, Report)
 aDomainType E
 aDataType  S
-aMaxStringLth 8
+aMaxStringLth 32
 aContextRestriction N
 
 eContext   3

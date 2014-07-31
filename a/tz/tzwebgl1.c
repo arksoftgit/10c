@@ -709,6 +709,94 @@ GenJSP_Action( zVIEW     vDialog,
 
       //:CreateViewFromView( vDialogTemp, vDialogCtrl )
       CreateViewFromView( &vDialogTemp, vDialogCtrl );
+
+      //:   // Aadit, wants there to be an upload file limit, so that for email attachment, the file isn't too big to bring
+      //:   // down the mail server. This really needs to be an updatable field...
+      //:   /*********************************************/
+      //:   szWriteBuffer = "      if ( iFileLth > 10485760 )"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      if ( iFileLth > 10485760 )", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "      {"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      {", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+
+
+      //:   szWriteBuffer = "         strErrorMsg = ^Y\tFile\t\tAttachment File is too large!\t^;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         strErrorMsg = ^Y\\tFile\\t\\tAttachment File is too large!\\t^;", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "         session.setAttribute( ^FileUploadError^, strErrorMsg );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         session.setAttribute( ^FileUploadError^, strErrorMsg );", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+
+      //:   szWriteBuffer = "         vAppSubtask.TraceLine( ^File TOO big ERROR =======>> ^, strErrorMsg );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         vAppSubtask.TraceLine( ^File TOO big ERROR =======>> ^, strErrorMsg );", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "         nRC = -1;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         nRC = -1;", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "         break;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         break;", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+
+      //:/*
+      //:   szWriteBuffer = "         int iView = vAppSubtask.GetIntegerFromView( strSessionId );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "         vAppSubtask.TraceLine( ^File TOO big ERROR =======>> ^, ^^ );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "         nRC = vMsgQ.GetView( strSessionId, ^__MSGQ^, vAppSubtask );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "         if ( nRC > 0 )"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "         {"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            zeidon.zView v = new zeidon.zView( strSessionId );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            v.CreateViewFromView( strSessionId, vMsgQ );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            nRC = v.SetCursorFirst( strSessionId, ^Task^, ^Id^, iView, ^^ );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            if ( nRC == 0 )"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            {"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "               nRC = v.SetCursorFirst( strSessionId, ^QMsg^ );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "               if ( nRC == 0 )"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "               {"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "                  v.SetAttributeFromVariable( strSessionId, ^QMsg^, ^Title^, ^Attachment File is too large!^, 'S',"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "                                              24, ^^, 8 );"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "               }"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "               nRC = 0;"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            }"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            v.DropView( strSessionId);"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "            nRC = -1;"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "         }"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:   szWriteBuffer = "         break;"
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      //:*/
+      //:   szWriteBuffer = "      }"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      }", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   /*********************************************/
+
       //://I wanted to do the "SET CURSOR..." but because Control doesn't really have a parent
       //://the c code that gets generated is only looking for ControlDef under Control (not all controls) and so
       //://it is not finding it.
@@ -8939,22 +9027,18 @@ GenJSP_CrteCtrlsRecurs( zVIEW     vDialog,
             //:IF vGroupParent != 0
             if ( vGroupParent != 0 )
             { 
+               //:// KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+               //:// out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
+               //:/*
                //:SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
-               RESULT = SetCursorFirstEntityByString( vGroupParent, "WebControlProperty", "Name", "Relative Positioning", "" );
                //:IF RESULT >= zCURSOR_SET
-               if ( RESULT >= zCURSOR_SET )
-               { 
-                  //:szParentWebType = "RelativePos"
-                  ZeidonStringCopy( szParentWebType, 1, 0, "RelativePos", 1, 0, 51 );
-                  //:ELSE
-               } 
-               else
-               { 
-                  //:szParentWebType = vGroupParent.Control.WebCtrlType
-                  GetVariableFromAttribute( szParentWebType, 0, 'S', 51, vGroupParent, "Control", "WebCtrlType", "", 0 );
-               } 
-
+               //:   szParentWebType = "RelativePos"
+               //:ELSE
+               //:   szParentWebType = vGroupParent.Control.WebCtrlType
                //:END
+               //:*/
+               //:szParentWebType = vGroupParent.Control.WebCtrlType
+               GetVariableFromAttribute( szParentWebType, 0, 'S', 51, vGroupParent, "Control", "WebCtrlType", "", 0 );
             } 
 
             //:END
@@ -10900,22 +10984,18 @@ GenJSP_CrteCtrlsRecurs( zVIEW     vDialog,
             //:IF vGroupParent != 0
             if ( vGroupParent != 0 )
             { 
+               //:// KJS 01/30/14 - I'm thinking "Relative Positioning" is old. I only use this in one pwd and when I take it
+               //:// out and use "Div/No Height", the results look exactly the same so I am going to take this off grid controls.
+               //:/*
                //:SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "Relative Positioning"
-               RESULT = SetCursorFirstEntityByString( vGroupParent, "WebControlProperty", "Name", "Relative Positioning", "" );
                //:IF RESULT >= zCURSOR_SET
-               if ( RESULT >= zCURSOR_SET )
-               { 
-                  //:szWebCtrlType = "RelativePos"
-                  ZeidonStringCopy( szWebCtrlType, 1, 0, "RelativePos", 1, 0, 51 );
-                  //:ELSE
-               } 
-               else
-               { 
-                  //:szWebCtrlType = vGroupParent.Control.WebCtrlType
-                  GetVariableFromAttribute( szWebCtrlType, 0, 'S', 51, vGroupParent, "Control", "WebCtrlType", "", 0 );
-               } 
-
+               //:   szWebCtrlType = "RelativePos"
+               //:ELSE
+               //:   szWebCtrlType = vGroupParent.Control.WebCtrlType
                //:END
+               //:*/
+               //:szWebCtrlType = vGroupParent.Control.WebCtrlType
+               GetVariableFromAttribute( szWebCtrlType, 0, 'S', 51, vGroupParent, "Control", "WebCtrlType", "", 0 );
             } 
 
             //:END
@@ -13833,8 +13913,8 @@ GenJSP_CrteCtrlsRecurs( zVIEW     vDialog,
                                  ZeidonStringConcat( szWriteBuffer, 1, 0, " );", 1, 0, 10001 );
                                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-                                 //:szWriteBuffer = "      nComboCnt = 0;"
-                                 ZeidonStringCopy( szWriteBuffer, 1, 0, "      nComboCnt = 0;", 1, 0, 10001 );
+                                 //:szWriteBuffer = "      ComboCount = 0;"
+                                 ZeidonStringCopy( szWriteBuffer, 1, 0, "      ComboCount = 0;", 1, 0, 10001 );
                                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
                                  //:   szWriteBuffer = "      strComboSelectedValue = ^0^;"
@@ -13854,8 +13934,8 @@ GenJSP_CrteCtrlsRecurs( zVIEW     vDialog,
                                     ZeidonStringCopy( szWriteBuffer, 1, 0, "      // For Auto Include, process null entry.", 1, 0, 10001 );
                                     //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-                                    //:szWriteBuffer = "      nComboCnt++;"
-                                    ZeidonStringCopy( szWriteBuffer, 1, 0, "      nComboCnt++;", 1, 0, 10001 );
+                                    //:szWriteBuffer = "      ComboCount++;"
+                                    ZeidonStringCopy( szWriteBuffer, 1, 0, "      ComboCount++;", 1, 0, 10001 );
                                     //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
                                     //:szWriteBuffer = "      if ( strComboCurrentValue == null )"
@@ -14028,8 +14108,8 @@ GenJSP_CrteCtrlsRecurs( zVIEW     vDialog,
                                  ZeidonStringCopy( szWriteBuffer, 1, 0, "<%", 1, 0, 10001 );
                                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-                                 //:   szWriteBuffer = "            strComboSelectedValue = Integer.toString( nComboCnt );"
-                                 ZeidonStringCopy( szWriteBuffer, 1, 0, "            strComboSelectedValue = Integer.toString( nComboCnt );", 1, 0, 10001 );
+                                 //:   szWriteBuffer = "            strComboSelectedValue = Integer.toString( ComboCount );"
+                                 ZeidonStringCopy( szWriteBuffer, 1, 0, "            strComboSelectedValue = Integer.toString( ComboCount );", 1, 0, 10001 );
                                  //:   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
                                  //:   szWriteBuffer = "         }"
@@ -14060,8 +14140,8 @@ GenJSP_CrteCtrlsRecurs( zVIEW     vDialog,
                                  ZeidonStringCopy( szWriteBuffer, 1, 0, "         }", 1, 0, 10001 );
                                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
-                                 //:szWriteBuffer = "         nComboCnt++;"
-                                 ZeidonStringCopy( szWriteBuffer, 1, 0, "         nComboCnt++;", 1, 0, 10001 );
+                                 //:szWriteBuffer = "         ComboCount++;"
+                                 ZeidonStringCopy( szWriteBuffer, 1, 0, "         ComboCount++;", 1, 0, 10001 );
                                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
                                  //:IF lSubtype = 0

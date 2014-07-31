@@ -186,62 +186,31 @@ CLOSE_UsersForLPLR( zVIEW     ViewToWindow )
 //:DIALOG OPERATION
 //:ACCEPT_User( VIEW ViewToWindow )
 
-//:   VIEW TZCMULWO  REGISTERED AS TZCMULWO
+//:   VIEW TZCMULWO REGISTERED AS TZCMULWO
 zOPER_EXPORT zSHORT OPERATION
 ACCEPT_User( zVIEW     ViewToWindow )
 {
    zVIEW     TZCMULWO = 0; 
    zSHORT    RESULT; 
-   //:VIEW TZCMULWO2 BASED ON LOD  TZCMULWO
-   zVIEW     TZCMULWO2 = 0; 
-   //:INTEGER UserPrefix
-   zLONG     UserPrefix = 0; 
-   zLONG     lTempInteger_0; 
 
    RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", ViewToWindow, zLEVEL_TASK );
 
-   //:// Make sure User ZKey Prefix is unique.
-   //:UserPrefix = TZCMULWO.User.GenerationStartZKeyPrefix 
-   GetIntegerFromAttribute( &UserPrefix, TZCMULWO, "User", "GenerationStartZKeyPrefix" );
-   //:CreateViewFromView( TZCMULWO2, TZCMULWO )
-   CreateViewFromView( &TZCMULWO2, TZCMULWO );
-   //:SET CURSOR FIRST TZCMULWO2.User WHERE TZCMULWO2.User.GenerationStartZKeyPrefix = UserPrefix
-   RESULT = SetCursorFirstEntityByInteger( TZCMULWO2, "User", "GenerationStartZKeyPrefix", UserPrefix, "" );
-   //:SET CURSOR NEXT TZCMULWO2.User WHERE TZCMULWO2.User.GenerationStartZKeyPrefix = UserPrefix
-   RESULT = SetCursorNextEntityByInteger( TZCMULWO2, "User", "GenerationStartZKeyPrefix", UserPrefix, "" );
-   //:IF RESULT >= zCURSOR_SET
-   if ( RESULT >= zCURSOR_SET )
+   //:IF TZCMULWO.User.GenerationStartZKey < 10000000
+   if ( CompareAttributeToInteger( TZCMULWO, "User", "GenerationStartZKey", 10000000 ) < 0 )
    { 
       //:MessageSend( ViewToWindow, "", "Configuration Management",
-      //:             "The User Prefix must be unique.",
+      //:             "A Starting Generation ZKey must be specified with at least 7 zeros.",
       //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
-      MessageSend( ViewToWindow, "", "Configuration Management", "The User Prefix must be unique.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      MessageSend( ViewToWindow, "", "Configuration Management", "A Starting Generation ZKey must be specified with at least 7 zeros.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
       //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
-      //:DropView( TZCMULWO2 )
-      DropView( TZCMULWO2 );
       //:RETURN -1
       return( -1 );
    } 
 
    //:END
-
-   //:TZCMULWO.User.ZKey = TZCMULWO.User.GenerationStartZKeyPrefix 
-   SetAttributeFromAttribute( TZCMULWO, "User", "ZKey", TZCMULWO, "User", "GenerationStartZKeyPrefix" );
-
-   //:// If the Start Zkey is null, set it.
-   //:IF TZCMULWO2.User.GenerationStartZKey = ""
-   if ( CompareAttributeToString( TZCMULWO2, "User", "GenerationStartZKey", "" ) == 0 )
-   { 
-      //:TZCMULWO2.User.GenerationStartZKey = UserPrefix * 10000000
-      lTempInteger_0 = UserPrefix * 10000000;
-      SetAttributeFromInteger( TZCMULWO2, "User", "GenerationStartZKey", lTempInteger_0 );
-   } 
-
-   //:END
-   //:DropView( TZCMULWO2 )
-   DropView( TZCMULWO2 );
-
+   //:TZCMULWO.User.ZKey = TZCMULWO.User.GenerationStartZKey 
+   SetAttributeFromAttribute( TZCMULWO, "User", "ZKey", TZCMULWO, "User", "GenerationStartZKey" );
    //:AcceptSubobject( TZCMULWO, "User" )
    AcceptSubobject( TZCMULWO, "User" );
    return( 0 );
@@ -260,56 +229,34 @@ INITIALIZE_UserStartingGenZKey( zVIEW     ViewToWindow )
    zSHORT    RESULT; 
    //:VIEW TZCMWKSO REGISTERED AS TZCMWKSO
    zVIEW     TZCMWKSO = 0; 
-   //:STRING (  90 ) szMsg
+   //:VIEW TZCMWIPO REGISTERED AS TZCMWIPO
+   zVIEW     TZCMWIPO = 0; 
+   //:STRING ( 90 ) szMsg
    zCHAR     szMsg[ 91 ] = { 0 }; 
-   //:STRING ( 200 ) szFileName
-   zCHAR     szFileName[ 201 ] = { 0 }; 
    //:SHORT nRC
    zSHORT    nRC = 0; 
    zCHAR     szTempString_0[ 33 ]; 
-   zCHAR     szTempString_1[ 33 ]; 
 
    RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", ViewToWindow, zLEVEL_TASK );
    RESULT = GetViewByName( &TZCMWKSO, "TZCMWKSO", ViewToWindow, zLEVEL_TASK );
-
-   //:// KJS 04/24/14 - We don't think we want to be able to reset the starting ZKey. So if there is one, don't
-   //:// reset again.
-   //:IF TZCMWKSO.LPLR.MaxZKey != ""
-   if ( CompareAttributeToString( TZCMWKSO, "LPLR", "MaxZKey", "" ) != 0 )
-   { 
-      //:szMsg = "The current User, " + TZCMWKSO.User.Name + ", already has it's starting ZKey initialized. You do not need to reset."
-      GetVariableFromAttribute( szTempString_0, 0, 'S', 33, TZCMWKSO, "User", "Name", "", 0 );
-      ZeidonStringCopy( szMsg, 1, 0, "The current User, ", 1, 0, 91 );
-      ZeidonStringConcat( szMsg, 1, 0, szTempString_0, 1, 0, 91 );
-      ZeidonStringConcat( szMsg, 1, 0, ", already has it's starting ZKey initialized. You do not need to reset.", 1, 0, 91 );
-      //:MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
-      MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
-      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
-      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
-      //:RETURN -1
-      return( -1 );
-   } 
-
-   //:END
+   RESULT = GetViewByName( &TZCMWIPO, "TZCMWIPO", ViewToWindow, zLEVEL_TASK );
 
    //:// Use the current User Name, which is defined in TZCMWIPO, to position on the corresponding User entry
    //:// in TZCMULWO and use the GenerationStartZKey value there to initialize the ZKey Gen starting value in 
    //:// TZCMWKSO for the current LPLR.
    //:// KJS 02/04/14 - I think we mean to do TZCMULWO not TZCMWKSO which I believe is already set.
    //://SET CURSOR FIRST TZCMWKSO.User WHERE TZCMWKSO.User.Name = TZCMWIPO.ROOT.UserName 
-   //://SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWIPO.ROOT.UserName 
-   //:// KJS 04/24/14 - Now we are not using TZCMWIPO because we have gotten rid of the login for workstation. Use TZCMWOKS
-   //:SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name  
-   GetStringFromAttribute( szTempString_1, TZCMWKSO, "User", "Name" );
-   RESULT = SetCursorFirstEntityByString( TZCMULWO, "User", "Name", szTempString_1, "" );
+   //:SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWIPO.ROOT.UserName 
+   GetStringFromAttribute( szTempString_0, TZCMWIPO, "ROOT", "UserName" );
+   RESULT = SetCursorFirstEntityByString( TZCMULWO, "User", "Name", szTempString_0, "" );
 
    //:IF RESULT < zCURSOR_SET
    if ( RESULT < zCURSOR_SET )
    { 
-      //:szMsg = "The current User, " + TZCMWKSO.User.Name + ", is not in the list of ZKey Users. Add a 'New User'."
-      GetVariableFromAttribute( szTempString_1, 0, 'S', 33, TZCMWKSO, "User", "Name", "", 0 );
+      //:szMsg = "The current User, " + TZCMWIPO.ROOT.UserName + ", is not in the list of ZKey Users. Add a 'New User'."
+      GetVariableFromAttribute( szTempString_0, 0, 'S', 33, TZCMWIPO, "ROOT", "UserName", "", 0 );
       ZeidonStringCopy( szMsg, 1, 0, "The current User, ", 1, 0, 91 );
-      ZeidonStringConcat( szMsg, 1, 0, szTempString_1, 1, 0, 91 );
+      ZeidonStringConcat( szMsg, 1, 0, szTempString_0, 1, 0, 91 );
       ZeidonStringConcat( szMsg, 1, 0, ", is not in the list of ZKey Users. Add a 'New User'.", 1, 0, 91 );
       //:MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
@@ -523,16 +470,6 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
 
       RESULT = SetCursorNextEntity( TZCMLPLO, "W_MetaType", "" );
       //:END
-   } 
-
-   //:END
-
-   //:// If lMinZKey is still , then no metas exist and we will reset it to zero.
-   //:IF lMinZKey = 990000000
-   if ( lMinZKey == 990000000 )
-   { 
-      //:lMinZKey = 0
-      lMinZKey = 0;
    } 
 
    //:END

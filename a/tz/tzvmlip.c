@@ -1853,7 +1853,7 @@ GenFullQualPathFromRelPath( zPCHAR pchPathName,  // Pathname or empty string
              (szTempPath[ 0 ] >= 'A' && szTempPath[ 0 ] <= 'Z')) &&
            szTempPath[ 1 ] == ':') || szTempPath[ 0 ] == '\\' )
        {
-          strcpy( pchOutput, pchPathName ); // full qualified path
+          strcpy( pchOutput, pchPathName ); // fully qualified path
           return( 1 );
        }
        else

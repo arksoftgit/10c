@@ -3472,8 +3472,8 @@ zwTZTEUPDD_ReconstructERForForeignKey( zVIEW vSubtask, zVIEW vDTE, zVIEW vEMD)
    zVIEW  vDTE_Work;
    zVIEW  vDTE2;
 
-   zCHAR  szCatalogName[ 33 ];
-   zCHAR  szAttributeName[ 35 ];
+   zCHAR  szCatalogName[33];
+   zCHAR  szAttributeName[35];
 
    CreateViewFromViewForTask(&vDTE_Work, vDTE, 0 );
    SetNameForView(vDTE_Work, "vDTE_Work", vDTE, zLEVEL_TASK );

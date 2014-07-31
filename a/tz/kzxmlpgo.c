@@ -1,12 +1,12 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H"
-#include "ZDRVROPR.H"
-
+#include "KZOENGAA.H" 
+#include "ZDRVROPR.H" 
+ 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
+ 
 #include "ZEIDONOP.H"
 
 //:TRANSFORMATION OPERATION
@@ -20,26 +20,26 @@ oKZXMLPGO_InitWebSessionObject( zPVIEW    vKZXMLPGO,
                                 zVIEW     AnyView,
                                 zPCHAR    UserID )
 {
-   zSHORT    nRC = 0;
-   zSHORT    RESULT;
+   zSHORT    nRC = 0; 
+   zSHORT    RESULT; 
 
 
    //:nRC = SfActivateSysEmptyOI( vKZXMLPGO, "KZXMLPGO", AnyView, zSINGLE )
    nRC = SfActivateSysEmptyOI( vKZXMLPGO, "KZXMLPGO", AnyView, zSINGLE );
    //:IF nRC >= 0
    if ( nRC >= 0 )
-   {
+   { 
       //:CREATE ENTITY vKZXMLPGO.Session
       RESULT = CreateEntity( *vKZXMLPGO, "Session", zPOS_AFTER );
       //:vKZXMLPGO.Session.UserID = UserID
       SetAttributeFromString( *vKZXMLPGO, "Session", "UserID", UserID );
-   }
+   } 
 
    //:END
    //:RETURN nRC
    return( nRC );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -48,7 +48,7 @@ oKZXMLPGO_InitWebPage( zVIEW     vKZXMLPGO,
                        zPCHAR    DialogName,
                        zPCHAR    WindowName )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    //:InitWebPage( VIEW vKZXMLPGO BASED ON LOD KZXMLPGO,
    //:          STRING ( 32 ) DialogName,
@@ -59,10 +59,10 @@ oKZXMLPGO_InitWebPage( zVIEW     vKZXMLPGO,
    RESULT = SetCursorFirstEntity( vKZXMLPGO, "Page", "" );
    //:IF RESULT >= zCURSOR_SET
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
       //:DELETE ENTITY vKZXMLPGO.Page NONE
       RESULT = DeleteEntity( vKZXMLPGO, "Page", zREPOS_NONE );
-   }
+   } 
 
    //:END
    //:CREATE ENTITY vKZXMLPGO.Page
@@ -73,7 +73,7 @@ oKZXMLPGO_InitWebPage( zVIEW     vKZXMLPGO,
    SetAttributeFromString( vKZXMLPGO, "Page", "WindowName", WindowName );
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -97,20 +97,20 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
                                   zPCHAR    SourceAttribute,
                                   zPCHAR    AutoComboBoxExternalValue )
 {
-   zVIEW     SourceView = 0;
+   zVIEW     SourceView = 0; 
    //:VIEW            SourceView2
-   zVIEW     SourceView2 = 0;
+   zVIEW     SourceView2 = 0; 
    //:SHORT           nRC
-   zSHORT    nRC = 0;
+   zSHORT    nRC = 0; 
    //:INTEGER         CursorPos
-   zLONG     CursorPos = 0;
+   zLONG     CursorPos = 0; 
    //:STRING ( 2000 ) ExternalValue
-   zCHAR     ExternalValue[ 2001 ] = { 0 };
+   zCHAR     ExternalValue[ 2001 ] = { 0 }; 
    //:STRING ( 200 )  CurrentValue
-   zCHAR     CurrentValue[ 201 ] = { 0 };
-   zSHORT    RESULT;
-   zCHAR     szTempString_0[ 255 ];
-   zCHAR     szTempString_1[ 32001 ];
+   zCHAR     CurrentValue[ 201 ] = { 0 }; 
+   zSHORT    RESULT; 
+   zCHAR     szTempString_0[ 255 ]; 
+   zCHAR     szTempString_1[ 32001 ]; 
 
 
    //:// Create a Control entity for the data passed.
@@ -128,39 +128,39 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
    RESULT = GetViewByName( &SourceView, SourceViewName, vKZXMLPGO, zLEVEL_TASK );
    //:IF RESULT < 0
    if ( RESULT < 0 )
-   {
+   { 
       //:// There is no mapping, so return having just created the entity, with Name and Type,
       //:// unless the Control is Text, in which case we'll add the Text value, which is passed as
       //:// AutoComboBoxExternalValue.
       //:IF vKZXMLPGO.Control.Type = "Text" OR
       //:   vKZXMLPGO.Control.Type = "PushBtn"
       if ( CompareAttributeToString( vKZXMLPGO, "Control", "Type", "Text" ) == 0 || CompareAttributeToString( vKZXMLPGO, "Control", "Type", "PushBtn" ) == 0 )
-      {
+      { 
 
          //:vKZXMLPGO.Control.CurrentValue = AutoComboBoxExternalValue
          SetAttributeFromString( vKZXMLPGO, "Control", "CurrentValue", AutoComboBoxExternalValue );
-      }
+      } 
 
       //:END
       //:RETURN
       return( 0 );
-   }
+   } 
 
    //:END
    //:IF SourceEntity != ""
    if ( ZeidonStringCompare( SourceEntity, 1, 0, "", 1, 0, 33 ) != 0 )
-   {
+   { 
       //:nRC = CheckExistenceOfEntity( SourceView, SourceEntity )
       nRC = CheckExistenceOfEntity( SourceView, SourceEntity );
       //:IF nRC < 0
       if ( nRC < 0 )
-      {
+      { 
          //:RETURN
          return( 0 );
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
 
@@ -169,7 +169,7 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
    //:   vKZXMLPGO.Control.Type = "Text" OR
    //:   vKZXMLPGO.Control.Type = "CheckBox"
    if ( CompareAttributeToString( vKZXMLPGO, "Control", "Type", "EditBox" ) == 0 || CompareAttributeToString( vKZXMLPGO, "Control", "Type", "Text" ) == 0 || CompareAttributeToString( vKZXMLPGO, "Control", "Type", "CheckBox" ) == 0 )
-   {
+   { 
 
       //:GetStringFromAttributeByContext( ExternalValue,
       //:                                 SourceView, SourceEntity, SourceAttribute, ControlContext, 2000 )
@@ -177,24 +177,24 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
       //:vKZXMLPGO.Control.CurrentValue = ExternalValue
       SetAttributeFromString( vKZXMLPGO, "Control", "CurrentValue", ExternalValue );
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
 
       //:IF vKZXMLPGO.Control.Type = "MLEdit"
       if ( CompareAttributeToString( vKZXMLPGO, "Control", "Type", "MLEdit" ) == 0 )
-      {
+      { 
          //:SetAttributeFromAttribute( vKZXMLPGO, "Control", "CurrentValue",
          //:                        SourceView, SourceEntity, SourceAttribute )
          SetAttributeFromAttribute( vKZXMLPGO, "Control", "CurrentValue", SourceView, SourceEntity, SourceAttribute );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
 
          //:IF vKZXMLPGO.Control.Type = "ComboBox"
          if ( CompareAttributeToString( vKZXMLPGO, "Control", "Type", "ComboBox" ) == 0 )
-         {
+         { 
             //:// Build the list of selection values from the Domain table entries.
             //:GetStringFromAttributeByContext( CurrentValue,
             //:                           SourceView, SourceEntity, SourceAttribute, ControlContext, 200 )
@@ -207,40 +207,40 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
             nRC = GetFirstTableEntryForAttribute( ExternalValue, SourceView, SourceEntity, SourceAttribute, ControlContext, &CursorPos );
             //:LOOP WHILE nRC >= 0
             while ( nRC >= 0 )
-            {
+            { 
                //:CREATE ENTITY vKZXMLPGO.ComboValue
                RESULT = CreateEntity( vKZXMLPGO, "ComboValue", zPOS_AFTER );
                //:vKZXMLPGO.ComboValue.ExternalValue = ExternalValue
                SetAttributeFromString( vKZXMLPGO, "ComboValue", "ExternalValue", ExternalValue );
                //:IF ExternalValue = CurrentValue
                if ( ZeidonStringCompare( ExternalValue, 1, 0, CurrentValue, 1, 0, 2001 ) == 0 )
-               {
+               { 
                   //:SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 1 )
                   SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 1 );
                   //:ELSE
-               }
+               } 
                else
-               {
+               { 
                   //:SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 0 )
                   SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 0 );
-               }
+               } 
 
                //:END
                //:nRC = GetNextTableEntryForAttribute( ExternalValue,
                //:                               SourceView, SourceEntity, SourceAttribute,
                //:                               ControlContext, CursorPos )
                nRC = GetNextTableEntryForAttribute( ExternalValue, SourceView, SourceEntity, SourceAttribute, ControlContext, &CursorPos );
-            }
+            } 
 
             //:END
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
 
             //:IF vKZXMLPGO.Control.Type = "ComboBoxAuto"
             if ( CompareAttributeToString( vKZXMLPGO, "Control", "Type", "ComboBoxAuto" ) == 0 )
-            {
+            { 
                //:// Build the list of selection values from the list of entities.
                //:// Note that the entry selected is defined by the AutoComboBoxExternalValue passed, which
                //:// was set from the value of the Edit Mapping.
@@ -250,7 +250,7 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
                nRC = SetCursorFirstEntity( SourceView, SourceEntity, "" );
                //:LOOP WHILE nRC >= 0
                while ( nRC >= 0 )
-               {
+               { 
                   //:CREATE ENTITY vKZXMLPGO.ComboValue
                   RESULT = CreateEntity( vKZXMLPGO, "ComboValue", zPOS_AFTER );
                   //:GetStringFromAttributeByContext( ExternalValue,
@@ -260,31 +260,31 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
                   SetAttributeFromString( vKZXMLPGO, "ComboValue", "ExternalValue", ExternalValue );
                   //:IF ExternalValue = AutoComboBoxExternalValue
                   if ( ZeidonStringCompare( ExternalValue, 1, 0, AutoComboBoxExternalValue, 1, 0, 2001 ) == 0 )
-                  {
+                  { 
                      //:SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 1 )
                      SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 1 );
                      //:ELSE
-                  }
+                  } 
                   else
-                  {
+                  { 
                      //:SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 0 )
                      SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 0 );
-                  }
+                  } 
 
                   //:END
                   //:nRC = SetCursorNextEntity( SourceView, SourceEntity, "" )
                   nRC = SetCursorNextEntity( SourceView, SourceEntity, "" );
-               }
+               } 
 
                //:END
                //:ELSE
-            }
+            } 
             else
-            {
+            { 
 
                //:IF vKZXMLPGO.Control.Type = "ComboBoxList"
                if ( CompareAttributeToString( vKZXMLPGO, "Control", "Type", "ComboBoxList" ) == 0 )
-               {
+               { 
                   //:// Build the list of selection values from the list of entities.
                   //:// Note that the entry selected is defined by the cursor position.
                   //:CreateViewFromViewForTask( SourceView2, SourceView, vKZXMLPGO )
@@ -298,7 +298,7 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
                   nRC = SetCursorFirstEntity( SourceView2, SourceEntity, "" );
                   //:LOOP WHILE nRC >= 0
                   while ( nRC >= 0 )
-                  {
+                  { 
                      //:CREATE ENTITY vKZXMLPGO.ComboValue
                      RESULT = CreateEntity( vKZXMLPGO, "ComboValue", zPOS_AFTER );
                      //:GetStringFromAttributeByContext( ExternalValue,
@@ -308,39 +308,39 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
                      SetAttributeFromString( vKZXMLPGO, "ComboValue", "ExternalValue", ExternalValue );
                      //:IF ExternalValue = CurrentValue
                      if ( ZeidonStringCompare( ExternalValue, 1, 0, CurrentValue, 1, 0, 2001 ) == 0 )
-                     {
+                     { 
                         //:SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 1 )
                         SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 1 );
                         //:ELSE
-                     }
+                     } 
                      else
-                     {
+                     { 
                         //:SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 0 )
                         SetSelectStateOfEntity( vKZXMLPGO, "ComboValue", 0 );
-                     }
+                     } 
 
                      //:END
                      //:nRC = SetCursorNextEntity( SourceView2, SourceEntity, "" )
                      nRC = SetCursorNextEntity( SourceView2, SourceEntity, "" );
-                  }
+                  } 
 
                   //:END
                   //:DropView( SourceView2 )
                   DropView( SourceView2 );
-               }
+               } 
 
 
                //:END
-            }
+            } 
 
             //:END
-         }
+         } 
 
          //:END
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
 
@@ -360,10 +360,10 @@ oKZXMLPGO_AddWebControlSubobject( zVIEW     vKZXMLPGO,
 //       vKZXMLPGO.Control.Type = "Outliner" OR
 //       vKZXMLPGO.Control.Type = "RadioBtnGroup" */
 // END
-}
+} 
 
 
-
+ 
 #ifdef __cplusplus
 }
 #endif

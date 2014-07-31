@@ -3954,8 +3954,8 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
          IF szControlType = "MLEdit"  // MLEDIT
          
-            GenJSPJ_CrteMLEdit( vDialog, lFile, szWriteBuffer, szIndent, szCtrlTag,
-                                "", szJustify, szNoPositioning, lOffsetX, lOffsetY, szRepeatGrpKey )
+         // GenJSPJ_CrteMLEdit( vDialog, lFile, szWriteBuffer, szIndent, szCtrlTag,
+         //                     "", szJustify, szNoPositioning, lOffsetX, lOffsetY, szRepeatGrpKey )
 /*                                
             SET CURSOR FIRST vDialog.CtrlMapLOD_Attribute WITHIN vDialog.Control
             IF RESULT >= zCURSOR_SET
@@ -4525,7 +4525,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                         szWriteBuffer = "               nRelPos = java.lang.Integer.parseInt( strMapValue );"
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
        /*
-   
+
                         IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
                            // For Auto Include, we must decrement nRelPos for blank entry.
                            szWriteBuffer = "            nRelPos--;    // For Auto Include combos, we need to decrement for the blank entry."
@@ -4631,7 +4631,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                            szWriteBuffer = "         if ( !StringUtils.equals( strMapValue, ^0^ ) && !StringUtils.isBlank( " + szViewName + ".cursor( ^" +
-                                           vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ) +  " ) )"
+                                           vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ) ) )"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "         {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -4757,7 +4757,6 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                szWriteBuffer = "            nRelPos = java.lang.Integer.parseInt( strMapValue );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
-                    
                szWriteBuffer = "               " + szViewName + ".cursor( ^" + vDialog.CtrlMapLOD_Entity.Name + "^ )" +
                                ".setByEntityKey( nRelPos );"
                                //".setPosition( " +
@@ -6945,8 +6944,8 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
          // IF nGridParent = 1 OR szRepeatingGroupFlag = "Y"
          IF nGridParent = 1 OR szRepeatingGroupFlag = "Y"
          ELSE
-            szWriteBuffer = "      View " + szViewName + " = task.getViewByName( ^" + szViewName + "^ );"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      View " + szViewName + " = task.getViewByName( ^" + szViewName + "^ );"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          END
          
          szWriteBuffer = "      EntityCursor cursor = " + szViewName + ".cursor( ^" + szEntityName + "^ );"
@@ -6954,14 +6953,14 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
          
          // Add Accept or Cancel statement.
          IF lAutoSubAction = 1 OR lAutoSubAction = 2
-            szWriteBuffer = "      if ( cursor.isNull() )"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         nRC = 0;"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      else"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      {"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      if ( cursor.isNull() )"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         nRC = 0;"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      else"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      {"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          
             szWriteBuffer = "         if ( cursor.isVersioned( ) )"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )

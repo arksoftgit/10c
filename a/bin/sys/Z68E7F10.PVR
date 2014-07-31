@@ -1,0 +1,13 @@
+z1000-Zeidon    Z68E7F10 TZWDVORO 05/28/14   19:34:26 1.0a2    
+eViewObjRef 1
+aZKey      110001936
+aName      TZZOLODO
+aDesc      VOR automatically built from LOD Dialog
+
+eLOD       2
+aZKey      1324578
+aName      TZZOLODO
+aDesc      LOD Object Def
+aDLL_Name  TZLODOPR
+aCommitConstraint Y
+

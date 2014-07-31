@@ -1,12 +1,12 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H"
-#include "ZDRVROPR.H"
-
+#include "KZOENGAA.H" 
+#include "ZDRVROPR.H" 
+ 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
+ 
 #include "ZEIDONOP.H"
 
 zOPER_EXPORT zSHORT OPERATION
@@ -138,12 +138,12 @@ o_fnLocalBuildQual_10( zVIEW     vSubtask,
 zOPER_EXPORT zSHORT OPERATION
 ActivateERD_List( zVIEW     vSubtask )
 {
-   zVIEW     vTZCMCPRO = 0;
+   zVIEW     vTZCMCPRO = 0; 
    //:VIEW vTZBRERDO BASED ON LOD TZBRERDO
-   zVIEW     vTZBRERDO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
+   zVIEW     vTZBRERDO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
 
 
    //:GET VIEW vTZCMCPRO NAMED "TZCMCPRO"
@@ -164,24 +164,24 @@ ActivateERD_List( zVIEW     vSubtask )
    //:FOR EACH vTZBRERDO.ER_RelLink1 WITHIN vTZBRERDO.EntpER_Model
    RESULT = SetCursorFirstEntity( vTZBRERDO, "ER_RelLink1", "EntpER_Model" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:IF vTZBRERDO.ER_RelLink2.ZKey != vTZBRERDO.ER_RelLink1.ZKey
       if ( CompareAttributeToAttribute( vTZBRERDO, "ER_RelLink2", "ZKey", vTZBRERDO, "ER_RelLink1", "ZKey" ) != 0 )
-      {
+      { 
          //:SET CURSOR NEXT vTZBRERDO.ER_RelLink2
          RESULT = SetCursorNextEntity( vTZBRERDO, "ER_RelLink2", "" );
-      }
+      } 
 
       //:END
       //:EXCLUDE vTZBRERDO.ER_RelLink2
       RESULT = ExcludeEntity( vTZBRERDO, "ER_RelLink2", zREPOS_AFTER );
       RESULT = SetCursorNextEntity( vTZBRERDO, "ER_RelLink1", "EntpER_Model" );
-   }
+   } 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -191,15 +191,15 @@ ActivateERD_List( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 ActivateEntityInstance( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRENTO = 0;
+   zVIEW     vTZBRENTO = 0; 
    //:VIEW vTZBRERDO BASED ON LOD TZBRERDO
-   zVIEW     vTZBRERDO = 0;
+   zVIEW     vTZBRERDO = 0; 
    //:VIEW vTZBRLIAO  BASED ON LOD TZBRLIAO
-   zVIEW     vTZBRLIAO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
-   zLONG     lTempInteger_1;
+   zVIEW     vTZBRLIAO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
+   zLONG     lTempInteger_1; 
 
 
    //:GET VIEW vTZBRERDO NAMED "TZBRERDO"
@@ -220,7 +220,7 @@ ActivateEntityInstance( zVIEW     vSubtask )
    //:FOR EACH vTZBRENTO.LOD_Attribute WITHIN vTZBRENTO.ER_Entity
    RESULT = SetCursorFirstEntity( vTZBRENTO, "LOD_Attribute", "ER_Entity" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:SET CURSOR FIRST vTZBRENTO.LOD_Entity WHERE
       //:    vTZBRENTO.LOD_Entity.ZKey = vTZBRENTO.AttributeLOD_Entity.ZKey
       GetIntegerFromAttribute( &lTempInteger_1, vTZBRENTO, "AttributeLOD_Entity", "ZKey" );
@@ -228,7 +228,7 @@ ActivateEntityInstance( zVIEW     vSubtask )
       //:vTZBRENTO.LOD_Attribute.LOD_Name = vTZBRENTO.RootLOD.Name
       SetAttributeFromAttribute( vTZBRENTO, "LOD_Attribute", "LOD_Name", vTZBRENTO, "RootLOD", "Name" );
       RESULT = SetCursorNextEntity( vTZBRENTO, "LOD_Attribute", "ER_Entity" );
-   }
+   } 
 
    //:END
 
@@ -239,15 +239,15 @@ ActivateEntityInstance( zVIEW     vSubtask )
    RESULT = GetViewByName( &vTZBRLIAO, "TZBRLIAO", vSubtask, zLEVEL_TASK );
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   {
+   { 
       //:DropObjectInstance( vTZBRLIAO )
       DropObjectInstance( vTZBRLIAO );
-   }
+   } 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -257,12 +257,12 @@ ActivateEntityInstance( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 ActivateLOD_AttributeList( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRLIAO = 0;
+   zVIEW     vTZBRLIAO = 0; 
    //:VIEW vTZBRENTO  BASED ON LOD TZBRENTO
-   zVIEW     vTZBRENTO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
+   zVIEW     vTZBRENTO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
 
 
    //:GET VIEW vTZBRENTO NAMED "TZBRENTO"
@@ -276,7 +276,7 @@ ActivateLOD_AttributeList( zVIEW     vSubtask )
    SetNameForView( vTZBRLIAO, "TZBRLIAO", 0, zLEVEL_TASK );
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -286,22 +286,22 @@ ActivateLOD_AttributeList( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 ActivateLOD_AttributeMapping( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRLIAO = 0;
+   zVIEW     vTZBRLIAO = 0; 
    //:VIEW vTZBRENTO  BASED ON LOD TZBRENTO
-   zVIEW     vTZBRENTO = 0;
+   zVIEW     vTZBRENTO = 0; 
    //:VIEW vRecur     BASED ON LOD TZBRLOAO
-   zVIEW     vRecur = 0;
+   zVIEW     vRecur = 0; 
    //:VIEW vTZBRLOAO  BASED ON LOD TZBRLOAO
-   zVIEW     vTZBRLOAO = 0;
+   zVIEW     vTZBRLOAO = 0; 
    //:SHORT nRC
-   zSHORT    nRC = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
-   zLONG     lTempInteger_1;
-   zVIEW     vTempViewVar_1;
-   zSHORT    lTempInteger_2;
-   zSHORT    lTempInteger_3;
+   zSHORT    nRC = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
+   zLONG     lTempInteger_1; 
+   zVIEW     vTempViewVar_1; 
+   zSHORT    lTempInteger_2; 
+   zSHORT    lTempInteger_3; 
 
 
    //:// Activate the Attribute mapping object from either the list of LOD_Attributes for a
@@ -311,7 +311,7 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
    RESULT = GetViewByName( &vTZBRLIAO, "TZBRLIAO", vSubtask, zLEVEL_TASK );
    //:IF RESULT >= 0
    if ( RESULT >= 0 )
-   {
+   { 
       //:ACTIVATE vTZBRLOAO SINGLE WHERE vTZBRLOAO.LOD_Attribute.ZKey = vTZBRLIAO.LOD_Attribute.ZKey
       GetIntegerFromAttribute( &lTempInteger_0, vTZBRLIAO, "LOD_Attribute", "ZKey" );
       o_fnLocalBuildQual_9( vSubtask, &vTempViewVar_0, lTempInteger_0 );
@@ -320,9 +320,9 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
       //:NAME VIEW vTZBRLOAO "TZBRLOAO"
       SetNameForView( vTZBRLOAO, "TZBRLOAO", 0, zLEVEL_TASK );
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
       //:GET VIEW vTZBRENTO NAMED "TZBRENTO"
       RESULT = GetViewByName( &vTZBRENTO, "TZBRENTO", vSubtask, zLEVEL_TASK );
       //:ACTIVATE vTZBRLOAO SINGLE WHERE vTZBRLOAO.LOD_Attribute.ZKey = vTZBRENTO.LOD_Attribute.ZKey
@@ -332,7 +332,7 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
       DropView( vTempViewVar_1 );
       //:NAME VIEW vTZBRLOAO "TZBRLOAO"
       SetNameForView( vTZBRLOAO, "TZBRLOAO", 0, zLEVEL_TASK );
-   }
+   } 
 
    //:END
 
@@ -340,11 +340,11 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
    //:FOR EACH vTZBRLOAO.MapRef
    RESULT = SetCursorFirstEntity( vTZBRLOAO, "MapRef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:IF vTZBRLOAO.Control EXISTS
       lTempInteger_2 = CheckExistenceOfEntity( vTZBRLOAO, "Control" );
       if ( lTempInteger_2 == 0 )
-      {
+      { 
          //:// Follow the recursive Control path to set the work entity containing Dialog
          //:// and Window names.
          //:CreateViewFromViewForTask( vRecur, vTZBRLOAO, vSubtask )
@@ -353,12 +353,12 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
          nRC = CheckExistenceOfEntity( vRecur, "ControlWindow" );
          //:LOOP WHILE nRC < zCURSOR_SET
          while ( nRC < zCURSOR_SET )
-         {
+         { 
             //:SetViewToSubobject( vRecur, "ParentControl" )
             SetViewToSubobject( vRecur, "ParentControl" );
             //:nRC = CheckExistenceOfEntity( vRecur, "ControlWindow" )
             nRC = CheckExistenceOfEntity( vRecur, "ControlWindow" );
-         }
+         } 
 
          //:END
 
@@ -370,13 +370,13 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
          SetAttributeFromAttribute( vTZBRLOAO, "ControlWindowInfo", "DialogName", vRecur, "ControlDialog", "Tag" );
          //:DropView( vRecur )
          DropView( vRecur );
-      }
+      } 
 
       //:END
       //:IF vTZBRLOAO.Option EXISTS
       lTempInteger_3 = CheckExistenceOfEntity( vTZBRLOAO, "Option" );
       if ( lTempInteger_3 == 0 )
-      {
+      { 
          //:// Follow the recursive Control path to set the work entity containing Dialog
          //:// and Window names.
          //:CreateViewFromViewForTask( vRecur, vTZBRLOAO, vSubtask )
@@ -385,12 +385,12 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
          nRC = CheckExistenceOfEntity( vRecur, "OptionWindow" );
          //:LOOP WHILE nRC < zCURSOR_SET
          while ( nRC < zCURSOR_SET )
-         {
+         { 
             //:SetViewToSubobject( vRecur, "ParentOption" )
             SetViewToSubobject( vRecur, "ParentOption" );
             //:nRC = CheckExistenceOfEntity( vRecur, "OptionWindow" )
             nRC = CheckExistenceOfEntity( vRecur, "OptionWindow" );
-         }
+         } 
 
          //:END
 
@@ -402,17 +402,17 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
          SetAttributeFromAttribute( vTZBRLOAO, "OptionWindowInfo", "DialogName", vRecur, "OptionDialog", "Tag" );
          //:DropView( vRecur )
          DropView( vRecur );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( vTZBRLOAO, "MapRef", "" );
       //:END
-   }
+   } 
 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -422,17 +422,17 @@ ActivateLOD_AttributeMapping( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 ActivateLOD_Mapping( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRLOEO = 0;
+   zVIEW     vTZBRLOEO = 0; 
    //:VIEW vRecur     BASED ON LOD TZBRLOEO
-   zVIEW     vRecur = 0;
+   zVIEW     vRecur = 0; 
    //:VIEW vTZBRENTO  BASED ON LOD TZBRENTO
-   zVIEW     vTZBRENTO = 0;
+   zVIEW     vTZBRENTO = 0; 
    //:SHORT nRC
-   zSHORT    nRC = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
-   zSHORT    lTempInteger_1;
+   zSHORT    nRC = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
+   zSHORT    lTempInteger_1; 
 
 
    //:GET VIEW vTZBRENTO NAMED "TZBRENTO"
@@ -449,11 +449,11 @@ ActivateLOD_Mapping( zVIEW     vSubtask )
    //:FOR EACH vTZBRLOEO.MapRef
    RESULT = SetCursorFirstEntity( vTZBRLOEO, "MapRef", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:IF vTZBRLOEO.Control EXISTS
       lTempInteger_1 = CheckExistenceOfEntity( vTZBRLOEO, "Control" );
       if ( lTempInteger_1 == 0 )
-      {
+      { 
          //:// Follow the recursive Control path to set the work entity containing Dialog
          //:// and Window names.
          //:CreateViewFromViewForTask( vRecur, vTZBRLOEO, vSubtask )
@@ -462,12 +462,12 @@ ActivateLOD_Mapping( zVIEW     vSubtask )
          nRC = CheckExistenceOfEntity( vRecur, "ControlWindow" );
          //:LOOP WHILE nRC < zCURSOR_SET
          while ( nRC < zCURSOR_SET )
-         {
+         { 
             //:SetViewToSubobject( vRecur, "ParentControl" )
             SetViewToSubobject( vRecur, "ParentControl" );
             //:nRC = CheckExistenceOfEntity( vRecur, "ControlWindow" )
             nRC = CheckExistenceOfEntity( vRecur, "ControlWindow" );
-         }
+         } 
 
          //:END
 
@@ -479,16 +479,16 @@ ActivateLOD_Mapping( zVIEW     vSubtask )
          SetAttributeFromAttribute( vTZBRLOEO, "ControlWindowInfo", "DialogName", vRecur, "ControlDialog", "Tag" );
          //:DropView( vRecur )
          DropView( vRecur );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( vTZBRLOEO, "MapRef", "" );
       //:END
-   }
+   } 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -498,16 +498,16 @@ ActivateLOD_Mapping( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 ActivateRelTypeInstance( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRRELO = 0;
+   zVIEW     vTZBRRELO = 0; 
    //:VIEW vTZBRRELO2 BASED ON LOD TZBRRELO
-   zVIEW     vTZBRRELO2 = 0;
+   zVIEW     vTZBRRELO2 = 0; 
    //:VIEW vTZBRERDO  BASED ON LOD TZBRERDO
-   zVIEW     vTZBRERDO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
+   zVIEW     vTZBRERDO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
 
 
    //:GET VIEW vTZBRERDO NAMED "TZBRERDO"
@@ -535,7 +535,7 @@ ActivateRelTypeInstance( zVIEW     vSubtask )
    RESULT = SetCursorFirstEntityByInteger( vTZBRRELO2, "ER_RelLink", "ZKey", lTempInteger_2, "" );
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -545,28 +545,28 @@ ActivateRelTypeInstance( zVIEW     vSubtask )
 static zVOID
 o_DeriveRootLOD( zVIEW     vTZBRENTO )
 {
-   zVIEW     vRecur = 0;
+   zVIEW     vRecur = 0; 
    //:SHORT nRC
-   zSHORT    nRC = 0;
-   zSHORT    RESULT;
+   zSHORT    nRC = 0; 
+   zSHORT    RESULT; 
 
 
    //:FOR EACH vTZBRENTO.LOD_Entity
    RESULT = SetCursorFirstEntity( vTZBRENTO, "LOD_Entity", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:CreateViewFromViewForTask( vRecur, vTZBRENTO, vTZBRENTO )
       CreateViewFromViewForTask( &vRecur, vTZBRENTO, vTZBRENTO );
       //:nRC = CheckExistenceOfEntity( vRecur, "LOD" )
       nRC = CheckExistenceOfEntity( vRecur, "LOD" );
       //:LOOP WHILE nRC < zCURSOR_SET
       while ( nRC < zCURSOR_SET )
-      {
+      { 
          //:SetViewToSubobject( vRecur, "ParentLOD_Entity" )
          SetViewToSubobject( vRecur, "ParentLOD_Entity" );
          //:nRC = CheckExistenceOfEntity( vRecur, "LOD" )
          nRC = CheckExistenceOfEntity( vRecur, "LOD" );
-      }
+      } 
 
       //:END
 
@@ -575,12 +575,12 @@ o_DeriveRootLOD( zVIEW     vTZBRENTO )
       //:DropView( vRecur )
       DropView( vRecur );
       RESULT = SetCursorNextEntity( vTZBRENTO, "LOD_Entity", "" );
-   }
+   } 
 
    //:END
    return;
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -590,8 +590,8 @@ o_DeriveRootLOD( zVIEW     vTZBRENTO )
 zOPER_EXPORT zSHORT OPERATION
 DropInstance( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRENTO = 0;
-   zSHORT    RESULT;
+   zVIEW     vTZBRENTO = 0; 
+   zSHORT    RESULT; 
 
 
    //:GET VIEW vTZBRENTO NAMED "TZBRENTO"
@@ -600,7 +600,7 @@ DropInstance( zVIEW     vSubtask )
    DropObjectInstance( vTZBRENTO );
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -614,7 +614,7 @@ EntityListPopUp( zVIEW     vSubtask )
    CreateTrackingPopupMenu( vSubtask, "EntityListPopUp", -1, 0, 0, 0 );
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -628,7 +628,7 @@ LOD_EntityPopUp( zVIEW     vSubtask )
    CreateTrackingPopupMenu( vSubtask, "LOD_EntityPopUp", -1, 0, 0, 0 );
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -638,12 +638,12 @@ LOD_EntityPopUp( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 NextEntityInstance( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRENTO = 0;
+   zVIEW     vTZBRENTO = 0; 
    //:VIEW vTZBRERDO BASED ON LOD TZBRERDO
-   zVIEW     vTZBRERDO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
+   zVIEW     vTZBRERDO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
 
 
    //:GET VIEW vTZBRENTO NAMED "TZBRENTO"
@@ -668,7 +668,7 @@ NextEntityInstance( zVIEW     vSubtask )
    o_DeriveRootLOD( vTZBRENTO );
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -678,16 +678,16 @@ NextEntityInstance( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 NextRelTypeInstance( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRRELO = 0;
+   zVIEW     vTZBRRELO = 0; 
    //:VIEW vTZBRRELO2 BASED ON LOD TZBRRELO
-   zVIEW     vTZBRRELO2 = 0;
+   zVIEW     vTZBRRELO2 = 0; 
    //:VIEW vTZBRERDO  BASED ON LOD TZBRERDO
-   zVIEW     vTZBRERDO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
+   zVIEW     vTZBRERDO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
 
 
    //:GET VIEW vTZBRRELO NAMED "TZBRRELO"
@@ -722,7 +722,7 @@ NextRelTypeInstance( zVIEW     vSubtask )
    RESULT = SetCursorFirstEntityByInteger( vTZBRRELO2, "ER_RelLink", "ZKey", lTempInteger_2, "" );
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -732,12 +732,12 @@ NextRelTypeInstance( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 PreviousEntityInstance( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRENTO = 0;
+   zVIEW     vTZBRENTO = 0; 
    //:VIEW vTZBRERDO BASED ON LOD TZBRERDO
-   zVIEW     vTZBRERDO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
+   zVIEW     vTZBRERDO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
 
 
    //:GET VIEW vTZBRENTO NAMED "TZBRENTO"
@@ -762,7 +762,7 @@ PreviousEntityInstance( zVIEW     vSubtask )
    o_DeriveRootLOD( vTZBRENTO );
    return( 0 );
 // END
-}
+} 
 
 
 //:DIALOG OPERATION
@@ -772,16 +772,16 @@ PreviousEntityInstance( zVIEW     vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 PreviousRelTypeInstance( zVIEW     vSubtask )
 {
-   zVIEW     vTZBRRELO = 0;
+   zVIEW     vTZBRRELO = 0; 
    //:VIEW vTZBRRELO2 BASED ON LOD TZBRRELO
-   zVIEW     vTZBRRELO2 = 0;
+   zVIEW     vTZBRRELO2 = 0; 
    //:VIEW vTZBRERDO  BASED ON LOD TZBRERDO
-   zVIEW     vTZBRERDO = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zVIEW     vTempViewVar_0;
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
+   zVIEW     vTZBRERDO = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zVIEW     vTempViewVar_0; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
 
 
    //:GET VIEW vTZBRRELO NAMED "TZBRRELO"
@@ -816,7 +816,7 @@ PreviousRelTypeInstance( zVIEW     vSubtask )
    RESULT = SetCursorFirstEntityByInteger( vTZBRRELO2, "ER_RelLink", "ZKey", lTempInteger_2, "" );
    return( 0 );
 // END
-}
+} 
 
 
 static zSHORT
@@ -824,7 +824,7 @@ o_fnLocalBuildQual_0( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -835,7 +835,7 @@ o_fnLocalBuildQual_0( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -843,7 +843,7 @@ o_fnLocalBuildQual_1( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -854,7 +854,7 @@ o_fnLocalBuildQual_1( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -862,7 +862,7 @@ o_fnLocalBuildQual_2( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -873,7 +873,7 @@ o_fnLocalBuildQual_2( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -881,7 +881,7 @@ o_fnLocalBuildQual_3( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -892,7 +892,7 @@ o_fnLocalBuildQual_3( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -900,7 +900,7 @@ o_fnLocalBuildQual_4( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -911,7 +911,7 @@ o_fnLocalBuildQual_4( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -919,7 +919,7 @@ o_fnLocalBuildQual_5( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -930,7 +930,7 @@ o_fnLocalBuildQual_5( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -938,7 +938,7 @@ o_fnLocalBuildQual_6( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -949,7 +949,7 @@ o_fnLocalBuildQual_6( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -957,7 +957,7 @@ o_fnLocalBuildQual_7( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -968,7 +968,7 @@ o_fnLocalBuildQual_7( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -976,7 +976,7 @@ o_fnLocalBuildQual_8( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -987,7 +987,7 @@ o_fnLocalBuildQual_8( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -995,7 +995,7 @@ o_fnLocalBuildQual_9( zVIEW     vSubtask,
                       zPVIEW    vQualObject,
                       zLONG     lTempInteger_0 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -1006,7 +1006,7 @@ o_fnLocalBuildQual_9( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_0 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
 static zSHORT
@@ -1014,7 +1014,7 @@ o_fnLocalBuildQual_10( zVIEW     vSubtask,
                        zPVIEW    vQualObject,
                        zLONG     lTempInteger_1 )
 {
-   zSHORT    RESULT;
+   zSHORT    RESULT; 
 
    RESULT = SfActivateSysEmptyOI( vQualObject, "KZDBHQUA", vSubtask, zMULTIPLE );
    CreateEntity( *vQualObject, "EntitySpec", zPOS_AFTER );
@@ -1025,10 +1025,10 @@ o_fnLocalBuildQual_10( zVIEW     vSubtask,
    SetAttributeFromInteger( *vQualObject, "QualAttrib", "Value", lTempInteger_1 );
    SetAttributeFromString( *vQualObject, "QualAttrib", "Oper", "=" );
    return( 0 );
-}
+} 
 
 
-
+ 
 #ifdef __cplusplus
 }
 #endif

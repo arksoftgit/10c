@@ -399,7 +399,7 @@ GenJSPJ_CrteCheckBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szUnChecked = szBlob
    END
   */
-
+   
    szWriteBuffer = "<%"
    WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   strErrorMapValue = ^^;"
@@ -2362,45 +2362,45 @@ GenJSPJ_CrteEditBox( VIEW vDialog BASED ON LOD TZWDLGSO,
    // If there is an Event for the EditBox, build code to insert in <input statement.
    szEditActionCode = ""
    FOR EACH vDialog.Event
-      IF vDialog.EventAct EXISTS
-         szActionName = vDialog.EventAct.Tag
-         IF vDialog.Event.Type = 16
+   IF vDialog.EventAct EXISTS
+      szActionName = vDialog.EventAct.Tag
+      IF vDialog.Event.Type = 16
             szEditActionCode = szEditActionCode + " onfocus=^" + szActionName + "( )^ "
-         ELSE
-         IF vDialog.Event.Type = 17
+      ELSE
+      IF vDialog.Event.Type = 17
             szEditActionCode = szEditActionCode + " onblur=^" + szActionName + "( )^ "
-         ELSE
-         IF vDialog.Event.Type = 18
+      ELSE
+      IF vDialog.Event.Type = 18
             szEditActionCode = szEditActionCode + " onchange=^" + szActionName + "( )^ "
-         ELSE
-         IF vDialog.Event.Type = 21
+      ELSE
+      IF vDialog.Event.Type = 21
             szEditActionCode = szEditActionCode + " onkeydown=^" + szActionName + "( )^ "
-         ELSE
-         IF vDialog.Event.Type = 22
+      ELSE
+      IF vDialog.Event.Type = 22
             szEditActionCode = szEditActionCode + " onkeyup=^" + szActionName + "( )^ "
-         ELSE
-         IF vDialog.Event.Type = 24
+      ELSE
+      IF vDialog.Event.Type = 24
             szEditActionCode = szEditActionCode + " onclick=^" + szActionName + "( )^ "
-         END
-         END
-         END
-         END
-         END
-         END
+      END
+      END
+      END
+      END
+      END
+      END
       END
    END
 
-   // If there is a Default button for the window, we must add some characters
-   // to the end of the input statement.
-   CreateViewFromView( vDialogRoot, vDialog )
-   nRC = ResetViewFromSubobject( vDialogRoot )
-   LOOP WHILE nRC = 0
+      // If there is a Default button for the window, we must add some characters
+      // to the end of the input statement.
+      CreateViewFromView( vDialogRoot, vDialog )
       nRC = ResetViewFromSubobject( vDialogRoot )
-   END
-   IF vDialogRoot.Window.DfltButton != ""
+      LOOP WHILE nRC = 0
+         nRC = ResetViewFromSubobject( vDialogRoot )
+      END
+      IF vDialogRoot.Window.DfltButton != ""
       szEditActionCode = szEditActionCode + " onKeyPress=^return _OnEnter( event )^"
-   END
-   DropView( vDialogRoot )
+      END
+      DropView( vDialogRoot )
 
    IF szNoOutputMapping = "Y"
          szValue = "value=^^"

@@ -20,7 +20,6 @@ DELETE_User( VIEW ViewToWindow )
 
 END
 
-
 /*************************************************************************************************
 **
 **    OPERATION: SAVE_UsersForLPLR
@@ -113,32 +112,16 @@ END
 DIALOG OPERATION
 ACCEPT_User( VIEW ViewToWindow )
 
-   VIEW TZCMULWO  REGISTERED AS TZCMULWO
-   VIEW TZCMULWO2 BASED ON LOD  TZCMULWO
-   INTEGER UserPrefix
+   VIEW TZCMULWO REGISTERED AS TZCMULWO
    
-   // Make sure User ZKey Prefix is unique.
-   UserPrefix = TZCMULWO.User.GenerationStartZKeyPrefix 
-   CreateViewFromView( TZCMULWO2, TZCMULWO )
-   SET CURSOR FIRST TZCMULWO2.User WHERE TZCMULWO2.User.GenerationStartZKeyPrefix = UserPrefix
-   SET CURSOR NEXT TZCMULWO2.User WHERE TZCMULWO2.User.GenerationStartZKeyPrefix = UserPrefix
-   IF RESULT >= zCURSOR_SET
+   IF TZCMULWO.User.GenerationStartZKey < 10000000
       MessageSend( ViewToWindow, "", "Configuration Management",
-                   "The User Prefix must be unique.",
+                   "A Starting Generation ZKey must be specified with at least 7 zeros.",
                    zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
-      DropView( TZCMULWO2 )
       RETURN -1
    END
-   
-   TZCMULWO.User.ZKey = TZCMULWO.User.GenerationStartZKeyPrefix 
-   
-   // If the Start Zkey is null, set it.
-   IF TZCMULWO2.User.GenerationStartZKey = ""
-      TZCMULWO2.User.GenerationStartZKey = UserPrefix * 10000000
-   END
-   DropView( TZCMULWO2 )
-   
+   TZCMULWO.User.ZKey = TZCMULWO.User.GenerationStartZKey 
    AcceptSubobject( TZCMULWO, "User" )
 
 END
@@ -153,30 +136,19 @@ INITIALIZE_UserStartingGenZKey( VIEW ViewToWindow )
 
    VIEW TZCMULWO REGISTERED AS TZCMULWO
    VIEW TZCMWKSO REGISTERED AS TZCMWKSO
-   STRING (  90 ) szMsg
-   STRING ( 200 ) szFileName
+   VIEW TZCMWIPO REGISTERED AS TZCMWIPO
+   STRING ( 90 ) szMsg
    SHORT nRC
-   
-   // KJS 04/24/14 - We don't think we want to be able to reset the starting ZKey. So if there is one, don't
-   // reset again.
-   IF TZCMWKSO.LPLR.MaxZKey != ""
-      szMsg = "The current User, " + TZCMWKSO.User.Name + ", already has it's starting ZKey initialized. You do not need to reset."
-      MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
-      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
-      RETURN -1
-   END
    
    // Use the current User Name, which is defined in TZCMWIPO, to position on the corresponding User entry
    // in TZCMULWO and use the GenerationStartZKey value there to initialize the ZKey Gen starting value in 
    // TZCMWKSO for the current LPLR.
    // KJS 02/04/14 - I think we mean to do TZCMULWO not TZCMWKSO which I believe is already set.
    //SET CURSOR FIRST TZCMWKSO.User WHERE TZCMWKSO.User.Name = TZCMWIPO.ROOT.UserName 
-   //SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWIPO.ROOT.UserName 
-   // KJS 04/24/14 - Now we are not using TZCMWIPO because we have gotten rid of the login for workstation. Use TZCMWOKS
-   SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name  
+   SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWIPO.ROOT.UserName 
 
    IF RESULT < zCURSOR_SET
-      szMsg = "The current User, " + TZCMWKSO.User.Name + ", is not in the list of ZKey Users. Add a 'New User'."
+      szMsg = "The current User, " + TZCMWIPO.ROOT.UserName + ", is not in the list of ZKey Users. Add a 'New User'."
       MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
       RETURN -1
@@ -277,11 +249,6 @@ ANALYZE_MinMaxZKeyValues( VIEW ViewToWindow )
             END
          END
       END
-   END
-   
-   // If lMinZKey is still , then no metas exist and we will reset it to zero.
-   IF lMinZKey = 990000000
-      lMinZKey = 0
    END
    
    TraceLineI( "*** lMinZKey: ", lMinZKey )

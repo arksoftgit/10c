@@ -572,6 +572,8 @@ oTZRPSRCO_GenerateXML_CtlRecurs( zVIEW     vReportDef,
    zCHAR     szAttributeName[ 33 ] = { 0 }; 
    //:STRING ( 32 )   szMappingName
    zCHAR     szMappingName[ 33 ] = { 0 }; 
+   //:STRING ( 32 )   szContextName
+   zCHAR     szContextName[ 33 ] = { 0 }; 
    //:STRING ( 5000 ) szReturnedAttributeValue
    zCHAR     szReturnedAttributeValue[ 5001 ] = { 0 }; 
    //:STRING ( 5000 ) szConvertedAttributeValue
@@ -581,6 +583,7 @@ oTZRPSRCO_GenerateXML_CtlRecurs( zVIEW     vReportDef,
    zSHORT    RESULT; 
    zSHORT    lTempInteger_0; 
    zSHORT    lTempInteger_1; 
+   zSHORT    lTempInteger_2; 
 
 
    //:// Generate an attribute entry for each attribute with mapping in the GroupSet. Note that these are all at the same
@@ -629,11 +632,22 @@ oTZRPSRCO_GenerateXML_CtlRecurs( zVIEW     vReportDef,
             GetVariableFromAttribute( szAttributeName, 0, 'S', 33, vReportDef, "CtrlMapER_Attribute", "Name", "", 0 );
             //:szEntityName    = vReportDef.CtrlMapRelatedEntity.Name
             GetVariableFromAttribute( szEntityName, 0, 'S', 33, vReportDef, "CtrlMapRelatedEntity", "Name", "", 0 );
+            //:szContextName = ""
+            ZeidonStringCopy( szContextName, 1, 0, "", 1, 0, 33 );
+            //:IF vReportDef.CtrlMapContext EXISTS
+            lTempInteger_2 = CheckExistenceOfEntity( vReportDef, "CtrlMapContext" );
+            if ( lTempInteger_2 == 0 )
+            { 
+               //:szContextName = vReportDef.CtrlMapContext.Name  
+               GetVariableFromAttribute( szContextName, 0, 'S', 33, vReportDef, "CtrlMapContext", "Name", "", 0 );
+            } 
+
+            //:END
             //:IF vReportDef.CtrlMapView.Name = szDrivingObjectViewName   // Check if mapping if from Driving Object View.
             if ( CompareAttributeToString( vReportDef, "CtrlMapView", "Name", szDrivingObjectViewName ) == 0 )
             { 
-               //:GetStringFromAttributeByContext( szReturnedAttributeValue, vSourceOI, szEntityName, szAttributeName, "", 5000 )
-               GetStringFromAttributeByContext( szReturnedAttributeValue, vSourceOI, szEntityName, szAttributeName, "", 5000 );
+               //:GetStringFromAttributeByContext( szReturnedAttributeValue, vSourceOI, szEntityName, szAttributeName, szContextName, 5000 )
+               GetStringFromAttributeByContext( szReturnedAttributeValue, vSourceOI, szEntityName, szAttributeName, szContextName, 5000 );
                //:ELSE
             } 
             else
@@ -643,8 +657,8 @@ oTZRPSRCO_GenerateXML_CtlRecurs( zVIEW     vReportDef,
                GetVariableFromAttribute( szMappingName, 0, 'S', 33, vReportDef, "CtrlMapView", "Name", "", 0 );
                //:GET VIEW vMappingOI NAMED szMappingName
                RESULT = GetViewByName( &vMappingOI, szMappingName, vReportDef, zLEVEL_TASK );
-               //:GetStringFromAttributeByContext( szReturnedAttributeValue, vMappingOI, szEntityName, szAttributeName, "", 5000 )
-               GetStringFromAttributeByContext( szReturnedAttributeValue, vMappingOI, szEntityName, szAttributeName, "", 5000 );
+               //:GetStringFromAttributeByContext( szReturnedAttributeValue, vMappingOI, szEntityName, szAttributeName, szContextName, 5000 )
+               GetStringFromAttributeByContext( szReturnedAttributeValue, vMappingOI, szEntityName, szAttributeName, szContextName, 5000 );
             } 
 
             //:END

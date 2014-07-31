@@ -307,8 +307,8 @@ DialogCompareDataModels( zVIEW     vSubtask )
 
    //:STRING (512) FileName
    zCHAR     FileName[ 513 ] = { 0 }; 
-   //:STRING (9)   TruncatedName
-   zCHAR     TruncatedName[ 10 ] = { 0 }; 
+   //:STRING (32)  TruncatedName
+   zCHAR     TruncatedName[ 33 ] = { 0 }; 
    //:SHORT        nRC
    zSHORT    nRC = 0; 
    zSHORT    RESULT; 
@@ -321,8 +321,8 @@ DialogCompareDataModels( zVIEW     vSubtask )
    //:// Activate Other LPLR.
    //:FileName = vCM.LPLR.Name
    GetVariableFromAttribute( FileName, 0, 'S', 513, vCM, "LPLR", "Name", "", 0 );
-   //:TruncatedName = FileName [1:8]
-   ZeidonStringCopy( TruncatedName, 1, 0, FileName, 1, 8, 10 );
+   //:TruncatedName = FileName [1:32]
+   ZeidonStringCopy( TruncatedName, 1, 0, FileName, 1, 32, 33 );
    //:FileName = vCM.LPLR.ExecDir + "\" + TruncatedName + ".XLP"
    GetStringFromAttribute( FileName, vCM, "LPLR", "ExecDir" );
    ZeidonStringConcat( FileName, 1, 0, "\\", 1, 0, 513 );
@@ -1451,8 +1451,8 @@ SelectLPLR( zVIEW     vSubtask )
 
    //:STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
    zCHAR     SourceFileName[ 514 ] = { 0 }; 
-   //:STRING ( 9 )   TruncatedName
-   zCHAR     TruncatedName[ 10 ] = { 0 }; 
+   //:STRING ( 32 )  TruncatedName
+   zCHAR     TruncatedName[ 33 ] = { 0 }; 
    //:INTEGER        TempType
    zLONG     TempType = 0; 
    zSHORT    RESULT; 
@@ -1464,8 +1464,8 @@ SelectLPLR( zVIEW     vSubtask )
    //:// Activate OI and View to the source LPLR
    //:SourceFileName = vCM.LPLR.Name
    GetVariableFromAttribute( SourceFileName, 0, 'S', 514, vCM, "LPLR", "Name", "", 0 );
-   //:TruncatedName = SourceFileName [1:8]
-   ZeidonStringCopy( TruncatedName, 1, 0, SourceFileName, 1, 8, 10 );
+   //:TruncatedName = SourceFileName [1:32]
+   ZeidonStringCopy( TruncatedName, 1, 0, SourceFileName, 1, 32, 33 );
    //:SourceFileName = vCM.LPLR.ExecDir + "\" +
    //:                 TruncatedName + ".XLP"
    GetStringFromAttribute( SourceFileName, vCM, "LPLR", "ExecDir" );
@@ -2578,8 +2578,8 @@ SelectLPLR_ForSAMerge( zVIEW     vSubtask )
 
    //:STRING ( 513 ) SourceFileName            // zMAX_FILESPEC_LTH+1
    zCHAR     SourceFileName[ 514 ] = { 0 }; 
-   //:STRING ( 9 )   TruncatedName
-   zCHAR     TruncatedName[ 10 ] = { 0 }; 
+   //:STRING ( 32 )  TruncatedName
+   zCHAR     TruncatedName[ 33 ] = { 0 }; 
    zSHORT    RESULT; 
 
 
@@ -2589,8 +2589,8 @@ SelectLPLR_ForSAMerge( zVIEW     vSubtask )
    //:// Activate OI and View to the source LPLR
    //:SourceFileName = vCM.LPLR.Name
    GetVariableFromAttribute( SourceFileName, 0, 'S', 514, vCM, "LPLR", "Name", "", 0 );
-   //:TruncatedName = SourceFileName [1:8]
-   ZeidonStringCopy( TruncatedName, 1, 0, SourceFileName, 1, 8, 10 );
+   //:TruncatedName = SourceFileName [1:32]
+   ZeidonStringCopy( TruncatedName, 1, 0, SourceFileName, 1, 32, 33 );
    //:SourceFileName = vCM.LPLR.ExecDir + "\" +
    //:                 TruncatedName + ".XLP"
    GetStringFromAttribute( SourceFileName, vCM, "LPLR", "ExecDir" );

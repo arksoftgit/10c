@@ -1540,7 +1540,7 @@ zwTZZOLODD_LoadLODList( zVIEW vSubtask )
 {
    zVIEW    vTZLODS;
    zVIEW    vTZZOLODO;
-   zCHAR    szLodName[ 33 ];
+   zCHAR    szLodName[33];
    zSHORT   nRC;
 
    // Obtain list of LOD's and position on the current LOD if there is
@@ -1597,7 +1597,7 @@ zwfnTZZOLODD_AskForSave( zVIEW vSubtask )
    zVIEW    vTZZOLODO;
    zSHORT   nRC;
    zBOOL    nSaveAs = FALSE;
-   zCHAR    szLodName[ 33 ];
+   zCHAR    szLodName[33];
    zCHAR    szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    // Get Access to LOD Object
@@ -7798,7 +7798,7 @@ zwfnTZZOLODD_SaveAsSetSourceName( zVIEW   vSubtask,
                                   zVIEW   vLodData,
                                   zSHORT  nIndex )
 {
-   zCHAR  szNewName[ 33 ];
+   zCHAR  szNewName[33];
    zCHAR  szIndex[ 4 ];
    zSHORT nPosition = 0;
    zSHORT nRC;
@@ -7936,8 +7936,8 @@ zwfnTZZOLODD_SaveAsCheckFileName( zVIEW    vSubtask,
 {
    zVIEW    vSaveAsCopy;
    zSHORT   nRC;
-   zCHAR    szNewName[ 33 ];
-   zCHAR    szFileName[ 33 ];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
    zCHAR    szMsg[ zSHORT_MESSAGE_LTH + 1 ];
 
    CreateViewFromViewForTask( &vSaveAsCopy, vSaveAs, 0 );
@@ -7996,8 +7996,8 @@ zwfnTZZOLODD_SaveAsCheckName( zVIEW    vSubtask,
 {
    zVIEW  vDialog_LPLR;
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
-   zCHAR  szDLLName[ 33 ];
-   zCHAR  szNewName[ 33 ];
+   zCHAR  szDLLName[33];
+   zCHAR  szNewName[33];
 
    //Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
@@ -8089,8 +8089,8 @@ zwfnTZZOLODD_SaveAsGetFileName( zVIEW  vTaskLPLR,
                                 zPCHAR szSourceFileName )
 {
    zCHAR    szExtension[ zMAX_EXTENSION_LTH + 1 ];
-   zCHAR    szNewName[ 33 ];
-   zCHAR    szFileName[ 33 ];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
 
    GetStringFromAttribute( szNewName, vView, "SourceFile", szAttribute );
    UfCompressName( szNewName, szFileName, 32, "", "", "", "", 0 );
@@ -8839,8 +8839,8 @@ zwTZZOLODD_CheckNameForCheckOut( zVIEW vSubtask )
    zSHORT  nEnable = 1;
    zVIEW   vTZZOLFLO;
    zVIEW   vTZZOLFLO_Copy;
-   zCHAR   szNewName[ 33 ];
-   zCHAR   szOutName[ 33 ];
+   zCHAR   szNewName[33];
+   zCHAR   szOutName[33];
 
    GetCtrlText( vSubtask, "edLODName", szNewName, 33 );
    UfCompressName( szNewName, szOutName, 32, "", "", "", "", 0 );
@@ -9251,8 +9251,8 @@ zwTZZOLODD_SaveAsSetDefaults( zVIEW vSubtask )
    zVIEW  vSaveAs;
    zVIEW  vTZZOLFLO;
    zVIEW  vTZLodList;
-   zCHAR  szNewName[ 33 ];
-   zCHAR  szOutName[ 33 ];
+   zCHAR  szNewName[33];
+   zCHAR  szOutName[33];
    zSHORT nRC;
    zSHORT nIndex = -1;
 

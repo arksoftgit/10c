@@ -1023,7 +1023,7 @@ wTZOPRUSD_SaveSourceFile( zVIEW vSubtask )
    else
    {
       if ( szLanguageType[ 0 ] == 'S' )
-         SetAttributeFromString( vMetaView, "SourceFile", "Extension",
+      SetAttributeFromString( vMetaView, "SourceFile", "Extension",
                                  "Scala" );
       else
       {
@@ -1032,7 +1032,7 @@ wTZOPRUSD_SaveSourceFile( zVIEW vSubtask )
                                  "Java" );
       else
          SetAttributeFromString( vMetaView, "SourceFile", "Extension",
-                                 "C" );
+                              "C" );
       }
    }
 

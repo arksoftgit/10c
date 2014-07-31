@@ -1,14 +1,14 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H"
-#include "TZ__OPRS.H"
-#include "TZVMLIP.H"
-#include "ZDRVROPR.H"
-
+#include "KZOENGAA.H" 
+#include "TZ__OPRS.H" 
+#include "TZVMLIP.H" 
+#include "ZDRVROPR.H" 
+ 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
+ 
 #include "ZEIDONOP.H"
 
 static zSHORT
@@ -40,12 +40,12 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
                            zVIEW     vSourceLPLR,
                            zVIEW     vSubtask )
 {
-   zCHAR     szSrcLPLR[ 513 ] = { 0 };
+   zCHAR     szSrcLPLR[ 513 ] = { 0 }; 
    //:STRING (512) szBaseDir
-   zCHAR     szBaseDir[ 513 ] = { 0 };
+   zCHAR     szBaseDir[ 513 ] = { 0 }; 
    //:STRING (512) szAktDir
-   zCHAR     szAktDir[ 513 ] = { 0 };
-   zSHORT    RESULT;
+   zCHAR     szAktDir[ 513 ] = { 0 }; 
+   zSHORT    RESULT; 
 
 
    //:szSrcLPLR = vSourceLPLR.LPLR.Name
@@ -56,11 +56,11 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
    //:FOR EACH vSourceLPLR.Compiler
    RESULT = SetCursorFirstEntity( vSourceLPLR, "Compiler", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:IF vSourceLPLR.Compiler.CompilerName != ""
       if ( CompareAttributeToString( vSourceLPLR, "Compiler", "CompilerName", "" ) != 0 )
-      {
+      { 
 
          //:CREATE ENTITY vCurrentLPLR.Compiler
          RESULT = CreateEntity( vCurrentLPLR, "Compiler", zPOS_AFTER );
@@ -76,7 +76,7 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
          //:FOR EACH vSourceLPLR.Include
          RESULT = SetCursorFirstEntity( vSourceLPLR, "Include", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         {
+         { 
             //: CREATE ENTITY vCurrentLPLR.Include
             RESULT = CreateEntity( vCurrentLPLR, "Include", zPOS_AFTER );
             //: SetMatchingAttributesByName( vCurrentLPLR, "Include",
@@ -88,14 +88,14 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
             //:                   "IncludeDir", "Include Dir", "Migrate Compiler Spec", 254 )
             SetCompSpecPaths( vCurrentLPLR, szBaseDir, szSrcLPLR, szAktDir, "Include", "IncludeDir", "Include Dir", "Migrate Compiler Spec", 254 );
             RESULT = SetCursorNextEntity( vSourceLPLR, "Include", "" );
-         }
+         } 
 
          //:END
 
          //:FOR EACH vSourceLPLR.Lib
          RESULT = SetCursorFirstEntity( vSourceLPLR, "Lib", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         {
+         { 
             //: CREATE ENTITY vCurrentLPLR.Lib
             RESULT = CreateEntity( vCurrentLPLR, "Lib", zPOS_AFTER );
             //: SetMatchingAttributesByName( vCurrentLPLR, "Lib",
@@ -107,14 +107,14 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
             //:                   "Lib Dir", "Migrate Compiler Spec", 254 )
             SetCompSpecPaths( vCurrentLPLR, szBaseDir, szSrcLPLR, szAktDir, "Lib", "LibDir", "Lib Dir", "Migrate Compiler Spec", 254 );
             RESULT = SetCursorNextEntity( vSourceLPLR, "Lib", "" );
-         }
+         } 
 
          //:END
 
          //:FOR EACH vSourceLPLR.ExternalTarget
          RESULT = SetCursorFirstEntity( vSourceLPLR, "ExternalTarget", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         {
+         { 
             //: CREATE ENTITY vCurrentLPLR.ExternalTarget
             RESULT = CreateEntity( vCurrentLPLR, "ExternalTarget", zPOS_AFTER );
             //: SetMatchingAttributesByName( vCurrentLPLR, "ExternalTarget",
@@ -124,7 +124,7 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
             //: FOR EACH vSourceLPLR.ExternalObjFile
             RESULT = SetCursorFirstEntity( vSourceLPLR, "ExternalObjFile", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            {
+            { 
                //:  CREATE ENTITY vCurrentLPLR.ExternalObjFile
                RESULT = CreateEntity( vCurrentLPLR, "ExternalObjFile", zPOS_AFTER );
                //:  SetMatchingAttributesByName( vCurrentLPLR, "ExternalObjFile",
@@ -136,14 +136,14 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
                //:                    "Name", "External Object Dir", "Migrate Compiler Spec", 512 )
                SetCompSpecPaths( vCurrentLPLR, szBaseDir, szSrcLPLR, szAktDir, "ExternalObjFile", "Name", "External Object Dir", "Migrate Compiler Spec", 512 );
                RESULT = SetCursorNextEntity( vSourceLPLR, "ExternalObjFile", "" );
-            }
+            } 
 
             //: END
 
             //: FOR EACH vSourceLPLR.ExternalLibFile
             RESULT = SetCursorFirstEntity( vSourceLPLR, "ExternalLibFile", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            {
+            { 
                //:  CREATE ENTITY vCurrentLPLR.ExternalLibFile
                RESULT = CreateEntity( vCurrentLPLR, "ExternalLibFile", zPOS_AFTER );
                //:  SetMatchingAttributesByName( vCurrentLPLR, "ExternalLibFile",
@@ -155,24 +155,24 @@ oTZCMLPLO_CompilerMigrate( zVIEW     vCurrentLPLR,
                //:                    "Name", "External Lib Dir", "Migrate Compiler Spec", 512 )
                SetCompSpecPaths( vCurrentLPLR, szBaseDir, szSrcLPLR, szAktDir, "ExternalLibFile", "Name", "External Lib Dir", "Migrate Compiler Spec", 512 );
                RESULT = SetCursorNextEntity( vSourceLPLR, "ExternalLibFile", "" );
-            }
+            } 
 
             RESULT = SetCursorNextEntity( vSourceLPLR, "ExternalTarget", "" );
             //: END
-         }
+         } 
 
 
          //:END
-      }
+      } 
 
       RESULT = SetCursorNextEntity( vSourceLPLR, "Compiler", "" );
       //:END
-   }
+   } 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -188,15 +188,15 @@ oTZCMLPLO_HeaderMigrate( zVIEW     SourceLPLR,
                          zPVIEW    NewHeader,
                          zVIEW     vSubtask )
 {
-   zVIEW     OldHeader = 0;
+   zVIEW     OldHeader = 0; 
    //:VIEW CurrentLPLR BASED ON LOD TZCMLPLO
-   zVIEW     CurrentLPLR = 0;
+   zVIEW     CurrentLPLR = 0; 
 
    //:STRING ( 513 ) HeaderFileName1  // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     HeaderFileName1[ 514 ] = { 0 };
+   zCHAR     HeaderFileName1[ 514 ] = { 0 }; 
    //:STRING ( 513 ) HeaderFileName2  // size according to zMAX_FILESPEC_LTH+1
-   zCHAR     HeaderFileName2[ 514 ] = { 0 };
-   zSHORT    RESULT;
+   zCHAR     HeaderFileName2[ 514 ] = { 0 }; 
+   zSHORT    RESULT; 
 
 
    //:// Copy the .H file, if it exists, from the source directory to the target directory.
@@ -246,7 +246,7 @@ oTZCMLPLO_HeaderMigrate( zVIEW     SourceLPLR,
    //:FOR EACH OldHeader.DefinedItem
    RESULT = SetCursorFirstEntity( OldHeader, "DefinedItem", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:CreateMetaEntity( vSubtask, NewHeader, "DefinedItem", zPOS_AFTER )
       CreateMetaEntity( vSubtask, *NewHeader, "DefinedItem", zPOS_AFTER );
@@ -254,7 +254,7 @@ oTZCMLPLO_HeaderMigrate( zVIEW     SourceLPLR,
       //:                             "DefinedItem", zSET_NULL )
       SetMatchingAttributesByName( *NewHeader, "DefinedItem", OldHeader, "DefinedItem", zSET_NULL );
       RESULT = SetCursorNextEntity( OldHeader, "DefinedItem", "" );
-   }
+   } 
 
    //:END
 
@@ -264,7 +264,7 @@ oTZCMLPLO_HeaderMigrate( zVIEW     SourceLPLR,
    CommitMetaOI( vSubtask, *NewHeader, zSOURCE_HDR_META );
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -276,11 +276,11 @@ static zSHORT
 oTZCMLPLO_SetCompilerSpecDir( zVIEW     vSourceLPLR,
                               zVIEW     vCurrentLPLR )
 {
-   zCHAR     szSrcLPLR[ 513 ] = { 0 };
+   zCHAR     szSrcLPLR[ 513 ] = { 0 }; 
    //:STRING (512) szBaseDir
-   zCHAR     szBaseDir[ 513 ] = { 0 };
+   zCHAR     szBaseDir[ 513 ] = { 0 }; 
    //:STRING (512) szActDir
-   zCHAR     szActDir[ 513 ] = { 0 };
+   zCHAR     szActDir[ 513 ] = { 0 }; 
 
 
    //:szSrcLPLR = vSourceLPLR.LPLR.Name
@@ -317,7 +317,7 @@ oTZCMLPLO_SetCompilerSpecDir( zVIEW     vSourceLPLR,
    SetCompSpecPaths( vCurrentLPLR, szBaseDir, szSrcLPLR, szActDir, "Compiler", "EnvironmentDir", "Resource Dir", "Migrate Compiler Spec", 254 );
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -327,25 +327,25 @@ oTZCMLPLO_SetCompilerSpecDir( zVIEW     vSourceLPLR,
 static zSHORT
 oTZCMLPLO_SetUniqueSpecName( zVIEW     vCurrentLPLR )
 {
-   zCHAR     szNewName[ 33 ] = { 0 };
+   zCHAR     szNewName[ 33 ] = { 0 }; 
    //:STRING ( 32 ) szCurrentName
-   zCHAR     szCurrentName[ 33 ] = { 0 };
+   zCHAR     szCurrentName[ 33 ] = { 0 }; 
    //:STRING ( 11 ) szSuffix
-   zCHAR     szSuffix[ 12 ] = { 0 };
+   zCHAR     szSuffix[ 12 ] = { 0 }; 
    //:STRING ( 10 ) szNumber
-   zCHAR     szNumber[ 11 ] = { 0 };
+   zCHAR     szNumber[ 11 ] = { 0 }; 
    //:INTEGER       lNumber
-   zLONG     lNumber = 0;
+   zLONG     lNumber = 0; 
    //:INTEGER       lSuffixLen
-   zLONG     lSuffixLen = 0;
+   zLONG     lSuffixLen = 0; 
    //:INTEGER       lNewLen
-   zLONG     lNewLen = 0;
+   zLONG     lNewLen = 0; 
    //:INTEGER       lCurrentLen
-   zLONG     lCurrentLen = 0;
+   zLONG     lCurrentLen = 0; 
 
    //:VIEW vTempName BASED ON LOD TZCMLPLO
-   zVIEW     vTempName = 0;
-   zSHORT    RESULT;
+   zVIEW     vTempName = 0; 
+   zSHORT    RESULT; 
 
 
    //:CreateViewFromViewForTask( vTempName, vCurrentLPLR, 0 )
@@ -370,7 +370,7 @@ oTZCMLPLO_SetUniqueSpecName( zVIEW     vCurrentLPLR )
 
    //:LOOP WHILE RESULT >= zCURSOR_SET
    while ( RESULT >= zCURSOR_SET )
-   {
+   { 
 
       //:  lNumber = lNumber + 1
       lNumber = lNumber + 1;
@@ -388,27 +388,27 @@ oTZCMLPLO_SetUniqueSpecName( zVIEW     vCurrentLPLR )
 
       //:  IF  lNewLen <= 32
       if ( lNewLen <= 32 )
-      {
+      { 
          //:   szNewName = szCurrentName + szSuffix
          ZeidonStringCopy( szNewName, 1, 0, szCurrentName, 1, 0, 33 );
          ZeidonStringConcat( szNewName, 1, 0, szSuffix, 1, 0, 33 );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:   lNewLen   = lCurrentLen - lSuffixLen
          lNewLen = lCurrentLen - lSuffixLen;
          //:   szNewName = szCurrentName[1:lNewLen] + szSuffix
          ZeidonStringCopy( szNewName, 1, 0, szCurrentName, 1, lNewLen, 33 );
          ZeidonStringConcat( szNewName, 1, 0, szSuffix, 1, 0, 33 );
-      }
+      } 
 
       //:  END
 
       //:  SET CURSOR FIRST vTempName.Compiler
       //:             WHERE vTempName.Compiler.Name = szNewName
       RESULT = SetCursorFirstEntityByString( vTempName, "Compiler", "Name", szNewName, "" );
-   }
+   } 
 
 
    //:END
@@ -419,7 +419,7 @@ oTZCMLPLO_SetUniqueSpecName( zVIEW     vCurrentLPLR )
    SetAttributeFromString( vCurrentLPLR, "Compiler", "Name", szNewName );
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -441,31 +441,31 @@ oTZCMLPLO_SetCompilerPathes( zVIEW     vSource,
                              zPCHAR    pszDirName,
                              zSHORT    sMaxLen )
 {
-   zSHORT    sRC = 0;
+   zSHORT    sRC = 0; 
    //:SHORT sAnfPos
-   zSHORT    sAnfPos = 0;
+   zSHORT    sAnfPos = 0; 
    //:SHORT sAnzahl
-   zSHORT    sAnzahl = 0;
+   zSHORT    sAnzahl = 0; 
    //:SHORT sAktLth
-   zSHORT    sAktLth = 0;
+   zSHORT    sAktLth = 0; 
    //:SHORT sBaseLth
-   zSHORT    sBaseLth = 0;
+   zSHORT    sBaseLth = 0; 
    //:STRING (1024) szNewPath
-   zCHAR     szNewPath[ 1025 ] = { 0 };
+   zCHAR     szNewPath[ 1025 ] = { 0 }; 
    //:STRING (10) szLPLRName
-   zCHAR     szLPLRName[ 11 ] = { 0 };
+   zCHAR     szLPLRName[ 11 ] = { 0 }; 
    //:STRING (10) szLPLRNameUpper
-   zCHAR     szLPLRNameUpper[ 11 ] = { 0 };
+   zCHAR     szLPLRNameUpper[ 11 ] = { 0 }; 
    //:STRING (256) szBaseDir
-   zCHAR     szBaseDir[ 257 ] = { 0 };
+   zCHAR     szBaseDir[ 257 ] = { 0 }; 
    //:STRING (256) szActDir
-   zCHAR     szActDir[ 257 ] = { 0 };
+   zCHAR     szActDir[ 257 ] = { 0 }; 
    //:STRING (256) szBaseDirUpper
-   zCHAR     szBaseDirUpper[ 257 ] = { 0 };
+   zCHAR     szBaseDirUpper[ 257 ] = { 0 }; 
    //:STRING (256) szActDirUpper
-   zCHAR     szActDirUpper[ 257 ] = { 0 };
+   zCHAR     szActDirUpper[ 257 ] = { 0 }; 
    //:STRING (512) szMsg
-   zCHAR     szMsg[ 513 ] = { 0 };
+   zCHAR     szMsg[ 513 ] = { 0 }; 
 
 
    //:GetStringFromAttribute( szBaseDir, vSource, "LPLR", "MetaSrcDir" )
@@ -481,7 +481,7 @@ oTZCMLPLO_SetCompilerPathes( zVIEW     vSource,
    sRC = GenFullQualPathFromRelPath( szActDir, szBaseDir, szNewPath, sMaxLen );
    //:CASE sRC
    switch( sRC )
-   {
+   { 
       //:  OF 0:  // The pathname was relative
       case 0 :
          //:      // We take the name like it is.
@@ -499,21 +499,21 @@ oTZCMLPLO_SetCompilerPathes( zVIEW     vSource,
          sRC = zSearchSubString( szActDirUpper, szLPLRNameUpper, "f", 0 );
          //:      IF sRC = -1
          if ( sRC == -1 )
-         {
+         { 
             //:      // LPLR-Name not found. Take the pathname like it is
             //:      SetAttributeFromString( vTarget, pszEntityName, pszAttributeName, szActDir)
             SetAttributeFromString( vTarget, pszEntityName, pszAttributeName, szActDir );
             //:   ELSE
-         }
+         } 
          else
-         {
+         { 
             //:      // LPLR-Name is included in the pathname
             //:      // See if ComponentSourceDirectory is part of the pathname
             //:      sRC = zSearchSubString ( szActDirUpper, szBaseDirUpper, "f", 0 )
             sRC = zSearchSubString( szActDirUpper, szBaseDirUpper, "f", 0 );
             //:      IF sRC = -1
             if ( sRC == -1 )
-            {
+            { 
                //:      // Component Source Directory isn't part of the pathname
                //:      szMsg = "Counld't change " + pszDirName + " in CompilerSpec!"
                ZeidonStringCopy( szMsg, 1, 0, "Counld't change ", 1, 0, 513 );
@@ -522,9 +522,9 @@ oTZCMLPLO_SetCompilerPathes( zVIEW     vSource,
                //:      TraceLineS( "Migrate Compiler Specification: ", szMsg)
                TraceLineS( "Migrate Compiler Specification: ", szMsg );
                //:   ELSE
-            }
+            } 
             else
-            {
+            { 
                //:      // Component Source Directory is part of the pathname
                //:      // Take the new component Source directory and add the end of
                //:      // the original pathname
@@ -542,10 +542,10 @@ oTZCMLPLO_SetCompilerPathes( zVIEW     vSource,
                ZeidonStringConcat( szBaseDir, 1, 0, szActDir, sAnfPos, sAnzahl, 257 );
                //:      SetAttributeFromString( vTarget, pszEntityName, pszAttributeName, szBaseDir)
                SetAttributeFromString( vTarget, pszEntityName, pszAttributeName, szBaseDir );
-            }
+            } 
 
             //:      END
-         }
+         } 
 
          //:      END
          break ;
@@ -559,14 +559,14 @@ oTZCMLPLO_SetCompilerPathes( zVIEW     vSource,
          TraceLineS( "Migrate Compiler Specification: ", szMsg );
          //:           return
          return( 0 );
-      }
+      } 
 
       //:END
       return( 0 );
-   }
+   } 
 
 
-
+ 
 #ifdef __cplusplus
 }
 #endif

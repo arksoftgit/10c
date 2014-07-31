@@ -1,4 +1,4 @@
-z1000-Zeidon    DATA     TZDGSRCO 04/23/13   15:00:21 1.0a2    
+z1000-Zeidon    DATA     TZDGSRCO 01/22/14   16:16:45 1.0a2    
 eDomainGroup 1
 aZKey      1319805
 aName      DATA
@@ -231,9 +231,6 @@ aName      OperationGenerationType
 aIsDefault Y
 
 eTableEntry 4
-aZKey      92726981
-
-eTableEntry 4
 aZKey      92726979
 aExternalValue C Generation Only
 aInternalValue C
@@ -344,7 +341,7 @@ aIsDefault Y
 aDIL_Text  LanguageType and Extension for SourceFiles
 
 eTableEntry 4
-aZKey      92484525
+aZKey      110001393
 
 eTableEntry 4
 aZKey      90026795
@@ -355,6 +352,16 @@ eTableEntry 4
 aZKey      90026796
 aExternalValue VML
 aInternalValue V
+
+eTableEntry 4
+aZKey      110001385
+aExternalValue Java
+aInternalValue J
+
+eTableEntry 4
+aZKey      110001392
+aExternalValue Scala
+aInternalValue S
 
 eDomain    2
 aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain

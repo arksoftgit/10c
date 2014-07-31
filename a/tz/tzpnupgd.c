@@ -40,7 +40,7 @@ UpgradeDialog1( zVIEW    vSubtask,
 
    nZRetCode = RetrieveViewForMetaList( vSubtask, &LOD_List, 2013 );
    nZRetCode = ActivateMetaOI( vSubtask, &vPE, LOD_List, 2013, zSINGLE );
-   nZRetCode = ActivateOI_FromFile( &vType, "TZPACTLO", vSubtask, "c:\\10c\\W\\BIN\\SYS\\TZPACTLI.POR", zSINGLE );
+   nZRetCode = ActivateOI_FromFile( &vType, "TZPACTLO", vSubtask, "c:\\10e\\W\\BIN\\SYS\\TZPACTLI.POR", zSINGLE );
    lTempInteger_0 = CheckExistenceOfEntity( OrigW, "SourceFile" );
    if ( lTempInteger_0 < 0 )
    {

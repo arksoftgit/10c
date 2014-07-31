@@ -1,4 +1,4 @@
-z1000-Zeidon    TZRPSRCO TZZOLODO 03/08/13   14:50:25 1.0a2    
+z1000-Zeidon    TZRPSRCO TZZOLODO 11/15/13   21:05:34 1.0a2    
 eLOD       1
 aZKey      90145850
 aName      TZRPSRCO
@@ -5707,6 +5707,8 @@ eDomainRec 7
 
 eLOD_AttributeRec 5
 aZKey      92656839
+aUpdate    Y
+aSeqOrder  A
 
 eER_AttributeRec 6
 
@@ -6028,6 +6030,8 @@ eDomainRec 6
 
 eLOD_AttributeRec 4
 aZKey      92656816
+aUpdate    Y
+aSeqOrder  A
 
 eER_AttributeRec 5
 
@@ -6359,7 +6363,6 @@ aSeqNo_LOD_Entity 5
 eER_AttributeRec 4
 aName      wDLL_Name
 aZKey      89388673
-aLth       8
 aDesc      Executable Name of DLL
 
 eDomainRec 5
@@ -6510,7 +6513,7 @@ aZKey      90145848
 aName      MetaName
 aDomainType E
 aDataType  S
-aMaxStringLth 8
+aMaxStringLth 32
 aDesc      Name of a meta object (ie., LOD, Dialog, Report)
 aContextRestriction N
 
@@ -6553,6 +6556,7 @@ eDomainRec 5
 eLOD_AttributeRec 3
 aZKey      1074003
 aUpdate    Y
+aSeqOrder  A
 
 eER_AttributeRec 4
 aName      MarginTop
@@ -6563,6 +6567,7 @@ eDomainRec 5
 eLOD_AttributeRec 3
 aZKey      1074004
 aUpdate    Y
+aSeqOrder  A
 
 eER_AttributeRec 4
 aName      MarginLeft
@@ -6573,6 +6578,7 @@ eDomainRec 5
 eLOD_AttributeRec 3
 aZKey      1074005
 aUpdate    Y
+aSeqOrder  A
 
 eER_AttributeRec 4
 aName      MarginBottom
@@ -6583,6 +6589,7 @@ eDomainRec 5
 eLOD_AttributeRec 3
 aZKey      1074006
 aUpdate    Y
+aSeqOrder  A
 
 eER_AttributeRec 4
 aName      MarginRight
@@ -6599,7 +6606,7 @@ aER_DiagramPosX 420
 aER_DiagramPosY 84
 
 eLOD_Entity 2
-awkSelectedAttributeForDragSort 14
+awkSelectedAttributeForDragSort 36
 
 eLOD_Attribute 3
 awkSequence 1
@@ -9729,7 +9736,7 @@ eER_Attribute 4
 eDomain    5
 
 eLOD_Entity 2
-awkSelectedAttributeForDragSort 6
+awkSelectedAttributeForDragSort 5
 
 eLOD_Attribute 3
 awkSequence 1
@@ -9804,6 +9811,7 @@ eDomain    5
 eER_Entity 3
 
 eLOD_Entity 2
+awkSelectedAttributeForDragSort 2
 
 eLOD_Attribute 3
 awkSequence 1
@@ -12308,7 +12316,7 @@ aGenKeyExecutable KZHGENKY
 aDisplayOwner Y
 aDisplayDBMS_ID N
 aDBH_Data  322
-TZDBHODO ********************************************************************************************************************************z10000Zeidon    ZBLOBOI  TZDBHODO 09/22/99   13:50:33 1.0a     
+TZDBHODO ********************************************************************************************************************************z10000Zeidon    ZBLOBOI  TZDBHODO 09/22/99   13:50:33 1.0a     
 eODBC      1
 aTimestampPrecision 3
 aTimestampAsString N

@@ -1,13 +1,13 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H"
-#include "ZDRVROPR.H"
-#include "TZVMLIP.H"
-
+#include "KZOENGAA.H" 
+#include "ZDRVROPR.H" 
+#include "TZVMLIP.H" 
+ 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
+ 
 #include "ZEIDONOP.H"
 
 static zSHORT
@@ -39,52 +39,52 @@ oTZRPSRCO_XSLT_BuildCtrlsInRows( zVIEW     vReportDefRoot,
                                  zPCHAR    szOutputLine,
                                  zPCHAR    szIndentationChars )
 {
-   zVIEW     vReportDef3 = 0;
+   zVIEW     vReportDef3 = 0; 
    //:STRING ( 20 )  szCurrentWidth
-   zCHAR     szCurrentWidth[ 21 ] = { 0 };
+   zCHAR     szCurrentWidth[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szPageWidth
-   zCHAR     szPageWidth[ 21 ] = { 0 };
+   zCHAR     szPageWidth[ 21 ] = { 0 }; 
    //:STRING ( 30 )  szCellPaddingName
-   zCHAR     szCellPaddingName[ 31 ] = { 0 };
+   zCHAR     szCellPaddingName[ 31 ] = { 0 }; 
    //:STRING ( 50 )  szAttributeMappingName
-   zCHAR     szAttributeMappingName[ 51 ] = { 0 };
+   zCHAR     szAttributeMappingName[ 51 ] = { 0 }; 
    //:STRING ( 256 ) szConstantArea
-   zCHAR     szConstantArea[ 257 ] = { 0 };
+   zCHAR     szConstantArea[ 257 ] = { 0 }; 
    //:STRING ( 50 )  szCellPadding
-   zCHAR     szCellPadding[ 51 ] = { 0 };
+   zCHAR     szCellPadding[ 51 ] = { 0 }; 
    //:STRING ( 20 )  szTableMarginTop
-   zCHAR     szTableMarginTop[ 21 ] = { 0 };
+   zCHAR     szTableMarginTop[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTablePaddingLeft
-   zCHAR     szTablePaddingLeft[ 21 ] = { 0 };
+   zCHAR     szTablePaddingLeft[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTableWidth
-   zCHAR     szTableWidth[ 21 ] = { 0 };
+   zCHAR     szTableWidth[ 21 ] = { 0 }; 
    //:INTEGER       CurrentWidth
-   zLONG     CurrentWidth = 0;
+   zLONG     CurrentWidth = 0; 
    //:INTEGER       CurrentPositionY
-   zLONG     CurrentPositionY = 0;
+   zLONG     CurrentPositionY = 0; 
    //:INTEGER       LastPositionY
-   zLONG     LastPositionY = 0;
+   zLONG     LastPositionY = 0; 
    //:INTEGER       FirstColumnPosition
-   zLONG     FirstColumnPosition = 0;
+   zLONG     FirstColumnPosition = 0; 
    //:INTEGER       TopGroupPosition
-   zLONG     TopGroupPosition = 0;
+   zLONG     TopGroupPosition = 0; 
    //:INTEGER       ColumnCount
-   zLONG     ColumnCount = 0;
+   zLONG     ColumnCount = 0; 
    //:INTEGER       TextColumnCount
-   zLONG     TextColumnCount = 0;
+   zLONG     TextColumnCount = 0; 
    //:INTEGER       RowCount
-   zLONG     RowCount = 0;
+   zLONG     RowCount = 0; 
    //:INTEGER       TablePaddingLeft
-   zLONG     TablePaddingLeft = 0;
+   zLONG     TablePaddingLeft = 0; 
    //:INTEGER       TableMarginTop
-   zLONG     TableMarginTop = 0;
+   zLONG     TableMarginTop = 0; 
    //:INTEGER       TableWidth
-   zLONG     TableWidth = 0;
+   zLONG     TableWidth = 0; 
    //:INTEGER       LastRowPosition
-   zLONG     LastRowPosition = 0;
+   zLONG     LastRowPosition = 0; 
    //:INTEGER       LastRowHeight
-   zLONG     LastRowHeight = 0;
-   zSHORT    RESULT;
+   zLONG     LastRowHeight = 0; 
+   zSHORT    RESULT; 
 
 
    //:szOutputLine = szIndentationChars + "<!-- In XSLT_BuildCtrlsInRows -->"
@@ -119,7 +119,7 @@ oTZRPSRCO_XSLT_BuildCtrlsInRows( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDefRoot.XSLT_WorkRow
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkRow", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:// Build Row & Cell statements. Each work row becomes a single table with a single row.
 
@@ -130,7 +130,7 @@ oTZRPSRCO_XSLT_BuildCtrlsInRows( zVIEW     vReportDefRoot,
       //:XSLT_GroupTable( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars, RowCount, "" )
       oTZRPSRCO_XSLT_GroupTable( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars, RowCount, "" );
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkRow", "" );
-   }
+   } 
 
 
    //:END
@@ -139,16 +139,16 @@ oTZRPSRCO_XSLT_BuildCtrlsInRows( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDefRoot.XSLT_WorkRow
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkRow", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:DELETE ENTITY vReportDefRoot.XSLT_WorkRow NONE
       RESULT = DeleteEntity( vReportDefRoot, "XSLT_WorkRow", zREPOS_NONE );
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkRow", "" );
-   }
+   } 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -170,19 +170,19 @@ oTZRPSRCO_XSLT_BuildBlockData( zVIEW     vReportDefRoot,
                                zPCHAR    szIndentationChars,
                                zLONG     GroupHierarchicalLevel )
 {
-   zCHAR     szPaddingTop[ 21 ] = { 0 };
+   zCHAR     szPaddingTop[ 21 ] = { 0 }; 
    //:STRING ( 256 ) szAttributeMappingName
-   zCHAR     szAttributeMappingName[ 257 ] = { 0 };
+   zCHAR     szAttributeMappingName[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szConstantArea
-   zCHAR     szConstantArea[ 257 ] = { 0 };
+   zCHAR     szConstantArea[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szStyle
-   zCHAR     szStyle[ 257 ] = { 0 };
+   zCHAR     szStyle[ 257 ] = { 0 }; 
    //:STRING ( 10 )  szLineWidth
-   zCHAR     szLineWidth[ 11 ] = { 0 };
+   zCHAR     szLineWidth[ 11 ] = { 0 }; 
    //:INTEGER        PaddingTop
-   zLONG     PaddingTop = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
+   zLONG     PaddingTop = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
 
 
    //:szOutputLine = szIndentationChars + "<!-- In XSLT_BuildBlockData -->"
@@ -202,19 +202,19 @@ oTZRPSRCO_XSLT_BuildBlockData( zVIEW     vReportDefRoot,
    GetIntegerFromAttribute( &lTempInteger_0, vReportDefRoot, "XSLT_WorkColumn", "ControlZKey" );
    RESULT = SetCursorFirstEntityByInteger( vReportDef, "Control", "ZKey", lTempInteger_0, "" );
    //:// KJS 11/28/12
-   //:IF RESULT >= zCURSOR_SET
+   //:IF RESULT >= zCURSOR_SET 
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
 
       //:XSLT_BuildControl( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars )
       oTZRPSRCO_XSLT_BuildControl( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars );
-   }
+   } 
 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -232,51 +232,51 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
                              zPCHAR    szOutputLine,
                              zPCHAR    szIndentationChars )
 {
-   zCHAR     szPaddingTop[ 21 ] = { 0 };
+   zCHAR     szPaddingTop[ 21 ] = { 0 }; 
    //:STRING ( 256 ) szAttributeMappingName
-   zCHAR     szAttributeMappingName[ 257 ] = { 0 };
+   zCHAR     szAttributeMappingName[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szConstantArea
-   zCHAR     szConstantArea[ 257 ] = { 0 };
+   zCHAR     szConstantArea[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szStyle
-   zCHAR     szStyle[ 257 ] = { 0 };
+   zCHAR     szStyle[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szStyleLeader
-   zCHAR     szStyleLeader[ 257 ] = { 0 };
+   zCHAR     szStyleLeader[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szAttribPrefix  // szAttribPrefix is only for the Page Header and Page Footer
-   zCHAR     szAttribPrefix[ 257 ] = { 0 };
+   zCHAR     szAttribPrefix[ 257 ] = { 0 }; 
    //:STRING ( 10 )  szLineWidth
-   zCHAR     szLineWidth[ 11 ] = { 0 };
+   zCHAR     szLineWidth[ 11 ] = { 0 }; 
    //:INTEGER        PaddingTop
-   zLONG     PaddingTop = 0;
-   zSHORT    lTempInteger_0;
-   zCHAR     szTempString_0[ 33 ];
-   zCHAR     szTempString_1[ 33 ];
+   zLONG     PaddingTop = 0; 
+   zSHORT    lTempInteger_0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
 
 
    //:// This is for page heading/footing
    //://IF vReportDefRoot.XSLT_WorkGroup.RecursiveNumber = -1
    //:// WHEN WE ARE DOWN RECURSIVELY, WE CAN"T SEE Report. NOT SURE WHAT TO DO
 
-   //:IF vReportDefRoot.Report.wOriginalViewName != ""
+   //:IF vReportDefRoot.Report.wOriginalViewName != ""   
    if ( CompareAttributeToString( vReportDefRoot, "Report", "wOriginalViewName", "" ) != 0 )
-   {
-      //:szAttribPrefix = vReportDefRoot.Report.wOriginalViewName
+   { 
+      //:szAttribPrefix = vReportDefRoot.Report.wOriginalViewName 
       GetVariableFromAttribute( szAttribPrefix, 0, 'S', 257, vReportDefRoot, "Report", "wOriginalViewName", "", 0 );
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
       //:szAttribPrefix = ""
       ZeidonStringCopy( szAttribPrefix, 1, 0, "", 1, 0, 257 );
-   }
+   } 
 
    //:END
 
-   //:
+   //:                
    //:IF vReportDef.ControlDef.Tag = "Rpt_PicGraphic"
    if ( CompareAttributeToString( vReportDef, "ControlDef", "Tag", "Rpt_PicGraphic" ) == 0 )
-   {
+   { 
       //:// Control is graphic.
-      //:szConstantArea = vReportDef.Control.WebFileName
+      //:szConstantArea = vReportDef.Control.WebFileName 
       GetVariableFromAttribute( szConstantArea, 0, 'S', 257, vReportDef, "Control", "WebFileName", "", 0 );
       //:PaddingTop = vReportDef.Control.PSDLG_Y
       GetIntegerFromAttribute( &PaddingTop, vReportDef, "Control", "PSDLG_Y" );
@@ -291,7 +291,7 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
       //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
       //:szOutputLine = szIndentationChars + "  <fo:external-graphic src=" + QUOTES + szConstantArea + QUOTES +
-      //:                                    " padding-top=" + QUOTES + szPaddingTop + "in" + QUOTES
+      //:                                    " padding-top=" + QUOTES + szPaddingTop + "in" + QUOTES 
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
       ZeidonStringConcat( szOutputLine, 1, 0, "  <fo:external-graphic src=", 1, 0, 5001 );
       ZeidonStringConcat( szOutputLine, 1, 0, QUOTES, 1, 0, 5001 );
@@ -304,7 +304,7 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
       ZeidonStringConcat( szOutputLine, 1, 0, QUOTES, 1, 0, 5001 );
       //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
-      //:
+      //:                                    
       //:szOutputLine = szIndentationChars + "     content-width=" + QUOTES + "scale-to-fit" + QUOTES
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
       ZeidonStringConcat( szOutputLine, 1, 0, "     content-width=", 1, 0, 5001 );
@@ -341,28 +341,28 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
       oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
 
       //:ELSE
-   }
+   } 
    else
-   {
-      //:IF vReportDef.ControlDef.Tag = "Rpt_Shape"
+   { 
+      //:IF vReportDef.ControlDef.Tag = "Rpt_Shape" 
       if ( CompareAttributeToString( vReportDef, "ControlDef", "Tag", "Rpt_Shape" ) == 0 )
-      {
-         //:// If we get here, this is a shape without anything inside. Don't see why this would happen but check for it anyway.
+      { 
+         //:// If we get here, this is a shape without anything inside. Don't see why this would happen but check for it anyway.         
          //://TraceLineS("**** XSLT_GetStyleShape *** ", "" )
          //:XSLT_GetStyleShape( vReportDef, szStyle )
          oTZRPSRCO_XSLT_GetStyleShape( vReportDef, szStyle );
          //:IF vReportDef.Control.BorderBottom = 1
          if ( CompareAttributeToInteger( vReportDef, "Control", "BorderBottom", 1 ) == 0 )
-         {
+         { 
             //:szStyleLeader = "<fo:leader />"
             ZeidonStringCopy( szStyleLeader, 1, 0, "<fo:leader />", 1, 0, 257 );
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
             //:szStyleLeader = ""
             ZeidonStringCopy( szStyleLeader, 1, 0, "", 1, 0, 257 );
-         }
+         } 
 
          //:END
          //:szOutputLine = szIndentationChars + "      <fo:block " + szStyle + ">" + szStyleLeader + "</fo:block> <!-- XSLT_BuildControl Empty Shape -->"
@@ -374,10 +374,10 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
          ZeidonStringConcat( szOutputLine, 1, 0, "</fo:block> <!-- XSLT_BuildControl Empty Shape -->", 1, 0, 5001 );
          //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
          oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
-         //:ELSE
-      }
+         //:ELSE 
+      } 
       else
-      {
+      { 
          //:// Control is considered Text.
          //:XSLT_GetStyleText( vReportDef, szStyle )
          oTZRPSRCO_XSLT_GetStyleText( vReportDef, szStyle );
@@ -386,7 +386,7 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
          //:IF vReportDef.CtrlMapER_Attribute EXISTS
          lTempInteger_0 = CheckExistenceOfEntity( vReportDef, "CtrlMapER_Attribute" );
          if ( lTempInteger_0 == 0 )
-         {
+         { 
             //:szAttributeMappingName = szAttribPrefix + vReportDef.CtrlMapRelatedEntity.Name + "." + vReportDef.CtrlMapER_Attribute.Name
             GetVariableFromAttribute( szTempString_0, 0, 'S', 33, vReportDef, "CtrlMapRelatedEntity", "Name", "", 0 );
             ZeidonStringCopy( szAttributeMappingName, 1, 0, szAttribPrefix, 1, 0, 257 );
@@ -407,14 +407,14 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
             //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
             oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
 
             //:IF vReportDef.Control.Tag = "PageNumber"
             if ( CompareAttributeToString( vReportDef, "Control", "Tag", "PageNumber" ) == 0 )
-            {
-               //:// This is the PageNumber
+            { 
+               //:// This is the PageNumber 
                //://szOutputLine = szIndentationChars + "      <fo:block " + szStyle + " text-align=" + QUOTES + "right" + QUOTES + "> <!-- XSLT_BuildControl -->"
                //:szOutputLine = szIndentationChars + "      <fo:block " + szStyle + "> <!-- XSLT_BuildControl -->"
                ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
@@ -425,7 +425,7 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
                oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
                //:IF vReportDef.Report.CountPages = "Y"
                if ( CompareAttributeToString( vReportDef, "Report", "CountPages", "Y" ) == 0 )
-               {
+               { 
                   //:szOutputLine = szIndentationChars + "      Page <fo:page-number/> of <fo:page-number-citation ref-id=" + QUOTES + "last-page" + QUOTES + "/>"
                   ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
                   ZeidonStringConcat( szOutputLine, 1, 0, "      Page <fo:page-number/> of <fo:page-number-citation ref-id=", 1, 0, 5001 );
@@ -433,14 +433,14 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
                   ZeidonStringConcat( szOutputLine, 1, 0, "last-page", 1, 0, 5001 );
                   ZeidonStringConcat( szOutputLine, 1, 0, QUOTES, 1, 0, 5001 );
                   ZeidonStringConcat( szOutputLine, 1, 0, "/>", 1, 0, 5001 );
-                  //:ELSE
-               }
+                  //:ELSE 
+               } 
                else
-               {
+               { 
                   //:szOutputLine = szIndentationChars + "      Page <fo:page-number/> "
                   ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
                   ZeidonStringConcat( szOutputLine, 1, 0, "      Page <fo:page-number/> ", 1, 0, 5001 );
-               }
+               } 
 
                //:END
                //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
@@ -453,13 +453,13 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
                oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
 
                //:ELSE
-            }
+            } 
             else
-            {
+            { 
                //:// We are assuming that if this is a very thin text control, we must want there to be a line (should I not look at border?)
                //:IF vReportDef.Control.Text = "" AND vReportDef.Control.SZDLG_Y <= 21
                if ( CompareAttributeToString( vReportDef, "Control", "Text", "" ) == 0 && CompareAttributeToInteger( vReportDef, "Control", "SZDLG_Y", 21 ) <= 0 )
-               {
+               { 
                   //:// Build a Leader line.
                   //:szOutputLine = szIndentationChars + "      <fo:block>  <!-- XSLT_BuildControl -->"
                   ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
@@ -498,9 +498,9 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
                   oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
 
                   //:ELSE
-               }
+               } 
                else
-               {
+               { 
                   //:szConstantArea = vReportDef.Control.Text
                   GetVariableFromAttribute( szConstantArea, 0, 'S', 257, vReportDef, "Control", "Text", "", 0 );
                   //:szOutputLine = szIndentationChars + "      <fo:block " + szStyle + ">" + szConstantArea + "</fo:block> <!-- XSLT_BuildControl -->"
@@ -512,25 +512,25 @@ oTZRPSRCO_XSLT_BuildControl( zVIEW     vReportDefRoot,
                   ZeidonStringConcat( szOutputLine, 1, 0, "</fo:block> <!-- XSLT_BuildControl -->", 1, 0, 5001 );
                   //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
                   oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
-               }
+               } 
 
                //:END
-            }
+            } 
 
             //:END
-         }
+         } 
 
          //:END
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
    return( 0 );
-//
+//    
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -556,13 +556,13 @@ oTZRPSRCO_XSLT_BuildTable( zVIEW     vReportDefRoot,
                            zLONG     TableMarginTop,
                            zLONG     TableWidth )
 {
-   zCHAR     szTableWidth[ 21 ] = { 0 };
+   zCHAR     szTableWidth[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTableMarginTop
-   zCHAR     szTableMarginTop[ 21 ] = { 0 };
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zCHAR     szTempString_0[ 33 ];
-   zCHAR     szTempString_1[ 33 ];
+   zCHAR     szTableMarginTop[ 21 ] = { 0 }; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
 
 
    //:szOutputLine = szIndentationChars + "<!-- In XSLT_BuildTable -->"
@@ -597,9 +597,9 @@ oTZRPSRCO_XSLT_BuildTable( zVIEW     vReportDefRoot,
    oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
 
    //:// KJS 11/28/12
-   //:IF RESULT >= zCURSOR_SET
+   //:IF RESULT >= zCURSOR_SET 
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
 
       //:szOutputLine = szIndentationChars + "<!-- XSLT_BuildTable Control " + vReportDef.Control.Tag + " -->"
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
@@ -661,7 +661,7 @@ oTZRPSRCO_XSLT_BuildTable( zVIEW     vReportDefRoot,
       ZeidonStringConcat( szOutputLine, 1, 0, ">", 1, 0, 5001 );
       //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-   }
+   } 
 
    //:END
 
@@ -677,7 +677,7 @@ oTZRPSRCO_XSLT_BuildTable( zVIEW     vReportDefRoot,
    oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -699,48 +699,48 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                             zPCHAR    szIndentationChars,
                             zPCHAR    szStructurePath )
 {
-   zVIEW     vReportDef = 0;
+   zVIEW     vReportDef = 0; 
    //:INTEGER PosY
-   zLONG     PosY = 0;
+   zLONG     PosY = 0; 
    //:INTEGER CurrentWidth
-   zLONG     CurrentWidth = 0;
+   zLONG     CurrentWidth = 0; 
    //:INTEGER ColumnCount
-   zLONG     ColumnCount = 0;
+   zLONG     ColumnCount = 0; 
    //:INTEGER CellPadding
-   zLONG     CellPadding = 0;
+   zLONG     CellPadding = 0; 
    //:INTEGER GroupHierarchicalLevel
-   zLONG     GroupHierarchicalLevel = 0;
+   zLONG     GroupHierarchicalLevel = 0; 
    //:INTEGER i
-   zLONG     i = 0;
+   zLONG     i = 0; 
    //:STRING ( 50 )  szGroupSetName
-   zCHAR     szGroupSetName[ 51 ] = { 0 };
+   zCHAR     szGroupSetName[ 51 ] = { 0 }; 
    //:STRING ( 10 )  szPageWidth
-   zCHAR     szPageWidth[ 11 ] = { 0 };
+   zCHAR     szPageWidth[ 11 ] = { 0 }; 
    //:STRING ( 10 )  szCurrentWidth
-   zCHAR     szCurrentWidth[ 11 ] = { 0 };
+   zCHAR     szCurrentWidth[ 11 ] = { 0 }; 
    //:STRING ( 1 )   szSingleRowFlag
-   zCHAR     szSingleRowFlag[ 2 ] = { 0 };
+   zCHAR     szSingleRowFlag[ 2 ] = { 0 }; 
    //:STRING ( 1 )   szForEach
-   zCHAR     szForEach[ 2 ] = { 0 };
+   zCHAR     szForEach[ 2 ] = { 0 }; 
    //:STRING ( 32 )  szEntityName
-   zCHAR     szEntityName[ 33 ] = { 0 };
+   zCHAR     szEntityName[ 33 ] = { 0 }; 
    //:STRING ( 32 )  szAttributeName
-   zCHAR     szAttributeName[ 33 ] = { 0 };
+   zCHAR     szAttributeName[ 33 ] = { 0 }; 
    //:STRING ( 20 )  szCellPadding
-   zCHAR     szCellPadding[ 21 ] = { 0 };
+   zCHAR     szCellPadding[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szCellPaddingName
-   zCHAR     szCellPaddingName[ 21 ] = { 0 };
+   zCHAR     szCellPaddingName[ 21 ] = { 0 }; 
    //:STRING ( 50 )  szIndentationSubValue
-   zCHAR     szIndentationSubValue[ 51 ] = { 0 };
+   zCHAR     szIndentationSubValue[ 51 ] = { 0 }; 
    //:STRING ( 1000 ) szStructure
-   zCHAR     szStructure[ 1001 ] = { 0 };
-   zSHORT    RESULT;
-   zSHORT    lTempInteger_0;
-   zSHORT    lTempInteger_1;
-   zSHORT    lTempInteger_2;
-   zSHORT    lTempInteger_3;
-   zSHORT    lTempInteger_4;
-   zSHORT    lTempInteger_5;
+   zCHAR     szStructure[ 1001 ] = { 0 }; 
+   zSHORT    RESULT; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
+   zSHORT    lTempInteger_2; 
+   zSHORT    lTempInteger_3; 
+   zSHORT    lTempInteger_4; 
+   zSHORT    lTempInteger_5; 
 
 
    //:szPageWidth = "7.5in"
@@ -751,18 +751,18 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
    //://IssueError( vReportDefRoot,0,0, "In EntityR" )
 
    //:// Process each PartialReportEntity within the recursive LOD structure.
-   //:FOR EACH vReportDefRecurs.PartialReportEntity
+   //:FOR EACH vReportDefRecurs.PartialReportEntity 
    RESULT = SetCursorFirstEntity( vReportDefRecurs, "PartialReportEntity", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
-      //:szEntityName = vReportDefRecurs.PartialReportEntity.Name
+      //:szEntityName = vReportDefRecurs.PartialReportEntity.Name 
       GetVariableFromAttribute( szEntityName, 0, 'S', 33, vReportDefRecurs, "PartialReportEntity", "Name", "", 0 );
       //://szStructure = szStructurePath + "/" + szEntityName
-      //:
+      //:      
       //:IF vReportDefRecurs.PartialReportEntity.ReportDisplayFlag = "D"
       if ( CompareAttributeToString( vReportDefRecurs, "PartialReportEntity", "ReportDisplayFlag", "D" ) == 0 )
-      {
+      { 
 
          //:szStructure = szStructurePath + "/" + szEntityName
          ZeidonStringCopy( szStructure, 1, 0, szStructurePath, 1, 0, 1001 );
@@ -787,22 +787,22 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
          ZeidonStringConcat( szOutputLine, 1, 0, ">", 1, 0, 5001 );
          //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
          oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-         //:
-         //:SET CURSOR FIRST vReportDefRoot.GroupSet WHERE vReportDefRoot.GroupSet.Tag = szEntityName
+         //:     
+         //:SET CURSOR FIRST vReportDefRoot.GroupSet WHERE vReportDefRoot.GroupSet.Tag = szEntityName 
          RESULT = SetCursorFirstEntityByString( vReportDefRoot, "GroupSet", "Tag", szEntityName, "" );
          //:IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         {
-         }
+         { 
+         } 
 
-         //:   // There is an error because the report should have a GroupSet for this.
+         //:   // There is an error because the report should have a GroupSet for this.          
          //:END
 
          //:// Only continue building this xsl section if the user painted a control is this section.
-         //:IF vReportDefRoot.Control EXISTS
+         //:IF vReportDefRoot.Control EXISTS 
          lTempInteger_0 = CheckExistenceOfEntity( vReportDefRoot, "Control" );
          if ( lTempInteger_0 == 0 )
-         {
+         { 
 
             //:szOutputLine = "  <!-- XSLT_EntityRecur " + szEntityName + " -->"
             ZeidonStringCopy( szOutputLine, 1, 0, "  <!-- XSLT_EntityRecur ", 1, 0, 5001 );
@@ -821,38 +821,38 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
             i = 1;
             //:LOOP WHILE i <= 3
             while ( i <= 3 )
-            {
+            { 
 
-               //:IF i = 1
+               //:IF i = 1 
                if ( i == 1 )
-               {
+               { 
                   //:SET CURSOR FIRST vReportDefRoot.Group WHERE vReportDefRoot.Group.Type = "gh"
                   RESULT = SetCursorFirstEntityByString( vReportDefRoot, "Group", "Type", "gh", "" );
                   //:ELSE
-               }
+               } 
                else
-               {
+               { 
                   //:IF i = 2
                   if ( i == 2 )
-                  {
+                  { 
                      //:SET CURSOR FIRST vReportDefRoot.Group WHERE vReportDefRoot.Group.Type = "ga"
                      RESULT = SetCursorFirstEntityByString( vReportDefRoot, "Group", "Type", "ga", "" );
-                     //:ELSE
-                  }
+                     //:ELSE             
+                  } 
                   else
-                  {
+                  { 
                      //:SET CURSOR FIRST vReportDefRoot.Group WHERE vReportDefRoot.Group.Type = "gf"
                      RESULT = SetCursorFirstEntityByString( vReportDefRoot, "Group", "Type", "gf", "" );
-                  }
+                  } 
 
-                  //:END
-               }
+                  //:END 
+               } 
 
                //:END
 
                //:IF RESULT >= zCURSOR_SET
                if ( RESULT >= zCURSOR_SET )
-               {
+               { 
 
                   //:// Initialize Work Group.
                   //:// Note that GroupHierarchicalLevel is the Control level with the vReportDef object, not the entity level within the LOD.
@@ -862,28 +862,28 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                   //:FOR EACH vReportDefRoot.XSLT_WorkGroup
                   RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkGroup", "" );
                   while ( RESULT > zCURSOR_UNCHANGED )
-                  {
-                     //:DELETE ENTITY vReportDefRoot.XSLT_WorkGroup NONE
+                  { 
+                     //:DELETE ENTITY vReportDefRoot.XSLT_WorkGroup NONE  
                      RESULT = DeleteEntity( vReportDefRoot, "XSLT_WorkGroup", zREPOS_NONE );
                      RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkGroup", "" );
-                  }
+                  } 
 
                   //:END
 
-                  //:CREATE ENTITY vReportDefRoot.XSLT_WorkGroup
+                  //:CREATE ENTITY vReportDefRoot.XSLT_WorkGroup 
                   RESULT = CreateEntity( vReportDefRoot, "XSLT_WorkGroup", zPOS_AFTER );
 
                   //:vReportDefRoot.XSLT_WorkGroup.RecursiveNumber = GroupHierarchicalLevel
                   SetAttributeFromInteger( vReportDefRoot, "XSLT_WorkGroup", "RecursiveNumber", GroupHierarchicalLevel );
                   //:vReportDefRoot.XSLT_WorkGroup.EntityName = szEntityName
                   SetAttributeFromString( vReportDefRoot, "XSLT_WorkGroup", "EntityName", szEntityName );
-                  //:
+                  //:            
                   //:szForEach = "N"
                   ZeidonStringCopy( szForEach, 1, 0, "N", 1, 0, 2 );
 
                   //:IF vReportDefRoot.Group.Type = "gh"
                   if ( CompareAttributeToString( vReportDefRoot, "Group", "Type", "gh" ) == 0 )
-                  {
+                  { 
 
                      //:// Group is Header.
 
@@ -896,15 +896,15 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                      oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
                      //:GenerateLine( vReportDefRoot, lFileHandle, " " )
                      oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, " " );
-                     //:szEntityName = szEntityName + "Header"
+                     //:szEntityName = szEntityName + "Header"      
                      ZeidonStringConcat( szEntityName, 1, 0, "Header", 1, 0, 33 );
                      //:ELSE
-                  }
+                  } 
                   else
-                  {
-                     //:IF vReportDefRoot.Group.Type = "ga"
+                  { 
+                     //:IF vReportDefRoot.Group.Type = "ga" 
                      if ( CompareAttributeToString( vReportDefRoot, "Group", "Type", "ga" ) == 0 )
-                     {
+                     { 
                         //:// Generate Entity Detail Comment.
                         //:GenerateLine( vReportDefRoot, lFileHandle, " " )
                         oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, " " );
@@ -919,19 +919,19 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                         //:IF vReportDefRecurs.PartialReportEntityChild EXISTS
                         lTempInteger_1 = CheckExistenceOfEntity( vReportDefRecurs, "PartialReportEntityChild" );
                         if ( lTempInteger_1 == 0 )
-                        {
+                        { 
                            //:szForEach = "Y"
                            ZeidonStringCopy( szForEach, 1, 0, "Y", 1, 0, 2 );
-                        }
+                        } 
 
                         //:END
                         //:ELSE
-                     }
+                     } 
                      else
-                     {
-                        //:IF vReportDefRoot.Group.Type = "gf"
+                     { 
+                        //:IF vReportDefRoot.Group.Type = "gf" 
                         if ( CompareAttributeToString( vReportDefRoot, "Group", "Type", "gf" ) == 0 )
-                        {
+                        { 
                            //:// Generate Entity Footer Comment.
                            //:GenerateLine( vReportDefRoot, lFileHandle, " " )
                            oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, " " );
@@ -943,13 +943,13 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                            oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, " " );
                            //:szEntityName = szEntityName + "Footer"
                            ZeidonStringConcat( szEntityName, 1, 0, "Footer", 1, 0, 33 );
-                        }
+                        } 
 
                         //:END
-                     }
+                     } 
 
                      //:END
-                  }
+                  } 
 
                   //:END
 
@@ -965,32 +965,32 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                   //:IF vReportDefRoot.Control EXISTS
                   lTempInteger_2 = CheckExistenceOfEntity( vReportDefRoot, "Control" );
                   if ( lTempInteger_2 == 0 )
-                  {
+                  { 
                      //:PosY = vReportDefRoot.Control.PSDLG_Y
                      GetIntegerFromAttribute( &PosY, vReportDefRoot, "Control", "PSDLG_Y" );
                      //:FOR EACH vReportDefRoot.Control
                      RESULT = SetCursorFirstEntity( vReportDefRoot, "Control", "" );
                      while ( RESULT > zCURSOR_UNCHANGED )
-                     {
+                     { 
                         //:IF vReportDefRoot.CtrlCtrl EXISTS OR vReportDefRoot.Control.PSDLG_Y != PosY
                         lTempInteger_3 = CheckExistenceOfEntity( vReportDefRoot, "CtrlCtrl" );
                         if ( lTempInteger_3 == 0 || CompareAttributeToInteger( vReportDefRoot, "Control", "PSDLG_Y", PosY ) != 0 )
-                        {
+                        { 
                            //:szSingleRowFlag = "N"
                            ZeidonStringCopy( szSingleRowFlag, 1, 0, "N", 1, 0, 2 );
-                        }
+                        } 
 
                         RESULT = SetCursorNextEntity( vReportDefRoot, "Control", "" );
                         //:END
-                     }
+                     } 
 
                      //:END
-                  }
+                  } 
 
                   //:END
                   //:IF szSingleRowFlag = "N"
                   if ( ZeidonStringCompare( szSingleRowFlag, 1, 0, "N", 1, 0, 2 ) == 0 )
-                  {
+                  { 
                      //:// Go to process more complex Group.
 
                      //:// Loop through all the entities... (we do this in XSLT_GroupTable if all the controls are on
@@ -1003,7 +1003,7 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                      ZeidonStringConcat( szOutputLine, 1, 0, ">", 1, 0, 5001 );
                      //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                      oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-                     //:
+                     //:      
                      //:CreateViewFromView( vReportDef, vReportDefRoot )
                      CreateViewFromView( &vReportDef, vReportDefRoot );
                      //:NAME VIEW vReportDef "vReportDefTop"
@@ -1013,36 +1013,36 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                      //:DropView( vReportDef )
                      DropView( vReportDef );
 
-                     //:IF szForEach = "N"
+                     //:IF szForEach = "N" 
                      if ( ZeidonStringCompare( szForEach, 1, 0, "N", 1, 0, 2 ) == 0 )
-                     {
+                     { 
                         //:szOutputLine = "    </xsl:for-each>"
                         ZeidonStringCopy( szOutputLine, 1, 0, "    </xsl:for-each>", 1, 0, 5001 );
-                        //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
+                        //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )    
                         oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-                     }
+                     } 
 
                      //:END
                      //:ELSE
-                  }
+                  } 
                   else
-                  {
+                  { 
                      //:CreateViewFromView( vReportDef, vReportDefRoot )
                      CreateViewFromView( &vReportDef, vReportDefRoot );
                      //:// Detail entity has single row.
                      //:// Build work subobject, with a single row and columns.
                      //:CREATE ENTITY vReportDefRoot.XSLT_WorkRow
                      RESULT = CreateEntity( vReportDefRoot, "XSLT_WorkRow", zPOS_AFTER );
-                     //:IF vReportDefRoot.Control EXISTS
+                     //:IF vReportDefRoot.Control EXISTS 
                      lTempInteger_4 = CheckExistenceOfEntity( vReportDefRoot, "Control" );
                      if ( lTempInteger_4 == 0 )
-                     {
+                     { 
                         //:vReportDefRoot.XSLT_WorkRow.PSDLG_Y = vReportDefRoot.Control.PSDLG_Y
                         SetAttributeFromAttribute( vReportDefRoot, "XSLT_WorkRow", "PSDLG_Y", vReportDefRoot, "Control", "PSDLG_Y" );
                         //:FOR EACH vReportDefRoot.Control
                         RESULT = SetCursorFirstEntity( vReportDefRoot, "Control", "" );
                         while ( RESULT > zCURSOR_UNCHANGED )
-                        {
+                        { 
                            //:CREATE ENTITY vReportDefRoot.XSLT_WorkColumn
                            RESULT = CreateEntity( vReportDefRoot, "XSLT_WorkColumn", zPOS_AFTER );
                            //:vReportDefRoot.XSLT_WorkColumn.ControlZKey = vReportDefRoot.Control.ZKey
@@ -1052,15 +1052,15 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                            //:SetMatchingAttributesByName( vReportDefRoot, "XSLT_WorkColumn",  vReportDefRoot, "Control", zSET_NULL )
                            SetMatchingAttributesByName( vReportDefRoot, "XSLT_WorkColumn", vReportDefRoot, "Control", zSET_NULL );
                            RESULT = SetCursorNextEntity( vReportDefRoot, "Control", "" );
-                        }
+                        } 
 
                         //:END
-                     }
+                     } 
 
                      //:END
-                     //:IF szForEach = "Y"
+                     //:IF szForEach = "Y" 
                      if ( ZeidonStringCompare( szForEach, 1, 0, "Y", 1, 0, 2 ) == 0 )
-                     {
+                     { 
                         //:szOutputLine = "    <xsl:for-each select=" + QUOTES + szEntityName + QUOTES + ">"
                         ZeidonStringCopy( szOutputLine, 1, 0, "    <xsl:for-each select=", 1, 0, 5001 );
                         ZeidonStringConcat( szOutputLine, 1, 0, QUOTES, 1, 0, 5001 );
@@ -1072,26 +1072,26 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                         //:XSLT_GroupTable( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars, 1, "" )
                         oTZRPSRCO_XSLT_GroupTable( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars, 1, "" );
                         //:ELSE
-                     }
+                     } 
                      else
-                     {
+                     { 
                         //:// Go to build the table.
                         //:XSLT_GroupTable( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars, 1, szEntityName )
                         oTZRPSRCO_XSLT_GroupTable( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars, 1, szEntityName );
-                     }
+                     } 
 
                      //:END
                      //:DropView( vReportDef )
                      DropView( vReportDef );
-                  }
+                  } 
 
-                  //:END
-               }
+                  //:END               
+               } 
 
                //:END // IF SET CURSOR To header/detail/footer
                //:i = i + 1
                i = i + 1;
-            }
+            } 
 
             //:END  // FOR EACH vReportDefRoot.Group
 
@@ -1100,7 +1100,7 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
             //:IF vReportDefRecurs.PartialReportEntityChild EXISTS
             lTempInteger_5 = CheckExistenceOfEntity( vReportDefRecurs, "PartialReportEntityChild" );
             if ( lTempInteger_5 == 0 )
-            {
+            { 
 
                //:SetViewToSubobject( vReportDefRecurs, "PartialReportEntityChild" )
                SetViewToSubobject( vReportDefRecurs, "PartialReportEntityChild" );
@@ -1113,14 +1113,14 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                //:ResetViewFromSubobject( vReportDefRecurs )
                ResetViewFromSubobject( vReportDefRecurs );
 
-               //:IF szForEach = "Y"
+               //:IF szForEach = "Y" 
                if ( ZeidonStringCompare( szForEach, 1, 0, "Y", 1, 0, 2 ) == 0 )
-               {
+               { 
                   //:szOutputLine = "    </xsl:for-each>"
                   ZeidonStringCopy( szOutputLine, 1, 0, "    </xsl:for-each>", 1, 0, 5001 );
                   //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                   oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-               }
+               } 
 
                //:END
 
@@ -1129,10 +1129,10 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
                RESULT = SetCursorFirstEntityByString( vReportDefRoot, "GroupSet", "Tag", szEntityName, "" );
                //:SET CURSOR FIRST vReportDefRoot.Group WHERE vReportDefRoot.Group.Type = "ga"
                RESULT = SetCursorFirstEntityByString( vReportDefRoot, "Group", "Type", "ga", "" );
-            }
+            } 
 
             //:END
-         }
+         } 
 
          //:END // IF vReportDefRoot.Control EXISTS
 
@@ -1141,9 +1141,9 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
          //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
          oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:szStructure = szStructurePath + ""
          ZeidonStringCopy( szStructure, 1, 0, szStructurePath, 1, 0, 1001 );
          ZeidonStringConcat( szStructure, 1, 0, "", 1, 0, 1001 );
@@ -1158,17 +1158,17 @@ oTZRPSRCO_XSLT_EntityRecur( zVIEW     vReportDefRoot,
 
          //:ResetViewFromSubobject( vReportDefRecurs )
          ResetViewFromSubobject( vReportDefRecurs );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( vReportDefRecurs, "PartialReportEntity", "" );
       //:END // IF vReportDefRecurs.PartialReportEntity.ReportDisplayFlag = "D"
-   }
+   } 
 
 
    //:END  // FOR EACH vReportDefRoot.GroupSet WHERE vReportDefRoot.GroupSet.Type = "E"
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -1180,53 +1180,55 @@ zOPER_EXPORT zSHORT OPERATION
 oTZRPSRCO_XSLT_GetStyleShape( zVIEW     vReportDef,
                               zPCHAR    szStyle )
 {
-   zSHORT    nMultiLineFlag = 0;
+   zSHORT    nMultiLineFlag = 0; 
    //:SHORT          nBoldFlag
-   zSHORT    nBoldFlag = 0;
+   zSHORT    nBoldFlag = 0; 
    //:SHORT          nItalicFlag
-   zSHORT    nItalicFlag = 0;
+   zSHORT    nItalicFlag = 0; 
    //:SHORT          nStrikeoutFlag
-   zSHORT    nStrikeoutFlag = 0;
+   zSHORT    nStrikeoutFlag = 0; 
    //:SHORT          nUnderlineFlag
-   zSHORT    nUnderlineFlag = 0;
+   zSHORT    nUnderlineFlag = 0; 
    //:INTEGER        lJustify
-   zLONG     lJustify = 0;
+   zLONG     lJustify = 0; 
    //:INTEGER        lFontSize
-   zLONG     lFontSize = 0;
+   zLONG     lFontSize = 0; 
    //:INTEGER        lTextColor
-   zLONG     lTextColor = 0;
+   zLONG     lTextColor = 0; 
    //:INTEGER        lTextBkColor
-   zLONG     lTextBkColor = 0;
+   zLONG     lTextBkColor = 0; 
    //:INTEGER        lBorderStyle
-   zLONG     lBorderStyle = 0;
+   zLONG     lBorderStyle = 0; 
    //:INTEGER        lBorderColor
-   zLONG     lBorderColor = 0;
+   zLONG     lBorderColor = 0; 
    //:INTEGER        lEscapement
-   zLONG     lEscapement = 0;
+   zLONG     lEscapement = 0; 
    //:INTEGER        lType
-   zLONG     lType = 0;
+   zLONG     lType = 0; 
    //:INTEGER        nRC
-   zLONG     nRC = 0;
+   zLONG     nRC = 0; 
    //:DECIMAL        lBorder
-   ZDecimal  lBorder = 0.0;
+   ZDecimal  lBorder = 0.0; 
    //:STRING ( 32 )  szFaceName
-   zCHAR     szFaceName[ 33 ] = { 0 };
+   zCHAR     szFaceName[ 33 ] = { 0 }; 
    //:STRING ( 10 )  szBorderWidth
-   zCHAR     szBorderWidth[ 11 ] = { 0 };
+   zCHAR     szBorderWidth[ 11 ] = { 0 }; 
    //:STRING ( 50 ) szAlign
-   zCHAR     szAlign[ 51 ] = { 0 };
+   zCHAR     szAlign[ 51 ] = { 0 }; 
    //:STRING ( 50 ) szBorderStyle
-   zCHAR     szBorderStyle[ 51 ] = { 0 };
+   zCHAR     szBorderStyle[ 51 ] = { 0 }; 
    //:STRING ( 25 ) szFontSize
-   zCHAR     szFontSize[ 26 ] = { 0 };
+   zCHAR     szFontSize[ 26 ] = { 0 }; 
    //:STRING ( 2 )  szWidth
-   zCHAR     szWidth[ 3 ] = { 0 };
+   zCHAR     szWidth[ 3 ] = { 0 }; 
    //:STRING ( 500 ) szMsg
-   zCHAR     szMsg[ 501 ] = { 0 };
+   zCHAR     szMsg[ 501 ] = { 0 }; 
+   zCHAR     szTempString_0[ 33 ]; 
 
 
-   //:TraceLineS("**** XSLT_GetStyleShape *** ", "" )
-   TraceLineS( "**** XSLT_GetStyleShape *** ", "" );
+   //:TraceLineS("**** XSLT_GetStyleShape *** ", vReportDef.Control.Tag )
+   GetStringFromAttribute( szTempString_0, vReportDef, "Control", "Tag" );
+   TraceLineS( "**** XSLT_GetStyleShape *** ", szTempString_0 );
 
    //:szStyle = ""
    ZeidonStringCopy( szStyle, 1, 0, "", 1, 0, 257 );
@@ -1234,10 +1236,10 @@ oTZRPSRCO_XSLT_GetStyleShape( zVIEW     vReportDef,
    //:SetRptShapeFromBlob( vReportDef )
    SetRptShapeFromBlob( vReportDef );
 
-   //:// Do we only show border if line width is greater than zero?
+   //:// Do we only show border if line width is greater than zero? 
    //:IF vReportDef.Control.BorderWidth > 0
    if ( CompareAttributeToInteger( vReportDef, "Control", "BorderWidth", 0 ) > 0 )
-   {
+   { 
 
       //:// Seems like the border is a little too thick. Going to try halving what is specified.
       //:lBorder = vReportDef.Control.BorderWidth
@@ -1245,12 +1247,12 @@ oTZRPSRCO_XSLT_GetStyleShape( zVIEW     vReportDef,
       //:lBorder = lBorder / 2
       lBorder = lBorder / 2;
       //:SysConvertDecimalToString( lBorder, szBorderWidth, 1 )
-      SysConvertDecimalToString( &lBorder, szBorderWidth, 1 );  // dks change
+      SysConvertDecimalToString( &lBorder, szBorderWidth, 1 );
       //://SysConvertDecimalToString( DOUBLE /* pDecimal */,
       //://                           STRING /* ReturnString */,
       //://                           INTEGER /* nPrecision */ )
       //://zIntegerToString( szBorderWidth, 25, lFontSize )
-      //://szBorderWidth = vReportDef.Control.BorderWidth
+      //://szBorderWidth = vReportDef.Control.BorderWidth 
 
 
       //://TraceLineS("**** BorderWidth *** ", szBorderWidth)
@@ -1263,44 +1265,44 @@ oTZRPSRCO_XSLT_GetStyleShape( zVIEW     vReportDef,
 
       //:IF vReportDef.Control.BorderStyle = 0
       if ( CompareAttributeToInteger( vReportDef, "Control", "BorderStyle", 0 ) == 0 )
-      {
+      { 
          //://TraceLineS("**** Border SOLID *** ", szBorderWidth)
-         //:szBorderStyle = "solid"
+         //:szBorderStyle = "solid" 
          ZeidonStringCopy( szBorderStyle, 1, 0, "solid", 1, 0, 51 );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:IF vReportDef.Control.BorderStyle = 1
          if ( CompareAttributeToInteger( vReportDef, "Control", "BorderStyle", 1 ) == 0 )
-         {
+         { 
             //://TraceLineS("**** Border dashed *** ", szBorderWidth)
-            //:szBorderStyle = "dashed"
+            //:szBorderStyle = "dashed" 
             ZeidonStringCopy( szBorderStyle, 1, 0, "dashed", 1, 0, 51 );
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
             //:IF vReportDef.Control.BorderStyle = 2
             if ( CompareAttributeToInteger( vReportDef, "Control", "BorderStyle", 2 ) == 0 )
-            {
+            { 
                //://TraceLineS("**** Border dotted *** ", szBorderWidth)
-               //:szBorderStyle = "dotted"
+               //:szBorderStyle = "dotted" 
                ZeidonStringCopy( szBorderStyle, 1, 0, "dotted", 1, 0, 51 );
                //:ELSE
-            }
+            } 
             else
-            {
+            { 
                //://TraceLineS("**** Border SOLID *** ", szBorderWidth)
-               //:szBorderStyle = "solid"
+               //:szBorderStyle = "solid" 
                ZeidonStringCopy( szBorderStyle, 1, 0, "solid", 1, 0, 51 );
-            }
+            } 
 
-            //:END
-         }
+            //:END 
+         } 
 
-         //:END
-      }
+         //:END 
+      } 
 
       //:END
 
@@ -1308,9 +1310,9 @@ oTZRPSRCO_XSLT_GetStyleShape( zVIEW     vReportDef,
       //:// KJS 01/31/13 - This is cheesy but I'm going for it for now...
       //:// The only other report color I know being used is red... which seems to be 255
       //:// SetRptShapeFromBlob sets wLineColorText and wLineColorInt.
-      //:IF vReportDef.Control.wLineColorInt = 255
+      //:IF vReportDef.Control.wLineColorInt = 255 
       if ( CompareAttributeToInteger( vReportDef, "Control", "wLineColorInt", 255 ) == 0 )
-      {
+      { 
          //:szStyle = szStyle + "border-color=" + QUOTES + "red" + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "border-color=", 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
@@ -1318,51 +1320,51 @@ oTZRPSRCO_XSLT_GetStyleShape( zVIEW     vReportDef,
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:szStyle = szStyle + "border-color=" + QUOTES + "black" + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "border-color=", 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, "black", 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-      }
+      } 
 
       //:END
 
       //:// If the "Horizontal" checkbox is checked, then we have set BorderBottom to 1 in SetRptShapeFromBlob.
       //:IF vReportDef.Control.BorderBottom = 1
       if ( CompareAttributeToInteger( vReportDef, "Control", "BorderBottom", 1 ) == 0 )
-      {
-         //:szStyle = szStyle + "border-bottom-style=" + QUOTES + szBorderStyle + QUOTES + " "
+      { 
+         //:szStyle = szStyle + "border-bottom-style=" + QUOTES + szBorderStyle + QUOTES + " "         
          ZeidonStringConcat( szStyle, 1, 0, "border-bottom-style=", 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, szBorderStyle, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:szStyle = szStyle + "border-style=" + QUOTES + szBorderStyle + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "border-style=", 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, szBorderStyle, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-      }
+      } 
 
       //:END
-   }
+   } 
 
-   //:
-   //:
-   //:END
+   //:   
+   //:   
+   //:END  
    return( 0 );
-//
+//    
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -1374,47 +1376,47 @@ zOPER_EXPORT zSHORT OPERATION
 oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
                              zPCHAR    szStyle )
 {
-   zSHORT    nMultiLineFlag = 0;
+   zSHORT    nMultiLineFlag = 0; 
    //:SHORT          nBoldFlag
-   zSHORT    nBoldFlag = 0;
+   zSHORT    nBoldFlag = 0; 
    //:SHORT          nItalicFlag
-   zSHORT    nItalicFlag = 0;
+   zSHORT    nItalicFlag = 0; 
    //:SHORT          nStrikeoutFlag
-   zSHORT    nStrikeoutFlag = 0;
+   zSHORT    nStrikeoutFlag = 0; 
    //:SHORT          nUnderlineFlag
-   zSHORT    nUnderlineFlag = 0;
+   zSHORT    nUnderlineFlag = 0; 
    //:INTEGER        lJustify
-   zLONG     lJustify = 0;
+   zLONG     lJustify = 0; 
    //:INTEGER        lFontSize
-   zLONG     lFontSize = 0;
+   zLONG     lFontSize = 0; 
    //:INTEGER        lTextColor
-   zLONG     lTextColor = 0;
+   zLONG     lTextColor = 0; 
    //:INTEGER        lTextBkColor
-   zLONG     lTextBkColor = 0;
+   zLONG     lTextBkColor = 0; 
    //:INTEGER        lBorderStyle
-   zLONG     lBorderStyle = 0;
+   zLONG     lBorderStyle = 0; 
    //:INTEGER        lBorderColor
-   zLONG     lBorderColor = 0;
+   zLONG     lBorderColor = 0; 
    //:INTEGER        lEscapement
-   zLONG     lEscapement = 0;
+   zLONG     lEscapement = 0; 
    //:INTEGER        lType
-   zLONG     lType = 0;
+   zLONG     lType = 0; 
    //:INTEGER        nRC
-   zLONG     nRC = 0;
+   zLONG     nRC = 0; 
    //:STRING ( 32 )  szFaceName
-   zCHAR     szFaceName[ 33 ] = { 0 };
+   zCHAR     szFaceName[ 33 ] = { 0 }; 
    //:STRING ( 2 )  szBorderWidth
-   zCHAR     szBorderWidth[ 3 ] = { 0 };
+   zCHAR     szBorderWidth[ 3 ] = { 0 }; 
    //:STRING ( 50 ) szAlign
-   zCHAR     szAlign[ 51 ] = { 0 };
+   zCHAR     szAlign[ 51 ] = { 0 }; 
    //:STRING ( 50 ) szBorderStyle
-   zCHAR     szBorderStyle[ 51 ] = { 0 };
+   zCHAR     szBorderStyle[ 51 ] = { 0 }; 
    //:STRING ( 25 ) szFontSize
-   zCHAR     szFontSize[ 26 ] = { 0 };
+   zCHAR     szFontSize[ 26 ] = { 0 }; 
    //:STRING ( 2 )  szWidth
-   zCHAR     szWidth[ 3 ] = { 0 };
+   zCHAR     szWidth[ 3 ] = { 0 }; 
    //:STRING ( 500 ) szMsg
-   zCHAR     szMsg[ 501 ] = { 0 };
+   zCHAR     szMsg[ 501 ] = { 0 }; 
 
 
    //:szStyle = ""
@@ -1427,7 +1429,7 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
    //:                            lBorderStyle, lBorderColor,
    //:                            lEscapement, lType, szFaceName )
    nRC = TX_GetTextRptCtrlBOI( vReportDef, &nMultiLineFlag, &nBoldFlag, &nItalicFlag, &nStrikeoutFlag, &nUnderlineFlag, &lJustify, &lFontSize, &lTextColor, &lTextBkColor, &lBorderStyle, &lBorderColor, &lEscapement, &lType, szFaceName );
-   //:
+   //:                            
 
    //://TraceLineI("**** lBorderStyle *** ", lBorderStyle )
 
@@ -1437,7 +1439,7 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
    //:// Should I give an error message if TextAlignHorizontal is not "Right", "Left" or "Center" (I have had problems since
    //:// putting in mapping for this).
    //:IF szAlign != "" AND szAlign != "right" AND szAlign != "center" AND szAlign != "left"
-   //:   szMsg = "Alignment for control " + vReportDef.Control.Tag + " is wrong. Please set this again."
+   //:   szMsg = "Alignment for control " + vReportDef.Control.Tag + " is wrong. Please set this again."  
    //:   MessageSend( vReportDef, "Text Alignment", "Autodesigner",
    //:                szMsg,
    //:                zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
@@ -1447,19 +1449,33 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
    //:END
    //:*/
 
-   //:IF lBorderStyle != 0
+   //:// If we have a new line char. we need to have the following...
+   //:IF nMultiLineFlag > 0
+   if ( nMultiLineFlag > 0 )
+   { 
+      //:szStyle = szStyle + "linefeed-treatment=" + QUOTES + "preserve" + QUOTES + " "    
+      ZeidonStringConcat( szStyle, 1, 0, "linefeed-treatment=", 1, 0, 257 );
+      ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
+      ZeidonStringConcat( szStyle, 1, 0, "preserve", 1, 0, 257 );
+      ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
+      ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
+   } 
+
+   //:END
+
+   //:IF lBorderStyle != 0 
    if ( lBorderStyle != 0 )
-   {
+   { 
 
       //:nRC = GetBorderLineWidth( lBorderStyle, szBorderWidth )
       nRC = GetBorderLineWidth( lBorderStyle, szBorderWidth );
       //://TraceLineS("*** Line Width *** ", szBorderWidth )
       //:IF szBorderWidth = "" OR szBorderWidth = "0"
       if ( ZeidonStringCompare( szBorderWidth, 1, 0, "", 1, 0, 3 ) == 0 || ZeidonStringCompare( szBorderWidth, 1, 0, "0", 1, 0, 3 ) == 0 )
-      {
+      { 
          //:szBorderWidth = "1"
          ZeidonStringCopy( szBorderWidth, 1, 0, "1", 1, 0, 3 );
-      }
+      } 
 
       //:END
 
@@ -1475,41 +1491,41 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
       ZeidonStringCopy( szBorderStyle, 1, 0, "", 1, 0, 51 );
       //:nRC = IsFlagSequenceSet( lBorderStyle, 1 )
       nRC = IsFlagSequenceSet( lBorderStyle, 1 );
-      //:IF nRC > 0
+      //:IF nRC > 0 
       if ( nRC > 0 )
-      {
+      { 
          //://TraceLineI("**** lBorderStyle DASH is SET *** ", nRC)
-         //:szBorderStyle = "dashed"
+         //:szBorderStyle = "dashed" 
          ZeidonStringCopy( szBorderStyle, 1, 0, "dashed", 1, 0, 51 );
-      }
+      } 
 
       //:END
       //:nRC = IsFlagSequenceSet( lBorderStyle, 2 )
       nRC = IsFlagSequenceSet( lBorderStyle, 2 );
-      //:IF nRC > 0
+      //:IF nRC > 0 
       if ( nRC > 0 )
-      {
+      { 
          //://TraceLineI("**** lBorderStyle DOTTED is SET *** ", nRC)
-         //:szBorderStyle = "dotted"
+         //:szBorderStyle = "dotted" 
          ZeidonStringCopy( szBorderStyle, 1, 0, "dotted", 1, 0, 51 );
-      }
+      } 
 
       //:END
       //:IF szBorderStyle = ""
       if ( ZeidonStringCompare( szBorderStyle, 1, 0, "", 1, 0, 51 ) == 0 )
-      {
-         //:szBorderStyle = "solid"
+      { 
+         //:szBorderStyle = "solid" 
          ZeidonStringCopy( szBorderStyle, 1, 0, "solid", 1, 0, 51 );
-      }
+      } 
 
       //:END
 
 
       //:nRC = IsFlagSequenceSet( lBorderStyle, 256 )
       nRC = IsFlagSequenceSet( lBorderStyle, 256 );
-      //:IF nRC > 0
+      //:IF nRC > 0 
       if ( nRC > 0 )
-      {
+      { 
          //://TraceLineI("**** lBorderStyle Top is SET *** ", nRC)
          //:szStyle = szStyle + "border-top-style=" + QUOTES + szBorderStyle + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "border-top-style=", 1, 0, 257 );
@@ -1517,14 +1533,14 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
          ZeidonStringConcat( szStyle, 1, 0, szBorderStyle, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-      }
+      } 
 
       //:END
       //:nRC = IsFlagSequenceSet( lBorderStyle, 512 )
       nRC = IsFlagSequenceSet( lBorderStyle, 512 );
-      //:IF nRC > 0
+      //:IF nRC > 0 
       if ( nRC > 0 )
-      {
+      { 
          //://TraceLineI("**** lBorderStyle Left is SET *** ", nRC)
          //:szStyle = szStyle + "border-left-style=" + QUOTES + szBorderStyle + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "border-left-style=", 1, 0, 257 );
@@ -1532,14 +1548,14 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
          ZeidonStringConcat( szStyle, 1, 0, szBorderStyle, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-      }
+      } 
 
       //:END
       //:nRC = IsFlagSequenceSet( lBorderStyle, 1024 )
       nRC = IsFlagSequenceSet( lBorderStyle, 1024 );
-      //:IF nRC > 0
+      //:IF nRC > 0 
       if ( nRC > 0 )
-      {
+      { 
          //://TraceLineI("**** lBorderStyle Bottom is SET *** ", nRC)
          //:szStyle = szStyle + "border-bottom-style=" + QUOTES + szBorderStyle + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "border-bottom-style=", 1, 0, 257 );
@@ -1547,14 +1563,14 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
          ZeidonStringConcat( szStyle, 1, 0, szBorderStyle, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-      }
+      } 
 
       //:END
       //:nRC = IsFlagSequenceSet( lBorderStyle, 2048 )
       nRC = IsFlagSequenceSet( lBorderStyle, 2048 );
-      //:IF nRC > 0
+      //:IF nRC > 0 
       if ( nRC > 0 )
-      {
+      { 
          //://TraceLineI("**** lBorderStyle Right is SET *** ", nRC)
          //:szStyle = szStyle + "border-right-style=" + QUOTES + szBorderStyle + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "border-right-style=", 1, 0, 257 );
@@ -1562,21 +1578,21 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
          ZeidonStringConcat( szStyle, 1, 0, szBorderStyle, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
 
    //:IF lJustify != 0
    if ( lJustify != 0 )
-   {
+   { 
       //:nRC = IsFlagSequenceSet( lJustify, 2 )
       nRC = IsFlagSequenceSet( lJustify, 2 );
       //:IF nRC != 0
       if ( nRC != 0 )
-      {
+      { 
          //:szStyle = szStyle + "text-align=" + QUOTES + "center" + QUOTES + " "
          ZeidonStringConcat( szStyle, 1, 0, "text-align=", 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
@@ -1584,97 +1600,97 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:nRC = IsFlagSequenceSet( lJustify, 4 )
          nRC = IsFlagSequenceSet( lJustify, 4 );
          //:IF nRC != 0
          if ( nRC != 0 )
-         {
+         { 
             //:szStyle = szStyle + "text-align=" + QUOTES + "right" + QUOTES + " "
             ZeidonStringConcat( szStyle, 1, 0, "text-align=", 1, 0, 257 );
             ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
             ZeidonStringConcat( szStyle, 1, 0, "right", 1, 0, 257 );
             ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
             ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-         }
+         } 
 
          //:END
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
 
    //:/*
-   //:// Do we only show border if line width is greater than zero?
+   //:// Do we only show border if line width is greater than zero? 
    //:IF vReportDef.Control.BorderWidth > 0
 
-   //:   szBorderWidth = vReportDef.Control.BorderWidth
+   //:   szBorderWidth = vReportDef.Control.BorderWidth 
    //:   szStyle = szStyle + "border-width=" + QUOTES + szBorderWidth + QUOTES + " "
-   //:
+   //:   
    //:   IF vReportDef.Control.BorderStyle = 0
-   //:      szBorderStyle = "solid"
+   //:      szBorderStyle = "solid" 
    //:   ELSE
    //:   IF vReportDef.Control.BorderStyle = 1
-   //:      szBorderStyle = "dashed"
+   //:      szBorderStyle = "dashed" 
    //:   ELSE
    //:   IF vReportDef.Control.BorderStyle = 2
-   //:      szBorderStyle = "dotted"
+   //:      szBorderStyle = "dotted" 
    //:   ELSE
-   //:      szBorderStyle = "solid"
+   //:      szBorderStyle = "solid" 
+   //:   END 
+   //:   END 
    //:   END
-   //:   END
-   //:   END
-   //:
+   //:   
    //:   //IF vReportDef.Control.Tag = "Rpt_Text8" OR  vReportDef.Control.Tag = "Rpt_Text13"
-   //:
+   //:   
    //:   // Maybe put in color later...
    //:   szStyle = szStyle + "border-color=" + QUOTES + "black" + QUOTES + " "
-   //:
+   //:   
    //:   IF vReportDef.Control.BorderTop = 0 AND vReportDef.Control.BorderBottom = 0
    //:      szStyle = szStyle + "border-style=" + QUOTES + szBorderStyle + QUOTES + " "
    //:   ELSE
-   //:   IF vReportDef.Control.BorderTop = 1
+   //:   IF vReportDef.Control.BorderTop = 1 
    //:      szStyle = szStyle + "border-top-style=" + QUOTES + szBorderStyle + QUOTES + " "
    //:   END
    //:   IF vReportDef.Control.BorderBottom = 1
    //:      szStyle = szStyle + "border-bottom-style=" + QUOTES + szBorderStyle + QUOTES + " "
+   //:   END   
    //:   END
-   //:   END
-   //:
+   //:   
    //:   //END
-   //:END
-   //:*/
+   //:END 
+   //:*/ 
 
    //:IF lTextColor > 0
    if ( lTextColor > 0 )
-   {
-      //:TraceLineI("**** lTextColor  *** ", lTextColor )
+   { 
+      //:TraceLineI("**** lTextColor  *** ", lTextColor ) 
       TraceLineI( "**** lTextColor  *** ", lTextColor );
-   }
+   } 
 
    //:END
    //:IF lTextBkColor > 0
    if ( lTextBkColor > 0 )
-   {
-      //:TraceLineI("**** lTextBkColor  *** ", lTextBkColor )
+   { 
+      //:TraceLineI("**** lTextBkColor  *** ", lTextBkColor ) 
       TraceLineI( "**** lTextBkColor  *** ", lTextBkColor );
-   }
+   } 
 
    //:END
 
    //://IF vReportDef.Control.FontSize > 0
    //:IF lFontSize > 0
    if ( lFontSize > 0 )
-   {
+   { 
       //:lFontSize = lFontSize / 10
       lFontSize = lFontSize / 10;
-      //:IF lFontSize != 9
+      //:IF lFontSize != 9 
       if ( lFontSize != 9 )
-      {
+      { 
          //:zIntegerToString( szFontSize, 25, lFontSize )
          zIntegerToString( szFontSize, 25, lFontSize );
          //:szStyle = szStyle + "font-size=" + QUOTES + szFontSize + "pt" + QUOTES + " "
@@ -1684,58 +1700,58 @@ oTZRPSRCO_XSLT_GetStyleText( zVIEW     vReportDef,
          ZeidonStringConcat( szStyle, 1, 0, "pt", 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
          ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-      }
+      } 
 
       //:END
-   }
+   } 
 
-   //:END
+   //:END   
 
    //://IF vReportDef.Control.TextBold = "Y"
    //:IF nBoldFlag != 0
    if ( nBoldFlag != 0 )
-   {
+   { 
       //:szStyle = szStyle + "font-weight=" + QUOTES + "bold" + QUOTES + " "
       ZeidonStringConcat( szStyle, 1, 0, "font-weight=", 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, "bold", 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-   }
+   } 
 
-   //:END
+   //:END   
 
    //://IF vReportDef.Control.TextItalic = "Y"
-   //:IF nItalicFlag != 0
+   //:IF nItalicFlag != 0 
    if ( nItalicFlag != 0 )
-   {
+   { 
       //:szStyle = szStyle + "font-style=" + QUOTES + "italic" + QUOTES + " "
       ZeidonStringConcat( szStyle, 1, 0, "font-style=", 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, "italic", 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-   }
+   } 
 
-   //:END
+   //:END   
 
    //://IF vReportDef.Control.TextUnderline = "Y"
    //:IF nUnderlineFlag != 0
    if ( nUnderlineFlag != 0 )
-   {
+   { 
       //:szStyle = szStyle + "text-decoration=" + QUOTES + "underline" + QUOTES + " "
       ZeidonStringConcat( szStyle, 1, 0, "text-decoration=", 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, "underline", 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, QUOTES, 1, 0, 257 );
       ZeidonStringConcat( szStyle, 1, 0, " ", 1, 0, 257 );
-   }
+   } 
 
-   //:END
+   //:END   
    return( 0 );
-//
+//    
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -1757,91 +1773,91 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                            zPCHAR    szIndentationChars,
                            zLONG     GroupHierarchicalLevel )
 {
-   zVIEW     vReportDefRoot2 = 0;
+   zVIEW     vReportDefRoot2 = 0; 
    //:VIEW vReportDef3     BASED ON LOD TZRPSRCO
-   zVIEW     vReportDef3 = 0;
+   zVIEW     vReportDef3 = 0; 
    //:STRING ( 20 )  szCurrentWidth
-   zCHAR     szCurrentWidth[ 21 ] = { 0 };
+   zCHAR     szCurrentWidth[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szPageWidth
-   zCHAR     szPageWidth[ 21 ] = { 0 };
+   zCHAR     szPageWidth[ 21 ] = { 0 }; 
    //:STRING ( 30 )  szCellPaddingName
-   zCHAR     szCellPaddingName[ 31 ] = { 0 };
+   zCHAR     szCellPaddingName[ 31 ] = { 0 }; 
    //:STRING ( 50 )  szAttributeMappingName
-   zCHAR     szAttributeMappingName[ 51 ] = { 0 };
+   zCHAR     szAttributeMappingName[ 51 ] = { 0 }; 
    //:STRING ( 50 )  szReportDefName
-   zCHAR     szReportDefName[ 51 ] = { 0 };
+   zCHAR     szReportDefName[ 51 ] = { 0 }; 
    //:STRING ( 50 )  szSubIndentationChars
-   zCHAR     szSubIndentationChars[ 51 ] = { 0 };
+   zCHAR     szSubIndentationChars[ 51 ] = { 0 }; 
    //:STRING ( 50 )  szCellPadding
-   zCHAR     szCellPadding[ 51 ] = { 0 };
+   zCHAR     szCellPadding[ 51 ] = { 0 }; 
    //:STRING ( 20 )  szTableMarginTop
-   zCHAR     szTableMarginTop[ 21 ] = { 0 };
+   zCHAR     szTableMarginTop[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTablePaddingLeft
-   zCHAR     szTablePaddingLeft[ 21 ] = { 0 };
+   zCHAR     szTablePaddingLeft[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTableWidth
-   zCHAR     szTableWidth[ 21 ] = { 0 };
+   zCHAR     szTableWidth[ 21 ] = { 0 }; 
    //:STRING ( 5 )   szColumnCount
-   zCHAR     szColumnCount[ 6 ] = { 0 };
+   zCHAR     szColumnCount[ 6 ] = { 0 }; 
    //:STRING ( 1 )   szSubControlType
-   zCHAR     szSubControlType[ 2 ] = { 0 };
+   zCHAR     szSubControlType[ 2 ] = { 0 }; 
    //:STRING ( 1 )   szShapeGrpExists
-   zCHAR     szShapeGrpExists[ 2 ] = { 0 };
+   zCHAR     szShapeGrpExists[ 2 ] = { 0 }; 
    //:STRING ( 1 )   szColumnCountEqual
-   zCHAR     szColumnCountEqual[ 2 ] = { 0 };
+   zCHAR     szColumnCountEqual[ 2 ] = { 0 }; 
    //:STRING ( 2 )   szHierarchicalLevel
-   zCHAR     szHierarchicalLevel[ 3 ] = { 0 };
+   zCHAR     szHierarchicalLevel[ 3 ] = { 0 }; 
    //:STRING ( 20 )  szSubObjectName
-   zCHAR     szSubObjectName[ 21 ] = { 0 };
+   zCHAR     szSubObjectName[ 21 ] = { 0 }; 
    //:STRING ( 200 ) szMsg
-   zCHAR     szMsg[ 201 ] = { 0 };
+   zCHAR     szMsg[ 201 ] = { 0 }; 
    //:STRING ( 256 ) szStyle
-   zCHAR     szStyle[ 257 ] = { 0 };
+   zCHAR     szStyle[ 257 ] = { 0 }; 
    //:STRING ( 10 )  szLineWidth
-   zCHAR     szLineWidth[ 11 ] = { 0 };
+   zCHAR     szLineWidth[ 11 ] = { 0 }; 
    //:INTEGER       CurrentWidth
-   zLONG     CurrentWidth = 0;
+   zLONG     CurrentWidth = 0; 
    //:INTEGER       CurrentRowPositionX
-   zLONG     CurrentRowPositionX = 0;
+   zLONG     CurrentRowPositionX = 0; 
    //:INTEGER       CurrentPositionY
-   zLONG     CurrentPositionY = 0;
+   zLONG     CurrentPositionY = 0; 
    //:INTEGER       LastPositionY
-   zLONG     LastPositionY = 0;
+   zLONG     LastPositionY = 0; 
    //:INTEGER       LastPositionRowY
-   zLONG     LastPositionRowY = 0;
+   zLONG     LastPositionRowY = 0; 
    //:INTEGER       LastPositionX
-   zLONG     LastPositionX = 0;
+   zLONG     LastPositionX = 0; 
    //:INTEGER       LastWidthX
-   zLONG     LastWidthX = 0;
+   zLONG     LastWidthX = 0; 
    //:INTEGER       TopGroupPosition
-   zLONG     TopGroupPosition = 0;
+   zLONG     TopGroupPosition = 0; 
    //:INTEGER       ColumnCount
-   zLONG     ColumnCount = 0;
+   zLONG     ColumnCount = 0; 
    //:INTEGER       ControlCount
-   zLONG     ControlCount = 0;
+   zLONG     ControlCount = 0; 
    //:INTEGER       FirstColumnCount
-   zLONG     FirstColumnCount = 0;
+   zLONG     FirstColumnCount = 0; 
    //:INTEGER       TextColumnCount
-   zLONG     TextColumnCount = 0;
+   zLONG     TextColumnCount = 0; 
    //:INTEGER       CellPadding
-   zLONG     CellPadding = 0;
+   zLONG     CellPadding = 0; 
    //:INTEGER       RowCount
-   zLONG     RowCount = 0;
+   zLONG     RowCount = 0; 
    //:INTEGER       TablePaddingLeft
-   zLONG     TablePaddingLeft = 0;
+   zLONG     TablePaddingLeft = 0; 
    //:INTEGER       TableMarginTop
-   zLONG     TableMarginTop = 0;
+   zLONG     TableMarginTop = 0; 
    //:INTEGER       TableWidth
-   zLONG     TableWidth = 0;
-   zSHORT    RESULT;
-   zSHORT    lTempInteger_0;
-   zCHAR     szTempString_0[ 33 ];
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
-   zLONG     lTempInteger_3;
-   zLONG     lTempInteger_4;
-   zLONG     lTempInteger_5;
-   zSHORT    lTempInteger_6;
-   zCHAR     szTempString_1[ 33 ];
+   zLONG     TableWidth = 0; 
+   zSHORT    RESULT; 
+   zSHORT    lTempInteger_0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
+   zLONG     lTempInteger_3; 
+   zLONG     lTempInteger_4; 
+   zLONG     lTempInteger_5; 
+   zSHORT    lTempInteger_6; 
+   zCHAR     szTempString_1[ 33 ]; 
 
 
 
@@ -1880,18 +1896,18 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDef.Control
    RESULT = SetCursorFirstEntity( vReportDef, "Control", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:IF vReportDef.CtrlCtrl EXISTS AND vReportDef.ControlDef.Tag = "Rpt_Shape"
       lTempInteger_0 = CheckExistenceOfEntity( vReportDef, "CtrlCtrl" );
       if ( lTempInteger_0 == 0 && CompareAttributeToString( vReportDef, "ControlDef", "Tag", "Rpt_Shape" ) == 0 )
-      {
+      { 
          //:szShapeGrpExists = "Y"
          ZeidonStringCopy( szShapeGrpExists, 1, 0, "Y", 1, 0, 2 );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( vReportDef, "Control", "" );
       //:END
-   }
+   } 
 
    //:END
 
@@ -1909,14 +1925,14 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDef.Control
    RESULT = SetCursorFirstEntity( vReportDef, "Control", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:ControlCount = ControlCount + 1
       ControlCount = ControlCount + 1;
       //:CurrentPositionY = vReportDef.Control.PSDLG_Y
       GetIntegerFromAttribute( &CurrentPositionY, vReportDef, "Control", "PSDLG_Y" );
       //:IF CurrentPositionY != LastPositionY
       if ( CurrentPositionY != LastPositionY )
-      {
+      { 
          //:CREATE ENTITY vReportDefRoot.XSLT_WorkRow
          RESULT = CreateEntity( vReportDefRoot, "XSLT_WorkRow", zPOS_AFTER );
          //:vReportDefRoot.XSLT_WorkRow.PSDLG_Y = vReportDef.Control.PSDLG_Y
@@ -1925,7 +1941,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
          GetStringFromAttribute( szTempString_0, vReportDef, "Control", "Tag" );
          ZeidonStringConcat( szTempString_0, 1, 0, "Parent", 1, 0, 33 );
          SetAttributeFromString( vReportDefRoot, "XSLT_WorkRow", "Tag", szTempString_0 );
-      }
+      } 
 
       //:END
       //:LastPositionY = CurrentPositionY
@@ -1939,7 +1955,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
       //:SetMatchingAttributesByName( vReportDefRoot, "XSLT_WorkColumn",  vReportDef, "Control", zSET_NULL )
       SetMatchingAttributesByName( vReportDefRoot, "XSLT_WorkColumn", vReportDef, "Control", zSET_NULL );
       RESULT = SetCursorNextEntity( vReportDef, "Control", "" );
-   }
+   } 
 
    //:END
 
@@ -1956,11 +1972,11 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDefRoot.XSLT_WorkColumn
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:ColumnCount = ColumnCount + 1
       ColumnCount = ColumnCount + 1;
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-   }
+   } 
 
    //:END
    //:FirstColumnCount = ColumnCount
@@ -1968,29 +1984,29 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDefRoot.XSLT_WorkRow
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkRow", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:ColumnCount = 0
       ColumnCount = 0;
       //:FOR EACH vReportDefRoot.XSLT_WorkColumn
       RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //:ColumnCount = ColumnCount + 1
          ColumnCount = ColumnCount + 1;
          RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-      }
+      } 
 
       //:END
       //:IF ColumnCount != FirstColumnCount
       if ( ColumnCount != FirstColumnCount )
-      {
+      { 
          //:szColumnCountEqual = "N"
          ZeidonStringCopy( szColumnCountEqual, 1, 0, "N", 1, 0, 2 );
-      }
+      } 
 
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkRow", "" );
       //:END
-   }
+   } 
 
    //:END
 
@@ -1998,20 +2014,20 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
    //:// I'm also now wondering if we should build the table even if there is one control because we would need the spacing.
    //:IF szShapeGrpExists = "" AND ControlCount = 1
    if ( ZeidonStringCompare( szShapeGrpExists, 1, 0, "", 1, 0, 2 ) == 0 && ControlCount == 1 )
-   {
+   { 
 
       //:// There is only a single Control, so skip table.
       //:XSLT_BuildBlockData( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars, GroupHierarchicalLevel )
       oTZRPSRCO_XSLT_BuildBlockData( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars, GroupHierarchicalLevel );
 
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
       //:// No shape controls but the column nbrs in each row are equal so build as one table.
       //:IF szShapeGrpExists = "" AND szColumnCountEqual = "Y"
       if ( ZeidonStringCompare( szShapeGrpExists, 1, 0, "", 1, 0, 2 ) == 0 && ZeidonStringCompare( szColumnCountEqual, 1, 0, "Y", 1, 0, 2 ) == 0 )
-      {
+      { 
 
          //:szOutputLine = szIndentationChars + "<!-- NO Rpt_Shape Equal column nbr -->"
          ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
@@ -2030,12 +2046,12 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
          //:XSLT_BuildCtrlsAsTable( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szSubIndentationChars, GroupHierarchicalLevel )
          oTZRPSRCO_XSLT_BuildCtrlsAsTable( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szSubIndentationChars, GroupHierarchicalLevel );
          //:ELSE
-      }
+      } 
       else
-      {
-         //:IF  szShapeGrpExists = "" AND szColumnCountEqual = "N"
+      { 
+         //:IF  szShapeGrpExists = "" AND szColumnCountEqual = "N" 
          if ( ZeidonStringCompare( szShapeGrpExists, 1, 0, "", 1, 0, 2 ) == 0 && ZeidonStringCompare( szColumnCountEqual, 1, 0, "N", 1, 0, 2 ) == 0 )
-         {
+         { 
 
             //:szOutputLine = szIndentationChars + "<!-- No Rpt_Shape calling XSLT_BuildCtrlsInRows each line new Table -->"
             ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
@@ -2051,10 +2067,10 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
             //:// Build each row as a separate table.
             //:XSLT_BuildCtrlsInRows( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars )
             oTZRPSRCO_XSLT_BuildCtrlsInRows( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars );
-            //:ELSE
-         }
+            //:ELSE    
+         } 
          else
-         {
+         { 
 
             //:// At least some of the Controls are Shapes/Groups, so continue processing as Group.
 
@@ -2082,7 +2098,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
             //:FOR EACH vReportDefRoot.XSLT_WorkRow
             RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkRow", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            {
+            { 
 
                //:RowCount = RowCount + 1
                RowCount = RowCount + 1;
@@ -2094,16 +2110,16 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                //:// the margin top will be zero.
                //:IF RowCount = 1
                if ( RowCount == 1 )
-               {
+               { 
                   //:TableMarginTop  = vReportDefRoot.XSLT_WorkRow.PSDLG_Y
                   GetIntegerFromAttribute( &TableMarginTop, vReportDefRoot, "XSLT_WorkRow", "PSDLG_Y" );
                   //:ELSE
-               }
+               } 
                else
-               {
+               { 
                   //:TableMarginTop  = 0
                   TableMarginTop = 0;
-               }
+               } 
 
                //:END
                //:ConvertPxToInchesCH( vReportDefRoot, szTableMarginTop, TableMarginTop )
@@ -2115,14 +2131,14 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                //:SET CURSOR FIRST vReportDefRoot.XSLT_WorkColumn
                RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
                //:// KJS 11/28/12
-               //:IF RESULT >= zCURSOR_SET
+               //:IF RESULT >= zCURSOR_SET 
                if ( RESULT >= zCURSOR_SET )
-               {
+               { 
                   //:TablePaddingLeft = vReportDefRoot.XSLT_WorkColumn.PSDLG_X
                   GetIntegerFromAttribute( &TablePaddingLeft, vReportDefRoot, "XSLT_WorkColumn", "PSDLG_X" );
                   //:ConvertPxToInchesCH( vReportDefRoot, szTablePaddingLeft, TablePaddingLeft )
                   oTZRPSRCO_ConvertPxToInchesCH( vReportDefRoot, szTablePaddingLeft, TablePaddingLeft );
-               }
+               } 
 
                //:END
 
@@ -2179,7 +2195,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                //:// Generate Padding Column, if TablePaddingLeft is > 0.
                //:IF TablePaddingLeft > 0
                if ( TablePaddingLeft > 0 )
-               {
+               { 
                   //:szOutputLine = szIndentationChars + "<fo:table-column column-width=" + QUOTES + szTablePaddingLeft + "in" + QUOTES + "/> <!-- This is just for padding -->"
                   ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
                   ZeidonStringConcat( szOutputLine, 1, 0, "<fo:table-column column-width=", 1, 0, 5001 );
@@ -2190,7 +2206,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                   ZeidonStringConcat( szOutputLine, 1, 0, "/> <!-- This is just for padding -->", 1, 0, 5001 );
                   //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                   oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-               }
+               } 
 
                //:END
 
@@ -2198,7 +2214,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                //:FOR EACH vReportDefRoot.XSLT_WorkColumn
                RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
                while ( RESULT > zCURSOR_UNCHANGED )
-               {
+               { 
 
                   //:// The width is the difference between the starting position of this control and the starting position of the next control.
                   //:// If there is no next control, the width will be the actual width of the control.
@@ -2208,18 +2224,18 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                   RESULT = SetCursorNextEntity( vReportDef3, "XSLT_WorkColumn", "" );
                   //:IF RESULT >= zCURSOR_SET
                   if ( RESULT >= zCURSOR_SET )
-                  {
+                  { 
                      //:CurrentWidth  = vReportDef3.XSLT_WorkColumn.PSDLG_X - vReportDefRoot.XSLT_WorkColumn.PSDLG_X
                      GetIntegerFromAttribute( &lTempInteger_3, vReportDef3, "XSLT_WorkColumn", "PSDLG_X" );
                      GetIntegerFromAttribute( &lTempInteger_4, vReportDefRoot, "XSLT_WorkColumn", "PSDLG_X" );
                      CurrentWidth = lTempInteger_3 - lTempInteger_4;
                      //:ELSE
-                  }
+                  } 
                   else
-                  {
+                  { 
                      //:CurrentWidth  = vReportDefRoot.XSLT_WorkColumn.SZDLG_X
                      GetIntegerFromAttribute( &CurrentWidth, vReportDefRoot, "XSLT_WorkColumn", "SZDLG_X" );
-                  }
+                  } 
 
                   //:END
                   //:DropView( vReportDef3 )
@@ -2238,7 +2254,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                   //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                   oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
                   RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-               }
+               } 
 
                //:END
 
@@ -2261,7 +2277,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                //:// Generate Padding Cell, if TablePaddingLeft is > 0.
                //:IF TablePaddingLeft > 0
                if ( TablePaddingLeft > 0 )
-               {
+               { 
                   //:szOutputLine = szIndentationChars + "    <fo:table-cell xsl:use-attribute-sets=" + QUOTES + szCellPaddingName + QUOTES + ">"
                   ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
                   ZeidonStringConcat( szOutputLine, 1, 0, "    <fo:table-cell xsl:use-attribute-sets=", 1, 0, 5001 );
@@ -2283,14 +2299,14 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                   ZeidonStringConcat( szOutputLine, 1, 0, "    </fo:table-cell>", 1, 0, 5001 );
                   //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                   oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-               }
+               } 
 
                //:END
 
                //:FOR EACH vReportDefRoot.XSLT_WorkColumn
                RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
                while ( RESULT > zCURSOR_UNCHANGED )
-               {
+               { 
                   //:szOutputLine = szIndentationChars + "    <fo:table-cell xsl:use-attribute-sets=" + QUOTES + szCellPaddingName + QUOTES + ">"
                   ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
                   ZeidonStringConcat( szOutputLine, 1, 0, "    <fo:table-cell xsl:use-attribute-sets=", 1, 0, 5001 );
@@ -2306,10 +2322,10 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                   GetIntegerFromAttribute( &lTempInteger_5, vReportDefRoot, "XSLT_WorkColumn", "ControlZKey" );
                   RESULT = SetCursorFirstEntityByInteger( vReportDef, "Control", "ZKey", lTempInteger_5, "" );
 
-                  //:IF vReportDef.ControlDef.Tag = "Rpt_Shape" AND vReportDef.CtrlCtrl EXISTS
+                  //:IF vReportDef.ControlDef.Tag = "Rpt_Shape" AND vReportDef.CtrlCtrl EXISTS 
                   lTempInteger_6 = CheckExistenceOfEntity( vReportDef, "CtrlCtrl" );
                   if ( CompareAttributeToString( vReportDef, "ControlDef", "Tag", "Rpt_Shape" ) == 0 && lTempInteger_6 == 0 )
-                  {
+                  { 
 
                      //:szOutputLine = szIndentationChars + "    <!-- ** Rpt_Shape " + vReportDef.Control.Tag + " ** -->"
                      ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
@@ -2348,7 +2364,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                      ZeidonStringCopy( szSubIndentationChars, 1, 0, szIndentationChars, 1, 0, 51 );
                      ZeidonStringConcat( szSubIndentationChars, 1, 0, "      ", 1, 0, 51 );
 
-                     //:// Feel like here I should just look at see if this has sub controls. If so, then
+                     //:// Feel like here I should just look at see if this has sub controls. If so, then 
                      //:// Create new view so that we can save our current position.
 
 
@@ -2374,15 +2390,15 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                      //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                      oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
                      //:ELSE
-                  }
+                  } 
                   else
-                  {
+                  { 
                      //:// I don't think there is anything else is there besides Text or Graphic? Maybe an empty Rpt_Shape?
                      //:// Call XSLT_BuildCtrlsAsTable to format data.
                      //://XSLT_BuildCtrlsAsTable( vReportDefRoot2, vReportDef, vLOD, lFileHandle, szOutputLine, szSubIndentationChars, GroupHierarchicalLevel )
                      //:XSLT_BuildBlockData( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars, GroupHierarchicalLevel )
                      oTZRPSRCO_XSLT_BuildBlockData( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars, GroupHierarchicalLevel );
-                  }
+                  } 
 
                   //:END
 
@@ -2393,7 +2409,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                   //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                   oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
                   RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-               }
+               } 
 
                //:END
 
@@ -2420,7 +2436,7 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
                //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
                oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
                RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkRow", "" );
-            }
+            } 
 
             //:// KJS 12/12/12 - taking out...
             //://szOutputLine = szIndentationChars + "</fo:block>"
@@ -2433,18 +2449,18 @@ oTZRPSRCO_XSLT_GroupRecur( zVIEW     vReportDefRoot,
             //:// Remove the Work Group for this hierarchical level.
             //:DELETE ENTITY vReportDefRoot.XSLT_WorkGroup
             RESULT = DeleteEntity( vReportDefRoot, "XSLT_WorkGroup", zPOS_NEXT );
-         }
+         } 
 
          //:END  // Rpt_Shapes exist
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -2466,60 +2482,60 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
                            zLONG     RowCount,
                            zPCHAR    szForEachName )
 {
-   zVIEW     vReportDef3 = 0;
+   zVIEW     vReportDef3 = 0; 
    //:STRING ( 20 )  szCurrentWidth
-   zCHAR     szCurrentWidth[ 21 ] = { 0 };
+   zCHAR     szCurrentWidth[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szPageWidth
-   zCHAR     szPageWidth[ 21 ] = { 0 };
+   zCHAR     szPageWidth[ 21 ] = { 0 }; 
    //:STRING ( 30 )  szCellPaddingName
-   zCHAR     szCellPaddingName[ 31 ] = { 0 };
+   zCHAR     szCellPaddingName[ 31 ] = { 0 }; 
    //:STRING ( 256 ) szAttributeMappingName
-   zCHAR     szAttributeMappingName[ 257 ] = { 0 };
+   zCHAR     szAttributeMappingName[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szConstantArea
-   zCHAR     szConstantArea[ 257 ] = { 0 };
+   zCHAR     szConstantArea[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szAttribPrefix
-   zCHAR     szAttribPrefix[ 257 ] = { 0 };
+   zCHAR     szAttribPrefix[ 257 ] = { 0 }; 
    //:STRING ( 256 ) szStyle
-   zCHAR     szStyle[ 257 ] = { 0 };
+   zCHAR     szStyle[ 257 ] = { 0 }; 
    //:STRING ( 10 )  szLineWidth
-   zCHAR     szLineWidth[ 11 ] = { 0 };
+   zCHAR     szLineWidth[ 11 ] = { 0 }; 
    //:STRING ( 50 )  szCellPadding
-   zCHAR     szCellPadding[ 51 ] = { 0 };
+   zCHAR     szCellPadding[ 51 ] = { 0 }; 
    //:STRING ( 20 )  szTableMarginTop
-   zCHAR     szTableMarginTop[ 21 ] = { 0 };
+   zCHAR     szTableMarginTop[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTablePaddingLeft
-   zCHAR     szTablePaddingLeft[ 21 ] = { 0 };
+   zCHAR     szTablePaddingLeft[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTableWidth
-   zCHAR     szTableWidth[ 21 ] = { 0 };
+   zCHAR     szTableWidth[ 21 ] = { 0 }; 
    //:INTEGER       CurrentWidth
-   zLONG     CurrentWidth = 0;
+   zLONG     CurrentWidth = 0; 
    //:INTEGER       CurrentPositionY
-   zLONG     CurrentPositionY = 0;
+   zLONG     CurrentPositionY = 0; 
    //:INTEGER       LastPositionY
-   zLONG     LastPositionY = 0;
+   zLONG     LastPositionY = 0; 
    //:INTEGER       FirstColumnPosition
-   zLONG     FirstColumnPosition = 0;
+   zLONG     FirstColumnPosition = 0; 
    //:INTEGER       TopGroupPosition
-   zLONG     TopGroupPosition = 0;
+   zLONG     TopGroupPosition = 0; 
    //:INTEGER       TextColumnCount
-   zLONG     TextColumnCount = 0;
+   zLONG     TextColumnCount = 0; 
    //:INTEGER       TablePaddingLeft
-   zLONG     TablePaddingLeft = 0;
+   zLONG     TablePaddingLeft = 0; 
    //:INTEGER       TableMarginTop
-   zLONG     TableMarginTop = 0;
+   zLONG     TableMarginTop = 0; 
    //:INTEGER       TableWidth
-   zLONG     TableWidth = 0;
+   zLONG     TableWidth = 0; 
    //:INTEGER       LastRowPosition
-   zLONG     LastRowPosition = 0;
+   zLONG     LastRowPosition = 0; 
    //:INTEGER       LastRowHeight
-   zLONG     LastRowHeight = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
-   zLONG     lTempInteger_3;
-   zLONG     lTempInteger_4;
-   zLONG     lTempInteger_5;
+   zLONG     LastRowHeight = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
+   zLONG     lTempInteger_3; 
+   zLONG     lTempInteger_4; 
+   zLONG     lTempInteger_5; 
 
 
    //:// Build Table
@@ -2548,13 +2564,13 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    //:// 2. Any later row is the Y Position minus the previous Row position and Row height (which is Y size of first control).
    //:IF RowCount = 1
    if ( RowCount == 1 )
-   {
+   { 
       //:TableMarginTop  = vReportDefRoot.XSLT_WorkRow.PSDLG_Y
       GetIntegerFromAttribute( &TableMarginTop, vReportDefRoot, "XSLT_WorkRow", "PSDLG_Y" );
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
       //:CreateViewFromView( vReportDef3, vReportDefRoot )
       CreateViewFromView( &vReportDef3, vReportDefRoot );
       //:SET CURSOR PREVIOUS vReportDef3.XSLT_WorkRow
@@ -2568,15 +2584,15 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       TableMarginTop = lTempInteger_0 - LastRowPosition - LastRowHeight;
       //:IF TableMarginTop < 0
       if ( TableMarginTop < 0 )
-      {
+      { 
          //:TableMarginTop = 0
          TableMarginTop = 0;
-      }
+      } 
 
       //:END
       //:DropView( vReportDef3 )
       DropView( vReportDef3 );
-   }
+   } 
 
    //:END
    //:ConvertPxToInchesCH( vReportDef, szTableMarginTop, TableMarginTop )
@@ -2595,10 +2611,10 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    TraceLineI( "*** XSLT_GroupTable TablePaddingLeft *** ", TablePaddingLeft );
    //:IF TablePaddingLeft < 0
    if ( TablePaddingLeft < 0 )
-   {
+   { 
       //:TablePaddingLeft = 0
       TablePaddingLeft = 0;
-   }
+   } 
 
    //:END
    //:ConvertPxToInchesCH( vReportDef, szTablePaddingLeft, TablePaddingLeft )
@@ -2660,7 +2676,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    //:// Generate Padding Column, if TablePaddingLeft is > 0.
    //:IF TablePaddingLeft > 0
    if ( TablePaddingLeft > 0 )
-   {
+   { 
       //:szOutputLine = szIndentationChars + "<fo:table-column column-width=" + QUOTES + szTablePaddingLeft + "in" + QUOTES + "/> <!-- This is just for padding -->"
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
       ZeidonStringConcat( szOutputLine, 1, 0, "<fo:table-column column-width=", 1, 0, 5001 );
@@ -2671,7 +2687,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       ZeidonStringConcat( szOutputLine, 1, 0, "/> <!-- This is just for padding -->", 1, 0, 5001 );
       //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-   }
+   } 
 
    //:END
 
@@ -2679,7 +2695,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDefRoot.XSLT_WorkColumn
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:// The width is the difference between the starting position of this control and the starting position of the next control.
       //:// If there is no next control, the width will be the actual width of the control.
       //:CreateViewFromView( vReportDef3, vReportDefRoot )
@@ -2688,18 +2704,18 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       RESULT = SetCursorNextEntity( vReportDef3, "XSLT_WorkColumn", "" );
       //:IF RESULT >= zCURSOR_SET
       if ( RESULT >= zCURSOR_SET )
-      {
+      { 
          //:CurrentWidth  = vReportDef3.XSLT_WorkColumn.PSDLG_X - vReportDefRoot.XSLT_WorkColumn.PSDLG_X
          GetIntegerFromAttribute( &lTempInteger_3, vReportDef3, "XSLT_WorkColumn", "PSDLG_X" );
          GetIntegerFromAttribute( &lTempInteger_4, vReportDefRoot, "XSLT_WorkColumn", "PSDLG_X" );
          CurrentWidth = lTempInteger_3 - lTempInteger_4;
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:CurrentWidth  = vReportDefRoot.XSLT_WorkColumn.SZDLG_X
          GetIntegerFromAttribute( &CurrentWidth, vReportDefRoot, "XSLT_WorkColumn", "SZDLG_X" );
-      }
+      } 
 
       //:END
       //:DropView( vReportDef3 )
@@ -2717,7 +2733,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-   }
+   } 
 
    //:END
 
@@ -2731,7 +2747,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    //:// If this is for a repeating Entity (based on For-Each flag, create for-each statement.
    //:IF szForEachName != ""
    if ( ZeidonStringCompare( szForEachName, 1, 0, "", 1, 0, 33 ) != 0 )
-   {
+   { 
       //:szOutputLine = szIndentationChars + "<xsl:for-each select=" + QUOTES + szForEachName + QUOTES + ">"
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
       ZeidonStringConcat( szOutputLine, 1, 0, "<xsl:for-each select=", 1, 0, 5001 );
@@ -2741,7 +2757,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       ZeidonStringConcat( szOutputLine, 1, 0, ">", 1, 0, 5001 );
       //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-   }
+   } 
 
    //:END
 
@@ -2756,7 +2772,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    //:// Generate Padding Cell, if TablePaddingLeft is > 0.
    //:IF TablePaddingLeft > 0
    if ( TablePaddingLeft > 0 )
-   {
+   { 
       //:szOutputLine = szIndentationChars + "    <fo:table-cell xsl:use-attribute-sets=" + QUOTES + szCellPaddingName + QUOTES + ">"
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
       ZeidonStringConcat( szOutputLine, 1, 0, "    <fo:table-cell xsl:use-attribute-sets=", 1, 0, 5001 );
@@ -2778,14 +2794,14 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       ZeidonStringConcat( szOutputLine, 1, 0, "    </fo:table-cell>", 1, 0, 5001 );
       //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-   }
+   } 
 
    //:END
 
-   //:/*
+   //:/*   
    //:// This is for page heading/footing
    //://IF vReportDefRoot.XSLT_WorkGroup.RecursiveNumber = -1
-   //:IF vReportDefRoot.XSLT_WorkGroup.EntityName = "PageHeader" OR vReportDefRoot.XSLT_WorkGroup.EntityName = "PageFooter"
+   //:IF vReportDefRoot.XSLT_WorkGroup.EntityName = "PageHeader" OR vReportDefRoot.XSLT_WorkGroup.EntityName = "PageFooter" 
    //:   szAttribPrefix = "zOI/" + vLOD.LOD_EntityParent.Name + "/"
    //:ELSE
    //:   szAttribPrefix = ""
@@ -2797,7 +2813,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    //:FOR EACH vReportDefRoot.XSLT_WorkColumn
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:szOutputLine = szIndentationChars + "    <fo:table-cell xsl:use-attribute-sets=" + QUOTES + szCellPaddingName + QUOTES + ">"
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
@@ -2815,13 +2831,13 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       GetIntegerFromAttribute( &lTempInteger_5, vReportDefRoot, "XSLT_WorkColumn", "ControlZKey" );
       RESULT = SetCursorFirstEntityByInteger( vReportDef, "Control", "ZKey", lTempInteger_5, "" );
       //:// KJS 11/28/12
-      //:IF RESULT >= zCURSOR_SET
+      //:IF RESULT >= zCURSOR_SET 
       if ( RESULT >= zCURSOR_SET )
-      {
+      { 
 
          //:XSLT_BuildControl( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars )
          oTZRPSRCO_XSLT_BuildControl( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars );
-      }
+      } 
 
 
       //:END
@@ -2833,7 +2849,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
       //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-   }
+   } 
 
 
    //:END
@@ -2847,13 +2863,13 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
 
    //:IF szForEachName != ""
    if ( ZeidonStringCompare( szForEachName, 1, 0, "", 1, 0, 33 ) != 0 )
-   {
+   { 
       //:szOutputLine = szIndentationChars + "  </xsl:for-each>"
       ZeidonStringCopy( szOutputLine, 1, 0, szIndentationChars, 1, 0, 5001 );
       ZeidonStringConcat( szOutputLine, 1, 0, "  </xsl:for-each>", 1, 0, 5001 );
       //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
-   }
+   } 
 
    //:END
 
@@ -2884,7 +2900,7 @@ oTZRPSRCO_XSLT_GroupTable( zVIEW     vReportDefRoot,
    oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -2904,40 +2920,40 @@ oTZRPSRCO_XSLT_HeaderFooter( zVIEW     vReportDefRoot,
                              zPCHAR    szIndentationChars,
                              zPCHAR    szForEachName )
 {
-   zVIEW     vReportDef = 0;
+   zVIEW     vReportDef = 0; 
    //:INTEGER PosY
-   zLONG     PosY = 0;
+   zLONG     PosY = 0; 
    //:INTEGER CurrentWidth
-   zLONG     CurrentWidth = 0;
+   zLONG     CurrentWidth = 0; 
    //:INTEGER ColumnCount
-   zLONG     ColumnCount = 0;
+   zLONG     ColumnCount = 0; 
    //:INTEGER CellPadding
-   zLONG     CellPadding = 0;
+   zLONG     CellPadding = 0; 
    //:INTEGER GroupHierarchicalLevel
-   zLONG     GroupHierarchicalLevel = 0;
+   zLONG     GroupHierarchicalLevel = 0; 
    //:STRING ( 50 )  szGroupSetName
-   zCHAR     szGroupSetName[ 51 ] = { 0 };
+   zCHAR     szGroupSetName[ 51 ] = { 0 }; 
    //:STRING ( 10 )  szPageWidth
-   zCHAR     szPageWidth[ 11 ] = { 0 };
+   zCHAR     szPageWidth[ 11 ] = { 0 }; 
    //:STRING ( 10 )  szCurrentWidth
-   zCHAR     szCurrentWidth[ 11 ] = { 0 };
+   zCHAR     szCurrentWidth[ 11 ] = { 0 }; 
    //:STRING ( 1 )   szSingleRowFlag
-   zCHAR     szSingleRowFlag[ 2 ] = { 0 };
+   zCHAR     szSingleRowFlag[ 2 ] = { 0 }; 
    //:STRING ( 32 )  szEntityName
-   zCHAR     szEntityName[ 33 ] = { 0 };
+   zCHAR     szEntityName[ 33 ] = { 0 }; 
    //:STRING ( 32 )  szAttributeName
-   zCHAR     szAttributeName[ 33 ] = { 0 };
+   zCHAR     szAttributeName[ 33 ] = { 0 }; 
    //:STRING ( 20 )  szCellPadding
-   zCHAR     szCellPadding[ 21 ] = { 0 };
+   zCHAR     szCellPadding[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szCellPaddingName
-   zCHAR     szCellPaddingName[ 21 ] = { 0 };
+   zCHAR     szCellPaddingName[ 21 ] = { 0 }; 
    //:STRING ( 50 )  szSubIndentationChars
-   zCHAR     szSubIndentationChars[ 51 ] = { 0 };
-   zSHORT    lTempInteger_0;
-   zSHORT    lTempInteger_1;
-   zSHORT    RESULT;
-   zSHORT    lTempInteger_2;
-   zSHORT    lTempInteger_3;
+   zCHAR     szSubIndentationChars[ 51 ] = { 0 }; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
+   zSHORT    RESULT; 
+   zSHORT    lTempInteger_2; 
+   zSHORT    lTempInteger_3; 
 
 
    //:szPageWidth = "7.5"
@@ -2961,10 +2977,10 @@ oTZRPSRCO_XSLT_HeaderFooter( zVIEW     vReportDefRoot,
    //:GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
    oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
 
-   //:IF vReportDefRoot.Control EXISTS
+   //:IF vReportDefRoot.Control EXISTS 
    lTempInteger_0 = CheckExistenceOfEntity( vReportDefRoot, "Control" );
    if ( lTempInteger_0 == 0 )
-   {
+   { 
 
       //:   // Make sure Controls are in row/column order.
       //:   OrderEntityForView( vReportDefRoot, "Control", "PSDLG_Y A PSDLG_X A" )
@@ -2978,34 +2994,34 @@ oTZRPSRCO_XSLT_HeaderFooter( zVIEW     vReportDefRoot,
       //:   IF vReportDefRoot.Control EXISTS
       lTempInteger_1 = CheckExistenceOfEntity( vReportDefRoot, "Control" );
       if ( lTempInteger_1 == 0 )
-      {
+      { 
          //:   PosY = vReportDefRoot.Control.PSDLG_Y
          GetIntegerFromAttribute( &PosY, vReportDefRoot, "Control", "PSDLG_Y" );
          //:   FOR EACH vReportDefRoot.Control
          RESULT = SetCursorFirstEntity( vReportDefRoot, "Control", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         {
+         { 
             //:   IF vReportDefRoot.CtrlCtrl EXISTS OR vReportDefRoot.Control.PSDLG_Y != PosY
             lTempInteger_2 = CheckExistenceOfEntity( vReportDefRoot, "CtrlCtrl" );
             if ( lTempInteger_2 == 0 || CompareAttributeToInteger( vReportDefRoot, "Control", "PSDLG_Y", PosY ) != 0 )
-            {
+            { 
                //:   szSingleRowFlag = "N"
                ZeidonStringCopy( szSingleRowFlag, 1, 0, "N", 1, 0, 2 );
-            }
+            } 
 
             RESULT = SetCursorNextEntity( vReportDefRoot, "Control", "" );
             //:   END
-         }
+         } 
 
          //:   END
-      }
+      } 
 
       //:   END
       //:   IF szSingleRowFlag = "N"
       if ( ZeidonStringCompare( szSingleRowFlag, 1, 0, "N", 1, 0, 2 ) == 0 )
-      {
+      { 
          //:   // Go to process more complex Group.
-         //:
+         //:                           
          //:   CreateViewFromView( vReportDef, vReportDefRoot )
          CreateViewFromView( &vReportDef, vReportDefRoot );
          //:   NAME VIEW vReportDef "vReportDefTop"
@@ -3014,27 +3030,27 @@ oTZRPSRCO_XSLT_HeaderFooter( zVIEW     vReportDefRoot,
          oTZRPSRCO_XSLT_GroupRecur( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars, GroupHierarchicalLevel );
          //:   DropView( vReportDef )
          DropView( vReportDef );
-         //:
+         //:   
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:   CreateViewFromView( vReportDef, vReportDefRoot )
          CreateViewFromView( &vReportDef, vReportDefRoot );
          //:   // Detail entity has single row.
          //:   // Build work subobject, with a single row and columns.
          //:   CREATE ENTITY vReportDefRoot.XSLT_WorkRow
          RESULT = CreateEntity( vReportDefRoot, "XSLT_WorkRow", zPOS_AFTER );
-         //:   IF vReportDefRoot.Control EXISTS
+         //:   IF vReportDefRoot.Control EXISTS 
          lTempInteger_3 = CheckExistenceOfEntity( vReportDefRoot, "Control" );
          if ( lTempInteger_3 == 0 )
-         {
+         { 
             //:   vReportDefRoot.XSLT_WorkRow.PSDLG_Y = vReportDefRoot.Control.PSDLG_Y
             SetAttributeFromAttribute( vReportDefRoot, "XSLT_WorkRow", "PSDLG_Y", vReportDefRoot, "Control", "PSDLG_Y" );
             //:   FOR EACH vReportDefRoot.Control
             RESULT = SetCursorFirstEntity( vReportDefRoot, "Control", "" );
             while ( RESULT > zCURSOR_UNCHANGED )
-            {
+            { 
                //:   CREATE ENTITY vReportDefRoot.XSLT_WorkColumn
                RESULT = CreateEntity( vReportDefRoot, "XSLT_WorkColumn", zPOS_AFTER );
                //:   vReportDefRoot.XSLT_WorkColumn.ControlZKey = vReportDefRoot.Control.ZKey
@@ -3044,10 +3060,10 @@ oTZRPSRCO_XSLT_HeaderFooter( zVIEW     vReportDefRoot,
                //:   SetMatchingAttributesByName( vReportDefRoot, "XSLT_WorkColumn",  vReportDefRoot, "Control", zSET_NULL )
                SetMatchingAttributesByName( vReportDefRoot, "XSLT_WorkColumn", vReportDefRoot, "Control", zSET_NULL );
                RESULT = SetCursorNextEntity( vReportDefRoot, "Control", "" );
-            }
+            } 
 
             //:   END
-         }
+         } 
 
          //:   END
          //:   // Go to build the table.
@@ -3055,10 +3071,10 @@ oTZRPSRCO_XSLT_HeaderFooter( zVIEW     vReportDefRoot,
          oTZRPSRCO_XSLT_GroupTable( vReportDefRoot, vReportDef, lFileHandle, szOutputLine, szIndentationChars, 1, "" );
          //:   DropView( vReportDef )
          DropView( vReportDef );
-      }
+      } 
 
       //:   END
-   }
+   } 
 
    //:END
 
@@ -3069,34 +3085,34 @@ oTZRPSRCO_XSLT_HeaderFooter( zVIEW     vReportDefRoot,
    oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
 //:XSLT_MainHeader( VIEW vReportDef BASED ON LOD TZRPSRCO,
 //:                 INTEGER lFileHandle,
 //:                 STRING ( 5000 ) szOutputLine )
-//:
+//:                 
 //:   VIEW vLOD BASED ON LOD TZZOLODO
 zOPER_EXPORT zSHORT OPERATION
 oTZRPSRCO_XSLT_MainHeader( zVIEW     vReportDef,
                            zLONG     lFileHandle,
                            zPCHAR    szOutputLine )
 {
-   zVIEW     vLOD = 0;
+   zVIEW     vLOD = 0; 
    //:STRING ( 20 ) szHeaderHeight
-   zCHAR     szHeaderHeight[ 21 ] = { 0 };
+   zCHAR     szHeaderHeight[ 21 ] = { 0 }; 
    //:STRING ( 20 ) szFooterHeight
-   zCHAR     szFooterHeight[ 21 ] = { 0 };
+   zCHAR     szFooterHeight[ 21 ] = { 0 }; 
    //:INTEGER       HeaderHeight
-   zLONG     HeaderHeight = 0;
+   zLONG     HeaderHeight = 0; 
    //:INTEGER       FooterHeight
-   zLONG     FooterHeight = 0;
-   zSHORT    RESULT;
-   zCHAR     szTempString_0[ 33 ];
-   zCHAR     szTempString_1[ 33 ];
-   zSHORT    lTempInteger_0;
-   zSHORT    lTempInteger_1;
+   zLONG     FooterHeight = 0; 
+   zSHORT    RESULT; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
 
 
    //:GET VIEW  vLOD  NAMED "LOD_XSLT"
@@ -3263,31 +3279,31 @@ oTZRPSRCO_XSLT_MainHeader( zVIEW     vReportDef,
    //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
    oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
 
-   //:SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PH"
+   //:SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PH"    
    RESULT = SetCursorFirstEntityByString( vReportDef, "GroupSet", "Type", "PH", "" );
-   //:IF RESULT >= zCURSOR_SET
+   //:IF RESULT >= zCURSOR_SET 
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
 
-      //:HeaderHeight = vReportDef.Group.SZDLG_Y
+      //:HeaderHeight = vReportDef.Group.SZDLG_Y 
       GetIntegerFromAttribute( &HeaderHeight, vReportDef, "Group", "SZDLG_Y" );
       //:ConvertPxToInchesCH( vReportDef, szHeaderHeight, HeaderHeight )
       oTZRPSRCO_ConvertPxToInchesCH( vReportDef, szHeaderHeight, HeaderHeight );
-   }
+   } 
 
    //:END
 
-   //:SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PF"
+   //:SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PF"    
    RESULT = SetCursorFirstEntityByString( vReportDef, "GroupSet", "Type", "PF", "" );
-   //:IF RESULT >= zCURSOR_SET
+   //:IF RESULT >= zCURSOR_SET 
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
 
-      //:FooterHeight = vReportDef.Group.SZDLG_Y
+      //:FooterHeight = vReportDef.Group.SZDLG_Y 
       GetIntegerFromAttribute( &FooterHeight, vReportDef, "Group", "SZDLG_Y" );
       //:ConvertPxToInchesCH( vReportDef, szFooterHeight, FooterHeight )
       oTZRPSRCO_ConvertPxToInchesCH( vReportDef, szFooterHeight, FooterHeight );
-   }
+   } 
 
    //:END
 
@@ -3364,29 +3380,29 @@ oTZRPSRCO_XSLT_MainHeader( zVIEW     vReportDef,
    oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
 
 
-   //:// Process Page Header
-   //:SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PH"
+   //:// Process Page Header    
+   //:SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Type = "PH"    
    RESULT = SetCursorFirstEntityByString( vReportDef, "GroupSet", "Type", "PH", "" );
-   //:IF RESULT >= zCURSOR_SET
+   //:IF RESULT >= zCURSOR_SET 
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
 
-      //:IF vReportDef.Control EXISTS
+      //:IF vReportDef.Control EXISTS 
       lTempInteger_0 = CheckExistenceOfEntity( vReportDef, "Control" );
       if ( lTempInteger_0 == 0 )
-      {
+      { 
 
          //:FOR EACH vReportDef.XSLT_WorkGroup
          RESULT = SetCursorFirstEntity( vReportDef, "XSLT_WorkGroup", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         {
-            //:DELETE ENTITY vReportDef.XSLT_WorkGroup NONE
+         { 
+            //:DELETE ENTITY vReportDef.XSLT_WorkGroup NONE  
             RESULT = DeleteEntity( vReportDef, "XSLT_WorkGroup", zREPOS_NONE );
             RESULT = SetCursorNextEntity( vReportDef, "XSLT_WorkGroup", "" );
-         }
+         } 
 
          //:END
-         //:CREATE ENTITY vReportDef.XSLT_WorkGroup
+         //:CREATE ENTITY vReportDef.XSLT_WorkGroup 
          RESULT = CreateEntity( vReportDef, "XSLT_WorkGroup", zPOS_AFTER );
 
          //:// Using this to show that it is the PageHeader or PageFooter
@@ -3402,10 +3418,10 @@ oTZRPSRCO_XSLT_MainHeader( zVIEW     vReportDef,
 
          //:XSLT_HeaderFooter( vReportDef, vLOD, lFileHandle, szOutputLine, "      ", "PageHeader" )
          oTZRPSRCO_XSLT_HeaderFooter( vReportDef, vLOD, lFileHandle, szOutputLine, "      ", "PageHeader" );
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
 
@@ -3439,27 +3455,27 @@ oTZRPSRCO_XSLT_MainHeader( zVIEW     vReportDef,
    RESULT = SetCursorFirstEntityByString( vReportDef, "GroupSet", "Type", "PF", "" );
    //:IF RESULT >= zCURSOR_SET
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
 
-      //:IF vReportDef.Control EXISTS
+      //:IF vReportDef.Control EXISTS 
       lTempInteger_1 = CheckExistenceOfEntity( vReportDef, "Control" );
       if ( lTempInteger_1 == 0 )
-      {
+      { 
 
          //:FOR EACH vReportDef.XSLT_WorkGroup
          RESULT = SetCursorFirstEntity( vReportDef, "XSLT_WorkGroup", "" );
          while ( RESULT > zCURSOR_UNCHANGED )
-         {
-            //:DELETE ENTITY vReportDef.XSLT_WorkGroup NONE
+         { 
+            //:DELETE ENTITY vReportDef.XSLT_WorkGroup NONE  
             RESULT = DeleteEntity( vReportDef, "XSLT_WorkGroup", zREPOS_NONE );
             RESULT = SetCursorNextEntity( vReportDef, "XSLT_WorkGroup", "" );
-         }
+         } 
 
          //:END
-         //:
-         //:CREATE ENTITY vReportDef.XSLT_WorkGroup
+         //:   
+         //:CREATE ENTITY vReportDef.XSLT_WorkGroup 
          RESULT = CreateEntity( vReportDef, "XSLT_WorkGroup", zPOS_AFTER );
-         //:
+         //: 
          //:vReportDef.XSLT_WorkGroup.RecursiveNumber = -1
          SetAttributeFromInteger( vReportDef, "XSLT_WorkGroup", "RecursiveNumber", -1 );
 
@@ -3472,10 +3488,10 @@ oTZRPSRCO_XSLT_MainHeader( zVIEW     vReportDef,
 
          //:XSLT_HeaderFooter( vReportDef, vLOD, lFileHandle, szOutputLine, "      ", "PageFooter" )
          oTZRPSRCO_XSLT_HeaderFooter( vReportDef, vLOD, lFileHandle, szOutputLine, "      ", "PageFooter" );
-      }
+      } 
 
       //:END
-   }
+   } 
 
    //:END
 
@@ -3556,7 +3572,7 @@ oTZRPSRCO_XSLT_MainHeader( zVIEW     vReportDef,
    oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -3578,80 +3594,80 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
                                   zPCHAR    szIndentationChars,
                                   zLONG     GroupHierarchicalLevel )
 {
-   zVIEW     vReportDef3 = 0;
+   zVIEW     vReportDef3 = 0; 
    //:STRING ( 20 )  szCurrentWidth
-   zCHAR     szCurrentWidth[ 21 ] = { 0 };
+   zCHAR     szCurrentWidth[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szPageWidth
-   zCHAR     szPageWidth[ 21 ] = { 0 };
+   zCHAR     szPageWidth[ 21 ] = { 0 }; 
    //:STRING ( 30 )  szCellPaddingName
-   zCHAR     szCellPaddingName[ 31 ] = { 0 };
+   zCHAR     szCellPaddingName[ 31 ] = { 0 }; 
    //:STRING ( 50 )  szAttributeMappingName
-   zCHAR     szAttributeMappingName[ 51 ] = { 0 };
+   zCHAR     szAttributeMappingName[ 51 ] = { 0 }; 
    //:STRING ( 256 ) szConstantArea
-   zCHAR     szConstantArea[ 257 ] = { 0 };
+   zCHAR     szConstantArea[ 257 ] = { 0 }; 
    //:STRING ( 50 )  szReportDefName
-   zCHAR     szReportDefName[ 51 ] = { 0 };
+   zCHAR     szReportDefName[ 51 ] = { 0 }; 
    //:STRING ( 50 )  szSubIndentationChars
-   zCHAR     szSubIndentationChars[ 51 ] = { 0 };
+   zCHAR     szSubIndentationChars[ 51 ] = { 0 }; 
    //:STRING ( 50 )  szCellPadding
-   zCHAR     szCellPadding[ 51 ] = { 0 };
+   zCHAR     szCellPadding[ 51 ] = { 0 }; 
    //:STRING ( 20 )  szTableMarginTop
-   zCHAR     szTableMarginTop[ 21 ] = { 0 };
+   zCHAR     szTableMarginTop[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTablePaddingLeft
-   zCHAR     szTablePaddingLeft[ 21 ] = { 0 };
+   zCHAR     szTablePaddingLeft[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szTableWidth
-   zCHAR     szTableWidth[ 21 ] = { 0 };
+   zCHAR     szTableWidth[ 21 ] = { 0 }; 
    //:STRING ( 20 )  szPaddingTop
-   zCHAR     szPaddingTop[ 21 ] = { 0 };
+   zCHAR     szPaddingTop[ 21 ] = { 0 }; 
    //:STRING ( 5 )   szColumnCount
-   zCHAR     szColumnCount[ 6 ] = { 0 };
+   zCHAR     szColumnCount[ 6 ] = { 0 }; 
    //:STRING ( 200 ) szMsg
-   zCHAR     szMsg[ 201 ] = { 0 };
+   zCHAR     szMsg[ 201 ] = { 0 }; 
    //:INTEGER       CurrentWidth
-   zLONG     CurrentWidth = 0;
+   zLONG     CurrentWidth = 0; 
    //:INTEGER       CurrentRowPositionX
-   zLONG     CurrentRowPositionX = 0;
+   zLONG     CurrentRowPositionX = 0; 
    //:INTEGER       CurrentPositionY
-   zLONG     CurrentPositionY = 0;
+   zLONG     CurrentPositionY = 0; 
    //:INTEGER       LastPositionY
-   zLONG     LastPositionY = 0;
+   zLONG     LastPositionY = 0; 
    //:INTEGER       LastPositionRowY
-   zLONG     LastPositionRowY = 0;
+   zLONG     LastPositionRowY = 0; 
    //:INTEGER       LastPositionX
-   zLONG     LastPositionX = 0;
+   zLONG     LastPositionX = 0; 
    //:INTEGER       LastWidthX
-   zLONG     LastWidthX = 0;
+   zLONG     LastWidthX = 0; 
    //:INTEGER       FirstColumnPosition
-   zLONG     FirstColumnPosition = 0;
+   zLONG     FirstColumnPosition = 0; 
    //:INTEGER       TopGroupPosition
-   zLONG     TopGroupPosition = 0;
+   zLONG     TopGroupPosition = 0; 
    //:INTEGER       ColumnCount
-   zLONG     ColumnCount = 0;
+   zLONG     ColumnCount = 0; 
    //:INTEGER       FirstColumnCount
-   zLONG     FirstColumnCount = 0;
+   zLONG     FirstColumnCount = 0; 
    //:INTEGER       TextColumnCount
-   zLONG     TextColumnCount = 0;
+   zLONG     TextColumnCount = 0; 
    //:INTEGER       CellPadding
-   zLONG     CellPadding = 0;
+   zLONG     CellPadding = 0; 
    //:INTEGER       RowCount
-   zLONG     RowCount = 0;
+   zLONG     RowCount = 0; 
    //:INTEGER       TablePaddingLeft
-   zLONG     TablePaddingLeft = 0;
+   zLONG     TablePaddingLeft = 0; 
    //:INTEGER       TableMarginTop
-   zLONG     TableMarginTop = 0;
+   zLONG     TableMarginTop = 0; 
    //:INTEGER       TableWidth
-   zLONG     TableWidth = 0;
+   zLONG     TableWidth = 0; 
    //:INTEGER       MaximumWidth
-   zLONG     MaximumWidth = 0;
+   zLONG     MaximumWidth = 0; 
    //:INTEGER       PaddingTop
-   zLONG     PaddingTop = 0;
+   zLONG     PaddingTop = 0; 
    //:INTEGER       ControlCount
-   zLONG     ControlCount = 0;
-   zSHORT    RESULT;
-   zLONG     lTempInteger_0;
-   zLONG     lTempInteger_1;
-   zLONG     lTempInteger_2;
-   zLONG     lTempInteger_3;
+   zLONG     ControlCount = 0; 
+   zSHORT    RESULT; 
+   zLONG     lTempInteger_0; 
+   zLONG     lTempInteger_1; 
+   zLONG     lTempInteger_2; 
+   zLONG     lTempInteger_3; 
 
 
    //:TraceLineS("*** XSLT_BuildCtrlsAsTable *** ", "")
@@ -3733,14 +3749,14 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
    //:   SET CURSOR FIRST vReportDefRoot.XSLT_WorkRow
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkRow", "" );
    //:   // KJS 11/28/12
-   //:   IF RESULT >= zCURSOR_SET
+   //:   IF RESULT >= zCURSOR_SET 
    if ( RESULT >= zCURSOR_SET )
-   {
+   { 
       //:TableMarginTop = vReportDefRoot.XSLT_WorkRow.PSDLG_Y
       GetIntegerFromAttribute( &TableMarginTop, vReportDefRoot, "XSLT_WorkRow", "PSDLG_Y" );
       //:XSLT_BuildTable( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars, GroupHierarchicalLevel, TableMarginTop, TableWidth )
       oTZRPSRCO_XSLT_BuildTable( vReportDefRoot, vReportDef, vLOD, lFileHandle, szOutputLine, szIndentationChars, GroupHierarchicalLevel, TableMarginTop, TableWidth );
-   }
+   } 
 
    //:   END
 
@@ -3750,57 +3766,57 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
    //:   FOR EACH vReportDefRoot.XSLT_WorkRow
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkRow", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       //:   ColumnCount = 0
       ColumnCount = 0;
       //:   FOR EACH vReportDefRoot.XSLT_WorkColumn
       RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
          //:   ColumnCount = ColumnCount + 1
          ColumnCount = ColumnCount + 1;
          //:   SET CURSOR FIRST vReportDefRoot.XSLT_ColumnWidth WHERE vReportDefRoot.XSLT_ColumnWidth.Index = ColumnCount
          RESULT = SetCursorFirstEntityByInteger( vReportDefRoot, "XSLT_ColumnWidth", "Index", ColumnCount, "" );
          //:   IF RESULT < zCURSOR_SET
          if ( RESULT < zCURSOR_SET )
-         {
+         { 
             //:   CREATE ENTITY vReportDefRoot.XSLT_ColumnWidth
             RESULT = CreateEntity( vReportDefRoot, "XSLT_ColumnWidth", zPOS_AFTER );
             //:   vReportDefRoot.XSLT_ColumnWidth.Index = ColumnCount
             SetAttributeFromInteger( vReportDefRoot, "XSLT_ColumnWidth", "Index", ColumnCount );
-         }
+         } 
 
          //:   END
          //:   IF ColumnCount = 1
          if ( ColumnCount == 1 )
-         {
+         { 
             //:   MaximumWidth = vReportDefRoot.XSLT_WorkColumn.SZDLG_X + vReportDefRoot.XSLT_WorkColumn.PSDLG_X
             GetIntegerFromAttribute( &lTempInteger_0, vReportDefRoot, "XSLT_WorkColumn", "SZDLG_X" );
             GetIntegerFromAttribute( &lTempInteger_1, vReportDefRoot, "XSLT_WorkColumn", "PSDLG_X" );
             MaximumWidth = lTempInteger_0 + lTempInteger_1;
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
             //:   MaximumWidth = vReportDefRoot.XSLT_WorkColumn.SZDLG_X
             GetIntegerFromAttribute( &MaximumWidth, vReportDefRoot, "XSLT_WorkColumn", "SZDLG_X" );
-         }
+         } 
 
          //:   END
          //:   IF MaximumWidth > vReportDefRoot.XSLT_ColumnWidth.MaximumWidth
          if ( CompareAttributeToInteger( vReportDefRoot, "XSLT_ColumnWidth", "MaximumWidth", MaximumWidth ) < 0 )
-         {
+         { 
             //:   vReportDefRoot.XSLT_ColumnWidth.MaximumWidth = MaximumWidth
             SetAttributeFromInteger( vReportDefRoot, "XSLT_ColumnWidth", "MaximumWidth", MaximumWidth );
-         }
+         } 
 
          RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
          //:   END
-      }
+      } 
 
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkRow", "" );
       //:   END
-   }
+   } 
 
    //:   END
    //:   SET CURSOR FIRST vReportDefRoot.XSLT_WorkRow
@@ -3810,7 +3826,7 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
    //:   FOR EACH vReportDefRoot.XSLT_WorkColumn
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:   ColumnCount = ColumnCount + 1
       ColumnCount = ColumnCount + 1;
@@ -3823,7 +3839,7 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
       SetNameForView( vReportDef3, "vReportDef3SubText", 0, zLEVEL_TASK );
       //:   IF ColumnCount = 1
       if ( ColumnCount == 1 )
-      {
+      { 
          //:   // The width of the first column is the starting position of the next column, if there is one.
          //:   // Otherwise it's the width of the single control plus its X position.
          //:   // In either case, it needs to be big enough to handle any padding characters.
@@ -3831,45 +3847,45 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
          RESULT = SetCursorNextEntity( vReportDef3, "XSLT_WorkColumn", "" );
          //:   IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         {
+         { 
             //:   // There is a next column, so use its X position as the first column width.
             //:   CurrentWidth = vReportDef3.XSLT_WorkColumn.PSDLG_X
             GetIntegerFromAttribute( &CurrentWidth, vReportDef3, "XSLT_WorkColumn", "PSDLG_X" );
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
             //:   // There is no next column, so use computed width from above.
             //:   CurrentWidth = vReportDefRoot.XSLT_ColumnWidth.MaximumWidth
             GetIntegerFromAttribute( &CurrentWidth, vReportDefRoot, "XSLT_ColumnWidth", "MaximumWidth" );
-         }
+         } 
 
          //:   END
          //:ELSE
-      }
+      } 
       else
-      {
+      { 
          //:   // The width is the difference between the starting position of this control and the starting position of the next control.
          //:   // If there is no next control, the width will be the actual width of the control computed above.
          //:   SET CURSOR NEXT vReportDef3.XSLT_WorkColumn
          RESULT = SetCursorNextEntity( vReportDef3, "XSLT_WorkColumn", "" );
          //:   IF RESULT >= zCURSOR_SET
          if ( RESULT >= zCURSOR_SET )
-         {
+         { 
             //:   CurrentWidth  = vReportDef3.XSLT_WorkColumn.PSDLG_X - vReportDefRoot.XSLT_WorkColumn.PSDLG_X
             GetIntegerFromAttribute( &lTempInteger_2, vReportDef3, "XSLT_WorkColumn", "PSDLG_X" );
             GetIntegerFromAttribute( &lTempInteger_3, vReportDefRoot, "XSLT_WorkColumn", "PSDLG_X" );
             CurrentWidth = lTempInteger_2 - lTempInteger_3;
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
             //:   CurrentWidth  = vReportDefRoot.XSLT_ColumnWidth.MaximumWidth
             GetIntegerFromAttribute( &CurrentWidth, vReportDefRoot, "XSLT_ColumnWidth", "MaximumWidth" );
-         }
+         } 
 
          //:   END
-      }
+      } 
 
       //:   END
       //:   ConvertPxToInchesCH( vReportDef, szCurrentWidth, CurrentWidth )
@@ -3888,7 +3904,7 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
       //:   GenerateLine( vReportDefRoot, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDefRoot, lFileHandle, szOutputLine );
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-   }
+   } 
 
 
    //:   END
@@ -3906,7 +3922,7 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
    //:   FOR EACH vReportDefRoot.XSLT_WorkRow
    RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkRow", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
 
       //:   // Build open table-row statement.
       //:   szOutputLine = szIndentationChars + "  <fo:table-row>"
@@ -3921,26 +3937,26 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
       //:   FOR EACH vReportDefRoot.XSLT_WorkColumn
       RESULT = SetCursorFirstEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
-      {
+      { 
 
          //:   // Cell padding is only used for first column in row.
          //:   TextColumnCount = TextColumnCount + 1
          TextColumnCount = TextColumnCount + 1;
          //:   IF TextColumnCount = 1
          if ( TextColumnCount == 1 )
-         {
+         { 
             //:   // Determine padding for 1st column.
             //:   CellPadding = vReportDefRoot.XSLT_WorkColumn.PSDLG_X
             GetIntegerFromAttribute( &CellPadding, vReportDefRoot, "XSLT_WorkColumn", "PSDLG_X" );
             //:   ConvertPxToInchesCH( vReportDef, szCellPadding, CellPadding )
             oTZRPSRCO_ConvertPxToInchesCH( vReportDef, szCellPadding, CellPadding );
             //:ELSE
-         }
+         } 
          else
-         {
+         { 
             //:   szCellPadding = "0"
             ZeidonStringCopy( szCellPadding, 1, 0, "0", 1, 0, 51 );
-         }
+         } 
 
          //:   END
 
@@ -3971,7 +3987,7 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
          //:   GenerateLine( vReportDef, lFileHandle, szOutputLine )
          oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
          RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkColumn", "" );
-      }
+      } 
 
 
       //:   END
@@ -3983,7 +3999,7 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
       //:   GenerateLine( vReportDef, lFileHandle, szOutputLine )
       oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
       RESULT = SetCursorNextEntity( vReportDefRoot, "XSLT_WorkRow", "" );
-   }
+   } 
 
 
    //:   END
@@ -4012,7 +4028,7 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
    RESULT = DeleteEntity( vReportDefRoot, "XSLT_WorkGroup", zPOS_NEXT );
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -4022,40 +4038,40 @@ oTZRPSRCO_XSLT_BuildCtrlsAsTable( zVIEW     vReportDefRoot,
 zOPER_EXPORT zSHORT OPERATION
 oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
 {
-   zVIEW     vReportDef = 0;
+   zVIEW     vReportDef = 0; 
    //:VIEW vReportRecurs BASED ON LOD TZRPSRCO
-   zVIEW     vReportRecurs = 0;
+   zVIEW     vReportRecurs = 0; 
    //:VIEW vLOD          BASED ON LOD TZZOLODO
-   zVIEW     vLOD = 0;
+   zVIEW     vLOD = 0; 
    //:VIEW vTaskLPLR     BASED ON LOD TZCMLPLO
-   zVIEW     vTaskLPLR = 0;
+   zVIEW     vTaskLPLR = 0; 
    //:STRING ( 32 )   szTopEntityName
-   zCHAR     szTopEntityName[ 33 ] = { 0 };
+   zCHAR     szTopEntityName[ 33 ] = { 0 }; 
    //:STRING ( 50 )   szGroupSetName
-   zCHAR     szGroupSetName[ 51 ] = { 0 };
+   zCHAR     szGroupSetName[ 51 ] = { 0 }; 
    //:STRING ( 200 )  szMsg
-   zCHAR     szMsg[ 201 ] = { 0 };
+   zCHAR     szMsg[ 201 ] = { 0 }; 
    //:STRING ( 200 )  szFileName
-   zCHAR     szFileName[ 201 ] = { 0 };
+   zCHAR     szFileName[ 201 ] = { 0 }; 
    //:STRING ( 5000 ) szOutputLine
-   zCHAR     szOutputLine[ 5001 ] = { 0 };
+   zCHAR     szOutputLine[ 5001 ] = { 0 }; 
    //:STRING ( 1000 ) szStructure
-   zCHAR     szStructure[ 1001 ] = { 0 };
+   zCHAR     szStructure[ 1001 ] = { 0 }; 
    //:STRING ( 50 )   szIndentationChars
-   zCHAR     szIndentationChars[ 51 ] = { 0 };
+   zCHAR     szIndentationChars[ 51 ] = { 0 }; 
    //:STRING ( 200 )  szPathName
-   zCHAR     szPathName[ 201 ] = { 0 };
+   zCHAR     szPathName[ 201 ] = { 0 }; 
    //:INTEGER         lFileHandle
-   zLONG     lFileHandle = 0;
+   zLONG     lFileHandle = 0; 
    //:SHORT           nRC
-   zSHORT    nRC = 0;
-   zCHAR     szTempString_0[ 33 ];
-   zSHORT    lTempInteger_0;
-   zSHORT    RESULT;
-   zCHAR     szTempString_1[ 33 ];
-   zSHORT    lTempInteger_1;
-   zSHORT    lTempInteger_2;
-   zSHORT    lTempInteger_3;
+   zSHORT    nRC = 0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    RESULT; 
+   zCHAR     szTempString_1[ 33 ]; 
+   zSHORT    lTempInteger_1; 
+   zSHORT    lTempInteger_2; 
+   zSHORT    lTempInteger_3; 
 
 
    //:// Build an XSLT object from the Dialog Window passed.
@@ -4076,7 +4092,7 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
    lFileHandle = SysOpenFile( SourceReport, szFileName, COREFILE_WRITE );
    //:IF lFileHandle < 0
    if ( lFileHandle < 0 )
-   {
+   { 
       //:szMsg = "Cannot open XSLT Output File, " + szFileName
       ZeidonStringCopy( szMsg, 1, 0, "Cannot open XSLT Output File, ", 1, 0, 201 );
       ZeidonStringConcat( szMsg, 1, 0, szFileName, 1, 0, 201 );
@@ -4085,7 +4101,7 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
       MessageSend( SourceReport, "", "Generate XSLT", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
       //:RETURN -1
       return( -1 );
-   }
+   } 
 
    //:END
 
@@ -4093,7 +4109,7 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
    //:IF vReportDef.DrivingViewObjRef EXISTS
    lTempInteger_0 = CheckExistenceOfEntity( vReportDef, "DrivingViewObjRef" );
    if ( lTempInteger_0 == 0 )
-   {
+   { 
       //://szFileName = "c:\temp\mSAProfE.lod"
       //:GET VIEW vTaskLPLR NAMED "TaskLPLR"
       RESULT = GetViewByName( &vTaskLPLR, "TaskLPLR", SourceReport, zLEVEL_TASK );
@@ -4109,9 +4125,9 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
       //:NAME VIEW vLOD "LOD_XSLT"
       SetNameForView( vLOD, "LOD_XSLT", 0, zLEVEL_TASK );
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
       //:szMsg = "One of the registered views needs to be set as the 'Driving View'. "
       ZeidonStringCopy( szMsg, 1, 0, "One of the registered views needs to be set as the 'Driving View'. ", 1, 0, 201 );
       //:MessageSend( SourceReport, "", "Generate XSLT",
@@ -4121,7 +4137,7 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
       SysCloseFile( SourceReport, lFileHandle, 0 );
       //:RETURN -1
       return( -1 );
-   }
+   } 
 
    //:END
 
@@ -4137,30 +4153,30 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
    //:SET CURSOR FIRST vReportDef.GroupSet WHERE vReportDef.GroupSet.Tag != "Rpt_GroupSet1"
    RESULT = SetCursorFirstEntity( vReportDef, "GroupSet", "" );
    if ( RESULT > zCURSOR_UNCHANGED )
-   {
+   { 
       while ( RESULT > zCURSOR_UNCHANGED && ( CompareAttributeToString( vReportDef, "GroupSet", "Tag", "Rpt_GroupSet1" ) == 0 ) )
-      {
+      { 
          RESULT = SetCursorNextEntity( vReportDef, "GroupSet", "" );
-      }
+      } 
 
-   }
+   } 
 
-   //:IF vReportDef.PartialReportEntity EXISTS
+   //:IF vReportDef.PartialReportEntity EXISTS 
    lTempInteger_1 = CheckExistenceOfEntity( vReportDef, "PartialReportEntity" );
    if ( lTempInteger_1 == 0 )
-   {
-      //:szTopEntityName = vReportDef.PartialReportEntity.Name
+   { 
+      //:szTopEntityName = vReportDef.PartialReportEntity.Name 
       GetVariableFromAttribute( szTopEntityName, 0, 'S', 33, vReportDef, "PartialReportEntity", "Name", "", 0 );
       //:ELSE
-   }
+   } 
    else
-   {
+   { 
       //:MessageSend( SourceReport, "You can't generate to xslt without any GroupSets.", "Generate XSLT",
       //:             szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
       MessageSend( SourceReport, "You can't generate to xslt without any GroupSets.", "Generate XSLT", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
-      //:RETURN 2
+      //:RETURN 2                   
       return( 2 );
-   }
+   } 
 
    //:END
    //://szTopEntityName = vReportDef.GroupSet.Tag
@@ -4172,10 +4188,10 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
    //:IF vReportDef.XSLT_WorkGroup EXISTS
    lTempInteger_2 = CheckExistenceOfEntity( vReportDef, "XSLT_WorkGroup" );
    if ( lTempInteger_2 == 0 )
-   {
+   { 
       //:DELETE ENTITY vReportDef.XSLT_WorkGroup
       RESULT = DeleteEntity( vReportDef, "XSLT_WorkGroup", zPOS_NEXT );
-   }
+   } 
 
    //:END
 
@@ -4200,7 +4216,7 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
    ZeidonStringConcat( szOutputLine, 1, 0, ">", 1, 0, 5001 );
    //:GenerateLine( vReportDef, lFileHandle, szOutputLine )
    oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, szOutputLine );
-   //:GenerateLine( vReportDef, lFileHandle, " " )
+   //:GenerateLine( vReportDef, lFileHandle, " " )   
    oTZRPSRCO_GenerateLine( vReportDef, lFileHandle, " " );
 
    //:CREATE ENTITY vReportDef.XSLT_WorkGroup
@@ -4247,15 +4263,15 @@ oTZRPSRCO_GenerateXSLT( zVIEW     SourceReport )
    //:IF vReportDef.XSLT_WorkGroup EXISTS
    lTempInteger_3 = CheckExistenceOfEntity( vReportDef, "XSLT_WorkGroup" );
    if ( lTempInteger_3 == 0 )
-   {
+   { 
       //:DELETE ENTITY vReportDef.XSLT_WorkGroup
       RESULT = DeleteEntity( vReportDef, "XSLT_WorkGroup", zPOS_NEXT );
-   }
+   } 
 
    //:END
    return( 0 );
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -4275,7 +4291,7 @@ oTZRPSRCO_GenerateLine( zVIEW     ReportObject,
    SysWriteLine( ReportObject, lFileHandle, szOutputLine );
    return( 0 );
 // END
-}
+} 
 
 
 //:TRANSFORMATION OPERATION
@@ -4294,7 +4310,7 @@ oTZRPSRCO_GenerateXSLT_PDF( zVIEW     vReportDef,
 //    // The first step is to build the XML object for the passed in application object and Report Definition.
 //    //GenerateXSLT_XML( vReportDef, vSourceOI, szTopEntityName )
 // END
-}
+} 
 
 
 //:LOCAL OPERATION
@@ -4308,11 +4324,11 @@ oTZRPSRCO_ConvertPxToInchesCH( zVIEW     vReportDefRoot,
                                zPCHAR    ReturnedString,
                                zLONG     lValueInPixles )
 {
-   ZDecimal  dValueInInches = 0.0;
+   ZDecimal  dValueInInches = 0.0; 
    //:DECIMAL dDecimal0
-   ZDecimal  dDecimal0 = 0.0;
+   ZDecimal  dDecimal0 = 0.0; 
    //:INTEGER lValueInInches
-   zLONG     lValueInInches = 0;
+   zLONG     lValueInInches = 0; 
 
 
    //:// Convert pixles integer value to decimal 2 as a returned string.
@@ -4328,10 +4344,10 @@ oTZRPSRCO_ConvertPxToInchesCH( zVIEW     vReportDefRoot,
    ZeidonStringConvertFromNumber( ReturnedString, 1, 0, 20, 0, dValueInInches, "D" );
    return( 0 );
 // END
-}
+} 
 
 
-
+ 
 #ifdef __cplusplus
 }
 #endif

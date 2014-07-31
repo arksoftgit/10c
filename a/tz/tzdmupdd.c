@@ -865,25 +865,21 @@ zwfnTZDMUPDD_SaveDomain( zVIEW vSubtask, zVIEW vDomainGrp )
    // We are updating a Domain if CM_List.W_MetaDef.CPLR_ZKey = the Domain
    // ZKey.  We compare the CM_List.W_MetaDef.Name value to the Domain name
    // to see if the Domain name has changed.
-   // However, we will only do this check if W_MetaDef exists, which it might not for the first Domain.
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
-   if ( CheckExistenceOfEntity( vCM_List, "W_MetaDef" ) >= zCURSOR_SET )
+   if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "CPLR_ZKey",
+                                     vDomainGrp, "Domain",    "ZKey" ) == 0 )
    {
-      if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "CPLR_ZKey",
-                                        vDomainGrp, "Domain",    "ZKey" ) == 0 )
+      if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "Name",
+                                        vDomainGrp, "Domain",    "Name" ) != 0 )
       {
-         if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "Name",
-                                           vDomainGrp, "Domain",    "Name" ) != 0 )
+         // Domain Name has changed, so change Context Name as well, if there
+         // is one by the old name.
+         nRC = SetCursorFirstEntityByAttr( vDomainGrp, "Context",   "Name",
+                                           vCM_List,   "W_MetaDef", "Name", 0 );
+         if ( nRC >= zCURSOR_SET )
          {
-            // Domain Name has changed, so change Context Name as well, if there
-            // is one by the old name.
-            nRC = SetCursorFirstEntityByAttr( vDomainGrp, "Context",   "Name",
-                                              vCM_List,   "W_MetaDef", "Name", 0 );
-            if ( nRC >= zCURSOR_SET )
-            {
-               SetAttributeFromAttribute( vDomainGrp, "Context", "Name",
-                                          vDomainGrp, "Domain",  "Name" );
-            }
+            SetAttributeFromAttribute( vDomainGrp, "Context", "Name",
+                                       vDomainGrp, "Domain",  "Name" );
          }
       }
    }
@@ -2343,21 +2339,27 @@ zwTZDMUPDD_CreateDomainParameter( zVIEW vSubtask, zVIEW vDomain )
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "Y" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "DataType" );
+
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "Data" );
+
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ContextName" );
+
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "V" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "View" );
+
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ViewEntity" );
+
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ViewAttrib" );
+
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "N" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "MaxStrLth" );
@@ -3243,7 +3245,7 @@ zwTZDMUPDD_MoveDomainPostBuild( zVIEW vSubtask )
    zVIEW  vTZDGSRCO;
    zVIEW  vMoveDomain;
    zCHAR  szDomainName[ 33 ];
-   zCHAR  szDomainGroup[ 33 ];
+   zCHAR  szDomainGroup[ 33];
    zCHAR  szType[ 4 ];
    zSHORT nRC = -1;
    zBOOL  bSelectedOperation = FALSE;
@@ -3440,7 +3442,7 @@ zwTZDMUPDD_SetSaveAsName( zVIEW vSubtask )
    zVIEW   vMoveDomain;
    zVIEW   vProfileXFER;
    zVIEW   vDomainData;
-   zCHAR   szGroupName[ 33 ];
+   zCHAR   szGroupName[ 33];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -3500,7 +3502,7 @@ zwTZDMUPDD_SetGroupName( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vMoveDomain;
    zVIEW   vProfileXFER;
-   zCHAR   szGroupName[ 33 ];
+   zCHAR   szGroupName[ 33];
    zCHAR   szType[ 4 ];
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
@@ -4351,7 +4353,7 @@ zwTZDMUPDD_MoveDomainOperToFile( zVIEW  vSubtask,
    zVIEW  vDeleteOp;
    zVIEW  vTZDGSRCO;
    zVIEW  vWindow;
-   zCHAR  szGroupName[ 33 ];
+   zCHAR  szGroupName[ 33];
    zCHAR  szOperationName[ 33 ];
 
    if ( nCopyOrMoveFlag <= 0 )
@@ -4611,7 +4613,7 @@ zwTZDMUPDD_AcceptDomainGroup( zVIEW vSubtask )
    zVIEW   vCM_ListGroup;
    zVIEW   vProfileXFER;
    zVIEW   vParentWindow;
-   zCHAR   szDomainGroup[ 33 ];
+   zCHAR   szDomainGroup[ 33];
    zCHAR   szControlText[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -4698,7 +4700,7 @@ zwTZDMUPDD_SaveAsInNewGroup( zVIEW vSubtask )
    zVIEW  vCM_List;
    zCHAR  szOutName[ 33 ];
    zCHAR  szNewName[ 33 ];
-   zCHAR  szGroupName[ 33 ];
+   zCHAR  szGroupName[ 33];
    zCHAR  szMsg[ 100 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );
@@ -5147,7 +5149,7 @@ zwTZDMUPDD_SaveAsRtnFromSubwnd( zVIEW vSubtask )
 {
    zVIEW    vProfileXFER;
    zVIEW    vMoveDomain;
-   zCHAR    szGroupName[ 33 ];
+   zCHAR    szGroupName[ 33];
    zCHAR    szLanguageType[ 4 ];
 
    GetViewByName( &vProfileXFER, "ProfileXFER", vSubtask, zLEVEL_ANY );

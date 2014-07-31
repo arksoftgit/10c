@@ -5464,7 +5464,7 @@ zwTZEREMDD_SA_AskForSave( zVIEW vSubtask )
 {
    zVIEW  vTZERSASO;
    zVIEW  vSA;
-   zCHAR  szName[ 33 ];
+   zCHAR  szName[33];
    zCHAR  szMsg[ 254 ];
    zSHORT nRC;
 
@@ -5587,7 +5587,7 @@ zwTZEREMDD_CreateNewSA( zVIEW vSubtask )
    zVIEW vTZEREMDO;
    zSHORT nRC;
    zCHAR  szInName[ 120 ];
-   zCHAR  szOutName[ 33 ];
+   zCHAR  szOutName[33];
 
    // Get access to opened ER Model and error if a ER model is not opened
    nRC = GetViewByName( &vTZEREMDO, "TZEREMDO", vSubtask, zLEVEL_TASK );
@@ -6714,7 +6714,7 @@ zwTZEREMDD_AddAttrToIdentifier( zVIEW vSubtask )
    nRC = DeleteEntity( vTZERATLO, "ER_Attribute", zREPOS_NEXT );
 
    // Set Name if it is null from attribute just selected
-   GetCtrlText( vSubtask, "Name", szValue, 2 );
+   GetCtrlText( vSubtask, "Name", szValue, 2);
    if (szValue[ 0 ] == 0 )
    {
       GetAddrForAttribute( &szName, vTZEREMDO, "ER_AttributeIdentifier", "Name" );
@@ -8945,23 +8945,6 @@ zwTZEREMDD_CloseSA( zVIEW vSubtask )
    return( 0 );
 }
 
-/* are we sure?  dks 2014.07.24
-zOPER_EXPORT zSHORT OPERATION
-AnalyzeERD_ZKeys( zVIEW vSubtask )
-{
-   // This routine executes the ERD object operation to check if there are
-   // duplicate ZKeys within the ERD object.
-
-   zVIEW  vERD;
-
-   // This routine prints a report on the current ERD in memory.
-
-   GetViewByName( &vERD, "TZEREMDO", vSubtask, zLEVEL_TASK );
-   oTZEREMDO_AnalyzeZKeys( vERD );
-
-   return( 0 );
-}
-*/
 zOPER_EXPORT zSHORT OPERATION
 zwTZEREMDD_SetDIL_Message( zVIEW vSubtask )
 {
@@ -9617,7 +9600,7 @@ zwTZEREMDD_SA_SetNewName( zVIEW vSubtask )
 {
    zVIEW  vTZERSFLO;
    zVIEW  vTZERSASO;
-   zCHAR  szSAName[ 33 ];
+   zCHAR  szSAName[33];
    zCHAR  szDescription[32000];
 
    GetViewByName( &vTZERSFLO, "TZERSFLO", vSubtask, zLEVEL_TASK );
@@ -9686,8 +9669,8 @@ zwTZEREMDD_SA_SaveAs( zVIEW vSubtask )
    zVIEW  vTZERSFLO;
    zVIEW  vTZERSASO_New;
    zVIEW  vSAView;
-   zCHAR  szNewName[ 33 ];
-   zCHAR  szOutName[ 33 ];
+   zCHAR  szNewName[33];
+   zCHAR  szOutName[33];
    zCHAR  szDescription[32000];
 
    // Validate Subject Area Name is OK

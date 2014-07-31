@@ -1,13 +1,13 @@
-z1000-Zeidon    TZADCSDO TZZOXODO 02/17/14   12:41:30 1.0a2    
+z1000-Zeidon    TZADCSDO TZZOXODO 03/22/14   17:53:51 1.0a2    
 eOBJECT    1
 aNAME      TZADCSDO
 aZKey      1326102
 aOPER_LIBNM TZLODOPR
-aER_DATE   20140217115820998
+aER_DATE   20140322175321721
 
 eENTITY    2
 aNAME      UI_Spec
-aMAX_LTH   33669
+aMAX_LTH   33924
 aERENT_TOK 1321402
 aCREATE    Y
 aDELETE    Y
@@ -248,6 +248,17 @@ aUPDATE    Y
 aXVAATT_TOK 21
 
 eATTRIB    3
+aNAME      WebAutodesignGroupType
+aERATT_TOK 110000779
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       254
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 22
+
+eATTRIB    3
 aNAME      ActionType
 aERATT_TOK 1321405
 aPERSIST   Y
@@ -256,7 +267,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 22
+aXVAATT_TOK 23
 
 eATTRIB    3
 aNAME      ListSelect
@@ -267,7 +278,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 23
+aXVAATT_TOK 24
 
 eATTRIB    3
 aNAME      ListAllText
@@ -278,7 +289,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 24
+aXVAATT_TOK 25
 
 eATTRIB    3
 aNAME      ListQualifyText
@@ -289,7 +300,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 25
+aXVAATT_TOK 26
 
 eATTRIB    3
 aNAME      WDOD_Style
@@ -300,7 +311,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 26
+aXVAATT_TOK 27
 
 eATTRIB    3
 aNAME      ListType
@@ -311,7 +322,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 27
+aXVAATT_TOK 28
 
 eATTRIB    3
 aNAME      TransferObjectName
@@ -322,7 +333,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 28
+aXVAATT_TOK 29
 
 eATTRIB    3
 aNAME      TransferQualifier
@@ -333,7 +344,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 29
+aXVAATT_TOK 30
 
 eATTRIB    3
 aNAME      ExitText
@@ -344,7 +355,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 30
+aXVAATT_TOK 31
 
 eATTRIB    3
 aNAME      LoadText
@@ -355,7 +366,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 31
+aXVAATT_TOK 32
 
 eATTRIB    3
 aNAME      ActionBarText
@@ -366,7 +377,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 32
+aXVAATT_TOK 33
 
 eATTRIB    3
 aNAME      SelectQualifier
@@ -377,7 +388,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 33
+aXVAATT_TOK 34
 
 eATTRIB    3
 aNAME      ExitMenuText
@@ -388,7 +399,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 34
+aXVAATT_TOK 35
 
 eATTRIB    3
 aNAME      SelectText
@@ -399,7 +410,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 35
+aXVAATT_TOK 36
 
 eATTRIB    3
 aNAME      SelectMenuText
@@ -410,7 +421,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 36
+aXVAATT_TOK 37
 
 eATTRIB    3
 aNAME      ListMenuText
@@ -421,7 +432,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 37
+aXVAATT_TOK 38
 
 eATTRIB    3
 aNAME      StyleObjectType
@@ -432,7 +443,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 38
+aXVAATT_TOK 39
 
 eCHILDENTITY 3
 aNAME      UIS_Entity
@@ -460,7 +471,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 39
+aXVAATT_TOK 40
 
 eATTRIB    4
 aNAME      EliminateWnd
@@ -471,7 +482,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 40
+aXVAATT_TOK 41
 
 eATTRIB    4
 aNAME      SeqNo
@@ -482,7 +493,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 41
+aXVAATT_TOK 42
 
 eATTRIB    4
 aNAME      ListTypeFlag
@@ -493,7 +504,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 42
+aXVAATT_TOK 43
 
 eATTRIB    4
 aNAME      ReportOrientationFlag
@@ -504,7 +515,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 43
+aXVAATT_TOK 44
 
 eATTRIB    4
 aNAME      ReportGroupBorder
@@ -515,7 +526,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 44
+aXVAATT_TOK 45
 
 eATTRIB    4
 aNAME      VerticalControlSize
@@ -526,7 +537,7 @@ aDOMAIN    VerticalControlSize
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 45
+aXVAATT_TOK 46
 
 eATTRIB    4
 aNAME      HorizontalControlSize
@@ -537,7 +548,7 @@ aDOMAIN    HorizontalControlSize
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 46
+aXVAATT_TOK 47
 
 eATTRIB    4
 aNAME      VerticalSpacingIncrement
@@ -548,7 +559,7 @@ aDOMAIN    VerticalSpacingIncrement
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 47
+aXVAATT_TOK 48
 
 eATTRIB    4
 aNAME      AutodesignCaseType
@@ -559,7 +570,7 @@ aDOMAIN    AutodesignCaseType
 aTYPE      S
 aLTH       2
 aUPDATE    Y
-aXVAATT_TOK 48
+aXVAATT_TOK 49
 
 eATTRIB    4
 aNAME      RootIndicator
@@ -570,7 +581,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 49
+aXVAATT_TOK 50
 
 eATTRIB    4
 aNAME      FirstDataFieldName
@@ -581,7 +592,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       10
 aUPDATE    Y
-aXVAATT_TOK 50
+aXVAATT_TOK 51
 
 eATTRIB    4
 aNAME      RootOnlyList
@@ -592,7 +603,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 51
+aXVAATT_TOK 52
 
 eATTRIB    4
 aNAME      HeaderText
@@ -603,7 +614,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 52
+aXVAATT_TOK 53
 
 eATTRIB    4
 aNAME      FooterText
@@ -614,7 +625,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 53
+aXVAATT_TOK 54
 
 eATTRIB    4
 aNAME      ForceHeaderPerEntity
@@ -625,7 +636,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 54
+aXVAATT_TOK 55
 
 eATTRIB    4
 aNAME      FontSize
@@ -636,7 +647,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 55
+aXVAATT_TOK 56
 
 eATTRIB    4
 aNAME      BoldFlag
@@ -647,7 +658,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 56
+aXVAATT_TOK 57
 
 eATTRIB    4
 aNAME      ItalicFlag
@@ -658,7 +669,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 57
+aXVAATT_TOK 58
 
 eATTRIB    4
 aNAME      HeaderFontSize
@@ -669,7 +680,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 58
+aXVAATT_TOK 59
 
 eATTRIB    4
 aNAME      HeaderBoldFlag
@@ -680,7 +691,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 59
+aXVAATT_TOK 60
 
 eATTRIB    4
 aNAME      HeaderItalicFlag
@@ -691,7 +702,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 60
+aXVAATT_TOK 61
 
 eATTRIB    4
 aNAME      FooterFontSize
@@ -702,7 +713,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 61
+aXVAATT_TOK 62
 
 eATTRIB    4
 aNAME      FooterBoldFlag
@@ -713,7 +724,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 62
+aXVAATT_TOK 63
 
 eATTRIB    4
 aNAME      FooterItalicFlag
@@ -724,7 +735,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 63
+aXVAATT_TOK 64
 
 eCHILDENTITY 4
 aNAME      LOD_Entity
@@ -749,7 +760,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 64
+aXVAATT_TOK 65
 
 eATTRIB    5
 aNAME      IndentName
@@ -761,7 +772,7 @@ aTYPE      S
 aLTH       100
 aCASESENS  Y
 aUPDATE    Y
-aXVAATT_TOK 65
+aXVAATT_TOK 66
 
 eATTRIB    5
 aNAME      IndentLvl
@@ -772,7 +783,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 66
+aXVAATT_TOK 67
 
 eATTRIB    5
 aNAME      CreateConstraint
@@ -783,7 +794,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 67
+aXVAATT_TOK 68
 
 eATTRIB    5
 aNAME      DeleteConstraint
@@ -794,7 +805,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 68
+aXVAATT_TOK 69
 
 eATTRIB    5
 aNAME      IncludeConstraint
@@ -805,7 +816,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 69
+aXVAATT_TOK 70
 
 eATTRIB    5
 aNAME      ExcludeConstraint
@@ -816,7 +827,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 70
+aXVAATT_TOK 71
 
 eATTRIB    5
 aNAME      AcceptConstraint
@@ -827,7 +838,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 71
+aXVAATT_TOK 72
 
 eATTRIB    5
 aNAME      CancelConstraint
@@ -838,7 +849,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 72
+aXVAATT_TOK 73
 
 eATTRIB    5
 aNAME      SeqNo
@@ -849,7 +860,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 73
+aXVAATT_TOK 74
 
 eATTRIB    5
 aNAME      DataLocking
@@ -860,7 +871,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 74
+aXVAATT_TOK 75
 
 eATTRIB    5
 aNAME      MultipleChildLimit
@@ -871,7 +882,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 75
+aXVAATT_TOK 76
 
 eATTRIB    5
 aNAME      ZKey
@@ -884,7 +895,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 76
+aXVAATT_TOK 77
 
 eATTRIB    5
 aNAME      Create
@@ -895,7 +906,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 77
+aXVAATT_TOK 78
 
 eATTRIB    5
 aNAME      Delete
@@ -906,7 +917,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 78
+aXVAATT_TOK 79
 
 eATTRIB    5
 aNAME      Update
@@ -917,7 +928,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 79
+aXVAATT_TOK 80
 
 eATTRIB    5
 aNAME      Include
@@ -928,7 +939,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 80
+aXVAATT_TOK 81
 
 eATTRIB    5
 aNAME      InclSrc
@@ -939,7 +950,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 81
+aXVAATT_TOK 82
 
 eATTRIB    5
 aNAME      Exclude
@@ -950,7 +961,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 82
+aXVAATT_TOK 83
 
 eATTRIB    5
 aNAME      Hidden
@@ -961,7 +972,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 83
+aXVAATT_TOK 84
 
 eATTRIB    5
 aNAME      Recursive
@@ -972,7 +983,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 84
+aXVAATT_TOK 85
 
 eATTRIB    5
 aNAME      AutoCreate
@@ -983,7 +994,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 85
+aXVAATT_TOK 86
 
 eATTRIB    5
 aNAME      Derived
@@ -994,7 +1005,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 86
+aXVAATT_TOK 87
 
 eATTRIB    5
 aNAME      SeqType
@@ -1005,7 +1016,7 @@ aDOMAIN    LOD_EntitySequence
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 87
+aXVAATT_TOK 88
 
 eATTRIB    5
 aNAME      Work
@@ -1016,7 +1027,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 88
+aXVAATT_TOK 89
 
 eATTRIB    5
 aNAME      ParentDeleteBehave
@@ -1027,7 +1038,7 @@ aDOMAIN    LOD_ParentDeleteBehavior
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 89
+aXVAATT_TOK 90
 
 eATTRIB    5
 aNAME      DupEntityInstance
@@ -1038,7 +1049,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 90
+aXVAATT_TOK 91
 
 eATTRIB    5
 aNAME      DupRelationshipInstance
@@ -1049,7 +1060,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 91
+aXVAATT_TOK 92
 
 eATTRIB    5
 aNAME      RelLinkIndicator
@@ -1060,7 +1071,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 92
+aXVAATT_TOK 93
 
 eATTRIB    5
 aNAME      Desc
@@ -1071,7 +1082,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 93
+aXVAATT_TOK 94
 
 eATTRIB    5
 aNAME      Abstract
@@ -1082,7 +1093,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 94
+aXVAATT_TOK 95
 
 eATTRIB    5
 aNAME      XML_Name
@@ -1093,7 +1104,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 95
+aXVAATT_TOK 96
 
 eATTRIB    5
 aNAME      LazyLoadFlag
@@ -1104,7 +1115,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 96
+aXVAATT_TOK 97
 
 eATTRIB    5
 aNAME      ReportDisplayFlag
@@ -1115,7 +1126,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 97
+aXVAATT_TOK 98
 
 eCHILDENTITY 5
 aNAME      ER_Entity
@@ -1125,7 +1136,7 @@ aCARDMIN   0
 aCARDMAX   1
 aPDELETE   D
 aINCLSRC   Y
-aMAX_LTH   32201
+aMAX_LTH   32645
 
 eATTRIB    6
 aNAME      Name
@@ -1137,7 +1148,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 98
+aXVAATT_TOK 99
 
 eATTRIB    6
 aNAME      ZKey
@@ -1150,7 +1161,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 99
+aXVAATT_TOK 100
 
 eATTRIB    6
 aNAME      Purpose
@@ -1161,7 +1172,7 @@ aDOMAIN    ER_EntityPurpose
 aTYPE      S
 aLTH       12
 aUPDATE    Y
-aXVAATT_TOK 100
+aXVAATT_TOK 101
 
 eATTRIB    6
 aNAME      Desc
@@ -1172,7 +1183,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 101
+aXVAATT_TOK 102
 
 eATTRIB    6
 aNAME      OwningArea
@@ -1183,7 +1194,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 102
+aXVAATT_TOK 103
 
 eATTRIB    6
 aNAME      ER_DiagramPosX
@@ -1194,7 +1205,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 103
+aXVAATT_TOK 104
 
 eATTRIB    6
 aNAME      ER_DiagramPosY
@@ -1205,7 +1216,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 104
+aXVAATT_TOK 105
 
 eATTRIB    6
 aNAME      ER_PortFactor
@@ -1216,7 +1227,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 105
+aXVAATT_TOK 106
 
 eATTRIB    6
 aNAME      TE_TableName
@@ -1225,9 +1236,9 @@ aPERSIST   Y
 aAPDM_TOK  90000032
 aDOMAIN    Text
 aTYPE      S
-aLTH       32
+aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 106
+aXVAATT_TOK 107
 
 eATTRIB    6
 aNAME      TE_TableOwner
@@ -1236,9 +1247,9 @@ aPERSIST   Y
 aAPDM_TOK  90000032
 aDOMAIN    Text
 aTYPE      S
-aLTH       32
+aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 107
+aXVAATT_TOK 108
 
 eATTRIB    6
 aNAME      SAP_Entity
@@ -1249,7 +1260,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 108
+aXVAATT_TOK 109
 
 eCHILDENTITY 4
 aNAME      UIS_ChildEntity
@@ -1277,7 +1288,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 109
+aXVAATT_TOK 110
 
 eATTRIB    5
 aNAME      EliminateWnd
@@ -1288,7 +1299,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 110
+aXVAATT_TOK 111
 
 eATTRIB    5
 aNAME      SeqNo
@@ -1300,7 +1311,7 @@ aTYPE      L
 aLTH       4
 aSEQUENCING 16
 aUPDATE    Y
-aXVAATT_TOK 111
+aXVAATT_TOK 112
 
 eATTRIB    5
 aNAME      ListTypeFlag
@@ -1311,7 +1322,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 112
+aXVAATT_TOK 113
 
 eATTRIB    5
 aNAME      ReportOrientationFlag
@@ -1322,7 +1333,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 113
+aXVAATT_TOK 114
 
 eATTRIB    5
 aNAME      ReportGroupBorder
@@ -1333,7 +1344,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 114
+aXVAATT_TOK 115
 
 eATTRIB    5
 aNAME      VerticalControlSize
@@ -1344,7 +1355,7 @@ aDOMAIN    VerticalControlSize
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 115
+aXVAATT_TOK 116
 
 eATTRIB    5
 aNAME      HorizontalControlSize
@@ -1355,7 +1366,7 @@ aDOMAIN    HorizontalControlSize
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 116
+aXVAATT_TOK 117
 
 eATTRIB    5
 aNAME      VerticalSpacingIncrement
@@ -1366,7 +1377,7 @@ aDOMAIN    VerticalSpacingIncrement
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 117
+aXVAATT_TOK 118
 
 eATTRIB    5
 aNAME      AutodesignCaseType
@@ -1377,7 +1388,7 @@ aDOMAIN    AutodesignCaseType
 aTYPE      S
 aLTH       2
 aHIDDEN    Y
-aXVAATT_TOK 118
+aXVAATT_TOK 119
 
 eATTRIB    5
 aNAME      FirstDataFieldName
@@ -1388,7 +1399,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       10
 aHIDDEN    Y
-aXVAATT_TOK 119
+aXVAATT_TOK 120
 
 eATTRIB    5
 aNAME      RootOnlyList
@@ -1399,7 +1410,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 120
+aXVAATT_TOK 121
 
 eATTRIB    5
 aNAME      HeaderText
@@ -1410,7 +1421,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 121
+aXVAATT_TOK 122
 
 eATTRIB    5
 aNAME      FooterText
@@ -1421,7 +1432,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 122
+aXVAATT_TOK 123
 
 eATTRIB    5
 aNAME      ForceHeaderPerEntity
@@ -1432,7 +1443,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 123
+aXVAATT_TOK 124
 
 eATTRIB    5
 aNAME      FontSize
@@ -1443,7 +1454,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 124
+aXVAATT_TOK 125
 
 eATTRIB    5
 aNAME      BoldFlag
@@ -1454,7 +1465,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 125
+aXVAATT_TOK 126
 
 eATTRIB    5
 aNAME      ItalicFlag
@@ -1465,7 +1476,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 126
+aXVAATT_TOK 127
 
 eATTRIB    5
 aNAME      HeaderFontSize
@@ -1476,7 +1487,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 127
+aXVAATT_TOK 128
 
 eATTRIB    5
 aNAME      HeaderBoldFlag
@@ -1487,7 +1498,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 128
+aXVAATT_TOK 129
 
 eATTRIB    5
 aNAME      HeaderItalicFlag
@@ -1498,7 +1509,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 129
+aXVAATT_TOK 130
 
 eATTRIB    5
 aNAME      FooterFontSize
@@ -1509,7 +1520,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 130
+aXVAATT_TOK 131
 
 eATTRIB    5
 aNAME      FooterBoldFlag
@@ -1520,7 +1531,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 131
+aXVAATT_TOK 132
 
 eATTRIB    5
 aNAME      FooterItalicFlag
@@ -1531,7 +1542,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 132
+aXVAATT_TOK 133
 
 eATTRIB    5
 aNAME      RootIndicator
@@ -1542,7 +1553,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 49
+aXVAATT_TOK 50
 
 eCHILDENTITY 4
 aNAME      WndDesign
@@ -1569,7 +1580,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 133
+aXVAATT_TOK 134
 
 eATTRIB    5
 aNAME      AutoVersion
@@ -1580,7 +1591,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 134
+aXVAATT_TOK 135
 
 eATTRIB    5
 aNAME      ActionType
@@ -1591,7 +1602,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 135
+aXVAATT_TOK 136
 
 eATTRIB    5
 aNAME      UsageStyle
@@ -1602,7 +1613,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 136
+aXVAATT_TOK 137
 
 eATTRIB    5
 aNAME      Cascade
@@ -1613,7 +1624,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 137
+aXVAATT_TOK 138
 
 eATTRIB    5
 aNAME      UpdateCancelAction
@@ -1624,7 +1635,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 138
+aXVAATT_TOK 139
 
 eATTRIB    5
 aNAME      UpdateDeleteAction
@@ -1635,7 +1646,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 139
+aXVAATT_TOK 140
 
 eATTRIB    5
 aNAME      UpdateSaveAction
@@ -1646,7 +1657,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 140
+aXVAATT_TOK 141
 
 eATTRIB    5
 aNAME      UpdateNextAction
@@ -1657,7 +1668,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 141
+aXVAATT_TOK 142
 
 eATTRIB    5
 aNAME      UpdatePrevAction
@@ -1668,7 +1679,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 142
+aXVAATT_TOK 143
 
 eATTRIB    5
 aNAME      UpdateSaveText
@@ -1679,7 +1690,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 143
+aXVAATT_TOK 144
 
 eATTRIB    5
 aNAME      UpdateCancelText
@@ -1690,7 +1701,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 144
+aXVAATT_TOK 145
 
 eATTRIB    5
 aNAME      UpdateDeleteText
@@ -1701,7 +1712,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 145
+aXVAATT_TOK 146
 
 eATTRIB    5
 aNAME      UpdateNextText
@@ -1712,7 +1723,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 146
+aXVAATT_TOK 147
 
 eATTRIB    5
 aNAME      UpdatePrevText
@@ -1723,7 +1734,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 147
+aXVAATT_TOK 148
 
 eATTRIB    5
 aNAME      UpdateSaveAccel
@@ -1734,7 +1745,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 148
+aXVAATT_TOK 149
 
 eATTRIB    5
 aNAME      UpdateCancelAccel
@@ -1745,7 +1756,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 149
+aXVAATT_TOK 150
 
 eATTRIB    5
 aNAME      UpdateDeleteAccel
@@ -1756,7 +1767,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 150
+aXVAATT_TOK 151
 
 eATTRIB    5
 aNAME      UpdateNextAccel
@@ -1767,7 +1778,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 151
+aXVAATT_TOK 152
 
 eATTRIB    5
 aNAME      UpdatePrevAccel
@@ -1778,7 +1789,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 152
+aXVAATT_TOK 153
 
 eATTRIB    5
 aNAME      ListOptionPosition
@@ -1789,7 +1800,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 153
+aXVAATT_TOK 154
 
 eATTRIB    5
 aNAME      ListUpdateAction
@@ -1800,7 +1811,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 154
+aXVAATT_TOK 155
 
 eATTRIB    5
 aNAME      ListActionMenuText
@@ -1812,7 +1823,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 155
+aXVAATT_TOK 156
 
 eATTRIB    5
 aNAME      ListActionAccel
@@ -1823,7 +1834,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 156
+aXVAATT_TOK 157
 
 eATTRIB    5
 aNAME      ListDeleteAction
@@ -1834,7 +1845,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 157
+aXVAATT_TOK 158
 
 eATTRIB    5
 aNAME      ListCreateAction
@@ -1845,7 +1856,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 158
+aXVAATT_TOK 159
 
 eATTRIB    5
 aNAME      CreateFromNewInd
@@ -1856,7 +1867,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 159
+aXVAATT_TOK 160
 
 eATTRIB    5
 aNAME      ListDeleteText
@@ -1867,7 +1878,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 160
+aXVAATT_TOK 161
 
 eATTRIB    5
 aNAME      ListCreateText
@@ -1878,7 +1889,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 161
+aXVAATT_TOK 162
 
 eATTRIB    5
 aNAME      ListUpdateText
@@ -1889,7 +1900,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 162
+aXVAATT_TOK 163
 
 eATTRIB    5
 aNAME      ListNewIndText
@@ -1900,7 +1911,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 163
+aXVAATT_TOK 164
 
 eATTRIB    5
 aNAME      ListDeleteAccel
@@ -1911,7 +1922,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 164
+aXVAATT_TOK 165
 
 eATTRIB    5
 aNAME      ListCreateAccel
@@ -1922,7 +1933,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 165
+aXVAATT_TOK 166
 
 eATTRIB    5
 aNAME      ListUpdateAccel
@@ -1933,7 +1944,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 166
+aXVAATT_TOK 167
 
 eATTRIB    5
 aNAME      ListTriggerMenuTxt
@@ -1944,7 +1955,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 167
+aXVAATT_TOK 168
 
 eATTRIB    5
 aNAME      ListTriggerText
@@ -1955,7 +1966,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 168
+aXVAATT_TOK 169
 
 eATTRIB    5
 aNAME      UpdtActionMenuTxt
@@ -1966,7 +1977,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 169
+aXVAATT_TOK 170
 
 eATTRIB    5
 aNAME      WndStyle
@@ -1977,7 +1988,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 170
+aXVAATT_TOK 171
 
 eATTRIB    5
 aNAME      WndName
@@ -1988,7 +1999,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       8
 aUPDATE    Y
-aXVAATT_TOK 171
+aXVAATT_TOK 172
 
 eATTRIB    5
 aNAME      WndCaption
@@ -2000,7 +2011,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 172
+aXVAATT_TOK 173
 
 eATTRIB    5
 aNAME      WndNoMap
@@ -2011,7 +2022,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 173
+aXVAATT_TOK 174
 
 eATTRIB    5
 aNAME      WndRefresh
@@ -2022,7 +2033,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 174
+aXVAATT_TOK 175
 
 eATTRIB    5
 aNAME      WndSize_Y
@@ -2033,7 +2044,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 175
+aXVAATT_TOK 176
 
 eATTRIB    5
 aNAME      WndSize_X
@@ -2044,7 +2055,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 176
+aXVAATT_TOK 177
 
 eATTRIB    5
 aNAME      WndStart_Y
@@ -2055,7 +2066,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 177
+aXVAATT_TOK 178
 
 eATTRIB    5
 aNAME      WndStart_X
@@ -2066,7 +2077,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 178
+aXVAATT_TOK 179
 
 eATTRIB    5
 aNAME      FullWnd
@@ -2077,7 +2088,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 179
+aXVAATT_TOK 180
 
 eATTRIB    5
 aNAME      EntityFromSubObj
@@ -2089,7 +2100,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 180
+aXVAATT_TOK 181
 
 eATTRIB    5
 aNAME      SubobjectSelectText
@@ -2100,7 +2111,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 181
+aXVAATT_TOK 182
 
 eATTRIB    5
 aNAME      SubobjectCancelText
@@ -2111,7 +2122,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 182
+aXVAATT_TOK 183
 
 eATTRIB    5
 aNAME      SubobjectNewText
@@ -2122,7 +2133,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 183
+aXVAATT_TOK 184
 
 eATTRIB    5
 aNAME      ListQualFlag
@@ -2133,7 +2144,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 184
+aXVAATT_TOK 185
 
 eATTRIB    5
 aNAME      ListQualLikeFlag
@@ -2144,7 +2155,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 185
+aXVAATT_TOK 186
 
 eATTRIB    5
 aNAME      ListQualWndCaption
@@ -2155,7 +2166,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 186
+aXVAATT_TOK 187
 
 eATTRIB    5
 aNAME      ListQualWndPrompt
@@ -2166,7 +2177,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 187
+aXVAATT_TOK 188
 
 eATTRIB    5
 aNAME      ListQualWndButtonText
@@ -2177,7 +2188,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 188
+aXVAATT_TOK 189
 
 eATTRIB    5
 aNAME      MinimizeListboxFlag
@@ -2188,7 +2199,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 189
+aXVAATT_TOK 190
 
 eATTRIB    5
 aNAME      ListGroupboxText
@@ -2199,7 +2210,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 190
+aXVAATT_TOK 191
 
 eATTRIB    5
 aNAME      WndDIL_Message
@@ -2210,7 +2221,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 191
+aXVAATT_TOK 192
 
 eATTRIB    5
 aNAME      WndCaption2
@@ -2221,7 +2232,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 192
+aXVAATT_TOK 193
 
 eATTRIB    5
 aNAME      UpdateCreateAction
@@ -2232,7 +2243,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 193
+aXVAATT_TOK 194
 
 eCHILDENTITY 5
 aNAME      WndStyle
@@ -2259,7 +2270,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 194
+aXVAATT_TOK 195
 
 eATTRIB    6
 aNAME      Tag
@@ -2270,7 +2281,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 195
+aXVAATT_TOK 196
 
 eATTRIB    6
 aNAME      Desc
@@ -2281,7 +2292,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 196
+aXVAATT_TOK 197
 
 eATTRIB    6
 aNAME      Style
@@ -2292,7 +2303,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 197
+aXVAATT_TOK 198
 
 eATTRIB    6
 aNAME      StyleEx
@@ -2303,7 +2314,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 198
+aXVAATT_TOK 199
 
 eCHILDENTITY 4
 aNAME      M_LOD_Attribute
@@ -2329,7 +2340,7 @@ aTYPE      L
 aLTH       4
 aKEY       Y
 aREQUIRED  Y
-aXVAATT_TOK 199
+aXVAATT_TOK 200
 
 eATTRIB    5
 aNAME      Work
@@ -2341,7 +2352,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 200
+aXVAATT_TOK 201
 
 eATTRIB    5
 aNAME      Update
@@ -2353,7 +2364,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 201
+aXVAATT_TOK 202
 
 eATTRIB    5
 aNAME      Init
@@ -2365,7 +2376,7 @@ aTYPE      S
 aLTH       254
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 202
+aXVAATT_TOK 203
 
 eATTRIB    5
 aNAME      Hidden
@@ -2377,7 +2388,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 203
+aXVAATT_TOK 204
 
 eATTRIB    5
 aNAME      SeqPriority
@@ -2389,7 +2400,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 204
+aXVAATT_TOK 205
 
 eATTRIB    5
 aNAME      SeqOrder
@@ -2401,7 +2412,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 205
+aXVAATT_TOK 206
 
 eATTRIB    5
 aNAME      ParticipatesInKey
@@ -2411,7 +2422,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aSEQ_AD    A
-aXVAATT_TOK 206
+aXVAATT_TOK 207
 aDERIVEDF  oTZADCSDO_DeriveKey
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -2423,7 +2434,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aSEQ_AD    A
-aXVAATT_TOK 207
+aXVAATT_TOK 208
 aDERIVEDF  oTZADCSDO_DerivedAttr
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -2438,7 +2449,7 @@ aLTH       4
 aSEQUENCING 16
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 208
+aXVAATT_TOK 209
 
 eATTRIB    5
 aNAME      ReportLengthOverride
@@ -2449,7 +2460,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 209
+aXVAATT_TOK 210
 
 eATTRIB    5
 aNAME      DIL_Text
@@ -2460,7 +2471,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 210
+aXVAATT_TOK 211
 
 eATTRIB    5
 aNAME      SeqNo_LOD_Entity
@@ -2471,7 +2482,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 211
+aXVAATT_TOK 212
 
 eATTRIB    5
 aNAME      SeqNo_UIS_Entity_L
@@ -2482,7 +2493,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 212
+aXVAATT_TOK 213
 
 eATTRIB    5
 aNAME      DB_DerivedValue
@@ -2493,7 +2504,7 @@ aDOMAIN    LOD_DB_DerivedValue
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 213
+aXVAATT_TOK 214
 
 eATTRIB    5
 aNAME      XML_Simple
@@ -2504,7 +2515,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 214
+aXVAATT_TOK 215
 
 eATTRIB    5
 aNAME      HashkeyType
@@ -2515,7 +2526,7 @@ aDOMAIN    LOD_AttributeHashkeyType
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 215
+aXVAATT_TOK 216
 
 eATTRIB    5
 aNAME      HashkeyParentEntityName
@@ -2526,7 +2537,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 216
+aXVAATT_TOK 217
 
 eCHILDENTITY 5
 aNAME      M_LOD_Entity
@@ -2549,7 +2560,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 217
+aXVAATT_TOK 218
 
 eATTRIB    6
 aNAME      IndentName
@@ -2561,7 +2572,7 @@ aTYPE      S
 aLTH       100
 aCASESENS  Y
 aUPDATE    Y
-aXVAATT_TOK 218
+aXVAATT_TOK 219
 
 eATTRIB    6
 aNAME      CreateConstraint
@@ -2572,7 +2583,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 219
+aXVAATT_TOK 220
 
 eATTRIB    6
 aNAME      DeleteConstraint
@@ -2583,7 +2594,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 220
+aXVAATT_TOK 221
 
 eATTRIB    6
 aNAME      IncludeConstraint
@@ -2594,7 +2605,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 221
+aXVAATT_TOK 222
 
 eATTRIB    6
 aNAME      ExcludeConstraint
@@ -2605,7 +2616,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 222
+aXVAATT_TOK 223
 
 eATTRIB    6
 aNAME      AcceptConstraint
@@ -2616,7 +2627,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 223
+aXVAATT_TOK 224
 
 eATTRIB    6
 aNAME      CancelConstraint
@@ -2627,7 +2638,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 224
+aXVAATT_TOK 225
 
 eATTRIB    6
 aNAME      SeqNo
@@ -2638,7 +2649,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 225
+aXVAATT_TOK 226
 
 eATTRIB    6
 aNAME      DataLocking
@@ -2649,7 +2660,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 226
+aXVAATT_TOK 227
 
 eATTRIB    6
 aNAME      MultipleChildLimit
@@ -2660,7 +2671,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 227
+aXVAATT_TOK 228
 
 eATTRIB    6
 aNAME      IndentLvl
@@ -2671,7 +2682,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 228
+aXVAATT_TOK 229
 
 eATTRIB    6
 aNAME      ZKey
@@ -2684,7 +2695,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 229
+aXVAATT_TOK 230
 
 eATTRIB    6
 aNAME      Create
@@ -2695,7 +2706,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 230
+aXVAATT_TOK 231
 
 eATTRIB    6
 aNAME      Delete
@@ -2706,7 +2717,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 231
+aXVAATT_TOK 232
 
 eATTRIB    6
 aNAME      Update
@@ -2717,7 +2728,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 232
+aXVAATT_TOK 233
 
 eATTRIB    6
 aNAME      Include
@@ -2728,7 +2739,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 233
+aXVAATT_TOK 234
 
 eATTRIB    6
 aNAME      InclSrc
@@ -2739,7 +2750,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 234
+aXVAATT_TOK 235
 
 eATTRIB    6
 aNAME      Exclude
@@ -2750,7 +2761,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 235
+aXVAATT_TOK 236
 
 eATTRIB    6
 aNAME      Hidden
@@ -2761,7 +2772,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 236
+aXVAATT_TOK 237
 
 eATTRIB    6
 aNAME      Recursive
@@ -2772,7 +2783,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 237
+aXVAATT_TOK 238
 
 eATTRIB    6
 aNAME      AutoCreate
@@ -2783,7 +2794,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 238
+aXVAATT_TOK 239
 
 eATTRIB    6
 aNAME      Derived
@@ -2795,7 +2806,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 239
+aXVAATT_TOK 240
 
 eATTRIB    6
 aNAME      SeqType
@@ -2806,7 +2817,7 @@ aDOMAIN    LOD_EntitySequence
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 240
+aXVAATT_TOK 241
 
 eATTRIB    6
 aNAME      Work
@@ -2817,7 +2828,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 241
+aXVAATT_TOK 242
 
 eATTRIB    6
 aNAME      ParentDeleteBehave
@@ -2828,7 +2839,7 @@ aDOMAIN    LOD_ParentDeleteBehavior
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 242
+aXVAATT_TOK 243
 
 eATTRIB    6
 aNAME      DupEntityInstance
@@ -2839,7 +2850,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 243
+aXVAATT_TOK 244
 
 eATTRIB    6
 aNAME      DupRelationshipInstance
@@ -2850,7 +2861,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 244
+aXVAATT_TOK 245
 
 eATTRIB    6
 aNAME      RelLinkIndicator
@@ -2861,7 +2872,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 245
+aXVAATT_TOK 246
 
 eATTRIB    6
 aNAME      Desc
@@ -2872,7 +2883,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 246
+aXVAATT_TOK 247
 
 eATTRIB    6
 aNAME      Abstract
@@ -2883,7 +2894,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 247
+aXVAATT_TOK 248
 
 eATTRIB    6
 aNAME      XML_Name
@@ -2894,7 +2905,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 248
+aXVAATT_TOK 249
 
 eATTRIB    6
 aNAME      LazyLoadFlag
@@ -2905,7 +2916,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 249
+aXVAATT_TOK 250
 
 eATTRIB    6
 aNAME      ReportDisplayFlag
@@ -2916,7 +2927,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 250
+aXVAATT_TOK 251
 
 eCHILDENTITY 5
 aNAME      M_ER_Attribute
@@ -2939,7 +2950,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 251
+aXVAATT_TOK 252
 
 eATTRIB    6
 aNAME      ZKey
@@ -2952,7 +2963,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 252
+aXVAATT_TOK 253
 
 eATTRIB    6
 aNAME      Lth
@@ -2963,7 +2974,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 253
+aXVAATT_TOK 254
 
 eATTRIB    6
 aNAME      CaseSens
@@ -2974,7 +2985,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 254
+aXVAATT_TOK 255
 
 eATTRIB    6
 aNAME      TE_ColumnName
@@ -2985,7 +2996,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 255
+aXVAATT_TOK 256
 
 eATTRIB    6
 aNAME      TE_ForeignKeyName
@@ -2996,7 +3007,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 256
+aXVAATT_TOK 257
 
 eATTRIB    6
 aNAME      Work
@@ -3007,7 +3018,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 257
+aXVAATT_TOK 258
 
 eATTRIB    6
 aNAME      DerivedExpression
@@ -3018,7 +3029,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 258
+aXVAATT_TOK 259
 
 eATTRIB    6
 aNAME      Key
@@ -3029,7 +3040,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 259
+aXVAATT_TOK 260
 
 eATTRIB    6
 aNAME      NotNull
@@ -3040,7 +3051,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 260
+aXVAATT_TOK 261
 
 eATTRIB    6
 aNAME      Desc
@@ -3051,7 +3062,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 261
+aXVAATT_TOK 262
 
 eATTRIB    6
 aNAME      PromptPaintLit
@@ -3062,7 +3073,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 262
+aXVAATT_TOK 263
 
 eATTRIB    6
 aNAME      PromptPaintLth
@@ -3073,7 +3084,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 263
+aXVAATT_TOK 264
 
 eATTRIB    6
 aNAME      ListPaintLit
@@ -3084,7 +3095,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 264
+aXVAATT_TOK 265
 
 eATTRIB    6
 aNAME      ListPaintLth
@@ -3095,7 +3106,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 265
+aXVAATT_TOK 266
 
 eATTRIB    6
 aNAME      ADW_Position
@@ -3106,7 +3117,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       16
 aUPDATE    Y
-aXVAATT_TOK 266
+aXVAATT_TOK 267
 
 eATTRIB    6
 aNAME      DerivedExpressionXPG
@@ -3117,7 +3128,7 @@ aDOMAIN    Blob
 aTYPE      B
 aLTH       7
 aHIDDEN    Y
-aXVAATT_TOK 267
+aXVAATT_TOK 268
 
 eATTRIB    6
 aNAME      Sequence
@@ -3128,7 +3139,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 268
+aXVAATT_TOK 269
 
 eATTRIB    6
 aNAME      SAP_Attribute
@@ -3139,7 +3150,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 269
+aXVAATT_TOK 270
 
 eATTRIB    6
 aNAME      XML_SimpleName
@@ -3150,7 +3161,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 270
+aXVAATT_TOK 271
 
 eATTRIB    6
 aNAME      XML_NameExternal
@@ -3161,7 +3172,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       100
 aHIDDEN    Y
-aXVAATT_TOK 271
+aXVAATT_TOK 272
 
 eCHILDENTITY 6
 aNAME      M_Domain
@@ -3186,7 +3197,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 272
+aXVAATT_TOK 273
 
 eATTRIB    7
 aNAME      Desc
@@ -3197,7 +3208,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 273
+aXVAATT_TOK 274
 
 eATTRIB    7
 aNAME      ContextRestriction
@@ -3208,7 +3219,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 274
+aXVAATT_TOK 275
 
 eATTRIB    7
 aNAME      LastSyncDate
@@ -3217,7 +3228,7 @@ aAPDM_TOK  90000089
 aDOMAIN    DateTime
 aTYPE      T
 aLTH       6
-aXVAATT_TOK 275
+aXVAATT_TOK 276
 
 eATTRIB    7
 aNAME      DerivedName
@@ -3227,7 +3238,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aSEQ_AD    A
-aXVAATT_TOK 276
+aXVAATT_TOK 277
 aDERIVEDF  oTZDMSRCO_DeriveDomName
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -3239,7 +3250,7 @@ aDOMAIN    DataTypeDomain
 aTYPE      S
 aLTH       1
 aSEQ_AD    A
-aXVAATT_TOK 277
+aXVAATT_TOK 278
 aDERIVEDF  oTZDMSRCO_DeriveDomDataType
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -3251,7 +3262,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aSEQ_AD    A
-aXVAATT_TOK 278
+aXVAATT_TOK 279
 aDERIVEDF  oTZDMSRCO_DeriveDomStringLth
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -3263,7 +3274,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aSEQ_AD    A
-aXVAATT_TOK 279
+aXVAATT_TOK 280
 aDERIVEDF  oTZDMSRCO_DeriveDomDecFormat
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -3275,7 +3286,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aSEQ_AD    A
-aXVAATT_TOK 280
+aXVAATT_TOK 281
 aDERIVEDF  oTZDMSRCO_DeriveDomType
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -3289,7 +3300,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 281
+aXVAATT_TOK 282
 
 eATTRIB    7
 aNAME      DomainType
@@ -3301,7 +3312,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 282
+aXVAATT_TOK 283
 
 eATTRIB    7
 aNAME      DataType
@@ -3313,7 +3324,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 283
+aXVAATT_TOK 284
 
 eATTRIB    7
 aNAME      MaxStringLth
@@ -3324,7 +3335,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 284
+aXVAATT_TOK 285
 
 eATTRIB    7
 aNAME      DecimalFormat
@@ -3335,7 +3346,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 285
+aXVAATT_TOK 286
 
 eCHILDENTITY 4
 aNAME      L_LOD_Attribute
@@ -3362,7 +3373,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 286
+aXVAATT_TOK 287
 
 eATTRIB    5
 aNAME      Work
@@ -3373,7 +3384,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 287
+aXVAATT_TOK 288
 
 eATTRIB    5
 aNAME      Update
@@ -3384,7 +3395,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 288
+aXVAATT_TOK 289
 
 eATTRIB    5
 aNAME      Init
@@ -3395,7 +3406,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 289
+aXVAATT_TOK 290
 
 eATTRIB    5
 aNAME      Hidden
@@ -3406,7 +3417,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 290
+aXVAATT_TOK 291
 
 eATTRIB    5
 aNAME      SeqPriority
@@ -3417,7 +3428,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 291
+aXVAATT_TOK 292
 
 eATTRIB    5
 aNAME      SeqOrder
@@ -3428,7 +3439,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 292
+aXVAATT_TOK 293
 
 eATTRIB    5
 aNAME      ParticipatesInKey
@@ -3438,7 +3449,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aSEQ_AD    A
-aXVAATT_TOK 293
+aXVAATT_TOK 294
 aDERIVEDF  oTZADCSDO_DeriveKey
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -3451,7 +3462,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 294
+aXVAATT_TOK 295
 
 eATTRIB    5
 aNAME      DIL_Text
@@ -3462,7 +3473,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 295
+aXVAATT_TOK 296
 
 eATTRIB    5
 aNAME      SeqNo_LOD_Entity
@@ -3473,7 +3484,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 296
+aXVAATT_TOK 297
 
 eATTRIB    5
 aNAME      SeqNo_UIS_Entity_M
@@ -3484,7 +3495,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 297
+aXVAATT_TOK 298
 
 eATTRIB    5
 aNAME      DB_DerivedValue
@@ -3495,7 +3506,7 @@ aDOMAIN    LOD_DB_DerivedValue
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 298
+aXVAATT_TOK 299
 
 eATTRIB    5
 aNAME      XML_Simple
@@ -3506,7 +3517,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 299
+aXVAATT_TOK 300
 
 eATTRIB    5
 aNAME      HashkeyType
@@ -3517,7 +3528,7 @@ aDOMAIN    LOD_AttributeHashkeyType
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 300
+aXVAATT_TOK 301
 
 eATTRIB    5
 aNAME      HashkeyParentEntityName
@@ -3528,7 +3539,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 301
+aXVAATT_TOK 302
 
 eCHILDENTITY 5
 aNAME      L_LOD_Entity
@@ -3551,7 +3562,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 302
+aXVAATT_TOK 303
 
 eATTRIB    6
 aNAME      IndentName
@@ -3563,7 +3574,7 @@ aTYPE      S
 aLTH       100
 aCASESENS  Y
 aUPDATE    Y
-aXVAATT_TOK 303
+aXVAATT_TOK 304
 
 eATTRIB    6
 aNAME      IndentLvl
@@ -3574,7 +3585,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 304
+aXVAATT_TOK 305
 
 eATTRIB    6
 aNAME      CreateConstraint
@@ -3585,7 +3596,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 305
+aXVAATT_TOK 306
 
 eATTRIB    6
 aNAME      DeleteConstraint
@@ -3596,7 +3607,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 306
+aXVAATT_TOK 307
 
 eATTRIB    6
 aNAME      IncludeConstraint
@@ -3607,7 +3618,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 307
+aXVAATT_TOK 308
 
 eATTRIB    6
 aNAME      ExcludeConstraint
@@ -3618,7 +3629,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 308
+aXVAATT_TOK 309
 
 eATTRIB    6
 aNAME      AcceptConstraint
@@ -3629,7 +3640,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 309
+aXVAATT_TOK 310
 
 eATTRIB    6
 aNAME      CancelConstraint
@@ -3640,7 +3651,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 310
+aXVAATT_TOK 311
 
 eATTRIB    6
 aNAME      SeqNo
@@ -3651,7 +3662,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 311
+aXVAATT_TOK 312
 
 eATTRIB    6
 aNAME      DataLocking
@@ -3662,7 +3673,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 312
+aXVAATT_TOK 313
 
 eATTRIB    6
 aNAME      MultipleChildLimit
@@ -3673,7 +3684,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 313
+aXVAATT_TOK 314
 
 eATTRIB    6
 aNAME      ZKey
@@ -3686,7 +3697,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 314
+aXVAATT_TOK 315
 
 eATTRIB    6
 aNAME      Create
@@ -3697,7 +3708,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 315
+aXVAATT_TOK 316
 
 eATTRIB    6
 aNAME      Delete
@@ -3708,7 +3719,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 316
+aXVAATT_TOK 317
 
 eATTRIB    6
 aNAME      Update
@@ -3719,7 +3730,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 317
+aXVAATT_TOK 318
 
 eATTRIB    6
 aNAME      Include
@@ -3730,7 +3741,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 318
+aXVAATT_TOK 319
 
 eATTRIB    6
 aNAME      InclSrc
@@ -3741,7 +3752,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 319
+aXVAATT_TOK 320
 
 eATTRIB    6
 aNAME      Exclude
@@ -3752,7 +3763,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 320
+aXVAATT_TOK 321
 
 eATTRIB    6
 aNAME      Hidden
@@ -3763,7 +3774,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 321
+aXVAATT_TOK 322
 
 eATTRIB    6
 aNAME      Recursive
@@ -3774,7 +3785,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 322
+aXVAATT_TOK 323
 
 eATTRIB    6
 aNAME      AutoCreate
@@ -3785,7 +3796,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 323
+aXVAATT_TOK 324
 
 eATTRIB    6
 aNAME      Derived
@@ -3796,7 +3807,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 324
+aXVAATT_TOK 325
 
 eATTRIB    6
 aNAME      SeqType
@@ -3807,7 +3818,7 @@ aDOMAIN    LOD_EntitySequence
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 325
+aXVAATT_TOK 326
 
 eATTRIB    6
 aNAME      Work
@@ -3818,7 +3829,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 326
+aXVAATT_TOK 327
 
 eATTRIB    6
 aNAME      ParentDeleteBehave
@@ -3829,7 +3840,7 @@ aDOMAIN    LOD_ParentDeleteBehavior
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 327
+aXVAATT_TOK 328
 
 eATTRIB    6
 aNAME      DupEntityInstance
@@ -3840,7 +3851,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 328
+aXVAATT_TOK 329
 
 eATTRIB    6
 aNAME      DupRelationshipInstance
@@ -3851,7 +3862,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 329
+aXVAATT_TOK 330
 
 eATTRIB    6
 aNAME      RelLinkIndicator
@@ -3862,7 +3873,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 330
+aXVAATT_TOK 331
 
 eATTRIB    6
 aNAME      Desc
@@ -3873,7 +3884,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 331
+aXVAATT_TOK 332
 
 eATTRIB    6
 aNAME      Abstract
@@ -3884,7 +3895,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 332
+aXVAATT_TOK 333
 
 eATTRIB    6
 aNAME      XML_Name
@@ -3895,7 +3906,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 333
+aXVAATT_TOK 334
 
 eATTRIB    6
 aNAME      LazyLoadFlag
@@ -3906,7 +3917,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 334
+aXVAATT_TOK 335
 
 eATTRIB    6
 aNAME      ReportDisplayFlag
@@ -3917,7 +3928,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 335
+aXVAATT_TOK 336
 
 eCHILDENTITY 5
 aNAME      L_ER_Attribute
@@ -3940,7 +3951,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 336
+aXVAATT_TOK 337
 
 eATTRIB    6
 aNAME      ZKey
@@ -3953,7 +3964,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 337
+aXVAATT_TOK 338
 
 eATTRIB    6
 aNAME      Lth
@@ -3964,7 +3975,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 338
+aXVAATT_TOK 339
 
 eATTRIB    6
 aNAME      Key
@@ -3975,7 +3986,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 339
+aXVAATT_TOK 340
 
 eATTRIB    6
 aNAME      NotNull
@@ -3986,7 +3997,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 340
+aXVAATT_TOK 341
 
 eATTRIB    6
 aNAME      Desc
@@ -3997,7 +4008,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 341
+aXVAATT_TOK 342
 
 eATTRIB    6
 aNAME      CaseSens
@@ -4008,7 +4019,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 342
+aXVAATT_TOK 343
 
 eATTRIB    6
 aNAME      TE_ColumnName
@@ -4019,7 +4030,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 343
+aXVAATT_TOK 344
 
 eATTRIB    6
 aNAME      TE_ForeignKeyName
@@ -4030,7 +4041,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 344
+aXVAATT_TOK 345
 
 eATTRIB    6
 aNAME      Work
@@ -4041,7 +4052,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 345
+aXVAATT_TOK 346
 
 eATTRIB    6
 aNAME      DerivedExpression
@@ -4052,7 +4063,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 346
+aXVAATT_TOK 347
 
 eATTRIB    6
 aNAME      PromptPaintLit
@@ -4063,7 +4074,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 347
+aXVAATT_TOK 348
 
 eATTRIB    6
 aNAME      PromptPaintLth
@@ -4074,7 +4085,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 348
+aXVAATT_TOK 349
 
 eATTRIB    6
 aNAME      ListPaintLit
@@ -4085,7 +4096,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 349
+aXVAATT_TOK 350
 
 eATTRIB    6
 aNAME      ListPaintLth
@@ -4096,7 +4107,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 350
+aXVAATT_TOK 351
 
 eATTRIB    6
 aNAME      ADW_Position
@@ -4107,7 +4118,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       16
 aUPDATE    Y
-aXVAATT_TOK 351
+aXVAATT_TOK 352
 
 eATTRIB    6
 aNAME      DerivedExpressionXPG
@@ -4118,7 +4129,7 @@ aDOMAIN    Blob
 aTYPE      B
 aLTH       7
 aHIDDEN    Y
-aXVAATT_TOK 352
+aXVAATT_TOK 353
 
 eATTRIB    6
 aNAME      Sequence
@@ -4129,7 +4140,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 353
+aXVAATT_TOK 354
 
 eATTRIB    6
 aNAME      SAP_Attribute
@@ -4140,7 +4151,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 354
+aXVAATT_TOK 355
 
 eATTRIB    6
 aNAME      XML_SimpleName
@@ -4151,7 +4162,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 355
+aXVAATT_TOK 356
 
 eATTRIB    6
 aNAME      XML_NameExternal
@@ -4162,7 +4173,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       100
 aHIDDEN    Y
-aXVAATT_TOK 356
+aXVAATT_TOK 357
 
 eCHILDENTITY 6
 aNAME      L_Domain
@@ -4187,7 +4198,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 357
+aXVAATT_TOK 358
 
 eATTRIB    7
 aNAME      LastSyncDate
@@ -4198,7 +4209,7 @@ aTYPE      T
 aLTH       6
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 358
+aXVAATT_TOK 359
 
 eATTRIB    7
 aNAME      Desc
@@ -4209,7 +4220,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 359
+aXVAATT_TOK 360
 
 eATTRIB    7
 aNAME      ContextRestriction
@@ -4220,7 +4231,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 360
+aXVAATT_TOK 361
 
 eATTRIB    7
 aNAME      DerivedName
@@ -4230,7 +4241,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aSEQ_AD    A
-aXVAATT_TOK 361
+aXVAATT_TOK 362
 aDERIVEDF  oTZDMSRCO_DeriveDomName
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -4242,7 +4253,7 @@ aDOMAIN    DataTypeDomain
 aTYPE      S
 aLTH       1
 aSEQ_AD    A
-aXVAATT_TOK 362
+aXVAATT_TOK 363
 aDERIVEDF  oTZDMSRCO_DeriveDomDataType
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -4254,7 +4265,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aSEQ_AD    A
-aXVAATT_TOK 363
+aXVAATT_TOK 364
 aDERIVEDF  oTZDMSRCO_DeriveDomStringLth
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -4266,7 +4277,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aSEQ_AD    A
-aXVAATT_TOK 364
+aXVAATT_TOK 365
 aDERIVEDF  oTZDMSRCO_DeriveDomDecFormat
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -4280,7 +4291,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 365
+aXVAATT_TOK 366
 
 eATTRIB    7
 aNAME      DomainType
@@ -4292,7 +4303,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 366
+aXVAATT_TOK 367
 
 eATTRIB    7
 aNAME      DataType
@@ -4304,7 +4315,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 367
+aXVAATT_TOK 368
 
 eATTRIB    7
 aNAME      MaxStringLth
@@ -4315,7 +4326,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 368
+aXVAATT_TOK 369
 
 eATTRIB    7
 aNAME      DecimalFormat
@@ -4326,7 +4337,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 369
+aXVAATT_TOK 370
 
 eCHILDENTITY 4
 aNAME      UIS_Include
@@ -4354,7 +4365,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 370
+aXVAATT_TOK 371
 
 eATTRIB    5
 aNAME      SubObjectType
@@ -4365,7 +4376,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 371
+aXVAATT_TOK 372
 
 eATTRIB    5
 aNAME      SubObjectName
@@ -4376,7 +4387,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 372
+aXVAATT_TOK 373
 
 eATTRIB    5
 aNAME      SubObjectListQual
@@ -4387,7 +4398,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 373
+aXVAATT_TOK 374
 
 eATTRIB    5
 aNAME      SubObjectTransQual
@@ -4398,7 +4409,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 374
+aXVAATT_TOK 375
 
 eATTRIB    5
 aNAME      SubObjectOperators
@@ -4409,7 +4420,7 @@ aDOMAIN    Operators
 aTYPE      S
 aLTH       2
 aUPDATE    Y
-aXVAATT_TOK 375
+aXVAATT_TOK 376
 
 eCHILDENTITY 5
 aNAME      ListViewObjRef
@@ -4435,7 +4446,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 376
+aXVAATT_TOK 377
 
 eATTRIB    6
 aNAME      LastSyncDate
@@ -4445,7 +4456,7 @@ aDOMAIN    DateTime
 aTYPE      T
 aLTH       6
 aUPDATE    Y
-aXVAATT_TOK 377
+aXVAATT_TOK 378
 
 eATTRIB    6
 aNAME      Name
@@ -4456,7 +4467,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 378
+aXVAATT_TOK 379
 
 eATTRIB    6
 aNAME      Desc
@@ -4467,7 +4478,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 379
+aXVAATT_TOK 380
 
 eATTRIB    6
 aNAME      Level
@@ -4478,7 +4489,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 380
+aXVAATT_TOK 381
 
 eATTRIB    6
 aNAME      IsDrivingViewForReportFlag
@@ -4489,7 +4500,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 381
+aXVAATT_TOK 382
 
 eCHILDENTITY 6
 aNAME      ListSubObjLOD
@@ -4513,7 +4524,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 382
+aXVAATT_TOK 383
 
 eATTRIB    7
 aNAME      DLL_Name
@@ -4524,7 +4535,7 @@ aDOMAIN    QSFileName
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 383
+aXVAATT_TOK 384
 
 eATTRIB    7
 aNAME      ActivateConstraint
@@ -4535,7 +4546,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 384
+aXVAATT_TOK 385
 
 eATTRIB    7
 aNAME      ActivateServerConstraint
@@ -4546,7 +4557,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 385
+aXVAATT_TOK 386
 
 eATTRIB    7
 aNAME      ActivateEmptyConstraint
@@ -4557,7 +4568,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 386
+aXVAATT_TOK 387
 
 eATTRIB    7
 aNAME      CommitConstraint
@@ -4568,7 +4579,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 387
+aXVAATT_TOK 388
 
 eATTRIB    7
 aNAME      CommitServerConstraint
@@ -4579,7 +4590,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 388
+aXVAATT_TOK 389
 
 eATTRIB    7
 aNAME      DropOIConstraint
@@ -4590,7 +4601,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 389
+aXVAATT_TOK 390
 
 eATTRIB    7
 aNAME      CacheNumberPerEntity
@@ -4601,7 +4612,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 390
+aXVAATT_TOK 391
 
 eATTRIB    7
 aNAME      DataLocking
@@ -4612,7 +4623,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 391
+aXVAATT_TOK 392
 
 eATTRIB    7
 aNAME      LastSyncDate
@@ -4622,7 +4633,7 @@ aDOMAIN    DateTime
 aTYPE      T
 aLTH       6
 aUPDATE    Y
-aXVAATT_TOK 392
+aXVAATT_TOK 393
 
 eATTRIB    7
 aNAME      Name
@@ -4634,7 +4645,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 393
+aXVAATT_TOK 394
 
 eATTRIB    7
 aNAME      Desc
@@ -4645,7 +4656,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 394
+aXVAATT_TOK 395
 
 eATTRIB    7
 aNAME      DoNotMergeFlag
@@ -4656,7 +4667,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 395
+aXVAATT_TOK 396
 
 eCHILDENTITY 5
 aNAME      IncludeViewObjRef
@@ -4683,7 +4694,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 396
+aXVAATT_TOK 397
 
 eATTRIB    6
 aNAME      Name
@@ -4694,7 +4705,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 397
+aXVAATT_TOK 398
 
 eATTRIB    6
 aNAME      Desc
@@ -4705,7 +4716,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 398
+aXVAATT_TOK 399
 
 eATTRIB    6
 aNAME      Level
@@ -4716,7 +4727,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 399
+aXVAATT_TOK 400
 
 eATTRIB    6
 aNAME      IsDrivingViewForReportFlag
@@ -4727,7 +4738,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 400
+aXVAATT_TOK 401
 
 eCHILDENTITY 6
 aNAME      IncludeSubObjLOD
@@ -4750,7 +4761,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 401
+aXVAATT_TOK 402
 
 eATTRIB    7
 aNAME      Name
@@ -4762,7 +4773,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 402
+aXVAATT_TOK 403
 
 eATTRIB    7
 aNAME      Desc
@@ -4773,7 +4784,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 403
+aXVAATT_TOK 404
 
 eATTRIB    7
 aNAME      DLL_Name
@@ -4784,7 +4795,7 @@ aDOMAIN    QSFileName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 404
+aXVAATT_TOK 405
 
 eATTRIB    7
 aNAME      ActivateConstraint
@@ -4795,7 +4806,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 405
+aXVAATT_TOK 406
 
 eATTRIB    7
 aNAME      ActivateServerConstraint
@@ -4806,7 +4817,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 406
+aXVAATT_TOK 407
 
 eATTRIB    7
 aNAME      ActivateEmptyConstraint
@@ -4817,7 +4828,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 407
+aXVAATT_TOK 408
 
 eATTRIB    7
 aNAME      CommitConstraint
@@ -4828,7 +4839,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 408
+aXVAATT_TOK 409
 
 eATTRIB    7
 aNAME      CommitServerConstraint
@@ -4839,7 +4850,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 409
+aXVAATT_TOK 410
 
 eATTRIB    7
 aNAME      DropOIConstraint
@@ -4850,7 +4861,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 410
+aXVAATT_TOK 411
 
 eATTRIB    7
 aNAME      CacheNumberPerEntity
@@ -4861,7 +4872,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 411
+aXVAATT_TOK 412
 
 eATTRIB    7
 aNAME      DataLocking
@@ -4872,7 +4883,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 412
+aXVAATT_TOK 413
 
 eATTRIB    7
 aNAME      DoNotMergeFlag
@@ -4883,7 +4894,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 413
+aXVAATT_TOK 414
 
 eCHILDENTITY 4
 aNAME      I_LOD_Attribute
@@ -4910,7 +4921,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 414
+aXVAATT_TOK 415
 
 eATTRIB    5
 aNAME      Work
@@ -4921,7 +4932,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 415
+aXVAATT_TOK 416
 
 eATTRIB    5
 aNAME      Update
@@ -4932,7 +4943,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 416
+aXVAATT_TOK 417
 
 eATTRIB    5
 aNAME      Init
@@ -4943,7 +4954,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 417
+aXVAATT_TOK 418
 
 eATTRIB    5
 aNAME      Hidden
@@ -4954,7 +4965,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 418
+aXVAATT_TOK 419
 
 eATTRIB    5
 aNAME      SeqPriority
@@ -4965,7 +4976,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 419
+aXVAATT_TOK 420
 
 eATTRIB    5
 aNAME      SeqOrder
@@ -4976,7 +4987,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 420
+aXVAATT_TOK 421
 
 eATTRIB    5
 aNAME      DIL_Text
@@ -4987,7 +4998,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 421
+aXVAATT_TOK 422
 
 eATTRIB    5
 aNAME      SeqNo_LOD_Entity
@@ -4998,7 +5009,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 422
+aXVAATT_TOK 423
 
 eATTRIB    5
 aNAME      SeqNo_UIS_Entity_M
@@ -5009,7 +5020,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 423
+aXVAATT_TOK 424
 
 eATTRIB    5
 aNAME      SeqNo_UIS_Entity_L
@@ -5020,7 +5031,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 424
+aXVAATT_TOK 425
 
 eATTRIB    5
 aNAME      DB_DerivedValue
@@ -5031,7 +5042,7 @@ aDOMAIN    LOD_DB_DerivedValue
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 425
+aXVAATT_TOK 426
 
 eATTRIB    5
 aNAME      XML_Simple
@@ -5042,7 +5053,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 426
+aXVAATT_TOK 427
 
 eATTRIB    5
 aNAME      HashkeyType
@@ -5053,7 +5064,7 @@ aDOMAIN    LOD_AttributeHashkeyType
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 427
+aXVAATT_TOK 428
 
 eATTRIB    5
 aNAME      HashkeyParentEntityName
@@ -5064,7 +5075,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 428
+aXVAATT_TOK 429
 
 eCHILDENTITY 5
 aNAME      I_LOD_Entity
@@ -5089,7 +5100,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 429
+aXVAATT_TOK 430
 
 eATTRIB    6
 aNAME      IndentName
@@ -5101,7 +5112,7 @@ aTYPE      S
 aLTH       100
 aCASESENS  Y
 aUPDATE    Y
-aXVAATT_TOK 430
+aXVAATT_TOK 431
 
 eATTRIB    6
 aNAME      IndentLvl
@@ -5112,7 +5123,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 431
+aXVAATT_TOK 432
 
 eATTRIB    6
 aNAME      ZKey
@@ -5125,7 +5136,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 432
+aXVAATT_TOK 433
 
 eATTRIB    6
 aNAME      Create
@@ -5136,7 +5147,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 433
+aXVAATT_TOK 434
 
 eATTRIB    6
 aNAME      Delete
@@ -5147,7 +5158,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 434
+aXVAATT_TOK 435
 
 eATTRIB    6
 aNAME      Update
@@ -5158,7 +5169,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 435
+aXVAATT_TOK 436
 
 eATTRIB    6
 aNAME      Include
@@ -5169,7 +5180,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 436
+aXVAATT_TOK 437
 
 eATTRIB    6
 aNAME      InclSrc
@@ -5180,7 +5191,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 437
+aXVAATT_TOK 438
 
 eATTRIB    6
 aNAME      Exclude
@@ -5191,7 +5202,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 438
+aXVAATT_TOK 439
 
 eATTRIB    6
 aNAME      Hidden
@@ -5202,7 +5213,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 439
+aXVAATT_TOK 440
 
 eATTRIB    6
 aNAME      Recursive
@@ -5213,7 +5224,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 440
+aXVAATT_TOK 441
 
 eATTRIB    6
 aNAME      AutoCreate
@@ -5224,7 +5235,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 441
+aXVAATT_TOK 442
 
 eATTRIB    6
 aNAME      Derived
@@ -5235,7 +5246,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 442
+aXVAATT_TOK 443
 
 eATTRIB    6
 aNAME      SeqType
@@ -5246,7 +5257,7 @@ aDOMAIN    LOD_EntitySequence
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 443
+aXVAATT_TOK 444
 
 eATTRIB    6
 aNAME      Work
@@ -5257,7 +5268,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 444
+aXVAATT_TOK 445
 
 eATTRIB    6
 aNAME      ParentDeleteBehave
@@ -5268,7 +5279,7 @@ aDOMAIN    LOD_ParentDeleteBehavior
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 445
+aXVAATT_TOK 446
 
 eATTRIB    6
 aNAME      DupEntityInstance
@@ -5279,7 +5290,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 446
+aXVAATT_TOK 447
 
 eATTRIB    6
 aNAME      DupRelationshipInstance
@@ -5290,7 +5301,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 447
+aXVAATT_TOK 448
 
 eATTRIB    6
 aNAME      RelLinkIndicator
@@ -5301,7 +5312,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 448
+aXVAATT_TOK 449
 
 eATTRIB    6
 aNAME      Desc
@@ -5312,7 +5323,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 449
+aXVAATT_TOK 450
 
 eATTRIB    6
 aNAME      CreateConstraint
@@ -5323,7 +5334,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 450
+aXVAATT_TOK 451
 
 eATTRIB    6
 aNAME      DeleteConstraint
@@ -5334,7 +5345,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 451
+aXVAATT_TOK 452
 
 eATTRIB    6
 aNAME      IncludeConstraint
@@ -5345,7 +5356,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 452
+aXVAATT_TOK 453
 
 eATTRIB    6
 aNAME      ExcludeConstraint
@@ -5356,7 +5367,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 453
+aXVAATT_TOK 454
 
 eATTRIB    6
 aNAME      AcceptConstraint
@@ -5367,7 +5378,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 454
+aXVAATT_TOK 455
 
 eATTRIB    6
 aNAME      CancelConstraint
@@ -5378,7 +5389,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 455
+aXVAATT_TOK 456
 
 eATTRIB    6
 aNAME      SeqNo
@@ -5389,7 +5400,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 456
+aXVAATT_TOK 457
 
 eATTRIB    6
 aNAME      Abstract
@@ -5400,7 +5411,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 457
+aXVAATT_TOK 458
 
 eATTRIB    6
 aNAME      DataLocking
@@ -5411,7 +5422,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 458
+aXVAATT_TOK 459
 
 eATTRIB    6
 aNAME      MultipleChildLimit
@@ -5422,7 +5433,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 459
+aXVAATT_TOK 460
 
 eATTRIB    6
 aNAME      XML_Name
@@ -5433,7 +5444,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 460
+aXVAATT_TOK 461
 
 eATTRIB    6
 aNAME      LazyLoadFlag
@@ -5444,7 +5455,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 461
+aXVAATT_TOK 462
 
 eATTRIB    6
 aNAME      ReportDisplayFlag
@@ -5455,7 +5466,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 462
+aXVAATT_TOK 463
 
 eCHILDENTITY 5
 aNAME      I_ER_Attribute
@@ -5480,7 +5491,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 463
+aXVAATT_TOK 464
 
 eATTRIB    6
 aNAME      ZKey
@@ -5493,7 +5504,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 464
+aXVAATT_TOK 465
 
 eATTRIB    6
 aNAME      Lth
@@ -5504,7 +5515,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 465
+aXVAATT_TOK 466
 
 eATTRIB    6
 aNAME      Key
@@ -5515,7 +5526,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 466
+aXVAATT_TOK 467
 
 eATTRIB    6
 aNAME      NotNull
@@ -5526,7 +5537,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 467
+aXVAATT_TOK 468
 
 eATTRIB    6
 aNAME      Desc
@@ -5537,7 +5548,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 468
+aXVAATT_TOK 469
 
 eATTRIB    6
 aNAME      PromptPaintLit
@@ -5548,7 +5559,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 469
+aXVAATT_TOK 470
 
 eATTRIB    6
 aNAME      PromptPaintLth
@@ -5559,7 +5570,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 470
+aXVAATT_TOK 471
 
 eATTRIB    6
 aNAME      ListPaintLit
@@ -5570,7 +5581,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 471
+aXVAATT_TOK 472
 
 eATTRIB    6
 aNAME      ListPaintLth
@@ -5581,7 +5592,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 472
+aXVAATT_TOK 473
 
 eATTRIB    6
 aNAME      CaseSens
@@ -5592,7 +5603,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 473
+aXVAATT_TOK 474
 
 eATTRIB    6
 aNAME      ADW_Position
@@ -5603,7 +5614,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       16
 aUPDATE    Y
-aXVAATT_TOK 474
+aXVAATT_TOK 475
 
 eATTRIB    6
 aNAME      TE_ColumnName
@@ -5614,7 +5625,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 475
+aXVAATT_TOK 476
 
 eATTRIB    6
 aNAME      TE_ForeignKeyName
@@ -5625,7 +5636,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 476
+aXVAATT_TOK 477
 
 eATTRIB    6
 aNAME      Work
@@ -5636,7 +5647,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 477
+aXVAATT_TOK 478
 
 eATTRIB    6
 aNAME      DerivedExpression
@@ -5647,7 +5658,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 478
+aXVAATT_TOK 479
 
 eATTRIB    6
 aNAME      DerivedExpressionXPG
@@ -5658,7 +5669,7 @@ aDOMAIN    Blob
 aTYPE      B
 aLTH       7
 aHIDDEN    Y
-aXVAATT_TOK 479
+aXVAATT_TOK 480
 
 eATTRIB    6
 aNAME      Sequence
@@ -5669,7 +5680,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 480
+aXVAATT_TOK 481
 
 eATTRIB    6
 aNAME      SAP_Attribute
@@ -5680,7 +5691,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 481
+aXVAATT_TOK 482
 
 eATTRIB    6
 aNAME      XML_SimpleName
@@ -5691,7 +5702,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 482
+aXVAATT_TOK 483
 
 eATTRIB    6
 aNAME      XML_NameExternal
@@ -5702,7 +5713,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       100
 aHIDDEN    Y
-aXVAATT_TOK 483
+aXVAATT_TOK 484
 
 eCHILDENTITY 6
 aNAME      I_Domain
@@ -5727,7 +5738,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 484
+aXVAATT_TOK 485
 
 eATTRIB    7
 aNAME      Name
@@ -5739,7 +5750,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 485
+aXVAATT_TOK 486
 
 eATTRIB    7
 aNAME      Desc
@@ -5750,7 +5761,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 486
+aXVAATT_TOK 487
 
 eATTRIB    7
 aNAME      DomainType
@@ -5762,7 +5773,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 487
+aXVAATT_TOK 488
 
 eATTRIB    7
 aNAME      DataType
@@ -5774,7 +5785,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 488
+aXVAATT_TOK 489
 
 eATTRIB    7
 aNAME      MaxStringLth
@@ -5785,7 +5796,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 489
+aXVAATT_TOK 490
 
 eATTRIB    7
 aNAME      ContextRestriction
@@ -5796,7 +5807,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 490
+aXVAATT_TOK 491
 
 eATTRIB    7
 aNAME      DecimalFormat
@@ -5807,7 +5818,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 491
+aXVAATT_TOK 492
 
 eCHILDENTITY 4
 aNAME      UIS_Tab
@@ -5835,7 +5846,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 492
+aXVAATT_TOK 493
 
 eATTRIB    5
 aNAME      Title
@@ -5846,7 +5857,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 493
+aXVAATT_TOK 494
 
 eCHILDENTITY 5
 aNAME      MT_LOD_Attribute
@@ -5872,7 +5883,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 494
+aXVAATT_TOK 495
 
 eATTRIB    6
 aNAME      Work
@@ -5883,7 +5894,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 495
+aXVAATT_TOK 496
 
 eATTRIB    6
 aNAME      Update
@@ -5894,7 +5905,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 496
+aXVAATT_TOK 497
 
 eATTRIB    6
 aNAME      Init
@@ -5905,7 +5916,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 497
+aXVAATT_TOK 498
 
 eATTRIB    6
 aNAME      Hidden
@@ -5916,7 +5927,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 498
+aXVAATT_TOK 499
 
 eATTRIB    6
 aNAME      SeqPriority
@@ -5927,7 +5938,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 499
+aXVAATT_TOK 500
 
 eATTRIB    6
 aNAME      SeqOrder
@@ -5938,7 +5949,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 500
+aXVAATT_TOK 501
 
 eATTRIB    6
 aNAME      DIL_Text
@@ -5949,7 +5960,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aUPDATE    Y
-aXVAATT_TOK 501
+aXVAATT_TOK 502
 
 eATTRIB    6
 aNAME      SeqNo_LOD_Entity
@@ -5960,7 +5971,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 502
+aXVAATT_TOK 503
 
 eATTRIB    6
 aNAME      SeqNo_UIS_Entity_M
@@ -5971,7 +5982,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 503
+aXVAATT_TOK 504
 
 eATTRIB    6
 aNAME      SeqNo_UIS_Entity_L
@@ -5982,7 +5993,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 504
+aXVAATT_TOK 505
 
 eATTRIB    6
 aNAME      ParticipatesInKey
@@ -5993,7 +6004,7 @@ aTYPE      S
 aLTH       254
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 505
+aXVAATT_TOK 506
 aDERIVEDF  oTZADCSDO_DeriveKey
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -6006,7 +6017,7 @@ aTYPE      S
 aLTH       254
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 506
+aXVAATT_TOK 507
 aDERIVEDF  oTZADCSDO_DerivedAttr
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
 
@@ -6019,7 +6030,7 @@ aDOMAIN    LOD_DB_DerivedValue
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 507
+aXVAATT_TOK 508
 
 eATTRIB    6
 aNAME      XML_Simple
@@ -6030,7 +6041,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 508
+aXVAATT_TOK 509
 
 eATTRIB    6
 aNAME      HashkeyType
@@ -6041,7 +6052,7 @@ aDOMAIN    LOD_AttributeHashkeyType
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 509
+aXVAATT_TOK 510
 
 eATTRIB    6
 aNAME      HashkeyParentEntityName
@@ -6052,7 +6063,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 510
+aXVAATT_TOK 511
 
 eCHILDENTITY 6
 aNAME      MT_LOD_Entity
@@ -6075,7 +6086,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 511
+aXVAATT_TOK 512
 
 eATTRIB    7
 aNAME      IndentName
@@ -6087,7 +6098,7 @@ aTYPE      S
 aLTH       100
 aCASESENS  Y
 aUPDATE    Y
-aXVAATT_TOK 512
+aXVAATT_TOK 513
 
 eATTRIB    7
 aNAME      IndentLvl
@@ -6098,7 +6109,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 513
+aXVAATT_TOK 514
 
 eATTRIB    7
 aNAME      ZKey
@@ -6111,7 +6122,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 514
+aXVAATT_TOK 515
 
 eATTRIB    7
 aNAME      Create
@@ -6122,7 +6133,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 515
+aXVAATT_TOK 516
 
 eATTRIB    7
 aNAME      Delete
@@ -6133,7 +6144,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 516
+aXVAATT_TOK 517
 
 eATTRIB    7
 aNAME      Update
@@ -6144,7 +6155,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 517
+aXVAATT_TOK 518
 
 eATTRIB    7
 aNAME      Include
@@ -6155,7 +6166,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 518
+aXVAATT_TOK 519
 
 eATTRIB    7
 aNAME      InclSrc
@@ -6166,7 +6177,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 519
+aXVAATT_TOK 520
 
 eATTRIB    7
 aNAME      Exclude
@@ -6177,7 +6188,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 520
+aXVAATT_TOK 521
 
 eATTRIB    7
 aNAME      Hidden
@@ -6188,7 +6199,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 521
+aXVAATT_TOK 522
 
 eATTRIB    7
 aNAME      Recursive
@@ -6199,7 +6210,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 522
+aXVAATT_TOK 523
 
 eATTRIB    7
 aNAME      AutoCreate
@@ -6210,7 +6221,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 523
+aXVAATT_TOK 524
 
 eATTRIB    7
 aNAME      Derived
@@ -6221,7 +6232,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 524
+aXVAATT_TOK 525
 
 eATTRIB    7
 aNAME      SeqType
@@ -6232,7 +6243,7 @@ aDOMAIN    LOD_EntitySequence
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 525
+aXVAATT_TOK 526
 
 eATTRIB    7
 aNAME      Work
@@ -6243,7 +6254,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 526
+aXVAATT_TOK 527
 
 eATTRIB    7
 aNAME      ParentDeleteBehave
@@ -6254,7 +6265,7 @@ aDOMAIN    LOD_ParentDeleteBehavior
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 527
+aXVAATT_TOK 528
 
 eATTRIB    7
 aNAME      DupEntityInstance
@@ -6265,7 +6276,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 528
+aXVAATT_TOK 529
 
 eATTRIB    7
 aNAME      DupRelationshipInstance
@@ -6276,7 +6287,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 529
+aXVAATT_TOK 530
 
 eATTRIB    7
 aNAME      RelLinkIndicator
@@ -6287,7 +6298,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 530
+aXVAATT_TOK 531
 
 eATTRIB    7
 aNAME      Desc
@@ -6298,7 +6309,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 531
+aXVAATT_TOK 532
 
 eATTRIB    7
 aNAME      CreateConstraint
@@ -6309,7 +6320,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 532
+aXVAATT_TOK 533
 
 eATTRIB    7
 aNAME      DeleteConstraint
@@ -6320,7 +6331,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 533
+aXVAATT_TOK 534
 
 eATTRIB    7
 aNAME      IncludeConstraint
@@ -6331,7 +6342,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 534
+aXVAATT_TOK 535
 
 eATTRIB    7
 aNAME      ExcludeConstraint
@@ -6342,7 +6353,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 535
+aXVAATT_TOK 536
 
 eATTRIB    7
 aNAME      AcceptConstraint
@@ -6353,7 +6364,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 536
+aXVAATT_TOK 537
 
 eATTRIB    7
 aNAME      CancelConstraint
@@ -6364,7 +6375,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 537
+aXVAATT_TOK 538
 
 eATTRIB    7
 aNAME      SeqNo
@@ -6375,7 +6386,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 538
+aXVAATT_TOK 539
 
 eATTRIB    7
 aNAME      Abstract
@@ -6386,7 +6397,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 539
+aXVAATT_TOK 540
 
 eATTRIB    7
 aNAME      DataLocking
@@ -6397,7 +6408,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 540
+aXVAATT_TOK 541
 
 eATTRIB    7
 aNAME      MultipleChildLimit
@@ -6408,7 +6419,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 541
+aXVAATT_TOK 542
 
 eATTRIB    7
 aNAME      XML_Name
@@ -6419,7 +6430,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 542
+aXVAATT_TOK 543
 
 eATTRIB    7
 aNAME      LazyLoadFlag
@@ -6430,7 +6441,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 543
+aXVAATT_TOK 544
 
 eATTRIB    7
 aNAME      ReportDisplayFlag
@@ -6441,7 +6452,7 @@ aDOMAIN    AlphaNumeric
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 544
+aXVAATT_TOK 545
 
 eCHILDENTITY 6
 aNAME      MT_ER_Attribute
@@ -6464,7 +6475,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 545
+aXVAATT_TOK 546
 
 eATTRIB    7
 aNAME      ZKey
@@ -6477,7 +6488,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 546
+aXVAATT_TOK 547
 
 eATTRIB    7
 aNAME      Lth
@@ -6488,7 +6499,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 547
+aXVAATT_TOK 548
 
 eATTRIB    7
 aNAME      Key
@@ -6499,7 +6510,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 548
+aXVAATT_TOK 549
 
 eATTRIB    7
 aNAME      NotNull
@@ -6510,7 +6521,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 549
+aXVAATT_TOK 550
 
 eATTRIB    7
 aNAME      Desc
@@ -6521,7 +6532,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 550
+aXVAATT_TOK 551
 
 eATTRIB    7
 aNAME      PromptPaintLit
@@ -6532,7 +6543,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 551
+aXVAATT_TOK 552
 
 eATTRIB    7
 aNAME      PromptPaintLth
@@ -6543,7 +6554,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 552
+aXVAATT_TOK 553
 
 eATTRIB    7
 aNAME      ListPaintLit
@@ -6554,7 +6565,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       60
 aUPDATE    Y
-aXVAATT_TOK 553
+aXVAATT_TOK 554
 
 eATTRIB    7
 aNAME      ListPaintLth
@@ -6565,7 +6576,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 554
+aXVAATT_TOK 555
 
 eATTRIB    7
 aNAME      CaseSens
@@ -6576,7 +6587,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 555
+aXVAATT_TOK 556
 
 eATTRIB    7
 aNAME      ADW_Position
@@ -6587,7 +6598,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       16
 aUPDATE    Y
-aXVAATT_TOK 556
+aXVAATT_TOK 557
 
 eATTRIB    7
 aNAME      TE_ColumnName
@@ -6598,7 +6609,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 557
+aXVAATT_TOK 558
 
 eATTRIB    7
 aNAME      TE_ForeignKeyName
@@ -6609,7 +6620,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 558
+aXVAATT_TOK 559
 
 eATTRIB    7
 aNAME      Work
@@ -6620,7 +6631,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 559
+aXVAATT_TOK 560
 
 eATTRIB    7
 aNAME      DerivedExpression
@@ -6631,7 +6642,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       254
 aHIDDEN    Y
-aXVAATT_TOK 560
+aXVAATT_TOK 561
 
 eATTRIB    7
 aNAME      DerivedExpressionXPG
@@ -6642,7 +6653,7 @@ aDOMAIN    Blob
 aTYPE      B
 aLTH       7
 aHIDDEN    Y
-aXVAATT_TOK 561
+aXVAATT_TOK 562
 
 eATTRIB    7
 aNAME      Sequence
@@ -6653,7 +6664,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 562
+aXVAATT_TOK 563
 
 eATTRIB    7
 aNAME      SAP_Attribute
@@ -6664,7 +6675,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aHIDDEN    Y
-aXVAATT_TOK 563
+aXVAATT_TOK 564
 
 eATTRIB    7
 aNAME      XML_SimpleName
@@ -6675,7 +6686,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aHIDDEN    Y
-aXVAATT_TOK 564
+aXVAATT_TOK 565
 
 eATTRIB    7
 aNAME      XML_NameExternal
@@ -6686,7 +6697,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       100
 aHIDDEN    Y
-aXVAATT_TOK 565
+aXVAATT_TOK 566
 
 eCHILDENTITY 7
 aNAME      MT_Domain
@@ -6711,7 +6722,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 566
+aXVAATT_TOK 567
 
 eATTRIB    8
 aNAME      Name
@@ -6723,7 +6734,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 567
+aXVAATT_TOK 568
 
 eATTRIB    8
 aNAME      Desc
@@ -6734,7 +6745,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 568
+aXVAATT_TOK 569
 
 eATTRIB    8
 aNAME      DomainType
@@ -6746,7 +6757,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 569
+aXVAATT_TOK 570
 
 eATTRIB    8
 aNAME      DataType
@@ -6758,7 +6769,7 @@ aTYPE      S
 aLTH       1
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 570
+aXVAATT_TOK 571
 
 eATTRIB    8
 aNAME      MaxStringLth
@@ -6769,7 +6780,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 571
+aXVAATT_TOK 572
 
 eATTRIB    8
 aNAME      ContextRestriction
@@ -6780,7 +6791,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 572
+aXVAATT_TOK 573
 
 eATTRIB    8
 aNAME      DecimalFormat
@@ -6791,7 +6802,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 573
+aXVAATT_TOK 574
 
 eCHILDENTITY 3
 aNAME      DfltWndDesign
@@ -6818,7 +6829,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 574
+aXVAATT_TOK 575
 
 eATTRIB    4
 aNAME      AutoVersion
@@ -6829,7 +6840,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 575
+aXVAATT_TOK 576
 
 eATTRIB    4
 aNAME      ActionType
@@ -6840,7 +6851,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 576
+aXVAATT_TOK 577
 
 eATTRIB    4
 aNAME      UsageStyle
@@ -6851,7 +6862,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 577
+aXVAATT_TOK 578
 
 eATTRIB    4
 aNAME      Cascade
@@ -6862,7 +6873,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 578
+aXVAATT_TOK 579
 
 eATTRIB    4
 aNAME      UpdateCancelAction
@@ -6873,7 +6884,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 579
+aXVAATT_TOK 580
 
 eATTRIB    4
 aNAME      UpdateDeleteAction
@@ -6884,7 +6895,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 580
+aXVAATT_TOK 581
 
 eATTRIB    4
 aNAME      UpdateSaveAction
@@ -6895,7 +6906,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 581
+aXVAATT_TOK 582
 
 eATTRIB    4
 aNAME      UpdateNextAction
@@ -6906,7 +6917,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 582
+aXVAATT_TOK 583
 
 eATTRIB    4
 aNAME      UpdatePrevAction
@@ -6917,7 +6928,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 583
+aXVAATT_TOK 584
 
 eATTRIB    4
 aNAME      UpdateSaveText
@@ -6928,7 +6939,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 584
+aXVAATT_TOK 585
 
 eATTRIB    4
 aNAME      UpdateCancelText
@@ -6939,7 +6950,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 585
+aXVAATT_TOK 586
 
 eATTRIB    4
 aNAME      UpdateDeleteText
@@ -6950,7 +6961,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 586
+aXVAATT_TOK 587
 
 eATTRIB    4
 aNAME      UpdateNextText
@@ -6961,7 +6972,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 587
+aXVAATT_TOK 588
 
 eATTRIB    4
 aNAME      UpdatePrevText
@@ -6972,7 +6983,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 588
+aXVAATT_TOK 589
 
 eATTRIB    4
 aNAME      UpdateSaveAccel
@@ -6983,7 +6994,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 589
+aXVAATT_TOK 590
 
 eATTRIB    4
 aNAME      UpdateCancelAccel
@@ -6994,7 +7005,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 590
+aXVAATT_TOK 591
 
 eATTRIB    4
 aNAME      UpdateDeleteAccel
@@ -7005,7 +7016,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 591
+aXVAATT_TOK 592
 
 eATTRIB    4
 aNAME      UpdateNextAccel
@@ -7016,7 +7027,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 592
+aXVAATT_TOK 593
 
 eATTRIB    4
 aNAME      UpdatePrevAccel
@@ -7027,7 +7038,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 593
+aXVAATT_TOK 594
 
 eATTRIB    4
 aNAME      ListOptionPosition
@@ -7038,7 +7049,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 594
+aXVAATT_TOK 595
 
 eATTRIB    4
 aNAME      ListUpdateAction
@@ -7049,7 +7060,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 595
+aXVAATT_TOK 596
 
 eATTRIB    4
 aNAME      ListActionMenuText
@@ -7060,7 +7071,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 596
+aXVAATT_TOK 597
 
 eATTRIB    4
 aNAME      ListActionAccel
@@ -7071,7 +7082,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 597
+aXVAATT_TOK 598
 
 eATTRIB    4
 aNAME      ListDeleteAction
@@ -7082,7 +7093,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 598
+aXVAATT_TOK 599
 
 eATTRIB    4
 aNAME      ListCreateAction
@@ -7093,7 +7104,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 599
+aXVAATT_TOK 600
 
 eATTRIB    4
 aNAME      CreateFromNewInd
@@ -7104,7 +7115,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 600
+aXVAATT_TOK 601
 
 eATTRIB    4
 aNAME      ListDeleteText
@@ -7115,7 +7126,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 601
+aXVAATT_TOK 602
 
 eATTRIB    4
 aNAME      ListCreateText
@@ -7126,7 +7137,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 602
+aXVAATT_TOK 603
 
 eATTRIB    4
 aNAME      ListUpdateText
@@ -7137,7 +7148,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 603
+aXVAATT_TOK 604
 
 eATTRIB    4
 aNAME      ListNewIndText
@@ -7148,7 +7159,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 604
+aXVAATT_TOK 605
 
 eATTRIB    4
 aNAME      ListDeleteAccel
@@ -7159,7 +7170,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 605
+aXVAATT_TOK 606
 
 eATTRIB    4
 aNAME      ListCreateAccel
@@ -7170,7 +7181,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 606
+aXVAATT_TOK 607
 
 eATTRIB    4
 aNAME      ListUpdateAccel
@@ -7181,7 +7192,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 607
+aXVAATT_TOK 608
 
 eATTRIB    4
 aNAME      ListTriggerMenuTxt
@@ -7192,7 +7203,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 608
+aXVAATT_TOK 609
 
 eATTRIB    4
 aNAME      ListTriggerText
@@ -7203,7 +7214,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 609
+aXVAATT_TOK 610
 
 eATTRIB    4
 aNAME      UpdtActionMenuTxt
@@ -7214,7 +7225,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 610
+aXVAATT_TOK 611
 
 eATTRIB    4
 aNAME      WndStyle
@@ -7225,7 +7236,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 611
+aXVAATT_TOK 612
 
 eATTRIB    4
 aNAME      WndName
@@ -7236,7 +7247,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       8
 aUPDATE    Y
-aXVAATT_TOK 612
+aXVAATT_TOK 613
 
 eATTRIB    4
 aNAME      WndCaption
@@ -7247,7 +7258,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aUPDATE    Y
-aXVAATT_TOK 613
+aXVAATT_TOK 614
 
 eATTRIB    4
 aNAME      WndNoMap
@@ -7258,7 +7269,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 614
+aXVAATT_TOK 615
 
 eATTRIB    4
 aNAME      WndRefresh
@@ -7269,7 +7280,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 615
+aXVAATT_TOK 616
 
 eATTRIB    4
 aNAME      WndSize_Y
@@ -7280,7 +7291,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 616
+aXVAATT_TOK 617
 
 eATTRIB    4
 aNAME      WndSize_X
@@ -7291,7 +7302,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 617
+aXVAATT_TOK 618
 
 eATTRIB    4
 aNAME      WndStart_Y
@@ -7302,7 +7313,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 618
+aXVAATT_TOK 619
 
 eATTRIB    4
 aNAME      WndStart_X
@@ -7313,7 +7324,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 619
+aXVAATT_TOK 620
 
 eATTRIB    4
 aNAME      FullWnd
@@ -7324,7 +7335,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 620
+aXVAATT_TOK 621
 
 eATTRIB    4
 aNAME      EntityFromSubObj
@@ -7336,7 +7347,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 621
+aXVAATT_TOK 622
 
 eATTRIB    4
 aNAME      SubobjectSelectText
@@ -7347,7 +7358,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 622
+aXVAATT_TOK 623
 
 eATTRIB    4
 aNAME      SubobjectCancelText
@@ -7358,7 +7369,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 623
+aXVAATT_TOK 624
 
 eATTRIB    4
 aNAME      SubobjectNewText
@@ -7369,7 +7380,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 624
+aXVAATT_TOK 625
 
 eATTRIB    4
 aNAME      ListQualWndButtonText
@@ -7380,7 +7391,7 @@ aTYPE      S
 aLTH       50
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 625
+aXVAATT_TOK 626
 
 eATTRIB    4
 aNAME      UpdateCreateAction
@@ -7391,7 +7402,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 626
+aXVAATT_TOK 627
 
 eATTRIB    4
 aNAME      ListGroupboxText
@@ -7402,7 +7413,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 627
+aXVAATT_TOK 628
 
 eATTRIB    4
 aNAME      WndCaption2
@@ -7413,7 +7424,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       50
 aHIDDEN    Y
-aXVAATT_TOK 628
+aXVAATT_TOK 629
 
 eATTRIB    4
 aNAME      WndDIL_Message
@@ -7424,7 +7435,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 629
+aXVAATT_TOK 630
 
 eCHILDENTITY 4
 aNAME      DfltWndStyle
@@ -7452,7 +7463,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 630
+aXVAATT_TOK 631
 
 eATTRIB    5
 aNAME      Tag
@@ -7463,7 +7474,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 631
+aXVAATT_TOK 632
 
 eATTRIB    5
 aNAME      Desc
@@ -7474,7 +7485,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 632
+aXVAATT_TOK 633
 
 eATTRIB    5
 aNAME      Style
@@ -7485,7 +7496,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 633
+aXVAATT_TOK 634
 
 eATTRIB    5
 aNAME      StyleEx
@@ -7496,7 +7507,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 634
+aXVAATT_TOK 635
 
 eCHILDENTITY 3
 aNAME      UIS_QualList
@@ -7524,7 +7535,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 635
+aXVAATT_TOK 636
 
 eATTRIB    4
 aNAME      QualAttribZKey
@@ -7535,7 +7546,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 636
+aXVAATT_TOK 637
 
 eATTRIB    4
 aNAME      QualifierAttrib
@@ -7546,7 +7557,7 @@ aDOMAIN    QSName
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 637
+aXVAATT_TOK 638
 
 eATTRIB    4
 aNAME      Join
@@ -7557,7 +7568,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       3
 aUPDATE    Y
-aXVAATT_TOK 638
+aXVAATT_TOK 639
 
 eATTRIB    4
 aNAME      Operator
@@ -7568,7 +7579,7 @@ aDOMAIN    Operators
 aTYPE      S
 aLTH       2
 aUPDATE    Y
-aXVAATT_TOK 639
+aXVAATT_TOK 640
 
 eATTRIB    4
 aNAME      SeqNo
@@ -7580,7 +7591,7 @@ aTYPE      L
 aLTH       4
 aSEQUENCING 16
 aUPDATE    Y
-aXVAATT_TOK 640
+aXVAATT_TOK 641
 
 eCHILDENTITY 3
 aNAME      UIS_ViewObjRef
@@ -7607,7 +7618,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 641
+aXVAATT_TOK 642
 
 eATTRIB    4
 aNAME      LastSyncDate
@@ -7617,7 +7628,7 @@ aDOMAIN    DateTime
 aTYPE      T
 aLTH       6
 aUPDATE    Y
-aXVAATT_TOK 642
+aXVAATT_TOK 643
 
 eATTRIB    4
 aNAME      Name
@@ -7629,7 +7640,7 @@ aTYPE      S
 aLTH       32
 aSEQUENCING 1
 aUPDATE    Y
-aXVAATT_TOK 643
+aXVAATT_TOK 644
 
 eATTRIB    4
 aNAME      Desc
@@ -7640,7 +7651,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 644
+aXVAATT_TOK 645
 
 eATTRIB    4
 aNAME      Level
@@ -7651,7 +7662,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 645
+aXVAATT_TOK 646
 
 eATTRIB    4
 aNAME      IsDrivingViewForReportFlag
@@ -7662,7 +7673,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 646
+aXVAATT_TOK 647
 
 eCHILDENTITY 4
 aNAME      UIS_LOD
@@ -7686,7 +7697,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 647
+aXVAATT_TOK 648
 
 eATTRIB    5
 aNAME      LastSyncDate
@@ -7696,7 +7707,7 @@ aDOMAIN    DateTime
 aTYPE      T
 aLTH       6
 aUPDATE    Y
-aXVAATT_TOK 648
+aXVAATT_TOK 649
 
 eATTRIB    5
 aNAME      DLL_Name
@@ -7707,7 +7718,7 @@ aDOMAIN    QSFileName
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 649
+aXVAATT_TOK 650
 
 eATTRIB    5
 aNAME      ActivateConstraint
@@ -7718,7 +7729,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 650
+aXVAATT_TOK 651
 
 eATTRIB    5
 aNAME      ActivateServerConstraint
@@ -7729,7 +7740,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 651
+aXVAATT_TOK 652
 
 eATTRIB    5
 aNAME      ActivateEmptyConstraint
@@ -7740,7 +7751,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 652
+aXVAATT_TOK 653
 
 eATTRIB    5
 aNAME      CommitConstraint
@@ -7751,7 +7762,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 653
+aXVAATT_TOK 654
 
 eATTRIB    5
 aNAME      CommitServerConstraint
@@ -7762,7 +7773,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 654
+aXVAATT_TOK 655
 
 eATTRIB    5
 aNAME      DropOIConstraint
@@ -7773,7 +7784,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 655
+aXVAATT_TOK 656
 
 eATTRIB    5
 aNAME      CacheNumberPerEntity
@@ -7784,7 +7795,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 656
+aXVAATT_TOK 657
 
 eATTRIB    5
 aNAME      DataLocking
@@ -7795,7 +7806,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 657
+aXVAATT_TOK 658
 
 eATTRIB    5
 aNAME      Name
@@ -7807,7 +7818,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 658
+aXVAATT_TOK 659
 
 eATTRIB    5
 aNAME      Desc
@@ -7818,7 +7829,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 659
+aXVAATT_TOK 660
 
 eATTRIB    5
 aNAME      DoNotMergeFlag
@@ -7829,7 +7840,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 660
+aXVAATT_TOK 661
 
 eCHILDENTITY 3
 aNAME      ListVOR
@@ -7855,7 +7866,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 661
+aXVAATT_TOK 662
 
 eATTRIB    4
 aNAME      Name
@@ -7866,7 +7877,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 662
+aXVAATT_TOK 663
 
 eATTRIB    4
 aNAME      Desc
@@ -7877,7 +7888,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 663
+aXVAATT_TOK 664
 
 eATTRIB    4
 aNAME      Level
@@ -7888,7 +7899,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 664
+aXVAATT_TOK 665
 
 eATTRIB    4
 aNAME      IsDrivingViewForReportFlag
@@ -7899,7 +7910,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 665
+aXVAATT_TOK 666
 
 eCHILDENTITY 4
 aNAME      ListLOD
@@ -7923,7 +7934,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 666
+aXVAATT_TOK 667
 
 eATTRIB    5
 aNAME      DLL_Name
@@ -7934,7 +7945,7 @@ aDOMAIN    QSFileName
 aTYPE      S
 aLTH       32
 aUPDATE    Y
-aXVAATT_TOK 667
+aXVAATT_TOK 668
 
 eATTRIB    5
 aNAME      ActivateConstraint
@@ -7945,7 +7956,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 668
+aXVAATT_TOK 669
 
 eATTRIB    5
 aNAME      ActivateServerConstraint
@@ -7956,7 +7967,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 669
+aXVAATT_TOK 670
 
 eATTRIB    5
 aNAME      ActivateEmptyConstraint
@@ -7967,7 +7978,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 670
+aXVAATT_TOK 671
 
 eATTRIB    5
 aNAME      CommitConstraint
@@ -7978,7 +7989,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 671
+aXVAATT_TOK 672
 
 eATTRIB    5
 aNAME      CommitServerConstraint
@@ -7989,7 +8000,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 672
+aXVAATT_TOK 673
 
 eATTRIB    5
 aNAME      DropOIConstraint
@@ -8000,7 +8011,7 @@ aDOMAIN    Text
 aTYPE      S
 aLTH       1
 aUPDATE    Y
-aXVAATT_TOK 673
+aXVAATT_TOK 674
 
 eATTRIB    5
 aNAME      CacheNumberPerEntity
@@ -8011,7 +8022,7 @@ aDOMAIN    Integer
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 674
+aXVAATT_TOK 675
 
 eATTRIB    5
 aNAME      DataLocking
@@ -8022,7 +8033,7 @@ aDOMAIN    LockingOptions
 aTYPE      L
 aLTH       4
 aUPDATE    Y
-aXVAATT_TOK 675
+aXVAATT_TOK 676
 
 eATTRIB    5
 aNAME      Name
@@ -8034,7 +8045,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 676
+aXVAATT_TOK 677
 
 eATTRIB    5
 aNAME      Desc
@@ -8045,7 +8056,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 677
+aXVAATT_TOK 678
 
 eATTRIB    5
 aNAME      DoNotMergeFlag
@@ -8056,7 +8067,7 @@ aDOMAIN    Y/N
 aTYPE      S
 aLTH       1
 aHIDDEN    Y
-aXVAATT_TOK 678
+aXVAATT_TOK 679
 
 eCHILDENTITY 3
 aNAME      Z_MetaDef
@@ -8082,7 +8093,7 @@ aTYPE      S
 aLTH       32
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 679
+aXVAATT_TOK 680
 
 eATTRIB    4
 aNAME      ZKey
@@ -8095,7 +8106,7 @@ aLTH       4
 aKEY       Y
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 680
+aXVAATT_TOK 681
 
 eATTRIB    4
 aNAME      Type
@@ -8107,7 +8118,7 @@ aTYPE      L
 aLTH       4
 aREQUIRED  Y
 aUPDATE    Y
-aXVAATT_TOK 681
+aXVAATT_TOK 682
 
 eATTRIB    4
 aNAME      LastUpdateDate
@@ -8118,7 +8129,7 @@ aDOMAIN    DateTime
 aTYPE      T
 aLTH       6
 aUPDATE    Y
-aXVAATT_TOK 682
+aXVAATT_TOK 683
 
 eATTRIB    4
 aNAME      LastCheckInDate
@@ -8129,7 +8140,7 @@ aDOMAIN    DateTime
 aTYPE      T
 aLTH       6
 aUPDATE    Y
-aXVAATT_TOK 683
+aXVAATT_TOK 684
 
 eATTRIB    4
 aNAME      Desc
@@ -8140,7 +8151,7 @@ aDOMAIN    Description
 aTYPE      S
 aLTH       32000
 aUPDATE    Y
-aXVAATT_TOK 684
+aXVAATT_TOK 685
 
 eCHILDENTITY 3
 aNAME      InitValues
@@ -8166,7 +8177,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 685
+aXVAATT_TOK 686
 
 eATTRIB    4
 aNAME      Cancel
@@ -8177,7 +8188,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 686
+aXVAATT_TOK 687
 
 eATTRIB    4
 aNAME      Delete
@@ -8188,7 +8199,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 687
+aXVAATT_TOK 688
 
 eATTRIB    4
 aNAME      Next
@@ -8199,7 +8210,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 688
+aXVAATT_TOK 689
 
 eATTRIB    4
 aNAME      Previous
@@ -8210,7 +8221,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 689
+aXVAATT_TOK 690
 
 eATTRIB    4
 aNAME      Close
@@ -8221,7 +8232,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 690
+aXVAATT_TOK 691
 
 eATTRIB    4
 aNAME      New
@@ -8232,7 +8243,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 691
+aXVAATT_TOK 692
 
 eATTRIB    4
 aNAME      Exit
@@ -8243,7 +8254,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 692
+aXVAATT_TOK 693
 
 eATTRIB    4
 aNAME      DetailUpdate
@@ -8254,7 +8265,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 693
+aXVAATT_TOK 694
 
 eATTRIB    4
 aNAME      DetailDisplay
@@ -8265,7 +8276,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 694
+aXVAATT_TOK 695
 
 eATTRIB    4
 aNAME      SelectOnParent
@@ -8276,7 +8287,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 695
+aXVAATT_TOK 696
 
 eATTRIB    4
 aNAME      SelectOnInclude
@@ -8287,7 +8298,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 696
+aXVAATT_TOK 697
 
 eATTRIB    4
 aNAME      CancelOnInclude
@@ -8298,7 +8309,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 697
+aXVAATT_TOK 698
 
 eATTRIB    4
 aNAME      CloseOnInclude
@@ -8309,7 +8320,7 @@ aTYPE      S
 aLTH       20
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 698
+aXVAATT_TOK 699
 
 eATTRIB    4
 aNAME      ButtonWidth
@@ -8320,7 +8331,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 699
+aXVAATT_TOK 700
 
 eATTRIB    4
 aNAME      ButtonHeight
@@ -8331,7 +8342,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 700
+aXVAATT_TOK 701
 
 eATTRIB    4
 aNAME      ButtonTopMargin
@@ -8342,7 +8353,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 701
+aXVAATT_TOK 702
 
 eATTRIB    4
 aNAME      ButtonBottomMargin
@@ -8353,7 +8364,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 702
+aXVAATT_TOK 703
 
 eATTRIB    4
 aNAME      ButtonLeftMargin
@@ -8364,7 +8375,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 703
+aXVAATT_TOK 704
 
 eATTRIB    4
 aNAME      ButtonRightMargin
@@ -8375,7 +8386,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 704
+aXVAATT_TOK 705
 
 eATTRIB    4
 aNAME      ButtonIncrementX
@@ -8386,7 +8397,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 705
+aXVAATT_TOK 706
 
 eATTRIB    4
 aNAME      ButtonIncrementY
@@ -8397,7 +8408,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 706
+aXVAATT_TOK 707
 
 eATTRIB    4
 aNAME      EditboxHeight
@@ -8408,7 +8419,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 707
+aXVAATT_TOK 708
 
 eATTRIB    4
 aNAME      EditboxVerticalSpacing
@@ -8419,7 +8430,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 708
+aXVAATT_TOK 709
 
 eATTRIB    4
 aNAME      GroupboxRightMargin
@@ -8430,7 +8441,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 709
+aXVAATT_TOK 710
 
 eATTRIB    4
 aNAME      GroupboxBottomMargin
@@ -8441,7 +8452,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 710
+aXVAATT_TOK 711
 
 eATTRIB    4
 aNAME      WindowWidth
@@ -8452,7 +8463,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 711
+aXVAATT_TOK 712
 
 eATTRIB    4
 aNAME      WindowHeight
@@ -8463,7 +8474,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 712
+aXVAATT_TOK 713
 
 eATTRIB    4
 aNAME      DIL_MessageFlag
@@ -8474,7 +8485,7 @@ aTYPE      S
 aLTH       1
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 713
+aXVAATT_TOK 714
 
 eATTRIB    4
 aNAME      ReportTextSize
@@ -8485,7 +8496,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 714
+aXVAATT_TOK 715
 
 eATTRIB    4
 aNAME      ReportTextHeight
@@ -8496,7 +8507,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 715
+aXVAATT_TOK 716
 
 eATTRIB    4
 aNAME      ReportHeight
@@ -8507,7 +8518,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 716
+aXVAATT_TOK 717
 
 eATTRIB    4
 aNAME      ReportWidth
@@ -8518,7 +8529,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 717
+aXVAATT_TOK 718
 
 eATTRIB    4
 aNAME      ReportTextIncrementX
@@ -8529,7 +8540,7 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 718
+aXVAATT_TOK 719
 
 eATTRIB    4
 aNAME      ReportTextIncrementY
@@ -8540,5 +8551,489 @@ aTYPE      L
 aLTH       4
 aSEQ_AD    A
 aUPDATE    Y
-aXVAATT_TOK 719
+aXVAATT_TOK 720
+
+eCHILDENTITY 3
+aNAME      FlatListPotentialTopEntity
+aERENT_TOK 110000604
+aERREL_TOK 110000604
+aFULLPERSIST Y
+aCARDMIN   0
+aCARDMAX   999999
+aCREATE    Y
+aDELETE    Y
+aPDELETE   D
+aUPDATE    Y
+aDERIVED   Y
+aINCLSRC   Y
+aMAX_LTH   164
+
+eATTRIB    4
+aNAME      ZKey
+aERATT_TOK 110000613
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aREQUIRED  Y
+aUPDATE    Y
+aXVAATT_TOK 721
+
+eATTRIB    4
+aNAME      Name
+aERATT_TOK 110000607
+aAPDM_TOK  90000038
+aDOMAIN    QSName
+aTYPE      S
+aLTH       32
+aREQUIRED  Y
+aUPDATE    Y
+aXVAATT_TOK 722
+
+eATTRIB    4
+aNAME      IndentName
+aERATT_TOK 110000609
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       100
+aCASESENS  Y
+aUPDATE    Y
+aXVAATT_TOK 723
+
+eATTRIB    4
+aNAME      IndentLvl
+aERATT_TOK 110000611
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 724
+
+eATTRIB    4
+aNAME      Create
+aERATT_TOK 110000615
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 725
+
+eATTRIB    4
+aNAME      Delete
+aERATT_TOK 110000617
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 726
+
+eATTRIB    4
+aNAME      Update
+aERATT_TOK 110000619
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 727
+
+eATTRIB    4
+aNAME      Include
+aERATT_TOK 110000621
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 728
+
+eCHILDENTITY 3
+aNAME      FlatListSelectedEntity
+aERENT_TOK 110000605
+aERREL_TOK 110000605
+aFULLPERSIST Y
+aCARDMIN   0
+aCARDMAX   999999
+aCREATE    Y
+aDELETE    Y
+aPDELETE   D
+aUPDATE    Y
+aDERIVED   Y
+aINCLSRC   Y
+aMAX_LTH   164
+
+eATTRIB    4
+aNAME      ZKey
+aERATT_TOK 110000623
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aREQUIRED  Y
+aUPDATE    Y
+aXVAATT_TOK 729
+
+eATTRIB    4
+aNAME      Name
+aERATT_TOK 110000625
+aAPDM_TOK  90000038
+aDOMAIN    QSName
+aTYPE      S
+aLTH       32
+aREQUIRED  Y
+aUPDATE    Y
+aXVAATT_TOK 730
+
+eATTRIB    4
+aNAME      IndentName
+aERATT_TOK 110000627
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       100
+aCASESENS  Y
+aUPDATE    Y
+aXVAATT_TOK 731
+
+eATTRIB    4
+aNAME      IndentLvl
+aERATT_TOK 110000629
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 732
+
+eATTRIB    4
+aNAME      Create
+aERATT_TOK 110000631
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 733
+
+eATTRIB    4
+aNAME      Delete
+aERATT_TOK 110000633
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 734
+
+eATTRIB    4
+aNAME      Update
+aERATT_TOK 110000635
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 735
+
+eATTRIB    4
+aNAME      Include
+aERATT_TOK 110000637
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 736
+
+eCHILDENTITY 3
+aNAME      FlatListPotentialAttribute
+aERENT_TOK 110000661
+aERREL_TOK 110000661
+aFULLPERSIST Y
+aCARDMIN   0
+aCARDMAX   999999
+aCREATE    Y
+aDELETE    Y
+aPDELETE   D
+aUPDATE    Y
+aDERIVED   Y
+aINCLSRC   Y
+aMAX_LTH   463
+
+eATTRIB    4
+aNAME      ZKey
+aERATT_TOK 110000663
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aREQUIRED  Y
+aUPDATE    Y
+aXVAATT_TOK 737
+
+eATTRIB    4
+aNAME      EntityName
+aERATT_TOK 110000665
+aAPDM_TOK  90000038
+aDOMAIN    QSName
+aTYPE      S
+aLTH       32
+aREQUIRED  Y
+aSEQ_AD    A
+aUPDATE    Y
+aXVAATT_TOK 738
+
+eATTRIB    4
+aNAME      IndentEntityName
+aERATT_TOK 110000667
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       100
+aCASESENS  Y
+aSEQ_AD    A
+aUPDATE    Y
+aXVAATT_TOK 739
+
+eATTRIB    4
+aNAME      IndentLvl
+aERATT_TOK 110000669
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 740
+
+eATTRIB    4
+aNAME      Create
+aERATT_TOK 110000671
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 741
+
+eATTRIB    4
+aNAME      Delete
+aERATT_TOK 110000673
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 742
+
+eATTRIB    4
+aNAME      Update
+aERATT_TOK 110000675
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 743
+
+eATTRIB    4
+aNAME      Include
+aERATT_TOK 110000677
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 744
+
+eATTRIB    4
+aNAME      AttributeName
+aERATT_TOK 110000754
+aAPDM_TOK  90000038
+aDOMAIN    QSName
+aTYPE      S
+aLTH       32
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 745
+
+eATTRIB    4
+aNAME      ControlType
+aERATT_TOK 110000777
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       254
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 746
+
+eATTRIB    4
+aNAME      ControlWidth
+aERATT_TOK 110001038
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 747
+
+eCHILDENTITY 3
+aNAME      FlatListSelectedAttribute
+aERENT_TOK 110000755
+aERREL_TOK 110000755
+aFULLPERSIST Y
+aCARDMIN   0
+aCARDMAX   999999
+aCREATE    Y
+aDELETE    Y
+aPDELETE   D
+aUPDATE    Y
+aDERIVED   Y
+aINCLSRC   Y
+aMAX_LTH   729
+
+eATTRIB    4
+aNAME      ZKey
+aERATT_TOK 110000757
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aREQUIRED  Y
+aUPDATE    Y
+aXVAATT_TOK 748
+
+eATTRIB    4
+aNAME      EntityName
+aERATT_TOK 110000759
+aAPDM_TOK  90000038
+aDOMAIN    QSName
+aTYPE      S
+aLTH       32
+aREQUIRED  Y
+aSEQ_AD    A
+aUPDATE    Y
+aXVAATT_TOK 749
+
+eATTRIB    4
+aNAME      IndentEntityName
+aERATT_TOK 110000761
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       100
+aCASESENS  Y
+aSEQ_AD    A
+aUPDATE    Y
+aXVAATT_TOK 750
+
+eATTRIB    4
+aNAME      IndentLvl
+aERATT_TOK 110000763
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aUPDATE    Y
+aXVAATT_TOK 751
+
+eATTRIB    4
+aNAME      Create
+aERATT_TOK 110000765
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 752
+
+eATTRIB    4
+aNAME      Delete
+aERATT_TOK 110000767
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 753
+
+eATTRIB    4
+aNAME      Update
+aERATT_TOK 110000769
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 754
+
+eATTRIB    4
+aNAME      Include
+aERATT_TOK 110000771
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       1
+aUPDATE    Y
+aXVAATT_TOK 755
+
+eATTRIB    4
+aNAME      AttributeName
+aERATT_TOK 110000773
+aAPDM_TOK  90000038
+aDOMAIN    QSName
+aTYPE      S
+aLTH       32
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 756
+
+eATTRIB    4
+aNAME      ControlType
+aERATT_TOK 110000775
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       254
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 757
+
+eATTRIB    4
+aNAME      ControlWidth
+aERATT_TOK 110001040
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 758
+
+eATTRIB    4
+aNAME      PromptValue
+aERATT_TOK 110001113
+aAPDM_TOK  90000032
+aDOMAIN    Text
+aTYPE      S
+aLTH       254
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 759
+
+eATTRIB    4
+aNAME      PromptLength
+aERATT_TOK 110001111
+aAPDM_TOK  90000044
+aDOMAIN    Integer
+aTYPE      L
+aLTH       4
+aSEQ_AD    Y
+aUPDATE    Y
+aXVAATT_TOK 760
 

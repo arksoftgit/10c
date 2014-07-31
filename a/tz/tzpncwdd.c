@@ -1,20 +1,56 @@
 #define KZSYSSVC_INCL
-#include "KZOENGAA.H"
-#include "TZ__OPRS.H"
-#include "ZDRVROPR.H"
-#include "tzlodopr.h"
-
+#include "KZOENGAA.H" 
+#include "TZ__OPRS.H" 
+#include "ZDRVROPR.H" 
+#include "tzlodopr.h" 
+ 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
+ 
 #include "ZEIDONOP.H"
 
 zSHORT zwTZPNCW2D_CopyOperationToFile( zVIEW, zSHORT );
 
 zOPER_EXPORT zSHORT OPERATION
 SEL_CLONE_Init( zVIEW     vSubtask );
+
+
+zOPER_EXPORT zSHORT OPERATION
+PostbuildExternalDialogOpen( zVIEW     ViewToWindow );
+
+
+zOPER_EXPORT zSHORT OPERATION
+OPEN_ExternalDialog( zVIEW     ViewToWindow );
+
+
+static zSHORT
+o_DIALOG_CompareNewControlSrc( zVIEW     TargetDialogRoot,
+                               zVIEW     SourceDialog );
+
+
+static zSHORT
+o_DIALOG_CompareNewControlTgt( zVIEW     TargetDialogRoot,
+                               zVIEW     TargetDialog );
+
+
+static zSHORT
+o_CompareControlRecursiveSrc( zVIEW     TargetDialog,
+                              zVIEW     SourceDialog,
+                              zVIEW     TargetDialogRoot,
+                              zVIEW     SourceDialogRoot,
+                              zPCHAR    szWindowDifferenceFlag,
+                              zPCHAR    szConcatenatedControlTag );
+
+
+static zSHORT
+o_CompareControlRecursiveTgt( zVIEW     TargetDialog,
+                              zVIEW     SourceDialog,
+                              zVIEW     TargetDialogRoot,
+                              zVIEW     SourceDialogRoot,
+                              zPCHAR    szWindowDifferenceFlag,
+                              zPCHAR    szConcatenatedControlTag );
 
 
 zOPER_EXPORT zSHORT OPERATION
@@ -220,6 +256,10 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
                                     zPCHAR    szFileName );
 
 
+zOPER_EXPORT zSHORT OPERATION
+DIALOG_Compare( zVIEW     ViewToWindow );
+
+
 //:DIALOG OPERATION
 //:SEL_CLONE_Init( VIEW vSubtask )
 
@@ -312,6 +352,1162 @@ SEL_CLONE_Init( zVIEW     vSubtask )
    //:END
 
    //:RETURN  0
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:PostbuildExternalDialogOpen( VIEW ViewToWindow )
+
+//:   VIEW TaskLPLR REGISTERED AS TaskLPLR
+zOPER_EXPORT zSHORT OPERATION
+PostbuildExternalDialogOpen( zVIEW     ViewToWindow )
+{
+   zVIEW     TaskLPLR = 0; 
+   zSHORT    RESULT; 
+
+   RESULT = GetViewByName( &TaskLPLR, "TaskLPLR", ViewToWindow, zLEVEL_TASK );
+
+   //:// If the file name work attribute is null, prefill it from the directory name that was used
+   //:// in compare.
+
+   //:IF TaskLPLR.LPLR.wFullyQualifiedFileName = ""
+   if ( CompareAttributeToString( TaskLPLR, "LPLR", "wFullyQualifiedFileName", "" ) == 0 )
+   { 
+      //:TaskLPLR.LPLR.wFullyQualifiedFileName = TaskLPLR.LPLR.wFullyQualifiedDirectoryName
+      SetAttributeFromAttribute( TaskLPLR, "LPLR", "wFullyQualifiedFileName", TaskLPLR, "LPLR", "wFullyQualifiedDirectoryName" );
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:OPEN_ExternalDialog( VIEW ViewToWindow )
+
+//:   VIEW ExternalDialog  BASED ON LOD  TZWDLGSO
+zOPER_EXPORT zSHORT OPERATION
+OPEN_ExternalDialog( zVIEW     ViewToWindow )
+{
+   zVIEW     ExternalDialog = 0; 
+   //:VIEW ExternalDialog2 BASED ON LOD  TZWDLGSO
+   zVIEW     ExternalDialog2 = 0; 
+   //:VIEW TaskLPLR        REGISTERED AS TaskLPLR
+   zVIEW     TaskLPLR = 0; 
+   zSHORT    RESULT; 
+   //:STRING ( 200 ) szFileName
+   zCHAR     szFileName[ 201 ] = { 0 }; 
+   //:SHORT          nRC
+   zSHORT    nRC = 0; 
+
+   RESULT = GetViewByName( &TaskLPLR, "TaskLPLR", ViewToWindow, zLEVEL_TASK );
+
+   //:// Activate the Source Dialog and compare it to the Dialog in memory by the same name.
+   //:szFileName = TaskLPLR.LPLR.wFullyQualifiedFileName
+   GetVariableFromAttribute( szFileName, 0, 'S', 201, TaskLPLR, "LPLR", "wFullyQualifiedFileName", "", 0 );
+   //:nRC = ActivateOI_FromFile( ExternalDialog, "TZWDLGSO", ViewToWindow, szFileName, zSINGLE )
+   nRC = ActivateOI_FromFile( &ExternalDialog, "TZWDLGSO", ViewToWindow, szFileName, zSINGLE );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:MessageSend( ViewToWindow, "", "Open External Dialog",
+      //:             "Invalid File Name",
+      //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Open External Dialog", "Invalid File Name", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:RETURN -1
+      return( -1 );
+   } 
+
+   //:END
+   //:NAME VIEW ExternalDialog "TZWINDOW"
+   SetNameForView( ExternalDialog, "TZWINDOW", 0, zLEVEL_TASK );
+   //:CreateViewFromView( ExternalDialog2, ExternalDialog )
+   CreateViewFromView( &ExternalDialog2, ExternalDialog );
+   //:NAME VIEW ExternalDialog2 "TZWINDOWL"
+   SetNameForView( ExternalDialog2, "TZWINDOWL", 0, zLEVEL_TASK );
+   //:CreateViewFromView( ExternalDialog2, ExternalDialog )
+   CreateViewFromView( &ExternalDialog2, ExternalDialog );
+   //:NAME VIEW ExternalDialog2 "TZWINOPT"
+   SetNameForView( ExternalDialog2, "TZWINOPT", 0, zLEVEL_TASK );
+   return( 0 );
+// END
+} 
+
+
+//:LOCAL OPERATION
+static zSHORT
+o_DIALOG_CompareNewControlSrc( zVIEW     TargetDialogRoot,
+                               zVIEW     SourceDialog )
+{
+   zCHAR     szTempString_0[ 255 ]; 
+   zCHAR     szTempString_1[ 255 ]; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
+   zCHAR     szTempString_2[ 255 ]; 
+   zCHAR     szTempString_3[ 33 ]; 
+   zCHAR     szTempString_4[ 33 ]; 
+   zSHORT    lTempInteger_2; 
+
+   //:DIALOG_CompareNewControlSrc( VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+   //:                          VIEW SourceDialog     BASED ON LOD  TZWDLGSO )
+
+   //:// For a new Control, set compare values to diaplay.
+   //:TargetDialogRoot.DisplayCompareResult.SourceControlType = SourceDialog.ControlDef.Tag
+   SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceControlType", SourceDialog, "ControlDef", "Tag" );
+   //:IF SourceDialog.ControlDef.Tag = "Text" OR SourceDialog.ControlDef.Tag = "GroupBox"
+   if ( CompareAttributeToString( SourceDialog, "ControlDef", "Tag", "Text" ) == 0 || CompareAttributeToString( SourceDialog, "ControlDef", "Tag", "GroupBox" ) == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = QUOTES + SourceDialog.Control.Text + QUOTES
+      GetVariableFromAttribute( szTempString_1, 0, 'S', 255, SourceDialog, "Control", "Text", "", 0 );
+      ZeidonStringCopy( szTempString_0, 1, 0, QUOTES, 1, 0, 255 );
+      ZeidonStringConcat( szTempString_0, 1, 0, szTempString_1, 1, 0, 255 );
+      ZeidonStringConcat( szTempString_0, 1, 0, QUOTES, 1, 0, 255 );
+      SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_0 );
+   } 
+
+   //:END
+
+   //:// Entity Only Mapping
+   //:IF SourceDialog.CtrlMapLOD_Entity EXISTS
+   lTempInteger_0 = CheckExistenceOfEntity( SourceDialog, "CtrlMapLOD_Entity" );
+   if ( lTempInteger_0 == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapLOD_Entity.Name
+      SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", SourceDialog, "CtrlMapLOD_Entity", "Name" );
+   } 
+
+   //:END
+
+   //:// Entity/Attribute Mapping
+   //:IF SourceDialog.CtrlMapLOD_Attribute EXISTS
+   lTempInteger_1 = CheckExistenceOfEntity( SourceDialog, "CtrlMapLOD_Attribute" );
+   if ( lTempInteger_1 == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+      //:                                                                SourceDialog.CtrlMapRelatedEntity.Name + "." +
+      //:                                                                SourceDialog.CtrlMapER_Attribute.Name
+      GetStringFromAttribute( szTempString_2, SourceDialog, "CtrlMapView", "Name" );
+      ZeidonStringConcat( szTempString_2, 1, 0, ".", 1, 0, 255 );
+      GetVariableFromAttribute( szTempString_3, 0, 'S', 33, SourceDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+      ZeidonStringConcat( szTempString_2, 1, 0, szTempString_3, 1, 0, 255 );
+      ZeidonStringConcat( szTempString_2, 1, 0, ".", 1, 0, 255 );
+      GetVariableFromAttribute( szTempString_4, 0, 'S', 33, SourceDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+      ZeidonStringConcat( szTempString_2, 1, 0, szTempString_4, 1, 0, 255 );
+      SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_2 );
+   } 
+
+   //:END
+
+   //:// Action
+   //:IF SourceDialog.EventAct EXISTS
+   lTempInteger_2 = CheckExistenceOfEntity( SourceDialog, "EventAct" );
+   if ( lTempInteger_2 == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.EventAct.Tag
+      SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", SourceDialog, "EventAct", "Tag" );
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:LOCAL OPERATION
+static zSHORT
+o_DIALOG_CompareNewControlTgt( zVIEW     TargetDialogRoot,
+                               zVIEW     TargetDialog )
+{
+   zCHAR     szTempString_0[ 255 ]; 
+   zCHAR     szTempString_1[ 255 ]; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
+   zCHAR     szTempString_2[ 255 ]; 
+   zCHAR     szTempString_3[ 33 ]; 
+   zCHAR     szTempString_4[ 33 ]; 
+   zSHORT    lTempInteger_2; 
+
+   //:DIALOG_CompareNewControlTgt( VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+   //:                          VIEW TargetDialog     BASED ON LOD  TZWDLGSO )
+
+   //:// For a new Control, set compare values to diaplay.
+   //:TargetDialogRoot.DisplayCompareResult.TargetControlType = TargetDialog.ControlDef.Tag
+   SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetControlType", TargetDialog, "ControlDef", "Tag" );
+   //:IF TargetDialog.ControlDef.Tag = "Text" OR TargetDialog.ControlDef.Tag = "GroupBox"
+   if ( CompareAttributeToString( TargetDialog, "ControlDef", "Tag", "Text" ) == 0 || CompareAttributeToString( TargetDialog, "ControlDef", "Tag", "GroupBox" ) == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = QUOTES + TargetDialog.Control.Text + QUOTES
+      GetVariableFromAttribute( szTempString_1, 0, 'S', 255, TargetDialog, "Control", "Text", "", 0 );
+      ZeidonStringCopy( szTempString_0, 1, 0, QUOTES, 1, 0, 255 );
+      ZeidonStringConcat( szTempString_0, 1, 0, szTempString_1, 1, 0, 255 );
+      ZeidonStringConcat( szTempString_0, 1, 0, QUOTES, 1, 0, 255 );
+      SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_0 );
+   } 
+
+   //:END
+
+   //:// Entity Only Mapping
+   //:IF TargetDialog.CtrlMapLOD_Entity EXISTS
+   lTempInteger_0 = CheckExistenceOfEntity( TargetDialog, "CtrlMapLOD_Entity" );
+   if ( lTempInteger_0 == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapLOD_Entity.Name
+      SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", TargetDialog, "CtrlMapLOD_Entity", "Name" );
+   } 
+
+   //:END
+
+   //:// Entity/Attribute Mapping
+   //:IF TargetDialog.CtrlMapLOD_Attribute EXISTS
+   lTempInteger_1 = CheckExistenceOfEntity( TargetDialog, "CtrlMapLOD_Attribute" );
+   if ( lTempInteger_1 == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+      //:                                                                TargetDialog.CtrlMapRelatedEntity.Name + "." +
+      //:                                                                TargetDialog.CtrlMapER_Attribute.Name
+      GetStringFromAttribute( szTempString_2, TargetDialog, "CtrlMapView", "Name" );
+      ZeidonStringConcat( szTempString_2, 1, 0, ".", 1, 0, 255 );
+      GetVariableFromAttribute( szTempString_3, 0, 'S', 33, TargetDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+      ZeidonStringConcat( szTempString_2, 1, 0, szTempString_3, 1, 0, 255 );
+      ZeidonStringConcat( szTempString_2, 1, 0, ".", 1, 0, 255 );
+      GetVariableFromAttribute( szTempString_4, 0, 'S', 33, TargetDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+      ZeidonStringConcat( szTempString_2, 1, 0, szTempString_4, 1, 0, 255 );
+      SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_2 );
+   } 
+
+   //:END
+
+   //:// Action
+   //:IF TargetDialog.EventAct EXISTS
+   lTempInteger_2 = CheckExistenceOfEntity( TargetDialog, "EventAct" );
+   if ( lTempInteger_2 == 0 )
+   { 
+      //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.EventAct.Tag
+      SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", TargetDialog, "EventAct", "Tag" );
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:LOCAL OPERATION
+//:CompareControlRecursiveSrc( VIEW TargetDialog     BASED ON LOD  TZWDLGSO,
+//:                            VIEW SourceDialog     BASED ON LOD  TZWDLGSO,
+//:                            VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+//:                            VIEW SourceDialogRoot BASED ON LOD  TZWDLGSO,
+//:                            STRING ( 1 )   szWindowDifferenceFlag,
+//:                            STRING ( 500 ) szConcatenatedControlTag )
+
+//:   STRING ( 500 ) szNewConcatenatedControlTag
+static zSHORT
+o_CompareControlRecursiveSrc( zVIEW     TargetDialog,
+                              zVIEW     SourceDialog,
+                              zVIEW     TargetDialogRoot,
+                              zVIEW     SourceDialogRoot,
+                              zPCHAR    szWindowDifferenceFlag,
+                              zPCHAR    szConcatenatedControlTag )
+{
+   zCHAR     szNewConcatenatedControlTag[ 501 ] = { 0 }; 
+   //:STRING ( 500 ) szNewConcatenatedSubControlTag
+   zCHAR     szNewConcatenatedSubControlTag[ 501 ] = { 0 }; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
+   zSHORT    RESULT; 
+   zCHAR     szTempString_1[ 33 ]; 
+   zCHAR     szTempString_2[ 255 ]; 
+   zCHAR     szTempString_3[ 255 ]; 
+   zCHAR     szTempString_4[ 255 ]; 
+   zCHAR     szTempString_5[ 255 ]; 
+   zSHORT    lTempInteger_2; 
+   zCHAR     szTempString_6[ 33 ]; 
+   zCHAR     szTempString_7[ 255 ]; 
+   zCHAR     szTempString_8[ 255 ]; 
+   zCHAR     szTempString_9[ 33 ]; 
+   zSHORT    lTempInteger_3; 
+   zSHORT    lTempInteger_4; 
+   zCHAR     szTempString_10[ 255 ]; 
+   zCHAR     szTempString_11[ 33 ]; 
+   zCHAR     szTempString_12[ 33 ]; 
+   zCHAR     szTempString_13[ 255 ]; 
+   zCHAR     szTempString_14[ 33 ]; 
+   zCHAR     szTempString_15[ 33 ]; 
+   zCHAR     szTempString_16[ 255 ]; 
+   zCHAR     szTempString_17[ 33 ]; 
+   zCHAR     szTempString_18[ 33 ]; 
+   zSHORT    lTempInteger_5; 
+   zLONG     lTempInteger_6; 
+   zLONG     lTempInteger_7; 
+   zSHORT    lTempInteger_8; 
+   zCHAR     szTempString_19[ 33 ]; 
+
+
+   //:// Compare two Controls as a recursive subobject.
+
+   //:// The concatenated name is the prior name plus the current name.
+   //:IF szConcatenatedControlTag = ""
+   if ( ZeidonStringCompare( szConcatenatedControlTag, 1, 0, "", 1, 0, 501 ) == 0 )
+   { 
+      //:szNewConcatenatedControlTag = SourceDialog.Control.Tag
+      GetVariableFromAttribute( szNewConcatenatedControlTag, 0, 'S', 501, SourceDialog, "Control", "Tag", "", 0 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:szNewConcatenatedControlTag = szConcatenatedControlTag + "/" + SourceDialog.Control.Tag
+      ZeidonStringCopy( szNewConcatenatedControlTag, 1, 0, szConcatenatedControlTag, 1, 0, 501 );
+      ZeidonStringConcat( szNewConcatenatedControlTag, 1, 0, "/", 1, 0, 501 );
+      GetVariableFromAttribute( szTempString_0, 0, 'S', 33, SourceDialog, "Control", "Tag", "", 0 );
+      ZeidonStringConcat( szNewConcatenatedControlTag, 1, 0, szTempString_0, 1, 0, 501 );
+   } 
+
+   //:END
+
+   //:// First look for subcontrol.
+   //:IF SourceDialog.CtrlCtrl EXISTS
+   lTempInteger_0 = CheckExistenceOfEntity( SourceDialog, "CtrlCtrl" );
+   if ( lTempInteger_0 == 0 )
+   { 
+      //:IF TargetDialog.CtrlCtrl EXISTS
+      lTempInteger_1 = CheckExistenceOfEntity( TargetDialog, "CtrlCtrl" );
+      if ( lTempInteger_1 == 0 )
+      { 
+         //:// There is a matching subcontrol, so go down one level and look for match.
+         //:SetViewToSubobject( SourceDialog, "CtrlCtrl" )
+         SetViewToSubobject( SourceDialog, "CtrlCtrl" );
+         //:SetViewToSubobject( TargetDialog, "CtrlCtrl" )
+         SetViewToSubobject( TargetDialog, "CtrlCtrl" );
+         //:FOR EACH SourceDialog.Control
+         RESULT = SetCursorFirstEntity( SourceDialog, "Control", "" );
+         while ( RESULT > zCURSOR_UNCHANGED )
+         { 
+            //:SET CURSOR FIRST TargetDialog.Control WHERE TargetDialog.Control.Tag = SourceDialog.Control.Tag
+            GetStringFromAttribute( szTempString_1, SourceDialog, "Control", "Tag" );
+            RESULT = SetCursorFirstEntityByString( TargetDialog, "Control", "Tag", szTempString_1, "" );
+            //:IF RESULT < zCURSOR_SET
+            if ( RESULT < zCURSOR_SET )
+            { 
+               //:// There is a difference, so just stop with the difference.
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:szNewConcatenatedSubControlTag = szNewConcatenatedControlTag + "/" + SourceDialog.Control.Tag
+               ZeidonStringCopy( szNewConcatenatedSubControlTag, 1, 0, szNewConcatenatedControlTag, 1, 0, 501 );
+               ZeidonStringConcat( szNewConcatenatedSubControlTag, 1, 0, "/", 1, 0, 501 );
+               GetVariableFromAttribute( szTempString_1, 0, 'S', 33, SourceDialog, "Control", "Tag", "", 0 );
+               ZeidonStringConcat( szNewConcatenatedSubControlTag, 1, 0, szTempString_1, 1, 0, 501 );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag = szNewConcatenatedSubControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedSubControlTag );
+               //:DIALOG_CompareNewControlSrc( TargetDialogRoot, SourceDialog )
+               o_DIALOG_CompareNewControlSrc( TargetDialogRoot, SourceDialog );
+               //:ELSE
+            } 
+            else
+            { 
+
+               //:// There is a match by Control Tag, so continue compare.
+               //:CompareControlRecursiveSrc( TargetDialog,
+               //:                            SourceDialog,
+               //:                            TargetDialogRoot,
+               //:                            SourceDialogRoot,
+               //:                            szWindowDifferenceFlag,
+               //:                            szNewConcatenatedControlTag )
+               o_CompareControlRecursiveSrc( TargetDialog, SourceDialog, TargetDialogRoot, SourceDialogRoot, szWindowDifferenceFlag, szNewConcatenatedControlTag );
+            } 
+
+            RESULT = SetCursorNextEntity( SourceDialog, "Control", "" );
+
+            //:END
+         } 
+
+         //:END
+         //:ResetViewFromSubobject( SourceDialog )
+         ResetViewFromSubobject( SourceDialog );
+         //:ResetViewFromSubobject( TargetDialog )
+         ResetViewFromSubobject( TargetDialog );
+
+         //:ELSE
+      } 
+      else
+      { 
+         //:// There is no subcontrol match, so show difference.
+         //:szWindowDifferenceFlag = "Y"
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+         //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+         //:TargetDialogRoot.DisplayCompareResult.SourceControlTag = szNewConcatenatedControlTag
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+      } 
+
+      //:END
+      //:ELSE
+   } 
+   else
+   { 
+      //:// There is no subcontrol, so look for match on Control characteristics of Type, Mapping and Action.
+
+      //:// Type
+      //:IF SourceDialog.ControlDef.Tag != TargetDialog.ControlDef.Tag
+      if ( CompareAttributeToAttribute( SourceDialog, "ControlDef", "Tag", TargetDialog, "ControlDef", "Tag" ) != 0 )
+      { 
+         //:szWindowDifferenceFlag = "Y"
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+         //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+         //:TargetDialogRoot.DisplayCompareResult.SourceControlTag  = szNewConcatenatedControlTag
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+         //:TargetDialogRoot.DisplayCompareResult.TargetControlTag  = szNewConcatenatedControlTag
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+         //:TargetDialogRoot.DisplayCompareResult.SourceControlType = SourceDialog.ControlDef.Tag
+         SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceControlType", SourceDialog, "ControlDef", "Tag" );
+
+         //:ELSE
+      } 
+      else
+      { 
+
+         //:// Text
+         //:IF SourceDialog.ControlDef.Tag = "Text"
+         if ( CompareAttributeToString( SourceDialog, "ControlDef", "Tag", "Text" ) == 0 )
+         { 
+            //:IF SourceDialog.Control.Text != TargetDialog.Control.Text
+            if ( CompareAttributeToAttribute( SourceDialog, "Control", "Text", TargetDialog, "Control", "Text" ) != 0 )
+            { 
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = QUOTES + SourceDialog.Control.Text + QUOTES
+               GetVariableFromAttribute( szTempString_3, 0, 'S', 255, SourceDialog, "Control", "Text", "", 0 );
+               ZeidonStringCopy( szTempString_2, 1, 0, QUOTES, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_2, 1, 0, szTempString_3, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_2, 1, 0, QUOTES, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_2 );
+               //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = QUOTES + TargetDialog.Control.Text + QUOTES
+               GetVariableFromAttribute( szTempString_5, 0, 'S', 255, TargetDialog, "Control", "Text", "", 0 );
+               ZeidonStringCopy( szTempString_4, 1, 0, QUOTES, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_4, 1, 0, szTempString_5, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_4, 1, 0, QUOTES, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_4 );
+            } 
+
+            //:END
+         } 
+
+         //:END
+
+         //:// Entity Only Mapping
+         //:IF SourceDialog.CtrlMapLOD_Entity EXISTS
+         lTempInteger_2 = CheckExistenceOfEntity( SourceDialog, "CtrlMapLOD_Entity" );
+         if ( lTempInteger_2 == 0 )
+         { 
+            //:SET CURSOR FIRST TargetDialog.CtrlMapLOD_Entity WITHIN TargetDialog.Control
+            //:           WHERE TargetDialog.CtrlMapLOD_Entity.Name = SourceDialog.CtrlMapLOD_Entity.Name
+            GetStringFromAttribute( szTempString_6, SourceDialog, "CtrlMapLOD_Entity", "Name" );
+            RESULT = SetCursorFirstEntityByString( TargetDialog, "CtrlMapLOD_Entity", "Name", szTempString_6, "Control" );
+            //:IF RESULT < zCURSOR_SET
+            if ( RESULT < zCURSOR_SET )
+            { 
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+               //:                                                                SourceDialog.CtrlMapLOD_Entity.Name
+               GetStringFromAttribute( szTempString_7, SourceDialog, "CtrlMapView", "Name" );
+               ZeidonStringConcat( szTempString_7, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_6, 0, 'S', 33, SourceDialog, "CtrlMapLOD_Entity", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_7, 1, 0, szTempString_6, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_7 );
+               //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+               //:                                                                TargetDialog.CtrlMapLOD_Entity.Name
+               GetStringFromAttribute( szTempString_8, TargetDialog, "CtrlMapView", "Name" );
+               ZeidonStringConcat( szTempString_8, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_9, 0, 'S', 33, TargetDialog, "CtrlMapLOD_Entity", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_8, 1, 0, szTempString_9, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_8 );
+            } 
+
+            //:END
+         } 
+
+         //:END
+
+         //:// Entity/Attribute Mapping
+         //:IF SourceDialog.CtrlMapLOD_Attribute EXISTS
+         lTempInteger_3 = CheckExistenceOfEntity( SourceDialog, "CtrlMapLOD_Attribute" );
+         if ( lTempInteger_3 == 0 )
+         { 
+            //:IF TargetDialog.CtrlMapLOD_Attribute EXISTS
+            lTempInteger_4 = CheckExistenceOfEntity( TargetDialog, "CtrlMapLOD_Attribute" );
+            if ( lTempInteger_4 == 0 )
+            { 
+               //:// Both Source and Target have mapping.
+               //:SET CURSOR FIRST TargetDialog.CtrlMapLOD_Attribute WITHIN TargetDialog.Control
+               //:           WHERE TargetDialog.CtrlMapER_Attribute.Name  = SourceDialog.CtrlMapER_Attribute.Name
+               //:             AND TargetDialog.CtrlMapRelatedEntity.Name = SourceDialog.CtrlMapRelatedEntity.Name
+               RESULT = SetCursorFirstEntity( TargetDialog, "CtrlMapLOD_Attribute", "Control" );
+               if ( RESULT > zCURSOR_UNCHANGED )
+               { 
+                  while ( RESULT > zCURSOR_UNCHANGED && ( CompareAttributeToAttribute( TargetDialog, "CtrlMapER_Attribute", "Name", SourceDialog, "CtrlMapER_Attribute", "Name" ) != 0 ||
+                        CompareAttributeToAttribute( TargetDialog, "CtrlMapRelatedEntity", "Name", SourceDialog, "CtrlMapRelatedEntity", "Name" ) != 0 ) )
+                  { 
+                     RESULT = SetCursorNextEntity( TargetDialog, "CtrlMapLOD_Attribute", "Control" );
+                  } 
+
+               } 
+
+               //:IF RESULT < zCURSOR_SET OR TargetDialog.CtrlMapView.Name != SourceDialog.CtrlMapView.Name
+               if ( RESULT < zCURSOR_SET || CompareAttributeToAttribute( TargetDialog, "CtrlMapView", "Name", SourceDialog, "CtrlMapView", "Name" ) != 0 )
+               { 
+                  //:szWindowDifferenceFlag = "Y"
+                  ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+                  //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                  //:                                                                SourceDialog.CtrlMapRelatedEntity.Name + "." +
+                  //:                                                                SourceDialog.CtrlMapER_Attribute.Name
+                  GetStringFromAttribute( szTempString_10, SourceDialog, "CtrlMapView", "Name" );
+                  ZeidonStringConcat( szTempString_10, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_11, 0, 'S', 33, SourceDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_10, 1, 0, szTempString_11, 1, 0, 255 );
+                  ZeidonStringConcat( szTempString_10, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_12, 0, 'S', 33, SourceDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_10, 1, 0, szTempString_12, 1, 0, 255 );
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_10 );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                  //:                                                                TargetDialog.CtrlMapRelatedEntity.Name + "." +
+                  //:                                                                TargetDialog.CtrlMapER_Attribute.Name
+                  GetStringFromAttribute( szTempString_13, TargetDialog, "CtrlMapView", "Name" );
+                  ZeidonStringConcat( szTempString_13, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_14, 0, 'S', 33, TargetDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_13, 1, 0, szTempString_14, 1, 0, 255 );
+                  ZeidonStringConcat( szTempString_13, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_15, 0, 'S', 33, TargetDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_13, 1, 0, szTempString_15, 1, 0, 255 );
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_13 );
+               } 
+
+               //:END
+               //:ELSE
+            } 
+            else
+            { 
+               //:// The Source has mapping but the Target does not.
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+               //:                                                                SourceDialog.CtrlMapRelatedEntity.Name + "." +
+               //:                                                                SourceDialog.CtrlMapER_Attribute.Name
+               GetStringFromAttribute( szTempString_16, SourceDialog, "CtrlMapView", "Name" );
+               ZeidonStringConcat( szTempString_16, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_17, 0, 'S', 33, SourceDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_16, 1, 0, szTempString_17, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_16, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_18, 0, 'S', 33, SourceDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_16, 1, 0, szTempString_18, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_16 );
+            } 
+
+            //:END
+         } 
+
+         //:END
+
+         //:// Action
+         //:IF SourceDialog.EventAct EXISTS
+         lTempInteger_5 = CheckExistenceOfEntity( SourceDialog, "EventAct" );
+         if ( lTempInteger_5 == 0 )
+         { 
+            //:SET CURSOR FIRST TargetDialog.EventAct WHERE TargetDialog.EventAct.Tag        = SourceDialog.EventAct.Tag
+            //:                                         AND TargetDialog.EventAct.DialogName = SourceDialog.EventAct.DialogName
+            //:                                         AND TargetDialog.EventAct.WindowName = SourceDialog.EventAct.WindowName
+            RESULT = SetCursorFirstEntity( TargetDialog, "EventAct", "" );
+            if ( RESULT > zCURSOR_UNCHANGED )
+            { 
+               while ( RESULT > zCURSOR_UNCHANGED && ( CompareAttributeToAttribute( TargetDialog, "EventAct", "Tag", SourceDialog, "EventAct", "Tag" ) != 0 ||
+                       CompareAttributeToAttribute( TargetDialog, "EventAct", "DialogName", SourceDialog, "EventAct", "DialogName" ) != 0 ||
+                       CompareAttributeToAttribute( TargetDialog, "EventAct", "WindowName", SourceDialog, "EventAct", "WindowName" ) != 0 ) )
+               { 
+                  RESULT = SetCursorNextEntity( TargetDialog, "EventAct", "" );
+               } 
+
+            } 
+
+            //:IF RESULT >= zCURSOR_SET
+            if ( RESULT >= zCURSOR_SET )
+            { 
+               //:SET CURSOR FIRST SourceDialogRoot.Action WITHIN SourceDialogRoot.Dialog
+               //:           WHERE SourceDialogRoot.Action.ZKey = SourceDialog.EventAct.ZKey
+               GetIntegerFromAttribute( &lTempInteger_6, SourceDialog, "EventAct", "ZKey" );
+               RESULT = SetCursorFirstEntityByInteger( SourceDialogRoot, "Action", "ZKey", lTempInteger_6, "Dialog" );
+               //:SET CURSOR FIRST TargetDialogRoot.Action WITHIN TargetDialogRoot.Dialog
+               //:           WHERE TargetDialogRoot.Action.ZKey = TargetDialog.EventAct.ZKey
+               GetIntegerFromAttribute( &lTempInteger_7, TargetDialog, "EventAct", "ZKey" );
+               RESULT = SetCursorFirstEntityByInteger( TargetDialogRoot, "Action", "ZKey", lTempInteger_7, "Dialog" );
+               //:IF SourceDialogRoot.ActOpt EXISTS
+               lTempInteger_8 = CheckExistenceOfEntity( SourceDialogRoot, "ActOpt" );
+               if ( lTempInteger_8 == 0 )
+               { 
+                  //:SET CURSOR FIRST TargetDialogRoot.ActOpt WHERE TargetDialogRoot.ActOpt.Tag = SourceDialogRoot.ActOpt.Tag
+                  GetStringFromAttribute( szTempString_19, SourceDialogRoot, "ActOpt", "Tag" );
+                  RESULT = SetCursorFirstEntityByString( TargetDialogRoot, "ActOpt", "Tag", szTempString_19, "" );
+                  //:IF RESULT < zCURSOR_SET
+                  if ( RESULT < zCURSOR_SET )
+                  { 
+                     //:// New or Different Action
+                     //:szWindowDifferenceFlag = "Y"
+                     ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+                     //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                     RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+                     //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                     SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+                     //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                     SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+                     //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.ActOpt.Tag
+                     SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", SourceDialogRoot, "ActOpt", "Tag" );
+                     //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.ActOpt.Tag
+                     SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", TargetDialogRoot, "ActOpt", "Tag" );
+                  } 
+
+                  //:END
+               } 
+
+               //:END
+               //:IF SourceDialogRoot.Action.DialogName != TargetDialogRoot.Action.DialogName OR
+               //:   SourceDialogRoot.Action.WindowName != TargetDialogRoot.Action.WindowName
+               if ( CompareAttributeToAttribute( SourceDialogRoot, "Action", "DialogName", TargetDialogRoot, "Action", "DialogName" ) != 0 ||
+                    CompareAttributeToAttribute( SourceDialogRoot, "Action", "WindowName", TargetDialogRoot, "Action", "WindowName" ) != 0 )
+               { 
+
+                  //:// Different transfer window.
+                  //:szWindowDifferenceFlag = "Y"
+                  ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+                  //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.Action.WindowName
+                  SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", SourceDialogRoot, "Action", "WindowName" );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.Action.WindowName
+                  SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", TargetDialogRoot, "Action", "WindowName" );
+               } 
+
+               //:END
+               //:ELSE
+            } 
+            else
+            { 
+               //:// New Action
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.EventAct.Tag
+               SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", SourceDialog, "EventAct", "Tag" );
+            } 
+
+            //:END
+         } 
+
+
+         //:END
+      } 
+
+      //:END
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:LOCAL OPERATION
+//:CompareControlRecursiveTgt( VIEW TargetDialog     BASED ON LOD  TZWDLGSO,
+//:                            VIEW SourceDialog     BASED ON LOD  TZWDLGSO,
+//:                            VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO,
+//:                            VIEW SourceDialogRoot BASED ON LOD  TZWDLGSO,
+//:                            STRING ( 1 )   szWindowDifferenceFlag,
+//:                            STRING ( 500 ) szConcatenatedControlTag )
+
+//:   STRING ( 500 ) szNewConcatenatedControlTag
+static zSHORT
+o_CompareControlRecursiveTgt( zVIEW     TargetDialog,
+                              zVIEW     SourceDialog,
+                              zVIEW     TargetDialogRoot,
+                              zVIEW     SourceDialogRoot,
+                              zPCHAR    szWindowDifferenceFlag,
+                              zPCHAR    szConcatenatedControlTag )
+{
+   zCHAR     szNewConcatenatedControlTag[ 501 ] = { 0 }; 
+   //:STRING ( 500 ) szNewConcatenatedSubControlTag
+   zCHAR     szNewConcatenatedSubControlTag[ 501 ] = { 0 }; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
+   zSHORT    RESULT; 
+   zCHAR     szTempString_1[ 33 ]; 
+   zCHAR     szTempString_2[ 255 ]; 
+   zCHAR     szTempString_3[ 255 ]; 
+   zCHAR     szTempString_4[ 255 ]; 
+   zCHAR     szTempString_5[ 255 ]; 
+   zSHORT    lTempInteger_2; 
+   zCHAR     szTempString_6[ 33 ]; 
+   zCHAR     szTempString_7[ 255 ]; 
+   zCHAR     szTempString_8[ 255 ]; 
+   zCHAR     szTempString_9[ 33 ]; 
+   zSHORT    lTempInteger_3; 
+   zSHORT    lTempInteger_4; 
+   zCHAR     szTempString_10[ 255 ]; 
+   zCHAR     szTempString_11[ 33 ]; 
+   zCHAR     szTempString_12[ 33 ]; 
+   zCHAR     szTempString_13[ 255 ]; 
+   zCHAR     szTempString_14[ 33 ]; 
+   zCHAR     szTempString_15[ 33 ]; 
+   zCHAR     szTempString_16[ 255 ]; 
+   zCHAR     szTempString_17[ 33 ]; 
+   zCHAR     szTempString_18[ 33 ]; 
+   zSHORT    lTempInteger_5; 
+   zLONG     lTempInteger_6; 
+   zLONG     lTempInteger_7; 
+   zSHORT    lTempInteger_8; 
+   zCHAR     szTempString_19[ 33 ]; 
+
+
+   //:// Compare two Controls as a recursive subobject.
+
+   //:// The concatenated name is the prior name plus the current name.
+   //:IF szConcatenatedControlTag = ""
+   if ( ZeidonStringCompare( szConcatenatedControlTag, 1, 0, "", 1, 0, 501 ) == 0 )
+   { 
+      //:szNewConcatenatedControlTag = SourceDialog.Control.Tag
+      GetVariableFromAttribute( szNewConcatenatedControlTag, 0, 'S', 501, SourceDialog, "Control", "Tag", "", 0 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:szNewConcatenatedControlTag = szConcatenatedControlTag + "/" + SourceDialog.Control.Tag
+      ZeidonStringCopy( szNewConcatenatedControlTag, 1, 0, szConcatenatedControlTag, 1, 0, 501 );
+      ZeidonStringConcat( szNewConcatenatedControlTag, 1, 0, "/", 1, 0, 501 );
+      GetVariableFromAttribute( szTempString_0, 0, 'S', 33, SourceDialog, "Control", "Tag", "", 0 );
+      ZeidonStringConcat( szNewConcatenatedControlTag, 1, 0, szTempString_0, 1, 0, 501 );
+   } 
+
+   //:END
+
+   //:// First look for subcontrol.
+   //:IF TargetDialog.CtrlCtrl EXISTS
+   lTempInteger_0 = CheckExistenceOfEntity( TargetDialog, "CtrlCtrl" );
+   if ( lTempInteger_0 == 0 )
+   { 
+      //:IF SourceDialog.CtrlCtrl EXISTS
+      lTempInteger_1 = CheckExistenceOfEntity( SourceDialog, "CtrlCtrl" );
+      if ( lTempInteger_1 == 0 )
+      { 
+         //:// There is a matching subcontrol, so go down one level and look for match.
+         //:SetViewToSubobject( TargetDialog, "CtrlCtrl" )
+         SetViewToSubobject( TargetDialog, "CtrlCtrl" );
+         //:SetViewToSubobject( SourceDialog, "CtrlCtrl" )
+         SetViewToSubobject( SourceDialog, "CtrlCtrl" );
+         //:FOR EACH TargetDialog.Control
+         RESULT = SetCursorFirstEntity( TargetDialog, "Control", "" );
+         while ( RESULT > zCURSOR_UNCHANGED )
+         { 
+            //:SET CURSOR FIRST SourceDialog.Control WHERE SourceDialog.Control.Tag = TargetDialog.Control.Tag
+            GetStringFromAttribute( szTempString_1, TargetDialog, "Control", "Tag" );
+            RESULT = SetCursorFirstEntityByString( SourceDialog, "Control", "Tag", szTempString_1, "" );
+            //:IF RESULT < zCURSOR_SET
+            if ( RESULT < zCURSOR_SET )
+            { 
+               //:// There is a difference, so just stop with the difference.
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:szNewConcatenatedSubControlTag = szNewConcatenatedControlTag + "/" + TargetDialog.Control.Tag
+               ZeidonStringCopy( szNewConcatenatedSubControlTag, 1, 0, szNewConcatenatedControlTag, 1, 0, 501 );
+               ZeidonStringConcat( szNewConcatenatedSubControlTag, 1, 0, "/", 1, 0, 501 );
+               GetVariableFromAttribute( szTempString_1, 0, 'S', 33, TargetDialog, "Control", "Tag", "", 0 );
+               ZeidonStringConcat( szNewConcatenatedSubControlTag, 1, 0, szTempString_1, 1, 0, 501 );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag = szNewConcatenatedSubControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedSubControlTag );
+               //:DIALOG_CompareNewControlTgt( TargetDialogRoot, TargetDialog )
+               o_DIALOG_CompareNewControlTgt( TargetDialogRoot, TargetDialog );
+               //:ELSE
+            } 
+            else
+            { 
+
+               //:// There is a match by Control Tag, so continue compare.
+               //:CompareControlRecursiveTgt( TargetDialog,
+               //:                            SourceDialog,
+               //:                            TargetDialogRoot,
+               //:                            SourceDialogRoot,
+               //:                            szWindowDifferenceFlag,
+               //:                            szNewConcatenatedControlTag )
+               o_CompareControlRecursiveTgt( TargetDialog, SourceDialog, TargetDialogRoot, SourceDialogRoot, szWindowDifferenceFlag, szNewConcatenatedControlTag );
+            } 
+
+            RESULT = SetCursorNextEntity( TargetDialog, "Control", "" );
+
+            //:END
+         } 
+
+         //:END
+         //:ResetViewFromSubobject( TargetDialog )
+         ResetViewFromSubobject( TargetDialog );
+         //:ResetViewFromSubobject( SourceDialog )
+         ResetViewFromSubobject( SourceDialog );
+
+         //:ELSE
+      } 
+      else
+      { 
+         //:// There is no subcontrol match, so show difference.
+         //:szWindowDifferenceFlag = "Y"
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+         //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+         //:TargetDialogRoot.DisplayCompareResult.TargetControlTag = szNewConcatenatedControlTag
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+      } 
+
+      //:END
+      //:ELSE
+   } 
+   else
+   { 
+      //:// There is no subcontrol, so look for match on Control characteristics of Type, Mapping and Action.
+
+      //:// Type
+      //:IF TargetDialog.ControlDef.Tag != SourceDialog.ControlDef.Tag
+      if ( CompareAttributeToAttribute( TargetDialog, "ControlDef", "Tag", SourceDialog, "ControlDef", "Tag" ) != 0 )
+      { 
+         //:szWindowDifferenceFlag = "Y"
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+         //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+         RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+         //:TargetDialogRoot.DisplayCompareResult.TargetControlTag  = szNewConcatenatedControlTag
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+         //:TargetDialogRoot.DisplayCompareResult.TargetControlTag  = szNewConcatenatedControlTag
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+         //:TargetDialogRoot.DisplayCompareResult.TargetControlType = TargetDialog.ControlDef.Tag
+         SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetControlType", TargetDialog, "ControlDef", "Tag" );
+
+         //:ELSE
+      } 
+      else
+      { 
+
+         //:// Text
+         //:IF TargetDialog.ControlDef.Tag = "Text"
+         if ( CompareAttributeToString( TargetDialog, "ControlDef", "Tag", "Text" ) == 0 )
+         { 
+            //:IF TargetDialog.Control.Text != SourceDialog.Control.Text
+            if ( CompareAttributeToAttribute( TargetDialog, "Control", "Text", SourceDialog, "Control", "Text" ) != 0 )
+            { 
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = QUOTES + TargetDialog.Control.Text + QUOTES
+               GetVariableFromAttribute( szTempString_3, 0, 'S', 255, TargetDialog, "Control", "Text", "", 0 );
+               ZeidonStringCopy( szTempString_2, 1, 0, QUOTES, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_2, 1, 0, szTempString_3, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_2, 1, 0, QUOTES, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_2 );
+               //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = QUOTES + SourceDialog.Control.Text + QUOTES
+               GetVariableFromAttribute( szTempString_5, 0, 'S', 255, SourceDialog, "Control", "Text", "", 0 );
+               ZeidonStringCopy( szTempString_4, 1, 0, QUOTES, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_4, 1, 0, szTempString_5, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_4, 1, 0, QUOTES, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_4 );
+            } 
+
+            //:END
+         } 
+
+         //:END
+
+         //:// Entity Only Mapping
+         //:IF TargetDialog.CtrlMapLOD_Entity EXISTS
+         lTempInteger_2 = CheckExistenceOfEntity( TargetDialog, "CtrlMapLOD_Entity" );
+         if ( lTempInteger_2 == 0 )
+         { 
+            //:SET CURSOR FIRST SourceDialog.CtrlMapLOD_Entity WITHIN SourceDialog.Control
+            //:           WHERE SourceDialog.CtrlMapLOD_Entity.Name = TargetDialog.CtrlMapLOD_Entity.Name
+            GetStringFromAttribute( szTempString_6, TargetDialog, "CtrlMapLOD_Entity", "Name" );
+            RESULT = SetCursorFirstEntityByString( SourceDialog, "CtrlMapLOD_Entity", "Name", szTempString_6, "Control" );
+            //:IF RESULT < zCURSOR_SET
+            if ( RESULT < zCURSOR_SET )
+            { 
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+               //:                                                                TargetDialog.CtrlMapLOD_Entity.Name
+               GetStringFromAttribute( szTempString_7, TargetDialog, "CtrlMapView", "Name" );
+               ZeidonStringConcat( szTempString_7, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_6, 0, 'S', 33, TargetDialog, "CtrlMapLOD_Entity", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_7, 1, 0, szTempString_6, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_7 );
+               //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+               //:                                                                SourceDialog.CtrlMapLOD_Entity.Name
+               GetStringFromAttribute( szTempString_8, SourceDialog, "CtrlMapView", "Name" );
+               ZeidonStringConcat( szTempString_8, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_9, 0, 'S', 33, SourceDialog, "CtrlMapLOD_Entity", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_8, 1, 0, szTempString_9, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_8 );
+            } 
+
+            //:END
+         } 
+
+         //:END
+
+         //:// Entity/Attribute Mapping
+         //:IF TargetDialog.CtrlMapLOD_Attribute EXISTS
+         lTempInteger_3 = CheckExistenceOfEntity( TargetDialog, "CtrlMapLOD_Attribute" );
+         if ( lTempInteger_3 == 0 )
+         { 
+            //:IF SourceDialog.CtrlMapLOD_Attribute EXISTS
+            lTempInteger_4 = CheckExistenceOfEntity( SourceDialog, "CtrlMapLOD_Attribute" );
+            if ( lTempInteger_4 == 0 )
+            { 
+               //:// Both Target and Source have mapping.
+               //:SET CURSOR FIRST SourceDialog.CtrlMapLOD_Attribute WITHIN SourceDialog.Control
+               //:           WHERE SourceDialog.CtrlMapER_Attribute.Name  = TargetDialog.CtrlMapER_Attribute.Name
+               //:             AND SourceDialog.CtrlMapRelatedEntity.Name = TargetDialog.CtrlMapRelatedEntity.Name
+               RESULT = SetCursorFirstEntity( SourceDialog, "CtrlMapLOD_Attribute", "Control" );
+               if ( RESULT > zCURSOR_UNCHANGED )
+               { 
+                  while ( RESULT > zCURSOR_UNCHANGED && ( CompareAttributeToAttribute( SourceDialog, "CtrlMapER_Attribute", "Name", TargetDialog, "CtrlMapER_Attribute", "Name" ) != 0 ||
+                        CompareAttributeToAttribute( SourceDialog, "CtrlMapRelatedEntity", "Name", TargetDialog, "CtrlMapRelatedEntity", "Name" ) != 0 ) )
+                  { 
+                     RESULT = SetCursorNextEntity( SourceDialog, "CtrlMapLOD_Attribute", "Control" );
+                  } 
+
+               } 
+
+               //:IF RESULT < zCURSOR_SET OR TargetDialog.CtrlMapView.Name != SourceDialog.CtrlMapView.Name
+               if ( RESULT < zCURSOR_SET || CompareAttributeToAttribute( TargetDialog, "CtrlMapView", "Name", SourceDialog, "CtrlMapView", "Name" ) != 0 )
+               { 
+                  //:szWindowDifferenceFlag = "Y"
+                  ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+                  //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+                  //:                                                                TargetDialog.CtrlMapRelatedEntity.Name + "." +
+                  //:                                                                TargetDialog.CtrlMapER_Attribute.Name
+                  GetStringFromAttribute( szTempString_10, TargetDialog, "CtrlMapView", "Name" );
+                  ZeidonStringConcat( szTempString_10, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_11, 0, 'S', 33, TargetDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_10, 1, 0, szTempString_11, 1, 0, 255 );
+                  ZeidonStringConcat( szTempString_10, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_12, 0, 'S', 33, TargetDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_10, 1, 0, szTempString_12, 1, 0, 255 );
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_10 );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialog.CtrlMapView.Name + "." +
+                  //:                                                                SourceDialog.CtrlMapRelatedEntity.Name + "." +
+                  //:                                                                SourceDialog.CtrlMapER_Attribute.Name
+                  GetStringFromAttribute( szTempString_13, SourceDialog, "CtrlMapView", "Name" );
+                  ZeidonStringConcat( szTempString_13, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_14, 0, 'S', 33, SourceDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_13, 1, 0, szTempString_14, 1, 0, 255 );
+                  ZeidonStringConcat( szTempString_13, 1, 0, ".", 1, 0, 255 );
+                  GetVariableFromAttribute( szTempString_15, 0, 'S', 33, SourceDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+                  ZeidonStringConcat( szTempString_13, 1, 0, szTempString_15, 1, 0, 255 );
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", szTempString_13 );
+               } 
+
+               //:END
+               //:ELSE
+            } 
+            else
+            { 
+               //:// The Target has mapping but the Source does not.
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.CtrlMapView.Name + "." +
+               //:                                                                TargetDialog.CtrlMapRelatedEntity.Name + "." +
+               //:                                                                TargetDialog.CtrlMapER_Attribute.Name
+               GetStringFromAttribute( szTempString_16, TargetDialog, "CtrlMapView", "Name" );
+               ZeidonStringConcat( szTempString_16, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_17, 0, 'S', 33, TargetDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_16, 1, 0, szTempString_17, 1, 0, 255 );
+               ZeidonStringConcat( szTempString_16, 1, 0, ".", 1, 0, 255 );
+               GetVariableFromAttribute( szTempString_18, 0, 'S', 33, TargetDialog, "CtrlMapER_Attribute", "Name", "", 0 );
+               ZeidonStringConcat( szTempString_16, 1, 0, szTempString_18, 1, 0, 255 );
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", szTempString_16 );
+            } 
+
+            //:END
+         } 
+
+         //:END
+
+         //:// Action
+         //:IF TargetDialog.EventAct EXISTS
+         lTempInteger_5 = CheckExistenceOfEntity( TargetDialog, "EventAct" );
+         if ( lTempInteger_5 == 0 )
+         { 
+            //:SET CURSOR FIRST SourceDialog.EventAct WHERE SourceDialog.EventAct.Tag        = TargetDialog.EventAct.Tag
+            //:                                         AND SourceDialog.EventAct.DialogName = TargetDialog.EventAct.DialogName
+            //:                                         AND SourceDialog.EventAct.WindowName = TargetDialog.EventAct.WindowName
+            RESULT = SetCursorFirstEntity( SourceDialog, "EventAct", "" );
+            if ( RESULT > zCURSOR_UNCHANGED )
+            { 
+               while ( RESULT > zCURSOR_UNCHANGED && ( CompareAttributeToAttribute( SourceDialog, "EventAct", "Tag", TargetDialog, "EventAct", "Tag" ) != 0 ||
+                       CompareAttributeToAttribute( SourceDialog, "EventAct", "DialogName", TargetDialog, "EventAct", "DialogName" ) != 0 ||
+                       CompareAttributeToAttribute( SourceDialog, "EventAct", "WindowName", TargetDialog, "EventAct", "WindowName" ) != 0 ) )
+               { 
+                  RESULT = SetCursorNextEntity( SourceDialog, "EventAct", "" );
+               } 
+
+            } 
+
+            //:IF RESULT >= zCURSOR_SET
+            if ( RESULT >= zCURSOR_SET )
+            { 
+               //:SET CURSOR FIRST SourceDialogRoot.Action WITHIN SourceDialogRoot.Dialog
+               //:           WHERE SourceDialogRoot.Action.ZKey = SourceDialog.EventAct.ZKey
+               GetIntegerFromAttribute( &lTempInteger_6, SourceDialog, "EventAct", "ZKey" );
+               RESULT = SetCursorFirstEntityByInteger( SourceDialogRoot, "Action", "ZKey", lTempInteger_6, "Dialog" );
+               //:SET CURSOR FIRST TargetDialogRoot.Action WITHIN TargetDialogRoot.Dialog
+               //:           WHERE TargetDialogRoot.Action.ZKey = TargetDialog.EventAct.ZKey
+               GetIntegerFromAttribute( &lTempInteger_7, TargetDialog, "EventAct", "ZKey" );
+               RESULT = SetCursorFirstEntityByInteger( TargetDialogRoot, "Action", "ZKey", lTempInteger_7, "Dialog" );
+               //:IF TargetDialogRoot.ActOpt EXISTS
+               lTempInteger_8 = CheckExistenceOfEntity( TargetDialogRoot, "ActOpt" );
+               if ( lTempInteger_8 == 0 )
+               { 
+                  //:SET CURSOR FIRST SourceDialogRoot.ActOpt WHERE SourceDialogRoot.ActOpt.Tag = TargetDialogRoot.ActOpt.Tag
+                  GetStringFromAttribute( szTempString_19, TargetDialogRoot, "ActOpt", "Tag" );
+                  RESULT = SetCursorFirstEntityByString( SourceDialogRoot, "ActOpt", "Tag", szTempString_19, "" );
+                  //:IF RESULT < zCURSOR_SET
+                  if ( RESULT < zCURSOR_SET )
+                  { 
+                     //:// New or Different Action
+                     //:szWindowDifferenceFlag = "Y"
+                     ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+                     //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                     RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+                     //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                     SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+                     //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                     SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+                     //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.ActOpt.Tag
+                     SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", SourceDialogRoot, "ActOpt", "Tag" );
+                     //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.ActOpt.Tag
+                     SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", TargetDialogRoot, "ActOpt", "Tag" );
+                  } 
+
+                  //:END
+               } 
+
+               //:END
+               //:IF SourceDialogRoot.Action.DialogName != TargetDialogRoot.Action.DialogName OR
+               //:   SourceDialogRoot.Action.WindowName != TargetDialogRoot.Action.WindowName
+               if ( CompareAttributeToAttribute( SourceDialogRoot, "Action", "DialogName", TargetDialogRoot, "Action", "DialogName" ) != 0 ||
+                    CompareAttributeToAttribute( SourceDialogRoot, "Action", "WindowName", TargetDialogRoot, "Action", "WindowName" ) != 0 )
+               { 
+
+                  //:// Different transfer window.
+                  //:szWindowDifferenceFlag = "Y"
+                  ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+                  //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+                  RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+                  SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+                  //:TargetDialogRoot.DisplayCompareResult.SourceMappingActionName = SourceDialogRoot.Action.WindowName
+                  SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceMappingActionName", SourceDialogRoot, "Action", "WindowName" );
+                  //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialogRoot.Action.WindowName
+                  SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", TargetDialogRoot, "Action", "WindowName" );
+               } 
+
+               //:END
+               //:ELSE
+            } 
+            else
+            { 
+               //:// New Action
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag        = szNewConcatenatedControlTag
+               SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", szNewConcatenatedControlTag );
+               //:TargetDialogRoot.DisplayCompareResult.TargetMappingActionName = TargetDialog.EventAct.Tag
+               SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetMappingActionName", TargetDialog, "EventAct", "Tag" );
+            } 
+
+            //:END
+         } 
+
+
+         //:END
+      } 
+
+      //:END
+   } 
+
+   //:END
    return( 0 );
 // END
 } 
@@ -2513,11 +3709,11 @@ SEL_CLONE_SetSourceFileState( zVIEW     vSubtask )
 //:DIALOG OPERATION
 //:SEL_CLONE_SetFileName( VIEW vSubtask )
 
-//:   STRING ( 8 ) szFileName
+//:   STRING ( 32 ) szFileName
 zOPER_EXPORT zSHORT OPERATION
 SEL_CLONE_SetFileName( zVIEW     vSubtask )
 {
-   zCHAR     szFileName[ 9 ] = { 0 }; 
+   zCHAR     szFileName[ 33 ] = { 0 }; 
 
    //:VIEW  vDialog       BASED ON LOD  TZWDLGSO
    zVIEW     vDialog = 0; 
@@ -2536,7 +3732,7 @@ SEL_CLONE_SetFileName( zVIEW     vSubtask )
 
    //:// set VML File Name
    //:szFileName = ""
-   ZeidonStringCopy( szFileName, 1, 0, "", 1, 0, 9 );
+   ZeidonStringCopy( szFileName, 1, 0, "", 1, 0, 33 );
    //:SET CURSOR FIRST vDialog_Copy.SourceFile
    //:           WHERE vDialog_Copy.SourceFile.LanguageType = "V"
    RESULT = SetCursorFirstEntityByString( vDialog_Copy, "SourceFile", "LanguageType", "V", "" );
@@ -2544,7 +3740,7 @@ SEL_CLONE_SetFileName( zVIEW     vSubtask )
    if ( RESULT >= zCURSOR_SET )
    { 
       //:szFileName = vDialog_Copy.SourceFile.Name
-      GetVariableFromAttribute( szFileName, 0, 'S', 9, vDialog_Copy, "SourceFile", "Name", "", 0 );
+      GetVariableFromAttribute( szFileName, 0, 'S', 33, vDialog_Copy, "SourceFile", "Name", "", 0 );
       //:ELSE
    } 
    else
@@ -2565,7 +3761,7 @@ SEL_CLONE_SetFileName( zVIEW     vSubtask )
    if ( RESULT >= zCURSOR_SET )
    { 
       //:szFileName = vDialog_Copy.SourceFile.Name
-      GetVariableFromAttribute( szFileName, 0, 'S', 9, vDialog_Copy, "SourceFile", "Name", "", 0 );
+      GetVariableFromAttribute( szFileName, 0, 'S', 33, vDialog_Copy, "SourceFile", "Name", "", 0 );
       //:ELSE
    } 
    else
@@ -2649,9 +3845,9 @@ o_SEL_CLONE_CreateDeleteLod( zVIEW     vSubtask,
 //:SEL_CLONE_CreateWorkLod( VIEW vSubtask,
 //:                         VIEW vOrigWindow BASED ON LOD TZWDLGSO,
 //:                         VIEW vNewWindow  BASED ON LOD TZWDLGSO,
-//:                         STRING ( 8 ) szVML_Name,
-//:                         STRING ( 8 ) szC_Name )
-//:   STRING (   8 )  szName
+//:                         STRING ( 32 ) szVML_Name,
+//:                         STRING ( 32 ) szC_Name )
+//:   STRING (  32 )  szName
 static zSHORT
 o_SEL_CLONE_CreateWorkLod( zVIEW     vSubtask,
                            zVIEW     vOrigWindow,
@@ -2659,7 +3855,7 @@ o_SEL_CLONE_CreateWorkLod( zVIEW     vSubtask,
                            zPCHAR    szVML_Name,
                            zPCHAR    szC_Name )
 {
-   zCHAR     szName[ 9 ] = { 0 }; 
+   zCHAR     szName[ 33 ] = { 0 }; 
    //:STRING (  32 )  szOperationName
    zCHAR     szOperationName[ 33 ] = { 0 }; 
    //:STRING (   1 )  szLanguageType
@@ -2717,7 +3913,7 @@ o_SEL_CLONE_CreateWorkLod( zVIEW     vSubtask,
       if ( ZeidonStringCompare( szLanguageType, 1, 0, "V", 1, 0, 2 ) == 0 )
       { 
          //: szName      = szVML_Name
-         ZeidonStringCopy( szName, 1, 0, szVML_Name, 1, 0, 9 );
+         ZeidonStringCopy( szName, 1, 0, szVML_Name, 1, 0, 33 );
          //: szExtension = "VML"
          ZeidonStringCopy( szExtension, 1, 0, "VML", 1, 0, 4 );
          //:ELSE
@@ -2725,7 +3921,7 @@ o_SEL_CLONE_CreateWorkLod( zVIEW     vSubtask,
       else
       { 
          //: szName      = szC_Name
-         ZeidonStringCopy( szName, 1, 0, szC_Name, 1, 0, 9 );
+         ZeidonStringCopy( szName, 1, 0, szC_Name, 1, 0, 33 );
          //: szExtension = "C"
          ZeidonStringCopy( szExtension, 1, 0, "C", 1, 0, 4 );
       } 
@@ -2936,15 +4132,15 @@ o_SEL_CLONE_CopyOperCode( zVIEW     vSubtask )
 //:                    VIEW vOrigWindow    BASED ON LOD TZWDLGSO,
 //:                    VIEW vNewWindow     BASED ON LOD TZWDLGSO )
 
-//:   STRING (  8 )  szVML_Name
+//:   STRING (  32 ) szVML_Name
 static zSHORT
 o_SEL_CLONE_CopyCode( zVIEW     vSubtask,
                       zVIEW     vOrigWindow,
                       zVIEW     vNewWindow )
 {
-   zCHAR     szVML_Name[ 9 ] = { 0 }; 
-   //:STRING (  8 )  szC_Name
-   zCHAR     szC_Name[ 9 ] = { 0 }; 
+   zCHAR     szVML_Name[ 33 ] = { 0 }; 
+   //:STRING (  32 ) szC_Name
+   zCHAR     szC_Name[ 33 ] = { 0 }; 
    //:SHORT          nRC
    zSHORT    nRC = 0; 
 
@@ -2972,9 +4168,9 @@ o_SEL_CLONE_CopyCode( zVIEW     vSubtask,
    //:END
 
    //:szVML_Name = ""
-   ZeidonStringCopy( szVML_Name, 1, 0, "", 1, 0, 9 );
+   ZeidonStringCopy( szVML_Name, 1, 0, "", 1, 0, 33 );
    //:szC_Name   = ""
-   ZeidonStringCopy( szC_Name, 1, 0, "", 1, 0, 9 );
+   ZeidonStringCopy( szC_Name, 1, 0, "", 1, 0, 33 );
 
    //:// create VML Source File
    //:IF GetCtrlState( vSubtask, "edVML_File", zCONTROL_STATUS_ENABLED ) = 1
@@ -2982,7 +4178,7 @@ o_SEL_CLONE_CopyCode( zVIEW     vSubtask,
    if ( lTempInteger_2 == 1 )
    { 
       //:szVML_Name = CopyOperation.SourceFile.NameVML
-      GetVariableFromAttribute( szVML_Name, 0, 'S', 9, CopyOperation, "SourceFile", "NameVML", "", 0 );
+      GetVariableFromAttribute( szVML_Name, 0, 'S', 33, CopyOperation, "SourceFile", "NameVML", "", 0 );
       //:// exists a VML File by that Name?
       //:SET CURSOR FIRST vNewWindow.SourceFile
       //:           WHERE vNewWindow.SourceFile.LanguageType = "V" AND
@@ -3016,7 +4212,7 @@ o_SEL_CLONE_CopyCode( zVIEW     vSubtask,
    if ( lTempInteger_3 == 1 )
    { 
       //:szC_Name = CopyOperation.SourceFile.NameC
-      GetVariableFromAttribute( szC_Name, 0, 'S', 9, CopyOperation, "SourceFile", "NameC", "", 0 );
+      GetVariableFromAttribute( szC_Name, 0, 'S', 33, CopyOperation, "SourceFile", "NameC", "", 0 );
       //:// exists a VML File by that Name?
       //:SET CURSOR FIRST vNewWindow.SourceFile
       //:           WHERE vNewWindow.SourceFile.LanguageType = "C" AND
@@ -3078,8 +4274,8 @@ o_SEL_CLONE_CreateSourceFile( zVIEW     vSubtask,
 
    //:SEL_CLONE_CreateSourceFile( VIEW vSubtask,
    //:                         VIEW vDialog BASED ON LOD TZWDLGSO,
-   //:                         STRING ( 1 ) szLanguageType,
-   //:                         STRING ( 8 ) szName )
+   //:                         STRING ( 1 )  szLanguageType,
+   //:                         STRING ( 32 ) szName )
 
    //:// create the new Source File on FIRST position, because the operation
    //:// CloneWindow search the first source file with LanguageType
@@ -3119,13 +4315,13 @@ o_SEL_CLONE_CreateSourceFile( zVIEW     vSubtask,
 //:DIALOG OPERATION
 //:SEL_CLONE_CheckSourceFile( VIEW vSubtask )
 
-//:   STRING ( 8 )  szVML_File
+//:   STRING ( 32 )  szVML_File
 zOPER_EXPORT zSHORT OPERATION
 SEL_CLONE_CheckSourceFile( zVIEW     vSubtask )
 {
-   zCHAR     szVML_File[ 9 ] = { 0 }; 
-   //:STRING ( 8 )  szC_File
-   zCHAR     szC_File[ 9 ] = { 0 }; 
+   zCHAR     szVML_File[ 33 ] = { 0 }; 
+   //:STRING ( 32 )  szC_File
+   zCHAR     szC_File[ 33 ] = { 0 }; 
 
    //:VIEW  vDialog       BASED ON LOD  TZWDLGSO
    zVIEW     vDialog = 0; 
@@ -3167,9 +4363,9 @@ SEL_CLONE_CheckSourceFile( zVIEW     vSubtask )
    { 
       //://Name is required
       //:szVML_File = CopyOperation.SourceFile.NameVML
-      GetVariableFromAttribute( szVML_File, 0, 'S', 9, CopyOperation, "SourceFile", "NameVML", "", 0 );
+      GetVariableFromAttribute( szVML_File, 0, 'S', 33, CopyOperation, "SourceFile", "NameVML", "", 0 );
       //:IF szVML_File = ""
-      if ( ZeidonStringCompare( szVML_File, 1, 0, "", 1, 0, 9 ) == 0 )
+      if ( ZeidonStringCompare( szVML_File, 1, 0, "", 1, 0, 33 ) == 0 )
       { 
          //:MessageSend( vSubtask, "ZO00137", "Dialog Maintenance",
          //:             "VML Source File Name is required.",
@@ -3233,9 +4429,9 @@ SEL_CLONE_CheckSourceFile( zVIEW     vSubtask )
    { 
       //://Name is required
       //:szC_File = CopyOperation.SourceFile.NameC
-      GetVariableFromAttribute( szC_File, 0, 'S', 9, CopyOperation, "SourceFile", "NameC", "", 0 );
+      GetVariableFromAttribute( szC_File, 0, 'S', 33, CopyOperation, "SourceFile", "NameC", "", 0 );
       //:IF szC_File = ""
-      if ( ZeidonStringCompare( szC_File, 1, 0, "", 1, 0, 9 ) == 0 )
+      if ( ZeidonStringCompare( szC_File, 1, 0, "", 1, 0, 33 ) == 0 )
       { 
          //:MessageSend( vSubtask, "ZO00137", "Dialog Maintenance",
          //:             "C Source File Name is required.",
@@ -3298,7 +4494,7 @@ SEL_CLONE_CheckSourceFile( zVIEW     vSubtask )
    //:   AND szVML_File = szC_File
    lTempInteger_4 = GetCtrlState( vSubtask, "edVML_File", zCONTROL_STATUS_ENABLED );
    lTempInteger_5 = GetCtrlState( vSubtask, "edC_File", zCONTROL_STATUS_ENABLED );
-   if ( lTempInteger_4 == 1 && lTempInteger_5 == 1 && ZeidonStringCompare( szVML_File, 1, 0, szC_File, 1, 0, 9 ) == 0 )
+   if ( lTempInteger_4 == 1 && lTempInteger_5 == 1 && ZeidonStringCompare( szVML_File, 1, 0, szC_File, 1, 0, 33 ) == 0 )
    { 
       //:   MessageSend( vSubtask, "ZO00137", "Dialog Maintenance",
       //:                "VML and C Source File Name are identical.",
@@ -3328,8 +4524,8 @@ SEL_CLONE_CheckSourceFile( zVIEW     vSubtask )
 //:SEL_CLONE_GenerateSourceFileName( VIEW vSubtask,
 //:                                  VIEW vTargetDialog BASED ON LOD TZWDLGSO,
 //:                                  STRING ( 32 ) szControlTag,
-//:                                  STRING (  8 ) szFileName )
-//:   STRING ( 3 ) szIndex
+//:                                  STRING ( 32 ) szFileName )
+//:   STRING ( 3 )  szIndex
 static zSHORT
 o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
                                     zVIEW     vTargetDialog,
@@ -3337,13 +4533,13 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
                                     zPCHAR    szFileName )
 {
    zCHAR     szIndex[ 4 ] = { 0 }; 
-   //:STRING ( 8 ) szVMLControl
-   zCHAR     szVMLControl[ 9 ] = { 0 }; 
-   //:SHORT        nPosition
+   //:STRING ( 32 ) szVMLControl
+   zCHAR     szVMLControl[ 33 ] = { 0 }; 
+   //:SHORT         nPosition
    zSHORT    nPosition = 0; 
-   //:SHORT        nIndex
+   //:SHORT         nIndex
    zSHORT    nIndex = 0; 
-   //:SHORT        nRC
+   //:SHORT         nRC
    zSHORT    nRC = 0; 
 
    //:VIEW CopyOperation REGISTERED AS CopyOperation
@@ -3358,7 +4554,7 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
    if ( lTempInteger_0 != 0 && ZeidonStringCompare( szControlTag, 1, 0, "edVML_File", 1, 0, 33 ) == 0 )
    { 
       //:szFileName = vTargetDialog.Dialog.Tag
-      GetVariableFromAttribute( szFileName, 0, 'S', 9, vTargetDialog, "Dialog", "Tag", "", 0 );
+      GetVariableFromAttribute( szFileName, 0, 'S', 33, vTargetDialog, "Dialog", "Tag", "", 0 );
       //:RETURN 0
       return( 0 );
    } 
@@ -3374,7 +4570,7 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
 
       //:LOOP
       //:szFileName = vTargetDialog.Dialog.Tag
-      GetVariableFromAttribute( szFileName, 0, 'S', 9, vTargetDialog, "Dialog", "Tag", "", 0 );
+      GetVariableFromAttribute( szFileName, 0, 'S', 33, vTargetDialog, "Dialog", "Tag", "", 0 );
       //:nPosition = zstrlen( szFileName )
       nPosition = zstrlen( szFileName );
       //:IF nPosition > 6
@@ -3392,9 +4588,9 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
       if ( nIndex < 10 )
       { 
          //:szFileName[1 + nPosition:1] = "_"
-         ZeidonStringCopy( szFileName, 1 + nPosition, 1, "_", 1, 0, 9 );
+         ZeidonStringCopy( szFileName, 1 + nPosition, 1, "_", 1, 0, 33 );
          //:szFileName[2 + nPosition:1] = szIndex
-         ZeidonStringCopy( szFileName, 2 + nPosition, 1, szIndex, 1, 0, 9 );
+         ZeidonStringCopy( szFileName, 2 + nPosition, 1, szIndex, 1, 0, 33 );
          //:ELSE
       } 
       else
@@ -3408,9 +4604,9 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
 
          //:END
          //:szFileName[1 + nPosition] = "_"
-         ZeidonStringCopy( szFileName, 1 + nPosition, -1, "_", 1, 0, 9 );
+         ZeidonStringCopy( szFileName, 1 + nPosition, -1, "_", 1, 0, 33 );
          //:szFileName[2 + nPosition:2] = szIndex
-         ZeidonStringCopy( szFileName, 2 + nPosition, 2, szIndex, 1, 0, 9 );
+         ZeidonStringCopy( szFileName, 2 + nPosition, 2, szIndex, 1, 0, 33 );
       } 
 
       //:END
@@ -3427,9 +4623,9 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
       if ( ZeidonStringCompare( szControlTag, 1, 0, "edC_File", 1, 0, 33 ) == 0 )
       { 
          //:szVMLControl = CopyOperation.SourceFile.NameVML
-         GetVariableFromAttribute( szVMLControl, 0, 'S', 9, CopyOperation, "SourceFile", "NameVML", "", 0 );
+         GetVariableFromAttribute( szVMLControl, 0, 'S', 33, CopyOperation, "SourceFile", "NameVML", "", 0 );
          //:IF szVMLControl = szFileName
-         if ( ZeidonStringCompare( szVMLControl, 1, 0, szFileName, 1, 0, 9 ) == 0 )
+         if ( ZeidonStringCompare( szVMLControl, 1, 0, szFileName, 1, 0, 33 ) == 0 )
          { 
             //:nRC = zCURSOR_SET
             nRC = zCURSOR_SET;
@@ -3445,6 +4641,288 @@ o_SEL_CLONE_GenerateSourceFileName( zVIEW     vSubtask,
 
 
    //:RETURN 0
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:DIALOG_Compare( VIEW ViewToWindow )
+
+//:   VIEW TargetDialog     REGISTERED AS TZWINDOW
+zOPER_EXPORT zSHORT OPERATION
+DIALOG_Compare( zVIEW     ViewToWindow )
+{
+   zVIEW     TargetDialog = 0; 
+   zSHORT    RESULT; 
+   //:VIEW TargetDialogRoot BASED ON LOD  TZWDLGSO
+   zVIEW     TargetDialogRoot = 0; 
+   //:VIEW SourceDialog     BASED ON LOD  TZWDLGSO
+   zVIEW     SourceDialog = 0; 
+   //:VIEW SourceDialogRoot BASED ON LOD  TZWDLGSO
+   zVIEW     SourceDialogRoot = 0; 
+   //:VIEW TaskLPLR         REGISTERED AS TaskLPLR
+   zVIEW     TaskLPLR = 0; 
+   //:STRING ( 500 ) szConcatenatedControlTag
+   zCHAR     szConcatenatedControlTag[ 501 ] = { 0 }; 
+   //:STRING ( 200 ) szFileName
+   zCHAR     szFileName[ 201 ] = { 0 }; 
+   //:STRING ( 1 )   szWindowDifferenceFlag
+   zCHAR     szWindowDifferenceFlag[ 2 ] = { 0 }; 
+   //:SHORT          nRC
+   zSHORT    nRC = 0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
+
+   RESULT = GetViewByName( &TargetDialog, "TZWINDOW", ViewToWindow, zLEVEL_TASK );
+   RESULT = GetViewByName( &TaskLPLR, "TaskLPLR", ViewToWindow, zLEVEL_TASK );
+
+   //:// Activate the Source Dialog and compare it to the Dialog in memory by the same name.
+   //:GET VIEW TargetDialog NAMED "TZWINDOWL"
+   RESULT = GetViewByName( &TargetDialog, "TZWINDOWL", ViewToWindow, zLEVEL_TASK );
+   //:szFileName = TaskLPLR.LPLR.wFullyQualifiedDirectoryName + "\\" + TargetDialog.Dialog.Tag + ".PWD"
+   GetStringFromAttribute( szFileName, TaskLPLR, "LPLR", "wFullyQualifiedDirectoryName" );
+   ZeidonStringConcat( szFileName, 1, 0, "\\\\", 1, 0, 201 );
+   GetVariableFromAttribute( szTempString_0, 0, 'S', 33, TargetDialog, "Dialog", "Tag", "", 0 );
+   ZeidonStringConcat( szFileName, 1, 0, szTempString_0, 1, 0, 201 );
+   ZeidonStringConcat( szFileName, 1, 0, ".PWD", 1, 0, 201 );
+   //:nRC = ActivateOI_FromFile( SourceDialog, "TZWDLGSO", ViewToWindow, szFileName, zSINGLE )
+   nRC = ActivateOI_FromFile( &SourceDialog, "TZWDLGSO", ViewToWindow, szFileName, zSINGLE );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:MessageSend( ViewToWindow, "", "Compare Dialogs",
+      //:             "Invalid File Name",
+      //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Compare Dialogs", "Invalid File Name", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:RETURN -1
+      return( -1 );
+   } 
+
+   //:END
+   //:NAME VIEW SourceDialog "SourceDialog"
+   SetNameForView( SourceDialog, "SourceDialog", 0, zLEVEL_TASK );
+   //:NAME VIEW TargetDialog "TargetDialog"
+   SetNameForView( TargetDialog, "TargetDialog", 0, zLEVEL_TASK );
+
+   //:// Compare source and target Dialogs.
+   //:CreateViewFromView( TargetDialogRoot, TargetDialog )
+   CreateViewFromView( &TargetDialogRoot, TargetDialog );
+   //:NAME VIEW TargetDialogRoot "TargetDialogRoot"
+   SetNameForView( TargetDialogRoot, "TargetDialogRoot", 0, zLEVEL_TASK );
+   //:FOR EACH TargetDialogRoot.DisplayCompareResult
+   RESULT = SetCursorFirstEntity( TargetDialogRoot, "DisplayCompareResult", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:DELETE ENTITY TargetDialogRoot.DisplayCompareResult NONE
+      RESULT = DeleteEntity( TargetDialogRoot, "DisplayCompareResult", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( TargetDialogRoot, "DisplayCompareResult", "" );
+   } 
+
+   //:END
+   //:CreateViewFromView( SourceDialogRoot, SourceDialog )
+   CreateViewFromView( &SourceDialogRoot, SourceDialog );
+   //:NAME VIEW SourceDialogRoot "SourceDialogRoot"
+   SetNameForView( SourceDialogRoot, "SourceDialogRoot", 0, zLEVEL_TASK );
+
+   //:// Compare Source to Target
+   //:FOR EACH SourceDialog.Window //WHERE SourceDialog.Window.Tag = "StudentDetail"
+   RESULT = SetCursorFirstEntity( SourceDialog, "Window", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+      RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+      //:TargetDialogRoot.DisplayCompareResult.SourceWindowName = SourceDialog.Window.Tag
+      SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceWindowName", SourceDialog, "Window", "Tag" );
+      //:SET CURSOR FIRST TargetDialog.Window WHERE TargetDialog.Window.Tag = SourceDialog.Window.Tag
+      GetStringFromAttribute( szTempString_1, SourceDialog, "Window", "Tag" );
+      RESULT = SetCursorFirstEntityByString( TargetDialog, "Window", "Tag", szTempString_1, "" );
+      //:IF RESULT >= zCURSOR_SET
+      if ( RESULT >= zCURSOR_SET )
+      { 
+
+         //:TargetDialogRoot.DisplayCompareResult.TargetWindowName = SourceDialog.Window.Tag
+         SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetWindowName", SourceDialog, "Window", "Tag" );
+
+         //:// There is a Target Window by the same name, so compare controls.
+         //:szWindowDifferenceFlag = ""    // Start indicating no difference.
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "", 1, 0, 2 );
+         //:FOR EACH SourceDialog.Control
+         RESULT = SetCursorFirstEntity( SourceDialog, "Control", "" );
+         while ( RESULT > zCURSOR_UNCHANGED )
+         { 
+            //:SET CURSOR FIRST TargetDialog.Control WHERE TargetDialog.Control.Tag = SourceDialog.Control.Tag
+            GetStringFromAttribute( szTempString_1, SourceDialog, "Control", "Tag" );
+            RESULT = SetCursorFirstEntityByString( TargetDialog, "Control", "Tag", szTempString_1, "" );
+            //:IF RESULT < zCURSOR_SET
+            if ( RESULT < zCURSOR_SET )
+            { 
+               //:// There is a difference, so just stop with the difference.
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.SourceControlTag = SourceDialog.Control.Tag
+               SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceControlTag", SourceDialog, "Control", "Tag" );
+               //:DIALOG_CompareNewControlSrc( TargetDialogRoot, SourceDialog )
+               o_DIALOG_CompareNewControlSrc( TargetDialogRoot, SourceDialog );
+               //:ELSE
+            } 
+            else
+            { 
+
+               //:// There is a match by Control Tag, so continue compare.
+               //:szConcatenatedControlTag = ""    // Concatenated Name just starts out null.
+               ZeidonStringCopy( szConcatenatedControlTag, 1, 0, "", 1, 0, 501 );
+               //:CompareControlRecursiveSrc( TargetDialog,
+               //:                            SourceDialog,
+               //:                            TargetDialogRoot,
+               //:                            SourceDialogRoot,
+               //:                            szWindowDifferenceFlag,
+               //:                            szConcatenatedControlTag )
+               o_CompareControlRecursiveSrc( TargetDialog, SourceDialog, TargetDialogRoot, SourceDialogRoot, szWindowDifferenceFlag, szConcatenatedControlTag );
+            } 
+
+            RESULT = SetCursorNextEntity( SourceDialog, "Control", "" );
+
+            //:END
+         } 
+
+         //:END
+
+         //:ELSE
+      } 
+      else
+      { 
+         //:// There is no corresponding Target window.
+         //:szWindowDifferenceFlag = "Y"
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+         //:TargetDialogRoot.DisplayCompareResult.TargetWindowName = "(No Target Window)"
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetWindowName", "(No Target Window)" );
+      } 
+
+      //:END
+
+      //:IF szWindowDifferenceFlag = ""
+      if ( ZeidonStringCompare( szWindowDifferenceFlag, 1, 0, "", 1, 0, 2 ) == 0 )
+      { 
+         //:// The corresponding Target window matches the source.
+         //:TargetDialogRoot.DisplayCompareResult.TargetWindowName = "(Matching Target Window)"
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "TargetWindowName", "(Matching Target Window)" );
+      } 
+
+      RESULT = SetCursorNextEntity( SourceDialog, "Window", "" );
+      //:END
+   } 
+
+   //:END
+
+   //:// Create Display enties that define boundary of Source and Target compares.
+   //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+   RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+   //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+   RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+   //:TargetDialogRoot.DisplayCompareResult.SourceWindowName = "**** Target Compare ****"
+   SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceWindowName", "**** Target Compare ****" );
+   //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+   RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+
+   //:// Compare Target to Source
+   //:FOR EACH TargetDialog.Window
+   RESULT = SetCursorFirstEntity( TargetDialog, "Window", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+      RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+      //:TargetDialogRoot.DisplayCompareResult.TargetWindowName = TargetDialog.Window.Tag
+      SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetWindowName", TargetDialog, "Window", "Tag" );
+      //:SET CURSOR FIRST SourceDialog.Window WHERE SourceDialog.Window.Tag = TargetDialog.Window.Tag
+      GetStringFromAttribute( szTempString_1, TargetDialog, "Window", "Tag" );
+      RESULT = SetCursorFirstEntityByString( SourceDialog, "Window", "Tag", szTempString_1, "" );
+      //:IF RESULT >= zCURSOR_SET
+      if ( RESULT >= zCURSOR_SET )
+      { 
+
+         //:TargetDialogRoot.DisplayCompareResult.SourceWindowName = TargetDialog.Window.Tag
+         SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "SourceWindowName", TargetDialog, "Window", "Tag" );
+
+         //:// There is a Source Window by the same name, so compare controls.
+         //:szWindowDifferenceFlag = ""    // Start indicating no difference.
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "", 1, 0, 2 );
+         //:FOR EACH TargetDialog.Control
+         RESULT = SetCursorFirstEntity( TargetDialog, "Control", "" );
+         while ( RESULT > zCURSOR_UNCHANGED )
+         { 
+            //:SET CURSOR FIRST SourceDialog.Control WHERE SourceDialog.Control.Tag = TargetDialog.Control.Tag
+            GetStringFromAttribute( szTempString_1, TargetDialog, "Control", "Tag" );
+            RESULT = SetCursorFirstEntityByString( SourceDialog, "Control", "Tag", szTempString_1, "" );
+            //:IF RESULT < zCURSOR_SET
+            if ( RESULT < zCURSOR_SET )
+            { 
+               //:// There is a difference, so just stop with the difference.
+               //:szWindowDifferenceFlag = "Y"
+               ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+               //:CREATE ENTITY TargetDialogRoot.DisplayCompareResult
+               RESULT = CreateEntity( TargetDialogRoot, "DisplayCompareResult", zPOS_AFTER );
+               //:TargetDialogRoot.DisplayCompareResult.TargetControlTag = TargetDialog.Control.Tag
+               SetAttributeFromAttribute( TargetDialogRoot, "DisplayCompareResult", "TargetControlTag", TargetDialog, "Control", "Tag" );
+               //:DIALOG_CompareNewControlTgt( TargetDialogRoot, TargetDialog )
+               o_DIALOG_CompareNewControlTgt( TargetDialogRoot, TargetDialog );
+               //:ELSE
+            } 
+            else
+            { 
+
+               //:// There is a match by Control Tag, so continue compare.
+               //:szConcatenatedControlTag = ""    // Concatenated Name just starts out null.
+               ZeidonStringCopy( szConcatenatedControlTag, 1, 0, "", 1, 0, 501 );
+               //:CompareControlRecursiveTgt( TargetDialog,
+               //:                            SourceDialog,
+               //:                            TargetDialogRoot,
+               //:                            SourceDialogRoot,
+               //:                            szWindowDifferenceFlag,
+               //:                            szConcatenatedControlTag )
+               o_CompareControlRecursiveTgt( TargetDialog, SourceDialog, TargetDialogRoot, SourceDialogRoot, szWindowDifferenceFlag, szConcatenatedControlTag );
+            } 
+
+            RESULT = SetCursorNextEntity( TargetDialog, "Control", "" );
+
+            //:END
+         } 
+
+         //:END
+
+         //:ELSE
+      } 
+      else
+      { 
+         //:// There is no corresponding Source window.
+         //:szWindowDifferenceFlag = "Y"
+         ZeidonStringCopy( szWindowDifferenceFlag, 1, 0, "Y", 1, 0, 2 );
+         //:TargetDialogRoot.DisplayCompareResult.SourceWindowName = "(No Source Window)"
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceWindowName", "(No Source Window)" );
+      } 
+
+      //:END
+
+      //:IF szWindowDifferenceFlag = ""
+      if ( ZeidonStringCompare( szWindowDifferenceFlag, 1, 0, "", 1, 0, 2 ) == 0 )
+      { 
+         //:// The corresponding Source window matches the Target.
+         //:TargetDialogRoot.DisplayCompareResult.SourceWindowName = "(Matching Source Window)"
+         SetAttributeFromString( TargetDialogRoot, "DisplayCompareResult", "SourceWindowName", "(Matching Source Window)" );
+      } 
+
+      RESULT = SetCursorNextEntity( TargetDialog, "Window", "" );
+      //:END
+   } 
+
+   //:END
+
+   //:DropView( TargetDialogRoot )
+   DropView( TargetDialogRoot );
    return( 0 );
 // END
 } 

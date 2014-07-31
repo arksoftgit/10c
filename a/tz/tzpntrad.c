@@ -11193,7 +11193,7 @@ zwfnTZPNTRAD_SaveAsSetSourceName( zVIEW   vSubtask,
                                   zVIEW   vDialogData,
                                   zSHORT  nIndex )
 {
-   zCHAR  szNewName[ 33 ];
+   zCHAR  szNewName[33];
    zCHAR  szIndex[ 4 ];
    zSHORT nPosition = 0;
    zSHORT nRC;
@@ -11375,8 +11375,8 @@ zwfnTZPNTRAD_SaveAsCheckFileName( zVIEW    vSubtask,
 {
    zVIEW    vSaveAsCopy;
    zSHORT   nRC;
-   zCHAR    szNewName[ 33 ];
-   zCHAR    szFileName[ 33 ];
+   zCHAR    szNewName[33];
+   zCHAR    szFileName[33];
    zCHAR    szMsg[ 100 ];
 
    CreateViewFromViewForTask( &vSaveAsCopy, vSaveAs, 0 );
@@ -11436,8 +11436,8 @@ zwfnTZPNTRAD_SaveAsCheckName( zVIEW    vSubtask,
 {
    zVIEW  vLOD_LPLR;
    zCHAR  szMsg[155];
-   zCHAR  szDLLName[ 33 ];
-   zCHAR  szNewName[ 33 ];
+   zCHAR  szDLLName[33];
+   zCHAR  szNewName[33];
 
    // Dialog Name is required
    if ( zstrcmp( szOutName, "" ) == 0 )
