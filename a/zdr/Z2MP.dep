@@ -1,6 +1,9 @@
 # Microsoft Developer Studio Generated Dependency File, included by Z2MP.mak
 
 .\mpna81.cpp : \
+	"c:\msvc32\include\basetsd.h"\
+	"c:\msvc32\mfc\src\afximpl.h"\
+	"c:\msvc32\mfc\src\sockimpl.h"\
 	"..\..\w\incr\kzoeenaa.h"\
 	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
@@ -19,20 +22,6 @@
 	
 
 .\Z2MP.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
-	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
 	".\Z2MP.h"\
 	
 
@@ -41,19 +30,5 @@
 	
 
 .\Z2MPAPI.CPP : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
-	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
 	".\Z2MP.h"\
 	

@@ -1,6 +1,13 @@
 # Microsoft Developer Studio Generated Dependency File, included by Zdr.mak
 
 .\ZDr.cpp : \
+	"c:\msvc32\include\basetsd.h"\
+	"c:\msvc32\mfc\src\afximpl.h"\
+	"c:\msvc32\mfc\src\occimpl.h"\
+	"c:\msvc32\mfc\src\ocdb.h"\
+	"c:\msvc32\mfc\src\ocdbid.h"\
+	"c:\msvc32\mfc\src\olebind.h"\
+	"c:\msvc32\mfc\src\sockimpl.h"\
 	"..\..\w\incr\kzoeenaa.h"\
 	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\

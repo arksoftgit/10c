@@ -52,6 +52,10 @@ build/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
+*.opt
+*.plg
+*.dep
+
 account.*
 *_i.c
 *_p.c

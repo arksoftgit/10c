@@ -1,8 +1,8 @@
 # Microsoft Developer Studio Generated Dependency File, included by ZSEMail.mak
 
 .\ZSEMail.cpp : \
+	"c:\msvc32\include\basetsd.h"\
 	"..\..\w\incr\kzoeenaa.h"\
-	"..\..\w\incz\kzoeinco.h"\
 	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
 	"..\incr\kzoemeaa.h"\
@@ -10,10 +10,6 @@
 	"..\incr\kzoep1aa.h"\
 	"..\incr\kzoessaa.h"\
 	"..\incr\zdrvropr.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
 	".\ZSEMail.h"\
 	
 
