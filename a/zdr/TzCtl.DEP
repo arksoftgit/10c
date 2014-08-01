@@ -1,6 +1,13 @@
 # Microsoft Developer Studio Generated Dependency File, included by Tzctl.mak
 
 .\TzCtl.cpp : \
+	"c:\msvc32\include\basetsd.h"\
+	"c:\msvc32\mfc\src\afximpl.h"\
+	"c:\msvc32\mfc\src\occimpl.h"\
+	"c:\msvc32\mfc\src\ocdb.h"\
+	"c:\msvc32\mfc\src\ocdbid.h"\
+	"c:\msvc32\mfc\src\olebind.h"\
+	"c:\msvc32\mfc\src\sockimpl.h"\
 	"..\..\w\incr\kzoeenaa.h"\
 	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
@@ -53,6 +60,7 @@
 	".\radio.bmp"\
 	".\shape.bmp"\
 	".\ss.bmp"\
+	".\sssub.bmp"\
 	".\tab.bmp"\
 	".\text.bmp"\
 	".\timer.bmp"\
@@ -60,409 +68,86 @@
 	
 
 .\TzCtlATX.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlCVT.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlERD.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlERE.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlERL.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlERV.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlOPR.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTB.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTC.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTE.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTM.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTR.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTS.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTU.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlPTX.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlTAB.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
 
 .\TzCtlTBE.cpp : \
-	"..\..\w\incr\kzoeenaa.h"\
-	"..\incr\kzoedeca.h"\
 	"..\incr\kzoegdef.h"\
-	"..\incr\kzoemeaa.h"\
-	"..\incr\kzoengaa.h"\
-	"..\incr\kzoep1aa.h"\
-	"..\incr\kzoessaa.h"\
-	"..\incr\kzwdlgxo.hst"\
-	"..\incr\zdrvropr.h"\
-	"..\incr\zstdafx.h"\
-	"..\incz\kzoeidaa.h"\
-	"..\incz\kzoemiaa.h"\
-	"..\incz\kzoep0aa.h"\
-	"..\incz\kzoetdaa.h"\
-	".\jpeglib\jconfig.h"\
-	".\jpeglib\jmorecfg.h"\
-	".\jpeglib\jpeglib.h"\
 	".\tzctlgbl.h"\
-	".\ZDr.h"\
-	".\ZDrApp.h"\
-	".\zdrtwain.h"\
 	
