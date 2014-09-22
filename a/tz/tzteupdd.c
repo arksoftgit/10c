@@ -389,7 +389,7 @@ zwTZTEUPDD_InitTool( zVIEW vSubtask )
 
    // Always have a Named List of Meta's!
    // This is done to be consistent with other dialogs.  The only time
-   // that the named List will not exist is during a SwithLPLR.
+   // that the named List will not exist is during a SwitchLPLR.
    // This fact is used a "flag" to the RtnFromSubwnd logic.
    RetrieveViewForMetaList( vSubtask, &vT, zSOURCE_DTE_META );
    SetNameForView( vT, "CM_DTE_List", vSubtask, zLEVEL_TASK );

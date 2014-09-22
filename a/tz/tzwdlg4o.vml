@@ -332,7 +332,9 @@ GenerateJSP( VIEW vDialog BASED ON LOD TZWDLGSO,
       lTrace = 0
    END
 
-   szJSP_FileName = szDirectoryName + szFormName + ".jsp"
+   szFileName = szDirectoryName + szFormName + ".jsp"
+   SysConvertEnvironmentString( szJSP_FileName, szFileName )
+
    TraceLineS( "GenerateJSP writing to file: ", szJSP_FileName )
    lFileJSP = SysOpenFile( vDialog, szJSP_FileName, COREFILE_WRITE )
    IF lFileJSP < 0

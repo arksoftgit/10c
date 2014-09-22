@@ -863,7 +863,7 @@ ParseSource( zVIEW  vVML_Subtask,
 
       // Give the XPG file the same timestamp as the VML file.  This will give us a more accurate
       // guide to when the VML file needs to be parsed.
-      lOrigFile = SysOpenFile( vVML_Subtask, szSrcDirectory,  COREFILE_READ );
+      lOrigFile = SysOpenFile( vVML_Subtask, szSrcDirectory, COREFILE_READ );
       SysGetFileDateTime( lOrigFile, szVML_DateTime );
       SysCloseFile( vVML_Subtask, lOrigFile, 0 );
       SysSetFileTime( szFullXPGPathName, szVML_DateTime, 0 );

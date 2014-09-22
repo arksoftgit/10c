@@ -338,11 +338,10 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    ZeidonStringConcat( szSystemIniApplName, 1, 0, "]", 1, 0, 65 );
    //:szDirectoryName = ""
    ZeidonStringCopy( szDirectoryName, 1, 0, "", 1, 0, 1025 );
-   //:SysReadZeidonIni( -1, szSystemIniApplName, "WebDirectory", szDirectoryName )
-   SysReadZeidonIni( -1, szSystemIniApplName, "WebDirectory", szDirectoryName );
-   //:SysReadZeidonIni( -1, szSystemIniApplName, "WebRedirection", szWebRedirection )
-   SysReadZeidonIni( -1, szSystemIniApplName, "WebRedirection", szWebRedirection );
-
+   //:SysReadZeidonIni( -1, szSystemIniApplName, "WebDirectory", szFileName )
+   SysReadZeidonIni( -1, szSystemIniApplName, "WebDirectory", szFileName );
+   //:SysConvertEnvironmentString( szDirectoryName, szFileName )
+   SysConvertEnvironmentString( szDirectoryName, szFileName );
    //:IF szDirectoryName = ""
    if ( ZeidonStringCompare( szDirectoryName, 1, 0, "", 1, 0, 1025 ) == 0 )
    { 
@@ -359,6 +358,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
 
    //:END
 
+   //:SysReadZeidonIni( -1, szSystemIniApplName, "WebRedirection", szWebRedirection )
+   SysReadZeidonIni( -1, szSystemIniApplName, "WebRedirection", szWebRedirection );
    //:szJavaPackage = vLPLR.LPLR.JavaPackageName
    GetVariableFromAttribute( szJavaPackage, 0, 'S', 101, vLPLR, "LPLR", "JavaPackageName", "", 0 );
    //:zSearchAndReplace( szJavaPackage, 100, "\", "." )

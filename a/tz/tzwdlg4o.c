@@ -383,10 +383,13 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
 
    //:END
 
-   //:szJSP_FileName = szDirectoryName + szFormName + ".jsp"
-   ZeidonStringCopy( szJSP_FileName, 1, 0, szDirectoryName, 1, 0, 1025 );
-   ZeidonStringConcat( szJSP_FileName, 1, 0, szFormName, 1, 0, 1025 );
-   ZeidonStringConcat( szJSP_FileName, 1, 0, ".jsp", 1, 0, 1025 );
+   //:szFileName = szDirectoryName + szFormName + ".jsp"
+   ZeidonStringCopy( szFileName, 1, 0, szDirectoryName, 1, 0, 1025 );
+   ZeidonStringConcat( szFileName, 1, 0, szFormName, 1, 0, 1025 );
+   ZeidonStringConcat( szFileName, 1, 0, ".jsp", 1, 0, 1025 );
+   //:SysConvertEnvironmentString( szJSP_FileName, szFileName )
+   SysConvertEnvironmentString( szJSP_FileName, szFileName );
+
    //:TraceLineS( "GenerateJSP writing to file: ", szJSP_FileName )
    TraceLineS( "GenerateJSP writing to file: ", szJSP_FileName );
    //:lFileJSP = SysOpenFile( vDialog, szJSP_FileName, COREFILE_WRITE )

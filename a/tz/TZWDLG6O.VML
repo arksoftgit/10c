@@ -769,9 +769,8 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    szLPLR_Name = vLPLR.LPLR.Name
    szSystemIniApplName = "[App." + szLPLR_Name + "]"
    szDirectoryName = ""
-   SysReadZeidonIni( -1, szSystemIniApplName, "WebDirectory", szDirectoryName )
-   SysReadZeidonIni( -1, szSystemIniApplName, "WebRedirection", szWebRedirection )
-
+   SysReadZeidonIni( -1, szSystemIniApplName, "WebDirectory", szFileName )
+   SysConvertEnvironmentString( szDirectoryName, szFileName )
    IF szDirectoryName = ""
       szWriteBuffer = "Zeidon.ini file does not have WebDirectory entry in Application: " + szSystemIniApplName
       MessageSend( vSubtask, "", "JSP Generation",
@@ -780,6 +779,7 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
       RETURN -1
    END
 
+   SysReadZeidonIni( -1, szSystemIniApplName, "WebRedirection", szWebRedirection )
    szJavaPackage = vLPLR.LPLR.JavaPackageName
    zSearchAndReplace( szJavaPackage, 100, "\", "." )
    szAppImport = szJavaPackage + ".*"

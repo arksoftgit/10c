@@ -321,7 +321,7 @@ fnGetDirectorySpec( zVIEW vSubtask, zPCHAR pchDirectorySpec, zLONG lType, zBOOL 
 
    GetStringFromAttribute( szWork, vTaskLPLR, "LPLR", "MetaSrcDir" );
    if ( bConvertEnvironment )
-   SysConvertEnvironmentString( pchDirectorySpec, szWork );
+      SysConvertEnvironmentString( pchDirectorySpec, szWork );
    else
       zstrcpy( pchDirectorySpec, szWork );
 
@@ -4221,9 +4221,9 @@ CreateMetaEntity( zVIEW  vSubtask,
 {
    zVIEW   WKS_View;
    zVIEW   vZeidonCM;
-   zVIEW   vTZCMREPO;
-   zLONG   lWKS_Id;
-   zLONG   lWkZKey;
+// zVIEW   vTZCMREPO;
+// zLONG   lWKS_Id;
+// zLONG   lWkZKey;
    zULONG  ulMaxZKey;
 
    GetViewByName( &vZeidonCM, "ZeidonCM", vSubtask,  zLEVEL_APPLICATION );
@@ -4303,9 +4303,9 @@ CreateTemporalMetaEntity( zVIEW  vSubtask,
 {
    zVIEW   vZeidonCM;
    zVIEW   WKS_View;
-   zVIEW   vTZCMREPO;
-   zLONG   lWKS_Id;
-   zLONG   lWkZKey;
+// zVIEW   vTZCMREPO;
+// zLONG   lWKS_Id;
+// zLONG   lWkZKey;
    zULONG  ulMaxZKey;
 
    if ( GetViewByName( &vZeidonCM, "ZeidonCM",
