@@ -1040,8 +1040,12 @@ zwTZTEUPDD_RebuildTablesRels( zVIEW vSubtask )
    zVIEW    vEMD;
    zVIEW    vErrorList;
    zVIEW    vWindow;
+   zVIEW    vLPLR;
    zPCHAR   szDS;
    zSHORT   nRC;
+   zCHAR    szSystemApp[ 65 ] = { 0 }; 
+   zCHAR    szTranslateColumnUnderscore[ 2 ] = { 0 }; 
+   zCHAR    szLPLR_Name[ 33 ] = { 0 }; 
 
    if ( GetViewByName( &vDTE, "TE_DB_Environ", vSubtask, zLEVEL_ANY ) < 0 )
       return( -1 );
@@ -1051,6 +1055,20 @@ zwTZTEUPDD_RebuildTablesRels( zVIEW vSubtask )
       SetWindowActionBehavior( vSubtask, zWAB_TerminateActionForError, 0, 0 );
       return( -1 );
    }
+
+   // KJS 08/05/14
+   // DG wants to be able to create db table/column names with underscores (EntityName = entity_name). So we don't have to read the
+   // ini every time we create a name, lets try setting a work attribute here.
+   GetViewByName( &vLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+   GetVariableFromAttribute( szLPLR_Name, 0, 'S', 33, vLPLR, "LPLR", "Name", "", 0 );
+   ZeidonStringCopy( szSystemApp, 1, 0, "[App.", 1, 0, 65 );
+   ZeidonStringConcat( szSystemApp, 1, 0, szLPLR_Name, 1, 0, 65 );
+   ZeidonStringConcat( szSystemApp, 1, 0, "]", 1, 0, 65 );
+   // KJS 08/06/14 - DG would like his ER table/attrib names to be created in the TE lowercase with underscores. So I
+   // added TranslateNamesToUnderscore to the ini for that. 
+   SysReadZeidonIni( -1, szSystemApp, "TranslateNamesToUnderscore", szTranslateColumnUnderscore );
+   if ( szTranslateColumnUnderscore[ 0 ] == 'Y' )
+      SetAttributeFromString( vDTE, "TE_DB_Environ", "wTranslateNamesToUnderscore", "Y" );
 
    SetNameForView( vDTE, "vDTE_Init", vSubtask, zLEVEL_TASK );
 

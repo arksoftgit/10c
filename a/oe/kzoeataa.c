@@ -10909,7 +10909,10 @@ fnSetUpdateIndicator( LPVIEWOI         lpViewOI,
       lpAttribFlags->u.bFlags.bUpdated = TRUE;
    }
 
-   if ( fnInstanceVersioned( lpEntityInstance ) == 0 )
+   // KJS 08/22/14 - I am confused here because fnInstanceVersioned returns 0 if there is no
+   // versioning, so it would seem that the check should be > 0.
+   //if ( fnInstanceVersioned( lpEntityInstance ) == 0 )
+   if ( fnInstanceVersioned( lpEntityInstance ) > 0 )
    {
       lpViewOI->bUpdatedFile = TRUE;
 

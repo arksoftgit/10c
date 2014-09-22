@@ -1,4 +1,4 @@
-z1000-Zeidon    ZEIDON   TZDMXGPO 03/20/14   12:15:49 1.0a2    
+z1000-Zeidon    ZEIDON   TZDMXGPO 09/16/14   13:13:50 1.0a2    
 eDomainGroup 1
 aName      Zeidon9B
 
@@ -5576,9 +5576,6 @@ aZKey      1320488
 aName      Control/Option Action Type
 
 eTableEntry 4
-aZKey      4847914
-
-eTableEntry 4
 aZKey      1320489
 aExternalValue Same Window / No Refresh
 aInternalValue 1
@@ -5642,9 +5639,6 @@ eContext   3
 aZKey      1320473
 aName      WD_ActionType
 aIsDefault Y
-
-eTableEntry 4
-aZKey      4847915
 
 eTableEntry 4
 aZKey      1320475
@@ -5752,6 +5746,11 @@ aExternalValue Start Browser PDF Page
 aInternalValue 47
 
 eTableEntry 4
+aZKey      130000444
+aExternalValue Start Jasper PDF Report
+aInternalValue 48
+
+eTableEntry 4
 aZKey      4847905
 aExternalValue Replace Dialog with Dialog
 aInternalValue 51
@@ -5854,9 +5853,6 @@ aInternalValue 99
 eContext   3
 aZKey      1320500
 aName      Window Event Action Type
-
-eTableEntry 4
-aZKey      4847916
 
 eTableEntry 4
 aZKey      1320501

@@ -326,6 +326,9 @@ static zSHORT
 zwfnTZEREMDD_LoadErrorList( zVIEW vSubtask );
 static zSHORT
 zwfnTZEREMDD_CommitERD( zVIEW vSubtask, zVIEW vTZEREMDO );
+zOPER_EXPORT zSHORT OPERATION
+zwTZEREMDD_RebuildTablesRels( zVIEW vSubtask );
+
 
 
 zVOID
@@ -3139,7 +3142,7 @@ zwTZEREMDD_ValidateEntity( zVIEW vSubtask )
 {
    zVIEW vTZEREMDO;
    zCHAR szEntityName[ 255 ];
-   zCHAR szOutName[ 255 ];
+   //zCHAR szOutName[ 255 ];
    zCHAR szMsg[ 256 ];
    zSHORT nRC;
 
@@ -11667,6 +11670,375 @@ zwTZEREMDD_AnalyzeDuplicateZKeys( zVIEW vSubtask )
    return( 0 );
 } // zwTZEREMDD_AnalyzeDuplicateZKeys
 
+// KJS 08/25/14 - I am adding this because we'd like to rebuild the TE when saving the ER. I am copying this code from tzteupdd.c which
+// makes me think that maybe I should add the code to TZTENVRO.c but I'm not sure...
+// ******************************************************
+
+/*
+   This function finds the ZKey of the ER attribute that corresponds to the
+   current physical key (TE_FieldDataRel_PK).
+   We pass in two views for performance reasons.  This way we don't have to
+   create/drop a new view everytime we are called.
+   NOTE: This function changes the cursor positions of vDTE.
+*/
+zLONG LOCALOPER
+fnFindER_ZKeyForPhysicalKey( zVIEW vDTE_Orig, zVIEW vDTE )
+{
+   zLONG   lZKey = -1;
+   zSHORT  nRC;
+
+   SetViewFromView( vDTE, vDTE_Orig );
+
+   // Keep looping until we find the ER attribute.
+   do
+   {
+      // Get the ZKey of the physical key.
+      GetIntegerFromAttribute( &lZKey, vDTE, "TE_FieldDataRel_PK", "ZKey" );
+
+      // Now find the Field with the corresponding ZKey.
+      nRC = SetCursorFirstEntityByInteger( vDTE, "TE_FieldDataRel", "ZKey",
+                                           lZKey, "TE_DBMS_Source" );
+
+   } while ( nRC >= zCURSOR_SET &&
+             CheckExistenceOfEntity( vDTE, "ER_Attribute" ) < zCURSOR_SET );
+
+   if ( nRC >= zCURSOR_SET )
+      GetIntegerFromAttribute( &lZKey, vDTE, "ER_Attribute", "ZKey" );
+
+   return( lZKey );
+}
+
+zSHORT LOCALOPER
+fnRebuildTables( zVIEW vSubtask,
+                 zVIEW vDTE,
+                 zVIEW vEMD,
+                 zPCHAR pszTE_EntityName )
+{
+   zVIEW  vDTE_Old;
+   zVIEW  vDTE_OldTemp;
+   zVIEW  vDTE_NewTemp;
+   zVIEW  vTZTEDBLO;
+   zSHORT nRC;
+
+   zCHAR szSironDB_Type[ 2 ];
+
+   // Drop Error List View
+   //zwTZTEUPDD_ClearErrorWindow( vSubtask );
+
+   // Used later in oTZTENVRO_BuildRelationsFromEMD().
+   ActivateOI_FromFile( &vTZTEDBLO, "tztedblo", vSubtask, "tztedblo.xdl",
+                        zMULTIPLE );
+   SetNameForView( vTZTEDBLO, "TZTEDBLO", vSubtask, zLEVEL_TASK );
+
+   // First create a copy of the TE.
+   ActivateOI_FromOI_ForTask( &vDTE_Old, vDTE, 0, zMULTIPLE );
+   SetCursorFirstEntityByAttr( vDTE_Old, "TE_DBMS_Source", "ZKey",
+                               vDTE,     "TE_DBMS_Source", "ZKey", 0 );
+
+   CreateViewFromViewForTask( &vDTE_OldTemp, vDTE_Old, 0 );
+   CreateViewFromViewForTask( &vDTE_NewTemp, vDTE, 0 );
+
+   // Get the SironDB_Type because we only have to rebuild the tables for
+   // Siron catalogs
+   GetStringFromAttribute (szSironDB_Type, vDTE, "TE_DBMS_Source", "SironDB_Type");
+
+   // Run through all the tables and columns and delete them.
+   // Don't delete the tables for Siron Catalogs
+   if ( *szSironDB_Type != 'F' )
+   {
+      for ( nRC = SetCursorFirstEntity( vDTE, "TE_TablRec", 0 );
+            nRC >= zCURSOR_SET;
+            nRC = SetCursorNextEntity( vDTE, "TE_TablRec", 0 ) )
+         DeleteEntity( vDTE, "TE_TablRec", zREPOS_NONE );
+   }
+
+   // Rebuild the entities
+   if ( oTZTENVRO_BuildTablRecsFromEMD( vSubtask, vDTE,
+                                        vEMD, pszTE_EntityName ) < 0 )
+   {
+      DropView( vDTE_Old );
+      DropView( vDTE_OldTemp );
+      DropView( vDTE_NewTemp );
+      return( -1 );
+   }
+
+   // Do not Rebuild relationships for Siron Catalogs
+   // We don't need to reset physical information from the copy
+   // for Siron catalogs
+   if ( *szSironDB_Type != 'F' )
+   {
+      // Rebuild the relationships.
+      oTZTENVRO_BuildRelationsFromEMD( vSubtask, vDTE, vEMD );
+
+      // Reset some of the physical information from the copy.
+      for ( nRC = SetCursorFirstEntity( vDTE_Old, "TE_TablRec", 0 );
+            nRC >= zCURSOR_SET;
+            nRC = SetCursorNextEntity( vDTE_Old, "TE_TablRec", 0 ) )
+      {
+         // If the TablRec in the TE copy has the flag set and if the entity
+         // is in the new TE copy physical attributes.
+
+         if ( CheckExistenceOfEntity( vDTE_Old,
+                                      "ER_Entity" ) == zCURSOR_SET &&
+              SetCursorFirstEntityByAttr( vDTE, "ER_Entity", "ZKey",
+                                          vDTE_Old, "ER_Entity", "ZKey",
+                                          "TE_DBMS_Source" ) >= zCURSOR_SET ||
+              CheckExistenceOfEntity( vDTE_Old,
+                                      "ER_RelType" ) == zCURSOR_SET &&
+              SetCursorFirstEntityByAttr( vDTE, "ER_RelType", "ZKey",
+                                          vDTE_Old, "ER_RelType", "ZKey",
+                                          "TE_DBMS_Source" ) >= zCURSOR_SET )
+         {
+            SetAttributeFromAttribute( vDTE, "TE_TablRec",
+                                       "KeepPhysCharsFlagForAllColumns",
+                                        vDTE_Old, "TE_TablRec",
+                                        "KeepPhysCharsFlagForAllColumns" );
+
+            if ( CompareAttributeToString( vDTE_Old, "TE_TablRec",
+                                           "KeepPhysicalCharacteristicsFlag",
+                                           "Y" ) == 0 )
+            {
+               SetAttributeFromAttribute( vDTE, "TE_TablRec", "Name",
+                                          vDTE_Old, "TE_TablRec", "Name" );
+               SetAttributeFromAttribute( vDTE, "TE_TablRec", "SQL_TableQual",
+                                          vDTE_Old, "TE_TablRec", "SQL_TableQual" );
+               SetAttributeFromAttribute( vDTE, "TE_TablRec", "SQL_TableOwner",
+                                          vDTE_Old, "TE_TablRec", "SQL_TableOwner" );
+               SetAttributeFromAttribute( vDTE, "TE_TablRec", "Desc",
+                                          vDTE_Old, "TE_TablRec", "Desc" );
+               SetAttributeFromAttribute( vDTE, "TE_TablRec",
+                                          "KeepPhysicalCharacteristicsFlag",
+                                          vDTE_Old, "TE_TablRec",
+                                          "KeepPhysicalCharacteristicsFlag" );
+            }
+         }
+
+         // Do the same thing with the TE fields.
+         for ( nRC = SetCursorFirstEntityByString( vDTE_Old, "TE_FieldDataRel",
+                                                   "KeepPhysicalCharacteristicsFlag",
+                                                   "Y", 0 );
+               nRC >= zCURSOR_SET;
+               nRC = SetCursorNextEntityByString( vDTE_Old, "TE_FieldDataRel",
+                                                  "KeepPhysicalCharacteristicsFlag",
+                                                  "Y", 0 ) )
+         {
+            // Make sure attr exists in new copy.
+            if ( CheckExistenceOfEntity( vDTE_Old,
+                                         "ER_Attribute" ) == zCURSOR_SET )
+            {
+               if ( SetCursorFirstEntityByAttr( vDTE, "ER_Attribute", "ZKey",
+                                                vDTE_Old, "ER_Attribute", "ZKey",
+                                                "TE_TablRec" ) < zCURSOR_SET )
+               {
+                  // This ER_Attribute no longer exists so skip it.
+                  continue;
+               }
+            } // if ER_Attribute exists...
+            else
+            {
+               zBOOL bFound = FALSE;
+               zLONG lOldZKey;
+
+               // Get the ZKey of the originating ER Attribute.
+               lOldZKey = fnFindER_ZKeyForPhysicalKey( vDTE_Old, vDTE_OldTemp );
+
+               // We have to find the FK in the new TE that matches the old
+               // TE in both relationship and originating parent key.
+               for ( nRC = SetCursorFirstEntityByAttr( vDTE, "ER_RelLink", "ZKey",
+                                                       vDTE_Old, "ER_RelLink",
+                                                       "ZKey",
+                                                       "TE_TablRec" );
+                     nRC >= zCURSOR_SET;
+                     nRC = SetCursorNextEntityByAttr( vDTE, "ER_RelLink", "ZKey",
+                                                      vDTE_Old, "ER_RelLink",
+                                                      "ZKey",
+                                                      "TE_TablRec" ) )
+               {
+                  // Check to see if the ZKey for the ER attribute in the new
+                  // TE matches the one for the old TE.  If they do then we've
+                  // found our man.
+                  if ( fnFindER_ZKeyForPhysicalKey( vDTE,
+                                                    vDTE_NewTemp ) == lOldZKey )
+                  {
+                     bFound = TRUE;
+                     break;
+                  }
+               }
+
+               if ( !bFound )
+                  continue; // This Relationshiop no longer exists so skip it.
+            }
+
+            // Copy physical information.
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "Name",
+                                       vDTE_Old, "TE_FieldDataRel", "Name" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "Desc",
+                                       vDTE_Old, "TE_FieldDataRel", "Desc" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "Key",
+                                       vDTE_Old, "TE_FieldDataRel", "Key" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_SCALE",
+                                       vDTE_Old, "TE_FieldDataRel", "SQL_SCALE" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_NULLS",
+                                       vDTE_Old, "TE_FieldDataRel", "SQL_NULLS" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_LABEL",
+                                       vDTE_Old, "TE_FieldDataRel", "SQL_LABEL" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_REMARKS",
+                                       vDTE_Old, "TE_FieldDataRel", "SQL_REMARKS" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel",
+                                       "KeepPhysicalCharacteristicsFlag",
+                                       vDTE_Old, "TE_FieldDataRel",
+                                       "KeepPhysicalCharacteristicsFlag" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "DataType",
+                                       vDTE_Old, "TE_FieldDataRel", "DataType" );
+            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "Length",
+                                       vDTE_Old, "TE_FieldDataRel", "Length" );
+         }
+      }
+   }
+
+   DropView( vDTE_Old );
+   DropView( vDTE_OldTemp );
+   DropView( vDTE_NewTemp );
+
+   // if field sequence does not exist, set it
+   oTZTENVRO_SetFieldSequence( vDTE );
+
+   return( 0 );
+}
+
+zOPER_EXPORT zSHORT OPERATION
+zwTZEREMDD_RebuildTablesRels( zVIEW vSubtask )
+{
+   zVIEW    vDTE;
+   zVIEW    vEMD;
+   zVIEW    vErrorList;
+   zVIEW    vWindow;
+   zVIEW    vLPLR;
+   zVIEW    vTE_Work;
+   zPCHAR   szDS;
+   zSHORT   nRC;
+   zCHAR    szSystemApp[ 65 ] = { 0 }; 
+   zCHAR    szTranslateColumnUnderscore[ 2 ] = { 0 }; 
+   zCHAR    szLPLR_Name[ 33 ] = { 0 }; 
+   zCHAR    szER_UpdateFlag[ 2 ];
+
+   // KJS 08/26/14 - I have copied this code from the TE. Unless I save the ER, this doesn't create the TE with the latest changes.
+   // Should I prompt for save? Or save ER automatically? Or use the view that is already in existence for the ER?
+   // Also, when we have finished, there are two l... views that were created (TZCMLPLO) that are not deleted. Does this matter?
+
+
+   if ( GetViewByName( &vDTE, "TE_DB_Environ", vSubtask, zLEVEL_ANY ) < 0 )
+   {
+      oTZTENVRO_GetUpdViewForDTE_P( vSubtask, &vDTE );
+      if ( vDTE )
+      {
+         oTZTENVRO_SetFieldSequence( vDTE );
+         // KJS 08/25/14 - I'm not sure... do I need to do all of the following if I'm in the ER? 
+         // not sure yet about the SetFieldSequence, not sure what that does.
+         /*
+         SetNameForView( vDTE, "TE_DB_Environ", vSubtask, zLEVEL_TASK );
+         // Set window Title with check out state
+         SetTitleWithCheckOutState( vSubtask, "Physical Data Model",
+                                    "TE_DB_Environ", vDTE,
+                                    "TE_DB_Environ", zSOURCE_DTE_META );
+         // if field sequence does not exist, set it and remove update flag
+         oTZTENVRO_SetFieldSequence( vDTE );
+         lpViewCsr = (LPVIEWCSR) SysGetPointerFromHandle( vDTE->hViewCsr );
+         lpViewOI  = (LPVIEWOI) SysGetPointerFromHandle( lpViewCsr->hViewOI );
+         lpViewOI->bUpdatedFile = FALSE;
+         // if PE not checked out, set TE View read only ->
+         // the user cannot update the values in Detail Windows
+         if ( !ComponentIsCheckedOut( vSubtask, vDTE, zSOURCE_DTE_META ))
+            SetViewReadOnly( vDTE );
+         if ( GetViewByName( &vDTE_Old, "TE_DB_Environ_old", vSubtask, zLEVEL_TASK ) > 0 )
+            DropView( vDTE_Old );
+         */
+      }
+      else
+         return( -1 );   }
+
+   SetNameForView( vDTE, "vDTE_Init", vSubtask, zLEVEL_TASK );
+
+   if ( oTZEREMDO_GetRefViewForER( vSubtask, &vEMD, zCURRENT_OI ) < 0 )
+      return( -1 );
+
+   // We can't init table recs with a Remote Server DBMS.
+   if ( CompareAttributeToString( vDTE, "TE_DBMS_Source", "Paradigm",
+                                  "S" ) == 0 )
+   {
+      MessageSend( vSubtask, "TE00423", "Physical Data Model",
+                   "Can't add Table Records for Remote Servers",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+      return( 0 );
+   }
+
+   // Rebuilding all data sources.
+   fnRebuildTables( vSubtask, vDTE, vEMD, "TE_DB_Environ" );
+
+   // Send Error List Window
+   if ( GetViewByName( &vErrorList, "TZTEERR", vSubtask, zLEVEL_TASK ) >= 0 )
+   {
+      //RefreshWindow( vSubtask );    // Refresh Main Window
+      //SetWindowActionBehavior( vSubtask, zWAB_StartOrFocusModelessSubwindow,
+      //                         "TZTEUPDD", "ErrorList" );
+      //GetSubtaskForWindowName( vSubtask, &vWindow, "ErrorList" ),
+      //RefreshWindow( vWindow );    // Refresh Error List
+   }
+   else
+   {
+      // Save the TE. This code is copied from zwTZTEUPDD_SaveModelDTE.
+      // Make sure object is not empty
+      nRC = CheckExistenceOfEntity( vDTE, "TE_DB_Environ" );
+      if (  nRC < zCURSOR_SET )
+      {
+         return( -1 );
+      }
+   
+      // Sort Attributes in original sequence
+      oTZTENVRO_SortFields( vDTE, vSubtask );
+   
+      nRC = CommitMetaOI( vSubtask, vDTE, zSOURCE_DTE_META );
+      if ( nRC < 0 )
+      {
+         MessageSend( vSubtask, "TE00420", "Physical Data Model",
+                      "Unable to save Physical Environment.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         return( -1 );
+      }
+      else
+      {
+         // save XDM here in the future..................
+      } 
+
+      // KJS 08/26/14 - Do we want the following TZTEWRKO code???      
+   
+      // Save the ER if it was updated as a part of Identifier or Relationship
+      // Syncronization.
+      nRC = GetViewByName( &vTE_Work, "TZTEWRKO", vSubtask, zLEVEL_TASK );
+      if ( nRC >= 0 )
+      {
+         GetStringFromAttribute( szER_UpdateFlag,
+                                 vTE_Work, "TE_Work", "ER_UpdateFlag" );
+         if ( szER_UpdateFlag[ 0 ] == 'Y' )
+         {
+            // Get the ERD View
+            nRC = GetViewByName( &vEMD, "TZEREMDO_U", vSubtask, zLEVEL_TASK );
+            CommitMetaOI( vSubtask, vEMD, zSOURCE_ERD_META );
+            DropView (vEMD);
+         }
+         DropView (vTE_Work);
+      }
+
+      // KJS 08/26/14 - This is needed because of the oTZEREMDO_GetRefViewForER.
+      DropMetaOI( vSubtask, vEMD );
+   
+   }
+
+   DropMetaOI( vSubtask, vDTE );
+
+   return( 0 );
+}
+// ******************************************************
 
 #ifdef __cplusplus
 }

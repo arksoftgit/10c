@@ -827,7 +827,10 @@ zwfnTZDMUPDD_SaveDomain( zVIEW vSubtask, zVIEW vDomainGrp )
       return( -4 );
 
    // If there is no table entry with a null internal value, create one
-   zwTZDMUPDD_SetNullEntry( vSubtask, vDomainGrp );
+   // KJS 08/21/14 - We are not sure we need this now (we delete the null value when 
+   // opening the domain, so I am commenting this out but leaving the code here just
+   // in case we run into issues.
+   //zwTZDMUPDD_SetNullEntry( vSubtask, vDomainGrp );
 
    // Make sure that the Subdirectory attribute is null and that the
    // Extension attribute is set according to the Language type.
@@ -1598,6 +1601,9 @@ zwTZDMUPDD_CONTEXT_INIT( zVIEW    vSubtask )
    //  one with both null internal and external value.  This is so that
    //  the Domain table handler will give a blank entry to the Combo
    //  Box control.
+   //  KJS 08/21/14 - When saving the domain, we used to create a null entry 
+   //  in zwTZDMUPDD_SetNullEntry(), but we don't think we need that,
+   //  but we will keep this code for now.
    for ( nRC = SetCursorFirstEntity( vTZDGSRCO_Copy, "Context", "" );
          nRC >= zCURSOR_SET;
          nRC = SetCursorNextEntity( vTZDGSRCO_Copy, "Context", "" ) )

@@ -1,0 +1,443 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch kelly-10c
+# Your branch is up-to-date with 'origin/kelly-10c'.
+#
+# Changes to be committed:
+#	modified:   a/bin/sys/TZTEUPDD.PWD
+#	modified:   a/bin/sys/TZZOLODD.PWD
+#	modified:   a/bin/sys/WD.PDG
+#	modified:   a/bin/sys/ZEIDON9A.PMD
+#	modified:   a/bin/sys/Zeidon_T.DTE
+#	modified:   a/bin/sys/kzdbhqua.lod
+#	modified:   a/bin/sys/tzedfrmd.pwd
+#	modified:   a/bin/sys/tzeremdd.pwd
+#	modified:   a/bin/sys/tztenvro.lod
+#	deleted:    a/java/kzoejava.err
+#	deleted:    a/java/zQual.err
+#	deleted:    a/java/zView.err
+#	modified:   a/oe/kzhsqlxb.c
+#	modified:   a/oe/kzoeataa.c
+#	modified:   a/tz/TZWDLG6O.VML
+#	modified:   a/tz/TZWDLG6O.c
+#	modified:   a/tz/TZWEBGL2.C
+#	modified:   a/tz/TZWEBGL2.VML
+#	modified:   a/tz/tzdmupdd.c
+#	modified:   a/tz/tzedfrmd.c
+#	modified:   a/tz/tzeremdd.c
+#	modified:   a/tz/tztenvro.c
+#	modified:   a/tz/tzteupdd.c
+#	deleted:    a/tz/tzwebgl2_tmp.vml
+#	modified:   a/tz/zeidonop.h
+#	modified:   w/bin/KZHGENKY.DLL
+#	modified:   w/bin/KZHSQLAB.DLL
+#	modified:   w/bin/KZHSQLDB.DLL
+#	modified:   w/bin/KZHSQLMB.DLL
+#	modified:   w/bin/KZHSQLOA.DLL
+#	modified:   w/bin/KZHSQLOB.DLL
+#	modified:   w/bin/KZHSQLPB.DLL
+#	modified:   w/bin/KZHSQLSB.DLL
+#	modified:   w/bin/KZHSQLXX.DLL
+#	modified:   w/bin/KZOECLNT.EXE
+#	modified:   w/bin/KZOEDBGA.DLL
+#	modified:   w/bin/KZOENGAA.DLL
+#	modified:   w/bin/KZOENGWA.EXE
+#	modified:   w/bin/KZSCHEDT.EXE
+#	modified:   w/bin/TzAxCtl.dll
+#	modified:   w/bin/TzCtl.dll
+#	modified:   w/bin/Z2MP.dll
+#	modified:   w/bin/ZDr.exe
+#	modified:   w/bin/ZDrApp.dll
+#	modified:   w/bin/ZSEMail.dll
+#	modified:   w/bin/ZSIMPDIR.DLL
+#	modified:   w/bin/ZWINSOCK.DLL
+#	modified:   w/bin/ZdCtl.dll
+#	modified:   w/bin/kzoejava.dll
+#	modified:   w/bin/kzrpsrco.dll
+#	modified:   w/bin/sys/ACCOUNT.XOD
+#	modified:   w/bin/sys/KZAPPLOO.XOD
+#	modified:   w/bin/sys/KZDBHQUA.XOD
+#	modified:   w/bin/sys/KZDBHWOB.XOD
+#	modified:   w/bin/sys/KZFXFERO.XOD
+#	modified:   w/bin/sys/KZGKHWOB.XOD
+#	modified:   w/bin/sys/KZHKEYSO.XOD
+#	modified:   w/bin/sys/KZHKEYXO.XOD
+#	modified:   w/bin/sys/KZMSGQOO.XOD
+#	modified:   w/bin/sys/KZPEXVOO.XOD
+#	modified:   w/bin/sys/KZRESTRC.XOD
+#	modified:   w/bin/sys/KZRestResponse.XOD
+#	modified:   w/bin/sys/KZSIRRPO.XOD
+#	modified:   w/bin/sys/KZSIXSKO.XOD
+#	modified:   w/bin/sys/KZTRACEO.XOD
+#	modified:   w/bin/sys/KZTRANWO.XOD
+#	modified:   w/bin/sys/KZWDLGXO.XOD
+#	modified:   w/bin/sys/KZXMLPGO.XOD
+#	modified:   w/bin/sys/KZXRA.XOD
+#	modified:   w/bin/sys/KZZDR.XOD
+#	modified:   w/bin/sys/TZADCSDO.XOD
+#	modified:   w/bin/sys/TZADCWKO.XOD
+#	modified:   w/bin/sys/TZADWKLO.XOD
+#	modified:   w/bin/sys/TZADWWKO.XOD
+#	modified:   w/bin/sys/TZBMPATH.XOD
+#	modified:   w/bin/sys/TZBRAU2O.XOD
+#	modified:   w/bin/sys/TZBRAU3O.XOD
+#	modified:   w/bin/sys/TZBRAUDO.XOD
+#	modified:   w/bin/sys/TZBRDMAO.XOD
+#	modified:   w/bin/sys/TZBRENTO.XOD
+#	modified:   w/bin/sys/TZBRERDO.XOD
+#	modified:   w/bin/sys/TZBRERLO.XOD
+#	modified:   w/bin/sys/TZBRLIAO.XOD
+#	modified:   w/bin/sys/TZBRLOAO.XOD
+#	modified:   w/bin/sys/TZBRLOEO.XOD
+#	modified:   w/bin/sys/TZBRLOVO.XOD
+#	modified:   w/bin/sys/TZBRRELO.XOD
+#	modified:   w/bin/sys/TZCMAUDO.XOD
+#	modified:   w/bin/sys/TZCMAVLO.XOD
+#	modified:   w/bin/sys/TZCMCOML.XOD
+#	modified:   w/bin/sys/TZCMCOMP.XOD
+#	modified:   w/bin/sys/TZCMCPL.XOD
+#	modified:   w/bin/sys/TZCMCPLR.XOD
+#	modified:   w/bin/sys/TZCMCPRO.XOD
+#	modified:   w/bin/sys/TZCMCRWO.XOD
+#	modified:   w/bin/sys/TZCMCUSR.XOD
+#	modified:   w/bin/sys/TZCMENQO.XOD
+#	modified:   w/bin/sys/TZCMFILE.XOD
+#	modified:   w/bin/sys/TZCMFILO.XOD
+#	modified:   w/bin/sys/TZCMHDWO.XOD
+#	modified:   w/bin/sys/TZCMLP2O.XPG
+#	modified:   w/bin/sys/TZCMLPLO.XOD
+#	modified:   w/bin/sys/TZCMLPLR.XOD
+#	modified:   w/bin/sys/TZCMQCPO.XOD
+#	modified:   w/bin/sys/TZCMQSYO.XOD
+#	modified:   w/bin/sys/TZCMRCRO.XOD
+#	modified:   w/bin/sys/TZCMRE2O.XOD
+#	modified:   w/bin/sys/TZCMREFL.XOD
+#	modified:   w/bin/sys/TZCMREFO.XOD
+#	modified:   w/bin/sys/TZCMREPO.XOD
+#	modified:   w/bin/sys/TZCMREUS.XOD
+#	modified:   w/bin/sys/TZCMREVO.XOD
+#	modified:   w/bin/sys/TZCMRPTO.XOD
+#	modified:   w/bin/sys/TZCMULWO.XOD
+#	modified:   w/bin/sys/TZCMUSER.XOD
+#	modified:   w/bin/sys/TZCMWIPO.XOD
+#	modified:   w/bin/sys/TZCMWKSO.XOD
+#	modified:   w/bin/sys/TZCMWKUS.XOD
+#	modified:   w/bin/sys/TZCMWULO.XOD
+#	modified:   w/bin/sys/TZCMZKEY.XOD
+#	modified:   w/bin/sys/TZCTRWKO.XOD
+#	modified:   w/bin/sys/TZDBHDBO.XOD
+#	modified:   w/bin/sys/TZDBHODO.XOD
+#	modified:   w/bin/sys/TZDBHTSO.XOD
+#	modified:   w/bin/sys/TZDGSRCO.XOD
+#	modified:   w/bin/sys/TZDMXGPO.XOD
+#	modified:   w/bin/sys/TZEDWDEL.XOD
+#	modified:   w/bin/sys/TZEDWRKO.XOD
+#	modified:   w/bin/sys/TZERADWE.XOD
+#	modified:   w/bin/sys/TZERADWO.XOD
+#	modified:   w/bin/sys/TZERATLO.XOD
+#	modified:   w/bin/sys/TZEREMDO.XOD
+#	modified:   w/bin/sys/TZEREMXO.XOD
+#	modified:   w/bin/sys/TZERENTO.XOD
+#	modified:   w/bin/sys/TZERPOSO.XOD
+#	modified:   w/bin/sys/TZERQBDO.XOD
+#	modified:   w/bin/sys/TZERRLLO.XOD
+#	modified:   w/bin/sys/TZERROR.XOD
+#	modified:   w/bin/sys/TZERRPTO.XOD
+#	modified:   w/bin/sys/TZERSAPO.XOD
+#	modified:   w/bin/sys/TZERSASO.XOD
+#	modified:   w/bin/sys/TZFLOW.XOD
+#	modified:   w/bin/sys/TZHLPCXO.XOD
+#	modified:   w/bin/sys/TZMSDGPO.XOD
+#	modified:   w/bin/sys/TZOBOIOO.XOD
+#	modified:   w/bin/sys/TZOBRWOO.XOD
+#	modified:   w/bin/sys/TZOGSRCO.XOD
+#	modified:   w/bin/sys/TZOLOBWK.XOD
+#	modified:   w/bin/sys/TZOLOBWO.XOD
+#	modified:   w/bin/sys/TZOPGRPO.XOD
+#	modified:   w/bin/sys/TZOPHDRO.XOD
+#	modified:   w/bin/sys/TZOPLSWO.XOD
+#	modified:   w/bin/sys/TZOPRUSO.XOD
+#	modified:   w/bin/sys/TZOPSIGO.XOD
+#	modified:   w/bin/sys/TZPEAXWO.XOD
+#	modified:   w/bin/sys/TZPESRCO.XOD
+#	modified:   w/bin/sys/TZPEWRKO.XOD
+#	modified:   w/bin/sys/TZPNCTWO.XOD
+#	modified:   w/bin/sys/TZPNEVWO.XOD
+#	modified:   w/bin/sys/TZPNMAPP.XOD
+#	modified:   w/bin/sys/TZPNOPWO.XOD
+#	modified:   w/bin/sys/TZPNTBAR.XOD
+#	modified:   w/bin/sys/TZPNTROO.XOD
+#	modified:   w/bin/sys/TZREPOWK.XOD
+#	modified:   w/bin/sys/TZRPRDTO.XOD
+#	modified:   w/bin/sys/TZRPSRCO.XOD
+#	modified:   w/bin/sys/TZSAPERR.XOD
+#	modified:   w/bin/sys/TZSAPRS.XOD
+#	modified:   w/bin/sys/TZSAVEAS.XOD
+#	modified:   w/bin/sys/TZSIDEWK.XOD
+#	modified:   w/bin/sys/TZSIIMLO.XOD
+#	modified:   w/bin/sys/TZSIIMWK.XOD
+#	modified:   w/bin/sys/TZSIWK1O.XOD
+#	modified:   w/bin/sys/TZTEDBLO.XOD
+#	modified:   w/bin/sys/TZTEERR.XOD
+#	modified:   w/bin/sys/TZTEMPMO.XOD
+#	modified:   w/bin/sys/TZTENVRO.XOD
+#	modified:   w/bin/sys/TZTENVTO.XOD
+#	modified:   w/bin/sys/TZTEUPDD.XWD
+#	modified:   w/bin/sys/TZTEWRKO.XOD
+#	modified:   w/bin/sys/TZUVIMPO.XOD
+#	modified:   w/bin/sys/TZVMEROO.XOD
+#	modified:   w/bin/sys/TZVSEXPO.XOD
+#	modified:   w/bin/sys/TZVSINIT.XOD
+#	modified:   w/bin/sys/TZVSPOOO.XOD
+#	modified:   w/bin/sys/TZVSRTOO.XOD
+#	modified:   w/bin/sys/TZVSXCOO.XOD
+#	modified:   w/bin/sys/TZWDGRWO.XOD
+#	modified:   w/bin/sys/TZWDLCVO.XOD
+#	modified:   w/bin/sys/TZWDLGSO.XOD
+#	modified:   w/bin/sys/TZWDVORO.XOD
+#	modified:   w/bin/sys/TZXSLTSO.XOD
+#	modified:   w/bin/sys/TZZOHDGO.XOD
+#	modified:   w/bin/sys/TZZOLODD.XWD
+#	modified:   w/bin/sys/TZZOLODO.XOD
+#	modified:   w/bin/sys/TZZOTYPO.XOD
+#	modified:   w/bin/sys/TZZOVEAO.XOD
+#	modified:   w/bin/sys/TZZOWK1O.XOD
+#	modified:   w/bin/sys/TZZOXODO.XOD
+#	modified:   w/bin/sys/TZ__PRFO.XOD
+#	modified:   w/bin/sys/Zeidon.XLP
+#	modified:   w/bin/sys/tzedfrmd.xwd
+#	modified:   w/bin/sys/tzeremdd.xwd
+#	modified:   w/bin/sys/zeidon.xdm
+#	modified:   w/bin/truegrid.dll
+#	modified:   w/bin/tzadcdod.dll
+#	modified:   w/bin/tzadwdod.dll
+#	modified:   w/bin/tzapdmaa.dll
+#	modified:   w/bin/tzaxcfgd.dll
+#	modified:   w/bin/tzbrau2o.dll
+#	modified:   w/bin/tzbraudo.dll
+#	modified:   w/bin/tzbrentd.dll
+#	modified:   w/bin/tzcmcpld.dll
+#	modified:   w/bin/tzcmlpld.dll
+#	modified:   w/bin/tzcmlpmd.dll
+#	modified:   w/bin/tzcmrevd.dll
+#	modified:   w/bin/tzcmrptd.dll
+#	modified:   w/bin/tzcmslpd.dll
+#	modified:   w/bin/tzdbhtsd.dll
+#	modified:   w/bin/tzdmupdd.dll
+#	modified:   w/bin/tzedcmpd.dll
+#	modified:   w/bin/tzedfrmd.dll
+#	modified:   w/bin/tzedvmld.dll
+#	modified:   w/bin/tzeremdd.dll
+#	modified:   w/bin/tzhkeyad.dll
+#	modified:   w/bin/tzlodopr.dll
+#	modified:   w/bin/tzobrwad.dll
+#	modified:   w/bin/tzophdrd.dll
+#	modified:   w/bin/tzoprusd.dll
+#	modified:   w/bin/tzopsigd.dll
+#	modified:   w/bin/tzopupdd.dll
+#	modified:   w/bin/tzpeupdd.dll
+#	modified:   w/bin/tzpnctad.dll
+#	modified:   w/bin/tzpnctld.dll
+#	modified:   w/bin/tzpncwdd.dll
+#	modified:   w/bin/tzpnolad.dll
+#	modified:   w/bin/tzpntbad.dll
+#	modified:   w/bin/tzpntrad.dll
+#	modified:   w/bin/tzpnupgd.dll
+#	modified:   w/bin/tzrepoad.dll
+#	modified:   w/bin/tzrpupdd.dll
+#	modified:   w/bin/tztedbld.dll
+#	modified:   w/bin/tzteupdd.dll
+#	modified:   w/bin/tzvmledt.dll
+#	modified:   w/bin/tzvmlip.dll
+#	modified:   w/bin/tzvmlopr.dll
+#	modified:   w/bin/tzvmpopr.dll
+#	modified:   w/bin/tzvsdbad.dll
+#	modified:   w/bin/tzvsxcad.dll
+#	modified:   w/bin/tzwdgrwd.dll
+#	modified:   w/bin/tzwdvord.dll
+#	modified:   w/bin/tzweb.dll
+#	modified:   w/bin/tzxsltdd.dll
+#	modified:   w/bin/tzzmaind.dll
+#	modified:   w/bin/tzzolodd.dll
+#	modified:   w/bin/tzzolodq.dll
+#	deleted:    w/libr/JpegLib.lib
+#	deleted:    w/libr/KZOENGAA.LIB
+#	deleted:    w/libr/TzAxCtl.lib
+#	deleted:    w/libr/TzCtl.lib
+#	deleted:    w/libr/Z2MP.lib
+#	deleted:    w/libr/ZDrApp.lib
+#	deleted:    w/libr/ZSEMail.lib
+#	deleted:    w/libr/ZdCtl.lib
+#	deleted:    w/libr/kzoejava.lib
+#	deleted:    w/libr/kzrpsrco.lib
+#	deleted:    w/libr/tzvmlip.lib
+#	deleted:    w/libz/expat/xmlparse.lib
+#	deleted:    w/libz/htmlhelp.lib
+#	deleted:    w/libz/kzmsgqaa.lib
+#	deleted:    w/libz/see32.lib
+#	deleted:    w/oe/KZHGENKY.asm
+#	deleted:    w/oe/KZHSQLGA.asm
+#	deleted:    w/oe/KZHSQLXA.asm
+#	deleted:    w/oe/KZHSQLXB.asm
+#	deleted:    w/oe/KZOEAPAA.asm
+#	deleted:    w/oe/KZOEATAA.asm
+#	deleted:    w/oe/KZOECLNT.asm
+#	deleted:    w/oe/KZOECMAA.asm
+#	deleted:    w/oe/KZOEDBGA.asm
+#	deleted:    w/oe/KZOEDECA.asm
+#	deleted:    w/oe/KZOEDMAA.asm
+#	deleted:    w/oe/KZOEEIAA.asm
+#	deleted:    w/oe/KZOEERAA.asm
+#	deleted:    w/oe/KZOEMIAA.asm
+#	deleted:    w/oe/KZOEMMAA.asm
+#	deleted:    w/oe/KZOEMQAA.asm
+#	deleted:    w/oe/KZOENETA.asm
+#	deleted:    w/oe/KZOENGWA.asm
+#	deleted:    w/oe/KZOEODAA.asm
+#	deleted:    w/oe/KZOEOIAA.asm
+#	deleted:    w/oe/KZOESOAA.asm
+#	deleted:    w/oe/KZOESYAA.asm
+#	deleted:    w/oe/KZOETMAA.asm
+#	deleted:    w/oe/KZOETRAA.asm
+#	deleted:    w/oe/KZOETSAA.asm
+#	deleted:    w/oe/KZOEUFAA.asm
+#	deleted:    w/oe/KZOEVLAA.asm
+#	deleted:    w/oe/KZOEVMAA.asm
+#	deleted:    w/oe/KZOEXMLA.asm
+#	deleted:    w/oe/KZSCHEDT.asm
+#	deleted:    w/oe/KZWDLGXO.asm
+#	deleted:    w/oe/METERSEC.asm
+#	deleted:    w/oe/ZSIMPDIR.asm
+#	deleted:    w/oe/ZWINSOCK.asm
+#
+# Untracked files:
+#	a/tz/TZBLDXOD.c
+#	a/tz/TZBLDXOD.mak
+#	a/tz/ax/msdbgrid/msdbgrid.dfb
+#	a/tz/ax/truegrid/truegrid.dfb
+#	a/tz/ax/tzaxctl/tzaxctl.dfb
+#	tzweb.dll
+#	w/bin/KZOEDBGA.DLL~HEAD
+#	w/ms/kzmsgqaa.dfb
+#	w/tz/account.dfb
+#	w/tz/account.mak
+#	w/tz/kzrpsrco.dfb
+#	w/tz/kzrpsrco.mak
+#	w/tz/kzsirrep.dfb
+#	w/tz/kzsirrep.mak
+#	w/tz/tzadcdod.dfb
+#	w/tz/tzadcdod.mak
+#	w/tz/tzadwdod.dfb
+#	w/tz/tzadwdod.mak
+#	w/tz/tzadwexp.dfb
+#	w/tz/tzadwexp.mak
+#	w/tz/tzapdmaa.dfb
+#	w/tz/tzapdmaa.mak
+#	w/tz/tzaxcfgd.dfb
+#	w/tz/tzaxcfgd.mak
+#	w/tz/tzbmupdd.dfb
+#	w/tz/tzbmupdd.mak
+#	w/tz/tzbrau2o.dfb
+#	w/tz/tzbrau2o.mak
+#	w/tz/tzbraudo.dfb
+#	w/tz/tzbraudo.mak
+#	w/tz/tzbrentd.dfb
+#	w/tz/tzbrentd.mak
+#	w/tz/tzcm_opr.dfb
+#	w/tz/tzcmcpld.dfb
+#	w/tz/tzcmcpld.mak
+#	w/tz/tzcmlpld.dfb
+#	w/tz/tzcmlpmd.dfb
+#	w/tz/tzcmlpmd.mak
+#	w/tz/tzcmqcpo.dfb
+#	w/tz/tzcmqcpo.mak
+#	w/tz/tzcmrevd.dfb
+#	w/tz/tzcmrevd.mak
+#	w/tz/tzcmrptd.dfb
+#	w/tz/tzcmrptd.mak
+#	w/tz/tzcmslpd.dfb
+#	w/tz/tzcmslpd.mak
+#	w/tz/tzdbhtsd.dfb
+#	w/tz/tzdbhtsd.mak
+#	w/tz/tzdmupdd.dfb
+#	w/tz/tzdmupdd.mak
+#	w/tz/tzedcmpd.dfb
+#	w/tz/tzedcmpd.mak
+#	w/tz/tzedfrmd.dfb
+#	w/tz/tzedfrmd.mak
+#	w/tz/tzedvmld.mak
+#	w/tz/tzeremdd.dfb
+#	w/tz/tzeremdd.mak
+#	w/tz/tzerrord.dfb
+#	w/tz/tzerrord.mak
+#	w/tz/tzhkeyad.dfb
+#	w/tz/tzhkeyad.mak
+#	w/tz/tzlodopr.dfb
+#	w/tz/tzlodopr.mak
+#	w/tz/tzobrwad.dfb
+#	w/tz/tzobrwad.mak
+#	w/tz/tzophdrd.dfb
+#	w/tz/tzophdrd.mak
+#	w/tz/tzoprusd.dfb
+#	w/tz/tzoprusd.mak
+#	w/tz/tzopsigd.dfb
+#	w/tz/tzopsigd.mak
+#	w/tz/tzopupdd.dfb
+#	w/tz/tzopupdd.mak
+#	w/tz/tzpeupdd.dfb
+#	w/tz/tzpeupdd.mak
+#	w/tz/tzpnctad.dfb
+#	w/tz/tzpnctad.mak
+#	w/tz/tzpnctld.dfb
+#	w/tz/tzpnctld.mak
+#	w/tz/tzpncwdd.dfb
+#	w/tz/tzpncwdd.mak
+#	w/tz/tzpnolad.dfb
+#	w/tz/tzpnolad.mak
+#	w/tz/tzpntbad.dfb
+#	w/tz/tzpntbad.mak
+#	w/tz/tzpntrad.dfb
+#	w/tz/tzpntrad.mak
+#	w/tz/tzpnupgd.dfb
+#	w/tz/tzpnupgd.mak
+#	w/tz/tzrepoad.dfb
+#	w/tz/tzrepoad.mak
+#	w/tz/tzrpupdd.dfb
+#	w/tz/tzrpupdd.mak
+#	w/tz/tzsiimpd.dfb
+#	w/tz/tzsiimpd.mak
+#	w/tz/tzstarto.dfb
+#	w/tz/tztedbld.dfb
+#	w/tz/tztedbld.mak
+#	w/tz/tzteupdd.dfb
+#	w/tz/tzteupdd.mak
+#	w/tz/tzvmlip.dfb
+#	w/tz/tzvmlip.mak
+#	w/tz/tzvmlopr.dfb
+#	w/tz/tzvmlopr.mak
+#	w/tz/tzvmpopr.dfb
+#	w/tz/tzvmpopr.mak
+#	w/tz/tzvsdbad.dfb
+#	w/tz/tzvsdbad.mak
+#	w/tz/tzvsxcad.dfb
+#	w/tz/tzvsxcad.mak
+#	w/tz/tzwdgrwd.dfb
+#	w/tz/tzwdgrwd.mak
+#	w/tz/tzwdvord.dfb
+#	w/tz/tzwdvord.mak
+#	w/tz/tzweb.dfb
+#	w/tz/tzweb.mak
+#	w/tz/tzxsltdd.DFB
+#	w/tz/tzxsltdd.MAK
+#	w/tz/tzzmaind.dfb
+#	w/tz/tzzmaind.mak
+#	w/tz/tzzolodd.dfb
+#	w/tz/tzzolodd.mak
+#	w/tz/tzzolodq.dfb
+#	w/tz/tzzolodq.mak
+#	w/tz/waccount.dfb
+#	w/tz/waccount.mak
+#	w/tz/zglobal1.dfb
+#
+
