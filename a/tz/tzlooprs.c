@@ -2036,21 +2036,25 @@ fnCreateDEF_IBMC20( zVIEW         lpTaskView,
    zLONG hDEF = -1;
    zPCHAR pchGroup;
    zCHAR szFileName[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR szFileName2[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR szMetaFileName[ zMAX_FILESPEC_LTH + 1 ];
    zPCHAR pchDFBLine;
    zSHORT nMetaLth;
    zSHORT nRC;
    zVIEW vMeta;
 
-   zstrcpy( szMetaFileName, pcd->pszMetaSrcDir );
+   zstrcpy( szFileName2, pcd->pszMetaSrcDir );
+   SysConvertEnvironmentString( szMetaFileName, szFileName2 );
    zstrcat( szMetaFileName, "\\" );
    nMetaLth = zstrlen( szMetaFileName );
 
-   zsprintf( szFileName, "%s\\%s.DFB", pcd->pszEnvironmentDir, pchTargetName );
+   zsprintf( szFileName2, "%s\\%s.DFB", pcd->pszEnvironmentDir, pchTargetName );
+   SysConvertEnvironmentString( szFileName, szFileName2 );
    hDFB = SysOpenFile( lpTaskView, szFileName, COREFILE_READ );
    if ( hDFB != -1 )
    {
-      zsprintf( szFileName, "%s\\%s.DEF", pcd->pszEnvironmentDir, pchTargetName );
+      zsprintf( szFileName2, "%s\\%s.DEF", pcd->pszEnvironmentDir, pchTargetName );
+      SysConvertEnvironmentString( szFileName, szFileName2 );
       hDEF = SysOpenFile( lpTaskView, szFileName, COREFILE_WRITE );
       if ( hDEF != -1 )
       {
@@ -2113,7 +2117,7 @@ fnCreateDEF_IBMC20( zVIEW         lpTaskView,
                   zCHAR szDLLUpper[ 9 ];
 
                   // Activate the global op group.
-                  zstrcpy( &szMetaFileName[nMetaLth], pchGroup);
+                  zstrcpy( szMetaFileName + nMetaLth, pchGroup);
                   zstrcat( szMetaFileName, ".POG" );
                   ActivateOI_FromFile( &vMeta, "TZOGSRCO", vTaskLPLR,
                                        szMetaFileName, zSINGLE );
@@ -2210,11 +2214,9 @@ fnCreateDEF_IBMC20( zVIEW         lpTaskView,
                                  vTaskLPLR, szMetaFileName, zSINGLE );
 
             // For each meta: go through all source files
-            for ( nRC = SetCursorFirstEntity( vMeta, pchSourceFileEntityName,
-                                              0 );
+            for ( nRC = SetCursorFirstEntity( vMeta, pchSourceFileEntityName, 0 );
                   nRC >= zCURSOR_SET;
-                  nRC = SetCursorNextEntity( vMeta, pchSourceFileEntityName,
-                                             0 ) )
+                  nRC = SetCursorNextEntity( vMeta, pchSourceFileEntityName, 0 ) )
             {
               // For each source file: get the operations
               OrderEntityForView( vMeta, pchOpEntityName, "Name A" );
@@ -2227,19 +2229,16 @@ fnCreateDEF_IBMC20( zVIEW         lpTaskView,
                  zCHAR szOpNameUpper[ 33 ];
 
                  // look for operation type
-                 GetAddrForAttribute( &pchOpType, vMeta,
-                                      pchOpEntityName, "Type" );
+                 GetAddrForAttribute( &pchOpType, vMeta, pchOpEntityName, "Type" );
 
                  // if no local operation
                  if ( *pchOpType != 'L' )
                  {
                    // build export entry
-                   GetAddrForAttribute( &pchOpName, vMeta,
-                                        pchOpEntityName, "Name" );
+                   GetAddrForAttribute( &pchOpName, vMeta, pchOpEntityName, "Name" );
                    zstrcpy( szOpNameUpper, pchOpName );
                    SysTranslateString( szOpNameUpper, 'U' );
-                   zsprintf( pchLine, "   %-32s=%s", pchOpName,
-                             szOpNameUpper );
+                   zsprintf( pchLine, "   %-32s=%s", pchOpName, szOpNameUpper );
                    SysWriteLine( lpTaskView, hDEF, pchLine );
                  }
               } // for each pchOpEntityName...
@@ -2392,12 +2391,14 @@ fnCreateRC( zPCHAR        pchTargetName,
    zLONG  hIn;
    zLONG  hOut;
    zCHAR  szFileName[ 2 * zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szFileName2[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szFileNameTemp[ 2 * zMAX_FILESPEC_LTH + 1 ];
    zPCHAR pchRC;
    zSHORT nRC = 0;
 
    // Is there an old RC file?
-   zsprintf( szFileName, "%s\\%s.RC", pcd->pszEnvironmentDir, pchTargetName );
+   zsprintf( szFileName2, "%s\\%s.RC", pcd->pszEnvironmentDir, pchTargetName );
+   SysConvertEnvironmentString( szFileName, szFileName2 );
    hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_EXIST );
    if ( hFile == -1 )
    {
@@ -2434,7 +2435,8 @@ fnCreateRC( zPCHAR        pchTargetName,
       // the compile from unnecessarily linking.
 
       // create new RC as temp file
-      zsprintf( szFileNameTemp, "%s\\%s.RC~", pcd->pszEnvironmentDir, pchTargetName );
+      zsprintf( szFileName2, "%s\\%s.RC~", pcd->pszEnvironmentDir, pchTargetName );
+      SysConvertEnvironmentString( szFileNameTemp, szFileName2 );
       hOut = SysOpenFile( vTaskLPLR, szFileNameTemp, COREFILE_WRITE );
       if ( hOut == -1 )
       {
@@ -2664,7 +2666,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
    zCHAR  szEnvironmentDir[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szTargetDir[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szObjString[ zMAX_FILESPEC_LTH + 1 ];
-
+   zCHAR  szMsg[ 900 ];
    //
    // The following directories don't have a default and must be specified.
    //
@@ -2676,7 +2678,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
    //
    // The following directories default to PgmSrcDir
    //
-   /* Object/Libraries directory incl. support of relative paths */
+   // Object/Libraries directory incl. support of relative paths
    GetAddrForAttribute( &cdir.pszTargetObjectDir, vTaskLPLR, "Compiler", "TargetObjectDir" );
    if ( cdir.pszTargetObjectDir == 0 || *cdir.pszTargetObjectDir == 0 )
       cdir.pszTargetObjectDir = cdir.pszPgmSrcDir;
@@ -2698,7 +2700,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
       goto EndOfFunction;
    }
 
-   /* MakefileDir incl. support of relative pathes */
+   // MakefileDir incl. support of relative paths
    GetAddrForAttribute( &cdir.pszMakefileDir, vTaskLPLR, "Compiler", "MakefileDir" );
    if ( cdir.pszMakefileDir == 0 || *cdir.pszMakefileDir == 0 )
       cdir.pszMakefileDir = cdir.pszPgmSrcDir;
@@ -2717,7 +2719,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
    if ( !VerifyDir( vTaskLPLR, cdir.pszMakefileDir, "Makefile Directory", TRUE ) )
       goto EndOfFunction;
 
-   /* Resource-Dir incl. support of relative pathes */
+   // Resource-Dir incl. support of relative paths
    GetAddrForAttribute( &cdir.pszEnvironmentDir, vTaskLPLR, "Compiler", "EnvironmentDir" );
    if ( cdir.pszEnvironmentDir == 0 || *cdir.pszEnvironmentDir == 0 )
       cdir.pszEnvironmentDir = cdir.pszPgmSrcDir;
@@ -2737,7 +2739,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
    //
    // The following directories default to ExecDir
    //
-   /* Target (Executable) Directory incl. relative pathes */
+   // Target (Executable) Directory incl. relative paths
    GetAddrForAttribute( &cdir.pszTargetExecutableDir, vTaskLPLR, "Compiler", "TargetExecutableDir" );
    if ( cdir.pszTargetExecutableDir == 0 || *cdir.pszTargetExecutableDir == 0 )
       cdir.pszTargetExecutableDir = cdir.pszExecDir;
@@ -2791,7 +2793,8 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
    // process to dynamically create a .DEF file.
    //
    //=======================================================================
-   zsprintf( szFileName, "%s\\%s.DFB", cdir.pszEnvironmentDir, pchTargetName );
+   zsprintf( szFileName2, "%s\\%s.DFB", cdir.pszEnvironmentDir, pchTargetName );
+   SysConvertEnvironmentString( szFileName, szFileName2 );
    hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_EXIST );
    if ( hFile == -1 )
    {
@@ -2850,7 +2853,8 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
    // Create the makefile.
    //
    //=======================================================================
-   zsprintf( szFileName, "%s\\%s.MAK", cdir.pszMakefileDir, pchTargetName );
+   zsprintf( szFileName2, "%s\\%s.MAK", cdir.pszMakefileDir, pchTargetName );
+   SysConvertEnvironmentString( szFileName, szFileName2 );
    hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_WRITE );
    if ( hFile == -1 )
    {
@@ -2940,8 +2944,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
       zPCHAR pchSourceFileEntityName;
       zVIEW  vMeta;
 
-      GetStringFromAttribute( &szFileName[ nLth ],
-                              vTaskLPLR, "Meta", "Name" );
+      GetStringFromAttribute( &szFileName[ nLth ], vTaskLPLR, "Meta", "Name" );
       GetIntegerFromAttribute( &lType, vTaskLPLR, "Meta", "MetaType" );
 
       switch ( lType )
@@ -2988,7 +2991,6 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
          zstrcat( szObjString, ".OBJ" );
          if ( strstr( pchLine, szObjString ) )
          {
-            zCHAR szMsg[ 900 ];
             zsprintf( szMsg, "Warning: source file '%s' is specified for object "
                       "%s and at least one other LOD.  The make file generation "
                       "will not add a second reference to %s.OBJ for file %s.MAK.  "
@@ -2996,7 +2998,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
                       "recommended, since the addition of operations in one will "
                       "not be reflected in the other.  If one of the LOD is incorrectly "
                       "referencing the source file, please correct the reference.",
-                      pch, &szFileName[ nLth ], pch, pchTargetName );
+                      pch, szFileName + nLth, pch, pchTargetName );
             MessagePrompt( vTaskLPLR, "LO00111", "Zeidon Tools", szMsg, 1,
                           zBUTTONS_OK, zRESPONSE_OK, zICON_INFORMATION );
          }
@@ -3011,10 +3013,10 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
          if ( SetCursorFirstEntity( vMeta, "Operation", NULL ) != zCURSOR_SET )
          {
             zLONG hCFile;
-            zCHAR szMsg[ 200 ];
 
             // Is there a C file?
-            zsprintf( szFileName2, "%s\\%s.C", cdir.pszPgmSrcDir, pch );
+            zsprintf( szMsg, "%s\\%s.C", cdir.pszPgmSrcDir, pch );  // borrow szMsg for a sec
+            SysConvertEnvironmentString( szFileName2, szMsg );
             hCFile = SysOpenFile( vTaskLPLR, szFileName2, COREFILE_EXIST );
             if ( hCFile == -1 )
             {
@@ -3048,7 +3050,8 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
             zPCHAR pchXPG_Name;
             zCHAR  szXPG_FileName[ zMAX_FILESPEC_LTH + 1 ];
 
-            GetStringFromAttribute( szXPG_FileName, vTaskLPLR, "LPLR", "ExecDir" );
+            GetStringFromAttribute( szMsg, vTaskLPLR, "LPLR", "ExecDir" );  // borrow szMsg for a sec
+            SysConvertEnvironmentString( szXPG_FileName, szMsg );
             GetAddrForAttribute( &pchXPG_Name, vMeta, pchSourceFileEntityName, "Name" );
             SysAppendcDirSep( szXPG_FileName );
             zstrcat( szXPG_FileName, pchXPG_Name );
@@ -3132,8 +3135,7 @@ fnCreateMakefileForTarget( zPCHAR pchTargetName,
             nRC >= zCURSOR_SET;
             nRC = SetCursorNextEntity( vTaskLPLR, "ExternalLibFile", 0 ) )
       {
-         GetStringFromAttribute( szFileName2, vTaskLPLR,
-                                 "ExternalLibFile", "Name" );
+         GetStringFromAttribute( szFileName2, vTaskLPLR, "ExternalLibFile", "Name" );
 
          // Extract the Filename without Dirs ...
          _splitpath( szFileName2, 0, 0, szFileName2, 0 );
@@ -3300,6 +3302,7 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
    zCHAR  szFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szLocalDir[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szLine[ 2 * zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szMsg[ zMAX_FILESPEC_LTH + 1  ];
    zLONG  hFile = -1;
    zSHORT nCompilerType;
    zSHORT nRC;
@@ -3320,8 +3323,6 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
         SetCursorFirstEntityByString( vTaskLPLR, "TargetExecutable",
                                       "Name", pchTargetName, 0 ) < zCURSOR_SET )
    {
-      zCHAR szMsg[ 200 ];
-
       zstrcpy( szMsg, "Target Executable is invalid:\n'" );
       zstrcat( szMsg, pchTargetName );
       zstrcat( szMsg, "'" );
@@ -3342,8 +3343,6 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
                                           pchCompilerSpec, 0 );
       if ( nRC < zCURSOR_SET )
       {
-         zCHAR szMsg[ 200 ];
-
          zstrcpy( szMsg, "Invalid name for Compiler Specification:\n'" );
          zstrcat( szMsg, pchCompilerSpec );
          zstrcat( szMsg, "'" );
@@ -3362,10 +3361,8 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
                                         "CurrentCompilerSpec", 0 );
       if ( nRC < zCURSOR_SET )
       {
-         zCHAR szMsg[ 200 ];
-
          zstrcpy( szMsg, "Current Compiler Specification is invalid:\n'" );
-         GetStringFromAttribute( &szMsg[ zstrlen( szMsg ) ],
+         GetStringFromAttribute( szMsg + zstrlen( szMsg ),
                                  vTaskLPLR, "LPLR", "CurrentCompilerSpec" );
          zstrcat( szMsg, "'" );
          MessageSend( vSubtask, "LO00105", "Zeidon Tools",
@@ -3445,7 +3442,8 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
    if ( nCompilerType == zCOMP_TYPE_MSVC15 )
    {
       // create ZMAKE.BAT for windows
-      zsprintf( szFileName, "%s\\ZMAKE.BAT", pchEnvironmentDir );
+      zsprintf( szMsg, "%s\\ZMAKE.BAT", pchEnvironmentDir );
+      SysConvertEnvironmentString( szFileName, szMsg );
       hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_WRITE );
       if ( bBuildAllTargets )
          zsprintf( szLine, "%s\\nmake -nologo -a -f %s\\%s.MAK -k",
@@ -3460,7 +3458,8 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
    else
    {
       // create ZMAKEOS2.BAT for WinOS2
-      zsprintf( szFileName, "%s\\ZMAKEOS2.BAT", pchMakefileDir );
+      zsprintf( szMsg, "%s\\ZMAKEOS2.BAT", pchMakefileDir );
+      SysConvertEnvironmentString( szFileName, szMsg );
       hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_WRITE );
       SysGetLocalDirectory( szLocalDir );
       zsprintf( szLine,
@@ -3470,7 +3469,8 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
       SysCloseFile( vTaskLPLR, hFile, 0 );
 
       // create ZMAKEOS2.CMD for OS/2
-      zsprintf( szFileName, "%s\\ZMAKEOS2.CMD", pchMakefileDir );
+      zsprintf( szMsg, "%s\\ZMAKEOS2.CMD", pchMakefileDir );
+      SysConvertEnvironmentString( szFileName, szMsg );
       hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_WRITE );
       SysWriteLine( vTaskLPLR, hFile, "/*                             */" );
       SysWriteLine( vTaskLPLR, hFile, "/* ZMAKEOS2.CMD                */" );
@@ -3554,7 +3554,7 @@ CreateMakefileForTarget( zPCHAR pchTargetName,
 //
 //
 /////////////////////////////////////////////////////////////////////////////
-//./ END + 4
+//./ END + 7
 zOPER_EXPORT zSHORT OPERATION
 CreateMakefileForAllTargets( zVIEW  vSubtask,
                              zVIEW  vTaskLPLR,
@@ -3572,11 +3572,12 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
    zCHAR  szFileName[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szLocalDir[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szLine[ 2 * zMAX_FILESPEC_LTH + zSHORT_MESSAGE_LTH + 1 ];
+   zCHAR  szBaseDir[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szMsg[ zMAX_FILESPEC_LTH + 1  ];
    zLONG  hFile = -1;
    zSHORT nReturnCode = 1;
    zSHORT nRC = 0;
    zSHORT nCompilerType;
-   zCHAR  szBaseDir[ zMAX_FILESPEC_LTH + 1 ];
 
    if ( vTaskLPLR == 0 )
    {
@@ -3593,8 +3594,6 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
                                           pchCompilerSpec, 0 );
       if ( nRC < zCURSOR_SET )
       {
-         zCHAR szMsg[ 200 ];
-
          zstrcpy( szMsg, "Invalid name for Compiler Specification:\n'" );
          zstrcat( szMsg, pchCompilerSpec );
          zstrcat( szMsg, "'" );
@@ -3613,10 +3612,8 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
                                         "CurrentCompilerSpec", 0 );
       if ( nRC < zCURSOR_SET )
       {
-         zCHAR szMsg[ 200 ];
-
          zstrcpy( szMsg, "Current Compiler Specification is invalid:\n'" );
-         GetStringFromAttribute( &szMsg[ zstrlen( szMsg ) ],
+         GetStringFromAttribute( szMsg + zstrlen( szMsg ),
                                  vTaskLPLR, "LPLR", "CurrentCompilerSpec" );
          zstrcat( szMsg, "'" );
          MessageSend( vSubtask, "LO00105", "Zeidon Tools",
@@ -3682,7 +3679,8 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
    nCompilerType = FindCompilerType( vTaskLPLR );
    if ( nCompilerType == zCOMP_TYPE_MSVC15 )
    {
-      zstrcpy( szFileName, pchEnvironmentDir );
+      zstrcpy( szMsg, pchEnvironmentDir );
+      SysConvertEnvironmentString( szFileName, szMsg );
       SysAppendcDirSep( szFileName );
       zstrcat( szFileName, "ZMAKE.BAT" );
       hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_WRITE );
@@ -3697,14 +3695,10 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
          //BL. 2000.01.19 Don't deselect the entity because the target in the Listbox
          //               is still selected after "Make Target"
          // SetSelectStateOfEntity( vTaskLPLR, "TargetExecutable", 0 );  // Turn off select
-         GetAddrForAttribute( &pchTargetName, vTaskLPLR,
-                              "TargetExecutable", "Name" );
-
+         GetAddrForAttribute( &pchTargetName, vTaskLPLR, "TargetExecutable", "Name" );
          nRC = fnCreateMakefileForTarget( pchTargetName, vSubtask, vTaskLPLR, cpcGenLang );
          if ( nRC == 0 )
          {
-            zCHAR szMsg[ 200 ];
-
             zsprintf( szMsg, "Error creating make file for target '%s'. "
                              "Continuing to build makefiles.",
                       pchTargetName );
@@ -3732,11 +3726,13 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
    else
    {
       // create ZMAKEOS2.BAT for WinOS2
-      zstrcpy( szFileName, pchEnvironmentDir );
+      zstrcpy( szMsg, pchEnvironmentDir );
+      SysConvertEnvironmentString( szFileName, szMsg );
       SysAppendcDirSep( szFileName );
       zstrcat( szFileName, "ZMAKEOS2.BAT" );
       hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_WRITE );
-      SysGetLocalDirectory( szLocalDir );
+      SysGetLocalDirectory( szMsg );
+      SysConvertEnvironmentString( szLocalDir, szMsg );
       zsprintf( szLine,
             "%sHSTART.EXE \"Zeidon Build for OS/2\" /Win /K %s\\ZMAKEOS2.CMD",
             szLocalDir, pchMakefileDir );
@@ -3744,7 +3740,8 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
       SysCloseFile( vTaskLPLR, hFile, 0 );
 
       // create ZMAKEOS2.CMD for OS/2
-      zsprintf( szFileName, "%s\\ZMAKEOS2.CMD", pchMakefileDir );
+      zsprintf( szMsg, "%s\\ZMAKEOS2.CMD", pchMakefileDir );
+      SysConvertEnvironmentString( szFileName, szMsg );
       hFile = SysOpenFile( vTaskLPLR, szFileName, COREFILE_WRITE );
       SysWriteLine( vTaskLPLR, hFile, "/*                             */" );
       SysWriteLine( vTaskLPLR, hFile, "/* ZMAKEOS2.CMD                */" );
@@ -3782,8 +3779,6 @@ CreateMakefileForAllTargets( zVIEW  vSubtask,
          nRC = fnCreateMakefileForTarget( pchTargetName, vSubtask, vTaskLPLR, cpcGenLang );
          if ( nRC == 0 )
          {
-            zCHAR szMsg[ 200 ];
-
             zsprintf( szMsg, "Error creating makefile for target '%s'. "
                              "Continuing to build makefiles.",
                       pchTargetName );
@@ -5378,12 +5373,14 @@ LOD_DialogListActivateMeta( zVIEW  vSubtask,
 {
    zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
    zCHAR  szFullName[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szFileName[ zMAX_FILESPEC_LTH + 1 ];
    HFILE  hFile;
 
    if ( vTaskLPLR == 0 )
       return( -1 );
 
-   GetStringFromAttribute( szFullName, vTaskLPLR, "LPLR", "MetaSrcDir" );
+   GetStringFromAttribute( szFileName, vTaskLPLR, "LPLR", "MetaSrcDir" );
+   SysConvertEnvironmentString( szFullName, szFileName );
    zstrcat( szFullName, "\\" );
    zstrcat( szFullName, pchMetaName );
    zstrcat( szFullName, "." );
@@ -5567,19 +5564,21 @@ VerifyDir( zVIEW  vSubtask,
            zBOOL  bCreate )
 {
    zCHAR     szMsg[ 400 ];
+   zCHAR     szTempPath[ 2 * zMAX_FILESPEC_LTH + 1 ];
    zSHORT    nRC;
 
    // Check to see if dir exists.
-   if ( SysValidDirOrFile( pchDir, TRUE, FALSE,
-                           (zSHORT) (zstrlen( pchDir ) + 1) ) == FALSE )
+   SysConvertEnvironmentString( szTempPath, pchDir );
+   if ( SysValidDirOrFile( szTempPath, TRUE, FALSE,
+                           (zSHORT) (zstrlen( szTempPath ) + 1) ) == FALSE )
    {
-      if ( zstrcmp( pchDir, "" ) == 0 )
+      if ( zstrcmp( szTempPath, "" ) == 0 )
          return( fnDirectoryIsRequiredD( vSubtask, pchControlName, bCreate ));
 
       if ( !bCreate )
       {
          zsprintf( szMsg, "%s '%s' does not exist.\nIgnore error?",
-                  pchControlName, pchDir );
+                   pchControlName, szTempPath );
          if ( MessagePrompt( vSubtask, "ED1003", "Zeidon Compiler",
                              szMsg, TRUE, zBUTTONS_YESNO, zRESPONSE_NO,
                              zICON_QUESTION ) == zRESPONSE_YES )
@@ -5594,7 +5593,7 @@ VerifyDir( zVIEW  vSubtask,
       }
 
       zsprintf( szMsg, "%s '%s' does not exist.\nDo you "
-               "want to create it?", pchControlName, pchDir );
+                "want to create it?", pchControlName, szTempPath );
 
       nRC = MessagePrompt( vSubtask, "ED1002", "Zeidon Compiler",
                            szMsg,
@@ -5614,15 +5613,15 @@ VerifyDir( zVIEW  vSubtask,
       if ( nRC == zRESPONSE_YES )
       {
          // Try to create dir.
-         if ( !SysValidDirOrFile( pchDir, TRUE, TRUE,
-                                  (zSHORT) (zstrlen( pchDir ) + 1) ) )
+         if ( !SysValidDirOrFile( szTempPath, TRUE, TRUE,
+                                  (zSHORT) (zstrlen( szTempPath ) + 1) ) )
          {
             // Couldn't create the dir, so show error and exit.
             SetCtrlState( vSubtask, pchControlName, zCONTROL_STATUS_ERROR, TRUE );
             SetFocusToCtrl( vSubtask, pchControlName );
             SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
             zsprintf( szMsg, "%s '%s' could not be created.",
-                     pchControlName, pchDir );
+                      pchControlName, szTempPath );
             MessagePrompt( vSubtask, "ED1003", "Zeidon Compiler",
                            szMsg, TRUE, zBUTTONS_OK, 0, zICON_STOP );
 
@@ -6268,8 +6267,9 @@ CopyOperationCode( zVIEW   vSubtask,
    SfGetApplicationForSubtask( &lpApp, vSubtask );
    if ( lpApp )
    {
-      zstrcpy( szTgtFile, lpApp->szSourceDir );
-      zstrcpy( szSrcFile, lpApp->szSourceDir );
+      zstrcpy( szTmpFile, lpApp->szSourceDir );
+      SysConvertEnvironmentString( szTgtFile, szTmpFile );
+      zstrcpy( szSrcFile, szTgtFile );
    }
    else
    {

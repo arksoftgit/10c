@@ -6069,6 +6069,16 @@ RetrieveSchema( zVIEW  vDTE, zPVIEW pvDB )
                iColLth = 4;
                break;
 
+            case -6:  // SQL_TINYINT
+               szDataType[ 0 ] = zTYPE_INTEGER;
+               iColLth = 1;
+               break;
+
+            case -5:  // SQL_BIGINT
+               szDataType[ 0 ] = zTYPE_INTEGER;
+               iColLth = 8;
+               break;
+
             case SQL_REAL:
             case SQL_FLOAT:
             case SQL_DOUBLE:

@@ -3143,8 +3143,8 @@ zwTZCMLPLD_SaveLPLR_Desc( zVIEW vSubtask )
    oTZCMLPLO_CommitLPLR( vTZCMLPLO );
    
    // Save the TZCMULWO object, if it's been modified.
-   GetViewByName( &vTZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK );
-   if ( ObjectInstanceUpdatedFromFile( vTZCMULWO ) == 1 )
+   //GetViewByName( &vTZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK );
+   if ( GetViewByName( &vTZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK ) > 0 && ObjectInstanceUpdatedFromFile( vTZCMULWO ) == 1 )
    {
       GetStringFromAttribute( szFileName, vTZCMLPLO, "LPLR", "MetaSrcDir" );
       zstrcat( szFileName, "\\TZCMULWO.POR" );

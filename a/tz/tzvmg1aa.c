@@ -1477,7 +1477,7 @@ GenerateC_LocalVariableList( zVIEW  vSubtask,
          if ( pch == 0 )
             pch = zstrstr( pchOutputString, "lZRetCode" );
 
-         if ( pch == 0 )
+         if ( pch == 0 )  // if you want a return code, specify one ... no automatics dks 2013.03.26
             OutputLine( vSubtask, lfTempCFileHandle, pchOutputString, 0 );
          else
             pchOutputString[ 0 ] = 0;

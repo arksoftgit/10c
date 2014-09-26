@@ -4298,9 +4298,14 @@ CreateMetaEntity( zVIEW  vSubtask,
    // current work stations and LPLR.
    if ( ulMaxZKey < 10000000 )  
    {
-      MessageSend( lpView, "CM00459", "Configuration Management",
-                   "The LPLR MaxZKey value has not been correctly initialized in the TZCMWKS8.POR file (initial value must be at least 10000000). You must abort the current process and fix.",
-                   zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+      zCHAR   szMaxZKey[ 33 ];
+      zCHAR   szMessage[ 256 ];
+      
+      zltoa( (zLONG) ulMaxZKey, szMaxZKey );
+      zstrcpy( szMessage, "The LPLR MaxZKey (" );
+      zstrcat( szMessage, szMaxZKey );
+      zstrcat( szMessage, ") value has not been correctly initialized in the TZCMWKS8.POR file (initial value must be at least 10000000). You must abort the current process and fix." );
+      MessageSend( lpView, "CM00459", "Configuration Management", szMessage, zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
       return( -1 );
    }
 

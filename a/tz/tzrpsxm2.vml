@@ -1918,7 +1918,9 @@ XSLT_GetStyleShape( VIEW vReportDef BASED ON LOD TZRPSRCO,
       lBorder = vReportDef.Control.BorderWidth
       lBorder = lBorder / 2
       SysConvertDecimalToString( lBorder, szBorderWidth, 1 )
-      //SysConvertDecimalToString( DOUBLE /* pDecimal */,      //                           STRING /* ReturnString */,      //                           INTEGER /* nPrecision */ )
+      //SysConvertDecimalToString( DOUBLE /* pDecimal */,
+      //                           STRING /* ReturnString */,
+      //                           INTEGER /* nPrecision */ )
       //zIntegerToString( szBorderWidth, 25, lFontSize )
       //szBorderWidth = vReportDef.Control.BorderWidth 
       
