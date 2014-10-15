@@ -6598,6 +6598,21 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    ZeidonStringCopy( szWriteBuffer, 1, 0, "      }", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+   //:// KJS 10/10/14
+   //:IF vDialog.Window.WEB_UnregisterZeidonWindow = "Y"
+   if ( CompareAttributeToString( vDialog, "Window", "WEB_UnregisterZeidonWindow", "Y" ) == 0 )
+   { 
+      //:szWriteBuffer = "      // Setting strActionToProcess = null because this is an ^Unregister App^ page, if an error occurs on the page, we still unregister."
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      // Setting strActionToProcess = null because this is an ^Unregister App^ page, if an error occurs on the page, we still unregister.", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:szWriteBuffer = "      strActionToProcess = null;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      strActionToProcess = null;", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+   } 
+
+   //:END
    //:szWriteBuffer = "   }"
    ZeidonStringCopy( szWriteBuffer, 1, 0, "   }", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )

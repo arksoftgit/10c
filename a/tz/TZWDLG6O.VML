@@ -4025,6 +4025,13 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "      }"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   // KJS 10/10/14
+   IF vDialog.Window.WEB_UnregisterZeidonWindow = "Y"
+      szWriteBuffer = "      // Setting strActionToProcess = null because this is an ^Unregister App^ page, if an error occurs on the page, we still unregister."
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      strActionToProcess = null;"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
    szWriteBuffer = "   }"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 

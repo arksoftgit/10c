@@ -276,8 +276,20 @@ zwfnSaveOperation( zVIEW vSubtask,
       SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
                               "VML" );
    else
-      SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
-                              "C" );
+   {
+      if ( szLanguageType[ 0 ] == 'S' )
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+                                 "Scala" );
+      else
+      {
+      if ( szLanguageType[ 0 ] == 'J' )
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+                                 "Java" );
+      else
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+                                 "C" );
+      }
+   }
 
    // Since CommitMetaOI modifies position, create a temporary
    // view to be used by that routine.
@@ -1404,8 +1416,20 @@ zwTZOPUPDD_SetExtension( zVIEW vSubtask )
       SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
                               "VML" );
    else
-      SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
-                              "C" );
+   {
+      if ( szLanguageType[ 0 ] == 'S' )
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+                                 "Scala" );
+      else
+      {
+      if ( szLanguageType[ 0 ] == 'J' )
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+                                 "Java" );
+      else
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+                                 "C" );
+      }
+   }
    return( 0 );
 } // zwTZOPUPDD_SetExtension
 

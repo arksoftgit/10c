@@ -376,9 +376,45 @@ oTZZOXODO_SaveXOD( zVIEW vSubtask, zVIEW vTZZOLODO )
    if ( SetCursorFirstEntity( vTZZOLODO, "LOD_ConstraintOper", "" )
                                                            >= zCURSOR_SET )
    {
+      zCHAR  szTempName[ 256 ];
+      zCHAR  szType[ 256 ];
+      zLONG  lLth;
+
       SetAttributeFromAttribute( vTZZOXODO, "OBJECT", "OCEOPER",
                                  vTZZOLODO, "LOD_ConstraintOper",
                                  "C_GeneratedOperationName" );
+
+      // KJS 10/15/14 - Set the SourceFile Name, Extension.
+      SetAttributeFromAttribute( vTZZOXODO, "OBJECT", "OCSRCTYPE", 
+                                 vTZZOLODO, "SourceFileForOCOper", "Extension" );
+
+      GetStringFromAttribute( szType, vTZZOLODO, "SourceFileForOCOper", "Extension" );
+
+      // If the source file is VML or Java, then we want to get the JavaPackageName.
+      if ( vTaskLPLR && ( szType[ 0 ] == 'V' || szType[ 0 ] == 'J' ) )
+      {
+         zPCHAR pchSlash;
+
+         GetStringFromAttribute( szTempName, vTaskLPLR, "LPLR", "JavaPackageName" );
+         while ( (pchSlash = zstrchr( szTempName, '\\' )) != 0 )
+            *pchSlash = '.';
+
+      }
+
+      lLth = zstrlen( szTempName );
+      if ( lLth > 0 )
+         szTempName[ lLth++ ] = '.';
+
+      GetStringFromAttribute( szTempName + lLth, vTZZOLODO, "SourceFileForOCOper", "Name" );
+
+      // We only want the _Object extension, if this is VML that we are converting into java.
+      if ( szType[ 0 ] == 'V' )
+         zstrcat( szTempName, "_Object" );
+
+      SetAttributeFromString( vTZZOXODO, "OBJECT", "OCSRCFILE", szTempName );
+      //                           vTZZOLODO, "SourceFileForOCOper", "Name" );
+
+
       SetAttributeFromAttribute( vTZZOXODO, "OBJECT", "OCACT",
                                  vTZZOLODO, "LOD", "ActivateConstraint" );
       SetAttributeFromAttribute( vTZZOXODO, "OBJECT", "OCACTE",
@@ -748,11 +784,6 @@ ofnTZZOXODO_BldXOD( zVIEW vSubtask, zVIEW vTZZOXODO_Root,
       pszNetwork = pszParadigm = "";
    }
 
-   // Set the SourceFile Extension, if there is a SourceFile for Scala, as the OE needs
-   // to know if it is Scala.
-   if ( SetCursorFirstEntityByString( vTZZOLODO, "SourceFile",
-                                      "Extension", "Scala", 0 ) >= zCURSOR_SET )
-      SetAttributeFromString( vTZZOXODO, "OBJECT", "OCSRCTYPE", "Scala" );
 
    // If network is not null, then set network information.
    if ( *pszNetwork )
@@ -1632,8 +1663,7 @@ zOPER_EXPORT zSHORT OPERATION
 ofnTZZOXODO_BldXODEntity( zVIEW vSubtask, zVIEW vTZZOXODO, zVIEW vTZZOLOD1 )
 {
    zCHAR  szInd[ 2 ];
-   zCHAR  szEntityName[ 33 ];
-   zLONG  lIndentLvl;
+   zCHAR  szEntityName[ 33 ];   zLONG  lIndentLvl;
    zSHORT nRC;
 
    GetStringFromAttribute( szEntityName,
@@ -1785,10 +1815,46 @@ ofnTZZOXODO_BldXODEntity( zVIEW vSubtask, zVIEW vTZZOXODO, zVIEW vTZZOLOD1 )
 
    if ( SetCursorFirstEntity( vTZZOLOD1, "LOD_EntityConstraintOperRec", "" ) >= zCURSOR_SET )
    {
+      zVIEW  vTaskLPLR;
+      zCHAR  szTempName[ 256 ];
+      zCHAR  szType[ 256 ];
+      zLONG  lLth;
+
       SetAttributeFromAttribute( vTZZOXODO, "ENTITY", "ECEOPER",
                                  vTZZOLOD1, "LOD_EntityConstraintOperRec",
                                  "C_GeneratedOperationName" );
-//                               vTZZOLOD1, "LOD_EntityConstraintOperRec", "Name" );
+
+      // KJS 10/15/14 - Add Name and Extension for Entity Constraint.
+      SetAttributeFromAttribute( vTZZOXODO, "ENTITY", "ECESRCTYPE",
+                                 vTZZOLOD1, "SourceFileForECOperRec", "Extension" );
+      GetStringFromAttribute( szType, vTZZOLOD1, "SourceFileForECOperRec", "Extension" );
+      
+      GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+
+      // If the source file is VML or Java, then we want to get the JavaPackageName.
+      if ( vTaskLPLR && ( szType[ 0 ] == 'V' || szType[ 0 ] == 'J' ) )
+      {
+         zPCHAR pchSlash;
+
+         GetStringFromAttribute( szTempName, vTaskLPLR, "LPLR", "JavaPackageName" );
+         while ( (pchSlash = zstrchr( szTempName, '\\' )) != 0 )
+            *pchSlash = '.';
+
+      }
+
+      lLth = zstrlen( szTempName );
+      if ( lLth > 0 )
+         szTempName[ lLth++ ] = '.';
+
+      GetStringFromAttribute( szTempName + lLth, vTZZOLOD1, "SourceFileForECOperRec", "Name" );
+
+      // We only want the _Object extension, if this is VML that we are converting into java.
+      if ( szType[ 0 ] == 'V' )
+         zstrcat( szTempName, "_Object" );
+
+      SetAttributeFromString( vTZZOXODO, "ENTITY", "ECESRCFILE", szTempName );
+      //                           vTZZOLOD1, "SourceFileForECOperRec", "Name" );
+
       SetAttributeFromAttribute( vTZZOXODO, "ENTITY", "ECCR",
                       vTZZOLOD1, "LOD_EntityParent", "CreateConstraint" );
       SetAttributeFromAttribute( vTZZOXODO, "ENTITY", "ECDEL",
@@ -2015,8 +2081,9 @@ ofnTZZOXODO_BldXODAttrib( zVIEW vSubtask, zVIEW vTZZOXODO,
    {
       zVIEW  vTaskLPLR;
       zVIEW  vTemp;
-      zCHAR  szTempName[ 64 ];
-      zCHAR  szType[ 4 ];
+      zCHAR  szTempName[ 256 ];
+      zCHAR  szType[ 256 ];
+      zLONG  lLth;
 
    // MessageSend( vSubtask, "ZO00305", "Operations",
    //              "LOD_AttrDerive", zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
@@ -2024,36 +2091,34 @@ ofnTZZOXODO_BldXODAttrib( zVIEW vSubtask, zVIEW vTZZOXODO,
       SetAttributeFromAttribute( vTZZOXODO, "ATTRIB", "DERIVEDF",
                                  vTZZOLOD1, "LOD_AttrDerivationOperRec",
                                  "C_GeneratedOperationName" );
+      SetAttributeFromAttribute( vTZZOXODO, "ATTRIB", "DRSRCTYPE",
+                                 vTZZOLOD1, "SourceFileForDARec", "Extension" );
 
       // Kelly wanted aDERIVEDF  owWebXfer_dTotalRequestedAmount
       //          and aDERIVEDC  com.quinsoft.zencas.wWebXfer_Object
-      // so here we set DERIVEDC  (without a derived attribute).
       GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+
       GetStringFromAttribute( szType, vTZZOLOD1, "SourceFileForDARec", "Extension" );
-      if ( vTaskLPLR ) // why not for C files as well?  dks 2012.08.01   && szType[ 0 ] == 'V' )
+
+      // If the source file is VML or Java, then we want to get the JavaPackageName.
+      if ( vTaskLPLR && ( szType[ 0 ] == 'V' || szType[ 0 ] == 'J' ) )
       {
          zPCHAR pchSlash;
-         zLONG  lLth;
 
          GetStringFromAttribute( szTempName, vTaskLPLR, "LPLR", "JavaPackageName" );
          while ( (pchSlash = zstrchr( szTempName, '\\' )) != 0 )
             *pchSlash = '.';
 
-         lLth = zstrlen( szTempName );
+      }
+      lLth = zstrlen( szTempName );
+      if ( lLth > 0 )
          szTempName[ lLth++ ] = '.';
-         CreateViewFromViewForTask( &vTemp, vTZZOLOD1, 0 );
-         ResetView( vTemp );
-       // KJS 09/06/13 - There are times, when the derived attribute comes from a different source file so we should
-       // not use the LOD Name, we should use the SourceFileForDARec.
-         //GetStringFromAttribute( szTempName + lLth, vTemp, "LOD", "Name" );
-         GetStringFromAttribute( szTempName + lLth, vTZZOLOD1, "SourceFileForDARec", "Name" );
-         DropView( vTemp );
+
+      GetStringFromAttribute( szTempName + lLth, vTZZOLOD1, "SourceFileForDARec", "Name" );
+
+      // We only want the _Object extension, if this is VML that we are converting into java.
+      if ( szType[ 0 ] == 'V' )
          zstrcat( szTempName, "_Object" );
-      }
-      else
-      {
-         GetStringFromAttribute( szTempName, vTZZOLOD1, "LOD_AttrDerivationOperRec", "Name" );
-      }
 
       SetAttributeFromString( vTZZOXODO, "ATTRIB", "DERIVEDC", szTempName );
    }

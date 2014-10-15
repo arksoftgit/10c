@@ -174,8 +174,8 @@ zCHAR szDebug[ 512 ];
 
 
 #define BUFF_SIZE 256
-#define MAX_TABLENAME_LTH 64
-#define MAX_COLUMNNAME_LTH    64
+#define MAX_TABLENAME_LTH	32
+#define MAX_COLUMNNAME_LTH    	32
 
 
 
@@ -1018,9 +1018,9 @@ ofnTZTENVRO_ImplementRelAs( zPSHORT nRelImplemented,
    // delete the current Rel implementation and continue to next Rel
    if ( bRelImplemented )
    {
-      if ( CompareAttributeToString( vEMD, "ER_Entity", "Purpose",
+      if ( CompareAttributeToString( vEMD, "ER_Entity_2", "Purpose",
                                      "W" ) == 0  ||
-           CompareAttributeToString( vEMD2, "ER_Entity", "Purpose",
+           CompareAttributeToString( vEMD2, "ER_Entity_2", "Purpose",
                                      "W" ) == 0 )
       {
          if ( bRelImplementedAsTablRec )
