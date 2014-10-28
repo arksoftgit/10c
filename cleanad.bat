@@ -32,7 +32,9 @@ qrw ad.rpt /r.RST
 qrw ad.rpt /r.sbr
 qrw ad.rpt /r.tlb
 qrw ad.rpt /r.tmp
+qrw ad.rpt /r.sbr
 qrw ad.rpt /r.sln
+
 qrw ad.rpt /r.tlog
 qrw ad.rpt /r.vcxproj
 qrw ad.rpt /r.xpg
