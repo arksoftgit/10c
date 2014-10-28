@@ -1,3 +1,7 @@
+.cproject
+.project
+*.dep
+*.hnm
 *.1st
 *.bad
 *.bak
@@ -20,11 +24,16 @@
 *.map
 x.bat
 dks.vml
+account.*
 wAccount.*
 dks.bat
 old.bat
 phil*.*
+qc.bat
+qe.bat
+qe.exc
 
+.svn\
 back\
 temp\
 zapp\
@@ -32,6 +41,7 @@ dgc\
 dg\
 dks\
 don\
+java\
 kjs\
 kelly\
 vml\
