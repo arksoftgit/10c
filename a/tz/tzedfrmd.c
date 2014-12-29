@@ -5991,6 +5991,69 @@ GenerateJava( zVIEW vSubtask )
    return( Generate( vSubtask, "Java" ) );
 }
 
+/*************************************************************************************************
+**    
+**    OPERATION: GenerateCompileJava
+**    
+*************************************************************************************************/
+zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
+GenerateCompileJava( zVIEW vSubtask )
+{
+   zVIEW    vLPLR;
+   zSHORT   nRC;
+   zCHAR    szSystemApp[ 65 ] = { 0 }; 
+   zCHAR    szJavaCompileBat[ 256 ] = { 0 }; 
+   zCHAR    szLPLR_Name[ 33 ] = { 0 }; 
+   
+   nRC = Generate( vSubtask, "Java" );
+   
+   if (nRC != 0)
+      return ( nRC );
+   
+   // KJS 08/21/14
+   GetViewByName( &vLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+   GetVariableFromAttribute( szLPLR_Name, 0, 'S', 33, vLPLR, "LPLR", "Name", "", 0 );
+   ZeidonStringCopy( szSystemApp, 1, 0, "[App.", 1, 0, 65 );
+   ZeidonStringConcat( szSystemApp, 1, 0, szLPLR_Name, 1, 0, 65 );
+   ZeidonStringConcat( szSystemApp, 1, 0, "]", 1, 0, 65 );
+   
+   // KJS 08/21/14 - Get JavaCompileBat from the zeidon.ini and run it (currently we are using maven for compile).
+   SysReadZeidonIni( -1, szSystemApp, "JavaCompileBat", szJavaCompileBat );   
+   system( szJavaCompileBat );
+
+   return nRC;
+
+} // GenerateCompileJava
+
+/*************************************************************************************************
+**    
+**    OPERATION: CompileJava
+**    
+*************************************************************************************************/
+zOPER_EXPORT zSHORT /*DIALOG */  OPERATION
+CompileJava( zVIEW vSubtask )
+{
+   zVIEW    vLPLR;
+   zCHAR    szSystemApp[ 65 ] = { 0 }; 
+   zCHAR    szJavaCompileBat[ 256 ] = { 0 }; 
+   zCHAR    szLPLR_Name[ 33 ] = { 0 }; 
+   
+   // KJS 08/21/14
+   GetViewByName( &vLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+   GetVariableFromAttribute( szLPLR_Name, 0, 'S', 33, vLPLR, "LPLR", "Name", "", 0 );
+   ZeidonStringCopy( szSystemApp, 1, 0, "[App.", 1, 0, 65 );
+   ZeidonStringConcat( szSystemApp, 1, 0, szLPLR_Name, 1, 0, 65 );
+   ZeidonStringConcat( szSystemApp, 1, 0, "]", 1, 0, 65 );
+   
+   // KJS 08/21/14 - Get JavaCompileBat from the zeidon.ini and run it (currently we are using maven for compile).
+   SysReadZeidonIni( -1, szSystemApp, "JavaCompileBat", szJavaCompileBat );   
+   system( szJavaCompileBat );
+
+   return 0;
+
+} // CompileJava
+
+
 zOPER_EXPORT zSHORT OPERATION
 zPrint( zVIEW vSubtask )
 {
@@ -7519,6 +7582,7 @@ SetUpdateFlagInMeta( zVIEW vSubtask )
    DropView( vMeta );
    return( nRC );
 }
+
 
 #ifdef __cplusplus
 }
