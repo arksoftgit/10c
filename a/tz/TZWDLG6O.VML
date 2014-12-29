@@ -717,6 +717,7 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    STRING ( 100 )   szJavaPackage
    STRING ( 100 )   szAppImport
    STRING ( 15 )    szIOImport
+   STRING ( 1 )     szJasperImport
    STRING ( 50 )    szTempStr
    STRING ( 1 )     szUploadFile
    STRING ( 1 )     szSideMenuExists
@@ -729,6 +730,8 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    STRING ( 1 )     szNoAutoLogout
    STRING ( 1 )     szKeyRole
    STRING ( 1 )     szZeidonTaskTimeout
+   STRING ( 1 )     szRegisterZeidon
+   STRING ( 1 )     szNoMonitorTaskLogout
    STRING ( 10 )    szTimeout
    STRING ( 10 )    szDOCTYPE
    INTEGER          lActionType
@@ -790,6 +793,7 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    SysReadZeidonIni( -1, szSystemIniApplName, "JSPTraceLevel", szTrace )
    SysReadZeidonIni( -1, szSystemIniApplName, "DOCTYPE", szDOCTYPE )
    SysReadZeidonIni( -1, szSystemIniApplName, "UseZeidonTaskTimeout", szZeidonTaskTimeout )
+   SysReadZeidonIni( -1, szSystemIniApplName, "NoMonitorTaskLogout", szNoMonitorTaskLogout )
    TraceLineS("** TraceLevel ** ", szTrace)
    IF  szTrace = "1"
       lTrace = 1
@@ -896,12 +900,15 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
       // If there is an action to download a file, we need to include "java.oi.*" in the import statement.
       lActionType = vDialogTemp.Action.Type
       IF lActionType = zWAB_ProcessDownloadFile
-         szIOImport = ",java.io.*"
+         szIOImport = "Y"
+      END
+      IF lActionType = zWAB_StartJasperPDF_Page
+         szJasperImport = "Y"
       END
       // If there is an action for the reCAPTCHA control, then we need
       // net.tanesha.recaptcha.* in the import statement
       IF lActionType = 35 OR lActionType = 55
-         szreCAPTCHAImport = ",net.tanesha.recaptcha.*"
+         szreCAPTCHAImport = "Y"
       END
    END
 
@@ -946,6 +953,11 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
 
    IF szreCAPTCHAImport != ""
       szWriteBuffer = "<%@ page import=^net.tanesha.recaptcha.*^ %>"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
+   END
+
+   IF szJasperImport != ""
+      szWriteBuffer = "<%@ page import=^net.sf.jasperreports.engine.JasperExportManager^ %>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    END
 
@@ -1242,6 +1254,7 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   response.sendRedirect( strURL );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      // KJS 09/04/14 - Should we be dropping the task here????
       szWriteBuffer = "   return;"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "}"
@@ -1256,6 +1269,27 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "String taskId = (String) session.getAttribute( ^ZeidonTaskId^ );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   
+   // NoMonitorTaskLogout
+   
+   szRegisterZeidon = ""
+   nRC = zSearchSubString( szFormName, "Login", "f", 0 )
+   IF nRC >= 0  OR vDialog.Window.WEB_RegisterZeidonWindow = "Y" // "wStartUpLogin"
+      szRegisterZeidon = "Y"
+   END
+
+   // I think this is only for if we are registering zeidon on this page...
+   // KJS 09/04/14 - Setting a logout date, to try and determine if a user tries to log into application when they already have a session open.
+   // It looks like users write over data when they have a couple of browser sessions open.
+   /*
+   IF szRegisterZeidon = "Y" AND szNoMonitorTaskLogout = ""
+      szWriteBuffer = "Date dLogin = (Date) session.getAttribute( ^ZeidonTaskLoginDate^ );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "Date dLogout = (Date) session.getAttribute( ^ZeidonTaskLogoutDate^ );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
+   */
+   
    szWriteBuffer = "if ( StringUtils.isBlank( taskId ) )"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "{"
@@ -1265,8 +1299,7 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    // if this window should have the RegisterZeidonApplication in it.  I will keep this code for now
    // but I really think this should be a property for the window.  I have added a checkbox to WND_UPD
    // for this.
-   nRC = zSearchSubString( szFormName, "Login", "f", 0 )
-   IF nRC >= 0  OR vDialog.Window.WEB_RegisterZeidonWindow = "Y" // "wStartUpLogin"
+   IF szRegisterZeidon = "Y" // "wStartUpLogin"
 
       // KJS 04/21/14 - changing from createTask( "lplr", true ) to createTask( "lplr", session.getId())
       szWriteBuffer = "   task = objectEngine.createTask( ^" + vLPLR.LPLR.Name + "^, session.getId() );"
@@ -1292,6 +1325,24 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
 
    END
 
+   /*
+   IF szRegisterZeidon = "Y" AND szNoMonitorTaskLogout = ""
+      szWriteBuffer = "   // We are trying to determine on login, if a user is already logged into the task, and if so, then do not allow them to log in again. "   
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "   if ( dLogin != null && dLogout != null ) "
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "   {"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      strURL = response.encodeRedirectURL( ^loggedintotask.jsp^ );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      response.sendRedirect( strURL );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      return;"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "   }"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
+   */
 
    szWriteBuffer = "}"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -1299,8 +1350,17 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "{"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   task = objectEngine.getTaskById( taskId );"
-   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   IF szRegisterZeidon = "Y" AND szNoMonitorTaskLogout = ""
+      szWriteBuffer = "   strURL = response.encodeRedirectURL( ^loggedintotask.jsp^ );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "   response.sendRedirect( strURL );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "   return;"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   ELSE
+     szWriteBuffer = "   task = objectEngine.getTaskById( taskId );"
+     WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
    szWriteBuffer = "}"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
@@ -1309,6 +1369,8 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    szWriteBuffer = "{"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    //szWriteBuffer = "    strURL = response.encodeRedirectURL( ^Notasklogout.jsp^ );"
+   szWriteBuffer = "   session.setAttribute( ^ZeidonTaskId^, null );"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "    strURL = response.encodeRedirectURL( ^logout.jsp^ );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "    response.sendRedirect( strURL );"
@@ -1743,7 +1805,7 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "      {"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         task.log().info( ^OnUnload UnregisterZeidonApplication: ----------------------------------->>> ^ + ^" + szFormName + "^ );"
+   szWriteBuffer = "         task.log().info( ^OnUnload UnregisterZeidonApplication: ----->>> ^ + ^" + szFormName + "^ );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "         task.dropTask();"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -1751,6 +1813,14 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "         session.setAttribute( ^ZeidonTaskId^, task );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   /*
+   // KJS 09/04/14 - Setting a logout date, to try and determine if a user tries to log into application when they already have a session open.
+   // It looks like users write over data when they have a couple of browser sessions open.
+   szWriteBuffer = "         // Setting a logout date to try and determine if a user tries to log into application when they already have a session open."
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "         session.setAttribute( ^ZeidonTaskLogoutDate^, new java.util.Date() );"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   */
    szWriteBuffer = "      }"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
@@ -1776,7 +1846,7 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "      {"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         task.log().info( ^OnUnload UnregisterZeidonApplication: ----------------------------------->>> ^ + ^" + szFormName + "^ );"
+   szWriteBuffer = "         task.log().info( ^OnUnload UnregisterZeidonApplication: ------->>> ^ + ^" + szFormName + "^ );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "         task.dropTask();"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -1784,6 +1854,14 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "         session.setAttribute( ^ZeidonTaskId^, task );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   /*
+   // KJS 09/04/14 - Setting a logout date, to try and determine if a user tries to log into application when they already have a session open.
+   // It looks like users write over data when they have a couple of browser sessions open.
+   szWriteBuffer = "         // Setting a logout date to try and determine if a user tries to log into application when they already have a session open."
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "         session.setAttribute( ^ZeidonTaskLogoutDate^, new java.util.Date() );"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   */
    szWriteBuffer = "      }"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
@@ -2127,8 +2205,9 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    END
 
-   szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/validations.js^></script>"
-   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   // KJS 09/04/14 - Can't find validations.js anywhere so I am assuming we don't need it.
+   //szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/validations.js^></script>"
+   //WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/scw.js^></script>"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    // KJS 04/27/11 - I am not sure that we want to always include this js file but if not, then I need
@@ -3220,8 +3299,10 @@ DKS_TRACE_END */
                END
             END
 
-            // If this function is for Download File, we want to eliminate the _DisableFormElements statement.
-            IF lActionType != zWAB_ProcessDownloadFile
+            // If this function is for Download File or open Jasper pdf report, we want to eliminate the _DisableFormElements statement.
+            // For both of these we use response.getOutputStream and when we do this, our original jsp page does not get the focus
+            // back and so _DisableFormElements( false ) in _AfterPageLoaded does not get called. The page would be hung.
+            IF lActionType != zWAB_ProcessDownloadFile AND lActionType != zWAB_StartJasperPDF_Page
                szWriteBuffer = "      _DisableFormElements( true );"
                WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
             END
@@ -3944,6 +4025,13 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "      }"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   // KJS 10/10/14
+   IF vDialog.Window.WEB_UnregisterZeidonWindow = "Y"
+      szWriteBuffer = "      // Setting strActionToProcess = null because this is an ^Unregister App^ page, if an error occurs on the page, we still unregister."
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      strActionToProcess = null;"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
    szWriteBuffer = "   }"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
@@ -4404,7 +4492,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   {"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "      task.log().info( ^After building the page UnregisterZeidonApplication: ----------------------------------->>> ^ + ^" + szFormName + "^ );"
+      szWriteBuffer = "      task.log().info( ^After building the page UnregisterZeidonApplication: ------>>> ^ + ^" + szFormName + "^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      task.dropTask();"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -4412,6 +4500,14 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      session.setAttribute( ^ZeidonTaskId^, task );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      /*
+      // KJS 09/04/14 - Setting a logout date, to try and determine if a user tries to log into application when they already have a session open.
+      // It looks like users write over data when they have a couple of browser sessions open.
+      szWriteBuffer = "         // Setting a logout date to try and determine if a user tries to log into application when they already have a session open."
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         session.setAttribute( ^ZeidonTaskLogoutDate^, new java.util.Date() );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      */
       szWriteBuffer = "  }"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
       //szWriteBuffer = "%>"
