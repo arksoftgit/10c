@@ -969,6 +969,12 @@ fnRebuildTables( zVIEW vSubtask,
                // Get the ZKey of the originating ER Attribute.
                lOldZKey = fnFindER_ZKeyForPhysicalKey( vDTE_Old, vDTE_OldTemp );
 
+// KJS 10/16/14 - I get an error here when I rebuild tables/rels for ZENCAS with "Keep Physical" flag set.
+// It's on DOMAINVALUE and the first attribute (TE_FieldDataRel) is DOMAINVALUE_TOKEN which has no
+// ER_Attribute or ER_RelLink. I wouldn't think I would get an error becuase it's SetCursorFirst... 
+// Not exactly sure what to do, so I am putting in this comment.
+
+
                // We have to find the FK in the new TE that matches the old
                // TE in both relationship and originating parent key.
                for ( nRC = SetCursorFirstEntityByAttr( vDTE, "ER_RelLink", "ZKey",
