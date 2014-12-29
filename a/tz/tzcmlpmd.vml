@@ -560,6 +560,10 @@ SelectLPLR( VIEW vSubtask )
    NAME VIEW VOR_LPLR "TargetVOR_LPLR"
    SET CURSOR FIRST VOR_LPLR.W_MetaType WHERE VOR_LPLR.W_MetaType.Type = 2009  // 2009 is the VOR.
 
+   // Reposition work station view on original LPLR so that any ZKeys generated during migration will
+   // be created using the correct next ZKey.
+   SET CURSOR FIRST vCM.LPLR WHERE vCM.LPLR.Name = CurrentLPLR.LPLR.Name 
+
    // Copy the Orig members with Type >= 2000 to Source
    ACTIVATE SourceLPLR EMPTY
    NAME VIEW SourceLPLR "SourceLPLR"
