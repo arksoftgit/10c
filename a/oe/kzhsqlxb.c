@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 //
 // KZHSQLXB.C - SQL DDL generator for all supported databases.
 //
@@ -101,8 +101,8 @@ the brackets for the DDL-command
 
    #define CONTINUATION_STR      ""
    #define LINE_TERMINATOR       ";"
-   #define MAX_TABLENAME_LTH     30
-   #define MAX_COLUMNNAME_LTH    18
+   #define MAX_TABLENAME_LTH     32
+   #define MAX_COLUMNNAME_LTH    32
    #define MAX_DATATYPE_LTH      20
    #define COLUMN_INDENT         10
    #define COMMENT_START         "--"
@@ -693,8 +693,8 @@ the brackets for the DDL-command
 
    #define CONTINUATION_STR      ""
    #define LINE_TERMINATOR       ";"
-   #define MAX_TABLENAME_LTH     30
-   #define MAX_COLUMNNAME_LTH    18
+   #define MAX_TABLENAME_LTH     32
+   #define MAX_COLUMNNAME_LTH    32
    #define MAX_DATATYPE_LTH      20
    #define COLUMN_INDENT         10
    #define COMMENT_START         "/*"
@@ -1282,8 +1282,8 @@ the brackets for the DDL-command
 
    #define CONTINUATION_STR      ""
    #define LINE_TERMINATOR       ";"
-   #define MAX_TABLENAME_LTH     18
-   #define MAX_COLUMNNAME_LTH    18
+   #define MAX_TABLENAME_LTH     32
+   #define MAX_COLUMNNAME_LTH    32
    #define MAX_DATATYPE_LTH      20
    #define COLUMN_INDENT         10
    #define COMMENT_START         "--"
@@ -1442,8 +1442,8 @@ the brackets for the DDL-command
 
    #define CONTINUATION_STR      ""
    #define LINE_TERMINATOR       ""
-   #define MAX_TABLENAME_LTH     30
-   #define MAX_COLUMNNAME_LTH    18
+   #define MAX_TABLENAME_LTH     32
+   #define MAX_COLUMNNAME_LTH    32
    #define MAX_DATATYPE_LTH      20
    #define COLUMN_INDENT         10
    #define COMMENT_START         "/*"
@@ -3729,6 +3729,12 @@ BuildSyncDDL( zVIEW  vDTE,
                zCHAR szEntityName[ zZEIDON_NAME_LTH + 1 ];
 
                bFirstAlterOfTable = FALSE;
+
+			   // KJS 10/16/14 - When I have selected "Keep Physical Characteristics..." for the datasource, and the
+			   // rebuild tables/rels and then "Build Sync DDL", I get to this point and have TE_TablRecs where there
+			   // is no ER_ENTITY. I am not sure why I don't seem to get that when "Keep ..." is not set.
+			   if ( CheckExistenceOfEntity( vDTE, "ER_Entity" ) == zCURSOR_SET )
+			   {
                GetStringFromAttribute( szEntityName, vDTE, "ER_Entity", "Name" );
 
                if ( fnWriteLine( vDTE, f, "" ) < 0 )
@@ -3738,6 +3744,7 @@ BuildSyncDDL( zVIEW  vDTE,
                          COMMENT_START, szEntityName, COMMENT_END );
                if ( fnWriteLine( vDTE, f, szLine ) < 0 )
                   goto EndOfFunction;
+			   }
             }
 
             GetStringFromAttribute( szColumnName, vDTE, "TE_FieldDataRel", "Name" );
@@ -4372,6 +4379,135 @@ fnChangeReservedName( zPCHAR pchName )
    }
 }
 
+
+
+
+//./ ADD NAME=TranslateToUnderscoreCase
+/////////////////////////////////////////////////////////////////////////////
+//
+//   ENTRY:    TranslateToUnderscoreCase
+//
+//   PROTOTYPE:
+//        void OPERATION
+//        TranslateToUnderscoreCase( zPCHAR pchSrc, 
+//                                   zPCHAR pchTarget, 
+//                                   zSHORT targetLth )
+//
+//   PURPOSE:  Converts a string from Camel Casing to underscores.  E.g.:
+//
+//                  ThisIsCamelCase to this_is_camel_case
+//                  ThisIsHTTPCase to this_is_http_case
+//                  ThisIsHTTP to this_is_http
+//                  ThisIsATest to this_is_a_test
+//                  nocamel_case to nocamel_case
+//                  noLeadingUpper to no_leading_upper
+//
+//   RETURNS: 0 or zCALL_ERROR
+//
+//////////////////////////////////////////////////////////////////////////////
+
+//TranslateToUnderscoreCase( zPCHAR pchSrc, zPCHAR pchTarget, zSHORT targetLth )
+zSHORT OPERATION
+TranslateToUnderscoreCase( zPCHAR pchSrc, zPCHAR pchTarget, zCHAR  cMetaType )
+{
+   zVIEW  vDBH_Data = 0;
+   //zCHAR  szDBH_DataObjectName[ zZEIDON_NAME_LTH + 1 ];
+   //zCHAR  szCreateUnderscore[ 2 ];
+   zLONG  l;
+   zPCHAR targetEnd; // = pchTarget + targetLth - 1; // Point to last char in target buffer.
+   zPCHAR original = pchSrc;
+   zPCHAR p;
+   zCHAR  sz[ 256 ];
+   static zSHORT nMaxLth;      // Used to keep track of duplicate names.
+
+   switch ( cMetaType )
+   {
+      case 'E':      // Meta type is Entity
+
+         // Try getting the max length from the DBH-Specific OI.  If one is
+         // not specified use the default length.
+         if ( vDBH_Data &&
+              GetIntegerFromAttribute( &l, vDBH_Data, "ODBC",
+                                       "MaxTableNameLength" ) != -1 )
+         {
+            nMaxLth = (zSHORT) l;
+         }
+         else
+            nMaxLth = MAX_TABLENAME_LTH;
+
+         break;
+
+      case 'A':      // Meta type is Attribute
+
+         // Try getting the max length from the DBH-Specific OI.  If one is
+         // not specified use the default length.
+         if ( vDBH_Data &&
+              GetIntegerFromAttribute( &l, vDBH_Data, "ODBC",
+                                       "MaxColumnNameLength" ) != -1 )
+         {
+            nMaxLth = (zSHORT) l;
+         }
+         else
+            nMaxLth = MAX_COLUMNNAME_LTH;
+
+         break;
+
+   }
+
+   if ( nMaxLth >= BUFF_SIZE )
+      nMaxLth = BUFF_SIZE - 1;
+
+  targetEnd = pchTarget + nMaxLth - 1;
+
+  // Defensive programming...
+  *targetEnd = 0;
+
+  if ( zstrlen( pchSrc ) >= nMaxLth )
+     return zCALL_ERROR;
+
+  zstrcpy( sz, pchSrc );
+
+  //p = pchTarget;
+  p = &sz;
+
+  // Copy first char to target.
+  *p++ = *pchSrc++;
+  while ( *pchSrc != 0 )
+    {
+      // Do we have enough space to add two more chars?
+      if ( p + 2 > targetEnd )
+  	 return -16;
+
+      if ( *pchSrc >= 'A' && *pchSrc <= 'Z' )
+	{
+	  // We have a capital letter.  Is previous letter upper?
+	  if ( *(p-1) < 'A' || *(p-1) > 'Z' )
+	    // No, so copy _.
+	    *p++ = '_';
+	  else
+	    // Previous letter is also upper.  Insert _ if next char is lower.
+	    if ( ( *(pchSrc+1) < 'A' || *(pchSrc+1) > 'Z' ) && *(pchSrc+1) != 0 )
+	      *p++ = '_';
+	}
+      *p++ = *pchSrc++;
+    }
+//
+  *p++ = 0;
+  
+  // Now convert to all lower.
+  SysTranslateString( p, 'L' );
+  zstrcpy( pchTarget, sz );
+
+  return 0;
+}
+
+
+
+
+
+
+
+
 /*
    Generates a valid SQLBase table or column name using an entity/attribute
    name as it's base.
@@ -4402,6 +4538,7 @@ GenerateName( zVIEW  vDTE,
 
    zVIEW  vDBH_Data = 0;
    zCHAR  szDBH_DataObjectName[ zZEIDON_NAME_LTH + 1 ];
+   zCHAR  szCreateUnderscore[ 2 ];
    zPCHAR pch1;
    zPCHAR pch2;
    zLONG  l;
@@ -4420,6 +4557,9 @@ GenerateName( zVIEW  vDTE,
 
    // Null-terminate string.
    pch1[ 0 ] = 0;
+
+   // KJS 08/07/14 - DG wants to be able to create names Like EntityName to entity_name. This is the ini setting.
+   GetStringFromAttribute (szCreateUnderscore, vDTE, "TE_DBMS_Source", "TranslateNamesToLowerUnderscore");
 
    switch ( cMetaType )
    {
@@ -4492,8 +4632,12 @@ GenerateName( zVIEW  vDTE,
                    "B_",      // Remove '_' starting from back.
                    0 );       // Stop when the name is short enough.
 
-   // Change string to all upper-case.
-   SysTranslateString( pchName, 'U' );
+   if ( szCreateUnderscore[ 0 ] == 'Y' )
+      // KJS 08/07/14 - Change string to all lower-case if we are creating table/column names with underscore.
+      SysTranslateString( pchName, 'L' );
+   else
+      // Change string to all upper-case.
+      SysTranslateString( pchName, 'U' );
 
    // Make sure generated name doesn't match a reserved word.
    fnChangeReservedName( pchName );
@@ -4501,6 +4645,12 @@ GenerateName( zVIEW  vDTE,
    return( 0 );
 
 } // GenerateName
+
+
+
+
+
+
 
 //====================================================================
 //
