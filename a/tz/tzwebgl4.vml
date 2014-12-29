@@ -535,6 +535,7 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
    STRING ( 256 ) szTitle
    STRING ( 256 ) szTitleHTML
    STRING ( 100 ) szCtrlTagRG
+   STRING ( 100 ) szInListCtrlTag
    STRING ( 16 )  szTabIndex
    STRING ( 10 )  szWidth
    STRING ( 10 )  szSelectAction
@@ -640,6 +641,13 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szWriteBuffer = "<%"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       IF vDialog.CtrlMapView EXISTS
+         // KJS 10/22/14 - If the value from the database is not part of the domain anymore, we will put that option in but
+         // we will set it as disabled.
+         szInListCtrlTag = "inList" + szCtrlTag
+
+         szWriteBuffer = "   boolean " + szInListCtrlTag + " = false;"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+
          szWriteBuffer = "   " + vDialog.CtrlMapView.Name + " = " +
                       "task.getViewByName( ^" + vDialog.CtrlMapView.Name + "^ );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -661,7 +669,6 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
                             vDialog.CtrlMapRelatedEntity.Name + "^, ^" + vDialog.CtrlMapER_Attribute.Name + "^, ^" + szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
-/***** 04/26/11 */
             szWriteBuffer = "      nRC = " + vDialog.CtrlMapView.Name + ".cursor( ^" +
                      vDialog.CtrlMapRelatedEntity.Name + "^ ).checkExistenceOfEntity( ).toInt();"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -669,11 +676,15 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "      {"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-/**********/
+
             // Get the current value of the combo box.
             szWriteBuffer = "         strComboCurrentValue = " + vDialog.CtrlMapView.Name + ".cursor( ^" +
                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                     vDialog.CtrlMapER_Attribute.Name + "^, ^" + szContextName + "^ );"
+                     vDialog.CtrlMapER_Attribute.Name + "^, ^^ );"
+                     // KJS 10/22/14 - Right now we are not adding the context name, we only want the default, which
+                     // I am currently assuming has ALL the values (old and new) of this domain. When we get DGs domain fix
+                     // I think we need to put this back!!!!!!!
+                     //vDialog.CtrlMapER_Attribute.Name + "^, ^" + szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
             // KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
@@ -700,6 +711,10 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "      {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+               szWriteBuffer = "         " + szInListCtrlTag + " = true;"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
                szWriteBuffer = "%>"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "         <option selected=^selected^ value=^^></option>"
@@ -754,6 +769,10 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "            {"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+            szWriteBuffer = "               " + szInListCtrlTag + " = true;"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
             szWriteBuffer = "%>"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "               <option selected=^selected^ value=^<%=externalValue%>^><%=externalValue%></option>"
@@ -778,6 +797,26 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "      }  // for ( TableEntry entry"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            
+            // KJS 10/22/14 - Add this value as disabled.
+            szWriteBuffer = "      // The value from the database isn't in the domain, add it to the list as disabled."
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "      if ( !" + szInListCtrlTag + " )"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "      { "
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "%>"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+            szWriteBuffer = "         <option disabled selected=^selected^ value=^<%=strComboCurrentValue%>^><%=strComboCurrentValue%></option>"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            szWriteBuffer = "<%"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+            szWriteBuffer = "      }  "
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            
+            
          END
       END
 
@@ -901,8 +940,6 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
          szWriteBuffer = "      strComboSelectedValue = ^0^;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
-         // KJS 05/21/14 - Now putting this inside the "while" loop, create a blank entry only if the list doesn't have a blank.
-         /*
          // Auto Include
          IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
             szWriteBuffer = ""
@@ -942,7 +979,6 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             szWriteBuffer = "      }"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
          END
-         */
 
          IF lSubtype = 0
             szWriteBuffer = "      csrRC = v" + szCtrlTag + ".cursor( ^" +
@@ -980,61 +1016,9 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
          // KJS 05/20/14 - There were some issues for auto include when the "list view" already had a blank entry, then
          // two blank entries were in the list and this caused errors. For auto include check if one of these entries is
          // blank, don't add it if it is.
+         /*
          IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
-
-            szWriteBuffer = ""
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            // For Auto Include, we are automatically putting a blank entry as the first entry in the
-            // combobox.  With this in mind, there is code in DoInputMapping that assumes the first
-            // entry in a combobox is null (or blank).  What if the user doesn't want a blank entry?
-            // and wants to use the "No null in list" checkbox in the painter.  I would need to
-            // change this code but I'm not sure how because I can't tell from DoInputMapping what
-            // the value of combobox.selectedindex[0] is, I only know they selected the index 0.
-            
-            // KJS 05/22/14 - Do we want to automatically put a blank entry if the attribute is required?
-            //IF vDialog.CtrlMapER_Attribute.NotNull != "Y"
-            
             szWriteBuffer = "      // For Auto Include, we have already created a blank entry for the combobox, check to make"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      // we don't add another blank entry. That will cause errors."
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      if ( ComboCount == 0 && !StringUtils.isBlank( strErrorMapValue ) )"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      {"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         ComboCount++;"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         if ( StringUtils.isBlank( strComboCurrentValue ) )"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         {"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "%>"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "            <option value=^0^ selected=^selected^></option>"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "<%"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         }"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         else"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         {"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "%>"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "            <option value=^0^></option>"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "<%"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         }"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      }"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-
-         
-         //********************
-         /* KJS 05/22/14
-            szWriteBuffer = "         // For Auto Include, we have already created a blank entry for the combobox, check to make "
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         // we don't add another blank entry. That will cause errors. "
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -1042,24 +1026,19 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         {"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-          */
-            //*********
          END
-         szWriteBuffer = "         strEntityKey = Long.toString( v" + szCtrlTag +
-                         ".cursor( ^" + szListEntityName +
-                         "^ ).getEntityKey( ) );"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+          */
          szWriteBuffer = "         if ( StringUtils.equals( strComboCurrentValue, strErrorMapValue ) )"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         {"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "%>"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "            <option value=^<%=strEntityKey%>^ selected=^selected^><%=strErrorMapValue%></option>"
+         szWriteBuffer = "            <option selected=^selected^><%=strErrorMapValue%></option>"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "<%"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "            strComboSelectedValue = strEntityKey;"
+         szWriteBuffer = "            strComboSelectedValue = Integer.toString( ComboCount );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         }"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -1069,13 +1048,19 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "%>"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "            <option value=^<%=strEntityKey%>^><%=strErrorMapValue%></option>"
+         szWriteBuffer = "            <option><%=strErrorMapValue%></option>"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "<%"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "         }"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
+         /*
+         IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
+            szWriteBuffer = "         } // if ( !StringUtils.isBlank( strErrorMapValue ) )"
+            WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+         END
+         */
          szWriteBuffer = "         ComboCount++;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       // IF lSubtype = 0  now always do setNextContinue here for performance reasons dks/dgc 2011.05.03
@@ -2401,6 +2386,18 @@ GenJSPJ_CrteEditBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szEditActionCode = szEditActionCode + " onKeyPress=^return _OnEnter( event )^"
       END
       DropView( vDialogRoot )
+
+   IF szNoOutputMapping = "Y"
+         szValue = "value=^^"
+   ELSE 
+      lStyleX = vDialog.Control.ExtendedStyle
+      lTemp = IsFlagSequenceSet( lStyleX, zCONTROLX_PREFILL )
+      IF lTemp != 0 AND bMapping = 0
+         szValue = "value=^" + vDialog.Control.Text + "^"
+      ELSE
+         szValue = "value=^<%=strErrorMapValue%>^"
+      END
+   END
 
    IF szNoOutputMapping = "Y"
          szValue = "value=^^"
