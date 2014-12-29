@@ -1456,6 +1456,7 @@ SelectLPLR( zVIEW     vSubtask )
    //:INTEGER        TempType
    zLONG     TempType = 0; 
    zSHORT    RESULT; 
+   zCHAR     szTempString_0[ 33 ]; 
 
 
    //:GET VIEW vCM NAMED "TZCMWKSO"
@@ -1493,6 +1494,12 @@ SelectLPLR( zVIEW     vSubtask )
    SetNameForView( VOR_LPLR, "TargetVOR_LPLR", 0, zLEVEL_TASK );
    //:SET CURSOR FIRST VOR_LPLR.W_MetaType WHERE VOR_LPLR.W_MetaType.Type = 2009  // 2009 is the VOR.
    RESULT = SetCursorFirstEntityByInteger( VOR_LPLR, "W_MetaType", "Type", 2009, "" );
+
+   //:// Reposition work station view on original LPLR so that any ZKeys generated during migration will
+   //:// be created using the correct next ZKey.
+   //:SET CURSOR FIRST vCM.LPLR WHERE vCM.LPLR.Name = CurrentLPLR.LPLR.Name 
+   GetStringFromAttribute( szTempString_0, CurrentLPLR, "LPLR", "Name" );
+   RESULT = SetCursorFirstEntityByString( vCM, "LPLR", "Name", szTempString_0, "" );
 
    //:// Copy the Orig members with Type >= 2000 to Source
    //:ACTIVATE SourceLPLR EMPTY
