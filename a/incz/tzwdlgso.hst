@@ -138,6 +138,13 @@ typedef struct tagzTZWDLGSO_Control_DEF
    zCHAR GUID[ 65 ];
    zLONG Properties;
    zLONG LKey;
+   zLONG BorderWidth;
+   zLONG BorderStyle;
+   zLONG BorderTop;
+   zLONG BorderBottom;
+   zLONG BorderLeft;
+   zLONG BorderRight;
+   zCHAR TextAlignHorizontal[ 255 ];
    zCHAR VisibleBorder[ 2 ];
    zCHAR CenterJustify[ 2 ];
    zCHAR RightJustify[ 2 ];
@@ -160,13 +167,6 @@ typedef struct tagzTZWDLGSO_Control_DEF
    zCHAR DIL_Inherited[ 255 ];
    zCHAR NLS_Text[ 255 ];
    zCHAR NLS_DIL_Text[ 255 ];
-   zLONG BorderWidth;
-   zLONG BorderStyle;
-   zLONG BorderTop;
-   zLONG BorderBottom;
-   zLONG BorderLeft;
-   zLONG BorderRight;
-   zCHAR TextAlignHorizontal[ 255 ];
    zLONG FontSize;
    zCHAR TextBold[ 2 ];
    zCHAR TextItalic[ 2 ];
@@ -1032,6 +1032,7 @@ typedef struct tagzTZWDLGSO_ActOper_DEF
    zCHAR ReturnDesc[ 65 ];
    zCHAR ReturnDataType[ 2 ];
    zLONG OrdinalValue;
+   zCHAR GenerationType[ 2 ];
    zCHAR DoNotMergeFlag[ 2 ];
    zCHAR ThrowsException[ 2 ];
    zCHAR ThrowsExceptionCatchCode[ 255 ];
@@ -1051,7 +1052,7 @@ typedef struct tagzTZWDLGSO_SourceFileForOper_DEF
    zCHAR DomainAndGlobalOpGroupName[ 9 ];
    zCHAR Name[ 33 ];
    zCHAR Desc[ 32001 ];
-   zCHAR Extension[ 4 ];
+   zCHAR Extension[ 255 ];
    zCHAR Subdirectory[ 33 ];
 
 #ifdef DEBUG_LODSTRUCT
@@ -1746,8 +1747,8 @@ typedef struct tagzTZWDLGSO_ViewObjRef_DEF
    zCHAR Name[ 33 ];
    zCHAR Desc[ 32001 ];
    zLONG Level;
-   zCHAR IsDrivingViewForReportFlag[ 2 ];
    zCHAR wWindowUseFlag[ 2 ];
+   zCHAR IsDrivingViewForReportFlag[ 2 ];
 
 #ifdef DEBUG_LODSTRUCT
 unsigned char CheckByte;
@@ -1783,7 +1784,7 @@ typedef struct tagzTZWDLGSO_SourceFile_DEF
    zLONG ZKey;
    zCHAR Name[ 33 ];
    zCHAR Desc[ 32001 ];
-   zCHAR Extension[ 4 ];
+   zCHAR Extension[ 255 ];
    zCHAR CM_Managed[ 2 ];
    zCHAR OwnerType[ 2 ];
    zCHAR LanguageType[ 2 ];
@@ -1808,6 +1809,7 @@ typedef struct tagzTZWDLGSO_Operation_DEF
    zLONG OrdinalValue;
    zLONG Class;
    zCHAR DoNotMergeFlag[ 2 ];
+   zCHAR GenerationType[ 2 ];
    zCHAR ThrowsException[ 2 ];
    zCHAR ThrowsExceptionCatchCode[ 255 ];
 
@@ -1952,6 +1954,7 @@ typedef struct tagzTZWDLGSO_OperationList_DEF
    zLONG OrdinalValue;
    zLONG Class;
    zCHAR DoNotMergeFlag[ 2 ];
+   zCHAR GenerationType[ 2 ];
    zCHAR ThrowsException[ 2 ];
    zCHAR ThrowsExceptionCatchCode[ 255 ];
 
@@ -1966,7 +1969,7 @@ typedef struct tagzTZWDLGSO_OperSourceFile_DEF
    zLONG ZKey;
    zCHAR Name[ 33 ];
    zCHAR Desc[ 32001 ];
-   zCHAR Extension[ 4 ];
+   zCHAR Extension[ 255 ];
    zCHAR CM_Managed[ 2 ];
    zCHAR OwnerType[ 2 ];
    zCHAR LanguageType[ 2 ];

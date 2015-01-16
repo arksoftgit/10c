@@ -4108,7 +4108,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                END
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
             END
-*/               
+*/
          END   //IF szControlType = "MLEdit"
       END
    END // FOR EACH
@@ -4534,7 +4534,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
 
                         IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
                            // For Auto Include, we must decrement nRelPos for blank entry.
-                           szWriteBuffer = "               nRelPos--;    // For Auto Include combos, we need to decrement for the blank entry."
+                           szWriteBuffer = "            nRelPos--;    // For Auto Include combos, we need to decrement for the blank entry."
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                         END
 
@@ -4548,15 +4548,15 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                            //Set Foreign Key
                            szWriteBuffer = " "
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            // Set Foreign Key Code "
+                           szWriteBuffer = "         // Set Foreign Key Code "
                            //Check the existence of the edit mapping entity
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            nRC = " + szViewName + ".cursor( ^" +
+                           szWriteBuffer = "         nRC = " + szViewName + ".cursor( ^" +
                                            vDialog.CtrlMapRelatedEntity.Name + "^ ).checkExistenceOfEntity( ).toInt();"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            if ( nRC >= 0 )"
+                           szWriteBuffer = "         if ( nRC >= 0 )"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            {"
+                           szWriteBuffer = "         {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                            IF vDialog2.CtrlMapContext EXISTS
@@ -4572,7 +4572,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                               szMaxStringLength = "254"
                            END
 
-                           szWriteBuffer = "               strMapValue = " + vDialog2.CtrlMapView.Name + ".cursor( ^" +
+                           szWriteBuffer = "            strMapValue = " + vDialog2.CtrlMapView.Name + ".cursor( ^" +
                               vDialog2.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
                               vDialog2.CtrlMapER_Attribute.Name + "^, ^" + szContextName + "^ );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -4585,36 +4585,36 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                            END
 
                            // try
-                           szWriteBuffer = "            try"
+                           szWriteBuffer = "         try"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            {"
+                           szWriteBuffer = "         {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               if ( webMapping )"
+                           szWriteBuffer = "            if ( webMapping )"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                  VmlOperation.CreateMessage( task, ^" +
+                           szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" +
                                                               szCtrlTag + "^, ^^, strMapValue );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               else"
+                           szWriteBuffer = "            else"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                  " + szViewName + ".cursor( ^" +
+                           szWriteBuffer = "               " + szViewName + ".cursor( ^" +
                               vDialog.CtrlMapRelatedEntity.Name + "^ ).setAttribute( ^" +
                               vDialog.CtrlMapER_Attribute.Name + "^, strMapValue, ^" + szContextName + "^ );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            }"
+                           szWriteBuffer = "         }"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            // catch
-                           szWriteBuffer = "            catch ( InvalidAttributeValueException e )"
+                           szWriteBuffer = "         catch ( InvalidAttributeValueException e )"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            {"
+                           szWriteBuffer = "         {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               nMapError = -16;"
+                           szWriteBuffer = "            nMapError = -16;"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strMapValue );"
+                           szWriteBuffer = "            VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strMapValue );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            // end of try/catch
-                           szWriteBuffer = "            }"
+                           szWriteBuffer = "         }"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            }"
+                           szWriteBuffer = "         }"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                         END
@@ -4624,95 +4624,95 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                            // Auto Include only.
                            szWriteBuffer = " "
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            // Auto Include Code "
+                           szWriteBuffer = "         // Auto Include Code "
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            // If the value is ^0^ then the user has selected the null entry, we do not want to do an include."
+                           szWriteBuffer = "         // If the value is ^0^ then the user has selected the null entry, we do not want to do an include."
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            // If there is an entity, we want to exclude it. "
-                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-
-                           szWriteBuffer = "            if ( !StringUtils.equals( strMapValue, ^0^ ) )"
-                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            {"
+                           szWriteBuffer = "         // If there is an entity, we want to exclude it. "
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
-                           szWriteBuffer = "               nRC = " + szViewName + ".cursor( ^" +
+                           szWriteBuffer = "         if ( !StringUtils.equals( strMapValue, ^0^ ) )"
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           szWriteBuffer = "         {"
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+                           szWriteBuffer = "            nRC = " + szViewName + ".cursor( ^" +
                                            vDialog.CtrlMapRelatedEntity.Name + "^ ).checkExistenceOfEntity( ).toInt();"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               if ( nRC >= 0 )"
+                           szWriteBuffer = "            if ( nRC >= 0 )"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               {"
+                           szWriteBuffer = "            {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                            //KJS 12/11/07 - Adding code to check if we are already positioned on the correct
                            //Entity, so then we would not want to exclude and include.  Seems like this is only
                            //going to matter if this combo box is in a grid.
                            //KELLY121008
-                           szWriteBuffer = "                  // Only do the automatic include if this is a different entity"
+                           szWriteBuffer = "               // Only do the automatic include if this is a different entity"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                  strTemp = " + szViewName + ".cursor( ^" +
+                           szWriteBuffer = "               strTemp = " + szViewName + ".cursor( ^" +
                                            vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ );"
 
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
-                           szWriteBuffer = "                  if ( !StringUtils.equals( strTemp, " + vDialog2.CtrlMapView.Name +
+                           szWriteBuffer = "               if ( !StringUtils.equals( strTemp, " + vDialog2.CtrlMapView.Name +
                                            ".cursor( ^" + vDialog2.CtrlMapRelatedEntity.Name +
                                            "^ ).getStringFromAttribute( ^" + vDialog2.CtrlMapER_Attribute.Name + "^ ))) "
 
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                  {"
+                           szWriteBuffer = "               {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                     " + szViewName + ".cursor( ^" +
+                           szWriteBuffer = "                  " + szViewName + ".cursor( ^" +
                                            vDialog.CtrlMapRelatedEntity.Name +
                                            "^ ).excludeEntity( CursorPosition.NONE );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
-                           szWriteBuffer = "                     " + szViewName + ".cursor( ^" +
+                           szWriteBuffer = "                  " + szViewName + ".cursor( ^" +
                                            vDialog.CtrlMapRelatedEntity.Name + "^ ).includeSubobject( " +
                                            vDialog2.CtrlMapView.Name + ".cursor( ^" +
                                            vDialog2.CtrlMapRelatedEntity.Name +
                                            "^ ), CursorPosition.NEXT );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                  }"
-                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-
                            szWriteBuffer = "               }"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               else"
-                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                     " + szViewName + ".cursor( ^" +
-                                           vDialog.CtrlMapRelatedEntity.Name + "^ ).includeSubobject( " +
-                                           vDialog2.CtrlMapView.Name + ".cursor( ^" +
-                                           vDialog2.CtrlMapRelatedEntity.Name +
-                                           "^ ), CursorPosition.NEXT );"
-                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-
 
                            szWriteBuffer = "            }"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "            else"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "            {"
+                           szWriteBuffer = "                  " + szViewName + ".cursor( ^" +
+                                           vDialog.CtrlMapRelatedEntity.Name + "^ ).includeSubobject( " +
+                                           vDialog2.CtrlMapView.Name + ".cursor( ^" +
+                                           vDialog2.CtrlMapRelatedEntity.Name +
+                                           "^ ), CursorPosition.NEXT );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               nRC = " + szViewName + ".cursor( ^" +
+
+
+                           szWriteBuffer = "         }"
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           szWriteBuffer = "         else"
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           szWriteBuffer = "         {"
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           szWriteBuffer = "            nRC = " + szViewName + ".cursor( ^" +
                                            vDialog.CtrlMapRelatedEntity.Name + "^ ).checkExistenceOfEntity( ).toInt();"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               if ( nRC >= 0 )"
+                           szWriteBuffer = "            if ( nRC >= 0 )"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               {"
+                           szWriteBuffer = "            {"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "                     " + szViewName + ".cursor( ^" +
+                           szWriteBuffer = "                  " + szViewName + ".cursor( ^" +
                                            vDialog.CtrlMapRelatedEntity.Name +
                                            "^ ).excludeEntity( CursorPosition.NONE );"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                           szWriteBuffer = "               }"
-                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "            }"
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           szWriteBuffer = "         }"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                         END
 
-                        szWriteBuffer = "         }"
+                        szWriteBuffer = "      }"
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
                         
                         szWriteBuffer = "         }  // checkExistenceofEntity"
@@ -5209,7 +5209,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  IF vDialog.Control.Subtype >= 20480 AND vDialog.Control.Subtype <= 21252   // IF Auto Include
                                     // For Auto Include, we must decrement nRelPos for blank entry.
-                                    szWriteBuffer = "               nRelPos--;    // For Auto Include combos, we need to decrement for the blank entry."
+                                    szWriteBuffer = "                  nRelPos--;    // For Auto Include combos, we need to decrement for the blank entry."
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                  END
                                  szWriteBuffer = "            " + vDialog2.CtrlMapView.Name+ ".cursor( ^" + szListMappingEntityName + "^ )" +
@@ -6056,7 +6056,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    SHORT            nRC
 
    InsertBlankFlag = "N"
-   
+
    TraceLineS("*** GenJSPJ_Action *** ", "")
 
    szWebRedirection = ""
@@ -6127,48 +6127,48 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                   szProductionMode = ""
                   IF szProductionMode = "Y"
                      
-                     szWriteBuffer = "      try"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      {"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      }"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      catch (Exception e)"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      {"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         // Set the error return code."
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         nOptRC = 2;"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         strVMLError = ^<br><br>*** Error running Operation " + vDialogTemp.ActOper.Name + ", Please contact the helpdesk: ^ + e.getMessage();"     
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         task.log().error( strVMLError, e );"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      }"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-   
-                     //szWriteBuffer = "      nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
-                     //WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      if ( nOptRC == 2 )"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      {"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         nRC = 2;  // do the ^error^ redirection"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         session.setAttribute( ^ZeidonError^, ^Y^ );"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "         break;"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     szWriteBuffer = "      }"
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+                  szWriteBuffer = "      try"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      {"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      }"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      catch (Exception e)"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      {"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         // Set the error return code."
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         nOptRC = 2;"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         strVMLError = ^<br><br>*** Error running Operation " + vDialogTemp.ActOper.Name + ", Please contact the helpdesk: ^ + e.getMessage();"     
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         task.log().error( strVMLError, e );"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      }"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+                  //szWriteBuffer = "      nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
+                  //WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      if ( nOptRC == 2 )"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      {"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         nRC = 2;  // do the ^error^ redirection"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         session.setAttribute( ^ZeidonError^, ^Y^ );"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         break;"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      }"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
                   ELSE
                      szWriteBuffer = "         nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                      
-                  END
+               END
                END
             END
          END
@@ -6336,39 +6336,39 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                // crash. But that might be true in production but when developing, we'd really like to see the stack trace. Want to make
                // this an ini setting but for now I think I am just going to make the operation call and skip the try/catch.
                IF szProductionMode = "Y"
-                  // try
-                  szWriteBuffer = "            try"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "            {"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "               " +
-                         vDialogTemp.CtrlMapView.Name +
-                         ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).setAttribute( ^" +
-                         vDialogTemp.CtrlMapER_Attribute.Name + "^, strInputFileName );"
-                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "            }"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  // catch
-                  szWriteBuffer = "            catch ( InvalidAttributeValueException e )"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "            {"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "               nRC = 2;  // do the ^error^ redirection"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  // KJS 02/27/12 Specifically using strTag...
-                  szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strInputFileName );"
-               // szWriteBuffer = "            VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strMapValue );"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "               break;"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "            }"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  // end of try/catch
-   
-                  szWriteBuffer = "         }"
-                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-                  szWriteBuffer = "      }"
-                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+               // try
+               szWriteBuffer = "            try"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "            {"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "               " +
+                      vDialogTemp.CtrlMapView.Name +
+                      ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).setAttribute( ^" +
+                      vDialogTemp.CtrlMapER_Attribute.Name + "^, strInputFileName );"
+               WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "            }"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               // catch
+               szWriteBuffer = "            catch ( InvalidAttributeValueException e )"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "            {"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "               nRC = 2;  // do the ^error^ redirection"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               // KJS 02/27/12 Specifically using strTag...
+               szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strInputFileName );"
+            // szWriteBuffer = "            VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strMapValue );"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "               break;"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "            }"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               // end of try/catch
+
+               szWriteBuffer = "         }"
+               WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "      }"
+               WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                ELSE
                   szWriteBuffer = "               " +
                          vDialogTemp.CtrlMapView.Name +
@@ -6555,7 +6555,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
             IF szPosDataCreated = "N"
 
                szPosDataCreated = "Y"
-               
+
                TraceLineS("*** Calling EntityKey code *** ","")
 
                szWriteBuffer = "      // Position on the entity that was selected in the grid."
@@ -6716,33 +6716,33 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    // szWriteBuffer = "      task.log().info( ^ZeidonOperation: " + szDlgTag + "." + szOperName + " called from " + szFormName + ".jsp^ );"  // keep us informed of where we are ...  dks 2011.11.11
       szWriteBuffer = "      VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + ".jsp^, ^" + szDlgTag + "." + szOperName + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-      
+
       // KJS 08/06/14 - I had put a try/catch around the operation call because it seemed better than getting the exception
       // crash. But that might be true in production but when developing, we'd really like to see the stack trace. Want to make
       // this an ini setting but for now I think I am just going to make the operation call and skip the try/catch.
       IF szProductionMode = "Y"
-         szWriteBuffer = "      try"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "      {"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "      }"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "      catch (Exception e)"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "      {"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "         // Set the error return code."
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "         nOptRC = 2;"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "         strVMLError = ^<br><br>*** Error running Operation " + szOperName + ": ^ + e.getMessage();"     
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "         task.log().info( strVMLError );"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "      }"
-         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      try"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      {"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      }"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      catch (Exception e)"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      {"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         // Set the error return code."
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         nOptRC = 2;"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         strVMLError = ^<br><br>*** Error running Operation " + szOperName + ": ^ + e.getMessage();"     
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         task.log().info( strVMLError );"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      }"
+      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       ELSE
          szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -6989,8 +6989,8 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
          // IF nGridParent = 1 OR szRepeatingGroupFlag = "Y"
          IF nGridParent = 1 OR szRepeatingGroupFlag = "Y"
          ELSE
-            szWriteBuffer = "      View " + szViewName + " = task.getViewByName( ^" + szViewName + "^ );"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      View " + szViewName + " = task.getViewByName( ^" + szViewName + "^ );"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          END
          
          szWriteBuffer = "      EntityCursor cursor = " + szViewName + ".cursor( ^" + szEntityName + "^ );"
@@ -6998,14 +6998,14 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
          
          // Add Accept or Cancel statement.
          IF lAutoSubAction = 1 OR lAutoSubAction = 2
-            szWriteBuffer = "      if ( cursor.isNull() )"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         nRC = 0;"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      else"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      {"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      if ( cursor.isNull() )"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "         nRC = 0;"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      else"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "      {"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          
             szWriteBuffer = "         if ( cursor.isVersioned( ) )"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -7089,28 +7089,28 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
 
    IF szWebRedirection = "Y"
 
-      IF lActionType = zWAB_StartBrowserHTML_Page
-            // KJS 02/09/12 - In JOE task.setName is failing, not sure what this code is
-            // even doing so I am commenting this out for now...
-            szWriteBuffer = "      task.setName( strURL );"
-            //WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-   
-            // KJS 03/05/08 - This was "nRC = 2 //do the error redirection" and I'm not sure why.
-            // That resubmitted the current page and I assume this was done thinking this was how
-            // the report page would be called but since the report popup is determined in AfterPageLoaded, we
-            // don't need to resubmit the page.  Just keep building this current page.
-            szWriteBuffer = "      nRC = 0;  // Don't need to redirect for popup window"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-      END
-   
-      IF lActionType = zWAB_StartBrowserPDF_Page
-            // KJS 03/05/08 - This was "nRC = 2 //do the error redirection" and I'm not sure why.
-            // That resubmitted the current page and I assume this was done thinking this was how
-            // the report page would be called but since the report popup is determined in AfterPageLoaded, we
-            // don't need to resubmit the page.  Just keep building this current page.
-            szWriteBuffer = "      nRC = 0;  // Don't need to redirect for popup window"
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-      END
+   IF lActionType = zWAB_StartBrowserHTML_Page
+         // KJS 02/09/12 - In JOE task.setName is failing, not sure what this code is
+         // even doing so I am commenting this out for now...
+         szWriteBuffer = "      task.setName( strURL );"
+         //WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+
+         // KJS 03/05/08 - This was "nRC = 2 //do the error redirection" and I'm not sure why.
+         // That resubmitted the current page and I assume this was done thinking this was how
+         // the report page would be called but since the report popup is determined in AfterPageLoaded, we
+         // don't need to resubmit the page.  Just keep building this current page.
+         szWriteBuffer = "      nRC = 0;  // Don't need to redirect for popup window"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+   END
+
+   IF lActionType = zWAB_StartBrowserPDF_Page
+         // KJS 03/05/08 - This was "nRC = 2 //do the error redirection" and I'm not sure why.
+         // That resubmitted the current page and I assume this was done thinking this was how
+         // the report page would be called but since the report popup is determined in AfterPageLoaded, we
+         // don't need to resubmit the page.  Just keep building this current page.
+         szWriteBuffer = "      nRC = 0;  // Don't need to redirect for popup window"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+   END
 
    ELSE
 
@@ -7176,7 +7176,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    END  //End of Next Window Option
 
    // This Action is Startup Web Popup WITH mapping, so set zOpenPopupWindow to the next page jsp.
-   IF ( lActionType = zWAB_StartModalWebPopup OR lActionType = zWAB_StartModelessWebPopup ) // KJS 07/11/12 AND vDialog.Action.NoMap = ""
+      IF ( lActionType = zWAB_StartModalWebPopup OR lActionType = zWAB_StartModelessWebPopup ) // KJS 07/11/12 AND vDialog.Action.NoMap = ""
       //This gets the value for the popup window so that in AfterPageLoaded, we can get this
       //value and pop up the window.
       szWriteBuffer = "      strOpenPopupWindow = request.getParameter( ^zOpenPopupWindow^ );"
@@ -7190,7 +7190,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
    END
 
    // Same Window Refresh option
-   IF lActionType = zWAB_StayOnWindowWithRefresh
+      IF lActionType = zWAB_StayOnWindowWithRefresh
       szWriteBuffer = "      // Stay on Window with Refresh"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      strURL = response.encodeRedirectURL( ^" + vDialogRoot.Dialog.Tag + vDialogRoot.Window.Tag + ".jsp^ );"

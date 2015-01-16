@@ -210,6 +210,7 @@ extern "C"
 #define zWAB_LinkToHTML_Address               45
 #define zWAB_ProcessDownloadFile              46
 #define zWAB_StartBrowserPDF_Page             47
+#define zWAB_StartJasperPDF_Page              48
 
 #define zWAB_ReplaceDialogWithDialog          51
 #define zWAB_ReplaceWindowWithModelessWindow  52

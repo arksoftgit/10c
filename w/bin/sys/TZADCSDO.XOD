@@ -1,9 +1,9 @@
-z1000-Zeidon    TZADCSDO TZZOXODO 03/22/14   17:53:51 1.0a2    
+z1000-Zeidon    TZADCSDO TZZOXODO 11/04/14   11:01:30 1.0a2    
 eOBJECT    1
 aNAME      TZADCSDO
 aZKey      1326102
 aOPER_LIBNM TZLODOPR
-aER_DATE   20140322175321721
+aER_DATE   20140819124300328
 
 eENTITY    2
 aNAME      UI_Spec
@@ -2424,7 +2424,8 @@ aLTH       1
 aSEQ_AD    A
 aXVAATT_TOK 207
 aDERIVEDF  oTZADCSDO_DeriveKey
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    5
 aNAME      Derived
@@ -2436,7 +2437,8 @@ aLTH       1
 aSEQ_AD    A
 aXVAATT_TOK 208
 aDERIVEDF  oTZADCSDO_DerivedAttr
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    5
 aNAME      SeqNo_UIS_Entity_M
@@ -3240,7 +3242,8 @@ aLTH       32
 aSEQ_AD    A
 aXVAATT_TOK 277
 aDERIVEDF  oTZDMSRCO_DeriveDomName
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DerivedDataType
@@ -3252,7 +3255,8 @@ aLTH       1
 aSEQ_AD    A
 aXVAATT_TOK 278
 aDERIVEDF  oTZDMSRCO_DeriveDomDataType
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DerivedMaxStringLth
@@ -3264,7 +3268,8 @@ aLTH       4
 aSEQ_AD    A
 aXVAATT_TOK 279
 aDERIVEDF  oTZDMSRCO_DeriveDomStringLth
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DerivedDecimalFormat
@@ -3276,7 +3281,8 @@ aLTH       4
 aSEQ_AD    A
 aXVAATT_TOK 280
 aDERIVEDF  oTZDMSRCO_DeriveDomDecFormat
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DerivedDomainType
@@ -3288,7 +3294,8 @@ aLTH       1
 aSEQ_AD    A
 aXVAATT_TOK 281
 aDERIVEDF  oTZDMSRCO_DeriveDomType
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      Name
@@ -3451,7 +3458,8 @@ aLTH       1
 aSEQ_AD    A
 aXVAATT_TOK 294
 aDERIVEDF  oTZADCSDO_DeriveKey
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    5
 aNAME      SeqNo_UIS_Entity_L
@@ -4243,7 +4251,8 @@ aLTH       32
 aSEQ_AD    A
 aXVAATT_TOK 362
 aDERIVEDF  oTZDMSRCO_DeriveDomName
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DerivedDataType
@@ -4255,7 +4264,8 @@ aLTH       1
 aSEQ_AD    A
 aXVAATT_TOK 363
 aDERIVEDF  oTZDMSRCO_DeriveDomDataType
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DerivedMaxStringLth
@@ -4267,7 +4277,8 @@ aLTH       4
 aSEQ_AD    A
 aXVAATT_TOK 364
 aDERIVEDF  oTZDMSRCO_DeriveDomStringLth
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DerivedDecimalFormat
@@ -4279,7 +4290,8 @@ aLTH       4
 aSEQ_AD    A
 aXVAATT_TOK 365
 aDERIVEDF  oTZDMSRCO_DeriveDomDecFormat
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      Name
@@ -6006,7 +6018,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 506
 aDERIVEDF  oTZADCSDO_DeriveKey
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    6
 aNAME      Derived
@@ -6019,7 +6032,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 507
 aDERIVEDF  oTZADCSDO_DerivedAttr
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZADCSDO_Object
+aDERIVEDC  TZADCSDO
+aDRSRCTYPE C
 
 eATTRIB    6
 aNAME      DB_DerivedValue

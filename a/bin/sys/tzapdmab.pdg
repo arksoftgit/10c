@@ -1,4 +1,4 @@
-z1000-Zeidon    TZAPDMAB TZDGSRCO 03/01/12   12:47:49 1.0a2    
+z1000-Zeidon    TZAPDMAB TZDGSRCO 09/26/14   12:33:15 1.0a2    
 eDomainGroup 1
 aZKey      90000048
 aName      TZAPDMAB
@@ -26,6 +26,8 @@ eContext   3
 aZKey      90000068
 aDesc      Arithmetic operations on day portion of DateTime
 aName      Day
+aEditString D
+aJavaEditString D
 
 eContext   3
 aZKey      90000074
@@ -92,6 +94,8 @@ eContext   3
 aZKey      90000069
 aDesc      Arithmetic operations against Month portion of DateTime
 aName      Month
+aEditString M
+aJavaEditString M
 
 eContext   3
 aZKey      90000062
@@ -109,22 +113,30 @@ eContext   3
 aZKey      90000066
 aDesc      Use LongDate format from Windows
 aName      MSWindowsLongSetting
+aEditString mm/dd/YYYY
+aJavaEditString MM/dd/yyyy
 
 eContext   3
 aZKey      90000067
 aDesc      Use ShortDate format from Windows
 aName      MSWindowsShortSetting
+aEditString mm/dd/YYYY
+aJavaEditString MM/dd/yyyy
 aIsDefault Y
 
 eContext   3
 aZKey      90000076
 aDesc      Return the week within the year
 aName      WeekOfYear
+aEditString w
+aJavaEditString w
 
 eContext   3
 aZKey      90000070
 aDesc      Arithmetic operations against year protion of DateTime
 aName      Year
+aEditString YYYY
+aJavaEditString yyyy
 
 eContext   3
 aZKey      90000071
@@ -348,6 +360,8 @@ aDIL_Text  Basic Timestamp Domain
 eContext   3
 aZKey      90000109
 aName      Day
+aEditString Dddd
+aJavaEditString dddd
 
 eContext   3
 aZKey      90000115
@@ -473,6 +487,8 @@ aJavaEditString MMM dd, yyyy
 eContext   3
 aZKey      90000110
 aName      Month
+aEditString Mmmm
+aJavaEditString MMMM
 
 eContext   3
 aZKey      90000102
@@ -489,14 +505,20 @@ aJavaEditString MMMM
 eContext   3
 aZKey      90000106
 aName      MSWindowsLongSetting
+aEditString mm/dd/YYYY HH:MI:SS.9
+aJavaEditString MM/dd/yyyy HH:mm:ss.S
 
 eContext   3
 aZKey      90000108
 aName      MSWindowsSetting
+aEditString mm/dd/YYYY
+aJavaEditString MM/dd/yyyy
 
 eContext   3
 aZKey      90000107
 aName      MSWindowsShortSetting
+aEditString mm-dd-YYYY
+aJavaEditString MM-dd-yyyy
 aIsDefault Y
 
 eContext   3
@@ -515,16 +537,22 @@ eContext   3
 aZKey      123030441
 aDesc      62
 accepts any reasonable input
-output formatting is dd.mm.yyyy 
+output formatting is dd.mm.yyyy·
 aName      UserFriendlyGerman
+aEditString dd.mm.YYYY
+aJavaEditString dd.mm.yyyy
 
 eContext   3
 aZKey      90000117
 aName      WeekOfYear
+aEditString w
+aJavaEditString w
 
 eContext   3
 aZKey      90000111
 aName      Year
+aEditString YYYY
+aJavaEditString yyyy
 
 eContext   3
 aZKey      90000112

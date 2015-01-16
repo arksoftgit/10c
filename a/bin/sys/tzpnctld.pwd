@@ -1,9 +1,9 @@
-z1000-Zeidon    TZPNCTLD TZWDLGSO 01/01/04   17:28:22 1.0b0    
+z1000-Zeidon    TZPNCTLD TZWDLGSO 11/04/14   11:10:23 1.0b0    
 eDialog    1
 aTag       TZPNCTLD
+aDLL_Name  TZPNCTLD
 aZKey      1137589
 aDesc      Tab/Bmp/Timer/Icon/Calendar Maintenance
-aDLL_Name  TZPNCTLD
 
 eDfltWnd   2
 aTag       UPD_BMPCTL
@@ -25,9 +25,9 @@ aSZDLG_X   30409176
 aSZDLG_Y   16515342
 aDfltButton OK
 aZKey      1151222
-aBarID     59451
 aDIL_Active Y
 aGeneralFlag 0
+aBarID     59451
 
 eControl   3
 aTag       Tag
@@ -46,11 +46,8 @@ eCtrlMap   4
 aZKey      1151290
 
 eCtrlMapLOD_Attribute 5
-aZKey      1325428
-aSeqNo_LOD_Entity 1
-aWork      N
+aZKey      1043128
 aUpdate    Y
-aSeqPriority 1
 
 eCtrlMapRelatedEntity 6
 aName      Control
@@ -130,9 +127,9 @@ eCtrlMap   4
 aZKey      1151294
 
 eCtrlMapLOD_Attribute 5
-aZKey      1325429
-aSeqNo_LOD_Entity 2
-aSeqPriority 0
+aZKey      1043129
+aUpdate    Y
+aSeqOrder  A
 
 eCtrlMapRelatedEntity 6
 
@@ -386,7 +383,7 @@ eCtrlMapER_Attribute 7
 aName      DialogName
 aZKey      1320667
 aLth       32
-aDesc      Name of WDOD to be automatically activated from this Action
+aDesc      Name of Dialog to be automatically activated from this Action
 
 eCtrlMapER_Domain 8
 
@@ -574,9 +571,7 @@ eCtrlMap   6
 aZKey      1151366
 
 eCtrlMapLOD_Attribute 7
-aZKey      1325360
-aSeqNo_LOD_Entity 1
-aWork      N
+aZKey      68304986
 aUpdate    Y
 
 eCtrlMapRelatedEntity 8
@@ -608,6 +603,13 @@ aLth       32
 aDesc      Name of Control Mapping Reference (optional)
 
 eCtrlMapER_Domain 9
+aZKey      1158762
+aDesc      Specify the type of mapping
+aName      MapTypeGeneral
+aDomainType E
+aDataType  S
+aMaxStringLth 32
+aContextRestriction N
 
 eCtrlMapView 7
 aZKey      1332639
@@ -2447,7 +2449,7 @@ eCtrlMap   4
 aZKey      91471765
 
 eCtrlMapLOD_Attribute 5
-aZKey      91471763
+aZKey      1043158
 aUpdate    Y
 
 eCtrlMapRelatedEntity 6
@@ -2808,9 +2810,9 @@ aSZDLG_X   24904011
 aSZDLG_Y   19988804
 aDfltButton OK
 aZKey      1151836
-aBarID     59451
 aDIL_Active Y
 aGeneralFlag 0
+aBarID     59451
 
 eControl   3
 aTag       Tag
@@ -4174,9 +4176,9 @@ aSZDLG_X   17694996
 aSZDLG_Y   15859972
 aDfltButton OK
 aZKey      1009579
-aBarID     59451
 aDIL_Active Y
 aGeneralFlag 0
+aBarID     59451
 
 eControl   3
 aTag       Tag
@@ -5099,9 +5101,9 @@ aPSDLG_Y   60
 aSZDLG_X   21168458
 aSZDLG_Y   15991047
 aZKey      1138284
-aBarID     59451
 aDIL_Active Y
 aGeneralFlag 0
+aBarID     59451
 
 eControl   3
 aTag       Edit1
@@ -6039,9 +6041,9 @@ aPSDLG_Y   2
 aSZDLG_X   17891620
 aSZDLG_Y   16711938
 aZKey      1137591
-aBarID     59451
 aDIL_Active Y
 aGeneralFlag 0
+aBarID     59451
 
 eControl   3
 aTag       Tag
@@ -6296,11 +6298,8 @@ eCtrlMap   5
 aZKey      1138018
 
 eCtrlMapLOD_Attribute 6
-aZKey      1325249
-aSeqNo_LOD_Entity 2
-aWork      N
-aUpdate    N
-aSeqPriority 0
+aZKey      1043168
+aUpdate    Y
 
 eCtrlMapRelatedEntity 7
 aName      CtrlCtrl
@@ -6351,9 +6350,7 @@ eCtrlMap   5
 aZKey      1147067
 
 eCtrlMapLOD_Attribute 6
-aZKey      1325251
-aSeqNo_LOD_Entity 4
-aWork      N
+aZKey      1043170
 aUpdate    Y
 
 eCtrlMapRelatedEntity 7
@@ -6734,9 +6731,9 @@ aPSDLG_Y   2
 aSZDLG_X   20250952
 aSZDLG_Y   11862199
 aZKey      1138026
-aBarID     59451
 aDIL_Active Y
 aGeneralFlag 0
+aBarID     59451
 
 eControl   3
 aTag       Tag
@@ -6808,8 +6805,8 @@ eCtrlMap   4
 aZKey      1147065
 
 eCtrlMapLOD_Attribute 5
-aZKey      1325431
-aSeqNo_LOD_Entity 4
+aZKey      1043131
+aUpdate    Y
 
 eCtrlMapRelatedEntity 6
 
@@ -7433,9 +7430,9 @@ aPSDLG_Y   67
 aSZDLG_X   21430606
 aSZDLG_Y   13304030
 aZKey      1150858
-aBarID     59451
 aDIL_Active Y
 aGeneralFlag 0
+aBarID     59451
 
 eControl   3
 aTag       Tag
@@ -7482,7 +7479,7 @@ eCtrlMap   4
 aZKey      1150917
 
 eCtrlMapLOD_Attribute 5
-aZKey      1151058
+aZKey      1043148
 aUpdate    Y
 
 eCtrlMapRelatedEntity 6
@@ -8343,6 +8340,9 @@ aDesc      Source Dialog Definition
 aDLL_Name  TZLODOPR
 
 eViewObjRef 2
+aZKey      1332639
+aName      TZCONTROL
+aDesc      View for looking at Control subobject
 
 eLOD       3
 
@@ -9147,7 +9147,6 @@ i75        26
 i76        27
 i78        23
 i79        26
-i96        8
 i98        27
 i104       8
 i105       97
@@ -10107,7 +10106,6 @@ i1959      1924
 i1960      1923
 i1961      1916
 i1962      1807
-i1970      510
 i1971      1969
 i1975      1969
 i1977      1973

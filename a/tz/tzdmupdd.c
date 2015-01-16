@@ -827,7 +827,10 @@ zwfnTZDMUPDD_SaveDomain( zVIEW vSubtask, zVIEW vDomainGrp )
       return( -4 );
 
    // If there is no table entry with a null internal value, create one
-   zwTZDMUPDD_SetNullEntry( vSubtask, vDomainGrp );
+   // KJS 08/21/14 - We are not sure we need this now (we delete the null value when 
+   // opening the domain, so I am commenting this out but leaving the code here just
+   // in case we run into issues.
+   //zwTZDMUPDD_SetNullEntry( vSubtask, vDomainGrp );
 
    // Make sure that the Subdirectory attribute is null and that the
    // Extension attribute is set according to the Language type.
@@ -865,21 +868,25 @@ zwfnTZDMUPDD_SaveDomain( zVIEW vSubtask, zVIEW vDomainGrp )
    // We are updating a Domain if CM_List.W_MetaDef.CPLR_ZKey = the Domain
    // ZKey.  We compare the CM_List.W_MetaDef.Name value to the Domain name
    // to see if the Domain name has changed.
+   // However, we will only do this check if W_MetaDef exists, which it might not for the first Domain.
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_TASK );
-   if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "CPLR_ZKey",
-                                     vDomainGrp, "Domain",    "ZKey" ) == 0 )
+   if ( CheckExistenceOfEntity( vCM_List, "W_MetaDef" ) >= zCURSOR_SET )
    {
-      if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "Name",
-                                        vDomainGrp, "Domain",    "Name" ) != 0 )
+      if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "CPLR_ZKey",
+                                        vDomainGrp, "Domain",    "ZKey" ) == 0 )
       {
-         // Domain Name has changed, so change Context Name as well, if there
-         // is one by the old name.
-         nRC = SetCursorFirstEntityByAttr( vDomainGrp, "Context",   "Name",
-                                           vCM_List,   "W_MetaDef", "Name", 0 );
-         if ( nRC >= zCURSOR_SET )
+         if ( CompareAttributeToAttribute( vCM_List,   "W_MetaDef", "Name",
+                                           vDomainGrp, "Domain",    "Name" ) != 0 )
          {
-            SetAttributeFromAttribute( vDomainGrp, "Context", "Name",
-                                       vDomainGrp, "Domain",  "Name" );
+            // Domain Name has changed, so change Context Name as well, if there
+            // is one by the old name.
+            nRC = SetCursorFirstEntityByAttr( vDomainGrp, "Context",   "Name",
+                                              vCM_List,   "W_MetaDef", "Name", 0 );
+            if ( nRC >= zCURSOR_SET )
+            {
+               SetAttributeFromAttribute( vDomainGrp, "Context", "Name",
+                                          vDomainGrp, "Domain",  "Name" );
+            }
          }
       }
    }
@@ -1594,6 +1601,9 @@ zwTZDMUPDD_CONTEXT_INIT( zVIEW    vSubtask )
    //  one with both null internal and external value.  This is so that
    //  the Domain table handler will give a blank entry to the Combo
    //  Box control.
+   //  KJS 08/21/14 - When saving the domain, we used to create a null entry 
+   //  in zwTZDMUPDD_SetNullEntry(), but we don't think we need that,
+   //  but we will keep this code for now.
    for ( nRC = SetCursorFirstEntity( vTZDGSRCO_Copy, "Context", "" );
          nRC >= zCURSOR_SET;
          nRC = SetCursorNextEntity( vTZDGSRCO_Copy, "Context", "" ) )
@@ -2339,27 +2349,21 @@ zwTZDMUPDD_CreateDomainParameter( zVIEW vSubtask, zVIEW vDomain )
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "Y" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "DataType" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "Data" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ContextName" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "V" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "View" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ViewEntity" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "S" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "ViewAttrib" );
-
    CreateMetaEntity( vSubtask, vDomain, "Parameter", zPOS_LAST );
    SetAttributeFromString( vDomain, "Parameter", "DataType", "N" );
    SetAttributeFromString( vDomain, "Parameter", "ShortDesc", "MaxStrLth" );

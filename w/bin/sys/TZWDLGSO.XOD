@@ -1,9 +1,9 @@
-z1000-Zeidon    TZWDLGSO TZZOXODO 03/22/14   17:53:57 1.0a2    
+z1000-Zeidon    TZWDLGSO TZZOXODO 11/04/14   11:01:50 1.0a2    
 eOBJECT    1
 aNAME      TZWDLGSO
 aZKey      1325104
 aOPER_LIBNM TZLODOPR
-aER_DATE   20140322175321721
+aER_DATE   20140819124300328
 
 eENTITY    2
 aNAME      Dialog
@@ -2495,7 +2495,8 @@ aLTH       254
 aSEQ_AD    A
 aXVAATT_TOK 215
 aDERIVEDF  oTZWDLGSO_DIL_TextMsg
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG3O_Object
+aDERIVEDC  TZWDLG3O
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DIL_Inherited
@@ -2507,7 +2508,8 @@ aLTH       254
 aSEQ_AD    A
 aXVAATT_TOK 216
 aDERIVEDF  oTZWDLGSO_DIL_Inherited_LOD
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG3O_Object
+aDERIVEDC  TZWDLG3O
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      XML_Simple
@@ -8561,7 +8563,8 @@ aLTH       254
 aSEQ_AD    A
 aXVAATT_TOK 711
 aDERIVEDF  oTZWDLGSO_DIL_TextMsg
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG3O_Object
+aDERIVEDC  TZWDLG3O
+aDRSRCTYPE C
 
 eATTRIB    6
 aNAME      DIL_Inherited
@@ -8573,7 +8576,8 @@ aLTH       254
 aSEQ_AD    A
 aXVAATT_TOK 712
 aDERIVEDF  oTZWDLGSO_DIL_Inherited_Opt
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG3O_Object
+aDERIVEDC  TZWDLG3O
+aDRSRCTYPE C
 
 eATTRIB    6
 aNAME      SeqNo_Menu
@@ -8611,6 +8615,7 @@ aUPDATE    Y
 aXVAATT_TOK 715
 aDERIVEDF  oTZWDLGSO_NLS_OptionText
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG2O_Object
+aDRSRCTYPE VML
 
 eCHILDENTITY 6
 aNAME      OptOpt
@@ -8741,7 +8746,8 @@ aLTH       254
 aSEQ_AD    A
 aXVAATT_TOK 711
 aDERIVEDF  oTZWDLGSO_DIL_TextMsg
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG3O_Object
+aDERIVEDC  TZWDLG3O
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      DIL_Inherited
@@ -8753,7 +8759,8 @@ aLTH       254
 aSEQ_AD    A
 aXVAATT_TOK 712
 aDERIVEDF  oTZWDLGSO_DIL_Inherited_Opt
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG3O_Object
+aDERIVEDC  TZWDLG3O
+aDRSRCTYPE C
 
 eATTRIB    7
 aNAME      SeqNo_Menu
@@ -8791,6 +8798,7 @@ aUPDATE    Y
 aXVAATT_TOK 715
 aDERIVEDF  oTZWDLGSO_NLS_OptionText
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZWDLG2O_Object
+aDRSRCTYPE VML
 
 eCHILDENTITY 6
 aNAME      OptAct

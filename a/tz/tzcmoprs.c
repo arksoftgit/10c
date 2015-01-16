@@ -971,6 +971,8 @@ fnActivateMetaOI( zVIEW   vSubtask,
    zVIEW  vTaskLPLR;
    zVIEW  CM_View;
    zVIEW  vWkListView;
+   zVIEW  vTZCMULWO;
+   zVIEW  vTZCMWKSO;
    zBOOL  bCopyOI = FALSE;
    zSHORT nEntityType;
    zSHORT nOrigType;
@@ -978,12 +980,17 @@ fnActivateMetaOI( zVIEW   vSubtask,
    zBOOL  bReactivate;
    zLONG  lStatus, lTaskID, lCurrentTaskID;
    zLONG  lMetaOI_ZKey;
+   zLONG  lPrefix;
+   zLONG  lLastPrefix;
    zULONG ulOrigMetaOI_ZKey;
    zCHAR  szMetaOI_Name[ 33 ];
    zCHAR  szMetaOI_Def[ 33 ];
+   zCHAR  szTempSpec[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szFileSpec[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szFileName[ 255 ];
    zCHAR  szCM_ViewName[ 80 ];
    zCHAR  szLPLR_Name[ 80 ];
+   zCHAR  szUserName[ 80 ];
    zCHAR  szSyncDate[ 18 ];
    zCHAR  szGroupName[ 80 ];
    zSHORT nRC = 0;
@@ -1014,6 +1021,64 @@ fnActivateMetaOI( zVIEW   vSubtask,
    // It is also needed to properly qualify the task for vWkListView.
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
    GetStringFromAttribute( szLPLR_Name, vTaskLPLR, "LPLR", "Name" );  // e.g. Zeidon
+
+   // Validate that the User ZKey Prefixes in TZCMWULO are unique.
+   nRC = GetViewByName( &vTZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK );
+   if ( nRC < 0 )
+   {
+      // Activate TZCMULWO as necessary.
+      zCHAR  szTempFile[ zMAX_FILESPEC_LTH + 1 ];
+      GetStringFromAttribute( szTempFile, vTaskLPLR, "LPLR", "MetaSrcDir" );
+      SysConvertEnvironmentString( szFileName, szTempFile );
+      zstrcat( szFileName, "\\TZCMULWO.POR" );
+      nRC = ActivateOI_FromFile( &vTZCMULWO, "TZCMULWO", vTaskLPLR, szFileName, zIGNORE_ERRORS | zLEVEL_TASK );
+      if ( nRC >= 0 )
+      {
+         OrderEntityForView( vTZCMULWO, "User", "GenerationStartZKeyPrefix A" );
+      // DisplayObjectInstance( vTZCMULWO, "", "" );
+      }
+      else
+      {
+         ActivateEmptyObjectInstance( &vTZCMULWO, "TZCMULWO", vTaskLPLR, zSINGLE | zLEVEL_TASK );
+         CreateEntity( vTZCMULWO, "Installation", zPOS_AFTER ); 
+      }
+      SetNameForView( vTZCMULWO, "TZCMULWO", vTaskLPLR, zLEVEL_TASK );
+
+      // Make sure that each User Prefix is unique.
+      lLastPrefix = 0;
+      lPrefix = -1;
+      while ( nRC >= zCURSOR_SET && lPrefix != lLastPrefix )
+      {
+         lLastPrefix = lPrefix;
+         GetIntegerFromAttribute( &lPrefix, vTZCMULWO, "User", "GenerationStartZKeyPrefix" );
+         nRC = SetCursorNextEntity( vTZCMULWO, "User", 0 );
+      }
+      if ( lPrefix == lLastPrefix )
+      {
+         MessageSend( vSubtask, "", "Configuration Management",
+                      "User ZKey prefixes are not unique. Processing is aborted.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         return( -16 ); 
+      }
+
+      // Make sure that the User in the work station object is in the TZCMULO object.
+      GetViewByName( &vZeidonCM, "ZeidonCM", vSubtask,  zLEVEL_APPLICATION );
+      GetViewByName( &vTZCMWKSO, "TZCMWKSO", vZeidonCM, zLEVEL_SUBTASK );
+      GetStringFromAttribute( szUserName, vTZCMWKSO, "User", "Name" );
+      nRC = SetCursorFirstEntityByString( vTZCMULWO, "User", "Name", szUserName, "" );
+      if ( nRC < zCURSOR_SET )
+      {
+         zCHAR szMsg[ 512 ];
+         zstrcpy( szMsg, "The Work Station User Name (" );
+         zstrcat( szMsg, szUserName );
+         zstrcat( szMsg, ") is not in the TZCMULWO object. Processing is aborted.  File Name: " );
+         zstrcat( szMsg, szFileName );
+         MessageSend( vSubtask, "", "Configuration Management",
+                      szMsg,
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         return( -16 ); 
+      }
+   }
 
    // The following code changes the Type for Domain and Global Operation
    // Activates into Domain Group and Global Operation Group Activates.
@@ -1355,14 +1420,15 @@ fnActivateMetaOI( zVIEW   vSubtask,
       //BL, 2000.01.13 Load PPE from LPLR, not from system directory
       //               if PPE does not exist in LPLR, then we call the
       //               Function ActivateOI_FromFile, not ActivateMetaOI
-      fnGetDirectorySpec( vSubtask, szFileSpec, nType, FALSE ); // for CompilerSpec, needed to use vSubtask
+      fnGetDirectorySpec( vSubtask, szTempSpec, nType, FALSE ); // for CompilerSpec, needed to use vSubtask
 #if 0
       // We will get PEs from the system directory and others from the LPLR.
       if ( nActiveType == zSOURCE_PENV_META )
-         zgGetZeidonToolsDir( vSubtask, szFileSpec, zAPPL_DIR_OBJECT );
+         zgGetZeidonToolsDir( vSubtask, szTempSpec, zAPPL_DIR_OBJECT );
       else
-         fnGetDirectorySpec( szFileSpec, nType, TRUE );
+         fnGetDirectorySpec( szTempSpec, nType, TRUE );
 #endif
+      SysConvertEnvironmentString( szFileSpec, szTempSpec );
       zstrcat( szFileSpec, szMetaOI_Name );
       if ( nEntityType == CM_ACTIVE_TYPE )
          zstrcat( szFileSpec, SRC_CMOD[ nType ].szOD_EXT );
@@ -4155,9 +4221,6 @@ CreateTE_MetaEntity( zVIEW  vSubtask,
 {
    zVIEW   WKS_View;
    zVIEW   vZeidonCM;
-// zVIEW   vTZCMREPO;
-// zLONG   lWKS_Id;
-// zLONG   lWkZKey;
    zULONG  ulMaxZKey;
 
    GetViewByName( &vZeidonCM, "ZeidonCM", vSubtask,  zLEVEL_APPLICATION );
@@ -4221,13 +4284,16 @@ CreateMetaEntity( zVIEW  vSubtask,
 {
    zVIEW   WKS_View;
    zVIEW   vZeidonCM;
-// zVIEW   vTZCMREPO;
-// zLONG   lWKS_Id;
-// zLONG   lWkZKey;
+   zVIEW   TZCMULWO = 0; 
    zULONG  ulMaxZKey;
+   zLONG   lGenKeyStart = 0; 
+   zCHAR   szMsg[ 300 ] = { 0 }; 
+   zCHAR   szTemp[ 33 ]; 
 
    GetViewByName( &vZeidonCM, "ZeidonCM", vSubtask,  zLEVEL_APPLICATION );
    GetViewByName( &WKS_View, "TZCMWKSO", vZeidonCM, zLEVEL_SUBTASK );
+   GetViewByName( &TZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK );
+
    if ( WKS_View == 0 )  // View isn't there
    {
       MessageSend( lpView, "CM00459", "Configuration Management",
@@ -4255,6 +4321,33 @@ CreateMetaEntity( zVIEW  vSubtask,
       return( -1 );
    }
 
+   // KJS 07/22/14 - I would like to check that the MaxZKey beginning value is the same as the user's initial zkey value. There is
+   // potential because these files get copied from workstation to workstation that we do not catch an issue like this in the
+   // files.
+   if ( TZCMULWO != 0 )  // View exists
+   {
+      GetIntegerFromAttribute( &lGenKeyStart, TZCMULWO, "User", "GenerationStartZKey" );
+      if ( ulMaxZKey / 10000000 != (zULONG) lGenKeyStart / 10000000 )
+      {
+         GetVariableFromAttribute( szTemp, 0, 'S', 33, WKS_View, "User", "Name", "", 0 );
+         //"The User GenerationStartZKeyPrefix does not match the LPLR MaxZKey. Look at MaxZKey in TZCMWKSO.POR and TZCMULWO.POR for discrepencies.",
+         ZeidonStringCopy( szMsg, 1, 0, "The User GenerationStartZKeyPrefix does not match the LPLR MaxZKey. Look at MaxZKey in TZCMWKSO.POR and TZCMULWO.POR for discrepencies. ", 1, 0, 300 );
+         ZeidonStringConcat( szMsg, 1, 0, ", User: ", 1, 0, 300 );
+         ZeidonStringConcat( szMsg, 1, 0, szTemp, 1, 0, 200 );
+         ZeidonStringConcat( szMsg, 1, 0, ", LPLR: ", 1, 0, 300 );
+         GetVariableFromAttribute( szTemp, 0, 'S', 33, WKS_View, "LPLR", "Name", "", 0 );
+         ZeidonStringConcat( szMsg, 1, 0, szTemp, 1, 0, 300 );
+         ZeidonStringConcat( szMsg, 1, 0, ", Installation: ", 1, 0, 300 );
+         GetVariableFromAttribute( szTemp, 0, 'S', 33, TZCMULWO, "Installation", "Name", "", 0 );
+         ZeidonStringConcat( szMsg, 1, 0, szTemp, 1, 0, 300 );
+
+         MessageSend( lpView, "CM00459", "Configuration Management",
+                      szMsg,
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         return( -1 );
+      }
+   }
+   
    // 12/6/2013 - DonC deleted fnBreakDownZKey call and related code.
 
    ulMaxZKey++;
@@ -4303,10 +4396,11 @@ CreateTemporalMetaEntity( zVIEW  vSubtask,
 {
    zVIEW   vZeidonCM;
    zVIEW   WKS_View;
-// zVIEW   vTZCMREPO;
-// zLONG   lWKS_Id;
-// zLONG   lWkZKey;
+   zVIEW   TZCMULWO;
    zULONG  ulMaxZKey;
+   zLONG   lGenKeyStart = 0; 
+   zCHAR   szMsg[ 300 ] = { 0 }; 
+   zCHAR   szTemp[ 33 ]; 
 
    if ( GetViewByName( &vZeidonCM, "ZeidonCM",
                        vSubtask, zLEVEL_APPLICATION ) <= 0 )
@@ -4335,6 +4429,33 @@ CreateTemporalMetaEntity( zVIEW  vSubtask,
                    "The LPLR MaxZKey value has not been correctly initialized in the TZCMWKS8.POR file (initial values must be at least 10000000). You must abort the current process and fix.",
                    zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
       return( -1 );
+   }
+
+   // KJS 07/22/14 - I would like to check that the MaxZKey beginning value is the same as the user's initial zkey value. There is
+   // potential because these files get copied from workstation to workstation that we do not catch an issue like this in the
+   // files.
+   if ( GetViewByName( &TZCMULWO, "TZCMULWO", vSubtask, zLEVEL_TASK ) > 0 )
+   {
+      GetIntegerFromAttribute( &lGenKeyStart, TZCMULWO, "User", "GenerationStartZKey" );
+      if ( ulMaxZKey / 10000000 != (zULONG) lGenKeyStart / 10000000 )
+      {
+         GetVariableFromAttribute( szTemp, 0, 'S', 33, WKS_View, "User", "Name", "", 0 );
+         //"The User GenerationStartZKeyPrefix does not match the LPLR MaxZKey. Look at MaxZKey in TZCMWKSO.POR and TZCMULWO.POR for discrepencies.",
+         ZeidonStringCopy( szMsg, 1, 0, "The User GenerationStartZKeyPrefix does not match the LPLR MaxZKey. Look at MaxZKey in TZCMWKSO.POR and TZCMULWO.POR for discrepencies. ", 1, 0, 300 );
+         ZeidonStringConcat( szMsg, 1, 0, ", User: ", 1, 0, 300 );
+         ZeidonStringConcat( szMsg, 1, 0, szTemp, 1, 0, 200 );
+         ZeidonStringConcat( szMsg, 1, 0, ", LPLR: ", 1, 0, 300 );
+         GetVariableFromAttribute( szTemp, 0, 'S', 33, WKS_View, "LPLR", "Name", "", 0 );
+         ZeidonStringConcat( szMsg, 1, 0, szTemp, 1, 0, 300 );
+         ZeidonStringConcat( szMsg, 1, 0, ", Installation: ", 1, 0, 300 );
+         GetVariableFromAttribute( szTemp, 0, 'S', 33, TZCMULWO, "Installation", "Name", "", 0 );
+         ZeidonStringConcat( szMsg, 1, 0, szTemp, 1, 0, 300 );
+
+         MessageSend( lpView, "CM00459", "Configuration Management",
+                      szMsg,
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         return( -1 );
+      }
    }
 
    // 12/6/2013 - DonC deleted fnBreakDownZKey call and related code.

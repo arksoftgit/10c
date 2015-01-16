@@ -1,9 +1,9 @@
-z1000-Zeidon    KZWDLGXO TZZOXODO 03/22/14   17:53:50 1.0a2    
+z1000-Zeidon    KZWDLGXO TZZOXODO 11/04/14   11:01:28 1.0a2    
 eOBJECT    1
 aNAME      KZWDLGXO
 aZKey      1330836
 aOPER_LIBNM KZOENGAA
-aER_DATE   20140322175321721
+aER_DATE   20140819124300328
 
 eENTITY    2
 aNAME      Dlg
@@ -594,7 +594,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 50
 aDERIVEDF  oKZWDLGXO_DerivedCaption
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.KZWDLGXO_Object
+aDERIVEDC  KZWDLGXO
+aDRSRCTYPE C
 
 eATTRIB    4
 aNAME      NLS
@@ -878,7 +879,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 74
 aDERIVEDF  oKZWDLGXO_DerivedControlText
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.KZWDLGXO_Object
+aDERIVEDC  KZWDLGXO
+aDRSRCTYPE C
 
 eATTRIB    5
 aNAME      NLS
@@ -1195,7 +1197,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 74
 aDERIVEDF  oKZWDLGXO_DerivedControlText
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.KZWDLGXO_Object
+aDERIVEDC  KZWDLGXO
+aDRSRCTYPE C
 
 eATTRIB    6
 aNAME      NLS
@@ -2624,7 +2627,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 214
 aDERIVEDF  oKZWDLGXO_DerivedOptionText
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.KZWDLGXO_Object
+aDERIVEDC  KZWDLGXO
+aDRSRCTYPE C
 
 eATTRIB    6
 aNAME      NLS
@@ -2753,7 +2757,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 214
 aDERIVEDF  oKZWDLGXO_DerivedOptionText
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.KZWDLGXO_Object
+aDERIVEDC  KZWDLGXO
+aDRSRCTYPE C
 
 eCHILDENTITY 6
 aNAME      OptAct
@@ -3324,7 +3329,8 @@ aSEQ_AD    A
 aUPDATE    Y
 aXVAATT_TOK 266
 aDERIVEDF  oKZWDLGXO_DerivedDIL_Msg
-aDERIVEDC  com.quinsoft.zeidon.zeidontools.KZWDLGXO_Object
+aDERIVEDC  KZWDLGXO
+aDRSRCTYPE C
 
 eCHILDENTITY 4
 aNAME      NLS_DIL_Text

@@ -5,7 +5,7 @@
 typedef struct tagzKZWDLGXO_Dlg_DEF
 {
    zCHAR Tag[ 33 ];
-   zCHAR DLL[ 9 ];
+   zCHAR DLL[ 255 ];
    zCHAR DfltWnd[ 33 ];
    zLONG PE;
 

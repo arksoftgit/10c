@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="94">
+<configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
       <df name="_common">
@@ -314,16 +314,19 @@
             </df>
           </df>
           <in>TZADWEBD.c</in>
+          <in>TZBLDXOD.c</in>
           <in>TZCMLPLDV.c</in>
           <in>TZGLOJSP.c</in>
           <in>TZRPSXM2.c</in>
           <in>TZVSPMAA.HD</in>
           <in>TZVSPMAA.HT</in>
+          <in>TZWDLG5O.C</in>
           <in>TZWDLG6O.c</in>
           <in>TZWEBGL2.C</in>
           <in>TZWEBGL3.c</in>
           <in>TZWEBGL4.c</in>
           <in>TrueGrid.cpp</in>
+          <in>ZEIDONOP.H</in>
           <in>account.c</in>
           <in>currency.c</in>
           <in>kzrpquer.c</in>
@@ -496,8 +499,8 @@
           <in>tzzoloq2.c</in>
           <in>tzzorpts.c</in>
           <in>tzzoxodo.c</in>
+          <in>underscore.c</in>
           <in>waccount.c</in>
-          <in>zeidonop.h</in>
           <in>zglobal1.c</in>
         </df>
         <df name="ut">
@@ -512,8 +515,6 @@
           </df>
         </df>
         <df name="zdr">
-          <df name="dsp">
-          </df>
           <df name="jpeglib">
             <in>CDERROR.H</in>
             <in>CDJPEG.H</in>
@@ -780,8 +781,6 @@
       </df>
       <df name="w">
         <df name="bin">
-          <df name="hlp">
-          </df>
           <df name="sys">
           </df>
         </df>

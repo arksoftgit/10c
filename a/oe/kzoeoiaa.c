@@ -2589,7 +2589,10 @@ ActivateOI_FromFile( zPVIEW    pvReturnView,
    SysConvertEnvironmentString( szOpenFileName, szWork );
 
    if ( AnchorBlock->TraceFlags.bOpenFile )
-      TraceLineS( "(oi) opening ", szOpenFileName );
+   {
+      if ( zstrstr( cpcFileName, "TZCMULWO.POR" ) == 0 )
+         TraceLineS( "(oi) opening ", szOpenFileName );
+   }
 
    // Open the file for the object instance data.
    if ( lControl & (zLEVEL_APPLICATION | zLEVEL_SYSTEM) )
@@ -12093,9 +12096,12 @@ EndOfFunction:
    {
       zCHAR sz[ 100 ];
 
-      zsprintf( sz, "(%s) = %lf seconds", lpViewOD->szName,
-                (double) (SysGetTickCount( ) - lTickCount) / zTICKS_PER_SECOND );
-      TraceLineS( "(oi) Total time for SfActivateOI_FromStream ", sz );
+      if ( zstrcmp( lpViewOD->szName, "TZCMULWO" ) != 0 )
+      {
+         zsprintf( sz, "(%s) = %lf seconds", lpViewOD->szName,
+                   (double) (SysGetTickCount( ) - lTickCount) / zTICKS_PER_SECOND );
+         TraceLineS( "(oi) Total time for SfActivateOI_FromStream ", sz );
+      }
    }
 
    return( nRC );

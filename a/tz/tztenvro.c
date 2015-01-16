@@ -139,6 +139,12 @@ CHANGE LOG
 //#define  DEBUG_VIEWS 1
 
 zOPER_EXPORT zSHORT OPERATION
+CreateTE_MetaEntity( zVIEW  vSubtask,
+                  zVIEW  lpView,
+                  zPCHAR szEntityName,
+                  zSHORT nPosition );
+
+zOPER_EXPORT zSHORT OPERATION
 ofnTZTENVRO_ImplementSQL_RelLink( zVIEW    vSubtask,
                                   zVIEW    vDTE_c,
                                   zVIEW    vEMD,
@@ -158,6 +164,10 @@ zOPER_EXPORT zSHORT OPERATION
 oTZTENVRO_WriteErrorMsgToList( zVIEW  vSubtask,
                                zPCHAR szEntityName,
                                zPCHAR szErrorMsg );
+
+zSHORT LOCALOPER
+TranslateToUnderscoreCase( zPCHAR pchSrc, zPCHAR pchTarget, zCHAR  cMetaType );
+
 
 
 static zSHORT
@@ -181,6 +191,14 @@ zCHAR szDebug[ 512 ];
 #define zREL_IMPLD_AsFkInSrc     1
 #define zREL_IMPLD_AsFkInTgt     2
 #define zREL_IMPLD_AsTablRec     3
+
+
+#define BUFF_SIZE 256
+#define MAX_TABLENAME_LTH	32
+#define MAX_COLUMNNAME_LTH    	32
+
+
+
 
 /*
    The basic algorithm is:
@@ -215,6 +233,7 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
    zBOOL     bModifyExistingTables;
    zBOOL     bExists;
    zCHAR     szSironDB_Type[ 2 ];
+   zCHAR     szCreateUnderscore[ 2 ];
 
    GetStringFromAttribute( szName,
                            vDTE, "TE_DBMS_Source", "GenerateExecutable" );
@@ -314,6 +333,10 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
             if ( *szName == 0 )
             {
                GetStringFromAttribute( szName, vEMD, "ER_Entity", "Name" );
+               GetStringFromAttribute (szCreateUnderscore, vDTE, "TE_DBMS_Source", "TranslateNamesToLowerUnderscore");
+               if ( szCreateUnderscore[ 0 ] == 'Y' )
+                  TranslateToUnderscoreCase( szName, szName, 'E' );        
+
                ofnTZTENVRO_GenerateUniqueName( vSubtask, vDTE, szName, 'E', "TE_TablRec",
                                                "Name", 0, pfnGenerateName );
             }
@@ -383,6 +406,9 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
             if ( *szName == 0 )
             {
                GetStringFromAttribute( szName, vEMD, "ER_Attribute", "Name" );
+               GetStringFromAttribute (szCreateUnderscore, vDTE, "TE_DBMS_Source", "TranslateNamesToLowerUnderscore");
+	       if ( szCreateUnderscore[ 0 ] == 'Y' )
+	          TranslateToUnderscoreCase( szName, szName, 'A' );        
                ofnTZTENVRO_GenerateUniqueName( vSubtask, vDTE, szName,
                                                'A', "TE_FieldDataRel",
                                                "Name", 0, pfnGenerateName );
@@ -441,6 +467,9 @@ oTZTENVRO_BuildTablRecsFromEMD( zVIEW    vSubtask,
                                           vEMD, "ER_EntIdentifier", "TE_KeyName" );
 
                GetStringFromAttribute( szName, vEMD, "ER_EntIdentifier", "Name" );
+               GetStringFromAttribute (szCreateUnderscore, vDTE, "TE_DBMS_Source", "TranslateNamesToLowerUnderscore");
+	       if ( szCreateUnderscore[ 0 ] == 'Y' )
+	          TranslateToUnderscoreCase( szName, szName, 'A' );        
 
                ofnTZTENVRO_GenerateUniqueName( vSubtask, vDTE, szName,
                                                'A', "TE_TablRecKey",
@@ -1008,9 +1037,9 @@ ofnTZTENVRO_ImplementRelAs( zPSHORT nRelImplemented,
    // delete the current Rel implementation and continue to next Rel
    if ( bRelImplemented )
    {
-      if ( CompareAttributeToString( vEMD, "ER_Entity", "Purpose",
+      if ( CompareAttributeToString( vEMD, "ER_Entity_2", "Purpose",
                                      "W" ) == 0  ||
-           CompareAttributeToString( vEMD2, "ER_Entity", "Purpose",
+           CompareAttributeToString( vEMD2, "ER_Entity_2", "Purpose",
                                      "W" ) == 0 )
       {
          if ( bRelImplementedAsTablRec )
@@ -2314,11 +2343,16 @@ ofnTZTENVRO_GenerateUniqueName( zVIEW  vSubtask,
    zVIEW  vDTE2;
    zSHORT RESULT;
    zCHAR  szSironDB_Type[ 2 ];
+// zCHAR  szCreateUnderscore[ 2 ];
 
    // Generate unique name only for databases, not for Siron Flat Files
    GetStringFromAttribute (szSironDB_Type, vDTE, "TE_DBMS_Source", "SironDB_Type");
    if (*szSironDB_Type != 'F')
    {
+      //GetStringFromAttribute (szCreateUnderscore, vDTE, "TE_DBMS_Source", "TranslateNamesToLowerUnderscore");
+      //if ( szCreateUnderscore[ 0 ] == 'Y' )
+      //   TranslateToUnderscoreCase( pszName, pszName, cType );        
+      
       CreateViewFromViewForTask( &vDTE2, vDTE, 0 );
       (*pfnGenerateName) ( vDTE, pszName, cType );
 
@@ -2338,6 +2372,135 @@ ofnTZTENVRO_GenerateUniqueName( zVIEW  vSubtask,
 
    return;
 }
+
+
+
+
+
+
+//./ ADD NAME=TranslateToUnderscoreCase
+/////////////////////////////////////////////////////////////////////////////
+//
+//   ENTRY:    TranslateToUnderscoreCase
+//
+//   PROTOTYPE:
+//        void OPERATION
+//        TranslateToUnderscoreCase( zPCHAR pchSrc, 
+//                                   zPCHAR pchTarget, 
+//                                   zSHORT targetLth )
+//
+//   PURPOSE:  Converts a string from Camel Casing to underscores.  E.g.:
+//
+//                  ThisIsCamelCase to this_is_camel_case
+//                  ThisIsHTTPCase to this_is_http_case
+//                  ThisIsHTTP to this_is_http
+//                  ThisIsATest to this_is_a_test
+//                  nocamel_case to nocamel_case
+//                  noLeadingUpper to no_leading_upper
+//
+//   RETURNS: 0 or zCALL_ERROR
+//
+//////////////////////////////////////////////////////////////////////////////
+
+//TranslateToUnderscoreCase( zPCHAR pchSrc, zPCHAR pchTarget, zSHORT targetLth )
+zSHORT LOCALOPER
+TranslateToUnderscoreCase( zPCHAR pchSrc, zPCHAR pchTarget, zCHAR  cMetaType )
+{
+   zVIEW  vDBH_Data = 0;
+   //zCHAR  szDBH_DataObjectName[ zZEIDON_NAME_LTH + 1 ];
+   //zCHAR  szCreateUnderscore[ 2 ];
+   zLONG  l;
+   zPCHAR targetEnd; // = pchTarget + targetLth - 1; // Point to last char in target buffer.
+   zPCHAR original = pchSrc;
+   zPCHAR p;
+   zCHAR  sz[ 256 ];
+   static zSHORT nMaxLth;      // Used to keep track of duplicate names.
+
+   switch ( cMetaType )
+   {
+      case 'E':      // Meta type is Entity
+
+         // Try getting the max length from the DBH-Specific OI.  If one is
+         // not specified use the default length.
+         if ( vDBH_Data &&
+              GetIntegerFromAttribute( &l, vDBH_Data, "ODBC",
+                                       "MaxTableNameLength" ) != -1 )
+         {
+            nMaxLth = (zSHORT) l;
+         }
+         else
+            nMaxLth = MAX_TABLENAME_LTH;
+
+         break;
+
+      case 'A':      // Meta type is Attribute
+
+         // Try getting the max length from the DBH-Specific OI.  If one is
+         // not specified use the default length.
+         if ( vDBH_Data &&
+              GetIntegerFromAttribute( &l, vDBH_Data, "ODBC",
+                                       "MaxColumnNameLength" ) != -1 )
+         {
+            nMaxLth = (zSHORT) l;
+         }
+         else
+            nMaxLth = MAX_COLUMNNAME_LTH;
+
+         break;
+
+   }
+
+   if ( nMaxLth >= BUFF_SIZE )
+      nMaxLth = BUFF_SIZE - 1;
+
+  targetEnd = pchTarget + nMaxLth - 1;
+
+  // Defensive programming...
+  *targetEnd = 0;
+
+  if ( zstrlen( pchSrc ) >= (zULONG) nMaxLth )
+     return zCALL_ERROR;
+
+  zstrcpy( sz, pchSrc );
+
+  //p = pchTarget;
+  p = (zPCHAR) &sz;
+
+  // Copy first char to target.
+  *p++ = *pchSrc++;
+  while ( *pchSrc != 0 )
+    {
+      // Do we have enough space to add two more chars?
+      if ( p + 2 > targetEnd )
+  	 return -16;
+
+      if ( *pchSrc >= 'A' && *pchSrc <= 'Z' )
+	{
+	  // We have a capital letter.  Is previous letter upper?
+	  if ( *(p-1) < 'A' || *(p-1) > 'Z' )
+	    // No, so copy _.
+	    *p++ = '_';
+	  else
+	    // Previous letter is also upper.  Insert _ if next char is lower.
+	    if ( ( *(pchSrc+1) < 'A' || *(pchSrc+1) > 'Z' ) && *(pchSrc+1) != 0 )
+	      *p++ = '_';
+	}
+      *p++ = *pchSrc++;
+    }
+//
+  *p++ = 0;
+  
+  // Now convert to all lower.
+  SysTranslateString( sz, 'L' );
+  zstrcpy( pchTarget, sz );
+
+  return 0;
+}
+
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

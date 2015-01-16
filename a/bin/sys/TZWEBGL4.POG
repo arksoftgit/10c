@@ -1,4 +1,4 @@
-z1000-Zeidon    TZWEBGL4 TZOGSRCO 11/09/12   14:48:00 1.0a2    
+z1000-Zeidon    TZWEBGL4 TZOGSRCO 04/16/14   15:04:41 1.0a2    
 eGlobalOperationGroup 1
 aZKey      4896724
 aName      TZWEBGL4
@@ -47,6 +47,90 @@ aDataType  V
 aPFlag     N
 aUFlag     N
 aZKey      4896730
+
+eOperation 2
+aName      GenJSPJ_CrteMLEdit
+aZKey      130000067
+aDesc      JSP Java generation for MLE control
+aType      G
+aReturnDataType N
+
+eParameter 3
+aShortDesc vDialog
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      130000068
+
+eParameter 3
+aShortDesc File
+aDataType  L
+aPFlag     N
+aUFlag     N
+aZKey      130000069
+
+eParameter 3
+aShortDesc WriteBuffer
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      130000070
+
+eParameter 3
+aShortDesc Indent
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      130000071
+
+eParameter 3
+aShortDesc CtrlTag
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      130000072
+
+eParameter 3
+aShortDesc TableRowFlag
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      130000073
+
+eParameter 3
+aShortDesc Justify
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      130000074
+
+eParameter 3
+aShortDesc NoPositioning
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      130000075
+
+eParameter 3
+aShortDesc OffsetX
+aDataType  L
+aPFlag     N
+aUFlag     N
+aZKey      130000076
+
+eParameter 3
+aShortDesc OffsetY
+aDataType  L
+aPFlag     N
+aUFlag     N
+aZKey      130000077
+
+eParameter 3
+aShortDesc strRepeatGrpKey
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      130000078
 
 eOperation 2
 aName      GenJSPJ_CrteListBox

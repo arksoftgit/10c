@@ -1,9 +1,9 @@
-z1000-Zeidon    TZDGSRCO TZZOXODO 03/22/14   17:53:53 1.0a2    
+z1000-Zeidon    TZDGSRCO TZZOXODO 11/04/14   11:01:38 1.0a2    
 eOBJECT    1
 aNAME      TZDGSRCO
 aZKey      1325025
 aOPER_LIBNM TZLODOPR
-aER_DATE   20140322175321721
+aER_DATE   20140819124300328
 
 eENTITY    2
 aNAME      DomainGroup
@@ -364,6 +364,7 @@ aUPDATE    Y
 aXVAATT_TOK 28
 aDERIVEDF  oTZDGSRCO_DIL_InheritedMessage
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZDGSRCO_Object
+aDRSRCTYPE VML
 
 eATTRIB    5
 aNAME      DIL_TextMsg
@@ -377,6 +378,7 @@ aUPDATE    Y
 aXVAATT_TOK 29
 aDERIVEDF  oTZDGSRCO_DIL_TextMsg
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZDGSRCO_Object
+aDRSRCTYPE VML
 
 eATTRIB    5
 aNAME      DIL_NLS_Text
@@ -390,6 +392,7 @@ aUPDATE    Y
 aXVAATT_TOK 30
 aDERIVEDF  oTZDGSRCO_NLS_DIL_Text
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZDGSRCO_Object
+aDRSRCTYPE VML
 
 eCHILDENTITY 5
 aNAME      TableEntry
@@ -454,6 +457,7 @@ aUPDATE    Y
 aXVAATT_TOK 34
 aDERIVEDF  oTZDGSRCO_NLS_ExtValueText
 aDERIVEDC  com.quinsoft.zeidon.zeidontools.TZDGSRCO_Object
+aDRSRCTYPE VML
 
 eCHILDENTITY 6
 aNAME      ExtValueNLS_Text

@@ -5923,6 +5923,8 @@ RetrieveSchema( zVIEW  vDTE, zPVIEW pvDB )
    GetAddrForAttribute( &pchDBName, vDTE, "TE_DBMS_Source", "Name" );
 
    SysGetDB_UserID( vDTE, szUserID, szPassword );
+// TraceLineS( "User ID: ", szUserID );
+// TraceLineS( "Password: ", szPassword );
 
    //==============================================================
    // Open database.
