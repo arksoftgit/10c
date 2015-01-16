@@ -1,0 +1,18 @@
+
+/*************************************************************************************************
+**
+**    OPERATION: GenJSP_CrteGrid
+**
+*************************************************************************************************/
+LOCAL OPERATION
+GenJSP_CrteGrid( VIEW vDialog,
+                 INTEGER lFile,
+                 STRING ( 32 ) Buffer,
+                 STRING ( 32 ) Indent,
+                 STRING ( 32 ) ControlName,
+                 INTEGER       lOffsetX,
+                 INTEGER       lOffsetY )
+
+
+
+END
