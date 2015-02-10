@@ -57,6 +57,7 @@ build/
 *.dep
 
 account.*
+mtznlast.bat
 *_i.c
 *_p.c
 *.bak
