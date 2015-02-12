@@ -42,6 +42,7 @@
 *.xbk
 x.bat
 zdr.mak
+zzdr.inc
 cdalast.bat
 dks.vml
 account*.*

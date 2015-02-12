@@ -277,6 +277,8 @@ SQL_DBH_RemoveAll( zVIEW     vSubtask )
          { 
             //:  TZZOLODO.POD_Entity.SQL_JoinWithParent = "N"
             SetAttributeFromString( TZZOLODO, "POD_Entity", "SQL_JoinWithParent", "N" );
+            //:  TZZOLODO.POD_Entity.SQL_ActivateInOne = "N"
+            SetAttributeFromString( TZZOLODO, "POD_Entity", "SQL_ActivateInOne", "N" );
          } 
 
          //:  END
@@ -366,6 +368,8 @@ SQL_DBH_LOD_BeforeEntityChange( zVIEW     vSubtask )
    { 
       //: MapCtrl( vSubtask, "SQL_DBH_JoinCheck" )
       MapCtrl( vSubtask, "SQL_DBH_JoinCheck" );
+      //: MapCtrl( vSubtask, "SQL_DBH_OneSelCheck" )
+      MapCtrl( vSubtask, "SQL_DBH_OneSelCheck" );
    } 
 
    //:END
@@ -1096,6 +1100,8 @@ SQL_DBH_LOD_EntityChanged( zVIEW     vSubtask )
 
             //:TZZOLODO.POD_Entity.SQL_JoinWithParent = "N"
             SetAttributeFromString( TZZOLODO, "POD_Entity", "SQL_JoinWithParent", "N" );
+            //:TZZOLODO.POD_Entity.SQL_ActivateInOne = "N"
+            SetAttributeFromString( TZZOLODO, "POD_Entity", "SQL_ActivateInOne", "N" );
             //:INCLUDE TZZOLODO.TE_DBMS_SourceForEntity FROM TZTENVRO.TE_DBMS_Source
             RESULT = IncludeSubobjectFromSubobject( TZZOLODO, "TE_DBMS_SourceForEntity", TZTENVRO, "TE_DBMS_Source", zPOS_AFTER );
          } 
@@ -1105,12 +1111,16 @@ SQL_DBH_LOD_EntityChanged( zVIEW     vSubtask )
          //:// not the root and not work and not derived
          //:SetCtrlState( vSubtask,      "SQL_DBH_JoinCheck", zCONTROL_STATUS_ENABLED, TRUE )
          SetCtrlState( vSubtask, "SQL_DBH_JoinCheck", zCONTROL_STATUS_ENABLED, TRUE );
+         //:SetCtrlState( vSubtask,      "SQL_DBH_OneSelCheck", zCONTROL_STATUS_ENABLED, TRUE )
+         SetCtrlState( vSubtask, "SQL_DBH_OneSelCheck", zCONTROL_STATUS_ENABLED, TRUE );
          //:ELSE
       } 
       else
       { 
          //:SetCtrlState( vSubtask,      "SQL_DBH_JoinCheck", zCONTROL_STATUS_ENABLED, FALSE )
          SetCtrlState( vSubtask, "SQL_DBH_JoinCheck", zCONTROL_STATUS_ENABLED, FALSE );
+         //:SetCtrlState( vSubtask,      "SQL_DBH_OneSelCheck", zCONTROL_STATUS_ENABLED, FALSE )
+         SetCtrlState( vSubtask, "SQL_DBH_OneSelCheck", zCONTROL_STATUS_ENABLED, FALSE );
       } 
 
       //:END
@@ -1144,6 +1154,8 @@ SQL_DBH_LOD_EntityChanged( zVIEW     vSubtask )
 
    //:RefreshCtrl( vSubtask, "SQL_DBH_JoinCheck" )
    RefreshCtrl( vSubtask, "SQL_DBH_JoinCheck" );
+   //:RefreshCtrl( vSubtask, "SQL_DBH_OneSelCheck" )
+   RefreshCtrl( vSubtask, "SQL_DBH_OneSelCheck" );
    //:RefreshCtrl( vSubtask, "edDescription" )
    RefreshCtrl( vSubtask, "edDescription" );
    //:RefreshCtrl( vSubtask, "cbDerived" )

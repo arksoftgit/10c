@@ -97,6 +97,11 @@ the brackets for the DDL-command
 #include <stdio.h>
 #include <ctype.h>
 
+// Sqlite is almost exactly the same as MySQL so they share much of the same code.
+#if defined( SQLITE )
+   #define MYSQL 1
+#endif
+
 #if defined( ACCESS )
 
    #define CONTINUATION_STR      ""
@@ -693,9 +698,6 @@ the brackets for the DDL-command
 
    #define CONTINUATION_STR      ""
    #define LINE_TERMINATOR       ";"
-   #define MAX_TABLENAME_LTH     32
-   #define MAX_COLUMNNAME_LTH    32
-   #define MAX_DATATYPE_LTH      20
    #define COLUMN_INDENT         10
    #define COMMENT_START         "/*"
    #define COMMENT_END           "*/"
@@ -703,10 +705,442 @@ the brackets for the DDL-command
    #define NULL_FIELD            "NULL    "
    #define ADD_COLUMN_STMT       "ADD"
    #define DROP_COLUMN_STMT      "DROP COLUMN"
+   #define MAX_TABLENAME_LTH     32
+   #define MAX_COLUMNNAME_LTH    32
+   #define MAX_DATATYPE_LTH      20
+   #define COLUMN_INDENT         10
+   #define CREATE_DB             0
    #define COMMIT_STR            "COMMIT;"  // DGC 2007.09.15 "GO"
-   #define CREATE_DB             1     // Causes CREATE DATABASE command.
-   #define GRANT_ALL             1     // Causes GRANT ALL command.
-   #define COMMIT_EVERY_TABLE    1     // Causes COMMIT after every table.
+   #define GRANT_ALL             1
+   #define MAX_LTH_FOR_STRING    254
+
+   // List of words that are reserved in SQL Server.
+   // Note: these MUST be listed in alphabetical order.
+   zCHAR  *szReservedName[] =
+                           {
+                              "ABSOLUTE",           // SQLSERVER
+                              "ACTION",             // SQLSERVER
+                              "ADD",                // ACCESS
+                            //"ADD",                // SQLSERVER
+                              "ALL",                // ACCESS
+                            //"ALL",                // SQLSERVER
+                              "ALLOCATE",           // SQLSERVER
+                              "ALPHANUMERIC",       // ACCESS
+                              "ALTER",              // ACCESS
+                            //"ALTER",              // SQLSERVER
+                              "AND",                // ACCESS
+                            //"AND",                // SQLSERVER
+                              "ANY",                // ACCESS
+                            //"ANY",                // SQLSERVER
+                              "ARE",                // SQLSERVER
+                              "AS",                 // ACCESS
+                            //"AS",                 // SQLSERVER
+                              "ASC",                // ACCESS
+                            //"ASC",                // SQLSERVER
+                              "ASSERTION",          // SQLSERVER
+                              "AT",                 // SQLSERVER
+                              "AUTHORIZATION",      // SQLSERVER
+                              "AUTOINCREMENT",      // ACCESS
+                              "AVG",                // ACCESS
+                            //"AVG",                // SQLSERVER
+                              "BEGIN",              // SQLSERVER
+                              "BETWEEN",            // ACCESS
+                            //"BETWEEN",            // SQLSERVER
+                              "BINARY",             // ACCESS
+                              "BIT",                // ACCESS
+                              "BOOLEAN",            // ACCESS
+                              "BOTH",               // SQLSERVER
+                              "BREAK",              // SQLSERVER
+                              "BROWSE",             // SQLSERVER
+                              "BULK",               // SQLSERVER
+                              "BY",                 // ACCESS
+                            //"BY",                 // SQLSERVER
+                              "BYTE",               // ACCESS
+                              "CASCADE",            // SQLSERVER
+                              "CASCADED",           // SQLSERVER
+                              "CASE",               // SQLSERVER
+                              "CAST",               // SQLSERVER
+                              "CATALOG",            // SQLSERVER
+                              "CHAR",               // ACCESS
+                              "CHARACTER",          // ACCESS
+                            //"CHARACTER",          // SQLSERVER
+                              "CHARACTER_LENGTH",   // SQLSERVER
+                              "CHAR_LENGTH",        // SQLSERVER
+                              "CHECK",              // SQLSERVER
+                              "CHECKPOINT",         // SQLSERVER
+                              "CLOSE",              // SQLSERVER
+                              "CLUSTERED",          // SQLSERVER
+                              "COALESCE",           // SQLSERVER
+                              "COLLATE",            // SQLSERVER
+                              "COLLATION",          // SQLSERVER
+                              "COLUMN",             // ACCESS
+                            //"COLUMN",             // SQLSERVER
+                              "COMMIT",             // SQLSERVER
+                              "COMMITTED",          // SQLSERVER
+                              "COMPUTE",            // SQLSERVER
+                              "CONFIRM",            // SQLSERVER
+                              "CONNECT",            // SQLSERVER
+                              "CONNECTION",         // SQLSERVER
+                              "CONSTRAINT",         // ACCESS
+                            //"CONSTRAINT",         // SQLSERVER
+                              "CONSTRAINTS",        // SQLSERVER
+                              "CONTINUE",           // SQLSERVER
+                              "CONTROLROW",         // SQLSERVER
+                              "CONVERT",            // SQLSERVER
+                              "CORRESPONDING",      // SQLSERVER
+                              "COUNT",              // ACCESS
+                            //"COUNT",              // SQLSERVER
+                              "COUNTER",            // ACCESS
+                              "CREATE",             // ACCESS
+                            //"CREATE",             // SQLSERVER
+                              "CROSS",              // SQLSERVER
+                              "CURRENCY",           // ACCESS
+                              "CURRENT",            // SQLSERVER
+                              "CURRENT_DATE",       // SQLSERVER
+                              "CURRENT_TIME",       // SQLSERVER
+                              "CURRENT_TIMESTAMP",  // SQLSERVER
+                              "CURRENT_USER",       // SQLSERVER
+                              "CURSOR",             // SQLSERVER
+                              "DATABASE",           // ACCESS
+                            //"DATABASE",           // SQLSERVER
+                              "DATE",               // ACCESS
+                            //"DATE",               // SQLSERVER
+                              "DATETIME",           // ACCESS
+                            //"DATETIME",           // SQLSERVER
+                              "DAY",                // SQLSERVER
+                              "DBAREA",             // ACCESS
+                              "DBCC",               // SQLSERVER
+                              "DEALLOCATE",         // SQLSERVER
+                              "DEBUG",              // SQLSERVER
+                              "DECLARE",            // SQLSERVER
+                              "DEFAULT",            // SQLSERVER
+                              "DEFERRABLE",         // SQLSERVER
+                              "DEFERRED",           // SQLSERVER
+                              "DELETE",             // ACCESS
+                            //"DELETE",             // SQLSERVER
+                              "DESC",               // ACCESS
+                            //"DESC",               // SQLSERVER
+                              "DESCRIBE",           // SQLSERVER
+                              "DESCRIPTOR",         // SQLSERVER
+                              "DIAGNOSTICS",        // SQLSERVER
+                              "DISALLOW",           // ACCESS
+                              "DISCONNECT",         // SQLSERVER
+                              "DISK",               // SQLSERVER
+                              "DISTINCT",           // ACCESS
+                            //"DISTINCT",           // SQLSERVER
+                              "DISTINCTROW",        // ACCESS
+                              "DISTRIBUTED",        // SQLSERVER
+                              "DOMAIN",             // SQLSERVER
+                              "DOUBLE",             // ACCESS
+                            //"DOUBLE",             // SQLSERVER
+                              "DROP",               // ACCESS
+                            //"DROP",               // SQLSERVER
+                              "DUMMY",              // SQLSERVER
+                              "DUMP",               // SQLSERVER
+                              "ELSE",               // SQLSERVER
+                              "END",                // SQLSERVER
+                              "END_EXEC",           // SQLSERVER
+                              "EQV",                // ACCESS
+                              "ERRLVL",             // SQLSERVER
+                              "ERROREXIT",          // SQLSERVER
+                              "ESCAPE",             // SQLSERVER
+                              "EXCEPT",             // SQLSERVER
+                              "EXCEPTION",          // SQLSERVER
+                              "EXEC",               // SQLSERVER
+                              "EXECUTE",            // SQLSERVER
+                              "EXISTS",             // ACCESS
+                            //"EXISTS",             // SQLSERVER
+                              "EXIT",               // SQLSERVER
+                              "EXPIREDATE",         // SQLSERVER
+                              "EXTERNAL",           // SQLSERVER
+                              "EXTRACT",            // SQLSERVER
+                              "FALSE",              // SQLSERVER
+                              "FETCH",              // SQLSERVER
+                              "FILE",               // SQLSERVER
+                              "FILLFACTOR",         // SQLSERVER
+                              "FIRST",              // SQLSERVER
+                              "FLOAT",              // ACCESS
+                              "FLOAT4",             // ACCESS
+                              "FLOAT8",             // ACCESS
+                              "FLOPPY",             // SQLSERVER
+                              "FOR",                // SQLSERVER
+                              "FOREIGN",            // ACCESS
+                            //"FOREIGN",            // SQLSERVER
+                              "FROM",               // ACCESS
+                            //"FROM",               // SQLSERVER
+                              "FULL",               // SQLSERVER
+                              "GET",                // SQLSERVER
+                              "GETDEFAULT",         // SQLSERVER
+                              "GLOBAL",             // SQLSERVER
+                              "GOTO",               // SQLSERVER
+                              "GRANT",              // SQLSERVER
+                              "GROUP",              // ACCESS
+                            //"GROUP",              // SQLSERVER
+                              "GUID",               // ACCESS
+                              "HAVING",             // ACCESS
+                            //"HAVING",             // SQLSERVER
+                              "HOLDLOCK",           // SQLSERVER
+                              "HOUR",               // SQLSERVER
+                              "IDENTITY",           // SQLSERVER
+                              "IDENTITYCOL",        // SQLSERVER
+                              "IDENTITY_INSERT",    // SQLSERVER
+                              "IEEEDOUBLE",         // ACCESS
+                              "IEEESINGLE",         // ACCESS
+                              "IF",                 // SQLSERVER
+                              "IGNORE",             // ACCESS
+                              "IMMEDIATE",          // SQLSERVER
+                              "IMP",                // ACCESS
+                              "IN",                 // ACCESS
+                            //"IN",                 // SQLSERVER
+                              "INDEX",              // ACCESS
+                            //"INDEX",              // SQLSERVER
+                              "INITIALLY",          // SQLSERVER
+                              "INNER",              // ACCESS
+                            //"INNER",              // SQLSERVER
+                              "INPUT",              // SQLSERVER
+                              "INSENSITIVE",        // SQLSERVER
+                              "INSERT",             // ACCESS
+                            //"INSERT",             // SQLSERVER
+                              "INT",                // ACCESS
+                              "INTEGER",            // ACCESS
+                              "INTEGER1",           // ACCESS
+                              "INTEGER2",           // ACCESS
+                              "INTERSECT",          // SQLSERVER
+                              "INTERVAL",           // SQLSERVER
+                              "INTO",               // ACCESS
+                            //"INTO",               // SQLSERVER
+                              "IS",                 // ACCESS
+                            //"IS",                 // SQLSERVER
+                              "ISOLATION",          // SQLSERVER
+                              "JOIN",               // ACCESS
+                            //"JOIN",               // SQLSERVER
+                              "KEY",                // ACCESS
+                            //"KEY",                // SQLSERVER
+                              "KILL",               // SQLSERVER
+                              "LAST",               // SQLSERVER
+                              "LEADING",            // SQLSERVER
+                              "LEFT",               // ACCESS
+                            //"LEFT",               // SQLSERVER
+                              "LEVEL",              // ACCESS
+                            //"LEVEL",              // SQLSERVER
+                              "LIKE",               // ACCESS
+                            //"LIKE",               // SQLSERVER
+                              "LINENO",             // SQLSERVER
+                              "LOAD",               // SQLSERVER
+                              "LOCAL",              // SQLSERVER
+                              "LOGICAL",            // ACCESS
+                              "LOGICAL1",           // ACCESS
+                              "LONG",               // ACCESS
+                              "LONGBINARY",         // ACCESS
+                              "LONGTEXT",           // ACCESS
+                              "MATCH",              // SQLSERVER
+                              "MAX",                // ACCESS
+                            //"MAX",                // SQLSERVER
+                              "MEMO",               // ACCESS
+                              "MIN",                // ACCESS
+                            //"MIN",                // SQLSERVER
+                              "MINUTE",             // SQLSERVER
+                              "MIRROREXIT",         // SQLSERVER
+                              "MOD",                // ACCESS
+                              "MONEY",              // ACCESS
+                              "MONTH",              // SQLSERVER
+                              "NAMES",              // SQLSERVER
+                              "NATIONAL",           // SQLSERVER
+                              "NATURAL",            // SQLSERVER
+                              "NCHAR",              // SQLSERVER
+                              "NEXT",               // SQLSERVER
+                              "NEXTLOG",            // ACCESS
+                              "NO",                 // ACCESS
+                            //"NO",                 // SQLSERVER
+                              "NOCHECK",            // SQLSERVER
+                              "NONCLUSTERED",       // SQLSERVER
+                              "NOT",                // ACCESS
+                            //"NOT",                // SQLSERVER
+                              "NOTE",               // ACCESS
+                              "NULL",               // ACCESS
+                            //"NULL",               // SQLSERVER
+                              "NULLIF",             // SQLSERVER
+                              "NUMBER",             // ACCESS
+                              "NUMERIC",            // ACCESS
+                              "OCTET_LENGTH",       // SQLSERVER
+                              "OF",                 // SQLSERVER
+                              "OFF",                // SQLSERVER
+                              "OFFSETS",            // SQLSERVER
+                              "OLEOBJECT",          // ACCESS
+                              "ON",                 // ACCESS
+                            //"ON",                 // SQLSERVER
+                              "ONCE",               // SQLSERVER
+                              "ONLY",               // SQLSERVER
+                              "OPEN",               // SQLSERVER
+                              "OPTION",             // ACCESS
+                            //"OPTION",             // SQLSERVER
+                              "OR",                 // ACCESS
+                            //"OR",                 // SQLSERVER
+                              "ORDER",              // ACCESS
+                            //"ORDER",              // SQLSERVER
+                              "OUTER",              // ACCESS
+                            //"OUTER",              // SQLSERVER
+                              "OUTPUT",             // SQLSERVER
+                              "OVER",               // SQLSERVER
+                              "OVERLAPS",           // SQLSERVER
+                              "OWNERACCESS",        // ACCESS
+                              "PAD",                // SQLSERVER
+                              "PARAMETERS",         // ACCESS
+                              "PARTIAL",            // SQLSERVER
+                              "PERCENT",            // ACCESS
+                              "PERM",               // SQLSERVER
+                              "PERMANENT",          // SQLSERVER
+                              "PIPE",               // SQLSERVER
+                              "PIVOT",              // ACCESS
+                              "PLAN",               // SQLSERVER
+                              "POSITION",           // SQLSERVER
+                              "PRECISION",          // SQLSERVER
+                              "PREPARE",            // SQLSERVER
+                              "PRESEVE",            // SQLSERVER
+                              "PRIMARY",            // ACCESS
+                            //"PRIMARY",            // SQLSERVER
+                              "PRINT",              // SQLSERVER
+                              "PRIOR",              // SQLSERVER
+                              "PRIVILEGES",         // SQLSERVER
+                              "PROC",               // SQLSERVER
+                              "PROCEDURE",          // ACCESS
+                            //"PROCEDURE",          // SQLSERVER
+                              "PROCESSEXIT",        // SQLSERVER
+                              "PUBLIC",             // SQLSERVER
+                              "RAISERROR",          // SQLSERVER
+                              "READ",               // SQLSERVER
+                              "READTEXT",           // SQLSERVER
+                              "REAL",               // ACCESS
+                              "RECONFIGURE",        // SQLSERVER
+                              "REFERENCES",         // ACCESS
+                            //"REFERENCES",         // SQLSERVER
+                              "RELATIVE",           // SQLSERVER
+                              "REPEATABLE",         // SQLSERVER
+                              "REPLICATION",        // SQLSERVER
+                              "RESTRICT",           // SQLSERVER
+                              "RETAINDAY",          // SQLSERVER
+                              "RETURN",             // SQLSERVER
+                              "REVOKE",             // SQLSERVER
+                              "RIGHT",              // ACCESS
+                            //"RIGHT",              // SQLSERVER
+                              "ROLLBACK",           // SQLSERVER
+                              "ROWCOUNT",           // SQLSERVER
+                              "ROWS",               // SQLSERVER
+                              "RULE",               // SQLSERVER
+                              "SAVE",               // SQLSERVER
+                              "SCHEMA",             // SQLSERVER
+                              "SCROLL",             // SQLSERVER
+                              "SECOND",             // SQLSERVER
+                              "SELECT",             // ACCESS
+                            //"SELECT",             // SQLSERVER
+                              "SERIALIZABLE",       // SQLSERVER
+                              "SESSION",            // SQLSERVER
+                              "SESSION_USER",       // SQLSERVER
+                              "SET",                // ACCESS
+                            //"SET",                // SQLSERVER
+                              "SETUSER",            // SQLSERVER
+                              "SHORT",              // ACCESS
+                              "SHUTDOWN",           // SQLSERVER
+                              "SINGLE",             // ACCESS
+                              "SIZE",               // SQLSERVER
+                              "SMALLINT",           // ACCESS
+                              "SOME",               // ACCESS
+                            //"SOME",               // SQLSERVER
+                              "SPACE",              // SQLSERVER
+                              "SQLSTATE",           // SQLSERVER
+                              "STATISTICS",         // SQLSERVER
+                              "STDEV",              // ACCESS
+                              "STDEVP",             // ACCESS
+                              "STRING",             // ACCESS
+                              "SUM",                // ACCESS
+                            //"SUM",                // SQLSERVER
+                              "SYSTEM_USER",        // SQLSERVER
+                              "TABLE",              // ACCESS
+                            //"TABLE",              // SQLSERVER
+                              "TABLEID",            // ACCESS
+                              "TAPE",               // SQLSERVER
+                              "TEMP",               // SQLSERVER
+                              "TEMPORARY",          // SQLSERVER
+                              "TEXT",               // ACCESS
+                              "TEXTSIZE",           // SQLSERVER
+                              "THEN",               // SQLSERVER
+                              "TIME",               // ACCESS
+                            //"TIME",               // SQLSERVER
+                              "TIMESTAMP",          // ACCESS
+                            //"TIMESTAMP",          // SQLSERVER
+                              "TIMEZONE_HOUR",      // SQLSERVER
+                              "TIMEZONE_MINUTE",    // SQLSERVER
+                              "TO",                 // ACCESS
+                            //"TO",                 // SQLSERVER
+                              "TOP",                // ACCESS
+                              "TRAILING",           // SQLSERVER
+                              "TRAN",               // SQLSERVER
+                              "TRANSACTION",        // SQLSERVER
+                              "TRANSFORM",          // ACCESS
+                              "TRANSLATE",          // SQLSERVER
+                              "TRANSLATION",        // SQLSERVER
+                              "TRIGGER",            // SQLSERVER
+                              "TRUE",               // SQLSERVER
+                              "TRUNCATE",           // SQLSERVER
+                              "TSEQUAL",            // SQLSERVER
+                              "UNCOMMITTED",        // SQLSERVER
+                              "UNION",              // ACCESS
+                            //"UNION",              // SQLSERVER
+                              "UNIQUE",             // ACCESS
+                            //"UNIQUE",             // SQLSERVER
+                              "UNKNOWN",            // SQLSERVER
+                              "UPDATE",             // ACCESS
+                            //"UPDATE",             // SQLSERVER
+                              "UPDATETEXT",         // SQLSERVER
+                              "USAGE",              // SQLSERVER
+                              "USE",                // SQLSERVER
+                              "USER",               // SQLSERVER
+                              "USING",              // SQLSERVER
+                              "VALUE",              // ACCESS
+                            //"VALUE",              // SQLSERVER
+                              "VALUES",             // ACCESS
+                            //"VALUES",             // SQLSERVER
+                              "VAR",                // ACCESS
+                              "VARBINARY",          // ACCESS
+                              "VARCHAR",            // ACCESS
+                              "VARP",               // ACCESS
+                              "VARYING",            // SQLSERVER
+                              "VIEW",               // SQLSERVER
+                              "VOLUME",             // SQLSERVER
+                              "WAITFOR",            // SQLSERVER
+                              "WHEN",               // SQLSERVER
+                              "WHERE",              // ACCESS
+                            //"WHERE",              // SQLSERVER
+                              "WHILE",              // SQLSERVER
+                              "WITH",               // ACCESS
+                            //"WITH",               // SQLSERVER
+                              "WORK",               // SQLSERVER
+                              "WRITE",              // SQLSERVER
+                              "WRITETEXT",          // SQLSERVER
+                              "XOR",                // ACCESS
+                              "YEAR",               // SQLSERVER
+                              "YESNO",              // ACCESS
+                              "ZONE",               // SQLSERVER
+                              "\0" };     // Must be last -- terminates list.
+
+#elif defined( SQLITE )
+
+   #define CONTINUATION_STR      ""
+   #define LINE_TERMINATOR       ";"
+   #define COLUMN_INDENT         10
+   #define COMMENT_START         "/*"
+   #define COMMENT_END           "*/"
+   #define NOT_NULL_FIELD        "NOT NULL"
+   #define NULL_FIELD            "NULL    "
+   #define ADD_COLUMN_STMT       "ADD"
+   #define DROP_COLUMN_STMT      "DROP COLUMN"
+   #define MAX_TABLENAME_LTH     64
+   #define MAX_COLUMNNAME_LTH    64
+   #define MAX_DATATYPE_LTH      20
+   #define COMMIT_STR            "";
+   #define COLUMN_INDENT         10
+   #define CREATE_DB             0
+   #define GRANT_ALL             1
    #define MAX_LTH_FOR_STRING    254
 
    // List of words that are reserved in SQL Server.
@@ -1915,6 +2349,7 @@ fnBuildColumn( zVIEW  vDTE, zLONG  f, zPCHAR pchLine )
 {
    zCHAR    szColName[ MAX_NAME_LTH + 1 ];
    zPCHAR   pchDataType;
+   zPCHAR   pchKeyType;
    zPCHAR   pchEnd, pch;
    zLONG    nLth;
    zUSHORT  nMaxColumnNameLth = MAX_COLUMNNAME_LTH;
@@ -1979,8 +2414,7 @@ fnBuildColumn( zVIEW  vDTE, zLONG  f, zPCHAR pchLine )
       DropView( vDBH_Data );
 
    GetStringFromAttribute( szColName, vDTE, "TE_FieldDataRel", "Name" );
-   GetAddrForAttribute( &pchDataType, vDTE, "TE_FieldDataRel",
-                        "DataType" );
+   GetAddrForAttribute( &pchDataType, vDTE, "TE_FieldDataRel", "DataType" );
    RemoveBrackets( szColName );
 
    pchEnd = pchLine + zstrlen( pchLine );
@@ -2190,6 +2624,25 @@ fnBuildColumn( zVIEW  vDTE, zLONG  f, zPCHAR pchLine )
 
       case 'V':
          zsprintf( pchEnd, " longtext" );
+         break;
+
+      case 'A':
+         GetAddrForAttribute( &pchKeyType, vDTE, "TE_FieldDataRel", "DataOrRelfieldOrSet" );
+         if ( pchKeyType[ 0 ] == 'D' )
+	 {
+            // The key type is 'D' for data which means it's the main key.
+            #if defined( SQLITE )
+	       zsprintf( pchEnd, " INTEGER PRIMARY KEY " );
+            #else
+	       zsprintf( pchEnd, " SERIAL" );
+            #endif
+	 }
+	 else
+	 {
+            // This must be a FK so don't declare it as SERIAL/KEY.
+            zsprintf( pchEnd, " INTEGER" );
+	 }
+
          break;
 
       // TimeStampEx
@@ -3053,9 +3506,13 @@ BuildDDL( zVIEW  vDTE,
 
 #elif defined( MYSQL) || defined( SQLSERVER )
 
-   zsprintf( szLine, "USE %s %s", pchDatabaseName, LINE_TERMINATOR );
-   if ( fnWriteLine( vDTE, f, szLine ) < 0 )
-      goto EndOfFunction;
+   #ifdef SQLITE
+       // Skip the "USE" statement for SQLITE.
+   #else
+       zsprintf( szLine, "USE %s %s", pchDatabaseName, LINE_TERMINATOR );
+       if ( fnWriteLine( vDTE, f, szLine ) < 0 )
+         goto EndOfFunction;
+   #endif
 
 #endif
 
@@ -3232,7 +3689,13 @@ BuildDDL( zVIEW  vDTE,
          pch = szEntityName;
          RemoveBrackets( pch );
 
-         zsprintf( szLine, "DROP TABLE %s%s %s", szOwner, pch, LINE_TERMINATOR );
+         #if defined( SQLITE )
+            zsprintf( szLine, "DROP TABLE IF EXISTS %s%s %s", szOwner, pch, LINE_TERMINATOR );
+         #elif defined( MYSQL )
+            zsprintf( szLine, "DROP TABLE %s%s IF EXISTS %s", szOwner, pch, LINE_TERMINATOR );
+         #else
+            zsprintf( szLine, "DROP TABLE %s%s %s", szOwner, pch, LINE_TERMINATOR );
+	 #endif
 
          if ( fnWriteLine( vDTE, f, szLine ) < 0 )
             nRC = zCALL_ERROR;
@@ -4113,6 +4576,12 @@ LoadDataTypes( zVIEW vType )
    SetAttributeFromString( vType, "DB_DataTypes", "InternalName", "V" );
    SetAttributeFromString( vType, "DB_DataTypes", "ExternalName", "Text (longtext)" );
 
+   // Create a data type that will be autoincrement in MySql
+   CreateEntity( vType, "DB_DataTypes", zPOS_LAST );
+   SetAttributeFromString( vType, "DB_DataTypes", "InternalName", "A" );
+   SetAttributeFromString( vType, "DB_DataTypes", "ExternalName",
+                           "SERIAL (autoincrement)" );
+
 #elif defined( POSTGRESQL ) || defined( SQLSERVER )
 
    CreateEntity( vType, "DB_DataTypes", zPOS_LAST );
@@ -4230,6 +4699,14 @@ SetDataType( zVIEW vDTE, zBOOL bSetDefault )
       else
       if ( zstrcmpi( pchDomainName, "TimeStampEx" ) == 0 )
          SetAttributeFromString( vDTE, "TE_FieldDataRel", "DataType", "X" );
+#if defined( MYSQL )
+      else
+      // If domain is GeneratedKey then use "SERIAL" for default datatype.
+      if ( zstrcmpi( pchDomainName, "GeneratedKey" ) == 0 )
+      {
+         SetAttributeFromString( vDTE, "TE_FieldDataRel", "DataType", "A" );
+      }    
+#endif
       else
          // Domain is not Date or Time, so just set the default data type the
          // same as the domain's data type.
@@ -4253,6 +4730,7 @@ SetDataType( zVIEW vDTE, zBOOL bSetDefault )
       if ( pchDataType[ 0 ] == zTYPE_BLOB )
          SetAttributeFromString( vDTE, "TE_FieldDataRel", "DataType", "V" );
 #endif
+
    }
 
    // Get the data type.
@@ -4293,6 +4771,10 @@ SetDataType( zVIEW vDTE, zBOOL bSetDefault )
 
       case zTYPE_INTEGER:
          SetAttributeFromInteger( vDTE, "TE_FieldDataRel", "Length", 4 );
+         break;
+
+      case 'A':                // For SERIAL/AUTOINCREMENT
+         SetAttributeFromInteger( vDTE, "TE_FieldDataRel", "Length", 64 );
          break;
 
       case zTYPE_DECIMAL:
@@ -6708,14 +7190,20 @@ PostXOD_BuildHook( zVIEW vTZTEDBLO,
 
    if ( vOI == 0 )
    {
+      return( 0 );
+
+      // DGC 2015-01-07 Removed the following code and just return 0 because this
+      // stuff is never used by the JOE and so it's not an error.
+#if 0
       // KJS - 08/22/12 - This is being put in because we were getting an 'Invalid View' error on the DropView( vOI ) if
-     // a 'Set DBH' hadn't been done on the data source and the db handler was PostgreSQL since TZDBHODO was not ever set.
-     // Not actually sure if this is much of an error (should I just put the DropView in the below "If") or if there could
-     // be problems if TZDBHODO is not a valid view.
+      // a 'Set DBH' hadn't been done on the data source and the db handler was PostgreSQL since TZDBHODO was not ever set.
+      // Not actually sure if this is much of an error (should I just put the DropView in the below "If") or if there could
+      // be problems if TZDBHODO is not a valid view.
       MessageSend( vTZZOXODO, "PostXOD_BuildHook", "Zeidon Tools",
                    "You need to do a 'Set DBH' for this data source before building the xods.", zMSGQ_SYSTEM_ERROR, TRUE );
       TraceLineS( "*** PostXOD_BuildHook TZDBHODO does not exist. ", "" );
       return( zCALL_ERROR );
+#endif
    }
 
    // Check for ODBC object.

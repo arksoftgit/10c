@@ -1069,9 +1069,6 @@ fnResetView( zVIEW  lpView, zSHORT nControl );
 zSHORT
 fnResetViewFromSubobject( zVIEW zView );
 
-zSHORT
-fnResetViewFromSubobjectTop( zVIEW zView );
-
 void
 fnDropAllViewSubobjects( zVIEW zView );
 

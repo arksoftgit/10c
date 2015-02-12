@@ -49,6 +49,7 @@ TARGETS = $(kz_bin)\KZHDBVAA.DLL \
           $(kz_bin)\KZHSQLSA.DLL \
           $(kz_bin)\KZHSQLSB.DLL \
           $(kz_bin)\KZHSQLMB.DLL \
+          $(kz_bin)\KZHSQLLB.DLL \
           $(kz_bin)\KZHSQLBA.DLL \
           $(kz_bin)\KZHSQLBB.DLL \
           $(kz_bin)\KZHSQLDB.DLL \
@@ -88,7 +89,7 @@ TARGETS = $(TARGETS) $(kz_bin)\KZHSQLPB.DLL
 !endif
 
 !ifndef NO_MYSQL
-TARGETS = $(TARGETS) $(kz_bin)\KZHSQLMB.DLL
+TARGETS = $(TARGETS) $(kz_bin)\KZHSQLMB.DLL $(kz_bin)\KZHSQLLB.DLL
 !endif
 
 !ifndef NO_DUMMY
@@ -453,7 +454,7 @@ $(kz_bin)\KZHSQLMB.DLL : $(kz_obj)\KZHSQLMB.OBJ \
    @echo --------------- KZHSQLMB.DLL ---------------------------
    @echo --------------------------------------------------------
 !if "$(BUILDOS)"=="win32"
-   qpreproc __WIN32__=1 SQLSERVER=1 $(kz_src)\KZHSQLXB.DEF > $(TEMP)\KZHSQLMB.DEF
+   qpreproc __WIN32__=1 MYSQL=1 $(kz_src)\KZHSQLXB.DEF > $(TEMP)\KZHSQLMB.DEF
    qspawn $(kz_srca)\$(@B).LER $(linker) @<<
 $(linkopt) $(linkoptdll)
 /OUT:$(kz_bin)\KZHSQLMB.DLL
@@ -463,7 +464,7 @@ $(linkopt) $(linkoptdll)
 $(kz_obj)\KZHSQLMB.OBJ $(linkdlls)
 <<
 !else
-   qpreproc SQLSERVER=1 $(kz_src)\KZHSQLXB.DEF > $(TEMP)\KZHSQLMB.DEF
+   qpreproc MYSQL=1 $(kz_src)\KZHSQLXB.DEF > $(TEMP)\KZHSQLMB.DEF
    qspawn $(kz_base)\a\oe\KZHSQLMB.LER $(linker) @<<
 $(kz_obj)\KZHSQLMB.OBJ +
 $(linkopt)
@@ -471,6 +472,48 @@ $(kz_bin)\KZHSQLMB.DLL
 KZHSQLMB.MAP
 $(linkdlls) kzoengaa
 $(TEMP)\KZHSQLMB.DEF
+<<
+!endif
+
+
+#============================================================================
+#================= KZHSQLLB.DLL (Sqlite) ====================================
+#============================================================================
+$(kz_obj)\KZHSQLLB.OBJ : {$(kz_src_concat)}KZHSQLXB.C \
+                         {$(kz_inc_concat)}KZOEMEAA.H
+   @echo --------------------------------------------------------
+   @echo --------------- KZHSQLLB.OBJ ---------------------------
+   @echo --------------------------------------------------------
+   qspawn $(kz_base)\a\oe\KZHSQLLB.ERR $(cl) @<<
+$(DLLFLAG) -DMYSQL -DSQLITE /Fd$(kz_basew)\bin\kzhsqllb.PDB
+-I\$(KZV)\a\tz
+$(kz_base)\a\oe\KZHSQLXB.C
+<<
+
+$(kz_bin)\KZHSQLLB.DLL : $(kz_obj)\KZHSQLLB.OBJ \
+                         $(kz_src)\KZHSQLXB.DEF
+   @echo --------------------------------------------------------
+   @echo --------------- KZHSQLLB.DLL ---------------------------
+   @echo --------------------------------------------------------
+!if "$(BUILDOS)"=="win32"
+   qpreproc __WIN32__=1 SQLITE=1 $(kz_src)\KZHSQLXB.DEF > $(TEMP)\KZHSQLLB.DEF
+   qspawn $(kz_srca)\$(@B).LER $(linker) @<<
+$(linkopt) $(linkoptdll)
+/OUT:$(kz_bin)\KZHSQLLB.DLL
+/PDB:$(kz_bin)\kzhsqllb.pdb
+/MAP:KZHSQLLB.MAP
+/DEF:$(TEMP)\KZHSQLLB.DEF
+$(kz_obj)\KZHSQLLB.OBJ $(linkdlls)
+<<
+!else
+   qpreproc SQLITE=1 $(kz_src)\KZHSQLXB.DEF > $(TEMP)\KZHSQLLB.DEF
+   qspawn $(kz_base)\a\oe\KZHSQLLB.LER $(linker) @<<
+$(kz_obj)\KZHSQLLB.OBJ +
+$(linkopt)
+$(kz_bin)\KZHSQLLB.DLL
+KZHSQLLB.MAP
+$(linkdlls) kzoengaa
+$(TEMP)\KZHSQLLB.DEF
 <<
 !endif
 

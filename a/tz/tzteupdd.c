@@ -1011,8 +1011,9 @@ fnRebuildTables( zVIEW vSubtask,
                                        vDTE_Old, "TE_FieldDataRel", "Key" );
             SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_SCALE",
                                        vDTE_Old, "TE_FieldDataRel", "SQL_SCALE" );
-            SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_NULLS",
-                                       vDTE_Old, "TE_FieldDataRel", "SQL_NULLS" );
+            // The following statement was removed by DonC on 12/10/2014 as null flag shouldn't be kept.
+            //SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_NULLS",
+            //                           vDTE_Old, "TE_FieldDataRel", "SQL_NULLS" );
             SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_LABEL",
                                        vDTE_Old, "TE_FieldDataRel", "SQL_LABEL" );
             SetAttributeFromAttribute( vDTE, "TE_FieldDataRel", "SQL_REMARKS",

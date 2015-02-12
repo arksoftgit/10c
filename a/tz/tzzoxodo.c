@@ -2359,6 +2359,8 @@ ofnTZZOXODO_BldXODDataRec( zVIEW vSubtask, zVIEW vTZZOXODO,
    {
       SetAttributeFromAttribute( vTZZOXODO, "DATARECORD", "JOIN",
                                  vTZZOLODO, "POD_Entity", "SQL_JoinWithParent" );
+      SetAttributeFromAttribute( vTZZOXODO, "DATARECORD", "ACTIVATEONE",
+                                 vTZZOLODO, "POD_Entity", "SQL_ActivateInOne" );
    }
 
    return( 0 );

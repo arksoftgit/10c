@@ -278,7 +278,7 @@ zwfnSaveOperation( zVIEW vSubtask,
    else
    {
       if ( szLanguageType[ 0 ] == 'S' )
-      SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
                                  "Scala" );
       else
       {
@@ -287,7 +287,7 @@ zwfnSaveOperation( zVIEW vSubtask,
                                  "Java" );
       else
          SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
-                              "C" );
+                                 "C" );
       }
    }
 
@@ -319,6 +319,9 @@ zwfnSaveOperation( zVIEW vSubtask,
    MergeGlobalPrototypes( vOperGrpTmp, szMetaName, "GlobalOperationGroup",
                           vCM_List );
    DropView( vOperGrpTmp );
+   
+   // Make sure that the global executable is generated.
+   oTZOGSRCO_GenerateXOG( vOperGrp );
 
    if ( GetSubtaskForWindowName( vSubtask, &vWindow, "OPERGRPLIST" ) >= 0 )
       RefreshWindow( vWindow );
@@ -1418,7 +1421,7 @@ zwTZOPUPDD_SetExtension( zVIEW vSubtask )
    else
    {
       if ( szLanguageType[ 0 ] == 'S' )
-      SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
+         SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
                                  "Scala" );
       else
       {
@@ -1427,7 +1430,7 @@ zwTZOPUPDD_SetExtension( zVIEW vSubtask )
                                  "Java" );
       else
          SetAttributeFromString( vOperGrp, "GlobalOperationGroup", "Extension",
-                              "C" );
+                                 "C" );
       }
    }
    return( 0 );

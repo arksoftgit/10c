@@ -170,3 +170,77 @@ OF   zECE_INCLUDE:
 END  /* case */
 
 END
+
+
+/*************************************************************************************************
+**    
+**    OPERATION: GenerateXOG
+**    
+*************************************************************************************************/
+TRANSFORMATION OPERATION
+GenerateXOG( VIEW OperationGroup BASED ON LOD TZOGSRCO )
+
+   VIEW OperationXOG    BASED ON LOD TZZOXOGO
+   VIEW OperationGroupT BASED ON LOD TZOGSRCO
+   VIEW CurrentLPLR     BASED ON LOD TZCMLPLO
+   STRING ( 513 ) XOG_FileName 
+   STRING ( 513 ) POG_FileName
+   STRING ( 200 ) szMsg
+   INTEGER        lFile
+   SHORT          nRC                 
+   
+   // Build the executable Global Object executable for all Operations in the LPLR.
+   
+   // Activate or initialize the XOG executable object.
+   GET VIEW CurrentLPLR NAMED "TaskLPLR"
+   XOG_FileName = CurrentLPLR.LPLR.ExecDir + "\" + CurrentLPLR.LPLR.Name + ".XOG"
+   lFile = SysOpenFile( OperationGroup, XOG_FileName, COREFILE_READ )
+   IF lFile < 0
+      // Executable has not yet been generated.
+      ACTIVATE OperationXOG EMPTY 
+      CREATE ENTITY OperationXOG.TZZOXOGO 
+      OperationXOG.TZZOXOGO.NAME = CurrentLPLR.LPLR.Name
+   ELSE
+      SysCloseFile( OperationGroup, lFile, 0 )
+      // Get current executable File.
+      ActivateOI_FromFile( OperationXOG, "TZZOXOGO", OperationGroup, XOG_FileName, zSINGLE )
+      
+      // Delete current source file entries.
+      FOR EACH OperationXOG.GLOBALOPERATIONSOURCEFILE 
+         DELETE ENTITY OperationXOG.GLOBALOPERATIONSOURCEFILE NONE 
+      END
+   END
+   NAME VIEW OperationXOG "OperationXOG"
+   
+   // Build the executable components from each POG Operation.
+   SET CURSOR FIRST CurrentLPLR.W_MetaType WHERE CurrentLPLR.W_MetaType.Type = 14   // 14 is Global Operation Group 
+   FOR EACH CurrentLPLR.W_MetaDef 
+      POG_FileName = CurrentLPLR.LPLR.MetaSrcDir + "\" + CurrentLPLR.W_MetaDef.Name + ".POG"
+      nRC = ActivateOI_FromFile( OperationGroupT, "TZOGSRCO", OperationGroup, POG_FileName, zSINGLE + 8192 )
+      IF nRC < 0
+         szMsg = "Can't open POG file, " + POG_FileName
+         IssueError( OperationGroup,0,0, szMsg )
+         RETURN -1
+      END
+      // Create Source file entry.
+      CREATE ENTITY OperationXOG.GLOBALOPERATIONSOURCEFILE 
+      OperationXOG.GLOBALOPERATIONSOURCEFILE.NAME         = OperationGroupT.GlobalOperationGroup.Name 
+      OperationXOG.GLOBALOPERATIONSOURCEFILE.LANGUAGETYPE = OperationGroupT.GlobalOperationGroup.LanguageType 
+      
+      // Create each Operation entry.
+      FOR EACH OperationGroupT.Operation 
+         CREATE ENTITY OperationXOG.OPERATION 
+         OperationXOG.OPERATION.NAME = OperationGroupT.Operation.Name 
+         OperationXOG.OPERATION.TYPE = OperationGroupT.Operation.Type 
+         
+         FOR EACH OperationGroupT.Parameter 
+            CREATE ENTITY OperationXOG.PARAMETER 
+            OperationXOG.PARAMETER.NAME     = OperationGroupT.Parameter.ShortDesc 
+            OperationXOG.PARAMETER.DATATYPE = OperationGroupT.Parameter.DataType 
+         END 
+      END
+   END
+   CommitOI_ToFile( OperationXOG, XOG_FileName, zASCII )
+   DropObjectInstance( OperationXOG )
+
+END

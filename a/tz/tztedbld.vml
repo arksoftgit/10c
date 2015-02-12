@@ -346,13 +346,16 @@ SQL_DBH_LOD_EntityChanged( VIEW vSubtask )
             CREATE ENTITY TZZOLODO.POD_Entity
 
             TZZOLODO.POD_Entity.SQL_JoinWithParent = "N"
+            TZZOLODO.POD_Entity.SQL_ActivateInOne = "N"
             INCLUDE TZZOLODO.TE_DBMS_SourceForEntity FROM TZTENVRO.TE_DBMS_Source
          END
 
          // not the root and not work and not derived
          SetCtrlState( vSubtask,      "SQL_DBH_JoinCheck", zCONTROL_STATUS_ENABLED, TRUE )
+         SetCtrlState( vSubtask,      "SQL_DBH_OneSelCheck", zCONTROL_STATUS_ENABLED, TRUE )
       ELSE
          SetCtrlState( vSubtask,      "SQL_DBH_JoinCheck", zCONTROL_STATUS_ENABLED, FALSE )
+         SetCtrlState( vSubtask,      "SQL_DBH_OneSelCheck", zCONTROL_STATUS_ENABLED, FALSE )
       END
 
       // Refresh checkbox and set the string being displayed.
@@ -365,6 +368,7 @@ SQL_DBH_LOD_EntityChanged( VIEW vSubtask )
    END
 
    RefreshCtrl( vSubtask, "SQL_DBH_JoinCheck" )
+   RefreshCtrl( vSubtask, "SQL_DBH_OneSelCheck" )
    RefreshCtrl( vSubtask, "edDescription" )
    RefreshCtrl( vSubtask, "cbDerived" )
    RefreshCtrl( vSubtask, "cbWork" )
@@ -387,6 +391,7 @@ SQL_DBH_LOD_BeforeEntityChange( VIEW vSubtask )
    // TZZOLODO pointing to the "old" Entity
    IF  TZZOLODO.POD_Entity EXISTS
        MapCtrl( vSubtask, "SQL_DBH_JoinCheck" )
+       MapCtrl( vSubtask, "SQL_DBH_OneSelCheck" )
    END
 END
 
@@ -871,6 +876,7 @@ SQL_DBH_RemoveAll( VIEW vSubtask )
 
            IF RESULT >= zCURSOR_SET
               TZZOLODO.POD_Entity.SQL_JoinWithParent = "N"
+              TZZOLODO.POD_Entity.SQL_ActivateInOne = "N"
            END
        END
 

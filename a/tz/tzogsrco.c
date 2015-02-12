@@ -315,6 +315,162 @@ oTZOGSRCO_AcceptParameter( zVIEW     OperGrp,
    } 
 
 
+   //:TRANSFORMATION OPERATION
+   //:GenerateXOG( VIEW OperationGroup BASED ON LOD TZOGSRCO )
+
+   //:VIEW OperationXOG    BASED ON LOD TZZOXOGO
+zOPER_EXPORT zSHORT OPERATION
+oTZOGSRCO_GenerateXOG( zVIEW     OperationGroup )
+{
+   zVIEW     OperationXOG = 0; 
+   //:VIEW OperationGroupT BASED ON LOD TZOGSRCO
+   zVIEW     OperationGroupT = 0; 
+   //:VIEW CurrentLPLR     BASED ON LOD TZCMLPLO
+   zVIEW     CurrentLPLR = 0; 
+   //:STRING ( 513 ) XOG_FileName 
+   zCHAR     XOG_FileName[ 514 ] = { 0 }; 
+   //:STRING ( 513 ) POG_FileName
+   zCHAR     POG_FileName[ 514 ] = { 0 }; 
+   //:STRING ( 200 ) szMsg
+   zCHAR     szMsg[ 201 ] = { 0 }; 
+   //:INTEGER        lFile
+   zLONG     lFile = 0; 
+   //:SHORT          nRC                 
+   zSHORT    nRC = 0; 
+   zSHORT    RESULT; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
+
+
+   //:// Build the executable Global Object executable for all Operations in the LPLR.
+
+   //:// Activate or initialize the XOG executable object.
+   //:GET VIEW CurrentLPLR NAMED "TaskLPLR"
+   RESULT = GetViewByName( &CurrentLPLR, "TaskLPLR", OperationGroup, zLEVEL_TASK );
+   //:XOG_FileName = CurrentLPLR.LPLR.ExecDir + "\" + CurrentLPLR.LPLR.Name + ".XOG"
+   GetStringFromAttribute( XOG_FileName, CurrentLPLR, "LPLR", "ExecDir" );
+   ZeidonStringConcat( XOG_FileName, 1, 0, "\\", 1, 0, 514 );
+   GetVariableFromAttribute( szTempString_0, 0, 'S', 33, CurrentLPLR, "LPLR", "Name", "", 0 );
+   ZeidonStringConcat( XOG_FileName, 1, 0, szTempString_0, 1, 0, 514 );
+   ZeidonStringConcat( XOG_FileName, 1, 0, ".XOG", 1, 0, 514 );
+   //:lFile = SysOpenFile( OperationGroup, XOG_FileName, COREFILE_READ )
+   lFile = SysOpenFile( OperationGroup, XOG_FileName, COREFILE_READ );
+   //:IF lFile < 0
+   if ( lFile < 0 )
+   { 
+      //:// Executable has not yet been generated.
+      //:ACTIVATE OperationXOG EMPTY 
+      RESULT = ActivateEmptyObjectInstance( &OperationXOG, "TZZOXOGO", OperationGroup, zSINGLE );
+      //:CREATE ENTITY OperationXOG.TZZOXOGO 
+      RESULT = CreateEntity( OperationXOG, "TZZOXOGO", zPOS_AFTER );
+      //:OperationXOG.TZZOXOGO.NAME = CurrentLPLR.LPLR.Name
+      SetAttributeFromAttribute( OperationXOG, "TZZOXOGO", "NAME", CurrentLPLR, "LPLR", "Name" );
+      //:ELSE
+   } 
+   else
+   { 
+      //:SysCloseFile( OperationGroup, lFile, 0 )
+      SysCloseFile( OperationGroup, lFile, 0 );
+      //:// Get current executable File.
+      //:ActivateOI_FromFile( OperationXOG, "TZZOXOGO", OperationGroup, XOG_FileName, zSINGLE )
+      ActivateOI_FromFile( &OperationXOG, "TZZOXOGO", OperationGroup, XOG_FileName, zSINGLE );
+
+      //:// Delete current source file entries.
+      //:FOR EACH OperationXOG.GLOBALOPERATIONSOURCEFILE 
+      RESULT = SetCursorFirstEntity( OperationXOG, "GLOBALOPERATIONSOURCEFILE", "" );
+      while ( RESULT > zCURSOR_UNCHANGED )
+      { 
+         //:DELETE ENTITY OperationXOG.GLOBALOPERATIONSOURCEFILE NONE 
+         RESULT = DeleteEntity( OperationXOG, "GLOBALOPERATIONSOURCEFILE", zREPOS_NONE );
+         RESULT = SetCursorNextEntity( OperationXOG, "GLOBALOPERATIONSOURCEFILE", "" );
+      } 
+
+      //:END
+   } 
+
+   //:END
+   //:NAME VIEW OperationXOG "OperationXOG"
+   SetNameForView( OperationXOG, "OperationXOG", 0, zLEVEL_TASK );
+
+   //:// Build the executable components from each POG Operation.
+   //:SET CURSOR FIRST CurrentLPLR.W_MetaType WHERE CurrentLPLR.W_MetaType.Type = 14   // 14 is Global Operation Group 
+   RESULT = SetCursorFirstEntityByInteger( CurrentLPLR, "W_MetaType", "Type", 14, "" );
+   //:FOR EACH CurrentLPLR.W_MetaDef 
+   RESULT = SetCursorFirstEntity( CurrentLPLR, "W_MetaDef", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:POG_FileName = CurrentLPLR.LPLR.MetaSrcDir + "\" + CurrentLPLR.W_MetaDef.Name + ".POG"
+      GetStringFromAttribute( POG_FileName, CurrentLPLR, "LPLR", "MetaSrcDir" );
+      ZeidonStringConcat( POG_FileName, 1, 0, "\\", 1, 0, 514 );
+      GetVariableFromAttribute( szTempString_1, 0, 'S', 33, CurrentLPLR, "W_MetaDef", "Name", "", 0 );
+      ZeidonStringConcat( POG_FileName, 1, 0, szTempString_1, 1, 0, 514 );
+      ZeidonStringConcat( POG_FileName, 1, 0, ".POG", 1, 0, 514 );
+      //:nRC = ActivateOI_FromFile( OperationGroupT, "TZOGSRCO", OperationGroup, POG_FileName, zSINGLE + 8192 )
+      nRC = ActivateOI_FromFile( &OperationGroupT, "TZOGSRCO", OperationGroup, POG_FileName, zSINGLE + 8192 );
+      //:IF nRC < 0
+      if ( nRC < 0 )
+      { 
+         //:szMsg = "Can't open POG file, " + POG_FileName
+         ZeidonStringCopy( szMsg, 1, 0, "Can't open POG file, ", 1, 0, 201 );
+         ZeidonStringConcat( szMsg, 1, 0, POG_FileName, 1, 0, 201 );
+         //:IssueError( OperationGroup,0,0, szMsg )
+         IssueError( OperationGroup, 0, 0, szMsg );
+         //:RETURN -1
+         return( -1 );
+      } 
+
+      //:END
+      //:// Create Source file entry.
+      //:CREATE ENTITY OperationXOG.GLOBALOPERATIONSOURCEFILE 
+      RESULT = CreateEntity( OperationXOG, "GLOBALOPERATIONSOURCEFILE", zPOS_AFTER );
+      //:OperationXOG.GLOBALOPERATIONSOURCEFILE.NAME         = OperationGroupT.GlobalOperationGroup.Name 
+      SetAttributeFromAttribute( OperationXOG, "GLOBALOPERATIONSOURCEFILE", "NAME", OperationGroupT, "GlobalOperationGroup", "Name" );
+      //:OperationXOG.GLOBALOPERATIONSOURCEFILE.LANGUAGETYPE = OperationGroupT.GlobalOperationGroup.LanguageType 
+      SetAttributeFromAttribute( OperationXOG, "GLOBALOPERATIONSOURCEFILE", "LANGUAGETYPE", OperationGroupT, "GlobalOperationGroup", "LanguageType" );
+
+      //:// Create each Operation entry.
+      //:FOR EACH OperationGroupT.Operation 
+      RESULT = SetCursorFirstEntity( OperationGroupT, "Operation", "" );
+      while ( RESULT > zCURSOR_UNCHANGED )
+      { 
+         //:CREATE ENTITY OperationXOG.OPERATION 
+         RESULT = CreateEntity( OperationXOG, "OPERATION", zPOS_AFTER );
+         //:OperationXOG.OPERATION.NAME = OperationGroupT.Operation.Name 
+         SetAttributeFromAttribute( OperationXOG, "OPERATION", "NAME", OperationGroupT, "Operation", "Name" );
+         //:OperationXOG.OPERATION.TYPE = OperationGroupT.Operation.Type 
+         SetAttributeFromAttribute( OperationXOG, "OPERATION", "TYPE", OperationGroupT, "Operation", "Type" );
+
+         //:FOR EACH OperationGroupT.Parameter 
+         RESULT = SetCursorFirstEntity( OperationGroupT, "Parameter", "" );
+         while ( RESULT > zCURSOR_UNCHANGED )
+         { 
+            //:CREATE ENTITY OperationXOG.PARAMETER 
+            RESULT = CreateEntity( OperationXOG, "PARAMETER", zPOS_AFTER );
+            //:OperationXOG.PARAMETER.NAME     = OperationGroupT.Parameter.ShortDesc 
+            SetAttributeFromAttribute( OperationXOG, "PARAMETER", "NAME", OperationGroupT, "Parameter", "ShortDesc" );
+            //:OperationXOG.PARAMETER.DATATYPE = OperationGroupT.Parameter.DataType 
+            SetAttributeFromAttribute( OperationXOG, "PARAMETER", "DATATYPE", OperationGroupT, "Parameter", "DataType" );
+            RESULT = SetCursorNextEntity( OperationGroupT, "Parameter", "" );
+         } 
+
+         RESULT = SetCursorNextEntity( OperationGroupT, "Operation", "" );
+         //:END 
+      } 
+
+      RESULT = SetCursorNextEntity( CurrentLPLR, "W_MetaDef", "" );
+      //:END
+   } 
+
+   //:END
+   //:CommitOI_ToFile( OperationXOG, XOG_FileName, zASCII )
+   CommitOI_ToFile( OperationXOG, XOG_FileName, zASCII );
+   //:DropObjectInstance( OperationXOG )
+   DropObjectInstance( OperationXOG );
+   return( 0 );
+// END
+} 
+
+
  
 #ifdef __cplusplus
 }
