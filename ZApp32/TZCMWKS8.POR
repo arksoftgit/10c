@@ -1,9 +1,9 @@
-z1100-Zeidon    TZCMWKS8 TZCMWKSO 01/15/15   17:03:47 1.0a2    
+z1100-Zeidon    TZCMWKS8 TZCMWKSO 02/06/15   11:05:26 1.0a2    
 20140819124300328
 eRepositoryClient 1,50331780
 aZKey,2    88000000
 aWKS_Id,2  2
-aMaxZKey,2 92758532
+aMaxZKey,2 92758535
 aTE_MaxZKey,2 66824
 aDesc,2    DKS
 aDefaultLPLR_ZKey,2 89580508
@@ -24,7 +24,7 @@ aZKey,2    89580508
 aPgmSrcDir,2 %kzd%:\lplr\epamms
 aExecDir,2 %kzd%:\lplr\epamms\bin
 aMetaSrcDir,2 %kzd%:\lplr\epamms
-aMaxZKey,2 110001412
+aMaxZKey,2 110001490
 
 eLPLR      2,38
 aName,2    ha

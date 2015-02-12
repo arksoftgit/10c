@@ -2910,6 +2910,29 @@ ResetViewFromSubobject( zVIEW  lpView )
    return( nRC );
 }
 
+//./ ADD NAME=ResetViewFromSubobjectTop
+// Source Module=kzoevmaa.c
+/////////////////////////////////////////////////////////////////////////////
+//
+//  ENTRY:   ResetViewFromSubobjectTop
+//
+//  PURPOSE: To reset a view from a subobject entity back to the top level.
+//
+//  RETURNS: 0           - View successfully reset
+//           1           - View is not currently on a subobject
+//           zCALL_ERROR - error creating new view
+//
+/////////////////////////////////////////////////////////////////////////////
+//./ END + 2
+zSHORT OPERATION
+ResetViewFromSubobjectTop( zVIEW  lpView )
+{
+   while ( ResetViewFromSubobjectWithoutError( lpView ) == 0 )
+   {
+   }
+   return( 0 );
+}
+
 //./ ADD NAME=DropView
 // Source Module=kzoevmaa.c
 /////////////////////////////////////////////////////////////////////////////

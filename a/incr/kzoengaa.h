@@ -683,6 +683,9 @@ zSHORT OPERATION
 ResetViewFromSubobject( zVIEW lpView );
 
 zSHORT OPERATION
+ResetViewFromSubobjectTop( zVIEW lpView );
+
+zSHORT OPERATION
 ResetViewFromSubobjectWithoutError( zVIEW  lpView );
 
 zSHORT OPERATION
