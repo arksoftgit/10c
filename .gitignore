@@ -55,6 +55,7 @@ build/
 *.opt
 *.plg
 *.dep
+delerr.bat
 
 account.*
 mtznlast.bat
@@ -84,6 +85,8 @@ mtznlast.bat
 *.pidb
 *.log
 *.scc
+*.xpj
+*.xpg
 *.XPG
 *.XPJ
 

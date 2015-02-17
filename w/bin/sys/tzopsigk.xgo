@@ -1,4 +1,4 @@
-z1000-Zeidon    TZOPSIGK TZOPGRPO 02/12/15   10:28:49 1.0a2    
+z1000-Zeidon    TZOPSIGK TZOPGRPO 02/17/15   15:44:53 1.0a2    
 eOPERSIG   1
 aName      TZKZ8C
 
@@ -16833,6 +16833,89 @@ eHeaderFile_Oper 3
 
 eOperation 2
 aName      SetEntityCursor
+aZKey      92727189
+aDesc      does alot
+aType      Z
+aReturnDesc nReturnCode
+aReturnDataType N
+aGenerationType C
+
+eParameter 3
+aShortDesc zView
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      92727190
+
+eParameter 3
+aShortDesc EntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727191
+
+eParameter 3
+aShortDesc AttributeName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727192
+
+eParameter 3
+aShortDesc lControl
+aDataType  L
+aPFlag     N
+aUFlag     N
+aZKey      92727194
+
+eParameter 3
+aShortDesc Void Qual Value
+aDataType  O
+aPFlag     Y
+aUFlag     N
+aZKey      92727195
+
+eParameter 3
+aShortDesc SrcEntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727196
+
+eParameter 3
+aShortDesc SrcAttributeName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727197
+
+eParameter 3
+aShortDesc RelPosition
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      92727198
+
+eParameter 3
+aShortDesc ScopingEntityName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727199
+
+eParameter 3
+aShortDesc ContextName
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727200
+
+eSourceFile 3
+
+eHeaderFile_Oper 3
+
+eOperation 2
+aName      SetEntityCursor
 aZKey      8023342
 aDesc      does alot
 aType      Z
@@ -16910,89 +16993,6 @@ aDataType  S
 aPFlag     N
 aUFlag     N
 aZKey      8023352
-
-eSourceFile 3
-
-eHeaderFile_Oper 3
-
-eOperation 2
-aName      SetEntityCursor
-aZKey      92727189
-aDesc      does alot
-aType      Z
-aReturnDesc nReturnCode
-aReturnDataType N
-aGenerationType C
-
-eParameter 3
-aShortDesc zView
-aDataType  V
-aPFlag     N
-aUFlag     N
-aZKey      92727190
-
-eParameter 3
-aShortDesc EntityName
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727191
-
-eParameter 3
-aShortDesc AttributeName
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727192
-
-eParameter 3
-aShortDesc lControl
-aDataType  L
-aPFlag     N
-aUFlag     N
-aZKey      92727194
-
-eParameter 3
-aShortDesc Void Qual Value
-aDataType  O
-aPFlag     Y
-aUFlag     N
-aZKey      92727195
-
-eParameter 3
-aShortDesc SrcEntityName
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727196
-
-eParameter 3
-aShortDesc SrcAttributeName
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727197
-
-eParameter 3
-aShortDesc RelPosition
-aDataType  N
-aPFlag     N
-aUFlag     N
-aZKey      92727198
-
-eParameter 3
-aShortDesc ScopingEntityName
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727199
-
-eParameter 3
-aShortDesc ContextName
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727200
 
 eSourceFile 3
 
@@ -19684,6 +19684,54 @@ eHeaderFile_Oper 3
 
 eOperation 2
 aName      StoreValueInRecord
+aZKey      92727183
+aDesc      used to store attribute values in a zeidon record
+aType      Z
+aReturnDesc nReturnCode
+aReturnDataType N
+aGenerationType J
+
+eParameter 3
+aShortDesc View
+aDataType  V
+aPFlag     N
+aUFlag     N
+aZKey      92727184
+
+eParameter 3
+aShortDesc View Entity String
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727185
+
+eParameter 3
+aShortDesc View Attribute String
+aDataType  S
+aPFlag     N
+aUFlag     N
+aZKey      92727186
+
+eParameter 3
+aShortDesc Void Value
+aDataType  O
+aPFlag     N
+aUFlag     N
+aZKey      92727187
+
+eParameter 3
+aShortDesc uLength
+aDataType  L
+aPFlag     N
+aUFlag     N
+aZKey      92727188
+
+eSourceFile 3
+
+eHeaderFile_Oper 3
+
+eOperation 2
+aName      StoreValueInRecord
 aZKey      8023436
 aDesc      used to store attribute values in a zeidon record
 aType      Z
@@ -19726,54 +19774,6 @@ aDataType  L
 aPFlag     N
 aUFlag     Y
 aZKey      8023441
-
-eSourceFile 3
-
-eHeaderFile_Oper 3
-
-eOperation 2
-aName      StoreValueInRecord
-aZKey      92727183
-aDesc      used to store attribute values in a zeidon record
-aType      Z
-aReturnDesc nReturnCode
-aReturnDataType N
-aGenerationType J
-
-eParameter 3
-aShortDesc View
-aDataType  V
-aPFlag     N
-aUFlag     N
-aZKey      92727184
-
-eParameter 3
-aShortDesc View Entity String
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727185
-
-eParameter 3
-aShortDesc View Attribute String
-aDataType  S
-aPFlag     N
-aUFlag     N
-aZKey      92727186
-
-eParameter 3
-aShortDesc Void Value
-aDataType  O
-aPFlag     N
-aUFlag     N
-aZKey      92727187
-
-eParameter 3
-aShortDesc uLength
-aDataType  L
-aPFlag     N
-aUFlag     N
-aZKey      92727188
 
 eSourceFile 3
 
@@ -19965,6 +19965,38 @@ eHeaderFile_Oper 3
 
 eOperation 2
 aName      SysConvertDecimalToString
+aZKey      1592220
+aDesc      Convert a Decimal to a String
+aType      Z
+aReturnDesc nRC
+aReturnDataType N
+aGenerationType J
+
+eParameter 3
+aShortDesc pDecimal
+aDataType  M
+aPFlag     N
+aUFlag     N
+aZKey      1592221
+
+eParameter 3
+aShortDesc ReturnString
+aDataType  S
+aPFlag     Y
+aUFlag     N
+aZKey      1592222
+
+eParameter 3
+aShortDesc nPrecision
+aDataType  N
+aZKey      1592223
+
+eSourceFile 3
+
+eHeaderFile_Oper 3
+
+eOperation 2
+aName      SysConvertDecimalToString
 aZKey      92727201
 aDesc      Convert a Decimal to a String
 aType      Z
@@ -19998,38 +20030,6 @@ eSourceFile 3
 eHeaderFile_Oper 3
 
 eOperation 2
-aName      SysConvertDecimalToString
-aZKey      1592220
-aDesc      Convert a Decimal to a String
-aType      Z
-aReturnDesc nRC
-aReturnDataType N
-aGenerationType J
-
-eParameter 3
-aShortDesc pDecimal
-aDataType  M
-aPFlag     N
-aUFlag     N
-aZKey      1592221
-
-eParameter 3
-aShortDesc ReturnString
-aDataType  S
-aPFlag     Y
-aUFlag     N
-aZKey      1592222
-
-eParameter 3
-aShortDesc nPrecision
-aDataType  N
-aZKey      1592223
-
-eSourceFile 3
-
-eHeaderFile_Oper 3
-
-eOperation 2
 aName      SysConvertEnvironmentString
 aZKey      44805704
 aDesc      Convert Environment Variables to Value
@@ -20040,7 +20040,7 @@ aReturnDataType N
 eParameter 3
 aShortDesc ConvertedString
 aDataType  S
-aPFlag     N
+aPFlag     Y
 aUFlag     N
 aZKey      44805705
 
@@ -30058,7 +30058,7 @@ i3526      4
 i3531      8
 i3532      4
 i3536      8
-i3537      4
+i3537      3502
 i3541      8
 i3542      4
 i3548      8

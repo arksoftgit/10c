@@ -11979,8 +11979,6 @@ GenJSPJ_InputMapRecurs( zVIEW     vDialog,
                                                 ZeidonStringCopy( szWriteBuffer, 1, 0, "         }  // checkExistenceOfEntity", 1, 0, 10001 );
                                                 //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                                 WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-                                                //:IssueError( vDialog,0,0, "At second" )
-                                                IssueError( vDialog, 0, 0, "At second" );
 
                                                 //:IF vDialog.Control.Subtype >= 36864 AND vDialog.Control.Subtype <= 45056   // IF Set Foreign Key
                                                 if ( CompareAttributeToInteger( vDialog, "Control", "Subtype", 36864 ) >= 0 && CompareAttributeToInteger( vDialog, "Control", "Subtype", 45056 ) <= 0 )
