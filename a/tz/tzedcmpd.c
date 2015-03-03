@@ -933,6 +933,16 @@ RebuildTargetList( zVIEW     vSubtask )
       { 
          //: szDLL_Name = vGOG_Meta.GlobalOperationGroup.DomainAndGlobalOpGroupName
          GetVariableFromAttribute( szDLL_Name, 0, 'S', 514, vGOG_Meta, "GlobalOperationGroup", "DomainAndGlobalOpGroupName", "", 0 );
+         //: // KJS 02/25/15 - In the java world, we don't put values in the DLL_Name field, so 
+         //: // use the object name in the list.
+         //: IF szDLL_Name = ""
+         if ( ZeidonStringCompare( szDLL_Name, 1, 0, "", 1, 0, 514 ) == 0 )
+         { 
+            //: szDLL_Name = vGOG_Meta.GlobalOperationGroup.Name   
+            GetVariableFromAttribute( szDLL_Name, 0, 'S', 514, vGOG_Meta, "GlobalOperationGroup", "Name", "", 0 );
+         } 
+
+         //: END
 
          //: IF szDLL_Name != ""
          if ( ZeidonStringCompare( szDLL_Name, 1, 0, "", 1, 0, 514 ) != 0 )
@@ -1010,6 +1020,16 @@ RebuildTargetList( zVIEW     vSubtask )
       { 
          //: szDLL_Name = vDLG_Meta.Dialog.DLL_Name
          GetVariableFromAttribute( szDLL_Name, 0, 'S', 514, vDLG_Meta, "Dialog", "DLL_Name", "", 0 );
+         //: // KJS 02/25/15 - In the java world, we don't put values in the DLL_Name field, so 
+         //: // use the object name in the list.
+         //: IF szDLL_Name = ""
+         if ( ZeidonStringCompare( szDLL_Name, 1, 0, "", 1, 0, 514 ) == 0 )
+         { 
+            //: szDLL_Name = vDLG_Meta.Dialog.Tag  
+            GetVariableFromAttribute( szDLL_Name, 0, 'S', 514, vDLG_Meta, "Dialog", "Tag", "", 0 );
+         } 
+
+         //: END
 
          //: // Show only dialogs with source in target list
          //: // these dialogs have an DLL name
@@ -1091,6 +1111,16 @@ RebuildTargetList( zVIEW     vSubtask )
          { 
             //: szDLL_Name = vLOD_Meta.LOD.DLL_Name
             GetVariableFromAttribute( szDLL_Name, 0, 'S', 514, vLOD_Meta, "LOD", "DLL_Name", "", 0 );
+            //:// KJS 02/25/15 - In the java world, we don't put values in the DLL_Name field, so 
+            //:// use the object name in the list.
+            //:IF szDLL_Name = ""
+            if ( ZeidonStringCompare( szDLL_Name, 1, 0, "", 1, 0, 514 ) == 0 )
+            { 
+               //:szDLL_Name = vLOD_Meta.LOD.Name   
+               GetVariableFromAttribute( szDLL_Name, 0, 'S', 514, vLOD_Meta, "LOD", "Name", "", 0 );
+            } 
+
+            //:END
 
             //: // Show only LODs with source in target list
             //: // these LODs have an DLL name

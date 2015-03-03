@@ -75,6 +75,11 @@ RebuildTargetList( VIEW vSubtask )
 
        IF nRC >= 0
           szDLL_Name = vGOG_Meta.GlobalOperationGroup.DomainAndGlobalOpGroupName
+          // KJS 02/25/15 - In the java world, we don't put values in the DLL_Name field, so 
+          // use the object name in the list.
+          IF szDLL_Name = ""
+             szDLL_Name = vGOG_Meta.GlobalOperationGroup.Name   
+          END
 
           IF szDLL_Name != ""
              // Check to see if the DLL name of the GOPGRP is specified as a
@@ -113,6 +118,11 @@ RebuildTargetList( VIEW vSubtask )
 
        IF nRC >= 0
           szDLL_Name = vDLG_Meta.Dialog.DLL_Name
+          // KJS 02/25/15 - In the java world, we don't put values in the DLL_Name field, so 
+          // use the object name in the list.
+          IF szDLL_Name = ""
+             szDLL_Name = vDLG_Meta.Dialog.Tag  
+          END
 
           // Show only dialogs with source in target list
           // these dialogs have an DLL name
@@ -153,6 +163,11 @@ RebuildTargetList( VIEW vSubtask )
           // executable for the LOD.
           IF nRC >= 0
              szDLL_Name = vLOD_Meta.LOD.DLL_Name
+          // KJS 02/25/15 - In the java world, we don't put values in the DLL_Name field, so 
+          // use the object name in the list.
+          IF szDLL_Name = ""
+             szDLL_Name = vLOD_Meta.LOD.Name   
+          END
 
              // Show only LODs with source in target list
              // these LODs have an DLL name

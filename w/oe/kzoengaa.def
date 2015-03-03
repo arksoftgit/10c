@@ -92,7 +92,7 @@
    LIBRARY       KZOENGAA
    DESCRIPTION   'KZOENGAA Operations'
 
-;  Maximum Ordinal value is currently > @467 <
+;  Maximum Ordinal value is currently > @468 <
 ;      Unused 118
 EXPORTS
               _zCall_GetDateTime                 @454
@@ -297,6 +297,7 @@ EXPORTS
               RelinkInstanceToInstance           @147
               ResetView                          @82
               ResetViewFromSubobject             @50
+              ResetViewFromSubobjectTop          @468
               ResetViewFromSubobjectWithoutError @431
               ResetViewPositions                 @283
               SendDomainError                    @241

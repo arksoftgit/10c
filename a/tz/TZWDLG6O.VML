@@ -2059,7 +2059,7 @@ DKS_TRACE_END */
 
                szWriteBuffer = "      vView = task.getViewByName( ^wXferO^ );"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "      strMessage = vView.cursor( ^Root^ ).getStringFromAttribute( ^WebReturnMessage^ );"
+               szWriteBuffer = "      strMessage = vView.cursor( ^Root^ ).getAttribute( ^WebReturnMessage^ ).getString();"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                szWriteBuffer = "      strURLParameters = ^?CallingPage=" + szFormName + ".jsp^ +"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -2098,7 +2098,7 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   if ( csrRC.isSet( ) )"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getStringFromAttribute( ^BannerName^ );"
+   szWriteBuffer = "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getAttribute( ^BannerName^ ).getString();"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    szWriteBuffer = "   if ( StringUtils.isBlank( strBannerName ) )"
@@ -2129,9 +2129,9 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   {"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).setAttribute( ^CurrentDialog^, ^" + szDialogTag + "^ );"
+      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentDialog^ ).setValue( ^" + szDialogTag + "^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).setAttribute( ^CurrentWindow^, ^" + szWindowTag + "^ );"
+      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentWindow^ ).setValue( ^" + szWindowTag + "^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   }"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
@@ -2218,6 +2218,9 @@ DKS_TRACE_END */
    // KJS 06/09/11 - I am not sure that we want to always include this js file because at the moment, I am putting
    // this in because we want to do a md5 hash conversion.
    szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/md5.js^></script>"
+   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   // DKS 03/02/15 - To disable UI while processing
+   szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/jquery.blockUI.js^></script>"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
    IF szWysiwygEditor != ""
@@ -2514,33 +2517,18 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "{"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var theForm;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var j;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var k;"
+   szWriteBuffer = "   var bRC = false;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
 
-   szWriteBuffer = "   for ( j = 0; j < document.forms.length; j++ )"
+   szWriteBuffer = "   var $el = $(^#zDisable^);"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   {"
+   szWriteBuffer = "   if ( $el.length > 0 ) {"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      theForm = document.forms[ j ];"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      for ( k = 0; k < theForm.length; k++ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         if ( theForm.elements[ k ].name == ^zDisable^ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "            return theForm.elements[ k ].disabled;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      }"
+   szWriteBuffer = "      bRC = $el.attr( ^disabled^ );"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   }"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-
-   szWriteBuffer = "   return false;"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "   return bRC ? true : false;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "}"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
@@ -2550,21 +2538,8 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "{"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var theForm;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var type;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var lis;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var thisLi;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var j;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   var k;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   var bRC = false;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-
    szWriteBuffer = "   if ( bDisabled && timerID != null )"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   {"
@@ -2576,100 +2551,19 @@ DKS_TRACE_END */
    szWriteBuffer = "   }"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
 
-   // Controls on the window may have been set as disabled through javascript but
-   // when we try to get the values for these controls in jsp (response.getParameter)
-   // they will always be null.  Set any disabled fields to enabled for this reason.
-   szWriteBuffer = "   // Controls on the window may have been set as disabled through javascript but"
+   szWriteBuffer = "   var $el = $(^#zDisable^);"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   // when we try to get the values for these controls in jsp (response.getParameter)"
+   szWriteBuffer = "   if ( $el.length > 0 ) {"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   // they will always be null.  Set any disabled fields to enabled for this reason."
+   szWriteBuffer = "      $el.attr( ^disabled^, bDisabled );"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   for ( j = 0; j < document.forms.length; j++ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      theForm = document.forms[ j ];"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      for ( k = 0; k < theForm.length; k++ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         if (theForm.elements[ k ].disabled == true)"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "             theForm.elements[ k ].disabled = false;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      }"
+   szWriteBuffer = "      bRC = true;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   }"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
 
-   // We want to set some fields as disabled (like buttons and comboboxes) so that
-   // while the jsp code is processing, users can not select these controls.
-   // We do not have the above problem with response.getParameter with comboboxes because
-   // we have a hidden field for every combobox (h + controltag) and we use that for the
-   // response.getParameter in DoInputMapping.
-   szWriteBuffer = "   // We want to set some fields as disabled (like buttons and comboboxes) so that"
+   szWriteBuffer = "   $.blockUI({ message: '<h1><img src=^./images/busy.gif^ /></h1>', overlayCSS: { backgroundColor: '#eee' } });"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   // while the jsp code is processing, users can not select these controls."
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   for ( j = 0; j < document.forms.length; j++ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      theForm = document.forms[ j ];"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-
-   szWriteBuffer = "      for ( k = 0; k < theForm.length; k++ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         type = theForm.elements[ k ].type;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-
-// szWriteBuffer = "         if ( type == ^button^ |||| type == ^checkbox^ |||| type == ^radio^ |||| type == ^select^ )"
-// szWriteBuffer = "         if ( type == ^button^ |||| type == ^select-one^ )"
-// szWriteBuffer = "         if ( type == ^button^ |||| (type != null && type.indexOf( ^select^ ) == 0) )"
-   szWriteBuffer = "         if ( type == ^button^ |||| type == ^submit^ |||| (type != null && type.indexOf( ^select^ ) == 0) )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "            theForm.elements[ k ].disabled = bDisabled;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         }"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         else"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         if ( theForm.elements[ k ].name == ^zDisable^ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "            theForm.elements[ k ].disabled = bDisabled;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "            bRC = true;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "         }"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-
-   szWriteBuffer = "      }"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   }"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-
-
-   szWriteBuffer = "   lis = document.getElementsByTagName( ^li^ );"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   for ( k = 0; k < lis.length; k++ )"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   {"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      thisLi = lis[ k ];"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      thisLi.disabled = bDisabled;"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   }"
-   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-
    szWriteBuffer = "   return bRC;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "}"
@@ -3903,7 +3797,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = ""
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "   strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getStringFromAttribute( ^Name^ );"
+      szWriteBuffer = "   strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^Name^ ).getString();"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   task.log().info(^**** ReportName *** ^ + strViewName);"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -3915,7 +3809,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      nRC = mDashboard.SetOIFromBlob( ^^, task, " + szViewName + ", ^PresentationObjectInstance^, ^ObjectInstanceBlob^, 0 ); //zIGNORE_ERRORS "
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "      strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getStringFromAttribute( ^ObjectInstanceName^ );"
+      szWriteBuffer = "      strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^ObjectInstanceName^ ).getString();"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      mDashboard.SetName(strViewName );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -3925,7 +3819,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   iFrameCount = iFrameCount + 1;"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "   vKZXMLPGO.cursor( ^Session^ ).setAttribute( ^DashboardFrameCount^, iFrameCount );"
+      szWriteBuffer = "   vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^DashboardFrameCount^ ).setValue( iFrameCount );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    END
@@ -4047,7 +3941,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    END
 
-   szWriteBuffer = "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getStringFromAttribute( ^SolicitSaveFlag^ );"
+   szWriteBuffer = "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^SolicitSaveFlag^ ).getString();"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    // FindOpenFile processing.
@@ -4093,7 +3987,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      {"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "         strKeyRole = wWebXA.cursor( ^Root^ ).getStringFromAttribute( ^KeyRole^, ^KeyRole^ );"
+      szWriteBuffer = "         strKeyRole = wWebXA.cursor( ^Root^ ).getAttribute( ^KeyRole^ ).getString( ^KeyRole^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "         if ( strKeyRole == null )"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -4335,8 +4229,8 @@ DKS_TRACE_END */
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                szWriteBuffer = "         strErrorMapValue = " +
                                vDialogTemp.CtrlMapView.Name + ".cursor(^" + vDialogTemp.CtrlMapRelatedEntity.Name + 
-                               "^).getStringFromAttribute( ^" +
-                               vDialogTemp.CtrlMapER_Attribute.Name + "^ );"
+                               "^).getAttribute( ^" +
+                               vDialogTemp.CtrlMapER_Attribute.Name + "^ ).getString();"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                szWriteBuffer = "   }"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )

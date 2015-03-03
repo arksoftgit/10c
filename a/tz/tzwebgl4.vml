@@ -260,8 +260,8 @@ GenJSPJ_CrteCalendar( VIEW vDialog BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "            strErrorMapValue = " +
                       vDialog.CtrlMapView.Name + ".cursor( ^" +
-                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                      vDialog.CtrlMapER_Attribute.Name + "^, strDateFormat );"
+                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString( strDateFormat );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
       // KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
@@ -424,8 +424,8 @@ GenJSPJ_CrteCheckBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "         strRadioGroupValue = " +
                       vDialog.CtrlMapView.Name + ".cursor( ^" +
-                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                      vDialog.CtrlMapER_Attribute.Name + "^ );"
+                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   }"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
@@ -679,8 +679,8 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
 
             // Get the current value of the combo box.
             szWriteBuffer = "         strComboCurrentValue = " + vDialog.CtrlMapView.Name + ".cursor( ^" +
-                     vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                     vDialog.CtrlMapER_Attribute.Name + "^, ^^ );"
+                     vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                     vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
                      // KJS 10/22/14 - Right now we are not adding the context name, we only want the default, which
                      // I am currently assuming has ALL the values (old and new) of this domain. When we get DGs domain fix
                      // I think we need to put this back!!!!!!!
@@ -898,8 +898,8 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
                szContextName = ""
             END
             szWriteBuffer = "            strComboCurrentValue = " + vDialog.CtrlMapView.Name + ".cursor( ^" +
-                     vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                     vDialog.CtrlMapER_Attribute.Name + "^, ^" + szContextName + "^ );"
+                     vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                     vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" + szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
             // KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
@@ -1000,8 +1000,8 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             END
 
             szWriteBuffer = "         strErrorMapValue = v" + szCtrlTag + ".cursor( ^" +
-                            vList.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                            vList.CtrlMapER_Attribute.Name + "^, ^" +
+                            vList.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                            vList.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                             szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
@@ -1793,8 +1793,8 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         strRadioGroupValue = " +
                             vDialog.CtrlMapView.Name + ".cursor( ^" +
-                            vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                            vDialog.CtrlMapER_Attribute.Name + "^ );"
+                            vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                            vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "   }"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -1956,8 +1956,8 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
 
             szWriteBuffer = "            strErrorMapValue = " +
                             vDialog.CtrlMapView.Name + ".cursor( ^" +
-                            vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                            vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                            vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                            vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                             szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
@@ -2237,8 +2237,8 @@ GenJSPJ_CrteEditBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       END
       szWriteBuffer = "            strErrorMapValue = " +
                       vDialog.CtrlMapView.Name + ".cursor( ^" +
-                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                      vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                       szContextName + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
@@ -2623,8 +2623,8 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
       IF vDialog.CtrlMapER_Domain.DataType = "T" OR vDialog.CtrlMapER_Domain.DataType = "D"
          szWriteBuffer = "         strTextDisplayValue = " +
                          vDialog.CtrlMapView.Name + ".cursor( ^" +
-                         vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                         vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                         vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                         vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                          szContextName + "^ );"
       ELSE
          IF vDialog.CtrlMapER_Domain.MaxStringLth > 254
@@ -2636,8 +2636,8 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
          szWriteBuffer = "         strTextDisplayValue = " +
                          vDialog.CtrlMapView.Name + ".cursor( ^" +
-                         vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                         vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                         vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                         vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                          szContextName + "^ );"
       END
 
@@ -2710,8 +2710,8 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
             IF vDialog.CtrlMapER_Domain.DataType = "T" OR vDialog.CtrlMapER_Domain.DataType = "D"
                szWriteBuffer = "         strTextURL_Value = " +
                                vDialog.CtrlMapView.Name + ".cursor( ^" +
-                               vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                               vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                               vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                               vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                                szContextName + "^ );"
             ELSE
                IF vDialog.CtrlMapER_Domain.MaxStringLth > 254
@@ -2723,8 +2723,8 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
                szWriteBuffer = "         strTextURL_Value = " +
                                vDialog.CtrlMapView.Name + ".cursor( ^" +
-                               vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                               vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                               vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                               vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                                szContextName + "^ );"
             END
 
@@ -2911,8 +2911,8 @@ GenJSPJ_CrteJPG( VIEW vDialog BASED ON LOD TZWDLGSO,
       szWriteBuffer = "         strErrorMapValue = " +
                       vDialog.CtrlMapView.Name +
                       ".cursor( ^" +
-                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                      vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                       szContextName + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
@@ -3107,8 +3107,8 @@ GenJSPJ_CrteListBox( VIEW vDialog,
 
             szWriteBuffer = "         strComboCurrentValue = " + vDialog.CtrlMapView.Name +
                      ".cursor( ^" +
-                     szEntityName + "^ ).getStringFromAttribute( ^" +
-                     szAttributeName + "^, ^" + szContextName + "^ );"
+                     szEntityName + "^ ).getAttribute( ^" +
+                     szAttributeName + "^ ).getString( ^" + szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
             // KJS 02/15/11 - Thinking I need to add code to change values returned as null to ""
@@ -3159,8 +3159,8 @@ GenJSPJ_CrteListBox( VIEW vDialog,
 
             szWriteBuffer = "         strErrorMapValue = v" + szCtrlTag +
                             ".cursor( ^" +
-                            szEntityName + "^ ).getStringFromAttribute( ^" +
-                            szAttributeName + "^, ^" +
+                            szEntityName + "^ ).getAttribute( ^" +
+                            szAttributeName + "^ ).getString( ^" +
                             szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
@@ -3333,8 +3333,8 @@ GenJSPJ_CrteMLEdit( VIEW vDialog BASED ON LOD TZWDLGSO,
 
       szWriteBuffer = "            strErrorMapValue = " +
                       vDialog.CtrlMapView.Name + ".cursor( ^" +
-                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getStringFromAttribute( ^" +
-                      vDialog.CtrlMapER_Attribute.Name + "^, ^" +
+                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
+                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                       szContextName + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 

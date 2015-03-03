@@ -1,4 +1,4 @@
-z1000-Zeidon    TZOGSRCO TZZOLODO 06/21/10   16:02:32 1.0b0    
+z1000-Zeidon    TZOGSRCO TZZOLODO 11/26/14   16:19:41 1.0b0    
 eLOD       1
 aZKey      1326765
 aName      TZOGSRCO
@@ -552,13 +552,6 @@ aNotNull   Y
 aDesc      OS File name
 
 eDomainRec 5
-aZKey      90145848
-aName      MetaName
-aDomainType E
-aDataType  S
-aMaxStringLth 8
-aDesc      Name of a meta object (ie., LOD, Dialog, Report)
-aContextRestriction N
 
 eLOD_AttributeRec 3
 aZKey      1326797
@@ -578,7 +571,6 @@ aSeqNo_LOD_Entity 4
 eER_AttributeRec 4
 aName      Extension
 aZKey      1321280
-aLth       3
 aDesc      Override of VML standard
 
 eDomainRec 5
@@ -661,7 +653,7 @@ aZKey      90000040
 aName      QSFileName
 aDomainType E
 aDataType  S
-aMaxStringLth 8
+aMaxStringLth 32
 aDesc      QuinSoft File Name - 32 chars
 aContextRestriction N
 
@@ -676,6 +668,7 @@ aER_DiagramPosY 267
 aER_PortFactor 2
 
 eLOD_Entity 2
+awkSelectedAttributeForDragSort 7
 
 eLOD_Attribute 3
 awkSequence 1
@@ -988,6 +981,17 @@ aShortDesc State
 aDataType  N
 aZKey      89241280
 
+eOperation 3
+aName      GenerateXOG
+aZKey      110002076
+aType      T
+aReturnDataType N
+
+eParameter 4
+aShortDesc View To Instance
+aDataType  V
+aZKey      110002077
+
 eZ_MetaDef 2
 aName      TZOGSRCO
 aZKey      1326765
@@ -995,6 +999,10 @@ aType      7
 aLastUpdateDate 19951102200106000
 aLastCheckInDate 19951102203051110
 aDesc      Global Operation Group source object
+
+eOperationList 2
+
+eOperSourceFile 3
 
 eOperationList 2
 
@@ -1019,6 +1027,7 @@ i69        18
 i78        75
 i81        35
 i87        18
+i90        29
 i93        35
 i99        6
 i102       6
@@ -1029,7 +1038,7 @@ i115       86
 i116       18
 i117       88
 i118       89
-i119       90
+i119       29
 i120       91
 i121       92
 i122       35
@@ -1137,7 +1146,9 @@ i223       83
 i224       84
 i225       26
 i231       25
-i237       25
-i238       26
-i239       226
+i239       25
 i240       26
+i241       236
+i242       26
+i243       226
+i244       26
