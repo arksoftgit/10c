@@ -425,7 +425,7 @@ GenJSPJ_CrteCheckBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szWriteBuffer = "         strRadioGroupValue = " +
                       vDialog.CtrlMapView.Name + ".cursor( ^" +
                       vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   }"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
@@ -680,7 +680,7 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             // Get the current value of the combo box.
             szWriteBuffer = "         strComboCurrentValue = " + vDialog.CtrlMapView.Name + ".cursor( ^" +
                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-                     vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+                     vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
                      // KJS 10/22/14 - Right now we are not adding the context name, we only want the default, which
                      // I am currently assuming has ALL the values (old and new) of this domain. When we get DGs domain fix
                      // I think we need to put this back!!!!!!!
@@ -1794,7 +1794,7 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
             szWriteBuffer = "         strRadioGroupValue = " +
                             vDialog.CtrlMapView.Name + ".cursor( ^" +
                             vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-                            vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+                            vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "   }"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )

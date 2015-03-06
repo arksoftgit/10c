@@ -2059,7 +2059,7 @@ DKS_TRACE_END */
 
                szWriteBuffer = "      vView = task.getViewByName( ^wXferO^ );"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "      strMessage = vView.cursor( ^Root^ ).getAttribute( ^WebReturnMessage^ ).getString();"
+               szWriteBuffer = "      strMessage = vView.cursor( ^Root^ ).getAttribute( ^WebReturnMessage^ ).getString( ^^ );"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                szWriteBuffer = "      strURLParameters = ^?CallingPage=" + szFormName + ".jsp^ +"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -2098,7 +2098,7 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   if ( csrRC.isSet( ) )"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getAttribute( ^BannerName^ ).getString();"
+   szWriteBuffer = "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getAttribute( ^BannerName^ ).getString( ^^ );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    szWriteBuffer = "   if ( StringUtils.isBlank( strBannerName ) )"
@@ -2129,9 +2129,9 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   {"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentDialog^ ).setValue( ^" + szDialogTag + "^ );"
+      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentDialog^ ).setValue( ^" + szDialogTag + "^, ^^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentWindow^ ).setValue( ^" + szWindowTag + "^ );"
+      szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentWindow^ ).setValue( ^" + szWindowTag + "^, ^^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   }"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
@@ -3797,7 +3797,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = ""
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "   strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^Name^ ).getString();"
+      szWriteBuffer = "   strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^Name^ ).getString( ^^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   task.log().info(^**** ReportName *** ^ + strViewName);"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -3809,7 +3809,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      nRC = mDashboard.SetOIFromBlob( ^^, task, " + szViewName + ", ^PresentationObjectInstance^, ^ObjectInstanceBlob^, 0 ); //zIGNORE_ERRORS "
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "      strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^ObjectInstanceName^ ).getString();"
+      szWriteBuffer = "      strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^ObjectInstanceName^ ).getString( ^^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      mDashboard.SetName(strViewName );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -3819,7 +3819,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   iFrameCount = iFrameCount + 1;"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "   vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^DashboardFrameCount^ ).setValue( iFrameCount );"
+      szWriteBuffer = "   vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^DashboardFrameCount^ ).setValue( iFrameCount, ^^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    END
@@ -3941,7 +3941,7 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    END
 
-   szWriteBuffer = "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^SolicitSaveFlag^ ).getString();"
+   szWriteBuffer = "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^SolicitSaveFlag^ ).getString( ^^ );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    // FindOpenFile processing.
@@ -4230,7 +4230,7 @@ DKS_TRACE_END */
                szWriteBuffer = "         strErrorMapValue = " +
                                vDialogTemp.CtrlMapView.Name + ".cursor(^" + vDialogTemp.CtrlMapRelatedEntity.Name + 
                                "^).getAttribute( ^" +
-                               vDialogTemp.CtrlMapER_Attribute.Name + "^ ).getString();"
+                               vDialogTemp.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                szWriteBuffer = "   }"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )

@@ -5003,7 +5003,7 @@ GenJSPJ_CrteGroupTable( zVIEW     vDialog,
             //:szWriteBuffer = "         strRadioGroupValue = " +
             //:                vDialog.CtrlMapView.Name + ".cursor( ^" +
             //:                vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-            //:                vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+            //:                vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
             GetVariableFromAttribute( szTempString_8, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
             ZeidonStringCopy( szWriteBuffer, 1, 0, "         strRadioGroupValue = ", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_8, 1, 0, 10001 );
@@ -5013,7 +5013,7 @@ GenJSPJ_CrteGroupTable( zVIEW     vDialog,
             ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getAttribute( ^", 1, 0, 10001 );
             GetVariableFromAttribute( szTempString_10, 0, 'S', 33, vDialog, "CtrlMapER_Attribute", "Name", "", 0 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_10, 1, 0, 10001 );
-            ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString();", 1, 0, 10001 );
+            ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString( ^^ );", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
             //:szWriteBuffer = "   }"
@@ -6437,7 +6437,7 @@ GenJSPJ_CrteComboBox( zVIEW     vDialog,
             //:// Get the current value of the combo box.
             //:szWriteBuffer = "         strComboCurrentValue = " + vDialog.CtrlMapView.Name + ".cursor( ^" +
             //:         vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-            //:         vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+            //:         vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
             GetVariableFromAttribute( szTempString_9, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
             ZeidonStringCopy( szWriteBuffer, 1, 0, "         strComboCurrentValue = ", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_9, 1, 0, 10001 );
@@ -6447,7 +6447,7 @@ GenJSPJ_CrteComboBox( zVIEW     vDialog,
             ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getAttribute( ^", 1, 0, 10001 );
             GetVariableFromAttribute( szTempString_11, 0, 'S', 33, vDialog, "CtrlMapER_Attribute", "Name", "", 0 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_11, 1, 0, 10001 );
-            ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString();", 1, 0, 10001 );
+            ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString( ^^ );", 1, 0, 10001 );
             //:         // KJS 10/22/14 - Right now we are not adding the context name, we only want the default, which
             //:         // I am currently assuming has ALL the values (old and new) of this domain. When we get DGs domain fix
             //:         // I think we need to put this back!!!!!!!
@@ -7486,7 +7486,7 @@ GenJSPJ_CrteCheckBox( zVIEW     vDialog,
       //:szWriteBuffer = "         strRadioGroupValue = " +
       //:                vDialog.CtrlMapView.Name + ".cursor( ^" +
       //:                vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-      //:                vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+      //:                vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
       GetVariableFromAttribute( szTempString_5, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
       ZeidonStringCopy( szWriteBuffer, 1, 0, "         strRadioGroupValue = ", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_5, 1, 0, 10001 );
@@ -7496,7 +7496,7 @@ GenJSPJ_CrteCheckBox( zVIEW     vDialog,
       ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getAttribute( ^", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_7, 0, 'S', 33, vDialog, "CtrlMapER_Attribute", "Name", "", 0 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_7, 1, 0, 10001 );
-      ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString();", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString( ^^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "   }"

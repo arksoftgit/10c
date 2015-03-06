@@ -2839,8 +2839,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
                ZeidonStringCopy( szWriteBuffer, 1, 0, "      vView = task.getViewByName( ^wXferO^ );", 1, 0, 10001 );
                //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-               //:szWriteBuffer = "      strMessage = vView.cursor( ^Root^ ).getAttribute( ^WebReturnMessage^ ).getString();"
-               ZeidonStringCopy( szWriteBuffer, 1, 0, "      strMessage = vView.cursor( ^Root^ ).getAttribute( ^WebReturnMessage^ ).getString();", 1, 0, 10001 );
+               //:szWriteBuffer = "      strMessage = vView.cursor( ^Root^ ).getAttribute( ^WebReturnMessage^ ).getString( ^^ );"
+               ZeidonStringCopy( szWriteBuffer, 1, 0, "      strMessage = vView.cursor( ^Root^ ).getAttribute( ^WebReturnMessage^ ).getString( ^^ );", 1, 0, 10001 );
                //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
                //:szWriteBuffer = "      strURLParameters = ^?CallingPage=" + szFormName + ".jsp^ +"
@@ -2929,8 +2929,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    ZeidonStringCopy( szWriteBuffer, 1, 0, "   if ( csrRC.isSet( ) )", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-   //:szWriteBuffer = "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getAttribute( ^BannerName^ ).getString();"
-   ZeidonStringCopy( szWriteBuffer, 1, 0, "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getAttribute( ^BannerName^ ).getString();", 1, 0, 10001 );
+   //:szWriteBuffer = "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getAttribute( ^BannerName^ ).getString( ^^ );"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "      strBannerName = vKZXMLPGO.cursor( ^DynamicBannerName^ ).getAttribute( ^BannerName^ ).getString( ^^ );", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );
 
@@ -2985,16 +2985,16 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "   {", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentDialog^ ).setValue( ^" + szDialogTag + "^ );"
+      //:szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentDialog^ ).setValue( ^" + szDialogTag + "^, ^^ );"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentDialog^ ).setValue( ^", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szDialogTag, 1, 0, 10001 );
-      ZeidonStringConcat( szWriteBuffer, 1, 0, "^ );", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^, ^^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentWindow^ ).setValue( ^" + szWindowTag + "^ );"
+      //:szWriteBuffer = "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentWindow^ ).setValue( ^" + szWindowTag + "^, ^^ );"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "      wWebXA.cursor( ^Root^ ).getAttribute( ^CurrentWindow^ ).setValue( ^", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szWindowTag, 1, 0, 10001 );
-      ZeidonStringConcat( szWriteBuffer, 1, 0, "^ );", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^, ^^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "   }"
@@ -6161,10 +6161,10 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "   strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^Name^ ).getString();"
+      //:szWriteBuffer = "   strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^Name^ ).getString( ^^ );"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "   strViewName = ", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szViewName, 1, 0, 10001 );
-      ZeidonStringConcat( szWriteBuffer, 1, 0, ".cursor( ^DashboardFrame^ ).getAttribute( ^Name^ ).getString();", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ".cursor( ^DashboardFrame^ ).getAttribute( ^Name^ ).getString( ^^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "   task.log().info(^**** ReportName *** ^ + strViewName);"
@@ -6191,10 +6191,10 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
       ZeidonStringConcat( szWriteBuffer, 1, 0, ", ^PresentationObjectInstance^, ^ObjectInstanceBlob^, 0 ); //zIGNORE_ERRORS ", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "      strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^ObjectInstanceName^ ).getString();"
+      //:szWriteBuffer = "      strViewName = " + szViewName + ".cursor( ^DashboardFrame^ ).getAttribute( ^ObjectInstanceName^ ).getString( ^^ );"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "      strViewName = ", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szViewName, 1, 0, 10001 );
-      ZeidonStringConcat( szWriteBuffer, 1, 0, ".cursor( ^DashboardFrame^ ).getAttribute( ^ObjectInstanceName^ ).getString();", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ".cursor( ^DashboardFrame^ ).getAttribute( ^ObjectInstanceName^ ).getString( ^^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "      mDashboard.SetName(strViewName );"
@@ -6213,8 +6213,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "   iFrameCount = iFrameCount + 1;", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "   vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^DashboardFrameCount^ ).setValue( iFrameCount );"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "   vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^DashboardFrameCount^ ).setValue( iFrameCount );", 1, 0, 10001 );
+      //:szWriteBuffer = "   vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^DashboardFrameCount^ ).setValue( iFrameCount, ^^ );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "   vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^DashboardFrameCount^ ).setValue( iFrameCount, ^^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );
    } 
@@ -6447,8 +6447,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
 
    //:END
 
-   //:szWriteBuffer = "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^SolicitSaveFlag^ ).getString();"
-   ZeidonStringCopy( szWriteBuffer, 1, 0, "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^SolicitSaveFlag^ ).getString();", 1, 0, 10001 );
+   //:szWriteBuffer = "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^SolicitSaveFlag^ ).getString( ^^ );"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "   strSolicitSave = vKZXMLPGO.cursor( ^Session^ ).getAttribute( ^SolicitSaveFlag^ ).getString( ^^ );", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );
 
@@ -6988,7 +6988,7 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
                //:szWriteBuffer = "         strErrorMapValue = " +
                //:                vDialogTemp.CtrlMapView.Name + ".cursor(^" + vDialogTemp.CtrlMapRelatedEntity.Name + 
                //:                "^).getAttribute( ^" +
-               //:                vDialogTemp.CtrlMapER_Attribute.Name + "^ ).getString();"
+               //:                vDialogTemp.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
                GetVariableFromAttribute( szTempString_31, 0, 'S', 33, vDialogTemp, "CtrlMapView", "Name", "", 0 );
                ZeidonStringCopy( szWriteBuffer, 1, 0, "         strErrorMapValue = ", 1, 0, 10001 );
                ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_31, 1, 0, 10001 );
@@ -6998,7 +6998,7 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
                ZeidonStringConcat( szWriteBuffer, 1, 0, "^).getAttribute( ^", 1, 0, 10001 );
                GetVariableFromAttribute( szTempString_33, 0, 'S', 33, vDialogTemp, "CtrlMapER_Attribute", "Name", "", 0 );
                ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_33, 1, 0, 10001 );
-               ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString();", 1, 0, 10001 );
+               ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).getString( ^^ );", 1, 0, 10001 );
                //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
                //:szWriteBuffer = "   }"

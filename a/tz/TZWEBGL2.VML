@@ -839,7 +839,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         { "
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "            szDisplayFrame = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^ActiveOnCurrentDashboard^ ).getString();"
+            szWriteBuffer = "            szDisplayFrame = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^ActiveOnCurrentDashboard^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = ""
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -859,7 +859,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "               // Set what column this frame will be positioned in. "
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "               " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^wColumnNbr^ ).setValue( iColNbr );"
+            szWriteBuffer = "               " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^wColumnNbr^ ).setValue( iColNbr, ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "               iDashboardMax++;"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -939,7 +939,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "            { "
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "               szDisplayFrame = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^ActiveOnCurrentDashboard^ ).getString();"
+            szWriteBuffer = "               szDisplayFrame = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^ActiveOnCurrentDashboard^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "               iSortOrder = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getIntegerFromAttribute( ^PresentationSortOrder^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -955,7 +955,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = ""
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "               " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^wFrameNbr^ ).setValue( iDashboardCnt );"
+            szWriteBuffer = "               " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrameUser^ ).getAttribute( ^wFrameNbr^ ).setValue( iDashboardCnt, ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = ""
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -967,9 +967,9 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "               { "
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "                  szDashboardSource = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrame^ ).getAttribute( ^DashboardDisplayURL^ ).getString();"
+            szWriteBuffer = "                  szDashboardSource = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrame^ ).getAttribute( ^DashboardDisplayURL^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "                  szDashboardMore = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrame^ ).getAttribute( ^ExpandedDisplayURL^ ).getString();"
+            szWriteBuffer = "                  szDashboardMore = " + vDialog.CtrlMapView.Name + ".cursor( ^DashboardFrame^ ).getAttribute( ^ExpandedDisplayURL^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = ""
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -1254,7 +1254,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                szWriteBuffer = "         strRadioGroupValue = " +
                                vDialog.CtrlMapView.Name + ".cursor( ^" +
                                vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-                               vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+                               vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "   }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -2403,7 +2403,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                         END
                         szWriteBuffer = "         strErrorMapValue =  " + vDialog.CtrlMapView.Name +
                                      ".cursor( ^" + vDialog.CtrlMapRelatedEntity.Name +
-                                     "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+                                     "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                         szWriteBuffer = "       else"
                         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -2700,7 +2700,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
                   szWriteBuffer = "         strFilter = " + szGridView +
                                ".cursor( ^" + vDialog.CtrlMapLOD_Entity.Name +
-                               "^ ).getAttribute( ^wHideTableRow^ ).getString();"
+                               "^ ).getAttribute( ^wHideTableRow^ ).getString( ^^ );"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
                   szWriteBuffer = "         // If the attribute wHideTableRow is null then we want to show this row."
@@ -4635,13 +4635,13 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                            szWriteBuffer = "                  // Only do the automatic include if this is a different entity"
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "                  strTemp = " + szViewName + ".cursor( ^" +
-                                           vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+                                           vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
 
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                            szWriteBuffer = "                  if ( !StringUtils.equals( strTemp, " + vDialog2.CtrlMapView.Name +
                                            ".cursor( ^" + vDialog2.CtrlMapRelatedEntity.Name +
-                                           "^ ).getAttribute( ^" + vDialog2.CtrlMapER_Attribute.Name + "^ ).getString())) "
+                                           "^ ).getAttribute( ^" + vDialog2.CtrlMapER_Attribute.Name + "^ ).getString( ^^ ) ) )"
 
                            WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                            szWriteBuffer = "                  {"
@@ -5027,15 +5027,15 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                      szWriteBuffer = "                  vGridTmp.cursor( ^" +
                                   vDialog.CtrlMapRelatedEntity.Name +
                                   "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name +
-                                  "^ ).setValue( strMapValue );" //KKKKKKK
-                                  //"^ ).setValue( ^" + szCheckBoxValue + "^ );" //KKKKKKK
+                                  "^ ).setValue( strMapValue, ^^ );" //KKKKKKK
+                                  //"^ ).setValue( ^" + szCheckBoxValue + "^, ^^ );" //KKKKKKK
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                      szWriteBuffer = "               else"
                      WL_QC( vDialog, lFile, szWriteBuffer, "'", 0 )
                      szWriteBuffer = "                  vGridTmp.cursor( ^" +
                                   vDialog.CtrlMapRelatedEntity.Name +
                                   "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name +
-                                  "^ ).setValue( ^^ );"
+                                  "^ ).setValue( ^^, ^^ );"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                      szWriteBuffer = "         }"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -5301,13 +5301,13 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                                     szWriteBuffer = "               //Only do the automatic include if this is a different entity"
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     szWriteBuffer = "               strTemp = vGridTmp.cursor( ^" +
-                                                    vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ).getString();"
+                                                    vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" + vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
 
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                                     szWriteBuffer = "               if ( !StringUtils.equals( strTemp, " + vDialog2.CtrlMapView.Name +
                                                     ".cursor( ^" + vDialog2.CtrlMapRelatedEntity.Name +
-                                                    "^ ).getAttribute( ^" + vDialog2.CtrlMapER_Attribute.Name + "^ ).getString())) "
+                                                    "^ ).getAttribute( ^" + vDialog2.CtrlMapER_Attribute.Name + "^ ).getString( ^^ ) ) )"
 
                                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                                     szWriteBuffer = "               {"
@@ -5503,7 +5503,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "               strQuestionAnswer = request.getParameter( strTemp );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               nRC = " + szViewName + ".cursor( ^SurveyQuestion^).getAttribute( ^wTextAnswer^ ).setValue( strQuestionAnswer );"
+               szWriteBuffer = "               nRC = " + szViewName + ".cursor( ^SurveyQuestion^).getAttribute( ^wTextAnswer^ ).setValue( strQuestionAnswer, ^^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "            }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -5533,7 +5533,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "         task.log().info( ^******* Radio Answer:   ^, strQuestionAnswer );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "                 nRC = " + szViewName + ".cursor( ^SurveyQuestion^).getAttribute( ^wTextAnswer^ ).setValue( strQuestionAnswer );"
+               szWriteBuffer = "                 nRC = " + szViewName + ".cursor( ^SurveyQuestion^).getAttribute( ^wTextAnswer^ ).setValue( strQuestionAnswer, ^^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "              }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -5551,7 +5551,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "                 {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "                    strQuestionChoiceID = " + szViewName + ".cursor( ^SurveyMultiChoiceOption^ ).getAttribute( ^ID^ ).getString();"
+               szWriteBuffer = "                    strQuestionChoiceID = " + szViewName + ".cursor( ^SurveyMultiChoiceOption^ ).getAttribute( ^ID^ ).getString( ^^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "                    strTemp = ^chkAnswer^ + strQuestionChoiceID;"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -5565,11 +5565,11 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "                    if ( strQuestionAnswer != null )"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "                       nRC = " + szViewName + ".cursor( ^SurveyMultiChoiceOption^).getAttribute( ^wSelectedAnswer^ ).setValue( strQuestionChoiceID );"
+               szWriteBuffer = "                       nRC = " + szViewName + ".cursor( ^SurveyMultiChoiceOption^).getAttribute( ^wSelectedAnswer^ ).setValue( strQuestionChoiceID, ^^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
               szWriteBuffer = "                      else"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "                       nRC = " + szViewName + ".cursor( ^SurveyMultiChoiceOption^).getAttribute( ^wSelectedAnswer^ ).setValue( ^^);"
+               szWriteBuffer = "                       nRC = " + szViewName + ".cursor( ^SurveyMultiChoiceOption^).getAttribute( ^wSelectedAnswer^ ).setValue( ^^, ^^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "                       "
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -5593,7 +5593,7 @@ GenJSPJ_InputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "               strQuestionAnswer = request.getParameter( strTemp );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-               szWriteBuffer = "               nRC = " + szViewName + ".cursor( ^SurveyQuestion^).getAttribute( ^wComment^ ).setValue( strQuestionAnswer );"
+               szWriteBuffer = "               nRC = " + szViewName + ".cursor( ^SurveyQuestion^).getAttribute( ^wComment^ ).setValue( strQuestionAnswer, ^^ );"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "            }"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -6331,7 +6331,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                   szWriteBuffer = "               " +
                          vDialogTemp.CtrlMapView.Name +
                          ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-                         vDialogTemp.CtrlMapER_Attribute.Name + "^ ).setValue( strInputFileName );"
+                         vDialogTemp.CtrlMapER_Attribute.Name + "^ ).setValue( strInputFileName, ^^ );"
                   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "            }"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -6360,7 +6360,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                   szWriteBuffer = "               " +
                          vDialogTemp.CtrlMapView.Name +
                          ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-                         vDialogTemp.CtrlMapER_Attribute.Name + "^ ).setValue( strInputFileName );"
+                         vDialogTemp.CtrlMapER_Attribute.Name + "^ ).setValue( strInputFileName, ^^ );"
                   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                END
 
@@ -6870,9 +6870,9 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "      {"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         strDialogName = vKZXMLPGO.cursor( ^NextDialogWindow^ ).getAttribute( ^DialogName^ ).getString();"
+            szWriteBuffer = "         strDialogName = vKZXMLPGO.cursor( ^NextDialogWindow^ ).getAttribute( ^DialogName^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "         strWindowName = vKZXMLPGO.cursor( ^NextDialogWindow^ ).getAttribute( ^WindowName^ ).getString();"
+            szWriteBuffer = "         strWindowName = vKZXMLPGO.cursor( ^NextDialogWindow^ ).getAttribute( ^WindowName^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         strNextJSP_Name = strDialogName + strWindowName + ^.jsp^;"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -6892,7 +6892,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         if ( nRC >= 0 )"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "            strFunctionCall = vKZXMLPGO.cursor( ^NextDialogWindow^ ).getAttribute( ^FunctionCall^ ).getString();"
+            szWriteBuffer = "            strFunctionCall = vKZXMLPGO.cursor( ^NextDialogWindow^ ).getAttribute( ^FunctionCall^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         else"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -6905,7 +6905,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "            vKZXMLPGO.cursor( ^PagePath^ ).createEntity( CursorPosition.NEXT );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "            vKZXMLPGO.cursor( ^PagePath^ ).getAttribute( ^LastPageName^ ).setValue( ^" + szFormName + "^ );"
+            szWriteBuffer = "            vKZXMLPGO.cursor( ^PagePath^ ).getAttribute( ^LastPageName^ ).setValue( ^" + szFormName + "^, ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         }"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
@@ -7161,7 +7161,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
          szWriteBuffer = "      vKZXMLPGO.cursor( ^PagePath^ ).createEntity( CursorPosition.NEXT );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "      vKZXMLPGO.cursor( ^PagePath^ ).getAttribute( ^LastPageName^ ).setValue( ^" +
-                         szFormName + "^ );"
+                         szFormName + "^, ^^ );"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       END
 
@@ -7219,7 +7219,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      {"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-      szWriteBuffer = "         strLastPage = vKZXMLPGO.cursor( ^PagePath^ ).getAttribute( ^LastPageName^ ).getString();"
+      szWriteBuffer = "         strLastPage = vKZXMLPGO.cursor( ^PagePath^ ).getAttribute( ^LastPageName^ ).getString( ^^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "         vKZXMLPGO.cursor( ^PagePath^ ).deleteEntity( CursorPosition.PREV );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -7293,7 +7293,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
             END
 
             szWriteBuffer = "            sDownloadFile = " + vDialogCtrl.CtrlMapView.Name + ".cursor( ^" + vDialogCtrl.CtrlMapRelatedEntity.Name +
-                            "^ ).getAttribute( ^" + vDialogCtrl.CtrlMapER_Attribute.Name + "^ ).getString();"
+                            "^ ).getAttribute( ^" + vDialogCtrl.CtrlMapER_Attribute.Name + "^ ).getString( ^^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
             //KJS Trace
