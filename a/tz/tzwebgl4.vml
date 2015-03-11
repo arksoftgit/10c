@@ -984,7 +984,7 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
             szWriteBuffer = "      csrRC = v" + szCtrlTag + ".cursor( ^" +
                                          szListEntityName + "^ ).setFirst( " + szScopingEntityName + " );"
          ELSE
-            szWriteBuffer = "      nRC = v" + szCtrlTag + ".cursor( ^" + szListEntityName + "^ ).setFirstWithinOi( );"
+            szWriteBuffer = "      csrRC = v" + szCtrlTag + ".cursor( ^" + szListEntityName + "^ ).setFirstWithinOi( );"
          END
 
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )

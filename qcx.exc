@@ -40,6 +40,7 @@
 *.xpj    
 *.xsv
 *.xbk
+KZHSQL*.lib
 x.bat
 zdr.mak
 zzdr.inc
@@ -55,6 +56,7 @@ phil*.*
 qc.bat
 qe.bat
 qe.exc
+z__temp.vml
 
 .svn\
 back\
