@@ -52,8 +52,8 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
    zCHAR     szLPLR_Name[ 33 ] = { 0 }; 
    //:STRING ( 1024 )  szJSP_FileName
    zCHAR     szJSP_FileName[ 1025 ] = { 0 }; 
-   //:STRING ( 1024 )  szJAVA_FileName
-   zCHAR     szJAVA_FileName[ 1025 ] = { 0 }; 
+   //:STRING ( 1024 )  szJS_FileName
+   zCHAR     szJS_FileName[ 1025 ] = { 0 }; 
    //:STRING ( 1024 )  szDirectoryName
    zCHAR     szDirectoryName[ 1025 ] = { 0 }; 
    //:STRING ( 10000 ) szWriteBuffer
@@ -3117,9 +3117,25 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
 
+      //:szJS_FileName = ""
+      ZeidonStringCopy( szJS_FileName, 1, 0, "", 1, 0, 1025 );
+      //:SysReadZeidonIni( -1, szSystemIniApplName, "TinyMCEJavaScript", szJS_FileName )
+      SysReadZeidonIni( -1, szSystemIniApplName, "TinyMCEJavaScript", szJS_FileName );
+      //:IF szJS_FileName = ""
+      if ( ZeidonStringCompare( szJS_FileName, 1, 0, "", 1, 0, 1025 ) == 0 )
+      { 
+         //:szJS_FileName = "./tinymce/jscripts/tiny_mce/tiny_mce.js"
+         ZeidonStringCopy( szJS_FileName, 1, 0, "./tinymce/jscripts/tiny_mce/tiny_mce.js", 1, 0, 1025 );
+      } 
+
+      //:END
+
       //:// Use TinyMCE rather than widgEditor.
-      //:szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./tinymce/jscripts/tiny_mce/tiny_mce.js^></script>"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "<script language=^JavaScript^ type=^text/javascript^ src=^./tinymce/jscripts/tiny_mce/tiny_mce.js^></script>", 1, 0, 10001 );
+      //:szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^" + szJS_FileName
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "<script language=^JavaScript^ type=^text/javascript^ src=^", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szJS_FileName, 1, 0, 10001 );
+      //:szWriteBuffer = szWriteBuffer + "^></script>"
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^></script>", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
 

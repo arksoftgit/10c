@@ -222,7 +222,7 @@ GenerateJSP( VIEW vDialog BASED ON LOD TZWDLGSO,
    VIEW vDfltMenu    BASED ON LOD TZWDLGSO
    STRING ( 32 )    szLPLR_Name
    STRING ( 1024 )  szJSP_FileName
-   STRING ( 1024 )  szJAVA_FileName
+   STRING ( 1024 )  szJS_FileName
    STRING ( 1024 )  szDirectoryName
    STRING ( 10000 ) szWriteBuffer
    STRING ( 10000 ) szJavaScript
@@ -1718,8 +1718,15 @@ DKS_TRACE_END */
       szWriteBuffer = "<!-- TinyMCE -->"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
+      szJS_FileName = ""
+      SysReadZeidonIni( -1, szSystemIniApplName, "TinyMCEJavaScript", szJS_FileName )
+      IF szJS_FileName = ""
+         szJS_FileName = "./tinymce/jscripts/tiny_mce/tiny_mce.js"
+      END
+
       // Use TinyMCE rather than widgEditor.
-      szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./tinymce/jscripts/tiny_mce/tiny_mce.js^></script>"
+      szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^" + szJS_FileName
+      szWriteBuffer = szWriteBuffer + "^></script>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
       nRC = zSearchSubString( szWysiwygEditor, ".js", "f", 0 )

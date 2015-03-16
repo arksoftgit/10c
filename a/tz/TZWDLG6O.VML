@@ -671,6 +671,7 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    VIEW vDfltMenu    BASED ON LOD TZWDLGSO
    STRING ( 32 )    szLPLR_Name
    STRING ( 1024 )  szJSP_FileName
+   STRING ( 1024 )  szJS_FileName
    STRING ( 1024 )  szJAVA_FileName
    STRING ( 1024 )  szDirectoryName
    STRING ( 32 )    szDateFormat
@@ -2031,7 +2032,11 @@ DKS_TRACE_END */
                szWriteBuffer = "   VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + ".jsp^, ^" + szDlgTag + "." + szOperName + "^ );"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
             // szWriteBuffer = "   nOptRC = task.CallDialogOperation( ^" + szDlgTag + "^, ^" + szOperName + "^, 1 );"
-               szWriteBuffer = "   nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
+               IF vDialog.SourceFileForOper.LanguageType = "S"
+                  szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new com.quinsoft.zeidon.scala.View( vKZXMLPGO ) );"
+               ELSE 
+                  szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
+               END
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
                // No longer applicable in JOE ... don't exactly know how to prevent reentry if we have to.   dks 2011.11.11
@@ -2230,8 +2235,15 @@ DKS_TRACE_END */
       szWriteBuffer = "<!-- TinyMCE -->"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
+      szJS_FileName = ""
+      SysReadZeidonIni( -1, szSystemIniApplName, "TinyMCEJavaScript", szJS_FileName )
+      IF szJS_FileName = ""
+         szJS_FileName = "./js/tinymce/jscripts/tiny_mce/tiny_mce.js"
+      END
+
       // Use TinyMCE rather than widgEditor.
-      szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/tinymce/jscripts/tiny_mce/tiny_mce.js^></script>"
+      szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^" + szJS_FileName
+      szWriteBuffer = szWriteBuffer + "^></script>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
       nRC = zSearchSubString( szWysiwygEditor, ".js", "f", 0 )
