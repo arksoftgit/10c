@@ -2009,7 +2009,7 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
             ELSE
                zAppendQuotedString( szStyle, "border:solid;border-width:2px;border-style:groove;", "style=", "^" )
             END
-            zAppendQuotedString( szStyle, szAbsoluteStyle, "style=", "^" )
+         // zAppendQuotedString( szStyle, szAbsoluteStyle, "style=", "^" ) already in
 
             szTinyMCEFlag = ""
             SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "wysiwyg TinyMCE"
