@@ -3750,8 +3750,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    ZeidonStringCopy( szWriteBuffer, 1, 0, "   if ( $el.length > 0 ) {", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
-   //:szWriteBuffer = "      bRC = $el.attr( ^disabled^ );"
-   ZeidonStringCopy( szWriteBuffer, 1, 0, "      bRC = $el.attr( ^disabled^ );", 1, 0, 10001 );
+   //:szWriteBuffer = "      bRC = $el[0].disabled;"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "      bRC = $el[0].disabled;", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
    //:szWriteBuffer = "   }"
@@ -3809,8 +3809,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    ZeidonStringCopy( szWriteBuffer, 1, 0, "   if ( $el.length > 0 ) {", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
-   //:szWriteBuffer = "      $el.attr( ^disabled^, bDisabled );"
-   ZeidonStringCopy( szWriteBuffer, 1, 0, "      $el.attr( ^disabled^, bDisabled );", 1, 0, 10001 );
+   //:szWriteBuffer = "      $el[0].disabled = true;"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "      $el[0].disabled = true;", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
    //:szWriteBuffer = "      bRC = true;"

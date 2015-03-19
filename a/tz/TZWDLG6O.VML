@@ -2536,7 +2536,7 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   if ( $el.length > 0 ) {"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      bRC = $el.attr( ^disabled^ );"
+   szWriteBuffer = "      bRC = $el[0].disabled;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   }"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
@@ -2567,7 +2567,7 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   if ( $el.length > 0 ) {"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "      $el.attr( ^disabled^, bDisabled );"
+   szWriteBuffer = "      $el[0].disabled = true;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "      bRC = true;"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )

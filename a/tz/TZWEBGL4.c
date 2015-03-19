@@ -797,6 +797,8 @@ GenJSPJ_CrteMLEdit( zVIEW     vDialog,
 
    //:// *********************  END NEW ******************
 
+   //:CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
+   CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" );
 
    //:X_Size = vDialog.Control.SZDLG_X
    GetIntegerFromAttribute( &X_Size, vDialog, "Control", "SZDLG_X" );
@@ -5533,6 +5535,8 @@ GenJSPJ_CrteGroupTable( zVIEW     vDialog,
             } 
 
             //:END
+            //:zAppendQuotedString( szStyle, szAbsoluteStyle, "style=", "^" )
+            zAppendQuotedString( szStyle, szAbsoluteStyle, "style=", "^" );
 
             //:szTinyMCEFlag = ""
             ZeidonStringCopy( szTinyMCEFlag, 1, 0, "", 1, 0, 2 );
@@ -7122,8 +7126,8 @@ GenJSPJ_CrteComboBox( zVIEW     vDialog,
          } 
          else
          { 
-            //:szWriteBuffer = "      nRC = v" + szCtrlTag + ".cursor( ^" + szListEntityName + "^ ).setFirstWithinOi( );"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "      nRC = v", 1, 0, 10001 );
+            //:szWriteBuffer = "      csrRC = v" + szCtrlTag + ".cursor( ^" + szListEntityName + "^ ).setFirstWithinOi( );"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "      csrRC = v", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, ".cursor( ^", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szListEntityName, 1, 0, 10001 );

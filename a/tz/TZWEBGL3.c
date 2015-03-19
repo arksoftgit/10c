@@ -2131,6 +2131,9 @@ GenJSP_CrteGroupTable( zVIEW     vDialog,
             } 
 
             //:END
+            //:zAppendQuotedString( szStyle, szAbsoluteStyle, "style=", "^" )
+            zAppendQuotedString( szStyle, szAbsoluteStyle, "style=", "^" );
+
 
             //:szTinyMCEFlag = ""
             ZeidonStringCopy( szTinyMCEFlag, 1, 0, "", 1, 0, 2 );
