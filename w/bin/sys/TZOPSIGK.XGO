@@ -1,4 +1,4 @@
-z1000-Zeidon    TZOPSIGK TZOPGRPO 02/19/15   14:08:58 1.0a2    
+z1000-Zeidon    TZOPSIGK TZOPGRPO 03/21/15   08:29:02 1.0a2    
 eOPERSIG   1
 aName      TZKZ8C
 
@@ -25909,7 +25909,7 @@ eHeaderFile_Oper 3
 
 eOperation 2
 aName      zstrncpy
-aZKey      91040279
+aZKey      110003607
 aDesc      Copy SubString in length nLth
 aType      Z
 aReturnDataType O
@@ -25917,7 +25917,39 @@ aReturnDataType O
 eParameter 3
 aShortDesc TargetString
 aDataType  S
+aPFlag     Y
+aUFlag     N
+aZKey      110003608
+
+eParameter 3
+aShortDesc SourceString
+aDataType  S
 aPFlag     N
+aUFlag     N
+aZKey      110003609
+
+eParameter 3
+aShortDesc AnzBytes
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      110003610
+
+eSourceFile 3
+
+eHeaderFile_Oper 3
+
+eOperation 2
+aName      zstrncpyoffset
+aZKey      91040279
+aDesc      Copy SubString in length nLth starting at offset
+aType      Z
+aReturnDataType O
+
+eParameter 3
+aShortDesc TargetString
+aDataType  S
+aPFlag     Y
 aUFlag     N
 aZKey      91040280
 
@@ -25929,11 +25961,18 @@ aUFlag     N
 aZKey      91040281
 
 eParameter 3
-aShortDesc AnzBytes
+aShortDesc BytesToCopy
 aDataType  N
 aPFlag     N
 aUFlag     N
 aZKey      91040282
+
+eParameter 3
+aShortDesc OffsetWithinSrc
+aDataType  N
+aPFlag     N
+aUFlag     N
+aZKey      110003611
 
 eSourceFile 3
 
@@ -30448,41 +30487,43 @@ i4618      949
 i4619      4
 i4624      949
 i4625      4
-i4628      949
-i4629      950
+i4631      949
+i4632      4
 i4635      949
 i4636      950
 i4642      949
 i4643      950
-i4647      949
-i4648      950
-i4653      949
-i4654      950
-i4658      949
-i4659      950
-i4662      949
-i4663      950
-i4666      949
-i4667      950
-i4668      4
-i4868      3281
-i4885      3508
-i4887      16
-i5141      518
-i5143      566
-i5145      950
-i5147      8
-i5149      313
-i5151      3
-i5153      22
-i5155      1194
-i5157      15
-i5159      1248
-i5161      228
-i5163      517
-i5165      3893
-i5167      198
-i5169      949
-i5171      1881
-i5173      565
-i5175      3280
+i4649      949
+i4650      950
+i4654      949
+i4655      950
+i4660      949
+i4661      950
+i4665      949
+i4666      950
+i4669      949
+i4670      950
+i4673      949
+i4674      950
+i4675      4
+i4875      3281
+i4892      3508
+i4894      16
+i5148      518
+i5150      566
+i5152      950
+i5154      8
+i5156      313
+i5158      3
+i5160      22
+i5162      1194
+i5164      15
+i5166      1248
+i5168      228
+i5170      517
+i5172      3893
+i5174      198
+i5176      949
+i5178      1881
+i5180      565
+i5182      3280
