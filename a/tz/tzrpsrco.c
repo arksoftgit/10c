@@ -140,9 +140,11 @@ oTZRPSRCO_AutodesignReport( zVIEW     vReportDef,
    //:// doesn't exist, exit.
    //:GET VIEW vTaskLPLR NAMED "TaskLPLR"
    RESULT = GetViewByName( &vTaskLPLR, "TaskLPLR", vReportDef, zLEVEL_TASK );
-   //:szFileName = vTaskLPLR.LPLR.MetaSrcDir + "\Z__DFLT.BAS"
-   GetStringFromAttribute( szFileName, vTaskLPLR, "LPLR", "MetaSrcDir" );
-   ZeidonStringConcat( szFileName, 1, 0, "\\Z__DFLT.BAS", 1, 0, 514 );
+   //:szMsg = vTaskLPLR.LPLR.MetaSrcDir + "\Z__DFLT.BAS"  // borrow szMsg for a second
+   GetStringFromAttribute( szMsg, vTaskLPLR, "LPLR", "MetaSrcDir" );
+   ZeidonStringConcat( szMsg, 1, 0, "\\Z__DFLT.BAS", 1, 0, 258 );
+   //:SysConvertEnvironmentString( szFileName, szMsg )
+   SysConvertEnvironmentString( szFileName, szMsg );
    //:lFile = SysOpenFile( vSubtask, szFileName, COREFILE_READ )
    lFile = SysOpenFile( vSubtask, szFileName, COREFILE_READ );
    //:IF lFile < 0

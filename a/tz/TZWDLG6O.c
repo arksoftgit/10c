@@ -3801,6 +3801,58 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
 
+   //:// Controls on the window may have been set as disabled through javascript but
+   //:// when we try to get the values for these controls in jsp (response.getParameter)
+   //:// they will always be null.  Set any disabled fields to enabled for this reason.
+   //:szWriteBuffer = "   // Controls on the window may have been set as disabled through javascript but"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "   // Controls on the window may have been set as disabled through javascript but", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "   // when we try to get the values for these controls in jsp (response.getParameter)"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "   // when we try to get the values for these controls in jsp (response.getParameter)", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "   // they will always be null.  Set any disabled fields to enabled for this reason."
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "   // they will always be null.  Set any disabled fields to enabled for this reason.", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "   for ( j = 0; j < document.forms.length; j++ )"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "   for ( j = 0; j < document.forms.length; j++ )", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "   {"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "   {", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "      theForm = document.forms[ j ];"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "      theForm = document.forms[ j ];", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "      for ( k = 0; k < theForm.length; k++ )"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "      for ( k = 0; k < theForm.length; k++ )", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "      {"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "      {", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "         if (theForm.elements[ k ].disabled == true)"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "         if (theForm.elements[ k ].disabled == true)", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "             theForm.elements[ k ].disabled = false;"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "             theForm.elements[ k ].disabled = false;", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "      }"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "      }", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   //:szWriteBuffer = "   }"
+   ZeidonStringCopy( szWriteBuffer, 1, 0, "   }", 1, 0, 10001 );
+   //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+
    //:szWriteBuffer = "   var $el = $(^#zDisable^);"
    ZeidonStringCopy( szWriteBuffer, 1, 0, "   var $el = $(^#zDisable^);", 1, 0, 10001 );
    //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )

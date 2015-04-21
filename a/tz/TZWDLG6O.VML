@@ -2563,6 +2563,34 @@ DKS_TRACE_END */
    szWriteBuffer = "   }"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
 
+   // Controls on the window may have been set as disabled through javascript but
+   // when we try to get the values for these controls in jsp (response.getParameter)
+   // they will always be null.  Set any disabled fields to enabled for this reason.
+   szWriteBuffer = "   // Controls on the window may have been set as disabled through javascript but"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "   // when we try to get the values for these controls in jsp (response.getParameter)"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "   // they will always be null.  Set any disabled fields to enabled for this reason."
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "   for ( j = 0; j < document.forms.length; j++ )"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "   {"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "      theForm = document.forms[ j ];"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "      for ( k = 0; k < theForm.length; k++ )"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "      {"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "         if (theForm.elements[ k ].disabled == true)"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "             theForm.elements[ k ].disabled = false;"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "      }"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+   szWriteBuffer = "   }"
+   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+
    szWriteBuffer = "   var $el = $(^#zDisable^);"
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   if ( $el.length > 0 ) {"

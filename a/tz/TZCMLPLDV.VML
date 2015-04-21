@@ -64,7 +64,7 @@ CLOSE_UsersForLPLR( VIEW ViewToWindow )
    TraceLineI( "OI Updated RC: ", nRC )
    IF nRC = 1
       nRC = MessagePrompt( ViewToWindow, "", "Configuration Management",
-                           "User data has been updated. Do you want to save the changes?", 1, zBUTTONS_YESNO,
+                           "Installation / User data has been updated. Do you want to save the changes?", 1, zBUTTONS_YESNO,
                            zRESPONSE_YES, 0 )
       IF nRC = zRESPONSE_YES
          SAVE_UsersForLPLR( ViewToWindow )
@@ -87,20 +87,24 @@ GOTO_UpdateUserZKeys( VIEW ViewToWindow )
    STRING (513) szDirectoryName
    SHORT nRC
 
+   // If the TZCMULWO doesn't exist, create it.
    // Activate the TZCMULWO object from a file by the same name, and create it if it doesn't exist.
-   GET VIEW TZCMLPLO NAMED "TZCMLPLO"
-   szDirectoryName = TZCMLPLO.LPLR.MetaSrcDir
-   szFileName = szDirectoryName + "\" + "TZCMULWO.POR"
-   nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
-   IF nRC < 0
-      ACTIVATE TZCMULWO EMPTY
-      NAME VIEW TZCMULWO "TZCMULWO"
-      CREATE ENTITY TZCMULWO.Installation
-      TZCMULWO.Installation.ZKey = 1
-      TZCMULWO.Installation.Name = TZCMLPLO.LPLR.Name
-      CommitOI_ToFile( TZCMULWO, szFileName, zASCII )
-   ELSE
-      NAME VIEW TZCMULWO "TZCMULWO"
+   GET VIEW TZCMULWO NAMED "TZCMULWO"
+   IF RESULT < 0 
+      GET VIEW TZCMLPLO NAMED "TZCMLPLO"
+      szDirectoryName = TZCMLPLO.LPLR.MetaSrcDir
+      szFileName = szDirectoryName + "\" + "TZCMULWO.POR"
+      nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
+      IF nRC < 0
+         ACTIVATE TZCMULWO EMPTY
+         NAME VIEW TZCMULWO "TZCMULWO"
+         CREATE ENTITY TZCMULWO.Installation
+         TZCMULWO.Installation.ZKey = 1
+         TZCMULWO.Installation.Name = TZCMLPLO.LPLR.Name
+         CommitOI_ToFile( TZCMULWO, szFileName, zASCII )
+      ELSE
+         NAME VIEW TZCMULWO "TZCMULWO"
+      END
    END
    
 END
@@ -113,7 +117,7 @@ END
 DIALOG OPERATION
 ACCEPT_User( VIEW ViewToWindow )
 
-   VIEW TZCMULWO REGISTERED AS TZCMULWO
+   VIEW TZCMULWO  REGISTERED AS TZCMULWO
    VIEW TZCMULWO2 BASED ON LOD  TZCMULWO
    INTEGER UserPrefix
    
@@ -153,7 +157,7 @@ INITIALIZE_UserStartingGenZKey( VIEW ViewToWindow )
 
    VIEW TZCMULWO REGISTERED AS TZCMULWO
    VIEW TZCMWKSO REGISTERED AS TZCMWKSO
-   STRING ( 90 ) szMsg
+   STRING (  90 ) szMsg
    STRING ( 200 ) szFileName
    SHORT nRC
    
@@ -194,6 +198,8 @@ DIALOG OPERATION
 ANALYZE_MinMaxZKeyValues( VIEW ViewToWindow )
 
    VIEW TZCMLPLO REGISTERED AS TZCMLPLO
+   VIEW TZCMULWO REGISTERED AS TZCMULWO
+   VIEW TZCMWKSO REGISTERED AS TZCMWKSO
    VIEW vMetaOI
    VIEW vHierMetaOI
    STRING ( 255 ) szFullFileName
@@ -203,11 +209,19 @@ ANALYZE_MinMaxZKeyValues( VIEW ViewToWindow )
    STRING ( 32 )  szEntityName
    STRING ( 15 )  szMinZKey
    STRING ( 15 )  szMaxZKey
-   STRING ( 200 ) szMsg
+   STRING ( 15 )  szUserMaxZKey
+   //STRING ( 15 )  szUserPrefix
+   //STRING ( 15 )  szUserNextPrefix
+   STRING ( 500 ) szMsg
    INTEGER        hFile
    INTEGER        lZKey
    INTEGER        lMinZKey
    INTEGER        lMaxZKey
+   INTEGER        lUserMaxZKey
+   INTEGER        lUserPrefix
+   INTEGER        lNextUserPrefix
+   INTEGER        lUserLowestZKey
+   INTEGER        lNextUserLowestZKey
    SHORT          nRC
    SHORT          nHierRC
    SHORT          nReturnLevel
@@ -218,6 +232,16 @@ ANALYZE_MinMaxZKeyValues( VIEW ViewToWindow )
    // to be generated for the first User identified as "1", followed by 7 zeros.
    lMinZKey = 990000000
    lMaxZKey = 0
+   
+   // Below we will be finding the max ZKey with the User's generation prefix. We thus want the lowest value with
+   // that prefix as well as the lowest value for the next prefix.
+   SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name  
+   lUserPrefix         = TZCMULWO.User.GenerationStartZKeyPrefix 
+   lNextUserPrefix     = lUserPrefix + 1
+   lUserLowestZKey     = lUserPrefix * 10000000
+   lNextUserLowestZKey = lNextUserPrefix * 10000000
+   lUserMaxZKey        = lUserLowestZKey
+   
    FOR EACH TZCMLPLO.W_MetaType 
       IF TZCMLPLO.W_MetaType.Type = 7 OR TZCMLPLO.W_MetaType.Type = 11
          IF TZCMLPLO.W_MetaType.Type = 7
@@ -254,13 +278,20 @@ ANALYZE_MinMaxZKeyValues( VIEW ViewToWindow )
                                                                 vHierMetaOI )
                      IF nHierRC >= zCURSOR_SET
                      
-                        // Check Zkey
+                        // Check Zkey against ZKey range for all Users.
                         GetIntegerFromAttribute( lZKey, vHierMetaOI, szCurrentEntityName, "ZKey" )
                         IF lZKey >= 10000000 AND lZKey < lMinZKey
                            lMinZKey =lZKey
                         END
                         IF lZKey > lMaxZKey
                            lMaxZKey =lZKey
+                        END
+                        
+                        // Check Zkey against ZKey range for current User.
+                        IF lZKey >= lUserLowestZKey AND lZKey < lNextUserLowestZKey
+                           IF lZKey > lUserMaxZKey
+                              lUserMaxZKey = lZKey
+                           END
                         END
          
                         // For recursive subentity, step down a level.
@@ -279,16 +310,269 @@ ANALYZE_MinMaxZKeyValues( VIEW ViewToWindow )
       END
    END
    
-   // If lMinZKey is still , then no metas exist and we will reset it to zero.
+   // If lMinZKey is still 990000000, then no metas exist and we will reset it to zero.
    IF lMinZKey = 990000000
       lMinZKey = 0
    END
    
    TraceLineI( "*** lMinZKey: ", lMinZKey )
    TraceLineI( "*** lMaxZKey: ", lMaxZKey )
-   szMinZKey = lMinZKey
-   szMaxZKey = lMaxZKey
-   szMsg = "Min and Max ZKeys are " + szMinZKey + " and " + szMaxZKey + "."
+   szMinZKey     = lMinZKey
+   szMaxZKey     = lMaxZKey
+   szUserMaxZKey = lUserMaxZKey
+   szMsg = "ZKey Analysis for LPLR, " + TZCMLPLO.LPLR.Name + NEW_LINE +
+           "Min and Max ZKeys are " + szMinZKey + " and " + szMaxZKey + "." + NEW_LINE +
+           "Max ZKey of current User is " + szUserMaxZKey + "."
    MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: CANCEL_NewLPLR
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+CANCEL_NewLPLR( VIEW ViewToWindow )
+
+   VIEW TZCMLPLO REGISTERED AS TZCMLPLO
+   VIEW TZCMULWO BASED ON LOD  TZCMULWO
+   
+   DropObjectInstance( TZCMLPLO )
+   GET VIEW TZCMULWO NAMED "TZCMULWO"
+   IF RESULT >= 0
+      DropObjectInstance( TZCMULWO )
+   END
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: CREATE_NewLPLR
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+CREATE_NewLPLR( VIEW ViewToWindow )
+
+   VIEW TZCMWKSO    REGISTERED AS TZCMWKSO
+   VIEW TZCMLPLO    REGISTERED AS TZCMLPLO
+   VIEW TZCMULWO    BASED ON LOD  TZCMULWO
+   VIEW TZCMLPLONew BASED ON LOD  TZCMLPLO
+   STRING ( 513 ) szMsg
+   STRING ( 513 ) szFileName
+   SHORT nRC
+   
+   // If the request is to create a new, empty LPLR, use the data entered to create a new one.
+   // If the request is to create a new entry for an existing, external LPLR, then update the existing LPLR.
+   
+   IF TZCMLPLO.LPLR.LPLR_Type = "2"    // "2" is new empty
+      // LPLR is new empty. 
+      // Create the following.
+      // 1. Build Installation/Users object (TZCMULWO). It will be completed on next window.
+      // 2. TZCMLPLO and TZCMWKSO will be updated on next window.
+      
+      // TZCMULWO
+      ACTIVATE TZCMULWO EMPTY
+      NAME VIEW TZCMULWO "TZCMULWO"
+      CREATE ENTITY TZCMULWO.Installation 
+      TZCMULWO.Installation.Name = TZCMLPLO.LPLR.Name 
+      TZCMULWO.Installation.ExecutableSubDirectory = TZCMLPLO.LPLR.wExecutableSubDirectory 
+      CREATE ENTITY TZCMULWO.User 
+      TZCMULWO.User.Name = TZCMWKSO.User.Name
+      
+   ELSE
+      // LPLR is new existing. 
+      // Activate Installation/Users object (TZCMULWO) and existing XLP (TZCMLPLO).
+      // Then, update directory information in TZCMLPLO from basic path just entered and executable subdirectory from
+      // TZCMULWO.
+      
+      // TZCMULWO
+      // TZCMLPLO.LPLR.MetaSrcDir value was entered by User.
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + "TZCMULWO.POR"
+      nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
+      IF nRC < 0
+         MessageSend( ViewToWindow, "", "Configuration Management",
+                      "An Installation/Users object (TZCMULWO) does not exist in the directory path specified.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+         SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+         DropView( TZCMULWO )
+         RETURN -1
+      ELSE
+         NAME VIEW TZCMULWO "TZCMULWO"
+      END
+   END
+      
+   // Make sure that the current User is in the TZCMULWO object. Currently, we will just add the User, if he
+   // isn't already there. Though, we could also return an error for that case and make the person in charge of the
+   // LPLR enter all valid Users.
+   SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name 
+   IF RESULT < zCURSOR_SET
+      CREATE ENTITY TZCMULWO.User 
+      TZCMULWO.User.Name = TZCMWKSO.User.Name  
+   END
+   
+   // TZCMWKSO
+   // Make sure that the LPLR object exists in TZCMWKSO.
+   SET CURSOR FIRST TZCMWKSO.LPLR WHERE TZCMWKSO.LPLR.Name = TZCMULWO.Installation.Name 
+   IF RESULT < zCURSOR_SET
+      CREATE ENTITY TZCMWKSO.LPLR 
+      TZCMWKSO.LPLR.LPLR_Type = "2"
+      TZCMWKSO.LPLR.Name      = TZCMULWO.Installation.Name 
+      TZCMWKSO.LPLR.Desc      = TZCMULWO.Installation.Desc 
+   END 
+   TZCMWKSO.LPLR.MetaSrcDir = TZCMLPLO.LPLR.MetaSrcDir
+   TZCMWKSO.LPLR.PgmSrcDir  = TZCMLPLO.LPLR.MetaSrcDir
+   TZCMWKSO.LPLR.ExecDir    = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
+   TZCMWKSO.LPLR.MaxZKey    = TZCMULWO.User.GenerationStartZKey 
+   
+   // TZCMLPLO
+   IF TZCMULWO.Installation.ExecutableSubDirectory = ""
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMLPLO.LPLR.Name  + ".XLP"
+   ELSE
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory + "\" + TZCMLPLO.LPLR.Name  + ".XLP"
+   END
+   nRC = ActivateOI_FromFile ( TZCMLPLONew, "TZCMLPLO", ViewToWindow, szFileName, 512 )
+   IF nRC < 0
+      szMsg = "An XLP object (TZCMLPLO) does not exist in the directory path specified: " + NEW_LINE + "  " + szFileName + "."
+      MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      DropView( TZCMULWO )
+      RETURN -1
+   ELSE
+      TZCMLPLONew.LPLR.LPLR_Type  = TZCMLPLO.LPLR.LPLR_Type    // We will use Type on next window.
+      TZCMLPLONew.LPLR.MetaSrcDir = TZCMLPLO.LPLR.MetaSrcDir
+      TZCMLPLONew.LPLR.PgmSrcDir  = TZCMLPLO.LPLR.MetaSrcDir 
+      TZCMLPLONew.LPLR.ExecDir    = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory 
+      DropObjectInstance( TZCMLPLO )
+      NAME VIEW TZCMLPLONew "TZCMLPLO"
+   END
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: PostbuildNewLPLR
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+PostbuildNewLPLR( VIEW ViewToWindow )
+
+   VIEW TZCMWKSO REGISTERED AS TZCMWKSO
+   VIEW TZCMLPLO BASED ON LOD  TZCMLPLO
+   
+   // Initialize an empty LPLO object to hold the keyed in data.
+   ACTIVATE TZCMLPLO EMPTY 
+   NAME VIEW TZCMLPLO "TZCMLPLO"
+   CREATE ENTITY TZCMLPLO.LPLR  
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: SAVE_NewLPLR
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+SAVE_NewLPLR( VIEW ViewToWindow )
+
+   VIEW TZCMWKSO    REGISTERED AS TZCMWKSO
+   VIEW TZCMLPLO    REGISTERED AS TZCMLPLO
+   VIEW TZCMULWO    REGISTERED AS TZCMULWO
+   VIEW KZAPPLOO    BASED ON LOD  KZAPPLOO
+   STRING (513) szFileName
+   STRING (513) szDirectoryName
+   SHORT nRC
+   
+   // Make sure that a subdirectory is specified and then update and save the three objects above.
+   /*IF TZCMULWO.Installation.ExecutableSubDirectory = ""
+      MessageSend( ViewToWindow, "", "Save New LPLR",
+                   "A Subdirectory value must be specified.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END*/
+   
+   // Make sure that each User has a ZKey generation prefix.
+   FOR EACH TZCMULWO.User 
+      IF TZCMULWO.User.GenerationStartZKeyPrefix = ""
+         MessageSend( ViewToWindow, "", "Save New LPLR",
+                      "All Users do not have a ZKey Generation Prefix.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+         SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+         RETURN -1
+      END
+   END
+   
+   // Save the TZCMULWO object.
+   szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + "TZCMULWO.POR"
+   nRC = CommitOI_ToFile( TZCMULWO, szFileName, zASCII )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Save New LPLR",
+                   "An error occurred when writing the TZCMULWO file. You will have to repeat the function.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END
+   
+   // Save the XLP object.
+   szFileName = TZCMLPLO.LPLR.ExecDir + "\" + TZCMLPLO.LPLR.Name  + ".XLP" 
+   nRC = CommitOI_ToFile( TZCMLPLO, szFileName, zASCII )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Save New LPLR",
+                   "An error occurred when writing the TZCMLPLO file. You will have to repeat the function.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END
+   
+   // Save the TZCMWKSO object.
+   SysGetEnvVar( szDirectoryName, "ZEIDON", 128 )
+   szFileName = szDirectoryName + "\TZCMWKS8.POR"
+TraceLineS( "*** WKS File: ", szDirectoryName )
+   nRC = CommitOI_ToFile( TZCMWKSO, szFileName, zASCII )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Save New LPLR",
+                   "An error occurred when writing the TZCMWKSO file. You will have to repeat the function.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END
+   
+   // Make sure there is a correct APPLICATION entry for the new LPLR in the ZEIDON.APP object and save it.
+   SysGetEnvVar( szDirectoryName, "ZEIDON", 128 )
+   szFileName = szDirectoryName + "\ZEIDON.APP"
+   nRC = ActivateOI_FromFile ( KZAPPLOO, "KZAPPLOO", ViewToWindow, szFileName, 512 )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Configuration Management",
+                   "An error occurred when reading the ZEIDON.APP file.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      DropView( KZAPPLOO )
+      RETURN -1
+   ELSE
+      NAME VIEW KZAPPLOO "KZAPPLOO"
+   END
+TraceLineS( "*** APP File: ", szDirectoryName )
+
+   // Make sure the APPLICATION entry exists and is correct.
+   SET CURSOR FIRST KZAPPLOO.APPLICATION WHERE KZAPPLOO.APPLICATION.APP_NAME = TZCMLPLO.LPLR.Name 
+   IF RESULT < zCURSOR_SET
+      CREATE ENTITY KZAPPLOO.APPLICATION 
+      KZAPPLOO.APPLICATION.APP_NAME = TZCMLPLO.LPLR.Name 
+   END 
+   KZAPPLOO.APPLICATION.APP_DLL    = TZCMLPLO.LPLR.ExecDir 
+   KZAPPLOO.APPLICATION.APP_ADOBIN = TZCMLPLO.LPLR.ExecDir 
+   KZAPPLOO.APPLICATION.APP_LOCAL  = KZAPPLOO.ZEIDON.ZEIDON_LOC 
+   KZAPPLOO.APPLICATION.APP_SHARED = KZAPPLOO.ZEIDON.ZEIDON_SHR 
+   
+   // Commit the ZEIDON.APP object.
+   nRC = CommitOI_ToFile( KZAPPLOO, szFileName, zASCII )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Save New LPLR",
+                   "An error occurred when writing the ZEIDON.APP file. You will have to repeat the function.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END
 
 END

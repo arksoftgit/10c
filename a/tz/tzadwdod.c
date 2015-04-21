@@ -1251,6 +1251,7 @@ oTZWDLGSO_AutoPaintWindow( zVIEW vSubtask )
    zVIEW    vTaskLPLR;
    zLONG    lFile;
    zCHAR    szFileName[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR    szTemp[ zMAX_FILESPEC_LTH + 1 ];
    zSHORT   nRC;
 
    GetViewByName( &vUserSpec, "User_Spec", vSubtask, zLEVEL_TASK );
@@ -1278,8 +1279,9 @@ oTZWDLGSO_AutoPaintWindow( zVIEW vSubtask )
    // Activate the Defaults object that will be used in autodesigning
    // subwindows.
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
-   GetStringFromAttribute( szFileName, vTaskLPLR, "LPLR", "MetaSrcDir" );
-   zstrcat( szFileName, "\\Z__DFLT.BAS" );
+   GetStringFromAttribute( szTemp, vTaskLPLR, "LPLR", "MetaSrcDir" );
+   zstrcat( szTemp, "\\Z__DFLT.BAS" );
+   SysConvertEnvironmentString( szFileName, szTemp );
    lFile = SysOpenFile( vSubtask, szFileName, COREFILE_READ );
    if ( lFile < 0 )
    {

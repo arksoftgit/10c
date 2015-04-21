@@ -26,6 +26,14 @@ DELETE_User( zVIEW     ViewToWindow );
 
 
 zOPER_EXPORT zSHORT OPERATION
+PostbuildNewLPLR( zVIEW     ViewToWindow );
+
+
+zOPER_EXPORT zSHORT OPERATION
+CANCEL_NewLPLR( zVIEW     ViewToWindow );
+
+
+zOPER_EXPORT zSHORT OPERATION
 GOTO_UpdateUserZKeys( zVIEW     ViewToWindow );
 
 
@@ -47,6 +55,14 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow );
 
 zOPER_EXPORT zSHORT OPERATION
 SAVE_UsersForLPLR( zVIEW     ViewToWindow );
+
+
+zOPER_EXPORT zSHORT OPERATION
+CREATE_NewLPLR( zVIEW     ViewToWindow );
+
+
+zOPER_EXPORT zSHORT OPERATION
+SAVE_NewLPLR( zVIEW     ViewToWindow );
 
 
 //:DIALOG OPERATION
@@ -82,6 +98,63 @@ DELETE_User( zVIEW     ViewToWindow )
 
 
 //:DIALOG OPERATION
+//:PostbuildNewLPLR( VIEW ViewToWindow )
+
+//:   VIEW TZCMWKSO REGISTERED AS TZCMWKSO
+zOPER_EXPORT zSHORT OPERATION
+PostbuildNewLPLR( zVIEW     ViewToWindow )
+{
+   zVIEW     TZCMWKSO = 0; 
+   zSHORT    RESULT; 
+   //:VIEW TZCMLPLO BASED ON LOD  TZCMLPLO
+   zVIEW     TZCMLPLO = 0; 
+
+   RESULT = GetViewByName( &TZCMWKSO, "TZCMWKSO", ViewToWindow, zLEVEL_TASK );
+
+   //:// Initialize an empty LPLO object to hold the keyed in data.
+   //:ACTIVATE TZCMLPLO EMPTY 
+   RESULT = ActivateEmptyObjectInstance( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zSINGLE );
+   //:NAME VIEW TZCMLPLO "TZCMLPLO"
+   SetNameForView( TZCMLPLO, "TZCMLPLO", 0, zLEVEL_TASK );
+   //:CREATE ENTITY TZCMLPLO.LPLR  
+   RESULT = CreateEntity( TZCMLPLO, "LPLR", zPOS_AFTER );
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:CANCEL_NewLPLR( VIEW ViewToWindow )
+
+//:   VIEW TZCMLPLO REGISTERED AS TZCMLPLO
+zOPER_EXPORT zSHORT OPERATION
+CANCEL_NewLPLR( zVIEW     ViewToWindow )
+{
+   zVIEW     TZCMLPLO = 0; 
+   zSHORT    RESULT; 
+   //:VIEW TZCMULWO BASED ON LOD  TZCMULWO
+   zVIEW     TZCMULWO = 0; 
+
+   RESULT = GetViewByName( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zLEVEL_TASK );
+
+   //:DropObjectInstance( TZCMLPLO )
+   DropObjectInstance( TZCMLPLO );
+   //:GET VIEW TZCMULWO NAMED "TZCMULWO"
+   RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", ViewToWindow, zLEVEL_TASK );
+   //:IF RESULT >= 0
+   if ( RESULT >= 0 )
+   { 
+      //:DropObjectInstance( TZCMULWO )
+      DropObjectInstance( TZCMULWO );
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
 //:GOTO_UpdateUserZKeys( VIEW ViewToWindow )
 
 //:   VIEW TZCMULWO BASED ON LOD TZCMULWO
@@ -100,38 +173,47 @@ GOTO_UpdateUserZKeys( zVIEW     ViewToWindow )
    zSHORT    RESULT; 
 
 
+   //:// If the TZCMULWO doesn't exist, create it.
    //:// Activate the TZCMULWO object from a file by the same name, and create it if it doesn't exist.
-   //:GET VIEW TZCMLPLO NAMED "TZCMLPLO"
-   RESULT = GetViewByName( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zLEVEL_TASK );
-   //:szDirectoryName = TZCMLPLO.LPLR.MetaSrcDir
-   GetVariableFromAttribute( szDirectoryName, 0, 'S', 514, TZCMLPLO, "LPLR", "MetaSrcDir", "", 0 );
-   //:szFileName = szDirectoryName + "\" + "TZCMULWO.POR"
-   ZeidonStringCopy( szFileName, 1, 0, szDirectoryName, 1, 0, 514 );
-   ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
-   ZeidonStringConcat( szFileName, 1, 0, "TZCMULWO.POR", 1, 0, 514 );
-   //:nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
-   nRC = ActivateOI_FromFile( &TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 );
-   //:IF nRC < 0
-   if ( nRC < 0 )
+   //:GET VIEW TZCMULWO NAMED "TZCMULWO"
+   RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", ViewToWindow, zLEVEL_TASK );
+   //:IF RESULT < 0 
+   if ( RESULT < 0 )
    { 
-      //:ACTIVATE TZCMULWO EMPTY
-      RESULT = ActivateEmptyObjectInstance( &TZCMULWO, "TZCMULWO", ViewToWindow, zSINGLE );
-      //:NAME VIEW TZCMULWO "TZCMULWO"
-      SetNameForView( TZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
-      //:CREATE ENTITY TZCMULWO.Installation
-      RESULT = CreateEntity( TZCMULWO, "Installation", zPOS_AFTER );
-      //:TZCMULWO.Installation.ZKey = 1
-      SetAttributeFromInteger( TZCMULWO, "Installation", "ZKey", 1 );
-      //:TZCMULWO.Installation.Name = TZCMLPLO.LPLR.Name
-      SetAttributeFromAttribute( TZCMULWO, "Installation", "Name", TZCMLPLO, "LPLR", "Name" );
-      //:CommitOI_ToFile( TZCMULWO, szFileName, zASCII )
-      CommitOI_ToFile( TZCMULWO, szFileName, zASCII );
-      //:ELSE
-   } 
-   else
-   { 
-      //:NAME VIEW TZCMULWO "TZCMULWO"
-      SetNameForView( TZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
+      //:GET VIEW TZCMLPLO NAMED "TZCMLPLO"
+      RESULT = GetViewByName( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zLEVEL_TASK );
+      //:szDirectoryName = TZCMLPLO.LPLR.MetaSrcDir
+      GetVariableFromAttribute( szDirectoryName, 0, 'S', 514, TZCMLPLO, "LPLR", "MetaSrcDir", "", 0 );
+      //:szFileName = szDirectoryName + "\" + "TZCMULWO.POR"
+      ZeidonStringCopy( szFileName, 1, 0, szDirectoryName, 1, 0, 514 );
+      ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+      ZeidonStringConcat( szFileName, 1, 0, "TZCMULWO.POR", 1, 0, 514 );
+      //:nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
+      nRC = ActivateOI_FromFile( &TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 );
+      //:IF nRC < 0
+      if ( nRC < 0 )
+      { 
+         //:ACTIVATE TZCMULWO EMPTY
+         RESULT = ActivateEmptyObjectInstance( &TZCMULWO, "TZCMULWO", ViewToWindow, zSINGLE );
+         //:NAME VIEW TZCMULWO "TZCMULWO"
+         SetNameForView( TZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
+         //:CREATE ENTITY TZCMULWO.Installation
+         RESULT = CreateEntity( TZCMULWO, "Installation", zPOS_AFTER );
+         //:TZCMULWO.Installation.ZKey = 1
+         SetAttributeFromInteger( TZCMULWO, "Installation", "ZKey", 1 );
+         //:TZCMULWO.Installation.Name = TZCMLPLO.LPLR.Name
+         SetAttributeFromAttribute( TZCMULWO, "Installation", "Name", TZCMLPLO, "LPLR", "Name" );
+         //:CommitOI_ToFile( TZCMULWO, szFileName, zASCII )
+         CommitOI_ToFile( TZCMULWO, szFileName, zASCII );
+         //:ELSE
+      } 
+      else
+      { 
+         //:NAME VIEW TZCMULWO "TZCMULWO"
+         SetNameForView( TZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
+      } 
+
+      //:END
    } 
 
    //:END
@@ -164,9 +246,9 @@ CLOSE_UsersForLPLR( zVIEW     ViewToWindow )
    if ( nRC == 1 )
    { 
       //:nRC = MessagePrompt( ViewToWindow, "", "Configuration Management",
-      //:                     "User data has been updated. Do you want to save the changes?", 1, zBUTTONS_YESNO,
+      //:                     "Installation / User data has been updated. Do you want to save the changes?", 1, zBUTTONS_YESNO,
       //:                     zRESPONSE_YES, 0 )
-      nRC = MessagePrompt( ViewToWindow, "", "Configuration Management", "User data has been updated. Do you want to save the changes?", 1, zBUTTONS_YESNO, zRESPONSE_YES, 0 );
+      nRC = MessagePrompt( ViewToWindow, "", "Configuration Management", "Installation / User data has been updated. Do you want to save the changes?", 1, zBUTTONS_YESNO, zRESPONSE_YES, 0 );
       //:IF nRC = zRESPONSE_YES
       if ( nRC == zRESPONSE_YES )
       { 
@@ -186,7 +268,7 @@ CLOSE_UsersForLPLR( zVIEW     ViewToWindow )
 //:DIALOG OPERATION
 //:ACCEPT_User( VIEW ViewToWindow )
 
-//:   VIEW TZCMULWO REGISTERED AS TZCMULWO
+//:   VIEW TZCMULWO  REGISTERED AS TZCMULWO
 zOPER_EXPORT zSHORT OPERATION
 ACCEPT_User( zVIEW     ViewToWindow )
 {
@@ -260,7 +342,7 @@ INITIALIZE_UserStartingGenZKey( zVIEW     ViewToWindow )
    zSHORT    RESULT; 
    //:VIEW TZCMWKSO REGISTERED AS TZCMWKSO
    zVIEW     TZCMWKSO = 0; 
-   //:STRING ( 90 ) szMsg
+   //:STRING (  90 ) szMsg
    zCHAR     szMsg[ 91 ] = { 0 }; 
    //:STRING ( 200 ) szFileName
    zCHAR     szFileName[ 201 ] = { 0 }; 
@@ -336,6 +418,10 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
 {
    zVIEW     TZCMLPLO = 0; 
    zSHORT    RESULT; 
+   //:VIEW TZCMULWO REGISTERED AS TZCMULWO
+   zVIEW     TZCMULWO = 0; 
+   //:VIEW TZCMWKSO REGISTERED AS TZCMWKSO
+   zVIEW     TZCMWKSO = 0; 
    //:VIEW vMetaOI
    zVIEW     vMetaOI = 0; 
    //:VIEW vHierMetaOI
@@ -354,8 +440,12 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
    zCHAR     szMinZKey[ 16 ] = { 0 }; 
    //:STRING ( 15 )  szMaxZKey
    zCHAR     szMaxZKey[ 16 ] = { 0 }; 
-   //:STRING ( 200 ) szMsg
-   zCHAR     szMsg[ 201 ] = { 0 }; 
+   //:STRING ( 15 )  szUserMaxZKey
+   zCHAR     szUserMaxZKey[ 16 ] = { 0 }; 
+   //://STRING ( 15 )  szUserPrefix
+   //://STRING ( 15 )  szUserNextPrefix
+   //:STRING ( 500 ) szMsg
+   zCHAR     szMsg[ 501 ] = { 0 }; 
    //:INTEGER        hFile
    zLONG     hFile = 0; 
    //:INTEGER        lZKey
@@ -364,6 +454,16 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
    zLONG     lMinZKey = 0; 
    //:INTEGER        lMaxZKey
    zLONG     lMaxZKey = 0; 
+   //:INTEGER        lUserMaxZKey
+   zLONG     lUserMaxZKey = 0; 
+   //:INTEGER        lUserPrefix
+   zLONG     lUserPrefix = 0; 
+   //:INTEGER        lNextUserPrefix
+   zLONG     lNextUserPrefix = 0; 
+   //:INTEGER        lUserLowestZKey
+   zLONG     lUserLowestZKey = 0; 
+   //:INTEGER        lNextUserLowestZKey
+   zLONG     lNextUserLowestZKey = 0; 
    //:SHORT          nRC
    zSHORT    nRC = 0; 
    //:SHORT          nHierRC
@@ -371,8 +471,11 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
    //:SHORT          nReturnLevel
    zSHORT    nReturnLevel = 0; 
    zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
 
    RESULT = GetViewByName( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zLEVEL_TASK );
+   RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", ViewToWindow, zLEVEL_TASK );
+   RESULT = GetViewByName( &TZCMWKSO, "TZCMWKSO", ViewToWindow, zLEVEL_TASK );
 
    //:// Determine the Min and Max ZKey values for all entities in Dialogs and LODs.
    //:// Process only meta types 7 and 11, LODs and Dialogs.
@@ -382,6 +485,23 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
    lMinZKey = 990000000;
    //:lMaxZKey = 0
    lMaxZKey = 0;
+
+   //:// Below we will be finding the max ZKey with the User's generation prefix. We thus want the lowest value with
+   //:// that prefix as well as the lowest value for the next prefix.
+   //:SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name  
+   GetStringFromAttribute( szTempString_0, TZCMWKSO, "User", "Name" );
+   RESULT = SetCursorFirstEntityByString( TZCMULWO, "User", "Name", szTempString_0, "" );
+   //:lUserPrefix         = TZCMULWO.User.GenerationStartZKeyPrefix 
+   GetIntegerFromAttribute( &lUserPrefix, TZCMULWO, "User", "GenerationStartZKeyPrefix" );
+   //:lNextUserPrefix     = lUserPrefix + 1
+   lNextUserPrefix = lUserPrefix + 1;
+   //:lUserLowestZKey     = lUserPrefix * 10000000
+   lUserLowestZKey = lUserPrefix * 10000000;
+   //:lNextUserLowestZKey = lNextUserPrefix * 10000000
+   lNextUserLowestZKey = lNextUserPrefix * 10000000;
+   //:lUserMaxZKey        = lUserLowestZKey
+   lUserMaxZKey = lUserLowestZKey;
+
    //:FOR EACH TZCMLPLO.W_MetaType 
    RESULT = SetCursorFirstEntity( TZCMLPLO, "W_MetaType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
@@ -468,7 +588,7 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
                      if ( nHierRC >= zCURSOR_SET )
                      { 
 
-                        //:// Check Zkey
+                        //:// Check Zkey against ZKey range for all Users.
                         //:GetIntegerFromAttribute( lZKey, vHierMetaOI, szCurrentEntityName, "ZKey" )
                         GetIntegerFromAttribute( &lZKey, vHierMetaOI, szCurrentEntityName, "ZKey" );
                         //:IF lZKey >= 10000000 AND lZKey < lMinZKey
@@ -484,6 +604,22 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
                         { 
                            //:lMaxZKey =lZKey
                            lMaxZKey = lZKey;
+                        } 
+
+                        //:END
+
+                        //:// Check Zkey against ZKey range for current User.
+                        //:IF lZKey >= lUserLowestZKey AND lZKey < lNextUserLowestZKey
+                        if ( lZKey >= lUserLowestZKey && lZKey < lNextUserLowestZKey )
+                        { 
+                           //:IF lZKey > lUserMaxZKey
+                           if ( lZKey > lUserMaxZKey )
+                           { 
+                              //:lUserMaxZKey = lZKey
+                              lUserMaxZKey = lZKey;
+                           } 
+
+                           //:END
                         } 
 
                         //:END
@@ -527,7 +663,7 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
 
    //:END
 
-   //:// If lMinZKey is still , then no metas exist and we will reset it to zero.
+   //:// If lMinZKey is still 990000000, then no metas exist and we will reset it to zero.
    //:IF lMinZKey = 990000000
    if ( lMinZKey == 990000000 )
    { 
@@ -541,16 +677,28 @@ ANALYZE_MinMaxZKeyValues( zVIEW     ViewToWindow )
    TraceLineI( "*** lMinZKey: ", lMinZKey );
    //:TraceLineI( "*** lMaxZKey: ", lMaxZKey )
    TraceLineI( "*** lMaxZKey: ", lMaxZKey );
-   //:szMinZKey = lMinZKey
+   //:szMinZKey     = lMinZKey
    ZeidonStringConvertFromNumber( szMinZKey, 1, 0, 15, lMinZKey, (ZDecimal) 0.0, "I" );
-   //:szMaxZKey = lMaxZKey
+   //:szMaxZKey     = lMaxZKey
    ZeidonStringConvertFromNumber( szMaxZKey, 1, 0, 15, lMaxZKey, (ZDecimal) 0.0, "I" );
-   //:szMsg = "Min and Max ZKeys are " + szMinZKey + " and " + szMaxZKey + "."
-   ZeidonStringCopy( szMsg, 1, 0, "Min and Max ZKeys are ", 1, 0, 201 );
-   ZeidonStringConcat( szMsg, 1, 0, szMinZKey, 1, 0, 201 );
-   ZeidonStringConcat( szMsg, 1, 0, " and ", 1, 0, 201 );
-   ZeidonStringConcat( szMsg, 1, 0, szMaxZKey, 1, 0, 201 );
-   ZeidonStringConcat( szMsg, 1, 0, ".", 1, 0, 201 );
+   //:szUserMaxZKey = lUserMaxZKey
+   ZeidonStringConvertFromNumber( szUserMaxZKey, 1, 0, 15, lUserMaxZKey, (ZDecimal) 0.0, "I" );
+   //:szMsg = "ZKey Analysis for LPLR, " + TZCMLPLO.LPLR.Name + NEW_LINE +
+   //:        "Min and Max ZKeys are " + szMinZKey + " and " + szMaxZKey + "." + NEW_LINE +
+   //:        "Max ZKey of current User is " + szUserMaxZKey + "."
+   GetVariableFromAttribute( szTempString_1, 0, 'S', 33, TZCMLPLO, "LPLR", "Name", "", 0 );
+   ZeidonStringCopy( szMsg, 1, 0, "ZKey Analysis for LPLR, ", 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, szTempString_1, 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, NEW_LINE, 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, "Min and Max ZKeys are ", 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, szMinZKey, 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, " and ", 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, szMaxZKey, 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, ".", 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, NEW_LINE, 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, "Max ZKey of current User is ", 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, szUserMaxZKey, 1, 0, 501 );
+   ZeidonStringConcat( szMsg, 1, 0, ".", 1, 0, 501 );
    //:MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 )
    MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_WARNING, 0 );
    return( 0 );
@@ -596,6 +744,440 @@ SAVE_UsersForLPLR( zVIEW     ViewToWindow )
       //:             "An error occurred when writing the file. You will have to repeat the function.",
       //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
       MessageSend( ViewToWindow, "", "Configuration Management", "An error occurred when writing the file. You will have to repeat the function.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:CREATE_NewLPLR( VIEW ViewToWindow )
+
+//:   VIEW TZCMWKSO    REGISTERED AS TZCMWKSO
+zOPER_EXPORT zSHORT OPERATION
+CREATE_NewLPLR( zVIEW     ViewToWindow )
+{
+   zVIEW     TZCMWKSO = 0; 
+   zSHORT    RESULT; 
+   //:VIEW TZCMLPLO    REGISTERED AS TZCMLPLO
+   zVIEW     TZCMLPLO = 0; 
+   //:VIEW TZCMULWO    BASED ON LOD  TZCMULWO
+   zVIEW     TZCMULWO = 0; 
+   //:VIEW TZCMLPLONew BASED ON LOD  TZCMLPLO
+   zVIEW     TZCMLPLONew = 0; 
+   //:STRING ( 513 ) szMsg
+   zCHAR     szMsg[ 514 ] = { 0 }; 
+   //:STRING ( 513 ) szFileName
+   zCHAR     szFileName[ 514 ] = { 0 }; 
+   //:SHORT nRC
+   zSHORT    nRC = 0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 255 ]; 
+   zCHAR     szTempString_2[ 255 ]; 
+   zCHAR     szTempString_3[ 255 ]; 
+   zCHAR     szTempString_4[ 33 ]; 
+   zCHAR     szTempString_5[ 255 ]; 
+   zCHAR     szTempString_6[ 255 ]; 
+
+   RESULT = GetViewByName( &TZCMWKSO, "TZCMWKSO", ViewToWindow, zLEVEL_TASK );
+   RESULT = GetViewByName( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zLEVEL_TASK );
+
+   //:// If the request is to create a new, empty LPLR, use the data entered to create a new one.
+   //:// If the request is to create a new entry for an existing, external LPLR, then update the existing LPLR.
+
+   //:IF TZCMLPLO.LPLR.LPLR_Type = "2"    // "2" is new empty
+   if ( CompareAttributeToString( TZCMLPLO, "LPLR", "LPLR_Type", "2" ) == 0 )
+   { 
+      //:// LPLR is new empty. 
+      //:// Create the following.
+      //:// 1. Build Installation/Users object (TZCMULWO). It will be completed on next window.
+      //:// 2. TZCMLPLO and TZCMWKSO will be updated on next window.
+
+      //:// TZCMULWO
+      //:ACTIVATE TZCMULWO EMPTY
+      RESULT = ActivateEmptyObjectInstance( &TZCMULWO, "TZCMULWO", ViewToWindow, zSINGLE );
+      //:NAME VIEW TZCMULWO "TZCMULWO"
+      SetNameForView( TZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
+      //:CREATE ENTITY TZCMULWO.Installation 
+      RESULT = CreateEntity( TZCMULWO, "Installation", zPOS_AFTER );
+      //:TZCMULWO.Installation.Name = TZCMLPLO.LPLR.Name 
+      SetAttributeFromAttribute( TZCMULWO, "Installation", "Name", TZCMLPLO, "LPLR", "Name" );
+      //:TZCMULWO.Installation.ExecutableSubDirectory = TZCMLPLO.LPLR.wExecutableSubDirectory 
+      SetAttributeFromAttribute( TZCMULWO, "Installation", "ExecutableSubDirectory", TZCMLPLO, "LPLR", "wExecutableSubDirectory" );
+      //:CREATE ENTITY TZCMULWO.User 
+      RESULT = CreateEntity( TZCMULWO, "User", zPOS_AFTER );
+      //:TZCMULWO.User.Name = TZCMWKSO.User.Name
+      SetAttributeFromAttribute( TZCMULWO, "User", "Name", TZCMWKSO, "User", "Name" );
+
+      //:ELSE
+   } 
+   else
+   { 
+      //:// LPLR is new existing. 
+      //:// Activate Installation/Users object (TZCMULWO) and existing XLP (TZCMLPLO).
+      //:// Then, update directory information in TZCMLPLO from basic path just entered and executable subdirectory from
+      //:// TZCMULWO.
+
+      //:// TZCMULWO
+      //:// TZCMLPLO.LPLR.MetaSrcDir value was entered by User.
+      //:szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + "TZCMULWO.POR"
+      GetStringFromAttribute( szFileName, TZCMLPLO, "LPLR", "MetaSrcDir" );
+      ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+      ZeidonStringConcat( szFileName, 1, 0, "TZCMULWO.POR", 1, 0, 514 );
+      //:nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
+      nRC = ActivateOI_FromFile( &TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 );
+      //:IF nRC < 0
+      if ( nRC < 0 )
+      { 
+         //:MessageSend( ViewToWindow, "", "Configuration Management",
+         //:             "An Installation/Users object (TZCMULWO) does not exist in the directory path specified.",
+         //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+         MessageSend( ViewToWindow, "", "Configuration Management", "An Installation/Users object (TZCMULWO) does not exist in the directory path specified.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+         //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+         SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+         //:DropView( TZCMULWO )
+         DropView( TZCMULWO );
+         //:RETURN -1
+         return( -1 );
+         //:ELSE
+      } 
+      else
+      { 
+         //:NAME VIEW TZCMULWO "TZCMULWO"
+         SetNameForView( TZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
+      } 
+
+      //:END
+   } 
+
+   //:END
+   //:   
+   //:// Make sure that the current User is in the TZCMULWO object. Currently, we will just add the User, if he
+   //:// isn't already there. Though, we could also return an error for that case and make the person in charge of the
+   //:// LPLR enter all valid Users.
+   //:SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name 
+   GetStringFromAttribute( szTempString_0, TZCMWKSO, "User", "Name" );
+   RESULT = SetCursorFirstEntityByString( TZCMULWO, "User", "Name", szTempString_0, "" );
+   //:IF RESULT < zCURSOR_SET
+   if ( RESULT < zCURSOR_SET )
+   { 
+      //:CREATE ENTITY TZCMULWO.User 
+      RESULT = CreateEntity( TZCMULWO, "User", zPOS_AFTER );
+      //:TZCMULWO.User.Name = TZCMWKSO.User.Name  
+      SetAttributeFromAttribute( TZCMULWO, "User", "Name", TZCMWKSO, "User", "Name" );
+   } 
+
+   //:END
+
+   //:// TZCMWKSO
+   //:// Make sure that the LPLR object exists in TZCMWKSO.
+   //:SET CURSOR FIRST TZCMWKSO.LPLR WHERE TZCMWKSO.LPLR.Name = TZCMULWO.Installation.Name 
+   GetStringFromAttribute( szTempString_0, TZCMULWO, "Installation", "Name" );
+   RESULT = SetCursorFirstEntityByString( TZCMWKSO, "LPLR", "Name", szTempString_0, "" );
+   //:IF RESULT < zCURSOR_SET
+   if ( RESULT < zCURSOR_SET )
+   { 
+      //:CREATE ENTITY TZCMWKSO.LPLR 
+      RESULT = CreateEntity( TZCMWKSO, "LPLR", zPOS_AFTER );
+      //:TZCMWKSO.LPLR.LPLR_Type = "2"
+      SetAttributeFromString( TZCMWKSO, "LPLR", "LPLR_Type", "2" );
+      //:TZCMWKSO.LPLR.Name      = TZCMULWO.Installation.Name 
+      SetAttributeFromAttribute( TZCMWKSO, "LPLR", "Name", TZCMULWO, "Installation", "Name" );
+      //:TZCMWKSO.LPLR.Desc      = TZCMULWO.Installation.Desc 
+      SetAttributeFromAttribute( TZCMWKSO, "LPLR", "Desc", TZCMULWO, "Installation", "Desc" );
+   } 
+
+   //:END 
+   //:TZCMWKSO.LPLR.MetaSrcDir = TZCMLPLO.LPLR.MetaSrcDir
+   SetAttributeFromAttribute( TZCMWKSO, "LPLR", "MetaSrcDir", TZCMLPLO, "LPLR", "MetaSrcDir" );
+   //:TZCMWKSO.LPLR.PgmSrcDir  = TZCMLPLO.LPLR.MetaSrcDir
+   SetAttributeFromAttribute( TZCMWKSO, "LPLR", "PgmSrcDir", TZCMLPLO, "LPLR", "MetaSrcDir" );
+   //:TZCMWKSO.LPLR.ExecDir    = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
+   GetStringFromAttribute( szTempString_1, TZCMLPLO, "LPLR", "MetaSrcDir" );
+   ZeidonStringConcat( szTempString_1, 1, 0, "\\", 1, 0, 255 );
+   GetVariableFromAttribute( szTempString_2, 0, 'S', 255, TZCMULWO, "Installation", "ExecutableSubDirectory", "", 0 );
+   ZeidonStringConcat( szTempString_1, 1, 0, szTempString_2, 1, 0, 255 );
+   SetAttributeFromString( TZCMWKSO, "LPLR", "ExecDir", szTempString_1 );
+   //:TZCMWKSO.LPLR.MaxZKey    = TZCMULWO.User.GenerationStartZKey 
+   SetAttributeFromAttribute( TZCMWKSO, "LPLR", "MaxZKey", TZCMULWO, "User", "GenerationStartZKey" );
+
+   //:// TZCMLPLO
+   //:IF TZCMULWO.Installation.ExecutableSubDirectory = ""
+   if ( CompareAttributeToString( TZCMULWO, "Installation", "ExecutableSubDirectory", "" ) == 0 )
+   { 
+      //:szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMLPLO.LPLR.Name  + ".XLP"
+      GetStringFromAttribute( szFileName, TZCMLPLO, "LPLR", "MetaSrcDir" );
+      ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+      GetVariableFromAttribute( szTempString_0, 0, 'S', 33, TZCMLPLO, "LPLR", "Name", "", 0 );
+      ZeidonStringConcat( szFileName, 1, 0, szTempString_0, 1, 0, 514 );
+      ZeidonStringConcat( szFileName, 1, 0, ".XLP", 1, 0, 514 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory + "\" + TZCMLPLO.LPLR.Name  + ".XLP"
+      GetStringFromAttribute( szFileName, TZCMLPLO, "LPLR", "MetaSrcDir" );
+      ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+      GetVariableFromAttribute( szTempString_3, 0, 'S', 255, TZCMULWO, "Installation", "ExecutableSubDirectory", "", 0 );
+      ZeidonStringConcat( szFileName, 1, 0, szTempString_3, 1, 0, 514 );
+      ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+      GetVariableFromAttribute( szTempString_4, 0, 'S', 33, TZCMLPLO, "LPLR", "Name", "", 0 );
+      ZeidonStringConcat( szFileName, 1, 0, szTempString_4, 1, 0, 514 );
+      ZeidonStringConcat( szFileName, 1, 0, ".XLP", 1, 0, 514 );
+   } 
+
+   //:END
+   //:nRC = ActivateOI_FromFile ( TZCMLPLONew, "TZCMLPLO", ViewToWindow, szFileName, 512 )
+   nRC = ActivateOI_FromFile( &TZCMLPLONew, "TZCMLPLO", ViewToWindow, szFileName, 512 );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:szMsg = "An XLP object (TZCMLPLO) does not exist in the directory path specified: " + NEW_LINE + "  " + szFileName + "."
+      ZeidonStringCopy( szMsg, 1, 0, "An XLP object (TZCMLPLO) does not exist in the directory path specified: ", 1, 0, 514 );
+      ZeidonStringConcat( szMsg, 1, 0, NEW_LINE, 1, 0, 514 );
+      ZeidonStringConcat( szMsg, 1, 0, "  ", 1, 0, 514 );
+      ZeidonStringConcat( szMsg, 1, 0, szFileName, 1, 0, 514 );
+      ZeidonStringConcat( szMsg, 1, 0, ".", 1, 0, 514 );
+      //:MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:DropView( TZCMULWO )
+      DropView( TZCMULWO );
+      //:RETURN -1
+      return( -1 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:TZCMLPLONew.LPLR.LPLR_Type  = TZCMLPLO.LPLR.LPLR_Type    // We will use Type on next window.
+      SetAttributeFromAttribute( TZCMLPLONew, "LPLR", "LPLR_Type", TZCMLPLO, "LPLR", "LPLR_Type" );
+      //:TZCMLPLONew.LPLR.MetaSrcDir = TZCMLPLO.LPLR.MetaSrcDir
+      SetAttributeFromAttribute( TZCMLPLONew, "LPLR", "MetaSrcDir", TZCMLPLO, "LPLR", "MetaSrcDir" );
+      //:TZCMLPLONew.LPLR.PgmSrcDir  = TZCMLPLO.LPLR.MetaSrcDir 
+      SetAttributeFromAttribute( TZCMLPLONew, "LPLR", "PgmSrcDir", TZCMLPLO, "LPLR", "MetaSrcDir" );
+      //:TZCMLPLONew.LPLR.ExecDir    = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory 
+      GetStringFromAttribute( szTempString_5, TZCMLPLO, "LPLR", "MetaSrcDir" );
+      ZeidonStringConcat( szTempString_5, 1, 0, "\\", 1, 0, 255 );
+      GetVariableFromAttribute( szTempString_6, 0, 'S', 255, TZCMULWO, "Installation", "ExecutableSubDirectory", "", 0 );
+      ZeidonStringConcat( szTempString_5, 1, 0, szTempString_6, 1, 0, 255 );
+      SetAttributeFromString( TZCMLPLONew, "LPLR", "ExecDir", szTempString_5 );
+      //:DropObjectInstance( TZCMLPLO )
+      DropObjectInstance( TZCMLPLO );
+      //:NAME VIEW TZCMLPLONew "TZCMLPLO"
+      SetNameForView( TZCMLPLONew, "TZCMLPLO", 0, zLEVEL_TASK );
+   } 
+
+   //:END
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:SAVE_NewLPLR( VIEW ViewToWindow )
+
+//:   VIEW TZCMWKSO    REGISTERED AS TZCMWKSO
+zOPER_EXPORT zSHORT OPERATION
+SAVE_NewLPLR( zVIEW     ViewToWindow )
+{
+   zVIEW     TZCMWKSO = 0; 
+   zSHORT    RESULT; 
+   //:VIEW TZCMLPLO    REGISTERED AS TZCMLPLO
+   zVIEW     TZCMLPLO = 0; 
+   //:VIEW TZCMULWO    REGISTERED AS TZCMULWO
+   zVIEW     TZCMULWO = 0; 
+   //:VIEW KZAPPLOO    BASED ON LOD  KZAPPLOO
+   zVIEW     KZAPPLOO = 0; 
+   //:STRING (513) szFileName
+   zCHAR     szFileName[ 514 ] = { 0 }; 
+   //:STRING (513) szDirectoryName
+   zCHAR     szDirectoryName[ 514 ] = { 0 }; 
+   //:SHORT nRC
+   zSHORT    nRC = 0; 
+   zCHAR     szTempString_0[ 33 ]; 
+   zCHAR     szTempString_1[ 33 ]; 
+
+   RESULT = GetViewByName( &TZCMWKSO, "TZCMWKSO", ViewToWindow, zLEVEL_TASK );
+   RESULT = GetViewByName( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zLEVEL_TASK );
+   RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", ViewToWindow, zLEVEL_TASK );
+
+   //:// Make sure that a subdirectory is specified and then update and save the three objects above.
+   //:/*IF TZCMULWO.Installation.ExecutableSubDirectory = ""
+   //:   MessageSend( ViewToWindow, "", "Save New LPLR",
+   //:                "A Subdirectory value must be specified.",
+   //:                zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+   //:   SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+   //:   RETURN -1
+   //:END*/
+
+   //:// Make sure that each User has a ZKey generation prefix.
+   //:FOR EACH TZCMULWO.User 
+   RESULT = SetCursorFirstEntity( TZCMULWO, "User", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      //:IF TZCMULWO.User.GenerationStartZKeyPrefix = ""
+      if ( CompareAttributeToString( TZCMULWO, "User", "GenerationStartZKeyPrefix", "" ) == 0 )
+      { 
+         //:MessageSend( ViewToWindow, "", "Save New LPLR",
+         //:             "All Users do not have a ZKey Generation Prefix.",
+         //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+         MessageSend( ViewToWindow, "", "Save New LPLR", "All Users do not have a ZKey Generation Prefix.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+         //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+         SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+         //:RETURN -1
+         return( -1 );
+      } 
+
+      RESULT = SetCursorNextEntity( TZCMULWO, "User", "" );
+      //:END
+   } 
+
+   //:END
+
+   //:// Save the TZCMULWO object.
+   //:szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + "TZCMULWO.POR"
+   GetStringFromAttribute( szFileName, TZCMLPLO, "LPLR", "MetaSrcDir" );
+   ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+   ZeidonStringConcat( szFileName, 1, 0, "TZCMULWO.POR", 1, 0, 514 );
+   //:nRC = CommitOI_ToFile( TZCMULWO, szFileName, zASCII )
+   nRC = CommitOI_ToFile( TZCMULWO, szFileName, zASCII );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:MessageSend( ViewToWindow, "", "Save New LPLR",
+      //:             "An error occurred when writing the TZCMULWO file. You will have to repeat the function.",
+      //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Save New LPLR", "An error occurred when writing the TZCMULWO file. You will have to repeat the function.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:RETURN -1
+      return( -1 );
+   } 
+
+   //:END
+
+   //:// Save the XLP object.
+   //:szFileName = TZCMLPLO.LPLR.ExecDir + "\" + TZCMLPLO.LPLR.Name  + ".XLP" 
+   GetStringFromAttribute( szFileName, TZCMLPLO, "LPLR", "ExecDir" );
+   ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+   GetVariableFromAttribute( szTempString_0, 0, 'S', 33, TZCMLPLO, "LPLR", "Name", "", 0 );
+   ZeidonStringConcat( szFileName, 1, 0, szTempString_0, 1, 0, 514 );
+   ZeidonStringConcat( szFileName, 1, 0, ".XLP", 1, 0, 514 );
+   //:nRC = CommitOI_ToFile( TZCMLPLO, szFileName, zASCII )
+   nRC = CommitOI_ToFile( TZCMLPLO, szFileName, zASCII );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:MessageSend( ViewToWindow, "", "Save New LPLR",
+      //:             "An error occurred when writing the TZCMLPLO file. You will have to repeat the function.",
+      //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Save New LPLR", "An error occurred when writing the TZCMLPLO file. You will have to repeat the function.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:RETURN -1
+      return( -1 );
+   } 
+
+   //:END
+
+   //:// Save the TZCMWKSO object.
+   //:SysGetEnvVar( szDirectoryName, "ZEIDON", 128 )
+   SysGetEnvVar( szDirectoryName, "ZEIDON", 128 );
+   //:szFileName = szDirectoryName + "\TZCMWKS8.POR"
+   ZeidonStringCopy( szFileName, 1, 0, szDirectoryName, 1, 0, 514 );
+   ZeidonStringConcat( szFileName, 1, 0, "\\TZCMWKS8.POR", 1, 0, 514 );
+   //:TraceLineS( "*** WKS File: ", szDirectoryName )
+   TraceLineS( "*** WKS File: ", szDirectoryName );
+   //:nRC = CommitOI_ToFile( TZCMWKSO, szFileName, zASCII )
+   nRC = CommitOI_ToFile( TZCMWKSO, szFileName, zASCII );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:MessageSend( ViewToWindow, "", "Save New LPLR",
+      //:             "An error occurred when writing the TZCMWKSO file. You will have to repeat the function.",
+      //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Save New LPLR", "An error occurred when writing the TZCMWKSO file. You will have to repeat the function.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:RETURN -1
+      return( -1 );
+   } 
+
+   //:END
+
+   //:// Make sure there is a correct APPLICATION entry for the new LPLR in the ZEIDON.APP object and save it.
+   //:SysGetEnvVar( szDirectoryName, "ZEIDON", 128 )
+   SysGetEnvVar( szDirectoryName, "ZEIDON", 128 );
+   //:szFileName = szDirectoryName + "\ZEIDON.APP"
+   ZeidonStringCopy( szFileName, 1, 0, szDirectoryName, 1, 0, 514 );
+   ZeidonStringConcat( szFileName, 1, 0, "\\ZEIDON.APP", 1, 0, 514 );
+   //:nRC = ActivateOI_FromFile ( KZAPPLOO, "KZAPPLOO", ViewToWindow, szFileName, 512 )
+   nRC = ActivateOI_FromFile( &KZAPPLOO, "KZAPPLOO", ViewToWindow, szFileName, 512 );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:MessageSend( ViewToWindow, "", "Configuration Management",
+      //:             "An error occurred when reading the ZEIDON.APP file.",
+      //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Configuration Management", "An error occurred when reading the ZEIDON.APP file.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:DropView( KZAPPLOO )
+      DropView( KZAPPLOO );
+      //:RETURN -1
+      return( -1 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:NAME VIEW KZAPPLOO "KZAPPLOO"
+      SetNameForView( KZAPPLOO, "KZAPPLOO", 0, zLEVEL_TASK );
+   } 
+
+   //:END
+   //:TraceLineS( "*** APP File: ", szDirectoryName )
+   TraceLineS( "*** APP File: ", szDirectoryName );
+
+   //:// Make sure the APPLICATION entry exists and is correct.
+   //:SET CURSOR FIRST KZAPPLOO.APPLICATION WHERE KZAPPLOO.APPLICATION.APP_NAME = TZCMLPLO.LPLR.Name 
+   GetStringFromAttribute( szTempString_1, TZCMLPLO, "LPLR", "Name" );
+   RESULT = SetCursorFirstEntityByString( KZAPPLOO, "APPLICATION", "APP_NAME", szTempString_1, "" );
+   //:IF RESULT < zCURSOR_SET
+   if ( RESULT < zCURSOR_SET )
+   { 
+      //:CREATE ENTITY KZAPPLOO.APPLICATION 
+      RESULT = CreateEntity( KZAPPLOO, "APPLICATION", zPOS_AFTER );
+      //:KZAPPLOO.APPLICATION.APP_NAME = TZCMLPLO.LPLR.Name 
+      SetAttributeFromAttribute( KZAPPLOO, "APPLICATION", "APP_NAME", TZCMLPLO, "LPLR", "Name" );
+   } 
+
+   //:END 
+   //:KZAPPLOO.APPLICATION.APP_DLL    = TZCMLPLO.LPLR.ExecDir 
+   SetAttributeFromAttribute( KZAPPLOO, "APPLICATION", "APP_DLL", TZCMLPLO, "LPLR", "ExecDir" );
+   //:KZAPPLOO.APPLICATION.APP_ADOBIN = TZCMLPLO.LPLR.ExecDir 
+   SetAttributeFromAttribute( KZAPPLOO, "APPLICATION", "APP_ADOBIN", TZCMLPLO, "LPLR", "ExecDir" );
+   //:KZAPPLOO.APPLICATION.APP_LOCAL  = KZAPPLOO.ZEIDON.ZEIDON_LOC 
+   SetAttributeFromAttribute( KZAPPLOO, "APPLICATION", "APP_LOCAL", KZAPPLOO, "ZEIDON", "ZEIDON_LOC" );
+   //:KZAPPLOO.APPLICATION.APP_SHARED = KZAPPLOO.ZEIDON.ZEIDON_SHR 
+   SetAttributeFromAttribute( KZAPPLOO, "APPLICATION", "APP_SHARED", KZAPPLOO, "ZEIDON", "ZEIDON_SHR" );
+
+   //:// Commit the ZEIDON.APP object.
+   //:nRC = CommitOI_ToFile( KZAPPLOO, szFileName, zASCII )
+   nRC = CommitOI_ToFile( KZAPPLOO, szFileName, zASCII );
+   //:IF nRC < 0
+   if ( nRC < 0 )
+   { 
+      //:MessageSend( ViewToWindow, "", "Save New LPLR",
+      //:             "An error occurred when writing the ZEIDON.APP file. You will have to repeat the function.",
+      //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      MessageSend( ViewToWindow, "", "Save New LPLR", "An error occurred when writing the ZEIDON.APP file. You will have to repeat the function.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+      //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 );
+      //:RETURN -1
+      return( -1 );
    } 
 
    //:END

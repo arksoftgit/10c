@@ -67,7 +67,8 @@ AutodesignReport( VIEW vReportDef BASED ON LOD TZRPSRCO,
    // Retrieve default information and name it for later use.  If the instance
    // doesn't exist, exit.
    GET VIEW vTaskLPLR NAMED "TaskLPLR"
-   szFileName = vTaskLPLR.LPLR.MetaSrcDir + "\Z__DFLT.BAS"
+   szMsg = vTaskLPLR.LPLR.MetaSrcDir + "\Z__DFLT.BAS"  // borrow szMsg for a second
+   SysConvertEnvironmentString( szFileName, szMsg )
    lFile = SysOpenFile( vSubtask, szFileName, COREFILE_READ )
    IF lFile < 0
       szMsg = "LPLR Defaults not found." + zNew_Line + "Exiting Autodesign."

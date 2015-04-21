@@ -116,6 +116,13 @@ aAPP_LOCAL %kzd%:/10e/zapp
 aAPP_SHARED %kzd%:/10e/w/bin/sys
 
 eAPPLICATION 2
+aAPP_NAME  epammsx
+aAPP_DLL   %kzd%:/lplr/epammsx/bin
+aAPP_ADOBIN %kzd%:/lplr/epammsx/bin
+aAPP_LOCAL %kzd%:/10e/zapp
+aAPP_SHARED %kzd%:/10e/w/bin/sys
+
+eAPPLICATION 2
 aAPP_NAME  ha
 aAPP_DLL   %kzd%:/lplr/ha/bin
 aAPP_ADOBIN %kzd%:/lplr/ha/bin
