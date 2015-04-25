@@ -1763,7 +1763,7 @@ GenJSP_CrteEditBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szWriteBuffer = "         else"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "            " + vDialog.CtrlMapView.Name +
-                      ".TraceLine( ^Entity does not exist: ^, ^" +
+                      ".TraceLine( ^Entity does not exist for " + szCtrlTag + ": ^, ^" +
                       vDialog.CtrlMapView.Name +
                       "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )

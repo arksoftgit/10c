@@ -63,4 +63,6 @@ EXPORTS
 #elif defined( SQLBASE )
 #elif defined( SQLSERVER )
                PostXOD_BuildHook
+#elif defined( MYSQL )
+               PostXOD_BuildHook
 #endif

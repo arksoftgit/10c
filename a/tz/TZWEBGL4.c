@@ -666,11 +666,13 @@ GenJSPJ_CrteMLEdit( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "         else", 1, 0, 10001 );
       //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "            task.log( ).info( ^Entity does not exist: ^ + ^" +
+      //:szWriteBuffer = "            task.log( ).info( ^Entity does not exist for " + szCtrlTag + ": ^ + ^" +
       //:                vDialog.CtrlMapView.Name +
       //:                "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).info( ^Entity does not exist for ", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ": ^ + ^", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_10, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).info( ^Entity does not exist: ^ + ^", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_10, 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_11, 0, 'S', 33, vDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
@@ -3330,11 +3332,13 @@ GenJSPJ_CrteEditBox( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "         else", 1, 0, 10001 );
       //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "            task.log( ).debug( ^Entity does not exist: ^ + ^" +
+      //:szWriteBuffer = "            task.log( ).debug( ^Entity does not exist for " + szCtrlTag + ": ^ + ^" +
       //:                vDialog.CtrlMapView.Name +
       //:                "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).debug( ^Entity does not exist for ", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ": ^ + ^", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_10, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).debug( ^Entity does not exist: ^ + ^", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_10, 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_11, 0, 'S', 33, vDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
@@ -5458,11 +5462,13 @@ GenJSPJ_CrteGroupTable( zVIEW     vDialog,
             ZeidonStringCopy( szWriteBuffer, 1, 0, "         else", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-            //:szWriteBuffer = "            task.log( ).debug( ^Entity does not exist: ^ + ^" +
+            //:szWriteBuffer = "            task.log( ).debug( ^Entity does not exist for " + szCtrlTag + ": ^ + ^" +
             //:                vDialog.CtrlMapView.Name +
             //:                "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).debug( ^Entity does not exist for ", 1, 0, 10001 );
+            ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+            ZeidonStringConcat( szWriteBuffer, 1, 0, ": ^ + ^", 1, 0, 10001 );
             GetVariableFromAttribute( szTempString_23, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).debug( ^Entity does not exist: ^ + ^", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_23, 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
             GetVariableFromAttribute( szTempString_24, 0, 'S', 33, vDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
@@ -7914,11 +7920,13 @@ GenJSPJ_CrteCalendar( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "         else", 1, 0, 10001 );
       //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-      //:szWriteBuffer = "            task.log( ).debug( ^Entity does not exist: ^ + ^" +
+      //:szWriteBuffer = "            task.log( ).debug( ^Entity does not exist for " + szCtrlTag + ": ^ + ^" +
       //:                vDialog.CtrlMapView.Name +
       //:                "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).debug( ^Entity does not exist for ", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ": ^ + ^", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_10, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "            task.log( ).debug( ^Entity does not exist: ^ + ^", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_10, 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_11, 0, 'S', 33, vDialog, "CtrlMapRelatedEntity", "Name", "", 0 );

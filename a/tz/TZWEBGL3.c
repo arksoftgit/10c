@@ -3872,13 +3872,15 @@ GenJSP_CrteEditBox( zVIEW     vDialog,
       //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "            " + vDialog.CtrlMapView.Name +
-      //:                ".TraceLine( ^Entity does not exist: ^, ^" +
+      //:                ".TraceLine( ^Entity does not exist for " + szCtrlTag + ": ^, ^" +
       //:                vDialog.CtrlMapView.Name +
       //:                "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
       GetVariableFromAttribute( szTempString_11, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
       ZeidonStringCopy( szWriteBuffer, 1, 0, "            ", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_11, 1, 0, 10001 );
-      ZeidonStringConcat( szWriteBuffer, 1, 0, ".TraceLine( ^Entity does not exist: ^, ^", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ".TraceLine( ^Entity does not exist for ", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ": ^, ^", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_12, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_12, 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );

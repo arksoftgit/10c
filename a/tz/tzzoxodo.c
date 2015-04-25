@@ -490,8 +490,13 @@ oTZZOXODO_SaveXOD( zVIEW vSubtask, zVIEW vTZZOLODO )
          hLibrary = SysLoadLibrary( vTZZOLODO, pszExecutable );
          pfnHook = SysGetProc( hLibrary, "PostXOD_BuildHook" );
          if ( pfnHook == 0 )
-            SysMessageBox( vTZZOLODO, "Build XOD Error",
-                           "Couldn't find BuildHook operation.", 1 );
+         {
+            zCHAR  szMsg[ 256 ];
+
+            zstrcpy( szMsg, "Couldn't find BuildHook operation - PostXOD_BuildHook in " );
+            zstrcat( szMsg, pszExecutable );
+            SysMessageBox( vTZZOLODO, "Build XOD Error", szMsg, 1 );
+         }
          else
          {
             nRC = (*pfnHook)( vTZTEDBLO, vTZZOXODO, vTZZOLODO, vTZEREMDO_REF,
@@ -2081,7 +2086,7 @@ ofnTZZOXODO_BldXODAttrib( zVIEW vSubtask, zVIEW vTZZOXODO,
    if ( CheckExistenceOfEntity( vTZZOLOD1, "LOD_AttrDerivationOperRec" ) >= zCURSOR_SET )
    {
       zVIEW  vTaskLPLR;
-      zVIEW  vTemp;
+   // zVIEW  vTemp;
       zCHAR  szTempName[ 256 ] = "";
       zCHAR  szType[ 256 ];
       zLONG  lLth;

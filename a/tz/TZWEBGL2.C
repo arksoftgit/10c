@@ -9373,7 +9373,7 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
          //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
          //:      szWriteBuffer = "         else"
          //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "            task.log( ).info( ^Entity does not exist: ^ + ^" +
+         //:      szWriteBuffer = "            task.log( ).info( ^Entity does not exist for " + szCtrlTag + ": ^" +
          //:                      vDialog.CtrlMapView.Name +
          //:                      "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
          //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
