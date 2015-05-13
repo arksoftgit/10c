@@ -1942,16 +1942,16 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
             szWriteBuffer = "         {"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             IF vDialog.CtrlMapContext EXISTS
-                    szContextName = vDialog.CtrlMapContext.Name
+               szContextName = vDialog.CtrlMapContext.Name
             ELSE
-                    szContextName = ""
+               szContextName = ""
             END
 
             IF vDialog.CtrlMapER_Domain.MaxStringLth > 254
-                    lMaxStringLength = vDialog.CtrlMapER_Domain.MaxStringLth
-                    szMaxStringLength = lMaxStringLength
+               lMaxStringLength = vDialog.CtrlMapER_Domain.MaxStringLth
+               szMaxStringLength = lMaxStringLength
             ELSE
-                    szMaxStringLength = "254"
+               szMaxStringLength = "254"
             END
 
             szWriteBuffer = "            strErrorMapValue = " +
@@ -1960,6 +1960,14 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
                             vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                             szContextName + "^ );"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            IF vDialog.Control.WebCtrlType = "escapeHTML"
+               szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " prior to unescape: ^ + strErrorMapValue );"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "               strErrorMapValue = StringEscapeUtils.unescapeHtml4( strErrorMapValue );"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " after unescape: ^ + strErrorMapValue );"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            END
 
             // KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
             szWriteBuffer = "            if ( strErrorMapValue == null )"
@@ -2236,12 +2244,20 @@ GenJSPJ_CrteEditBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       ELSE
          szMaxStringLength = "254"
       END
-      szWriteBuffer = "            strErrorMapValue = " +
+      szWriteBuffer = "               strErrorMapValue = " +
                       vDialog.CtrlMapView.Name + ".cursor( ^" +
                       vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
                       vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
                       szContextName + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      IF vDialog.Control.WebCtrlType = "escapeHTML"
+         szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " prior to unescape: ^ + strErrorMapValue );"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "               strErrorMapValue = StringEscapeUtils.unescapeHtml4( strErrorMapValue );"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " after unescape: ^ + strErrorMapValue );"
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+      END
 
       szWriteBuffer = "            }"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )

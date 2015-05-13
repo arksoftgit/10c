@@ -3237,13 +3237,13 @@ GenJSPJ_CrteEditBox( zVIEW     vDialog,
       } 
 
       //:END
-      //:szWriteBuffer = "            strErrorMapValue = " +
+      //:szWriteBuffer = "               strErrorMapValue = " +
       //:                vDialog.CtrlMapView.Name + ".cursor( ^" +
       //:                vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
       //:                vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
       //:                szContextName + "^ );"
       GetVariableFromAttribute( szTempString_5, 0, 'S', 33, vDialog, "CtrlMapView", "Name", "", 0 );
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "            strErrorMapValue = ", 1, 0, 10001 );
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "               strErrorMapValue = ", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_5, 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, ".cursor( ^", 1, 0, 10001 );
       GetVariableFromAttribute( szTempString_6, 0, 'S', 33, vDialog, "CtrlMapRelatedEntity", "Name", "", 0 );
@@ -3256,6 +3256,28 @@ GenJSPJ_CrteEditBox( zVIEW     vDialog,
       ZeidonStringConcat( szWriteBuffer, 1, 0, "^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+      //:IF vDialog.Control.WebCtrlType = "escapeHTML"
+      if ( CompareAttributeToString( vDialog, "Control", "WebCtrlType", "escapeHTML" ) == 0 )
+      { 
+         //:szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " prior to unescape: ^ + strErrorMapValue );"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "               task.log().debug( ^", 1, 0, 10001 );
+         ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+         ZeidonStringConcat( szWriteBuffer, 1, 0, " prior to unescape: ^ + strErrorMapValue );", 1, 0, 10001 );
+         //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+         //:szWriteBuffer = "               strErrorMapValue = StringEscapeUtils.unescapeHtml4( strErrorMapValue );"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "               strErrorMapValue = StringEscapeUtils.unescapeHtml4( strErrorMapValue );", 1, 0, 10001 );
+         //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+         //:szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " after unescape: ^ + strErrorMapValue );"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "               task.log().debug( ^", 1, 0, 10001 );
+         ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+         ZeidonStringConcat( szWriteBuffer, 1, 0, " after unescape: ^ + strErrorMapValue );", 1, 0, 10001 );
+         //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+      } 
+
+      //:END
 
       //:szWriteBuffer = "            }"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "            }", 1, 0, 10001 );
@@ -5384,13 +5406,13 @@ GenJSPJ_CrteGroupTable( zVIEW     vDialog,
             lTempInteger_9 = CheckExistenceOfEntity( vDialog, "CtrlMapContext" );
             if ( lTempInteger_9 == 0 )
             { 
-               //:     szContextName = vDialog.CtrlMapContext.Name
+               //:szContextName = vDialog.CtrlMapContext.Name
                GetVariableFromAttribute( szContextName, 0, 'S', 33, vDialog, "CtrlMapContext", "Name", "", 0 );
                //:ELSE
             } 
             else
             { 
-               //:     szContextName = ""
+               //:szContextName = ""
                ZeidonStringCopy( szContextName, 1, 0, "", 1, 0, 33 );
             } 
 
@@ -5399,15 +5421,15 @@ GenJSPJ_CrteGroupTable( zVIEW     vDialog,
             //:IF vDialog.CtrlMapER_Domain.MaxStringLth > 254
             if ( CompareAttributeToInteger( vDialog, "CtrlMapER_Domain", "MaxStringLth", 254 ) > 0 )
             { 
-               //:     lMaxStringLength = vDialog.CtrlMapER_Domain.MaxStringLth
+               //:lMaxStringLength = vDialog.CtrlMapER_Domain.MaxStringLth
                GetIntegerFromAttribute( &lMaxStringLength, vDialog, "CtrlMapER_Domain", "MaxStringLth" );
-               //:     szMaxStringLength = lMaxStringLength
+               //:szMaxStringLength = lMaxStringLength
                ZeidonStringConvertFromNumber( szMaxStringLength, 1, 0, 10, lMaxStringLength, (ZDecimal) 0.0, "I" );
                //:ELSE
             } 
             else
             { 
-               //:     szMaxStringLength = "254"
+               //:szMaxStringLength = "254"
                ZeidonStringCopy( szMaxStringLength, 1, 0, "254", 1, 0, 11 );
             } 
 
@@ -5432,6 +5454,28 @@ GenJSPJ_CrteGroupTable( zVIEW     vDialog,
             ZeidonStringConcat( szWriteBuffer, 1, 0, "^ );", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+            //:IF vDialog.Control.WebCtrlType = "escapeHTML"
+            if ( CompareAttributeToString( vDialog, "Control", "WebCtrlType", "escapeHTML" ) == 0 )
+            { 
+               //:szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " prior to unescape: ^ + strErrorMapValue );"
+               ZeidonStringCopy( szWriteBuffer, 1, 0, "               task.log().debug( ^", 1, 0, 10001 );
+               ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+               ZeidonStringConcat( szWriteBuffer, 1, 0, " prior to unescape: ^ + strErrorMapValue );", 1, 0, 10001 );
+               //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+               //:szWriteBuffer = "               strErrorMapValue = StringEscapeUtils.unescapeHtml4( strErrorMapValue );"
+               ZeidonStringCopy( szWriteBuffer, 1, 0, "               strErrorMapValue = StringEscapeUtils.unescapeHtml4( strErrorMapValue );", 1, 0, 10001 );
+               //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+               //:szWriteBuffer = "               task.log().debug( ^" + szCtrlTag + " after unescape: ^ + strErrorMapValue );"
+               ZeidonStringCopy( szWriteBuffer, 1, 0, "               task.log().debug( ^", 1, 0, 10001 );
+               ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+               ZeidonStringConcat( szWriteBuffer, 1, 0, " after unescape: ^ + strErrorMapValue );", 1, 0, 10001 );
+               //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+            } 
+
+            //:END
 
             //:// KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
             //:szWriteBuffer = "            if ( strErrorMapValue == null )"

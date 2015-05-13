@@ -10023,13 +10023,45 @@ GenJSPJ_InputMapRecurs( zVIEW     vDialog,
                   ZeidonStringConcat( szWriteBuffer, 1, 0, " );", 1, 0, 10001 );
                   //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-                  //:IF szControlType = "EditBox" AND szXSSEncode = "Y"
-                  if ( ZeidonStringCompare( szControlType, 1, 0, "EditBox", 1, 0, 51 ) == 0 && ZeidonStringCompare( szXSSEncode, 1, 0, "Y", 1, 0, 2 ) == 0 )
+                  //:IF szControlType = "EditBox" OR szControlType = "MLEdit"
+                  if ( ZeidonStringCompare( szControlType, 1, 0, "EditBox", 1, 0, 51 ) == 0 || ZeidonStringCompare( szControlType, 1, 0, "MLEdit", 1, 0, 51 ) == 0 )
                   { 
-                     //:szWriteBuffer = "         strMapValue = ReplaceXSSValues( strMapValue );"
-                     ZeidonStringCopy( szWriteBuffer, 1, 0, "         strMapValue = ReplaceXSSValues( strMapValue );", 1, 0, 10001 );
-                     //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                     WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                     //:IF szXSSEncode = "Y"
+                     if ( ZeidonStringCompare( szXSSEncode, 1, 0, "Y", 1, 0, 2 ) == 0 )
+                     { 
+                        //:szWriteBuffer = "         strMapValue = ReplaceXSSValues( strMapValue );"
+                        ZeidonStringCopy( szWriteBuffer, 1, 0, "         strMapValue = ReplaceXSSValues( strMapValue );", 1, 0, 10001 );
+                        //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                        WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                        //:ELSE
+                     } 
+                     else
+                     { 
+                        //:IF vDialog.Control.WebCtrlType = "escapeHTML"
+                        if ( CompareAttributeToString( vDialog, "Control", "WebCtrlType", "escapeHTML" ) == 0 )
+                        { 
+                           //:szWriteBuffer = "         task.log().debug( ^" + szCtrlTag + " prior to escape: ^ + strMapValue );"
+                           ZeidonStringCopy( szWriteBuffer, 1, 0, "         task.log().debug( ^", 1, 0, 10001 );
+                           ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+                           ZeidonStringConcat( szWriteBuffer, 1, 0, " prior to escape: ^ + strMapValue );", 1, 0, 10001 );
+                           //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                           //:szWriteBuffer = "         strMapValue = StringEscapeUtils.escapeHtml4( strMapValue );"
+                           ZeidonStringCopy( szWriteBuffer, 1, 0, "         strMapValue = StringEscapeUtils.escapeHtml4( strMapValue );", 1, 0, 10001 );
+                           //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                           //:szWriteBuffer = "         task.log().debug( ^" + szCtrlTag + " after escape: ^ + strMapValue );"
+                           ZeidonStringCopy( szWriteBuffer, 1, 0, "         task.log().debug( ^", 1, 0, 10001 );
+                           ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+                           ZeidonStringConcat( szWriteBuffer, 1, 0, " after escape: ^ + strMapValue );", 1, 0, 10001 );
+                           //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                           WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                        } 
+
+                        //:END
+                     } 
+
+                     //:END
                   } 
 
                   //:END

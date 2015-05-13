@@ -1,4 +1,4 @@
-z1000-Zeidon    ZEIDON   TZDMXGPO 11/04/14   11:02:30 1.0a2    
+z1000-Zeidon    ZEIDON   TZDMXGPO 05/11/15   15:53:09 1.0a2    
 eDomainGroup 1
 aName      Zeidon9B
 
@@ -6539,6 +6539,11 @@ eTableEntry 4
 aZKey      1141809
 aExternalValue Email Subject Line
 aInternalValue EmailSubject
+
+eTableEntry 4
+aZKey      130003160
+aExternalValue Escape special HTML characters
+aInternalValue escapeHTML
 
 eTableEntry 4
 aZKey      1141816
