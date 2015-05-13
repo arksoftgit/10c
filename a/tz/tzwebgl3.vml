@@ -41,7 +41,9 @@ BuildMainNavSection( VIEW vDialog,
    STRING ( 10000 ) szWriteBuffer
    STRING ( 50 )    szNavigationTitle
    STRING ( 256 )   szHTML_Address
+   STRING ( 256 )   szClass
    STRING ( 50 )    szDialogName
+   STRING ( 50 )    szMenuName
    STRING ( 34 )    szActionName
    INTEGER          ActionType
    SHORT            nRC
@@ -50,9 +52,14 @@ BuildMainNavSection( VIEW vDialog,
 
    szWriteBuffer = "<!-- Main Navigation *********************** -->"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "<div id=^mainnavigation^>"
+   szMenuName = vDialogRoot.Menu.Tag 
+   IF vDialogRoot.Menu.CSS_Class != ""
+      szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+   END
+   szWriteBuffer = "<div id=^mainnavigation^" + szClass + ">"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   <ul>"
+   //szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + ">"
+   szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^ >"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
 
    FOR EACH vDialogRoot.OptAct WITHIN vDialogRoot.Menu
@@ -60,6 +67,12 @@ BuildMainNavSection( VIEW vDialog,
       szDialogName = vDialogRoot.OptAct.DialogName
       IF szDialogName = ""
          szDialogName = "NoDialogName"
+      END
+      
+      IF vDialogRoot.Option.CSS_Class != ""
+         szClass = " class=^" + vDialogRoot.Option.CSS_Class + "^ "
+      ELSE
+         szClass = ""
       END
 
       IF vDialogRoot.OptAct EXISTS
@@ -79,11 +92,11 @@ BuildMainNavSection( VIEW vDialog,
             SET CURSOR FIRST vDialogRoot.Action WHERE vDialogRoot.Action.ZKey = vDialogRoot.OptAct.ZKey
             szHTML_Address = vDialogRoot.Action.WebHTML_TransferAddress
          END
-         szWriteBuffer = "       <li><a href=^" + szHTML_Address + "^ target=^_blank^>" + szNavigationTitle + "</a></li>"
+         szWriteBuffer = "       <li id=^l" + szActionName + "^ name=^l" + szActionName + "^ " + szClass + "><a href=^" + szHTML_Address + "^ target=^_blank^>" + szNavigationTitle + "</a></li>"
       ELSE
          // Regular Action
 
-         szWriteBuffer = "       <li id=^l" + szActionName + "^ name=^l" + szActionName + "^><a href=^#^ onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
+         szWriteBuffer = "       <li id=^l" + szActionName + "^ name=^l" + szActionName + "^ " + szClass + "><a href=^#^ onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
       END
       WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
    END
@@ -126,18 +139,19 @@ BuildSideNavSection( VIEW vDialog,
 
    STRING ( 10000 ) szWriteBuffer
    STRING ( 50 )    szNavigationTitle
-   STRING ( 50 )    szCSS_Class
    STRING ( 50 )    szHTML_Name
    STRING ( 50 )    szDialogName
    STRING ( 50 )    szOptionTag
+   STRING ( 50 )    szMenuName
    STRING ( 34 )    szActionName
-   STRING ( 34 )    szClass
+   STRING ( 256 )   szClass
+   STRING ( 256 )   szClass2
    INTEGER          ActionType
    INTEGER          lLth
    SHORT            nRC
 
    // SIDE NAVIGATION BAR
-   TraceLineS( "*** BuildSideNavSection Window *** ", vDialog.Window.Tag )
+   TraceLineS( "*** BuildSideNavSection Window! *** ", vDialog.Window.Tag )
 
    szWriteBuffer = ""
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
@@ -145,9 +159,15 @@ BuildSideNavSection( VIEW vDialog,
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 1 )
    szWriteBuffer = "<!-- Side Navigation *********************** -->"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "<div id=^sidenavigation^>"
+   IF vDialogRoot.Menu.CSS_Class != ""
+      szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+   END
+   szWriteBuffer = "<div id=^sidenavigation^" + szClass + ">"
+   //szWriteBuffer = "<div id=^sidenavigation^>"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   <ul>"
+   szMenuName = vDialogRoot.Menu.Tag 
+   //szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + ">"
+   szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^>"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
 
    FOR EACH vDialogRoot.OptAct WITHIN vDialogRoot.Menu
@@ -155,6 +175,12 @@ BuildSideNavSection( VIEW vDialog,
       szDialogName = vDialogRoot.OptAct.DialogName
       IF szDialogName = ""
          szDialogName = "NoDialogName"
+      END
+
+      IF szReusableMenu = "Y"
+         szMenuName = "sm" + vDialogRoot.Option.Tag
+      ELSE
+         szMenuName = vDialogRoot.Option.Tag
       END
 
    // szHTML_Name = szDialogName + vDialogRoot.OptAct.WindowName + ".jsp"
@@ -184,7 +210,13 @@ BuildSideNavSection( VIEW vDialog,
       // side menu points to, then we want to set a class on this option.  The
       // reason is so that we can tell which side menu option the user has selected.
       IF vDialogRoot.OptAct.WindowName = vDialog.Window.Tag
-         szClass = "class=^sideselected^ "
+         szClass2 = " class=^sideselected^ "
+      ELSE
+         szClass2 = ""
+      END
+      
+      IF vDialogRoot.Option.CSS_Class != "" 
+         szClass = " class=^" + vDialogRoot.Option.CSS_Class + "^"
       ELSE
          szClass = ""
       END
@@ -201,7 +233,7 @@ BuildSideNavSection( VIEW vDialog,
       szWriteBuffer = "%>"
       WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
 
-      szWriteBuffer = "       <li><a href=^#^ " + szClass + " onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
+      szWriteBuffer = "       <li id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + "><a href=^#^ " + szClass2 + " onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
       WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
 
       szWriteBuffer = "<%"
@@ -210,7 +242,7 @@ BuildSideNavSection( VIEW vDialog,
       WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "%>"
       WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 1 )
-   END
+   END  // FOR EACH
 
    // This is for building a default menu?
    // Trying to get this file to compile.
@@ -232,12 +264,20 @@ BuildSideNavSection( VIEW vDialog,
             szActionName = ""
             ActionType = 0
          END
+         
+         szMenuName = vDialogRoot.Option.Tag         
 
          // If the window we are currently generating is the same window that this
          // side menu points to, then we want to set a class on this option.  The
          // reason is so that we can tell which side menu option the user has selected.
          IF vDialogMenu.OptAct.WindowName = vDialog.Window.Tag
-            szClass = "class=^sideselected^ "
+            szClass2 = "class=^sideselected^ "
+         ELSE
+            szClass2 = ""
+         END
+      
+         IF vDialogMenu.Option.CSS_Class != "" 
+            szClass = "class=^" + vDialogMenu.Option.CSS_Class + "^"
          ELSE
             szClass = ""
          END
@@ -255,7 +295,7 @@ BuildSideNavSection( VIEW vDialog,
          szWriteBuffer = "%>"
          WL_QC( vDialogMenu, lFile, szWriteBuffer, "^", 0 )
 
-         szWriteBuffer = "       <li><a href=^#^ " + szClass + " onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
+         szWriteBuffer = "       <li id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + "><a href=^#^ " + szClass2 + " onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
          WL_QC( vDialogMenu, lFile, szWriteBuffer, "^", 0 )
 
          szWriteBuffer = "<%"
@@ -264,10 +304,10 @@ BuildSideNavSection( VIEW vDialog,
          WL_QC( vDialogMenu, lFile, szWriteBuffer, "^", 0 )
          szWriteBuffer = "%>"
          WL_QC( vDialogMenu, lFile, szWriteBuffer, "^", 1 )
-      END
+      END  // FOR EACH
 
       DropView( vDialogMenu )
-   END
+   END  // vDialogMenu != 0
 
    // Division ending for Navigation Bar.
    szWriteBuffer = "   </ul>"
@@ -1763,7 +1803,7 @@ GenJSP_CrteEditBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szWriteBuffer = "         else"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "            " + vDialog.CtrlMapView.Name +
-                      ".TraceLine( ^Entity does not exist for " + szCtrlTag + ": ^, ^" +
+                      ".TraceLine( ^Entity does not exist: ^, ^" +
                       vDialog.CtrlMapView.Name +
                       "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )

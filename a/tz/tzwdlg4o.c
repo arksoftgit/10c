@@ -2981,58 +2981,51 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
 
    //:END
 
-   //:IF szNoPositioning = "Y"
-   if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+   //:// KJS 04/30/15 - I can't think why we have the myheader.inc, why we would have that for pages absolute pages. 
+   //:// We didn't have Window.WEB_PageHeadInclude in the painter, but now it is there.
+   //://IF szNoPositioning = "Y" OR szNoPositioning = "S"
+   //:   IF vDialog.Window.WEB_PageHeadInclude != ""
+   if ( CompareAttributeToString( vDialog, "Window", "WEB_PageHeadInclude", "" ) != 0 )
    { 
-      //:IF vDialog.Window.WEB_PageHeadInclude != ""
-      if ( CompareAttributeToString( vDialog, "Window", "WEB_PageHeadInclude", "" ) != 0 )
+      //:   szWriteBuffer = "<%@ include file=^" + vDialog.Window.WEB_PageHeadInclude + "^ %>"
+      GetVariableFromAttribute( szTempString_15, 0, 'S', 255, vDialog, "Window", "WEB_PageHeadInclude", "", 0 );
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_15, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^ %>", 1, 0, 10001 );
+      //:   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:   IF vDialog.Dialog.WEB_PageHeadInclude != ""
+      if ( CompareAttributeToString( vDialog, "Dialog", "WEB_PageHeadInclude", "" ) != 0 )
       { 
-         //:szWriteBuffer = "<%@ include file=^" + vDialog.Window.WEB_PageHeadInclude + "^ %>"
-         GetVariableFromAttribute( szTempString_15, 0, 'S', 255, vDialog, "Window", "WEB_PageHeadInclude", "", 0 );
+         //:   szWriteBuffer = "<%@ include file=^" + vDialog.Dialog.WEB_PageHeadInclude  + "^ %>"
+         GetVariableFromAttribute( szTempString_16, 0, 'S', 255, vDialog, "Dialog", "WEB_PageHeadInclude", "", 0 );
          ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^", 1, 0, 10001 );
-         ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_15, 1, 0, 10001 );
+         ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_16, 1, 0, 10001 );
          ZeidonStringConcat( szWriteBuffer, 1, 0, "^ %>", 1, 0, 10001 );
-         //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+         //:   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
          WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
          //:ELSE
       } 
       else
       { 
-         //:IF vDialog.Dialog.WEB_PageHeadInclude != ""
-         if ( CompareAttributeToString( vDialog, "Dialog", "WEB_PageHeadInclude", "" ) != 0 )
-         { 
-            //:szWriteBuffer = "<%@ include file=^" + vDialog.Dialog.WEB_PageHeadInclude  + "^ %>"
-            GetVariableFromAttribute( szTempString_16, 0, 'S', 255, vDialog, "Dialog", "WEB_PageHeadInclude", "", 0 );
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^", 1, 0, 10001 );
-            ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_16, 1, 0, 10001 );
-            ZeidonStringConcat( szWriteBuffer, 1, 0, "^ %>", 1, 0, 10001 );
-            //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-            WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-            //:ELSE
-         } 
-         else
-         { 
-            //:szWriteBuffer = "<%@ include file=^./include/head.inc^ %>"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^./include/head.inc^ %>", 1, 0, 10001 );
-            //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-            WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-         } 
-
-         //:END
+         //:   szWriteBuffer = "<%@ include file=^./include/head.inc^ %>"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^./include/head.inc^ %>", 1, 0, 10001 );
+         //:   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+         WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       } 
 
-      //:END
-      //:ELSE
-   } 
-   else
-   { 
-      //:szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^./include/myheader.inc^ %>", 1, 0, 10001 );
-      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:   END
    } 
 
-   //:END
+   //:   END
+   //://ELSE
+   //://   szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
+   //://   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   //://END
 
    //:// KJS 2/19/08 - Trying to help Jeff with timeout.  Place a
    //:// timeout value in timeout.inc for when to timeout.

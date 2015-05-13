@@ -817,20 +817,49 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
 
    CreateViewFromViewForTask( vDialogRoot, vDialog, 0 )
    NAME VIEW vDialogRoot "DialogRoot"
+   
+   // We are going to assume first that "Relative Positioning is the default.
+   szNoPositioning = "Y"
 
-   // KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning
-   IF  vDialog.Dialog.WEB_RelativePositionFlag = "Y" OR vDialog.Window.WEB_RelativePositionFlag = "Y"
+   // KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning.
+   // First check the Dialog setting
+   //IF  vDialog.Dialog.WEB_RelativePositionFlag = "Y" OR vDialog.Window.WEB_RelativePositionFlag = "Y"
+   IF vDialog.Dialog.WEB_JSPGenerationPositioning = "R" 
       szNoPositioning = "Y"
    ELSE
+   // No style
+   IF  vDialog.Dialog.WEB_JSPGenerationPositioning = "N"
+      szNoPositioning = "S"
+   ELSE
+   // Absolute Style
+   IF  vDialog.Dialog.WEB_JSPGenerationPositioning = "A"
       szNoPositioning = ""
+   END
+   END
+   END
+
+   // KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning.
+   // Second check if the Window has a different setting.
+   IF vDialog.Window.WEB_JSPGenerationPositioning = "R" 
+      szNoPositioning = "Y"
+   ELSE
+   // No style
+   IF  vDialog.Window.WEB_JSPGenerationPositioning = "N"
+      szNoPositioning = "S"
+   ELSE
+   // Absolute Style
+   IF  vDialog.Window.WEB_JSPGenerationPositioning = "A"
+      szNoPositioning = ""
+   END
+   END
    END
 
    // KJS 02/19/09 - Added WEB_AbsolutePositionFlag because I would like to use absolute positioning on my popup pages but the rest
    // I want to use relative positioning.  Since I think from now on we will probably only want to use relative positioning for most
    // pages, I think it will be easier to have this flag.
-   IF  vDialog.Window.WEB_AbsolutePositionFlag = "Y"
-      szNoPositioning = ""
-   END
+   //IF  vDialog.Window.WEB_AbsolutePositionFlag = "Y"
+   //   szNoPositioning = ""
+   //END
 
    // KJS 09/16/08 - Thinking that if WEB_NoBannerFlag = "Y" and WEB_NoTopMenuFlag = "Y" and
    // szNoPositioning = "Y" (using relative positioning) then we can assume that this window
@@ -842,7 +871,7 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    IF vDialogRoot.WndStyle.Tag = "Popup Window"
       szWindowIsPopup = "Y"
    ELSE
-   IF vDialogRoot.Window.WEB_NoBannerFlag = "Y" AND vDialogRoot.Window.WEB_NoTopMenuFlag = "Y" AND szNoPositioning = "Y"
+   IF vDialogRoot.Window.WEB_NoBannerFlag = "Y" AND vDialogRoot.Window.WEB_NoTopMenuFlag = "Y" AND ( szNoPositioning = "Y" OR szNoPositioning = "S" )
       szWindowIsPopup = "Y"
    ELSE
       szWindowIsPopup = ""
@@ -2009,6 +2038,8 @@ DKS_TRACE_END */
    szWriteBuffer = "{"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
+   szJavaScript = ""
+
    // Actions Section Trailer, including prebuild and postbuild code.
    InsertBlankFlag = "N"
    FOR EACH vDialog.Action
@@ -2018,6 +2049,11 @@ DKS_TRACE_END */
             IF InsertBlankFlag = "Y"
                szWriteBuffer = ""
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+            END
+            
+            // KJS 04/30/15
+            IF vDialog.ActWndEvent.Type = 1 AND vDialog.Action.WebJavaScript != ""
+               szJavaScript = vDialog.Action.WebJavaScript
             END
 
             IF vDialog.ActOper EXISTS
@@ -2163,7 +2199,9 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    END
 
-   IF szNoPositioning = "Y"
+   // KJS 04/30/15 - I can't think why we have the myheader.inc, why we would have that for pages absolute pages. 
+   // We didn't have Window.WEB_PageHeadInclude in the painter, but now it is there.
+   //IF szNoPositioning = "Y" OR szNoPositioning = "S"
       IF vDialog.Window.WEB_PageHeadInclude != ""
          szWriteBuffer = "<%@ include file=^" + vDialog.Window.WEB_PageHeadInclude + "^ %>"
          WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -2176,10 +2214,10 @@ DKS_TRACE_END */
             WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
          END
       END
-   ELSE
-      szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
-      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   END
+   //ELSE
+   //   szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
+   //   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   //END
 
    // KJS 2/19/08 - Trying to help Jeff with timeout.  Place a
    // timeout value in timeout.inc for when to timeout.
@@ -2222,8 +2260,9 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    // KJS 06/09/11 - I am not sure that we want to always include this js file because at the moment, I am putting
    // this in because we want to do a md5 hash conversion.
-   szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/md5.js^></script>"
-   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   // KJS 04/30/15 - Now I am taking this out because I don't think we use this and if we do, we should add it to head.inc not here.
+   //szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/md5.js^></script>"
+   //WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    // DKS 03/02/15 - To disable UI while processing
    szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/jquery.blockUI.js^></script>"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -2294,6 +2333,19 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    END
 
+   // KJS 04/30/15 - If we have any javascript code on a window prebuild action, we should add it here.
+   IF szJavaScript != ""
+      szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ >"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "      // Javascript code entered by user for Window action prebuild."
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
+      szWriteBuffer = szJavaScript
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
+      szWriteBuffer = "      // END of Javascript code entered by user."
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
+      szWriteBuffer = "</script>"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
    
    /********************** JAVASCRIPT function Generation. ***********************************/
    // KJS 08/02/13 - Going to try putting the javascript code in a separate .js file becuase
@@ -4102,20 +4154,20 @@ DKS_TRACE_END */
    OrderEntityForView( vDialog, "Control", "PSDLG_Y A PSDLG_X A" )
    vGroupParent = 0
 
+   /* KJS 04/16/15 - We do this above, so would I need to do this again?
    // KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning
    IF  vDialog.Dialog.WEB_RelativePositionFlag = "Y" OR vDialog.Window.WEB_RelativePositionFlag = "Y"
       szNoPositioning = "Y"
    ELSE
       szNoPositioning = ""
    END
-
    // KJS 02/19/09 - Added WEB_AbsolutePositionFlag because I would like to use absolute positioning on my popup pages but the rest
    // I want to use relative positioning.  Since I think from now on we will probably only want to use relative positioning for most
    // pages, I think it will be easier to have this flag.
    IF  vDialog.Window.WEB_AbsolutePositionFlag = "Y"
       szNoPositioning = ""
    END
-
+   */
 
    GenJSPJ_CrteCtrlsRecurs( vDialog, vGroupParent, vDialogRoot, lFileJSP, szWriteBuffer, szIndentNext, lTableRowCnt, szNoPositioning, 0, 0, "" )
 
@@ -4374,7 +4426,7 @@ DKS_TRACE_END */
    // KJS 07/31/08
    // Include a footer at the bottom before the end wrapper div.
    // Only put in a footer if we are generating with relative position.
-   IF szNoPositioning = "Y" AND szWindowIsPopup = "" AND szWindowIsForDashboard = ""
+   IF ( szNoPositioning = "Y" OR szNoPositioning = "S" ) AND szWindowIsPopup = "" AND szWindowIsForDashboard = ""
       IF vDialogRoot.Dialog.WEB_FooterInclude = ""
          // If the user did not specify a footer, hardcode footer.inc
          szWriteBuffer = "<%@ include file=^./include/footer.inc^ %>"

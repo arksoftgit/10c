@@ -1649,7 +1649,9 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    END
 
-   IF szNoPositioning = "Y"
+   // KJS 04/30/15 - I can't think why we have the myheader.inc, why we would have that for pages absolute pages. 
+   // We didn't have Window.WEB_PageHeadInclude in the painter, but now it is there.
+   //IF szNoPositioning = "Y" OR szNoPositioning = "S"
       IF vDialog.Window.WEB_PageHeadInclude != ""
          szWriteBuffer = "<%@ include file=^" + vDialog.Window.WEB_PageHeadInclude + "^ %>"
          WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -1662,10 +1664,10 @@ DKS_TRACE_END */
             WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
          END
       END
-   ELSE
-      szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
-      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   END
+   //ELSE
+   //   szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
+   //   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   //END
 
    // KJS 2/19/08 - Trying to help Jeff with timeout.  Place a
    // timeout value in timeout.inc for when to timeout.

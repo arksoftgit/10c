@@ -1452,7 +1452,7 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
          GetIntegerFromAttribute( &LastX_Width, vDialog, "Control", "SZDLG_X" );
       } 
 
-      //:END
+      //:END  //IF  szNoPositioning = "Y"
 
       //:szFirstTimeThrough = ""
       ZeidonStringCopy( szFirstTimeThrough, 1, 0, "", 1, 0, 2 );
@@ -1925,8 +1925,20 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
       } 
       else
       { 
-         //:CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
-         CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" );
+         //:IF  szNoPositioning = "S" // We are not creating any style information.
+         if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+         { 
+            //:szAbsoluteStyle = ""
+            ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+            //:ELSE
+         } 
+         else
+         { 
+            //:CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
+            CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" );
+         } 
+
+         //:END
       } 
 
       //:END
@@ -1987,6 +1999,18 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
          { 
             //:zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
             zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" );
+            //:ELSE
+         } 
+         else
+         { 
+            //:IF szNoPositioning = "S"
+            if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+            { 
+               //:szAbsoluteStyle = "" // We are not creating any style information.
+               ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+            } 
+
+            //:END
          } 
 
          //:END
@@ -2394,6 +2418,18 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
                      { 
                         //:zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
                         zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" );
+                        //:ELSE
+                     } 
+                     else
+                     { 
+                        //:IF szNoPositioning = "S"
+                        if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+                        { 
+                           //:szAbsoluteStyle = "" // We are not creating any style information.
+                           ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+                        } 
+
+                        //:END
                      } 
 
                      //:END
@@ -3177,6 +3213,18 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
                            { 
                               //:zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
                               zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" );
+                              //:ELSE
+                           } 
+                           else
+                           { 
+                              //:IF szNoPositioning = "S"
+                              if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+                              { 
+                                 //:szAbsoluteStyle = "" // We are not creating any style information.
+                                 ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+                              } 
+
+                              //:END
                            } 
 
                            //:END
@@ -3256,6 +3304,18 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
                            { 
                               //:zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
                               zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" );
+                              //:ELSE
+                           } 
+                           else
+                           { 
+                              //:IF szNoPositioning = "S"
+                              if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+                              { 
+                                 //:szAbsoluteStyle = "" // We are not creating any style information.
+                                 ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+                              } 
+
+                              //:END
                            } 
 
                            //:END
@@ -4114,6 +4174,18 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
             { 
                //:zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
                zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" );
+               //:ELSE
+            } 
+            else
+            { 
+               //:IF szNoPositioning = "S"
+               if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+               { 
+                  //:szAbsoluteStyle = "" // We are not creating any style information.
+                  ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+               } 
+
+               //:END
             } 
 
             //:END
@@ -4126,11 +4198,29 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
             //://KJS 09/11/08 - Now that we can generate using relative positioning, this
             //:// repeating group doesn't work right.  Instead of using fieldset, I will use the
             //:// div.
-            //:IF  szNoPositioning = "Y"
-            if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+            //:IF  szNoPositioning = "Y" OR szNoPositioning = "S"
+            if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 || ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
             { 
-               //:zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
-               zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" );
+               //:IF szNoPositioning = "Y"
+               if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+               { 
+                  //:zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
+                  zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" );
+                  //:ELSE          
+               } 
+               else
+               { 
+                  //:IF szNoPositioning = "S"
+                  if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+                  { 
+                     //:szAbsoluteStyle = "" // We are not creating any style information.
+                     ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+                  } 
+
+                  //:END
+               } 
+
+               //:END
                //:szClass = vDialog.Control.CSS_Class
                GetVariableFromAttribute( szClass, 0, 'S', 257, vDialog, "Control", "CSS_Class", "", 0 );
                //:IF szClass = ""
@@ -4236,27 +4326,36 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
             vGroupParent = 0;
 
             //:// Process GroupBox end.
-            //:IF  szNoPositioning = "Y"
-            if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+            //:IF  szNoPositioning = "Y" OR szNoPositioning = "S"
+            if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 || ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
             { 
                //:szWriteBuffer = "</div>   <!-- end div for repeating group -->"
                ZeidonStringCopy( szWriteBuffer, 1, 0, "</div>   <!-- end div for repeating group -->", 1, 0, 10001 );
                //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-               //:szWriteBuffer = "<div style=^clear:both;^></div> <!-- clear before each repeating group -->"
-               ZeidonStringCopy( szWriteBuffer, 1, 0, "<div style=^clear:both;^></div> <!-- clear before each repeating group -->", 1, 0, 10001 );
+
+               //:IF szNoPositioning = "Y" 
+               if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+               { 
+                  //:szWriteBuffer = "<div style=^clear:both;^></div> <!-- clear before each repeating group -->"
+                  ZeidonStringCopy( szWriteBuffer, 1, 0, "<div style=^clear:both;^></div> <!-- clear before each repeating group -->", 1, 0, 10001 );
+                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
+               } 
+
+               //:END
                //:ELSE
             } 
             else
             { 
                //:szWriteBuffer = "</fieldset>"
                ZeidonStringCopy( szWriteBuffer, 1, 0, "</fieldset>", 1, 0, 10001 );
+               //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
             } 
 
             //:END
 
-            //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-            WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
             //:szWriteBuffer = "<%"
             ZeidonStringCopy( szWriteBuffer, 1, 0, "<%", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -4831,6 +4930,18 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
                ZeidonStringCopy( szAbsoluteStyle, 1, 0, "style=^width:", 1, 0, 257 );
                ZeidonStringConcat( szAbsoluteStyle, 1, 0, szWidth, 1, 0, 257 );
                ZeidonStringConcat( szAbsoluteStyle, 1, 0, "px;^", 1, 0, 257 );
+               //:ELSE
+            } 
+            else
+            { 
+               //:IF szNoPositioning = "S"
+               if ( ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 )
+               { 
+                  //:szAbsoluteStyle = "" // We are using no style
+                  ZeidonStringCopy( szAbsoluteStyle, 1, 0, "", 1, 0, 257 );
+               } 
+
+               //:END
             } 
 
             //:END
@@ -5053,8 +5164,8 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
             ZeidonStringCopy( szTableExport, 1, 0, "", 1, 0, 2 );
             //:SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Table Export Option"
             RESULT = SetCursorFirstEntityByString( vDialog, "WebControlProperty", "Name", "Table Export Option", "" );
-            //:IF RESULT >= zCURSOR_SET AND szNoPositioning = "Y"
-            if ( RESULT >= zCURSOR_SET && ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+            //:IF RESULT >= zCURSOR_SET AND ( szNoPositioning = "Y" OR szNoPositioning = "S" )
+            if ( RESULT >= zCURSOR_SET && ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 || ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 ) )
             { 
                //:szTableExport = "Y"
                ZeidonStringCopy( szTableExport, 1, 0, "Y", 1, 0, 2 );
@@ -9301,143 +9412,6 @@ GenJSPJ_CrteCtrlsRecurs( zVIEW     vDialog,
             GenJSPJ_CrteMLEdit( vDialog, lFile, szWriteBuffer, szIndent, szCtrlTag, "", szJustify, szNoPositioning, lOffsetX, lOffsetY, szRepeatGrpKey );
          } 
 
-         //:/*                                
-         //:   SET CURSOR FIRST vDialog.CtrlMapLOD_Attribute WITHIN vDialog.Control
-         //:   IF RESULT >= zCURSOR_SET
-         //:      szWriteBuffer = "<%"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   // " + szControlType + ": " + szCtrlTag
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   strErrorMapValue = VmlOperation.CheckError( ^" + szCtrlTag + "^, strError );"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   if ( !StringUtils.isBlank( strErrorMapValue ) )"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   {"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "      if ( StringUtils.equals( strErrorFlag, ^Y^ ) )"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "         strErrorColor = ^color:red;^;"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   }"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   else"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   {"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "      strErrorColor = ^^;"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "      " + vDialog.CtrlMapView.Name + " = " + "task.getViewByName( ^" +
-         //:                      vDialog.CtrlMapView.Name + "^ );"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "      if ( VmlOperation.isValid( " + vDialog.CtrlMapView.Name + " ) == false )"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "         task.log( ).info( ^Invalid View: ^ + ^" + szCtrlTag + "^ );"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "      else"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "      {"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "         nRC = " + vDialog.CtrlMapView.Name + ".cursor( ^" +
-         //:                      vDialog.CtrlMapRelatedEntity.Name + "^ ).checkExistenceOfEntity( ).toInt();"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "         if ( nRC >= 0 )"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "         {"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      IF vDialog.CtrlMapContext EXISTS
-         //:         szContextName = vDialog.CtrlMapContext.Name
-         //:      ELSE
-         //:         szContextName = ""
-         //:      END
-         //:      IF vDialog.CtrlMapER_Domain.MaxStringLth > 254
-         //:         lMaxStringLength = vDialog.CtrlMapER_Domain.MaxStringLth
-         //:         szMaxStringLength = lMaxStringLength
-         //:      ELSE
-         //:         szMaxStringLength = "254"
-         //:      END
-         //:      szWriteBuffer = "            strErrorMapValue = " +
-         //:                      vDialog.CtrlMapView.Name + ".cursor( ^" +
-         //:                      vDialog.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
-         //:                      vDialog.CtrlMapER_Attribute.Name + "^ ).getString( ^" +
-         //:                      szContextName + "^ );"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      // KJS 02/15/11 - Thinking I need to add code to change values returned as null to "".
-         //:      szWriteBuffer = "            if ( strErrorMapValue == null )"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "               strErrorMapValue = ^^;"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-         //:      szWriteBuffer = "            task.log( ).info( ^" + vDialog.CtrlMapRelatedEntity.Name + "." +
-         //:                      vDialog.CtrlMapER_Attribute.Name + ": ^ + strErrorMapValue );"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "         }"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "         else"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "            task.log( ).info( ^Entity does not exist for " + szCtrlTag + ": ^" +
-         //:                      vDialog.CtrlMapView.Name +
-         //:                      "." + vDialog.CtrlMapRelatedEntity.Name + "^ );"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "      }"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "   }"
-         //:      lStyleX = vDialog.Control.ExtendedStyle
-         //:      lTemp = IsFlagSequenceSet( lStyleX, zCONTROLX_PREFILL )
-         //:      IF lTemp != 0
-         //:         WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-         //:         szWriteBuffer = "      if ( strErrorMapValue.length( ) == 0 )"
-         //:         WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:         szWriteBuffer = "         strErrorMapValue = ^" + vDialog.Control.Text + "^;"
-         //:      END
-         //:      // This doesn't work, but something like it may be necessary to remove special characters ... dks 2012.04.25
-         //:      // strErrorMapValue = strErrorMapValue.replace("/&/g", "&amp;").replace("/>/g", "&gt;").replace("/</g", "&lt;").replace("/\"/g", "&quot;").replace("/%/g", "&#037;");
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         //:      szWriteBuffer = "%>"
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-         //:      X_Size = vDialog.Control.SZDLG_X
-         //:      Size = X_Size / 4
-         //:      zIntegerToString( szSize, 10, Size )
-         //:      Y_Size = vDialog.Control.SZDLG_Y
-         //:      Size = Y_Size / 12
-         //:      zIntegerToString( szHeight, 10, Size )
-         //:      IF vDialog.Control.VisibleBorder = "Y"
-         //:         zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:4px;border-style:groove;", "style=", "^" )
-         //:      ELSE
-         //:         zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:2px;border-style:groove;", "style=", "^" )
-         //:      END
-         //:      szTinyMCEFlag = ""
-         //:      SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "wysiwyg TinyMCE"
-         //:      IF RESULT >= zCURSOR_SET
-         //:         szTinyMCEFlag = "Y"
-         //:      END
-         //:      IF vDialog.Control.WebCtrlType = "wysiwygEditor" OR szTinyMCEFlag = "Y"
-         //:      // CreateTabIndexString( vDialog, szTabIndex )
-         //:      // CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
-         //:      // szAbsoluteStyle = szAbsoluteStyle + szTabIndex
-         //:         GetViewByName( vLPLR, "TaskLPLR", vDialog, zLEVEL_TASK )
-         //:         szText = vLPLR.LPLR.Name
-         //:         szLPLR_Name = "[App." + szText + "]"
-         //:         SysReadZeidonIni( -1, szLPLR_Name, "TinyMCEClass", szClass )
-         //:         IF szClass = ""
-         //:            szClass = "mceSimple"  // "mceSimple" is TinyMCE default
-         //:         END
-         //:         IF vDialog.Control.CSS_Class != ""
-         //:            szClass = szClass + " " + vDialog.Control.CSS_Class
-         //:         END
-         //:         szWriteBuffer = "<textarea name=^" + szCtrlTag + szRepeatGrpKey + "^ id=^" + szCtrlTag + szRepeatGrpKey +
-         //:                         "^ class=^" + szClass + "^ " + szTitleHTML +
-         //:                         szAbsoluteStyle + ">" +
-         //:                      // "^ rows="15" cols="80" style="width: 80%">" +
-         //:                         "<%=strErrorMapValue%></textarea>"
-         //:      ELSE
-         //:         szClass = vDialog.Control.CSS_Class
-         //:         CreateTabIndexString( vDialog, szTabIndex )
-         //:         szWriteBuffer = "<textarea name=^" + szCtrlTag + szRepeatGrpKey + "^ id=^" + szCtrlTag + szRepeatGrpKey + "^" + szTitleHTML +
-         //:                         szAbsoluteStyle + szTabIndex + " wrap=^wrap^>" +
-         //:                         "<%=strErrorMapValue%></textarea>"
-         //:      END
-         //:      WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
-         //:   END
-         //:*/               
          //:END   //IF szControlType = "MLEdit"
       } 
 

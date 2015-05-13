@@ -439,9 +439,15 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:NAME VIEW vDialogRoot "DialogRoot"
    SetNameForView( vDialogRoot, "DialogRoot", 0, zLEVEL_TASK );
 
-   //:// KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning
-   //:IF  vDialog.Dialog.WEB_RelativePositionFlag = "Y" OR vDialog.Window.WEB_RelativePositionFlag = "Y"
-   if ( CompareAttributeToString( vDialog, "Dialog", "WEB_RelativePositionFlag", "Y" ) == 0 || CompareAttributeToString( vDialog, "Window", "WEB_RelativePositionFlag", "Y" ) == 0 )
+   //:// We are going to assume first that "Relative Positioning is the default.
+   //:szNoPositioning = "Y"
+   ZeidonStringCopy( szNoPositioning, 1, 0, "Y", 1, 0, 2 );
+
+   //:// KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning.
+   //:// First check the Dialog setting
+   //://IF  vDialog.Dialog.WEB_RelativePositionFlag = "Y" OR vDialog.Window.WEB_RelativePositionFlag = "Y"
+   //:IF vDialog.Dialog.WEB_JSPGenerationPositioning = "R" 
+   if ( CompareAttributeToString( vDialog, "Dialog", "WEB_JSPGenerationPositioning", "R" ) == 0 )
    { 
       //:szNoPositioning = "Y"
       ZeidonStringCopy( szNoPositioning, 1, 0, "Y", 1, 0, 2 );
@@ -449,8 +455,65 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    } 
    else
    { 
-      //:szNoPositioning = ""
-      ZeidonStringCopy( szNoPositioning, 1, 0, "", 1, 0, 2 );
+      //:// No style
+      //:IF  vDialog.Dialog.WEB_JSPGenerationPositioning = "N"
+      if ( CompareAttributeToString( vDialog, "Dialog", "WEB_JSPGenerationPositioning", "N" ) == 0 )
+      { 
+         //:szNoPositioning = "S"
+         ZeidonStringCopy( szNoPositioning, 1, 0, "S", 1, 0, 2 );
+         //:ELSE
+      } 
+      else
+      { 
+         //:// Absolute Style
+         //:IF  vDialog.Dialog.WEB_JSPGenerationPositioning = "A"
+         if ( CompareAttributeToString( vDialog, "Dialog", "WEB_JSPGenerationPositioning", "A" ) == 0 )
+         { 
+            //:szNoPositioning = ""
+            ZeidonStringCopy( szNoPositioning, 1, 0, "", 1, 0, 2 );
+         } 
+
+         //:END
+      } 
+
+      //:END
+   } 
+
+   //:END
+
+   //:// KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning.
+   //:// Second check if the Window has a different setting.
+   //:IF vDialog.Window.WEB_JSPGenerationPositioning = "R" 
+   if ( CompareAttributeToString( vDialog, "Window", "WEB_JSPGenerationPositioning", "R" ) == 0 )
+   { 
+      //:szNoPositioning = "Y"
+      ZeidonStringCopy( szNoPositioning, 1, 0, "Y", 1, 0, 2 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:// No style
+      //:IF  vDialog.Window.WEB_JSPGenerationPositioning = "N"
+      if ( CompareAttributeToString( vDialog, "Window", "WEB_JSPGenerationPositioning", "N" ) == 0 )
+      { 
+         //:szNoPositioning = "S"
+         ZeidonStringCopy( szNoPositioning, 1, 0, "S", 1, 0, 2 );
+         //:ELSE
+      } 
+      else
+      { 
+         //:// Absolute Style
+         //:IF  vDialog.Window.WEB_JSPGenerationPositioning = "A"
+         if ( CompareAttributeToString( vDialog, "Window", "WEB_JSPGenerationPositioning", "A" ) == 0 )
+         { 
+            //:szNoPositioning = ""
+            ZeidonStringCopy( szNoPositioning, 1, 0, "", 1, 0, 2 );
+         } 
+
+         //:END
+      } 
+
+      //:END
    } 
 
    //:END
@@ -458,14 +521,9 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:// KJS 02/19/09 - Added WEB_AbsolutePositionFlag because I would like to use absolute positioning on my popup pages but the rest
    //:// I want to use relative positioning.  Since I think from now on we will probably only want to use relative positioning for most
    //:// pages, I think it will be easier to have this flag.
-   //:IF  vDialog.Window.WEB_AbsolutePositionFlag = "Y"
-   if ( CompareAttributeToString( vDialog, "Window", "WEB_AbsolutePositionFlag", "Y" ) == 0 )
-   { 
-      //:szNoPositioning = ""
-      ZeidonStringCopy( szNoPositioning, 1, 0, "", 1, 0, 2 );
-   } 
-
-   //:END
+   //://IF  vDialog.Window.WEB_AbsolutePositionFlag = "Y"
+   //://   szNoPositioning = ""
+   //://END
 
    //:// KJS 09/16/08 - Thinking that if WEB_NoBannerFlag = "Y" and WEB_NoTopMenuFlag = "Y" and
    //:// szNoPositioning = "Y" (using relative positioning) then we can assume that this window
@@ -483,8 +541,9 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    } 
    else
    { 
-      //:IF vDialogRoot.Window.WEB_NoBannerFlag = "Y" AND vDialogRoot.Window.WEB_NoTopMenuFlag = "Y" AND szNoPositioning = "Y"
-      if ( CompareAttributeToString( vDialogRoot, "Window", "WEB_NoBannerFlag", "Y" ) == 0 && CompareAttributeToString( vDialogRoot, "Window", "WEB_NoTopMenuFlag", "Y" ) == 0 && ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+      //:IF vDialogRoot.Window.WEB_NoBannerFlag = "Y" AND vDialogRoot.Window.WEB_NoTopMenuFlag = "Y" AND ( szNoPositioning = "Y" OR szNoPositioning = "S" )
+      if ( CompareAttributeToString( vDialogRoot, "Window", "WEB_NoBannerFlag", "Y" ) == 0 && CompareAttributeToString( vDialogRoot, "Window", "WEB_NoTopMenuFlag", "Y" ) == 0 && ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 ||
+           ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 ) )
       { 
          //:szWindowIsPopup = "Y"
          ZeidonStringCopy( szWindowIsPopup, 1, 0, "Y", 1, 0, 2 );
@@ -2743,6 +2802,9 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
 
+   //:szJavaScript = ""
+   ZeidonStringCopy( szJavaScript, 1, 0, "", 1, 0, 10001 );
+
    //:// Actions Section Trailer, including prebuild and postbuild code.
    //:InsertBlankFlag = "N"
    ZeidonStringCopy( InsertBlankFlag, 1, 0, "N", 1, 0, 2 );
@@ -2765,6 +2827,16 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
                ZeidonStringCopy( szWriteBuffer, 1, 0, "", 1, 0, 10001 );
                //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+            } 
+
+            //:END
+
+            //:// KJS 04/30/15
+            //:IF vDialog.ActWndEvent.Type = 1 AND vDialog.Action.WebJavaScript != ""
+            if ( CompareAttributeToInteger( vDialog, "ActWndEvent", "Type", 1 ) == 0 && CompareAttributeToString( vDialog, "Action", "WebJavaScript", "" ) != 0 )
+            { 
+               //:szJavaScript = vDialog.Action.WebJavaScript
+               GetVariableFromAttribute( szJavaScript, 0, 'S', 10001, vDialog, "Action", "WebJavaScript", "", 0 );
             } 
 
             //:END
@@ -3059,58 +3131,51 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
 
    //:END
 
-   //:IF szNoPositioning = "Y"
-   if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 )
+   //:// KJS 04/30/15 - I can't think why we have the myheader.inc, why we would have that for pages absolute pages. 
+   //:// We didn't have Window.WEB_PageHeadInclude in the painter, but now it is there.
+   //://IF szNoPositioning = "Y" OR szNoPositioning = "S"
+   //:   IF vDialog.Window.WEB_PageHeadInclude != ""
+   if ( CompareAttributeToString( vDialog, "Window", "WEB_PageHeadInclude", "" ) != 0 )
    { 
-      //:IF vDialog.Window.WEB_PageHeadInclude != ""
-      if ( CompareAttributeToString( vDialog, "Window", "WEB_PageHeadInclude", "" ) != 0 )
+      //:   szWriteBuffer = "<%@ include file=^" + vDialog.Window.WEB_PageHeadInclude + "^ %>"
+      GetVariableFromAttribute( szTempString_10, 0, 'S', 255, vDialog, "Window", "WEB_PageHeadInclude", "", 0 );
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_10, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^ %>", 1, 0, 10001 );
+      //:   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:ELSE
+   } 
+   else
+   { 
+      //:   IF vDialog.Dialog.WEB_PageHeadInclude != ""
+      if ( CompareAttributeToString( vDialog, "Dialog", "WEB_PageHeadInclude", "" ) != 0 )
       { 
-         //:szWriteBuffer = "<%@ include file=^" + vDialog.Window.WEB_PageHeadInclude + "^ %>"
-         GetVariableFromAttribute( szTempString_10, 0, 'S', 255, vDialog, "Window", "WEB_PageHeadInclude", "", 0 );
+         //:   szWriteBuffer = "<%@ include file=^" + vDialog.Dialog.WEB_PageHeadInclude  + "^ %>"
+         GetVariableFromAttribute( szTempString_11, 0, 'S', 255, vDialog, "Dialog", "WEB_PageHeadInclude", "", 0 );
          ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^", 1, 0, 10001 );
-         ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_10, 1, 0, 10001 );
+         ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_11, 1, 0, 10001 );
          ZeidonStringConcat( szWriteBuffer, 1, 0, "^ %>", 1, 0, 10001 );
-         //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+         //:   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
          WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
          //:ELSE
       } 
       else
       { 
-         //:IF vDialog.Dialog.WEB_PageHeadInclude != ""
-         if ( CompareAttributeToString( vDialog, "Dialog", "WEB_PageHeadInclude", "" ) != 0 )
-         { 
-            //:szWriteBuffer = "<%@ include file=^" + vDialog.Dialog.WEB_PageHeadInclude  + "^ %>"
-            GetVariableFromAttribute( szTempString_11, 0, 'S', 255, vDialog, "Dialog", "WEB_PageHeadInclude", "", 0 );
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^", 1, 0, 10001 );
-            ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_11, 1, 0, 10001 );
-            ZeidonStringConcat( szWriteBuffer, 1, 0, "^ %>", 1, 0, 10001 );
-            //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-            WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-            //:ELSE
-         } 
-         else
-         { 
-            //:szWriteBuffer = "<%@ include file=^./include/head.inc^ %>"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^./include/head.inc^ %>", 1, 0, 10001 );
-            //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-            WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
-         } 
-
-         //:END
+         //:   szWriteBuffer = "<%@ include file=^./include/head.inc^ %>"
+         ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^./include/head.inc^ %>", 1, 0, 10001 );
+         //:   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+         WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       } 
 
-      //:END
-      //:ELSE
-   } 
-   else
-   { 
-      //:szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^./include/myheader.inc^ %>", 1, 0, 10001 );
-      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:   END
    } 
 
-   //:END
+   //:   END
+   //://ELSE
+   //://   szWriteBuffer = "<%@ include file=^./include/myheader.inc^ %>"
+   //://   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   //://END
 
    //:// KJS 2/19/08 - Trying to help Jeff with timeout.  Place a
    //:// timeout value in timeout.inc for when to timeout.
@@ -3175,10 +3240,9 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
    //:// KJS 06/09/11 - I am not sure that we want to always include this js file because at the moment, I am putting
    //:// this in because we want to do a md5 hash conversion.
-   //:szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/md5.js^></script>"
-   ZeidonStringCopy( szWriteBuffer, 1, 0, "<script language=^JavaScript^ type=^text/javascript^ src=^./js/md5.js^></script>", 1, 0, 10001 );
-   //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+   //:// KJS 04/30/15 - Now I am taking this out because I don't think we use this and if we do, we should add it to head.inc not here.
+   //://szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/md5.js^></script>"
+   //://WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    //:// DKS 03/02/15 - To disable UI while processing
    //:szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ src=^./js/jquery.blockUI.js^></script>"
    ZeidonStringCopy( szWriteBuffer, 1, 0, "<script language=^JavaScript^ type=^text/javascript^ src=^./js/jquery.blockUI.js^></script>", 1, 0, 10001 );
@@ -3295,6 +3359,33 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
 
    //:END
 
+   //:// KJS 04/30/15 - If we have any javascript code on a window prebuild action, we should add it here.
+   //:IF szJavaScript != ""
+   if ( ZeidonStringCompare( szJavaScript, 1, 0, "", 1, 0, 10001 ) != 0 )
+   { 
+      //:szWriteBuffer = "<script language=^JavaScript^ type=^text/javascript^ >"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "<script language=^JavaScript^ type=^text/javascript^ >", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:szWriteBuffer = "      // Javascript code entered by user for Window action prebuild."
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      // Javascript code entered by user for Window action prebuild.", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );
+      //:szWriteBuffer = szJavaScript
+      ZeidonStringCopy( szWriteBuffer, 1, 0, szJavaScript, 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );
+      //:szWriteBuffer = "      // END of Javascript code entered by user."
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      // END of Javascript code entered by user.", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );
+      //:szWriteBuffer = "</script>"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "</script>", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+   } 
+
+   //:END
 
    //:/********************** JAVASCRIPT function Generation. ***********************************/
    //:// KJS 08/02/13 - Going to try putting the javascript code in a separate .js file becuase
@@ -6767,34 +6858,20 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:vGroupParent = 0
    vGroupParent = 0;
 
+   //:/* KJS 04/16/15 - We do this above, so would I need to do this again?
    //:// KJS 07/23/08 - Check if this dialog window will be built with all relative positioning or with absolute positioning
    //:IF  vDialog.Dialog.WEB_RelativePositionFlag = "Y" OR vDialog.Window.WEB_RelativePositionFlag = "Y"
-   if ( CompareAttributeToString( vDialog, "Dialog", "WEB_RelativePositionFlag", "Y" ) == 0 || CompareAttributeToString( vDialog, "Window", "WEB_RelativePositionFlag", "Y" ) == 0 )
-   { 
-      //:szNoPositioning = "Y"
-      ZeidonStringCopy( szNoPositioning, 1, 0, "Y", 1, 0, 2 );
-      //:ELSE
-   } 
-   else
-   { 
-      //:szNoPositioning = ""
-      ZeidonStringCopy( szNoPositioning, 1, 0, "", 1, 0, 2 );
-   } 
-
+   //:   szNoPositioning = "Y"
+   //:ELSE
+   //:   szNoPositioning = ""
    //:END
-
    //:// KJS 02/19/09 - Added WEB_AbsolutePositionFlag because I would like to use absolute positioning on my popup pages but the rest
    //:// I want to use relative positioning.  Since I think from now on we will probably only want to use relative positioning for most
    //:// pages, I think it will be easier to have this flag.
    //:IF  vDialog.Window.WEB_AbsolutePositionFlag = "Y"
-   if ( CompareAttributeToString( vDialog, "Window", "WEB_AbsolutePositionFlag", "Y" ) == 0 )
-   { 
-      //:szNoPositioning = ""
-      ZeidonStringCopy( szNoPositioning, 1, 0, "", 1, 0, 2 );
-   } 
-
+   //:   szNoPositioning = ""
    //:END
-
+   //:*/
 
    //:GenJSPJ_CrteCtrlsRecurs( vDialog, vGroupParent, vDialogRoot, lFileJSP, szWriteBuffer, szIndentNext, lTableRowCnt, szNoPositioning, 0, 0, "" )
    GenJSPJ_CrteCtrlsRecurs( vDialog, vGroupParent, vDialogRoot, lFileJSP, szWriteBuffer, szIndentNext, lTableRowCnt, szNoPositioning, 0, 0, "" );
@@ -7341,8 +7418,9 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:// KJS 07/31/08
    //:// Include a footer at the bottom before the end wrapper div.
    //:// Only put in a footer if we are generating with relative position.
-   //:IF szNoPositioning = "Y" AND szWindowIsPopup = "" AND szWindowIsForDashboard = ""
-   if ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 && ZeidonStringCompare( szWindowIsPopup, 1, 0, "", 1, 0, 2 ) == 0 && ZeidonStringCompare( szWindowIsForDashboard, 1, 0, "", 1, 0, 2 ) == 0 )
+   //:IF ( szNoPositioning = "Y" OR szNoPositioning = "S" ) AND szWindowIsPopup = "" AND szWindowIsForDashboard = ""
+   if ( ( ZeidonStringCompare( szNoPositioning, 1, 0, "Y", 1, 0, 2 ) == 0 || ZeidonStringCompare( szNoPositioning, 1, 0, "S", 1, 0, 2 ) == 0 ) && ZeidonStringCompare( szWindowIsPopup, 1, 0, "", 1, 0, 2 ) == 0 &&
+        ZeidonStringCompare( szWindowIsForDashboard, 1, 0, "", 1, 0, 2 ) == 0 )
    { 
       //:IF vDialogRoot.Dialog.WEB_FooterInclude = ""
       if ( CompareAttributeToString( vDialogRoot, "Dialog", "WEB_FooterInclude", "" ) == 0 )

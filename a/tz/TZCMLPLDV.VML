@@ -464,6 +464,31 @@ PostbuildNewLPLR( VIEW ViewToWindow )
    ACTIVATE TZCMLPLO EMPTY 
    NAME VIEW TZCMLPLO "TZCMLPLO"
    CREATE ENTITY TZCMLPLO.LPLR  
+   
+   // New Empty LPLR
+   TZCMLPLO.LPLR.LPLR_Type = 2
+
+END
+
+
+/*************************************************************************************************
+**    
+**    OPERATION: PostbuildNewLPLR
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+PostbuildImportLPLR( VIEW ViewToWindow )
+
+   VIEW TZCMWKSO REGISTERED AS TZCMWKSO
+   VIEW TZCMLPLO BASED ON LOD  TZCMLPLO
+   
+   // Initialize an empty LPLO object to hold the keyed in data.
+   ACTIVATE TZCMLPLO EMPTY 
+   NAME VIEW TZCMLPLO "TZCMLPLO"
+   CREATE ENTITY TZCMLPLO.LPLR  
+   
+   // New Imported (external) LPLR
+   TZCMLPLO.LPLR.LPLR_Type = 3
 
 END
 

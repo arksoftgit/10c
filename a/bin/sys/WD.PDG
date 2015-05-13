@@ -1,4 +1,4 @@
-z1000-Zeidon    WD       TZDGSRCO 05/11/15   15:53:09 1.0a2    
+z1000-Zeidon    WD       TZDGSRCO 05/13/15   17:22:35 1.0a2    
 eDomainGroup 1
 aZKey      1320467
 aName      WD
@@ -32,6 +32,35 @@ eTableEntry 4
 aZKey      1320471
 aExternalValue Yes
 aInternalValue Y
+
+eDomain    2
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
+aZKey      130001474
+aName      WD_WebJSPGenerationPositioning
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aContextRestriction N
+
+eContext   3
+aZKey      130001475
+aName      WD_WebJSPGenerationPositioning
+aIsDefault Y
+
+eTableEntry 4
+aZKey      130001476
+aExternalValue Absolute Positioning
+aInternalValue A
+
+eTableEntry 4
+aZKey      130001477
+aExternalValue Relative Positioning
+aInternalValue R
+
+eTableEntry 4
+aZKey      130001478
+aExternalValue No Positioning
+aInternalValue N
 
 eDomain    2
 aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
@@ -89,9 +118,6 @@ eContext   3
 aZKey      92709479
 aName      WD_WebTextControlProperties
 aIsDefault Y
-
-eTableEntry 4
-aZKey      92709609
 
 eTableEntry 4
 aZKey      92709482
@@ -404,9 +430,6 @@ aName      WD_WebGroupControlProperties
 aIsDefault Y
 
 eTableEntry 4
-aZKey      130000002
-
-eTableEntry 4
 aZKey      68304367
 aExternalValue Div
 aInternalValue Div
@@ -598,7 +621,7 @@ aExternalValue Email Subject Line
 aInternalValue EmailSubject
 
 eTableEntry 4
-aZKey      130003160
+aZKey      130003879
 aExternalValue Escape special HTML characters
 aInternalValue escapeHTML
 
@@ -1905,6 +1928,6 @@ aType      13
 aLastUpdateDate 19950908094926000
 aLastCheckInDate 19951102203051110
 
-i193       190
-i196       190
-i351       190
+i196       193
+i199       193
+i354       193

@@ -30,6 +30,9 @@
 #elif defined( MYSQL )
    LIBRARY       KZHSQLMB
    DESCRIPTION   'My SQL DDL GENERATOR'
+#elif defined( SQLITE )
+   LIBRARY       KZHSQLLB
+   DESCRIPTION   'Sqlite3 DDL GENERATOR'
 #endif
 
 #if defined( __WIN32__ )
@@ -56,13 +59,15 @@ EXPORTS
                PostXOD_BuildHook
                InitDataServerConfigurationHook
                MidDataServerConfigurationHook
+#elif defined( MYSQL )
+               PostXOD_BuildHook
 #elif defined( ODBC )
                PostXOD_BuildHook
 #elif defined( POSTGRESQL )
                PostXOD_BuildHook
 #elif defined( SQLBASE )
-#elif defined( SQLSERVER )
+#elif defined( SQLITE )
                PostXOD_BuildHook
-#elif defined( MYSQL )
+#elif defined( SQLSERVER )
                PostXOD_BuildHook
 #endif

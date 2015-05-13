@@ -30,6 +30,10 @@ PostbuildNewLPLR( zVIEW     ViewToWindow );
 
 
 zOPER_EXPORT zSHORT OPERATION
+PostbuildImportLPLR( zVIEW     ViewToWindow );
+
+
+zOPER_EXPORT zSHORT OPERATION
 CANCEL_NewLPLR( zVIEW     ViewToWindow );
 
 
@@ -118,6 +122,40 @@ PostbuildNewLPLR( zVIEW     ViewToWindow )
    SetNameForView( TZCMLPLO, "TZCMLPLO", 0, zLEVEL_TASK );
    //:CREATE ENTITY TZCMLPLO.LPLR  
    RESULT = CreateEntity( TZCMLPLO, "LPLR", zPOS_AFTER );
+
+   //:// New Empty LPLR
+   //:TZCMLPLO.LPLR.LPLR_Type = 2
+   SetAttributeFromInteger( TZCMLPLO, "LPLR", "LPLR_Type", 2 );
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:PostbuildImportLPLR( VIEW ViewToWindow )
+
+//:   VIEW TZCMWKSO REGISTERED AS TZCMWKSO
+zOPER_EXPORT zSHORT OPERATION
+PostbuildImportLPLR( zVIEW     ViewToWindow )
+{
+   zVIEW     TZCMWKSO = 0; 
+   zSHORT    RESULT; 
+   //:VIEW TZCMLPLO BASED ON LOD  TZCMLPLO
+   zVIEW     TZCMLPLO = 0; 
+
+   RESULT = GetViewByName( &TZCMWKSO, "TZCMWKSO", ViewToWindow, zLEVEL_TASK );
+
+   //:// Initialize an empty LPLO object to hold the keyed in data.
+   //:ACTIVATE TZCMLPLO EMPTY 
+   RESULT = ActivateEmptyObjectInstance( &TZCMLPLO, "TZCMLPLO", ViewToWindow, zSINGLE );
+   //:NAME VIEW TZCMLPLO "TZCMLPLO"
+   SetNameForView( TZCMLPLO, "TZCMLPLO", 0, zLEVEL_TASK );
+   //:CREATE ENTITY TZCMLPLO.LPLR  
+   RESULT = CreateEntity( TZCMLPLO, "LPLR", zPOS_AFTER );
+
+   //:// New Imported (external) LPLR
+   //:TZCMLPLO.LPLR.LPLR_Type = 3
+   SetAttributeFromInteger( TZCMLPLO, "LPLR", "LPLR_Type", 3 );
    return( 0 );
 // END
 } 

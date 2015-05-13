@@ -12,14 +12,14 @@ BuildSideNavSectionJ( VIEW vDialog,
 
    STRING ( 10000 ) szWriteBuffer
    STRING ( 50 )    szNavigationTitle
-   STRING ( 50 )    szCSS_Class
    STRING ( 50 )    szHTML_Name
    STRING ( 50 )    szDialogName
    STRING ( 50 )    szOptionTag
+   STRING ( 50 )    szMenuName
    STRING ( 34 )    szActionName
-   STRING ( 34 )    szClass
+   STRING ( 256 )   szClass
+   STRING ( 256 )   szClass2
    INTEGER          ActionType
-// INTEGER          lLth
    SHORT            nRC
 
    // SIDE NAVIGATION BAR
@@ -31,9 +31,14 @@ BuildSideNavSectionJ( VIEW vDialog,
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 1 )
    szWriteBuffer = "<!-- Side Navigation *********************** -->"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "<div id=^sidenavigation^>"
+   szMenuName = vDialogRoot.Menu.Tag 
+   IF vDialogRoot.Menu.CSS_Class != ""
+      szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+   END
+   szWriteBuffer = "<div id=^sidenavigation^" + szClass + ">"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "   <ul>"
+   //szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + ">"
+   szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^>"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
 
    FOR EACH vDialogRoot.OptAct WITHIN vDialogRoot.Menu
@@ -41,6 +46,12 @@ BuildSideNavSectionJ( VIEW vDialog,
       szDialogName = vDialogRoot.OptAct.DialogName
       IF szDialogName = ""
          szDialogName = "NoDialogName"
+      END
+
+      IF szReusableMenu = "Y"
+         szMenuName = "sm" + vDialogRoot.Option.Tag
+      ELSE
+         szMenuName = vDialogRoot.Option.Tag
       END
 
    // szHTML_Name = szDialogName + vDialogRoot.OptAct.WindowName + ".jsp"
@@ -69,8 +80,14 @@ BuildSideNavSectionJ( VIEW vDialog,
       // If the window we are currently generating is the same window that this
       // side menu points to, then we want to set a class on this option.  The
       // reason is so that we can tell which side menu option the user has selected.
-      IF vDialogRoot.OptAct.WindowName =  vDialog.Window.Tag
-         szClass = "class=^sideselected^ "
+      IF vDialogRoot.OptAct.WindowName = vDialog.Window.Tag
+         szClass2 = " class=^sideselected^ "
+      ELSE
+         szClass2 = ""
+      END
+      
+      IF vDialogRoot.Option.CSS_Class != "" 
+         szClass = " class=^" + vDialogRoot.Option.CSS_Class + "^"
       ELSE
          szClass = ""
       END
@@ -87,7 +104,8 @@ BuildSideNavSectionJ( VIEW vDialog,
       szWriteBuffer = "%>"
       WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
 
-      szWriteBuffer = "       <li><a href=^#^ " + szClass + " onclick=^" + szActionName + "( )^>" + szNavigationTitle + "</a></li>"
+      //szWriteBuffer = "       <li><a href=^#^ " + szClass + " onclick=^" + szActionName + "( )^>" + szNavigationTitle + "</a></li>"
+      szWriteBuffer = "       <li id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + "><a href=^#^ " + szClass2 + " onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
       WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
 
       szWriteBuffer = "<%"
@@ -119,11 +137,19 @@ BuildSideNavSectionJ( VIEW vDialog,
             ActionType = 0
          END
 
+         szMenuName = vDialogRoot.Option.Tag         
+
          // If the window we are currently generating is the same window that this
          // side menu points to, then we want to set a class on this option.  The
          // reason is so that we can tell which side menu option the user has selected.
          IF vDialogMenu.OptAct.WindowName = vDialog.Window.Tag
-            szClass = "class=^sideselected^ "
+            szClass2 = "class=^sideselected^ "
+         ELSE
+            szClass2 = ""
+         END
+      
+         IF vDialogMenu.Option.CSS_Class != "" 
+            szClass = "class=^" + vDialogMenu.Option.CSS_Class + "^"
          ELSE
             szClass = ""
          END
@@ -142,6 +168,7 @@ BuildSideNavSectionJ( VIEW vDialog,
          WL_QC( vDialogMenu, lFile, szWriteBuffer, "^", 0 )
 
          szWriteBuffer = "       <li><a href=^#^ " + szClass + " onclick=^" + szActionName + "( )^>" + szNavigationTitle + "</a></li>"
+         szWriteBuffer = "       <li id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + "><a href=^#^ " + szClass2 + " onclick=^" + szActionName + "()^>" + szNavigationTitle + "</a></li>"
          WL_QC( vDialogMenu, lFile, szWriteBuffer, "^", 0 )
 
          szWriteBuffer = "<%"
@@ -204,6 +231,7 @@ GenJSPJ_CrteCalendar( VIEW vDialog BASED ON LOD TZWDLGSO,
    // Format a CALENDAR control.
 
    STRING ( 256 ) szStyle
+   STRING ( 256 ) szStyleCalendar
    STRING ( 256 ) szClass
    STRING ( 10 )  szDisabled
    STRING ( 10 )  szWidth
@@ -319,13 +347,20 @@ GenJSPJ_CrteCalendar( VIEW vDialog BASED ON LOD TZWDLGSO,
       szStyle = "style=^width:" + szWidth + "px;height:" + szHeight + "px;"
 
       // If szNoPositioning is null then we are using absolute positioning when creating controls.
-      IF  szNoPositioning = ""
+      IF szNoPositioning = ""
 
          zIntegerToString( szX_Pos, 10, vDialog.Control.PSDLG_X * dDLUnits )
          zIntegerToString( szY_Pos, 10, vDialog.Control.PSDLG_Y * dDLUnits )
          szStyle = szStyle + "position:absolute;left:" + szX_Pos + "px;" + "top:" + szY_Pos + "px;^ "
+         szStyleCalendar = " style=^width:80px^"
       ELSE
          szStyle = szStyle + "^ "
+         szStyleCalendar = " style=^width:80px^"
+      END
+
+      IF szNoPositioning = "S"
+         szStyle = "" // No style information
+         szStyleCalendar = ""
       END
 
       CreateTabIndexString( vDialog, szTabIndex )
@@ -339,10 +374,10 @@ GenJSPJ_CrteCalendar( VIEW vDialog BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       IF szClass = ""
          szWriteBuffer = "   <input name=^" + szCtrlTag + szRepeatGrpKey + "^ id=^" + szCtrlTag + szRepeatGrpKey + "^ " + szDisabled +
-                             szActionCode + " style=^width:80px^ type=^text^ value=^<%=strErrorMapValue%>^ " + szTabIndex + " />"
+                             szActionCode + szStyleCalendar + " type=^text^ value=^<%=strErrorMapValue%>^ " + szTabIndex + " />"
       ELSE
          szWriteBuffer = "   <input class=^" + szClass + "^ name=^" + szCtrlTag + szRepeatGrpKey + "^ id=^" + szCtrlTag + szRepeatGrpKey + "^ " + szDisabled +
-                             szActionCode + " style=^width:80px^ type=^text^ value=^<%=strErrorMapValue%>^ " + szTabIndex + " />"
+                             szActionCode + szStyleCalendar + " type=^text^ value=^<%=strErrorMapValue%>^ " + szTabIndex + " />"
       END
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   <img src=^images/scw.gif^ title=^Select Date^ alt=^Select Date^"
@@ -443,7 +478,7 @@ GenJSPJ_CrteCheckBox( VIEW vDialog BASED ON LOD TZWDLGSO,
 
    // If this window is being generated with no positioning then
    // do not create the position in the style.
-   IF  szNoPositioning = ""
+   IF szNoPositioning = ""
       CreateAbsolPosString( vDialog, szPosition, lOffsetX, lOffsetY )
    END
 
@@ -452,6 +487,10 @@ GenJSPJ_CrteCheckBox( VIEW vDialog BASED ON LOD TZWDLGSO,
    END
 
    szStyle = "style=^" + szPosition + "^" + szTabIndex
+
+   IF szNoPositioning = "S"
+      szStyle = "" // No style
+   END
 
    CreateDisabledString( vDialog, szDisabled )
 
@@ -477,14 +516,19 @@ GenJSPJ_CrteCheckBox( VIEW vDialog BASED ON LOD TZWDLGSO,
 
    // If this window is being generated with no positioning then
    // do not create the position in the style.
-   IF  szNoPositioning = "Y"
+   IF szNoPositioning = "Y"
       CreateNoPosStyleString( vDialog, szStyle, "" )
       // If we aren't putting in absolute positioning, make sure that there is a little space between
       // the checkbox and the text.
       szSpaces = "&nbsp "
    ELSE
+   IF szNoPositioning = "S"
+      szStyle = ""  // No style information.
+      szSpaces = ""
+   ELSE
       CreateAbsolStyleString( vDialog, szStyle, 30 + lOffsetX, lOffsetY, "" )
       szSpaces = ""
+   END
    END
    szClass = vDialog.Control.CSS_Class
 
@@ -571,7 +615,7 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
    szStyle = "style=^width:" + szWidth + "px;"
 
    // If szNoPositioning is null then we are using absolute positioning.
-   IF  szNoPositioning = ""
+   IF szNoPositioning = ""
 
       zIntegerToString( szX_Pos, 10, vDialog.Control.PSDLG_X * dDLUnits )
       zIntegerToString( szY_Pos, 10, vDialog.Control.PSDLG_Y * dDLUnits )
@@ -582,6 +626,9 @@ GenJSPJ_CrteComboBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       szStyle = szStyle + "^ "
    END
 
+   IF szNoPositioning = "S"
+      szStyle = "" // No style information
+   END
    szStyle = szStyle + szTabIndex
 
    szWriteBuffer = "<% strErrorMapValue = ^^;  %>"
@@ -1160,12 +1207,16 @@ GenJSPJ_CrteCtrlsRadio( VIEW vDialog BASED ON LOD TZWDLGSO,
 
       // If this window is being generated with no positioning then
       // do not create the position in the style.
-      IF  szNoPositioning = ""
+      IF szNoPositioning = ""
          CreateAbsolPosString( vDialog, szPosition, lOffsetX, lOffsetY )
       END
       //CreateAbsolPosString( vDialog, szPosition, 0, 0 )
       CreateDisabledString( vDialog, szDisabled )
       FixStyleString( szStyle, szPosition, "", "" )
+
+      IF szNoPositioning = "S"
+         szStyle = "" // No style information
+      END
 
       // If LastY_Pos = -100 then this is the first time thru...
       IF ( ( LastY_Pos < vDialog.Control.PSDLG_Y ) )
@@ -1200,7 +1251,11 @@ GenJSPJ_CrteCtrlsRadio( VIEW vDialog BASED ON LOD TZWDLGSO,
       IF szNoPositioning = "Y"
          CreateNoPosStyleString( vDialog, szStyle, "")
       ELSE
+      IF szNoPositioning = "S"
+         szStyle = "" // No style information.
+      ELSE
          CreateAbsolStyleString( vDialog, szStyle, 30 + lOffsetX, lOffsetY, "" )
+      END
       END
 
       //If we put a title on the control, when the mouse is hovered over the control, this text will display.
@@ -1336,7 +1391,7 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
    zIntegerToString( szHeight, 10, Y_Size * dDLUnits )
 
    // 05/27/09 - Currently, we never put in a height.  Would we want to do this?????!!!.
-   IF  szNoPositioning = "Y"
+   IF szNoPositioning = "Y"
 
       szNoWidthFlag = ""
       SET CURSOR FIRST vGroupParent.WebControlProperty WHERE vGroupParent.WebControlProperty.Name = "No Width"
@@ -1349,17 +1404,21 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
    //szWriteBuffer = "<div style=^float:left;width:" + szWidth + "px;height:" + szHeight + "px;^" + szClass + ">"
    // KJS 09/11/09 - Neither the table or the div had an id or name.  I am not sure whether I should put the
    // id on the <table we create or on the <div> but I will put it on the div.
-   szWriteBuffer = "<div id=^" + szParentCtrlTag + "^ name=^" + szParentCtrlTag + "^ style=^float:left;"
-   IF szNoWidthFlag = ""
-      szWriteBuffer = szWriteBuffer + "width:" + szWidth + "px;"
+   IF szNoPositioning = "S"
+      szWriteBuffer = "<div id=^" + szParentCtrlTag + "^ name=^" + szParentCtrlTag + "^ "
+   ELSE
+      szWriteBuffer = "<div id=^" + szParentCtrlTag + "^ name=^" + szParentCtrlTag + "^ style=^float:left;"
+      IF szNoWidthFlag = ""
+         szWriteBuffer = szWriteBuffer + "width:" + szWidth + "px;^"
+      END
    END
-   szWriteBuffer = szWriteBuffer + "^ " + szClass + ">"
+   szWriteBuffer = szWriteBuffer + " " + szClass + ">"
    WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
    // Now create the table with the proper number of columns.
    //szWriteBuffer = "<table cols=" szColCount + " name=^" + szCtrlTag + "^ id=^" + szCtrlTag + "^>"
    szWriteBuffer = "<table cols=" + szColCnt
-   IF szNoWidthFlag = ""
+   IF szNoWidthFlag = "" AND szNoPositioning != "S"
       szWriteBuffer = szWriteBuffer + " style=^width:" + szWidth + "px;^ "
    END
    szWriteBuffer = szWriteBuffer + " class=^grouptable^>"
@@ -1438,27 +1497,15 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
 
       //KELLY0210
       zIntegerToString( szWidth, 10, iColWidth * dDLUnits )
-      szWriteBuffer = "<td valign=^top^ " + szClass + "style=^width:" + szWidth + "px;^>"
+      IF szNoPositioning = "S"  // No style information
+         szWriteBuffer = "<td valign=^top^ " + szClass + ">"
+      ELSE 
+         szWriteBuffer = "<td valign=^top^ " + szClass + "style=^width:" + szWidth + "px;^>"
+      END
       //szWriteBuffer = "<td>"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
       //****************************************************************************
-
-      /*
-      IF szControlType = "GroupBox"  // Grid or Table
-         OrderEntityForView( vDialog, "CtrlCtrl", "PSDLG_Y A PSDLG_X A" )
-         // Create view for Group as a parent. This will be used in processing subcontrols to check for WebControlProperty.
-         CreateViewFromView( vGroupParent, vDialog )
-         SetViewToSubobject( vDialog, "CtrlCtrl" )
-         TraceLineS("**** GroupBox in Table ", " Before Recurs ")
-         GenJSPJ_CrteCtrlsRecurs( vDialog, vGroupParent, lFile, szWriteBuffer, szIndent,
-                                  lTableRowCnt, szNoPositioning, 0, 0 )
-         TraceLineS("**** GroupBox in Table ", " After Recurs ")
-         ResetViewFromSubobject( vDialog )
-         DropView( vGroupParent )
-         vGroupParent = 0
-      END
-      */
 
       IF szControlType = "GroupBox"
 
@@ -1545,7 +1592,11 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
          END
          END
       ELSE
+      IF szNoPositioning = "S"
+         szAbsoluteStyle = "" // No style information.
+      ELSE 
          CreateAbsolStyleString( vDialog, szAbsoluteStyle, lOffsetX, lOffsetY, "" )
+      END
       END
 
       szWriteBuffer = "<% /* " + szCtrlTag + ":" + szControlType + " */ %>"
@@ -1654,8 +1705,12 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
 
             // If we are not using absolute positioning, then make all the divs
             // float left.
-            IF  szNoPositioning = "Y"
+            IF szNoPositioning = "Y"
                zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
+            ELSE
+            IF szNoPositioning = "S"
+               szAbsoluteStyle = "" // No style information.             
+            END
             END
 
             // Div on a Group Control requests that all the controls inside the group line up one under the other.
@@ -1686,8 +1741,11 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
 
             // If we are not using absolute positioning, then make all the divs
             // float left.
-            IF  szNoPositioning = "Y"
+            IF szNoPositioning = "Y"
                zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
+            END
+            IF szNoPositioning = "S"
+               szAbsoluteStyle = "" // No style information.             
             END
             szClass = vDialog.Control.CSS_Class
             IF szClass = ""
@@ -1713,8 +1771,12 @@ GenJSPJ_CrteGroupTable( VIEW vDialog BASED ON LOD TZWDLGSO,
             // Default Group is div for now
 
             // If we are not using absolute positioning, then make all the divs float left.
-            IF  szNoPositioning = "Y"
+            IF szNoPositioning = "Y"
                zAppendQuotedString( szAbsoluteStyle, "float:left;", "style=", "^" )
+            ELSE
+            IF szNoPositioning = "S"
+               szAbsoluteStyle = "" // No style information.             
+            END
             END
 
             szClass = vDialog.Control.CSS_Class
@@ -2150,7 +2212,11 @@ GenJSPJ_CrteEditBox( VIEW vDialog BASED ON LOD TZWDLGSO,
       CreateAbsolPosString( vDialog, szPosition, lOffsetX, lOffsetY )
    END
 
-   FixStyleString( szStyle, szSize, szPosition,  "<%=strErrorColor%>"  )
+   IF szNoPositioning = "S" // No style information but I think we need the error color.
+      szStyle = "style=^<%=strErrorColor%>^"
+   ELSE 
+      FixStyleString( szStyle, szSize, szPosition,  "<%=strErrorColor%>"  )
+   END
 
    szStyle = szStyle + szTabIndex
 
@@ -2501,6 +2567,7 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
    INTEGER        lEscapement
    INTEGER        lType
    STRING ( 32 )  szFaceName
+   STRING ( 256 ) szLabelFor
    STRING ( 256 ) szDecoration
    STRING ( 256 ) szTempStyle
    STRING ( 1 )   szIsLabel
@@ -2514,7 +2581,11 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
    IF  szNoPositioning = "Y"
       CreateNoPosStyleString( vDialog, szStyle, "" )
    ELSE
+   IF szNoPositioning = "S" // No style information
+      szStyle = "" 
+   ELSE 
       CreateAbsolStyleString( vDialog, szStyle, lOffsetX, lOffsetY, "" )
+   END
    END
 
    nRC = TX_GetTextRptCtrlBOI( vDialog, nMultiLineFlag, nBoldFlag,
@@ -2569,7 +2640,9 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
       szTitleHTML = " title=^" + szTitle + "^ "
    END
 
-   zAppendQuotedString( szStyle, szDecoration, "style=", "^" )
+   IF szNoPositioning != "S" 
+      zAppendQuotedString( szStyle, szDecoration, "style=", "^" )
+   END
    szStyle = szStyle + szTabIndex
    IF vDialog.Control.CSS_Class != ""
       szClassHTML = "class=^" + vDialog.Control.CSS_Class + "^ "
@@ -2802,9 +2875,14 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
       szIsLabel = ""
+      szLabelFor = ""
       SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Label"
       IF RESULT >= zCURSOR_SET
          szIsLabel = "Y"
+         IF vDialog.Control.WebFileName != ""
+            // Tie the label to an input control.
+            szLabelFor = " for=^" + vDialog.Control.WebFileName + "^ " 
+         END
       END
 
       // If szNoPositioning is null then we are using absolute positioning when creating controls.
@@ -2820,7 +2898,7 @@ GenJSPJ_CrteText( VIEW vDialog      BASED ON LOD TZWDLGSO,
    
          // If there is a "Label" web control property than make this a label, otherwise, just use <span>.
          IF szIsLabel = "Y"
-            szWriteBuffer = "<label " + szClassHTML + szHTMLCtrlID + szTitleHTML + szStyle + ">" + szText + "</label>"
+            szWriteBuffer = "<label " + szClassHTML + szHTMLCtrlID + szLabelFor + szTitleHTML + szStyle + ">" + szText + "</label>"
          ELSE 
             szWriteBuffer = "<span " + szClassHTML + szHTMLCtrlID + szTitleHTML + szStyle + ">" + szText + "</span>"
          END
@@ -2863,10 +2941,14 @@ GenJSPJ_CrteJPG( VIEW vDialog BASED ON LOD TZWDLGSO,
 
    // If this window is being generated with no positioning then
    // do not create the position in the style.
-   IF  szNoPositioning = "Y"
+   IF szNoPositioning = "Y"
       CreateNoPosStyleString( vDialog, szStyle, "" )
    ELSE
+   IF szNoPositioning = "S"
+      szStyle = "" // No style information.
+   ELSE 
       CreateAbsolStyleString( vDialog, szStyle, lOffsetX, lOffsetY, "" )
+   END
    END
 
    //CreateAbsolStyleString( vDialog, szStyle, lOffsetX, lOffsetY, "" )
@@ -3032,12 +3114,16 @@ GenJSPJ_CrteListBox( VIEW vDialog,
    szStyle = "style=^width:" + szWidth + "px;height:" + szHeight + "px;"
 
    // If szNoPositioning is null then we are using absolute positioning on controls.
-   IF  szNoPositioning = ""
+   IF szNoPositioning = ""
 
       zIntegerToString( szX_Pos, 10, vDialog.Control.PSDLG_X * dDLUnits )
       zIntegerToString( szY_Pos, 10, vDialog.Control.PSDLG_Y * dDLUnits )
       szStyle = szStyle + "position:absolute;" + "left:" + szX_Pos + "px;" + "top:" + szY_Pos + "px;"
       //CreateAbsolStyleString( vDialog, szStyle, lOffsetX, lOffsetY, "" )
+   ELSE
+   IF szNoPositioning = "S"
+      szStyle = "" 
+   END
    END
 
    szStyle = szStyle + "^ " + szTabIndex
@@ -3433,6 +3519,10 @@ GenJSPJ_CrteMLEdit( VIEW vDialog BASED ON LOD TZWDLGSO,
       zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:4px;border-style:groove;", "style=", "^" )
    ELSE
       zAppendQuotedString( szAbsoluteStyle, "border:solid;border-width:2px;border-style:groove;", "style=", "^" )
+   END
+   
+   IF szNoPositioning = "S"
+      szAbsoluteStyle = "" // No style information.    
    END
 
    szTinyMCEFlag = ""
