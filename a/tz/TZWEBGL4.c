@@ -46,14 +46,15 @@ BuildSideNavSectionJ( zVIEW     vDialog,
    zLONG     ActionType = 0; 
    //:SHORT            nRC
    zSHORT    nRC = 0; 
+   zSHORT    lTempInteger_0; 
    zCHAR     szTempString_0[ 255 ]; 
    zSHORT    RESULT; 
    zCHAR     szTempString_1[ 33 ]; 
-   zSHORT    lTempInteger_0; 
+   zSHORT    lTempInteger_1; 
    zCHAR     szTempString_2[ 33 ]; 
    zCHAR     szTempString_3[ 255 ]; 
-   zLONG     lTempInteger_1; 
-   zSHORT    lTempInteger_2; 
+   zLONG     lTempInteger_2; 
+   zSHORT    lTempInteger_3; 
    zCHAR     szTempString_4[ 255 ]; 
    zCHAR     szTempString_5[ 255 ]; 
 
@@ -73,16 +74,23 @@ BuildSideNavSectionJ( zVIEW     vDialog,
    ZeidonStringCopy( szWriteBuffer, 1, 0, "<!-- Side Navigation *********************** -->", 1, 0, 10001 );
    //:WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 );
-   //:szMenuName = vDialogRoot.Menu.Tag 
-   GetVariableFromAttribute( szMenuName, 0, 'S', 51, vDialogRoot, "Menu", "Tag", "", 0 );
-   //:IF vDialogRoot.Menu.CSS_Class != ""
-   if ( CompareAttributeToString( vDialogRoot, "Menu", "CSS_Class", "" ) != 0 )
+   //:IF vDialogRoot.Menu EXISTS 
+   lTempInteger_0 = CheckExistenceOfEntity( vDialogRoot, "Menu" );
+   if ( lTempInteger_0 == 0 )
    { 
-      //:szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
-      GetVariableFromAttribute( szTempString_0, 0, 'S', 255, vDialogRoot, "Menu", "CSS_Class", "", 0 );
-      ZeidonStringCopy( szClass, 1, 0, " class=^", 1, 0, 257 );
-      ZeidonStringConcat( szClass, 1, 0, szTempString_0, 1, 0, 257 );
-      ZeidonStringConcat( szClass, 1, 0, "^ ", 1, 0, 257 );
+      //:szMenuName = vDialogRoot.Menu.Tag 
+      GetVariableFromAttribute( szMenuName, 0, 'S', 51, vDialogRoot, "Menu", "Tag", "", 0 );
+      //:IF vDialogRoot.Menu.CSS_Class != ""
+      if ( CompareAttributeToString( vDialogRoot, "Menu", "CSS_Class", "" ) != 0 )
+      { 
+         //:szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+         GetVariableFromAttribute( szTempString_0, 0, 'S', 255, vDialogRoot, "Menu", "CSS_Class", "", 0 );
+         ZeidonStringCopy( szClass, 1, 0, " class=^", 1, 0, 257 );
+         ZeidonStringConcat( szClass, 1, 0, szTempString_0, 1, 0, 257 );
+         ZeidonStringConcat( szClass, 1, 0, "^ ", 1, 0, 257 );
+      } 
+
+      //:END
    } 
 
    //:END
@@ -138,8 +146,8 @@ BuildSideNavSectionJ( zVIEW     vDialog,
 
       //:// szHTML_Name = szDialogName + vDialogRoot.OptAct.WindowName + ".jsp"
       //:IF vDialogRoot.OptAct EXISTS
-      lTempInteger_0 = CheckExistenceOfEntity( vDialogRoot, "OptAct" );
-      if ( lTempInteger_0 == 0 )
+      lTempInteger_1 = CheckExistenceOfEntity( vDialogRoot, "OptAct" );
+      if ( lTempInteger_1 == 0 )
       { 
 
          //:// Because the menu actions can be created on separate windows from the control
@@ -285,8 +293,8 @@ BuildSideNavSectionJ( zVIEW     vDialog,
       //:CreateViewFromViewForTask( vDialogMenu, vDialogMenu, 0 )
       CreateViewFromViewForTask( &vDialogMenu, vDialogMenu, 0 );
       //:SET CURSOR FIRST vDialogMenu.Menu WHERE vDialogMenu.Menu.ZKey = vDialogMenu.DfltMenu.ZKey
-      GetIntegerFromAttribute( &lTempInteger_1, vDialogMenu, "DfltMenu", "ZKey" );
-      RESULT = SetCursorFirstEntityByInteger( vDialogMenu, "Menu", "ZKey", lTempInteger_1, "" );
+      GetIntegerFromAttribute( &lTempInteger_2, vDialogMenu, "DfltMenu", "ZKey" );
+      RESULT = SetCursorFirstEntityByInteger( vDialogMenu, "Menu", "ZKey", lTempInteger_2, "" );
       //:FOR EACH vDialogMenu.OptAct WITHIN vDialogMenu.Menu
       RESULT = SetCursorFirstEntity( vDialogMenu, "OptAct", "Menu" );
       while ( RESULT > zCURSOR_UNCHANGED )
@@ -306,8 +314,8 @@ BuildSideNavSectionJ( zVIEW     vDialog,
 
          //:// szHTML_Name = szDialogName + vDialogMenu.OptAct.WindowName + ".jsp"
          //:IF vDialogMenu.OptAct EXISTS
-         lTempInteger_2 = CheckExistenceOfEntity( vDialogMenu, "OptAct" );
-         if ( lTempInteger_2 == 0 )
+         lTempInteger_3 = CheckExistenceOfEntity( vDialogMenu, "OptAct" );
+         if ( lTempInteger_3 == 0 )
          { 
             //:szActionName = vDialogMenu.OptAct.Tag
             GetVariableFromAttribute( szActionName, 0, 'S', 35, vDialogMenu, "OptAct", "Tag", "", 0 );

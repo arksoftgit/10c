@@ -52,9 +52,11 @@ BuildMainNavSection( VIEW vDialog,
 
    szWriteBuffer = "<!-- Main Navigation *********************** -->"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szMenuName = vDialogRoot.Menu.Tag 
-   IF vDialogRoot.Menu.CSS_Class != ""
-      szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+   IF vDialogRoot.Menu EXISTS 
+      szMenuName = vDialogRoot.Menu.Tag 
+      IF vDialogRoot.Menu.CSS_Class != ""
+         szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+      END
    END
    szWriteBuffer = "<div id=^mainnavigation^" + szClass + ">"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
@@ -159,13 +161,15 @@ BuildSideNavSection( VIEW vDialog,
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 1 )
    szWriteBuffer = "<!-- Side Navigation *********************** -->"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   IF vDialogRoot.Menu.CSS_Class != ""
-      szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+   IF vDialogRoot.Menu EXISTS 
+      szMenuName = vDialogRoot.Menu.Tag 
+      IF vDialogRoot.Menu.CSS_Class != ""
+         szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+      END
    END
    szWriteBuffer = "<div id=^sidenavigation^" + szClass + ">"
    //szWriteBuffer = "<div id=^sidenavigation^>"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szMenuName = vDialogRoot.Menu.Tag 
    //szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^" + szClass + ">"
    szWriteBuffer = "   <ul id=^" + szMenuName + "^ name=^" + szMenuName + "^>"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )

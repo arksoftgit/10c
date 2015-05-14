@@ -31,9 +31,11 @@ BuildSideNavSectionJ( VIEW vDialog,
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 1 )
    szWriteBuffer = "<!-- Side Navigation *********************** -->"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
-   szMenuName = vDialogRoot.Menu.Tag 
-   IF vDialogRoot.Menu.CSS_Class != ""
-      szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+   IF vDialogRoot.Menu EXISTS 
+      szMenuName = vDialogRoot.Menu.Tag 
+      IF vDialogRoot.Menu.CSS_Class != ""
+         szClass = " class=^" + vDialogRoot.Menu.CSS_Class + "^ " 
+      END
    END
    szWriteBuffer = "<div id=^sidenavigation^" + szClass + ">"
    WL_QC( vDialogRoot, lFile, szWriteBuffer, "^", 0 )
