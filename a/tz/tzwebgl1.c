@@ -2210,8 +2210,8 @@ GenJSP_Action( zVIEW     vDialog,
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
 
-            //:szWriteBuffer = "            fis.close();"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "            fis.close();", 1, 0, 10001 );
+            //:szWriteBuffer = "         fis.close();"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "         fis.close();", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
 
@@ -2235,7 +2235,7 @@ GenJSP_Action( zVIEW     vDialog,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
          } 
 
-         //:   //szWriteBuffer = "      } "
+         //:   //szWriteBuffer = "    } "
          //:   //WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
          //:END
       } 

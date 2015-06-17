@@ -6618,7 +6618,7 @@ GenJSP_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
             szWriteBuffer = "         }"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
-            szWriteBuffer = "            fis.close();"
+            szWriteBuffer = "         fis.close();"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
             // The end of the Action is the same as "Same Window Refresh" above.
@@ -6628,7 +6628,7 @@ GenJSP_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             szWriteBuffer = "         nRC = 1;  // do the redirection"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            //szWriteBuffer = "      } "
+            //szWriteBuffer = "    } "
             //WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
          END
       END

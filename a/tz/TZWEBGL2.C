@@ -13346,9 +13346,9 @@ GenJSPJ_Action( zVIEW     vDialog,
                   } 
                   else
                   { 
-                     //:szWriteBuffer = "         nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
+                     //:szWriteBuffer = "      nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
                      GetVariableFromAttribute( szTempString_7, 0, 'S', 33, vDialogTemp, "Dialog", "Tag", "", 0 );
-                     ZeidonStringCopy( szWriteBuffer, 1, 0, "         nOptRC = ", 1, 0, 10001 );
+                     ZeidonStringCopy( szWriteBuffer, 1, 0, "      nOptRC = ", 1, 0, 10001 );
                      ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_7, 1, 0, 10001 );
                      ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
                      GetVariableFromAttribute( szTempString_8, 0, 'S', 33, vDialogTemp, "ActOper", "Name", "", 0 );
@@ -14592,10 +14592,10 @@ GenJSPJ_Action( zVIEW     vDialog,
       //:END
 
       //:// szWriteBuffer = "      task.log().info( ^ZeidonOperation: " + szDlgTag + "." + szOperName + " called from " + szFormName + ".jsp^ );"  // keep us informed of where we are ...  dks 2011.11.11
-      //:szWriteBuffer = "      VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + ".jsp^, ^" + szDlgTag + "." + szOperName + "^ );"
+      //:szWriteBuffer = "      VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + "^, ^" + szDlgTag + "." + szOperName + "^ );"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "      VmlOperation.SetZeidonSessionAttribute( null, task, ^", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szFormName, 1, 0, 10001 );
-      ZeidonStringConcat( szWriteBuffer, 1, 0, ".jsp^, ^", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^, ^", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szDlgTag, 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szOperName, 1, 0, 10001 );
@@ -14681,8 +14681,8 @@ GenJSPJ_Action( zVIEW     vDialog,
          //:IF vDialog.SourceFileForOper.LanguageType = "S"
          if ( CompareAttributeToString( vDialog, "SourceFileForOper", "LanguageType", "S" ) == 0 )
          { 
-            //:szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new com.quinsoft.zeidon.scala.View( vKZXMLPGO ) );"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "         nOptRC = ", 1, 0, 10001 );
+            //:szWriteBuffer = "      nOptRC = " + szDlgTag + "." + szOperName + "( new com.quinsoft.zeidon.scala.View( vKZXMLPGO ) );"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "      nOptRC = ", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szDlgTag, 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szOperName, 1, 0, 10001 );
@@ -14691,8 +14691,8 @@ GenJSPJ_Action( zVIEW     vDialog,
          } 
          else
          { 
-            //:szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "         nOptRC = ", 1, 0, 10001 );
+            //:szWriteBuffer = "      nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "      nOptRC = ", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szDlgTag, 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, ".", 1, 0, 10001 );
             ZeidonStringConcat( szWriteBuffer, 1, 0, szOperName, 1, 0, 10001 );

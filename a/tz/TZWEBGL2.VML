@@ -6064,7 +6064,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                      szWriteBuffer = "      }"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
                   ELSE
-                     szWriteBuffer = "         nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
+                     szWriteBuffer = "      nOptRC = " + vDialogTemp.Dialog.Tag + "." + vDialogTemp.ActOper.Name + "( new zVIEW( vKZXMLPGO ) );"
                      WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                      
                   END
@@ -6629,7 +6629,7 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       END
 
    // szWriteBuffer = "      task.log().info( ^ZeidonOperation: " + szDlgTag + "." + szOperName + " called from " + szFormName + ".jsp^ );"  // keep us informed of where we are ...  dks 2011.11.11
-      szWriteBuffer = "      VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + ".jsp^, ^" + szDlgTag + "." + szOperName + "^ );"
+      szWriteBuffer = "      VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + "^, ^" + szDlgTag + "." + szOperName + "^ );"
       WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       // KJS 08/06/14 - I had put a try/catch around the operation call because it seemed better than getting the exception
       // crash. But that might be true in production but when developing, we'd really like to see the stack trace. Want to make
@@ -6663,9 +6663,9 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       ELSE
          IF vDialog.SourceFileForOper.LanguageType = "S"
-            szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new com.quinsoft.zeidon.scala.View( vKZXMLPGO ) );"
+            szWriteBuffer = "      nOptRC = " + szDlgTag + "." + szOperName + "( new com.quinsoft.zeidon.scala.View( vKZXMLPGO ) );"
          ELSE 
-            szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
+            szWriteBuffer = "      nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
          END
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
       END

@@ -1401,9 +1401,9 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    //szWriteBuffer = "    strURL = response.encodeRedirectURL( ^Notasklogout.jsp^ );"
    szWriteBuffer = "   session.setAttribute( ^ZeidonTaskId^, null );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "    strURL = response.encodeRedirectURL( ^logout.jsp^ );"
+   szWriteBuffer = "   strURL = response.encodeRedirectURL( ^logout.jsp^ );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
-   szWriteBuffer = "    response.sendRedirect( strURL );"
+   szWriteBuffer = "   response.sendRedirect( strURL );"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    szWriteBuffer = "   return; // something really bad has happened!!!"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -2044,7 +2044,7 @@ DKS_TRACE_END */
    InsertBlankFlag = "N"
    FOR EACH vDialog.Action
       FOR EACH vDialog.ActWndEvent
-         IF vDialog.ActWndEvent.Type = 1 OR vDialog.ActWndEvent.Type = 2
+         IF vDialog.ActWndEvent.Type = 1 OR vDialog.ActWndEvent.Type = 2 // prebuild or postbuild
 
             IF InsertBlankFlag = "Y"
                szWriteBuffer = ""
@@ -2052,10 +2052,12 @@ DKS_TRACE_END */
             END
             
             // KJS 04/30/15
+            // DKS 2015.06.15 - Should not add JavaScript here for prebuild/postbuild action ... will be added in _AfterPageLoaded function.
+            /*
             IF vDialog.ActWndEvent.Type = 1 AND vDialog.Action.WebJavaScript != ""
                szJavaScript = vDialog.Action.WebJavaScript
             END
-
+            */
             IF vDialog.ActOper EXISTS
 
                szDlgTag = vDialog.Dialog.Tag
@@ -2065,13 +2067,13 @@ DKS_TRACE_END */
             //                 szDlgTag + "_Dialog( vKZXMLPGO );"
             // WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
             // szWriteBuffer = "   task.log().info( ^ZeidonOperation: " + szDlgTag + "." + szOperName + " called from " + szFormName + ".jsp^ );"  // keep us informed of where we are ...  dks 2011.11.11
-               szWriteBuffer = "   VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + ".jsp^, ^" + szDlgTag + "." + szOperName + "^ );"
+               szWriteBuffer = "   VmlOperation.SetZeidonSessionAttribute( null, task, ^" + szFormName + "^, ^" + szDlgTag + "." + szOperName + "^ );"
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
             // szWriteBuffer = "   nOptRC = task.CallDialogOperation( ^" + szDlgTag + "^, ^" + szOperName + "^, 1 );"
                IF vDialog.SourceFileForOper.LanguageType = "S"
-                  szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new com.quinsoft.zeidon.scala.View( vKZXMLPGO ) );"
+                  szWriteBuffer = "   nOptRC = " + szDlgTag + "." + szOperName + "( new com.quinsoft.zeidon.scala.View( vKZXMLPGO ) );"
                ELSE 
-                  szWriteBuffer = "         nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
+                  szWriteBuffer = "   nOptRC = " + szDlgTag + "." + szOperName + "( new zVIEW( vKZXMLPGO ) );"
                END
                WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
 
@@ -2348,7 +2350,7 @@ DKS_TRACE_END */
    END
    
    /********************** JAVASCRIPT function Generation. ***********************************/
-   // KJS 08/02/13 - Going to try putting the javascript code in a separate .js file becuase
+   // KJS 08/02/13 - Going to try putting the javascript code in a separate .js file because
    // Jeffrey is running over the 65kb jsp limit.
 
    // commenting out if we are creating a separate file for javascript funtions...
@@ -2788,8 +2790,7 @@ DKS_TRACE_END */
    // Check of prebuild and postbuild action jsp code.
    FOR EACH vDialogTemp.Action
       FOR EACH vDialogTemp.ActWndEvent
-         IF vDialogTemp.ActWndEvent.Type = 1 OR
-            vDialogTemp.ActWndEvent.Type = 2
+         IF vDialogTemp.ActWndEvent.Type = 1 OR vDialogTemp.ActWndEvent.Type = 2
             // DKS 2008.09.10 - We want to insert any javascript code that the
             // user has entered for this pre/post build action.
             szJavaScript = vDialogTemp.Action.WebJavaScript
@@ -2967,22 +2968,28 @@ DKS_TRACE_END */
    // Loop through the actions looking for one that has javascript code and place the calls here.
    CreateViewFromView( vDialogTemp, vDialog )
    FOR EACH vDialogTemp.Action
-
       FOR EACH vDialogTemp.ActWndEvent
-
-         // Only worry about PostBuild window actions.
-         IF vDialogTemp.ActWndEvent.Type = 2
-
-            IF vDialogTemp.Action.WebJavaScript != ""
-
-               szWriteBuffer = "   // Postbuild actions that have javascript code."
+         // DKS 2015.05.15 - for prebuild, need javascript code inserted directly into _AfterPageLoaded function.
+         szJavaScript = vDialogTemp.Action.WebJavaScript
+         IF szJavaScript != ""
+         // Only worry about Prebuild and Postbuild window actions.
+            IF vDialogTemp.ActWndEvent.Type = 1  // prebuild
+               szWriteBuffer = "   // Prebuild action has javascript code entered by user."
+               WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+               szWriteBuffer = szJavaScript
+               WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "   // END of Javascript code entered by user."
+               WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+            ELSE
+            IF vDialogTemp.ActWndEvent.Type = 2
+               szWriteBuffer = "   // Postbuild action that has javascript code."
                WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
                szActionTag = vDialogTemp.Action.Tag
                szWriteBuffer = "   " + szActionTag + "( );"
                WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
 
             END
-
+            END
          END
       END
    END
@@ -3245,7 +3252,6 @@ DKS_TRACE_END */
 
             szWriteBuffer = "   }"
             WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
-
 
          ELSE
 
@@ -4394,8 +4400,9 @@ DKS_TRACE_END */
       END
       ResetViewFromSubobject( vDialogTemp )
 
-      szWriteBuffer = "</div>"
+      szWriteBuffer = "</div>  <!-- " + vDialogTemp.Control.Tag + " --> "
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+
       szWriteBuffer = "</form>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
@@ -4494,12 +4501,12 @@ DKS_TRACE_END */
       szWriteBuffer = "         session.setAttribute( ^ZeidonTaskLogoutDate^, new java.util.Date() );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       */
-      szWriteBuffer = "  }"
+      szWriteBuffer = "   }"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
       //szWriteBuffer = "%>"
       //WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    END
-   szWriteBuffer = "     strActionToProcess = ^^;"
+   szWriteBuffer = "   strActionToProcess = ^^;"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
    szWriteBuffer = "%>"
