@@ -2453,6 +2453,7 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
    zCHAR    szLPLR_Name[ 33 ];
    zCHAR    szUserName[ 33 ];
    zCHAR    szFileName[ 255 ];
+   zCHAR    szMetaSrc[ 255 ];
    zLONG    lHighPrefix;
    zLONG    lPrefix;
    zLONG    lStartZKey;
@@ -2473,6 +2474,13 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
 
    GetStringFromAttribute( szLPLR_Type, vTZCMLPLO, "LPLR", "LPLR_Type" );
    GetStringFromAttribute( szLPLR_Name, vTZCMLPLO, "LPLR", "Name" );
+   
+   GetStringFromAttribute( szMetaSrc, vTZCMLPLO, "LPLR", "MetaSrcDir" );
+   SetAttributeFromString( vTZCMLPLO, "LPLR", "PgmSrcDir", szMetaSrc );
+   ZeidonStringConcat( szMetaSrc, 1, 0, "\\", 1, 0, 514 );
+   GetStringFromAttribute( szFileName, vTZCMLPLO, "LPLR", "wExecutableSubDirectory" );
+   ZeidonStringConcat( szMetaSrc, 1, 0, szFileName, 1, 0, 514 );
+   SetAttributeFromString( vTZCMLPLO, "LPLR", "ExecDir", szMetaSrc );
 
    // Check that an LPLR_Type and new LPLR name.
    if ( zwfnTZCMLPLD_CheckProjectName_Type( vSubtask, vTZCMWKSO, szLPLR_Name,
@@ -2497,6 +2505,41 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
    if ( szLPLR_Type[ 0 ] == '1' )
    {
       // Case 1:
+      // KJS 05/18/15 - Code dad had in vml...
+      //:// LPLR is new existing. 
+      //:// Activate Installation/Users object (TZCMULWO) and existing XLP (TZCMLPLO).
+      //:// Then, update directory information in TZCMLPLO from basic path just entered and executable subdirectory from
+      //:// TZCMULWO.
+
+      //:// TZCMULWO
+      //:// TZCMLPLO.LPLR.MetaSrcDir value was entered by User.
+      //:szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + "TZCMULWO.POR"
+      GetStringFromAttribute( szFileName, vTZCMLPLO, "LPLR", "MetaSrcDir" );
+      ZeidonStringConcat( szFileName, 1, 0, "\\", 1, 0, 514 );
+      ZeidonStringConcat( szFileName, 1, 0, "TZCMULWO.POR", 1, 0, 514 );
+      //:nRC = ActivateOI_FromFile ( vTZCMULWO, "TZCMULWO", vSubtask, szFileName, 512 )
+      nRC = ActivateOI_FromFile( &vTZCMULWO, "TZCMULWO", vSubtask, szFileName, 512 );
+      //:IF nRC < 0
+      if ( nRC < 0 )
+      { 
+         //:MessageSend( ViewToWindow, "", "Configuration Management",
+         //:             "An Installation/Users object (TZCMULWO) does not exist in the directory path specified.",
+         //:             zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+         MessageSend( vSubtask, "", "Configuration Management", "An Installation/Users object (TZCMULWO) does not exist in the directory path specified.", zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 );
+         //:SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+         SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
+         //:DropView( TZCMULWO )
+         DropView( vTZCMULWO );
+         //:RETURN -1
+         return( -1 );
+         //:ELSE
+      } 
+      else
+      { 
+         //:NAME VIEW TZCMULWO "TZCMULWO"
+         SetNameForView( vTZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
+      } 
+     // End of dad's vml code.
 
       // This version of creating an LPLR is the normal version for
       // initializing it from the Repository.
@@ -2507,6 +2550,20 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
    if ( szLPLR_Type[ 0 ] == '2' )
    {
       // Case 2:
+      // KJS 05/18/15 - Code dad had created in vml...
+      //:// Create the following.
+      //:// 1. Build Installation/Users object (TZCMULWO). It will be completed on next window.
+      //:// 2. TZCMLPLO and TZCMWKSO will be updated on next window.
+
+      //:// TZCMULWO
+      ActivateEmptyObjectInstance( &vTZCMULWO, "TZCMULWO", vSubtask, zSINGLE );
+      SetNameForView( vTZCMULWO, "TZCMULWO", 0, zLEVEL_TASK );
+      CreateEntity( vTZCMULWO, "Installation", zPOS_AFTER );
+      SetAttributeFromAttribute( vTZCMULWO, "Installation", "Name", vTZCMLPLO, "LPLR", "Name" );
+      SetAttributeFromAttribute( vTZCMULWO, "Installation", "ExecutableSubDirectory", vTZCMLPLO, "LPLR", "wExecutableSubDirectory" );
+      CreateEntity( vTZCMULWO, "User", zPOS_AFTER );
+      SetAttributeFromAttribute( vTZCMULWO, "User", "Name", vTZCMWKSO, "User", "Name" );
+     // End of dad's vml code.
 
       // This version of creating an LPLR initializes things just like
       // Case 1 above, except that no interface to the Repository has
@@ -2582,6 +2639,19 @@ zwTZCMLPLD_CreateNewLPLR( zVIEW vSubtask )
          CommitOI_ToFile( vTZCMULWO, szFileName, zSINGLE );
       }
    }
+
+   // KJS 05/18/15 - Dad's vml code.
+   //:// Make sure that the current User is in the TZCMULWO object. Currently, we will just add the User, if he
+   //:// isn't already there. Though, we could also return an error for that case and make the person in charge of the
+   //:// LPLR enter all valid Users.
+   GetStringFromAttribute( szUserName, vTZCMWKSO, "User", "Name" );
+   nRC = SetCursorFirstEntityByString( vTZCMULWO, "User", "Name", szUserName, "" );
+   if ( nRC < zCURSOR_SET )
+   { 
+     nRC = CreateEntity( vTZCMULWO, "User", zPOS_AFTER );
+     SetAttributeFromAttribute( vTZCMULWO, "User", "Name", vTZCMWKSO, "User", "Name" );
+   } 
+   // End dad's vml code.
 
    // Set the TaskLPLR to the new LPLR and force the TZCMLPLO named view
    // to be the same as the TaskLPLR view.
@@ -2998,6 +3068,8 @@ zwTZCMLPLD_LoadLPLR( zVIEW vSubtask )
    zCHAR    szFilePref[ 33 ];
    zCHAR    szName[ 33 ];
    zLONG    lZKey;
+
+   TraceLineS("*** zwTZCMLPLD_LoadLPLR *** ", "");
 
    GetViewByName( &vTZCMWKSO, "TZCMWKSO", vSubtask, zLEVEL_TASK );
    GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );

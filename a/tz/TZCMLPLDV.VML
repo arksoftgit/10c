@@ -356,20 +356,65 @@ CREATE_NewLPLR( VIEW ViewToWindow )
 
    VIEW TZCMWKSO    REGISTERED AS TZCMWKSO
    VIEW TZCMLPLO    REGISTERED AS TZCMLPLO
+   VIEW KZAPPLOO    BASED ON LOD  KZAPPLOO
    VIEW TZCMULWO    BASED ON LOD  TZCMULWO
    VIEW TZCMLPLONew BASED ON LOD  TZCMLPLO
    STRING ( 513 ) szMsg
    STRING ( 513 ) szFileName
+   STRING ( 513 ) szFromFileName
+   STRING ( 513 ) szLPLRName
    SHORT nRC
+   INTEGER lHighZKey
+   INTEGER lHighPrefix
+   INTEGER nLth
+   
+   // KJS 05/18/15 - For right now I am not using this because we were running into errors with 
+   // the xlp, hky file not being created and zeidon.app not updated. I modified nzwTZCMLPLD_CreateNewLPLR to
+   // create the tzcmulwo entries. 
    
    // If the request is to create a new, empty LPLR, use the data entered to create a new one.
    // If the request is to create a new entry for an existing, external LPLR, then update the existing LPLR.
+   szLPLRName = TZCMLPLO.LPLR.Name
+   zSearchAndReplace( szLPLRName, 513, " ", "_" )
+   
+   
+   // Get the max zkey in tzcmwkso? This is code from zwTZCMLPLD_PrebuildNewLPLR, not sure where that was called before...
+   // And I'm not seeing that the LPLR.ZKey in xlp is the same as the LPLR.Zkey in tzcmwkso.por. Is this a problem?
+   lHighZKey = 0
+   FOR EACH TZCMWKSO.LPLR  
+      IF TZCMWKSO.LPLR.ZKey > lHighZKey
+         lHighZKey = TZCMWKSO.LPLR.ZKey  
+      END
+   END
+   lHighZKey = lHighZKey + 1   
+
+   // Make sure there is a correct APPLICATION entry for the new LPLR in the ZEIDON.APP object and save it.
+   SysGetEnvVar( szFileName, "ZEIDON", 128 )
+   szFileName = szFileName + "\ZEIDON.APP"
+
+   GET VIEW KZAPPLOO NAMED "KZAPPLOO"
+   IF RESULT < 0 
+      nRC = ActivateOI_FromFile ( KZAPPLOO, "KZAPPLOO", ViewToWindow, szFileName, 512 )
+      IF nRC < 0
+         MessageSend( ViewToWindow, "", "Configuration Management",
+                      "An error occurred when reading the ZEIDON.APP file.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+         SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+         DropView( KZAPPLOO )
+         RETURN -1
+      ELSE
+         NAME VIEW KZAPPLOO "KZAPPLOO"
+      END
+   END
    
    IF TZCMLPLO.LPLR.LPLR_Type = "2"    // "2" is new empty
       // LPLR is new empty. 
       // Create the following.
       // 1. Build Installation/Users object (TZCMULWO). It will be completed on next window.
       // 2. TZCMLPLO and TZCMWKSO will be updated on next window.
+      
+      // Is this right?????
+      TZCMLPLO.LPLR.ZKey = lHighZKey
       
       // TZCMULWO
       ACTIVATE TZCMULWO EMPTY
@@ -379,37 +424,60 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       TZCMULWO.Installation.ExecutableSubDirectory = TZCMLPLO.LPLR.wExecutableSubDirectory 
       CREATE ENTITY TZCMULWO.User 
       TZCMULWO.User.Name = TZCMWKSO.User.Name
-      
+      TZCMULWO.User.ZKey = 11
+      TZCMULWO.User.GenerationStartZKeyPrefix = 11
+      TZCMULWO.User.GenerationStartZKey = 110000000
+            
+      // KJS 06/05/15 - If the user puts in a directory for the meta source that doesn't
+      // exist, do we want to create one for them?
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir 
+      SysValidDirOrFile( szFileName, TRUE, TRUE, 512)
+         
    ELSE
-      // LPLR is new existing. 
+      // LPLR is new existing. Being Imported.
       // Activate Installation/Users object (TZCMULWO) and existing XLP (TZCMLPLO).
       // Then, update directory information in TZCMLPLO from basic path just entered and executable subdirectory from
       // TZCMULWO.
+      GET VIEW TZCMULWO NAMED "TZCMULWO"
       
-      // TZCMULWO
-      // TZCMLPLO.LPLR.MetaSrcDir value was entered by User.
-      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + "TZCMULWO.POR"
-      nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
-      IF nRC < 0
-         MessageSend( ViewToWindow, "", "Configuration Management",
-                      "An Installation/Users object (TZCMULWO) does not exist in the directory path specified.",
-                      zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
-         SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
-         DropView( TZCMULWO )
-         RETURN -1
-      ELSE
-         NAME VIEW TZCMULWO "TZCMULWO"
+      lHighPrefix = 0
+      FOR EACH TZCMULWO.User 
+         IF TZCMULWO.User.GenerationStartZKeyPrefix > lHighPrefix
+            lHighPrefix = TZCMULWO.User.GenerationStartZKeyPrefix  
+         END 
+      END
+       
+      lHighPrefix = lHighPrefix + 1
+      
+      // Make sure that the current User is in the TZCMULWO object. Currently, we will just add the User, if he
+      // isn't already there. Though, we could also return an error for that case and make the person in charge of the
+      // LPLR enter all valid Users.
+      SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name 
+      IF RESULT < zCURSOR_SET
+         CREATE ENTITY TZCMULWO.User 
+         TZCMULWO.User.Name = TZCMWKSO.User.Name 
+         TZCMULWO.User.GenerationStartZKeyPrefix = lHighPrefix
+         lHighPrefix = lHighPrefix * 10000000
+         TZCMULWO.User.GenerationStartZKey = lHighPrefix    
       END
    END
-      
-   // Make sure that the current User is in the TZCMULWO object. Currently, we will just add the User, if he
-   // isn't already there. Though, we could also return an error for that case and make the person in charge of the
-   // LPLR enter all valid Users.
-   SET CURSOR FIRST TZCMULWO.User WHERE TZCMULWO.User.Name = TZCMWKSO.User.Name 
-   IF RESULT < zCURSOR_SET
-      CREATE ENTITY TZCMULWO.User 
-      TZCMULWO.User.Name = TZCMWKSO.User.Name  
-   END
+
+   // Set the executable directory. Create it if it doesn't exist and also copy the zeidon.hky if it doesn't exist.
+   szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
+   SysValidDirOrFile( szFileName, TRUE, TRUE, 512)
+   TZCMLPLO.LPLR.ExecDir = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
+   
+   // Copy the Hotkey file "ZEIDON.HKY" to the new LPLR executable directory.
+   szFileName = szFileName + "\ZEIDON.HKY"
+   nRC = SysValidDirOrFile( szFileName, FALSE, FALSE, 512 )
+   IF nRC <= 0 
+      szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+      szFromFileName = szFromFileName + "\ZEIDON.HKY" 
+      SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+   END                         
+
+   TZCMLPLO.LPLR.PgmSrcDir = TZCMLPLO.LPLR.MetaSrcDir       
+   TZCMLPLO.LPLR.TempDesc = TZCMLPLO.LPLR.Desc 
    
    // TZCMWKSO
    // Make sure that the LPLR object exists in TZCMWKSO.
@@ -419,18 +487,33 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       TZCMWKSO.LPLR.LPLR_Type = "2"
       TZCMWKSO.LPLR.Name      = TZCMULWO.Installation.Name 
       TZCMWKSO.LPLR.Desc      = TZCMULWO.Installation.Desc 
+      TZCMWKSO.LPLR.ZKey = lHighZKey      
    END 
    TZCMWKSO.LPLR.MetaSrcDir = TZCMLPLO.LPLR.MetaSrcDir
    TZCMWKSO.LPLR.PgmSrcDir  = TZCMLPLO.LPLR.MetaSrcDir
    TZCMWKSO.LPLR.ExecDir    = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
    TZCMWKSO.LPLR.MaxZKey    = TZCMULWO.User.GenerationStartZKey 
    
+   SysGetEnvVar( szFileName, "ZEIDON", 128 )
+   szFileName = szFileName + "\TZCMWKS8.POR"
+   nRC = CommitOI_ToFile( TZCMWKSO, szFileName, zASCII )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Save New LPLR",
+                   "An error occurred when writing the TZCMWKSO file. You will have to repeat the function.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END
+     
    // TZCMLPLO
    IF TZCMULWO.Installation.ExecutableSubDirectory = ""
-      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMLPLO.LPLR.Name  + ".XLP"
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + szLPLRName + ".XLP"
    ELSE
-      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory + "\" + TZCMLPLO.LPLR.Name  + ".XLP"
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory + "\" + szLPLRName + ".XLP"
    END
+   
+   // KJS 06/05/15 - Do we need to create this new one, or can we just save this with the new base directory?
+   /*
    nRC = ActivateOI_FromFile ( TZCMLPLONew, "TZCMLPLO", ViewToWindow, szFileName, 512 )
    IF nRC < 0
       szMsg = "An XLP object (TZCMLPLO) does not exist in the directory path specified: " + NEW_LINE + "  " + szFileName + "."
@@ -446,6 +529,35 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       DropObjectInstance( TZCMLPLO )
       NAME VIEW TZCMLPLONew "TZCMLPLO"
    END
+   */
+   // Commit the XLP in the executable directory, and then commit the LLP in the base directory.
+   CommitOI_ToFile( TZCMLPLO, szFileName, zSINGLE )
+   szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + szLPLRName + ".LLP"
+   CommitOI_ToFile( TZCMLPLO, szFileName, zSINGLE )
+   
+   // Make sure the APPLICATION entry exists and is correct.
+   SET CURSOR FIRST KZAPPLOO.APPLICATION WHERE KZAPPLOO.APPLICATION.APP_NAME = TZCMLPLO.LPLR.Name 
+   IF RESULT < zCURSOR_SET
+      CREATE ENTITY KZAPPLOO.APPLICATION 
+      KZAPPLOO.APPLICATION.APP_NAME = TZCMLPLO.LPLR.Name 
+   END 
+   KZAPPLOO.APPLICATION.APP_DLL    = TZCMLPLO.LPLR.ExecDir 
+   KZAPPLOO.APPLICATION.APP_ADOBIN = TZCMLPLO.LPLR.ExecDir 
+   KZAPPLOO.APPLICATION.APP_LOCAL  = KZAPPLOO.ZEIDON.ZEIDON_LOC 
+   KZAPPLOO.APPLICATION.APP_SHARED = KZAPPLOO.ZEIDON.ZEIDON_SHR 
+
+   SysGetEnvVar( szFileName, "ZEIDON", 128 )
+   szFileName = szFileName + "\ZEIDON.APP"
+   
+   // Commit the ZEIDON.APP object.
+   nRC = CommitOI_ToFile( KZAPPLOO, szFileName, zASCII )
+   IF nRC < 0
+      MessageSend( ViewToWindow, "", "Save New LPLR",
+                   "An error occurred when writing the ZEIDON.APP file. You will have to repeat the function.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END 
 
 END
 
@@ -479,14 +591,8 @@ END
 DIALOG OPERATION
 PostbuildImportLPLR( VIEW ViewToWindow )
 
-   VIEW TZCMWKSO REGISTERED AS TZCMWKSO
-   VIEW TZCMLPLO BASED ON LOD  TZCMLPLO
-   
-   // Initialize an empty LPLO object to hold the keyed in data.
-   ACTIVATE TZCMLPLO EMPTY 
-   NAME VIEW TZCMLPLO "TZCMLPLO"
-   CREATE ENTITY TZCMLPLO.LPLR  
-   
+   VIEW TZCMLPLO REGISTERED AS TZCMLPLO
+      
    // New Imported (external) LPLR
    TZCMLPLO.LPLR.LPLR_Type = 3
 
@@ -540,6 +646,8 @@ SAVE_NewLPLR( VIEW ViewToWindow )
    END
    
    // Save the XLP object.
+   // KJS 06/10/15 - Already done in CreateNewLPLR.
+   /*
    szFileName = TZCMLPLO.LPLR.ExecDir + "\" + TZCMLPLO.LPLR.Name  + ".XLP" 
    nRC = CommitOI_ToFile( TZCMLPLO, szFileName, zASCII )
    IF nRC < 0
@@ -578,7 +686,6 @@ TraceLineS( "*** WKS File: ", szDirectoryName )
       NAME VIEW KZAPPLOO "KZAPPLOO"
    END
 TraceLineS( "*** APP File: ", szDirectoryName )
-
    // Make sure the APPLICATION entry exists and is correct.
    SET CURSOR FIRST KZAPPLOO.APPLICATION WHERE KZAPPLOO.APPLICATION.APP_NAME = TZCMLPLO.LPLR.Name 
    IF RESULT < zCURSOR_SET
@@ -599,5 +706,129 @@ TraceLineS( "*** APP File: ", szDirectoryName )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
       RETURN -1
    END
+*/
+END
 
+
+/*************************************************************************************************
+**    
+**    OPERATION: IMPORT_LPLR
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+IMPORT_LPLR( VIEW ViewToWindow )
+
+   VIEW TZCMWKSO    REGISTERED AS TZCMWKSO
+   VIEW TZCMLPLO    BASED ON LOD  TZCMLPLO
+   VIEW TZCMULWO    BASED ON LOD  TZCMULWO
+   VIEW TZCMLPLONew BASED ON LOD  TZCMLPLO
+   VIEW KZAPPLOO    BASED ON LOD  KZAPPLOO 
+   VIEW KZXMLPGO    BASED ON LOD  KZXMLPGO 
+   STRING ( 513 ) szMsg
+   STRING ( 513 ) szTZCMULWOFileName
+   STRING ( 513 ) szXLPFileName
+   STRING ( 513 ) szStr
+   STRING ( 513 ) szFileName
+   STRING ( 1 )   szSlash
+   STRING ( 30 )  szOperatorArea
+   SHORT nRC
+   SHORT nLth
+   
+   szFileName = "*.*"
+   IF ( OperatorPromptForFile( ViewToWindow,
+                                szXLPFileName,
+                                500,
+                                "LLP files (*.LLP)||*.LLP||||",
+                                "CSV",
+                                9224 ) = 2 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      RETURN -1
+   END                                
+                                                                                                           
+
+   nRC = ActivateOI_FromFile ( TZCMLPLO, "TZCMLPLO", ViewToWindow, szXLPFileName, 512 )
+   
+   IF nRC < 0
+      szMsg = "Could not open the LLP file specified: " + NEW_LINE + "  " + szXLPFileName + "."
+      MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      DropView( TZCMLPLO )
+      RETURN -1
+   END
+   NAME VIEW TZCMLPLO "TZCMLPLO"
+   
+  nLth = zstrlen( szXLPFileName )
+  // We want to get just the directory selected without the filename.
+  nRC = zSearchSubString( szXLPFileName, "\"  , "b", nLth )
+  //nRC = zSearchSubString( szXLPFileName, "\"  , "b", nRC - 1 )
+  
+  // Keep track of original MetSrcDir
+  szStr = TZCMLPLO.LPLR.MetaSrcDir
+  
+  nRC = ZeidonStringCopy( szFileName, 1, 0, szXLPFileName, 1, nRC, 513 )
+
+// KJS 06/05/15 - Probably not here, but if the user puts in a directory for the meta source that doesn't
+// exist, do we want to create one for them?
+//      SysValidDirOrFile( szFileName,//                         TRUE /* Directory (TRUE or FALSE) */,//                         FALSE /* CheckCreate */,//                         512 /* Max Path Length */ )
+  TZCMLPLO.LPLR.MetaSrcDir = szFileName 
+  
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + "TZCMULWO.POR"
+      nRC = ActivateOI_FromFile ( TZCMULWO, "TZCMULWO", ViewToWindow, szFileName, 512 )
+      IF nRC < 0
+         MessageSend( ViewToWindow, "", "Configuration Management",
+                      "An Installation/Users object (TZCMULWO) does not exist in the directory path specified.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+         SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+         DropView( TZCMULWO )
+         RETURN -1
+      ELSE
+         NAME VIEW TZCMULWO "TZCMULWO"
+      END  
+   // KJS 06/16/15 - Should we see if there is an ExecutableSubDirecory, and if not, create one based on the ExecDir.
+   IF TZCMULWO.Installation.ExecutableSubDirectory = "" AND TZCMLPLO.LPLR.ExecDir != "" 
+      szFileName = TZCMLPLO.LPLR.ExecDir 
+      // Get the part of the filename that is different between the Meta and Exec dirs.
+      zSearchAndReplace( szFileName, 513, szStr, "" )
+      nRC = zSearchSubString( szFileName, "\"  , "f", 0 )
+      IF nRC = 0
+         // Now replace the starting "\" if there is one.
+         nRC = ZeidonStringCopy( szFileName, 1, 0, szFileName, 2, 0, 513 )          
+      END
+      // Do we need to get rid of the first /?
+      TZCMULWO.Installation.ExecutableSubDirectory = szFileName
+      TZCMLPLO.LPLR.wExecutableSubDirectory = szFileName
+   END
+  
+  //zstrncpy( szFileName, szXLPFileName, nRC, nLth ) 
+
+END
+
+/*************************************************************************************************
+**    
+**    OPERATION: GetZeidonApp
+**    
+*************************************************************************************************/
+LOCAL OPERATION
+GetZeidonApp( VIEW ViewToWindow,
+              VIEW vKZAPPLOO,
+              STRING ( 32 ) szZeidonDirectory )
+   STRING ( 513 ) szMsg
+   STRING ( 513 ) szTZCMULWOFileName
+   INTEGER nRC
+   INTEGER nLth
+
+  SysGetEnvVar( szZeidonDirectory, "ZEIDON",  513 )
+  nLth = zstrlen( szZeidonDirectory )
+  nRC = zSearchSubString( szZeidonDirectory, "\"  , "f", nLth )
+  
+  szZeidonDirectory = szZeidonDirectory + "ZEIDON.APP"
+  nRC = ActivateOI_FromFile ( vKZAPPLOO, "KZAPPLOO", ViewToWindow, szZeidonDirectory, 512)
+   IF nRC < 0
+      szMsg = "Could not open: " + szZeidonDirectory + "."
+      MessageSend( ViewToWindow, "", "Configuration Management", szMsg, zMSGQ_OBJECT_CONSTRAINT_ERROR, 0 )
+      SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
+      DropView( vKZAPPLOO )
+      RETURN -1
+   END
+  
 END

@@ -3753,6 +3753,9 @@ DKS_TRACE_END */
       END
       ResetViewFromSubobject( vDialogTemp )
 
+      szWriteBuffer = "</div>  <!-- " + vDialogTemp.Control.Tag + " --> "
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+
       szWriteBuffer = "</form>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 

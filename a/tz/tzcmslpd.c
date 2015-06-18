@@ -204,27 +204,20 @@ zwTZCMSLPD_RebuildMetaLists( zVIEW vSubtask )
    zVIEW  vTZCMWKSO;
    zVIEW  LPLR_View;
    zVIEW  vTZCMSLPL;
+   zVIEW  TZCMULWO = 0; 
    zCHAR  szLPLR_FileSpec[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szDirectorySpec[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szLPLR_Name[ 33 ];
    zCHAR  szLPLR_FileName[ 33 ];
+   zCHAR  szTimeStamp[ 22 ];
    zLONG  lTaskUseCnt;
    zLONG  lCurrentZKey;
    zLONG  lZKey;
-   zSHORT nRC, nLPLR_Activated;
+   zSHORT nRC, nLPLR_Activated, RESULT;
    HFILE  hFile;
    zCHAR  szDetachSpec[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR  szMsg[ zMAX_FILESPEC_LTH + zSHORT_MESSAGE_LTH + 1 ];
 
-   /* KJS 03/26/13 - Changing this to a simple yes or no question
-   if ( MessagePrompt( vSubtask, "CM00609",
-                       "Configuration Management",
-                       "Do you want to rebuild your Project?\n\n"
-                       "This is a Zeidon internal function only that will alter your Project.\n"
-                       "Only continue if you fully understand what you are doing.",
-                       zBEEP,
-                       zBUTTONS_YESNO, zRESPONSE_NO, 0 ) == zRESPONSE_NO )
-   */
    if ( MessagePrompt( vSubtask, "CM00609",
                        "Configuration Management",
                        "Do you want to rebuild your Project?",
@@ -346,22 +339,39 @@ zwTZCMSLPD_RebuildMetaLists( zVIEW vSubtask )
 
    nRC = zgSortEntityWithinParent( zASCENDING, LPLR_View,
                                    "W_MetaType", "Type", "" );
-// if ( CommitOI_ToFile( LPLR_View, szLPLR_FileSpec, zSINGLE ) == 0 ) // zBINARY | zSINGLE ) == 0 )
-//   {
-//      zstrcpy( szMsg, "Project " );
-//      zstrcat( szMsg, szLPLR_Name );
-//      zstrcat( szMsg, " to be rebuilt in\n" );
-//      zstrcat( szMsg, szLPLR_FileSpec );
-//      MessageSend( vSubtask, "CM00608", "Configuration Management",
-//                   szMsg,
-//                   zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
-//   }
+
+   // KSJ 06/10/15 - I think that we want to make sure that the Base Directory in both XLP and LLP are not something that
+   // was brought from someone else's project, should be based on the LPLR here on this machine.
+   SetAttributeFromAttribute( LPLR_View, "LPLR", "MetaSrcDir", vTZCMWKSO, "LPLR", "MetaSrcDir" );
+   SetAttributeFromAttribute( LPLR_View, "LPLR", "PgmSrcDir", vTZCMWKSO, "LPLR", "PgmSrcDir" );
+   SetAttributeFromAttribute( LPLR_View, "LPLR", "ExecDir", vTZCMWKSO, "LPLR", "ExecDir" );
+
+   // Added LastBuildDate so that we could then compare the LLP and XLP so see if they should be rebuild because they are out
+   // of sync.
+   SysGetDateTime( szTimeStamp );
+   SetAttributeFromString( LPLR_View, "LPLR", "LastBuildDate", szTimeStamp );
 
    if ( CommitOI_ToFile( LPLR_View, szLPLR_FileSpec, zSINGLE ) == 0 ) // zBINARY | zSINGLE ) == 0 )
    {
       zstrcpy( szMsg, "Project " );
       zstrcat( szMsg, szLPLR_Name );
       zstrcat( szMsg, " has been rebuilt in\n" );
+      zstrcat( szMsg, szLPLR_FileSpec );
+      MessageSend( vSubtask, "CM00608", "Configuration Management",
+                   szMsg,
+                   zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
+   }
+   GetStringFromAttribute( szDirectorySpec, vTZCMWKSO, "LPLR", "MetaSrcDir" );  // borrow szDirectorySpec for a second
+   SysConvertEnvironmentString( szLPLR_FileSpec, szDirectorySpec );
+   ofnTZCMWKSO_AppendSlash( szLPLR_FileSpec );
+   zstrncpy( szLPLR_FileName, szLPLR_Name, 33 );
+   zstrcat( szLPLR_FileSpec, szLPLR_FileName );
+   zstrcat( szLPLR_FileSpec, ".LLP" );
+   if ( CommitOI_ToFile( LPLR_View, szLPLR_FileSpec, zSINGLE ) != 0 ) 
+   {
+      zstrcpy( szMsg, "Project " );
+      zstrcat( szMsg, szLPLR_Name );
+      zstrcat( szMsg, " LLP could not be rebuilt in\n" );
       zstrcat( szMsg, szLPLR_FileSpec );
       MessageSend( vSubtask, "CM00608", "Configuration Management",
                    szMsg,
@@ -375,6 +385,42 @@ zwTZCMSLPD_RebuildMetaLists( zVIEW vSubtask )
    // GetWKS_FileName( szDirectorySpec );
    // CommitOI_ToFile( vTZCMWKSO, szDirectorySpec, zSINGLE );
    }
+   else
+   {
+/*
+   // KJS 06/09/15 - I am just going to see what would happen if I created the 
+   // W_MetaType structure from the TZCMLPLO to TZCMUWLO.
+   RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", LPLR_View, zLEVEL_TASK );
+   RESULT = SetCursorFirstEntity( TZCMULWO, "W_MetaType", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      DeleteEntity( TZCMULWO, "W_MetaType", zREPOS_NONE );
+      //ExcludeEntity( TZCMULWO, "W_MetaType", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( TZCMULWO, "W_MetaType", "" );
+   } 
+
+   RESULT = SetCursorFirstEntity( LPLR_View, "W_MetaType", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      IncludeSubobjectFromSubobject( TZCMULWO, "W_MetaType", LPLR_View, "W_MetaType", zPOS_AFTER );
+      SetMatchingAttributesByName( TZCMULWO, "W_MetaType", LPLR_View, "W_MetaType", zSET_NULL ); 
+      RESULT = SetCursorNextEntity( LPLR_View, "W_MetaType", "" );
+   } 
+*/
+/*
+   if ( CommitOI_ToFile( TZCMULWO, szLPLR_FileSpec, zSINGLE ) == 0 )
+   {
+      zstrcpy( szMsg, "TZCMULWO.POR " );
+      zstrcat( szMsg, " has been rebuilt in\n" );
+      zstrcat( szMsg, szLPLR_FileSpec );
+      MessageSend( vSubtask, "CM00608", "Configuration Management",
+                   szMsg,
+                   zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
+   }
+*/
+   // END OF KJS TZCMUWLO code
+   }
+
 
    if ( SysGetEnvVar( szDetachSpec, "ZEIDON", zMAX_FILENAME_LTH + 1 ) == 0 )
    {

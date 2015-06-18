@@ -6182,11 +6182,6 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
       //filename that is being uploaded into that mapping.
 
       CreateViewFromView( vDialogTemp, vDialogCtrl )
-      //I wanted to do the "SET CURSOR..." but because Control doesn't really have a parent
-      //the c code that gets generated is only looking for ControlDef under Control (not all controls) and so
-      //it is not finding it.
-      //SET CURSOR FIRST vDialogTemp.Control WHERE vDialogTemp.ControlDef.Tag = "EditBox"
-      FOR EACH vDialogTemp.Control
 
          // Aadit, wants there to be an upload file limit, so that for email attachment, the file isn't too big to bring
          // down the mail server. This really needs to be an updatable field...
@@ -6201,6 +6196,11 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
          szWriteBuffer = "      }"
          WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
 
+      //I wanted to do the "SET CURSOR..." but because Control doesn't really have a parent
+      //the c code that gets generated is only looking for ControlDef under Control (not all controls) and so
+      //it is not finding it.
+      //SET CURSOR FIRST vDialogTemp.Control WHERE vDialogTemp.ControlDef.Tag = "EditBox"
+      FOR EACH vDialogTemp.Control
 
          IF vDialogTemp.ControlDef.Tag = "EditBox"
                                         //256
@@ -6237,31 +6237,31 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                IF szProductionMode = "Y"
                   // try
                   szWriteBuffer = "            try"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "            {"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "               " +
                          vDialogTemp.CtrlMapView.Name +
                          ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
                          vDialogTemp.CtrlMapER_Attribute.Name + "^ ).setValue( strInputFileName, ^^ );"
                   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "            }"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   // catch
                   szWriteBuffer = "            catch ( InvalidAttributeValueException e )"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "            {"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "               nRC = 2;  // do the ^error^ redirection"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   // KJS 02/27/12 Specifically using strTag...
                   szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strInputFileName );"
                // szWriteBuffer = "            VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strMapValue );"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "               break;"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "            }"
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   // end of try/catch
    
                   szWriteBuffer = "         }"
@@ -6273,6 +6273,10 @@ GenJSPJ_Action( VIEW vDialog     BASED ON LOD TZWDLGSO,
                          vDialogTemp.CtrlMapView.Name +
                          ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
                          vDialogTemp.CtrlMapER_Attribute.Name + "^ ).setValue( strInputFileName, ^^ );"
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         }"
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "      }"
                   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                END
 

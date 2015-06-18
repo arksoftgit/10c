@@ -394,6 +394,8 @@ InitializeLPLR( zVIEW  vSubtask,
    LPTASK lpTask;
    zSHORT nRC;
 
+   TraceLineS("*** InitializeLPLR *** ", "");
+
    // Check to make sure that the Workstation Administration tool is not up.
    lpTask = 0;
    while ( (lpTask = SfGetNextTask( lpTask )) != 0 )
@@ -484,13 +486,12 @@ InitializeLPLR( zVIEW  vSubtask,
 
       SetNameForView( WKS_View, "TZCMWKSO", vZeidonCM, zLEVEL_SUBTASK );
    }
-
+ 
    if ( pchLPLR_NameIn &&
         zstrcmp( pchLPLR_NameIn, "CM New User" ) == 0 )
    {
       return( 0 );
    }
-
    if ( pchLPLR_NameIn &&
         SetCursorFirstEntityByString( WKS_View, "LPLR", "Name",
                                       pchLPLR_NameIn, "" ) == zCURSOR_SET )
@@ -664,6 +665,7 @@ InitializeLPLR( zVIEW  vSubtask,
    GetIntegerFromAttribute( &lTaskUseCnt, vLPLR, "LPLR", "TaskUseCount" );
    lTaskUseCnt++;
    SetAttributeFromInteger( vLPLR, "LPLR", "TaskUseCount", lTaskUseCnt );
+
    return( 1 );
 }
 
@@ -954,7 +956,7 @@ RetrieveViewForMetaList( zVIEW vSubtask,
 //
 //  RETURNS:    1 - Meta OI successfully activated
 //             -1 - Error encountered
-//
+///
 /////////////////////////////////////////////////////////////////////////////
 //./ END + 6
 zOPER_EXPORT zSHORT OPERATION

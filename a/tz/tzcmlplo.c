@@ -1596,14 +1596,21 @@ zwTZCMLPLO_RefreshReusableCPLRs( zVIEW   vSubtask,
 zOPER_EXPORT zSHORT OPERATION
 oTZCMLPLO_CommitLPLR( zVIEW vTZCMLPLO )
 {
+   zVIEW     TZCMULWO = 0; 
    zCHAR    szFileName[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR    szFileName2[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szWork[ zMAX_FILESPEC_LTH + 1 ];
    zCHAR    szLPLR_Name[ 33 ];
    zSHORT   nRC;
+   zSHORT   RESULT;
 
    GetStringFromAttribute( szWork, vTZCMLPLO, "LPLR", "ExecDir" );
    SysConvertEnvironmentString( szFileName, szWork );
    ofnTZCMWKSO_AppendSlash( szFileName );
+   // KJS 06/10/15 - Testing creating a LLP file in base directory.
+   GetStringFromAttribute( szWork, vTZCMLPLO, "LPLR", "MetaSrcDir" );
+   SysConvertEnvironmentString( szFileName2, szWork );
+   ofnTZCMWKSO_AppendSlash( szFileName2 );
    GetStringFromAttribute( szLPLR_Name, vTZCMLPLO, "LPLR", "Name" );
    for ( nRC = 0; nRC < 32; nRC++ )
    {
@@ -1616,10 +1623,35 @@ oTZCMLPLO_CommitLPLR( zVIEW vTZCMLPLO )
    szLPLR_Name[ nRC ] = 0;
    zstrcat( szFileName, szLPLR_Name );
    zstrcat( szFileName, ".XLP" );
+   // KJS 06/10/15 - Testing creating a LLP file in base directory.
+   zstrcat( szFileName2, szLPLR_Name );
+   zstrcat( szFileName2, ".LLP" );
    zgSortEntityWithinParent( zASCENDING, vTZCMLPLO,
                              "W_MetaType", "Type", 0 );
+
+   // KJS 06/09/15 - I am just going to see what would happen if I created the 
+   // W_MetaType structure from the TZCMLPLO to TZCMUWLO.
+/*
+   RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", vTZCMLPLO, zLEVEL_TASK );
+   RESULT = SetCursorFirstEntity( TZCMULWO, "W_MetaType", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      ExcludeEntity( TZCMULWO, "W_MetaType", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( TZCMULWO, "W_MetaType", "" );
+   } 
+
+   RESULT = SetCursorFirstEntity( vTZCMLPLO, "W_MetaType", "" );
+   while ( RESULT > zCURSOR_UNCHANGED )
+   { 
+      IncludeSubobjectFromSubobject( TZCMULWO, "W_MetaType", vTZCMLPLO, "W_MetaType", zPOS_AFTER );
+      RESULT = SetCursorNextEntity( vTZCMLPLO, "W_MetaType", "" );
+   } 
+*/
+   // END OF KJS TZCMUWLO code
+
+   // KJS 06/10/15 - Testing creating a LLP file in base directory.
+   CommitOI_ToFile( vTZCMLPLO, szFileName2, zSINGLE ); 
    return( CommitOI_ToFile( vTZCMLPLO, szFileName, zSINGLE ) );
-// return( CommitOI_ToFile( vTZCMLPLO, szFileName, zBINARY | zSINGLE | zINCREMENTAL ) );
 }
 
 /////////////////////////////////////////////////////////////////////////////
