@@ -306,7 +306,8 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
    zSHORT    lTempInteger_58; 
    zCHAR     szTempString_47[ 255 ]; 
    zCHAR     szTempString_48[ 255 ]; 
-   zCHAR     szTempString_49[ 255 ]; 
+   zCHAR     szTempString_49[ 33 ]; 
+   zCHAR     szTempString_50[ 255 ]; 
 
 
    //:// Generate a JSP file for formatting the Window that has current position.
@@ -7268,6 +7269,14 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
       //:ResetViewFromSubobject( vDialogTemp )
       ResetViewFromSubobject( vDialogTemp );
 
+      //:szWriteBuffer = "</div>  <!-- " + vDialogTemp.Control.Tag + " --> "
+      GetVariableFromAttribute( szTempString_49, 0, 'S', 33, vDialogTemp, "Control", "Tag", "", 0 );
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "</div>  <!-- ", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_49, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, " --> ", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+
       //:szWriteBuffer = "</form>"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "</form>", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
@@ -7332,9 +7341,9 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
       else
       { 
          //:szWriteBuffer = "<%@ include file=^" + vDialogRoot.Dialog.WEB_FooterInclude + "^ %>"
-         GetVariableFromAttribute( szTempString_49, 0, 'S', 255, vDialogRoot, "Dialog", "WEB_FooterInclude", "", 0 );
+         GetVariableFromAttribute( szTempString_50, 0, 'S', 255, vDialogRoot, "Dialog", "WEB_FooterInclude", "", 0 );
          ZeidonStringCopy( szWriteBuffer, 1, 0, "<%@ include file=^", 1, 0, 10001 );
-         ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_49, 1, 0, 10001 );
+         ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_50, 1, 0, 10001 );
          ZeidonStringConcat( szWriteBuffer, 1, 0, "^ %>", 1, 0, 10001 );
          //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
          WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );

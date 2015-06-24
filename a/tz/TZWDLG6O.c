@@ -108,6 +108,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    zCHAR     InitializationCode[ 2 ] = { 0 }; 
    //:STRING ( 1 )     InsertBlankFlag
    zCHAR     InsertBlankFlag[ 2 ] = { 0 }; 
+   //:STRING ( 1 )     szInsertPrebuildJavascriptInline
+   zCHAR     szInsertPrebuildJavascriptInline[ 2 ] = { 0 }; 
    //:STRING ( 1 )     WorkFlag
    zCHAR     WorkFlag[ 2 ] = { 0 }; 
    //:STRING ( 100 )   szSizeF
@@ -2803,6 +2805,10 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
 
+   //:// DKS 2015.06.19 - Get the InsertPrebuildJavascriptInlineFlag.
+   //:SysReadZeidonIni( -1, szSystemIniApplName, "InsertPrebuildJavascriptInlineFlag", szInsertPrebuildJavascriptInline )
+   SysReadZeidonIni( -1, szSystemIniApplName, "InsertPrebuildJavascriptInlineFlag", szInsertPrebuildJavascriptInline );
+
    //:szJavaScript = ""
    ZeidonStringCopy( szJavaScript, 1, 0, "", 1, 0, 10001 );
 
@@ -2834,11 +2840,20 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
 
             //:// KJS 04/30/15
             //:// DKS 2015.06.15 - Should not add JavaScript here for prebuild/postbuild action ... will be added in _AfterPageLoaded function.
-            //:/*
-            //:IF vDialog.ActWndEvent.Type = 1 AND vDialog.Action.WebJavaScript != ""
-            //:   szJavaScript = vDialog.Action.WebJavaScript
+            //:IF szInsertPrebuildJavascriptInline != "Y"
+            if ( ZeidonStringCompare( szInsertPrebuildJavascriptInline, 1, 0, "Y", 1, 0, 2 ) != 0 )
+            { 
+               //:IF vDialog.ActWndEvent.Type = 1 AND vDialog.Action.WebJavaScript != ""
+               if ( CompareAttributeToInteger( vDialog, "ActWndEvent", "Type", 1 ) == 0 && CompareAttributeToString( vDialog, "Action", "WebJavaScript", "" ) != 0 )
+               { 
+                  //:szJavaScript = vDialog.Action.WebJavaScript
+                  GetVariableFromAttribute( szJavaScript, 0, 'S', 10001, vDialog, "Action", "WebJavaScript", "", 0 );
+               } 
+
+               //:END
+            } 
+
             //:END
-            //:*/
             //:IF vDialog.ActOper EXISTS
             lTempInteger_22 = CheckExistenceOfEntity( vDialog, "ActOper" );
             if ( lTempInteger_22 == 0 )
@@ -4542,7 +4557,7 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
 
    //:// KJS 09/21/2009
    //:// If there are postbuild actions for this window, and those actions have javascript code on them, we
-   //:// need to call the java functions that has the javascript code in them (previously only an operation
+   //:// need to call the java functions that have the javascript code in them (previously only an operation
    //:// tied to this action was called up in the jsp code).  We are going to put a call to these functions
    //:// in the _AfterPageLoaded function.
    //:// Loop through the actions looking for one that has javascript code and place the calls here.
@@ -4563,8 +4578,8 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
          if ( ZeidonStringCompare( szJavaScript, 1, 0, "", 1, 0, 10001 ) != 0 )
          { 
             //:// Only worry about Prebuild and Postbuild window actions.
-            //:IF vDialogTemp.ActWndEvent.Type = 1  // prebuild
-            if ( CompareAttributeToInteger( vDialogTemp, "ActWndEvent", "Type", 1 ) == 0 )
+            //:IF vDialogTemp.ActWndEvent.Type = 1 AND szInsertPrebuildJavascriptInline = "Y"  // prebuild
+            if ( CompareAttributeToInteger( vDialogTemp, "ActWndEvent", "Type", 1 ) == 0 && ZeidonStringCompare( szInsertPrebuildJavascriptInline, 1, 0, "Y", 1, 0, 2 ) == 0 )
             { 
                //:szWriteBuffer = "   // Prebuild action has javascript code entered by user."
                ZeidonStringCopy( szWriteBuffer, 1, 0, "   // Prebuild action has javascript code entered by user.", 1, 0, 10001 );
@@ -4617,6 +4632,21 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:END
    //:DropView( vDialogTemp )
    DropView( vDialogTemp );
+
+   //:// DKS 2015.06.18 - See if there is any "global" javascript ... insert it here if there is.
+   //:SysReadZeidonIni( -1, szSystemIniApplName, "GlobalAfterPageLoadJavascript", szJavaScript )
+   SysReadZeidonIni( -1, szSystemIniApplName, "GlobalAfterPageLoadJavascript", szJavaScript );
+   //:IF szJavaScript != ""
+   if ( ZeidonStringCompare( szJavaScript, 1, 0, "", 1, 0, 10001 ) != 0 )
+   { 
+      //:szWriteBuffer = "   " + szJavaScript
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "   ", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szJavaScript, 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+   } 
+
+   //:END
 
    //:// Because there is some postbuild code that could be called where isWindowClosing could be set to false, re-initialize it
    //:// again after the page has been loaded.
@@ -4971,7 +5001,6 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
             //:IF lActionType = zWAB_StayOnWindow AND vDialog.Action.WebJavaScript != ""
             if ( lActionType == zWAB_StayOnWindow && CompareAttributeToString( vDialog, "Action", "WebJavaScript", "" ) != 0 )
             { 
-
                //:// KJS 08/14/2009 - If the window type is zWAB_StayOnWindow (no refresh) and we have Javascript code on this action
                //:// then we don't want to do the .submit (which we really don't want to do if the action is zWAB_StayOnWindow but I'm
                //:// afraid there might be places where we kept the action zWAB_StayOnWindow because we knew it would always put
@@ -4984,28 +5013,33 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
                ZeidonStringCopy( szWriteBuffer, 1, 0, "   {", 1, 0, 10001 );
                //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
                WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
-
-               //:szJavaScript = vDialog.Action.WebJavaScript
-               GetVariableFromAttribute( szJavaScript, 0, 'S', 10001, vDialog, "Action", "WebJavaScript", "", 0 );
-               //:IF  szJavaScript != ""
-               if ( ZeidonStringCompare( szJavaScript, 1, 0, "", 1, 0, 10001 ) != 0 )
+               //:// DKS 2015.06.20 - remove prebuild javascript if it is being inserted in _AfterPageLoaded
+               //:IF lActionType != 1 OR szInsertPrebuildJavascriptInline != "Y"  // prebuild
+               if ( lActionType != 1 || ZeidonStringCompare( szInsertPrebuildJavascriptInline, 1, 0, "Y", 1, 0, 2 ) != 0 )
                { 
-                  //:szWriteBuffer = "      // Javascript code entered by user."
-                  ZeidonStringCopy( szWriteBuffer, 1, 0, "      // Javascript code entered by user.", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-                  WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
-                  //:szWriteBuffer = szJavaScript
-                  ZeidonStringCopy( szWriteBuffer, 1, 0, szJavaScript, 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-                  WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
-                  //:szWriteBuffer = "      // END of Javascript code entered by user."
-                  ZeidonStringCopy( szWriteBuffer, 1, 0, "      // END of Javascript code entered by user.", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
-                  WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+                  //:szJavaScript = vDialog.Action.WebJavaScript
+                  GetVariableFromAttribute( szJavaScript, 0, 'S', 10001, vDialog, "Action", "WebJavaScript", "", 0 );
+                  //:IF  szJavaScript != ""
+                  if ( ZeidonStringCompare( szJavaScript, 1, 0, "", 1, 0, 10001 ) != 0 )
+                  { 
+                     //:szWriteBuffer = "      // Javascript code entered by user."
+                     ZeidonStringCopy( szWriteBuffer, 1, 0, "      // Javascript code entered by user.", 1, 0, 10001 );
+                     //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                     WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+                     //:szWriteBuffer = szJavaScript
+                     ZeidonStringCopy( szWriteBuffer, 1, 0, szJavaScript, 1, 0, 10001 );
+                     //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                     WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+                     //:szWriteBuffer = "      // END of Javascript code entered by user."
+                     ZeidonStringCopy( szWriteBuffer, 1, 0, "      // END of Javascript code entered by user.", 1, 0, 10001 );
+                     //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                     WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+                  } 
+
+                  //:END
                } 
 
                //:END
-
                //:szWriteBuffer = "   }"
                ZeidonStringCopy( szWriteBuffer, 1, 0, "   }", 1, 0, 10001 );
                //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )

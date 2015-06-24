@@ -13609,6 +13609,32 @@ GenJSPJ_Action( zVIEW     vDialog,
 
       //:CreateViewFromView( vDialogTemp, vDialogCtrl )
       CreateViewFromView( &vDialogTemp, vDialogCtrl );
+
+      //:   // Aadit, wants there to be an upload file limit, so that for email attachment, the file isn't too big to bring
+      //:   // down the mail server. This really needs to be an updatable field...
+      //:   szWriteBuffer = "      if ( iFileLth > 10485760 )"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      if ( iFileLth > 10485760 )", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "      {"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      {", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "         VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, ^This file is too large!^, ^This file is too large!^ );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         VmlOperation.CreateMessage( task, ^", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, "^, ^This file is too large!^, ^This file is too large!^ );", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "         break;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         break;", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+      //:   szWriteBuffer = "      }"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "      }", 1, 0, 10001 );
+      //:   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+      WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+
       //://I wanted to do the "SET CURSOR..." but because Control doesn't really have a parent
       //://the c code that gets generated is only looking for ControlDef under Control (not all controls) and so
       //://it is not finding it.
@@ -13617,32 +13643,6 @@ GenJSPJ_Action( zVIEW     vDialog,
       RESULT = SetCursorFirstEntity( vDialogTemp, "Control", "" );
       while ( RESULT > zCURSOR_UNCHANGED )
       { 
-
-         //:// Aadit, wants there to be an upload file limit, so that for email attachment, the file isn't too big to bring
-         //:// down the mail server. This really needs to be an updatable field...
-         //:szWriteBuffer = "      if ( iFileLth > 10485760 )"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "      if ( iFileLth > 10485760 )", 1, 0, 10001 );
-         //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
-         //:szWriteBuffer = "      {"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "      {", 1, 0, 10001 );
-         //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
-         //:szWriteBuffer = "         VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, ^This file is too large!^, ^This file is too large!^ );"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "         VmlOperation.CreateMessage( task, ^", 1, 0, 10001 );
-         ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
-         ZeidonStringConcat( szWriteBuffer, 1, 0, "^, ^This file is too large!^, ^This file is too large!^ );", 1, 0, 10001 );
-         //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
-         //:szWriteBuffer = "         break;"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "         break;", 1, 0, 10001 );
-         //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
-         //:szWriteBuffer = "      }"
-         ZeidonStringCopy( szWriteBuffer, 1, 0, "      }", 1, 0, 10001 );
-         //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
-         WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
-
 
          //:IF vDialogTemp.ControlDef.Tag = "EditBox"
          if ( CompareAttributeToString( vDialogTemp, "ControlDef", "Tag", "EditBox" ) == 0 )
@@ -13727,12 +13727,12 @@ GenJSPJ_Action( zVIEW     vDialog,
                   //:// try
                   //:szWriteBuffer = "            try"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "            try", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:szWriteBuffer = "            {"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "            {", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:szWriteBuffer = "               " +
                   //:       vDialogTemp.CtrlMapView.Name +
                   //:       ".cursor( ^" + vDialogTemp.CtrlMapRelatedEntity.Name + "^ ).getAttribute( ^" +
@@ -13751,37 +13751,37 @@ GenJSPJ_Action( zVIEW     vDialog,
                   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:szWriteBuffer = "            }"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "            }", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:// catch
                   //:szWriteBuffer = "            catch ( InvalidAttributeValueException e )"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "            catch ( InvalidAttributeValueException e )", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:szWriteBuffer = "            {"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "            {", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:szWriteBuffer = "               nRC = 2;  // do the ^error^ redirection"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "               nRC = 2;  // do the ^error^ redirection", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:// KJS 02/27/12 Specifically using strTag...
                   //:szWriteBuffer = "               VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strInputFileName );"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "               VmlOperation.CreateMessage( task, ^", 1, 0, 10001 );
                   ZeidonStringConcat( szWriteBuffer, 1, 0, szCtrlTag, 1, 0, 10001 );
                   ZeidonStringConcat( szWriteBuffer, 1, 0, "^, e.getReason( ), strInputFileName );", 1, 0, 10001 );
                   //:// szWriteBuffer = "            VmlOperation.CreateMessage( task, ^" + szCtrlTag + "^, e.getReason( ), strMapValue );"
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:szWriteBuffer = "               break;"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "               break;", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:szWriteBuffer = "            }"
                   ZeidonStringCopy( szWriteBuffer, 1, 0, "            }", 1, 0, 10001 );
-                  //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                   //:// end of try/catch
 
                   //:szWriteBuffer = "         }"
@@ -13810,6 +13810,14 @@ GenJSPJ_Action( zVIEW     vDialog,
                   GetVariableFromAttribute( szTempString_19, 0, 'S', 33, vDialogTemp, "CtrlMapER_Attribute", "Name", "", 0 );
                   ZeidonStringConcat( szWriteBuffer, 1, 0, szTempString_19, 1, 0, 10001 );
                   ZeidonStringConcat( szWriteBuffer, 1, 0, "^ ).setValue( strInputFileName, ^^ );", 1, 0, 10001 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+                  //:szWriteBuffer = "         }"
+                  ZeidonStringCopy( szWriteBuffer, 1, 0, "         }", 1, 0, 10001 );
+                  //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
+                  //:szWriteBuffer = "      }"
+                  ZeidonStringCopy( szWriteBuffer, 1, 0, "      }", 1, 0, 10001 );
                   //:WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 )
                   WL_QC( vDialogTemp, lFile, szWriteBuffer, "^", 0 );
                } 

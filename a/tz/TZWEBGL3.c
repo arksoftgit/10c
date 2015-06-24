@@ -7175,12 +7175,12 @@ GenJSP_MenuFunctions( zVIEW     vDialog,
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
 
-            //:szWriteBuffer = "      // This is for indicating whether the user hit the window close box."
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "      // This is for indicating whether the user hit the window close box.", 1, 0, 10001 );
+            //:szWriteBuffer = "   // This is for indicating whether the user hit the window close box."
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "   // This is for indicating whether the user hit the window close box.", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 );
-            //:szWriteBuffer = "      isWindowClosing = false;"
-            ZeidonStringCopy( szWriteBuffer, 1, 0, "      isWindowClosing = false;", 1, 0, 10001 );
+            //:szWriteBuffer = "   isWindowClosing = false;"
+            ZeidonStringCopy( szWriteBuffer, 1, 0, "   isWindowClosing = false;", 1, 0, 10001 );
             //:WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 );
 

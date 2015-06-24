@@ -5323,9 +5323,9 @@ GenJSP_OutputMapRecurs( VIEW vDialog BASED ON LOD TZWDLGSO,
          szWriteBuffer = "{"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
-         szWriteBuffer = "      // This is for indicating whether the user hit the window close box."
+         szWriteBuffer = "   // This is for indicating whether the user hit the window close box."
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-         szWriteBuffer = "      isWindowClosing = false;"
+         szWriteBuffer = "   isWindowClosing = false;"
          WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
          // _IsDocDisabled code.
@@ -6686,9 +6686,9 @@ GenJSP_TableExport( VIEW vDialog BASED ON LOD TZWDLGSO,
             szWriteBuffer = "{"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
-            szWriteBuffer = "      // This is for indicating whether the user hit the window close box."
+            szWriteBuffer = "   // This is for indicating whether the user hit the window close box."
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
-            szWriteBuffer = "      isWindowClosing = false;"
+            szWriteBuffer = "   isWindowClosing = false;"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
 
             // _IsDocDisabled code.
