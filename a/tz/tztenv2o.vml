@@ -434,13 +434,21 @@ TE_RelinkDelete( VIEW vTE  BASED ON LOD TZTENVRO, VIEW vSubtask )
    VIEW vERD    BASED ON LOD TZEREMDO
    VIEW vLPLR   BASED ON LOD TZCMLPLO
 
-   SHORT       nDeleteFlag
+   SHORT nDeleteFlag
+   SHORT nRC
    STRING (254) szMsg
 
    nDeleteFlag = 0
 
    RetrieveViewForMetaList( vSubtask, vLPLR, zREFER_ERD_META )
-   ActivateMetaOI( vSubtask, vERD, vLPLR, zREFER_ERD_META, 0 )
+   // KJS 06/19/15 - I am getting an error in Relink code when vERD does not exist (which would be rare but can happen when a new project
+   // is created but the ER has not yet been created.
+   IF vLPLR.W_MetaDef DOES NOT EXIST 
+      DropView( vLPLR ) 
+      RETURN ( nDeleteFlag )
+   END
+   
+   nRC = ActivateMetaOI( vSubtask, vERD, vLPLR, zREFER_ERD_META, 0 )
    DropView( vLPLR )
 
    FOR EACH vTE.TE_DBMS_Source

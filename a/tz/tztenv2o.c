@@ -984,28 +984,31 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
    //:VIEW vLPLR   BASED ON LOD TZCMLPLO
    zVIEW     vLPLR = 0; 
 
-   //:SHORT       nDeleteFlag
+   //:SHORT nDeleteFlag
    zSHORT    nDeleteFlag = 0; 
+   //:SHORT nRC
+   zSHORT    nRC = 0; 
    //:STRING (254) szMsg
    zCHAR     szMsg[ 255 ] = { 0 }; 
-   zSHORT    RESULT; 
    zSHORT    lTempInteger_0; 
-   zLONG     lTempInteger_1; 
+   zSHORT    RESULT; 
+   zSHORT    lTempInteger_1; 
+   zLONG     lTempInteger_2; 
    zCHAR     szTempString_0[ 33 ]; 
    zCHAR     szTempString_1[ 255 ]; 
    zCHAR     szTempString_2[ 255 ]; 
-   zSHORT    lTempInteger_2; 
-   zLONG     lTempInteger_3; 
+   zSHORT    lTempInteger_3; 
+   zLONG     lTempInteger_4; 
    zCHAR     szTempString_3[ 255 ]; 
-   zSHORT    lTempInteger_4; 
    zSHORT    lTempInteger_5; 
-   zLONG     lTempInteger_6; 
+   zSHORT    lTempInteger_6; 
+   zLONG     lTempInteger_7; 
    zCHAR     szTempString_4[ 33 ]; 
-   zSHORT    lTempInteger_7; 
-   zLONG     lTempInteger_8; 
+   zSHORT    lTempInteger_8; 
+   zLONG     lTempInteger_9; 
    zCHAR     szTempString_5[ 33 ]; 
-   zSHORT    lTempInteger_9; 
-   zLONG     lTempInteger_10; 
+   zSHORT    lTempInteger_10; 
+   zLONG     lTempInteger_11; 
    zCHAR     szTempString_6[ 33 ]; 
 
 
@@ -1014,8 +1017,22 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
 
    //:RetrieveViewForMetaList( vSubtask, vLPLR, zREFER_ERD_META )
    RetrieveViewForMetaList( vSubtask, &vLPLR, zREFER_ERD_META );
-   //:ActivateMetaOI( vSubtask, vERD, vLPLR, zREFER_ERD_META, 0 )
-   ActivateMetaOI( vSubtask, &vERD, vLPLR, zREFER_ERD_META, 0 );
+   //:// KJS 06/19/15 - I am getting an error in Relink code when vERD does not exist (which would be rare but can happen when a new project
+   //:// is created but the ER has not yet been created.
+   //:IF vLPLR.W_MetaDef DOES NOT EXIST 
+   lTempInteger_0 = CheckExistenceOfEntity( vLPLR, "W_MetaDef" );
+   if ( lTempInteger_0 != 0 )
+   { 
+      //:DropView( vLPLR ) 
+      DropView( vLPLR );
+      //:RETURN ( nDeleteFlag )
+      return( ( nDeleteFlag ) );
+   } 
+
+   //:END
+
+   //:nRC = ActivateMetaOI( vSubtask, vERD, vLPLR, zREFER_ERD_META, 0 )
+   nRC = ActivateMetaOI( vSubtask, &vERD, vLPLR, zREFER_ERD_META, 0 );
    //:DropView( vLPLR )
    DropView( vLPLR );
 
@@ -1030,13 +1047,13 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
       { 
 
          //:IF vTE.ER_Entity EXISTS
-         lTempInteger_0 = CheckExistenceOfEntity( vTE, "ER_Entity" );
-         if ( lTempInteger_0 == 0 )
+         lTempInteger_1 = CheckExistenceOfEntity( vTE, "ER_Entity" );
+         if ( lTempInteger_1 == 0 )
          { 
             //:SET CURSOR FIRST vERD.ER_Entity WHERE
             //:    vERD.ER_Entity.ZKey = vTE.ER_Entity.ZKey
-            GetIntegerFromAttribute( &lTempInteger_1, vTE, "ER_Entity", "ZKey" );
-            RESULT = SetCursorFirstEntityByInteger( vERD, "ER_Entity", "ZKey", lTempInteger_1, "" );
+            GetIntegerFromAttribute( &lTempInteger_2, vTE, "ER_Entity", "ZKey" );
+            RESULT = SetCursorFirstEntityByInteger( vERD, "ER_Entity", "ZKey", lTempInteger_2, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
             { 
@@ -1096,13 +1113,13 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
          //:END
 
          //:IF vTE.ER_RelType EXISTS
-         lTempInteger_2 = CheckExistenceOfEntity( vTE, "ER_RelType" );
-         if ( lTempInteger_2 == 0 )
+         lTempInteger_3 = CheckExistenceOfEntity( vTE, "ER_RelType" );
+         if ( lTempInteger_3 == 0 )
          { 
             //:SET CURSOR FIRST vERD.ER_RelType WHERE
             //:    vERD.ER_RelType.ZKey = vTE.ER_RelType.ZKey
-            GetIntegerFromAttribute( &lTempInteger_3, vTE, "ER_RelType", "ZKey" );
-            RESULT = SetCursorFirstEntityByInteger( vERD, "ER_RelType", "ZKey", lTempInteger_3, "" );
+            GetIntegerFromAttribute( &lTempInteger_4, vTE, "ER_RelType", "ZKey" );
+            RESULT = SetCursorFirstEntityByInteger( vERD, "ER_RelType", "ZKey", lTempInteger_4, "" );
             //:IF RESULT >= zCURSOR_SET
             if ( RESULT >= zCURSOR_SET )
             { 
@@ -1139,8 +1156,8 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
          //:END
 
          //:IF vTE.TE_TablRec EXISTS
-         lTempInteger_4 = CheckExistenceOfEntity( vTE, "TE_TablRec" );
-         if ( lTempInteger_4 == 0 )
+         lTempInteger_5 = CheckExistenceOfEntity( vTE, "TE_TablRec" );
+         if ( lTempInteger_5 == 0 )
          { 
 
             //:FOR EACH vTE.TE_FieldDataRel
@@ -1149,13 +1166,13 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
             { 
 
                //:IF vTE.ER_Attribute EXISTS
-               lTempInteger_5 = CheckExistenceOfEntity( vTE, "ER_Attribute" );
-               if ( lTempInteger_5 == 0 )
+               lTempInteger_6 = CheckExistenceOfEntity( vTE, "ER_Attribute" );
+               if ( lTempInteger_6 == 0 )
                { 
                   //:SET CURSOR FIRST vERD.ER_Attribute WHERE
                   //:    vERD.ER_Attribute.ZKey = vTE.ER_Attribute.ZKey
-                  GetIntegerFromAttribute( &lTempInteger_6, vTE, "ER_Attribute", "ZKey" );
-                  RESULT = SetCursorFirstEntityByInteger( vERD, "ER_Attribute", "ZKey", lTempInteger_6, "" );
+                  GetIntegerFromAttribute( &lTempInteger_7, vTE, "ER_Attribute", "ZKey" );
+                  RESULT = SetCursorFirstEntityByInteger( vERD, "ER_Attribute", "ZKey", lTempInteger_7, "" );
                   //:IF RESULT >= zCURSOR_SET
                   if ( RESULT >= zCURSOR_SET )
                   { 
@@ -1215,13 +1232,13 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
                //:END
 
                //:IF vTE.ER_RelLink EXISTS
-               lTempInteger_7 = CheckExistenceOfEntity( vTE, "ER_RelLink" );
-               if ( lTempInteger_7 == 0 )
+               lTempInteger_8 = CheckExistenceOfEntity( vTE, "ER_RelLink" );
+               if ( lTempInteger_8 == 0 )
                { 
                   //:SET CURSOR FIRST vERD.ER_RelLink_2 WITHIN vERD.EntpER_Model WHERE
                   //:    vERD.ER_RelLink_2.ZKey = vTE.ER_RelLink.ZKey
-                  GetIntegerFromAttribute( &lTempInteger_8, vTE, "ER_RelLink", "ZKey" );
-                  RESULT = SetCursorFirstEntityByInteger( vERD, "ER_RelLink_2", "ZKey", lTempInteger_8, "EntpER_Model" );
+                  GetIntegerFromAttribute( &lTempInteger_9, vTE, "ER_RelLink", "ZKey" );
+                  RESULT = SetCursorFirstEntityByInteger( vERD, "ER_RelLink_2", "ZKey", lTempInteger_9, "EntpER_Model" );
                   //:IF RESULT >= zCURSOR_SET
                   if ( RESULT >= zCURSOR_SET )
                   { 
@@ -1269,13 +1286,13 @@ oTZTENVRO_TE_RelinkDelete( zVIEW     vTE,
             { 
 
                //:IF vTE.ER_EntIdentifier EXISTS
-               lTempInteger_9 = CheckExistenceOfEntity( vTE, "ER_EntIdentifier" );
-               if ( lTempInteger_9 == 0 )
+               lTempInteger_10 = CheckExistenceOfEntity( vTE, "ER_EntIdentifier" );
+               if ( lTempInteger_10 == 0 )
                { 
                   //:SET CURSOR FIRST vERD.ER_EntIdentifier WHERE
                   //:    vERD.ER_EntIdentifier.ZKey = vTE.ER_EntIdentifier.ZKey
-                  GetIntegerFromAttribute( &lTempInteger_10, vTE, "ER_EntIdentifier", "ZKey" );
-                  RESULT = SetCursorFirstEntityByInteger( vERD, "ER_EntIdentifier", "ZKey", lTempInteger_10, "" );
+                  GetIntegerFromAttribute( &lTempInteger_11, vTE, "ER_EntIdentifier", "ZKey" );
+                  RESULT = SetCursorFirstEntityByInteger( vERD, "ER_EntIdentifier", "ZKey", lTempInteger_11, "" );
                   //:IF RESULT >= zCURSOR_SET
                   if ( RESULT >= zCURSOR_SET )
                   { 

@@ -5802,6 +5802,380 @@ SetUpMapLOD( zVIEW   vSubtask,
    return( (zLONG) vLOD );
 }
 
+
+//./ ADD NAME=ActivateMetaOI
+// Source Module=tzcmoprs.c
+/////////////////////////////////////////////////////////////////////////////
+//
+//  CM OPERATION: RebuildMetaLists
+//
+//  PURPOSE:    Rebuild the XLP and LLP. Moved from TZCMSLPD to a global operation.
+//
+//  PARAMETERS: vSubtask - 
+//
+//  RETURNS:    1 - Meta OI successfully activated
+//             -1 - Error encountered
+//
+/////////////////////////////////////////////////////////////////////////////
+//./ END + 7
+zOPER_EXPORT zSHORT OPERATION
+RebuildMetaLists( zVIEW   vSubtask )
+{
+   zVIEW  vZeidonCM;
+   zVIEW  vTZCMWKSO;
+   zVIEW  LPLR_View;
+   zVIEW  vTZCMSLPL;
+   zVIEW  TZCMULWO = 0; 
+   zCHAR  szLPLR_FileSpec[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szDirectorySpec[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szLPLR_Name[ 33 ];
+   zCHAR  szLPLR_FileName[ 33 ];
+   zCHAR  szTimeStamp[ 22 ];
+   zLONG  lTaskUseCnt;
+   zLONG  lCurrentZKey;
+   zLONG  lZKey;
+   zSHORT nRC, nLPLR_Activated, RESULT;
+   HFILE  hFile;
+   zCHAR  szDetachSpec[ zMAX_FILESPEC_LTH + 1 ];
+   zCHAR  szMsg[ zMAX_FILESPEC_LTH + zSHORT_MESSAGE_LTH + 1 ];
+
+   SetNameForView( vSubtask, "TZCM_RebuildLPLR", vSubtask, zLEVEL_TASK );
+   GetViewByName( &vZeidonCM, "ZeidonCM", vSubtask, zLEVEL_APPLICATION );
+   GetViewByName( &vTZCMWKSO, "TZCMWKSO", vZeidonCM, zLEVEL_SUBTASK );
+   if ( vTZCMWKSO == 0 )  // view isn't there
+      return( -1 );
+
+   // TZCMSLPL exists if we come here from SwitchLPLR but doesn't exist if we are calling this from
+   // "Create New Project", we will assume for now that we are on the correct LPLR in TZCMWKSO if
+   // TZCMSLPL doesn't exist.
+   if ( GetViewByName( &vTZCMSLPL, "TZCMSLPL", vSubtask, zLEVEL_TASK ) >= 0 )
+   {
+      GetIntegerFromAttribute( &lZKey, vTZCMSLPL, "LPLR", "ZKey" );
+      GetIntegerFromAttribute( &lCurrentZKey, vTZCMWKSO, "LPLR", "ZKey" );
+      nRC = SetCursorFirstEntityByInteger( vTZCMWKSO, "LPLR", "ZKey", lZKey, "" );
+   }
+   GetStringFromAttribute( szLPLR_Name, vTZCMWKSO, "LPLR", "Name" );
+   nLPLR_Activated = GetViewByName( &LPLR_View, szLPLR_Name, vZeidonCM, zLEVEL_SUBTASK );
+   GetStringFromAttribute( szDirectorySpec, vTZCMWKSO, "LPLR", "ExecDir" );  // borrow szDirectorySpec for a second
+   SysConvertEnvironmentString( szLPLR_FileSpec, szDirectorySpec );
+   ofnTZCMWKSO_AppendSlash( szLPLR_FileSpec );
+   zstrncpy( szLPLR_FileName, szLPLR_Name, 33 );
+   for ( nRC = 0; nRC < 32; nRC++ )
+   {
+      if ( szLPLR_FileName[ nRC ] == 0 )
+         break;
+
+      if ( szLPLR_FileName[ nRC ] == ' ' )
+         szLPLR_FileName[ nRC ] = '_';
+   }
+
+   szLPLR_FileName[ nRC ] = 0;
+   zstrcat( szLPLR_FileSpec, szLPLR_FileName );
+   zstrcat( szLPLR_FileSpec, ".XLP" );
+   if ( nLPLR_Activated < 1 ) // LPLR currently not activated
+   {
+      hFile = (HFILE) SysOpenFile( vSubtask, szLPLR_FileSpec, COREFILE_READ );
+      if ( hFile > 0 )
+      {                     // Activate LPLR for rebuild only
+         SysCloseFile( vSubtask, hFile, 0 );
+         nRC = ActivateOI_FromFile( &LPLR_View, "TZCMLPLO", vSubtask,
+                                    szLPLR_FileSpec, zSINGLE );
+         nRC = BuildLPLR_MetaTypes( vSubtask, LPLR_View, 1 );
+      }
+      else
+      {
+         if ( ActivateEmptyObjectInstance( &LPLR_View, "TZCMLPLO",
+                                           vSubtask, zSINGLE ) != 0 )
+         {
+            MessageSend( vSubtask, "CM00604", "Configuration Management",
+                         "Error activating empty Project Instance",
+                         zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+            return( -1 );
+         }
+
+         CreateMetaEntity( vSubtask, LPLR_View, "LPLR", zPOS_AFTER );
+         SetAttributeFromAttribute( vTZCMWKSO, "LPLR", "ZKey",
+                                    LPLR_View, "LPLR", "ZKey" );
+         SetMatchingAttributesByName( LPLR_View, "LPLR", vTZCMWKSO, "LPLR", zSET_NOTNULL );
+         if ( CheckExistenceOfEntity( vTZCMWKSO, "CorrespondingCPLR" ) >= zCURSOR_SET )
+              IncludeSubobjectFromSubobject( LPLR_View, "CorrespondingCPLR",
+                                             vTZCMWKSO, "CorrespondingCPLR", zPOS_AFTER );
+         nRC = BuildLPLR_MetaTypes( vSubtask, LPLR_View, 1 );
+      }
+   }
+   else  // LPLR is currently active
+   {
+      if ( lZKey != lCurrentZKey )
+      {
+         zstrcpy( szMsg, "Project is currently active in another task.\n" );
+         zstrcat( szMsg, "Rebuilding the Project may corrupt the meta list.\n" );
+         zstrcat( szMsg, "Rebuilding of the Project is therefore cancelled!" );
+         MessageSend( vSubtask, "CM00605", "Configuration Management",
+                      szMsg,
+                      zMSGQ_OBJECT_CONSTRAINT_WARNING, zBEEP );
+         return( -1 );
+      }
+      else
+      {
+         GetIntegerFromAttribute( &lTaskUseCnt, LPLR_View, "LPLR", "TaskUseCount" );
+         if ( lTaskUseCnt > 1 )
+         {
+            zstrcpy( szMsg, "Project is currently active in more than one task.\n" );
+            zstrcat( szMsg, "Rebuilding the Project may corrupt the meta list.\n" );
+            zstrcat( szMsg, "Rebuilding of the Project is therefore cancelled!" );
+            MessageSend( vSubtask, "CM00606", "Configuration Management",
+                         szMsg,
+                         zMSGQ_OBJECT_CONSTRAINT_WARNING, zBEEP );
+            return( -1 );
+         }
+      }
+
+      nRC = BuildLPLR_MetaTypes( vSubtask, LPLR_View, 1 );
+   }
+
+   if ( nRC < 0 )
+      return( -1 );
+
+   // Test to see if we are indeed writing the correct O to file.
+   GetStringFromAttribute( szDirectorySpec, LPLR_View, "LPLR", "Name" );
+   if ( zstrcmpi( szDirectorySpec, szLPLR_Name ) != 0 )
+   {
+      zstrcpy( szMsg, "Project Name " );
+      zstrcat( szMsg, szLPLR_Name );
+      zstrcat( szMsg, " doesn't match name \nof OI file\n" );
+      zstrcat( szMsg, szLPLR_FileSpec );
+      zstrcat( szMsg, "\nCommit of Project aborted!\n" );
+      zstrcat( szMsg, "Please notify Bill of error" );
+      MessageSend( vSubtask, "CM00607", "Configuration Management",
+                   szMsg,
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+      return( -1 );
+   }
+
+   nRC = zgSortEntityWithinParent( zASCENDING, LPLR_View,
+                                   "W_MetaType", "Type", "" );
+
+   // KSJ 06/10/15 - I think that we want to make sure that the Base Directory in both XLP and LLP are not something that
+   // was brought from someone else's project, should be based on the LPLR here on this machine.
+   SetAttributeFromAttribute( LPLR_View, "LPLR", "MetaSrcDir", vTZCMWKSO, "LPLR", "MetaSrcDir" );
+   SetAttributeFromAttribute( LPLR_View, "LPLR", "PgmSrcDir", vTZCMWKSO, "LPLR", "PgmSrcDir" );
+   SetAttributeFromAttribute( LPLR_View, "LPLR", "ExecDir", vTZCMWKSO, "LPLR", "ExecDir" );
+
+   // Added LastBuildDate so that we could then compare the LLP and XLP so see if they should be rebuild because they are out
+   // of sync.
+   SysGetDateTime( szTimeStamp );
+   SetAttributeFromString( LPLR_View, "LPLR", "LastBuildDate", szTimeStamp );
+
+   if ( CommitOI_ToFile( LPLR_View, szLPLR_FileSpec, zSINGLE ) != 0 ) // zBINARY | zSINGLE ) == 0 )
+   {
+      zstrcpy( szMsg, "Project " );
+      zstrcat( szMsg, szLPLR_Name );
+      zstrcat( szMsg, " XLP could not be committed in\n" );
+      zstrcat( szMsg, szLPLR_FileSpec );
+      MessageSend( vSubtask, "CM00608", "Configuration Management",
+                   szMsg,
+                   zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
+      return( -1 );
+   }
+   GetStringFromAttribute( szDirectorySpec, vTZCMWKSO, "LPLR", "MetaSrcDir" );  // borrow szDirectorySpec for a second
+   SysConvertEnvironmentString( szLPLR_FileSpec, szDirectorySpec );
+   ofnTZCMWKSO_AppendSlash( szLPLR_FileSpec );
+   zstrncpy( szLPLR_FileName, szLPLR_Name, 33 );
+   zstrcat( szLPLR_FileSpec, szLPLR_FileName );
+   zstrcat( szLPLR_FileSpec, ".LLP" );
+   if ( CommitOI_ToFile( LPLR_View, szLPLR_FileSpec, zSINGLE ) != 0 ) 
+   {
+      zstrcpy( szMsg, "Project " );
+      zstrcat( szMsg, szLPLR_Name );
+      zstrcat( szMsg, " LLP could not be committed in\n" );
+      zstrcat( szMsg, szLPLR_FileSpec );
+      MessageSend( vSubtask, "CM00608", "Configuration Management",
+                   szMsg,
+                   zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
+      return( -1 );
+   }
+
+   if ( nLPLR_Activated < 1 )  // Application LPLR View not found
+   {
+      // Drop the OI because it wasn't activated before.
+      DropObjectInstance( LPLR_View );
+   // GetWKS_FileName( szDirectorySpec );
+   // CommitOI_ToFile( vTZCMWKSO, szDirectorySpec, zSINGLE );
+   }
+
+   if ( SysGetEnvVar( szDetachSpec, "ZEIDON", zMAX_FILENAME_LTH + 1 ) == 0 )
+   {
+      ofnTZCMWKSO_AppendSlash( szDetachSpec );
+      zstrcat( szDetachSpec, "TZCM.DET" );
+      hFile = (HFILE) SysOpenFile( vSubtask, szDetachSpec, COREFILE_DELETE );
+   }
+
+   nRC = SetCursorFirstEntityByInteger( vTZCMWKSO,
+                                        "LPLR", "ZKey", lCurrentZKey, "" );
+   return( 0 );
+}
+
+// Added this to Global Operations because I believe we will be wanting to call this from somewhere other than just
+// the te Build XODs.
+zOPER_EXPORT zSHORT OPERATION
+RebuildXODs( zVIEW vSubtask )
+{
+   // This routine does not actually save LODs, but only builds the XODs
+   // on the LPLR.
+
+   zVIEW  vDTE;
+   zVIEW  vLPLR;
+   zVIEW  vLOD_List;
+   zVIEW  vLOD;
+   zVIEW  vXOD;
+   zSHORT nRC;
+   zCHAR  szMsg[ zSHORT_MESSAGE_LTH + 1 ];
+   zCHAR  szLOD_Name[ 33 ];
+   zCHAR  szFileName[ zMAX_FILESPEC_LTH + 1 ];
+
+   GetViewByName( &vDTE, "TE_DB_Environ", vSubtask, zLEVEL_TASK );
+   GetViewByName( &vLOD_List, "TZZOLFLO", vSubtask, zLEVEL_TASK );
+   GetViewByName( &vLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK );
+
+   // Save Subtask for use by XOD build routine.
+   SetNameForView( vSubtask, "TE_Window", vSubtask, zLEVEL_TASK );
+
+   // For each selected LOD, build the XOD using the current DBMS and
+   // commit as file to LPLR, unless the LOD does not have a POD.
+   // Note that we are not looking to see if the DBMS identified
+   // in the POD.TE_SourceZKey matches the current DBMS. We will save
+   // selected LODs with the current DBMS no matter how they were saved
+   // last time.
+
+   for ( nRC = SetCursorFirstEntity( vLOD_List, "W_MetaDef", "" );
+         nRC >= zCURSOR_SET;
+         nRC = SetCursorNextEntity( vLOD_List, "W_MetaDef", "" ) )
+   {
+      GetStringFromAttribute( szLOD_Name, vLOD_List, "W_MetaDef", "Name" );
+
+      nRC = ActivateMetaOI( vSubtask, &vLOD, vLOD_List, zREFER_LOD_META, zCURRENT_OI );
+      if ( nRC < 0 )
+      {
+         zstrcpy( szMsg, "Could not Activate LOD: " );
+         zstrcat( szMsg, szLOD_Name );
+         zstrcat( szMsg, ".\nAborting Build" );
+         MessageSend( vSubtask, "TE00426", "Physical Data Model",
+                      szMsg,
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         return( 0 );
+      }
+      else
+      {
+         // Send message that we are building the LOD.
+         zstrcpy( szMsg, "Building executable for LOD: " );
+         zstrcat( szMsg, szLOD_Name );
+         zstrcat( szMsg, "." );
+         MB_SetMessage( vSubtask, 1, szMsg );
+
+         // Make sure the TE_SourceZKey attribute is set because it determines
+         // what DBMS_Source is used in building the XOD.
+         if ( CheckExistenceOfEntity( vLOD, "POD" ) >= zCURSOR_SET )
+            SetAttributeFromAttribute( vLOD, "POD", "TE_SourceZKey",
+                                       vDTE, "TE_DBMS_Source", "ZKey" );
+
+         // Build the XOD in memory.
+         oTZZOXODO_SaveXOD( vSubtask, vLOD );
+         SetNameForView( vLOD, "TZZOLODO", vSubtask, zLEVEL_TASK );
+         GetViewByName( &vXOD, "TZZOXODO", vSubtask, zLEVEL_TASK );
+         DropMetaOI( vSubtask, vLOD );
+
+         // Commit the XOD to LPLR file.
+         GetStringFromAttribute( szFileName, vLPLR, "LPLR", "ExecDir" );
+         ofnTZCMWKSO_AppendSlash( szFileName );
+         zstrcat( szFileName, szLOD_Name );
+         zstrcat( szFileName, ".XOD" );
+         TraceLineS( "*** Committing workstation file: ", szFileName );
+         CommitOI_ToFile( vXOD, szFileName, zSINGLE );
+      }
+   }
+
+   MB_SetMessage( vSubtask, 1, "Build of XODs complete." );
+   return( 0 );
+}
+
+////////////////////////////////////////////////////////////////////////
+//   OPERATION:  RebuildXDM
+//   PURPOSE:    This Entry selects an operation for the domain
+////////////////////////////////////////////////////////////////////////
+zOPER_EXPORT zSHORT OPERATION
+RebuildXDM( zVIEW vSubtask )
+{
+   zVIEW    vActiveDomain;
+   zVIEW    vDomainGrp;
+   zVIEW    vCM_List;
+   zVIEW    vCM_List2;
+   zVIEW    vXDM;
+   zLONG    lDomainZKey;
+   zSHORT   nRC;
+   zSHORT   RESULT;
+   zBOOL    bUpdated;
+
+   bUpdated = 0;
+   if ( GetViewByName( &vActiveDomain, "TZDGSRCO", vSubtask, zLEVEL_TASK ) > 0 )
+   {
+      if ( (bUpdated = (zBOOL) ObjectInstanceUpdatedFromFile( vActiveDomain )) != 0 )
+      {
+         if ( MessagePrompt( vSubtask, "DM00108",
+                             "Domain Maintenance",
+                             "The Domain currently active has been updated. "
+                             "The active domain WILL NOT be included in "
+                             "the rebuilt executable until a save is done.\n\n"
+                             "Would you like to continue with the rebuild anyway?",
+                             zBEEP, zBUTTONS_YESNO,
+                             zRESPONSE_NO,      0 )  == zRESPONSE_YES )
+         {
+            return( 0 );
+         }
+      }
+   }
+
+   nRC = oTZDMXGPO_GetViewForXDM( vSubtask, &vXDM, zCURRENT_OI );
+   if ( nRC >= 0 )
+   {
+      for ( nRC = SetCursorFirstEntity( vXDM, "Domain", "" );
+            nRC >= zCURSOR_SET;
+            nRC = SetCursorNextEntity( vXDM, "Domain", "" ) )
+      {
+         DeleteEntity( vXDM, "Domain", zREPOS_PREV );
+      }
+   }
+
+   nRC = RetrieveViewForMetaList( vSubtask, &vCM_List, zREFER_DOMAIN_META );
+   RESULT = SetCursorFirstEntity( vCM_List, "W_MetaDef", "" );
+   while ( RESULT >= zCURSOR_SET )
+   {
+      nRC = GetIntegerFromAttribute( &lDomainZKey,
+                                     vCM_List, "W_MetaDef", "CPLR_ZKey" );
+
+      // Use a second CM_List view for Activate since Activate will alter
+      // its position.
+      CreateViewFromViewForTask( &vCM_List2, vCM_List, 0 );
+      nRC = ActivateMetaOI( vSubtask, &vDomainGrp, vCM_List2,
+                            zREFER_DOMAIN_META,
+                            zSINGLE | zLEVEL_APPLICATION );
+      DropView( vCM_List2 );
+
+      RESULT = SetCursorNextEntity( vCM_List, "W_MetaDef", "" );
+      if ( nRC >= 0 )
+      {
+         if ( RESULT >= zCURSOR_SET )
+            oTZDMSRCO_ReplaceOrAddDomToXDM( vSubtask, vDomainGrp, 0 );
+         else
+            oTZDMSRCO_ReplaceOrAddDomToXDM( vSubtask, vDomainGrp, 1 );
+         DropMetaOI( vSubtask, vDomainGrp );
+      }
+   }
+
+   return( nRC );
+}
+
+
+
 #ifdef __cplusplus
 }
 #endif

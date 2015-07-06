@@ -414,3 +414,18 @@ LoadProperties( VIEW vSubtask )
    SetNameForView( vTZDGSRCO_DETAIL, "TZDGSRCO_DETAIL", vSubtask, zLEVEL_TASK )
 
 END
+
+
+/*************************************************************************************************
+**    
+**    OPERATION: CHANGE_JavaClassName
+**    
+*************************************************************************************************/
+DIALOG OPERATION
+CHANGE_JavaClassName( VIEW ViewToWindow )
+
+   VIEW vTaskLPLR REGISTERED AS TaskLPLR
+   VIEW vTZDGSRCO REGISTERED AS TZDGSRCO
+   
+   vTZDGSRCO.Domain.JavaClass = vTaskLPLR.DomainJavaClass.JavaClassName 
+END

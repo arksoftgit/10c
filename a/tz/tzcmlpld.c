@@ -3111,6 +3111,11 @@ zwTZCMLPLD_LoadLPLR( zVIEW vSubtask )
       GetIntegerFromAttribute( &lZKey, vTZCMWKSO, "LPLR", "ZKey" );
       SetAttributeFromInteger( vTZCMWKSO, "RepositoryClient",
                                "DefaultLPLR_ZKey", lZKey );
+                               
+      // We had an error where a new or imported project wasn't correctly copying the description from TZCMLPLO to TZCMWKSO,
+      // so copy.
+      SetAttributeFromAttribute( vTZCMWKSO, "LPLR", "Desc", vTZCMLPLO, "LPLR", "Desc" );   
+                                  
       oTZCMWKSO_CommitWorkstation( vTZCMWKSO );
 
       zwfnTZCMLPLD_SwitchLPLR( vSubtask, vTZCMLPLO );

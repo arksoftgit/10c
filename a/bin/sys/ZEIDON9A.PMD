@@ -1,8 +1,8 @@
-z1000-Zeidon    ZEIDON9A TZEREMDO 08/19/14   12:43:00 1.0a2    
+z1000-Zeidon    ZEIDON9A TZEREMDO 06/25/15   10:26:56 1.0a2    
 eEntpER_Model 1
 aName      ZEIDON9A
 aZKey      1320651
-aLastSyncDate 20140819124300328
+aLastSyncDate 20150625102656296
 aDesc      Enterprise Model
 
 eER_Entity 2
@@ -4369,7 +4369,7 @@ aZKey      1320819
 eER_AttributeIdentifier 5
 
 eER_Entity 2
-awkSelectedAttributeForDragSort 2
+awkSelectedAttributeForDragSort 5
 
 eER_Attribute 3
 aName      ZKey
@@ -4409,7 +4409,6 @@ eER_Attribute 3
 aName      DomainType
 aZKey      1320824
 aLth       1
-aNotNull   Y
 aDesc      Type of Domain (Table, Expression, Algorithm)
 aPromptPaintLit Domain Type
 aListPaintLit Domain Type
@@ -4429,7 +4428,6 @@ eER_Attribute 3
 aName      DataType
 aZKey      1320825
 aLth       1
-aNotNull   Y
 aDesc      Internal data type stored (ie., string, date, decimal, integer)
 aPromptPaintLit Data Type
 aListPaintLit Data Type

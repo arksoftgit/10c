@@ -200,23 +200,7 @@ zwTZCMSLPD_SwitchLPLR( zVIEW vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 zwTZCMSLPD_RebuildMetaLists( zVIEW vSubtask )
 {
-   zVIEW  vZeidonCM;
-   zVIEW  vTZCMWKSO;
-   zVIEW  LPLR_View;
-   zVIEW  vTZCMSLPL;
-   zVIEW  TZCMULWO = 0; 
-   zCHAR  szLPLR_FileSpec[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR  szDirectorySpec[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR  szLPLR_Name[ 33 ];
-   zCHAR  szLPLR_FileName[ 33 ];
-   zCHAR  szTimeStamp[ 22 ];
-   zLONG  lTaskUseCnt;
-   zLONG  lCurrentZKey;
-   zLONG  lZKey;
-   zSHORT nRC, nLPLR_Activated, RESULT;
-   HFILE  hFile;
-   zCHAR  szDetachSpec[ zMAX_FILESPEC_LTH + 1 ];
-   zCHAR  szMsg[ zMAX_FILESPEC_LTH + zSHORT_MESSAGE_LTH + 1 ];
+   zSHORT nRC ;
 
    if ( MessagePrompt( vSubtask, "CM00609",
                        "Configuration Management",
@@ -224,213 +208,16 @@ zwTZCMSLPD_RebuildMetaLists( zVIEW vSubtask )
                        zBEEP,
                        zBUTTONS_YESNO, zRESPONSE_NO, 0 ) == zRESPONSE_NO )
    {
-      //SetWindowActionBehavior( vSubtask, zWAB_ExitDialogTask, 0, 0 );
       return( 0 );
    }
-
-   SetNameForView( vSubtask, "TZCM_RebuildLPLR", vSubtask, zLEVEL_TASK );
-   GetViewByName( &vZeidonCM, "ZeidonCM", vSubtask, zLEVEL_APPLICATION );
-   GetViewByName( &vTZCMWKSO, "TZCMWKSO", vZeidonCM, zLEVEL_SUBTASK );
-   if ( vTZCMWKSO == 0 )  // view isn't there
-      return( -1 );
-
-   nRC = GetViewByName( &vTZCMSLPL, "TZCMSLPL", vSubtask, zLEVEL_TASK );
-   GetIntegerFromAttribute( &lZKey, vTZCMSLPL, "LPLR", "ZKey" );
-   GetIntegerFromAttribute( &lCurrentZKey, vTZCMWKSO, "LPLR", "ZKey" );
-   nRC = SetCursorFirstEntityByInteger( vTZCMWKSO, "LPLR", "ZKey", lZKey, "" );
-
-   GetStringFromAttribute( szLPLR_Name, vTZCMWKSO, "LPLR", "Name" );
-   nLPLR_Activated = GetViewByName( &LPLR_View, szLPLR_Name, vZeidonCM, zLEVEL_SUBTASK );
-   GetStringFromAttribute( szDirectorySpec, vTZCMWKSO, "LPLR", "ExecDir" );  // borrow szDirectorySpec for a second
-   SysConvertEnvironmentString( szLPLR_FileSpec, szDirectorySpec );
-   ofnTZCMWKSO_AppendSlash( szLPLR_FileSpec );
-   zstrncpy( szLPLR_FileName, szLPLR_Name, 33 );
-   for ( nRC = 0; nRC < 32; nRC++ )
+   
+   if ( RebuildMetaLists( vSubtask ) == 0 )
    {
-      if ( szLPLR_FileName[ nRC ] == 0 )
-         break;
-
-      if ( szLPLR_FileName[ nRC ] == ' ' )
-         szLPLR_FileName[ nRC ] = '_';
-   }
-
-   szLPLR_FileName[ nRC ] = 0;
-   zstrcat( szLPLR_FileSpec, szLPLR_FileName );
-   zstrcat( szLPLR_FileSpec, ".XLP" );
-   if ( nLPLR_Activated < 1 ) // LPLR currently not activated
-   {
-      hFile = (HFILE) SysOpenFile( vSubtask, szLPLR_FileSpec, COREFILE_READ );
-      if ( hFile > 0 )
-      {                     // Activate LPLR for rebuild only
-         SysCloseFile( vSubtask, hFile, 0 );
-         nRC = ActivateOI_FromFile( &LPLR_View, "TZCMLPLO", vSubtask,
-                                    szLPLR_FileSpec, zSINGLE );
-         nRC = BuildLPLR_MetaTypes( vSubtask, LPLR_View, 1 );
-      }
-      else
-      {
-         if ( ActivateEmptyObjectInstance( &LPLR_View, "TZCMLPLO",
-                                           vSubtask, zSINGLE ) != 0 )
-         {
-            MessageSend( vSubtask, "CM00604", "Configuration Management",
-                         "Error activating empty Project Instance",
-                         zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-            return( -1 );
-         }
-
-         CreateMetaEntity( vSubtask, LPLR_View, "LPLR", zPOS_AFTER );
-         SetAttributeFromAttribute( vTZCMWKSO, "LPLR", "ZKey",
-                                    LPLR_View, "LPLR", "ZKey" );
-         SetMatchingAttributesByName( LPLR_View, "LPLR", vTZCMWKSO, "LPLR", zSET_NOTNULL );
-         if ( CheckExistenceOfEntity( vTZCMWKSO, "CorrespondingCPLR" ) >= zCURSOR_SET )
-              IncludeSubobjectFromSubobject( LPLR_View, "CorrespondingCPLR",
-                                             vTZCMWKSO, "CorrespondingCPLR", zPOS_AFTER );
-         nRC = BuildLPLR_MetaTypes( vSubtask, LPLR_View, 1 );
-      }
-   }
-   else  // LPLR is currently active
-   {
-      if ( lZKey != lCurrentZKey )
-      {
-         zstrcpy( szMsg, "Project is currently active in another task.\n" );
-         zstrcat( szMsg, "Rebuilding the Project may corrupt the meta list.\n" );
-         zstrcat( szMsg, "Rebuilding of the Project is therefore cancelled!" );
-         MessageSend( vSubtask, "CM00605", "Configuration Management",
-                      szMsg,
-                      zMSGQ_OBJECT_CONSTRAINT_WARNING, zBEEP );
-         return( -1 );
-      }
-      else
-      {
-         GetIntegerFromAttribute( &lTaskUseCnt, LPLR_View, "LPLR", "TaskUseCount" );
-         if ( lTaskUseCnt > 1 )
-         {
-            zstrcpy( szMsg, "Project is currently active in more than one task.\n" );
-            zstrcat( szMsg, "Rebuilding the Project may corrupt the meta list.\n" );
-            zstrcat( szMsg, "Rebuilding of the Project is therefore cancelled!" );
-            MessageSend( vSubtask, "CM00606", "Configuration Management",
-                         szMsg,
-                         zMSGQ_OBJECT_CONSTRAINT_WARNING, zBEEP );
-            return( -1 );
-         }
-      }
-
-      nRC = BuildLPLR_MetaTypes( vSubtask, LPLR_View, 1 );
-   }
-
-   if ( nRC < 0 )
-      return( -1 );
-
-   // Test to see if we are indeed writing the correct O to file.
-   GetStringFromAttribute( szDirectorySpec, LPLR_View, "LPLR", "Name" );
-   if ( zstrcmpi( szDirectorySpec, szLPLR_Name ) != 0 )
-   {
-      zstrcpy( szMsg, "Project Name " );
-      zstrcat( szMsg, szLPLR_Name );
-      zstrcat( szMsg, " doesn't match name \nof OI file\n" );
-      zstrcat( szMsg, szLPLR_FileSpec );
-      zstrcat( szMsg, "\nCommit of Project aborted!\n" );
-      zstrcat( szMsg, "Please notify Bill of error" );
-      MessageSend( vSubtask, "CM00607", "Configuration Management",
-                   szMsg,
-                   zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
-      return( -1 );
-   }
-
-   nRC = zgSortEntityWithinParent( zASCENDING, LPLR_View,
-                                   "W_MetaType", "Type", "" );
-
-   // KSJ 06/10/15 - I think that we want to make sure that the Base Directory in both XLP and LLP are not something that
-   // was brought from someone else's project, should be based on the LPLR here on this machine.
-   SetAttributeFromAttribute( LPLR_View, "LPLR", "MetaSrcDir", vTZCMWKSO, "LPLR", "MetaSrcDir" );
-   SetAttributeFromAttribute( LPLR_View, "LPLR", "PgmSrcDir", vTZCMWKSO, "LPLR", "PgmSrcDir" );
-   SetAttributeFromAttribute( LPLR_View, "LPLR", "ExecDir", vTZCMWKSO, "LPLR", "ExecDir" );
-
-   // Added LastBuildDate so that we could then compare the LLP and XLP so see if they should be rebuild because they are out
-   // of sync.
-   SysGetDateTime( szTimeStamp );
-   SetAttributeFromString( LPLR_View, "LPLR", "LastBuildDate", szTimeStamp );
-
-   if ( CommitOI_ToFile( LPLR_View, szLPLR_FileSpec, zSINGLE ) == 0 ) // zBINARY | zSINGLE ) == 0 )
-   {
-      zstrcpy( szMsg, "Project " );
-      zstrcat( szMsg, szLPLR_Name );
-      zstrcat( szMsg, " has been rebuilt in\n" );
-      zstrcat( szMsg, szLPLR_FileSpec );
       MessageSend( vSubtask, "CM00608", "Configuration Management",
-                   szMsg,
-                   zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
-   }
-   GetStringFromAttribute( szDirectorySpec, vTZCMWKSO, "LPLR", "MetaSrcDir" );  // borrow szDirectorySpec for a second
-   SysConvertEnvironmentString( szLPLR_FileSpec, szDirectorySpec );
-   ofnTZCMWKSO_AppendSlash( szLPLR_FileSpec );
-   zstrncpy( szLPLR_FileName, szLPLR_Name, 33 );
-   zstrcat( szLPLR_FileSpec, szLPLR_FileName );
-   zstrcat( szLPLR_FileSpec, ".LLP" );
-   if ( CommitOI_ToFile( LPLR_View, szLPLR_FileSpec, zSINGLE ) != 0 ) 
-   {
-      zstrcpy( szMsg, "Project " );
-      zstrcat( szMsg, szLPLR_Name );
-      zstrcat( szMsg, " LLP could not be rebuilt in\n" );
-      zstrcat( szMsg, szLPLR_FileSpec );
-      MessageSend( vSubtask, "CM00608", "Configuration Management",
-                   szMsg,
+                   "Your project has been rebuilt. ",
                    zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
    }
 
-   if ( nLPLR_Activated < 1 )  // Application LPLR View not found
-   {
-      // Drop the OI because it wasn't activated before.
-      DropObjectInstance( LPLR_View );
-   // GetWKS_FileName( szDirectorySpec );
-   // CommitOI_ToFile( vTZCMWKSO, szDirectorySpec, zSINGLE );
-   }
-   else
-   {
-/*
-   // KJS 06/09/15 - I am just going to see what would happen if I created the 
-   // W_MetaType structure from the TZCMLPLO to TZCMUWLO.
-   RESULT = GetViewByName( &TZCMULWO, "TZCMULWO", LPLR_View, zLEVEL_TASK );
-   RESULT = SetCursorFirstEntity( TZCMULWO, "W_MetaType", "" );
-   while ( RESULT > zCURSOR_UNCHANGED )
-   { 
-      DeleteEntity( TZCMULWO, "W_MetaType", zREPOS_NONE );
-      //ExcludeEntity( TZCMULWO, "W_MetaType", zREPOS_NONE );
-      RESULT = SetCursorNextEntity( TZCMULWO, "W_MetaType", "" );
-   } 
-
-   RESULT = SetCursorFirstEntity( LPLR_View, "W_MetaType", "" );
-   while ( RESULT > zCURSOR_UNCHANGED )
-   { 
-      IncludeSubobjectFromSubobject( TZCMULWO, "W_MetaType", LPLR_View, "W_MetaType", zPOS_AFTER );
-      SetMatchingAttributesByName( TZCMULWO, "W_MetaType", LPLR_View, "W_MetaType", zSET_NULL ); 
-      RESULT = SetCursorNextEntity( LPLR_View, "W_MetaType", "" );
-   } 
-*/
-/*
-   if ( CommitOI_ToFile( TZCMULWO, szLPLR_FileSpec, zSINGLE ) == 0 )
-   {
-      zstrcpy( szMsg, "TZCMULWO.POR " );
-      zstrcat( szMsg, " has been rebuilt in\n" );
-      zstrcat( szMsg, szLPLR_FileSpec );
-      MessageSend( vSubtask, "CM00608", "Configuration Management",
-                   szMsg,
-                   zMSGQ_OBJECT_CONSTRAINT_INFORMATION, zBEEP );
-   }
-*/
-   // END OF KJS TZCMUWLO code
-   }
-
-
-   if ( SysGetEnvVar( szDetachSpec, "ZEIDON", zMAX_FILENAME_LTH + 1 ) == 0 )
-   {
-      ofnTZCMWKSO_AppendSlash( szDetachSpec );
-      zstrcat( szDetachSpec, "TZCM.DET" );
-      hFile = (HFILE) SysOpenFile( vSubtask, szDetachSpec, COREFILE_DELETE );
-   }
-
-   nRC = SetCursorFirstEntityByInteger( vTZCMWKSO,
-                                        "LPLR", "ZKey", lCurrentZKey, "" );
    return( 0 );
 }
 

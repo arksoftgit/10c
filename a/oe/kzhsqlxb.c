@@ -694,7 +694,7 @@ the brackets for the DDL-command
    // Global variable used to determine indentation on SQL commands.
    g_nIndent;
 
-#elif defined( MYSQL )
+#elif defined( SQLITE ) // This needs to go ahead of MYSQL.
 
    #define CONTINUATION_STR      ""
    #define LINE_TERMINATOR       ";"
@@ -705,13 +705,13 @@ the brackets for the DDL-command
    #define NULL_FIELD            "NULL    "
    #define ADD_COLUMN_STMT       "ADD"
    #define DROP_COLUMN_STMT      "DROP COLUMN"
-   #define MAX_TABLENAME_LTH     32
-   #define MAX_COLUMNNAME_LTH    32
+   #define MAX_TABLENAME_LTH     64
+   #define MAX_COLUMNNAME_LTH    64
    #define MAX_DATATYPE_LTH      20
+   #define COMMIT_STR            "";
    #define COLUMN_INDENT         10
    #define CREATE_DB             0
-   #define COMMIT_STR            "COMMIT;"  // DGC 2007.09.15 "GO"
-   #define GRANT_ALL             1
+   #define GRANT_ALL             0
    #define MAX_LTH_FOR_STRING    254
 
    // List of words that are reserved in SQL Server.
@@ -1123,7 +1123,7 @@ the brackets for the DDL-command
                               "ZONE",               // SQLSERVER
                               "\0" };     // Must be last -- terminates list.
 
-#elif defined( SQLITE )
+#elif defined( MYSQL )
 
    #define CONTINUATION_STR      ""
    #define LINE_TERMINATOR       ";"
@@ -1134,12 +1134,12 @@ the brackets for the DDL-command
    #define NULL_FIELD            "NULL    "
    #define ADD_COLUMN_STMT       "ADD"
    #define DROP_COLUMN_STMT      "DROP COLUMN"
-   #define MAX_TABLENAME_LTH     64
-   #define MAX_COLUMNNAME_LTH    64
+   #define MAX_TABLENAME_LTH     32
+   #define MAX_COLUMNNAME_LTH    32
    #define MAX_DATATYPE_LTH      20
-   #define COMMIT_STR            "";
    #define COLUMN_INDENT         10
    #define CREATE_DB             0
+   #define COMMIT_STR            "COMMIT;"  // DGC 2007.09.15 "GO"
    #define GRANT_ALL             1
    #define MAX_LTH_FOR_STRING    254
 
@@ -3438,8 +3438,12 @@ BuildDDL( zVIEW  vDTE,
    SetOI_FromBlob( &vDBH_Data, szDBH_DataObjectName, vDTE, vDTE,
                    "TE_DBMS_Source", "DBH_Data", zNOI_OKAY );
 
-#if defined( ACCESS ) || defined( MYSQL ) || defined( ODBC ) || \
-    defined( POSTGRESQL ) || defined( SQLSERVER )
+#if defined( SQLITE )
+
+   pchGenCreateIdxs   = "N";   // Don't generate indexes for Sqlite.
+
+#elif defined( ACCESS ) || defined( MYSQL ) || defined( ODBC ) || \
+      defined( POSTGRESQL ) || defined( SQLSERVER )
 
    // Try to get the ODBC definition.
    SetOI_FromBlob( &vTZDBHODO, 0, vDTE, vTZTEDBLO,

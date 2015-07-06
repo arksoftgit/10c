@@ -417,7 +417,7 @@ zwTZDMUPDD_InitTool2( zVIEW vSubtask )
    // Set window Title with check out state
    SetTitleWithCheckOutState( vSubtask, "Domain Maintenance", "TZDGSRCO",
                                vDomainGrp, "Domain", zSOURCE_DOMAINGRP_META );
-
+                                                              
    return( 0 );
 }
 
@@ -643,6 +643,11 @@ zwTZDMUPDD_AskForSave( zVIEW    vSubtask )
       // Our solution will be to map all the controls on the window TZDMUPDD
       // individually.  We will check DataType and DomainType to see if they
       // are null and will map them if they are not.
+      
+      // KJS - 06/25/15 - I took off the "Not Null" for DataType and DomainType because of an KZOE
+      // error we recieved when hitting "Next" or "Prev". We will prompt the user if these fields 
+      // do not have value.
+      
       MapCtrl( vSubtask, "Restricted" );
       MapCtrl( vSubtask, "Operation" );
       MapCtrl( vSubtask, "DomainName" );
@@ -650,9 +655,27 @@ zwTZDMUPDD_AskForSave( zVIEW    vSubtask )
       GetCtrlText( vSubtask, "DataType", szControlText, 60 );
       if ( szControlText[ 0 ] != 0 )
          MapCtrl( vSubtask, "DataType" );
+      else
+      {
+         MessageSend( vSubtask, "DM00101", "Domain Maintenance",
+                      "Please enter a Data Type.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
+         SetFocusToCtrl( vSubtask, "DataType" );
+         return( -1 );
+      }
       GetCtrlText( vSubtask, "DomainType", szControlText, 60 );
       if ( szControlText[ 0 ] != 0 )
          MapCtrl( vSubtask, "DomainType" );
+      else
+      {
+         MessageSend( vSubtask, "DM00101", "Domain Maintenance",
+                      "Please enter a Domain Type.",
+                      zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+         SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
+         SetFocusToCtrl( vSubtask, "DomainType" );
+         return( -1 );
+      }
 
       nRC = MapCtrl( vSubtask, "DecimalFormat" );
       nRC2 = MapCtrl( vSubtask, "MaxString" );
@@ -664,6 +687,7 @@ zwTZDMUPDD_AskForSave( zVIEW    vSubtask )
          SetWindowActionBehavior( vSubtask, zWAB_StayOnWindow, 0, 0 );
          return( -1 );
       }
+      
 
       if ( MiGetUpdateForView( vDomainGrp ) == 1  &&
            ObjectInstanceUpdatedFromFile( vDomainGrp ) == 1 )
@@ -787,7 +811,25 @@ zwTZDMUPDD_SaveDomain( zVIEW    vSubtask )
    if ( nRC < 1 )
       return( 0 );
 
-   GetStringFromAttribute( szType, vDomainGrp, "Domain", "DataType" );
+   nRC = GetStringFromAttribute( szType, vDomainGrp, "Domain", "DomainType" );
+   if ( szType[ 0 ] == 0 )
+   {
+      MessageSend( vSubtask, "DM00101", "Domain Maintenance",
+                   "Please enter a Domain Type.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+      SetFocusToCtrl( vSubtask, "DomainType" );
+      return( -1 );
+   }
+
+   nRC = GetStringFromAttribute( szType, vDomainGrp, "Domain", "DataType" );
+   if ( szType[ 0 ] == 0 )
+   {
+      MessageSend( vSubtask, "DM00101", "Domain Maintenance",
+                   "Please enter a Data Type.",
+                   zMSGQ_OBJECT_CONSTRAINT_ERROR, zBEEP );
+      SetFocusToCtrl( vSubtask, "DataType" );
+      return( -1 );
+   }
    GetIntegerFromAttribute( &lMaxStringLength, vDomainGrp, "Domain", "MaxStringLth" );
    if ( *szType == 'S' && lMaxStringLength < 1 )
    {
@@ -944,6 +986,7 @@ zwTZDMUPDD_ActivateDomain( zVIEW  vSubtask )
    zVIEW    vCM_List2;
    zVIEW    vDomainGrp;
    zVIEW    vDomainGrpA;
+   zVIEW    vTaskLPLR;
    zLONG    lRC;
 
    GetViewByName( &vCM_List, "CM_List", vSubtask, zLEVEL_ANY );
@@ -971,6 +1014,10 @@ zwTZDMUPDD_ActivateDomain( zVIEW  vSubtask )
       // the user cannot update the values in Detail Windows
       if ( !ComponentIsCheckedOut( vSubtask, vDomainGrpA, zSOURCE_DOMAINGRP_META ))
          SetViewReadOnly( vDomainGrpA );
+         
+      // Position on the blank entry in DomainJavaClass
+      if ( GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK ) >= 0 )
+         SetCursorFirstEntity( vTaskLPLR, "DomainJavaClass", "" );
    }
 
    return( 0 );
@@ -1034,6 +1081,15 @@ zwTZDMUPDD_CreateNewDomain( zVIEW    vSubtask )
       SetAttributeFromAttribute( vDomainGrp, "Context", "Name",
                                   vProfileXFER, "DM", "DomainName" );
       SetAttributeFromString( vDomainGrp, "Context", "IsDefault", "Y" );
+      
+      // KJS 06/23/15 - If the user does not select a DomainType or DataType, an internal IssueOE_Error is given when saving (because these fields are not null),
+      // that to a new user would probably be confusing. To this end, I am going to set a default value of "Table" and "String",
+      // so that the error doesn't pop up.
+      // But now I see that if I set this, for some reason when we go to the AskForSave code, the object is not marked
+      // as updated so we never ask for the save and this domain might not get saved. Don't understand why that is so
+      // for now we will have to put up with the non user friendly message.
+      //SetAttributeFromString( vDomainGrp, "Domain", "DomainType", "T" );
+      //SetAttributeFromString( vDomainGrp, "Domain", "DataType", "S" );
    }
 
    return( 0 );
@@ -1990,71 +2046,9 @@ zwTZDMUPDD_CreateByCopy( zVIEW    vSubtask )
 zOPER_EXPORT zSHORT OPERATION
 zwTZDMUPDD_RebuildXDM( zVIEW vSubtask )
 {
-   zVIEW    vActiveDomain;
-   zVIEW    vDomainGrp;
-   zVIEW    vCM_List;
-   zVIEW    vCM_List2;
-   zVIEW    vXDM;
-   zLONG    lDomainZKey;
    zSHORT   nRC;
-   zSHORT   RESULT;
-   zBOOL    bUpdated;
-
-   bUpdated = 0;
-   if ( GetViewByName( &vActiveDomain, "TZDGSRCO", vSubtask, zLEVEL_TASK ) > 0 )
-   {
-      if ( (bUpdated = (zBOOL) ObjectInstanceUpdatedFromFile( vActiveDomain )) != 0 )
-      {
-         if ( MessagePrompt( vSubtask, "DM00108",
-                             "Domain Maintenance",
-                             "The Domain currently active has been updated. "
-                             "The active domain WILL NOT be included in "
-                             "the rebuilt executable until a save is done.\n\n"
-                             "Would you like to continue with the rebuild anyway?",
-                             zBEEP, zBUTTONS_YESNO,
-                             zRESPONSE_NO,      0 )  == zRESPONSE_YES )
-         {
-            return( 0 );
-         }
-      }
-   }
-
-   nRC = oTZDMXGPO_GetViewForXDM( vSubtask, &vXDM, zCURRENT_OI );
-   if ( nRC >= 0 )
-   {
-      for ( nRC = SetCursorFirstEntity( vXDM, "Domain", "" );
-            nRC >= zCURSOR_SET;
-            nRC = SetCursorNextEntity( vXDM, "Domain", "" ) )
-      {
-         DeleteEntity( vXDM, "Domain", zREPOS_PREV );
-      }
-   }
-
-   nRC = RetrieveViewForMetaList( vSubtask, &vCM_List, zREFER_DOMAIN_META );
-   RESULT = SetCursorFirstEntity( vCM_List, "W_MetaDef", "" );
-   while ( RESULT >= zCURSOR_SET )
-   {
-      nRC = GetIntegerFromAttribute( &lDomainZKey,
-                                     vCM_List, "W_MetaDef", "CPLR_ZKey" );
-
-      // Use a second CM_List view for Activate since Activate will alter
-      // its position.
-      CreateViewFromViewForTask( &vCM_List2, vCM_List, 0 );
-      nRC = ActivateMetaOI( vSubtask, &vDomainGrp, vCM_List2,
-                            zREFER_DOMAIN_META,
-                            zSINGLE | zLEVEL_APPLICATION );
-      DropView( vCM_List2 );
-
-      RESULT = SetCursorNextEntity( vCM_List, "W_MetaDef", "" );
-      if ( nRC >= 0 )
-      {
-         if ( RESULT >= zCURSOR_SET )
-            oTZDMSRCO_ReplaceOrAddDomToXDM( vSubtask, vDomainGrp, 0 );
-         else
-            oTZDMSRCO_ReplaceOrAddDomToXDM( vSubtask, vDomainGrp, 1 );
-         DropMetaOI( vSubtask, vDomainGrp );
-      }
-   }
+   
+   nRC = RebuildXDM( vSubtask );
 
    return( nRC );
 }
@@ -2693,6 +2687,7 @@ zwfnTZDMUPDD_OpenDom( zVIEW   vSubtask,
    zVIEW   vDomainGrp;
    zVIEW   vDomainGrpDetail;
    zVIEW   vWindow;
+   zVIEW   vTaskLPLR;
 
    nRC = ActivateMetaOI( vSubtask, &vDomainGrpA, vCM_List,
                          zSOURCE_DOMAIN_META,
@@ -2735,6 +2730,9 @@ zwfnTZDMUPDD_OpenDom( zVIEW   vSubtask,
             RefreshWindow( vWindow );
       }
    }
+   // Position on the blank entry in DomainJavaClass
+   if ( GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK ) >= 0 )
+      SetCursorFirstEntity( vTaskLPLR, "DomainJavaClass", "" );
 
    return( 0 );
 }
@@ -4763,7 +4761,10 @@ zwTZDMUPDD_Check_CheckoutStatus( zVIEW vSubtask )
    zVIEW   vCM_List;
    zVIEW   vCM_ListGrp;
    zVIEW   vCM_ListGroup;
+   zVIEW   vTaskLPLR;
+   zVIEW   vXDM;
    zSHORT  nEnable = 0;
+   zSHORT  nRC = 0;
    zBOOL   bEnable = FALSE;
 
    if ( GetViewByName( &vCM_ListGrp, "CM_ListGroup", vSubtask, zLEVEL_TASK ) >= 0 &&
@@ -4791,6 +4792,103 @@ zwTZDMUPDD_Check_CheckoutStatus( zVIEW vSubtask )
    SetCtrlState( vSubtask, "Delete", zOPTION_STATUS_ENABLED, nEnable );
    SetCtrlState( vSubtask, "Move", zOPTION_STATUS_ENABLED, nEnable );
    EnableAction( vSubtask, "DeleteDomain", bEnable );
+   
+   // KJS 06/24/15 - Adding work entities that contain the different JavaClass options available for
+   // domains. This is so that the user can select classes from a list.
+   if ( GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK ) >= 0 )
+   {
+      if ( CheckExistenceOfEntity( vTaskLPLR, "DomainJavaClass" ) < zCURSOR_SET )
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+      //kkkkkkk
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.StaticTableDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.StaticTableDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.DynamicTableDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.DynamicTableDomain" );
+      }
+/////////
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.BlobDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.BlobDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.DateDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.DateDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.DoubleDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.DoubleDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.EmailAddressDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.EmailAddressDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.IntegerDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.IntegerDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.PasswordDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.PasswordDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.StringDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.StringDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.SSNDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.SSNDomain" );
+      }
+      if ( SetCursorFirstEntityByString( vTaskLPLR, "DomainJavaClass",
+                                         "JavaClassName", "com.quinsoft.zeidon.domains.TimeDomain", 0 ) < zCURSOR_SET )
+      {                                        
+         CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+         SetAttributeFromString( vTaskLPLR, "DomainJavaClass", "JavaClassName", "com.quinsoft.zeidon.domains.TimeDomain" );
+      }
+      
+      // After building domains that exist in zeidon-joe, we should look at the xdm file and add any new domains that
+      // have been added for this LPLR project.
+      nRC = oTZDMXGPO_GetViewForXDM( vSubtask, &vXDM, zCURRENT_OI );
+      if ( nRC >= 0 )
+      {
+         for ( nRC = SetCursorFirstEntity( vXDM, "Domain", "" );
+               nRC >= zCURSOR_SET;
+               nRC = SetCursorNextEntity( vXDM, "Domain", "" ) )
+         {
+
+
+            if ( SetCursorFirstEntityByAttr( vTaskLPLR, "DomainJavaClass", "JavaClassName",
+                                             vXDM, "Domain", "JavaClass", "" ) < zCURSOR_SET )
+            {                                        
+               CreateEntity( vTaskLPLR, "DomainJavaClass", zPOS_AFTER );
+               SetAttributeFromAttribute( vTaskLPLR, "DomainJavaClass", "JavaClassName", vXDM, "Domain", "JavaClass" );
+            }
+
+        }
+      }
+   }
 
    return( 0 );
 } // zwTZDMUPDD_Check_CheckoutStatus
@@ -4887,6 +4985,7 @@ zOPER_EXPORT zSHORT OPERATION
 zwTZDMUPDD_OpenDomain( zVIEW vSubtask )
 {
    zVIEW  vSaveAs;
+   zVIEW  vTaskLPLR;
    zSHORT nRC;
 
    // Ask and do save
@@ -4907,6 +5006,11 @@ zwTZDMUPDD_OpenDomain( zVIEW vSubtask )
             SetAttributeFromInteger( vSaveAs, "ActionAfterSaveAS", "Typ",
                                      zNoActionAfterSaveAs );
       }
+      
+   // Position on the blank entry in DomainJavaClass
+   if ( GetViewByName( &vTaskLPLR, "TaskLPLR", vSubtask, zLEVEL_TASK ) >= 0 )
+      SetCursorFirstEntity( vTaskLPLR, "DomainJavaClass", "" );
+      
 
       return( 0 );
    }

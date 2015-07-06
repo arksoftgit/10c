@@ -82,6 +82,10 @@ zOPER_EXPORT zSHORT OPERATION
 LoadProperties( zVIEW     vSubtask );
 
 
+zOPER_EXPORT zSHORT OPERATION
+CHANGE_JavaClassName( zVIEW     ViewToWindow );
+
+
 //:DIALOG OPERATION
 //:NLS_DIL_DeleteText( VIEW vSubtask )
 
@@ -809,6 +813,28 @@ LoadProperties( zVIEW     vSubtask )
    CreateViewFromViewForTask( &vTZDGSRCO_DETAIL, vTZDGSRCO, vSubtask );
    //:SetNameForView( vTZDGSRCO_DETAIL, "TZDGSRCO_DETAIL", vSubtask, zLEVEL_TASK )
    SetNameForView( vTZDGSRCO_DETAIL, "TZDGSRCO_DETAIL", vSubtask, zLEVEL_TASK );
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:CHANGE_JavaClassName( VIEW ViewToWindow )
+
+//:   VIEW vTaskLPLR REGISTERED AS TaskLPLR
+zOPER_EXPORT zSHORT OPERATION
+CHANGE_JavaClassName( zVIEW     ViewToWindow )
+{
+   zVIEW     vTaskLPLR = 0; 
+   zSHORT    RESULT; 
+   //:VIEW vTZDGSRCO REGISTERED AS TZDGSRCO
+   zVIEW     vTZDGSRCO = 0; 
+
+   RESULT = GetViewByName( &vTaskLPLR, "TaskLPLR", ViewToWindow, zLEVEL_TASK );
+   RESULT = GetViewByName( &vTZDGSRCO, "TZDGSRCO", ViewToWindow, zLEVEL_TASK );
+
+   //:vTZDGSRCO.Domain.JavaClass = vTaskLPLR.DomainJavaClass.JavaClassName 
+   SetAttributeFromAttribute( vTZDGSRCO, "Domain", "JavaClass", vTaskLPLR, "DomainJavaClass", "JavaClassName" );
    return( 0 );
 // END
 } 

@@ -376,8 +376,7 @@ CREATE_NewLPLR( VIEW ViewToWindow )
    // If the request is to create a new entry for an existing, external LPLR, then update the existing LPLR.
    szLPLRName = TZCMLPLO.LPLR.Name
    zSearchAndReplace( szLPLRName, 513, " ", "_" )
-   
-   
+      
    // Get the max zkey in tzcmwkso? This is code from zwTZCMLPLD_PrebuildNewLPLR, not sure where that was called before...
    // And I'm not seeing that the LPLR.ZKey in xlp is the same as the LPLR.Zkey in tzcmwkso.por. Is this a problem?
    lHighZKey = 0
@@ -422,6 +421,7 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       CREATE ENTITY TZCMULWO.Installation 
       TZCMULWO.Installation.Name = TZCMLPLO.LPLR.Name 
       TZCMULWO.Installation.ExecutableSubDirectory = TZCMLPLO.LPLR.wExecutableSubDirectory 
+      TZCMULWO.Installation.Desc = TZCMLPLO.LPLR.Desc 
       CREATE ENTITY TZCMULWO.User 
       TZCMULWO.User.Name = TZCMWKSO.User.Name
       TZCMULWO.User.ZKey = 11
@@ -431,7 +431,9 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       // KJS 06/05/15 - If the user puts in a directory for the meta source that doesn't
       // exist, do we want to create one for them?
       szFileName = TZCMLPLO.LPLR.MetaSrcDir 
-      SysValidDirOrFile( szFileName, TRUE, TRUE, 512)
+      IF SysValidDirOrFile( szFileName, TRUE, TRUE, 512) < 0 
+         RETURN -1
+      END
          
    ELSE
       // LPLR is new existing. Being Imported.
@@ -464,7 +466,9 @@ CREATE_NewLPLR( VIEW ViewToWindow )
 
    // Set the executable directory. Create it if it doesn't exist and also copy the zeidon.hky if it doesn't exist.
    szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
-   SysValidDirOrFile( szFileName, TRUE, TRUE, 512)
+   IF SysValidDirOrFile( szFileName, TRUE, TRUE, 512) < 0
+      RETURN -1
+   END
    TZCMLPLO.LPLR.ExecDir = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
    
    // Copy the Hotkey file "ZEIDON.HKY" to the new LPLR executable directory.
@@ -474,7 +478,67 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
       szFromFileName = szFromFileName + "\ZEIDON.HKY" 
       SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
-   END                         
+   END       
+   
+   // If we are creating a new lplr...
+   // Now check kzmsgqoo, and tzzolodo if the directory "NewLPLR" exists under zeidon executable directory.
+   szFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS + "\NewLPLR"
+   IF TZCMLPLO.LPLR.LPLR_Type = "2" AND SysValidDirOrFile( szFileName, TRUE, FALSE, 512 ) > 0
+   
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir
+      szFileName = szFileName + "\KZMSGQOO.LOD"
+      nRC = SysValidDirOrFile( szFileName, FALSE, FALSE, 512 )
+      IF nRC <= 0 
+         szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+         szFromFileName = szFromFileName + "\NewLPLR\KZMSGQOO.LOD" 
+         SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+         szFileName = TZCMLPLO.LPLR.ExecDir + "\KZMSGQOO.XOD"
+         szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+         szFromFileName = szFromFileName + "\NewLPLR\KZMSGQOO.XOD" 
+         SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+      END                              
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir
+      szFileName = szFileName + "\TZZOLFLO.LOD"
+      nRC = SysValidDirOrFile( szFileName, FALSE, FALSE, 512 )
+      IF nRC <= 0 
+         szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+         szFromFileName = szFromFileName + "\NewLPLR\TZZOLFLO.LOD" 
+         SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+         szFileName = TZCMLPLO.LPLR.ExecDir + "\TZZOLFLO.XOD"
+         szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+         szFromFileName = szFromFileName + "\NewLPLR\TZZOLFLO.XOD" 
+         SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+      END                            
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir
+      szFileName = szFileName + "\TZAPDMAA.PDG"
+      nRC = SysValidDirOrFile( szFileName, FALSE, FALSE, 512 )
+      IF nRC <= 0 
+         szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+         szFromFileName = szFromFileName + "\NewLPLR\TZAPDMAA.PDG" 
+         SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+      END                            
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir
+      szFileName = szFileName + "\TZAPDMAB.PDG"
+      nRC = SysValidDirOrFile( szFileName, FALSE, FALSE, 512 )
+      IF nRC <= 0 
+         szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+         szFromFileName = szFromFileName + "\NewLPLR\TZAPDMAB.PDG" 
+         SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+      END                            
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir
+      szFileName = szFileName + "\TZAPDMAC.PDG"
+      nRC = SysValidDirOrFile( szFileName, FALSE, FALSE, 512 )
+      IF nRC <= 0 
+         szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+         szFromFileName = szFromFileName + "\NewLPLR\TZAPDMAC.PDG" 
+         SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+      END                            
+
+      szFileName = TZCMLPLO.LPLR.MetaSrcDir + "\KZMSGQOO_Object.java"
+      szFromFileName = KZAPPLOO.ZEIDON.ZEIDON_SYS 
+      szFromFileName = szFromFileName + "\NewLPLR\KZMSGQOO_Object.java"  
+      SysCopyFile( ViewToWindow, szFromFileName, szFileName, TRUE )
+   END
 
    TZCMLPLO.LPLR.PgmSrcDir = TZCMLPLO.LPLR.MetaSrcDir       
    TZCMLPLO.LPLR.TempDesc = TZCMLPLO.LPLR.Desc 
@@ -486,13 +550,15 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       CREATE ENTITY TZCMWKSO.LPLR 
       TZCMWKSO.LPLR.LPLR_Type = "2"
       TZCMWKSO.LPLR.Name      = TZCMULWO.Installation.Name 
-      TZCMWKSO.LPLR.Desc      = TZCMULWO.Installation.Desc 
       TZCMWKSO.LPLR.ZKey = lHighZKey      
    END 
+   TZCMWKSO.LPLR.Desc       = TZCMLPLO.LPLR.Desc 
    TZCMWKSO.LPLR.MetaSrcDir = TZCMLPLO.LPLR.MetaSrcDir
    TZCMWKSO.LPLR.PgmSrcDir  = TZCMLPLO.LPLR.MetaSrcDir
    TZCMWKSO.LPLR.ExecDir    = TZCMLPLO.LPLR.MetaSrcDir + "\" + TZCMULWO.Installation.ExecutableSubDirectory
    TZCMWKSO.LPLR.MaxZKey    = TZCMULWO.User.GenerationStartZKey 
+   
+   TZCMWKSO.RepositoryClient.DefaultLPLR_ZKey = TZCMWKSO.LPLR.ZKey 
    
    SysGetEnvVar( szFileName, "ZEIDON", 128 )
    szFileName = szFileName + "\TZCMWKS8.POR"
@@ -558,6 +624,17 @@ CREATE_NewLPLR( VIEW ViewToWindow )
       SetWindowActionBehavior( ViewToWindow, zWAB_StayOnWindow, 0, 0 )
       RETURN -1
    END 
+   
+   // Save view TZCMLPLO to view TaskLPLR because thi
+   NAME VIEW TZCMLPLO "TaskLPLR"
+    
+   RebuildMetaLists( ViewToWindow )
+   InitializeLPLR( ViewToWindow, szLPLRName )
+   RebuildXDM( ViewToWindow )
+   // Right now we run into an error in RebuildXODs because we don't have the TE set up.
+   // It's looking for view "TE_DB_Environ" and entity "TE_DBMS_Source".
+   // So I will come back to this, do we want to set up an initial te here?   
+   //RebuildXODs( ViewToWindow )
 
 END
 

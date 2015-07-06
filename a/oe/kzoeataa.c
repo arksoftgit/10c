@@ -10911,8 +10911,9 @@ fnSetUpdateIndicator( LPVIEWOI         lpViewOI,
 
    // KJS 08/22/14 - I am confused here because fnInstanceVersioned returns 0 if there is no
    // versioning, so it would seem that the check should be > 0.
-   //if ( fnInstanceVersioned( lpEntityInstance ) == 0 )
-   if ( fnInstanceVersioned( lpEntityInstance ) > 0 )
+   //if ( fnInstanceVersioned( lpEntityInstance ) > 0 )
+   // KJS 06/25/15 - Not asking for Save in domains when I create a new domain, so going to set this back to original.
+   if ( fnInstanceVersioned( lpEntityInstance ) == 0 )
    {
       lpViewOI->bUpdatedFile = TRUE;
 
