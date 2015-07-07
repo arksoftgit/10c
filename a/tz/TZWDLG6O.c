@@ -4912,7 +4912,6 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
          WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
 
          //:// This Action is Startup Web Popup WITHOUT mapping, so generate unique statements for that case.
-         //:// This Action is Startup Web Popup WITHOUT mapping, so generate unique statements for that case.
          //:// KJS 07/11/12 - I am taking out this code, because at the moment, I do not see why we want to open the popup window
          //:// differently when mapping is on or off.  If we do this this way, then if there is an operation that needs to be called
          //:// on the action, it isn't called (wed need the .submit).  If there is no mapping then the DoInputMapping is never called,
@@ -5019,19 +5018,63 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
                ZeidonStringCopy( szWriteBuffer, 1, 0, "   {", 1, 0, 10001 );
                //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
                WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+               //:szJavaScript = vDialog.Action.WebJavaScript
+               GetVariableFromAttribute( szJavaScript, 0, 'S', 10001, vDialog, "Action", "WebJavaScript", "", 0 );
 
                //:// DKS 2015.06.20 - remove prebuild javascript if it is being inserted in _AfterPageLoaded
-               //:IF vDialog.ActWndEvent EXISTS AND vDialog.ActWndEvent.Type = 1 AND szInsertPrebuildJavascriptInline = "Y"
-               lTempInteger_28 = CheckExistenceOfEntity( vDialog, "ActWndEvent" );
-               if ( lTempInteger_28 == 0 && CompareAttributeToInteger( vDialog, "ActWndEvent", "Type", 1 ) == 0 && ZeidonStringCompare( szInsertPrebuildJavascriptInline, 1, 0, "Y", 1, 0, 2 ) == 0 )
+               //:IF szInsertPrebuildJavascriptInline = "Y"
+               if ( ZeidonStringCompare( szInsertPrebuildJavascriptInline, 1, 0, "Y", 1, 0, 2 ) == 0 )
                { 
-                  //:// prebuild event and javascript being inserted inline in _AfterPageLoaded
+                  //:IF vDialog.ActWndEvent EXISTS AND vDialog.ActWndEvent.Type = 1
+                  lTempInteger_28 = CheckExistenceOfEntity( vDialog, "ActWndEvent" );
+                  if ( lTempInteger_28 == 0 && CompareAttributeToInteger( vDialog, "ActWndEvent", "Type", 1 ) == 0 )
+                  { 
+                     //:// prebuild javascript being inserted inline in _AfterPageLoaded
+                     //:ELSE
+                  } 
+                  else
+                  { 
+                     //:// otherwise, we need the javascript code
+                     //:IF  szJavaScript != ""
+                     if ( ZeidonStringCompare( szJavaScript, 1, 0, "", 1, 0, 10001 ) != 0 )
+                     { 
+                        //:szWriteBuffer = "      // Javascript code entered by user."
+                        ZeidonStringCopy( szWriteBuffer, 1, 0, "      // Javascript code entered by user.", 1, 0, 10001 );
+                        //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                        WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+                        //:szWriteBuffer = szJavaScript
+                        ZeidonStringCopy( szWriteBuffer, 1, 0, szJavaScript, 1, 0, 10001 );
+                        //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                        WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+                        //:szWriteBuffer = "      // END of Javascript code entered by user."
+                        ZeidonStringCopy( szWriteBuffer, 1, 0, "      // END of Javascript code entered by user.", 1, 0, 10001 );
+                        //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                        WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 );
+                     } 
+
+                     //:END
+                  } 
+
+                  //:END
+                  //:// DKS 2015.07.07 - and we always want the submit
+                  //:szWriteBuffer = "      document." + szFormName + ".zAction.value = ^" + szActionTag + "^;"
+                  ZeidonStringCopy( szWriteBuffer, 1, 0, "      document.", 1, 0, 10001 );
+                  ZeidonStringConcat( szWriteBuffer, 1, 0, szFormName, 1, 0, 10001 );
+                  ZeidonStringConcat( szWriteBuffer, 1, 0, ".zAction.value = ^", 1, 0, 10001 );
+                  ZeidonStringConcat( szWriteBuffer, 1, 0, szActionTag, 1, 0, 10001 );
+                  ZeidonStringConcat( szWriteBuffer, 1, 0, "^;", 1, 0, 10001 );
+                  //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
+                  //:szWriteBuffer = "      document." + szFormName + ".submit( );"
+                  ZeidonStringCopy( szWriteBuffer, 1, 0, "      document.", 1, 0, 10001 );
+                  ZeidonStringConcat( szWriteBuffer, 1, 0, szFormName, 1, 0, 10001 );
+                  ZeidonStringConcat( szWriteBuffer, 1, 0, ".submit( );", 1, 0, 10001 );
+                  //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+                  WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
                   //:ELSE
                } 
                else
                { 
-                  //:szJavaScript = vDialog.Action.WebJavaScript
-                  GetVariableFromAttribute( szJavaScript, 0, 'S', 10001, vDialog, "Action", "WebJavaScript", "", 0 );
                   //:IF  szJavaScript != ""
                   if ( ZeidonStringCompare( szJavaScript, 1, 0, "", 1, 0, 10001 ) != 0 )
                   { 

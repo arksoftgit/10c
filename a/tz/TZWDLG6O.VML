@@ -3162,7 +3162,6 @@ DKS_TRACE_END */
          WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
 
          // This Action is Startup Web Popup WITHOUT mapping, so generate unique statements for that case.
-         // This Action is Startup Web Popup WITHOUT mapping, so generate unique statements for that case.
          // KJS 07/11/12 - I am taking out this code, because at the moment, I do not see why we want to open the popup window
          // differently when mapping is on or off.  If we do this this way, then if there is an operation that needs to be called
          // on the action, it isn't called (wed need the .submit).  If there is no mapping then the DoInputMapping is never called,
@@ -3256,12 +3255,29 @@ DKS_TRACE_END */
             WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
             szWriteBuffer = "   {"
             WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+            szJavaScript = vDialog.Action.WebJavaScript
 
             // DKS 2015.06.20 - remove prebuild javascript if it is being inserted in _AfterPageLoaded
-            IF vDialog.ActWndEvent EXISTS AND vDialog.ActWndEvent.Type = 1 AND szInsertPrebuildJavascriptInline = "Y"
-               // prebuild event and javascript being inserted inline in _AfterPageLoaded
+            IF szInsertPrebuildJavascriptInline = "Y"
+               IF vDialog.ActWndEvent EXISTS AND vDialog.ActWndEvent.Type = 1
+                  // prebuild javascript being inserted inline in _AfterPageLoaded
+               ELSE
+                  // otherwise, we need the javascript code
+                  IF  szJavaScript != ""
+                     szWriteBuffer = "      // Javascript code entered by user."
+                     WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                     szWriteBuffer = szJavaScript
+                     WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                     szWriteBuffer = "      // END of Javascript code entered by user."
+                     WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
+                  END
+               END
+               // DKS 2015.07.07 - and we always want the submit
+               szWriteBuffer = "      document." + szFormName + ".zAction.value = ^" + szActionTag + "^;"
+               WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+               szWriteBuffer = "      document." + szFormName + ".submit( );"
+               WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
             ELSE
-               szJavaScript = vDialog.Action.WebJavaScript
                IF  szJavaScript != ""
                   szWriteBuffer = "      // Javascript code entered by user."
                   WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
