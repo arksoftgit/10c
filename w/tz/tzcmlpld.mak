@@ -15,7 +15,7 @@
 MODULE         = tzcmlpld
 TARGETS        = $(Z_BIN)\$(MODULE).dll
 C_DEPENDENTS   =
-LINKDLLS       = tzlodopr.lib truegrid.lib
+LINKDLLS       = tzlodopr.lib truegrid.lib tzvmlip.lib
 DRIVER_APP     = YES
 CPP_OBJS       = $(Z_OBJ)\$(MODULE).obj \
                  $(Z_OBJ)\tzcmlpldv.obj  \

@@ -2629,19 +2629,19 @@ fnBuildColumn( zVIEW  vDTE, zLONG  f, zPCHAR pchLine )
       case 'A':
          GetAddrForAttribute( &pchKeyType, vDTE, "TE_FieldDataRel", "DataOrRelfieldOrSet" );
          if ( pchKeyType[ 0 ] == 'D' )
-	 {
+    {
             // The key type is 'D' for data which means it's the main key.
             #if defined( SQLITE )
-	       zsprintf( pchEnd, " INTEGER PRIMARY KEY " );
+          zsprintf( pchEnd, " INTEGER PRIMARY KEY " );
             #else
-	       zsprintf( pchEnd, " SERIAL" );
+          zsprintf( pchEnd, " SERIAL" );
             #endif
-	 }
-	 else
-	 {
+    }
+    else
+    {
             // This must be a FK so don't declare it as SERIAL/KEY.
             zsprintf( pchEnd, " INTEGER" );
-	 }
+    }
 
          break;
 
@@ -3699,7 +3699,7 @@ BuildDDL( zVIEW  vDTE,
             zsprintf( szLine, "DROP TABLE %s%s IF EXISTS %s", szOwner, pch, LINE_TERMINATOR );
          #else
             zsprintf( szLine, "DROP TABLE %s%s %s", szOwner, pch, LINE_TERMINATOR );
-	 #endif
+    #endif
 
          if ( fnWriteLine( vDTE, f, szLine ) < 0 )
             nRC = zCALL_ERROR;
@@ -4197,11 +4197,11 @@ BuildSyncDDL( zVIEW  vDTE,
 
                bFirstAlterOfTable = FALSE;
 
-			   // KJS 10/16/14 - When I have selected "Keep Physical Characteristics..." for the datasource, and the
-			   // rebuild tables/rels and then "Build Sync DDL", I get to this point and have TE_TablRecs where there
-			   // is no ER_ENTITY. I am not sure why I don't seem to get that when "Keep ..." is not set.
-			   if ( CheckExistenceOfEntity( vDTE, "ER_Entity" ) == zCURSOR_SET )
-			   {
+            // KJS 10/16/14 - When I have selected "Keep Physical Characteristics..." for the datasource, and the
+            // rebuild tables/rels and then "Build Sync DDL", I get to this point and have TE_TablRecs where there
+            // is no ER_ENTITY. I am not sure why I don't seem to get that when "Keep ..." is not set.
+            if ( CheckExistenceOfEntity( vDTE, "ER_Entity" ) == zCURSOR_SET )
+            {
                GetStringFromAttribute( szEntityName, vDTE, "ER_Entity", "Name" );
 
                if ( fnWriteLine( vDTE, f, "" ) < 0 )
@@ -4211,7 +4211,7 @@ BuildSyncDDL( zVIEW  vDTE,
                          COMMENT_START, szEntityName, COMMENT_END );
                if ( fnWriteLine( vDTE, f, szLine ) < 0 )
                   goto EndOfFunction;
-			   }
+            }
             }
 
             GetStringFromAttribute( szColumnName, vDTE, "TE_FieldDataRel", "Name" );
@@ -4709,7 +4709,7 @@ SetDataType( zVIEW vDTE, zBOOL bSetDefault )
       if ( zstrcmpi( pchDomainName, "GeneratedKey" ) == 0 )
       {
          SetAttributeFromString( vDTE, "TE_FieldDataRel", "DataType", "A" );
-      }    
+      }
 #endif
       else
          // Domain is not Date or Time, so just set the default data type the
@@ -4875,8 +4875,8 @@ fnChangeReservedName( zPCHAR pchName )
 //
 //   PROTOTYPE:
 //        void OPERATION
-//        TranslateToUnderscoreCase( zPCHAR pchSrc, 
-//                                   zPCHAR pchTarget, 
+//        TranslateToUnderscoreCase( zPCHAR pchSrc,
+//                                   zPCHAR pchTarget,
 //                                   zSHORT targetLth )
 //
 //   PURPOSE:  Converts a string from Camel Casing to underscores.  E.g.:
@@ -4962,24 +4962,24 @@ TranslateToUnderscoreCase( zPCHAR pchSrc, zPCHAR pchTarget, zCHAR  cMetaType )
     {
       // Do we have enough space to add two more chars?
       if ( p + 2 > targetEnd )
-  	 return -16;
+    return -16;
 
       if ( *pchSrc >= 'A' && *pchSrc <= 'Z' )
-	{
-	  // We have a capital letter.  Is previous letter upper?
-	  if ( *(p-1) < 'A' || *(p-1) > 'Z' )
-	    // No, so copy _.
-	    *p++ = '_';
-	  else
-	    // Previous letter is also upper.  Insert _ if next char is lower.
-	    if ( ( *(pchSrc+1) < 'A' || *(pchSrc+1) > 'Z' ) && *(pchSrc+1) != 0 )
-	      *p++ = '_';
-	}
+   {
+     // We have a capital letter.  Is previous letter upper?
+     if ( *(p-1) < 'A' || *(p-1) > 'Z' )
+       // No, so copy _.
+       *p++ = '_';
+     else
+       // Previous letter is also upper.  Insert _ if next char is lower.
+       if ( ( *(pchSrc+1) < 'A' || *(pchSrc+1) > 'Z' ) && *(pchSrc+1) != 0 )
+         *p++ = '_';
+   }
       *p++ = *pchSrc++;
     }
 //
   *p++ = 0;
-  
+
   // Now convert to all lower.
   SysTranslateString( p, 'L' );
   zstrcpy( pchTarget, sz );
