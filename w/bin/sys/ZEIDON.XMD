@@ -1,4 +1,4 @@
-z1000-Zeidon    ZEIDON   TZEREMXO 06/25/15   10:28:14 1.0a2    
+z1000-Zeidon    ZEIDON   TZEREMXO 07/03/15   17:05:23 1.0a2    
 eMODEL     1
 aNumEnts   173
 aNumRels   315
@@ -1047,7 +1047,7 @@ aAPDM_TOK  90000089
 
 eENTITY    2
 aZKEY      1320820
-aNumAtts   8
+aNumAtts   9
 
 eATTRIB    3
 aZKEY      1320821
@@ -1095,6 +1095,11 @@ aZKEY      1320828
 aNAME      DecimalFormat
 aAPDM_TOK  90000044
 aLTH       4
+
+eATTRIB    3
+aZKEY      110003001
+aNAME      ConstraintRule
+aAPDM_TOK  1158059
 
 eENTITY    2
 aZKEY      1320831

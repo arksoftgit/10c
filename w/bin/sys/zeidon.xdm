@@ -1,4 +1,4 @@
-z1000-Zeidon    ZEIDON   TZDMXGPO 05/13/15   17:22:35 1.0a2    
+z1000-Zeidon    ZEIDON   TZDMXGPO 07/10/15   13:12:03 1.0a2    
 eDomainGroup 1
 aName      Zeidon9B
 
@@ -50,6 +50,25 @@ eTableEntry 4
 aZKey      127082700
 aExternalValue Update
 aInternalValue 1
+
+eDomain    2
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
+aZKey      110002502
+aName      AD_WebWindowStyle
+aDomainType T
+aDataType  S
+aMaxStringLth 50
+aContextRestriction N
+
+eContext   3
+aZKey      110002503
+aName      AD_WebWindowStyle
+aIsDefault Y
+
+eTableEntry 4
+aZKey      110002504
+aExternalValue Accept/Cancel
+aInternalValue AcceptCancel
 
 eDomain    2
 aJavaClass com.quinsoft.zeidon.domains.StringDomain
@@ -6649,6 +6668,11 @@ aExternalValue Absolute Width
 aInternalValue Absolute Width
 
 eTableEntry 4
+aZKey      130069695
+aExternalValue Select Set
+aInternalValue Select Set
+
+eTableEntry 4
 aZKey      92656442
 aExternalValue Table Export Option
 aInternalValue Table Export Option
@@ -6729,9 +6753,6 @@ aName      WD_WebGroupControlProperties
 aIsDefault Y
 
 eTableEntry 4
-aZKey      130000002
-
-eTableEntry 4
 aZKey      68304367
 aExternalValue Div
 aInternalValue Div
@@ -6790,6 +6811,11 @@ eTableEntry 4
 aZKey      68304372
 aExternalValue Repeating Group
 aInternalValue Repeating Group
+
+eTableEntry 4
+aZKey      130069814
+aExternalValue Select Set (Repeat Grp)
+aInternalValue Select Set (Repeat Grp)
 
 eTableEntry 4
 aZKey      68544987
@@ -6918,9 +6944,6 @@ eContext   3
 aZKey      92709479
 aName      WD_WebTextControlProperties
 aIsDefault Y
-
-eTableEntry 4
-aZKey      92709609
 
 eTableEntry 4
 aZKey      92709482

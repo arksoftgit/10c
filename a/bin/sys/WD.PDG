@@ -1,4 +1,4 @@
-z1000-Zeidon    WD       TZDGSRCO 05/13/15   17:22:35 1.0a2    
+z1000-Zeidon    WD       TZDGSRCO 07/10/15   13:11:26 1.0a2    
 eDomainGroup 1
 aZKey      1320467
 aName      WD
@@ -9,11 +9,11 @@ aDomainAndGlobalOpGroupName TZAPDMAA
 aWorkNumeric 48
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320468
 aName      WD_ActionNoMap
 aDesc      No Map (prevent mapping) options for an Action
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  T
 aMaxStringLth 1
 aContextRestriction N
@@ -34,10 +34,29 @@ aExternalValue Yes
 aInternalValue Y
 
 eDomain    2
+aZKey      110002502
+aName      AD_WebWindowStyle
+aDomainType T
 aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
+aDataType  S
+aMaxStringLth 50
+aContextRestriction N
+
+eContext   3
+aZKey      110002503
+aName      AD_WebWindowStyle
+aIsDefault Y
+
+eTableEntry 4
+aZKey      110002504
+aExternalValue Accept/Cancel
+aInternalValue AcceptCancel
+
+eDomain    2
 aZKey      130001474
 aName      WD_WebJSPGenerationPositioning
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 1
 aContextRestriction N
@@ -63,10 +82,10 @@ aExternalValue No Positioning
 aInternalValue N
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      92715091
 aName      WD_TextAlignHorizontal
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 25
 aContextRestriction N
@@ -105,11 +124,11 @@ aExternalValue Right Offset
 aInternalValue Right Offset
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      92709478
 aName      WD_WebTextControlProperties
 aDesc      Web control types for Text control
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -125,10 +144,10 @@ aExternalValue Label
 aInternalValue Label
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      4899546
 aName      WD_WebScriptLocation
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 16
 aContextRestriction N
@@ -154,11 +173,11 @@ aExternalValue Post Operation
 aInternalValue Post Operation
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      4591424
 aName      XSL_PageProperties
 aDesc      Table of XSL Page Properties
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -232,10 +251,10 @@ aExternalValue region-end
 aInternalValue region-end
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68567203
 aName      MapTypeTextControl
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -259,11 +278,11 @@ aExternalValue Hyperlink URL
 aInternalValue Hyperlink URL
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68567201
 aName      MapTypeGridColumnControl
 aDesc      Holds any of the MapType values
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -292,11 +311,11 @@ aExternalValue Displayed Text
 aInternalValue Displayed Text
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StringDomain
 aZKey      1158762
 aName      MapTypeGeneral
 aDesc      Specify the type of mapping
 aDomainType E
+aJavaClass com.quinsoft.zeidon.domains.StringDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -307,11 +326,11 @@ aName      MapTypeGeneral
 aIsDefault Y
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68544962
 aName      WD_WebPushControlProperties
 aDesc      Web control type for Push Button controls
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -332,11 +351,11 @@ aExternalValue Hidden
 aInternalValue Hidden
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68442297
 aName      WD_WebGridControlProperties
 aDesc      Web control type for Grid subcontrols
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -350,6 +369,11 @@ eTableEntry 4
 aZKey      68442299
 aExternalValue Absolute Width
 aInternalValue Absolute Width
+
+eTableEntry 4
+aZKey      130069695
+aExternalValue Select Set
+aInternalValue Select Set
 
 eTableEntry 4
 aZKey      92656442
@@ -367,11 +391,11 @@ aExternalValue Filter Rows (wHideTableRow='Y')
 aInternalValue Filter Rows
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68304446
 aName      WD_WebEditControlProperties
 aDesc      Web control type for Edit controls
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -415,11 +439,11 @@ aExternalValue Browse File
 aInternalValue Browse File
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68304365
 aName      WD_WebGroupControlProperties
 aDesc      Web control type for Group controls
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -490,6 +514,11 @@ aExternalValue Repeating Group
 aInternalValue Repeating Group
 
 eTableEntry 4
+aZKey      130069814
+aExternalValue Select Set (Repeat Grp)
+aInternalValue Select Set (Repeat Grp)
+
+eTableEntry 4
 aZKey      68544987
 aExternalValue File Transfer to Server
 aInternalValue File Transfer to Server
@@ -520,11 +549,11 @@ aExternalValue Scrollable
 aInternalValue Scrollable
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      68304279
 aName      WD_WebGridSubControlProperties
 aDesc      Web subcontrol type for Grid subcontrols
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -570,11 +599,11 @@ aExternalValue First Occurrence Only
 aInternalValue First Occurrence Only
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1141800
 aName      WD_WebCtrlType
 aDesc      Used for JSP Generation
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -661,11 +690,11 @@ aExternalValue wysiwygEditor
 aInternalValue wysiwygEditor
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1160237
 aName      WD_MapDefType
 aDesc      Mapping definition type for PE defined MapDef
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 32
 aContextRestriction N
@@ -697,11 +726,11 @@ aExternalValue Multiple Attributes
 aInternalValue M
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      90258866
 aName      ReportGroupSubType
 aDesc      Subtype of Group for Report
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 1
 aContextRestriction N
@@ -735,11 +764,11 @@ aExternalValue Last Page Only
 aInternalValue 3
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      90258642
 aName      ReportGroupSetType
 aDesc      Type of GroupSet for Report
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 2
 aContextRestriction N
@@ -778,11 +807,11 @@ aExternalValue Page End
 aInternalValue PE
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1137350
 aName      UserSpecType
 aDesc      Type of user spec - report dialog
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 1
 aContextRestriction N
@@ -806,11 +835,11 @@ aExternalValue Report
 aInternalValue R
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1137330
 aName      WD_CtrlDefVisible
 aDesc      Determines the visibility of  a CtrlDef to the painter or report builder or XSLT builder
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aContextRestriction N
 
@@ -906,11 +935,11 @@ aExternalValue Dialog & Report & XSLT
 aInternalValue 0
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      90145806
 aName      ReportGroupType
 aDesc      Type of Control group for report, Page Header, Group Header, Attribute, etc.
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 2
 aContextRestriction N
@@ -949,11 +978,11 @@ aExternalValue Page Footer
 aInternalValue pf
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StringDomain
 aZKey      90067466
 aName      AutodesignDefaultText
 aDesc      Default text for Autodesign
 aDomainType E
+aJavaClass com.quinsoft.zeidon.domains.StringDomain
 aDataType  S
 aMaxStringLth 20
 aContextRestriction N
@@ -964,11 +993,11 @@ aName      AutodesignDefaultText
 aIsDefault Y
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      90059367
 aName      AutodesignCaseType
 aDesc      Autodesign Case 1A, 1B, 1C, 2, 3, 4, etc.
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 2
 aContextRestriction N
@@ -1047,11 +1076,11 @@ aExternalValue None      - No window / report group
 aInternalValue N
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.IntegerDomain
 aZKey      70000607
 aName      VerticalSpacingIncrement
 aDesc      Autodesign - Vertical spacing between autopainted controls, range
 aDomainType E
+aJavaClass com.quinsoft.zeidon.domains.IntegerDomain
 aDataType  L
 aContextRestriction N
 
@@ -1068,11 +1097,11 @@ aDesc      Used in range edits
 aType      M
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.IntegerDomain
 aZKey      70000605
 aName      HorizontalControlSize
 aDesc      Autodesign - Horizontal size of autopainted control - range
 aDomainType E
+aJavaClass com.quinsoft.zeidon.domains.IntegerDomain
 aDataType  L
 aContextRestriction N
 
@@ -1085,11 +1114,11 @@ aIsDefault Y
 eSelectedOperation 3
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.IntegerDomain
 aZKey      70000603
 aName      VerticalControlSize
 aDesc      Autodesign - Vertical size of autopainted control, range
 aDomainType E
+aJavaClass com.quinsoft.zeidon.domains.IntegerDomain
 aDataType  L
 aContextRestriction N
 
@@ -1102,11 +1131,11 @@ aIsDefault Y
 eSelectedOperation 3
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      90026801
 aName      DragDropType
 aDesc      Defines the Drag/Drop type (source/target?)  of a control
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  S
 aMaxStringLth 1
 aContextRestriction N
@@ -1136,11 +1165,11 @@ aExternalValue Drag & Drop Target
 aInternalValue T
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320595
 aName      WD__OutlinerFormatType
 aDesc      Table for format values for an outliner
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aMaxStringLth 1
 aContextRestriction N
@@ -1164,11 +1193,11 @@ aExternalValue Single Root
 aInternalValue 1
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320593
 aName      WD_WindowStyle
 aDesc      Window Style
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  T
 aMaxStringLth 32
 aContextRestriction N
@@ -1179,11 +1208,11 @@ aName      WD_WindowStyle
 aIsDefault Y
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320578
 aName      WD_SB_SubAction
 aDesc      Subobject Behavior: SubAction
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aContextRestriction N
 
@@ -1249,11 +1278,11 @@ aExternalValue Create Temporal Subobject Version
 aInternalValue 64
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320573
 aName      WD_SB_NextPrev
 aDesc      Subobject Behavior: Next Prev behavior within a SubAction
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aContextRestriction N
 
@@ -1273,11 +1302,11 @@ aExternalValue Previous
 aInternalValue 256
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320568
 aName      WD_SB_DeleteNull
 aDesc      Subobject Behavior: Return/Stay behavior for Delete SubAct
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aContextRestriction N
 
@@ -1297,11 +1326,11 @@ aExternalValue Return When Null
 aInternalValue 1024
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320560
 aName      WD_SB_ActionDisabling
 aDesc      Subobject Behavior: Auto Action disabling
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aContextRestriction N
 
@@ -1341,11 +1370,11 @@ aExternalValue Entity Not Null
 aInternalValue 32
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320509
 aName      WD_ControlSubtype
 aDesc      Table of valid subtypes for Window Controls
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aContextRestriction N
 
@@ -1566,11 +1595,11 @@ aExternalValue 36864
 aInternalValue 36864
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320504
 aName      WD_ComboBoxFormatType
 aDesc      Table for format values for a Combo Box Control
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aMaxStringLth 1
 aContextRestriction N
@@ -1605,11 +1634,11 @@ aExternalValue Extended List
 aInternalValue 4
 
 eDomain    2
-aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aZKey      1320472
 aName      WD_ActionType
 aDesc      Behavior Type for a Window Action
 aDomainType T
+aJavaClass com.quinsoft.zeidon.domains.StaticTableDomain
 aDataType  L
 aContextRestriction N
 
@@ -1928,6 +1957,6 @@ aType      13
 aLastUpdateDate 19950908094926000
 aLastCheckInDate 19951102203051110
 
-i196       193
-i199       193
-i354       193
+i201       198
+i204       198
+i359       198

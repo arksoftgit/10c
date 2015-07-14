@@ -468,6 +468,12 @@ GenerateJSP( VIEW vDialog BASED ON LOD TZWDLGSO,
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
    END
 
+   // KJS 07/10/15 - Include for an import file for any extra imports.
+   IF vDialog.Dialog.WEB_ImportInclude != ""
+      szWriteBuffer = "<%@ include file=^" + vDialog.Dialog.WEB_ImportInclude  + "^ %>"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
+
    /*
    IF szUploadFile = "Y" OR szDownloadFile = "Y"
       // Page Header when File Transfer exists on Window.

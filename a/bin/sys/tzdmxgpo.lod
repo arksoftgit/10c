@@ -1,4 +1,4 @@
-z1000-Zeidon    TZDMXGPO TZZOLODO 03/31/10   16:35:41 1.0b0    
+z1000-Zeidon    TZDMXGPO TZZOLODO 07/03/15   17:05:23 1.0b0    
 eLOD       1
 aZKey      1329552
 aName      TZDMXGPO
@@ -173,10 +173,10 @@ aER_DiagramPosY 442
 
 eER_RelLinkRec 6
 aName      has defining
+aAutoSeq   Y
 aZKey      1322616
 aCardMin   0
 aCardMax   m
-aAutoSeq   Y
 
 eER_RelTypeRec 7
 aZKey      1322615
@@ -228,10 +228,10 @@ aER_DiagramPosY 384
 
 eER_RelLinkRec 6
 aName      has defining
+aAutoSeq   Y
 aZKey      1322619
 aCardMin   0
 aCardMax   m
-aAutoSeq   Y
 
 eER_RelTypeRec 7
 aZKey      1322618
@@ -331,10 +331,10 @@ aER_DiagramPosY 416
 
 eER_RelLinkRec 5
 aName      has
+aAutoSeq   Y
 aZKey      1322250
 aCardMin   0
 aCardMax   m
-aAutoSeq   Y
 
 eER_RelTypeRec 6
 aZKey      1322249
@@ -427,7 +427,6 @@ eER_AttributeRec 5
 aName      DomainType
 aZKey      1320824
 aLth       1
-aNotNull   Y
 aDesc      Type of Domain (Table, Expression, Algorithm)
 aPromptPaintLit Domain Type
 aListPaintLit Domain Type
@@ -448,7 +447,6 @@ eER_AttributeRec 5
 aName      DataType
 aZKey      1320825
 aLth       1
-aNotNull   Y
 aDesc      Internal data type stored (ie., string, date, decimal, integer)
 aPromptPaintLit Data Type
 aListPaintLit Data Type
@@ -506,7 +504,7 @@ aZKey      90000040
 aName      QSFileName
 aDomainType E
 aDataType  S
-aMaxStringLth 8
+aMaxStringLth 32
 aDesc      QuinSoft File Name - 32 chars
 aContextRestriction N
 
@@ -565,6 +563,24 @@ aDesc      Seq no. of each domain with operation
 
 eDomainRec 6
 
+eLOD_AttributeRec 4
+aZKey      110003003
+aWork      Y
+aUpdate    Y
+
+eER_AttributeRec 5
+aName      ConstraintRule
+aZKey      110003004
+
+eDomainRec 6
+aZKey      1158059
+aName      Note
+aDomainType E
+aDataType  S
+aMaxStringLth 10000
+aDesc      10000 byte string
+aContextRestriction N
+
 eER_EntityRec 4
 aName      Domain
 aZKey      1320820
@@ -614,7 +630,7 @@ eER_Attribute 4
 eDomain    5
 
 eLOD_Entity 2
-awkSelectedAttributeForDragSort 12
+awkSelectedAttributeForDragSort 14
 
 eLOD_Attribute 3
 awkSequence 1
@@ -709,6 +725,13 @@ eDomain    5
 
 eLOD_Attribute 3
 awkSequence 14
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 15
 
 eER_Attribute 4
 
@@ -836,7 +859,7 @@ aLanguageType V
 ePOD       2
 aNAME      TZDMXGPO
 aZKey      1149565
-aTE_SourceZKey 1148367
+aTE_SourceZKey 91005292
 
 eTE_DB_Environ 3
 aName      Zeidon_T
@@ -845,47 +868,9 @@ aDesc      Local Project Library Release 8C
 aType      P
 
 eTE_DBMS_Source 4
-aName      SQL_Rep
-aZKey      1148367
-aDesc      Last altered April 7, 1998
-aParadigm  R
-aDBMS      SQLServer via ODBC
-aGenerateExecutable kzhsqlsb
-aExecutable KZHSQLOA
-aGenKeyExecutable KZHGENKY
-aDisplayOwner Y
-aDisplayDBMS_ID N
-aDBH_Data  U322
-M5%I$0DA/1$\`*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
-M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
-M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
-M*BIZ,3`P,#!:96ED;VX@("`@6D),3T)/22`@5%I$0DA/1$\@,#DO,C(O.3D@
-M("`Q,SHU,#HS,R`Q+C!A("`@("`-"F5/1$)#("`@("`@,0T*851I;65S=&%M
-M<%!R96-I<VEO;B`S#0IA5&EM97-T86UP07-3=')I;F<@3@T*84)L;V)S3&%S
-M="!9#0IA1')O<%1A8FQE<R!9#0IA061D5&%B;&5.86UE5&]&2U]/=F5R<FED
-'92!9#0H-"@``
-`
-
-eTE_DBMS_Source 4
-aName      Zeidon
-aZKey      90031867
-aDesc      Zeidon repository on DB2 mainframe
-aParadigm  R
-aDBMS      MVS: DB2 deutsch
-aGenerateExecutable KZSIDB2
-aExecutable KZHSIRON
-aGenKeyExecutable KZHGENKY
-aConectionType O
-aSironDB_Type 2
-aDefaultOwner ZEIDON
-aDisplayOwner Y
-aDisplayDBMS_ID Y
-aSironDB_Subtype 4
-
-eTE_DBMS_Source 4
 aName      Repos9JA
 aZKey      91005292
-aDesc      Repository MS-Access
+aDesc      The fact that this is defined as MS Access is immaterial, as the meta data will never be kept in a database, but will only remain as individual meta objects.
 aParadigm  R
 aDBMS      MS Access via ODBC
 aGenerateExecutable KZHSQLAB
@@ -894,7 +879,7 @@ aGenKeyExecutable KZHGENKY
 aDisplayOwner Y
 aDisplayDBMS_ID N
 aDBH_Data  U322
-M5%I$0DA/1$\`*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
+M5%I$0DA/1$\`*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BH`*BHJ*BHJ*BHJ*BHJ
 M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
 M*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ*BHJ
 M*BIZ,3`P,#!:96ED;VX@("`@6D),3T)/22`@5%I$0DA/1$\@,#,O,#$O,#`@
@@ -921,105 +906,108 @@ i78        48
 i87        8
 i90        8
 i93        8
-i97        11
-i100       8
-i101       1
-i102       95
-i103       96
-i104       11
+i100       11
+i103       8
+i104       1
 i105       98
 i106       99
-i107       8
-i108       2
-i109       55
-i110       56
-i111       11
-i112       52
-i113       53
-i114       8
-i115       58
-i116       59
-i117       60
-i118       61
-i119       62
-i120       11
-i121       64
-i122       65
-i123       66
-i124       67
-i125       68
-i126       69
-i127       70
-i128       71
-i129       72
-i130       73
-i131       74
-i132       8
-i133       76
-i134       77
-i135       48
-i136       79
-i137       80
-i138       81
-i139       82
-i140       83
-i141       84
-i142       85
-i143       86
-i144       8
-i145       88
-i146       89
+i107       11
+i108       101
+i109       102
+i110       8
+i111       2
+i112       55
+i113       56
+i114       11
+i115       52
+i116       53
+i117       8
+i118       58
+i119       59
+i120       60
+i121       61
+i122       62
+i123       11
+i124       64
+i125       65
+i126       66
+i127       67
+i128       68
+i129       69
+i130       70
+i131       71
+i132       72
+i133       73
+i134       74
+i135       8
+i136       76
+i137       77
+i138       48
+i139       79
+i140       80
+i141       81
+i142       82
+i143       83
+i144       84
+i145       85
+i146       86
 i147       8
-i148       91
-i149       92
+i148       88
+i149       89
 i150       8
-i151       94
-i152       3
-i153       31
-i154       32
-i155       8
-i156       34
-i157       35
-i158       11
-i159       37
-i160       38
+i151       91
+i152       92
+i153       8
+i154       94
+i155       95
+i156       96
+i157       97
+i158       3
+i159       31
+i160       32
 i161       8
-i162       40
-i163       41
+i162       34
+i163       35
 i164       11
-i165       43
-i166       44
-i167       11
-i168       46
-i169       47
-i170       48
-i171       49
-i172       50
-i173       51
-i174       4
-i175       12
-i176       13
-i177       8
-i178       15
-i179       16
-i180       11
-i181       18
-i182       19
-i183       11
-i184       21
-i185       22
-i186       23
-i187       5
-i188       6
-i189       7
-i190       8
-i191       9
-i192       10
-i193       11
-i194       24
-i195       25
-i196       26
-i197       8
-i198       28
-i199       29
-i200       30
+i165       37
+i166       38
+i167       8
+i168       40
+i169       41
+i170       11
+i171       43
+i172       44
+i173       11
+i174       46
+i175       47
+i176       48
+i177       49
+i178       50
+i179       51
+i180       4
+i181       12
+i182       13
+i183       8
+i184       15
+i185       16
+i186       11
+i187       18
+i188       19
+i189       11
+i190       21
+i191       22
+i192       23
+i193       5
+i194       6
+i195       7
+i196       8
+i197       9
+i198       10
+i199       11
+i200       24
+i201       25
+i202       26
+i203       8
+i204       28
+i205       29
+i206       30

@@ -995,6 +995,12 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    szWriteBuffer = "<%@ page import=^" + szAppImport + "^ %>"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
 
+   // KJS 07/10/15 - Include for an import file for any extra imports.
+   IF vDialog.Dialog.WEB_ImportInclude != ""
+      szWriteBuffer = "<%@ include file=^" + vDialog.Dialog.WEB_ImportInclude  + "^ %>"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+   END
+
    DropView( vDialogTemp )
 
    szWriteBuffer = "<%! "

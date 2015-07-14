@@ -85,6 +85,8 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
    STRING ( 1 )   szScrollableFlag
    STRING ( 1 )   szScrollingTable
    STRING ( 1 )   szFilterTable
+   STRING ( 1 )   szSelectSet
+   STRING ( 1 )   szSelectSetRepeat
    STRING ( 1 )   szFileTransferFlag
    STRING ( 1 )   szGroupIsTable
    STRING ( 1 )   szreCAPTCHAFlag
@@ -363,6 +365,12 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
             IF RESULT >= zCURSOR_SET
                szRepeatingGroupFlag = "Y"
             END
+         END
+         
+         szSelectSetRepeat = ""
+         SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Select Set (Repeat Grp)"
+         IF RESULT >= zCURSOR_SET
+            szSelectSetRepeat = "Y"
          END
 
          // Set flag for Survey Group, which is a repeating group for survey questions.
@@ -1434,6 +1442,19 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "   {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               
+               // KJS 07/10/15 - Adding Select Set to the repeating group
+               IF szSelectSetRepeat = "Y"
+                  // if ( set.isSelected( View.Entity )
+                  // Maybe use field WebFileName on the control as the SelectSet name? Since that is only for group box...
+                  IF vDialog.Control.WebFileName != ""
+                     szWriteBuffer = "      SelectSet set = " + vDialog.CtrlMapView.Name + ".getSelectSet( ^" + vDialog.Control.WebSelectSetName + "^ );"
+                  ELSE
+                     szWriteBuffer = "      SelectSet set = " + vDialog.CtrlMapView.Name + ".getSelectSet( );"
+                  END
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               END
+               
 
                szWriteBuffer = "      long   lEntityKeyRG" + szCtrlTag + ";"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -1459,6 +1480,14 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                szWriteBuffer = "      {"
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               
+               // KJS 07/10/15 - Add SelectSet to repeating group
+               IF szSelectSetRepeat = "Y" 
+                  szWriteBuffer = "         if ( set.isSelected( " + vDialog.CtrlMapView.Name + ".cursor( ^" + vDialog.CtrlMapLOD_Entity.Name  + "^ ) ) )"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         {"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+               END
                
                szWriteBuffer = "         lEntityKeyRG" + szCtrlTag + " = " + vDialog.CtrlMapView.Name +
                                ".cursor( ^" + vDialog.CtrlMapLOD_Entity.Name + "^ ).getEntityKey( );"
@@ -1552,6 +1581,12 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
 
             szWriteBuffer = "<%"
             WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            
+            IF szSelectSetRepeat = "Y" 
+               szWriteBuffer = "         } // SelectSet end"
+               WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+            END
+            
 
             // Conclude with JSP next cursor loop.
             IF vDialog.CtrlMapView EXISTS
@@ -2317,6 +2352,12 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                szFilterTable = "Y"
             END
 
+            // KJS 06/26/15 - DG/Justin would like to add SelectSets as a filter for the table
+            SET CURSOR FIRST vDialog.WebControlProperty WHERE vDialog.WebControlProperty.Name = "Select Set"
+            IF RESULT >= zCURSOR_SET
+               szSelectSet = "Y"
+            END
+
             // KJS 05/06/09 - I am placing this div around the <table> being generated so that if there is a
             // WebGridNoDataMessage, I can create this message under the table lined up with the table.  Otherwise,
             // I need to save any spacing that happens before this grid.
@@ -2623,6 +2664,16 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                   szWriteBuffer = "      String strFilter;"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                END
+               IF szSelectSet = "Y"
+                  // if ( set.isSelected( View.Entity )
+                  // Maybe use field WebFileName on the control as the SelectSet name? Since that is only for group box...
+                  IF vDialog.Control.WebFileName != ""
+                     szWriteBuffer = "      SelectSet set = " + vDialog.CtrlMapView.Name + ".getSelectSet( ^" + vDialog.Control.WebSelectSetName + "^ );"
+                  ELSE
+                     szWriteBuffer = "      SelectSet set = " + vDialog.CtrlMapView.Name + ".getSelectSet( );"
+                  END
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+               END
 
                //szWriteBuffer = "      iTableRowCnt = 0;"
                //WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
@@ -2744,6 +2795,13 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                   szWriteBuffer = "         // If the attribute wHideTableRow is null then we want to show this row."
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "         if ( StringUtils.isBlank( strFilter ) )"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
+                  szWriteBuffer = "         {"
+                  WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
+               END
+               
+               IF szSelectSet = "Y" 
+                  szWriteBuffer = "         if ( set.isSelected( " + szGridView + ".cursor( ^" + vDialog.CtrlMapLOD_Entity.Name  + "^ ) ) )"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
                   szWriteBuffer = "         {"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 1 )
@@ -3876,7 +3934,7 @@ GenJSPJ_CrteCtrlsRecurs( VIEW vDialog      BASED ON LOD TZWDLGSO,
                WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
 
                //If on this table we are filtering rows, we need to add the closing bracket for the "if ( strFilter.length == 0 ) statement
-               IF  szFilterTable = "Y"
+               IF  szFilterTable = "Y" OR szSelectSet = "Y"
 
                   szWriteBuffer = "         }"
                   WL_QC( vDialog, lFile, szWriteBuffer, "^", 0 )
