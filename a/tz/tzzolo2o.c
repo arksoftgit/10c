@@ -921,9 +921,9 @@ oTZZOLODO_LOD_EntityCopy( zVIEW     NewMainLOD,
       //:END
 
       //:ResetViewFromSubobject( OldRecursiveLOD )
-      ResetViewFromSubobject( OldRecursiveLOD );
+      ResetViewFromSubobjectTop( OldRecursiveLOD );
       //:ResetViewFromSubobject( NewRecursiveLOD )
-      ResetViewFromSubobject( NewRecursiveLOD );
+      ResetViewFromSubobjectTop( NewRecursiveLOD );
       RESULT = SetCursorNextEntity( OldRecursiveLOD, "LOD_EntityChild", "" );
    } 
 
@@ -1472,7 +1472,7 @@ oTZZOLODO_LOD_OperationCopy( zVIEW     vSubtask,
       //:RetrieveViewForMetaList( vSubtask, DirLPLR, zSOURCE_ERD_META ) // Get a view for directory info.
       RetrieveViewForMetaList( vSubtask, &DirLPLR, zSOURCE_ERD_META );
       //:ResetViewFromSubobject( DirLPLR ) // Get visibility to root.
-      ResetViewFromSubobject( DirLPLR );
+      ResetViewFromSubobjectTop( DirLPLR );
       //:IF ExtensionName = "C"
       if ( ZeidonStringCompare( ExtensionName, 1, 0, "C", 1, 0, 10 ) == 0 )
       { 
@@ -1930,7 +1930,7 @@ oTZZOLODO_LOD_Migrate( zVIEW     NewMainLOD,
    //:RetrieveViewForMetaList( vSubtask, CurrentLPLR, zREFER_ERD_META )
    RetrieveViewForMetaList( vSubtask, &CurrentLPLR, zREFER_ERD_META );
    //:ResetViewFromSubobject( CurrentLPLR ) // Get visibility to root.
-   ResetViewFromSubobject( CurrentLPLR );
+   ResetViewFromSubobjectTop( CurrentLPLR );
 
    //:// Activate existing source meta OldMainLOD
    //:SourceFileName = SourceLPLR.LPLR.MetaSrcDir + "\" + LOD_Name + ".LOD"
@@ -3021,7 +3021,7 @@ oTZZOLODO_fnLocateParentName( zVIEW     vRecursLOD,
             //:CreateViewFromViewForTask( vParentLOD, vRecursLOD, 0 )
             CreateViewFromViewForTask( &vParentLOD, vRecursLOD, 0 );
             //:ResetViewFromSubobject( vParentLOD )
-            ResetViewFromSubobject( vParentLOD );
+            ResetViewFromSubobjectTop( vParentLOD );
             //:ReturnedParentName = vParentLOD.ER_EntityRec.Name
             GetVariableFromAttribute( ReturnedParentName, 0, 'S', 33, vParentLOD, "ER_EntityRec", "Name", "", 0 );
             //:DropView( vParentLOD )
@@ -3048,7 +3048,7 @@ oTZZOLODO_fnLocateParentName( zVIEW     vRecursLOD,
          //:                    ReturnedParentName )
          oTZZOLODO_fnLocateParentName( vRecursLOD, RelationshipZKey, ChildEntityZKey, ReturnedParentName );
          //:ResetViewFromSubobject( vRecursLOD )
-         ResetViewFromSubobject( vRecursLOD );
+         ResetViewFromSubobjectTop( vRecursLOD );
          //:IF ReturnedParentName != ""
          if ( ZeidonStringCompare( ReturnedParentName, 1, 0, "", 1, 0, 33 ) != 0 )
          { 
@@ -3263,7 +3263,7 @@ oTZZOLODO_fnRelinkRelationships( zVIEW     vSubtask,
          //:                    ReturnedParentName )
          oTZZOLODO_fnLocateParentName( vLOD, RelationshipZKey, ChildEntityZKey, ReturnedParentName );
          //:ResetViewFromSubobject( vLOD )
-         ResetViewFromSubobject( vLOD );
+         ResetViewFromSubobjectTop( vLOD );
          //:SET CURSOR FIRST vERD.ER_RelLink_Other WITHIN vERD.ER_Entity WHERE
          //:    vERD.ER_RelLink_Other.Name = vLOD.ER_RelLink.Name AND
          //:    vERD.ER_Entity_Other.Name  = ReturnedParentName
@@ -4509,9 +4509,9 @@ oTZZOLODO_LOD_CompareReus( zVIEW     TargetLOD,
          //:LOD_CompareReus( TargetLOD, SourceLOD, TargetLOD_Root, szNewParentNames )
          oTZZOLODO_LOD_CompareReus( TargetLOD, SourceLOD, TargetLOD_Root, szNewParentNames );
          //:ResetViewFromSubobject( SourceLOD )
-         ResetViewFromSubobject( SourceLOD );
+         ResetViewFromSubobjectTop( SourceLOD );
          //:ResetViewFromSubobject( TargetLOD )
-         ResetViewFromSubobject( TargetLOD );
+         ResetViewFromSubobjectTop( TargetLOD );
 
          //:ELSE
       } 
@@ -5677,7 +5677,7 @@ oTZZOLODO_LOD_MergeEntity( zVIEW     TargetLOD,
          //:CreateViewFromView( TargetLOD2, TargetLOD )
          CreateViewFromView( &TargetLOD2, TargetLOD );
          //:nRC = ResetViewFromSubobject( TargetLOD2 )
-         nRC = ResetViewFromSubobject( TargetLOD2 );
+         nRC = ResetViewFromSubobjectTop( TargetLOD2 );
          //:IF nRC = 0
          if ( nRC == 0 )
          { 
@@ -5868,9 +5868,9 @@ oTZZOLODO_LOD_MergeEntity( zVIEW     TargetLOD,
 
    //:END
    //:ResetViewFromSubobject( SourceLOD )
-   ResetViewFromSubobject( SourceLOD );
+   ResetViewFromSubobjectTop( SourceLOD );
    //:ResetViewFromSubobject( TargetLOD )
-   ResetViewFromSubobject( TargetLOD );
+   ResetViewFromSubobjectTop( TargetLOD );
    return( 0 );
 // END
 } 

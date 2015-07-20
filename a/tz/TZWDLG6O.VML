@@ -1238,6 +1238,8 @@ GenerateJSPJava( VIEW vDialog BASED ON LOD TZWDLGSO,
    szWriteBuffer = "String strDateFormat = ^^;"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    IF szKeyRole = "Y"
+      szWriteBuffer = "String strLoginName = ^^;"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "String strKeyRole = ^^;"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    END
@@ -2789,6 +2791,8 @@ DKS_TRACE_END */
    WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 1 )
 
    IF szKeyRole = "Y"
+      szWriteBuffer = "   var LoginName = document." + szFormName + ".zLoginName.value;"
+      WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   var keyRole = document." + szFormName + ".zKeyRole.value;"
       WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
    END
@@ -4129,15 +4133,21 @@ DKS_TRACE_END */
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      {"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         strLoginName = wWebXA.cursor( ^Root^ ).getAttribute( ^LoginName^ ).getString( ^LoginName^ );"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "         if ( strLoginName == null )"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      szWriteBuffer = "            strLoginName = ^^;"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "         strKeyRole = wWebXA.cursor( ^Root^ ).getAttribute( ^KeyRole^ ).getString( ^KeyRole^ );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "         if ( strKeyRole == null )"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "            strKeyRole = ^^;"
-      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
-
-      szWriteBuffer = "         task.log().info( ^Root.KeyRole: ^ + strKeyRole );"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+
+   // szWriteBuffer = "         task.log().info( ^Root.KeyRole: ^ + strKeyRole );"
+   // WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "      }"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   }"
@@ -4160,6 +4170,8 @@ DKS_TRACE_END */
    szWriteBuffer = "   <input name=^zDateFormat^ id=^zDateFormat^ type=^hidden^ value=^<%=strDateFormat%>^>"
    WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    IF szKeyRole = "Y"
+      szWriteBuffer = "   <input name=^zLoginName^ id=^zLoginName^ type=^hidden^ value=^<%=strLoginName%>^>"
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       szWriteBuffer = "   <input name=^zKeyRole^ id=^zKeyRole^ type=^hidden^ value=^<%=strKeyRole%>^>"
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
    END

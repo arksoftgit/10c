@@ -1269,6 +1269,10 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:IF szKeyRole = "Y"
    if ( ZeidonStringCompare( szKeyRole, 1, 0, "Y", 1, 0, 2 ) == 0 )
    { 
+      //:szWriteBuffer = "String strLoginName = ^^;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "String strLoginName = ^^;", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "String strKeyRole = ^^;"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "String strKeyRole = ^^;", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -4251,6 +4255,12 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:IF szKeyRole = "Y"
    if ( ZeidonStringCompare( szKeyRole, 1, 0, "Y", 1, 0, 2 ) == 0 )
    { 
+      //:szWriteBuffer = "   var LoginName = document." + szFormName + ".zLoginName.value;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "   var LoginName = document.", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szFormName, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ".zLoginName.value;", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJAVA, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "   var keyRole = document." + szFormName + ".zKeyRole.value;"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "   var keyRole = document.", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szFormName, 1, 0, 10001 );
@@ -6836,6 +6846,18 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
       ZeidonStringCopy( szWriteBuffer, 1, 0, "      {", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:szWriteBuffer = "         strLoginName = wWebXA.cursor( ^Root^ ).getAttribute( ^LoginName^ ).getString( ^LoginName^ );"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         strLoginName = wWebXA.cursor( ^Root^ ).getAttribute( ^LoginName^ ).getString( ^LoginName^ );", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:szWriteBuffer = "         if ( strLoginName == null )"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "         if ( strLoginName == null )", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+      //:szWriteBuffer = "            strLoginName = ^^;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "            strLoginName = ^^;", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "         strKeyRole = wWebXA.cursor( ^Root^ ).getAttribute( ^KeyRole^ ).getString( ^KeyRole^ );"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "         strKeyRole = wWebXA.cursor( ^Root^ ).getAttribute( ^KeyRole^ ).getString( ^KeyRole^ );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -6846,13 +6868,11 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "            strKeyRole = ^^;"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "            strKeyRole = ^^;", 1, 0, 10001 );
-      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 )
-      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 1 );
-
-      //:szWriteBuffer = "         task.log().info( ^Root.KeyRole: ^ + strKeyRole );"
-      ZeidonStringCopy( szWriteBuffer, 1, 0, "         task.log().info( ^Root.KeyRole: ^ + strKeyRole );", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
+
+      //:// szWriteBuffer = "         task.log().info( ^Root.KeyRole: ^ + strKeyRole );"
+      //:// WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
       //:szWriteBuffer = "      }"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "      }", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -6891,6 +6911,10 @@ oTZWDLGSO_GenerateJSPJava( zVIEW     vDialog,
    //:IF szKeyRole = "Y"
    if ( ZeidonStringCompare( szKeyRole, 1, 0, "Y", 1, 0, 2 ) == 0 )
    { 
+      //:szWriteBuffer = "   <input name=^zLoginName^ id=^zLoginName^ type=^hidden^ value=^<%=strLoginName%>^>"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "   <input name=^zLoginName^ id=^zLoginName^ type=^hidden^ value=^<%=strLoginName%>^>", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "   <input name=^zKeyRole^ id=^zKeyRole^ type=^hidden^ value=^<%=strKeyRole%>^>"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "   <input name=^zKeyRole^ id=^zKeyRole^ type=^hidden^ value=^<%=strKeyRole%>^>", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )

@@ -1275,6 +1275,10 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
    //:IF szKeyRole = "Y"
    if ( ZeidonStringCompare( szKeyRole, 1, 0, "Y", 1, 0, 2 ) == 0 )
    { 
+      //:szWriteBuffer = "String strLoginName = ^^;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "String strLoginName = ^^;", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "String strKeyRole = ^^;"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "String strKeyRole = ^^;", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
@@ -4163,6 +4167,12 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
    //:IF szKeyRole = "Y"
    if ( ZeidonStringCompare( szKeyRole, 1, 0, "Y", 1, 0, 2 ) == 0 )
    { 
+      //:szWriteBuffer = "   var LoginName = document." + szFormName + ".zLoginName.value;"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "   var LoginName = document.", 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, szFormName, 1, 0, 10001 );
+      ZeidonStringConcat( szWriteBuffer, 1, 0, ".zLoginName.value;", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "   var keyRole = document." + szFormName + ".zKeyRole.value;"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "   var keyRole = document.", 1, 0, 10001 );
       ZeidonStringConcat( szWriteBuffer, 1, 0, szFormName, 1, 0, 10001 );
@@ -6719,6 +6729,10 @@ oTZWDLGSO_GenerateJSP( zVIEW     vDialog,
    //:IF szKeyRole = "Y"
    if ( ZeidonStringCompare( szKeyRole, 1, 0, "Y", 1, 0, 2 ) == 0 )
    { 
+      //:szWriteBuffer = "   <input name=^zLoginName^ id=^zLoginName^ type=^hidden^ value=^<%=strLoginName%>^>"
+      ZeidonStringCopy( szWriteBuffer, 1, 0, "   <input name=^zLoginName^ id=^zLoginName^ type=^hidden^ value=^<%=strLoginName%>^>", 1, 0, 10001 );
+      //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
+      WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 );
       //:szWriteBuffer = "   <input name=^zKeyRole^ id=^zKeyRole^ type=^hidden^ value=^<%=strKeyRole%>^>"
       ZeidonStringCopy( szWriteBuffer, 1, 0, "   <input name=^zKeyRole^ id=^zKeyRole^ type=^hidden^ value=^<%=strKeyRole%>^>", 1, 0, 10001 );
       //:WL_QC( vDialog, lFileJSP, szWriteBuffer, "^", 0 )
